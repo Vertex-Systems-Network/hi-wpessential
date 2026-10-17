@@ -7,6 +7,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:group {"tagName":"section","align":"full","className":"wpe-section wpe-section--sm wpe-center","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-group alignfull wpe-section wpe-section--sm wpe-center"><!-- wp:paragraph {"textColor":"text-muted","fontSize":"small"} -->

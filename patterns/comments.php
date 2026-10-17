@@ -7,6 +7,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:comments {"className":"wpe-comments"} -->
 <div class="wp-block-comments wpe-comments"><!-- wp:comments-title {"level":3} /-->

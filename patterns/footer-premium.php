@@ -7,6 +7,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:group {"tagName":"footer","className":"wpe-footer wpe-section--md","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <footer class="wp-block-group wpe-footer wpe-section--md"><!-- wp:group {"className":"wpe-footer__newsletter","layout":{"type":"constrained","contentSize":"1200px"}} -->

@@ -22,9 +22,12 @@ require WPESSENTIAL_DIR . '/inc/core-bridge.php';
 if ( did_action( 'elementor/loaded' ) ) {
 	require WPESSENTIAL_DIR . '/inc/elementor.php';
 } else {
-	add_action( 'elementor/loaded', static function () {
-		require WPESSENTIAL_DIR . '/inc/elementor.php';
-	} );
+	add_action(
+		'elementor/loaded',
+		static function () {
+			require WPESSENTIAL_DIR . '/inc/elementor.php';
+		}
+	);
 }
 
 // WooCommerce is loaded before themes, so a class check is reliable here.

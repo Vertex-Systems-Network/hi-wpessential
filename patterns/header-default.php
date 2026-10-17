@@ -7,6 +7,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:pattern {"slug":"wpessential/header-topbar"} /-->
 

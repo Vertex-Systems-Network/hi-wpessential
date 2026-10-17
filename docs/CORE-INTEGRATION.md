@@ -5,9 +5,9 @@ Theme sirf data/hooks deti hai. Demo import, preview, plugin manager aur license
 ## Theme jo deti hai
 | Hook / function | Kaam |
 |---|---|
-| `wpessential_theme_supports()` / filter `wpessential/theme/supports` | Theme version, builders, features |
-| `wpessential_demo_manifest_url()` / filter `wpessential/demos/manifest_url` | Remote `demos.json` URL |
-| action `wpessential/demo/imported( $demo_id, $builder )` | Core import ke baad fire kare; theme Elementor Kit ko theme.json tokens se re-sync karti hai |
+| `wpessential_theme_supports()` / filter `wpessential_theme_supports` | Theme version, builders, features |
+| `wpessential_demo_manifest_url()` / filter `wpessential_demos_manifest_url` | Remote `demos.json` URL |
+| action `wpessential_demo_imported( $demo_id, $builder )` | Core import ke baad fire kare; theme Elementor Kit ko theme.json tokens se re-sync karti hai |
 | `wpessential_sync_elementor_kit()` | Manual Kit sync |
 | Constant `WPESSENTIAL_CORE_VERSION` | Core define kare to theme ka "install Core" notice band |
 

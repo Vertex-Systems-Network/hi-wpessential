@@ -7,6 +7,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:group {"tagName":"section","align":"full","className":"wpe-section wpe-section--md","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-group alignfull wpe-section wpe-section--md"><!-- wp:columns {"className":"is-style-wpe-card wpe-section--sm wpe-center"} -->

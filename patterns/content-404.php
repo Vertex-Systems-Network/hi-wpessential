@@ -7,6 +7,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:group {"tagName":"section","className":"wpe-section wpe-center","layout":{"type":"constrained","contentSize":"640px"}} -->
 <section class="wp-block-group wpe-section wpe-center"><!-- wp:paragraph {"className":"is-style-wpe-overline"} -->

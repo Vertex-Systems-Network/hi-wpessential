@@ -1,5 +1,5 @@
 === WPEssential ===
-Contributors: pellaglobal
+Contributors: wpessential
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -13,4 +13,4 @@ Lightweight multi-niche block theme, native for Gutenberg and Elementor.
 WPEssential is a fast, theme.json driven block theme. Every demo ships in a Gutenberg and an Elementor version. Install the WPEssential Core plugin for one-click demo import, live demo preview, automatic plugin setup and Pro license activation.
 
 == Copyright ==
-WPEssential, (C) 2026 Pella Global. Distributed under the terms of the GNU GPL.
+WPEssential, (C) 2026 WPEssential Team. Distributed under the terms of the GNU GPL.

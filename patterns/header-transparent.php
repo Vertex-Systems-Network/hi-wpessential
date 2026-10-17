@@ -7,6 +7,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:group {"tagName":"header","className":"wpe-header wpe-header--transparent","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <header class="wp-block-group wpe-header wpe-header--transparent"><!-- wp:group {"className":"wpe-header__inner","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->

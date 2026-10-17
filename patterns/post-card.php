@@ -8,6 +8,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:group {"className":"wpe-card","layout":{"type":"default"}} -->
 <div class="wp-block-group wpe-card"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/10","sizeSlug":"wpessential-card"} /-->

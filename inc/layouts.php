@@ -5,7 +5,7 @@
  * Templates always contain block template parts (`header*`, `footer*`), so the
  * theme works on its own. Before a part renders, the theme asks — in order:
  *
- *   1. WPEssential Core (or any plugin) via `wpessential/layout/html`
+ *   1. WPEssential Core (or any plugin) via `wpessential_layout_html`
  *      — e.g. a Site Builder layout built with Gutenberg or Elementor and
  *        matched by display conditions;
  *   2. Elementor Pro Theme Builder locations (`header` / `footer`);
@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string Area name ("header", "footer") or empty string.
  */
 function wpessential_layout_area( $slug ) {
-	$areas = apply_filters( 'wpessential/layout/areas', array( 'header', 'footer' ) );
+	$areas = apply_filters( 'wpessential_layout_areas', array( 'header', 'footer' ) );
 	foreach ( $areas as $area ) {
 		if ( $slug === $area || 0 === strpos( $slug, $area . '-' ) ) {
 			return $area;
@@ -47,7 +47,7 @@ function wpessential_external_layout( $area, $slug = '' ) {
 	 * @param string      $area Layout area ("header", "footer").
 	 * @param string      $slug Template part slug the template asked for.
 	 */
-	$html = apply_filters( 'wpessential/layout/html', null, $area, $slug );
+	$html = apply_filters( 'wpessential_layout_html', null, $area, $slug );
 	if ( is_string( $html ) ) {
 		return $html;
 	}
@@ -89,7 +89,7 @@ add_filter(
 		$rendered[ $area ] = true;
 
 		/** Fires right after an external layout replaced a block template part. */
-		do_action( 'wpessential/layout/rendered', $area, $slug );
+		do_action( 'wpessential_layout_rendered', $area, $slug );
 
 		return $html;
 	},

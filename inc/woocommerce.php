@@ -12,36 +12,44 @@
 
 defined( 'ABSPATH' ) || exit;
 
-add_action( 'after_setup_theme', static function () {
-	add_theme_support(
-		'woocommerce',
-		array(
-			'thumbnail_image_width' => 600,
-			'single_image_width'    => 900,
-			'product_grid'          => array(
-				'default_columns' => 4,
-				'min_columns'     => 2,
-				'max_columns'     => 4,
-				'default_rows'    => 3,
-			),
-		)
-	);
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
-} );
+add_action(
+	'after_setup_theme',
+	static function () {
+		add_theme_support(
+			'woocommerce',
+			array(
+				'thumbnail_image_width' => 600,
+				'single_image_width'    => 900,
+				'product_grid'          => array(
+					'default_columns' => 4,
+					'min_columns'     => 2,
+					'max_columns'     => 4,
+					'default_rows'    => 3,
+				),
+			)
+		);
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+	}
+);
 
 /**
  * Sale badge shows the real discount ("-20%") instead of "Sale!".
  */
-add_filter( 'woocommerce_sale_flash', static function ( $html, $post, $product ) {
-	$percent = wpessential_product_discount( $product );
-	if ( ! $percent ) {
-		return $html;
-	}
-	/* translators: %d: discount percentage. */
-	return '<span class="onsale">' . esc_html( sprintf( __( '-%d%%', 'wpessential' ), $percent ) ) . '</span>';
-}, 10, 3 );
+add_filter(
+	'woocommerce_sale_flash',
+	static function ( $html, $post, $product ) {
+		$percent = wpessential_product_discount( $product );
+		if ( ! $percent ) {
+			return $html;
+		}
+		/* translators: %d: discount percentage. */
+		return '<span class="onsale">' . esc_html( sprintf( __( '-%d%%', 'wpessential' ), $percent ) ) . '</span>';
+	},
+	10,
+	3
+);
 
 /**
  * Largest discount of a product (variable products: best variation).
@@ -73,32 +81,43 @@ function wpessential_product_discount( $product ) {
 /**
  * Classic loop: out-of-stock badge and category label above the title.
  */
-add_action( 'woocommerce_before_shop_loop_item_title', static function () {
-	global $product;
-	if ( $product && ! $product->is_in_stock() ) {
-		echo '<span class="wpe-badge-oos">' . esc_html__( 'Out of stock', 'wpessential' ) . '</span>';
-	}
-}, 9 );
+add_action(
+	'woocommerce_before_shop_loop_item_title',
+	static function () {
+		global $product;
+		if ( $product && ! $product->is_in_stock() ) {
+			echo '<span class="wpe-badge-oos">' . esc_html__( 'Out of stock', 'wpessential' ) . '</span>';
+		}
+	},
+	9
+);
 
-add_action( 'woocommerce_shop_loop_item_title', static function () {
-	global $product;
-	if ( ! $product ) {
-		return;
-	}
-	$terms = get_the_terms( $product->get_id(), 'product_cat' );
-	if ( $terms && ! is_wp_error( $terms ) ) {
-		echo '<span class="wpe-loop-cat">' . esc_html( $terms[0]->name ) . '</span>';
-	}
-}, 5 );
+add_action(
+	'woocommerce_shop_loop_item_title',
+	static function () {
+		global $product;
+		if ( ! $product ) {
+			return;
+		}
+		$terms = get_the_terms( $product->get_id(), 'product_cat' );
+		if ( $terms && ! is_wp_error( $terms ) ) {
+			echo '<span class="wpe-loop-cat">' . esc_html( $terms[0]->name ) . '</span>';
+		}
+	},
+	5
+);
 
 /**
  * Four related products in one row, matching the design.
  */
-add_filter( 'woocommerce_output_related_products_args', static function ( $args ) {
-	$args['posts_per_page'] = 4;
-	$args['columns']        = 4;
-	return $args;
-} );
+add_filter(
+	'woocommerce_output_related_products_args',
+	static function ( $args ) {
+		$args['posts_per_page'] = 4;
+		$args['columns']        = 4;
+		return $args;
+	}
+);
 
 /**
  * Free-shipping progress bar above the classic cart and in the cart block.
@@ -107,7 +126,7 @@ function wpessential_free_shipping_notice() {
 	if ( ! function_exists( 'WC' ) || ! WC()->cart || WC()->cart->is_empty() ) {
 		return;
 	}
-	$threshold = (float) apply_filters( 'wpessential/free_shipping_threshold', wpessential_free_shipping_min_amount() );
+	$threshold = (float) apply_filters( 'wpessential_free_shipping_threshold', wpessential_free_shipping_min_amount() );
 	if ( $threshold <= 0 ) {
 		return;
 	}
@@ -121,7 +140,7 @@ function wpessential_free_shipping_notice() {
 	}
 	printf(
 		'<div class="wpe-free-shipping">%1$s<div class="wpe-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="%2$d"><span style="width:%2$d%%"></span></div></div>',
-		$message, // Escaped above.
+		wp_kses_post( $message ),
 		(int) $percent
 	);
 }
@@ -150,6 +169,9 @@ function wpessential_free_shipping_min_amount() {
 	set_transient( 'wpessential_free_shipping_min', $min, DAY_IN_SECONDS );
 	return (float) $min;
 }
-add_action( 'woocommerce_update_options_shipping', static function () {
-	delete_transient( 'wpessential_free_shipping_min' );
-} );
+add_action(
+	'woocommerce_update_options_shipping',
+	static function () {
+		delete_transient( 'wpessential_free_shipping_min' );
+	}
+);

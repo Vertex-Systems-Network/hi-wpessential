@@ -7,6 +7,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:group {"className":"wpe-sidebar","layout":{"type":"default"}} -->
 <div class="wp-block-group wpe-sidebar"><!-- wp:group {"className":"is-style-wpe-card-flat","layout":{"type":"default"}} -->

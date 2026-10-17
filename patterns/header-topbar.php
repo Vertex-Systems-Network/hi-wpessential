@@ -6,6 +6,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:group {"className":"wpe-topbar","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group wpe-topbar"><!-- wp:group {"className":"wpe-topbar__inner","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->

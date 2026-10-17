@@ -8,6 +8,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:group {"className":"wpe-header-actions","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group wpe-header-actions"><!-- wp:search {"label":"<?php esc_attr_e( 'Search', 'wpessential' ); ?>","showLabel":false,"buttonText":"<?php esc_attr_e( 'Search', 'wpessential' ); ?>","buttonPosition":"button-only","buttonUseIcon":true,"isSearchFieldHidden":true} /-->

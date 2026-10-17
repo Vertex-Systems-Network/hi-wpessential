@@ -8,6 +8,7 @@
  *
  * @package WPEssential
  */
+
 ?>
 <!-- wp:group {"tagName":"section","align":"full","className":"wpe-hero-dark wpe-section wpe-section--flush-bottom wpe-center","layout":{"type":"constrained","contentSize":"1100px"}} -->
 <section class="wp-block-group alignfull wpe-hero-dark wpe-section wpe-section--flush-bottom wpe-center"><!-- wp:paragraph -->
