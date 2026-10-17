@@ -33,6 +33,9 @@ Yes. The header has a light/dark toggle. The first visit follows the device sett
 
 = 1.0.0 =
 * Initial release.
+* WPEssential dashboard: Demo Library with live preview, one-click import wizard (Gutenberg / Elementor), plugin manager, license activation and System Status.
+* Importer runs in short resumable steps with info, warning and error logging, automatic retry, crash-safe skipping and one-click removal.
+* Base Demo bundled: 7 pages, 3 articles, 8 WooCommerce products, menus and store settings.
 
 == Resources ==
 

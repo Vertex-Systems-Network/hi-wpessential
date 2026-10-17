@@ -375,6 +375,8 @@ progress::-moz-progress-bar { background: var(--wpe-primary); }
 .wpe-logo-mark { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(135deg, var(--wpe-primary), var(--wp--preset--color--secondary)); }
 
 /* core/navigation: items, hover, dropdowns */
+.wpe-header .wp-block-navigation__container { flex-wrap: nowrap; }
+@media (max-width: 1280px) { .wpe-header .wp-block-navigation .wp-block-navigation-item__content { padding: 8px 9px; } }
 .wp-block-navigation .wp-block-navigation-item__content { padding: 8px 12px; border-radius: 8px; transition: background var(--wpe-ease), color var(--wpe-ease); }
 .wp-block-navigation .wp-block-navigation-item__content:hover,
 .wp-block-navigation .current-menu-item > .wp-block-navigation-item__content { background: var(--wpe-primary-soft); color: var(--wpe-primary); text-decoration: none; }

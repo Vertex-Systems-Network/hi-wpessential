@@ -103,3 +103,19 @@ function wpessential_is_dark_scheme() {
 	}
 	return false;
 }
+
+/**
+ * When a static front page with its own content is chosen (for example by a demo import),
+ * show that page instead of the built-in front-page template so it stays editable.
+ *
+ * @param string[] $templates Template hierarchy.
+ * @return string[]
+ */
+function wpessential_front_page_hierarchy( $templates ) {
+	if ( 'page' !== get_option( 'show_on_front' ) ) {
+		return $templates;
+	}
+	$page = get_post( (int) get_option( 'page_on_front' ) );
+	return ( $page && '' !== trim( $page->post_content ) ) ? array() : $templates;
+}
+add_filter( 'frontpage_template_hierarchy', 'wpessential_front_page_hierarchy' );

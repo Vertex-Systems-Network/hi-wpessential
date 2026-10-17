@@ -1,0 +1,434 @@
+{
+	"version": 1,
+	"media": [
+		{
+			"key": "hero",
+			"file": "hero.webp",
+			"source": "theme",
+			"title": "Studio workspace",
+			"alt": "Team planning a website on a large monitor"
+		},
+		{
+			"key": "post-1",
+			"file": "post-1.webp",
+			"source": "theme",
+			"title": "Design system",
+			"alt": "Designer arranging colour swatches and type samples"
+		},
+		{
+			"key": "post-2",
+			"file": "post-2.webp",
+			"source": "theme",
+			"title": "Launch planning",
+			"alt": "Laptop with an analytics dashboard on a wooden desk"
+		},
+		{
+			"key": "post-3",
+			"file": "post-3.webp",
+			"source": "theme",
+			"title": "Remote collaboration",
+			"alt": "Two colleagues reviewing a layout on a tablet"
+		},
+		{
+			"key": "demo-business",
+			"file": "demo-business.webp",
+			"source": "theme",
+			"title": "Business website",
+			"alt": "Business website shown on a laptop screen"
+		},
+		{
+			"key": "team-1",
+			"file": "team-1.webp",
+			"source": "theme",
+			"title": "Ayesha Khan",
+			"alt": "Portrait of Ayesha Khan"
+		},
+		{
+			"key": "team-2",
+			"file": "team-2.webp",
+			"source": "theme",
+			"title": "Daniel Reyes",
+			"alt": "Portrait of Daniel Reyes"
+		},
+		{
+			"key": "team-3",
+			"file": "team-3.webp",
+			"source": "theme",
+			"title": "Sara Malik",
+			"alt": "Portrait of Sara Malik"
+		},
+		{
+			"key": "team-4",
+			"file": "team-4.webp",
+			"source": "theme",
+			"title": "James Carter",
+			"alt": "Portrait of James Carter"
+		}
+	],
+	"terms": [
+		{
+			"key": "cat-design",
+			"taxonomy": "category",
+			"name": "Design",
+			"slug": "design",
+			"description": "Layouts, colour and type that make websites feel premium."
+		},
+		{
+			"key": "cat-business",
+			"taxonomy": "category",
+			"name": "Business",
+			"slug": "business",
+			"description": "Growing a brand online."
+		},
+		{
+			"key": "cat-dev",
+			"taxonomy": "category",
+			"name": "Development",
+			"slug": "development",
+			"description": "Performance, blocks and WordPress craft."
+		},
+		{
+			"key": "pc-workspace",
+			"taxonomy": "product_cat",
+			"name": "Workspace",
+			"slug": "workspace",
+			"meta": {
+				"thumbnail_id": "{{media_id:demo-business}}"
+			}
+		},
+		{
+			"key": "pc-audio",
+			"taxonomy": "product_cat",
+			"name": "Audio",
+			"slug": "audio",
+			"meta": {
+				"thumbnail_id": "{{media_id:post-1}}"
+			}
+		},
+		{
+			"key": "pc-bags",
+			"taxonomy": "product_cat",
+			"name": "Bags",
+			"slug": "bags",
+			"meta": {
+				"thumbnail_id": "{{media_id:post-2}}"
+			}
+		},
+		{
+			"key": "pc-home",
+			"taxonomy": "product_cat",
+			"name": "Home",
+			"slug": "home-living",
+			"meta": {
+				"thumbnail_id": "{{media_id:post-3}}"
+			}
+		}
+	],
+	"content": [
+		{
+			"key": "home",
+			"type": "page",
+			"title": "Home",
+			"slug": "home",
+			"template": "page-landing",
+			"content": "{{pattern:wpessential/hero-dark}}\n\n{{pattern:wpessential/logos}}\n\n{{pattern:wpessential/features-grid}}\n\n{{pattern:wpessential/services-grid}}\n\n{{pattern:wpessential/builders-split}}\n\n{{pattern:wpessential/stats}}\n\n{{pattern:wpessential/testimonials}}\n\n{{pattern:wpessential/pricing}}\n\n{{pattern:wpessential/latest-posts}}\n\n{{pattern:wpessential/cta-banner}}"
+		},
+		{
+			"key": "about",
+			"type": "page",
+			"title": "About",
+			"slug": "about",
+			"template": "page-full-width",
+			"content": "{{pattern:wpessential/page-about}}"
+		},
+		{
+			"key": "services",
+			"type": "page",
+			"title": "Services",
+			"slug": "services",
+			"template": "page-full-width",
+			"content": "{{pattern:wpessential/page-services}}"
+		},
+		{
+			"key": "pricing",
+			"type": "page",
+			"title": "Pricing",
+			"slug": "pricing",
+			"template": "page-full-width",
+			"content": "{{pattern:wpessential/page-pricing}}"
+		},
+		{
+			"key": "contact",
+			"type": "page",
+			"title": "Contact",
+			"slug": "contact",
+			"template": "page-full-width",
+			"content": "{{pattern:wpessential/page-contact}}"
+		},
+		{
+			"key": "faq",
+			"type": "page",
+			"title": "FAQ",
+			"slug": "faq",
+			"template": "page-full-width",
+			"content": "{{pattern:wpessential/page-faq}}"
+		},
+		{
+			"key": "blog",
+			"type": "page",
+			"title": "Blog",
+			"slug": "blog",
+			"content": ""
+		},
+		{
+			"key": "article-1",
+			"type": "post",
+			"title": "Building a design system your whole team can use",
+			"slug": "building-a-design-system",
+			"featured": "post-1",
+			"date": "2026-09-02 09:00:00",
+			"terms": {
+				"category": [
+					"cat-design"
+				]
+			},
+			"excerpt": "A practical way to turn colours, type and spacing into tokens that designers and developers share.",
+			"content": "<!-- wp:paragraph -->\n<p>Every website starts consistent and slowly drifts. A new button here, a slightly different grey there. A design system stops the drift by giving everyone the same small set of decisions to build with.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Start with tokens, not components</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Colours, font sizes, spacing and shadows come first. In WPEssential they live in <code>theme.json</code>, so the Site Editor, patterns and Elementor all read the same values. Change the primary colour once and every button follows.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Keep the palette to 8–12 named colours.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Use a fluid type scale so headings shrink gracefully on phones.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Define spacing in steps (8, 12, 16, 24, 32…) and never use one-off values.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:image {\"sizeSlug\":\"large\",\"className\":\"is-style-wpe-shadow\"} -->\n<figure class=\"wp-block-image size-large is-style-wpe-shadow\"><img src=\"{{media:hero}}\" alt=\"Team planning a website on a large monitor\"/></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Name things by purpose</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Call a colour <em>surface</em> or <em>text-muted</em> rather than <em>light-grey</em>. Purpose names survive a rebrand and make a dark version possible without touching a single page.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><!-- wp:paragraph -->\n<p>The best systems are boring to use. You stop thinking about the button and start thinking about the message.</p>\n<!-- /wp:paragraph --><cite>Ayesha Khan, Design Lead</cite></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Once the tokens are settled, components almost design themselves. Your patterns become combinations of decisions you already made.</p>\n<!-- /wp:paragraph -->"
+		},
+		{
+			"key": "article-2",
+			"type": "post",
+			"title": "A launch checklist for small business websites",
+			"slug": "launch-checklist",
+			"featured": "post-2",
+			"date": "2026-09-16 09:00:00",
+			"terms": {
+				"category": [
+					"cat-business"
+				]
+			},
+			"excerpt": "Twelve checks we run before every client site goes live, from speed to search to the contact form.",
+			"content": "<!-- wp:paragraph -->\n<p>Launch day should be calm. Most surprises come from small things nobody owned, so we keep one list and tick every box before the domain points to the new site.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Content and search</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Every page has a unique title and meta description.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Images have alt text that describes them.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>The contact page lists a phone number, email and opening hours.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Old addresses redirect to their new pages.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Speed and stability</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Test the home page on a mid-range phone over 4G. If it takes longer than three seconds to show the headline, compress the hero image and remove unused plugins.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"sizeSlug\":\"large\",\"className\":\"is-style-wpe-shadow\"} -->\n<figure class=\"wp-block-image size-large is-style-wpe-shadow\"><img src=\"{{media:demo-business}}\" alt=\"Business website shown on a laptop screen\"/></figure>\n<!-- /wp:image -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">After launch</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Submit the sitemap to search engines, set up uptime monitoring and schedule a review two weeks later. Real visitors always find something the team missed.</p>\n<!-- /wp:paragraph -->"
+		},
+		{
+			"key": "article-3",
+			"type": "post",
+			"title": "Gutenberg or Elementor? Choosing the right builder",
+			"slug": "gutenberg-or-elementor",
+			"featured": "post-3",
+			"date": "2026-10-01 09:00:00",
+			"terms": {
+				"category": [
+					"cat-dev"
+				]
+			},
+			"excerpt": "Both builders are first-class in WPEssential. Here is how to decide which one fits your project.",
+			"content": "<!-- wp:paragraph -->\n<p>WPEssential ships every demo for both the block editor and Elementor, built from the same design tokens. The right choice depends on who edits the site after launch.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Choose Gutenberg when</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>You want the fastest pages with the fewest plugins.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>Editors already know the WordPress block editor.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>The site is content-heavy: articles, documentation, news.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Choose Elementor when</h2>\n<!-- /wp:heading -->\n\n<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Your team is used to visual drag-and-drop editing.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>You need advanced motion effects or popup builders.</li>\n<!-- /wp:list-item --><!-- wp:list-item -->\n<li>You plan to reuse an existing library of Elementor templates.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><!-- wp:paragraph -->\n<p>We switched one client from Elementor to blocks and their mobile load time dropped by forty percent.</p>\n<!-- /wp:paragraph --><cite>Daniel Reyes, Developer</cite></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Whichever you choose, the header, footer, colours and fonts stay identical, so you can even move between builders later without a redesign.</p>\n<!-- /wp:paragraph -->"
+		}
+	],
+	"products": [
+		{
+			"key": "p-headphones",
+			"name": "Aura Wireless Headphones",
+			"slug": "aura-wireless-headphones",
+			"price": "159",
+			"sale": "129",
+			"categories": [
+				"pc-audio"
+			],
+			"image": "post-1",
+			"gallery": [
+				"post-2",
+				"post-3"
+			],
+			"featured": true,
+			"stock": 42,
+			"short": "Hand-finished and built to last. Ships in 2–3 business days.",
+			"description": "<p>Designed in-house and tested for daily use. Free returns within 30 days.</p>"
+		},
+		{
+			"key": "p-mug",
+			"name": "Indigo Ceramic Mug",
+			"slug": "indigo-ceramic-mug",
+			"price": "24",
+			"categories": [
+				"pc-home"
+			],
+			"image": "post-2",
+			"gallery": [
+				"post-3",
+				"demo-business"
+			],
+			"featured": true,
+			"short": "Hand-finished and built to last. Ships in 2–3 business days.",
+			"description": "<p>Designed in-house and tested for daily use. Free returns within 30 days.</p>"
+		},
+		{
+			"key": "p-backpack",
+			"name": "Nomad Leather Backpack",
+			"slug": "nomad-leather-backpack",
+			"price": "189",
+			"categories": [
+				"pc-bags"
+			],
+			"image": "post-3",
+			"gallery": [
+				"demo-business",
+				"hero"
+			],
+			"featured": true,
+			"short": "Hand-finished and built to last. Ships in 2–3 business days.",
+			"description": "<p>Designed in-house and tested for daily use. Free returns within 30 days.</p>"
+		},
+		{
+			"key": "p-watch",
+			"name": "Meridian Classic Watch",
+			"slug": "meridian-classic-watch",
+			"price": "179",
+			"sale": "149",
+			"categories": [
+				"pc-workspace"
+			],
+			"image": "demo-business",
+			"gallery": [
+				"hero",
+				"post-1"
+			],
+			"featured": true,
+			"short": "Hand-finished and built to last. Ships in 2–3 business days.",
+			"description": "<p>Designed in-house and tested for daily use. Free returns within 30 days.</p>"
+		},
+		{
+			"key": "p-lamp",
+			"name": "Arc Matte Desk Lamp",
+			"slug": "arc-matte-desk-lamp",
+			"price": "89",
+			"categories": [
+				"pc-home"
+			],
+			"image": "hero",
+			"gallery": [
+				"post-1",
+				"post-2"
+			],
+			"stock": "out",
+			"short": "Hand-finished and built to last. Ships in 2–3 business days.",
+			"description": "<p>Designed in-house and tested for daily use. Free returns within 30 days.</p>"
+		},
+		{
+			"key": "p-notebook",
+			"name": "Sage Linen Notebook Set",
+			"slug": "sage-linen-notebook-set",
+			"price": "32",
+			"sale": "26",
+			"categories": [
+				"pc-workspace"
+			],
+			"image": "post-1",
+			"gallery": [
+				"post-3"
+			],
+			"short": "Hand-finished and built to last. Ships in 2–3 business days.",
+			"description": "<p>Designed in-house and tested for daily use. Free returns within 30 days.</p>"
+		},
+		{
+			"key": "p-hoodie",
+			"kind": "variable",
+			"name": "Cloudline Hoodie",
+			"slug": "cloudline-hoodie",
+			"price": "79",
+			"categories": [
+				"pc-workspace"
+			],
+			"image": "post-2",
+			"attributes": [
+				{
+					"name": "Color",
+					"options": [
+						"Midnight",
+						"Sand",
+						"Sage"
+					]
+				},
+				{
+					"name": "Size",
+					"options": [
+						"S",
+						"M",
+						"L"
+					]
+				}
+			],
+			"short": "Brushed cotton hoodie in three colours.",
+			"description": "<p>Designed in-house and tested for daily use. Free returns within 30 days.</p>"
+		},
+		{
+			"key": "p-bundle",
+			"kind": "grouped",
+			"name": "Desk Essentials Bundle",
+			"slug": "desk-essentials-bundle",
+			"categories": [
+				"pc-workspace"
+			],
+			"image": "demo-business",
+			"children": [
+				"p-mug",
+				"p-notebook",
+				"p-lamp"
+			],
+			"short": "Everything for a calm, focused desk.",
+			"description": "<p>Designed in-house and tested for daily use. Free returns within 30 days.</p>"
+		}
+	],
+	"menus": [
+		{
+			"name": "Main menu",
+			"location": "primary",
+			"items": [
+				{
+					"title": "About",
+					"page": "about"
+				},
+				{
+					"title": "Services",
+					"page": "services"
+				},
+				{
+					"title": "Pricing",
+					"page": "pricing"
+				},
+				{
+					"title": "Shop",
+					"woo": "shop"
+				},
+				{
+					"title": "Blog",
+					"page": "blog"
+				},
+				{
+					"title": "Contact",
+					"page": "contact"
+				}
+			]
+		}
+	],
+	"settings": {
+		"front_page": "home",
+		"blog_page": "blog",
+		"options": {
+			"posts_per_page": 9
+		},
+		"woocommerce": {
+			"free_shipping": 75,
+			"options": {
+				"woocommerce_currency": "USD",
+				"woocommerce_coming_soon": "no",
+				"woocommerce_store_pages_only": "no",
+				"woocommerce_cod_settings": {
+					"enabled": "yes",
+					"title": "Cash on delivery"
+				}
+			}
+		}
+	}
+}

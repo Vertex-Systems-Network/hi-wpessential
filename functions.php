@@ -19,6 +19,12 @@ require WPESSENTIAL_DIR . '/inc/layouts.php';
 require WPESSENTIAL_DIR . '/inc/core-bridge.php';
 require WPESSENTIAL_DIR . '/inc/scheme.php';
 
+// Demo import, plugin manager and license. Self-contained in core/ so it can ship as a
+// separate plugin later; the standalone plugin wins when both are present.
+if ( ! defined( 'WPESSENTIAL_CORE_VERSION' ) && apply_filters( 'wpessential_load_bundled_core', true ) ) {
+	require WPESSENTIAL_DIR . '/core/wpessential-core.php';
+}
+
 // Elementor may load before or after the theme.
 if ( did_action( 'elementor/loaded' ) ) {
 	require WPESSENTIAL_DIR . '/inc/elementor.php';

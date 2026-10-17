@@ -2,8 +2,8 @@
 /**
  * Contract between the theme and the WPEssential Core plugin.
  *
- * The theme never imports demos, installs plugins or checks licenses itself
- * (WordPress.org guideline). It only exposes data the Core plugin reads.
+ * Demo import, plugins and licensing live in core/ (loaded by functions.php) or in the
+ * standalone WPEssential Core plugin. This file only exposes theme data Core reads.
  *
  * @package WPEssential
  */

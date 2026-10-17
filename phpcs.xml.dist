@@ -21,4 +21,6 @@
 	</rule>
 	<!-- Block patterns are template files: file comment + short PHP tags are expected. -->
 	<rule ref="Squiz.Commenting.FileComment.Missing"><exclude-pattern>patterns/*</exclude-pattern></rule>
+	<!-- core/ autoloads PSR-4 class files so it can be extracted into a plugin unchanged. -->
+	<rule ref="WordPress.Files.FileName"><exclude-pattern>core/src/*</exclude-pattern></rule>
 </ruleset>

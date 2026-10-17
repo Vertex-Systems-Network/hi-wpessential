@@ -58,3 +58,10 @@ Key `wp_options` mein store (autoload off), status transient 24h cache, kabhi bh
 | `wpessential_back_to_top` | filter | Return `false` to disable the back-to-top button. |
 | `wpessential_scheme_toggle` | filter | Return `false` to remove the visitor light/dark toggle. |
 | `wpessential_scheme_follow_os` | filter | Return `false` to ignore the device colour preference on first visit. |
+
+
+## Bundled Core
+
+The Core module now ships in `core/` and is loaded by the theme when the standalone plugin is absent.
+See [`core/README.md`](../core/README.md) for the importer, package format, license adapters and hooks,
+and for the steps to extract it into its own plugin.
