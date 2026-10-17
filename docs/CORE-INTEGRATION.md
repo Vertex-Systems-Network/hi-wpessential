@@ -46,3 +46,13 @@ Implementations:
 - **WooCommerce** (License Manager for WooCommerce) — `/wp-json/lmfwc/v2/licenses/{activate|deactivate|validate}/{key}`.
 
 Key `wp_options` mein store (autoload off), status transient 24h cache, kabhi bhi frontend ya REST response mein expose na ho.
+
+## Layout hooks
+
+| Hook | Type | Purpose |
+|---|---|---|
+| `wpessential_layout_areas` | filter | Map of area => template part slugs the theme lets Core replace (default `header`, `footer`). |
+| `wpessential_layout_html` | filter | Return HTML for `( $area, $slug )` to replace the theme's header/footer part. Return `null` to keep the theme part. |
+| `wpessential_layout_rendered` | action | Fires after Core/Elementor output replaced an area. |
+| `wpessential_free_shipping_threshold` | filter | Override the free-shipping amount used by the cart progress bar. |
+| `wpessential_back_to_top` | filter | Return `false` to disable the back-to-top button. |
