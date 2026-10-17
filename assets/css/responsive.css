@@ -156,6 +156,9 @@ body,
 @media (max-width: 559px) {
 	.wp-block-post-template.is-layout-grid[class*="columns-"] { grid-template-columns: minmax(0, 1fr); }
 	.wp-block-columns:not(.is-not-stacked-on-mobile):has(> .wp-block-column:nth-child(4)) > .wp-block-column { flex-basis: 100% !important; }
+	/* Portraits and stat tiles stay 2-up on phones. */
+	.wp-block-columns.wp-block-columns:not(.is-not-stacked-on-mobile):has(> .wpe-team-member) > .wp-block-column,
+	.wp-block-columns.is-style-wpe-card:not(.is-not-stacked-on-mobile):has(> .wp-block-column:nth-child(4)) > .wp-block-column { flex-basis: calc(50% - 12px) !important; }
 }
 
 /* Header: compact header + off-canvas drawer from 1024 down (core switches at 600). */

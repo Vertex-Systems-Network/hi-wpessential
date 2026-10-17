@@ -24,3 +24,30 @@ add_action(
 		}
 	}
 );
+
+// Shop patterns use WooCommerce shortcodes, so they only exist when WooCommerce is active.
+add_action(
+	'init',
+	static function () {
+		if ( ! class_exists( 'WooCommerce' ) ) {
+			return;
+		}
+		$patterns = array(
+			'shop-categories' => __( 'Shop — Category grid', 'wpessential' ),
+			'shop-products'   => __( 'Shop — Featured, new and sale products', 'wpessential' ),
+		);
+		foreach ( $patterns as $slug => $title ) {
+			ob_start();
+			require WPESSENTIAL_DIR . '/inc/patterns-shop/' . $slug . '.php';
+			register_block_pattern(
+				'wpessential/' . $slug,
+				array(
+					'title'         => $title,
+					'categories'    => array( 'wpessential-shop' ),
+					'viewportWidth' => 1440,
+					'content'       => ob_get_clean(),
+				)
+			);
+		}
+	}
+);

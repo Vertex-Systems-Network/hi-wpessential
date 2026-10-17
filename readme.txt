@@ -23,6 +23,9 @@ The layout steps at 1920, 1440, 1280, 1024, 768, 560, 480, 360 and 320 pixels. E
 = Do I need the WPEssential Core plugin? =
 No. The theme works on its own. Core adds demo import, the header/footer builder, mega menus and Pro license activation.
 
+= How do I build an About, Services, Pricing, Contact or FAQ page? =
+Create a page, choose the "Full width" template, then pick the matching layout from the "WPEssential — Full pages" patterns. With WooCommerce active, the "WPEssential — Shop" patterns add category and product rows.
+
 == Changelog ==
 
 = 1.0.0 =
