@@ -78,3 +78,38 @@ add_action(
 		);
 	}
 );
+
+/**
+ * Whether the active palette is a dark scheme (dark "surface" colour).
+ *
+ * @return bool
+ */
+function wpessential_is_dark_scheme() {
+	$palettes = wp_get_global_settings( array( 'color', 'palette' ) );
+	// A palette chosen in the Site Editor (or a style variation) is stored as "custom" and wins over the theme's.
+	$palette = array_merge( (array) ( $palettes['theme'] ?? array() ), (array) ( $palettes['custom'] ?? array() ) );
+	foreach ( array_reverse( $palette ) as $color ) {
+		if ( isset( $color['slug'], $color['color'] ) && 'surface' === $color['slug'] ) {
+			$hex = ltrim( $color['color'], '#' );
+			if ( 3 === strlen( $hex ) ) {
+				$hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+			}
+			if ( 6 !== strlen( $hex ) ) {
+				return false;
+			}
+			list( $r, $g, $b ) = array_map( 'hexdec', str_split( $hex, 2 ) );
+			return ( 0.2126 * $r + 0.7152 * $g + 0.0722 * $b ) < 110;
+		}
+	}
+	return false;
+}
+
+add_filter(
+	'body_class',
+	static function ( $classes ) {
+		if ( wpessential_is_dark_scheme() ) {
+			$classes[] = 'wpe-scheme-dark';
+		}
+		return $classes;
+	}
+);
