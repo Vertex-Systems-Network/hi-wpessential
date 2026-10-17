@@ -12,7 +12,10 @@ Read it fully before starting a demo. Update it when a rule changes; never work 
 5. **All breakpoints.** 1920, 1440, 1024, 768, 560, 480, 360, 320 + device mockups, exactly like the Base Demo.
 6. **Every plugin screen.** If the demo uses a plugin (WooCommerce, The Events Calendar, AffiliateWP, LearnDash, bbPress, Contact Form…), design *all* of that plugin's front-end screens and states (lists, single, cart, checkout, account, empty, error, success).
 7. **Two builders, one design.** Gutenberg uses theme blocks/patterns. Elementor uses **native Elementor widgets and Global Kit settings only** — no custom CSS, no custom code, no HTML widgets for layout.
-8. **Accessibility.** WCAG 2.2 AA contrast in both schemes, focus states visible, motion respects `prefers-reduced-motion`.
+8. **Never crop heads.** Any image with a person must show the full head (hair included) with breathing room above it — in the generated image, in every Figma frame/crop at every breakpoint, and in theme `object-position`. Prompts for people always say "full head visible, not cropped". Product shots may hide the face only by turning the model away or framing from a distance, never by cutting through the head. Check every image after generation and regenerate if a head is cut.
+9. **Sharp at the largest breakpoint (1920 px).** Every image must look crisp in the biggest place it is used at 1920 px, including retina. Generate at Figma AI's maximum (`gpt-image-2.5-sunburst`, 1536 × 1024), then upscale 2× with an AI upscaler to 3072 × 2048 before exporting to the theme as WebP. Never stretch a small image in a layout; regenerate it instead.
+10. **One size for every image.** All images are generated at the same size and ratio: 1536 × 1024 (3:2). Compose with the subject centred and generous margins on every side, so the same file crops to 16:9 heroes, 3:4 product cards, 1:1 tiles or 4:5 mobile without losing the subject or the head.
+11. **Accessibility.** WCAG 2.2 AA contrast in both schemes, focus states visible, motion respects `prefers-reduced-motion`.
 
 ## 2. Figma structure (file `5AqHWOUl6bcITWWj4PPoAF`)
 
@@ -74,6 +77,9 @@ Elements opt in with the block class `wpe-anim` plus `wpe-anim--fade-up|fade|zoo
 - [ ] Brief written with research
 - [ ] Light, Dark and UI Kit pages complete, every breakpoint, every plugin screen
 - [ ] All images in Image Library, AI generated, named `[Demo] / …`
+- [ ] No person image has a cropped head (source image and every crop/breakpoint)
+- [ ] Every image generated at 1536 × 1024, same size for all, upscaled 2× for the theme
+- [ ] No pixelation at 1920 px or on retina crops
 - [ ] Zero placeholder text (search the file for lorem, placeholder, xxx, example)
 - [ ] Gutenberg package imports with 0 errors on a clean site and on a site with content
 - [ ] Elementor package uses only native widgets + Kit; import tested
