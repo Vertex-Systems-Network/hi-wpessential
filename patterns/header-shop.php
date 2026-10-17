@@ -24,5 +24,5 @@
 <!-- wp:pattern {"slug":"wpessential/header-actions"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:navigation {"overlayMenu":"mobile","className":"wpe-hide-mobile","layout":{"type":"flex","justifyContent":"left"}} /--></header>
+<!-- wp:navigation {"overlayMenu":"mobile","className":"wpe-header-shop-nav","layout":{"type":"flex","justifyContent":"left"}} /--></header>
 <!-- /wp:group -->

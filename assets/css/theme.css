@@ -363,12 +363,12 @@ progress::-moz-progress-bar { background: var(--wpe-primary); }
  * ------------------------------------------------------------------ */
 .wpe-topbar { background: var(--wpe-ink); color: var(--wp--preset--color--on-ink-muted); font-size: 13px; }
 .wpe-topbar a { color: var(--wp--preset--color--on-ink); }
-.wpe-header { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--wpe-surface) 92%, transparent); backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--wpe-border); transition: box-shadow var(--wpe-ease), background var(--wpe-ease); }
+.wpe-header { position: sticky; top: 0; z-index: 100; background: var(--wpe-surface); border-bottom: 1px solid var(--wpe-border); transition: box-shadow var(--wpe-ease), background var(--wpe-ease); }
 .admin-bar .wpe-header { top: var(--wp-admin--admin-bar--height, 32px); }
 .wpe-header.is-scrolled { box-shadow: var(--wpe-shadow-md); }
-.wpe-header--transparent { position: absolute; left: 0; right: 0; background: transparent; border-bottom-color: rgba(255,255,255,.12); backdrop-filter: none; }
+.wpe-header--transparent { position: absolute; left: 0; right: 0; background: transparent; border-bottom-color: rgba(255,255,255,.12); }
 .wpe-header--transparent, .wpe-header--transparent a, .wpe-header--transparent .wp-block-site-title a, .wpe-header--transparent .wp-block-navigation-item__content { color: #fff; }
-.wpe-header--transparent.is-scrolled { position: fixed; background: color-mix(in srgb, var(--wpe-ink) 92%, transparent); backdrop-filter: blur(10px); }
+.wpe-header--transparent.is-scrolled { position: fixed; background: var(--wpe-ink); }
 .wp-block-template-part:has(> .wpe-header) { position: sticky; top: 0; z-index: 100; }
 .wp-block-template-part:has(> .wpe-header--transparent) { position: relative; height: 0; }
 
@@ -675,15 +675,16 @@ pre, .wp-block-preformatted, .wp-block-verse, .wp-block-code { max-width: 100%; 
 	.wp-block-table { overflow-x: auto; }
 }
 
-/* Header hardening: a fixed drawer can't escape a parent with backdrop-filter. */
-.wpe-header:has(.wp-block-navigation__responsive-container.is-menu-open) { backdrop-filter: none; background: var(--wpe-surface); }
+/* Header hardening. No backdrop-filter on the header: it would trap the fixed menu and mini-cart drawers. */
 .wp-block-navigation__responsive-container.is-menu-open { height: 100dvh; overflow-y: auto; z-index: 100000; box-shadow: 0 0 0 100vmax rgba(11, 16, 32, .55) !important; }
 body:has(.wp-block-navigation__responsive-container.is-menu-open) { overflow: hidden; }
 .wpe-header__inner > :first-child .wp-block-site-title,
 .wpe-header__inner > .wp-block-site-title,
 .wpe-header .wp-block-button__link { white-space: nowrap; }
-.wpe-header__inner > :first-child,
 .wpe-header-actions { flex-shrink: 0; }
+.wpe-header__inner > :first-child { flex-shrink: 1; min-width: 0; }
+.wpe-header .wp-block-site-title { min-width: 0; }
+.wpe-header .wp-block-site-title a { display: block; overflow: hidden; text-overflow: ellipsis; }
 .wpe-header__inner > .wp-block-navigation { flex: 1 1 auto; min-width: 0; }
 @media (min-width: 1025px) {
 	.wpe-header .wp-block-navigation__container { row-gap: 0; }

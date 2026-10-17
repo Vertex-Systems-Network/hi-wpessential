@@ -216,3 +216,33 @@ body,
 	.wp-block-columns.wpe-stats { flex-wrap: wrap !important; row-gap: 20px; }
 	.wp-block-columns.wpe-stats > .wp-block-column { flex-basis: calc(50% - 12px) !important; flex-grow: 1; }
 }
+
+/* Compact header on small phones. */
+@media (max-width: 479px) {
+	.wpe-header-actions { gap: 0 !important; }
+	.wpe-header-actions .wp-block-woocommerce-customer-account { display: none; }
+	.wpe-header .wp-block-site-title { font-size: 18px; }
+}
+
+/* Loop buttons fit their card on 2-up phone grids. */
+.woocommerce ul.products li.product .button { box-sizing: border-box; max-width: 100%; white-space: normal; text-align: center; }
+@media (max-width: 767px) {
+	.woocommerce ul.products li.product .button { width: 100%; padding-inline: 10px; font-size: var(--wp--preset--font-size--small); }
+	.woocommerce-product-gallery__image { overflow: hidden; }
+}
+
+/* Shop header: the second-row menu collapses into a burger beside the logo. */
+@media (max-width: 1024px) {
+	.wpe-header:has(> .wpe-header-shop-nav) { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 8px; padding-inline: var(--wpe-gutter); }
+	.wpe-header:has(> .wpe-header-shop-nav) > .wpe-header-shop-nav { grid-column: 1; grid-row: 1; margin: 0 !important; }
+	.wpe-header:has(> .wpe-header-shop-nav) > .wpe-header__inner { grid-column: 2; grid-row: 1; max-width: none !important; margin: 0 !important; }
+}
+
+/* Grouped products on phones: stepper left, name and price stacked right. */
+@media (max-width: 767px) {
+	.woocommerce-grouped-product-list tr { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--wpe-border); }
+	.woocommerce-grouped-product-list td { padding: 0; border: 0; text-align: start; }
+	.woocommerce-grouped-product-list td.woocommerce-grouped-product-list-item__quantity { grid-row: span 2; width: auto !important; }
+	.woocommerce-grouped-product-list td.woocommerce-grouped-product-list-item__quantity .button { padding: 10px 14px; font-size: var(--wp--preset--font-size--small); }
+	.woocommerce-grouped-product-list td.woocommerce-grouped-product-list-item__price { white-space: nowrap; }
+}

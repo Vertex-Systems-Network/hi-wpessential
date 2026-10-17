@@ -175,3 +175,19 @@ add_action(
 		delete_transient( 'wpessential_free_shipping_min' );
 	}
 );
+
+/*
+ * WooCommerce hooks the account and mini-cart blocks after the header navigation.
+ * Our header actions already place them next to search, so skip the auto-inserted copies.
+ */
+add_filter(
+	'hooked_block_types',
+	static function ( $hooked_blocks, $relative_position, $anchor_block ) {
+		if ( 'core/navigation' === $anchor_block ) {
+			$hooked_blocks = array_values( array_diff( $hooked_blocks, array( 'woocommerce/customer-account', 'woocommerce/mini-cart' ) ) );
+		}
+		return $hooked_blocks;
+	},
+	20,
+	3
+);

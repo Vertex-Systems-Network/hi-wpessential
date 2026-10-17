@@ -311,3 +311,8 @@
 .woocommerce ul.products li.product-category .count { background: none; color: var(--wpe-muted); font-weight: 400; }
 .woocommerce ul.products.columns-6 { --wpe-cols: 6; }
 @media (max-width: 1023px) { .woocommerce ul.products.columns-6 { --wpe-cols: 3; } }
+
+/* Grouped product table: keep the stepper on one line. */
+.woocommerce-grouped-product-list .quantity { display: inline-flex; flex-wrap: nowrap; }
+.woocommerce-grouped-product-list td.woocommerce-grouped-product-list-item__quantity { width: 1%; white-space: nowrap; }
+.woocommerce-grouped-product-list td { vertical-align: middle; padding: 10px 8px; }
