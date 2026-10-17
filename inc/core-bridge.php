@@ -32,7 +32,7 @@ function wpessential_theme_supports() {
  * @return string
  */
 function wpessential_demo_manifest_url() {
-	return apply_filters( 'wpessential_demos_manifest_url', 'https://api.wpessential.org/v1/demos.json' );
+	return apply_filters( 'wpessential_demos_manifest_url', 'https://wpessential.org/wp-json/wpessential-server/v1/demos' );
 }
 
 /**

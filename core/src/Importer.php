@@ -1063,6 +1063,12 @@ class Importer {
 			update_option( $option, $value );
 		}
 
+		if ( ! empty( $settings['motion'] ) ) {
+			$this->track( 'option', 'wpessential_motion' );
+			update_option( 'wpessential_motion', array( 'preset' => sanitize_key( $settings['motion'] ) ) );
+			/* translators: %s: preset. */
+			$this->log( 'info', sprintf( __( 'Animation style set to "%s".', 'wpessential' ), $settings['motion'] ) );
+		}
 		if ( class_exists( 'WooCommerce' ) && ! empty( $settings['woocommerce'] ) ) {
 			$this->woocommerce( (array) $settings['woocommerce'] );
 		}

@@ -1,0 +1,44 @@
+/* WPEssential motion presets. Elements only start hidden when the preset class is on <html> (JS on, motion allowed). */
+
+.wpe-motion {
+	--wpe-motion-distance: 24px;
+	--wpe-motion-duration: 700ms;
+	--wpe-motion-ease: cubic-bezier(.2, .7, .2, 1);
+	--wpe-motion-scale: 1;
+}
+.wpe-motion--subtle { --wpe-motion-distance: 16px; --wpe-motion-duration: 500ms; }
+.wpe-motion--editorial { --wpe-motion-distance: 40px; --wpe-motion-duration: 1100ms; --wpe-motion-ease: cubic-bezier(.16, 1, .3, 1); }
+.wpe-motion--playful { --wpe-motion-distance: 28px; --wpe-motion-duration: 750ms; --wpe-motion-ease: cubic-bezier(.34, 1.56, .64, 1); --wpe-motion-scale: .94; }
+.wpe-motion--dynamic { --wpe-motion-distance: 48px; --wpe-motion-duration: 900ms; --wpe-motion-ease: cubic-bezier(.22, 1, .36, 1); }
+
+.wpe-motion .wpe-anim {
+	opacity: 0;
+	transform: translate3d(0, var(--wpe-motion-distance), 0) scale(var(--wpe-motion-scale));
+	transition: opacity var(--wpe-motion-duration) var(--wpe-motion-ease), transform var(--wpe-motion-duration) var(--wpe-motion-ease), clip-path var(--wpe-motion-duration) var(--wpe-motion-ease);
+	transition-delay: var(--wpe-delay, 0ms);
+	will-change: opacity, transform;
+}
+.wpe-motion .wpe-anim.is-in { opacity: 1; transform: none; }
+
+.wpe-motion .wpe-anim--fade { transform: none; }
+.wpe-motion .wpe-anim--zoom { transform: scale(.92); }
+.wpe-motion .wpe-anim--slide-left { transform: translate3d(calc(var(--wpe-motion-distance) * -1.5), 0, 0); }
+.wpe-motion .wpe-anim--slide-right { transform: translate3d(calc(var(--wpe-motion-distance) * 1.5), 0, 0); }
+.wpe-motion .wpe-anim--mask { opacity: 1; transform: none; clip-path: inset(0 0 100% 0); }
+.wpe-motion .wpe-anim--mask.is-in { clip-path: inset(0 0 0 0); }
+.wpe-motion .wpe-anim--counter, .wpe-motion .wpe-anim--parallax, .wpe-motion .wpe-anim--marquee { opacity: 1; transform: none; }
+
+/* Editorial: images reveal with a curtain, headings rise from a mask. */
+.wpe-motion--editorial .wpe-anim--auto.wp-block-image,
+.wpe-motion--editorial .wpe-anim--auto .wp-block-image { opacity: 1; transform: none; clip-path: inset(100% 0 0 0); }
+.wpe-motion--editorial .wpe-anim--auto.wp-block-image.is-in { clip-path: inset(0); }
+.wpe-motion--editorial .wp-block-image img { transition: transform 1.6s var(--wpe-motion-ease); }
+.wpe-motion--editorial .wp-block-image:not(.is-in) img { transform: scale(1.12); }
+
+/* Playful: cards pop and tilt a touch. */
+.wpe-motion--playful .wpe-card.wpe-anim { transform: translate3d(0, var(--wpe-motion-distance), 0) rotate(-1.5deg) scale(.94); }
+.wpe-motion--playful .wpe-card.wpe-anim.is-in { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+	.wpe-motion .wpe-anim { opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important; }
+}

@@ -34,6 +34,14 @@ class Rest {
 			'/license/activate'   => array( 'POST', 'license_activate' ),
 			'/license/deactivate' => array( 'POST', 'license_deactivate' ),
 			'/status'             => array( 'GET', 'status' ),
+			'/account'            => array( 'GET', 'account' ),
+			'/account/login'      => array( 'POST', 'account_login' ),
+			'/account/register'   => array( 'POST', 'account_register' ),
+			'/account/logout'     => array( 'POST', 'account_logout' ),
+			'/account/use'        => array( 'POST', 'account_use' ),
+			'/account/checkout'   => array( 'POST', 'account_checkout' ),
+			'/account/action'     => array( 'POST', 'account_action' ),
+			'/brand'              => array( 'POST', 'brand' ),
 		);
 		foreach ( $routes as $route => $def ) {
 			register_rest_route(
@@ -238,5 +246,83 @@ class Rest {
 				'environment' => Status::environment(),
 			)
 		);
+	}
+
+	/**
+	 * GET /account.
+	 */
+	public function account() {
+		return $this->respond( Account::me() );
+	}
+
+	/**
+	 * POST /account/login.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 */
+	public function account_login( $request ) {
+		return $this->respond( Account::login( (string) $request->get_param( 'login' ), (string) $request->get_param( 'password' ) ) );
+	}
+
+	/**
+	 * POST /account/register.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 */
+	public function account_register( $request ) {
+		return $this->respond( Account::register( (string) $request->get_param( 'name' ), (string) $request->get_param( 'email' ), (string) $request->get_param( 'password' ) ) );
+	}
+
+	/**
+	 * POST /account/logout.
+	 */
+	public function account_logout() {
+		return $this->respond( Account::logout() );
+	}
+
+	/**
+	 * POST /account/use.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 */
+	public function account_use( $request ) {
+		$result = Account::use_license( (int) $request->get_param( 'license_id' ) );
+		return $this->respond(
+			is_wp_error( $result ) ? $result : array(
+				'license' => $result,
+				'account' => Account::me(),
+			)
+		);
+	}
+
+	/**
+	 * POST /account/checkout.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 */
+	public function account_checkout( $request ) {
+		return $this->respond( Account::checkout( sanitize_key( (string) $request->get_param( 'plan' ) ), (int) $request->get_param( 'license_id' ), sanitize_key( (string) $request->get_param( 'mode' ) ) ) );
+	}
+
+	/**
+	 * POST /account/action.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 */
+	public function account_action( $request ) {
+		return $this->respond( Account::license_action( (int) $request->get_param( 'license_id' ), sanitize_key( (string) $request->get_param( 'action' ) ), (string) $request->get_param( 'domain' ) ) );
+	}
+
+	/**
+	 * POST /brand (white label only).
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 */
+	public function brand( $request ) {
+		if ( empty( License::data()['white_label'] ) || ! License::is_active() ) {
+			return $this->respond( new \WP_Error( 'wpe_white_label', __( 'Branding can be changed with a White Label plan.', 'wpessential' ) ) );
+		}
+		update_option( 'wpessential_core_brand', sanitize_text_field( (string) $request->get_param( 'name' ) ) );
+		return $this->respond( array( 'brand' => Admin::brand() ) );
 	}
 }

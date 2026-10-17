@@ -32,7 +32,7 @@ class Admin {
 	 */
 	public function menu() {
 		$icon = 'data:image/svg+xml;base64,' . base64_encode( '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="#a7aaad" d="M10 1.5 2 5.75v8.5L10 18.5l8-4.25v-8.5L10 1.5Zm0 2.3 5.6 3L10 9.8 4.4 6.8 10 3.8Zm-6 4.7 5 2.7v5.1l-5-2.7V8.5Zm7 7.8v-5.1l5-2.7v5.1l-5 2.7Z"/></svg>' ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- Menu icon data URI.
-		add_menu_page( __( 'WPEssential', 'wpessential' ), __( 'WPEssential', 'wpessential' ), 'manage_options', self::SLUG, array( $this, 'render' ), $icon, 59 );
+		add_menu_page( self::brand(), self::brand(), 'manage_options', self::SLUG, array( $this, 'render' ), $icon, 59 );
 		$tabs = array(
 			'welcome' => __( 'Dashboard', 'wpessential' ),
 			'demos'   => __( 'Demo Library', 'wpessential' ),
@@ -43,6 +43,16 @@ class Admin {
 		foreach ( $tabs as $tab => $label ) {
 			add_submenu_page( self::SLUG, $label, $label, 'manage_options', 'welcome' === $tab ? self::SLUG : self::SLUG . '#' . $tab, 'welcome' === $tab ? array( $this, 'render' ) : '__return_null' );
 		}
+	}
+
+	/**
+	 * Dashboard name (White Label licenses can rename it).
+	 *
+	 * @return string
+	 */
+	public static function brand() {
+		$name = License::is_active() && ! empty( License::data()['white_label'] ) ? (string) get_option( 'wpessential_core_brand', '' ) : '';
+		return $name ? $name : __( 'WPEssential', 'wpessential' );
 	}
 
 	/**
@@ -110,6 +120,8 @@ class Admin {
 				'docs'      => 'https://wpessential.org/docs/',
 				'support'   => 'https://wpessential.org/support/',
 				'steps'     => Importer::step_labels(),
+				'brand'     => self::brand(),
+				'pricing'   => 'https://wpessential.org/pricing/',
 			)
 		);
 	}

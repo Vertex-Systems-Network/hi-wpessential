@@ -155,7 +155,7 @@
 		root.dataset.mode = state.mode;
 		root.innerHTML = `
 			<header class="wpe-top">
-				<div class="wpe-brand"><span class="wpe-brand__mark">${ ico( 'logo', 20 ) }</span><span class="wpe-brand__name">WPEssential</span><span class="wpe-brand__ver">v${ esc( cfg.version ) }</span></div>
+				<div class="wpe-brand"><span class="wpe-brand__mark">${ ico( 'logo', 20 ) }</span><span class="wpe-brand__name">${ esc( cfg.brand ) }</span><span class="wpe-brand__ver">v${ esc( cfg.version ) }</span></div>
 				<nav class="wpe-tabs" aria-label="${ esc( __( 'Dashboard sections', 'wpessential' ) ) }">
 					${ TABS.map( ( [ id, label, icon ] ) => `<button class="wpe-tab" data-tab="${ id }">${ ico( icon, 17 ) }${ esc( label ) }</button>` ).join( '' ) }
 				</nav>
@@ -339,6 +339,9 @@
 			}
 		} ) );
 
+		loadAccount().catch( () => {
+			state.account = { signed_in: false };
+		} );
 		try {
 			await loadDemos();
 			if ( state.tab === 'demos' ) {
@@ -545,8 +548,11 @@
 
 	function wizard( demo, { resume = false } = {} ) {
 		const builders = Object.keys( demo.builders || {} );
+		const needAccount = ! resume && ( demo.locked || ! ( state.account && state.account.signed_in ) );
+		const flow = needAccount ? [ stepAccount, stepBuilder, stepPlugins, stepContent, stepImport, stepDone ] : [ stepBuilder, stepPlugins, stepContent, stepImport, stepDone ];
+		const at = ( fn ) => flow.indexOf( fn );
 		const w = {
-			step: resume ? 3 : 0,
+			step: resume ? at( stepImport ) : 0,
 			builder: resume && state.job ? state.job.builder : builders[ 0 ],
 			plugins: null,
 			skip: [],
@@ -558,7 +564,7 @@
 			running: false,
 			cancelled: false,
 		};
-		const STEPS = [ __( 'Builder', 'wpessential' ), __( 'Plugins', 'wpessential' ), __( 'Content', 'wpessential' ), __( 'Import', 'wpessential' ), __( 'Done', 'wpessential' ) ];
+		const STEPS = ( needAccount ? [ __( 'Account', 'wpessential' ) ] : [] ).concat( [ __( 'Builder', 'wpessential' ), __( 'Plugins', 'wpessential' ), __( 'Content', 'wpessential' ), __( 'Import', 'wpessential' ), __( 'Done', 'wpessential' ) ] );
 
 		const { el, close } = modal( 'wpe-wizard', `
 			<aside class="wpe-rail">
@@ -616,7 +622,33 @@
 		function show( step ) {
 			w.step = step;
 			rail();
-			[ stepBuilder, stepPlugins, stepContent, stepImport, stepDone ][ step ]();
+			flow[ step ]();
+		}
+
+
+		function stepAccount() {
+			const locked = () => demo.locked && ! ( state.license && state.license.status === 'active' && state.license.pro );
+			paint( `<h2>${ esc( locked() ? __( 'Unlock this Pro demo', 'wpessential' ) : __( 'Connect your WPEssential account', 'wpessential' ) ) }</h2><p class="wpe-pane__lead">${ esc( locked() ? __( 'Sign in and use a Pro license on this site — or pick a plan. Checkout opens in a new tab.', 'wpessential' ) : __( 'Sign in or create a free account to keep your demos, licenses and updates in one place.', 'wpessential' ) ) }</p><div data-acct></div>` );
+			const next = () => {
+				if ( locked() ) {
+					toast( 'warning', __( 'A Pro license is needed', 'wpessential' ), __( 'Use a Pro license on this site, or choose a plan.', 'wpessential' ) );
+					return;
+				}
+				show( at( stepBuilder ) );
+			};
+			footer( false, next, __( 'Continue', 'wpessential' ) );
+			renderAccount( $( '[data-acct]', body ), {
+				skip: demo.locked ? null : () => show( at( stepBuilder ) ),
+				onLicensed: async () => {
+					try {
+						await loadLicense();
+						if ( demo.locked && state.license.status === 'active' && state.license.pro ) {
+							demo.locked = false;
+							toast( 'success', __( 'Demo unlocked', 'wpessential' ), demo.title );
+						}
+					} catch ( e ) {}
+				},
+			} );
 		}
 
 		function stepBuilder() {
@@ -630,12 +662,12 @@
 				w.builder = r.value;
 				w.plugins = null;
 			} ) );
-			footer( false, () => show( 1 ), __( 'Continue', 'wpessential' ) );
+			footer( w.step > 0, () => show( at( stepPlugins ) ), __( 'Continue', 'wpessential' ) );
 		}
 
 		async function stepPlugins() {
 			paint( `<h2>${ esc( __( 'Plugins this demo uses', 'wpessential' ) ) }</h2><p class="wpe-pane__lead">${ esc( __( 'We install, activate or switch off plugins so the demo works exactly like the preview.', 'wpessential' ) ) }</p><div class="wpe-list" data-list>${ [ 0, 1 ].map( () => '<div class="wpe-row"><div class="wpe-skel" style="width:40px;height:40px"></div><div class="wpe-row__main"><div class="wpe-skel" style="height:12px;width:40%"></div></div></div>' ).join( '' ) }</div>` );
-			footer( true, () => show( 2 ), __( 'Continue', 'wpessential' ) );
+			footer( true, () => show( at( stepContent ) ), __( 'Continue', 'wpessential' ) );
 			try {
 				if ( ! w.plugins ) {
 					w.plugins = await api( { path: `/wpessential/v1/demo-plugins?demo=${ encodeURIComponent( demo.id ) }&builder=${ w.builder }` } );
@@ -686,7 +718,7 @@
 			if ( ! shop ) {
 				w.opts.products = false;
 			}
-			footer( true, () => show( 3 ), __( 'Start import', 'wpessential' ), 'rocket' );
+			footer( true, () => show( at( stepImport ) ), __( 'Start import', 'wpessential' ), 'rocket' );
 		}
 
 		/* ---------- import ---------- */
@@ -858,7 +890,7 @@
 			}
 			w.running = false;
 			if ( job.status === 'done' ) {
-				setTimeout( () => show( 4 ), 700 );
+				setTimeout( () => show( at( stepDone ) ), 700 );
 			} else if ( job.status === 'failed' ) {
 				const last = [ ...w.logs ].reverse().find( ( l ) => l.level === 'error' );
 				fail( last ? last.msg : __( 'The import stopped.', 'wpessential' ), last ? last.hint : '', true );
@@ -910,7 +942,7 @@
 			}
 			const ag = $( '[data-again]', foot );
 			if ( ag ) {
-				ag.addEventListener( 'click', () => show( 2 ) );
+				ag.addEventListener( 'click', () => show( at( stepContent ) ) );
 			}
 		}
 
@@ -1052,7 +1084,8 @@
 	/* ------------------------------------------------------------------ license */
 
 	async function viewLicense() {
-		view( `<div class="wpe-head"><div><h1>${ esc( __( 'License', 'wpessential' ) ) }</h1><p>${ esc( __( 'Activate your purchase on this domain to unlock Pro demos, automatic updates and priority support.', 'wpessential' ) ) }</p></div></div><div class="wpe-license" id="wpe-license"><div class="wpe-skel" style="height:240px;border-radius:24px"></div><div class="wpe-skel" style="height:240px;border-radius:20px"></div></div>` );
+		view( `<div class="wpe-head"><div><h1>${ esc( __( 'License', 'wpessential' ) ) }</h1><p>${ esc( __( 'Activate your purchase on this domain to unlock Pro demos, automatic updates and priority support.', 'wpessential' ) ) }</p></div></div><div class="wpe-license" id="wpe-license"><div class="wpe-skel" style="height:240px;border-radius:24px"></div><div class="wpe-skel" style="height:240px;border-radius:20px"></div></div><div id="wpe-account" style="margin-top:24px"></div>` );
+		renderAccount( $( '#wpe-account' ), { onLicensed: () => loadLicense().then( () => renderLicense() ) } );
 		try {
 			await loadLicense();
 			renderLicense();
@@ -1071,7 +1104,7 @@
 		const label = { active: __( 'Active', 'wpessential' ), expired: __( 'Expired', 'wpessential' ), invalid: __( 'Invalid', 'wpessential' ) }[ l.status ] || __( 'Not connected', 'wpessential' );
 		box.innerHTML = `
 			<div class="wpe-lic-card" data-status="${ esc( l.status ) }">
-				<div class="wpe-lic-card__top"><span class="wpe-brand"><span class="wpe-brand__mark">${ ico( 'logo', 20 ) }</span>WPEssential Pro</span><span class="wpe-pill ${ active ? 'wpe-pill--success' : l.key ? 'wpe-pill--warning' : '' }" style="${ active || l.key ? '' : 'background:rgb(255 255 255 / 14%);color:#fff;border-color:transparent' }"><i></i>${ esc( label ) }</span></div>
+				<div class="wpe-lic-card__top"><span class="wpe-brand"><span class="wpe-brand__mark">${ ico( 'logo', 20 ) }</span>${ esc( cfg.brand ) } ${ esc( l.plan || 'Pro' ) }</span><span class="wpe-pill ${ active ? 'wpe-pill--success' : l.key ? 'wpe-pill--warning' : '' }" style="${ active || l.key ? '' : 'background:rgb(255 255 255 / 14%);color:#fff;border-color:transparent' }"><i></i>${ esc( label ) }</span></div>
 				<div class="wpe-lic-card__key">${ esc( l.key || '•••• •••• •••• ••••' ) }</div>
 				<div class="wpe-lic-card__meta"><div>${ esc( __( 'Domain', 'wpessential' ) ) }<b>${ esc( l.domain ) }</b></div><div>${ esc( __( 'Expires', 'wpessential' ) ) }<b>${ esc( l.expires ? ( l.expires === 'lifetime' ? __( 'Lifetime', 'wpessential' ) : l.expires ) : '—' ) }</b></div><div>${ esc( __( 'Provider', 'wpessential' ) ) }<b>${ esc( l.provider ) }</b></div></div>
 			</div>
@@ -1083,7 +1116,7 @@
 					<form class="wpe-lic-form" data-form><label class="wpe-field"><span class="wpe-sr">${ esc( __( 'License key', 'wpessential' ) ) }</span><input type="password" autocomplete="off" spellcheck="false" placeholder="${ esc( __( 'Paste your license key', 'wpessential' ) ) }" data-key required><button type="button" class="wpe-btn wpe-btn--ghost wpe-btn--sm wpe-btn--icon" data-reveal aria-label="${ esc( __( 'Show key', 'wpessential' ) ) }">${ ico( 'eye', 15 ) }</button></label><button class="wpe-btn wpe-btn--primary wpe-btn--lg" type="submit" data-busy="${ esc( __( 'Checking', 'wpessential' ) ) }">${ ico( 'key', 17 ) }${ esc( __( 'Activate', 'wpessential' ) ) }</button></form>
 					${ error ? `<div class="wpe-callout wpe-callout--error" role="alert">${ ico( 'error' ) }<div>${ esc( error ) }</div></div>` : l.message ? `<div class="wpe-callout wpe-callout--warning">${ ico( 'warn' ) }<div>${ esc( l.message ) }</div></div>` : '' }
 					<ul class="wpe-perks">${ [ __( 'Unlock every Pro demo in the library', 'wpessential' ), __( 'Automatic updates from your dashboard', 'wpessential' ), __( 'Priority support from the WPEssential Team', 'wpessential' ) ].map( ( t ) => `<li>${ ico( 'ok', 18 ) }${ esc( t ) }</li>` ).join( '' ) }</ul>
-					<p style="margin-top:20px"><a href="https://wpessential.org/pricing/" target="_blank" rel="noopener">${ esc( __( 'Don’t have a license? See plans', 'wpessential' ) ) } →</a></p>` }
+					<p style="margin-top:20px"><a href="#wpe-account" data-jump>${ esc( __( 'Don’t have a license? Sign in or pick a plan below', 'wpessential' ) ) } ↓</a></p>` }
 			</div></div>`;
 		const form = $( '[data-form]', box );
 		if ( form ) {
@@ -1107,6 +1140,13 @@
 				} );
 			} );
 		}
+		const jump = $( '[data-jump]', box );
+		if ( jump ) {
+			jump.addEventListener( 'click', ( e ) => {
+				e.preventDefault();
+				$( '#wpe-account' ).scrollIntoView( { behavior: 'smooth' } );
+			} );
+		}
 		const de = $( '[data-deact]', box );
 		if ( de ) {
 			de.addEventListener( 'click', () => {
@@ -1126,6 +1166,166 @@
 				} );
 			} );
 		}
+	}
+
+
+	/* ------------------------------------------------------------------ account */
+
+	async function loadAccount() {
+		state.account = await api( { path: '/wpessential/v1/account' } );
+		return state.account;
+	}
+
+	const period = ( p ) => ( p.months > 0 ? sprintf( __( '/ %d mo', 'wpessential' ), p.months ) : __( 'one-time', 'wpessential' ) );
+	const money = ( p ) => new Intl.NumberFormat( undefined, { style: 'currency', currency: p.currency || 'USD', maximumFractionDigits: p.price % 1 ? 2 : 0 } ).format( p.price );
+
+	async function renderAccount( box, opts = {} ) {
+		if ( ! box ) {
+			return;
+		}
+		box.innerHTML = '<div class="wpe-card"><div class="wpe-card__body"><div class="wpe-skel" style="height:18px;width:30%;margin-bottom:12px"></div><div class="wpe-skel" style="height:120px"></div></div></div>';
+		try {
+			await loadAccount();
+		} catch ( e ) {
+			state.account = { signed_in: false };
+			if ( e.code !== 'wpe_signed_out' ) {
+				box.innerHTML = `<div class="wpe-callout wpe-callout--warning">${ ico( 'warn' ) }<div><b>${ esc( __( 'Your WPEssential account could not be reached', 'wpessential' ) ) }</b><br>${ esc( errMsg( e ) ) }</div></div>`;
+				return;
+			}
+		}
+		paintAccount( box, opts );
+	}
+
+	function paintAccount( box, opts, error = '' ) {
+		const a = state.account || { signed_in: false };
+		if ( ! a.signed_in ) {
+			const mode = box.dataset.mode || 'login';
+			box.innerHTML = `<div class="wpe-card wpe-auth">
+				<div class="wpe-auth__aside"><span class="wpe-brand__mark">${ ico( 'logo', 22 ) }</span><h3>${ esc( mode === 'login' ? __( 'Sign in to your account', 'wpessential' ) : __( 'Create your free account', 'wpessential' ) ) }</h3><p>${ esc( __( 'Your licenses, Pro demos and subscription in one place. New accounts include the Free plan for this website.', 'wpessential' ) ) }</p>
+					<ul class="wpe-perks">${ [ __( 'Activate licenses without copying keys', 'wpessential' ), __( 'Upgrade, renew or switch plans in one click', 'wpessential' ), __( 'Manage websites and auto-renewal', 'wpessential' ) ].map( ( t ) => `<li>${ ico( 'ok', 18 ) }${ esc( t ) }</li>` ).join( '' ) }</ul></div>
+				<form class="wpe-auth__form" data-auth novalidate>
+					<div class="wpe-seg" role="tablist"><button type="button" data-mode="login" aria-pressed="${ mode === 'login' }">${ esc( __( 'Sign in', 'wpessential' ) ) }</button><button type="button" data-mode="register" aria-pressed="${ mode === 'register' }">${ esc( __( 'Create account', 'wpessential' ) ) }</button></div>
+					${ mode === 'register' ? `<label class="wpe-label">${ esc( __( 'Full name', 'wpessential' ) ) }<input type="text" name="name" autocomplete="name" required></label>` : '' }
+					<label class="wpe-label">${ esc( __( 'Email', 'wpessential' ) ) }<input type="text" name="${ mode === 'login' ? 'login' : 'email' }" autocomplete="email" inputmode="email" required></label>
+					<label class="wpe-label">${ esc( __( 'Password', 'wpessential' ) ) }<input type="password" name="password" autocomplete="${ mode === 'login' ? 'current-password' : 'new-password' }" minlength="8" required></label>
+					${ error ? `<div class="wpe-callout wpe-callout--error" role="alert">${ ico( 'error' ) }<div>${ esc( error ) }</div></div>` : '' }
+					<button class="wpe-btn wpe-btn--primary wpe-btn--lg" type="submit" data-busy="${ esc( mode === 'login' ? __( 'Signing in', 'wpessential' ) : __( 'Creating account', 'wpessential' ) ) }">${ esc( mode === 'login' ? __( 'Sign in', 'wpessential' ) : __( 'Create free account', 'wpessential' ) ) }${ ico( 'arrow', 17 ) }</button>
+					${ mode === 'login' ? `<a class="wpe-auth__link" href="https://wpessential.org/my-account/lost-password/" target="_blank" rel="noopener">${ esc( __( 'Forgot password?', 'wpessential' ) ) }</a>` : `<p class="wpe-auth__link wpe-muted">${ esc( __( 'By creating an account you agree to the WPEssential terms.', 'wpessential' ) ) }</p>` }
+					${ opts.skip ? `<button type="button" class="wpe-btn wpe-btn--ghost" data-skip-auth>${ esc( __( 'Continue without an account', 'wpessential' ) ) }</button>` : '' }
+				</form></div>`;
+			$$( '[data-mode]', box ).forEach( ( b ) => b.addEventListener( 'click', () => {
+				box.dataset.mode = b.dataset.mode;
+				paintAccount( box, opts );
+			} ) );
+			const skip = $( '[data-skip-auth]', box );
+			if ( skip ) {
+				skip.addEventListener( 'click', opts.skip );
+			}
+			const form = $( '[data-auth]', box );
+			form.addEventListener( 'submit', ( e ) => {
+				e.preventDefault();
+				const data = Object.fromEntries( new FormData( form ) );
+				const empty = Object.entries( data ).find( ( [ , v ] ) => ! String( v ).trim() );
+				if ( empty ) {
+					paintAccount( box, opts, __( 'Fill in every field.', 'wpessential' ) );
+					return;
+				}
+				busy( $( '[type="submit"]', form ), async () => {
+					try {
+						state.account = await api( { path: '/wpessential/v1/account/' + ( mode === 'login' ? 'login' : 'register' ), method: 'POST', data } );
+						toast( 'success', mode === 'login' ? __( 'Signed in', 'wpessential' ) : __( 'Account created', 'wpessential' ), state.account.user.email );
+						state.demos = null;
+						setTimeout( () => {
+							paintAccount( box, opts );
+							if ( opts.onLicensed ) {
+								opts.onLicensed();
+							}
+						}, 0 );
+					} catch ( err ) {
+						setTimeout( () => paintAccount( box, opts, errMsg( err ) ), 0 );
+					}
+				} );
+			} );
+			return;
+		}
+
+		const statusPill = ( l ) => ( { active: 'success', expired: 'warning', cancelled: 'warning', revoked: 'danger' }[ l.status ] || '' );
+		const rank = ( k ) => [ 'free', 'monthly', 'quarterly', 'yearly', 'lifetime', 'enterprise', 'white_label' ].indexOf( k );
+		const best = ( a.licenses || [] ).filter( ( l ) => l.status === 'active' ).sort( ( x, y ) => rank( y.plan_key ) - rank( x.plan_key ) )[ 0 ];
+		box.innerHTML = `<div class="wpe-card"><div class="wpe-card__body">
+			<div class="wpe-acct-head"><span class="wpe-avatar">${ esc( ( a.user.name || a.user.email ).charAt( 0 ).toUpperCase() ) }<img src="${ esc( a.user.avatar ) }" alt="" width="44" height="44" onerror="this.remove()"></span><div><b>${ esc( a.user.name || a.user.email ) }</b><span class="wpe-muted">${ esc( a.user.email ) }</span></div><span class="wpe-grow"></span>
+				<button class="wpe-btn wpe-btn--ghost wpe-btn--sm" data-acct-refresh>${ ico( 'refresh', 15 ) }${ esc( __( 'Refresh', 'wpessential' ) ) }</button>
+				${ a.account ? `<a class="wpe-btn wpe-btn--ghost wpe-btn--sm" href="${ esc( a.account ) }" target="_blank" rel="noopener">${ ico( 'ext', 15 ) }${ esc( __( 'Manage account', 'wpessential' ) ) }</a>` : '' }
+				<button class="wpe-btn wpe-btn--ghost wpe-btn--sm" data-logout>${ esc( __( 'Sign out', 'wpessential' ) ) }</button></div>
+			${ error ? `<div class="wpe-callout wpe-callout--error" role="alert">${ ico( 'error' ) }<div>${ esc( error ) }</div></div>` : '' }
+			<h3 class="wpe-acct-title">${ esc( __( 'Your licenses', 'wpessential' ) ) }</h3>
+			<div class="wpe-list">${ ( a.licenses || [] ).map( ( l ) => `<div class="wpe-row wpe-lic-row ${ l.here ? 'is-here' : '' }">
+				<span class="wpe-row__ico">${ ico( 'key', 18 ) }</span>
+				<div class="wpe-row__main"><b>${ esc( l.plan ) } <span class="wpe-pill wpe-pill--${ statusPill( l ) }"><i></i>${ esc( l.status ) }</span></b><span>${ esc( l.mask ) } · ${ esc( sprintf( __( '%1$d of %2$s websites', 'wpessential' ), l.sites_used, l.sites_limit ? l.sites_limit : '∞' ) ) } · ${ esc( l.expires === 'lifetime' ? __( 'Never expires', 'wpessential' ) : sprintf( l.auto_renew ? __( 'Renews %s', 'wpessential' ) : __( 'Ends %s', 'wpessential' ), l.expires ) ) }</span></div>
+				${ l.expires !== 'lifetime' && l.plan_key !== 'free' && l.status === 'active' ? `<label class="wpe-switch" title="${ esc( __( 'Auto-renew', 'wpessential' ) ) }"><input type="checkbox" data-renew="${ l.id }" ${ l.auto_renew ? 'checked' : '' } aria-label="${ esc( __( 'Auto-renew', 'wpessential' ) ) }"><span></span></label>` : '' }
+				${ l.status !== 'active' && l.plan_key !== 'free' ? `<button class="wpe-btn wpe-btn--primary wpe-btn--sm" data-buy="${ esc( l.plan_key ) }" data-license="${ l.id }" data-mode="renew">${ esc( __( 'Renew', 'wpessential' ) ) }</button>` : l.here ? `<span class="wpe-pill wpe-pill--success">${ ico( 'check', 12, 3 ) }${ esc( __( 'This site', 'wpessential' ) ) }</span>` : `<button class="wpe-btn wpe-btn--soft wpe-btn--sm" data-use="${ l.id }" data-busy="${ esc( __( 'Activating', 'wpessential' ) ) }">${ esc( __( 'Use on this site', 'wpessential' ) ) }</button>` }
+			</div>` ).join( '' ) || `<p class="wpe-muted">${ esc( __( 'No licenses yet — choose a plan below.', 'wpessential' ) ) }</p>` }</div>
+			<h3 class="wpe-acct-title">${ esc( best && best.plan_key !== 'free' ? __( 'Upgrade your plan', 'wpessential' ) : __( 'Choose a plan', 'wpessential' ) ) }</h3>
+			<div class="wpe-plans">${ ( a.plans || [] ).map( ( p ) => {
+				const owned = best && best.plan_key === p.key;
+				const lower = best && rank( p.key ) < rank( best.plan_key ) && best.plan_key !== 'free';
+				const upgrade = best && best.plan_key !== 'free' && ! owned && ! lower;
+				return `<article class="wpe-plan ${ p.key === 'yearly' ? 'is-featured' : '' } ${ owned ? 'is-owned' : '' }">${ p.key === 'yearly' ? `<span class="wpe-plan__flag">${ esc( __( 'Most popular', 'wpessential' ) ) }</span>` : '' }<h4>${ esc( p.name ) }</h4><p class="wpe-plan__price">${ esc( money( p ) ) }<small>${ esc( period( p ) ) }</small></p><ul>${ p.features.map( ( f ) => `<li>${ ico( 'check', 14, 3 ) }${ esc( f ) }</li>` ).join( '' ) }</ul>
+					${ owned ? `<span class="wpe-pill wpe-pill--success" style="justify-content:center">${ esc( __( 'Current plan', 'wpessential' ) ) }</span>` : `<button class="wpe-btn ${ p.key === 'yearly' ? 'wpe-btn--grad' : 'wpe-btn--ghost' }" data-buy="${ esc( p.key ) }" ${ upgrade ? `data-license="${ best.id }" data-mode="upgrade"` : '' } ${ lower ? 'disabled' : '' }>${ esc( upgrade ? __( 'Upgrade', 'wpessential' ) : __( 'Choose', 'wpessential' ) ) }</button>` }</article>`;
+			} ).join( '' ) }</div>
+			<p class="wpe-muted" style="margin-top:14px;font-size:12px">${ esc( __( 'Checkout opens on wpessential.org already signed in. Upgrades credit the unused part of your current plan. Staging and local sites do not count toward your website limit.', 'wpessential' ) ) }</p>
+		</div></div>`;
+
+		const refresh = () => renderAccount( box, opts );
+		$( '[data-acct-refresh]', box ).addEventListener( 'click', refresh );
+		$( '[data-logout]', box ).addEventListener( 'click', async () => {
+			await api( { path: '/wpessential/v1/account/logout', method: 'POST' } ).catch( () => {} );
+			state.account = { signed_in: false };
+			paintAccount( box, opts );
+		} );
+		$$( '[data-use]', box ).forEach( ( b ) => b.addEventListener( 'click', () => busy( b, async () => {
+			try {
+				const res = await api( { path: '/wpessential/v1/account/use', method: 'POST', data: { license_id: b.dataset.use } } );
+				state.license = res.license;
+				state.account = res.account;
+				state.demos = null;
+				toast( 'success', __( 'License active on this site', 'wpessential' ) );
+				setTimeout( () => {
+					paintAccount( box, opts );
+					if ( opts.onLicensed ) {
+						opts.onLicensed();
+					}
+				}, 0 );
+			} catch ( e ) {
+				setTimeout( () => paintAccount( box, opts, errMsg( e ) ), 0 );
+			}
+		} ) ) );
+		$$( '[data-renew]', box ).forEach( ( c ) => c.addEventListener( 'change', async () => {
+			try {
+				state.account = await api( { path: '/wpessential/v1/account/action', method: 'POST', data: { license_id: c.dataset.renew, action: c.checked ? 'auto_renew_on' : 'auto_renew_off' } } );
+				toast( 'success', c.checked ? __( 'Auto-renew is on', 'wpessential' ) : __( 'Auto-renew is off', 'wpessential' ), c.checked ? '' : __( 'Your license works until its end date.', 'wpessential' ) );
+			} catch ( e ) {
+				c.checked = ! c.checked;
+				toast( 'error', __( 'Could not change auto-renew', 'wpessential' ), errMsg( e ) );
+			}
+		} ) );
+		$$( '[data-buy]', box ).forEach( ( b ) => b.addEventListener( 'click', () => busy( b, async () => {
+			const win = window.open( 'about:blank', '_blank' );
+			try {
+				const res = await api( { path: '/wpessential/v1/account/checkout', method: 'POST', data: { plan: b.dataset.buy, license_id: b.dataset.license || 0, mode: b.dataset.mode || 'buy' } } );
+				if ( win ) {
+					win.location = res.url;
+				} else {
+					window.location = res.url;
+				}
+				toast( 'info', __( 'Checkout opened in a new tab', 'wpessential' ), __( 'When payment is done, press Refresh here.', 'wpessential' ) );
+			} catch ( e ) {
+				if ( win ) {
+					win.close();
+				}
+				toast( 'error', __( 'Checkout could not start', 'wpessential' ), errMsg( e ) );
+			}
+		} ) ) );
 	}
 
 	/* ------------------------------------------------------------------ status */

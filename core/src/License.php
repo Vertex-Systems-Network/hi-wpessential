@@ -27,7 +27,8 @@ class License {
 			apply_filters( 'wpessential_core_license_config', array() ),
 			array(
 				'provider'   => 'custom',
-				'endpoint'   => 'https://api.wpessential.org/v1/license',
+				'api'        => 'https://wpessential.org/wp-json/wpessential-server/v1',
+				'endpoint'   => 'https://wpessential.org/wp-json/wpessential-server/v1/license',
 				'product_id' => 'wpessential-theme',
 			)
 		);
@@ -61,12 +62,16 @@ class License {
 		return wp_parse_args(
 			(array) get_option( self::OPTION, array() ),
 			array(
-				'key'     => '',
-				'status'  => 'inactive',
-				'expires' => '',
-				'plan'    => '',
-				'checked' => 0,
-				'message' => '',
+				'key'         => '',
+				'status'      => 'inactive',
+				'expires'     => '',
+				'plan'        => '',
+				'checked'     => 0,
+				'message'     => '',
+				'pro'         => false,
+				'white_label' => false,
+				'sites_used'  => 0,
+				'sites_limit' => 0,
 			)
 		);
 	}
@@ -98,6 +103,16 @@ class License {
 	 */
 	public static function is_active() {
 		return 'active' === self::data()['status'];
+	}
+
+	/**
+	 * Active license that unlocks Pro demos. Licenses from EDD/Woo adapters count as Pro.
+	 *
+	 * @return bool
+	 */
+	public static function has_pro() {
+		$data = self::data();
+		return self::is_active() && ( ! empty( $data['pro'] ) || 'custom' !== self::config()['provider'] );
 	}
 
 	/**

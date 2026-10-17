@@ -22,7 +22,7 @@ class Demos {
 	 * @return string
 	 */
 	public static function manifest_url() {
-		$default = function_exists( 'wpessential_demo_manifest_url' ) ? wpessential_demo_manifest_url() : 'https://api.wpessential.org/v1/demos.json';
+		$default = function_exists( 'wpessential_demo_manifest_url' ) ? wpessential_demo_manifest_url() : 'https://wpessential.org/wp-json/wpessential-server/v1/demos';
 		return (string) apply_filters( 'wpessential_core_manifest_url', $default );
 	}
 
@@ -70,7 +70,7 @@ class Demos {
 		$imported = Importer::imported();
 		foreach ( $demos as &$demo ) {
 			$demo['imported'] = isset( $imported['demo'] ) && $imported['demo'] === $demo['id'];
-			$demo['locked']   = 'pro' === ( $demo['type'] ?? 'free' ) && ! License::is_active();
+			$demo['locked']   = 'pro' === ( $demo['type'] ?? 'free' ) && ! License::has_pro();
 		}
 		unset( $demo );
 

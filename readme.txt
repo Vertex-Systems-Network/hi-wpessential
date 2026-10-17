@@ -35,6 +35,8 @@ Yes. The header has a light/dark toggle. The first visit follows the device sett
 * Initial release.
 * WPEssential dashboard: Demo Library with live preview, one-click import wizard (Gutenberg / Elementor), plugin manager, license activation and System Status.
 * Importer runs in short resumable steps with info, warning and error logging, automatic retry, crash-safe skipping and one-click removal.
+* Theme Options (Appearance): named CSS / JavaScript snippets with device scopes, head/footer placement, safe mode; animation presets (subtle, editorial, playful, dynamic with GSAP).
+* Dashboard sign-in / sign-up connected to the WPEssential account; licenses, plans, upgrades and auto-renewal from the import wizard and License tab.
 * Base Demo bundled: 7 pages, 3 articles, 8 WooCommerce products, menus and store settings.
 
 == Resources ==
@@ -43,3 +45,4 @@ Yes. The header has a light/dark toggle. The first visit follows the device sett
 * Plus Jakarta Sans, (C) 2020 Tokotype, SIL Open Font License 1.1, https://github.com/tokotype/PlusJakartaSans
 * Sun and moon icons in the light/dark toggle: Font Awesome Free 6, (C) Fonticons, Inc., CC BY 4.0, https://fontawesome.com/license/free
 * Images in assets/images (hero, post-1 to post-3, demo-business, team-1 to team-4) were generated with AI for this theme by the WPEssential Team and are released under GPLv2 or later.
+* GSAP 3.12.5 and ScrollTrigger, (C) 2024 GreenSock, Standard "no charge" license, https://gsap.com/standard-license — loaded only when the Dynamic animation preset or GSAP option is on.

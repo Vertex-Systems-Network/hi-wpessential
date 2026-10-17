@@ -23,7 +23,7 @@ jobs:
         run: composer install --no-interaction --no-progress
       - name: WordPress Coding Standards
         if: matrix.php == '8.3'
-        run: vendor/bin/phpcs --standard=phpcs.xml.dist
+        run: vendor/bin/phpcs --standard=phpcs.xml.dist && vendor/bin/phpcs --standard=server/wpessential-server/phpcs.xml.dist server/wpessential-server
       - name: JSON files are valid
         run: for f in theme.json styles/*.json core/demos/*/demo.json core/demos/*/*/content.json; do python3 -m json.tool "$f" > /dev/null || exit 1; done
       - name: JavaScript syntax
