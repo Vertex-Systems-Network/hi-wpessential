@@ -1,0 +1,29 @@
+/**
+ * WPEssential — Elementor compatibility.
+ * Elementor widgets pick up colors/fonts from the synced Global Kit; this file
+ * only aligns layout containers and form/button widgets with the theme toolkit.
+ */
+.elementor-page .wpe-main, .elementor-page .wp-block-post-content.is-layout-constrained > .elementor { max-width: none; }
+.elementor-page .wp-block-post-content > .elementor { margin-inline: calc(var(--wp--style--root--padding-left, 0px) * -1) calc(var(--wp--style--root--padding-right, 0px) * -1); }
+.elementor-widget-container > :last-child { margin-bottom: 0; }
+
+/* Buttons */
+.elementor-button { border-radius: var(--wpe-radius); font-weight: 600; font-family: var(--wp--preset--font-family--body); transition: background-color var(--wpe-ease), box-shadow var(--wpe-ease), transform var(--wpe-ease); }
+.elementor-button:focus-visible { box-shadow: var(--wpe-focus); }
+
+/* Forms (Elementor Pro Form widget) */
+.elementor-field-group .elementor-field-textual { border-radius: var(--wpe-radius); border-color: var(--wpe-border); min-height: 46px; }
+.elementor-field-group .elementor-field-textual:focus { border-color: var(--wpe-primary); box-shadow: 0 0 0 4px color-mix(in srgb, var(--wpe-primary) 18%, transparent); }
+
+/* Common widgets */
+.elementor-widget-icon-box .elementor-icon { color: var(--wpe-primary); }
+.elementor-widget-image-box img, .elementor-widget-image img { border-radius: var(--wpe-radius-lg); }
+.elementor-tab-title, .elementor-accordion .elementor-tab-title { font-weight: 600; }
+.elementor-accordion .elementor-accordion-item { border-color: var(--wpe-border); border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
+.elementor-toggle .elementor-tab-title.elementor-active, .elementor-accordion .elementor-tab-title.elementor-active { color: var(--wpe-primary); }
+.elementor-testimonial-wrapper .elementor-testimonial-image img { border-radius: 50%; }
+.elementor-star-rating { color: var(--wpe-star); }
+.elementor-widget-woocommerce-products ul.products li.product { text-align: left; }
+
+/* Theme Builder locations rendered inside block templates */
+.elementor-location-header, .elementor-location-footer { width: 100%; }

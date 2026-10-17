@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WPEssential demo manifest",
+  "type": "object",
+  "required": ["version", "demos"],
+  "properties": {
+    "version": { "type": "string" },
+    "demos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "niche", "type", "preview_url", "thumbnail", "builders"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "title": { "type": "string" },
+          "niche": { "type": "array", "items": { "type": "string" } },
+          "type": { "enum": ["free", "pro"] },
+          "min_theme_version": { "type": "string" },
+          "preview_url": { "type": "string", "format": "uri" },
+          "thumbnail": { "type": "string", "format": "uri" },
+          "builders": {
+            "type": "object",
+            "minProperties": 1,
+            "properties": {
+              "gutenberg": { "$ref": "#/$defs/package" },
+              "elementor": { "$ref": "#/$defs/package" }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "package": {
+      "type": "object",
+      "required": ["package", "plugins"],
+      "properties": {
+        "package": { "type": "string", "description": "Free: public zip URL. Pro: the literal value \"licensed\"; Core requests a signed URL from the license API." },
+        "files": {
+          "type": "object",
+          "properties": {
+            "content": { "const": "content.xml" },
+            "customizer": { "const": "customizer.json" },
+            "widgets": { "const": "widgets.wie" },
+            "global_styles": { "const": "global-styles.json" },
+            "elementor_kit": { "const": "kit.zip" }
+          }
+        },
+        "plugins": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["slug", "source", "state"],
+            "properties": {
+              "slug": { "type": "string" },
+              "name": { "type": "string" },
+              "source": { "enum": ["wporg", "zip", "licensed"] },
+              "url": { "type": "string", "format": "uri" },
+              "state": { "enum": ["required", "recommended", "conflicts"] }
+            }
+          }
+        },
+        "front_page": { "type": "string" },
+        "blog_page": { "type": "string" },
+        "menus": { "type": "object", "additionalProperties": { "type": "string" } }
+      }
+    }
+  }
+}
