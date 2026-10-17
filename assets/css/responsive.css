@@ -1,0 +1,215 @@
+/**
+ * WPEssential responsive system.
+ *
+ * Mirrors the "Base Demo · Responsive" page in Figma. Breakpoints:
+ * 1920 · 1440 (design base) · 1280 · 1024 · 768 · 560 · 480 · 360 · 320.
+ * Each step sets the page gutter, section rhythm, wide container and type scale.
+ */
+
+/* ≥1440 — design base */
+body,
+.editor-styles-wrapper {
+	--wpe-gutter: 80px;
+	--wpe-section-y: 120px;
+	--wpe-section-y-md: 96px;
+	--wpe-section-y-sm: 64px;
+	--wp--style--root--padding-left: var(--wpe-gutter);
+	--wp--style--root--padding-right: var(--wpe-gutter);
+	--wp--preset--font-size--display: 64px;
+	--wp--preset--font-size--h-1: 52px;
+	--wp--preset--font-size--h-2: 40px;
+	--wp--preset--font-size--h-3: 28px;
+	--wp--preset--font-size--h-4: 20px;
+	--wp--preset--font-size--body-l: 18px;
+}
+
+@media (min-width: 1920px) {
+	body,
+	.editor-styles-wrapper {
+		--wpe-section-y: 140px;
+		--wpe-section-y-md: 112px;
+		--wp--style--global--wide-size: 1320px;
+		--wp--preset--font-size--display: 72px;
+		--wp--preset--font-size--h-1: 60px;
+		--wp--preset--font-size--h-2: 48px;
+		--wp--preset--font-size--h-3: 30px;
+	}
+}
+
+@media (max-width: 1439px) {
+	body,
+	.editor-styles-wrapper {
+		--wpe-gutter: 80px;
+		--wpe-section-y: 112px;
+		--wpe-section-y-md: 88px;
+		--wp--preset--font-size--display: 60px;
+		--wp--preset--font-size--h-1: 48px;
+		--wp--preset--font-size--h-2: 38px;
+		--wp--preset--font-size--h-3: 26px;
+	}
+}
+
+@media (max-width: 1279px) {
+	body,
+	.editor-styles-wrapper {
+		--wpe-gutter: 40px;
+		--wpe-section-y: 96px;
+		--wpe-section-y-md: 80px;
+		--wpe-section-y-sm: 56px;
+		--wp--preset--font-size--display: 52px;
+		--wp--preset--font-size--h-1: 44px;
+		--wp--preset--font-size--h-2: 34px;
+		--wp--preset--font-size--h-3: 24px;
+	}
+}
+
+@media (max-width: 1023px) {
+	body,
+	.editor-styles-wrapper {
+		--wpe-gutter: 32px;
+		--wpe-section-y: 80px;
+		--wpe-section-y-md: 64px;
+		--wpe-section-y-sm: 48px;
+		--wp--preset--font-size--display: 44px;
+		--wp--preset--font-size--h-1: 38px;
+		--wp--preset--font-size--h-2: 30px;
+		--wp--preset--font-size--h-3: 22px;
+		--wp--preset--font-size--h-4: 19px;
+	}
+}
+
+@media (max-width: 767px) {
+	body,
+	.editor-styles-wrapper {
+		--wpe-gutter: 24px;
+		--wpe-section-y: 64px;
+		--wpe-section-y-md: 56px;
+		--wpe-section-y-sm: 40px;
+		--wp--preset--font-size--display: 38px;
+		--wp--preset--font-size--h-1: 34px;
+		--wp--preset--font-size--h-2: 28px;
+		--wp--preset--font-size--h-3: 21px;
+		--wp--preset--font-size--h-4: 18px;
+		--wp--preset--font-size--body-l: 17px;
+	}
+}
+
+@media (max-width: 559px) {
+	body,
+	.editor-styles-wrapper {
+		--wpe-gutter: 20px;
+		--wpe-section-y: 56px;
+		--wpe-section-y-md: 48px;
+		--wpe-section-y-sm: 36px;
+		--wp--preset--font-size--display: 36px;
+		--wp--preset--font-size--h-1: 32px;
+		--wp--preset--font-size--h-2: 26px;
+		--wp--preset--font-size--h-3: 20px;
+		--wp--preset--font-size--body-l: 16px;
+	}
+}
+
+@media (max-width: 479px) {
+	body,
+	.editor-styles-wrapper {
+		--wpe-gutter: 16px;
+		--wpe-section-y: 48px;
+		--wpe-section-y-md: 44px;
+		--wpe-section-y-sm: 32px;
+		--wp--preset--font-size--display: 32px;
+		--wp--preset--font-size--h-1: 28px;
+		--wp--preset--font-size--h-2: 24px;
+		--wp--preset--font-size--h-3: 20px;
+	}
+}
+
+@media (max-width: 359px) {
+	body,
+	.editor-styles-wrapper {
+		--wpe-section-y: 44px;
+		--wp--preset--font-size--display: 30px;
+		--wp--preset--font-size--h-1: 26px;
+		--wp--preset--font-size--h-2: 22px;
+		--wp--preset--font-size--h-3: 19px;
+	}
+}
+
+/* Section rhythm follows the step tokens. */
+.wpe-section { padding-block: var(--wpe-section-y); }
+.wpe-section--md { padding-block: var(--wpe-section-y-md); }
+.wpe-section--sm { padding-block: var(--wpe-section-y-sm); }
+.wpe-section--flush-top { padding-top: 0; }
+.wpe-section--flush-bottom { padding-bottom: 0; }
+
+/* Grids: 3–4 up on desktop, 2 up on tablet, 1 up on phones. */
+@media (max-width: 1023px) {
+	.wp-block-post-template.is-layout-grid.columns-3,
+	.wp-block-post-template.is-layout-grid.columns-4,
+	.wp-block-post-template.is-layout-grid.columns-5,
+	.wp-block-post-template.is-layout-grid.columns-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	/* Four-up rows (team, process, stats) go 2-up on tablets. */
+	.wp-block-columns:not(.is-not-stacked-on-mobile):has(> .wp-block-column:nth-child(4)) { flex-wrap: wrap !important; }
+	.wp-block-columns:not(.is-not-stacked-on-mobile):has(> .wp-block-column:nth-child(4)) > .wp-block-column { flex-basis: calc(50% - var(--wp--style--block-gap, 24px)) !important; flex-grow: 1; }
+	.wpe-has-sidebar { flex-direction: column; }
+	.wpe-has-sidebar > .wp-block-column { flex-basis: 100% !important; }
+}
+@media (max-width: 559px) {
+	.wp-block-post-template.is-layout-grid[class*="columns-"] { grid-template-columns: minmax(0, 1fr); }
+	.wp-block-columns:not(.is-not-stacked-on-mobile):has(> .wp-block-column:nth-child(4)) > .wp-block-column { flex-basis: 100% !important; }
+}
+
+/* Header: compact header + off-canvas drawer from 1024 down (core switches at 600). */
+@media (max-width: 1024px) {
+	.wpe-topbar { display: none; }
+	.wpe-header .wp-block-navigation__responsive-container-open:not(.always-shown) { display: flex !important; }
+	.wpe-header .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) { display: none !important; }
+	.wpe-header__inner { gap: 12px; }
+	.wpe-header__inner > .wp-block-navigation { order: -1; }
+	.wpe-header__inner > :is(.wp-block-site-logo, .wp-block-site-title, .wp-block-group:first-child) { margin-inline-end: auto; }
+}
+@media (max-width: 767px) {
+	.wpe-header-cta { display: none !important; }
+}
+
+/* WooCommerce steps: 4 → 3 → 2 product columns; split layouts stack below 1024. */
+@media (max-width: 1279px) { .woocommerce ul.products, .wc-block-product-template { --wpe-cols: 3; } }
+@media (max-width: 767px) { .woocommerce ul.products, .wc-block-product-template { --wpe-cols: 2; gap: 24px 12px; } }
+@media (max-width: 1023px) {
+	.woocommerce div.product,
+	.woocommerce form.checkout,
+	.woocommerce-account .woocommerce { grid-template-columns: minmax(0, 1fr); }
+	.woocommerce div.product div.images,
+	.woocommerce div.product div.summary { grid-column: 1 / -1; }
+	.woocommerce form.checkout #order_review_heading,
+	.woocommerce form.checkout #order_review { grid-column: 1; grid-row: auto; position: static; }
+}
+@media (max-width: 767px) {
+	.woocommerce-Addresses,
+	.woocommerce #customer_login { grid-template-columns: minmax(0, 1fr); }
+	/* Tables become stacked cards. */
+	.woocommerce table.shop_table_responsive thead,
+	.woocommerce-orders-table thead { display: none; }
+	.woocommerce table.shop_table_responsive tr { display: block; padding: 12px 0; border-bottom: 1px solid var(--wpe-border); }
+	.woocommerce table.shop_table_responsive td { display: flex; justify-content: space-between; gap: 12px; border: 0; padding: 6px 0; text-align: end; }
+	.woocommerce table.shop_table_responsive td::before { content: attr(data-title); font-weight: 600; text-align: start; }
+	.woocommerce table.shop_table_responsive td.product-remove::before,
+	.woocommerce table.shop_table_responsive td.product-thumbnail::before,
+	.woocommerce table.shop_table_responsive td.actions::before { content: none; }
+}
+
+/* Small phones: full-width buttons in button groups, tighter cards. */
+@media (max-width: 479px) {
+	.wp-block-buttons.is-layout-flex:not(.is-vertical) > .wp-block-button { flex: 1 1 100%; }
+	.wp-block-buttons.is-layout-flex:not(.is-vertical) > .wp-block-button > .wp-block-button__link { width: 100%; }
+	.is-style-wpe-card,
+	.is-style-wpe-card-flat,
+	.wpe-card { padding: 20px; }
+}
+
+/* Hero bits on phones: badge stays on one line, stats go 2 × 2. */
+.wpe-pill b { white-space: nowrap; flex-shrink: 0; }
+@media (max-width: 559px) {
+	.wpe-pill { text-align: start; }
+	.wp-block-columns.wpe-stats { flex-wrap: wrap !important; row-gap: 20px; }
+	.wp-block-columns.wpe-stats > .wp-block-column { flex-basis: calc(50% - 12px) !important; flex-grow: 1; }
+}

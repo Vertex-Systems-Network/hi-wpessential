@@ -20,6 +20,13 @@ add_action(
 			wp_enqueue_style( 'wpessential-elementor', WPESSENTIAL_URI . '/assets/css/elementor.css', array( 'wpessential' ), WPESSENTIAL_VERSION );
 		}
 
+		// Breakpoint tokens load last so every step overrides the base styles.
+		$wpessential_deps = array( 'wpessential' );
+		if ( wp_style_is( 'wpessential-woocommerce', 'enqueued' ) ) {
+			$wpessential_deps[] = 'wpessential-woocommerce';
+		}
+		wp_enqueue_style( 'wpessential-responsive', WPESSENTIAL_URI . '/assets/css/responsive.css', $wpessential_deps, WPESSENTIAL_VERSION );
+
 		wp_enqueue_script(
 			'wpessential',
 			WPESSENTIAL_URI . '/assets/js/theme.js',
