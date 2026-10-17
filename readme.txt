@@ -26,6 +26,9 @@ No. The theme works on its own. Core adds demo import, the header/footer builder
 = How do I build an About, Services, Pricing, Contact or FAQ page? =
 Create a page, choose the "Full width" template, then pick the matching layout from the "WPEssential — Full pages" patterns. With WooCommerce active, the "WPEssential — Shop" patterns add category and product rows.
 
+= Can visitors switch between light and dark? =
+Yes. The header has a light/dark toggle. The first visit follows the device setting, and the choice is remembered in the browser. The site's own colours stay the default; the other scheme comes from the theme (the "Dark" style, or the base light palette when the site uses a dark style). Turn it off with add_filter( 'wpessential_scheme_toggle', '__return_false' ).
+
 == Changelog ==
 
 = 1.0.0 =
@@ -35,4 +38,5 @@ Create a page, choose the "Full width" template, then pick the matching layout f
 
 * Inter, (C) 2016 The Inter Project Authors, SIL Open Font License 1.1, https://github.com/rsms/inter
 * Plus Jakarta Sans, (C) 2020 Tokotype, SIL Open Font License 1.1, https://github.com/tokotype/PlusJakartaSans
+* Sun and moon icons in the light/dark toggle: Font Awesome Free 6, (C) Fonticons, Inc., CC BY 4.0, https://fontawesome.com/license/free
 * Images in assets/images (hero, post-1 to post-3, demo-business, team-1 to team-4) were generated with AI for this theme by the WPEssential Team and are released under GPLv2 or later.

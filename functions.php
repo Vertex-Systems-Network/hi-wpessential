@@ -17,6 +17,7 @@ require WPESSENTIAL_DIR . '/inc/block-styles.php';
 require WPESSENTIAL_DIR . '/inc/patterns.php';
 require WPESSENTIAL_DIR . '/inc/layouts.php';
 require WPESSENTIAL_DIR . '/inc/core-bridge.php';
+require WPESSENTIAL_DIR . '/inc/scheme.php';
 
 // Elementor may load before or after the theme.
 if ( did_action( 'elementor/loaded' ) ) {

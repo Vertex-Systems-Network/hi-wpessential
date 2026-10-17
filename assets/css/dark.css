@@ -1,132 +1,125 @@
 /**
- * Dark scheme fixes. The body gets .wpe-scheme-dark when the active palette has a dark surface
+ * Dark scheme fixes. The body gets [data-wpe-scheme="dark"] when the active palette has a dark surface
  * (the "Dark" style variation, or any custom dark palette), see wpessential_is_dark_scheme().
  *
  * @package WPEssential
  */
 
-.wpe-scheme-dark { color-scheme: dark; }
-
-.wpe-scheme-dark mark,
-.wpe-scheme-dark .has-inline-color mark,
-.wpe-scheme-dark .comment-awaiting-moderation {
+[data-wpe-scheme="dark"] mark,
+[data-wpe-scheme="dark"] .has-inline-color mark,
+[data-wpe-scheme="dark"] .comment-awaiting-moderation {
 	background:#3F3412;
 	color:#FDE68A;
 }
 
-.wpe-scheme-dark .is-style-wpe-light .wp-block-button__link,
-.wpe-scheme-dark .wpe-btn--light {
+[data-wpe-scheme="dark"] .is-style-wpe-light .wp-block-button__link,
+[data-wpe-scheme="dark"] .wpe-btn--light {
 	background:#FFFFFF;
 	color:#0B1020;
 }
 
-.wpe-scheme-dark .is-style-wpe-dark .wp-block-button__link,
-.wpe-scheme-dark .wpe-btn--dark {
+[data-wpe-scheme="dark"] .is-style-wpe-dark .wp-block-button__link,
+[data-wpe-scheme="dark"] .wpe-btn--dark {
 	background:#1C2338;
 	box-shadow:inset 0 0 0 1px #2E3856;
 }
 
-.wpe-scheme-dark .is-style-wpe-dark .wp-block-button__link:hover,
-.wpe-scheme-dark .wpe-btn--dark:hover {
+[data-wpe-scheme="dark"] .is-style-wpe-dark .wp-block-button__link:hover,
+[data-wpe-scheme="dark"] .wpe-btn--dark:hover {
 	background:#252D46;
 }
 
-.wpe-scheme-dark .wpe-toast,
-.wpe-scheme-dark .wpe-badge-oos,
-.wpe-scheme-dark .woocommerce-store-notice,
-.wpe-scheme-dark p.demo_store,
-.wpe-scheme-dark [role=tooltip],
-.wpe-scheme-dark .wpe-tooltip::after {
+[data-wpe-scheme="dark"] .wpe-toast,
+[data-wpe-scheme="dark"] .wpe-badge-oos,
+[data-wpe-scheme="dark"] .woocommerce-store-notice,
+[data-wpe-scheme="dark"] p.demo_store,
+[data-wpe-scheme="dark"] [role=tooltip],
+[data-wpe-scheme="dark"] .wpe-tooltip::after {
 	background:#1C2338;
 }
 
-.wpe-scheme-dark .woocommerce ul.products li.product .button:hover,
-.wpe-scheme-dark.woocommerce ul.products li.product .button:hover {
+[data-wpe-scheme="dark"] .woocommerce ul.products li.product .button:hover{
 	background:#1C2338;
 	border-color:#2E3856;
 }
 
-.wpe-scheme-dark .wpe-footer,
-.wpe-scheme-dark .wpe-topbar {
+[data-wpe-scheme="dark"] .wpe-footer,
+[data-wpe-scheme="dark"] .wpe-topbar {
 	border-top:1px solid #1A2135;
 }
 
-.wpe-scheme-dark .wpe-header {
+[data-wpe-scheme="dark"] .wpe-header {
 	border-bottom-color:#1A2135;
 }
 
-.wpe-scheme-dark img:not(.wpe-no-dim) {
+[data-wpe-scheme="dark"] img:not(.wpe-no-dim) {
 	filter:brightness(.96);
 }
 
-.wpe-scheme-dark input,
-.wpe-scheme-dark select,
-.wpe-scheme-dark textarea {
-	background:#0A0F1D;
+[data-wpe-scheme="dark"] input,
+[data-wpe-scheme="dark"] select,
+[data-wpe-scheme="dark"] textarea {
+	background-color:#0A0F1D;
 	color:var(--wp--preset--color--text);
 	border-color:#2A3450;
 }
 
-.wpe-scheme-dark ::placeholder {
+[data-wpe-scheme="dark"] ::placeholder {
 	color:#6B7591;
 }
 
-.wpe-scheme-dark .woocommerce div.product .woocommerce-tabs ul.tabs li,
-.wpe-scheme-dark.woocommerce div.product .woocommerce-tabs ul.tabs li,
-.wpe-scheme-dark .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
-.wpe-scheme-dark.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+[data-wpe-scheme="dark"] .woocommerce div.product .woocommerce-tabs ul.tabs li,
+[data-wpe-scheme="dark"] .woocommerce div.product .woocommerce-tabs ul.tabs li.active{
 	background:transparent;
 	border-color:transparent;
 }
 
-.wpe-scheme-dark .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
-.wpe-scheme-dark.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+[data-wpe-scheme="dark"] .woocommerce div.product .woocommerce-tabs ul.tabs li.active a{
 	color:var(--wp--preset--color--text);
 }
 
-.wpe-scheme-dark .wc-block-components-text-input input,
-.wpe-scheme-dark .wc-block-components-combobox .wc-block-components-combobox-control input,
-.wpe-scheme-dark .wc-blocks-components-select .wc-blocks-components-select__select,
-.wpe-scheme-dark .wc-block-components-textarea {
+[data-wpe-scheme="dark"] .wc-block-components-text-input input,
+[data-wpe-scheme="dark"] .wc-block-components-combobox .wc-block-components-combobox-control input,
+[data-wpe-scheme="dark"] .wc-blocks-components-select .wc-blocks-components-select__select,
+[data-wpe-scheme="dark"] .wc-block-components-textarea {
 	background:#0A0F1D!important;
 	color:var(--wp--preset--color--text)!important;
 	border-color:#2A3450!important;
 }
 
-.wpe-scheme-dark .wc-block-components-text-input label,
-.wpe-scheme-dark .wc-block-components-combobox .wc-block-components-combobox-control label,
-.wpe-scheme-dark .wc-blocks-components-select .wc-blocks-components-select__label {
+[data-wpe-scheme="dark"] .wc-block-components-text-input label,
+[data-wpe-scheme="dark"] .wc-block-components-combobox .wc-block-components-combobox-control label,
+[data-wpe-scheme="dark"] .wc-blocks-components-select .wc-blocks-components-select__label {
 	color:#A0A9BF!important;
 }
 
-.wpe-scheme-dark .wc-block-components-text-input.is-active label {
+[data-wpe-scheme="dark"] .wc-block-components-text-input.is-active label {
 	color:#C7CEE0!important;
 }
 
-.wpe-scheme-dark .wc-block-components-radio-control__input,
-.wpe-scheme-dark .wc-block-components-checkbox .wc-block-components-checkbox__input {
+[data-wpe-scheme="dark"] .wc-block-components-radio-control__input,
+[data-wpe-scheme="dark"] .wc-block-components-checkbox .wc-block-components-checkbox__input {
 	background:#0A0F1D;
 	border-color:#4A5577;
 }
 
-.wpe-scheme-dark .wc-block-components-checkbox__mark {
+[data-wpe-scheme="dark"] .wc-block-components-checkbox__mark {
 	fill:#fff;
 }
 
-.wpe-scheme-dark .select2-container--default .select2-selection--single,
-.wpe-scheme-dark .select2-dropdown {
+[data-wpe-scheme="dark"] .select2-container--default .select2-selection--single,
+[data-wpe-scheme="dark"] .select2-dropdown {
 	background:#0A0F1D;
 	color:var(--wp--preset--color--text);
 	border-color:#2A3450;
 }
 
-.wpe-scheme-dark .woocommerce div.product .woocommerce-tabs ul.tabs li,
-.wpe-scheme-dark.woocommerce div.product .woocommerce-tabs ul.tabs li { background: transparent !important; border-color: transparent !important; }
-.wpe-scheme-dark .woocommerce-message,
-.wpe-scheme-dark .woocommerce-info,
-.wpe-scheme-dark .woocommerce-error,
-.wpe-scheme-dark .wc-block-components-notice-banner { background: color-mix(in srgb, var(--c, var(--wpe-primary)) 14%, var(--wpe-surface)) !important; color: var(--wpe-text) !important; border-color: color-mix(in srgb, var(--c, var(--wpe-primary)) 45%, transparent) !important; }
-.wpe-scheme-dark .wc-block-components-notice-banner > svg { fill: #fff; }
-.wpe-scheme-dark .woocommerce-message .button,
-.wpe-scheme-dark .woocommerce-info .button,
-.wpe-scheme-dark .wc-block-components-notice-banner a { background: transparent !important; color: var(--wpe-text) !important; border: 1px solid #3A4566 !important; }
+[data-wpe-scheme="dark"] .woocommerce div.product .woocommerce-tabs ul.tabs li{ background: transparent !important; border-color: transparent !important; }
+[data-wpe-scheme="dark"] .woocommerce-message,
+[data-wpe-scheme="dark"] .woocommerce-info,
+[data-wpe-scheme="dark"] .woocommerce-error,
+[data-wpe-scheme="dark"] .wc-block-components-notice-banner { background: color-mix(in srgb, var(--c, var(--wpe-primary)) 14%, var(--wpe-surface)) !important; color: var(--wpe-text) !important; border-color: color-mix(in srgb, var(--c, var(--wpe-primary)) 45%, transparent) !important; }
+[data-wpe-scheme="dark"] .wc-block-components-notice-banner > svg { fill: #fff; }
+[data-wpe-scheme="dark"] .woocommerce-message .button,
+[data-wpe-scheme="dark"] .woocommerce-info .button,
+[data-wpe-scheme="dark"] .wc-block-components-notice-banner a { background: transparent !important; color: var(--wpe-text) !important; border: 1px solid #3A4566 !important; }

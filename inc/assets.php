@@ -27,9 +27,7 @@ add_action(
 		}
 		wp_enqueue_style( 'wpessential-responsive', WPESSENTIAL_URI . '/assets/css/responsive.css', $wpessential_deps, WPESSENTIAL_VERSION );
 
-		if ( wpessential_is_dark_scheme() ) {
-			wp_enqueue_style( 'wpessential-dark', WPESSENTIAL_URI . '/assets/css/dark.css', array( 'wpessential-responsive' ), WPESSENTIAL_VERSION );
-		}
+		wp_enqueue_style( 'wpessential-dark', WPESSENTIAL_URI . '/assets/css/dark.css', array( 'wpessential-responsive' ), WPESSENTIAL_VERSION );
 
 		wp_enqueue_script(
 			'wpessential',

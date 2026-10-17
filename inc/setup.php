@@ -103,13 +103,3 @@ function wpessential_is_dark_scheme() {
 	}
 	return false;
 }
-
-add_filter(
-	'body_class',
-	static function ( $classes ) {
-		if ( wpessential_is_dark_scheme() ) {
-			$classes[] = 'wpe-scheme-dark';
-		}
-		return $classes;
-	}
-);

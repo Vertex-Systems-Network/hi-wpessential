@@ -56,3 +56,5 @@ Key `wp_options` mein store (autoload off), status transient 24h cache, kabhi bh
 | `wpessential_layout_rendered` | action | Fires after Core/Elementor output replaced an area. |
 | `wpessential_free_shipping_threshold` | filter | Override the free-shipping amount used by the cart progress bar. |
 | `wpessential_back_to_top` | filter | Return `false` to disable the back-to-top button. |
+| `wpessential_scheme_toggle` | filter | Return `false` to remove the visitor light/dark toggle. |
+| `wpessential_scheme_follow_os` | filter | Return `false` to ignore the device colour preference on first visit. |

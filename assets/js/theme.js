@@ -64,3 +64,32 @@
 		} );
 	}
 }() );
+
+// Light / dark toggle: flips <html data-wpe-scheme> and remembers the choice.
+( function () {
+	var root = document.documentElement;
+	function sync() {
+		var dark = root.getAttribute( 'data-wpe-scheme' ) === 'dark';
+		document.querySelectorAll( '.wpe-theme-toggle' ).forEach( function ( btn ) {
+			btn.setAttribute( 'aria-pressed', dark ? 'true' : 'false' );
+			btn.setAttribute( 'aria-label', btn.getAttribute( dark ? 'data-label-light' : 'data-label-dark' ) || '' );
+		} );
+	}
+	document.addEventListener( 'click', function ( e ) {
+		var btn = e.target.closest && e.target.closest( '.wpe-theme-toggle' );
+		if ( ! btn ) {
+			return;
+		}
+		var next = root.getAttribute( 'data-wpe-scheme' ) === 'dark' ? 'light' : 'dark';
+		root.setAttribute( 'data-wpe-scheme', next );
+		try {
+			window.localStorage.setItem( 'wpe-scheme', next );
+		} catch ( err ) {}
+		sync();
+	} );
+	if ( document.readyState === 'loading' ) {
+		document.addEventListener( 'DOMContentLoaded', sync );
+	} else {
+		sync();
+	}
+} )();
