@@ -410,7 +410,6 @@ progress::-moz-progress-bar { background: var(--wpe-primary); }
 	box-shadow: var(--wpe-shadow-lg); animation: wpe-drawer 220ms ease-out;
 }
 .wp-block-navigation__responsive-container.is-menu-open::after { content: none; }
-body:has(.wp-block-navigation__responsive-container.is-menu-open)::before { content: ""; position: fixed; inset: 0; background: rgba(11,16,32,.55); z-index: 99998; }
 @keyframes wpe-drawer { from { transform: translateX(-100%); } to { transform: none; } }
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content { align-items: stretch !important; padding-top: 48px !important; gap: 0 !important; }
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container { align-items: stretch !important; gap: 0 !important; width: 100%; }
@@ -674,4 +673,21 @@ pre, .wp-block-preformatted, .wp-block-verse, .wp-block-code { max-width: 100%; 
 @media (max-width: 781px) {
 	.wp-block-post-content table:not(.wp-block-table table) { display: block; overflow-x: auto; }
 	.wp-block-table { overflow-x: auto; }
+}
+
+/* Header hardening: a fixed drawer can't escape a parent with backdrop-filter. */
+.wpe-header:has(.wp-block-navigation__responsive-container.is-menu-open) { backdrop-filter: none; background: var(--wpe-surface); }
+.wp-block-navigation__responsive-container.is-menu-open { height: 100dvh; overflow-y: auto; z-index: 100000; box-shadow: 0 0 0 100vmax rgba(11, 16, 32, .55) !important; }
+body:has(.wp-block-navigation__responsive-container.is-menu-open) { overflow: hidden; }
+.wpe-header__inner > :first-child .wp-block-site-title,
+.wpe-header__inner > .wp-block-site-title,
+.wpe-header .wp-block-button__link { white-space: nowrap; }
+.wpe-header__inner > :first-child,
+.wpe-header-actions { flex-shrink: 0; }
+.wpe-header__inner > .wp-block-navigation { flex: 1 1 auto; min-width: 0; }
+@media (min-width: 1025px) {
+	.wpe-header .wp-block-navigation__container { row-gap: 0; }
+}
+@media (min-width: 1025px) and (max-width: 1279px) {
+	.wpe-header .wp-block-navigation .wp-block-navigation-item__content { padding-inline: 8px; }
 }
