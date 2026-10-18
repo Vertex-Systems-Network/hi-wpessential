@@ -1,9 +1,9 @@
 <?php
 /**
- * Contract between the theme and the WPEssential Core plugin.
+ * Contract between the theme and the Hi WPEssential Core plugin.
  *
  * Demo import, plugins and licensing live in core/ (loaded by functions.php) or in the
- * standalone WPEssential Core plugin. This file only exposes theme data Core reads.
+ * standalone Hi WPEssential Core plugin. This file only exposes theme data Core reads.
  *
  * @package WPEssential
  */
@@ -50,9 +50,9 @@ add_action(
 		$url = wp_nonce_url( add_query_arg( 'wpessential-dismiss', '1' ), 'wpessential-dismiss' );
 		printf(
 			'<div class="notice notice-info"><p>%1$s <a href="%2$s">%3$s</a> | <a href="%4$s">%5$s</a></p></div>',
-			esc_html__( 'Install the WPEssential Core plugin to import one-click demos for Gutenberg or Elementor.', 'hi-wpessential' ),
+			esc_html__( 'Install the Hi WPEssential Core plugin to import one-click demos for Gutenberg or Elementor.', 'hi-wpessential' ),
 			esc_url( 'https://wpessential.org/core/' ),
-			esc_html__( 'Get WPEssential Core', 'hi-wpessential' ),
+			esc_html__( 'Get Hi WPEssential Core', 'hi-wpessential' ),
 			esc_url( $url ),
 			esc_html__( 'Dismiss', 'hi-wpessential' )
 		);

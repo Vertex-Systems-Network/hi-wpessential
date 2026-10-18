@@ -15,6 +15,6 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"is-style-wpe-lead"} -->
-<p class="is-style-wpe-lead"><?php esc_html_e( 'Guides, tutorials and product news from the WPEssential team.', 'hi-wpessential' ); ?></p>
+<p class="is-style-wpe-lead"><?php esc_html_e( 'Guides, tutorials and product news from the Hi WPEssential team.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></section>
 <!-- /wp:group -->

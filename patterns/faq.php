@@ -21,7 +21,7 @@
 <!-- /wp:group -->
 
 <!-- wp:details {"showContent":true} -->
-<details class="wp-block-details" open><summary><?php esc_html_e( 'Is WPEssential free?', 'hi-wpessential' ); ?></summary><!-- wp:paragraph -->
+<details class="wp-block-details" open><summary><?php esc_html_e( 'Is Hi WPEssential free?', 'hi-wpessential' ); ?></summary><!-- wp:paragraph -->
 <p><?php esc_html_e( 'Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium blocks and priority support.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->

@@ -38,7 +38,7 @@
 
 <!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"is-style-wpe-shadow"} -->
-<figure class="wp-block-image size-full is-style-wpe-shadow"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero.webp' ) ); ?>" alt="<?php esc_attr_e( 'A WPEssential site on a laptop and phone', 'hi-wpessential' ); ?>"/></figure>
+<figure class="wp-block-image size-full is-style-wpe-shadow"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero.webp' ) ); ?>" alt="<?php esc_attr_e( 'A Hi WPEssential site on a laptop and phone', 'hi-wpessential' ); ?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

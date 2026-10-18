@@ -1051,7 +1051,7 @@
 	/* ------------------------------------------------------------------ plugins */
 
 	async function viewPlugins() {
-		view( `<div class="wpe-head"><div><h1>${ esc( __( 'Plugins', 'hi-wpessential' ) ) }</h1><p>${ esc( __( 'Plugins used by WPEssential demos. Install, switch on or off and delete them here.', 'hi-wpessential' ) ) }</p></div></div><div class="wpe-card"><div class="wpe-card__body"><div class="wpe-list" id="wpe-plugins">${ [ 0, 1, 2 ].map( () => '<div class="wpe-row"><div class="wpe-skel" style="width:40px;height:40px"></div><div class="wpe-row__main"><div class="wpe-skel" style="height:12px;width:30%"></div></div></div>' ).join( '' ) }</div></div></div>` );
+		view( `<div class="wpe-head"><div><h1>${ esc( __( 'Plugins', 'hi-wpessential' ) ) }</h1><p>${ esc( __( 'Plugins used by Hi WPEssential demos. Install, switch on or off and delete them here.', 'hi-wpessential' ) ) }</p></div></div><div class="wpe-card"><div class="wpe-card__body"><div class="wpe-list" id="wpe-plugins">${ [ 0, 1, 2 ].map( () => '<div class="wpe-row"><div class="wpe-skel" style="width:40px;height:40px"></div><div class="wpe-row__main"><div class="wpe-skel" style="height:12px;width:30%"></div></div></div>' ).join( '' ) }</div></div></div>` );
 		try {
 			state.plugins = await api( { path: '/wpessential/v1/plugins' } );
 			renderPlugins();
@@ -1219,7 +1219,7 @@
 					<label class="wpe-label">${ esc( __( 'Password', 'hi-wpessential' ) ) }<input type="password" name="password" autocomplete="${ mode === 'login' ? 'current-password' : 'new-password' }" minlength="8" required></label>
 					${ error ? `<div class="wpe-callout wpe-callout--error" role="alert">${ ico( 'error' ) }<div>${ esc( error ) }</div></div>` : '' }
 					<button class="wpe-btn wpe-btn--primary wpe-btn--lg" type="submit" data-busy="${ esc( mode === 'login' ? __( 'Signing in', 'hi-wpessential' ) : __( 'Creating account', 'hi-wpessential' ) ) }">${ esc( mode === 'login' ? __( 'Sign in', 'hi-wpessential' ) : __( 'Create free account', 'hi-wpessential' ) ) }${ ico( 'arrow', 17 ) }</button>
-					${ mode === 'login' ? `<a class="wpe-auth__link" href="https://wpessential.org/my-account/lost-password/" target="_blank" rel="noopener">${ esc( __( 'Forgot password?', 'hi-wpessential' ) ) }</a>` : `<p class="wpe-auth__link wpe-muted">${ esc( __( 'By creating an account you agree to the WPEssential terms.', 'hi-wpessential' ) ) }</p>` }
+					${ mode === 'login' ? `<a class="wpe-auth__link" href="https://wpessential.org/my-account/lost-password/" target="_blank" rel="noopener">${ esc( __( 'Forgot password?', 'hi-wpessential' ) ) }</a>` : `<p class="wpe-auth__link wpe-muted">${ esc( __( 'By creating an account you agree to the Hi WPEssential terms.', 'hi-wpessential' ) ) }</p>` }
 					${ opts.skip ? `<button type="button" class="wpe-btn wpe-btn--ghost" data-skip-auth>${ esc( __( 'Continue without an account', 'hi-wpessential' ) ) }</button>` : '' }
 				</form></div>`;
 			$$( '[data-mode]', box ).forEach( ( b ) => b.addEventListener( 'click', () => {

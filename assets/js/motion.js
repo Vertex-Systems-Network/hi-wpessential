@@ -1,5 +1,5 @@
 /**
- * WPEssential motion: reveals elements as they scroll into view.
+ * Hi WPEssential motion: reveals elements as they scroll into view.
  * Opt in with the block class `wpe-anim` (+ `wpe-anim--fade|fade-up|zoom|slide-left|slide-right|mask|stagger|parallax|counter`);
  * common theme blocks are animated automatically.
  */

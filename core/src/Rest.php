@@ -188,7 +188,7 @@ class Rest {
 			}
 		}
 		if ( ! $entry ) {
-			return $this->respond( new \WP_Error( 'wpe_plugin', __( 'This plugin is not managed by WPEssential.', 'hi-wpessential' ) ) );
+			return $this->respond( new \WP_Error( 'wpe_plugin', __( 'This plugin is not managed by Hi WPEssential.', 'hi-wpessential' ) ) );
 		}
 		switch ( $action ) {
 			case 'install':

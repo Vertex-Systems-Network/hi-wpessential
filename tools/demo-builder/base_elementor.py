@@ -25,9 +25,9 @@ def home():
         e.container(e.overline('Multi-niche WordPress theme', 'on-ink'), e.heading('Build any website in minutes', 1, 'on-ink', size_px=72),
                     e.text('Import a ready-made demo for Gutenberg or Elementor with one click, then make it yours.', 'on-ink-muted', size_px=18),
                     e.row(e.button('Get started', '{{page:pricing}}'), e.button('Learn more', '{{page:about}}', 'light'), gap=12, mobile_direction='row', wrap=True),
-                    e.image('hero', 'A WPEssential site on a laptop and phone', radius=16),
+                    e.image('hero', 'A Hi WPEssential site on a laptop and phone', radius=16),
                     bg='ink', pad=(120, 24, 96, 24), align='center', gap=24),
-        e.container(e.overline('Why WPEssential'), e.heading('Everything you need, nothing you don\'t'),
+        e.container(e.overline('Why Hi WPEssential'), e.heading('Everything you need, nothing you don\'t'),
                     e.grid(*[e.icon_box(i, t, d) for i, t, d in [('fas fa-download', 'One-click demos', 'Import a complete site with pages, products and menus.'),
                                                                  ('fas fa-layer-group', 'Two builders', 'Every demo ships for Gutenberg and Elementor.'),
                                                                  ('fas fa-bolt', 'Fast by default', 'No jQuery, local fonts and tiny CSS.')]], columns=3), pad=(96, 24, 96, 24)),
@@ -43,7 +43,7 @@ def home():
                     e.grid(*[e.image_box(img, t, x, link='{{page:%s}}' % k, height=240) for k, img, t, x in [
                         ('article-1', 'post-1', 'Building a design system your whole team can use', 'Turn colours, type and spacing into shared tokens.'),
                         ('article-2', 'post-2', 'A launch checklist for small business websites', 'Twelve checks we run before every site goes live.'),
-                        ('article-3', 'post-3', 'Gutenberg or Elementor? Choosing the right builder', 'Both are first-class in WPEssential.')]], columns=3), pad=(96, 24, 96, 24)),
+                        ('article-3', 'post-3', 'Gutenberg or Elementor? Choosing the right builder', 'Both are first-class in Hi WPEssential.')]], columns=3), pad=(96, 24, 96, 24)),
         e.container(e.heading('Ready to build your website?', 2, 'on-ink', align='center'), e.button('Get started', '{{page:pricing}}', align='center'),
                     bg='ink', pad=(96, 24, 96, 24), align='center'),
     ]

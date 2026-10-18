@@ -1,5 +1,5 @@
 /**
- * WPEssential front-end: sticky header shadow, back-to-top, Woo quantity steppers.
+ * Hi WPEssential front-end: sticky header shadow, back-to-top, Woo quantity steppers.
  * No dependencies. Loaded with the `defer` strategy.
  */
 ( function () {

@@ -169,7 +169,7 @@ def g_footer():
                     [('Shop', [('All products', '{{woo:shop}}'), ('Dresses', '{{term_link:pc-dresses}}'), ('Knitwear', '{{term_link:pc-knitwear}}'), ('Outerwear', '{{term_link:pc-outerwear}}')]),
                      ('Maison', [('Atelier', '{{page:atelier}}'), ('Lookbook', '{{page:lookbook}}'), ('Journal', '{{page:journal}}'), ('Stores', '{{page:contact}}')]),
                      ('Help', [('Shipping & returns', '{{page:help}}'), ('My account', '{{woo:myaccount}}'), ('Cart', '{{woo:cart}}'), ('Contact', '{{page:contact}}')])],
-                    ('© Maison Atelier. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">WPEssential</a>'),
+                    ('© Maison Atelier. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">Hi WPEssential</a>'),
                     band=('Letters from the atelier', 'New collections and repair days, once a month.', 'Join the list', '{{page:contact}}'))
 
 

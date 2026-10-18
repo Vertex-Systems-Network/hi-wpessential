@@ -21,7 +21,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"is-style-wpe-lead"} -->
-<p class="is-style-wpe-lead"><?php esc_html_e( 'WPEssential started as an internal starter theme for client work. Today it powers stores, agencies and creators in more than 60 countries.', 'hi-wpessential' ); ?></p>
+<p class="is-style-wpe-lead"><?php esc_html_e( 'Hi WPEssential started as an internal starter theme for client work. Today it powers stores, agencies and creators in more than 60 countries.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></section>
 <!-- /wp:group -->
 
