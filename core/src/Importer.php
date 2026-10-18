@@ -1190,8 +1190,16 @@ class Importer {
 		} elseif ( ! empty( $settings['style'] ) ) {
 			$this->style_variation( sanitize_key( $settings['style'] ) );
 		}
-		foreach ( (array) ( $settings['parts'] ?? array() ) as $area => $spec ) {
+		$parts = (array) ( $settings['parts'] ?? array() );
+		foreach ( $parts as $area => $spec ) {
 			$this->template_part( sanitize_key( $area ), $spec );
+		}
+		// Parts this demo does not set go back to the theme's own, so a previous demo's header
+		// or footer does not stay behind.
+		foreach ( array( 'header', 'header-shop', 'header-transparent', 'footer' ) as $part ) {
+			if ( ! isset( $parts[ $part ] ) ) {
+				$this->template_part( $part, array( 'theme' => true ) );
+			}
 		}
 
 		if ( ! empty( $settings['motion'] ) ) {
@@ -1274,7 +1282,10 @@ class Importer {
 		if ( ! $area || ! is_readable( get_theme_file_path( 'parts/' . $part . '.html' ) ) ) {
 			return;
 		}
-		if ( is_array( $spec ) && ! empty( $spec['content'] ) ) {
+		if ( is_array( $spec ) && ! empty( $spec['theme'] ) ) {
+			$slug    = $part;
+			$content = (string) file_get_contents( get_theme_file_path( 'parts/' . $part . '.html' ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Theme file.
+		} elseif ( is_array( $spec ) && ! empty( $spec['content'] ) ) {
 			$slug    = __( 'demo', 'hi-wpessential' );
 			$content = $this->tokens( (string) $spec['content'], true );
 		} elseif ( is_string( $spec ) && is_readable( get_theme_file_path( 'parts/' . sanitize_key( $spec ) . '.html' ) ) ) {
@@ -1298,6 +1309,9 @@ class Importer {
 				),
 			)
 		);
+		if ( ! $existing && is_array( $spec ) && ! empty( $spec['theme'] ) ) {
+			return; // Already the theme's part.
+		}
 		if ( $existing ) {
 			$this->track( 'part_' . $part, array( $existing[0]->ID, $existing[0]->post_content ) );
 			wp_update_post(
