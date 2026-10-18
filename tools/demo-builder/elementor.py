@@ -269,6 +269,7 @@ def icon_box(icon, title, desc, align='left'):
 
 def icon_list(items, icon='fas fa-check', color_slug='text'):
     s = {'icon_list': [{'_id': _id(), 'text': t, 'selected_icon': {'value': icon, 'library': 'fa-solid'}} for t in items],
+         'icon_size': size(14), 'text_indent': size(8), 'space_between': size(8),
          '__globals__': {'icon_color': color('accent'), 'text_color': color(color_slug),
                          'icon_typography_typography': font('text')}}
     return widget('icon-list', s)
