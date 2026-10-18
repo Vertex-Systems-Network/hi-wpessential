@@ -213,7 +213,7 @@ class MyAccount {
 			} else {
 				$ends = date_i18n( get_option( 'date_format' ), strtotime( $shape['expires'] ) );
 			}
-			$limit  = $shape['sites_limit'] ? $shape['sites_limit'] : '∞';
+			$limit = $shape['sites_limit'] ? $shape['sites_limit'] : '∞';
 			echo '<section class="wpes-license wpes-license--' . esc_attr( $status ) . '">';
 			echo '<header><div><span class="wpes-plan">' . esc_html( $shape['plan'] ) . '</span><span class="wpes-status">' . esc_html( $labels[ $status ] ?? $status ) . '</span></div>';
 			echo '<code class="wpes-key" title="' . esc_attr__( 'License key', 'wpessential-server' ) . '">' . esc_html( $shape['key'] ) . '</code></header>';

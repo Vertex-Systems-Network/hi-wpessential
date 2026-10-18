@@ -38,7 +38,7 @@ class Plans {
 			),
 		);
 		// Each tier sells monthly, yearly (20% off twelve months) and lifetime (one major version).
-		$tiers = array(
+		$tiers   = array(
 			'starter' => array(
 				'name'     => __( 'Starter', 'wpessential-server' ),
 				'monthly'  => 10,
@@ -47,7 +47,7 @@ class Plans {
 				'white'    => 0,
 				'features' => array( __( '1 theme + its demos', 'wpessential-server' ), __( 'Gutenberg & Elementor', 'wpessential-server' ), __( '1 website', 'wpessential-server' ), __( 'Updates & support', 'wpessential-server' ) ),
 			),
-			'pro' => array(
+			'pro'     => array(
 				'name'     => __( 'Pro', 'wpessential-server' ),
 				'monthly'  => 30,
 				'lifetime' => 719,
@@ -55,7 +55,7 @@ class Plans {
 				'white'    => 0,
 				'features' => array( __( 'All themes + every demo', 'wpessential-server' ), __( 'Early access to new demos', 'wpessential-server' ), __( '5 websites', 'wpessential-server' ), __( 'Priority support', 'wpessential-server' ) ),
 			),
-			'agency' => array(
+			'agency'  => array(
 				'name'     => __( 'Agency', 'wpessential-server' ),
 				'monthly'  => 100,
 				'lifetime' => 2399,
