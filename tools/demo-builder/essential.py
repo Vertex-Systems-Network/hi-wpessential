@@ -802,18 +802,6 @@ def e_pricing():
             e.container(e.heading('Frequently asked questions'), e.accordion(FAQ), pad=(72, 24, 72, 24))]
 
 
-def e_services():
-    return [e_title('Services', 'Your site, launched by the people who build the theme.', 'Design, setup, speed and care from the WPEssential team at Vertex Systems Network (Pvt.) Ltd.'),
-            e.container(e.shortcode('[products category="services" columns="3" limit="12" orderby="menu_order" order="ASC"]'), pad=(24, 24, 72, 24)),
-            e.container(e.heading('How a project runs'),
-                        e.grid(*[e.container(e.heading('0%d' % (i + 1), 3, 'primary', size_px=40), e.heading(t, 3, size_px=22), e.text(d), inner=True, gap=8)
-                                 for i, (t, d) in enumerate([('Discovery call', '30 minutes on goals, content and budget.'), ('Proposal', 'Fixed price, scope and timeline within 48 hours.'),
-                                                             ('Build', 'Weekly previews on a staging site you can click through.'), ('Launch & care', 'We go live, train your team and stay on call.')])], columns=4),
-                        bg='surface-alt', pad=(72, 24, 72, 24)),
-            e.container(e.heading('Tell us about your project', 3, align='center'), e.text('Free 30-minute call. Fixed quote within 48 hours.', align='center'),
-                        e.button('Book a free call', '{{page:contact}}', align='center'), pad=(72, 24, 72, 24))]
-
-
 def e_docs():
     return [e_title('Documentation', 'How can we help?', 'Guides for the theme, the demos and your account.'),
             e.container(e.text('<form role="search" method="get" action="{{home:}}" class="wpe-search-form"><input type="search" name="s" placeholder="Search the docs…" aria-label="Search the docs"> <button type="submit">Search</button></form>'), pad=(0, 24, 40, 24)),
@@ -841,13 +829,126 @@ def e_about():
                         bg='ink', pad=(64, 24, 64, 24), align='center')]
 
 
+def e_proof():
+    return e.container(e.grid(*[e.container(e.heading(n, 3, 'secondary', size_px=26), e.text(l, size_px=13), inner=True, pad=20, radius=16, bg='surface-alt', gap=4)
+                                for n, l in [('1,200+', 'WordPress sites delivered'), ('4.9 / 5', 'from 640 client reviews'), ('< 1 day', 'average first reply'), ('12 yrs', 'building for WordPress')]], columns=4),
+                       e.text('Trusted by agencies, stores and publishers: <strong>Northwind · Kitecraft · Fieldhouse · Lumen Studio · Orbitly · Mosaic &amp; Co</strong>', size_px=14),
+                       pad=(48, 24, 48, 24))
+
+
+def e_work():
+    return e.container(e.overline('Recent work'), e.heading('Sites we built for teams like yours.'),
+                       e.text('Every project ships on Hi WPEssential, so you can keep editing it yourself after launch.'),
+                       e.grid(*[e.image_box(k, t, tag + '<br><strong>✓ ' + r + '</strong>', height=220) for k, tag, t, r in [
+                           ('site-base', 'Business · Custom design', 'Synergy Advisors: new site and lead funnel in 3 weeks', '+62% enquiries in the first quarter'),
+                           ('site-maison', 'WooCommerce store', 'Maison: fashion store with lookbook and 12 variable products', '2.1s → 0.9s load time on mobile'),
+                           ('site-pulse', 'Events · Migration', 'Pulse Conference: agenda, tickets and Events Calendar', '2,400 tickets sold online')]], columns=3),
+                       e.container(e.testimonial('They scoped it in two days, launched in three weeks and still answer our tickets the same day. It feels like having our own WordPress team.',
+                                                 'Ayesha Malik', 'Marketing Lead, Fieldhouse Goods'), inner=True, bg='surface-alt', radius=20, pad=32),
+                       pad=(80, 24, 80, 24))
+
+
+def e_team():
+    return e.container(e.row(
+        e.col(e.overline('Who you will talk to'), e.heading('Real people, one team.'),
+              e.text('No call centre and no outsourcing — the people who build the theme run your project.'),
+              e.grid(*[e.image_box('team-%d' % i, n, r, height=180, people=True) for i, (n, r) in enumerate(
+                  [('Ayesha Malik', 'Project lead'), ('Bilal Khan', 'Lead developer'), ('Sara Ahmed', 'Client success'), ('Usman Tariq', 'WooCommerce')], 1)], columns=4), width=55),
+        e.col(e.map_widget('Lahore, Pakistan', height=420), width=45), gap=48), pad=(80, 24, 80, 24))
+
+
 def e_contact():
-    return [e_title('Contact', 'Talk to the WPEssential team', 'We reply within one business day, Monday to Friday.'),
-            e.container(e.grid(*[e.icon_box(i, t, d) for i, t, d in [('fas fa-life-ring', 'Support', 'support@wpessential.org'), ('fas fa-cart-shopping', 'Sales', 'sales@wpessential.org'),
-                                                                     ('fas fa-briefcase', 'Services', 'services@wpessential.org')]], columns=3), pad=(24, 24, 40, 24)),
-            e.container(e.heading('Follow @wpessential', 3), e.widget('social-icons', {'social_icon_list': [
-                {'_id': e._id(), 'social_icon': {'value': 'fab fa-%s' % ('x-twitter' if n == 'X' else n.lower()), 'library': 'fa-brands'},
-                 'link': {'url': u, 'is_external': 'on', 'nofollow': ''}} for n, u in SOCIAL], 'shape': 'circle'}), pad=(24, 24, 80, 24))]
+    side = [('fas fa-clock', 'Response times', 'Sales: within one business day<br>Projects: quote within two business days<br>Support: through the ticket desk'),
+            ('fas fa-envelope', 'Email us directly', 'sales@wpessential.org<br>services@wpessential.org<br>support@wpessential.org'),
+            ('fas fa-building', 'Office hours', 'Monday – Friday, Pakistan time (UTC+5)<br>Vertex Systems Network (Pvt.) Ltd.'),
+            ('fas fa-life-ring', 'Already a customer?', '<a href="{{page:docs}}">Documentation</a> · <a href="{{page:support}}">Open a ticket</a> · <a href="{{woo:myaccount}}">My account</a>')]
+    steps = [('We reply', 'A real person answers within one business day.'), ('Discovery call', '30 minutes on goals, content, budget and deadlines.'),
+             ('Fixed quote', 'Scope, price and timeline in writing — no surprises.'), ('Kickoff', 'We start on the agreed date and share weekly previews.')]
+    return [e_title('Contact', 'How can we help?', 'Pre-sales questions, new projects or an existing order — the right team replies, usually within one business day.'),
+            e.container(e_icon_cards([('fas fa-credit-card', 'Plans & licensing', 'Which plan fits, lifetime licences, agencies and invoices.'),
+                                      ('fas fa-palette', 'Start a project', 'Design, setup, WooCommerce, migration, speed or care plans. <a href="{{page:quote}}">Request a quote →</a>'),
+                                      ('fas fa-headset', 'Already a customer?', 'Bugs, demo import or licence questions. <a href="{{page:support}}">Open a ticket →</a>')]), pad=(8, 24, 8, 24)),
+            e_proof(),
+            e.container(e.row(e.col(e.heading('Send us a message', 2, size_px=28), e.shortcode('[wpforms id="{{form:contact}}" title="false"]'), width=64, pad=32, radius=20, border='border', bg='surface'),
+                              e.col(*[e.container(e.icon_box(i, t, d), inner=True, pad=20, radius=16, border='border', bg='surface') for i, t, d in side], width=36, gap=16), gap=32),
+                        pad=(24, 24, 80, 24)),
+            e.container(e.overline('What happens next'), e.heading('From message to kickoff in four steps.'),
+                        e.grid(*[e.container(e.heading('0%d' % (k + 1), 3, 'primary', size_px=28), e.heading(t, 3, size_px=20), e.text(d), inner=True, pad=24, radius=16, bg='surface', gap=8)
+                                 for k, (t, d) in enumerate(steps)], columns=4), bg='surface-alt', pad=(80, 24, 80, 24)),
+            e_work(), e_team(),
+            e.container(e.overline('FAQ'), e.heading('Questions we hear before every project.'),
+                        e.accordion([('Do you offer pre-sales help?', 'Yes — email sales@wpessential.org or use the form.'), ('Is there a refund policy?', 'Every plan has a 14-day money-back guarantee.'),
+                                     ('Do you work on sites not built with Hi WPEssential?', 'Yes. Most services work on any WordPress site.'), ('Do you sign NDAs?', 'Yes, on request.'),
+                                     ('Which time zones do you cover?', 'Pakistan time (UTC+5), overlapping with Europe, the Gulf and US mornings.')]), bg='surface-alt', pad=(80, 24, 80, 24))]
+
+
+def e_services():
+    steps = [('Discovery call', '30 minutes on goals, content and budget.'), ('Proposal', 'Fixed price, scope and timeline within 48 hours.'),
+             ('Build', 'Weekly previews on a staging site you can click through.'), ('Launch & care', 'We go live, train your team and stay on call.')]
+    return [e_title('Services', 'Your site, launched by the people who build the theme.', 'Design, setup, speed and care from the WPEssential team at Vertex Systems Network (Pvt.) Ltd.'),
+            e_proof(),
+            e.container(e.overline('What we do'), e.heading('Services'),
+                        e_icon_cards([(i, t, d + ' <a href="%s">%s →</a>' % (svc_link(t), p)) for i, t, d, p in SERVICES]), pad=(48, 24, 72, 24)),
+            e.container(e.overline('Process'), e.heading('How a project runs'),
+                        e.grid(*[e.container(e.heading('0%d' % (k + 1), 3, 'primary', size_px=32), e.heading(t, 3, size_px=20), e.text(d), inner=True, gap=8) for k, (t, d) in enumerate(steps)], columns=4),
+                        bg='surface-alt', pad=(72, 24, 72, 24)),
+            e_work(), e_team(),
+            e.container(e.heading('Tell us about your project', 3, align='center'), e.text('Free 30-minute call. Fixed quote within 48 hours.', align='center'),
+                        e.button('Book a free call', '{{page:contact}}', align='center'), pad=(72, 24, 72, 24))]
+
+
+def e_service(i):
+    _, name, desc, price = SERVICES[i]
+    slug, headline, who, included, turnaround = svc.DETAIL[name]
+    out = [e.container(e.row(e.col(e.text('<a href="{{page:services}}">Services</a> / ' + name, 'on-ink-muted', size_px=13), e.overline(name, 'on-ink'),
+                                   e.heading(headline, 1, 'on-ink', size_px=56), e.text(desc, 'on-ink-muted', size_px=17),
+                                   e.text('<strong>Starting at %s</strong> · <strong>Typical turnaround %s</strong>' % (price.replace('from ', ''), turnaround), 'on-ink', size_px=15),
+                                   e.row(e.button('Request a quote', '{{page:quote}}'), e.button('Book a call', '{{page:contact}}', 'light'), gap=12, mobile_direction='row', wrap=True), width=55, justify='center'),
+                             e.col(e.image('site-base', name, radius=16), width=45), gap=48), bg='ink', pad=(80, 24, 80, 24)),
+           e.container(e.row(e.col(e.overline('Who it is for'), e.heading(who, 2, size_px=36), width=50),
+                             e.col(e.container(e.heading('What is included', 3, size_px=20), e.icon_list(included), inner=True, pad=28, radius=20, bg='surface-alt'), width=50), gap=48),
+                       pad=(80, 24, 80, 24))]
+    if slug == 'care-plans':
+        out.append(e.container(e.overline('Plans'), e.heading('Pick a plan — cancel any month.'),
+                               e.grid(*[e.container(e.heading(n, 3, 'on-ink' if feat else 'text', size_px=20), e.heading('$%s / month' % p, 2, 'on-ink' if feat else 'text', size_px=36),
+                                                    e.icon_list(inc, color_slug='on-ink' if feat else 'text'), e.button('Choose ' + n, '{{page:quote}}', 'primary' if feat else 'outline'),
+                                                    inner=True, pad=28, radius=20, border=None if feat else 'border', bg='ink' if feat else 'surface', gap=14)
+                                        for n, p, inc, feat in CARE_PLANS], columns=3), pad=(48, 24, 80, 24)))
+    out += [e_work(),
+            e.container(e.row(e.col(e.overline('FAQ'), e.heading('Questions about ' + name), width=45),
+                              e.col(e.heading('Get a quote for ' + name, 3, size_px=22), e.shortcode('[wpforms id="{{form:service}}" title="false"]'), width=55, pad=28, radius=20, border='border', bg='surface'), gap=48),
+                        bg='surface-alt', pad=(80, 24, 80, 24))]
+    return out
+
+
+def e_quote():
+    return [e_title('Request a quote', 'Tell us about your project', 'A fixed quote, scope and timeline within two business days. Free 30-minute call included.'),
+            e.container(e.row(e.col(e.shortcode('[wpforms id="{{form:quote}}" title="false"]'), width=64, pad=32, radius=20, border='border', bg='surface'),
+                              e.col(e.container(e.icon_box('fas fa-list-check', 'What happens next', 'We read your brief the same day, call if anything is unclear, and send a fixed quote within two business days.'),
+                                                inner=True, pad=20, radius=16, bg='surface-alt'), width=36), gap=32), pad=(24, 24, 80, 24)),
+            e_work()]
+
+
+def e_support():
+    side = [('fas fa-book', 'Before you open a ticket', 'Search the <a href="{{page:docs}}">docs</a>, update the theme and plugin, and try with other plugins switched off.'),
+            ('fas fa-clock', 'Response times', 'Pro: within 1 business day<br>Agency: same day<br>Care plans: priority queue'),
+            ('fas fa-screwdriver-wrench', 'Need it done for you?', 'Bug fixes from $79 — <a href="{{page:svc-bug-fixes}}">we fix it, you relax</a>.')]
+    return [e_title('Support', 'How can we fix it?', 'Customers with an active licence get help from the developers who build the theme.'),
+            e.container(e.row(e.col(e.heading('Open a ticket', 2, size_px=28), e.shortcode('[wpforms id="{{form:support}}" title="false"]'), width=62, pad=32, radius=20, border='border', bg='surface'),
+                              e.col(*[e.container(e.icon_box(i, t, d), inner=True, pad=20, radius=16, border='border', bg='surface') for i, t, d in side], width=38, gap=16), gap=32),
+                        pad=(24, 24, 96, 24))]
+
+
+def e_changelog():
+    return [e_title('Changelog', 'What’s new in Hi WPEssential', 'Every release, with what changed and why.')] + [
+        e.container(e.container(e.heading('Version %s' % v, 2, size_px=28), e.text(d, size_px=13), e.icon_list(['%s — %s' % (t, x) for t, x in items], icon='fas fa-circle-check'),
+                                inner=True, pad=28, radius=20, border='border', bg='surface', gap=10), pad=(12, 24, 12, 24)) for v, d, items in RELEASES] + [e.container(e.spacer(48), pad=0)]
+
+
+def e_roadmap():
+    return [e_title('Roadmap', 'What we are building next', 'Vote for features and see what is in progress. Suggest your own from My Account.'),
+            e.container(e.grid(*[e.container(e.heading(c, 3, size_px=22), e.icon_list(items, icon='fas fa-caret-up'), inner=True, pad=24, radius=20, bg='surface-alt', gap=12)
+                                 for c, items in ROADMAP], columns=3), pad=(24, 24, 96, 24))]
 
 
 # Package --------------------------------------------------------------------------------
@@ -868,10 +969,10 @@ def package(builder):
     pages = [('home', 'Home', 'home', g_home, e_home), ('demos', 'Demos', 'demos', g_demos, e_demos),
              ('plugins', 'Plugins', 'plugins', g_plugins, e_plugins), ('pricing', 'Pricing', 'pricing', g_pricing, e_pricing), ('services', 'Services', 'services', g_services, e_services),
              ('docs', 'Docs', 'docs', g_docs, e_docs), ('about', 'About', 'about', g_about, e_about),
-             ('contact', 'Contact', 'contact', g_contact, e_contact), ('quote', 'Request a quote', 'request-a-quote', g_quote, e_contact),
-             ('support', 'Support', 'support', g_support, e_contact),
-             ('changelog', 'Changelog', 'changelog', g_changelog, e_docs), ('roadmap', 'Roadmap', 'roadmap', g_roadmap, e_docs)]
-    pages += [('svc-' + svc.DETAIL[n][0], n, svc.DETAIL[n][0], (lambda i=i: g_service(i)), e_services) for i, (_, n, _d, _p) in enumerate(SERVICES)]
+             ('contact', 'Contact', 'contact', g_contact, e_contact), ('quote', 'Request a quote', 'request-a-quote', g_quote, e_quote),
+             ('support', 'Support', 'support', g_support, e_support),
+             ('changelog', 'Changelog', 'changelog', g_changelog, e_changelog), ('roadmap', 'Roadmap', 'roadmap', g_roadmap, e_roadmap)]
+    pages += [('svc-' + svc.DETAIL[n][0], n, svc.DETAIL[n][0], (lambda i=i: g_service(i)), (lambda i=i: e_service(i))) for i, (_, n, _d, _p) in enumerate(SERVICES)]
     content = []
     for key, title, slug, g, el in pages:
         item = {'key': key, 'type': 'page', 'title': title, 'slug': slug, 'template': 'page-full-width'}
