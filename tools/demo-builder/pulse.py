@@ -345,9 +345,10 @@ def e_speaker(s, topic=True):
 
 def e_session(t):
     time, length, track, room, title, sp = t
-    return e.row(e.col(e.heading(time, 3, size_px=22), e.text(length), width=15),
-                 e.col(e.overline('%s · %s' % (track, room)), e.heading(title, 3, size_px=22), e.text(speaker_names(sp)) if sp else e.spacer(1), width=85),
-                 gap=24, pad=24, bg='surface', radius=20, border='border', mobile_direction='column')
+    return e.row(e.col(e.heading(time, 3, size_px=20), e.text(length, size_px=13), width=12),
+                 e.col(e.text('<span class="px-tag px-tag--%s">%s</span> <span class="px-room">%s</span>' % (track.lower().split()[0], track, room), size_px=12),
+                       e.heading(title, 3, size_px=20), e.text(speaker_names(sp), size_px=13) if sp else e.spacer(1), width=88, gap=6),
+                 gap=24, pad=20, bg='surface', radius=16, border='border', mobile_direction='row')
 
 
 def e_title(over, title, lead):
@@ -409,12 +410,13 @@ def e_speakers():
 
 
 def e_agenda():
-    return [e_title('Agenda', 'Two days, three stages', 'All times are Lisbon time (WEST, UTC+1). Workshops run on 12 May at LX Factory.'),
-            e.container(e.heading('Day 1 · Thursday 13 May'), *[e_session(t) for t in DAY1], pad=(24, 24, 64, 24), gap=16),
-            e.container(e.heading('Day 2 · Friday 14 May'), *[e_session(t) for t in DAY2], bg='surface-alt', pad=(64, 24, 64, 24), gap=16),
-            e.container(e.heading('Add Pulse to your calendar', 3, align='center'),
-                        e.row(e.button('Browse all events', '{{home:events/}}'), e.button('Get tickets', '{{page:tickets}}', 'outline'), gap=12, justify='center', mobile_direction='row', wrap=True),
-                        pad=(64, 24, 64, 24), align='center')]
+    tabs = e.text('<a href="#day-1"><strong>Day 1 · Thu 13</strong></a> &nbsp;·&nbsp; <a href="#day-2">Day 2 · Fri 14</a> &nbsp;·&nbsp; <a href="{{home:events/}}">Workshops · Wed 12</a>', size_px=14)
+    legend = e.text('Tracks: Design · Engineering · AI · Product', size_px=12)
+    return [e_title('Agenda', 'Two days, three stages', 'Times are Lisbon time (WEST, UTC+1). Workshops run on 12 May at LX Factory.'),
+            e.container(tabs, legend, e.text('<h3 id="day-1">Day 1 · Thursday 13 May</h3>'), *[e_session(t) for t in DAY1],
+                        e.text('<h3 id="day-2">Day 2 · Friday 14 May</h3>'), *[e_session(t) for t in DAY2],
+                        e.row(e.button('Add to calendar', '{{home:events/}}', 'outline'), e.button('Get tickets', '{{page:tickets}}'), gap=12, mobile_direction='row', wrap=True),
+                        pad=(24, 24, 96, 24), gap=12)]
 
 
 def e_tickets():
