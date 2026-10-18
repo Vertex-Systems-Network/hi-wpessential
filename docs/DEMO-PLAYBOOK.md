@@ -16,7 +16,26 @@ Read it fully before starting a demo. Update it when a rule changes; never work 
 9. **Sharp at the largest breakpoint (1920 px).** Every image must look crisp in the biggest place it is used at 1920 px, including retina. Generate at Figma AI's maximum (`gpt-image-2.5-sunburst`, 1536 × 1024), then upscale 2× with an AI upscaler to 3072 × 2048 before exporting to the theme as WebP. Never stretch a small image in a layout; regenerate it instead.
 10. **One size for every image.** All images are generated at the same size and ratio: 1536 × 1024 (3:2). Compose with the subject centred and generous margins on every side, so the same file crops to 16:9 heroes, 3:4 product cards, 1:1 tiles or 4:5 mobile without losing the subject or the head.
 11. **Accessibility.** WCAG 2.2 AA contrast in both schemes, focus states visible, motion respects `prefers-reduced-motion`.
-12. **SEO 100% — the base theme and every demo.** No demo ships with an SEO gap.
+12. **Hovers and animations from the niche's research.**
+    Every interactive element has a designed hover, focus and active state: buttons, links, nav items, cards, images, product cards, speaker/team cards, icons, form fields and pagination.
+
+    - **Research first.** The behaviour comes from the niche's research. Record it in the brief, in the "Hover & motion" table with sources. For example:
+      - Luxury fashion: no card lift, a slow 0.9 s zoom, a second-image (back view) crossfade, a drawn underline and inverted buttons.
+      - Tech conference: greyscale-to-colour speakers, cards that lift with an accent ring, buttons that lift and glow, all snappy at about 0.26 s.
+    - **Hover implementation.**
+      - Values live in the variation's `settings.custom.hover` tokens (zoom, lift, productLift, shadow, cardShadow, duration, ease, buttonLift, buttonGlow, underline, imageRest), applied by `assets/css/hover.css`.
+      - Elementor uses only native hover controls (hover colours, Hover Animation, CSS Filters hover, transition duration), set via `e.HOVER` per demo.
+      - Elementor V4 / MCP builds put hovers in each element's `&:hover` style.
+    - **Animations.**
+      - Each demo picks a motion preset that fits the niche (§5), such as editorial for luxury, dynamic for events or subtle for business.
+      - Reveal-on-scroll, counters, marquee and parallax are listed in the brief.
+      - Motion never hides the LCP element.
+    - **Accessibility.** Motion runs only for real pointers (`hover: hover`) and when `prefers-reduced-motion` is not set. Focus-visible mirrors hover. Nothing important appears only on hover.
+    - **Figma.**
+      - The UI Kit shows hover, focus and active states for every component.
+      - Prototype interactions show the hover, so the design, both builders and MCP builds match.
+
+13. **SEO 100% — the base theme and every demo.** No demo ships with an SEO gap.
 
     - **Semantics.**
       - One `<h1>` per page.
@@ -124,7 +143,8 @@ Elements opt in with the block class `wpe-anim` plus `wpe-anim--fade-up|fade|zoo
 - [ ] No horizontal scroll at any breakpoint, light and dark
 - [ ] Figma audit: no clipped text, no word broken mid-word, no empty frame inflating headers, no tall empty column next to a long one
 - [ ] Differentiation table (§7) updated
-- [ ] SEO gate (§1.12): Lighthouse SEO 100 / A11y ≥ 95 on every template, both builders; JSON-LD valid; unique titles + descriptions; 0 broken links
+- [ ] Hover/focus/active states on every interactive element, matching the niche research (§1.12), in Figma, Gutenberg, Elementor and MCP builds; reduced-motion respected
+- [ ] SEO gate (§1.13): Lighthouse SEO 100 / A11y ≥ 95 on every template, both builders; JSON-LD valid; unique titles + descriptions; 0 broken links
 
 ## 7. Demo register (keep up to date)
 

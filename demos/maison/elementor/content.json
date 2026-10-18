@@ -384,7 +384,12 @@
 											"background_color": "globals/colors?id=wped302e97",
 											"button_text_color": "globals/colors?id=text"
 										},
-										"background_background": "classic"
+										"background_background": "classic",
+										"button_hover_transition_duration": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
+										}
 									},
 									"elements": []
 								},
@@ -403,7 +408,9 @@
 										"__globals__": {
 											"typography_typography": "globals/typography?id=accent",
 											"button_text_color": "globals/colors?id=text",
-											"border_color": "globals/colors?id=text"
+											"border_color": "globals/colors?id=text",
+											"button_background_hover_color": "globals/colors?id=text",
+											"hover_color": "globals/colors?id=wped302e97"
 										},
 										"background_background": "classic",
 										"background_color": "rgba(0,0,0,0)",
@@ -415,7 +422,13 @@
 											"bottom": "1",
 											"left": "1",
 											"isLinked": true
-										}
+										},
+										"button_hover_transition_duration": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
+										},
+										"button_background_hover_background": "classic"
 									},
 									"elements": []
 								}
@@ -556,7 +569,8 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
@@ -568,6 +582,11 @@
 											"url": "{{term_link:pc-dresses}}",
 											"is_external": "",
 											"nofollow": ""
+										},
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -597,7 +616,8 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
@@ -609,6 +629,11 @@
 											"url": "{{term_link:pc-knitwear}}",
 											"is_external": "",
 											"nofollow": ""
+										},
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -638,7 +663,8 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
@@ -650,6 +676,11 @@
 											"url": "{{term_link:pc-outerwear}}",
 											"is_external": "",
 											"nofollow": ""
+										},
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -679,7 +710,8 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
@@ -691,6 +723,11 @@
 											"url": "{{term_link:pc-accessories}}",
 											"is_external": "",
 											"nofollow": ""
+										},
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -904,7 +941,12 @@
 													"sizes": []
 												},
 												"object-fit": "cover",
-												"object-position": "center center"
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
 											},
 											"elements": []
 										}
@@ -1049,7 +1091,26 @@
 												},
 												"size": "md",
 												"__globals__": {
-													"typography_typography": "globals/typography?id=accent"
+													"typography_typography": "globals/typography?id=accent",
+													"hover_color": "globals/colors?id=text",
+													"button_hover_border_color": "globals/colors?id=text"
+												},
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												},
+												"button_background_hover_background": "classic",
+												"button_background_hover_color": "rgba(0,0,0,0)",
+												"button_hover_border_color": "currentColor",
+												"border_border": "solid",
+												"border_width": {
+													"unit": "px",
+													"top": "1",
+													"right": "1",
+													"bottom": "1",
+													"left": "1",
+													"isLinked": true
 												}
 											},
 											"elements": []
@@ -1288,7 +1349,12 @@
 									"button_text_color": "globals/colors?id=text"
 								},
 								"background_background": "classic",
-								"align": "center"
+								"align": "center",
+								"button_hover_transition_duration": {
+									"unit": "s",
+									"size": 0.9,
+									"sizes": []
+								}
 							},
 							"elements": []
 						}
@@ -1385,7 +1451,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": ""
 									},
 									"elements": []
 								},
@@ -1414,7 +1481,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": ""
 									},
 									"elements": []
 								},
@@ -1443,7 +1511,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": ""
 									},
 									"elements": []
 								},
@@ -1472,7 +1541,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": ""
 									},
 									"elements": []
 								}
@@ -1617,7 +1687,8 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
@@ -1629,6 +1700,11 @@
 											"url": "{{page:post-dyes}}",
 											"is_external": "",
 											"nofollow": ""
+										},
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -1658,7 +1734,8 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
@@ -1670,6 +1747,11 @@
 											"url": "{{page:post-lisbon}}",
 											"is_external": "",
 											"nofollow": ""
+										},
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -1699,7 +1781,8 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
@@ -1711,6 +1794,11 @@
 											"url": "{{page:post-wardrobe}}",
 											"is_external": "",
 											"nofollow": ""
+										},
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -1966,7 +2054,12 @@
 													"sizes": []
 												},
 												"object-fit": "cover",
-												"object-position": "center center"
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
 											},
 											"elements": []
 										}
@@ -2285,7 +2378,12 @@
 													"sizes": []
 												},
 												"object-fit": "cover",
-												"object-position": "center center"
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
 											},
 											"elements": []
 										}
@@ -2408,7 +2506,12 @@
 													"sizes": []
 												},
 												"object-fit": "cover",
-												"object-position": "center center"
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
 											},
 											"elements": []
 										}
@@ -2587,9 +2690,28 @@
 								},
 								"size": "md",
 								"__globals__": {
-									"typography_typography": "globals/typography?id=accent"
+									"typography_typography": "globals/typography?id=accent",
+									"hover_color": "globals/colors?id=text",
+									"button_hover_border_color": "globals/colors?id=text"
 								},
-								"align": "center"
+								"align": "center",
+								"button_hover_transition_duration": {
+									"unit": "s",
+									"size": 0.9,
+									"sizes": []
+								},
+								"button_background_hover_background": "classic",
+								"button_background_hover_color": "rgba(0,0,0,0)",
+								"button_hover_border_color": "currentColor",
+								"border_border": "solid",
+								"border_width": {
+									"unit": "px",
+									"top": "1",
+									"right": "1",
+									"bottom": "1",
+									"left": "1",
+									"isLinked": true
+								}
 							},
 							"elements": []
 						}
@@ -3203,7 +3325,12 @@
 													"sizes": []
 												},
 												"object-fit": "cover",
-												"object-position": "center center"
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
 											},
 											"elements": []
 										}
@@ -3482,7 +3609,26 @@
 												},
 												"size": "md",
 												"__globals__": {
-													"typography_typography": "globals/typography?id=accent"
+													"typography_typography": "globals/typography?id=accent",
+													"hover_color": "globals/colors?id=text",
+													"button_hover_border_color": "globals/colors?id=text"
+												},
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												},
+												"button_background_hover_background": "classic",
+												"button_background_hover_color": "rgba(0,0,0,0)",
+												"button_hover_border_color": "currentColor",
+												"border_border": "solid",
+												"border_width": {
+													"unit": "px",
+													"top": "1",
+													"right": "1",
+													"bottom": "1",
+													"left": "1",
+													"isLinked": true
 												}
 											},
 											"elements": []
@@ -3548,7 +3694,12 @@
 													"sizes": []
 												},
 												"object-fit": "cover",
-												"object-position": "center center"
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
 											},
 											"elements": []
 										}
@@ -4030,7 +4181,12 @@
 													"sizes": []
 												},
 												"object-fit": "cover",
-												"object-position": "center center"
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
 											},
 											"elements": []
 										}
@@ -4131,7 +4287,9 @@
 												"__globals__": {
 													"typography_typography": "globals/typography?id=accent",
 													"button_text_color": "globals/colors?id=text",
-													"border_color": "globals/colors?id=text"
+													"border_color": "globals/colors?id=text",
+													"button_background_hover_color": "globals/colors?id=text",
+													"hover_color": "globals/colors?id=wped302e97"
 												},
 												"background_background": "classic",
 												"background_color": "rgba(0,0,0,0)",
@@ -4143,7 +4301,13 @@
 													"bottom": "1",
 													"left": "1",
 													"isLinked": true
-												}
+												},
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												},
+												"button_background_hover_background": "classic"
 											},
 											"elements": []
 										}
@@ -4497,9 +4661,28 @@
 								},
 								"size": "md",
 								"__globals__": {
-									"typography_typography": "globals/typography?id=accent"
+									"typography_typography": "globals/typography?id=accent",
+									"hover_color": "globals/colors?id=text",
+									"button_hover_border_color": "globals/colors?id=text"
 								},
-								"align": "center"
+								"align": "center",
+								"button_hover_transition_duration": {
+									"unit": "s",
+									"size": 0.9,
+									"sizes": []
+								},
+								"button_background_hover_background": "classic",
+								"button_background_hover_color": "rgba(0,0,0,0)",
+								"button_hover_border_color": "currentColor",
+								"border_border": "solid",
+								"border_width": {
+									"unit": "px",
+									"top": "1",
+									"right": "1",
+									"bottom": "1",
+									"left": "1",
+									"isLinked": true
+								}
 							},
 							"elements": []
 						}

@@ -49,3 +49,15 @@ vs Base: dark-first, neon lime instead of indigo, pill/tile language, sans-only 
 - **Month view at 768:** event pills use smaller text and padding, so no word breaks in the middle.
 - **Desktop checkout (1920, 1440, 1024):** the sidebar now holds event details, what happens next, the refund guarantee and help, instead of an empty column.
 - **Re-audit:** 0 clipped nodes, 0 overflowing text, no large empty gaps.
+
+## Hover & motion (research)
+
+Pulse uses the `dynamic` motion preset and `settings.custom.hover` in `styles/pulse.json`.
+
+| Element | Behaviour | Why (source) |
+| --- | --- | --- |
+| Speaker cards | Grey at rest, full colour on hover, card lifts 6 px. | A common conference pattern for browsing many speakers ([lovable.dev](https://lovable.dev/templates/websites/events/summit-tech-conference-event-template)). |
+| Ticket / pass cards | Lift with a 2 px lime ring and a soft shadow. | Ticket cards scale or lift on hover so the choice is clear ([huggingface.co example](https://huggingface.co/spaces/linsa11/techfusion-summit-2024/blob/main/style.css)). |
+| Buttons | Lift 3 px with a lime glow, fast at 0.26 s. | Energetic, high-contrast brand. |
+| Images / blog cards | Zoom to 1.06 inside the card. | Event and blog cards use an image zoom with a reveal ([framer.com](https://www.framer.com/community/marketplace/components/cms-event-card/)). |
+| Scroll | Counters count up, the sponsor marquee scrolls, the hero has parallax and sections reveal (`dynamic` + GSAP). | Kinetic event sites. Motion respects reduced-motion. |

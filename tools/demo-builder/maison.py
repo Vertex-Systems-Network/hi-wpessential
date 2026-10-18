@@ -388,6 +388,7 @@ def e_help():
 # Package --------------------------------------------------------------------------------
 
 def package(builder):
+    e.HOVER = {'button': '', 'image': '', 'icon': '', 'filter_rest': None, 'invert': True, 'transition': 0.9}
     e.FONTS = {'primary': 'Cormorant Garamond', 'text': 'Manrope', 'weight': '500'}
     media = [{'key': k, 'file': k + '.webp', 'title': t, 'alt': a} for k, t, a in MEDIA]
     terms = []

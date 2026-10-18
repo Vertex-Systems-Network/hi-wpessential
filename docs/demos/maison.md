@@ -33,3 +33,15 @@ Home · Shop (category grid + filters) · Category · Product (simple, variable 
 
 ## Differentiation
 vs Base: no gradients, no rounded cards, serif display, warm palette, centred logo header, photographic hero instead of mockup.
+
+## Hover & motion (research)
+
+Maison uses the `editorial` motion preset and `settings.custom.hover` in `styles/maison.json`.
+
+| Element | Behaviour | Why (source) |
+| --- | --- | --- |
+| Product card | No lift. The second gallery image (back view) crossfades in over 0.9 s while the image slowly zooms to 1.04. | Lingerie and fashion stores show the back view on hover to explain fit ([commerce-ui.com](https://commerce-ui.com/insights/motion-in-ecommerce-part-1-microinteractions)). Luxury listings keep the product steady and add information without hiding it. |
+| Buttons | Fill inverts to an outline, with no lift or glow. | Restrained luxury tone. |
+| Links / nav | An underline draws in from the left. | Editorial, magazine feel. |
+| Category / lookbook images | Slow zoom inside a fixed frame. | Calm, premium motion ([framer.com](https://www.framer.com/marketplace/components/hover-product-card/)). |
+| Scroll | Headings rise, images reveal with a curtain (`editorial`). | Slow mask reveals, as in the luxury references above. |

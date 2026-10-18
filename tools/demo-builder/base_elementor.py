@@ -86,6 +86,7 @@ def faq():
 
 
 def package():
+    e.HOVER = {'button': 'float', 'image': 'grow', 'icon': 'float', 'filter_rest': None, 'invert': False, 'transition': 0.45}
     e.FONTS = {'primary': 'Plus Jakarta Sans', 'text': 'Inter', 'weight': '800'}
     data = json.load(open(GUTENBERG))
     builders = {'home': home, 'about': about, 'services': services, 'pricing': pricing, 'contact': contact, 'faq': faq}

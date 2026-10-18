@@ -25,6 +25,9 @@ add_action(
 		if ( wp_style_is( 'wpessential-woocommerce', 'enqueued' ) ) {
 			$wpessential_deps[] = 'wpessential-woocommerce';
 		}
+		// Hover system: values come from each style variation's custom.hover tokens.
+		wp_enqueue_style( 'wpessential-hover', WPESSENTIAL_URI . '/assets/css/hover.css', $wpessential_deps, WPESSENTIAL_VERSION );
+		$wpessential_deps[] = 'wpessential-hover';
 		wp_enqueue_style( 'wpessential-responsive', WPESSENTIAL_URI . '/assets/css/responsive.css', $wpessential_deps, WPESSENTIAL_VERSION );
 
 		wp_enqueue_style( 'wpessential-dark', WPESSENTIAL_URI . '/assets/css/dark.css', array( 'wpessential-responsive' ), WPESSENTIAL_VERSION );

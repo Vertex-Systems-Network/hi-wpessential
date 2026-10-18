@@ -191,3 +191,19 @@ add_filter(
 	20,
 	3
 );
+
+// Second gallery image fades in when a product card is hovered (assets/css/hover.css).
+add_action(
+	'woocommerce_before_shop_loop_item_title',
+	static function () {
+		global $product;
+		if ( ! $product || ! apply_filters( 'wpessential_loop_hover_image', true ) ) {
+			return;
+		}
+		$gallery = $product->get_gallery_image_ids();
+		if ( $gallery ) {
+			echo wp_get_attachment_image( (int) $gallery[0], 'woocommerce_thumbnail', false, array( 'class' => 'wpe-hover-img', 'alt' => '', 'aria-hidden' => 'true', 'loading' => 'lazy' ) );
+		}
+	},
+	11
+);

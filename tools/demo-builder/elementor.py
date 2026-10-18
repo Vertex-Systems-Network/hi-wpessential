@@ -14,6 +14,12 @@ _seq = itertools.count(1)
 # custom size, so sized headings name the family directly (set by each demo before building).
 FONTS = {'primary': 'Plus Jakarta Sans', 'text': 'Inter'}
 
+# Niche hover behaviour (from the demo's research brief), applied with native hover controls only.
+# button: Elementor hover animation for buttons; image: hover animation for images/image boxes;
+# filter_rest: CSS-filter preset at rest that clears on hover (e.g. greyscale speakers);
+# invert: buttons swap to outline on hover.
+HOVER = {'button': 'float', 'image': 'grow', 'filter_rest': None, 'invert': False, 'transition': 0.45}
+
 
 def _id():
     return hashlib.md5(str(next(_seq)).encode()).hexdigest()[:7]
@@ -182,6 +188,20 @@ def button(label, href, kind='primary', align=None, full_mobile=False):
         s['align'] = align
     if full_mobile:
         s['align_mobile'] = 'justify'
+    if HOVER.get('button'):
+        s['hover_animation'] = HOVER['button']
+    s['button_hover_transition_duration'] = size(HOVER.get('transition', 0.3), 's')
+    if HOVER.get('invert') and kind in ('primary', 'dark'):
+        s['button_background_hover_background'] = 'classic'
+        s['button_background_hover_color'] = 'rgba(0,0,0,0)'
+        s['button_hover_border_color'] = 'currentColor'
+        s.setdefault('border_border', 'solid')
+        s.setdefault('border_width', box(1))
+        s['__globals__']['hover_color'] = color('text' if kind == 'primary' else 'ink')
+        s['__globals__']['button_hover_border_color'] = color('text' if kind == 'primary' else 'ink')
+    elif kind == 'outline':
+        s['button_background_hover_background'] = 'classic'
+        s['__globals__'].update({'button_background_hover_color': color('text'), 'hover_color': color('surface')})
     return widget('button', s)
 
 
@@ -192,7 +212,19 @@ def image(key, alt='', radius=None, link=None):
     if link:
         s['link_to'] = 'custom'
         s['link'] = {'url': link, 'is_external': '', 'nofollow': ''}
+    _image_hover(s)
     return widget('image', s)
+
+
+def _image_hover(s, people=False):
+    if HOVER.get('image'):
+        s['hover_animation'] = HOVER['image']
+    s['background_hover_transition'] = size(HOVER.get('transition', 0.3), 's')
+    if people and HOVER.get('filter_rest') == 'grayscale':
+        s['css_filters_css_filter'] = 'custom'
+        s['css_filters_saturate'] = size(0)
+        s['css_filters_hover_css_filter'] = 'custom'
+        s['css_filters_hover_saturate'] = size(100)
 
 
 def image_fixed(key, alt, height, radius=None, link=None):
@@ -205,10 +237,11 @@ def image_fixed(key, alt, height, radius=None, link=None):
     if link:
         s['link_to'] = 'custom'
         s['link'] = {'url': link, 'is_external': '', 'nofollow': ''}
+    _image_hover(s)
     return widget('image', s)
 
 
-def image_box(key, title, desc, link=None, height=None, align='left'):
+def image_box(key, title, desc, link=None, height=None, align='left', people=False):
     s = {'image': media(key), 'title_text': title, 'description_text': desc, 'position': 'top', 'text_align': align,
          'title_size': 'h3', 'image_size': size(100, '%'),
          '__globals__': {'title_color': color('text'), 'description_color': color('text-muted'),
@@ -219,6 +252,8 @@ def image_box(key, title, desc, link=None, height=None, align='left'):
         s['image_object_fit'] = 'cover'
     if link:
         s['link'] = {'url': link, 'is_external': '', 'nofollow': ''}
+    _image_hover(s, people)
+    s['__globals__']['hover_title_color'] = color('accent')
     return widget('image-box', s)
 
 
@@ -228,6 +263,7 @@ def icon_box(icon, title, desc, align='left'):
          '__globals__': {'primary_color': color('accent'), 'title_color': color('text'),
                          'description_color': color('text-muted'), 'title_typography_typography': font('primary'),
                          'description_typography_typography': font('text')}}
+    s['hover_animation'] = HOVER.get('icon', 'float') or ''
     return widget('icon-box', s)
 
 

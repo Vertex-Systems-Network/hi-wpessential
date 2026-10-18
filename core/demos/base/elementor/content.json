@@ -287,6 +287,12 @@
 										"size": "md",
 										"__globals__": {
 											"typography_typography": "globals/typography?id=accent"
+										},
+										"hover_animation": "float",
+										"button_hover_transition_duration": {
+											"unit": "s",
+											"size": 0.45,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -308,7 +314,13 @@
 											"background_color": "globals/colors?id=wped302e97",
 											"button_text_color": "globals/colors?id=text"
 										},
-										"background_background": "classic"
+										"background_background": "classic",
+										"hover_animation": "float",
+										"button_hover_transition_duration": {
+											"unit": "s",
+											"size": 0.45,
+											"sizes": []
+										}
 									},
 									"elements": []
 								}
@@ -339,6 +351,12 @@
 									"bottom": "16",
 									"left": "16",
 									"isLinked": true
+								},
+								"hover_animation": "grow",
+								"background_hover_transition": {
+									"unit": "s",
+									"size": 0.45,
+									"sizes": []
 								}
 							},
 							"elements": []
@@ -477,7 +495,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								},
@@ -506,7 +525,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								},
@@ -535,7 +555,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								}
@@ -680,7 +701,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								},
@@ -709,7 +731,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								},
@@ -738,7 +761,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								},
@@ -767,7 +791,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								}
@@ -1253,7 +1278,8 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
@@ -1265,6 +1291,12 @@
 											"url": "{{page:article-1}}",
 											"is_external": "",
 											"nofollow": ""
+										},
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.45,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -1294,7 +1326,8 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
@@ -1306,6 +1339,12 @@
 											"url": "{{page:article-2}}",
 											"is_external": "",
 											"nofollow": ""
+										},
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.45,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -1335,7 +1374,8 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
@@ -1347,6 +1387,12 @@
 											"url": "{{page:article-3}}",
 											"is_external": "",
 											"nofollow": ""
+										},
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.45,
+											"sizes": []
 										}
 									},
 									"elements": []
@@ -1428,7 +1474,13 @@
 								"__globals__": {
 									"typography_typography": "globals/typography?id=accent"
 								},
-								"align": "center"
+								"align": "center",
+								"hover_animation": "float",
+								"button_hover_transition_duration": {
+									"unit": "s",
+									"size": 0.45,
+									"sizes": []
+								}
 							},
 							"elements": []
 						}
@@ -1684,6 +1736,12 @@
 													"bottom": "16",
 													"left": "16",
 													"isLinked": true
+												},
+												"hover_animation": "grow",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.45,
+													"sizes": []
 												}
 											},
 											"elements": []
@@ -1900,14 +1958,21 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
 											"size": 300,
 											"sizes": []
 										},
-										"image_object_fit": "cover"
+										"image_object_fit": "cover",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.45,
+											"sizes": []
+										}
 									},
 									"elements": []
 								},
@@ -1936,14 +2001,21 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
 											"size": 300,
 											"sizes": []
 										},
-										"image_object_fit": "cover"
+										"image_object_fit": "cover",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.45,
+											"sizes": []
+										}
 									},
 									"elements": []
 								},
@@ -1972,14 +2044,21 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
 											"size": 300,
 											"sizes": []
 										},
-										"image_object_fit": "cover"
+										"image_object_fit": "cover",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.45,
+											"sizes": []
+										}
 									},
 									"elements": []
 								},
@@ -2008,14 +2087,21 @@
 											"title_color": "globals/colors?id=text",
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
-											"description_typography_typography": "globals/typography?id=text"
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
 										},
 										"image_height": {
 											"unit": "px",
 											"size": 300,
 											"sizes": []
 										},
-										"image_object_fit": "cover"
+										"image_object_fit": "cover",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.45,
+											"sizes": []
+										}
 									},
 									"elements": []
 								}
@@ -2246,7 +2332,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								},
@@ -2275,7 +2362,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								},
@@ -2304,7 +2392,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								},
@@ -2333,7 +2422,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								}
@@ -2673,6 +2763,12 @@
 												"size": "md",
 												"__globals__": {
 													"typography_typography": "globals/typography?id=accent"
+												},
+												"hover_animation": "float",
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.45,
+													"sizes": []
 												}
 											},
 											"elements": []
@@ -2822,6 +2918,12 @@
 												"size": "md",
 												"__globals__": {
 													"typography_typography": "globals/typography?id=accent"
+												},
+												"hover_animation": "float",
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.45,
+													"sizes": []
 												}
 											},
 											"elements": []
@@ -2963,6 +3065,12 @@
 												"size": "md",
 												"__globals__": {
 													"typography_typography": "globals/typography?id=accent"
+												},
+												"hover_animation": "float",
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.45,
+													"sizes": []
 												}
 											},
 											"elements": []
@@ -3197,7 +3305,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								},
@@ -3226,7 +3335,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								},
@@ -3255,7 +3365,8 @@
 											"description_color": "globals/colors?id=wpe07d0ec3",
 											"title_typography_typography": "globals/typography?id=primary",
 											"description_typography_typography": "globals/typography?id=text"
-										}
+										},
+										"hover_animation": "float"
 									},
 									"elements": []
 								}

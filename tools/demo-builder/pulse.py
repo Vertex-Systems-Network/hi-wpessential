@@ -307,7 +307,7 @@ def g_contact():
 
 def e_speaker(s, topic=True):
     k, name, role, company, talk, track = s
-    return e.image_box(k, name, '%s · %s%s' % (role, company, ('<br>' + talk) if topic else ''), height=320)
+    return e.image_box(k, name, '%s · %s%s' % (role, company, ('<br>' + talk) if topic else ''), height=320, people=True)
 
 
 def e_session(t):
@@ -428,6 +428,7 @@ def e_contact():
 # Package --------------------------------------------------------------------------------
 
 def package(builder):
+    e.HOVER = {'button': 'float', 'image': 'grow', 'icon': 'float', 'filter_rest': 'grayscale', 'invert': False, 'transition': 0.26}
     e.FONTS = {'primary': 'Space Grotesk', 'text': 'DM Sans', 'weight': '700'}
     media = [{'key': k, 'file': k + '.webp', 'title': t, 'alt': a} for k, t, a in MEDIA]
     terms = [
