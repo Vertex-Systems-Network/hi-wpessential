@@ -1,0 +1,63 @@
+name: Build zips
+
+on:
+  push:
+    branches: [ main, theme-foundation ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      WPES_SERVER_URL: ${{ secrets.WPES_SERVER_URL }}
+      WPES_SERVER_AUTH: ${{ secrets.WPES_SERVER_AUTH }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # A tag like v1.2.0 sets the theme version, so style.css never has to be edited by hand.
+      - name: Version from tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          V="${GITHUB_REF_NAME#v}"
+          sed -i "s/^Version: .*/Version: $V/" style.css
+          sed -i "s/^Stable tag: .*/Stable tag: $V/" readme.txt
+          grep -n "^Version" style.css
+      - name: Build theme, server plugin and demo packages
+        run: ./tools/build-zips.sh
+      # Each artifact downloads as its own zip from the run page (Actions → Build zips → Artifacts).
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wpessential-theme
+          path: build/wpessential.zip
+          compression-level: 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wpessential-server
+          path: build/wpessential-server.zip
+          compression-level: 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wpessential-demos
+          path: build/demos/*.zip
+          compression-level: 0
+      - name: Release (tags v*)
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" build/wpessential.zip build/wpessential-server.zip build/demos/*.zip --title "WPEssential $GITHUB_REF_NAME" --generate-notes
+      # Needs repository secrets WPES_SERVER_URL (e.g. https://wpessential.org) and
+      # WPES_SERVER_AUTH ("user:application-password" of an administrator). Skipped when unset.
+      - name: Upload to the WPEssential server
+        if: startsWith(github.ref, 'refs/tags/v') && env.WPES_SERVER_URL != ''
+        run: |
+          args=(-F "version=${GITHUB_REF_NAME#v}" -F "theme=@build/wpessential.zip")
+          for f in build/demos/*.zip; do n=$(basename "$f" .zip); args+=(-F "$n=@$f"); done
+          res=$(curl -sS --fail-with-body -u "$WPES_SERVER_AUTH" "${args[@]}" "$WPES_SERVER_URL/wp-json/wpessential-server/v1/release")
+          echo "$res"
+          echo "$res" | grep -q '"success":true'

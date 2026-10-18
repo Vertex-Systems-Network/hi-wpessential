@@ -1,0 +1,33 @@
+<!-- wp:template-part {"slug":"header","tagName":"div"} /-->
+<!-- wp:group {"tagName":"main","className":"wpe-main ","layout":{"type":"constrained"}} -->
+<main class="wp-block-group wpe-main ">
+<!-- wp:group {"tagName":"section","align":"full","className":"wpe-section wpe-section--sm wpe-page-hero","backgroundColor":"surface-alt","layout":{"type":"constrained","contentSize":"1200px"}} -->
+<section class="wp-block-group alignfull wpe-section wpe-section--sm wpe-page-hero has-surface-alt-background-color has-background"><!-- wp:query-title {"type":"search","level":1} /-->
+
+<!-- wp:search {"label":"Search","showLabel":false,"buttonText":"Search"} /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"wpe-section wpe-section--sm","layout":{"type":"constrained","contentSize":"1200px"}} -->
+<section class="wp-block-group wpe-section wpe-section--sm"><!-- wp:query {"queryId":1,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true}} -->
+<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:pattern {"slug":"wpessential/post-card"} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Nothing matched. Try a different search or browse the latest posts.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results -->
+
+<!-- wp:query-pagination {"className":"wpe-pagination","layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination --></div>
+<!-- /wp:query --></section>
+<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"div"} /-->

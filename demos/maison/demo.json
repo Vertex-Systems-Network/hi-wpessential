@@ -1,0 +1,64 @@
+{
+	"id": "maison",
+	"title": "Maison",
+	"tagline": "An editorial fashion store with a lookbook, atelier story and journal.",
+	"niche": [
+		"fashion",
+		"shop",
+		"clothing",
+		"boutique"
+	],
+	"type": "pro",
+	"thumbnail": "demo:thumbnail.webp",
+	"preview": {
+		"desktop": "demo:preview/desktop.webp",
+		"tablet": "demo:preview/tablet.webp",
+		"mobile": "demo:preview/mobile.webp"
+	},
+	"pages": [
+		"Home",
+		"Shop",
+		"Lookbook",
+		"Atelier",
+		"Journal",
+		"Stores & Contact",
+		"Shipping & Returns"
+	],
+	"highlights": [
+		"12 products",
+		"Variable sizes & colours",
+		"Lookbook",
+		"Light & dark"
+	],
+	"motion": "editorial",
+	"builders": {
+		"gutenberg": {
+			"package": "gutenberg",
+			"plugins": [
+				{
+					"slug": "woocommerce",
+					"name": "WooCommerce",
+					"source": "wporg",
+					"state": "required"
+				}
+			]
+		},
+		"elementor": {
+			"package": "elementor",
+			"plugins": [
+				{
+					"slug": "elementor",
+					"name": "Elementor",
+					"source": "wporg",
+					"state": "required"
+				},
+				{
+					"slug": "woocommerce",
+					"name": "WooCommerce",
+					"source": "wporg",
+					"state": "required"
+				}
+			]
+		}
+	}
+}

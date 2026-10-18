@@ -1,0 +1,117 @@
+/*
+ * WPEssential hover system.
+ *
+ * Every value comes from theme.json custom tokens (settings.custom.hover), so each style
+ * variation gives its demo its own hover personality without new CSS:
+ *   zoom, lift, shadow, duration, ease, button-lift, button-glow, underline.
+ * Motion only runs for real pointers and when the visitor allows motion.
+ */
+
+:root {
+	--wpe-h-zoom: var(--wp--custom--hover--zoom, 1.05);
+	--wpe-h-lift: var(--wp--custom--hover--lift, -4px);
+	--wpe-h-shadow: var(--wp--custom--hover--shadow, var(--wpe-shadow-lg, 0 18px 40px rgba(15, 23, 42, .14)));
+	--wpe-h-duration: var(--wp--custom--hover--duration, 450ms);
+	--wpe-h-ease: var(--wp--custom--hover--ease, cubic-bezier(.2, .7, .2, 1));
+	--wpe-h-button-lift: var(--wp--custom--hover--button-lift, -2px);
+	--wpe-h-button-glow: var(--wp--custom--hover--button-glow, none);
+	--wpe-h-underline: var(--wp--custom--hover--underline, 1px);
+	--wpe-h-image-rest: var(--wp--custom--hover--image-rest, none);
+	--wpe-h-product-lift: var(--wp--custom--hover--product-lift, -2px);
+	--wpe-h-card-shadow: var(--wp--custom--hover--card-shadow, var(--wpe-h-shadow));
+}
+
+/* Niche resting filter on people photos (e.g. greyscale speakers that turn colour on hover). */
+.wpe-speaker .wp-block-image img { filter: var(--wpe-h-image-rest); }
+
+/* Links in running text and footers: an underline that draws in from the left. */
+:where(.wp-block-post-content, .entry-content, .wpe-footer, .wpe-topbar) :where(p, li) a:not(.wp-element-button),
+.wpe-footer .wp-block-navigation-item__content,
+.wpe-header .wp-block-navigation .wp-block-navigation-item__content {
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	background-size: 0 var(--wpe-h-underline);
+	transition: background-size var(--wpe-h-duration) var(--wpe-h-ease), color 200ms ease;
+}
+:where(.wp-block-post-content, .entry-content, .wpe-footer, .wpe-topbar) :where(p, li) a:not(.wp-element-button):is(:hover, :focus-visible),
+.wpe-footer .wp-block-navigation-item__content:is(:hover, :focus-visible),
+.wpe-header .wp-block-navigation .wp-block-navigation-item__content:is(:hover, :focus-visible),
+.wpe-header .wp-block-navigation .current-menu-item > .wp-block-navigation-item__content {
+	background-size: 100% var(--wpe-h-underline);
+	text-decoration: none;
+}
+/* In-content links keep a resting underline for accessibility; the drawn line replaces it on hover. */
+:where(.wp-block-post-content, .entry-content) :where(p, li) a:not(.wp-element-button) {
+	text-decoration: underline;
+	text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+	text-underline-offset: 3px;
+}
+
+/* Linked headings (cards, post titles, product titles) take the accent colour. */
+:is(.wp-block-post-title, .wp-block-heading, .woocommerce-loop-product__title) a,
+.wp-block-heading:has(> a) { transition: color 200ms ease; }
+:is(.wp-block-post-title, .wp-block-heading) a:is(:hover, :focus-visible) { color: var(--wp--custom--color--primary-text, var(--wp--preset--color--accent)); text-decoration: none; }
+
+/* Images inside links and cards: a contained zoom. */
+.wp-block-image:has(> a),
+.wp-block-post-featured-image,
+.wpe-card .wp-block-image,
+.wpe-speaker .wp-block-image { overflow: hidden; }
+/* Keep rounded corners while the image zooms: clip on the frame with the image's radius. */
+.wpe-speaker .wp-block-image, .wpe-card .wp-block-image, .wp-block-image.is-style-wpe-shadow:has(> a) { border-radius: var(--wpe-radius-lg, 16px); isolation: isolate; }
+.woocommerce ul.products li.product .woocommerce-loop-product__link { isolation: isolate; }
+.wp-block-image > a img,
+.wp-block-post-featured-image img,
+.wpe-card .wp-block-image img,
+.wpe-speaker .wp-block-image img { transition: transform var(--wpe-h-duration) var(--wpe-h-ease), filter var(--wpe-h-duration) var(--wpe-h-ease); }
+
+/* Cards: lift and shadow. Columns styled as cards count too. */
+.wpe-card, .is-style-wpe-card, .wpe-speaker, .wp-block-post-template > li {
+	transition: transform var(--wpe-h-duration) var(--wpe-h-ease), box-shadow var(--wpe-h-duration) var(--wpe-h-ease), border-color 200ms ease;
+}
+
+/* Buttons: lift and the variation's glow on top of the colour change in theme.css. */
+.wp-element-button, .wp-block-button__link, .woocommerce .button, .wpe-btn {
+	transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, transform var(--wpe-h-duration) var(--wpe-h-ease), box-shadow var(--wpe-h-duration) var(--wpe-h-ease);
+}
+
+/* Product cards: lift, zoom and swap to the second gallery image. */
+.woocommerce ul.products li.product .woocommerce-loop-product__link { position: relative; }
+.woocommerce ul.products li.product .wpe-hover-img {
+	position: absolute; inset: 0; width: 100%; height: auto; aspect-ratio: 1 / 1.1; object-fit: cover;
+	opacity: 0; transition: opacity var(--wpe-h-duration) var(--wpe-h-ease), transform var(--wpe-h-duration) var(--wpe-h-ease);
+	margin: 0 !important; pointer-events: none;
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__link:focus-visible .wpe-hover-img { opacity: 1; }
+
+@media (hover: hover) and (pointer: fine) {
+	.wp-block-image > a:hover img,
+	a:hover > .wp-block-post-featured-image img,
+	.wp-block-post-featured-image a:hover img,
+	.wpe-card:hover .wp-block-image img,
+	.wpe-speaker:hover .wp-block-image img,
+	.woocommerce ul.products li.product:hover a img { transform: scale(var(--wpe-h-zoom)); }
+
+	.wpe-card:hover, .is-style-wpe-card:hover, .wpe-speaker:hover, .wp-block-post-template > li:hover {
+		transform: translateY(var(--wpe-h-lift));
+	}
+	.wpe-card:hover, .is-style-wpe-card:hover, .wp-block-post-template > li:hover { box-shadow: var(--wpe-h-card-shadow); }
+	.wpe-speaker:hover .wp-block-image img { filter: none; }
+
+	.wp-element-button:hover, .wp-block-button__link:hover, .woocommerce .button:hover, .wpe-btn:hover {
+		transform: translateY(var(--wpe-h-button-lift));
+		box-shadow: var(--wpe-h-button-glow);
+	}
+
+	.woocommerce ul.products li.product { transition: transform var(--wpe-h-duration) var(--wpe-h-ease); }
+	.woocommerce ul.products li.product:hover { transform: translateY(var(--wpe-h-product-lift)); }
+	.woocommerce ul.products li.product:hover .wpe-hover-img { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.wpe-card, .wpe-speaker, .wp-block-post-template > li, .woocommerce ul.products li.product,
+	.wp-element-button, .wp-block-button__link, .woocommerce .button, .wpe-btn,
+	.wp-block-image img, .wp-block-post-featured-image img, .wpe-hover-img { transition-duration: 1ms !important; transform: none !important; }
+}

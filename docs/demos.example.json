@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "demos": [
+    {
+      "id": "agency",
+      "title": "Agency",
+      "niche": ["agency", "business"],
+      "type": "free",
+      "preview_url": "https://demo.wpessential.org/agency/",
+      "thumbnail": "https://cdn.wpessential.org/demos/agency.jpg",
+      "builders": {
+        "gutenberg": {
+          "package": "https://cdn.wpessential.org/demos/agency-gutenberg.zip",
+          "plugins": [
+            { "slug": "contact-form-7", "source": "wporg", "state": "required" },
+            { "slug": "elementor", "source": "wporg", "state": "conflicts" }
+          ],
+          "front_page": "Home", "blog_page": "Blog", "menus": { "primary": "Main Menu" }
+        },
+        "elementor": {
+          "package": "https://cdn.wpessential.org/demos/agency-elementor.zip",
+          "plugins": [
+            { "slug": "elementor", "source": "wporg", "state": "required" },
+            { "slug": "contact-form-7", "source": "wporg", "state": "required" }
+          ],
+          "front_page": "Home", "blog_page": "Blog", "menus": { "primary": "Main Menu" }
+        }
+      }
+    },
+    {
+      "id": "business-pro",
+      "title": "Business Pro",
+      "niche": ["business"],
+      "type": "pro",
+      "preview_url": "https://demo.wpessential.org/business-pro/",
+      "thumbnail": "https://cdn.wpessential.org/demos/business-pro.jpg",
+      "builders": {
+        "elementor": {
+          "package": "licensed",
+          "plugins": [
+            { "slug": "elementor", "source": "wporg", "state": "required" },
+            { "slug": "woocommerce", "source": "wporg", "state": "required" }
+          ]
+        }
+      }
+    }
+  ]
+}
