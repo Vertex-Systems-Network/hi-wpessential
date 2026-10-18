@@ -174,9 +174,15 @@ body,
 	.wpe-header-cta { display: none !important; }
 }
 
-/* WooCommerce steps: 4 → 3 → 2 product columns; split layouts stack below 1024. */
-@media (max-width: 1279px) { .woocommerce ul.products, .wc-block-product-template { --wpe-cols: 3; } }
-@media (max-width: 767px) { .woocommerce ul.products, .wc-block-product-template { --wpe-cols: 2; gap: 24px 12px; } }
+/* Shop grids: 3 columns on small laptops, 2 on tablets (1024 and 768) and phones. The attribute
+   selector outranks .columns-N from shortcodes and widgets, so their column count steps down too. */
+@media (max-width: 1279px) { .woocommerce ul.products:not([class*="columns-"]), .woocommerce ul.products[class*="columns-"]:is(.columns-4, .columns-5, .columns-6), .wc-block-product-template { --wpe-cols: 3; } }
+@media (max-width: 1100px) {
+	.woocommerce ul.products:not(.columns-1), .woocommerce ul.products[class*="columns-"]:not(.columns-1), .wc-block-product-template { --wpe-cols: 2; gap: 32px 20px; }
+	.wc-block-grid__products { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+	.wc-block-grid__product { max-width: none !important; flex: none !important; }
+}
+@media (max-width: 767px) { .woocommerce ul.products:not(.columns-1), .woocommerce ul.products[class*="columns-"]:not(.columns-1), .wc-block-product-template { --wpe-cols: 2; gap: 24px 12px; } }
 @media (max-width: 1023px) {
 	.woocommerce div.product,
 	.woocommerce form.checkout,
