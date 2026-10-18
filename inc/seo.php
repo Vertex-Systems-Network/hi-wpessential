@@ -104,7 +104,7 @@ add_action( 'wp_head', 'wpessential_seo_head', 2 );
  * @param string $image       Image URL.
  */
 function wpessential_seo_schema( $description, $image ) {
-	$home  = home_url( '/' );
+	$home  = function_exists( 'wpessential_ml_home_url' ) ? wpessential_ml_home_url() : home_url( '/' );
 	$graph = array(
 		array(
 			'@type' => 'Organization',

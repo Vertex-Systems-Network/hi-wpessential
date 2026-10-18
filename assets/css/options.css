@@ -6,7 +6,7 @@
 .wpe-opt-code { display: grid; grid-template-columns: 260px 1fr; gap: 20px; }
 .wpe-opt-code aside ul { margin: 12px 0; }
 .wpe-opt-code aside li { margin: 0 0 4px; }
-.wpe-opt-code aside li button { width: 100%; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid transparent; border-radius: 8px; background: none; cursor: pointer; text-align: left; }
+.wpe-opt-code aside li button { width: 100%; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid transparent; border-radius: 8px; background: none; cursor: pointer; text-align: start; }
 .wpe-opt-code aside li button:hover { background: #f6f7f7; }
 .wpe-opt-code aside li button.is-current { background: #eef0ff; border-color: #c7d2fe; }
 .wpe-opt-add { display: flex; gap: 6px; }
@@ -39,7 +39,7 @@
 @keyframes wpe-opt-mask { 0%, 15% { clip-path: inset(100% 0 0 0); } 60%, 100% { clip-path: inset(0); } }
 @keyframes wpe-opt-pop { 0%, 15% { transform: scale(.6) rotate(-6deg); opacity: 0; } 50%, 100% { transform: none; opacity: 1; } }
 @keyframes wpe-opt-par { from { transform: translateY(-6px); } to { transform: translateY(6px); } }
-.wpe-opt-toast { position: fixed; right: 24px; bottom: 24px; z-index: 100000; padding: 12px 16px; border-radius: 10px; background: #1d2327; color: #fff; box-shadow: 0 10px 30px rgb(0 0 0 / 25%); }
+.wpe-opt-toast { position: fixed; inset-inline-end: 24px; bottom: 24px; z-index: 100000; padding: 12px 16px; border-radius: 10px; background: #1d2327; color: #fff; box-shadow: 0 10px 30px rgb(0 0 0 / 25%); }
 .wpe-opt-toast--error { background: #b32d2e; }
 @media (max-width: 900px) { .wpe-opt-code { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .wpe-opt-demo i { animation: none !important; } }

@@ -21,6 +21,7 @@ require WPESSENTIAL_DIR . '/inc/scheme.php';
 require WPESSENTIAL_DIR . '/inc/motion.php';
 require WPESSENTIAL_DIR . '/inc/options.php';
 require WPESSENTIAL_DIR . '/inc/seo.php';
+require WPESSENTIAL_DIR . '/inc/multilingual.php';
 
 // Demo import, plugin manager and license. Self-contained in core/ so it can ship as a
 // separate plugin later; the standalone plugin wins when both are present.
