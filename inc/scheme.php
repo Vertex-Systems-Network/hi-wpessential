@@ -84,6 +84,8 @@ function wpessential_scheme_settings() {
 			);
 		}
 		$dark['settings']['color']['palette'] = $palette;
+		// Keep the variation's own gradients; the generic dark ones are for the default palette.
+		unset( $dark['settings']['color']['gradients'] );
 	}
 
 	if ( wpessential_is_dark_scheme() ) {
