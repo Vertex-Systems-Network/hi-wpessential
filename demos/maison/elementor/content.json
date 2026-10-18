@@ -283,6 +283,75 @@
 					"placeholder": "Your email address"
 				}
 			]
+		},
+		{
+			"key": "appointment",
+			"title": "Atelier appointment — Maison",
+			"submit": "Request appointment",
+			"message": "Thank you — we will confirm your appointment by email within a few hours.",
+			"settings": {
+				"subject": "Appointment request: {field_id=\"1\"}"
+			},
+			"fields": [
+				{
+					"type": "name",
+					"label": "Full name",
+					"required": true,
+					"size": "medium"
+				},
+				{
+					"type": "email",
+					"label": "Email",
+					"required": true,
+					"size": "medium"
+				},
+				{
+					"type": "phone",
+					"label": "Phone",
+					"size": "medium"
+				},
+				{
+					"type": "select",
+					"label": "Appointment",
+					"required": true,
+					"size": "medium",
+					"choices": [
+						"Personal styling (60 min)",
+						"Made-to-measure fitting (45 min)",
+						"Alterations & repairs (20 min)"
+					]
+				},
+				{
+					"type": "select",
+					"label": "Store",
+					"required": true,
+					"size": "medium",
+					"choices": [
+						"Paris — Le Marais",
+						"Milan — Brera",
+						"London — Marylebone"
+					]
+				},
+				{
+					"type": "text",
+					"label": "Preferred date and time",
+					"placeholder": "e.g. Saturday 14 Nov, morning",
+					"size": "medium"
+				},
+				{
+					"type": "textarea",
+					"label": "Anything we should prepare?",
+					"placeholder": "Sizes, pieces you want to try or the item to repair."
+				},
+				{
+					"type": "checkbox",
+					"label": "Consent",
+					"required": true,
+					"choices": [
+						"I agree to the Privacy Policy and to being contacted about my request."
+					]
+				}
+			]
 		}
 	],
 	"content": [
@@ -6016,6 +6085,2700 @@
 			}
 		},
 		{
+			"key": "size-guide",
+			"type": "page",
+			"title": "Size Guide",
+			"slug": "size-guide",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
+				{
+					"id": "0336dcb",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "80",
+							"right": "24",
+							"bottom": "40",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "40",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "58a2fc6",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Client care",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "Manrope",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "bd686fd",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Size guide",
+								"header_size": "h1",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Cormorant Garamond",
+								"typography_font_weight": "500",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 80,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 64,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 44,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "a597e50",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Our pieces are cut for an easy fit. If you are between sizes, our client care team is happy to help.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Manrope",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 16,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "3644a68",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "24",
+							"right": "24",
+							"bottom": "72",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "36",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "084b6fb",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Clothing",
+								"header_size": "h3",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Cormorant Garamond",
+								"typography_font_weight": "500",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 28,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 22,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 15,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "85d8ce5",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<table class=\"mx-table\"><thead><tr><th>Maison</th><th>EU / FR</th><th>UK</th><th>US</th><th>Bust (cm)</th><th>Waist (cm)</th><th>Hips (cm)</th></tr></thead><tbody><tr><td>XS</td><td>34</td><td>6</td><td>2</td><td>80–83</td><td>62–65</td><td>87–90</td></tr><tr><td>S</td><td>36</td><td>8</td><td>4</td><td>84–87</td><td>66–69</td><td>91–94</td></tr><tr><td>M</td><td>38</td><td>10</td><td>6</td><td>88–92</td><td>70–74</td><td>95–99</td></tr><tr><td>L</td><td>40</td><td>12</td><td>8</td><td>93–97</td><td>75–79</td><td>100–104</td></tr></tbody></table>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3",
+									"typography_typography": "globals/typography?id=text"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "0e65972",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Shoes",
+								"header_size": "h3",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Cormorant Garamond",
+								"typography_font_weight": "500",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 28,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 22,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 15,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "84d9ee4",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<table class=\"mx-table\"><thead><tr><th>EU</th><th>UK</th><th>US</th><th>Foot length (cm)</th></tr></thead><tbody><tr><td>37</td><td>4</td><td>6.5</td><td>23.5</td></tr><tr><td>38</td><td>5</td><td>7.5</td><td>24.2</td></tr><tr><td>39</td><td>6</td><td>8.5</td><td>24.9</td></tr><tr><td>40</td><td>7</td><td>9.5</td><td>25.6</td></tr><tr><td>41</td><td>8</td><td>10.5</td><td>26.3</td></tr></tbody></table>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3",
+									"typography_typography": "globals/typography?id=text"
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "ec8ce6a",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "96",
+							"right": "24",
+							"bottom": "96",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "48",
+							"right": "20",
+							"bottom": "48",
+							"left": "20",
+							"isLinked": false
+						},
+						"background_background": "classic",
+						"__globals__": {
+							"background_color": "globals/colors?id=wpe6073fd3"
+						}
+					},
+					"elements": [
+						{
+							"id": "c0e190d",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 64,
+									"column": "64",
+									"row": "64",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "854d6fa",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "757b505",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:atelier-hands}}",
+													"id": "{{media_id:atelier-hands}}",
+													"alt": "Tailor measuring a client with a cloth tape",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 520,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 416,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 364,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "e96ed47",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"flex_justify_content": "center"
+									},
+									"elements": [
+										{
+											"id": "e2c0be2",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "How to measure",
+												"header_size": "p",
+												"typography_typography": "custom",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 13,
+													"sizes": []
+												},
+												"typography_font_weight": "600",
+												"typography_text_transform": "uppercase",
+												"typography_letter_spacing": {
+													"unit": "px",
+													"size": 1.6,
+													"sizes": []
+												},
+												"typography_font_family": "Manrope",
+												"__globals__": {
+													"title_color": "globals/colors?id=accent"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "274ad47",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Three measurements, two minutes",
+												"header_size": "h2",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 40,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 32,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "69adc1e",
+											"elType": "container",
+											"settings": {
+												"content_width": "full",
+												"flex_direction": "column",
+												"flex_gap": {
+													"unit": "px",
+													"size": 4,
+													"column": "4",
+													"row": "4",
+													"isLinked": true
+												}
+											},
+											"elements": [
+												{
+													"id": "eae27d7",
+													"elType": "widget",
+													"widgetType": "heading",
+													"settings": {
+														"title": "Bust",
+														"header_size": "h4",
+														"__globals__": {
+															"title_color": "globals/colors?id=text"
+														},
+														"typography_typography": "custom",
+														"typography_font_family": "Cormorant Garamond",
+														"typography_font_weight": "500",
+														"typography_line_height": {
+															"unit": "em",
+															"size": 1.05,
+															"sizes": []
+														},
+														"typography_font_size": {
+															"unit": "px",
+															"size": 18,
+															"sizes": []
+														},
+														"typography_font_size_tablet": {
+															"unit": "px",
+															"size": 14,
+															"sizes": []
+														},
+														"typography_font_size_mobile": {
+															"unit": "px",
+															"size": 10,
+															"sizes": []
+														}
+													},
+													"elements": []
+												},
+												{
+													"id": "7eabe3a",
+													"elType": "widget",
+													"widgetType": "text-editor",
+													"settings": {
+														"editor": "<p>Measure around the fullest part of your chest, keeping the tape level under your arms.</p>",
+														"__globals__": {
+															"text_color": "globals/colors?id=wpe07d0ec3"
+														},
+														"typography_typography": "custom",
+														"typography_font_family": "Manrope",
+														"typography_font_size": {
+															"unit": "px",
+															"size": 14,
+															"sizes": []
+														}
+													},
+													"elements": []
+												}
+											],
+											"isInner": true
+										},
+										{
+											"id": "6f3ef77",
+											"elType": "container",
+											"settings": {
+												"content_width": "full",
+												"flex_direction": "column",
+												"flex_gap": {
+													"unit": "px",
+													"size": 4,
+													"column": "4",
+													"row": "4",
+													"isLinked": true
+												}
+											},
+											"elements": [
+												{
+													"id": "091d584",
+													"elType": "widget",
+													"widgetType": "heading",
+													"settings": {
+														"title": "Waist",
+														"header_size": "h4",
+														"__globals__": {
+															"title_color": "globals/colors?id=text"
+														},
+														"typography_typography": "custom",
+														"typography_font_family": "Cormorant Garamond",
+														"typography_font_weight": "500",
+														"typography_line_height": {
+															"unit": "em",
+															"size": 1.05,
+															"sizes": []
+														},
+														"typography_font_size": {
+															"unit": "px",
+															"size": 18,
+															"sizes": []
+														},
+														"typography_font_size_tablet": {
+															"unit": "px",
+															"size": 14,
+															"sizes": []
+														},
+														"typography_font_size_mobile": {
+															"unit": "px",
+															"size": 10,
+															"sizes": []
+														}
+													},
+													"elements": []
+												},
+												{
+													"id": "b1d10e7",
+													"elType": "widget",
+													"widgetType": "text-editor",
+													"settings": {
+														"editor": "<p>Measure around the narrowest part of your waist, usually just above the belly button.</p>",
+														"__globals__": {
+															"text_color": "globals/colors?id=wpe07d0ec3"
+														},
+														"typography_typography": "custom",
+														"typography_font_family": "Manrope",
+														"typography_font_size": {
+															"unit": "px",
+															"size": 14,
+															"sizes": []
+														}
+													},
+													"elements": []
+												}
+											],
+											"isInner": true
+										},
+										{
+											"id": "979d472",
+											"elType": "container",
+											"settings": {
+												"content_width": "full",
+												"flex_direction": "column",
+												"flex_gap": {
+													"unit": "px",
+													"size": 4,
+													"column": "4",
+													"row": "4",
+													"isLinked": true
+												}
+											},
+											"elements": [
+												{
+													"id": "eb16372",
+													"elType": "widget",
+													"widgetType": "heading",
+													"settings": {
+														"title": "Hips",
+														"header_size": "h4",
+														"__globals__": {
+															"title_color": "globals/colors?id=text"
+														},
+														"typography_typography": "custom",
+														"typography_font_family": "Cormorant Garamond",
+														"typography_font_weight": "500",
+														"typography_line_height": {
+															"unit": "em",
+															"size": 1.05,
+															"sizes": []
+														},
+														"typography_font_size": {
+															"unit": "px",
+															"size": 18,
+															"sizes": []
+														},
+														"typography_font_size_tablet": {
+															"unit": "px",
+															"size": 14,
+															"sizes": []
+														},
+														"typography_font_size_mobile": {
+															"unit": "px",
+															"size": 10,
+															"sizes": []
+														}
+													},
+													"elements": []
+												},
+												{
+													"id": "1534b76",
+													"elType": "widget",
+													"widgetType": "text-editor",
+													"settings": {
+														"editor": "<p>Stand with feet together and measure around the fullest part of your hips.</p>",
+														"__globals__": {
+															"text_color": "globals/colors?id=wpe07d0ec3"
+														},
+														"typography_typography": "custom",
+														"typography_font_family": "Manrope",
+														"typography_font_size": {
+															"unit": "px",
+															"size": 14,
+															"sizes": []
+														}
+													},
+													"elements": []
+												}
+											],
+											"isInner": true
+										},
+										{
+											"id": "45fbc6d",
+											"elType": "container",
+											"settings": {
+												"content_width": "full",
+												"flex_direction": "column",
+												"flex_gap": {
+													"unit": "px",
+													"size": 4,
+													"column": "4",
+													"row": "4",
+													"isLinked": true
+												}
+											},
+											"elements": [
+												{
+													"id": "ca46c1b",
+													"elType": "widget",
+													"widgetType": "heading",
+													"settings": {
+														"title": "Between sizes?",
+														"header_size": "h4",
+														"__globals__": {
+															"title_color": "globals/colors?id=text"
+														},
+														"typography_typography": "custom",
+														"typography_font_family": "Cormorant Garamond",
+														"typography_font_weight": "500",
+														"typography_line_height": {
+															"unit": "em",
+															"size": 1.05,
+															"sizes": []
+														},
+														"typography_font_size": {
+															"unit": "px",
+															"size": 18,
+															"sizes": []
+														},
+														"typography_font_size_tablet": {
+															"unit": "px",
+															"size": 14,
+															"sizes": []
+														},
+														"typography_font_size_mobile": {
+															"unit": "px",
+															"size": 10,
+															"sizes": []
+														}
+													},
+													"elements": []
+												},
+												{
+													"id": "3b8a614",
+													"elType": "widget",
+													"widgetType": "text-editor",
+													"settings": {
+														"editor": "<p>Take the larger size in tailoring and the smaller one in knitwear — our wool relaxes with wear.</p>",
+														"__globals__": {
+															"text_color": "globals/colors?id=wpe07d0ec3"
+														},
+														"typography_typography": "custom",
+														"typography_font_family": "Manrope",
+														"typography_font_size": {
+															"unit": "px",
+															"size": 14,
+															"sizes": []
+														}
+													},
+													"elements": []
+												}
+											],
+											"isInner": true
+										},
+										{
+											"id": "63dc7ed",
+											"elType": "widget",
+											"widgetType": "button",
+											"settings": {
+												"text": "Book a fitting",
+												"link": {
+													"url": "{{page:appointment}}",
+													"is_external": "",
+													"nofollow": ""
+												},
+												"size": "md",
+												"__globals__": {
+													"typography_typography": "globals/typography?id=accent",
+													"button_text_color": "globals/colors?id=text",
+													"border_color": "globals/colors?id=text",
+													"button_background_hover_color": "globals/colors?id=text",
+													"hover_color": "globals/colors?id=wped302e97"
+												},
+												"background_background": "classic",
+												"background_color": "rgba(0,0,0,0)",
+												"border_border": "solid",
+												"border_width": {
+													"unit": "px",
+													"top": "1",
+													"right": "1",
+													"bottom": "1",
+													"left": "1",
+													"isLinked": true
+												},
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												},
+												"button_background_hover_background": "classic"
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "Maison size guide: clothing and shoe sizes in EU, UK and US, with how to measure bust, waist and hips."
+			}
+		},
+		{
+			"key": "responsibility",
+			"type": "page",
+			"title": "Responsibility",
+			"slug": "responsibility",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
+				{
+					"id": "13fe9d8",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "80",
+							"right": "24",
+							"bottom": "40",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "40",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "060ad92",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Responsibility",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "Manrope",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "bcbe336",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Made to last. Made to be mended.",
+								"header_size": "h1",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Cormorant Garamond",
+								"typography_font_weight": "500",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 80,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 64,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 44,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "115f895",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Clothes are only sustainable if you keep wearing them. Here is what we do, and what we still get wrong.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Manrope",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 16,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "ac1dd20",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "24",
+							"right": "24",
+							"bottom": "72",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "36",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "539fd53",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 4,
+									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "705f217",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 4,
+											"column": "4",
+											"row": "4",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "d1c38a0",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "92%",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 48,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 38,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 26,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "9cfdf10",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>natural or recycled fibres</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "6da9003",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 4,
+											"column": "4",
+											"row": "4",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "74db120",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "6",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 48,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 38,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 26,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "57aeee3",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>family ateliers in Portugal and Italy</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "e165421",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 4,
+											"column": "4",
+											"row": "4",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "9b04d15",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "1,840",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 48,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 38,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 26,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "be83ab3",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>pieces repaired last year</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "01161aa",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 4,
+											"column": "4",
+											"row": "4",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "289dff0",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "0",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 48,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 38,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 26,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "577ef11",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>pieces sent to landfill</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "335f535",
+					"elType": "container",
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": true
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "16",
+							"right": "16",
+							"bottom": "16",
+							"left": "16",
+							"isLinked": true
+						}
+					},
+					"elements": [
+						{
+							"id": "555d670",
+							"elType": "widget",
+							"widgetType": "image",
+							"settings": {
+								"image": {
+									"url": "{{media:journal-1}}",
+									"id": "{{media_id:journal-1}}",
+									"alt": "Linen swatches dyed with madder, weld and walnut",
+									"source": "library"
+								},
+								"image_size": "full",
+								"width": {
+									"unit": "%",
+									"size": 100,
+									"sizes": []
+								},
+								"height": {
+									"unit": "px",
+									"size": 520,
+									"sizes": []
+								},
+								"height_tablet": {
+									"unit": "px",
+									"size": 416,
+									"sizes": []
+								},
+								"height_mobile": {
+									"unit": "px",
+									"size": 364,
+									"sizes": []
+								},
+								"object-fit": "cover",
+								"object-position": "center center",
+								"background_hover_transition": {
+									"unit": "s",
+									"size": 0.9,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "6c9882b",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "96",
+							"right": "24",
+							"bottom": "96",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "48",
+							"right": "20",
+							"bottom": "48",
+							"left": "20",
+							"isLinked": false
+						},
+						"background_background": "classic",
+						"__globals__": {
+							"background_color": "globals/colors?id=wpe6073fd3"
+						}
+					},
+					"elements": [
+						{
+							"id": "f340f1b",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Our commitments",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "Manrope",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "e4a6222",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Six things we promise",
+								"header_size": "h2",
+								"__globals__": {
+									"title_color": "globals/colors?id=text",
+									"typography_typography": "globals/typography?id=primary"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "077e29b",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 3,
+									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "cb70ab3",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-leaf",
+											"library": "fa-solid"
+										},
+										"title_text": "Natural fibres",
+										"description_text": "Linen, wool, silk and leather — fibres that last, can be repaired and do not shed plastic in the wash.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": ""
+									},
+									"elements": []
+								},
+								{
+									"id": "9188905",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-people-group",
+											"library": "fa-solid"
+										},
+										"title_text": "Fair partners",
+										"description_text": "We pay every atelier above the regional living wage and publish the list of who makes what.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": ""
+									},
+									"elements": []
+								},
+								{
+									"id": "0266e33",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-scissors",
+											"library": "fa-solid"
+										},
+										"title_text": "Lifetime repairs",
+										"description_text": "Send back anything we have ever sold. Our atelier mends it for free, for as long as you own it.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": ""
+									},
+									"elements": []
+								},
+								{
+									"id": "38db3ae",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-box-open",
+											"library": "fa-solid"
+										},
+										"title_text": "Plastic-free parcels",
+										"description_text": "Recycled card boxes, paper tape and cotton dust bags you can reuse.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": ""
+									},
+									"elements": []
+								},
+								{
+									"id": "3cec07e",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-recycle",
+											"library": "fa-solid"
+										},
+										"title_text": "Take-back",
+										"description_text": "Return worn Maison pieces for store credit; we repair and resell them in our Second Life edit.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": ""
+									},
+									"elements": []
+								},
+								{
+									"id": "621bf66",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-receipt",
+											"library": "fa-solid"
+										},
+										"title_text": "Open costs",
+										"description_text": "Every product page shows what the fabric, making and shipping cost us.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": ""
+									},
+									"elements": []
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "502e4a1",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "96",
+							"right": "24",
+							"bottom": "96",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "48",
+							"right": "20",
+							"bottom": "48",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "d96409b",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 64,
+									"column": "64",
+									"row": "64",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "c24cd76",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "19f3cd3",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Impact report 2026",
+												"header_size": "p",
+												"typography_typography": "custom",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 13,
+													"sizes": []
+												},
+												"typography_font_weight": "600",
+												"typography_text_transform": "uppercase",
+												"typography_letter_spacing": {
+													"unit": "px",
+													"size": 1.6,
+													"sizes": []
+												},
+												"typography_font_family": "Manrope",
+												"__globals__": {
+													"title_color": "globals/colors?id=accent"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "03c6b06",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Where we still fall short",
+												"header_size": "h2",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 40,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 32,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "f718499",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "c52f1bd",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Air freight for 4% of orders, wool from one mill we have not yet audited and too many returns on dresses. Our full report lists each one with a date to fix it.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3",
+													"typography_typography": "globals/typography?id=text"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "fe131d7",
+											"elType": "widget",
+											"widgetType": "button",
+											"settings": {
+												"text": "Read about our atelier",
+												"link": {
+													"url": "{{page:atelier}}",
+													"is_external": "",
+													"nofollow": ""
+												},
+												"size": "md",
+												"__globals__": {
+													"typography_typography": "globals/typography?id=accent",
+													"button_text_color": "globals/colors?id=text",
+													"border_color": "globals/colors?id=text",
+													"button_background_hover_color": "globals/colors?id=text",
+													"hover_color": "globals/colors?id=wped302e97"
+												},
+												"background_background": "classic",
+												"background_color": "rgba(0,0,0,0)",
+												"border_border": "solid",
+												"border_width": {
+													"unit": "px",
+													"top": "1",
+													"right": "1",
+													"bottom": "1",
+													"left": "1",
+													"isLinked": true
+												},
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												},
+												"button_background_hover_background": "classic"
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "How Maison makes clothes to last: natural fibres, fair partners, lifetime repairs and our yearly impact report."
+			}
+		},
+		{
+			"key": "appointment",
+			"type": "page",
+			"title": "Book an Appointment",
+			"slug": "appointment",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
+				{
+					"id": "36660e5",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "80",
+							"right": "24",
+							"bottom": "40",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "40",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "cfa0860",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "The atelier",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "Manrope",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "a4f2367",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Book an appointment",
+								"header_size": "h1",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Cormorant Garamond",
+								"typography_font_weight": "500",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 80,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 64,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 44,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "b1a59b3",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Visit our Paris, Milan or London store for styling, fittings and repairs. Appointments are free.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Manrope",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 16,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "db8e1af",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "24",
+							"right": "24",
+							"bottom": "72",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "36",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "63923f4",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 3,
+									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "f766406",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 8,
+											"column": "8",
+											"row": "8",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "24",
+											"right": "24",
+											"bottom": "24",
+											"left": "24",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"border_border": "solid",
+										"border_width": {
+											"unit": "px",
+											"top": "1",
+											"right": "1",
+											"bottom": "1",
+											"left": "1",
+											"isLinked": true
+										},
+										"__globals__": {
+											"border_color": "globals/colors?id=wpe2de42fb"
+										}
+									},
+									"elements": [
+										{
+											"id": "8c19f57",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>60 minutes</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 13,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "d6baf65",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Personal styling",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 12,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "e56954b",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Try the new collection with a stylist who brings pieces in your size.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "3905972",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 8,
+											"column": "8",
+											"row": "8",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "24",
+											"right": "24",
+											"bottom": "24",
+											"left": "24",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"border_border": "solid",
+										"border_width": {
+											"unit": "px",
+											"top": "1",
+											"right": "1",
+											"bottom": "1",
+											"left": "1",
+											"isLinked": true
+										},
+										"__globals__": {
+											"border_color": "globals/colors?id=wpe2de42fb"
+										}
+									},
+									"elements": [
+										{
+											"id": "eda80a3",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>45 minutes</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 13,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "8f121ce",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Made-to-measure fitting",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 12,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "06138bc",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Our tailor takes 22 measurements for a coat, blazer or trousers cut for you.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "d947bf0",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 8,
+											"column": "8",
+											"row": "8",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "24",
+											"right": "24",
+											"bottom": "24",
+											"left": "24",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"border_border": "solid",
+										"border_width": {
+											"unit": "px",
+											"top": "1",
+											"right": "1",
+											"bottom": "1",
+											"left": "1",
+											"isLinked": true
+										},
+										"__globals__": {
+											"border_color": "globals/colors?id=wpe2de42fb"
+										}
+									},
+									"elements": [
+										{
+											"id": "7f100b7",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>20 minutes</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 13,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "7a614fd",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Alterations & repairs",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 12,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "4734ba6",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Bring any Maison piece for hemming, re-buttoning or a mend.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "0f49c89",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "96",
+							"right": "24",
+							"bottom": "96",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "48",
+							"right": "20",
+							"bottom": "48",
+							"left": "20",
+							"isLinked": false
+						},
+						"background_background": "classic",
+						"__globals__": {
+							"background_color": "globals/colors?id=wpe6073fd3"
+						}
+					},
+					"elements": [
+						{
+							"id": "6a9aedd",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 48,
+									"column": "48",
+									"row": "48",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "d395771",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 55,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "20f0759",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Choose a time",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 28,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 15,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "07cdfd2",
+											"elType": "widget",
+											"widgetType": "shortcode",
+											"settings": {
+												"shortcode": "[wpforms id=\"{{form:appointment}}\" title=\"false\"]"
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "e3796ae",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 45,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "92c8c96",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:store-paris}}",
+													"id": "{{media_id:store-paris}}",
+													"alt": "Fitting room in the Maison Paris store",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 520,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 416,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 364,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "Book a free styling, made-to-measure or repair appointment at a Maison store in Paris, Milan or London."
+			}
+		},
+		{
 			"key": "journal",
 			"type": "page",
 			"title": "Journal",
@@ -6082,7 +8845,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "0336dcb",
+					"id": "918317b",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6118,7 +8881,7 @@
 					},
 					"elements": [
 						{
-							"id": "58a2fc6",
+							"id": "46ba9f2",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6145,7 +8908,7 @@
 							"elements": []
 						},
 						{
-							"id": "bd686fd",
+							"id": "0e01938",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6181,7 +8944,7 @@
 							"elements": []
 						},
 						{
-							"id": "a597e50",
+							"id": "16a5cda",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6203,7 +8966,7 @@
 					"isInner": false
 				},
 				{
-					"id": "85d8ce5",
+					"id": "839ab46",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6239,7 +9002,7 @@
 					},
 					"elements": [
 						{
-							"id": "084b6fb",
+							"id": "48aedb8",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6274,7 +9037,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "757b505",
+					"id": "53c3bce",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6310,7 +9073,7 @@
 					},
 					"elements": [
 						{
-							"id": "0e65972",
+							"id": "f90f2ac",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6337,7 +9100,7 @@
 							"elements": []
 						},
 						{
-							"id": "84d9ee4",
+							"id": "9c838d2",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6373,7 +9136,7 @@
 							"elements": []
 						},
 						{
-							"id": "3644a68",
+							"id": "1700002",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6395,7 +9158,7 @@
 					"isInner": false
 				},
 				{
-					"id": "e2c0be2",
+					"id": "49182f8",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6431,7 +9194,7 @@
 					},
 					"elements": [
 						{
-							"id": "854d6fa",
+							"id": "6883966",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6466,7 +9229,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "69adc1e",
+					"id": "ef0d393",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6502,7 +9265,7 @@
 					},
 					"elements": [
 						{
-							"id": "274ad47",
+							"id": "d296c10",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6529,7 +9292,7 @@
 							"elements": []
 						},
 						{
-							"id": "eae27d7",
+							"id": "9fd8184",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6565,7 +9328,7 @@
 							"elements": []
 						},
 						{
-							"id": "7eabe3a",
+							"id": "26e359e",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6587,7 +9350,7 @@
 					"isInner": false
 				},
 				{
-					"id": "b1d10e7",
+					"id": "34ed066",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6623,7 +9386,7 @@
 					},
 					"elements": [
 						{
-							"id": "091d584",
+							"id": "94f6d7e",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6658,7 +9421,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "979d472",
+					"id": "496e05e",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6694,7 +9457,7 @@
 					},
 					"elements": [
 						{
-							"id": "6f3ef77",
+							"id": "577bcc9",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6721,7 +9484,7 @@
 							"elements": []
 						},
 						{
-							"id": "eb16372",
+							"id": "11b9842",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6757,7 +9520,7 @@
 							"elements": []
 						},
 						{
-							"id": "1534b76",
+							"id": "37bc2f7",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6779,7 +9542,7 @@
 					"isInner": false
 				},
 				{
-					"id": "3b8a614",
+					"id": "8e98d81",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6815,7 +9578,7 @@
 					},
 					"elements": [
 						{
-							"id": "ca46c1b",
+							"id": "b2eb734",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -7152,6 +9915,10 @@
 					"page": "atelier"
 				},
 				{
+					"title": "Responsibility",
+					"page": "responsibility"
+				},
+				{
 					"title": "Journal",
 					"page": "journal"
 				},
@@ -7178,7 +9945,7 @@
 				"content": "<!-- wp:group {\"className\":\"wpe-topbar\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-topbar\"><!-- wp:group {\"className\":\"wpe-topbar__inner mx-topbar\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"center\"}} -->\n<div class=\"wp-block-group wpe-topbar__inner mx-topbar\"><!-- wp:paragraph -->\n<p>Complimentary shipping over €150 · Free returns within 30 days · Gift wrapping on request</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"header\",\"className\":\"wpe-header mx-header\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<header class=\"wp-block-group wpe-header mx-header\"><!-- wp:group {\"className\":\"wpe-header__inner mx-header__inner\",\"layout\":{\"type\":\"default\"}} -->\n<div class=\"wp-block-group wpe-header__inner mx-header__inner\"><!-- wp:navigation {\"overlayMenu\":\"mobile\",\"className\":\"mx-nav\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"left\"}} -->\n<!-- wp:navigation-link {\"label\":\"New in\",\"url\":\"{{woo:shop}}?orderby=date\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Accessories\",\"url\":\"{{term_link:pc-accessories}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation -->\n\n<!-- wp:site-title {\"className\":\"mx-logo\"} /-->\n\n<!-- wp:group {\"className\":\"wpe-header-actions mx-actions\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"right\"}} -->\n<div class=\"wp-block-group wpe-header-actions mx-actions\"><!-- wp:navigation {\"overlayMenu\":\"never\",\"className\":\"mx-nav mx-nav\\u002d\\u002dright\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation -->\n\n<!-- wp:search {\"label\":\"Search\",\"showLabel\":false,\"buttonText\":\"Search\",\"buttonPosition\":\"button-only\",\"buttonUseIcon\":true,\"isSearchFieldHidden\":true,\"query\":{\"post_type\":\"product\"}} /-->\n\n<!-- wp:woocommerce/customer-account {\"displayStyle\":\"icon_only\",\"iconStyle\":\"line\",\"iconClass\":\"wc-block-customer-account__account-icon\"} /-->\n\n<!-- wp:woocommerce/mini-cart /--></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --></header>\n<!-- /wp:group -->"
 			},
 			"footer": {
-				"content": "<!-- wp:group {\"tagName\":\"section\",\"align\":\"full\",\"className\":\"wpe-section mx-letter\",\"backgroundColor\":\"surface-alt\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"560px\"}} -->\n<section class=\"wp-block-group alignfull wpe-section mx-letter has-surface-alt-background-color has-background\"><!-- wp:paragraph {\"align\":\"center\",\"className\":\"is-style-wpe-overline\"} -->\n<p class=\"is-style-wpe-overline has-text-align-center\">The Maison letter</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading {\"textAlign\":\"center\",\"fontSize\":\"h2\"} -->\n<h2 class=\"wp-block-heading has-text-align-center has-h-2-font-size\">Quiet notes on new collections</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"align\":\"center\",\"textColor\":\"text-muted\"} -->\n<p class=\"has-text-align-center has-text-muted-color has-text-color\">One letter a month: new pieces, atelier stories and private sales. No noise.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:shortcode -->\n[wpforms id=\"{{form:newsletter}}\" title=\"false\"]\n<!-- /wp:shortcode --></section>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"footer\",\"className\":\"wpe-footer wpe-section\\u002d\\u002dmd\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<footer class=\"wp-block-group wpe-footer wpe-section--md\"><!-- wp:columns {\"className\":\"wpe-footer__cols wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns wpe-footer__cols wpe-section--sm\"><!-- wp:column {\"width\":\"40%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:40%\"><!-- wp:site-title /-->\n\n<!-- wp:paragraph {\"fontSize\":\"small\"} -->\n<p class=\"has-small-font-size\">Considered clothing, made slowly in small European ateliers since 2014.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Shop</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"New in\",\"url\":\"{{woo:shop}}?orderby=date\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Outerwear\",\"url\":\"{{term_link:pc-outerwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Accessories\",\"url\":\"{{term_link:pc-accessories}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Maison</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Atelier\",\"url\":\"{{page:atelier}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Stores\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Help</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Shipping \\u0026 returns\",\"url\":\"{{page:help}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"My account\",\"url\":\"{{woo:myaccount}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Bag\",\"url\":\"{{woo:cart}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Contact\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Visit</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"14 Rue de Saintonge, Paris\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Tue – Sat 11:00 – 19:00\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"+33 1 42 71 18 40\",\"url\":\"tel:+33142711840\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"care@maison-atelier.com\",\"url\":\"mailto:care@maison-atelier.com\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:group {\"className\":\"wpe-footer__bottom\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-footer__bottom\"><!-- wp:paragraph -->\n<p>© Maison Atelier. All rights reserved.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"{{page:privacy-policy}}\">Privacy</a> · <a href=\"{{page:terms}}\">Terms</a> · <a href=\"{{page:refund-policy}}\">Refunds</a> · <a href=\"{{page:cookie-policy}}\">Cookies</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Designed &amp; built with <a href=\"https://wpessential.org/\">Hi WPEssential</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></footer>\n<!-- /wp:group -->"
+				"content": "<!-- wp:group {\"tagName\":\"section\",\"align\":\"full\",\"className\":\"wpe-section mx-letter\",\"backgroundColor\":\"surface-alt\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"560px\"}} -->\n<section class=\"wp-block-group alignfull wpe-section mx-letter has-surface-alt-background-color has-background\"><!-- wp:paragraph {\"align\":\"center\",\"className\":\"is-style-wpe-overline\"} -->\n<p class=\"is-style-wpe-overline has-text-align-center\">The Maison letter</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading {\"textAlign\":\"center\",\"fontSize\":\"h2\"} -->\n<h2 class=\"wp-block-heading has-text-align-center has-h-2-font-size\">Quiet notes on new collections</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"align\":\"center\",\"textColor\":\"text-muted\"} -->\n<p class=\"has-text-align-center has-text-muted-color has-text-color\">One letter a month: new pieces, atelier stories and private sales. No noise.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:shortcode -->\n[wpforms id=\"{{form:newsletter}}\" title=\"false\"]\n<!-- /wp:shortcode --></section>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"footer\",\"className\":\"wpe-footer wpe-section\\u002d\\u002dmd\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<footer class=\"wp-block-group wpe-footer wpe-section--md\"><!-- wp:columns {\"className\":\"wpe-footer__cols wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns wpe-footer__cols wpe-section--sm\"><!-- wp:column {\"width\":\"40%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:40%\"><!-- wp:site-title /-->\n\n<!-- wp:paragraph {\"fontSize\":\"small\"} -->\n<p class=\"has-small-font-size\">Considered clothing, made slowly in small European ateliers since 2014.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Shop</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"New in\",\"url\":\"{{woo:shop}}?orderby=date\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Outerwear\",\"url\":\"{{term_link:pc-outerwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Accessories\",\"url\":\"{{term_link:pc-accessories}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Maison</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Atelier\",\"url\":\"{{page:atelier}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Responsibility\",\"url\":\"{{page:responsibility}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Stores\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Help</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Shipping \\u0026 returns\",\"url\":\"{{page:help}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Size guide\",\"url\":\"{{page:size-guide}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Book an appointment\",\"url\":\"{{page:appointment}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"My account\",\"url\":\"{{woo:myaccount}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Bag\",\"url\":\"{{woo:cart}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Contact\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Visit</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"14 Rue de Saintonge, Paris\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Tue – Sat 11:00 – 19:00\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"+33 1 42 71 18 40\",\"url\":\"tel:+33142711840\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"care@maison-atelier.com\",\"url\":\"mailto:care@maison-atelier.com\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:group {\"className\":\"wpe-footer__bottom\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-footer__bottom\"><!-- wp:paragraph -->\n<p>© Maison Atelier. All rights reserved.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"{{page:privacy-policy}}\">Privacy</a> · <a href=\"{{page:terms}}\">Terms</a> · <a href=\"{{page:refund-policy}}\">Refunds</a> · <a href=\"{{page:cookie-policy}}\">Cookies</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Designed &amp; built with <a href=\"https://wpessential.org/\">Hi WPEssential</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></footer>\n<!-- /wp:group -->"
 			}
 		},
 		"options": {

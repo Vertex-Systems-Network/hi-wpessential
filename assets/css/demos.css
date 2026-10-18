@@ -338,3 +338,31 @@ body:not(.wpe-demo-maison) .woocommerce-products-header .wpe-shop-lead { color: 
 .nw-head > .has-text-align-center { margin-left: auto !important; margin-right: auto !important; }
 .wp-block-column .nw-stat__n { font-size: 32px; }
 .wpe-demo-base .wpe-footer__newsletter { display: none; }
+
+/* Maison — size guide, responsibility, appointment. */
+.mx-measure { border-top: 1px solid var(--wp--preset--color--border); padding-top: 14px; }
+.mx-impacts { border-block: 1px solid var(--wp--preset--color--border); padding-block: 32px; }
+.mx-impact__n { font-family: var(--wp--preset--font-family--display, inherit); font-size: 56px; line-height: 1; margin: 0; color: var(--wp--preset--color--primary); }
+.mx-appt__time { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--wp--preset--color--primary); margin: 0; }
+.mx-table { overflow-x: auto; }
+@media (max-width: 781px) { .mx-impacts.is-layout-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+
+/* Pulse — about, gallery, call for speakers, code of conduct. */
+.px-year, .px-num { font-family: var(--wp--preset--font-family--display, inherit); font-weight: 700; font-size: 40px; line-height: 1; margin: 0 0 8px; color: var(--wp--preset--color--text); }
+.px-nums { margin-top: 56px; border-top: 1px solid var(--wp--preset--color--border); padding-top: 32px; }
+.px-gallery.is-layout-grid { gap: 16px; }
+.px-gallery figure:nth-child(1), .px-gallery figure:nth-child(6) { grid-column: span 2; grid-row: span 2; }
+.px-gallery img { height: 100%; }
+.px-topics .px-tag { display: inline-block; margin: 0 6px 8px 0; }
+.px-tile--accent { border: 2px solid var(--wp--preset--color--primary); background: transparent; }
+.px-conduct .px-tile { margin-bottom: 16px; }
+@media (max-width: 781px) {
+	:is(.px-nums, .px-gallery).is-layout-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+	.px-gallery figure:nth-child(1), .px-gallery figure:nth-child(6) { grid-column: span 2; grid-row: auto; }
+}
+@media (max-width: 1024px) {
+	:is(.wpe-demo-pulse, .wpe-demo-maison) .wp-block-group.is-layout-grid:not(.px-gallery, .px-passes) { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 640px) {
+	:is(.wpe-demo-pulse, .wpe-demo-maison) .wp-block-group.is-layout-grid:not(.px-gallery, .px-nums, .mx-impacts, .px-passes) { grid-template-columns: minmax(0, 1fr) !important; }
+}

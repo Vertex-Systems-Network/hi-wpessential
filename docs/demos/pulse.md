@@ -61,3 +61,10 @@ Pulse uses the `dynamic` motion preset and `settings.custom.hover` in `styles/pu
 | Buttons | Lift 3 px with a lime glow, fast at 0.26 s. | Energetic, high-contrast brand. |
 | Images / blog cards | Zoom to 1.06 inside the card. | Event and blog cards use an image zoom with a reveal ([framer.com](https://www.framer.com/community/marketplace/components/cms-event-card/)). |
 | Scroll | Counters count up, the sponsor marquee scrolls, the hero has parallax and sections reveal (`dynamic` + GSAP). | Kinetic event sites. Motion respects reduced-motion. |
+
+## Gap audit (Oct 2026)
+Compared with top Envato event demos (Exhibz, Eventchamp, Meetup) and conferences such as Config, Smashing Conf and Web Summit, Pulse added:
+- **About** — story, numbers, edition history and values.
+- **Gallery** — last year's photos in a bento grid.
+- **Call for speakers** — process, topics and a WPForms proposal form.
+- **Code of conduct** — required by most real conferences and linked from About and the footer.

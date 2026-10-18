@@ -186,8 +186,8 @@ def g_letter():
 def g_footer():
     return g_letter() + '\n\n' + b.footer('Considered clothing, made slowly in small European ateliers since 2014.',
                     [('Shop', [('New in', '{{woo:shop}}?orderby=date'), ('Dresses', '{{term_link:pc-dresses}}'), ('Knitwear', '{{term_link:pc-knitwear}}'), ('Outerwear', '{{term_link:pc-outerwear}}'), ('Accessories', '{{term_link:pc-accessories}}')]),
-                     ('Maison', [('Atelier', '{{page:atelier}}'), ('Lookbook', '{{page:lookbook}}'), ('Journal', '{{page:journal}}'), ('Stores', '{{page:contact}}')]),
-                     ('Help', [('Shipping & returns', '{{page:help}}'), ('My account', '{{woo:myaccount}}'), ('Bag', '{{woo:cart}}'), ('Contact', '{{page:contact}}')]),
+                     ('Maison', [('Atelier', '{{page:atelier}}'), ('Lookbook', '{{page:lookbook}}'), ('Responsibility', '{{page:responsibility}}'), ('Journal', '{{page:journal}}'), ('Stores', '{{page:contact}}')]),
+                     ('Help', [('Shipping & returns', '{{page:help}}'), ('Size guide', '{{page:size-guide}}'), ('Book an appointment', '{{page:appointment}}'), ('My account', '{{woo:myaccount}}'), ('Bag', '{{woo:cart}}'), ('Contact', '{{page:contact}}')]),
                      ('Visit', [('14 Rue de Saintonge, Paris', '{{page:contact}}'), ('Tue – Sat 11:00 – 19:00', '{{page:contact}}'), ('+33 1 42 71 18 40', 'tel:+33142711840'), ('care@maison-atelier.com', 'mailto:care@maison-atelier.com')])],
                     ('© Maison Atelier. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">Hi WPEssential</a>'))
 
@@ -419,6 +419,106 @@ def e_help():
     ]
 
 
+# Size guide, responsibility and atelier appointment (common on top fashion stores and Envato fashion demos).
+SIZE_ROWS = [('XS', '34', '6', '2', '80–83', '62–65', '87–90'), ('S', '36', '8', '4', '84–87', '66–69', '91–94'),
+             ('M', '38', '10', '6', '88–92', '70–74', '95–99'), ('L', '40', '12', '8', '93–97', '75–79', '100–104')]
+SIZE_HEAD = ['Maison', 'EU / FR', 'UK', 'US', 'Bust (cm)', 'Waist (cm)', 'Hips (cm)']
+SHOE_ROWS = [('37', '4', '6.5', '23.5'), ('38', '5', '7.5', '24.2'), ('39', '6', '8.5', '24.9'), ('40', '7', '9.5', '25.6'), ('41', '8', '10.5', '26.3')]
+MEASURE = [('Bust', 'Measure around the fullest part of your chest, keeping the tape level under your arms.'),
+           ('Waist', 'Measure around the narrowest part of your waist, usually just above the belly button.'),
+           ('Hips', 'Stand with feet together and measure around the fullest part of your hips.'),
+           ('Between sizes?', 'Take the larger size in tailoring and the smaller one in knitwear — our wool relaxes with wear.')]
+IMPACT = [('92%', 'natural or recycled fibres'), ('6', 'family ateliers in Portugal and Italy'), ('1,840', 'pieces repaired last year'), ('0', 'pieces sent to landfill')]
+PLEDGES = [('fa-leaf', 'Natural fibres', 'Linen, wool, silk and leather — fibres that last, can be repaired and do not shed plastic in the wash.'),
+           ('fa-people-group', 'Fair partners', 'We pay every atelier above the regional living wage and publish the list of who makes what.'),
+           ('fa-scissors', 'Lifetime repairs', 'Send back anything we have ever sold. Our atelier mends it for free, for as long as you own it.'),
+           ('fa-box-open', 'Plastic-free parcels', 'Recycled card boxes, paper tape and cotton dust bags you can reuse.'),
+           ('fa-recycle', 'Take-back', 'Return worn Maison pieces for store credit; we repair and resell them in our Second Life edit.'),
+           ('fa-receipt', 'Open costs', 'Every product page shows what the fabric, making and shipping cost us.')]
+APPT = [('Personal styling', '60 minutes', 'Try the new collection with a stylist who brings pieces in your size.'),
+        ('Made-to-measure fitting', '45 minutes', 'Our tailor takes 22 measurements for a coat, blazer or trousers cut for you.'),
+        ('Alterations & repairs', '20 minutes', 'Bring any Maison piece for hemming, re-buttoning or a mend.')]
+
+
+def g_size_guide():
+    head = page_head('Size guide', 'Client care', 'Size guide', 'Our pieces are cut for an easy fit. If you are between sizes, our client care team is happy to help.')
+    women = b.group(b.h('Clothing', size='h3'), b.table(SIZE_HEAD, [list(r) for r in SIZE_ROWS], className='mx-table'), layout='default')
+    shoes = b.group(b.h('Shoes', size='h3'), b.table(['EU', 'UK', 'US', 'Foot length (cm)'], [list(r) for r in SHOE_ROWS], className='mx-table'), layout='default')
+    how = b.columns(b.column(b.image('atelier-hands', 'Tailor measuring a client with a cloth tape', aspect='4/5')),
+                    b.column(b.p('How to measure', style='wpe-overline'), b.h('Three measurements, two minutes', size='h2'),
+                             *[b.group(b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='mx-measure') for t, d in MEASURE],
+                             b.p('<a href="{{page:appointment}}">Book a fitting at the atelier →</a>', className='mx-link'), valign='center'),
+                    valign='center', className='wpe-gap-lg')
+    return b.join(head, b.section(women, shoes, className='wpe-section wpe-section--sm'), b.section(how, bg='surface-alt'))
+
+
+def g_responsibility():
+    head = page_head('Responsibility', 'Responsibility', 'Made to last.<br>Made to be mended.',
+                     'Clothes are only sustainable if you keep wearing them. Here is what we do, and what we still get wrong.')
+    stats = b.group(*[b.group(b.p(n, className='mx-impact__n'), b.p(t, color='text-muted', size='small'), layout='default', className='mx-impact')
+                      for n, t in IMPACT], layout='grid', columns=4, className='mx-impacts')
+    pledges = b.group(*[b.group(b.h(t, level=3, size='h4'), b.p(d, color='text-muted', size='small'), layout='default', className='mx-card')
+                        for _i, t, d in PLEDGES], layout='grid', columns=3)
+    wide = b.image('journal-1', 'Linen swatches dyed with madder, weld and walnut', className='mx-wide')
+    report = b.columns(b.column(b.p('Impact report 2026', style='wpe-overline'), b.h('Where we still fall short', size='h2')),
+                       b.column(b.p('Air freight for 4% of orders, wool from one mill we have not yet audited and too many returns on dresses. Our full report lists each one with a date to fix it.', color='text-muted'),
+                                b.buttons(b.button('Read about our atelier', '{{page:atelier}}', style='wpe-outline'))), className='wpe-gap-lg')
+    return b.join(head, b.section(stats, className='wpe-section wpe-section--sm'), wide,
+                  b.section(b.p('Our commitments', style='wpe-overline'), b.h('Six things we promise', size='h2'), pledges, bg='surface-alt'),
+                  b.section(report))
+
+
+def g_appointment():
+    head = page_head('Appointment', 'The atelier', 'Book an appointment', 'Visit our Paris, Milan or London store for styling, fittings and repairs. Appointments are free.')
+    cards = b.group(*[b.group(b.p(d, className='mx-appt__time'), b.h(t, level=3, size='h4'), b.p(x, color='text-muted', size='small'), layout='default', className='mx-card')
+                      for t, d, x in APPT], layout='grid', columns=3)
+    body = b.columns(b.column(b.h('Choose a time', size='h3'), b.shortcode('[wpforms id="{{form:appointment}}" title="false"]'), width='55%'),
+                     b.column(b.image('store-paris', 'Fitting room in the Maison Paris store', aspect='4/5'), width='45%'), className='wpe-gap-lg')
+    return b.join(head, b.section(cards, className='wpe-section wpe-section--sm'), b.section(body, bg='surface-alt'))
+
+
+def _e_table(head, rows):
+    return e.text('<table class="mx-table"><thead><tr>%s</tr></thead><tbody>%s</tbody></table>' % (
+        ''.join('<th>%s</th>' % h for h in head), ''.join('<tr>%s</tr>' % ''.join('<td>%s</td>' % c for c in r) for r in rows)))
+
+
+def e_size_guide():
+    return [
+        e_head('Client care', 'Size guide', 'Our pieces are cut for an easy fit. If you are between sizes, our client care team is happy to help.'),
+        e.container(e.heading('Clothing', 3, size_px=28), _e_table(SIZE_HEAD, SIZE_ROWS), e.heading('Shoes', 3, size_px=28),
+                    _e_table(['EU', 'UK', 'US', 'Foot length (cm)'], SHOE_ROWS), pad=(24, 24, 72, 24)),
+        e.container(e.row(e.col(e.image_fixed('atelier-hands', 'Tailor measuring a client with a cloth tape', 520), width=50),
+                          e.col(e.overline('How to measure'), e.heading('Three measurements, two minutes', 2, size_px=40),
+                                *[e.col(e.heading(t, 4, size_px=18), e.text(d, size_px=14), gap=4) for t, d in MEASURE],
+                                e.button('Book a fitting', '{{page:appointment}}', 'outline'), width=50, justify='center'), gap=64),
+                    bg='surface-alt', pad=(96, 24, 96, 24)),
+    ]
+
+
+def e_responsibility():
+    return [
+        e_head('Responsibility', 'Made to last. Made to be mended.', 'Clothes are only sustainable if you keep wearing them. Here is what we do, and what we still get wrong.'),
+        e.container(e.grid(*[e.col(e.heading(n, 3, 'primary', size_px=48), e.text(t, size_px=14), gap=4) for n, t in IMPACT], columns=4), pad=(24, 24, 72, 24)),
+        e.container(e.image_fixed('journal-1', 'Linen swatches dyed with madder, weld and walnut', 520), pad=0, boxed=False),
+        e.container(e.overline('Our commitments'), e.heading('Six things we promise'),
+                    e.grid(*[e.icon_box('fas ' + i, t, d) for i, t, d in PLEDGES], columns=3), bg='surface-alt', pad=(96, 24, 96, 24)),
+        e.container(e.row(e.col(e.overline('Impact report 2026'), e.heading('Where we still fall short', 2, size_px=40), width=50),
+                          e.col(e.text('Air freight for 4% of orders, wool from one mill we have not yet audited and too many returns on dresses. Our full report lists each one with a date to fix it.'),
+                                e.button('Read about our atelier', '{{page:atelier}}', 'outline'), width=50), gap=64), pad=(96, 24, 96, 24)),
+    ]
+
+
+def e_appointment():
+    return [
+        e_head('The atelier', 'Book an appointment', 'Visit our Paris, Milan or London store for styling, fittings and repairs. Appointments are free.'),
+        e.container(e.grid(*[e.col(e.text(d, size_px=13), e.heading(t, 3, size_px=22), e.text(x, size_px=14), gap=8, border='border', pad=24)
+                             for t, d, x in APPT], columns=3), pad=(24, 24, 72, 24)),
+        e.container(e.row(e.col(e.heading('Choose a time', 3, size_px=28), e.shortcode('[wpforms id="{{form:appointment}}" title="false"]'), width=55),
+                          e.col(e.image_fixed('store-paris', 'Fitting room in the Maison Paris store', 520), width=45), gap=48),
+                    bg='surface-alt', pad=(96, 24, 96, 24)),
+    ]
+
+
 # Package --------------------------------------------------------------------------------
 
 def package(builder):
@@ -438,6 +538,9 @@ def package(builder):
         ('atelier', 'Atelier', 'atelier', g_atelier, e_atelier),
         ('contact', 'Stores & Contact', 'contact', g_contact, e_contact),
         ('help', 'Shipping & Returns', 'shipping-returns', g_help, e_help),
+        ('size-guide', 'Size Guide', 'size-guide', g_size_guide, e_size_guide),
+        ('responsibility', 'Responsibility', 'responsibility', g_responsibility, e_responsibility),
+        ('appointment', 'Book an Appointment', 'appointment', g_appointment, e_appointment),
     ]
     content = []
     for key, title, slug, g, el in pages:
@@ -460,7 +563,7 @@ def package(builder):
         products.append(pr)
     menus = [{'name': 'Maison menu', 'location': 'primary', 'items': [
         {'title': 'Shop', 'woo': 'shop'}, {'title': 'Lookbook', 'page': 'lookbook'}, {'title': 'Atelier', 'page': 'atelier'},
-        {'title': 'Journal', 'page': 'journal'}, {'title': 'Stores', 'page': 'contact'}]}]
+        {'title': 'Responsibility', 'page': 'responsibility'}, {'title': 'Journal', 'page': 'journal'}, {'title': 'Stores', 'page': 'contact'}]}]
     settings = {'front_page': 'home', 'blog_page': 'journal', 'style': 'maison', 'motion': 'editorial',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'footer': {'content': g_footer()}},
                 'options': {'posts_per_page': 9, 'blogname': 'Maison', 'blogdescription': 'Clothes made slowly, to be worn for years.',
@@ -473,7 +576,7 @@ def package(builder):
                                                                   'woocommerce_cod_settings': {'enabled': 'yes', 'title': 'Pay in store'}}}}
     if builder == 'elementor':
         settings['elementor_kit'] = e.kit(container_width=1200, button_radius=0, field_radius=0, button_padding=(16, 28))
-    return {'version': 1, 'media': media, 'terms': terms, 'forms': [forms.maison_care(), forms.maison_newsletter()], 'content': content, 'products': products, 'menus': menus, 'settings': settings}
+    return {'version': 1, 'media': media, 'terms': terms, 'forms': [forms.maison_care(), forms.maison_newsletter(), forms.maison_appointment()], 'content': content, 'products': products, 'menus': menus, 'settings': settings}
 
 
 DEMO = {
@@ -481,8 +584,8 @@ DEMO = {
     'niche': ['fashion', 'shop', 'clothing', 'boutique'], 'type': 'pro',
     'thumbnail': 'demo:thumbnail.webp',
     'preview': {'desktop': 'demo:preview/desktop.webp', 'tablet': 'demo:preview/tablet.webp', 'mobile': 'demo:preview/mobile.webp'},
-    'pages': ['Home', 'Shop', 'Lookbook', 'Atelier', 'Journal', 'Stores & Contact', 'Shipping & Returns'],
-    'highlights': ['12 products', 'Variable sizes & colours', 'Lookbook', 'Light & dark'],
+    'pages': ['Home', 'Shop', 'Lookbook', 'Atelier', 'Journal', 'Stores & Contact', 'Shipping & Returns', 'Size Guide', 'Responsibility', 'Book an Appointment'],
+    'highlights': ['12 products', 'Variable sizes & colours', 'Lookbook', 'Size guide & appointments', 'Light & dark'],
     'motion': 'editorial',
     'plugins': [{'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'}, forms.PLUGIN],
 }
@@ -494,6 +597,9 @@ SEO = {
     'atelier': 'Inside the Maison atelier: how our tailors cut, fit and finish every garment, and how to book a fitting.',
     'contact': 'Visit a Maison store or contact our client care team for sizing, orders and atelier appointments.',
     'help': 'Maison shipping and returns: delivery times, costs, free 30-day returns and how to send an order back.',
+    'size-guide': 'Maison size guide: clothing and shoe sizes in EU, UK and US, with how to measure bust, waist and hips.',
+    'responsibility': 'How Maison makes clothes to last: natural fibres, fair partners, lifetime repairs and our yearly impact report.',
+    'appointment': 'Book a free styling, made-to-measure or repair appointment at a Maison store in Paris, Milan or London.',
     'journal': 'The Maison journal: styling notes, atelier stories and the ideas behind each collection.',
 }
 

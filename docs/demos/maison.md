@@ -45,3 +45,9 @@ Maison uses the `editorial` motion preset and `settings.custom.hover` in `styles
 | Links / nav | An underline draws in from the left. | Editorial, magazine feel. |
 | Category / lookbook images | Slow zoom inside a fixed frame. | Calm, premium motion ([framer.com](https://www.framer.com/marketplace/components/hover-product-card/)). |
 | Scroll | Headings rise, images reveal with a curtain (`editorial`). | Slow mask reveals, as in the luxury references above. |
+
+## Gap audit (Oct 2026)
+Compared with top Envato fashion demos (Kalles, Elessi, WoodMart Fashion) and stores such as Everlane, COS and Arket, Maison was missing three pages they all ship:
+- **Size guide** — clothing and shoe tables (EU/UK/US) plus how to measure; linked from the footer and PDP help.
+- **Responsibility** — impact numbers, six commitments and an honest "where we fall short" block (Everlane / Arket pattern).
+- **Book an appointment** — styling, made-to-measure and repairs, with a WPForms request form (luxury-store pattern).

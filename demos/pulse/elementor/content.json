@@ -247,6 +247,71 @@
 					]
 				}
 			]
+		},
+		{
+			"key": "cfp",
+			"title": "Call for speakers — Pulse",
+			"submit": "Submit proposal",
+			"message": "Thanks — your proposal is in. The review panel replies to everyone by 15 January.",
+			"settings": {
+				"subject": "Talk proposal from {field_id=\"1\"}"
+			},
+			"fields": [
+				{
+					"type": "name",
+					"label": "Full name",
+					"required": true,
+					"size": "medium"
+				},
+				{
+					"type": "email",
+					"label": "Email",
+					"required": true,
+					"size": "medium"
+				},
+				{
+					"type": "text",
+					"label": "Role and company",
+					"size": "medium"
+				},
+				{
+					"type": "select",
+					"label": "Track",
+					"required": true,
+					"size": "medium",
+					"choices": [
+						"Design systems & tokens",
+						"Front-end architecture",
+						"AI in product",
+						"Accessibility",
+						"Brand & motion",
+						"Research & strategy"
+					]
+				},
+				{
+					"type": "text",
+					"label": "Talk title",
+					"required": true
+				},
+				{
+					"type": "textarea",
+					"label": "Abstract (about 150 words)",
+					"required": true
+				},
+				{
+					"type": "url",
+					"label": "Link to a past talk or slides",
+					"placeholder": "Optional — first-time speakers welcome"
+				},
+				{
+					"type": "checkbox",
+					"label": "Consent",
+					"required": true,
+					"choices": [
+						"I agree to the Privacy Policy and to being contacted about my request."
+					]
+				}
+			]
 		}
 	],
 	"content": [
@@ -15198,6 +15263,4104 @@
 			}
 		},
 		{
+			"key": "about",
+			"type": "page",
+			"title": "About",
+			"slug": "about",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
+				{
+					"id": "e8c0653",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "72",
+							"right": "24",
+							"bottom": "32",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "36",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "5b69b9c",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Home › About</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "DM Sans",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 12,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "b5b41fa",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "About",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "DM Sans",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "285e19f",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "The conference for people who design and build the web",
+								"header_size": "h1",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Space Grotesk",
+								"typography_font_weight": "700",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 72,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 58,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 40,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "b337e84",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Independent since 2023, in Lisbon every May.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "DM Sans",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 16,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "85422af",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "24",
+							"right": "24",
+							"bottom": "72",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "36",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "10a7cdd",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 56,
+									"column": "56",
+									"row": "56",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "2d6cc4b",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "ff4d5fb",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:crowd}}",
+													"id": "{{media_id:crowd}}",
+													"alt": "The Pulse main stage full of attendees",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 420,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 336,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 294,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"hover_animation": "grow",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.26,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "a760880",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"flex_justify_content": "center"
+									},
+									"elements": [
+										{
+											"id": "389bc7b",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Our story",
+												"header_size": "p",
+												"typography_typography": "custom",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 13,
+													"sizes": []
+												},
+												"typography_font_weight": "600",
+												"typography_text_transform": "uppercase",
+												"typography_letter_spacing": {
+													"unit": "px",
+													"size": 1.6,
+													"sizes": []
+												},
+												"typography_font_family": "DM Sans",
+												"__globals__": {
+													"title_color": "globals/colors?id=accent"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "e2230b8",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Built by people who were tired of sales-pitch conferences",
+												"header_size": "h2",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 40,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 32,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "0874085",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Pulse started in 2023 as a one-day meetup for 420 designers and engineers in Lisbon. Five editions later it is still independent, still run by the same four people and still has no paid keynote slots.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3",
+													"typography_typography": "globals/typography?id=text"
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						},
+						{
+							"id": "69421f0",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 4,
+									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "2b8a615",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 4,
+											"column": "4",
+											"row": "4",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "3dc4876",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "2,400",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 44,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 35,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 24,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "59b90e1",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>attendees in 2026</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "ebd9629",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 4,
+											"column": "4",
+											"row": "4",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "f3f27a3",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "38",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 44,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 35,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 24,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "38913e1",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>countries</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "07563a3",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 4,
+											"column": "4",
+											"row": "4",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "63538fe",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "4.8/5",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 44,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 35,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 24,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "cf67355",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>average talk rating</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "ba2fd31",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 4,
+											"column": "4",
+											"row": "4",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "53fde96",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "120",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 44,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 35,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 24,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "2bb232c",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>scholarship tickets</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "ed265bc",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "88",
+							"right": "24",
+							"bottom": "88",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "44",
+							"right": "20",
+							"bottom": "44",
+							"left": "20",
+							"isLinked": false
+						},
+						"background_background": "classic",
+						"__globals__": {
+							"background_color": "globals/colors?id=wpe6073fd3"
+						}
+					},
+					"elements": [
+						{
+							"id": "13f320e",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Five editions",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "DM Sans",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "f4be002",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "How Pulse grew",
+								"header_size": "h2",
+								"__globals__": {
+									"title_color": "globals/colors?id=text",
+									"typography_typography": "globals/typography?id=primary"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "647bba3",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 4,
+									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "298f95e",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 6,
+											"column": "6",
+											"row": "6",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "20",
+											"right": "20",
+											"bottom": "20",
+											"left": "20",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"background_background": "classic",
+										"__globals__": {
+											"background_color": "globals/colors?id=wped302e97"
+										},
+										"border_radius": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "37f0e88",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "2023",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 28,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 15,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "d64a340",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "420 attendees",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "0fcbc61",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>First edition in a converted LX Factory warehouse.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "65658fd",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 6,
+											"column": "6",
+											"row": "6",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "20",
+											"right": "20",
+											"bottom": "20",
+											"left": "20",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"background_background": "classic",
+										"__globals__": {
+											"background_color": "globals/colors?id=wped302e97"
+										},
+										"border_radius": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "df877f3",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "2024",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 28,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 15,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "c399862",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "900 attendees",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "33e8075",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Moved to the riverfront; added the workshop day.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "9b72e31",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 6,
+											"column": "6",
+											"row": "6",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "20",
+											"right": "20",
+											"bottom": "20",
+											"left": "20",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"background_background": "classic",
+										"__globals__": {
+											"background_color": "globals/colors?id=wped302e97"
+										},
+										"border_radius": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "5ea1649",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "2025",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 28,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 15,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "7bcdf75",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "1,600 attendees",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "5737034",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Three tracks, 42 speakers and a sold-out after-party.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "97e8527",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 6,
+											"column": "6",
+											"row": "6",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "20",
+											"right": "20",
+											"bottom": "20",
+											"left": "20",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"background_background": "classic",
+										"__globals__": {
+											"background_color": "globals/colors?id=wped302e97"
+										},
+										"border_radius": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "16c222a",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "2026",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 28,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 15,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "7dcd340",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "2,400 attendees",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "8144813",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>58 talks, live captions on every stage and our first scholarship fund.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "5e38810",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "88",
+							"right": "24",
+							"bottom": "96",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "44",
+							"right": "20",
+							"bottom": "48",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "c75b6f1",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "What we stand for",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "DM Sans",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "8d34201",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Three rules we never break",
+								"header_size": "h2",
+								"__globals__": {
+									"title_color": "globals/colors?id=text",
+									"typography_typography": "globals/typography?id=primary"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "94c7bb5",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 3,
+									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "ccb1d45",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-microphone",
+											"library": "fa-solid"
+										},
+										"title_text": "Talks with receipts",
+										"description_text": "Every speaker has shipped what they talk about. No sales pitches on stage.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": "float"
+									},
+									"elements": []
+								},
+								{
+									"id": "01f78be",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-universal-access",
+											"library": "fa-solid"
+										},
+										"title_text": "Accessible by default",
+										"description_text": "Live captions, step-free venues, quiet rooms and a free sign-language interpreter on request.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": "float"
+									},
+									"elements": []
+								},
+								{
+									"id": "7f24d24",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-hand-holding-heart",
+											"library": "fa-solid"
+										},
+										"title_text": "Open to everyone",
+										"description_text": "5% of tickets fund scholarships for students and under-represented builders.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": "float"
+									},
+									"elements": []
+								}
+							],
+							"isInner": true
+						},
+						{
+							"id": "f387624",
+							"elType": "widget",
+							"widgetType": "button",
+							"settings": {
+								"text": "Read the code of conduct",
+								"link": {
+									"url": "{{page:code-of-conduct}}",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"size": "md",
+								"__globals__": {
+									"typography_typography": "globals/typography?id=accent",
+									"button_text_color": "globals/colors?id=text",
+									"border_color": "globals/colors?id=text",
+									"button_background_hover_color": "globals/colors?id=text",
+									"hover_color": "globals/colors?id=wped302e97"
+								},
+								"background_background": "classic",
+								"background_color": "rgba(0,0,0,0)",
+								"border_border": "solid",
+								"border_width": {
+									"unit": "px",
+									"top": "1",
+									"right": "1",
+									"bottom": "1",
+									"left": "1",
+									"isLinked": true
+								},
+								"hover_animation": "float",
+								"button_hover_transition_duration": {
+									"unit": "s",
+									"size": 0.26,
+									"sizes": []
+								},
+								"button_background_hover_background": "classic"
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "About Pulse: an independent design and engineering conference in Lisbon since 2023, with five editions and 2,400 attendees."
+			}
+		},
+		{
+			"key": "gallery",
+			"type": "page",
+			"title": "Gallery",
+			"slug": "gallery",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
+				{
+					"id": "3a07724",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "72",
+							"right": "24",
+							"bottom": "32",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "36",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "15de21c",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Home › Gallery</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "DM Sans",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 12,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "11b921e",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Gallery",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "DM Sans",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "6e2713a",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Pulse 2026 in pictures",
+								"header_size": "h1",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Space Grotesk",
+								"typography_font_weight": "700",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 72,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 58,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 40,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "1bb91f7",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Two days, 2,400 people and a lot of very good coffee. Photos by Joana Reis.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "DM Sans",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 16,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "8b16ebc",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "24",
+							"right": "24",
+							"bottom": "72",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "36",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "dd45850",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 4,
+									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "a9a6653",
+									"elType": "widget",
+									"widgetType": "image",
+									"settings": {
+										"image": {
+											"url": "{{media:crowd}}",
+											"id": "{{media_id:crowd}}",
+											"alt": "The main stage on Day 1, 2026",
+											"source": "library"
+										},
+										"image_size": "full",
+										"width": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"height": {
+											"unit": "px",
+											"size": 240,
+											"sizes": []
+										},
+										"height_tablet": {
+											"unit": "px",
+											"size": 192,
+											"sizes": []
+										},
+										"height_mobile": {
+											"unit": "px",
+											"size": 168,
+											"sizes": []
+										},
+										"object-fit": "cover",
+										"object-position": "center center",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.26,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "58ae749",
+									"elType": "widget",
+									"widgetType": "image",
+									"settings": {
+										"image": {
+											"url": "{{media:hero-stage}}",
+											"id": "{{media_id:hero-stage}}",
+											"alt": "Opening keynote under the riverfront roof",
+											"source": "library"
+										},
+										"image_size": "full",
+										"width": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"height": {
+											"unit": "px",
+											"size": 240,
+											"sizes": []
+										},
+										"height_tablet": {
+											"unit": "px",
+											"size": 192,
+											"sizes": []
+										},
+										"height_mobile": {
+											"unit": "px",
+											"size": 168,
+											"sizes": []
+										},
+										"object-fit": "cover",
+										"object-position": "center center",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.26,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "4e4b5fb",
+									"elType": "widget",
+									"widgetType": "image",
+									"settings": {
+										"image": {
+											"url": "{{media:workshop}}",
+											"id": "{{media_id:workshop}}",
+											"alt": "Design-tokens workshop at LX Factory",
+											"source": "library"
+										},
+										"image_size": "full",
+										"width": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"height": {
+											"unit": "px",
+											"size": 240,
+											"sizes": []
+										},
+										"height_tablet": {
+											"unit": "px",
+											"size": 192,
+											"sizes": []
+										},
+										"height_mobile": {
+											"unit": "px",
+											"size": 168,
+											"sizes": []
+										},
+										"object-fit": "cover",
+										"object-position": "center center",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.26,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "8eefcfd",
+									"elType": "widget",
+									"widgetType": "image",
+									"settings": {
+										"image": {
+											"url": "{{media:networking}}",
+											"id": "{{media_id:networking}}",
+											"alt": "Coffee and conversations between sessions",
+											"source": "library"
+										},
+										"image_size": "full",
+										"width": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"height": {
+											"unit": "px",
+											"size": 240,
+											"sizes": []
+										},
+										"height_tablet": {
+											"unit": "px",
+											"size": 192,
+											"sizes": []
+										},
+										"height_mobile": {
+											"unit": "px",
+											"size": 168,
+											"sizes": []
+										},
+										"object-fit": "cover",
+										"object-position": "center center",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.26,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "1728efb",
+									"elType": "widget",
+									"widgetType": "image",
+									"settings": {
+										"image": {
+											"url": "{{media:venue}}",
+											"id": "{{media_id:venue}}",
+											"alt": "The Lisbon Congress Centre at sunset",
+											"source": "library"
+										},
+										"image_size": "full",
+										"width": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"height": {
+											"unit": "px",
+											"size": 240,
+											"sizes": []
+										},
+										"height_tablet": {
+											"unit": "px",
+											"size": 192,
+											"sizes": []
+										},
+										"height_mobile": {
+											"unit": "px",
+											"size": 168,
+											"sizes": []
+										},
+										"object-fit": "cover",
+										"object-position": "center center",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.26,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "cbcb58a",
+									"elType": "widget",
+									"widgetType": "image",
+									"settings": {
+										"image": {
+											"url": "{{media:blog-1}}",
+											"id": "{{media_id:blog-1}}",
+											"alt": "Speakers backstage before the panel",
+											"source": "library"
+										},
+										"image_size": "full",
+										"width": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"height": {
+											"unit": "px",
+											"size": 240,
+											"sizes": []
+										},
+										"height_tablet": {
+											"unit": "px",
+											"size": 192,
+											"sizes": []
+										},
+										"height_mobile": {
+											"unit": "px",
+											"size": 168,
+											"sizes": []
+										},
+										"object-fit": "cover",
+										"object-position": "center center",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.26,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "db85e25",
+									"elType": "widget",
+									"widgetType": "image",
+									"settings": {
+										"image": {
+											"url": "{{media:blog-2}}",
+											"id": "{{media_id:blog-2}}",
+											"alt": "The after-party courtyard",
+											"source": "library"
+										},
+										"image_size": "full",
+										"width": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"height": {
+											"unit": "px",
+											"size": 240,
+											"sizes": []
+										},
+										"height_tablet": {
+											"unit": "px",
+											"size": 192,
+											"sizes": []
+										},
+										"height_mobile": {
+											"unit": "px",
+											"size": 168,
+											"sizes": []
+										},
+										"object-fit": "cover",
+										"object-position": "center center",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.26,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "99c5e07",
+									"elType": "widget",
+									"widgetType": "image",
+									"settings": {
+										"image": {
+											"url": "{{media:blog-3}}",
+											"id": "{{media_id:blog-3}}",
+											"alt": "Hallway track in the sponsor hall",
+											"source": "library"
+										},
+										"image_size": "full",
+										"width": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"height": {
+											"unit": "px",
+											"size": 240,
+											"sizes": []
+										},
+										"height_tablet": {
+											"unit": "px",
+											"size": 192,
+											"sizes": []
+										},
+										"height_mobile": {
+											"unit": "px",
+											"size": 168,
+											"sizes": []
+										},
+										"object-fit": "cover",
+										"object-position": "center center",
+										"hover_animation": "grow",
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.26,
+											"sizes": []
+										}
+									},
+									"elements": []
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "e5f6ad6",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "72",
+							"right": "24",
+							"bottom": "72",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "36",
+							"right": "20",
+							"bottom": "36",
+							"left": "20",
+							"isLinked": false
+						},
+						"background_background": "classic",
+						"__globals__": {
+							"background_color": "globals/colors?id=wpe6073fd3"
+						},
+						"flex_align_items": "center"
+					},
+					"elements": [
+						{
+							"id": "a86c450",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Be in the 2027 photos",
+								"header_size": "h3",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"align": "center",
+								"typography_typography": "custom",
+								"typography_font_family": "Space Grotesk",
+								"typography_font_weight": "700",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 32,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 26,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 18,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "c9892a9",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Early-bird Conference passes are on sale until 22 March.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3",
+									"typography_typography": "globals/typography?id=text"
+								},
+								"align": "center"
+							},
+							"elements": []
+						},
+						{
+							"id": "e6b4b2a",
+							"elType": "widget",
+							"widgetType": "button",
+							"settings": {
+								"text": "Get tickets",
+								"link": {
+									"url": "{{page:tickets}}",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"size": "md",
+								"__globals__": {
+									"typography_typography": "globals/typography?id=accent"
+								},
+								"hover_animation": "float",
+								"button_hover_transition_duration": {
+									"unit": "s",
+									"size": 0.26,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "Photos from Pulse 2026 in Lisbon: the main stage, workshops, networking and the after-party."
+			}
+		},
+		{
+			"key": "cfp",
+			"type": "page",
+			"title": "Call for Speakers",
+			"slug": "call-for-speakers",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
+				{
+					"id": "a8849b0",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "72",
+							"right": "24",
+							"bottom": "32",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "36",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "f0e52b2",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Home › Call for speakers</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "DM Sans",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 12,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "ffeabd2",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Call for speakers",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "DM Sans",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "a7aeed7",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Speak at Pulse 2028",
+								"header_size": "h1",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Space Grotesk",
+								"typography_font_weight": "700",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 72,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 58,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 40,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "fde9264",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Proposals are open until 30 November. We especially want first-time speakers.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "DM Sans",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 16,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "d490d7b",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "24",
+							"right": "24",
+							"bottom": "72",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "36",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "258be18",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "How it works",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "DM Sans",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "069d3bb",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "From pitch to stage",
+								"header_size": "h2",
+								"__globals__": {
+									"title_color": "globals/colors?id=text",
+									"typography_typography": "globals/typography?id=primary"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "08c5433",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 4,
+									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "f5deaee",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 6,
+											"column": "6",
+											"row": "6",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "20",
+											"right": "20",
+											"bottom": "20",
+											"left": "20",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"background_background": "classic",
+										"__globals__": {
+											"background_color": "globals/colors?id=wpe6073fd3"
+										},
+										"border_radius": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "c6e19e8",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "1",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 36,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 29,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 20,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "46922a0",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Send a pitch",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "9ad6aae",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Title, a 150-word abstract and a link to any past talk. First-time speakers welcome.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "daca412",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 6,
+											"column": "6",
+											"row": "6",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "20",
+											"right": "20",
+											"bottom": "20",
+											"left": "20",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"background_background": "classic",
+										"__globals__": {
+											"background_color": "globals/colors?id=wpe6073fd3"
+										},
+										"border_radius": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "a9a1d53",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "2",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 36,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 29,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 20,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "605ff76",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Review",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "766ebcd",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>An anonymous panel of five reviews every proposal by 15 January.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "dbe272b",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 6,
+											"column": "6",
+											"row": "6",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "20",
+											"right": "20",
+											"bottom": "20",
+											"left": "20",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"background_background": "classic",
+										"__globals__": {
+											"background_color": "globals/colors?id=wpe6073fd3"
+										},
+										"border_radius": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "30bb382",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "3",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 36,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 29,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 20,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "08b255a",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Coaching",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "3493894",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Selected speakers get two rehearsal calls with a speaker coach.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "b2eeb73",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 6,
+											"column": "6",
+											"row": "6",
+											"isLinked": true
+										},
+										"padding": {
+											"unit": "px",
+											"top": "20",
+											"right": "20",
+											"bottom": "20",
+											"left": "20",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"background_background": "classic",
+										"__globals__": {
+											"background_color": "globals/colors?id=wpe6073fd3"
+										},
+										"border_radius": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "acc3e04",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "4",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 36,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 29,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 20,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "076a0c9",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "On stage",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "04ecb1f",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Flights, three hotel nights and a €500 honorarium are covered.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "DM Sans",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						},
+						{
+							"id": "6aca970",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Topics we are looking for",
+								"header_size": "h3",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Space Grotesk",
+								"typography_font_weight": "700",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 22,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 18,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 12,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "3435c37",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<span class=\"px-tag\">Design systems & tokens</span> <span class=\"px-tag\">Front-end architecture</span> <span class=\"px-tag\">AI in product</span> <span class=\"px-tag\">Accessibility</span> <span class=\"px-tag\">Brand & motion</span> <span class=\"px-tag\">Research & strategy</span> ",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3",
+									"typography_typography": "globals/typography?id=text"
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "996a7fa",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "88",
+							"right": "24",
+							"bottom": "96",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "44",
+							"right": "20",
+							"bottom": "48",
+							"left": "20",
+							"isLinked": false
+						},
+						"background_background": "classic",
+						"__globals__": {
+							"background_color": "globals/colors?id=wpe6073fd3"
+						}
+					},
+					"elements": [
+						{
+							"id": "dc82d63",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 48,
+									"column": "48",
+									"row": "48",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "9cf81d8",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 45,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "b2f627f",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Send your proposal",
+												"header_size": "h2",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Space Grotesk",
+												"typography_font_weight": "700",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 40,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 32,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "c3992e9",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>It takes about ten minutes. We reply to every proposal.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3",
+													"typography_typography": "globals/typography?id=text"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "d86ea61",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:hero-stage}}",
+													"id": "{{media_id:hero-stage}}",
+													"alt": "A speaker on the Pulse main stage",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 320,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 256,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 224,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"hover_animation": "grow",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.26,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "44c4c17",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 55,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"padding": {
+											"unit": "px",
+											"top": "28",
+											"right": "28",
+											"bottom": "28",
+											"left": "28",
+											"isLinked": true
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "16",
+											"right": "16",
+											"bottom": "16",
+											"left": "16",
+											"isLinked": true
+										},
+										"background_background": "classic",
+										"__globals__": {
+											"background_color": "globals/colors?id=wped302e97",
+											"border_color": "globals/colors?id=wpe2de42fb"
+										},
+										"border_radius": {
+											"unit": "px",
+											"top": "20",
+											"right": "20",
+											"bottom": "20",
+											"left": "20",
+											"isLinked": true
+										},
+										"border_border": "solid",
+										"border_width": {
+											"unit": "px",
+											"top": "1",
+											"right": "1",
+											"bottom": "1",
+											"left": "1",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "c361bc7",
+											"elType": "widget",
+											"widgetType": "shortcode",
+											"settings": {
+												"shortcode": "[wpforms id=\"{{form:cfp}}\" title=\"false\"]"
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "Speak at Pulse 2028: how the call for proposals works, topics we want and the form to send your talk."
+			}
+		},
+		{
+			"key": "code-of-conduct",
+			"type": "page",
+			"title": "Code of Conduct",
+			"slug": "code-of-conduct",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
+				{
+					"id": "f29c21d",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "72",
+							"right": "24",
+							"bottom": "32",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "36",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "d7a728a",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Home › Code of conduct</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "DM Sans",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 12,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "00ac8ed",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Code of conduct",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "DM Sans",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "8ebda54",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "A safe, welcoming event for everyone",
+								"header_size": "h1",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Space Grotesk",
+								"typography_font_weight": "700",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 72,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 58,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 40,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "f76a89f",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>All attendees, speakers, sponsors and volunteers agree to this code.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "DM Sans",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 16,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "051e4e1",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 16,
+							"column": "16",
+							"row": "16",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "24",
+							"right": "24",
+							"bottom": "96",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "48",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "7750ca3",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "column",
+								"flex_gap": {
+									"unit": "px",
+									"size": 6,
+									"column": "6",
+									"row": "6",
+									"isLinked": true
+								},
+								"padding": {
+									"unit": "px",
+									"top": "24",
+									"right": "24",
+									"bottom": "24",
+									"left": "24",
+									"isLinked": true
+								},
+								"padding_mobile": {
+									"unit": "px",
+									"top": "16",
+									"right": "16",
+									"bottom": "16",
+									"left": "16",
+									"isLinked": true
+								},
+								"background_background": "classic",
+								"__globals__": {
+									"background_color": "globals/colors?id=wpe6073fd3"
+								},
+								"border_radius": {
+									"unit": "px",
+									"top": "16",
+									"right": "16",
+									"bottom": "16",
+									"left": "16",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "851ddf5",
+									"elType": "widget",
+									"widgetType": "heading",
+									"settings": {
+										"title": "Be kind and inclusive",
+										"header_size": "h2",
+										"__globals__": {
+											"title_color": "globals/colors?id=text"
+										},
+										"typography_typography": "custom",
+										"typography_font_family": "Space Grotesk",
+										"typography_font_weight": "700",
+										"typography_line_height": {
+											"unit": "em",
+											"size": 1.05,
+											"sizes": []
+										},
+										"typography_font_size": {
+											"unit": "px",
+											"size": 24,
+											"sizes": []
+										},
+										"typography_font_size_tablet": {
+											"unit": "px",
+											"size": 19,
+											"sizes": []
+										},
+										"typography_font_size_mobile": {
+											"unit": "px",
+											"size": 13,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "58d4d1e",
+									"elType": "widget",
+									"widgetType": "text-editor",
+									"settings": {
+										"editor": "<p>Pulse is for everyone, regardless of gender, identity, age, disability, appearance, race, religion or background.</p>",
+										"__globals__": {
+											"text_color": "globals/colors?id=wpe07d0ec3",
+											"typography_typography": "globals/typography?id=text"
+										}
+									},
+									"elements": []
+								}
+							],
+							"isInner": true
+						},
+						{
+							"id": "cdc0d6e",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "column",
+								"flex_gap": {
+									"unit": "px",
+									"size": 6,
+									"column": "6",
+									"row": "6",
+									"isLinked": true
+								},
+								"padding": {
+									"unit": "px",
+									"top": "24",
+									"right": "24",
+									"bottom": "24",
+									"left": "24",
+									"isLinked": true
+								},
+								"padding_mobile": {
+									"unit": "px",
+									"top": "16",
+									"right": "16",
+									"bottom": "16",
+									"left": "16",
+									"isLinked": true
+								},
+								"background_background": "classic",
+								"__globals__": {
+									"background_color": "globals/colors?id=wpe6073fd3"
+								},
+								"border_radius": {
+									"unit": "px",
+									"top": "16",
+									"right": "16",
+									"bottom": "16",
+									"left": "16",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "5d44ee6",
+									"elType": "widget",
+									"widgetType": "heading",
+									"settings": {
+										"title": "Harassment is not tolerated",
+										"header_size": "h2",
+										"__globals__": {
+											"title_color": "globals/colors?id=text"
+										},
+										"typography_typography": "custom",
+										"typography_font_family": "Space Grotesk",
+										"typography_font_weight": "700",
+										"typography_line_height": {
+											"unit": "em",
+											"size": 1.05,
+											"sizes": []
+										},
+										"typography_font_size": {
+											"unit": "px",
+											"size": 24,
+											"sizes": []
+										},
+										"typography_font_size_tablet": {
+											"unit": "px",
+											"size": 19,
+											"sizes": []
+										},
+										"typography_font_size_mobile": {
+											"unit": "px",
+											"size": 13,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "eb6fdc3",
+									"elType": "widget",
+									"widgetType": "text-editor",
+									"settings": {
+										"editor": "<p>This includes offensive comments, deliberate intimidation, stalking, unwanted photography and unwelcome physical contact.</p>",
+										"__globals__": {
+											"text_color": "globals/colors?id=wpe07d0ec3",
+											"typography_typography": "globals/typography?id=text"
+										}
+									},
+									"elements": []
+								}
+							],
+							"isInner": true
+						},
+						{
+							"id": "3871bd6",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "column",
+								"flex_gap": {
+									"unit": "px",
+									"size": 6,
+									"column": "6",
+									"row": "6",
+									"isLinked": true
+								},
+								"padding": {
+									"unit": "px",
+									"top": "24",
+									"right": "24",
+									"bottom": "24",
+									"left": "24",
+									"isLinked": true
+								},
+								"padding_mobile": {
+									"unit": "px",
+									"top": "16",
+									"right": "16",
+									"bottom": "16",
+									"left": "16",
+									"isLinked": true
+								},
+								"background_background": "classic",
+								"__globals__": {
+									"background_color": "globals/colors?id=wpe6073fd3"
+								},
+								"border_radius": {
+									"unit": "px",
+									"top": "16",
+									"right": "16",
+									"bottom": "16",
+									"left": "16",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "b73dfe2",
+									"elType": "widget",
+									"widgetType": "heading",
+									"settings": {
+										"title": "It applies everywhere",
+										"header_size": "h2",
+										"__globals__": {
+											"title_color": "globals/colors?id=text"
+										},
+										"typography_typography": "custom",
+										"typography_font_family": "Space Grotesk",
+										"typography_font_weight": "700",
+										"typography_line_height": {
+											"unit": "em",
+											"size": 1.05,
+											"sizes": []
+										},
+										"typography_font_size": {
+											"unit": "px",
+											"size": 24,
+											"sizes": []
+										},
+										"typography_font_size_tablet": {
+											"unit": "px",
+											"size": 19,
+											"sizes": []
+										},
+										"typography_font_size_mobile": {
+											"unit": "px",
+											"size": 13,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "85fc37b",
+									"elType": "widget",
+									"widgetType": "text-editor",
+									"settings": {
+										"editor": "<p>Talks, workshops, the after-party, online chat and social media about the event.</p>",
+										"__globals__": {
+											"text_color": "globals/colors?id=wpe07d0ec3",
+											"typography_typography": "globals/typography?id=text"
+										}
+									},
+									"elements": []
+								}
+							],
+							"isInner": true
+						},
+						{
+							"id": "2335090",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "column",
+								"flex_gap": {
+									"unit": "px",
+									"size": 6,
+									"column": "6",
+									"row": "6",
+									"isLinked": true
+								},
+								"padding": {
+									"unit": "px",
+									"top": "24",
+									"right": "24",
+									"bottom": "24",
+									"left": "24",
+									"isLinked": true
+								},
+								"padding_mobile": {
+									"unit": "px",
+									"top": "16",
+									"right": "16",
+									"bottom": "16",
+									"left": "16",
+									"isLinked": true
+								},
+								"background_background": "classic",
+								"__globals__": {
+									"background_color": "globals/colors?id=wpe6073fd3"
+								},
+								"border_radius": {
+									"unit": "px",
+									"top": "16",
+									"right": "16",
+									"bottom": "16",
+									"left": "16",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "a733fa9",
+									"elType": "widget",
+									"widgetType": "heading",
+									"settings": {
+										"title": "What happens if you break it",
+										"header_size": "h2",
+										"__globals__": {
+											"title_color": "globals/colors?id=text"
+										},
+										"typography_typography": "custom",
+										"typography_font_family": "Space Grotesk",
+										"typography_font_weight": "700",
+										"typography_line_height": {
+											"unit": "em",
+											"size": 1.05,
+											"sizes": []
+										},
+										"typography_font_size": {
+											"unit": "px",
+											"size": 24,
+											"sizes": []
+										},
+										"typography_font_size_tablet": {
+											"unit": "px",
+											"size": 19,
+											"sizes": []
+										},
+										"typography_font_size_mobile": {
+											"unit": "px",
+											"size": 13,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "48ab2f9",
+									"elType": "widget",
+									"widgetType": "text-editor",
+									"settings": {
+										"editor": "<p>Organisers may warn you, remove you from the event without a refund or report the incident to the police.</p>",
+										"__globals__": {
+											"text_color": "globals/colors?id=wpe07d0ec3",
+											"typography_typography": "globals/typography?id=text"
+										}
+									},
+									"elements": []
+								}
+							],
+							"isInner": true
+						},
+						{
+							"id": "42e77b6",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "column",
+								"flex_gap": {
+									"unit": "px",
+									"size": 6,
+									"column": "6",
+									"row": "6",
+									"isLinked": true
+								},
+								"padding": {
+									"unit": "px",
+									"top": "24",
+									"right": "24",
+									"bottom": "24",
+									"left": "24",
+									"isLinked": true
+								},
+								"padding_mobile": {
+									"unit": "px",
+									"top": "16",
+									"right": "16",
+									"bottom": "16",
+									"left": "16",
+									"isLinked": true
+								},
+								"border_radius": {
+									"unit": "px",
+									"top": "16",
+									"right": "16",
+									"bottom": "16",
+									"left": "16",
+									"isLinked": true
+								},
+								"border_border": "solid",
+								"border_width": {
+									"unit": "px",
+									"top": "1",
+									"right": "1",
+									"bottom": "1",
+									"left": "1",
+									"isLinked": true
+								},
+								"__globals__": {
+									"border_color": "globals/colors?id=primary"
+								}
+							},
+							"elements": [
+								{
+									"id": "45645a2",
+									"elType": "widget",
+									"widgetType": "heading",
+									"settings": {
+										"title": "Need help or want to report something?",
+										"header_size": "h2",
+										"__globals__": {
+											"title_color": "globals/colors?id=text"
+										},
+										"typography_typography": "custom",
+										"typography_font_family": "Space Grotesk",
+										"typography_font_weight": "700",
+										"typography_line_height": {
+											"unit": "em",
+											"size": 1.05,
+											"sizes": []
+										},
+										"typography_font_size": {
+											"unit": "px",
+											"size": 24,
+											"sizes": []
+										},
+										"typography_font_size_tablet": {
+											"unit": "px",
+											"size": 19,
+											"sizes": []
+										},
+										"typography_font_size_mobile": {
+											"unit": "px",
+											"size": 13,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "185c29d",
+									"elType": "widget",
+									"widgetType": "text-editor",
+									"settings": {
+										"editor": "<p>Find anyone in a pink Pulse T-shirt, call our safety line on +351 912 000 270 or email safety@pulseconf.io. Reports are confidential.</p>",
+										"__globals__": {
+											"text_color": "globals/colors?id=wpe07d0ec3",
+											"typography_typography": "globals/typography?id=text"
+										}
+									},
+									"elements": []
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "The Pulse code of conduct: what we expect from everyone at the event and how to report a problem."
+			}
+		},
+		{
 			"key": "blog",
 			"type": "page",
 			"title": "Blog",
@@ -15264,7 +19427,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "b337e84",
+					"id": "26dd0db",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -15300,7 +19463,7 @@
 					},
 					"elements": [
 						{
-							"id": "5b69b9c",
+							"id": "9cc138f",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -15327,7 +19490,7 @@
 							"elements": []
 						},
 						{
-							"id": "b5b41fa",
+							"id": "b7bb35b",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -15363,7 +19526,7 @@
 							"elements": []
 						},
 						{
-							"id": "285e19f",
+							"id": "abd8152",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -15385,7 +19548,7 @@
 					"isInner": false
 				},
 				{
-					"id": "ff4d5fb",
+					"id": "6a10bbd",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -15421,7 +19584,7 @@
 					},
 					"elements": [
 						{
-							"id": "e8c0653",
+							"id": "6766aa2",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -15456,7 +19619,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "0874085",
+					"id": "0f96613",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -15492,7 +19655,7 @@
 					},
 					"elements": [
 						{
-							"id": "2d6cc4b",
+							"id": "c5ab0bc",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -15519,7 +19682,7 @@
 							"elements": []
 						},
 						{
-							"id": "389bc7b",
+							"id": "a532400",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -15555,7 +19718,7 @@
 							"elements": []
 						},
 						{
-							"id": "e2230b8",
+							"id": "4c27cea",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -15577,7 +19740,7 @@
 					"isInner": false
 				},
 				{
-					"id": "10a7cdd",
+					"id": "67e103b",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -15613,7 +19776,7 @@
 					},
 					"elements": [
 						{
-							"id": "a760880",
+							"id": "4ffce04",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -15648,7 +19811,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "f3f27a3",
+					"id": "5e9f92a",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -15684,7 +19847,7 @@
 					},
 					"elements": [
 						{
-							"id": "3dc4876",
+							"id": "291597a",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -15711,7 +19874,7 @@
 							"elements": []
 						},
 						{
-							"id": "59b90e1",
+							"id": "9b698eb",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -15747,7 +19910,7 @@
 							"elements": []
 						},
 						{
-							"id": "2b8a615",
+							"id": "8c7bbbb",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -15769,7 +19932,7 @@
 					"isInner": false
 				},
 				{
-					"id": "ebd9629",
+					"id": "303ed4c",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -15805,7 +19968,7 @@
 					},
 					"elements": [
 						{
-							"id": "38913e1",
+							"id": "0ff39bb",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -15840,7 +20003,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "53fde96",
+					"id": "55743cc",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -15876,7 +20039,7 @@
 					},
 					"elements": [
 						{
-							"id": "63538fe",
+							"id": "443cb00",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -15903,7 +20066,7 @@
 							"elements": []
 						},
 						{
-							"id": "cf67355",
+							"id": "55b37c5",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -15939,7 +20102,7 @@
 							"elements": []
 						},
 						{
-							"id": "07563a3",
+							"id": "884d247",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -15961,7 +20124,7 @@
 					"isInner": false
 				},
 				{
-					"id": "ba2fd31",
+					"id": "eaae339",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -15997,7 +20160,7 @@
 					},
 					"elements": [
 						{
-							"id": "2bb232c",
+							"id": "30ef30b",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -16091,6 +20254,10 @@
 			"location": "primary",
 			"items": [
 				{
+					"title": "About",
+					"page": "about"
+				},
+				{
 					"title": "Speakers",
 					"page": "speakers"
 				},
@@ -16109,6 +20276,10 @@
 				{
 					"title": "Sponsors",
 					"page": "sponsors"
+				},
+				{
+					"title": "Gallery",
+					"page": "gallery"
 				},
 				{
 					"title": "Events",
@@ -16137,7 +20308,7 @@
 				"content": "<!-- wp:group {\"className\":\"wpe-topbar\",\"backgroundColor\":\"primary\",\"textColor\":\"on-primary\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-topbar has-on-primary-color has-text-color has-primary-background-color has-background\"><!-- wp:paragraph {\"align\":\"center\",\"fontSize\":\"small\"} -->\n<p class=\"has-text-align-center has-small-font-size\"><strong>Pulse 2027 · Lisbon · 13–14 May 2027</strong> — Early-bird pricing until 22 March</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"header\",\"className\":\"wpe-header\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<header class=\"wp-block-group wpe-header\"><!-- wp:group {\"className\":\"wpe-header__inner\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-header__inner\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\"}} -->\n<div class=\"wp-block-group\"><!-- wp:site-title /--></div>\n<!-- /wp:group -->\n\n<!-- wp:navigation {\"overlayMenu\":\"mobile\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"center\"}} /-->\n\n<!-- wp:buttons -->\n<div class=\"wp-block-buttons\"><!-- wp:button -->\n<div class=\"wp-block-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"{{page:tickets}}\">Get tickets</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons --></div>\n<!-- /wp:group --></header>\n<!-- /wp:group -->"
 			},
 			"footer": {
-				"content": "<!-- wp:group {\"tagName\":\"section\",\"align\":\"full\",\"className\":\"wpe-section wpe-section\\u002d\\u002dsm\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<section class=\"wp-block-group alignfull wpe-section wpe-section--sm\"><!-- wp:group {\"className\":\"wpe-card px-cta\",\"backgroundColor\":\"primary\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"space-between\",\"verticalAlignment\":\"center\"}} -->\n<div class=\"wp-block-group wpe-card px-cta has-primary-background-color has-background\"><!-- wp:group {\"layout\":{\"type\":\"default\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading {\"textColor\":\"on-primary\",\"fontSize\":\"h2\"} -->\n<h2 class=\"wp-block-heading has-on-primary-color has-text-color has-h-2-font-size\">Early-bird tickets end 22 March</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"textColor\":\"on-primary\"} -->\n<p class=\"has-on-primary-color has-text-color\">Save €150 on Conference passes. Prices go up at 23:59 Lisbon time.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->\n\n<!-- wp:buttons -->\n<div class=\"wp-block-buttons\"><!-- wp:button {\"className\":\"is-style-wpe-dark\"} -->\n<div class=\"wp-block-button is-style-wpe-dark\"><a class=\"wp-block-button__link wp-element-button\" href=\"{{page:tickets}}\">Get your ticket →</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons --></div>\n<!-- /wp:group --></section>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"footer\",\"className\":\"wpe-footer wpe-section\\u002d\\u002dmd\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<footer class=\"wp-block-group wpe-footer wpe-section--md\"><!-- wp:group {\"className\":\"wpe-footer__newsletter px-bigband\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-footer__newsletter px-bigband\"><!-- wp:columns {\"verticalAlignment\":\"center\",\"className\":\"wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns are-vertically-aligned-center wpe-section--sm\"><!-- wp:column {\"verticalAlignment\":\"center\",\"width\":\"66%\"} -->\n<div class=\"wp-block-column is-vertically-aligned-center\" style=\"flex-basis:66%\"><!-- wp:heading {\"level\":3,\"textColor\":\"on-ink\"} -->\n<h3 class=\"wp-block-heading has-on-ink-color has-text-color\">See you in Lisbon.</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"textColor\":\"on-ink\"} -->\n<p class=\"has-on-ink-color has-text-color\">Early-bird pricing until 22 March.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {\"verticalAlignment\":\"center\",\"width\":\"34%\"} -->\n<div class=\"wp-block-column is-vertically-aligned-center\" style=\"flex-basis:34%\"><!-- wp:buttons {\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n<div class=\"wp-block-buttons\"><!-- wp:button {\"className\":\"is-style-wpe-light\"} -->\n<div class=\"wp-block-button is-style-wpe-light\"><a class=\"wp-block-button__link wp-element-button\" href=\"{{page:tickets}}\">Get tickets</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div>\n<!-- /wp:group -->\n\n<!-- wp:columns {\"className\":\"wpe-footer__cols wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns wpe-footer__cols wpe-section--sm\"><!-- wp:column {\"width\":\"40%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:40%\"><!-- wp:site-title /-->\n\n<!-- wp:paragraph {\"fontSize\":\"small\"} -->\n<p class=\"has-small-font-size\">Two days of design, engineering and AI talks. 13–14 May 2027 at the Lisbon Congress Centre.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Event</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Speakers\",\"url\":\"{{page:speakers}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Agenda\",\"url\":\"{{page:agenda}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Tickets\",\"url\":\"{{page:tickets}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Events calendar\",\"url\":\"{{home:events/}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Attend</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Venue \\u0026 hotels\",\"url\":\"{{page:venue}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"FAQ\",\"url\":\"{{page:faq}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"My tickets\",\"url\":\"{{woo:myaccount}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Contact\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Company</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Sponsors\",\"url\":\"{{page:sponsors}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Become a sponsor\",\"url\":\"{{page:become-sponsor}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Blog\",\"url\":\"{{page:blog}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:group {\"className\":\"wpe-footer__bottom\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-footer__bottom\"><!-- wp:paragraph -->\n<p>© Pulse Conference Lda. All rights reserved.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"{{page:privacy-policy}}\">Privacy</a> · <a href=\"{{page:terms}}\">Terms</a> · <a href=\"{{page:refund-policy}}\">Refunds</a> · <a href=\"{{page:cookie-policy}}\">Cookies</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Designed &amp; built with <a href=\"https://wpessential.org/\">Hi WPEssential</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></footer>\n<!-- /wp:group -->"
+				"content": "<!-- wp:group {\"tagName\":\"section\",\"align\":\"full\",\"className\":\"wpe-section wpe-section\\u002d\\u002dsm\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<section class=\"wp-block-group alignfull wpe-section wpe-section--sm\"><!-- wp:group {\"className\":\"wpe-card px-cta\",\"backgroundColor\":\"primary\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"space-between\",\"verticalAlignment\":\"center\"}} -->\n<div class=\"wp-block-group wpe-card px-cta has-primary-background-color has-background\"><!-- wp:group {\"layout\":{\"type\":\"default\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading {\"textColor\":\"on-primary\",\"fontSize\":\"h2\"} -->\n<h2 class=\"wp-block-heading has-on-primary-color has-text-color has-h-2-font-size\">Early-bird tickets end 22 March</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"textColor\":\"on-primary\"} -->\n<p class=\"has-on-primary-color has-text-color\">Save €150 on Conference passes. Prices go up at 23:59 Lisbon time.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->\n\n<!-- wp:buttons -->\n<div class=\"wp-block-buttons\"><!-- wp:button {\"className\":\"is-style-wpe-dark\"} -->\n<div class=\"wp-block-button is-style-wpe-dark\"><a class=\"wp-block-button__link wp-element-button\" href=\"{{page:tickets}}\">Get your ticket →</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons --></div>\n<!-- /wp:group --></section>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"footer\",\"className\":\"wpe-footer wpe-section\\u002d\\u002dmd\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<footer class=\"wp-block-group wpe-footer wpe-section--md\"><!-- wp:group {\"className\":\"wpe-footer__newsletter px-bigband\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-footer__newsletter px-bigband\"><!-- wp:columns {\"verticalAlignment\":\"center\",\"className\":\"wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns are-vertically-aligned-center wpe-section--sm\"><!-- wp:column {\"verticalAlignment\":\"center\",\"width\":\"66%\"} -->\n<div class=\"wp-block-column is-vertically-aligned-center\" style=\"flex-basis:66%\"><!-- wp:heading {\"level\":3,\"textColor\":\"on-ink\"} -->\n<h3 class=\"wp-block-heading has-on-ink-color has-text-color\">See you in Lisbon.</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"textColor\":\"on-ink\"} -->\n<p class=\"has-on-ink-color has-text-color\">Early-bird pricing until 22 March.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {\"verticalAlignment\":\"center\",\"width\":\"34%\"} -->\n<div class=\"wp-block-column is-vertically-aligned-center\" style=\"flex-basis:34%\"><!-- wp:buttons {\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n<div class=\"wp-block-buttons\"><!-- wp:button {\"className\":\"is-style-wpe-light\"} -->\n<div class=\"wp-block-button is-style-wpe-light\"><a class=\"wp-block-button__link wp-element-button\" href=\"{{page:tickets}}\">Get tickets</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div>\n<!-- /wp:group -->\n\n<!-- wp:columns {\"className\":\"wpe-footer__cols wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns wpe-footer__cols wpe-section--sm\"><!-- wp:column {\"width\":\"40%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:40%\"><!-- wp:site-title /-->\n\n<!-- wp:paragraph {\"fontSize\":\"small\"} -->\n<p class=\"has-small-font-size\">Two days of design, engineering and AI talks. 13–14 May 2027 at the Lisbon Congress Centre.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Event</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Speakers\",\"url\":\"{{page:speakers}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Agenda\",\"url\":\"{{page:agenda}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Tickets\",\"url\":\"{{page:tickets}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Events calendar\",\"url\":\"{{home:events/}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Attend</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Venue \\u0026 hotels\",\"url\":\"{{page:venue}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"FAQ\",\"url\":\"{{page:faq}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"My tickets\",\"url\":\"{{woo:myaccount}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Contact\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Company</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Sponsors\",\"url\":\"{{page:sponsors}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"About\",\"url\":\"{{page:about}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Become a sponsor\",\"url\":\"{{page:become-sponsor}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Call for speakers\",\"url\":\"{{page:cfp}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Code of conduct\",\"url\":\"{{page:code-of-conduct}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Gallery\",\"url\":\"{{page:gallery}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Blog\",\"url\":\"{{page:blog}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:group {\"className\":\"wpe-footer__bottom\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-footer__bottom\"><!-- wp:paragraph -->\n<p>© Pulse Conference Lda. All rights reserved.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"{{page:privacy-policy}}\">Privacy</a> · <a href=\"{{page:terms}}\">Terms</a> · <a href=\"{{page:refund-policy}}\">Refunds</a> · <a href=\"{{page:cookie-policy}}\">Cookies</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Designed &amp; built with <a href=\"https://wpessential.org/\">Hi WPEssential</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></footer>\n<!-- /wp:group -->"
 			}
 		},
 		"options": {
