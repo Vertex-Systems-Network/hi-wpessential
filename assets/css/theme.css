@@ -609,6 +609,10 @@ progress::-moz-progress-bar { background: var(--wpe-primary); }
 .wpe-header-actions .wp-block-search__button:hover { background: var(--wpe-surface-alt) !important; }
 .wpe-header-actions .wp-block-search__inside-wrapper { border: 0; padding: 0; background: transparent; }
 .wpe-header-actions .wp-block-search.wp-block-search__searchfield-hidden .wp-block-search__inside-wrapper { width: auto !important; }
+/* Opened search: a visible field instead of a bare caret. */
+.wpe-header-actions .wp-block-search__button-only:not(.wp-block-search__searchfield-hidden) .wp-block-search__inside-wrapper { background: var(--wp--preset--color--surface); color: var(--wp--preset--color--text); border: 1.5px solid var(--wp--preset--color--primary); border-radius: 999px; padding: 2px 2px 2px 14px; box-shadow: 0 6px 20px rgba(11,26,61,.12); }
+.wpe-header-actions .wp-block-search__button-only:not(.wp-block-search__searchfield-hidden) .wp-block-search__input { min-width: 200px; padding: 6px 4px; border: 0; background: transparent; color: var(--wp--preset--color--text); outline: 0; }
+.wpe-header-actions .wp-block-search__button-only:not(.wp-block-search__searchfield-hidden) .wp-block-search__input::placeholder { color: var(--wp--preset--color--text-muted); }
 .wpe-header-actions .wc-block-customer-account a, .wpe-header-actions .wc-block-mini-cart__button { padding: 8px; border-radius: 999px; color: inherit; }
 .wpe-header-actions .wc-block-customer-account a:hover, .wpe-header-actions .wc-block-mini-cart__button:hover { background: var(--wpe-surface-alt); }
 .wpe-header--transparent .wpe-header-actions :is(.wp-block-search__button, .wc-block-mini-cart__button, .wc-block-customer-account a):hover { background: rgba(255,255,255,.1) !important; }
