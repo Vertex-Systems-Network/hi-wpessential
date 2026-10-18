@@ -48,12 +48,30 @@ add_action(
 
 		// Variation swatches on variable product pages.
 		if ( function_exists( 'is_product' ) && is_product() ) {
-			wp_enqueue_script( 'wpessential-swatches', WPESSENTIAL_URI . '/assets/js/swatches.js', array( 'wc-add-to-cart-variation' ), WPESSENTIAL_ASSET_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );
+			wp_enqueue_script(
+				'wpessential-swatches',
+				WPESSENTIAL_URI . '/assets/js/swatches.js',
+				array( 'wc-add-to-cart-variation' ),
+				WPESSENTIAL_ASSET_VERSION,
+				array(
+					'strategy'  => 'defer',
+					'in_footer' => true,
+				)
+			);
 		}
 
 		// Live countdown, only on pages that carry one (Pulse demo home).
 		if ( is_singular() && false !== strpos( (string) get_post_field( 'post_content', get_queried_object_id() ), 'px-count' ) ) {
-			wp_enqueue_script( 'wpessential-countdown', WPESSENTIAL_URI . '/assets/js/countdown.js', array(), WPESSENTIAL_ASSET_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );
+			wp_enqueue_script(
+				'wpessential-countdown',
+				WPESSENTIAL_URI . '/assets/js/countdown.js',
+				array(),
+				WPESSENTIAL_ASSET_VERSION,
+				array(
+					'strategy'  => 'defer',
+					'in_footer' => true,
+				)
+			);
 		}
 	}
 );
