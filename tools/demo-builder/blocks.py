@@ -204,12 +204,24 @@ def column(*inner, width=None, valign=None, className=None, style=None):
 
 # Dynamic --------------------------------------------------------------------------------
 
+# The theme's post card (patterns/post-card.php), inlined: a pattern block inside a query loop
+# renders empty on some WordPress versions.
+POST_CARD = ('<!-- wp:group {"className":"wpe-card","layout":{"type":"default"}} -->\n<div class="wp-block-group wpe-card">'
+             '<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/10","sizeSlug":"wpessential-card"} /-->\n'
+             '<!-- wp:group {"className":"wpe-card__body","layout":{"type":"flex","orientation":"vertical"}} -->\n<div class="wp-block-group wpe-card__body">'
+             '<!-- wp:post-terms {"term":"category","className":"is-style-wpe-overline"} /-->\n'
+             '<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"h4"} /-->\n'
+             '<!-- wp:post-excerpt {"excerptLength":18} /-->\n'
+             '<!-- wp:group {"className":"wpe-post-meta","layout":{"type":"flex","flexWrap":"wrap"}} -->\n<div class="wp-block-group wpe-post-meta">'
+             '<!-- wp:post-author-name /-->\n<!-- wp:post-date /--></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->')
+
+
 def latest_posts(count=3, post_type='post'):
     """Latest posts as theme post cards (wpessential/post-card), sticky posts excluded."""
     q = {'queryId': 7, 'query': {'perPage': count, 'pages': 0, 'offset': 0, 'postType': post_type, 'order': 'desc',
                                  'orderBy': 'date', 'sticky': 'exclude', 'inherit': False}}
     tpl = block('post-template', {'layout': {'type': 'grid', 'columnCount': count, 'minimumColumnWidth': '280px'}},
-                block('pattern', {'slug': 'wpessential/post-card'}))
+                POST_CARD)
     return block('query', q, '<div class="wp-block-query">%s</div>' % tpl)
 
 
