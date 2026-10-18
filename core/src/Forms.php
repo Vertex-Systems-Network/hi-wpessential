@@ -15,6 +15,30 @@ defined( 'ABSPATH' ) || exit;
 class Forms {
 
 	/**
+	 * Hooks.
+	 */
+	public static function hooks() {
+		add_action( 'init', array( __CLASS__, 'fallback' ), 99 );
+	}
+
+	/**
+	 * Without WPForms active, show an email link where a demo placed a form instead of the raw shortcode.
+	 */
+	public static function fallback() {
+		if ( shortcode_exists( 'wpforms' ) ) {
+			return;
+		}
+		add_shortcode(
+			'wpforms',
+			static function () {
+				$mail = get_option( 'admin_email' );
+				/* translators: %s: email link. */
+				return '<p class="wpe-form-fallback">' . sprintf( esc_html__( 'Write to us at %s.', 'hi-wpessential' ), '<a href="mailto:' . esc_attr( $mail ) . '">' . esc_html( $mail ) . '</a>' ) . '</p>';
+			}
+		);
+	}
+
+	/**
 	 * Make sure WPForms is active (installs WPForms Lite from WordPress.org when missing).
 	 *
 	 * @return true|\WP_Error

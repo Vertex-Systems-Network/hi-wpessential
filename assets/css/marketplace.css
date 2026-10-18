@@ -369,3 +369,9 @@ body:has(#yearly:target) .ess-toggle--dark a[href="#yearly"], body:has(#lifetime
 .ess-news .wpforms-container { margin: 0; }
 .ess-news .wpforms-form { display: flex; gap: 8px; align-items: flex-end; }
 @media (max-width: 1024px) { .ess-contact-cols { flex-wrap: wrap !important; } .ess-contact-cols > .wp-block-column { flex-basis: 100% !important; } }
+.ess-side__row a { overflow-wrap: normal; word-break: normal; white-space: nowrap; }
+.ess-side__row > :last-child { text-align: right; }
+ul.ess-facts { list-style: none; padding: 0; margin: 8px 0 0; max-width: 560px; }
+.ess-facts li { display: flex; flex-direction: column; gap: 4px; padding-left: 14px; border-left: 2px solid var(--wp--preset--color--primary, #ec7d1a); }
+.ess-facts span { font-size: 13px; color: rgba(255,255,255,.7); }
+.ess-facts b { font-size: 18px; color: #fff; }
