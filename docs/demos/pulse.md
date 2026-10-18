@@ -31,3 +31,12 @@ Home · Speakers · Speaker profile · Agenda (day tabs, tracks) · Session deta
 
 ## Differentiation
 vs Base: dark-first, neon lime instead of indigo, pill/tile language, sans-only display, countdown and marquee motion. vs Maison: opposite in every axis (cool/neon vs warm/neutral, rounded vs square, sans vs serif, dynamic vs editorial).
+
+## Figma status
+
+- **Pulse Demo:**
+  - 25 pages at each of the 8 breakpoints (1920–320).
+  - 6 overlays: speaker modal, ticket drawer, search, add to calendar, mobile menu, agenda filter sheet.
+  - Overflow audit: 0 issues.
+- **Pulse Demo Dark:** every section cloned with the Dark variable mode.
+- **Pulse Demo UI Kit:** Light and Dark boards with tokens, type, buttons, pills, fields, speaker / session / ticket cards, navigation, QR and icons.
