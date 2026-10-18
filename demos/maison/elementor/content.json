@@ -1319,16 +1319,28 @@
 											"elType": "container",
 											"settings": {
 												"content_width": "full",
-												"flex_direction": "row",
-												"flex_gap": {
-													"unit": "px",
-													"size": 40,
-													"column": "40",
-													"row": "40",
-													"isLinked": true
+												"container_type": "grid",
+												"grid_columns_grid": {
+													"unit": "fr",
+													"size": 3,
+													"sizes": []
 												},
-												"flex_direction_mobile": "row",
-												"flex_wrap": "wrap"
+												"grid_columns_grid_tablet": {
+													"unit": "fr",
+													"size": 2,
+													"sizes": []
+												},
+												"grid_columns_grid_mobile": {
+													"unit": "fr",
+													"size": 1,
+													"sizes": []
+												},
+												"grid_gaps": {
+													"unit": "px",
+													"column": "24",
+													"row": "24",
+													"isLinked": true
+												}
 											},
 											"elements": [
 												{
@@ -2604,9 +2616,22 @@
 						}
 					],
 					"isInner": false
-				},
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "Maison is an editorial fashion house: seasonal collections, a lookbook and atelier tailoring, shipped worldwide with free returns."
+			}
+		},
+		{
+			"key": "lookbook",
+			"type": "page",
+			"title": "Lookbook",
+			"slug": "lookbook",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
 				{
-					"id": "35f4a8d",
+					"id": "28dd2c7",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -2625,17 +2650,17 @@
 						},
 						"padding": {
 							"unit": "px",
-							"top": "96",
+							"top": "80",
 							"right": "24",
-							"bottom": "96",
+							"bottom": "40",
 							"left": "24",
 							"isLinked": false
 						},
 						"padding_mobile": {
 							"unit": "px",
-							"top": "48",
+							"top": "40",
 							"right": "20",
-							"bottom": "48",
+							"bottom": "24",
 							"left": "20",
 							"isLinked": false
 						},
@@ -2647,7 +2672,7 @@
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
-								"title": "The Maison letter",
+								"title": "Lookbook · AW26",
 								"header_size": "p",
 								"typography_typography": "custom",
 								"typography_font_size": {
@@ -2675,13 +2700,35 @@
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
-								"title": "Quiet notes on new collections",
-								"header_size": "h2",
+								"title": "A summer in Provence",
+								"header_size": "h1",
 								"__globals__": {
-									"title_color": "globals/colors?id=text",
-									"typography_typography": "globals/typography?id=primary"
+									"title_color": "globals/colors?id=text"
 								},
-								"align": "center"
+								"align": "center",
+								"typography_typography": "custom",
+								"typography_font_family": "Cormorant Garamond",
+								"typography_font_weight": "500",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 80,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 64,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 44,
+									"sizes": []
+								}
 							},
 							"elements": []
 						},
@@ -2690,148 +2737,7 @@
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
-								"editor": "<p>One letter a month: new pieces, atelier stories and private sales. No noise.</p>",
-								"__globals__": {
-									"text_color": "globals/colors?id=wpe07d0ec3",
-									"typography_typography": "globals/typography?id=text"
-								},
-								"align": "center"
-							},
-							"elements": []
-						},
-						{
-							"id": "28dd2c7",
-							"elType": "widget",
-							"widgetType": "shortcode",
-							"settings": {
-								"shortcode": "[wpforms id=\"{{form:newsletter}}\" title=\"false\"]"
-							},
-							"elements": []
-						}
-					],
-					"isInner": false
-				}
-			],
-			"meta": {
-				"_wpe_seo_description": "Maison is an editorial fashion house: seasonal collections, a lookbook and atelier tailoring, shipped worldwide with free returns."
-			}
-		},
-		{
-			"key": "lookbook",
-			"type": "page",
-			"title": "Lookbook",
-			"slug": "lookbook",
-			"template": "page-full-width",
-			"content": "",
-			"elementor": [
-				{
-					"id": "9778d5d",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "96",
-							"right": "24",
-							"bottom": "48",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "48",
-							"right": "20",
-							"bottom": "24",
-							"left": "20",
-							"isLinked": false
-						},
-						"flex_align_items": "center"
-					},
-					"elements": [
-						{
-							"id": "d1fe173",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "Autumn / Winter 2026",
-								"header_size": "p",
-								"typography_typography": "custom",
-								"typography_font_size": {
-									"unit": "px",
-									"size": 13,
-									"sizes": []
-								},
-								"typography_font_weight": "600",
-								"typography_text_transform": "uppercase",
-								"typography_letter_spacing": {
-									"unit": "px",
-									"size": 1.6,
-									"sizes": []
-								},
-								"typography_font_family": "Manrope",
-								"__globals__": {
-									"title_color": "globals/colors?id=accent"
-								},
-								"align": "center"
-							},
-							"elements": []
-						},
-						{
-							"id": "f033ab3",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "Lookbook",
-								"header_size": "h1",
-								"__globals__": {
-									"title_color": "globals/colors?id=text"
-								},
-								"align": "center",
-								"typography_typography": "custom",
-								"typography_font_family": "Cormorant Garamond",
-								"typography_font_weight": "500",
-								"typography_line_height": {
-									"unit": "em",
-									"size": 1.05,
-									"sizes": []
-								},
-								"typography_font_size": {
-									"unit": "px",
-									"size": 96,
-									"sizes": []
-								},
-								"typography_font_size_tablet": {
-									"unit": "px",
-									"size": 77,
-									"sizes": []
-								},
-								"typography_font_size_mobile": {
-									"unit": "px",
-									"size": 53,
-									"sizes": []
-								}
-							},
-							"elements": []
-						},
-						{
-							"id": "43ec517",
-							"elType": "widget",
-							"widgetType": "text-editor",
-							"settings": {
-								"editor": "<p>Twelve looks shot between Provence and Lisbon in late summer light. Every piece is available now.</p>",
+								"editor": "<p>Photographed over five days in the Luberon by Inès Moreau. Every piece is available to shop below each look.</p>",
 								"__globals__": {
 									"text_color": "globals/colors?id=wpe07d0ec3"
 								},
@@ -2840,7 +2746,7 @@
 								"typography_font_family": "Manrope",
 								"typography_font_size": {
 									"unit": "px",
-									"size": 18,
+									"size": 16,
 									"sizes": []
 								}
 							},
@@ -2850,7 +2756,7 @@
 					"isInner": false
 				},
 				{
-					"id": "54229ab",
+					"id": "3ef8154",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -2869,9 +2775,9 @@
 						},
 						"padding": {
 							"unit": "px",
-							"top": "48",
+							"top": "32",
 							"right": "24",
-							"bottom": "48",
+							"bottom": "32",
 							"left": "24",
 							"isLinked": false
 						},
@@ -2886,23 +2792,23 @@
 					},
 					"elements": [
 						{
-							"id": "8613985",
+							"id": "68d30a9",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
 								"flex_direction": "row",
 								"flex_gap": {
 									"unit": "px",
-									"size": 56,
-									"column": "56",
-									"row": "56",
+									"size": 64,
+									"column": "64",
+									"row": "64",
 									"isLinked": true
 								},
 								"flex_direction_mobile": "column"
 							},
 							"elements": [
 								{
-									"id": "68d30a9",
+									"id": "d1fe173",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -2916,7 +2822,7 @@
 										},
 										"width": {
 											"unit": "%",
-											"size": 58,
+											"size": 56,
 											"sizes": []
 										},
 										"width_mobile": {
@@ -2927,2147 +2833,14 @@
 									},
 									"elements": [
 										{
-											"id": "fe9fc28",
+											"id": "35f4a8d",
 											"elType": "widget",
 											"widgetType": "image",
 											"settings": {
 												"image": {
 													"url": "{{media:lookbook-1}}",
 													"id": "{{media_id:lookbook-1}}",
-													"alt": "Look 01 — Camel and cream",
-													"source": "library"
-												},
-												"image_size": "full",
-												"width": {
-													"unit": "%",
-													"size": 100,
-													"sizes": []
-												},
-												"height": {
-													"unit": "px",
-													"size": 720,
-													"sizes": []
-												},
-												"height_tablet": {
-													"unit": "px",
-													"size": 576,
-													"sizes": []
-												},
-												"height_mobile": {
-													"unit": "px",
-													"size": 504,
-													"sizes": []
-												},
-												"object-fit": "cover",
-												"object-position": "center center",
-												"background_hover_transition": {
-													"unit": "s",
-													"size": 0.9,
-													"sizes": []
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								},
-								{
-									"id": "7647966",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 42,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										},
-										"flex_justify_content": "center"
-									},
-									"elements": [
-										{
-											"id": "3ef8154",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "01",
-												"header_size": "p",
-												"typography_typography": "custom",
-												"typography_font_size": {
-													"unit": "px",
-													"size": 13,
-													"sizes": []
-												},
-												"typography_font_weight": "600",
-												"typography_text_transform": "uppercase",
-												"typography_letter_spacing": {
-													"unit": "px",
-													"size": 1.6,
-													"sizes": []
-												},
-												"typography_font_family": "Manrope",
-												"__globals__": {
-													"title_color": "globals/colors?id=accent"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "93db85e",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "Look 01 — Camel and cream",
-												"header_size": "h2",
-												"__globals__": {
-													"title_color": "globals/colors?id=text",
-													"typography_typography": "globals/typography?id=primary"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "c7e1249",
-											"elType": "widget",
-											"widgetType": "text-editor",
-											"settings": {
-												"editor": "<p>The Belted Wool Coat over the Cashmere Crew Knit. Undyed, unfussy, warm.</p>",
-												"__globals__": {
-													"text_color": "globals/colors?id=wpe07d0ec3"
-												},
-												"typography_typography": "custom",
-												"typography_font_family": "Manrope",
-												"typography_font_size": {
-													"unit": "px",
-													"size": 18,
-													"sizes": []
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "2a38a4a",
-											"elType": "widget",
-											"widgetType": "shortcode",
-											"settings": {
-												"shortcode": "[products ids=\"{{post_id:p-wool-coat}},{{post_id:p-cashmere}},{{post_id:p-trousers}}\" columns=\"3\" limit=\"3\"]"
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								}
-							],
-							"isInner": true
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "f899139",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "48",
-							"right": "24",
-							"bottom": "48",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "24",
-							"right": "20",
-							"bottom": "24",
-							"left": "20",
-							"isLinked": false
-						}
-					},
-					"elements": [
-						{
-							"id": "ac627ab",
-							"elType": "container",
-							"settings": {
-								"content_width": "full",
-								"flex_direction": "row",
-								"flex_gap": {
-									"unit": "px",
-									"size": 56,
-									"column": "56",
-									"row": "56",
-									"isLinked": true
-								},
-								"flex_direction_mobile": "column"
-							},
-							"elements": [
-								{
-									"id": "ed3d2c2",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 42,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										},
-										"flex_justify_content": "center"
-									},
-									"elements": [
-										{
-											"id": "f4b9ec3",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "02",
-												"header_size": "p",
-												"typography_typography": "custom",
-												"typography_font_size": {
-													"unit": "px",
-													"size": 13,
-													"sizes": []
-												},
-												"typography_font_weight": "600",
-												"typography_text_transform": "uppercase",
-												"typography_letter_spacing": {
-													"unit": "px",
-													"size": 1.6,
-													"sizes": []
-												},
-												"typography_font_family": "Manrope",
-												"__globals__": {
-													"title_color": "globals/colors?id=accent"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "812b4ba",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "Look 02 — Espresso silk",
-												"header_size": "h2",
-												"__globals__": {
-													"title_color": "globals/colors?id=text",
-													"typography_typography": "globals/typography?id=primary"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "26657d5",
-											"elType": "widget",
-											"widgetType": "text-editor",
-											"settings": {
-												"editor": "<p>Sand-washed silk with ivory wide-leg trousers. Dinner, then a late walk home.</p>",
-												"__globals__": {
-													"text_color": "globals/colors?id=wpe07d0ec3"
-												},
-												"typography_typography": "custom",
-												"typography_font_family": "Manrope",
-												"typography_font_size": {
-													"unit": "px",
-													"size": 18,
-													"sizes": []
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "e2ef524",
-											"elType": "widget",
-											"widgetType": "shortcode",
-											"settings": {
-												"shortcode": "[products ids=\"{{post_id:p-silk-shirt}},{{post_id:p-trousers}},{{post_id:p-loafers}}\" columns=\"3\" limit=\"3\"]"
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								},
-								{
-									"id": "98dce83",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 58,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										}
-									},
-									"elements": [
-										{
-											"id": "92cc227",
-											"elType": "widget",
-											"widgetType": "image",
-											"settings": {
-												"image": {
-													"url": "{{media:lookbook-2}}",
-													"id": "{{media_id:lookbook-2}}",
-													"alt": "Look 02 — Espresso silk",
-													"source": "library"
-												},
-												"image_size": "full",
-												"width": {
-													"unit": "%",
-													"size": 100,
-													"sizes": []
-												},
-												"height": {
-													"unit": "px",
-													"size": 720,
-													"sizes": []
-												},
-												"height_tablet": {
-													"unit": "px",
-													"size": 576,
-													"sizes": []
-												},
-												"height_mobile": {
-													"unit": "px",
-													"size": 504,
-													"sizes": []
-												},
-												"object-fit": "cover",
-												"object-position": "center center",
-												"background_hover_transition": {
-													"unit": "s",
-													"size": 0.9,
-													"sizes": []
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								}
-							],
-							"isInner": true
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "2723d09",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "48",
-							"right": "24",
-							"bottom": "48",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "24",
-							"right": "20",
-							"bottom": "24",
-							"left": "20",
-							"isLinked": false
-						}
-					},
-					"elements": [
-						{
-							"id": "a3c65c2",
-							"elType": "container",
-							"settings": {
-								"content_width": "full",
-								"flex_direction": "row",
-								"flex_gap": {
-									"unit": "px",
-									"size": 56,
-									"column": "56",
-									"row": "56",
-									"isLinked": true
-								},
-								"flex_direction_mobile": "column"
-							},
-							"elements": [
-								{
-									"id": "ec89566",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 58,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										}
-									},
-									"elements": [
-										{
-											"id": "38b3eff",
-											"elType": "widget",
-											"widgetType": "image",
-											"settings": {
-												"image": {
-													"url": "{{media:lookbook-3}}",
-													"id": "{{media_id:lookbook-3}}",
-													"alt": "Look 03 — Terracotta linen",
-													"source": "library"
-												},
-												"image_size": "full",
-												"width": {
-													"unit": "%",
-													"size": 100,
-													"sizes": []
-												},
-												"height": {
-													"unit": "px",
-													"size": 720,
-													"sizes": []
-												},
-												"height_tablet": {
-													"unit": "px",
-													"size": 576,
-													"sizes": []
-												},
-												"height_mobile": {
-													"unit": "px",
-													"size": 504,
-													"sizes": []
-												},
-												"object-fit": "cover",
-												"object-position": "center center",
-												"background_hover_transition": {
-													"unit": "s",
-													"size": 0.9,
-													"sizes": []
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								},
-								{
-									"id": "a97da62",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 42,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										},
-										"flex_justify_content": "center"
-									},
-									"elements": [
-										{
-											"id": "6974ce5",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "03",
-												"header_size": "p",
-												"typography_typography": "custom",
-												"typography_font_size": {
-													"unit": "px",
-													"size": 13,
-													"sizes": []
-												},
-												"typography_font_weight": "600",
-												"typography_text_transform": "uppercase",
-												"typography_letter_spacing": {
-													"unit": "px",
-													"size": 1.6,
-													"sizes": []
-												},
-												"typography_font_family": "Manrope",
-												"__globals__": {
-													"title_color": "globals/colors?id=accent"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "c9e1074",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "Look 03 — Terracotta linen",
-												"header_size": "h2",
-												"__globals__": {
-													"title_color": "globals/colors?id=text",
-													"typography_typography": "globals/typography?id=primary"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "65b9eea",
-											"elType": "widget",
-											"widgetType": "text-editor",
-											"settings": {
-												"editor": "<p>Madder-dyed ramie that moves with the wind. Wear it barefoot.</p>",
-												"__globals__": {
-													"text_color": "globals/colors?id=wpe07d0ec3"
-												},
-												"typography_typography": "custom",
-												"typography_font_family": "Manrope",
-												"typography_font_size": {
-													"unit": "px",
-													"size": 18,
-													"sizes": []
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "f0935e4",
-											"elType": "widget",
-											"widgetType": "shortcode",
-											"settings": {
-												"shortcode": "[products ids=\"{{post_id:p-maxi}},{{post_id:p-linen-dress}},{{post_id:p-tote}}\" columns=\"3\" limit=\"3\"]"
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								}
-							],
-							"isInner": true
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "7f6ffaa",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "80",
-							"right": "24",
-							"bottom": "80",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "40",
-							"right": "20",
-							"bottom": "40",
-							"left": "20",
-							"isLinked": false
-						},
-						"background_background": "classic",
-						"__globals__": {
-							"background_color": "globals/colors?id=wpe6073fd3"
-						}
-					},
-					"elements": [
-						{
-							"id": "5f93f98",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "Shop every look",
-								"header_size": "h2",
-								"__globals__": {
-									"title_color": "globals/colors?id=text",
-									"typography_typography": "globals/typography?id=primary"
-								},
-								"align": "center"
-							},
-							"elements": []
-						},
-						{
-							"id": "698d51a",
-							"elType": "widget",
-							"widgetType": "button",
-							"settings": {
-								"text": "Go to the shop",
-								"link": {
-									"url": "{{woo:shop}}",
-									"is_external": "",
-									"nofollow": ""
-								},
-								"size": "md",
-								"__globals__": {
-									"typography_typography": "globals/typography?id=accent",
-									"hover_color": "globals/colors?id=text",
-									"button_hover_border_color": "globals/colors?id=text"
-								},
-								"align": "center",
-								"button_hover_transition_duration": {
-									"unit": "s",
-									"size": 0.9,
-									"sizes": []
-								},
-								"button_background_hover_background": "classic",
-								"button_background_hover_color": "rgba(0,0,0,0)",
-								"button_hover_border_color": "currentColor",
-								"border_border": "solid",
-								"border_width": {
-									"unit": "px",
-									"top": "1",
-									"right": "1",
-									"bottom": "1",
-									"left": "1",
-									"isLinked": true
-								}
-							},
-							"elements": []
-						}
-					],
-					"isInner": false
-				}
-			],
-			"meta": {
-				"_wpe_seo_description": "The Maison lookbook: the season's collection styled in full, with every piece linked to the shop."
-			}
-		},
-		{
-			"key": "atelier",
-			"type": "page",
-			"title": "Atelier",
-			"slug": "atelier",
-			"template": "page-full-width",
-			"content": "",
-			"elementor": [
-				{
-					"id": "c45147d",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "96",
-							"right": "24",
-							"bottom": "96",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "48",
-							"right": "20",
-							"bottom": "48",
-							"left": "20",
-							"isLinked": false
-						},
-						"background_background": "classic",
-						"background_image": {
-							"url": "{{media:atelier-studio}}",
-							"id": "{{media_id:atelier-studio}}",
-							"alt": "",
-							"source": "library"
-						},
-						"background_position": "center center",
-						"background_size": "cover",
-						"background_overlay_background": "classic",
-						"__globals__": {
-							"background_overlay_color": "globals/colors?id=wpe0a16bc3"
-						},
-						"background_overlay_opacity": {
-							"unit": "px",
-							"size": 0.4,
-							"sizes": []
-						},
-						"min_height": {
-							"unit": "px",
-							"size": 620,
-							"sizes": []
-						},
-						"flex_justify_content": "flex-end"
-					},
-					"elements": [
-						{
-							"id": "73278a4",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "Since 1998",
-								"header_size": "p",
-								"typography_typography": "custom",
-								"typography_font_size": {
-									"unit": "px",
-									"size": 13,
-									"sizes": []
-								},
-								"typography_font_weight": "600",
-								"typography_text_transform": "uppercase",
-								"typography_letter_spacing": {
-									"unit": "px",
-									"size": 1.6,
-									"sizes": []
-								},
-								"typography_font_family": "Manrope",
-								"__globals__": {
-									"title_color": "globals/colors?id=wpece9a5f5"
-								}
-							},
-							"elements": []
-						},
-						{
-							"id": "5fd0b37",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "The atelier",
-								"header_size": "h1",
-								"__globals__": {
-									"title_color": "globals/colors?id=wpece9a5f5"
-								},
-								"typography_typography": "custom",
-								"typography_font_family": "Cormorant Garamond",
-								"typography_font_weight": "500",
-								"typography_line_height": {
-									"unit": "em",
-									"size": 1.05,
-									"sizes": []
-								},
-								"typography_font_size": {
-									"unit": "px",
-									"size": 96,
-									"sizes": []
-								},
-								"typography_font_size_tablet": {
-									"unit": "px",
-									"size": 77,
-									"sizes": []
-								},
-								"typography_font_size_mobile": {
-									"unit": "px",
-									"size": 53,
-									"sizes": []
-								}
-							},
-							"elements": []
-						},
-						{
-							"id": "2b44928",
-							"elType": "widget",
-							"widgetType": "text-editor",
-							"settings": {
-								"editor": "<p>A small studio with a long view: clothes made to be repaired, handed down and worn again.</p>",
-								"__globals__": {
-									"text_color": "globals/colors?id=wpece9a5f5"
-								},
-								"typography_typography": "custom",
-								"typography_font_family": "Manrope",
-								"typography_font_size": {
-									"unit": "px",
-									"size": 18,
-									"sizes": []
-								}
-							},
-							"elements": []
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "c8ffe9a",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "96",
-							"right": "24",
-							"bottom": "96",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "48",
-							"right": "20",
-							"bottom": "48",
-							"left": "20",
-							"isLinked": false
-						}
-					},
-					"elements": [
-						{
-							"id": "202cb96",
-							"elType": "container",
-							"settings": {
-								"content_width": "full",
-								"flex_direction": "row",
-								"flex_gap": {
-									"unit": "px",
-									"size": 64,
-									"column": "64",
-									"row": "64",
-									"isLinked": true
-								},
-								"flex_direction_mobile": "column"
-							},
-							"elements": [
-								{
-									"id": "07e1cd7",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 40,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										}
-									},
-									"elements": [
-										{
-											"id": "eb160de",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "Our story",
-												"header_size": "p",
-												"typography_typography": "custom",
-												"typography_font_size": {
-													"unit": "px",
-													"size": 13,
-													"sizes": []
-												},
-												"typography_font_weight": "600",
-												"typography_text_transform": "uppercase",
-												"typography_letter_spacing": {
-													"unit": "px",
-													"size": 1.6,
-													"sizes": []
-												},
-												"typography_font_family": "Manrope",
-												"__globals__": {
-													"title_color": "globals/colors?id=accent"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "5ef0599",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "Three generations of tailors",
-												"header_size": "h2",
-												"__globals__": {
-													"title_color": "globals/colors?id=text",
-													"typography_typography": "globals/typography?id=primary"
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								},
-								{
-									"id": "a0a080f",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 60,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										}
-									},
-									"elements": [
-										{
-											"id": "da4fb5c",
-											"elType": "widget",
-											"widgetType": "text-editor",
-											"settings": {
-												"editor": "<p>Maison began as a two-person alteration shop in the Marais. Today forty-two makers work with us across two family ateliers, but the rule is the same: one garment, one pair of hands.</p>",
-												"__globals__": {
-													"text_color": "globals/colors?id=text"
-												},
-												"typography_typography": "custom",
-												"typography_font_family": "Manrope",
-												"typography_font_size": {
-													"unit": "px",
-													"size": 20,
-													"sizes": []
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "4c56ff4",
-											"elType": "widget",
-											"widgetType": "text-editor",
-											"settings": {
-												"editor": "<p>We design two collections a year and keep the best pieces in production for as long as people want them. Fabrics come from mills we have visited, within a day's drive of the workshop.</p>",
-												"__globals__": {
-													"text_color": "globals/colors?id=wpe07d0ec3",
-													"typography_typography": "globals/typography?id=text"
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								}
-							],
-							"isInner": true
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "9b86192",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "72",
-							"right": "24",
-							"bottom": "72",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "36",
-							"right": "20",
-							"bottom": "36",
-							"left": "20",
-							"isLinked": false
-						},
-						"background_background": "classic",
-						"__globals__": {
-							"background_color": "globals/colors?id=wpe6073fd3"
-						}
-					},
-					"elements": [
-						{
-							"id": "d1f491a",
-							"elType": "container",
-							"settings": {
-								"content_width": "full",
-								"container_type": "grid",
-								"grid_columns_grid": {
-									"unit": "fr",
-									"size": 4,
-									"sizes": []
-								},
-								"grid_columns_grid_tablet": {
-									"unit": "fr",
-									"size": 2,
-									"sizes": []
-								},
-								"grid_columns_grid_mobile": {
-									"unit": "fr",
-									"size": 1,
-									"sizes": []
-								},
-								"grid_gaps": {
-									"unit": "px",
-									"column": "24",
-									"row": "24",
-									"isLinked": true
-								}
-							},
-							"elements": [
-								{
-									"id": "3def184",
-									"elType": "widget",
-									"widgetType": "counter",
-									"settings": {
-										"starting_number": 0,
-										"ending_number": 1998,
-										"suffix": "",
-										"prefix": "",
-										"title": "Founded in Paris",
-										"thousand_separator": "yes",
-										"__globals__": {
-											"number_color": "globals/colors?id=text",
-											"title_color": "globals/colors?id=wpe07d0ec3",
-											"typography_number_typography": "globals/typography?id=primary",
-											"typography_title_typography": "globals/typography?id=text"
-										}
-									},
-									"elements": []
-								},
-								{
-									"id": "069059b",
-									"elType": "widget",
-									"widgetType": "counter",
-									"settings": {
-										"starting_number": 0,
-										"ending_number": 42,
-										"suffix": "",
-										"prefix": "",
-										"title": "Makers in Porto and Florence",
-										"thousand_separator": "yes",
-										"__globals__": {
-											"number_color": "globals/colors?id=text",
-											"title_color": "globals/colors?id=wpe07d0ec3",
-											"typography_number_typography": "globals/typography?id=primary",
-											"typography_title_typography": "globals/typography?id=text"
-										}
-									},
-									"elements": []
-								},
-								{
-									"id": "ec5decc",
-									"elType": "widget",
-									"widgetType": "counter",
-									"settings": {
-										"starting_number": 0,
-										"ending_number": 100,
-										"suffix": "%",
-										"prefix": "",
-										"title": "Natural fibres",
-										"thousand_separator": "yes",
-										"__globals__": {
-											"number_color": "globals/colors?id=text",
-											"title_color": "globals/colors?id=wpe07d0ec3",
-											"typography_number_typography": "globals/typography?id=primary",
-											"typography_title_typography": "globals/typography?id=text"
-										}
-									},
-									"elements": []
-								},
-								{
-									"id": "76dc611",
-									"elType": "widget",
-									"widgetType": "counter",
-									"settings": {
-										"starting_number": 0,
-										"ending_number": 1900,
-										"suffix": "",
-										"prefix": "",
-										"title": "Repairs last year",
-										"thousand_separator": "yes",
-										"__globals__": {
-											"number_color": "globals/colors?id=text",
-											"title_color": "globals/colors?id=wpe07d0ec3",
-											"typography_number_typography": "globals/typography?id=primary",
-											"typography_title_typography": "globals/typography?id=text"
-										}
-									},
-									"elements": []
-								}
-							],
-							"isInner": true
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "a8baa56",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "96",
-							"right": "24",
-							"bottom": "96",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "48",
-							"right": "20",
-							"bottom": "48",
-							"left": "20",
-							"isLinked": false
-						}
-					},
-					"elements": [
-						{
-							"id": "0f28b5d",
-							"elType": "container",
-							"settings": {
-								"content_width": "full",
-								"flex_direction": "row",
-								"flex_gap": {
-									"unit": "px",
-									"size": 64,
-									"column": "64",
-									"row": "64",
-									"isLinked": true
-								},
-								"flex_direction_mobile": "column"
-							},
-							"elements": [
-								{
-									"id": "65ded53",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 50,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										}
-									},
-									"elements": [
-										{
-											"id": "1afa34a",
-											"elType": "widget",
-											"widgetType": "image",
-											"settings": {
-												"image": {
-													"url": "{{media:atelier-hands}}",
-													"id": "{{media_id:atelier-hands}}",
-													"alt": "Hand finishing a linen garment",
-													"source": "library"
-												},
-												"image_size": "full",
-												"width": {
-													"unit": "%",
-													"size": 100,
-													"sizes": []
-												},
-												"height": {
-													"unit": "px",
-													"size": 620,
-													"sizes": []
-												},
-												"height_tablet": {
-													"unit": "px",
-													"size": 496,
-													"sizes": []
-												},
-												"height_mobile": {
-													"unit": "px",
-													"size": 434,
-													"sizes": []
-												},
-												"object-fit": "cover",
-												"object-position": "center center",
-												"background_hover_transition": {
-													"unit": "s",
-													"size": 0.9,
-													"sizes": []
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								},
-								{
-									"id": "1385974",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 50,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										},
-										"flex_justify_content": "center"
-									},
-									"elements": [
-										{
-											"id": "9fc3d71",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "How we work",
-												"header_size": "p",
-												"typography_typography": "custom",
-												"typography_font_size": {
-													"unit": "px",
-													"size": 13,
-													"sizes": []
-												},
-												"typography_font_weight": "600",
-												"typography_text_transform": "uppercase",
-												"typography_letter_spacing": {
-													"unit": "px",
-													"size": 1.6,
-													"sizes": []
-												},
-												"typography_font_family": "Manrope",
-												"__globals__": {
-													"title_color": "globals/colors?id=accent"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "02522a2",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "Slow by design",
-												"header_size": "h2",
-												"__globals__": {
-													"title_color": "globals/colors?id=text",
-													"typography_typography": "globals/typography?id=primary"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "e00da03",
-											"elType": "widget",
-											"widgetType": "icon-list",
-											"settings": {
-												"icon_list": [
-													{
-														"_id": "7f1de29",
-														"text": "Fabric rests for 48 hours before cutting so it never shrinks later.",
-														"selected_icon": {
-															"value": "fas fa-check",
-															"library": "fa-solid"
-														}
-													},
-													{
-														"_id": "42a0e18",
-														"text": "Seams are French-finished or bound — no raw edges inside.",
-														"selected_icon": {
-															"value": "fas fa-check",
-															"library": "fa-solid"
-														}
-													},
-													{
-														"_id": "3988c7f",
-														"text": "Buttons are sewn with a thread shank so they last.",
-														"selected_icon": {
-															"value": "fas fa-check",
-															"library": "fa-solid"
-														}
-													},
-													{
-														"_id": "013d407",
-														"text": "Every piece is pressed and checked by the person who made it.",
-														"selected_icon": {
-															"value": "fas fa-check",
-															"library": "fa-solid"
-														}
-													}
-												],
-												"__globals__": {
-													"icon_color": "globals/colors?id=accent",
-													"text_color": "globals/colors?id=text",
-													"icon_typography_typography": "globals/typography?id=text"
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								}
-							],
-							"isInner": true
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "a8f15ed",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "96",
-							"right": "24",
-							"bottom": "96",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "48",
-							"right": "20",
-							"bottom": "48",
-							"left": "20",
-							"isLinked": false
-						},
-						"background_background": "classic",
-						"__globals__": {
-							"background_color": "globals/colors?id=wpe6073fd3"
-						}
-					},
-					"elements": [
-						{
-							"id": "7ef605f",
-							"elType": "container",
-							"settings": {
-								"content_width": "full",
-								"flex_direction": "row",
-								"flex_gap": {
-									"unit": "px",
-									"size": 64,
-									"column": "64",
-									"row": "64",
-									"isLinked": true
-								},
-								"flex_direction_mobile": "column"
-							},
-							"elements": [
-								{
-									"id": "8d5e957",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 45,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										},
-										"flex_justify_content": "center"
-									},
-									"elements": [
-										{
-											"id": "903ce92",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "Visit us",
-												"header_size": "p",
-												"typography_typography": "custom",
-												"typography_font_size": {
-													"unit": "px",
-													"size": 13,
-													"sizes": []
-												},
-												"typography_font_weight": "600",
-												"typography_text_transform": "uppercase",
-												"typography_letter_spacing": {
-													"unit": "px",
-													"size": 1.6,
-													"sizes": []
-												},
-												"typography_font_family": "Manrope",
-												"__globals__": {
-													"title_color": "globals/colors?id=accent"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "0a09c88",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "Try it on in Paris or Lisbon",
-												"header_size": "h2",
-												"__globals__": {
-													"title_color": "globals/colors?id=text",
-													"typography_typography": "globals/typography?id=primary"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "2b24d49",
-											"elType": "widget",
-											"widgetType": "text-editor",
-											"settings": {
-												"editor": "<p>Book a fitting and we will have your sizes ready, with a tailor on hand for small alterations.</p>",
-												"__globals__": {
-													"text_color": "globals/colors?id=wpe07d0ec3",
-													"typography_typography": "globals/typography?id=text"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "a5e0013",
-											"elType": "widget",
-											"widgetType": "button",
-											"settings": {
-												"text": "Find a store",
-												"link": {
-													"url": "{{page:contact}}",
-													"is_external": "",
-													"nofollow": ""
-												},
-												"size": "md",
-												"__globals__": {
-													"typography_typography": "globals/typography?id=accent",
-													"hover_color": "globals/colors?id=text",
-													"button_hover_border_color": "globals/colors?id=text"
-												},
-												"button_hover_transition_duration": {
-													"unit": "s",
-													"size": 0.9,
-													"sizes": []
-												},
-												"button_background_hover_background": "classic",
-												"button_background_hover_color": "rgba(0,0,0,0)",
-												"button_hover_border_color": "currentColor",
-												"border_border": "solid",
-												"border_width": {
-													"unit": "px",
-													"top": "1",
-													"right": "1",
-													"bottom": "1",
-													"left": "1",
-													"isLinked": true
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								},
-								{
-									"id": "f221706",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 55,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										}
-									},
-									"elements": [
-										{
-											"id": "47d1e99",
-											"elType": "widget",
-											"widgetType": "image",
-											"settings": {
-												"image": {
-													"url": "{{media:store-paris}}",
-													"id": "{{media_id:store-paris}}",
-													"alt": "The Maison store in Paris",
-													"source": "library"
-												},
-												"image_size": "full",
-												"width": {
-													"unit": "%",
-													"size": 100,
-													"sizes": []
-												},
-												"height": {
-													"unit": "px",
-													"size": 480,
-													"sizes": []
-												},
-												"height_tablet": {
-													"unit": "px",
-													"size": 384,
-													"sizes": []
-												},
-												"height_mobile": {
-													"unit": "px",
-													"size": 336,
-													"sizes": []
-												},
-												"object-fit": "cover",
-												"object-position": "center center",
-												"background_hover_transition": {
-													"unit": "s",
-													"size": 0.9,
-													"sizes": []
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								}
-							],
-							"isInner": true
-						}
-					],
-					"isInner": false
-				}
-			],
-			"meta": {
-				"_wpe_seo_description": "Inside the Maison atelier: how our tailors cut, fit and finish every garment, and how to book a fitting."
-			}
-		},
-		{
-			"key": "contact",
-			"type": "page",
-			"title": "Stores & Contact",
-			"slug": "contact",
-			"template": "page-full-width",
-			"content": "",
-			"elementor": [
-				{
-					"id": "2a79ea2",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "96",
-							"right": "24",
-							"bottom": "48",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "48",
-							"right": "20",
-							"bottom": "24",
-							"left": "20",
-							"isLinked": false
-						}
-					},
-					"elements": [
-						{
-							"id": "37a749d",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "Stores & contact",
-								"header_size": "p",
-								"typography_typography": "custom",
-								"typography_font_size": {
-									"unit": "px",
-									"size": 13,
-									"sizes": []
-								},
-								"typography_font_weight": "600",
-								"typography_text_transform": "uppercase",
-								"typography_letter_spacing": {
-									"unit": "px",
-									"size": 1.6,
-									"sizes": []
-								},
-								"typography_font_family": "Manrope",
-								"__globals__": {
-									"title_color": "globals/colors?id=accent"
-								}
-							},
-							"elements": []
-						},
-						{
-							"id": "b3e3e39",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "Come and see us",
-								"header_size": "h1",
-								"__globals__": {
-									"title_color": "globals/colors?id=text"
-								},
-								"typography_typography": "custom",
-								"typography_font_family": "Cormorant Garamond",
-								"typography_font_weight": "500",
-								"typography_line_height": {
-									"unit": "em",
-									"size": 1.05,
-									"sizes": []
-								},
-								"typography_font_size": {
-									"unit": "px",
-									"size": 64,
-									"sizes": []
-								},
-								"typography_font_size_tablet": {
-									"unit": "px",
-									"size": 51,
-									"sizes": []
-								},
-								"typography_font_size_mobile": {
-									"unit": "px",
-									"size": 35,
-									"sizes": []
-								}
-							},
-							"elements": []
-						},
-						{
-							"id": "1d7f7ab",
-							"elType": "widget",
-							"widgetType": "text-editor",
-							"settings": {
-								"editor": "<p>Questions about sizing, an order or a repair? We answer every email within one working day.</p>",
-								"__globals__": {
-									"text_color": "globals/colors?id=wpe07d0ec3"
-								},
-								"typography_typography": "custom",
-								"typography_font_family": "Manrope",
-								"typography_font_size": {
-									"unit": "px",
-									"size": 18,
-									"sizes": []
-								}
-							},
-							"elements": []
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "0777d5c",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "24",
-							"right": "24",
-							"bottom": "72",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "24",
-							"right": "20",
-							"bottom": "36",
-							"left": "20",
-							"isLinked": false
-						}
-					},
-					"elements": [
-						{
-							"id": "82aa4b0",
-							"elType": "container",
-							"settings": {
-								"content_width": "full",
-								"flex_direction": "row",
-								"flex_gap": {
-									"unit": "px",
-									"size": 24,
-									"column": "24",
-									"row": "24",
-									"isLinked": true
-								},
-								"flex_direction_mobile": "column"
-							},
-							"elements": [
-								{
-									"id": "0640966",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 50,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										},
-										"padding": {
-											"unit": "px",
-											"top": "32",
-											"right": "32",
-											"bottom": "32",
-											"left": "32",
-											"isLinked": true
-										},
-										"padding_mobile": {
-											"unit": "px",
-											"top": "16",
-											"right": "16",
-											"bottom": "16",
-											"left": "16",
-											"isLinked": true
-										},
-										"border_border": "solid",
-										"border_width": {
-											"unit": "px",
-											"top": "1",
-											"right": "1",
-											"bottom": "1",
-											"left": "1",
-											"isLinked": true
-										},
-										"__globals__": {
-											"border_color": "globals/colors?id=wpe2de42fb"
-										}
-									},
-									"elements": [
-										{
-											"id": "1c9ac01",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "Paris",
-												"header_size": "h3",
-												"__globals__": {
-													"title_color": "globals/colors?id=text",
-													"typography_typography": "globals/typography?id=primary"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "6c4b761",
-											"elType": "widget",
-											"widgetType": "text-editor",
-											"settings": {
-												"editor": "<p>14 Rue de Saintonge, 75003 Paris</p><p>Tue–Sat 11:00–19:00</p><p><a href=\"tel:+33142711840\">+33 1 42 71 18 40</a></p>",
-												"__globals__": {
-													"text_color": "globals/colors?id=wpe07d0ec3",
-													"typography_typography": "globals/typography?id=text"
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								},
-								{
-									"id": "bd4c9ab",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 50,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										},
-										"padding": {
-											"unit": "px",
-											"top": "32",
-											"right": "32",
-											"bottom": "32",
-											"left": "32",
-											"isLinked": true
-										},
-										"padding_mobile": {
-											"unit": "px",
-											"top": "16",
-											"right": "16",
-											"bottom": "16",
-											"left": "16",
-											"isLinked": true
-										},
-										"border_border": "solid",
-										"border_width": {
-											"unit": "px",
-											"top": "1",
-											"right": "1",
-											"bottom": "1",
-											"left": "1",
-											"isLinked": true
-										},
-										"__globals__": {
-											"border_color": "globals/colors?id=wpe2de42fb"
-										}
-									},
-									"elements": [
-										{
-											"id": "140f696",
-											"elType": "widget",
-											"widgetType": "heading",
-											"settings": {
-												"title": "Lisbon",
-												"header_size": "h3",
-												"__globals__": {
-													"title_color": "globals/colors?id=text",
-													"typography_typography": "globals/typography?id=primary"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "b73ce39",
-											"elType": "widget",
-											"widgetType": "text-editor",
-											"settings": {
-												"editor": "<p>Rua da Escola Politécnica 42, 1250-102 Lisboa</p><p>Mon–Sat 10:00–19:00</p><p><a href=\"tel:+351213401180\">+351 21 340 1180</a></p>",
-												"__globals__": {
-													"text_color": "globals/colors?id=wpe07d0ec3",
-													"typography_typography": "globals/typography?id=text"
-												}
-											},
-											"elements": []
-										}
-									],
-									"isInner": true
-								}
-							],
-							"isInner": true
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "bf82296",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "96",
-							"right": "24",
-							"bottom": "96",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "48",
-							"right": "20",
-							"bottom": "48",
-							"left": "20",
-							"isLinked": false
-						},
-						"background_background": "classic",
-						"__globals__": {
-							"background_color": "globals/colors?id=wpe6073fd3"
-						}
-					},
-					"elements": [
-						{
-							"id": "f7e6c85",
-							"elType": "container",
-							"settings": {
-								"content_width": "full",
-								"flex_direction": "row",
-								"flex_gap": {
-									"unit": "px",
-									"size": 64,
-									"column": "64",
-									"row": "64",
-									"isLinked": true
-								},
-								"flex_direction_mobile": "column"
-							},
-							"elements": [
-								{
-									"id": "9766527",
-									"elType": "container",
-									"settings": {
-										"content_width": "full",
-										"flex_direction": "column",
-										"flex_gap": {
-											"unit": "px",
-											"size": 16,
-											"column": "16",
-											"row": "16",
-											"isLinked": true
-										},
-										"width": {
-											"unit": "%",
-											"size": 50,
-											"sizes": []
-										},
-										"width_mobile": {
-											"unit": "%",
-											"size": 100,
-											"sizes": []
-										}
-									},
-									"elements": [
-										{
-											"id": "fa7cdfa",
-											"elType": "widget",
-											"widgetType": "image",
-											"settings": {
-												"image": {
-													"url": "{{media:store-paris}}",
-													"id": "{{media_id:store-paris}}",
-													"alt": "Inside the Paris store",
+													"alt": "Belted Wool Coat · Cashmere Crew Knit",
 													"source": "library"
 												},
 												"image_size": "full",
@@ -5105,7 +2878,7 @@
 									"isInner": true
 								},
 								{
-									"id": "1ff8a7b",
+									"id": "fe9fc28",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -5119,7 +2892,7 @@
 										},
 										"width": {
 											"unit": "%",
-											"size": 50,
+											"size": 44,
 											"sizes": []
 										},
 										"width_mobile": {
@@ -5131,66 +2904,85 @@
 									},
 									"elements": [
 										{
-											"id": "7e7757b",
+											"id": "f033ab3",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
-												"title": "Customer care",
+												"title": "Look 01",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 12,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "43ec517",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Belted Wool Coat · Cashmere Crew Knit",
 												"header_size": "h2",
 												"__globals__": {
-													"title_color": "globals/colors?id=text",
-													"typography_typography": "globals/typography?id=primary"
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 40,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 32,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
 												}
 											},
 											"elements": []
 										},
 										{
-											"id": "149e967",
-											"elType": "widget",
-											"widgetType": "icon-list",
-											"settings": {
-												"icon_list": [
-													{
-														"_id": "5878a7a",
-														"text": "care@maison-atelier.com",
-														"selected_icon": {
-															"value": "fas fa-envelope",
-															"library": "fa-solid"
-														}
-													},
-													{
-														"_id": "006f52e",
-														"text": "+33 1 42 71 18 40 (Mon–Fri, 9:00–18:00 CET)",
-														"selected_icon": {
-															"value": "fas fa-envelope",
-															"library": "fa-solid"
-														}
-													},
-													{
-														"_id": "3636638",
-														"text": "Press & wholesale: studio@maison-atelier.com",
-														"selected_icon": {
-															"value": "fas fa-envelope",
-															"library": "fa-solid"
-														}
-													}
-												],
-												"__globals__": {
-													"icon_color": "globals/colors?id=accent",
-													"text_color": "globals/colors?id=text",
-													"icon_typography_typography": "globals/typography?id=text"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "a4a042c",
+											"id": "9778d5d",
 											"elType": "widget",
 											"widgetType": "button",
 											"settings": {
-												"text": "Shipping & returns",
+												"text": "Shop this look",
 												"link": {
-													"url": "{{page:help}}",
+													"url": "{{page:p-wool-coat}}",
 													"is_external": "",
 													"nofollow": ""
 												},
@@ -5232,7 +3024,1002 @@
 					"isInner": false
 				},
 				{
-					"id": "8f85517",
+					"id": "98dce83",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "32",
+							"right": "24",
+							"bottom": "32",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "92cc227",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 64,
+									"column": "64",
+									"row": "64",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "54229ab",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 44,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"flex_justify_content": "center"
+									},
+									"elements": [
+										{
+											"id": "2a38a4a",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Look 02",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 12,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "7647966",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Silk Shirt · Wide-Leg Trousers",
+												"header_size": "h2",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 40,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 32,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "8613985",
+											"elType": "widget",
+											"widgetType": "button",
+											"settings": {
+												"text": "Shop this look",
+												"link": {
+													"url": "{{page:p-silk-shirt}}",
+													"is_external": "",
+													"nofollow": ""
+												},
+												"size": "md",
+												"__globals__": {
+													"typography_typography": "globals/typography?id=accent",
+													"button_text_color": "globals/colors?id=text",
+													"border_color": "globals/colors?id=text",
+													"button_background_hover_color": "globals/colors?id=text",
+													"hover_color": "globals/colors?id=wped302e97"
+												},
+												"background_background": "classic",
+												"background_color": "rgba(0,0,0,0)",
+												"border_border": "solid",
+												"border_width": {
+													"unit": "px",
+													"top": "1",
+													"right": "1",
+													"bottom": "1",
+													"left": "1",
+													"isLinked": true
+												},
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												},
+												"button_background_hover_background": "classic"
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "c7e1249",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 56,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "93db85e",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:lookbook-2}}",
+													"id": "{{media_id:lookbook-2}}",
+													"alt": "Silk Shirt · Wide-Leg Trousers",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 460,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 368,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 322,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "38b3eff",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "32",
+							"right": "24",
+							"bottom": "32",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "f899139",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 64,
+									"column": "64",
+									"row": "64",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "812b4ba",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 56,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "f4b9ec3",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:lookbook-3}}",
+													"id": "{{media_id:lookbook-3}}",
+													"alt": "Linen Midi Dress · Suede Penny Loafers",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 460,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 368,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 322,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "ac627ab",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 44,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"flex_justify_content": "center"
+									},
+									"elements": [
+										{
+											"id": "26657d5",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Look 03",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 12,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "e2ef524",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Linen Midi Dress · Suede Penny Loafers",
+												"header_size": "h2",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 40,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 32,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "ed3d2c2",
+											"elType": "widget",
+											"widgetType": "button",
+											"settings": {
+												"text": "Shop this look",
+												"link": {
+													"url": "{{page:p-linen-dress}}",
+													"is_external": "",
+													"nofollow": ""
+												},
+												"size": "md",
+												"__globals__": {
+													"typography_typography": "globals/typography?id=accent",
+													"button_text_color": "globals/colors?id=text",
+													"border_color": "globals/colors?id=text",
+													"button_background_hover_color": "globals/colors?id=text",
+													"hover_color": "globals/colors?id=wped302e97"
+												},
+												"background_background": "classic",
+												"background_color": "rgba(0,0,0,0)",
+												"border_border": "solid",
+												"border_width": {
+													"unit": "px",
+													"top": "1",
+													"right": "1",
+													"bottom": "1",
+													"left": "1",
+													"isLinked": true
+												},
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												},
+												"button_background_hover_background": "classic"
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "2723d09",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "32",
+							"right": "24",
+							"bottom": "32",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "a3c65c2",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 64,
+									"column": "64",
+									"row": "64",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "a97da62",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 44,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"flex_justify_content": "center"
+									},
+									"elements": [
+										{
+											"id": "c9e1074",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Look 04",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 12,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "65b9eea",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Linen Suit Blazer · Leather Tote",
+												"header_size": "h2",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 40,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 32,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "f0935e4",
+											"elType": "widget",
+											"widgetType": "button",
+											"settings": {
+												"text": "Shop this look",
+												"link": {
+													"url": "{{page:p-blazer}}",
+													"is_external": "",
+													"nofollow": ""
+												},
+												"size": "md",
+												"__globals__": {
+													"typography_typography": "globals/typography?id=accent",
+													"button_text_color": "globals/colors?id=text",
+													"border_color": "globals/colors?id=text",
+													"button_background_hover_color": "globals/colors?id=text",
+													"hover_color": "globals/colors?id=wped302e97"
+												},
+												"background_background": "classic",
+												"background_color": "rgba(0,0,0,0)",
+												"border_border": "solid",
+												"border_width": {
+													"unit": "px",
+													"top": "1",
+													"right": "1",
+													"bottom": "1",
+													"left": "1",
+													"isLinked": true
+												},
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												},
+												"button_background_hover_background": "classic"
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "6974ce5",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 56,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "ec89566",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:hero-campaign}}",
+													"id": "{{media_id:hero-campaign}}",
+													"alt": "Linen Suit Blazer · Leather Tote",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 460,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 368,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 322,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "The Maison lookbook: the season's collection styled in full, with every piece linked to the shop."
+			}
+		},
+		{
+			"key": "atelier",
+			"type": "page",
+			"title": "Atelier",
+			"slug": "atelier",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
+				{
+					"id": "7f6ffaa",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "80",
+							"right": "24",
+							"bottom": "40",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "40",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "5f93f98",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Atelier",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "Manrope",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "698d51a",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "We make fewer things, more carefully",
+								"header_size": "h1",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Cormorant Garamond",
+								"typography_font_weight": "500",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 80,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 64,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 44,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "5fd0b37",
+					"elType": "container",
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": true
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "16",
+							"right": "16",
+							"bottom": "16",
+							"left": "16",
+							"isLinked": true
+						}
+					},
+					"elements": [
+						{
+							"id": "73278a4",
+							"elType": "widget",
+							"widgetType": "image",
+							"settings": {
+								"image": {
+									"url": "{{media:atelier-studio}}",
+									"id": "{{media_id:atelier-studio}}",
+									"alt": "The Maison studio with arched windows and rails of linen",
+									"source": "library"
+								},
+								"image_size": "full",
+								"width": {
+									"unit": "%",
+									"size": 100,
+									"sizes": []
+								},
+								"height": {
+									"unit": "px",
+									"size": 640,
+									"sizes": []
+								},
+								"height_tablet": {
+									"unit": "px",
+									"size": 512,
+									"sizes": []
+								},
+								"height_mobile": {
+									"unit": "px",
+									"size": 448,
+									"sizes": []
+								},
+								"object-fit": "cover",
+								"object-position": "center center",
+								"background_hover_transition": {
+									"unit": "s",
+									"size": 0.9,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "4c56ff4",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5268,114 +4055,147 @@
 					},
 					"elements": [
 						{
-							"id": "8216124",
-							"elType": "widget",
-							"widgetType": "heading",
+							"id": "da4fb5c",
+							"elType": "container",
 							"settings": {
-								"title": "Write to client care",
-								"header_size": "h2",
-								"__globals__": {
-									"title_color": "globals/colors?id=text",
-									"typography_typography": "globals/typography?id=primary"
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 64,
+									"column": "64",
+									"row": "64",
+									"isLinked": true
 								},
-								"align": "center"
+								"flex_direction_mobile": "column"
 							},
-							"elements": []
-						},
-						{
-							"id": "38af861",
-							"elType": "widget",
-							"widgetType": "text-editor",
-							"settings": {
-								"editor": "<p>Sizing, orders, returns, repairs or an atelier appointment — tell us and the right person replies.</p>",
-								"__globals__": {
-									"text_color": "globals/colors?id=wpe07d0ec3",
-									"typography_typography": "globals/typography?id=text"
+							"elements": [
+								{
+									"id": "c45147d",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "2b44928",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Founded in 2014 by Hélène Rousseau after a decade in Paris couture houses.",
+												"header_size": "h2",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 36,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 29,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 20,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
 								},
-								"align": "center"
-							},
-							"elements": []
-						},
-						{
-							"id": "96da2f5",
-							"elType": "widget",
-							"widgetType": "shortcode",
-							"settings": {
-								"shortcode": "[wpforms id=\"{{form:care}}\" title=\"false\"]"
-							},
-							"elements": []
+								{
+									"id": "07e1cd7",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "eb160de",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Hélène wanted the craft of couture without its waste. Maison works with six family ateliers in Portugal and Italy, ordering in runs of 80 to 200 pieces so nothing ends in a landfill.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3",
+													"typography_typography": "globals/typography?id=text"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "5ef0599",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>We publish the cost of every garment, pay our partners above the regional living wage and keep a repair workshop open for anything we have ever sold.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3",
+													"typography_typography": "globals/typography?id=text"
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
 						}
 					],
 					"isInner": false
 				},
 				{
-					"id": "045117b",
-					"elType": "container",
-					"settings": {
-						"content_width": "full",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"padding": {
-							"unit": "px",
-							"top": "0",
-							"right": "0",
-							"bottom": "0",
-							"left": "0",
-							"isLinked": true
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "16",
-							"right": "16",
-							"bottom": "16",
-							"left": "16",
-							"isLinked": true
-						}
-					},
-					"elements": [
-						{
-							"id": "8f53295",
-							"elType": "widget",
-							"widgetType": "google_maps",
-							"settings": {
-								"address": "14 Rue de Saintonge, 75003 Paris",
-								"zoom": {
-									"unit": "px",
-									"size": 14,
-									"sizes": []
-								},
-								"height": {
-									"unit": "px",
-									"size": 420,
-									"sizes": []
-								}
-							},
-							"elements": []
-						}
-					],
-					"isInner": false
-				}
-			],
-			"meta": {
-				"_wpe_seo_description": "Visit a Maison store or contact our client care team for sizing, orders and atelier appointments."
-			}
-		},
-		{
-			"key": "help",
-			"type": "page",
-			"title": "Shipping & Returns",
-			"slug": "shipping-returns",
-			"template": "page-full-width",
-			"content": "",
-			"elementor": [
-				{
-					"id": "6cdd60e",
+					"id": "0f28b5d",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5396,7 +4216,7 @@
 							"unit": "px",
 							"top": "96",
 							"right": "24",
-							"bottom": "32",
+							"bottom": "96",
 							"left": "24",
 							"isLinked": false
 						},
@@ -5404,18 +4224,22 @@
 							"unit": "px",
 							"top": "48",
 							"right": "20",
-							"bottom": "24",
+							"bottom": "48",
 							"left": "20",
 							"isLinked": false
+						},
+						"background_background": "classic",
+						"__globals__": {
+							"background_color": "globals/colors?id=wpe6073fd3"
 						}
 					},
 					"elements": [
 						{
-							"id": "fc22130",
+							"id": "a0a080f",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
-								"title": "Help",
+								"title": "How a piece is made",
 								"header_size": "p",
 								"typography_typography": "custom",
 								"typography_font_size": {
@@ -5438,11 +4262,827 @@
 							"elements": []
 						},
 						{
-							"id": "4c5bde7",
+							"id": "202cb96",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
-								"title": "Shipping & returns",
+								"title": "From bolt to wardrobe in five weeks",
+								"header_size": "h2",
+								"__globals__": {
+									"title_color": "globals/colors?id=text",
+									"typography_typography": "globals/typography?id=primary"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "1385974",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 4,
+									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "ec5decc",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 8,
+											"column": "8",
+											"row": "8",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "c8ffe9a",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "01",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 28,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 15,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "3def184",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Fibre",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "069059b",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Undyed linen from Normandy flax, cashmere and merino from certified herds.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "1afa34a",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 8,
+											"column": "8",
+											"row": "8",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "76dc611",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "02",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 28,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 15,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "d1f491a",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Pattern",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "9b86192",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Hélène drafts every pattern by hand and fits it on three body types.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "7f1de29",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 8,
+											"column": "8",
+											"row": "8",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "65ded53",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "03",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 28,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 15,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "9fc3d71",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Atelier",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "02522a2",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Small teams cut and sew each piece; one person finishes it from start to end.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "e00da03",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 8,
+											"column": "8",
+											"row": "8",
+											"isLinked": true
+										}
+									},
+									"elements": [
+										{
+											"id": "42a0e18",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "04",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=primary"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 28,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 15,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "3988c7f",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Finish",
+												"header_size": "h4",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 18,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 10,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "013d407",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Garment washing, hand-pressing and a signed label from the maker.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "f221706",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": true
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "16",
+							"right": "16",
+							"bottom": "16",
+							"left": "16",
+							"isLinked": true
+						}
+					},
+					"elements": [
+						{
+							"id": "47d1e99",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 0,
+									"column": "0",
+									"row": "0",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "903ce92",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "a8baa56",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:atelier-hands}}",
+													"id": "{{media_id:atelier-hands}}",
+													"alt": "Rui Almeida hand-finishing a linen shirt",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 560,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 448,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 392,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "8d5e957",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"padding": {
+											"unit": "px",
+											"top": "48",
+											"right": "24",
+											"bottom": "48",
+											"left": "64",
+											"isLinked": false
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "24",
+											"right": "20",
+											"bottom": "24",
+											"left": "20",
+											"isLinked": false
+										},
+										"flex_justify_content": "center"
+									},
+									"elements": [
+										{
+											"id": "0a09c88",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Meet the makers",
+												"header_size": "p",
+												"typography_typography": "custom",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 13,
+													"sizes": []
+												},
+												"typography_font_weight": "600",
+												"typography_text_transform": "uppercase",
+												"typography_letter_spacing": {
+													"unit": "px",
+													"size": 1.6,
+													"sizes": []
+												},
+												"typography_font_family": "Manrope",
+												"__globals__": {
+													"title_color": "globals/colors?id=accent"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "2b24d49",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "“A seam should outlive the person who sewed it.”",
+												"header_size": "h2",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 40,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 32,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "a5e0013",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Rui Almeida, master tailor, Porto</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 14,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "Inside the Maison atelier: how our tailors cut, fit and finish every garment, and how to book a fitting."
+			}
+		},
+		{
+			"key": "contact",
+			"type": "page",
+			"title": "Stores & Contact",
+			"slug": "contact",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
+				{
+					"id": "9766527",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "80",
+							"right": "24",
+							"bottom": "40",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "40",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "82aa4b0",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Stores & contact",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "Manrope",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "0777d5c",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "We would love to hear from you",
 								"header_size": "h1",
 								"__globals__": {
 									"title_color": "globals/colors?id=text"
@@ -5457,28 +5097,28 @@
 								},
 								"typography_font_size": {
 									"unit": "px",
-									"size": 64,
+									"size": 80,
 									"sizes": []
 								},
 								"typography_font_size_tablet": {
 									"unit": "px",
-									"size": 51,
+									"size": 64,
 									"sizes": []
 								},
 								"typography_font_size_mobile": {
 									"unit": "px",
-									"size": 35,
+									"size": 44,
 									"sizes": []
 								}
 							},
 							"elements": []
 						},
 						{
-							"id": "cedebb6",
+							"id": "fa7cdfa",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
-								"editor": "<p>Everything about delivery, returns, sizing and repairs.</p>",
+								"editor": "<p>Our client care team answers within one working day, Monday to Saturday.</p>",
 								"__globals__": {
 									"text_color": "globals/colors?id=wpe07d0ec3"
 								},
@@ -5486,7 +5126,7 @@
 								"typography_font_family": "Manrope",
 								"typography_font_size": {
 									"unit": "px",
-									"size": 18,
+									"size": 16,
 									"sizes": []
 								}
 							},
@@ -5496,7 +5136,7 @@
 					"isInner": false
 				},
 				{
-					"id": "58a2fc6",
+					"id": "a4a042c",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5517,7 +5157,7 @@
 							"unit": "px",
 							"top": "24",
 							"right": "24",
-							"bottom": "72",
+							"bottom": "96",
 							"left": "24",
 							"isLinked": false
 						},
@@ -5525,45 +5165,801 @@
 							"unit": "px",
 							"top": "24",
 							"right": "20",
-							"bottom": "36",
+							"bottom": "48",
 							"left": "20",
 							"isLinked": false
 						}
 					},
 					"elements": [
 						{
-							"id": "0aa1883",
+							"id": "149e967",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 48,
+									"column": "48",
+									"row": "48",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "5878a7a",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 55,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "7e7757b",
+											"elType": "widget",
+											"widgetType": "shortcode",
+											"settings": {
+												"shortcode": "[wpforms id=\"{{form:care}}\" title=\"false\"]"
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "3636638",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 45,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "006f52e",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:store-paris}}",
+													"id": "{{media_id:store-paris}}",
+													"alt": "Inside the Maison store in Paris",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 320,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 256,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 224,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "2a79ea2",
+											"elType": "container",
+											"settings": {
+												"content_width": "full",
+												"flex_direction": "column",
+												"flex_gap": {
+													"unit": "px",
+													"size": 8,
+													"column": "8",
+													"row": "8",
+													"isLinked": true
+												},
+												"padding": {
+													"unit": "px",
+													"top": "20",
+													"right": "20",
+													"bottom": "20",
+													"left": "20",
+													"isLinked": true
+												},
+												"padding_mobile": {
+													"unit": "px",
+													"top": "16",
+													"right": "16",
+													"bottom": "16",
+													"left": "16",
+													"isLinked": true
+												},
+												"border_border": "solid",
+												"border_width": {
+													"unit": "px",
+													"top": "1",
+													"right": "1",
+													"bottom": "1",
+													"left": "1",
+													"isLinked": true
+												},
+												"__globals__": {
+													"border_color": "globals/colors?id=wpe2de42fb"
+												}
+											},
+											"elements": [
+												{
+													"id": "7ef605f",
+													"elType": "widget",
+													"widgetType": "heading",
+													"settings": {
+														"title": "Paris",
+														"header_size": "h3",
+														"__globals__": {
+															"title_color": "globals/colors?id=text"
+														},
+														"typography_typography": "custom",
+														"typography_font_family": "Cormorant Garamond",
+														"typography_font_weight": "500",
+														"typography_line_height": {
+															"unit": "em",
+															"size": 1.05,
+															"sizes": []
+														},
+														"typography_font_size": {
+															"unit": "px",
+															"size": 28,
+															"sizes": []
+														},
+														"typography_font_size_tablet": {
+															"unit": "px",
+															"size": 22,
+															"sizes": []
+														},
+														"typography_font_size_mobile": {
+															"unit": "px",
+															"size": 15,
+															"sizes": []
+														}
+													},
+													"elements": []
+												},
+												{
+													"id": "1d7f7ab",
+													"elType": "widget",
+													"widgetType": "icon-list",
+													"settings": {
+														"icon_list": [
+															{
+																"_id": "a8f15ed",
+																"text": "14 Rue de Saintonge, 75003 Paris",
+																"selected_icon": {
+																	"value": "fas fa-location-dot",
+																	"library": "fa-solid"
+																}
+															},
+															{
+																"_id": "37a749d",
+																"text": "Tue–Sat 11:00–19:00",
+																"selected_icon": {
+																	"value": "fas fa-location-dot",
+																	"library": "fa-solid"
+																}
+															},
+															{
+																"_id": "b3e3e39",
+																"text": "+33 1 42 71 18 40",
+																"selected_icon": {
+																	"value": "fas fa-location-dot",
+																	"library": "fa-solid"
+																}
+															}
+														],
+														"__globals__": {
+															"icon_color": "globals/colors?id=accent",
+															"text_color": "globals/colors?id=text",
+															"icon_typography_typography": "globals/typography?id=text"
+														}
+													},
+													"elements": []
+												}
+											],
+											"isInner": true
+										},
+										{
+											"id": "bd4c9ab",
+											"elType": "container",
+											"settings": {
+												"content_width": "full",
+												"flex_direction": "column",
+												"flex_gap": {
+													"unit": "px",
+													"size": 8,
+													"column": "8",
+													"row": "8",
+													"isLinked": true
+												},
+												"padding": {
+													"unit": "px",
+													"top": "20",
+													"right": "20",
+													"bottom": "20",
+													"left": "20",
+													"isLinked": true
+												},
+												"padding_mobile": {
+													"unit": "px",
+													"top": "16",
+													"right": "16",
+													"bottom": "16",
+													"left": "16",
+													"isLinked": true
+												},
+												"border_border": "solid",
+												"border_width": {
+													"unit": "px",
+													"top": "1",
+													"right": "1",
+													"bottom": "1",
+													"left": "1",
+													"isLinked": true
+												},
+												"__globals__": {
+													"border_color": "globals/colors?id=wpe2de42fb"
+												}
+											},
+											"elements": [
+												{
+													"id": "1c9ac01",
+													"elType": "widget",
+													"widgetType": "heading",
+													"settings": {
+														"title": "Lisbon",
+														"header_size": "h3",
+														"__globals__": {
+															"title_color": "globals/colors?id=text"
+														},
+														"typography_typography": "custom",
+														"typography_font_family": "Cormorant Garamond",
+														"typography_font_weight": "500",
+														"typography_line_height": {
+															"unit": "em",
+															"size": 1.05,
+															"sizes": []
+														},
+														"typography_font_size": {
+															"unit": "px",
+															"size": 28,
+															"sizes": []
+														},
+														"typography_font_size_tablet": {
+															"unit": "px",
+															"size": 22,
+															"sizes": []
+														},
+														"typography_font_size_mobile": {
+															"unit": "px",
+															"size": 15,
+															"sizes": []
+														}
+													},
+													"elements": []
+												},
+												{
+													"id": "b73ce39",
+													"elType": "widget",
+													"widgetType": "icon-list",
+													"settings": {
+														"icon_list": [
+															{
+																"_id": "6c4b761",
+																"text": "Rua da Escola Politécnica 42, 1250-102 Lisboa",
+																"selected_icon": {
+																	"value": "fas fa-location-dot",
+																	"library": "fa-solid"
+																}
+															},
+															{
+																"_id": "0640966",
+																"text": "Mon–Sat 10:00–19:00",
+																"selected_icon": {
+																	"value": "fas fa-location-dot",
+																	"library": "fa-solid"
+																}
+															},
+															{
+																"_id": "140f696",
+																"text": "+351 21 340 1180",
+																"selected_icon": {
+																	"value": "fas fa-location-dot",
+																	"library": "fa-solid"
+																}
+															}
+														],
+														"__globals__": {
+															"icon_color": "globals/colors?id=accent",
+															"text_color": "globals/colors?id=text",
+															"icon_typography_typography": "globals/typography?id=text"
+														}
+													},
+													"elements": []
+												}
+											],
+											"isInner": true
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				}
+			],
+			"meta": {
+				"_wpe_seo_description": "Visit a Maison store or contact our client care team for sizing, orders and atelier appointments."
+			}
+		},
+		{
+			"key": "help",
+			"type": "page",
+			"title": "Shipping & Returns",
+			"slug": "shipping-returns",
+			"template": "page-full-width",
+			"content": "",
+			"elementor": [
+				{
+					"id": "8216124",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "80",
+							"right": "24",
+							"bottom": "40",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "40",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "1ff8a7b",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Client care",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "Manrope",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "f7e6c85",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Shipping, returns & FAQ",
+								"header_size": "h1",
+								"__globals__": {
+									"title_color": "globals/colors?id=text"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Cormorant Garamond",
+								"typography_font_weight": "500",
+								"typography_line_height": {
+									"unit": "em",
+									"size": 1.05,
+									"sizes": []
+								},
+								"typography_font_size": {
+									"unit": "px",
+									"size": 80,
+									"sizes": []
+								},
+								"typography_font_size_tablet": {
+									"unit": "px",
+									"size": 64,
+									"sizes": []
+								},
+								"typography_font_size_mobile": {
+									"unit": "px",
+									"size": 44,
+									"sizes": []
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "bf82296",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Everything about delivery, sizing and caring for your pieces.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3"
+								},
+								"typography_typography": "custom",
+								"typography_font_family": "Manrope",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 16,
+									"sizes": []
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "fc22130",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "24",
+							"right": "24",
+							"bottom": "48",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "8f53295",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 3,
+									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
+								}
+							},
+							"elements": [
+								{
+									"id": "38af861",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-truck",
+											"library": "fa-solid"
+										},
+										"title_text": "Delivery",
+										"description_text": "Free over €150 in the EU, UK and Switzerland. 2–4 working days, carbon-neutral.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": ""
+									},
+									"elements": []
+								},
+								{
+									"id": "96da2f5",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-rotate-left",
+											"library": "fa-solid"
+										},
+										"title_text": "Returns",
+										"description_text": "30 days, free collection from your door. Refunds within 5 days of arrival.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": ""
+									},
+									"elements": []
+								},
+								{
+									"id": "8f85517",
+									"elType": "widget",
+									"widgetType": "icon-box",
+									"settings": {
+										"selected_icon": {
+											"value": "fas fa-ruler",
+											"library": "fa-solid"
+										},
+										"title_text": "Sizing",
+										"description_text": "Each product lists garment measurements. Book a video fitting with our tailors.",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"icon_size": {
+											"unit": "px",
+											"size": 28,
+											"sizes": []
+										},
+										"__globals__": {
+											"primary_color": "globals/colors?id=accent",
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text"
+										},
+										"hover_animation": ""
+									},
+									"elements": []
+								}
+							],
+							"isInner": true
+						},
+						{
+							"id": "045117b",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<table class=\"mx-table\"><thead><tr><th>Destination</th><th>Delivery time</th><th>Cost</th></tr></thead><tbody><tr><td>France</td><td>1–2 working days</td><td>Free over €150 · €8</td></tr><tr><td>European Union</td><td>2–4 working days</td><td>Free over €150 · €12</td></tr><tr><td>United Kingdom & Switzerland</td><td>3–5 working days</td><td>Free over €250 · €18</td></tr><tr><td>United States & Canada</td><td>4–6 working days</td><td>Free over €300 · €25</td></tr></tbody></table>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3",
+									"typography_typography": "globals/typography?id=text"
+								}
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "0aa1883",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "24",
+							"right": "24",
+							"bottom": "96",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "48",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "4c5bde7",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "FAQ",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "Manrope",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "cedebb6",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Frequently asked",
+								"header_size": "h2",
+								"__globals__": {
+									"title_color": "globals/colors?id=text",
+									"typography_typography": "globals/typography?id=primary"
+								}
+							},
+							"elements": []
+						},
+						{
+							"id": "cfecdb2",
 							"elType": "widget",
 							"widgetType": "accordion",
 							"settings": {
 								"tabs": [
 									{
-										"_id": "eecca5b",
+										"_id": "6cdd60e",
 										"tab_title": "How long does delivery take?",
 										"tab_content": "<p>Orders placed before 2 pm ship the same day. EU and UK delivery takes 2–4 working days; the rest of the world 5–8.</p>"
 									},
 									{
-										"_id": "9872ed9",
+										"_id": "eecca5b",
 										"tab_title": "Is shipping free?",
 										"tab_content": "<p>Yes, on orders over €150. Below that, standard delivery is €8 and express is €15.</p>"
 									},
 									{
-										"_id": "31fefc0",
+										"_id": "9872ed9",
 										"tab_title": "How do returns work?",
 										"tab_content": "<p>You have 30 days to return unworn pieces with their tags. Start a return from My Account and print the prepaid label.</p>"
 									},
 									{
-										"_id": "9dcb88e",
+										"_id": "31fefc0",
 										"tab_title": "When will I get my refund?",
 										"tab_content": "<p>Within 5 working days of the parcel reaching our studio, to the original payment method.</p>"
 									},
 									{
-										"_id": "a2557a7",
+										"_id": "9dcb88e",
 										"tab_title": "How do I find my size?",
 										"tab_content": "<p>Each product page shows the garment measurements. Between sizes? Take the larger for knitwear and the smaller for tailoring.</p>"
 									},
 									{
-										"_id": "cfecdb2",
+										"_id": "a2557a7",
 										"tab_title": "Do you repair Maison pieces?",
 										"tab_content": "<p>Always. Email care@maison-atelier.com with a photo and we will send a free repair label.</p>"
 									}
@@ -5577,102 +5973,6 @@
 									"border_color": "globals/colors?id=wpe2de42fb",
 									"title_typography_typography": "globals/typography?id=primary",
 									"content_typography_typography": "globals/typography?id=text"
-								}
-							},
-							"elements": []
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "0336dcb",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "64",
-							"right": "24",
-							"bottom": "64",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "32",
-							"right": "20",
-							"bottom": "32",
-							"left": "20",
-							"isLinked": false
-						},
-						"background_background": "classic",
-						"__globals__": {
-							"background_color": "globals/colors?id=wpe6073fd3"
-						}
-					},
-					"elements": [
-						{
-							"id": "bd686fd",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "Still need help?",
-								"header_size": "h3",
-								"__globals__": {
-									"title_color": "globals/colors?id=text",
-									"typography_typography": "globals/typography?id=primary"
-								},
-								"align": "center"
-							},
-							"elements": []
-						},
-						{
-							"id": "a597e50",
-							"elType": "widget",
-							"widgetType": "button",
-							"settings": {
-								"text": "Contact customer care",
-								"link": {
-									"url": "{{page:contact}}",
-									"is_external": "",
-									"nofollow": ""
-								},
-								"size": "md",
-								"__globals__": {
-									"typography_typography": "globals/typography?id=accent",
-									"hover_color": "globals/colors?id=text",
-									"button_hover_border_color": "globals/colors?id=text"
-								},
-								"align": "center",
-								"button_hover_transition_duration": {
-									"unit": "s",
-									"size": 0.9,
-									"sizes": []
-								},
-								"button_background_hover_background": "classic",
-								"button_background_hover_color": "rgba(0,0,0,0)",
-								"button_hover_border_color": "currentColor",
-								"border_border": "solid",
-								"border_width": {
-									"unit": "px",
-									"top": "1",
-									"right": "1",
-									"bottom": "1",
-									"left": "1",
-									"isLinked": true
 								}
 							},
 							"elements": []
@@ -5752,7 +6052,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "84d9ee4",
+					"id": "0336dcb",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5788,7 +6088,7 @@
 					},
 					"elements": [
 						{
-							"id": "084b6fb",
+							"id": "58a2fc6",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5815,7 +6115,7 @@
 							"elements": []
 						},
 						{
-							"id": "85d8ce5",
+							"id": "bd686fd",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5851,7 +6151,7 @@
 							"elements": []
 						},
 						{
-							"id": "0e65972",
+							"id": "a597e50",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5873,7 +6173,7 @@
 					"isInner": false
 				},
 				{
-					"id": "757b505",
+					"id": "85d8ce5",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5909,7 +6209,7 @@
 					},
 					"elements": [
 						{
-							"id": "3644a68",
+							"id": "084b6fb",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5944,7 +6244,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "eae27d7",
+					"id": "757b505",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5980,7 +6280,7 @@
 					},
 					"elements": [
 						{
-							"id": "854d6fa",
+							"id": "0e65972",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6007,7 +6307,7 @@
 							"elements": []
 						},
 						{
-							"id": "e2c0be2",
+							"id": "84d9ee4",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6043,7 +6343,7 @@
 							"elements": []
 						},
 						{
-							"id": "274ad47",
+							"id": "3644a68",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6065,7 +6365,7 @@
 					"isInner": false
 				},
 				{
-					"id": "69adc1e",
+					"id": "e2c0be2",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6101,7 +6401,7 @@
 					},
 					"elements": [
 						{
-							"id": "7eabe3a",
+							"id": "854d6fa",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6136,7 +6436,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "eb16372",
+					"id": "69adc1e",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6172,7 +6472,7 @@
 					},
 					"elements": [
 						{
-							"id": "091d584",
+							"id": "274ad47",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6199,7 +6499,7 @@
 							"elements": []
 						},
 						{
-							"id": "b1d10e7",
+							"id": "eae27d7",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6235,7 +6535,7 @@
 							"elements": []
 						},
 						{
-							"id": "6f3ef77",
+							"id": "7eabe3a",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6257,7 +6557,7 @@
 					"isInner": false
 				},
 				{
-					"id": "979d472",
+					"id": "b1d10e7",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6293,7 +6593,7 @@
 					},
 					"elements": [
 						{
-							"id": "1534b76",
+							"id": "091d584",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6328,7 +6628,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "63dc7ed",
+					"id": "979d472",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6364,7 +6664,7 @@
 					},
 					"elements": [
 						{
-							"id": "ca46c1b",
+							"id": "6f3ef77",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6391,7 +6691,7 @@
 							"elements": []
 						},
 						{
-							"id": "3b8a614",
+							"id": "eb16372",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -6427,7 +6727,7 @@
 							"elements": []
 						},
 						{
-							"id": "45fbc6d",
+							"id": "1534b76",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6449,7 +6749,7 @@
 					"isInner": false
 				},
 				{
-					"id": "c0e190d",
+					"id": "3b8a614",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -6485,7 +6785,7 @@
 					},
 					"elements": [
 						{
-							"id": "e96ed47",
+							"id": "ca46c1b",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6843,7 +7143,7 @@
 				"content": "<!-- wp:group {\"className\":\"wpe-topbar\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-topbar\"><!-- wp:group {\"className\":\"wpe-topbar__inner mx-topbar\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"center\"}} -->\n<div class=\"wp-block-group wpe-topbar__inner mx-topbar\"><!-- wp:paragraph -->\n<p>Complimentary shipping over €150 · Free returns within 30 days · Gift wrapping on request</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"header\",\"className\":\"wpe-header mx-header\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<header class=\"wp-block-group wpe-header mx-header\"><!-- wp:group {\"className\":\"wpe-header__inner mx-header__inner\",\"layout\":{\"type\":\"default\"}} -->\n<div class=\"wp-block-group wpe-header__inner mx-header__inner\"><!-- wp:navigation {\"overlayMenu\":\"mobile\",\"className\":\"mx-nav\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"left\"}} -->\n<!-- wp:navigation-link {\"label\":\"New in\",\"url\":\"{{woo:shop}}?orderby=date\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Accessories\",\"url\":\"{{term_link:pc-accessories}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation -->\n\n<!-- wp:site-title {\"className\":\"mx-logo\"} /-->\n\n<!-- wp:group {\"className\":\"wpe-header-actions mx-actions\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"right\"}} -->\n<div class=\"wp-block-group wpe-header-actions mx-actions\"><!-- wp:navigation {\"overlayMenu\":\"never\",\"className\":\"mx-nav mx-nav\\u002d\\u002dright\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation -->\n\n<!-- wp:search {\"label\":\"Search\",\"showLabel\":false,\"buttonText\":\"Search\",\"buttonPosition\":\"button-only\",\"buttonUseIcon\":true,\"isSearchFieldHidden\":true,\"query\":{\"post_type\":\"product\"}} /-->\n\n<!-- wp:woocommerce/customer-account {\"displayStyle\":\"icon_only\",\"iconStyle\":\"line\",\"iconClass\":\"wc-block-customer-account__account-icon\"} /-->\n\n<!-- wp:woocommerce/mini-cart /--></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --></header>\n<!-- /wp:group -->"
 			},
 			"footer": {
-				"content": "<!-- wp:group {\"tagName\":\"footer\",\"className\":\"wpe-footer wpe-section\\u002d\\u002dmd\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<footer class=\"wp-block-group wpe-footer wpe-section--md\"><!-- wp:columns {\"className\":\"wpe-footer__cols wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns wpe-footer__cols wpe-section--sm\"><!-- wp:column {\"width\":\"40%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:40%\"><!-- wp:site-title /-->\n\n<!-- wp:paragraph {\"fontSize\":\"small\"} -->\n<p class=\"has-small-font-size\">Considered clothing, made slowly in small European ateliers since 2014.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Shop</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"New in\",\"url\":\"{{woo:shop}}?orderby=date\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Outerwear\",\"url\":\"{{term_link:pc-outerwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Accessories\",\"url\":\"{{term_link:pc-accessories}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Maison</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Atelier\",\"url\":\"{{page:atelier}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Stores\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Help</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Shipping \\u0026 returns\",\"url\":\"{{page:help}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"My account\",\"url\":\"{{woo:myaccount}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Bag\",\"url\":\"{{woo:cart}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Contact\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Visit</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"14 Rue de Saintonge, Paris\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Tue – Sat 11:00 – 19:00\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"+33 1 42 71 18 40\",\"url\":\"tel:+33142711840\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"care@maison-atelier.com\",\"url\":\"mailto:care@maison-atelier.com\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:group {\"className\":\"wpe-footer__bottom\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-footer__bottom\"><!-- wp:paragraph -->\n<p>© Maison Atelier. All rights reserved.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"{{page:privacy-policy}}\">Privacy</a> · <a href=\"{{page:terms}}\">Terms</a> · <a href=\"{{page:refund-policy}}\">Refunds</a> · <a href=\"{{page:cookie-policy}}\">Cookies</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Designed &amp; built with <a href=\"https://wpessential.org/\">Hi WPEssential</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></footer>\n<!-- /wp:group -->"
+				"content": "<!-- wp:group {\"tagName\":\"section\",\"align\":\"full\",\"className\":\"wpe-section mx-letter\",\"backgroundColor\":\"surface-alt\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"560px\"}} -->\n<section class=\"wp-block-group alignfull wpe-section mx-letter has-surface-alt-background-color has-background\"><!-- wp:paragraph {\"align\":\"center\",\"className\":\"is-style-wpe-overline\"} -->\n<p class=\"is-style-wpe-overline has-text-align-center\">The Maison letter</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading {\"textAlign\":\"center\",\"fontSize\":\"h2\"} -->\n<h2 class=\"wp-block-heading has-text-align-center has-h-2-font-size\">Quiet notes on new collections</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"align\":\"center\",\"textColor\":\"text-muted\"} -->\n<p class=\"has-text-align-center has-text-muted-color has-text-color\">One letter a month: new pieces, atelier stories and private sales. No noise.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:shortcode -->\n[wpforms id=\"{{form:newsletter}}\" title=\"false\"]\n<!-- /wp:shortcode --></section>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"footer\",\"className\":\"wpe-footer wpe-section\\u002d\\u002dmd\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<footer class=\"wp-block-group wpe-footer wpe-section--md\"><!-- wp:columns {\"className\":\"wpe-footer__cols wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns wpe-footer__cols wpe-section--sm\"><!-- wp:column {\"width\":\"40%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:40%\"><!-- wp:site-title /-->\n\n<!-- wp:paragraph {\"fontSize\":\"small\"} -->\n<p class=\"has-small-font-size\">Considered clothing, made slowly in small European ateliers since 2014.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Shop</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"New in\",\"url\":\"{{woo:shop}}?orderby=date\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Outerwear\",\"url\":\"{{term_link:pc-outerwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Accessories\",\"url\":\"{{term_link:pc-accessories}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Maison</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Atelier\",\"url\":\"{{page:atelier}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Stores\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Help</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Shipping \\u0026 returns\",\"url\":\"{{page:help}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"My account\",\"url\":\"{{woo:myaccount}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Bag\",\"url\":\"{{woo:cart}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Contact\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Visit</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"14 Rue de Saintonge, Paris\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Tue – Sat 11:00 – 19:00\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"+33 1 42 71 18 40\",\"url\":\"tel:+33142711840\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"care@maison-atelier.com\",\"url\":\"mailto:care@maison-atelier.com\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:group {\"className\":\"wpe-footer__bottom\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-footer__bottom\"><!-- wp:paragraph -->\n<p>© Maison Atelier. All rights reserved.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"{{page:privacy-policy}}\">Privacy</a> · <a href=\"{{page:terms}}\">Terms</a> · <a href=\"{{page:refund-policy}}\">Refunds</a> · <a href=\"{{page:cookie-policy}}\">Cookies</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Designed &amp; built with <a href=\"https://wpessential.org/\">Hi WPEssential</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></footer>\n<!-- /wp:group -->"
 			}
 		},
 		"options": {

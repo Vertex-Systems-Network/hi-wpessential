@@ -45,3 +45,26 @@
 	.mx-hero__img img { min-height: 420px; }
 	.mx-split__img img { min-height: 360px; }
 }
+
+/* Maison — inner pages. */
+.mx-crumb { font-size: 12px; color: var(--wp--preset--color--text-muted); }
+.mx-crumb a { color: inherit; }
+.mx-page-title { font-size: clamp(44px, 5.5vw, 80px) !important; line-height: 1.05 !important; margin-block: 8px 12px; }
+.mx-wide { margin: 0 !important; max-width: none !important; }
+.mx-wide img { width: 100%; height: clamp(320px, 42vw, 640px); object-fit: cover; display: block; }
+.mx-serif-lead { font-weight: 400 !important; line-height: 1.25 !important; }
+.mx-step { border-top: 1px solid var(--wp--preset--color--text); padding-top: 20px; }
+.mx-step__n { font-family: var(--wp--preset--font-family--heading, serif); font-size: 28px; color: var(--wp--preset--color--primary); margin: 0 0 12px; }
+.mx-quote { font-style: italic; font-weight: 400 !important; }
+.mx-look { margin-block: 0 64px !important; }
+.mx-look__n { font-family: var(--wp--preset--font-family--heading, serif); font-style: italic; font-size: 22px; color: var(--wp--preset--color--primary); margin: 0; }
+.mx-store { border-top: 1px solid var(--wp--preset--color--border); padding-top: 20px; margin-top: 20px; }
+.mx-store__list { list-style: none; padding: 0; margin: 8px 0 0; font-size: 14px; color: var(--wp--preset--color--text-muted); display: grid; gap: 6px; }
+.mx-card { background: var(--wp--preset--color--surface-alt); padding: 28px; }
+.mx-card__ico { color: var(--wp--preset--color--primary); margin: 0; }
+.mx-table { margin-block: 32px 56px; }
+.mx-table table { border: 1px solid var(--wp--preset--color--border); font-size: 14px; }
+.mx-table thead { background: var(--wp--preset--color--surface-alt); }
+.mx-table :is(th, td) { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--wp--preset--color--border); }
+@media (max-width: 781px) { .mx-step { margin-bottom: 8px; } }
+.mx-actions > *, .mx-header__inner > * { margin-block: 0 !important; }
