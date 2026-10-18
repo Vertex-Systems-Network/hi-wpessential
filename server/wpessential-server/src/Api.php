@@ -326,12 +326,14 @@ class Api {
 			if ( 'theme' === $field ) {
 				$target = Playground::theme_path();
 			} elseif ( preg_match( '/^([a-z0-9]+)-(gutenberg|elementor)$/', (string) $field, $m ) ) {
-				Demos::ensure( $m[1] );
 				$target = Demos::package_path( $m[1], $m[2] );
 			} else {
 				continue;
 			}
 			if ( move_uploaded_file( $file['tmp_name'], $target ) ) { // phpcs:ignore Generic.PHP.ForbiddenFunctions.Found -- Release zip moved to the private folder.
+				if ( 'theme' !== $field ) {
+					Demos::sync_details( $m[1], $m[2], $target );
+				}
 				$done[] = $field;
 			}
 		}

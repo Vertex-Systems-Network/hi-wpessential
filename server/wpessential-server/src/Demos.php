@@ -131,13 +131,15 @@ class Demos {
 	}
 
 	/**
-	 * Create a draft demo for an id the library does not have yet.
+	 * Find or create the library entry for a demo id.
 	 *
 	 * @param string $demo Demo id.
+	 * @return int Post ID.
 	 */
 	public static function ensure( $demo ) {
-		if ( get_posts( array( 'post_type' => self::CPT, 'post_status' => 'any', 'meta_key' => '_wpes_demo_id', 'meta_value' => $demo, 'fields' => 'ids', 'numberposts' => 1 ) ) ) { // phpcs:ignore WordPress.DB.SlowDBQuery, WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound -- Admin-only release call.
-			return;
+		$ids = get_posts( array( 'post_type' => self::CPT, 'post_status' => 'any', 'meta_key' => '_wpes_demo_id', 'meta_value' => $demo, 'fields' => 'ids', 'numberposts' => 1 ) ); // phpcs:ignore WordPress.DB.SlowDBQuery, WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound -- Admin-only release call.
+		if ( $ids ) {
+			return (int) $ids[0];
 		}
 		$id = wp_insert_post(
 			array(
@@ -147,6 +149,74 @@ class Demos {
 			)
 		);
 		update_post_meta( $id, '_wpes_demo_id', $demo );
+		return (int) $id;
+	}
+
+	/**
+	 * Fill a library entry from the demo.json and thumbnail inside a package, without
+	 * overwriting anything already entered in the admin. A new entry is published once
+	 * it has its details, so the demo shows up in the theme right away.
+	 *
+	 * @param string $demo    Demo id.
+	 * @param string $builder Builder of the package.
+	 * @param string $zip     Package path.
+	 */
+	public static function sync_details( $demo, $builder, $zip ) {
+		$id      = self::ensure( $demo );
+		$archive = new \ZipArchive();
+		if ( ! $id || true !== $archive->open( $zip ) ) {
+			return;
+		}
+		$info  = json_decode( (string) $archive->getFromName( 'demo.json' ), true );
+		$thumb = $archive->getFromName( 'thumbnail.webp' );
+		$archive->close();
+		if ( ! is_array( $info ) ) {
+			return;
+		}
+		$csv     = static function ( $value ) {
+			return sanitize_text_field( implode( ', ', array_map( 'strval', (array) $value ) ) );
+		};
+		$fill    = array(
+			'tagline'    => sanitize_text_field( (string) ( $info['tagline'] ?? '' ) ),
+			'niche'      => $csv( $info['niche'] ?? array() ),
+			'pages'      => $csv( $info['pages'] ?? array() ),
+			'highlights' => $csv( $info['highlights'] ?? array() ),
+			'type'       => 'pro' === ( $info['type'] ?? '' ) ? 'pro' : 'free',
+		);
+		$plugins = $info['builders'][ $builder ]['plugins'] ?? null;
+		if ( is_array( $plugins ) ) {
+			$fill[ 'plugins_' . $builder ] = wp_json_encode( $plugins );
+		}
+		foreach ( $fill as $key => $value ) {
+			if ( '' === (string) get_post_meta( $id, '_wpes_' . $key, true ) && '' !== $value ) {
+				update_post_meta( $id, '_wpes_' . $key, $value );
+			}
+		}
+		if ( $thumb && ! has_post_thumbnail( $id ) ) {
+			require_once ABSPATH . 'wp-admin/includes/media.php';
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+			require_once ABSPATH . 'wp-admin/includes/image.php';
+			$tmp = wp_tempnam( $demo . '.webp' );
+			file_put_contents( $tmp, $thumb ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents -- Temp file.
+			$file  = array(
+				'name'     => $demo . '-thumbnail.webp',
+				'tmp_name' => $tmp,
+			);
+			$media = media_handle_sideload( $file, $id, (string) ( $info['title'] ?? $demo ) );
+			if ( ! is_wp_error( $media ) ) {
+				set_post_thumbnail( $id, $media );
+			}
+		}
+		$post = get_post( $id );
+		if ( $post && 'draft' === $post->post_status ) {
+			wp_update_post(
+				array(
+					'ID'          => $id,
+					'post_title'  => sanitize_text_field( (string) ( $info['title'] ?? $post->post_title ) ),
+					'post_status' => 'publish',
+				)
+			);
+		}
 	}
 
 	/**

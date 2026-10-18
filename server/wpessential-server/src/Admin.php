@@ -345,13 +345,15 @@ class Admin {
 		if ( 'hi-wpessential' === $base ) {
 			$target = Playground::theme_path();
 		} elseif ( preg_match( '/^([a-z0-9]+)-(gutenberg|elementor)$/', $base, $m ) ) {
-			Demos::ensure( $m[1] );
 			$target = Demos::package_path( $m[1], $m[2] );
 		} else {
 			return array();
 		}
 		wp_mkdir_p( dirname( $target ) );
 		$ok = $upload ? move_uploaded_file( $src, $target ) : copy( $src, $target ); // phpcs:ignore Generic.PHP.ForbiddenFunctions.Found -- Release zip moved to the private folder.
+		if ( $ok && ! empty( $m ) ) {
+			Demos::sync_details( $m[1], $m[2], $target );
+		}
 		return $ok ? array( $base ) : array();
 	}
 
