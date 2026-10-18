@@ -164,7 +164,7 @@ def g_footer():
                     [('Marketplace', [('Demos', '{{page:demos}}'), ('Pricing', '{{page:pricing}}'), ('Services', '{{page:services}}'), ('My account', '{{woo:myaccount}}')]),
                      ('Resources', [('Documentation', '{{page:docs}}'), ('Blog', '{{page:blog}}'), ('FAQ', '{{page:pricing}}'), ('Contact', '{{page:contact}}')]),
                      ('Follow', SOCIAL)],
-                    ('© WPEssential. A Vertex Systems Network company.', 'Built with <a href="https://wpessential.org/">Hi WPEssential</a>'),
+                    ('© WPEssential. A Vertex Systems Network Pvt Ltd company.', 'Built with <a href="https://wpessential.org/">Hi WPEssential</a>'),
                     band=('New themes and demo drops, monthly.', 'One email a month. Release notes, freebies and discounts.', 'See pricing', '{{page:pricing}}'))
 
 
@@ -185,7 +185,7 @@ def g_cards(items, icon_title=True):
 
 def g_home():
     hero = b.section(
-        b.p('Hi WPEssential · by Vertex Systems Network', style='wpe-overline', color='accent', align='center'),
+        b.p('Hi WPEssential · by Vertex Systems Network Pvt Ltd', style='wpe-overline', color='accent', align='center'),
         b.h('Launch a beautiful WordPress site in minutes', level=1, size='display', color='on-ink', align='center'),
         b.p('Premium themes and one-click demos — native for Gutenberg and Elementor. Pick a demo, import it, make it yours.', color='on-ink', size='body-l', align='center'),
         b.buttons(b.button('Browse demos', '{{page:demos}}'), b.button('See pricing', '{{page:pricing}}', style='wpe-light'), justify='center'),
@@ -244,7 +244,7 @@ def g_pricing():
 
 
 def g_services():
-    return b.join(g_title('Services', 'Your site, launched by the people who build the theme.', 'Design, setup, speed and care from the WPEssential team at Vertex Systems Network.'),
+    return b.join(g_title('Services', 'Your site, launched by the people who build the theme.', 'Design, setup, speed and care from the WPEssential team at Vertex Systems Network Pvt Ltd.'),
                   b.section(b.shortcode('[products category="services" columns="3" limit="6" orderby="menu_order" order="ASC"]'), className='wpe-section wpe-section--sm'),
                   b.section(b.h('How a project runs', size='h2'),
                             b.group(*[b.group(b.p('0%d' % (i + 1), className='wpe-stat-number'), b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default')
@@ -296,7 +296,7 @@ def e_products(cat, cols=3):
 
 def e_home():
     return [
-        e.container(e.overline('Hi WPEssential · by Vertex Systems Network', 'accent', align='center'),
+        e.container(e.overline('Hi WPEssential · by Vertex Systems Network Pvt Ltd', 'accent', align='center'),
                     e.heading('Launch a beautiful WordPress site in minutes', 1, 'on-ink', align='center', size_px=80),
                     e.text('Premium themes and one-click demos — native for Gutenberg and Elementor. Pick a demo, import it, make it yours.', 'on-ink-muted', align='center', size_px=18),
                     e.row(e.button('Browse demos', '{{page:demos}}'), e.button('See pricing', '{{page:pricing}}', 'light'), gap=12, justify='center', wrap=True, mobile_direction='row'),
@@ -347,7 +347,7 @@ def e_pricing():
 
 
 def e_services():
-    return [e_title('Services', 'Your site, launched by the people who build the theme.', 'Design, setup, speed and care from the WPEssential team at Vertex Systems Network.'),
+    return [e_title('Services', 'Your site, launched by the people who build the theme.', 'Design, setup, speed and care from the WPEssential team at Vertex Systems Network Pvt Ltd.'),
             e.container(e.shortcode('[products category="services" columns="3" limit="6" orderby="menu_order" order="ASC"]'), pad=(24, 24, 72, 24)),
             e.container(e.heading('How a project runs'),
                         e.grid(*[e.container(e.heading('0%d' % (i + 1), 3, 'primary', size_px=40), e.heading(t, 3, size_px=22), e.text(d), inner=True, gap=8)
