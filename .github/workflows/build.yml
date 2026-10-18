@@ -30,20 +30,20 @@ jobs:
           grep -n "^Version" style.css
       - name: Build theme, server plugin and demo packages
         run: ./tools/build-zips.sh
-      # Each artifact downloads as its own zip from the run page (Actions → Build zips → Artifacts).
-      - uses: actions/upload-artifact@v6
+      # The theme and server zips upload as-is (archive: false), so they download as
+      # hi-wpessential.zip and wpessential-server.zip, ready to install. Demo packages are many
+      # files, so they come as one archive named hi-wpessential-demos.
+      - uses: actions/upload-artifact@v7
         with:
-          name: wpessential-theme
           path: build/hi-wpessential.zip
-          compression-level: 0
-      - uses: actions/upload-artifact@v6
+          archive: false
+      - uses: actions/upload-artifact@v7
         with:
-          name: wpessential-server
           path: build/wpessential-server.zip
-          compression-level: 0
-      - uses: actions/upload-artifact@v6
+          archive: false
+      - uses: actions/upload-artifact@v7
         with:
-          name: wpessential-demos
+          name: hi-wpessential-demos
           path: build/demos/*.zip
           compression-level: 0
       - name: Release (tags v*)
