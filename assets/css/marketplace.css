@@ -375,3 +375,30 @@ ul.ess-facts { list-style: none; padding: 0; margin: 8px 0 0; max-width: 560px; 
 .ess-facts li { display: flex; flex-direction: column; gap: 4px; padding-left: 14px; border-left: 2px solid var(--wp--preset--color--primary, #ec7d1a); }
 .ess-facts span { font-size: 13px; color: rgba(255,255,255,.7); }
 .ess-facts b { font-size: 18px; color: #fff; }
+
+/* Contact — proof, recent work, testimonial, team and map. */
+.ess-proof { background: var(--wp--preset--color--surface-alt, #f3f6fc); border-radius: 16px; padding: 20px 24px; }
+.ess-proof__n { font-size: 26px; font-weight: 800; color: var(--wp--preset--color--secondary, #1f48a6); margin: 0; }
+.ess-clients { display: flex; flex-wrap: wrap; gap: 12px 44px; align-items: center; justify-content: space-between; margin-top: 28px; color: var(--wp--preset--color--text-muted, #5b6478); font-size: 14px; }
+.ess-clients b { font-size: 18px; letter-spacing: -.01em; }
+.ess-work { padding: 0 !important; overflow: hidden; }
+.ess-work figure { margin: 0; }
+.ess-work img { display: block; width: 100%; object-fit: cover; object-position: top; }
+.ess-work__body { padding: 20px 24px 24px; }
+.ess-work__result { color: var(--wp--preset--color--success, #16a34a); font-size: 14px; font-weight: 600; margin: 8px 0 0; }
+.ess-quote { gap: 24px !important; padding: 32px 40px !important; margin-top: 24px; }
+.ess-quote__avatar { flex: none; margin: 0; }
+.ess-quote__avatar img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; }
+.ess-quote__text { font-size: 18px; color: #fff; margin: 0 0 8px; }
+.ess-quote__by { font-size: 13px; color: rgba(255, 255, 255, .7); margin: 0; }
+.ess-team__img { margin: 0 0 10px; }
+.ess-team__img img { border-radius: 14px; width: 100%; object-fit: cover; }
+.ess-team p { margin: 0; }
+.ess-map { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid var(--wp--preset--color--border, #e3e8f2); min-height: 420px; }
+.ess-map iframe { display: block; width: 100%; height: 420px; border: 0; }
+.ess-map__card { position: absolute; left: 20px; bottom: 20px; background: #fff; border-radius: 14px; padding: 14px 18px; display: grid; gap: 4px; font-size: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, .12); color: #0e1630; }
+.ess-map__card span { color: #5b6478; font-size: 13px; }
+.ess-map__card a { color: var(--wp--preset--color--secondary, #1f48a6); font-weight: 600; }
+.wpforms-field-divider h3 { font-size: 15px !important; margin: 20px 0 2px !important; padding-top: 16px; border-top: 1px solid var(--wp--preset--color--border, #e3e8f2); }
+.wpforms-field-divider:first-child h3 { border-top: 0; padding-top: 0; margin-top: 0 !important; }
+@media (max-width: 781px) { .ess-quote { flex-direction: column; align-items: flex-start !important; } .ess-clients { justify-content: flex-start; } }
