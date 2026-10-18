@@ -199,17 +199,52 @@ def g_products(cat, cols=3):
     return b.shortcode('[products category="%s" columns="%d" limit="%d" orderby="menu_order" order="ASC"]' % (cat, cols, cols))
 
 
+PERIOD_SUFFIX = {'monthly': '/ month', 'yearly': '/ year', 'lifetime': 'once'}
+
+
+def plan_buy(pl):
+    return '{{home:}}?add-to-cart={{post_id:plan-%s}}' % pl['plan']
+
+
+def g_plan_cards(period):
+    cards = []
+    for pl in [x for x in PLANS if x['period'] == period]:
+        feat = pl.get('featured')
+        cards.append(b.column(
+            b.h(pl['name'], level=3, size='h4'),
+            b.p('$%s <small>%s</small>' % ('{:,}'.format(int(pl['price'])), PERIOD_SUFFIX[period]), className='wpe-price'),
+            b.p(pl['short']),
+            b.ul(pl['inc'], style='wpe-checklist'),
+            b.buttons(b.button('Choose ' + pl['name'], plan_buy(pl), style=None if feat else 'wpe-outline')),
+            className='wpe-pricing-card is-featured' if feat else 'wpe-pricing-card', style='wpe-card'))
+    return b.columns(*cards, className='wpe-columns-stretch')
+
+
+def e_plan_cards(period):
+    cards = []
+    for pl in [x for x in PLANS if x['period'] == period]:
+        feat = pl.get('featured')
+        cards.append(e.container(
+            e.heading(pl['name'], 3, size_px=22, color_slug='on-ink' if feat else 'text'),
+            e.heading('$%s %s' % ('{:,}'.format(int(pl['price'])), PERIOD_SUFFIX[period]), 4, size_px=34, color_slug='on-ink' if feat else 'text'),
+            e.text(pl['short'], color_slug='on-ink-muted' if feat else 'text-muted'),
+            e.icon_list(pl['inc'], color_slug='on-ink' if feat else 'text'),
+            e.button('Choose ' + pl['name'], plan_buy(pl), 'primary' if feat else 'outline'),
+            inner=True, pad=32, radius=24, border=None if feat else 'border', bg='ink' if feat else 'surface'))
+    return e.grid(*cards, columns=3)
+
+
 def g_cards(items, icon_title=True):
     return b.group(*[b.group(b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), *([b.p('<strong>%s</strong>' % x[3], color='primary')] if len(x) > 3 else []),
                              layout='default', className='wpe-card wpe-card--pad')
-                     for x in items for t, d in [(x[1], x[2])]], layout='grid', grid_min='16rem')
+                     for x in items for t, d in [(x[1], x[2])]], layout='grid', columns=3, grid_min='16rem')
 
 
 def g_plugin_cards():
     return b.group(*[b.group(b.p('Free · WordPress.org', style='wpe-overline'), b.h(t, level=3, size='h4'), b.p(d, color='text-muted'),
                              b.p(meta, color='text-muted', size='small'), b.buttons(b.button('Download', url, style='wpe-outline')),
                              layout='default', className='wpe-card wpe-card--pad') for _, t, d, meta, url in PLUGINS],
-                   layout='grid', grid_min='16rem')
+                   layout='grid', columns=3, grid_min='16rem')
 
 
 def g_plugins():
@@ -222,7 +257,7 @@ def g_plugins():
 
 def g_home():
     hero = b.section(
-        b.p('Hi WPEssential · by Vertex Systems Network (Pvt.) Ltd.', style='wpe-overline', color='accent', align='center'),
+        b.p('Hi WPEssential · by Vertex Systems Network (Pvt.) Ltd.', style='wpe-overline', color='on-ink-muted', align='center'),
         b.h('Launch a beautiful WordPress site in minutes', level=1, size='display', color='on-ink', align='center'),
         b.p('Premium themes and one-click demos — native for Gutenberg and Elementor. Pick a demo, import it, make it yours.', color='on-ink', size='body-l', align='center'),
         b.buttons(b.button('Browse demos', '{{page:demos}}'), b.button('See pricing', '{{page:pricing}}', style='wpe-light'), justify='center'),
@@ -230,7 +265,7 @@ def g_home():
         bg='ink', color='on-ink', content='1100px')
     stats = b.section(b.group(*[b.group(b.p(n, className='wpe-stat-number'), b.p(t, color='text-muted'), layout='default', className='wpe-card wpe-card--pad')
                                 for n, t in [('3', 'ready-made demos'), ('2', 'native builders'), ('20', 'languages'), ('95+', 'PageSpeed score')]],
-                              layout='grid', grid_min='12rem'), className='wpe-section wpe-section--sm')
+                              layout='grid', columns=4, grid_min='12rem'), className='wpe-section wpe-section--sm')
     demos = b.section(
         b.group(b.group(b.p('Demos', style='wpe-overline'), b.h('Start from a finished site', size='h2'), layout='default'),
                 b.buttons(b.button('All demos', '{{page:demos}}', style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom'),
@@ -249,7 +284,7 @@ def g_home():
                 b.buttons(b.button('All plugins', '{{page:plugins}}', style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom'),
         g_plugin_cards())
     pricing = b.section(b.p('Pricing', style='wpe-overline', align='center'), b.h('One subscription. Every theme and demo.', size='h2', align='center'),
-                        b.p('From $10 a month. Save 20% yearly, or pay once for lifetime.', align='center', color='text-muted'), g_products('plans-monthly'),
+                        b.p('From $10 a month. Save 20% yearly, or pay once for lifetime.', align='center', color='text-muted'), g_plan_cards('monthly'),
                         b.buttons(b.button('Yearly & lifetime prices', '{{page:pricing}}', style='wpe-outline'), justify='center'))
     news = b.section(b.group(b.group(b.p('Blog', style='wpe-overline'), b.h('Guides and release notes', size='h2'), layout='default'),
                              b.buttons(b.button('All posts', '{{page:blog}}', style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom'),
@@ -266,7 +301,7 @@ def g_demos():
         b.column(b.image(d['site'], '%s demo home page' % d['name'], style='wpe-shadow'), width='60%'),
         b.column(b.p(d['niche'], style='wpe-overline'), b.h(d['name'], size='h2'), b.p(d['short'], color='text-muted'),
                  b.p('<strong>%s</strong>' % ('Free with the theme' if d['price'] == '0' else '$%s or included in Pro' % d['price'])),
-                 b.buttons(b.button('View demo', '{{product:%s}}' % d['key']), b.button('Pricing', '{{page:pricing}}', style='wpe-outline')),
+                 b.buttons(b.button('View demo', '{{page:%s}}' % d['key']), b.button('Pricing', '{{page:pricing}}', style='wpe-outline')),
                  width='40%', valign='center'), valign='center', className='wpe-gap-lg'), bg='surface-alt' if i % 2 else None)
         for i, d in enumerate(DEMOS)]
     return b.join(g_title('Demos', 'Start from a finished site', 'Every demo imports in one click and ships native Gutenberg and Elementor versions.'),
@@ -278,7 +313,7 @@ def g_pricing():
             ['Support', 'Standard', 'Priority', 'Dedicated'], ['Updates', 'While subscribed · lifetime: one major version', 'Same', 'Same'], ['White-label dashboard', '—', '—', '✓']]
     return b.join(g_title('Pricing', 'One subscription. Every theme and demo.', 'Monthly, yearly (save 20%) or lifetime. Every plan has a 14-day money-back guarantee.'),
                   *[b.section(b.h(label + (' · save 20%' if period == 'yearly' else ''), size='h3'), b.p(BILLING_NOTE[period], color='text-muted'),
-                              g_products('plans-' + period), className='wpe-section wpe-section--sm', bg='surface-alt' if period == 'yearly' else None)
+                              g_plan_cards(period), className='wpe-section wpe-section--sm', bg='surface-alt' if period == 'yearly' else None)
                     for period, label, _ in BILLING],
                   b.section(b.h('Compare plans', size='h2'), b.table(['Feature', 'Starter', 'Pro', 'Agency'], rows), bg='surface-alt'),
                   b.section(b.h('Frequently asked questions', size='h2'), *[b.details(q, b.p(a)) for q, a in FAQ], content='860px'))
@@ -394,7 +429,7 @@ def e_home():
                                 e.text('Real WPEssential import · every step logged · 0 errors', align='center', size_px=14), width=55, justify='center'), gap=56),
                     bg='surface-alt', pad=(80, 24, 80, 24)),
         e.container(e.overline('Pricing', align='center'), e.heading('One subscription. Every theme and demo.', align='center'),
-                    e.text('From $10 a month. Save 20% yearly, or pay once for lifetime.', align='center'), e_products('plans-monthly'),
+                    e.text('From $10 a month. Save 20% yearly, or pay once for lifetime.', align='center'), e_plan_cards('monthly'),
                     e.button('Yearly & lifetime prices', '{{page:pricing}}', 'outline', align='center'), pad=(80, 24, 80, 24)),
         e.container(e.overline('Blog'), e.heading('Guides and release notes'),
                     e.grid(*[e.image_box(p['image'], p['title'], p['excerpt'], link='{{page:%s}}' % p['key'], height=220) for p in POSTS], columns=3),
@@ -412,7 +447,7 @@ def e_demos():
         out.append(e.container(e.row(e.col(e.image(d['site'], '%s demo home page' % d['name'], radius=20), width=60),
                                      e.col(e.overline(d['niche']), e.heading(d['name']), e.text(d['short']),
                                            e.heading('Free with the theme' if d['price'] == '0' else '$%s or included in Pro' % d['price'], 4, size_px=18),
-                                           e.row(e.button('View demo', '{{product:%s}}' % d['key']), e.button('Pricing', '{{page:pricing}}', 'outline'), gap=12, wrap=True, mobile_direction='row'),
+                                           e.row(e.button('View demo', '{{page:%s}}' % d['key']), e.button('Pricing', '{{page:pricing}}', 'outline'), gap=12, wrap=True, mobile_direction='row'),
                                            width=40, justify='center'), gap=56),
                                bg='surface-alt' if i % 2 else None, pad=(72, 24, 72, 24)))
     return out
@@ -420,7 +455,7 @@ def e_demos():
 
 def e_pricing():
     return [e_title('Pricing', 'One subscription. Every theme and demo.', 'Monthly, yearly (save 20%) or lifetime. Every plan has a 14-day money-back guarantee.'),
-            *[e.container(e.heading(label + (' · save 20%' if period == 'yearly' else ''), 3), e.text(BILLING_NOTE[period]), e_products('plans-' + period),
+            *[e.container(e.heading(label + (' · save 20%' if period == 'yearly' else ''), 3), e.text(BILLING_NOTE[period]), e_plan_cards(period),
                           bg='surface-alt' if period == 'yearly' else None, pad=(48, 24, 48, 24)) for period, label, _ in BILLING],
             e.container(e.heading('What is included'), e.grid(*[e.container(e.heading(p['name'], 3, size_px=22), e.icon_list(p['inc']), inner=True, pad=28, radius=20, border='border', bg='surface')
                                                                for p in TIERS], columns=3), bg='surface-alt', pad=(72, 24, 72, 24)),
