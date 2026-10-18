@@ -1,0 +1,3812 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WPEssential 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wpessential.org/support/\n"
+"POT-Creation-Date: 2026-10-18T02:45:11+00:00\n"
+"PO-Revision-Date: 2026-10-18T02:45:11+00:00\n"
+"Last-Translator: WPEssential Team <https://wpessential.org/>\n"
+"Language-Team: WPEssential Team <https://wpessential.org/>\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Domain: wpessential\n"
+"X-Generator: WP-CLI 2.11.0\n"
+
+#. Theme Name of the theme
+#: style.css core/src/Admin.php:55 inc/patterns.php:14
+msgid "WPEssential"
+msgstr "WPEssential"
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://wpessential.org/"
+msgstr "https://wpessential.org/"
+
+#. Description of the theme
+#: style.css
+msgid ""
+"Lightweight multi-niche block theme, native for Gutenberg and Elementor. "
+"One-click demos (free & pro) via the WPEssential Core plugin."
+msgstr ""
+"Lekki, uniwersalny motyw blokowy, natywny dla Gutenberga i Elementora. Dema "
+"instalowane jednym kliknięciem (darmowe i pro) przez wtyczkę WPEssential "
+"Core."
+
+#. Author of the theme
+#: style.css
+msgid "WPEssential Team"
+msgstr "Zespół WPEssential"
+
+#. translators: %s: error.
+#: core/src/Account.php:55
+msgid "WPEssential could not be reached: %s"
+msgstr "Nie udało się połączyć z WPEssential: %s"
+
+#: core/src/Account.php:61
+msgid "Your WPEssential session ended. Sign in again."
+msgstr "Twoja sesja WPEssential wygasła. Zaloguj się ponownie."
+
+#. translators: %d: HTTP code.
+#: core/src/Account.php:65
+msgid "WPEssential answered with an unexpected response (HTTP %d)."
+msgstr "WPEssential zwrócił nieoczekiwaną odpowiedź (HTTP %d)."
+
+#: core/src/Account.php:68 core/assets/admin.js:83 core/assets/admin.js:94
+msgid "Something went wrong."
+msgstr "Coś poszło nie tak."
+
+#: core/src/Account.php:238
+msgid "That license is not in your account."
+msgstr "Tej licencji nie ma na Twoim koncie."
+
+#: core/src/Account.php:271 core/src/Rest.php:211
+msgid "Unknown action."
+msgstr "Nieznana akcja."
+
+#: core/src/Admin.php:37 core/assets/admin.js:147
+msgid "Dashboard"
+msgstr "Kokpit"
+
+#: core/src/Admin.php:38 core/assets/admin.js:148 core/assets/admin.js:306
+msgid "Demo Library"
+msgstr "Biblioteka demo"
+
+#: core/src/Admin.php:39 core/assets/admin.js:149 core/assets/admin.js:576
+#: core/assets/admin.js:1054
+msgid "Plugins"
+msgstr "Wtyczki"
+
+#: core/src/Admin.php:40 core/assets/admin.js:150 core/assets/admin.js:284
+#: core/assets/admin.js:1096
+msgid "License"
+msgstr "Licencja"
+
+#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+msgid "System Status"
+msgstr "Stan systemu"
+
+#: core/src/Admin.php:133
+msgid ""
+"The WPEssential dashboard needs JavaScript. Enable it in your browser to "
+"import demos."
+msgstr ""
+"Kokpit WPEssential wymaga JavaScriptu. Włącz go w przeglądarce, aby "
+"importować dema."
+
+#: core/src/Demos.php:49
+msgid ""
+"The online demo library could not be reached, so only the demos bundled with"
+" the theme are listed. They import fully offline."
+msgstr ""
+"Nie udało się połączyć z biblioteką demo online, dlatego wyświetlane są "
+"tylko dema dołączone do motywu. Można je zaimportować całkowicie offline."
+
+#: core/src/Demos.php:173
+msgid ""
+"The bundled demo package is incomplete. Re-upload the theme and try again."
+msgstr ""
+"Dołączony pakiet demo jest niekompletny. Prześlij motyw ponownie i spróbuj "
+"jeszcze raz."
+
+#: core/src/Demos.php:183
+msgid "This demo has no download address in the library."
+msgstr "To demo nie ma adresu pobierania w bibliotece."
+
+#. translators: %s: error message.
+#: core/src/Demos.php:196
+msgid "Downloading the demo package failed: %s"
+msgstr "Pobieranie pakietu demo nie powiodło się: %s"
+
+#: core/src/Demos.php:200
+msgid "WordPress cannot write to the uploads folder. Check its permissions."
+msgstr ""
+"WordPress nie może zapisywać w katalogu uploads. Sprawdź jego uprawnienia."
+
+#: core/src/Demos.php:207
+msgid "The downloaded package does not contain content.json."
+msgstr "Pobrany pakiet nie zawiera pliku content.json."
+
+#: core/src/Importer.php:47
+msgid "Checking your server"
+msgstr "Sprawdzanie serwera"
+
+#: core/src/Importer.php:48
+msgid "Removing the previous demo"
+msgstr "Usuwanie poprzedniego demo"
+
+#: core/src/Importer.php:49
+msgid "Preparing the demo package"
+msgstr "Przygotowywanie pakietu demo"
+
+#: core/src/Importer.php:50
+msgid "Installing plugins"
+msgstr "Instalowanie wtyczek"
+
+#: core/src/Importer.php:51
+msgid "Importing images"
+msgstr "Importowanie obrazków"
+
+#: core/src/Importer.php:52
+msgid "Creating categories"
+msgstr "Tworzenie kategorii"
+
+#: core/src/Importer.php:53
+msgid "Building pages and posts"
+msgstr "Tworzenie stron i wpisów"
+
+#: core/src/Importer.php:54
+msgid "Adding products"
+msgstr "Dodawanie produktów"
+
+#: core/src/Importer.php:55
+msgid "Creating menus"
+msgstr "Tworzenie menu"
+
+#: core/src/Importer.php:56
+msgid "Applying site settings"
+msgstr "Stosowanie ustawień witryny"
+
+#: core/src/Importer.php:57
+msgid "Finishing touches"
+msgstr "Ostatnie poprawki"
+
+#: core/src/Importer.php:90
+msgid ""
+"Another import is running in a different tab. Wait for it to finish, or wait"
+" two minutes and try again."
+msgstr ""
+"W innej karcie trwa już inny import. Poczekaj, aż się zakończy, lub odczekaj"
+" dwie minuty i spróbuj ponownie."
+
+#: core/src/Importer.php:94
+msgid "This demo is no longer in the library. Refresh the page."
+msgstr "Tego demo nie ma już w bibliotece. Odśwież stronę."
+
+#: core/src/Importer.php:97
+msgid "This demo is not available for the selected builder."
+msgstr "To demo nie jest dostępne dla wybranego kreatora."
+
+#: core/src/Importer.php:100
+msgid ""
+"This is a Pro demo. Activate your license on the License tab to import it."
+msgstr ""
+"To jest demo Pro. Aktywuj licencję w karcie Licencja, aby je zaimportować."
+
+#. translators: 1: demo, 2: builder.
+#: core/src/Importer.php:192
+msgid "Starting import of %1$s for %2$s."
+msgstr "Rozpoczynanie importu %1$s dla %2$s."
+
+#: core/src/Importer.php:207
+msgid "There is no import to continue."
+msgstr "Brak importu do wznowienia."
+
+#: core/src/Importer.php:225
+msgid ""
+"Import cancelled. Everything imported so far can be removed from the Demo "
+"Library."
+msgstr ""
+"Import anulowano. Wszystko, co zostało dotąd zaimportowane, można usunąć z "
+"Biblioteki demo."
+
+#: core/src/Importer.php:341
+msgid "One item stopped the server twice and was skipped."
+msgstr "Jeden element dwukrotnie zatrzymał serwer i został pominięty."
+
+#: core/src/Importer.php:341
+msgid ""
+"Raise memory_limit / max_execution_time, then re-import to fill the gap."
+msgstr ""
+"Zwiększ memory_limit / max_execution_time, a następnie zaimportuj ponownie, "
+"aby uzupełnić brakujące elementy."
+
+#. translators: %s: error.
+#: core/src/Importer.php:358
+msgid "Unexpected error: %s"
+msgstr "Nieoczekiwany błąd: %s"
+
+#. translators: %d: errors.
+#: core/src/Importer.php:411
+msgid ""
+"Import finished with %d error. The site works; review the log for what was "
+"skipped."
+msgid_plural ""
+"Import finished with %d errors. The site works; review the log for what was "
+"skipped."
+msgstr[0] ""
+"Import zakończył się z %d błędem. Witryna działa; sprawdź dziennik, aby "
+"zobaczyć, co zostało pominięte."
+msgstr[1] ""
+"Import zakończył się z %d błędami. Witryna działa; sprawdź dziennik, aby "
+"zobaczyć, co zostało pominięte."
+msgstr[2] ""
+"Import zakończył się z %d błędami. Witryna działa; sprawdź dziennik, aby "
+"zobaczyć, co zostało pominięte."
+
+#: core/src/Importer.php:413
+msgid "Your site is ready."
+msgstr "Twoja witryna jest gotowa."
+
+#: core/src/Importer.php:445
+msgid "WooCommerce is not active, so the shop products were skipped."
+msgstr "WooCommerce nie jest aktywny, więc produkty sklepu zostały pominięte."
+
+#: core/src/Importer.php:602
+msgid "Your server needs a change before the import can run safely."
+msgstr "Serwer wymaga zmiany, zanim import będzie mógł bezpiecznie przebiec."
+
+#: core/src/Importer.php:602
+msgid "Fix the items above (your host can help), then press Retry."
+msgstr ""
+"Popraw powyższe elementy (Twój dostawca hostingu może pomóc), a następnie "
+"kliknij Ponów."
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid ""
+"%s was imported before. Its pages stay; the new import adds fresh copies."
+msgstr ""
+"%s było już wcześniej zaimportowane. Jego strony pozostaną; nowy import doda"
+" świeże kopie."
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid "Tick \"Remove previous demo\" next time for a clean site."
+msgstr ""
+"Następnym razem zaznacz „Usuń poprzednie demo”, aby uzyskać czystą witrynę."
+
+#: core/src/Importer.php:609
+msgid "Server checks passed."
+msgstr "Sprawdzanie serwera zakończone pomyślnie."
+
+#. translators: %d: items.
+#: core/src/Importer.php:621
+msgid "Removed %d items from the previous demo and restored its settings."
+msgstr ""
+"Usunięto %d elementów poprzedniego demo i przywrócono jego ustawienia."
+
+#: core/src/Importer.php:634
+msgid "Upload a fresh copy of the theme, then press Resume."
+msgstr "Prześlij świeżą kopię motywu, a następnie kliknij Wznów."
+
+#: core/src/Importer.php:634
+msgid "Check your internet connection and press Resume."
+msgstr "Sprawdź połączenie internetowe i kliknij Wznów."
+
+#: core/src/Importer.php:640
+msgid "The demo package could not be read (content.json is damaged)."
+msgstr "Nie można odczytać pakietu demo (plik content.json jest uszkodzony)."
+
+#: core/src/Importer.php:640
+msgid "Clear the cache on the System Status tab and retry."
+msgstr "Wyczyść pamięć podręczną w karcie Stan systemu i spróbuj ponownie."
+
+#. translators: 1: pages, 2: images, 3: products.
+#: core/src/Importer.php:644
+msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
+msgstr "Pakiet gotowy: %1$d stron i wpisów, %2$d obrazków, %3$d produktów."
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid "%1$s could not be set up: %2$s"
+msgstr "Nie udało się skonfigurować %1$s: %2$s"
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid ""
+"Install it from Plugins → Add New, then use the Plugins tab here to activate"
+" it."
+msgstr ""
+"Zainstaluj ją w Wtyczki → Dodaj nową, a następnie użyj tutaj karty Wtyczki, "
+"aby ją włączyć."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:667
+msgid "%s installed and activated."
+msgstr "Zainstalowano i włączono %s."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:669
+msgid "%s activated."
+msgstr "Włączono %s."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:671
+msgid "%s deactivated because it conflicts with this demo."
+msgstr "Wyłączono %s, ponieważ koliduje z tym demo."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:673
+msgid "%s is already active."
+msgstr "%s jest już włączona."
+
+#: core/src/Importer.php:702
+msgid "file not found in the package"
+msgstr "nie znaleziono pliku w pakiecie"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:707
+msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
+msgstr "Pominięto obrazek %1$s (%2$s). Strony użyją kopii z motywu."
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Image %1$s skipped (%2$s)."
+msgstr "Pominięto obrazek %1$s (%2$s)."
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Check that the uploads folder is writable."
+msgstr "Sprawdź, czy katalog uploads jest zapisywalny."
+
+#. translators: %s: file.
+#: core/src/Importer.php:729
+msgid "Imported image %s."
+msgstr "Zaimportowano obrazek %s."
+
+#. translators: 1: term, 2: taxonomy.
+#. translators: 1: title, 2: post type.
+#: core/src/Importer.php:744 core/src/Importer.php:790
+msgid "Skipped \"%1$s\": %2$s is not available on this site."
+msgstr "Pominięto „%1$s”: %2$s nie jest dostępne w tej witrynie."
+
+#. translators: %s: term.
+#: core/src/Importer.php:751
+msgid "Category \"%s\" already exists and was reused."
+msgstr "Kategoria „%s” już istnieje i została użyta ponownie."
+
+#. translators: 1: term, 2: error.
+#: core/src/Importer.php:763
+msgid "Category \"%1$s\" was not created: %2$s"
+msgstr "Nie utworzono kategorii „%1$s”: %2$s"
+
+#. translators: %s: term.
+#: core/src/Importer.php:770
+msgid "Created category \"%s\"."
+msgstr "Utworzono kategorię „%s”."
+
+#. translators: 1: title, 2: error.
+#: core/src/Importer.php:808
+msgid "\"%1$s\" could not be created: %2$s"
+msgstr "Nie można utworzyć „%1$s”: %2$s"
+
+#: core/src/Importer.php:836
+msgid "post"
+msgstr "wpis"
+
+#: core/src/Importer.php:837
+msgid "page"
+msgstr "strona"
+
+#: core/src/Importer.php:838
+msgid "event"
+msgstr "wydarzenie"
+
+#: core/src/Importer.php:839
+msgid "venue"
+msgstr "miejsce"
+
+#: core/src/Importer.php:840
+msgid "organizer"
+msgstr "organizator"
+
+#. translators: 1: type, 2: title.
+#: core/src/Importer.php:843
+msgid "Created %1$s \"%2$s\"."
+msgstr "Utworzono %1$s „%2$s”."
+
+#: core/src/Importer.php:860
+msgid "The Events Calendar rejected the venue."
+msgstr "The Events Calendar odrzucił miejsce."
+
+#: core/src/Importer.php:864
+msgid "The Events Calendar rejected the organizer."
+msgstr "The Events Calendar odrzucił organizatora."
+
+#: core/src/Importer.php:892
+msgid "The Events Calendar rejected the event."
+msgstr "The Events Calendar odrzucił wydarzenie."
+
+#. translators: %s: product.
+#: core/src/Importer.php:1004
+msgid "Product \"%s\" could not be saved."
+msgstr "Nie można zapisać produktu „%s”."
+
+#. translators: %s: product.
+#: core/src/Importer.php:1015
+msgid "Added product \"%s\"."
+msgstr "Dodano produkt „%s”."
+
+#. translators: 1: menu, 2: count.
+#: core/src/Importer.php:1118
+msgid "Created menu \"%1$s\" with %2$d links."
+msgstr "Utworzono menu „%1$s” z liczbą odnośników: %2$d."
+
+#: core/src/Importer.php:1164
+msgid "Home and blog pages assigned."
+msgstr "Przypisano stronę główną i stronę bloga."
+
+#. translators: %s: option.
+#: core/src/Importer.php:1170
+msgid "Setting \"%s\" is not on the allow-list and was ignored."
+msgstr ""
+"Ustawienie „%s” nie znajduje się na liście dozwolonych i zostało "
+"zignorowane."
+
+#. translators: %s: preset.
+#: core/src/Importer.php:1191
+msgid "Animation style set to \"%s\"."
+msgstr "Ustawiono styl animacji „%s”."
+
+#: core/src/Importer.php:1204
+msgid "Elementor set to use the theme colours and fonts."
+msgstr "Elementor używa teraz kolorów i krojów pisma motywu."
+
+#: core/src/Importer.php:1219
+msgid "Default"
+msgstr "Domyślny"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Style \"%s\" was not found in the theme, so the default colours stay."
+msgstr "Nie znaleziono stylu „%s” w motywie, więc pozostają domyślne kolory."
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Update the WPEssential theme, then import again."
+msgstr "Zaktualizuj motyw WPEssential, a następnie zaimportuj ponownie."
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1250
+msgid "Applied the %s colours and fonts."
+msgstr "Zastosowano kolory i kroje pisma %s."
+
+#: core/src/Importer.php:1268
+msgid "demo"
+msgstr "demo"
+
+#. translators: 1: template part, 2: design.
+#: core/src/Importer.php:1320
+msgid "Template part \"%1$s\" set to the \"%2$s\" design."
+msgstr "Część szablonu „%1$s” ustawiono na wygląd „%2$s”."
+
+#: core/src/Importer.php:1341
+msgid "Elementor Kit layout, buttons and form styles set."
+msgstr "Ustawiono układ, przyciski i style formularzy w Elementor Kit."
+
+#: core/src/Importer.php:1361
+msgid "Everywhere"
+msgstr "Wszędzie"
+
+#: core/src/Importer.php:1369
+msgid "Free shipping"
+msgstr "Darmowa wysyłka"
+
+#. translators: %s: amount.
+#: core/src/Importer.php:1377
+msgid "Shipping set up with free delivery over %s."
+msgstr "Skonfigurowano wysyłkę z darmową dostawą powyżej %s."
+
+#. translators: %d: pages.
+#: core/src/Importer.php:1412
+msgid "Linked %d page to its new address."
+msgid_plural "Linked %d pages to their new addresses."
+msgstr[0] "Połączono %d stronę z jej nowym adresem."
+msgstr[1] "Połączono %d strony z ich nowymi adresami."
+msgstr[2] "Połączono %d stron z ich nowymi adresami."
+
+#: core/src/Importer.php:1417
+msgid "Permalinks and caches refreshed."
+msgstr "Odświeżono bezpośrednie odnośniki i pamięć podręczną."
+
+#: core/src/License.php:136
+msgid ""
+"That license key looks too short. Copy it again from your purchase email."
+msgstr ""
+"Ten klucz licencyjny jest za krótki. Skopiuj go ponownie z e-maila z "
+"potwierdzeniem zakupu."
+
+#: core/src/License.php:204
+msgid ""
+"This is a Pro item. Activate your license on the License tab to unlock it."
+msgstr ""
+"To jest element Pro. Aktywuj licencję w karcie Licencja, aby go odblokować."
+
+#: core/src/License/Adapter.php:84
+msgid "The license server did not return a download link."
+msgstr "Serwer licencji nie zwrócił odnośnika do pobrania."
+
+#. translators: %s: error.
+#: core/src/License/Adapter.php:107
+msgid "The license server could not be reached: %s"
+msgstr "Nie udało się połączyć z serwerem licencji: %s"
+
+#. translators: %d: HTTP status.
+#: core/src/License/Adapter.php:113
+msgid ""
+"The license server answered with an unexpected response (HTTP %d). Try again"
+" in a few minutes."
+msgstr ""
+"Serwer licencji zwrócił nieoczekiwaną odpowiedź (HTTP %d). Spróbuj ponownie "
+"za kilka minut."
+
+#: core/src/License/Custom.php:42 core/src/License/Edd.php:31
+#: core/src/License/Woo.php:58
+msgid "This license key is not valid."
+msgstr "Ten klucz licencyjny jest nieprawidłowy."
+
+#: core/src/License/Edd.php:27
+msgid ""
+"This license has expired. Renew it to keep receiving demos and updates."
+msgstr ""
+"Ta licencja wygasła. Odnów ją, aby nadal otrzymywać dema i aktualizacje."
+
+#: core/src/License/Edd.php:28
+msgid "This license has been disabled."
+msgstr "Ta licencja została wyłączona."
+
+#: core/src/License/Edd.php:29
+msgid "This license has been revoked."
+msgstr "Ta licencja została unieważniona."
+
+#: core/src/License/Edd.php:30
+msgid "This license key does not exist."
+msgstr "Ten klucz licencyjny nie istnieje."
+
+#: core/src/License/Edd.php:32
+msgid "This license is not active for this domain."
+msgstr "Ta licencja nie jest aktywna dla tej domeny."
+
+#: core/src/License/Edd.php:33
+msgid "This key belongs to a different product."
+msgstr "Ten klucz należy do innego produktu."
+
+#: core/src/License/Edd.php:34
+msgid ""
+"This license has reached its activation limit. Deactivate it on another site"
+" first."
+msgstr ""
+"Ta licencja osiągnęła limit aktywacji. Najpierw dezaktywuj ją w innej "
+"witrynie."
+
+#: core/src/License/Edd.php:130 core/src/License/Woo.php:118
+msgid "The store did not return a download link for this license."
+msgstr "Sklep nie zwrócił odnośnika do pobrania dla tej licencji."
+
+#: core/src/Plugins.php:115
+msgid "Your account is not allowed to install plugins."
+msgstr "Twoje konto nie ma uprawnień do instalowania wtyczek."
+
+#. translators: 1: plugin name, 2: error.
+#: core/src/Plugins.php:130
+msgid ""
+"WordPress.org did not answer for %1$s (%2$s). Check the server can reach "
+"wordpress.org, or install it manually."
+msgstr ""
+"WordPress.org nie odpowiedział dla %1$s (%2$s). Sprawdź, czy serwer może "
+"połączyć się z wordpress.org, lub zainstaluj ją ręcznie."
+
+#: core/src/Plugins.php:145
+msgid "No download source is set for this plugin."
+msgstr "Dla tej wtyczki nie ustawiono źródła pobierania."
+
+#: core/src/Plugins.php:158
+msgid ""
+"The plugin could not be installed. The server may lack write access to wp-"
+"content/plugins."
+msgstr ""
+"Nie można zainstalować wtyczki. Serwer może nie mieć uprawnień zapisu do wp-"
+"content/plugins."
+
+#: core/src/Plugins.php:174
+msgid "Plugin is not installed."
+msgstr "Wtyczka nie jest zainstalowana."
+
+#: core/src/Plugins.php:208
+msgid "Your account is not allowed to delete plugins."
+msgstr "Twoje konto nie ma uprawnień do usuwania wtyczek."
+
+#: core/src/Rest.php:101
+msgid "Demo not found."
+msgstr "Nie znaleziono demo."
+
+#: core/src/Rest.php:158
+msgid "No imported demo was found."
+msgstr "Nie znaleziono zaimportowanego demo."
+
+#. translators: 1: demo, 2: count.
+#: core/src/Rest.php:164
+msgid "%1$s removed: %2$d items deleted and your previous settings restored."
+msgstr ""
+"Usunięto %1$s: skasowano elementy (%2$d) i przywrócono poprzednie "
+"ustawienia."
+
+#: core/src/Rest.php:191
+msgid "This plugin is not managed by WPEssential."
+msgstr "Ta wtyczka nie jest zarządzana przez WPEssential."
+
+#: core/src/Rest.php:323
+msgid "Branding can be changed with a White Label plan."
+msgstr "Branding można zmienić w planie White Label."
+
+#: core/src/Status.php:30
+msgid "WordPress version"
+msgstr "Wersja WordPressa"
+
+#: core/src/Status.php:33
+msgid "Update WordPress to 6.5 or newer."
+msgstr "Zaktualizuj WordPressa do wersji 6.5 lub nowszej."
+
+#: core/src/Status.php:37
+msgid "PHP version"
+msgstr "Wersja PHP"
+
+#: core/src/Status.php:40
+msgid ""
+"PHP 8.1 or newer is faster and still supported. Ask your host to upgrade."
+msgstr ""
+"PHP 8.1 lub nowszy jest szybszy i nadal wspierany. Poproś dostawcę hostingu "
+"o aktualizację."
+
+#: core/src/Status.php:44
+msgid "Memory limit"
+msgstr "Limit pamięci"
+
+#: core/src/Status.php:45 core/src/Status.php:52
+msgid "Unlimited"
+msgstr "Bez limitu"
+
+#: core/src/Status.php:47
+msgid ""
+"Set memory_limit to 256M in php.ini, or define WP_MEMORY_LIMIT in wp-"
+"config.php."
+msgstr ""
+"Ustaw memory_limit na 256M w php.ini lub zdefiniuj WP_MEMORY_LIMIT w wp-"
+"config.php."
+
+#: core/src/Status.php:51
+msgid "Max execution time"
+msgstr "Maksymalny czas wykonywania"
+
+#: core/src/Status.php:54
+msgid "The importer works in short batches, so 30 seconds is enough."
+msgstr "Importer działa w krótkich partiach, więc 30 sekund wystarczy."
+
+#: core/src/Status.php:58
+msgid "Max upload size"
+msgstr "Maksymalny rozmiar przesyłanego pliku"
+
+#: core/src/Status.php:61
+msgid "Raise upload_max_filesize and post_max_size to at least 8M."
+msgstr "Zwiększ upload_max_filesize i post_max_size do co najmniej 8M."
+
+#: core/src/Status.php:65
+msgid "Uploads folder"
+msgstr "Katalog uploads"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Writable"
+msgstr "Zapisywalny"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Not writable"
+msgstr "Niezapisywalny"
+
+#: core/src/Status.php:68
+msgid "Give the web server write access to wp-content/uploads."
+msgstr "Nadaj serwerowi WWW uprawnienia zapisu do wp-content/uploads."
+
+#: core/src/Status.php:72
+msgid "Plugins folder"
+msgstr "Katalog wtyczek"
+
+#: core/src/Status.php:75
+msgid "Without write access, required plugins must be installed by hand."
+msgstr "Bez uprawnień zapisu wymagane wtyczki trzeba zainstalować ręcznie."
+
+#: core/src/Status.php:79
+msgid "ZIP support"
+msgstr "Obsługa ZIP"
+
+#: core/src/Status.php:82
+msgid "Enable the PHP zip extension for faster package extraction."
+msgstr "Włącz rozszerzenie PHP zip, aby przyspieszyć rozpakowywanie pakietów."
+
+#: core/src/Status.php:86
+msgid "Image editor"
+msgstr "Edytor obrazków"
+
+#: core/src/Status.php:87
+msgid "WebP supported"
+msgstr "WebP obsługiwany"
+
+#: core/src/Status.php:87
+msgid "No WebP support"
+msgstr "Brak obsługi WebP"
+
+#: core/src/Status.php:89
+msgid ""
+"Images still import, but WordPress cannot create smaller sizes. Ask your "
+"host to enable Imagick or GD with WebP."
+msgstr ""
+"Obrazki nadal są importowane, ale WordPress nie może tworzyć mniejszych "
+"rozmiarów. Poproś dostawcę hostingu o włączenie Imagick lub GD z obsługą "
+"WebP."
+
+#: core/src/Status.php:93
+msgid "Permalinks"
+msgstr "Bezpośrednie odnośniki"
+
+#: core/src/Status.php:94
+msgid "Plain"
+msgstr "Prosty"
+
+#: core/src/Status.php:96
+msgid ""
+"Choose \"Post name\" under Settings → Permalinks for clean shop and page "
+"addresses."
+msgstr ""
+"Wybierz „Nazwa wpisu” w Ustawienia → Bezpośrednie odnośniki, aby uzyskać "
+"przejrzyste adresy sklepu i stron."
+
+#: core/src/Status.php:123 core/assets/admin.js:282
+msgid "Theme"
+msgstr "Motyw"
+
+#: core/src/Status.php:124
+msgid "Core module"
+msgstr "Moduł główny"
+
+#: core/src/Status.php:124
+msgid "plugin"
+msgstr "wtyczka"
+
+#: core/src/Status.php:124
+msgid "built into theme"
+msgstr "wbudowany w motyw"
+
+#: core/src/Status.php:125
+msgid "Site address"
+msgstr "Adres witryny"
+
+#: core/src/Status.php:126
+msgid "Multisite"
+msgstr "Multisite"
+
+#: core/src/Status.php:126
+msgid "Yes"
+msgstr "Tak"
+
+#: core/src/Status.php:126
+msgid "No"
+msgstr "Nie"
+
+#: core/src/Status.php:127
+msgid "Server"
+msgstr "Serwer"
+
+#: core/src/Status.php:128
+msgid "Database"
+msgstr "Baza danych"
+
+#: core/src/Status.php:129
+msgid "Active plugins"
+msgstr "Włączone wtyczki"
+
+#: inc/block-styles.php:16
+msgid "Secondary"
+msgstr "Drugorzędny"
+
+#: inc/block-styles.php:17
+msgid "Outline"
+msgstr "Kontur"
+
+#: inc/block-styles.php:18
+msgid "Ghost"
+msgstr "Przezroczysty"
+
+#: inc/block-styles.php:19
+msgid "Dark"
+msgstr "Ciemny"
+
+#: inc/block-styles.php:20
+msgid "Light (on dark)"
+msgstr "Jasny (na ciemnym)"
+
+#: inc/block-styles.php:21
+msgid "Text link"
+msgstr "Odnośnik tekstowy"
+
+#: inc/block-styles.php:22
+msgid "Pill"
+msgstr "Pigułka"
+
+#: inc/block-styles.php:23
+msgid "Large"
+msgstr "Duży"
+
+#: inc/block-styles.php:26 inc/block-styles.php:33
+msgid "Card"
+msgstr "Karta"
+
+#: inc/block-styles.php:27 inc/block-styles.php:34
+msgid "Card — flat"
+msgstr "Karta — płaska"
+
+#: inc/block-styles.php:28 inc/block-styles.php:35
+msgid "Card — dark"
+msgstr "Karta — ciemna"
+
+#: inc/block-styles.php:29
+msgid "Section — dark"
+msgstr "Sekcja — ciemna"
+
+#: inc/block-styles.php:30
+msgid "Logo strip"
+msgstr "Pasek logotypów"
+
+#: inc/block-styles.php:38
+msgid "Checklist"
+msgstr "Lista kontrolna"
+
+#: inc/block-styles.php:39
+msgid "Timeline"
+msgstr "Oś czasu"
+
+#: inc/block-styles.php:42
+msgid "Overline"
+msgstr "Nadtytuł"
+
+#: inc/block-styles.php:43
+msgid "Lead"
+msgstr "Wstęp"
+
+#: inc/block-styles.php:46
+msgid "Flush"
+msgstr "Bez odstępów"
+
+#: inc/block-styles.php:49
+msgid "Shadow"
+msgstr "Cień"
+
+#: inc/block-styles.php:50
+msgid "Glass frame"
+msgstr "Szklana ramka"
+
+#: inc/block-styles.php:53
+msgid "Pills"
+msgstr "Pigułki"
+
+#: inc/block-styles.php:54
+msgid "Hashtags"
+msgstr "Hashtagi"
+
+#: inc/block-styles.php:57
+msgid "Soft"
+msgstr "Delikatny"
+
+#: inc/core-bridge.php:53
+msgid ""
+"Install the WPEssential Core plugin to import one-click demos for Gutenberg "
+"or Elementor."
+msgstr ""
+"Zainstaluj wtyczkę WPEssential Core, aby importować dema jednym kliknięciem "
+"dla Gutenberga lub Elementora."
+
+#: inc/core-bridge.php:55
+msgid "Get WPEssential Core"
+msgstr "Pobierz WPEssential Core"
+
+#: inc/core-bridge.php:57
+msgid "Dismiss"
+msgstr "Odrzuć"
+
+#: inc/motion.php:21
+msgid "None"
+msgstr "Brak"
+
+#: inc/motion.php:22
+msgid "No animations."
+msgstr "Bez animacji."
+
+#: inc/motion.php:25
+msgid "Subtle"
+msgstr "Subtelny"
+
+#: inc/motion.php:26
+msgid "Short fade-up. Corporate, SaaS, finance, medical."
+msgstr "Krótkie pojawianie się od dołu. Firmy, SaaS, finanse, medycyna."
+
+#: inc/motion.php:29
+msgid "Editorial"
+msgstr "Redakcyjny"
+
+#: inc/motion.php:30
+msgid "Slow image masks and line reveals. Fashion, magazine, luxury."
+msgstr "Powolne maski obrazków i odsłanianie linii. Moda, magazyny, luksus."
+
+#: inc/motion.php:33
+msgid "Playful"
+msgstr "Zabawny"
+
+#: inc/motion.php:34
+msgid "Springy scale and stagger. Food, kids, events, creative."
+msgstr ""
+"Sprężyste skalowanie i kaskadowe pojawianie się. Gastronomia, dzieci, "
+"wydarzenia, branże kreatywne."
+
+#: inc/motion.php:37
+msgid "Dynamic (GSAP)"
+msgstr "Dynamiczny (GSAP)"
+
+#: inc/motion.php:38
+msgid ""
+"Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, "
+"sport, launches."
+msgstr ""
+"Paralaksa, liczniki i kaskadowe siatki z GSAP ScrollTrigger. Wydarzenia, "
+"sport, premiery."
+
+#: inc/multilingual.php:108
+msgid "Language"
+msgstr "Język"
+
+#: inc/multilingual.php:165
+msgid "Language switcher"
+msgstr "Przełącznik języka"
+
+#: inc/multilingual.php:245 inc/patterns-shop/shop-products.php:14
+msgid "Featured"
+msgstr "Wyróżnione"
+
+#: inc/multilingual.php:246
+msgid "Author"
+msgstr "Autor"
+
+#: inc/options.php:40
+msgid "Untitled snippet"
+msgstr "Fragment bez nazwy"
+
+#: inc/options.php:125 inc/options.php:215
+msgid "Theme Options"
+msgstr "Opcje motywu"
+
+#: inc/options.php:153
+msgid "Saved"
+msgstr "Zapisano"
+
+#: inc/options.php:154
+msgid "Could not save"
+msgstr "Nie udało się zapisać"
+
+#: inc/options.php:155
+msgid "Delete this snippet?"
+msgstr "Usunąć ten fragment kodu?"
+
+#: inc/options.php:156
+msgid ""
+"No snippets yet. Add CSS or JavaScript without editing theme files — it "
+"survives theme updates."
+msgstr ""
+"Brak fragmentów kodu. Dodaj CSS lub JavaScript bez edytowania plików motywu "
+"— przetrwa aktualizacje motywu."
+
+#: inc/options.php:215
+msgid "Loading…"
+msgstr "Wczytywanie…"
+
+#: inc/patterns-shop/shop-categories.php:13
+msgid "Shop by category"
+msgstr "Kupuj według kategorii"
+
+#: inc/patterns-shop/shop-categories.php:17
+msgid "Find what you love"
+msgstr "Znajdź to, co kochasz"
+
+#: inc/patterns-shop/shop-products.php:18
+msgid "Customer favourites"
+msgstr "Ulubione produkty klientów"
+
+#: inc/patterns-shop/shop-products.php:24
+msgid "View all products"
+msgstr "Zobacz wszystkie produkty"
+
+#: inc/patterns-shop/shop-products.php:34
+msgid "New arrivals"
+msgstr "Nowości"
+
+#: inc/patterns-shop/shop-products.php:42
+msgid "On sale now"
+msgstr "Teraz w promocji"
+
+#: inc/patterns.php:15
+msgid "WPEssential — Heroes"
+msgstr "WPEssential — Sekcje hero"
+
+#: inc/patterns.php:16
+msgid "WPEssential — Sections"
+msgstr "WPEssential — Sekcje"
+
+#: inc/patterns.php:17
+msgid "WPEssential — Headers"
+msgstr "WPEssential — Nagłówki"
+
+#: inc/patterns.php:18
+msgid "WPEssential — Footers"
+msgstr "WPEssential — Stopki"
+
+#: inc/patterns.php:19
+msgid "WPEssential — Full pages"
+msgstr "WPEssential — Pełne strony"
+
+#: inc/patterns.php:20
+msgid "WPEssential — Shop"
+msgstr "WPEssential — Sklep"
+
+#: inc/patterns.php:36
+msgid "Shop — Category grid"
+msgstr "Sklep — Siatka kategorii"
+
+#: inc/patterns.php:37
+msgid "Shop — Featured, new and sale products"
+msgstr "Sklep — Produkty wyróżnione, nowe i w promocji"
+
+#: inc/seo.php:136
+msgid "Home"
+msgstr "Strona główna"
+
+#: inc/setup.php:40
+msgid "Primary Menu"
+msgstr "Menu główne"
+
+#: inc/setup.php:41
+msgid "Mobile Menu"
+msgstr "Menu mobilne"
+
+#: inc/setup.php:42
+msgid "Footer Menu"
+msgstr "Menu stopki"
+
+#: inc/setup.php:43
+msgid "Top Bar Menu"
+msgstr "Menu górnego paska"
+
+#: inc/setup.php:77
+msgid "Back to top"
+msgstr "Powrót na górę"
+
+#. translators: %d: discount percentage.
+#: inc/woocommerce.php:48
+msgid "-%d%%"
+msgstr "-%d%%"
+
+#: inc/woocommerce.php:89
+msgid "Out of stock"
+msgstr "Brak w magazynie"
+
+#: inc/woocommerce.php:136
+msgid "You’ve unlocked free shipping on this order!"
+msgstr "Masz darmową wysyłkę dla tego zamówienia!"
+
+#. translators: %s: amount left for free shipping.
+#: inc/woocommerce.php:139
+msgid "Add %s more to unlock free shipping."
+msgstr "Dodaj produkty za %s, aby otrzymać darmową wysyłkę."
+
+#: patterns/blog-hero.php
+msgctxt "Pattern title"
+msgid "Blog hero"
+msgstr "Hero bloga"
+
+#: patterns/blog-hero.php:14 patterns/footer-premium.php:89
+#: patterns/footer-simple.php:18 core/assets/admin.js:301
+msgid "Blog"
+msgstr "Blog"
+
+#: patterns/blog-hero.php:18
+msgid "Guides, tutorials and product news from the WPEssential team."
+msgstr "Poradniki, samouczki i nowości produktowe od zespołu WPEssential."
+
+#: patterns/builders-split.php
+msgctxt "Pattern title"
+msgid "Split — image + checklist (dark)"
+msgstr "Podział — obrazek + lista kontrolna (ciemny)"
+
+#: patterns/builders-split.php:16
+msgid "Your builder, your choice"
+msgstr "Twój kreator, Twój wybór"
+
+#: patterns/builders-split.php:20
+msgid "Same design. Gutenberg or Elementor."
+msgstr "Ten sam wygląd. Gutenberg lub Elementor."
+
+#: patterns/builders-split.php:24
+msgid ""
+"Colors, fonts and spacing come from one theme.json and sync into Elementor’s"
+" global kit automatically."
+msgstr ""
+"Kolory, kroje pisma i odstępy pochodzą z jednego pliku theme.json i "
+"automatycznie synchronizują się z globalnym zestawem Elementora."
+
+#: patterns/builders-split.php:29
+msgid "Shared design tokens across both builders"
+msgstr "Wspólne tokeny projektowe w obu kreatorach"
+
+#: patterns/builders-split.php:31
+msgid "Elementor Pro Theme Builder locations supported"
+msgstr "Obsługa lokalizacji Elementor Pro Theme Builder"
+
+#: patterns/builders-split.php:33
+msgid "Full Site Editing templates and patterns"
+msgstr "Szablony i wzorce Full Site Editing"
+
+#: patterns/builders-split.php:40
+msgid "Designer building a site"
+msgstr "Projektant tworzący witrynę"
+
+#: patterns/coming-soon.php
+msgctxt "Pattern title"
+msgid "Coming soon"
+msgstr "Wkrótce"
+
+#: patterns/coming-soon.php:17
+msgid "Something great is on the way"
+msgstr "Nadchodzi coś wspaniałego"
+
+#: patterns/coming-soon.php:21
+msgid "We are polishing the final details. Follow us for launch news."
+msgstr ""
+"Dopracowujemy ostatnie szczegóły. Obserwuj nas, aby nie przegapić premiery."
+
+#: patterns/comments.php
+msgctxt "Pattern title"
+msgid "Comments"
+msgstr "Komentarze"
+
+#: patterns/contact.php
+msgctxt "Pattern title"
+msgid "Contact — details + form area"
+msgstr "Kontakt — dane + obszar formularza"
+
+#: patterns/contact.php:22
+msgid "Email us"
+msgstr "Napisz do nas"
+
+#: patterns/contact.php:36
+msgid "Call us"
+msgstr "Zadzwoń do nas"
+
+#: patterns/contact.php:50
+msgid "Visit us"
+msgstr "Odwiedź nas"
+
+#: patterns/contact.php:64
+msgid "Support hours"
+msgstr "Godziny wsparcia"
+
+#: patterns/contact.php:68
+msgid "Replies within one business day"
+msgstr "Odpowiadamy w ciągu jednego dnia roboczego"
+
+#: patterns/contact.php:76
+msgid "Send us a message"
+msgstr "Wyślij nam wiadomość"
+
+#: patterns/contact.php:80
+msgid ""
+"Replace the shortcode below with your form plugin (Contact Form 7, WPForms, "
+"Fluent Forms or the Elementor Form widget)."
+msgstr ""
+"Zastąp poniższy shortcode wtyczką formularzy (Contact Form 7, WPForms, "
+"Fluent Forms lub widżetem Elementor Form)."
+
+#: patterns/content-404.php
+msgctxt "Pattern title"
+msgid "404 content"
+msgstr "Treść 404"
+
+#: patterns/content-404.php:14
+msgid "Error 404"
+msgstr "Błąd 404"
+
+#: patterns/content-404.php:18
+msgid "This page took a day off"
+msgstr "Ta strona wzięła dzień wolny"
+
+#: patterns/content-404.php:22
+msgid ""
+"The link may be broken or the page may have moved. Try a search or head back"
+" home."
+msgstr ""
+"Odnośnik może być nieprawidłowy lub strona została przeniesiona. Spróbuj "
+"wyszukać lub wróć na stronę główną."
+
+#: patterns/content-404.php:25 patterns/header-actions.php:14
+#: patterns/header-shop.php:22 patterns/sidebar.php:14
+msgid "Search"
+msgstr "Szukaj"
+
+#: patterns/content-404.php:29
+msgid "Back to home"
+msgstr "Powrót na stronę główną"
+
+#: patterns/cta-banner.php
+msgctxt "Pattern title"
+msgid "Call to action — gradient banner"
+msgstr "Wezwanie do działania — baner z gradientem"
+
+#: patterns/cta-banner.php:15
+msgid "Ready to launch your next site?"
+msgstr "Gotowy, by uruchomić kolejną witrynę?"
+
+#: patterns/cta-banner.php:19
+msgid ""
+"Start free. Upgrade to Pro when you need premium demos and priority support."
+msgstr ""
+"Zacznij za darmo. Przejdź na Pro, gdy potrzebujesz demo premium i "
+"priorytetowego wsparcia."
+
+#: patterns/cta-banner.php:24
+msgid "Get WPEssential free"
+msgstr "Pobierz WPEssential za darmo"
+
+#: patterns/cta-banner.php:28
+msgid "See Pro plans →"
+msgstr "Zobacz plany Pro →"
+
+#: patterns/faq.php
+msgctxt "Pattern title"
+msgid "FAQ — accordion"
+msgstr "FAQ — akordeon"
+
+#: patterns/faq.php:15 patterns/footer-premium.php:90
+msgid "FAQ"
+msgstr "FAQ"
+
+#: patterns/faq.php:19 patterns/page-faq.php:20
+msgid "Frequently asked questions"
+msgstr "Często zadawane pytania"
+
+#: patterns/faq.php:24
+msgid "Is WPEssential free?"
+msgstr "Czy WPEssential jest darmowy?"
+
+#: patterns/faq.php:25
+msgid ""
+"Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium"
+" blocks and priority support."
+msgstr ""
+"Tak. Motyw i 12 dem są darmowe na zawsze. Pro odblokowuje ponad 40 dem, "
+"bloki premium i priorytetowe wsparcie."
+
+#: patterns/faq.php:30
+msgid "Which page builders are supported?"
+msgstr "Które kreatory stron są obsługiwane?"
+
+#: patterns/faq.php:31
+msgid ""
+"The native block editor (Gutenberg) and Elementor. Every demo ships in both "
+"versions."
+msgstr ""
+"Natywny edytor blokowy (Gutenberg) i Elementor. Każde demo jest dostępne w "
+"obu wersjach."
+
+#: patterns/faq.php:36
+msgid "Will importing a demo delete my content?"
+msgstr "Czy import demo usunie moje treści?"
+
+#: patterns/faq.php:37
+msgid ""
+"No. Demo content is added alongside your existing posts, and you choose what"
+" to import."
+msgstr ""
+"Nie. Treści demo są dodawane obok istniejących wpisów, a Ty wybierasz, co "
+"zaimportować."
+
+#: patterns/faq.php:42
+msgid "Do I need Elementor Pro?"
+msgstr "Czy potrzebuję Elementor Pro?"
+
+#: patterns/faq.php:43
+msgid ""
+"No. Elementor free is enough for every demo. Elementor Pro Theme Builder "
+"headers and footers are also supported."
+msgstr ""
+"Nie. Darmowy Elementor wystarczy do każdego demo. Obsługiwane są też "
+"nagłówki i stopki z Elementor Pro Theme Builder."
+
+#: patterns/faq.php:48
+msgid "Is the theme translation-ready and RTL compatible?"
+msgstr "Czy motyw jest gotowy do tłumaczenia i zgodny z RTL?"
+
+#: patterns/faq.php:49
+msgid ""
+"Yes. All strings are translatable and layouts mirror correctly for languages"
+" such as Urdu and Arabic."
+msgstr ""
+"Tak. Wszystkie teksty można przetłumaczyć, a układy poprawnie odwracają się "
+"dla języków takich jak urdu i arabski."
+
+#: patterns/features-grid.php
+msgctxt "Pattern title"
+msgid "Features — 3×2 grid"
+msgstr "Funkcje — siatka 3×2"
+
+#: patterns/features-grid.php:15
+msgid "Why WPEssential"
+msgstr "Dlaczego WPEssential"
+
+#: patterns/features-grid.php:19
+msgid "Everything a modern site needs, nothing it doesn’t"
+msgstr "Wszystko, czego potrzebuje nowoczesna witryna, nic zbędnego"
+
+#: patterns/features-grid.php:23
+msgid ""
+"Built on theme.json and native blocks, with first-class Elementor support."
+msgstr ""
+"Zbudowany na theme.json i natywnych blokach, z pełnoprawną obsługą "
+"Elementora."
+
+#: patterns/features-grid.php:34
+msgid "One-click demo import"
+msgstr "Import demo jednym kliknięciem"
+
+#: patterns/features-grid.php:38
+msgid ""
+"Pick a demo, choose your builder, import. Content and settings land exactly "
+"as previewed."
+msgstr ""
+"Wybierz demo, wybierz kreator, zaimportuj. Treści i ustawienia wyglądają "
+"dokładnie jak w podglądzie."
+
+#: patterns/features-grid.php:48
+msgid "Gutenberg &amp; Elementor"
+msgstr "Gutenberg &amp; Elementor"
+
+#: patterns/features-grid.php:52
+msgid ""
+"Every demo ships twice — native blocks and Elementor — sharing one set of "
+"design tokens."
+msgstr ""
+"Każde demo występuje w dwóch wersjach — natywne bloki i Elementor — ze "
+"wspólnym zestawem tokenów projektowych."
+
+#: patterns/features-grid.php:62
+msgid "Blazing fast"
+msgstr "Błyskawicznie szybki"
+
+#: patterns/features-grid.php:66
+msgid ""
+"No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
+msgstr ""
+"Brak jQuery, CSS ładowany per blok i mały arkusz stylów utrzymują Core Web "
+"Vitals na zielono."
+
+#: patterns/features-grid.php:78
+msgid "Automatic plugin setup"
+msgstr "Automatyczna konfiguracja wtyczek"
+
+#: patterns/features-grid.php:82
+msgid ""
+"Required plugins install and activate themselves when you import a demo."
+msgstr "Wymagane wtyczki instalują się i włączają same podczas importu demo."
+
+#: patterns/features-grid.php:92
+msgid "WooCommerce ready"
+msgstr "Gotowy na WooCommerce"
+
+#: patterns/features-grid.php:96
+msgid ""
+"Designed shop, product, cart, checkout and account pages — not default "
+"templates."
+msgstr ""
+"Zaprojektowane strony sklepu, produktu, koszyka, zamówienia i konta — nie "
+"domyślne szablony."
+
+#: patterns/features-grid.php:106
+msgid "Pro license &amp; updates"
+msgstr "Licencja Pro &amp; aktualizacje"
+
+#: patterns/features-grid.php:110
+msgid ""
+"Connect a license once to unlock Pro demos, premium blocks and updates."
+msgstr ""
+"Połącz licencję raz, aby odblokować dema Pro, bloki premium i aktualizacje."
+
+#: patterns/footer-premium.php
+msgctxt "Pattern title"
+msgid "Footer — Premium (dark, newsletter band)"
+msgstr "Stopka — Premium (ciemna, pasek newslettera)"
+
+#: patterns/footer-premium.php:17
+msgid "Get design tips & new demos"
+msgstr "Otrzymuj porady projektowe i nowe dema"
+
+#: patterns/footer-premium.php:21
+msgid "One email a month. No spam, unsubscribe anytime."
+msgstr ""
+"Jeden e-mail w miesiącu. Bez spamu, możesz zrezygnować w każdej chwili."
+
+#: patterns/footer-premium.php:28
+msgid "Subscribe"
+msgstr "Subskrybuj"
+
+#: patterns/footer-premium.php:55
+msgid "Company"
+msgstr "Firma"
+
+#: patterns/footer-premium.php:59 patterns/page-about.php:16
+msgid "About us"
+msgstr "O nas"
+
+#: patterns/footer-premium.php:60 patterns/page-services.php:16
+#: patterns/services-grid.php:15
+msgid "Services"
+msgstr "Usługi"
+
+#: patterns/footer-premium.php:61 patterns/page-pricing.php:16
+#: patterns/pricing.php:15
+msgid "Pricing"
+msgstr "Cennik"
+
+#: patterns/footer-premium.php:62 patterns/footer-simple.php:19
+#: patterns/header-topbar.php:18 patterns/page-contact.php:16
+msgid "Contact"
+msgstr "Kontakt"
+
+#: patterns/footer-premium.php:70 core/assets/admin.js:301
+msgid "Shop"
+msgstr "Sklep"
+
+#: patterns/footer-premium.php:74
+msgid "All products"
+msgstr "Wszystkie produkty"
+
+#: patterns/footer-premium.php:75
+msgid "My account"
+msgstr "Moje konto"
+
+#: patterns/footer-premium.php:76
+msgid "Cart"
+msgstr "Koszyk"
+
+#: patterns/footer-premium.php:77 patterns/header-topbar.php:18
+msgid "Track order"
+msgstr "Śledź zamówienie"
+
+#: patterns/footer-premium.php:85 core/assets/admin.js:263
+msgid "Resources"
+msgstr "Zasoby"
+
+#: patterns/footer-premium.php:91 core/assets/admin.js:266
+msgid "Documentation"
+msgstr "Dokumentacja"
+
+#: patterns/footer-premium.php:92 core/assets/admin.js:267
+msgid "Support"
+msgstr "Wsparcie"
+
+#: patterns/footer-premium.php:100
+msgid "All rights reserved."
+msgstr "Wszelkie prawa zastrzeżone."
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:20
+msgid "Privacy"
+msgstr "Prywatność"
+
+#: patterns/footer-premium.php:104
+msgid "Terms"
+msgstr "Regulamin"
+
+#: patterns/footer-simple.php
+msgctxt "Pattern title"
+msgid "Footer — Simple"
+msgstr "Stopka — Prosta"
+
+#: patterns/footer-simple.php:17
+msgid "About"
+msgstr "O nas"
+
+#: patterns/header-actions.php
+msgctxt "Pattern title"
+msgid "Header actions (search, account, cart, CTA)"
+msgstr "Akcje nagłówka (wyszukiwanie, konto, koszyk, CTA)"
+
+#: patterns/header-actions.php:23
+msgid "Switch to dark mode"
+msgstr "Przełącz na tryb ciemny"
+
+#: patterns/header-actions.php:23
+msgid "Switch to light mode"
+msgstr "Przełącz na tryb jasny"
+
+#: patterns/header-actions.php:29
+msgid "Get Started"
+msgstr "Zacznij teraz"
+
+#: patterns/header-centered.php
+msgctxt "Pattern title"
+msgid "Header — Centered"
+msgstr "Nagłówek — Wyśrodkowany"
+
+#: patterns/header-default.php
+msgctxt "Pattern title"
+msgid "Header — Default"
+msgstr "Nagłówek — Domyślny"
+
+#: patterns/header-shop.php
+msgctxt "Pattern title"
+msgid "Header — Shop (search + account + cart)"
+msgstr "Nagłówek — Sklep (wyszukiwanie + konto + koszyk)"
+
+#: patterns/header-shop.php:22
+msgid "Search products"
+msgstr "Szukaj produktów"
+
+#: patterns/header-shop.php:22
+msgid "Search products, brands and more…"
+msgstr "Szukaj produktów, marek i nie tylko…"
+
+#: patterns/header-topbar.php
+msgctxt "Pattern title"
+msgid "Top bar"
+msgstr "Górny pasek"
+
+#: patterns/header-topbar.php:14
+msgid "Free shipping on orders over $75 · 30-day returns"
+msgstr "Darmowa wysyłka dla zamówień powyżej 75 $ · 30 dni na zwrot"
+
+#: patterns/header-topbar.php:18
+msgid "Help"
+msgstr "Pomoc"
+
+#: patterns/header-transparent.php
+msgctxt "Pattern title"
+msgid "Header — Transparent (over dark hero)"
+msgstr "Nagłówek — Przezroczysty (na ciemnej sekcji hero)"
+
+#: patterns/hero-dark.php
+msgctxt "Pattern title"
+msgid "Hero — Dark with product shot"
+msgstr "Hero — Ciemny ze zdjęciem produktu"
+
+#: patterns/hero-dark.php:15 core/assets/admin.js:241
+msgid "NEW"
+msgstr "NOWOŚĆ"
+
+#: patterns/hero-dark.php:15
+msgid "40+ demos for Gutenberg &amp; Elementor"
+msgstr "Ponad 40 dem dla Gutenberga &amp; Elementora"
+
+#: patterns/hero-dark.php:19
+msgid "Launch a premium WordPress site in minutes, not weeks"
+msgstr "Uruchom witrynę WordPress premium w kilka minut, a nie tygodni"
+
+#: patterns/hero-dark.php:23
+msgid ""
+"One-click demos for every niche, built natively for both the block editor "
+"and Elementor — fast, accessible and fully yours."
+msgstr ""
+"Dema instalowane jednym kliknięciem dla każdej branży, zbudowane natywnie "
+"dla edytora blokowego i Elementora — szybkie, dostępne i w pełni Twoje."
+
+#: patterns/hero-dark.php:28 core/assets/admin.js:245
+msgid "Browse demos"
+msgstr "Przeglądaj dema"
+
+#: patterns/hero-dark.php:32
+msgid "Watch the 2-min tour"
+msgstr "Obejrzyj 2-minutową prezentację"
+
+#: patterns/hero-dark.php:43 patterns/stats.php:28
+msgid "Ready demos"
+msgstr "Gotowe dema"
+
+#: patterns/hero-dark.php:53
+msgid "Page builders"
+msgstr "Kreatory stron"
+
+#: patterns/hero-dark.php:63
+msgid "CSS on first load"
+msgstr "CSS przy pierwszym wczytaniu"
+
+#: patterns/hero-dark.php:73
+msgid "From 1,200 reviews"
+msgstr "Na podstawie 1200 opinii"
+
+#: patterns/hero-dark.php:80
+msgid "Business demo homepage built with WPEssential"
+msgstr "Strona główna demo firmowego zbudowana z WPEssential"
+
+#: patterns/hero-split.php
+msgctxt "Pattern title"
+msgid "Hero — Split with image"
+msgstr "Hero — Podział z obrazkiem"
+
+#: patterns/hero-split.php:17
+msgid "Multi-niche WordPress theme"
+msgstr "Uniwersalny motyw WordPress"
+
+#: patterns/hero-split.php:21
+msgid "Build any website in minutes"
+msgstr "Zbuduj dowolną witrynę w kilka minut"
+
+#: patterns/hero-split.php:25
+msgid ""
+"Import a ready-made demo for Gutenberg or Elementor with one click, then "
+"make it yours."
+msgstr ""
+"Zaimportuj gotowe demo dla Gutenberga lub Elementora jednym kliknięciem i "
+"dostosuj je do siebie."
+
+#: patterns/hero-split.php:30 core/assets/admin.js:258
+msgid "Get started"
+msgstr "Zacznij teraz"
+
+#: patterns/hero-split.php:34
+msgid "Learn more"
+msgstr "Dowiedz się więcej"
+
+#: patterns/hero-split.php:41
+msgid "A WPEssential site on a laptop and phone"
+msgstr "Witryna WPEssential na laptopie i telefonie"
+
+#: patterns/latest-posts.php
+msgctxt "Pattern title"
+msgid "Latest posts — 3 cards"
+msgstr "Najnowsze wpisy — 3 karty"
+
+#: patterns/latest-posts.php:15
+msgid "From the blog"
+msgstr "Z bloga"
+
+#: patterns/latest-posts.php:19
+msgid "Guides for faster, better WordPress sites"
+msgstr "Poradniki dla szybszych i lepszych witryn WordPress"
+
+#: patterns/logos.php
+msgctxt "Pattern title"
+msgid "Logo strip"
+msgstr "Pasek logotypów"
+
+#: patterns/logos.php:14
+msgid "Trusted by 18,000+ agencies, stores and creators"
+msgstr "Zaufało nam ponad 18 000 agencji, sklepów i twórców"
+
+#: patterns/maintenance.php
+msgctxt "Pattern title"
+msgid "Maintenance mode"
+msgstr "Tryb konserwacji"
+
+#: patterns/maintenance.php:17
+msgid "We will be back shortly"
+msgstr "Wkrótce wracamy"
+
+#: patterns/maintenance.php:21
+msgid ""
+"Scheduled maintenance is underway. Thanks for your patience — we will be "
+"back online in a few minutes."
+msgstr ""
+"Trwa zaplanowana konserwacja. Dziękujemy za cierpliwość — wrócimy online za "
+"kilka minut."
+
+#: patterns/no-results.php
+msgctxt "Pattern title"
+msgid "No results"
+msgstr "Brak wyników"
+
+#: patterns/no-results.php:13
+msgid "Nothing matched. Try a different search or browse the latest posts."
+msgstr ""
+"Nic nie pasuje. Spróbuj innego wyszukiwania lub przejrzyj najnowsze wpisy."
+
+#: patterns/page-about.php
+msgctxt "Pattern title"
+msgid "About page"
+msgstr "Strona O nas"
+
+#: patterns/page-about.php:20
+msgid "We build WordPress tools that feel premium and stay fast"
+msgstr ""
+"Tworzymy narzędzia WordPress, które wyglądają premium i pozostają szybkie"
+
+#: patterns/page-about.php:24
+msgid ""
+"WPEssential started as an internal starter theme for client work. Today it "
+"powers stores, agencies and creators in more than 60 countries."
+msgstr ""
+"WPEssential powstał jako wewnętrzny motyw startowy do projektów dla "
+"klientów. Dziś napędza sklepy, agencje i twórców w ponad 60 krajach."
+
+#: patterns/page-contact.php
+msgctxt "Pattern title"
+msgid "Contact page"
+msgstr "Strona kontaktowa"
+
+#: patterns/page-contact.php:20
+msgid "Let’s talk about your next site"
+msgstr "Porozmawiajmy o Twojej kolejnej witrynie"
+
+#: patterns/page-contact.php:24
+msgid ""
+"Questions about demos, licensing or a custom build? Our team replies within "
+"one business day."
+msgstr ""
+"Pytania o dema, licencje lub projekt na zamówienie? Nasz zespół odpowiada w "
+"ciągu jednego dnia roboczego."
+
+#: patterns/page-faq.php
+msgctxt "Pattern title"
+msgid "FAQ page"
+msgstr "Strona FAQ"
+
+#: patterns/page-faq.php:16
+msgid "Help center"
+msgstr "Centrum pomocy"
+
+#: patterns/page-faq.php:24
+msgid ""
+"Answers about demos, builders, licensing and updates. Can’t find what you "
+"need? Contact support."
+msgstr ""
+"Odpowiedzi na temat dem, kreatorów, licencji i aktualizacji. Nie możesz "
+"znaleźć tego, czego szukasz? Skontaktuj się z pomocą techniczną."
+
+#: patterns/page-hero.php
+msgctxt "Pattern title"
+msgid "Page title band"
+msgstr "Pasek tytułu strony"
+
+#: patterns/page-pricing.php
+msgctxt "Pattern title"
+msgid "Pricing page"
+msgstr "Strona cennika"
+
+#: patterns/page-pricing.php:20
+msgid "Simple plans that grow with you"
+msgstr "Proste plany, które rosną razem z Tobą"
+
+#: patterns/page-pricing.php:24
+msgid ""
+"Start free with the core theme. Upgrade for premium demos, Pro blocks and "
+"priority support."
+msgstr ""
+"Zacznij za darmo z motywem podstawowym. Przejdź wyżej, aby uzyskać dema "
+"premium, bloki Pro i priorytetowe wsparcie."
+
+#: patterns/page-services.php
+msgctxt "Pattern title"
+msgid "Services page"
+msgstr "Strona usług"
+
+#: patterns/page-services.php:20
+msgid "Everything you need to launch and grow"
+msgstr "Wszystko, czego potrzebujesz, by wystartować i się rozwijać"
+
+#: patterns/page-services.php:24
+msgid ""
+"Strategy, design, development and care plans — delivered on a theme built "
+"for speed."
+msgstr ""
+"Strategia, projekt, wdrożenie i plany opieki — na motywie stworzonym z myślą"
+" o szybkości."
+
+#: patterns/post-card.php
+msgctxt "Pattern title"
+msgid "Post card"
+msgstr "Karta wpisu"
+
+#: patterns/pricing.php
+msgctxt "Pattern title"
+msgid "Pricing — 3 plans"
+msgstr "Cennik — 3 plany"
+
+#: patterns/pricing.php:19
+msgid "Simple pricing. Both builders included."
+msgstr "Prosty cennik. Oba kreatory w zestawie."
+
+#: patterns/pricing.php:23
+msgid ""
+"Start free and upgrade when you need Pro demos, premium blocks and priority "
+"support."
+msgstr ""
+"Zacznij za darmo i przejdź wyżej, gdy potrzebujesz dem Pro, bloków premium i"
+" priorytetowego wsparcia."
+
+#: patterns/pricing.php:30 core/assets/admin.js:312
+msgid "Free"
+msgstr "Darmowy"
+
+#: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+msgid "/ year"
+msgstr "/ rok"
+
+#: patterns/pricing.php:38
+msgid "For personal sites getting started."
+msgstr "Dla witryn osobistych na start."
+
+#: patterns/pricing.php:43
+msgid "12 free demos"
+msgstr "12 darmowych dem"
+
+#: patterns/pricing.php:45
+msgid "Gutenberg + Elementor"
+msgstr "Gutenberg + Elementor"
+
+#: patterns/pricing.php:47
+msgid "Core blocks &amp; patterns"
+msgstr "Podstawowe bloki &amp; wzorce"
+
+#: patterns/pricing.php:49
+msgid "Community support"
+msgstr "Wsparcie społeczności"
+
+#: patterns/pricing.php:55
+msgid "Download free"
+msgstr "Pobierz za darmo"
+
+#: patterns/pricing.php:60 core/assets/admin.js:312
+msgid "Pro"
+msgstr "Pro"
+
+#: patterns/pricing.php:68
+msgid "For freelancers and growing businesses."
+msgstr "Dla freelancerów i rozwijających się firm."
+
+#: patterns/pricing.php:73
+msgid "All 40+ demos"
+msgstr "Wszystkie 40+ dem"
+
+#: patterns/pricing.php:75
+msgid "Premium blocks &amp; widgets"
+msgstr "Bloki &amp; widżety premium"
+
+#: patterns/pricing.php:77
+msgid "WooCommerce demos"
+msgstr "Dema WooCommerce"
+
+#: patterns/pricing.php:79
+msgid "1 year of updates"
+msgstr "1 rok aktualizacji"
+
+#: patterns/pricing.php:81 core/assets/admin.js:1122
+msgid "Priority support"
+msgstr "Priorytetowe wsparcie"
+
+#: patterns/pricing.php:87
+msgid "Get Pro"
+msgstr "Kup Pro"
+
+#: patterns/pricing.php:92 core/assets/admin.js:301
+msgid "Agency"
+msgstr "Agencja"
+
+#: patterns/pricing.php:100
+msgid "For teams building client sites."
+msgstr "Dla zespołów tworzących witryny dla klientów."
+
+#: patterns/pricing.php:105
+msgid "Everything in Pro"
+msgstr "Wszystko z planu Pro"
+
+#: patterns/pricing.php:107
+msgid "Unlimited sites"
+msgstr "Nieograniczona liczba witryn"
+
+#: patterns/pricing.php:109
+msgid "White-label dashboard"
+msgstr "Kokpit white-label"
+
+#: patterns/pricing.php:111
+msgid "Client handoff kit"
+msgstr "Zestaw do przekazania klientowi"
+
+#: patterns/pricing.php:117
+msgid "Get Agency"
+msgstr "Kup plan Agencja"
+
+#: patterns/process-steps.php
+msgctxt "Pattern title"
+msgid "Process — 4 steps (dark)"
+msgstr "Proces — 4 kroki (ciemny)"
+
+#: patterns/process-steps.php:15
+msgid "How it works"
+msgstr "Jak to działa"
+
+#: patterns/process-steps.php:19
+msgid "Live in four simple steps"
+msgstr "Online w czterech prostych krokach"
+
+#: patterns/process-steps.php:31
+msgid "Pick a demo"
+msgstr "Wybierz demo"
+
+#: patterns/process-steps.php:35
+msgid "Browse 40+ demos and preview them live."
+msgstr "Przejrzyj ponad 40 dem i zobacz je na żywo."
+
+#: patterns/process-steps.php:43
+msgid "Choose a builder"
+msgstr "Wybierz kreator"
+
+#: patterns/process-steps.php:47
+msgid "Gutenberg or Elementor — same design."
+msgstr "Gutenberg lub Elementor — ten sam wygląd."
+
+#: patterns/process-steps.php:55
+msgid "Import in one click"
+msgstr "Importuj jednym kliknięciem"
+
+#: patterns/process-steps.php:59
+msgid "Plugins, content and settings are set up for you."
+msgstr "Wtyczki, treści i ustawienia zostaną skonfigurowane za Ciebie."
+
+#: patterns/process-steps.php:67 core/assets/admin.js:290
+msgid "Make it yours"
+msgstr "Dostosuj do siebie"
+
+#: patterns/process-steps.php:71
+msgid "Edit text, swap images and publish."
+msgstr "Edytuj teksty, podmień obrazki i opublikuj."
+
+#: patterns/services-grid.php
+msgctxt "Pattern title"
+msgid "Services — 3 column cards"
+msgstr "Usługi — karty w 3 kolumnach"
+
+#: patterns/services-grid.php:19
+msgid "From idea to launch"
+msgstr "Od pomysłu do startu"
+
+#: patterns/services-grid.php:23
+msgid ""
+"Use WPEssential yourself, or let our team set up, customise and maintain "
+"your site."
+msgstr ""
+"Korzystaj z WPEssential samodzielnie lub pozwól naszemu zespołowi "
+"skonfigurować, dostosować i utrzymywać Twoją witrynę."
+
+#: patterns/services-grid.php:34
+msgid "Demo setup"
+msgstr "Konfiguracja demo"
+
+#: patterns/services-grid.php:38
+msgid "We import your chosen demo, connect your domain and configure plugins."
+msgstr "Importujemy wybrane demo, podłączamy domenę i konfigurujemy wtyczki."
+
+#: patterns/services-grid.php:48
+msgid "Brand customisation"
+msgstr "Dostosowanie do marki"
+
+#: patterns/services-grid.php:52
+msgid "Your colors, fonts, logo and copy applied across every template."
+msgstr ""
+"Twoje kolory, kroje pisma, logo i teksty zastosowane we wszystkich "
+"szablonach."
+
+#: patterns/services-grid.php:62
+msgid "WooCommerce launch"
+msgstr "Uruchomienie WooCommerce"
+
+#: patterns/services-grid.php:66
+msgid "Products, payments, shipping zones and emails configured and tested."
+msgstr ""
+"Produkty, płatności, strefy wysyłki i e-maile skonfigurowane i "
+"przetestowane."
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Blog sidebar"
+msgstr "Panel boczny bloga"
+
+#: patterns/sidebar.php:19
+msgid "Categories"
+msgstr "Kategorie"
+
+#: patterns/sidebar.php:27
+msgid "Recent posts"
+msgstr "Najnowsze wpisy"
+
+#: patterns/sidebar.php:35
+msgid "Tags"
+msgstr "Tagi"
+
+#: patterns/stats.php
+msgctxt "Pattern title"
+msgid "Stats — 4 counters"
+msgstr "Statystyki — 4 liczniki"
+
+#: patterns/stats.php:20
+msgid "Active installs"
+msgstr "Aktywne instalacje"
+
+#: patterns/stats.php:36
+msgid "Average rating"
+msgstr "Średnia ocena"
+
+#: patterns/stats.php:44
+msgid "Support response"
+msgstr "Czas odpowiedzi wsparcia"
+
+#: patterns/team.php
+msgctxt "Pattern title"
+msgid "Team — 4 members"
+msgstr "Zespół — 4 osoby"
+
+#: patterns/team.php:15
+msgid "The team"
+msgstr "Zespół"
+
+#: patterns/team.php:19
+msgid "People behind WPEssential"
+msgstr "Ludzie stojący za WPEssential"
+
+#: patterns/team.php:35
+msgid "Founder &amp; Lead Designer"
+msgstr "Założyciel &amp; główny projektant"
+
+#: patterns/team.php:47
+msgid "Head of Engineering"
+msgstr "Szef zespołu inżynierów"
+
+#: patterns/team.php:59
+msgid "Customer Success"
+msgstr "Obsługa klienta"
+
+#: patterns/team.php:71
+msgid "WooCommerce Specialist"
+msgstr "Specjalista WooCommerce"
+
+#: patterns/testimonials.php
+msgctxt "Pattern title"
+msgid "Testimonials — 3 cards"
+msgstr "Opinie — 3 karty"
+
+#: patterns/testimonials.php:15
+msgid "Loved by builders"
+msgstr "Uwielbiany przez twórców"
+
+#: patterns/testimonials.php:19
+msgid "What our customers say"
+msgstr "Co mówią nasi klienci"
+
+#: patterns/testimonials.php:31
+msgid ""
+"We rebuilt three client sites on WPEssential in a week. The Elementor and "
+"block versions matching exactly is a game changer."
+msgstr ""
+"W tydzień przebudowaliśmy trzy witryny klientów na WPEssential. Idealnie "
+"zgodne wersje dla Elementora i bloków to przełom."
+
+#: patterns/testimonials.php:35
+msgid "Founder, Kitecraft Agency"
+msgstr "Założyciel, Kitecraft Agency"
+
+#: patterns/testimonials.php:43
+msgid ""
+"Our store went from 3.9s to 1.2s load time. Checkout pages look custom out "
+"of the box."
+msgstr ""
+"Czas ładowania naszego sklepu spadł z 3,9 s do 1,2 s. Strony zamówienia od "
+"razu wyglądają jak projektowane na zamówienie."
+
+#: patterns/testimonials.php:47
+msgid "Owner, Fieldhouse Goods"
+msgstr "Właściciel, Fieldhouse Goods"
+
+#: patterns/testimonials.php:55
+msgid ""
+"The demo import just works — plugins, menus, homepage. I spend my time on "
+"content now, not setup."
+msgstr ""
+"Import demo po prostu działa — wtyczki, menu, strona główna. Teraz poświęcam"
+" czas na treści, a nie na konfigurację."
+
+#: patterns/testimonials.php:59
+msgid "Writer, The Quiet Desk"
+msgstr "Autorka, The Quiet Desk"
+
+#: assets/js/options.js:65
+msgid "Custom code"
+msgstr "Własny kod"
+
+#: assets/js/options.js:66
+msgid "Animations"
+msgstr "Animacje"
+
+#: assets/js/options.js:84 assets/js/options.js:91 core/assets/admin.js:280
+#: core/assets/admin.js:701 core/assets/admin.js:1074
+#: core/assets/admin.js:1113
+msgid "Active"
+msgstr "Aktywny"
+
+#: assets/js/options.js:84
+msgid "Off"
+msgstr "Wyłączony"
+
+#: assets/js/options.js:88
+msgid ""
+"Broke something? Open your site in safe mode to load it without snippets:"
+msgstr ""
+"Coś się zepsuło? Otwórz witrynę w trybie awaryjnym, aby wczytać ją bez "
+"fragmentów kodu:"
+
+#: assets/js/options.js:88
+msgid "Safe mode"
+msgstr "Tryb awaryjny"
+
+#: assets/js/options.js:90
+msgid "Snippet name"
+msgstr "Nazwa fragmentu"
+
+#: assets/js/options.js:93
+msgid "Devices"
+msgstr "Urządzenia"
+
+#: assets/js/options.js:93
+msgid "All devices"
+msgstr "Wszystkie urządzenia"
+
+#: assets/js/options.js:93
+msgid "Desktop (1025px+)"
+msgstr "Komputer (1025px+)"
+
+#: assets/js/options.js:93
+msgid "Tablet (768–1024px)"
+msgstr "Tablet (768–1024px)"
+
+#: assets/js/options.js:93
+msgid "Mobile (≤767px)"
+msgstr "Telefon (≤767px)"
+
+#: assets/js/options.js:96
+msgid "Load in"
+msgstr "Wczytaj w"
+
+#: assets/js/options.js:96
+msgid "Footer (recommended)"
+msgstr "Stopka (zalecane)"
+
+#: assets/js/options.js:97
+msgid "Write JavaScript only, without <script> tags."
+msgstr "Wpisz tylko JavaScript, bez znaczników <script>."
+
+#: assets/js/options.js:97
+msgid "Write CSS only, without <style> tags."
+msgstr "Wpisz tylko CSS, bez znaczników <style>."
+
+#: assets/js/options.js:99
+msgid "Save snippets"
+msgstr "Zapisz fragmenty"
+
+#: assets/js/options.js:99 core/assets/admin.js:1076
+msgid "Delete"
+msgstr "Usuń"
+
+#: assets/js/options.js:116
+msgid "New script"
+msgstr "Nowy skrypt"
+
+#: assets/js/options.js:116
+msgid "New styles"
+msgstr "Nowe style"
+
+#: assets/js/options.js:162
+msgid ""
+"Animations reveal sections as visitors scroll. Visitors who prefer reduced "
+"motion never see them."
+msgstr ""
+"Animacje odsłaniają sekcje podczas przewijania. Odwiedzający, którzy "
+"preferują ograniczony ruch, nigdy ich nie zobaczą."
+
+#: assets/js/options.js:166
+msgid "Use GSAP for parallax and counters with any preset"
+msgstr "Używaj GSAP do paralaksy i liczników z dowolnym ustawieniem"
+
+#: assets/js/options.js:167
+msgid ""
+"Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask,"
+" --stagger, --parallax or --counter) to any block under Advanced → "
+"Additional CSS class."
+msgstr ""
+"Dodaj klasę wpe-anim (oraz wpe-anim--fade-up, --zoom, --slide-left, --mask, "
+"--stagger, --parallax lub --counter) do dowolnego bloku w Zaawansowane → "
+"Dodatkowe klasy CSS."
+
+#: assets/js/options.js:168
+msgid "Save animations"
+msgstr "Zapisz animacje"
+
+#: core/assets/admin.js:86
+msgid ""
+"The connection to your site dropped. Check your internet and try again."
+msgstr ""
+"Połączenie z witryną zostało przerwane. Sprawdź internet i spróbuj ponownie."
+
+#: core/assets/admin.js:89
+msgid ""
+"The server sent an invalid response — usually a PHP error or a timeout. Your"
+" progress is saved."
+msgstr ""
+"Serwer wysłał nieprawidłową odpowiedź — zwykle z powodu błędu PHP lub "
+"przekroczenia czasu. Postęp został zapisany."
+
+#: core/assets/admin.js:92
+msgid "Your login session expired. Reload the page and sign in again."
+msgstr "Twoja sesja logowania wygasła. Odśwież stronę i zaloguj się ponownie."
+
+#: core/assets/admin.js:159
+msgid "Dashboard sections"
+msgstr "Sekcje kokpitu"
+
+#: core/assets/admin.js:163
+msgid "Docs"
+msgstr "Dokumentacja"
+
+#: core/assets/admin.js:164
+msgid "Switch dashboard colour mode"
+msgstr "Przełącz tryb kolorów kokpitu"
+
+#: core/assets/admin.js:241
+msgid "%s is active"
+msgstr "%s jest aktywny"
+
+#: core/assets/admin.js:242
+msgid "Welcome, %s. Let’s build something beautiful."
+msgstr "Witaj, %s. Zbudujmy coś pięknego."
+
+#: core/assets/admin.js:243
+msgid ""
+"Pick a demo, choose Gutenberg or Elementor, and get a finished website with "
+"pages, images, menus and a shop — in about a minute."
+msgstr ""
+"Wybierz demo, wybierz Gutenberga lub Elementora i otrzymaj gotową witrynę ze"
+" stronami, obrazkami, menu i sklepem — w około minutę."
+
+#: core/assets/admin.js:246
+msgid "Customize site"
+msgstr "Dostosuj witrynę"
+
+#: core/assets/admin.js:251
+msgid "Demo imported"
+msgstr "Zaimportowano demo"
+
+#: core/assets/admin.js:251
+msgid "in 48 seconds"
+msgstr "w 48 sekund"
+
+#: core/assets/admin.js:252
+msgid "Two builders"
+msgstr "Dwa kreatory"
+
+#: core/assets/admin.js:259
+msgid "Three steps to launch"
+msgstr "Trzy kroki do startu"
+
+#: core/assets/admin.js:264
+msgid "Help when you need it"
+msgstr "Pomoc, gdy jej potrzebujesz"
+
+#: core/assets/admin.js:266
+msgid "Guides for every feature"
+msgstr "Poradniki do każdej funkcji"
+
+#: core/assets/admin.js:267
+msgid "Real people, fast answers"
+msgstr "Prawdziwi ludzie, szybkie odpowiedzi"
+
+#: core/assets/admin.js:268
+msgid "Site Editor"
+msgstr "Edytor witryny"
+
+#: core/assets/admin.js:268
+msgid "Colours, fonts, header and footer"
+msgstr "Kolory, kroje pisma, nagłówek i stopka"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Expired"
+msgstr "Wygasła"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Invalid"
+msgstr "Nieprawidłowa"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Not connected"
+msgstr "Niepołączono"
+
+#: core/assets/admin.js:283
+msgid "Imported demo"
+msgstr "Zaimportowane demo"
+
+#: core/assets/admin.js:283
+msgid "None yet"
+msgstr "Jeszcze brak"
+
+#: core/assets/admin.js:285
+msgid "System health"
+msgstr "Kondycja systemu"
+
+#: core/assets/admin.js:288
+msgid "Import a demo"
+msgstr "Zaimportuj demo"
+
+#: core/assets/admin.js:288
+msgid "Start from a complete, ready-made website."
+msgstr "Zacznij od kompletnej, gotowej witryny."
+
+#: core/assets/admin.js:288
+msgid "Open library"
+msgstr "Otwórz bibliotekę"
+
+#: core/assets/admin.js:289 core/assets/admin.js:1124
+msgid "Activate your license"
+msgstr "Aktywuj licencję"
+
+#: core/assets/admin.js:289
+msgid "Unlock Pro demos, updates and support."
+msgstr "Odblokuj dema Pro, aktualizacje i wsparcie."
+
+#: core/assets/admin.js:289 core/assets/admin.js:1076
+#: core/assets/admin.js:1125
+msgid "Activate"
+msgstr "Aktywuj"
+
+#: core/assets/admin.js:290
+msgid "Swap the logo, colours and words in the Site Editor."
+msgstr "Podmień logo, kolory i teksty w Edytorze witryny."
+
+#: core/assets/admin.js:290 core/assets/admin.js:999
+msgid "Customize"
+msgstr "Dostosuj"
+
+#: core/assets/admin.js:295
+msgid "Could not load the dashboard"
+msgstr "Nie udało się wczytać kokpitu"
+
+#: core/assets/admin.js:301 core/assets/admin.js:312 core/assets/admin.js:756
+msgid "All"
+msgstr "Wszystkie"
+
+#: core/assets/admin.js:301
+msgid "Business"
+msgstr "Biznes"
+
+#: core/assets/admin.js:301
+msgid "Restaurant"
+msgstr "Restauracja"
+
+#: core/assets/admin.js:301
+msgid "Education"
+msgstr "Edukacja"
+
+#: core/assets/admin.js:306
+msgid ""
+"Every demo is a complete website. Preview it, then import it for Gutenberg "
+"or Elementor — plugins, pages, images and menus included."
+msgstr ""
+"Każde demo to kompletna witryna. Obejrzyj podgląd, a następnie zaimportuj je"
+" dla Gutenberga lub Elementora — wraz z wtyczkami, stronami, obrazkami i "
+"menu."
+
+#: core/assets/admin.js:307
+msgid "Refreshing"
+msgstr "Odświeżanie"
+
+#: core/assets/admin.js:307
+msgid "Refresh library"
+msgstr "Odśwież bibliotekę"
+
+#: core/assets/admin.js:310
+msgid "Search demos"
+msgstr "Szukaj dem"
+
+#: core/assets/admin.js:310
+msgid "Search demos…"
+msgstr "Szukaj dem…"
+
+#: core/assets/admin.js:311
+msgid "Category"
+msgstr "Kategoria"
+
+#: core/assets/admin.js:312
+msgid "Plan"
+msgstr "Plan"
+
+#: core/assets/admin.js:313 core/assets/admin.js:519 core/assets/admin.js:576
+msgid "Builder"
+msgstr "Kreator"
+
+#: core/assets/admin.js:313
+msgid "Any builder"
+msgstr "Dowolny kreator"
+
+#: core/assets/admin.js:336
+msgid "Library refreshed"
+msgstr "Odświeżono bibliotekę"
+
+#: core/assets/admin.js:338
+msgid "Refresh failed"
+msgstr "Odświeżanie nie powiodło się"
+
+#: core/assets/admin.js:351
+msgid "The library could not load"
+msgstr "Nie udało się wczytać biblioteki"
+
+#: core/assets/admin.js:363
+msgid "The import of %s stopped"
+msgstr "Import %s został zatrzymany"
+
+#: core/assets/admin.js:363
+msgid "The import of %s was interrupted"
+msgstr "Import %s został przerwany"
+
+#: core/assets/admin.js:363
+msgid "Your progress is saved. Continue exactly where it left off."
+msgstr ""
+"Postęp został zapisany. Kontynuuj dokładnie od miejsca, w którym przerwano."
+
+#: core/assets/admin.js:363
+msgid "Resume import"
+msgstr "Wznów import"
+
+#: core/assets/admin.js:366
+msgid "%s is installed on this site"
+msgstr "%s jest zainstalowane w tej witrynie"
+
+#: core/assets/admin.js:366
+msgid ""
+"You can remove everything it added and restore your previous settings at any"
+" time."
+msgstr ""
+"W każdej chwili możesz usunąć wszystko, co zostało dodane, i przywrócić "
+"poprzednie ustawienia."
+
+#: core/assets/admin.js:366 core/assets/admin.js:920
+msgid "Removing"
+msgstr "Usuwanie"
+
+#: core/assets/admin.js:366
+msgid "Remove demo"
+msgstr "Usuń demo"
+
+#: core/assets/admin.js:386
+msgid ""
+"Remove %s? Its pages, posts, products, images and menus will be deleted and "
+"your previous settings restored. Content you created yourself is not "
+"touched."
+msgstr ""
+"Usunąć %s? Jego strony, wpisy, produkty, obrazki i menu zostaną usunięte, a "
+"poprzednie ustawienia przywrócone. Treści utworzone przez Ciebie nie zostaną"
+" naruszone."
+
+#: core/assets/admin.js:392
+msgid "Demo removed"
+msgstr "Usunięto demo"
+
+#: core/assets/admin.js:396
+msgid "Removal failed"
+msgstr "Usuwanie nie powiodło się"
+
+#: core/assets/admin.js:416
+msgid "No demos match these filters"
+msgstr "Żadne demo nie pasuje do tych filtrów"
+
+#: core/assets/admin.js:416
+msgid "Try another category or clear the search."
+msgstr "Wybierz inną kategorię lub wyczyść wyszukiwanie."
+
+#: core/assets/admin.js:416
+msgid "Clear filters"
+msgstr "Wyczyść filtry"
+
+#: core/assets/admin.js:428
+msgid "IMPORTED"
+msgstr "ZAIMPORTOWANO"
+
+#: core/assets/admin.js:430
+msgid "Live preview"
+msgstr "Podgląd na żywo"
+
+#: core/assets/admin.js:438
+msgid "Preview"
+msgstr "Podgląd"
+
+#: core/assets/admin.js:439
+msgid "Unlock"
+msgstr "Odblokuj"
+
+#: core/assets/admin.js:439
+msgid "Re-import"
+msgstr "Importuj ponownie"
+
+#: core/assets/admin.js:439 core/assets/admin.js:576
+msgid "Import"
+msgstr "Importuj"
+
+#: core/assets/admin.js:512
+msgid "Desktop"
+msgstr "Komputer"
+
+#: core/assets/admin.js:512
+msgid "Tablet"
+msgstr "Tablet"
+
+#: core/assets/admin.js:512
+msgid "Mobile"
+msgstr "Telefon"
+
+#: core/assets/admin.js:515
+msgid "%1$s on %2$s"
+msgstr "%1$s na %2$s"
+
+#: core/assets/admin.js:520
+msgid "Device"
+msgstr "Urządzenie"
+
+#: core/assets/admin.js:521
+msgid "Unlock with Pro"
+msgstr "Odblokuj z Pro"
+
+#: core/assets/admin.js:521
+msgid "Import this demo"
+msgstr "Zaimportuj to demo"
+
+#: core/assets/admin.js:522
+msgid "Close preview"
+msgstr "Zamknij podgląd"
+
+#: core/assets/admin.js:576
+msgid "Account"
+msgstr "Konto"
+
+#: core/assets/admin.js:576
+msgid "Content"
+msgstr "Treść"
+
+#: core/assets/admin.js:576
+msgid "Done"
+msgstr "Gotowe"
+
+#: core/assets/admin.js:582
+msgid "Safe import — every change can be undone."
+msgstr "Bezpieczny import — każdą zmianę można cofnąć."
+
+#: core/assets/admin.js:585
+msgid "Close"
+msgstr "Zamknij"
+
+#: core/assets/admin.js:589
+msgid ""
+"The import keeps its progress if you close this window. You can resume it "
+"from the Demo Library. Close anyway?"
+msgstr ""
+"Import zachowa postęp, jeśli zamkniesz to okno. Możesz go wznowić z "
+"Biblioteki demo. Zamknąć mimo to?"
+
+#: core/assets/admin.js:618
+msgid "Back"
+msgstr "Wstecz"
+
+#: core/assets/admin.js:640
+msgid "Unlock this Pro demo"
+msgstr "Odblokuj to demo Pro"
+
+#: core/assets/admin.js:640
+msgid "Connect your WPEssential account"
+msgstr "Połącz konto WPEssential"
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in and use a Pro license on this site — or pick a plan. Checkout opens "
+"in a new tab."
+msgstr ""
+"Zaloguj się i użyj licencji Pro w tej witrynie — lub wybierz plan. Płatność "
+"otworzy się w nowej karcie."
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in or create a free account to keep your demos, licenses and updates in"
+" one place."
+msgstr ""
+"Zaloguj się lub utwórz darmowe konto, aby mieć dema, licencje i aktualizacje"
+" w jednym miejscu."
+
+#: core/assets/admin.js:643
+msgid "A Pro license is needed"
+msgstr "Wymagana jest licencja Pro"
+
+#: core/assets/admin.js:643
+msgid "Use a Pro license on this site, or choose a plan."
+msgstr "Użyj licencji Pro w tej witrynie lub wybierz plan."
+
+#: core/assets/admin.js:648 core/assets/admin.js:674 core/assets/admin.js:679
+msgid "Continue"
+msgstr "Kontynuuj"
+
+#: core/assets/admin.js:656
+msgid "Demo unlocked"
+msgstr "Odblokowano demo"
+
+#: core/assets/admin.js:666
+msgid "This demo has no version for this builder yet."
+msgstr "To demo nie ma jeszcze wersji dla tego kreatora."
+
+#: core/assets/admin.js:668
+msgid "Choose your page builder"
+msgstr "Wybierz kreator stron"
+
+#: core/assets/admin.js:668
+msgid ""
+"Both versions look identical. Pick the editor you or your client will use "
+"every day."
+msgstr ""
+"Obie wersje wyglądają identycznie. Wybierz edytor, z którego Ty lub Twój "
+"klient będziecie korzystać na co dzień."
+
+#: core/assets/admin.js:669
+msgid "The native WordPress block editor. Fastest pages, no extra plugin."
+msgstr ""
+"Natywny edytor blokowy WordPressa. Najszybsze strony, bez dodatkowej "
+"wtyczki."
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor is already installed."
+msgstr ""
+"Wizualna edycja metodą przeciągnij i upuść. Elementor jest już "
+"zainstalowany."
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor will be installed for you."
+msgstr ""
+"Wizualna edycja metodą przeciągnij i upuść. Elementor zostanie zainstalowany"
+" automatycznie."
+
+#: core/assets/admin.js:678
+msgid "Plugins this demo uses"
+msgstr "Wtyczki używane przez to demo"
+
+#: core/assets/admin.js:678
+msgid ""
+"We install, activate or switch off plugins so the demo works exactly like "
+"the preview."
+msgstr ""
+"Instalujemy, włączamy lub wyłączamy wtyczki, aby demo działało dokładnie jak"
+" w podglądzie."
+
+#: core/assets/admin.js:693
+msgid "No extra plugins needed — this demo runs on the theme alone."
+msgstr "Nie są potrzebne dodatkowe wtyczki — to demo działa na samym motywie."
+
+#: core/assets/admin.js:698
+msgid "Will be deactivated"
+msgstr "Zostanie wyłączona"
+
+#: core/assets/admin.js:698
+msgid "Not needed"
+msgstr "Niepotrzebna"
+
+#: core/assets/admin.js:702
+msgid "Will be activated"
+msgstr "Zostanie włączona"
+
+#: core/assets/admin.js:703
+msgid "Will be installed"
+msgstr "Zostanie zainstalowana"
+
+#: core/assets/admin.js:706
+msgid "Required"
+msgstr "Wymagana"
+
+#: core/assets/admin.js:706 core/assets/admin.js:1073
+msgid "Recommended"
+msgstr "Zalecana"
+
+#: core/assets/admin.js:706
+msgid "Conflicts with this demo"
+msgstr "Koliduje z tym demo"
+
+#: core/assets/admin.js:706
+msgid "Include"
+msgstr "Uwzględnij"
+
+#: core/assets/admin.js:706
+msgid "Include %s"
+msgstr "Uwzględnij %s"
+
+#: core/assets/admin.js:715
+msgid "Pages, posts and menus"
+msgstr "Strony, wpisy i menu"
+
+#: core/assets/admin.js:715
+msgid "%s and their navigation."
+msgstr "%s wraz z nawigacją."
+
+#: core/assets/admin.js:716
+msgid "Images"
+msgstr "Obrazki"
+
+#: core/assets/admin.js:716
+msgid "Copied to your Media Library, licensed for your site."
+msgstr "Skopiowane do Biblioteki mediów, z licencją dla Twojej witryny."
+
+#: core/assets/admin.js:717
+msgid "Shop products"
+msgstr "Produkty sklepu"
+
+#: core/assets/admin.js:717
+msgid "Products, categories, prices and shipping."
+msgstr "Produkty, kategorie, ceny i wysyłka."
+
+#: core/assets/admin.js:717
+msgid "Needs WooCommerce — enable it on the previous step."
+msgstr "Wymaga WooCommerce — włącz go w poprzednim kroku."
+
+#: core/assets/admin.js:718
+msgid "Site settings"
+msgstr "Ustawienia witryny"
+
+#: core/assets/admin.js:718
+msgid "Home page, blog page and store options."
+msgstr "Strona główna, strona bloga i opcje sklepu."
+
+#: core/assets/admin.js:720
+msgid "What should we import?"
+msgstr "Co zaimportować?"
+
+#: core/assets/admin.js:720
+msgid "Everything is on by default for a site that matches the preview."
+msgstr "Wszystko jest domyślnie włączone, aby witryna odpowiadała podglądowi."
+
+#: core/assets/admin.js:722
+msgid "Remove %s first"
+msgstr "Najpierw usuń %s"
+
+#: core/assets/admin.js:722
+msgid "Recommended: start from a clean site instead of adding duplicates."
+msgstr "Zalecane: zacznij od czystej witryny zamiast dodawać duplikaty."
+
+#: core/assets/admin.js:723
+msgid ""
+"Your existing posts and pages are never changed. Imported items are tagged, "
+"so they can be removed in one click later."
+msgstr ""
+"Twoje istniejące wpisy i strony nigdy nie są zmieniane. Zaimportowane "
+"elementy są oznaczane, więc później można je usunąć jednym kliknięciem."
+
+#: core/assets/admin.js:730
+msgid "Start import"
+msgstr "Rozpocznij import"
+
+#: core/assets/admin.js:736
+msgid "Preparing"
+msgstr "Przygotowywanie"
+
+#: core/assets/admin.js:736 core/assets/admin.js:947
+msgid "Importing your demo…"
+msgstr "Importowanie demo…"
+
+#: core/assets/admin.js:736
+msgid "Keep this window open. It usually takes about a minute."
+msgstr "Nie zamykaj tego okna. Zwykle trwa to około minuty."
+
+#: core/assets/admin.js:739 core/assets/admin.js:943
+msgid "Cancel import"
+msgstr "Anuluj import"
+
+#: core/assets/admin.js:756
+msgid "Info"
+msgstr "Informacje"
+
+#: core/assets/admin.js:756
+msgid "Success"
+msgstr "Sukces"
+
+#: core/assets/admin.js:756 core/assets/admin.js:998
+msgid "Warnings"
+msgstr "Ostrzeżenia"
+
+#: core/assets/admin.js:756
+msgid "Errors"
+msgstr "Błędy"
+
+#: core/assets/admin.js:756 core/assets/admin.js:920
+msgid "Copy log"
+msgstr "Kopiuj dziennik"
+
+#: core/assets/admin.js:790
+msgid "Log copied"
+msgstr "Skopiowano dziennik"
+
+#: core/assets/admin.js:790
+msgid "Paste it into your support ticket."
+msgstr "Wklej go do zgłoszenia w pomocy technicznej."
+
+#: core/assets/admin.js:816
+msgid "Stopped"
+msgstr "Zatrzymano"
+
+#: core/assets/admin.js:816
+msgid "Step"
+msgstr "Krok"
+
+#: core/assets/admin.js:816
+msgid "Complete"
+msgstr "Ukończono"
+
+#: core/assets/admin.js:824
+msgid "%ss elapsed"
+msgstr "Upłynęło %ss"
+
+#: core/assets/admin.js:850
+msgid "Resumed from the saved position."
+msgstr "Wznowiono od zapisanej pozycji."
+
+#: core/assets/admin.js:872
+msgid "Reload the page, then resume the import from the Demo Library."
+msgstr "Odśwież stronę, a następnie wznów import z Biblioteki demo."
+
+#: core/assets/admin.js:878
+msgid "Your progress is saved. Press Resume when the server is back."
+msgstr ""
+"Postęp został zapisany. Kliknij Wznów, gdy serwer znów będzie dostępny."
+
+#: core/assets/admin.js:882
+msgid "The server did not answer (%1$s). Retrying in %2$d seconds…"
+msgstr "Serwer nie odpowiedział (%1$s). Ponowna próba za %2$d s…"
+
+#: core/assets/admin.js:905
+msgid "The import stopped."
+msgstr "Import został zatrzymany."
+
+#: core/assets/admin.js:907
+msgid "Import cancelled."
+msgstr "Import anulowano."
+
+#: core/assets/admin.js:907
+msgid "Resume to finish it, or remove what was imported so far."
+msgstr "Wznów, aby go dokończyć, lub usuń to, co zostało dotąd zaimportowane."
+
+#: core/assets/admin.js:918
+msgid "Import paused"
+msgstr "Import wstrzymany"
+
+#: core/assets/admin.js:918
+msgid "The import needs your attention"
+msgstr "Import wymaga Twojej uwagi"
+
+#: core/assets/admin.js:920
+msgid "Remove imported content"
+msgstr "Usuń zaimportowane treści"
+
+#: core/assets/admin.js:920
+msgid "Resume"
+msgstr "Wznów"
+
+#: core/assets/admin.js:920
+msgid "Back to options"
+msgstr "Powrót do opcji"
+
+#: core/assets/admin.js:929
+msgid "Everything was rolled back"
+msgstr "Wszystko zostało wycofane"
+
+#: core/assets/admin.js:933
+msgid "Nothing to remove"
+msgstr "Nie ma nic do usunięcia"
+
+#: core/assets/admin.js:933
+msgid "Rollback failed"
+msgstr "Wycofanie nie powiodło się"
+
+#: core/assets/admin.js:960
+msgid "Resuming…"
+msgstr "Wznawianie…"
+
+#: core/assets/admin.js:967
+msgid "Your progress is saved. Try again in a moment."
+msgstr "Postęp został zapisany. Spróbuj ponownie za chwilę."
+
+#: core/assets/admin.js:973
+msgid "Cancel the import? What was imported so far stays until you remove it."
+msgstr ""
+"Anulować import? To, co zostało dotąd zaimportowane, pozostanie, dopóki tego"
+" nie usuniesz."
+
+#: core/assets/admin.js:983
+msgid "Could not cancel"
+msgstr "Nie udało się anulować"
+
+#: core/assets/admin.js:996
+msgid "Your website is ready!"
+msgstr "Twoja witryna jest gotowa!"
+
+#: core/assets/admin.js:997
+msgid "%1$s was imported. %2$d item(s) need a look — see the notes below."
+msgstr ""
+"Zaimportowano %1$s. Elementy wymagające uwagi: %2$d — zobacz uwagi poniżej."
+
+#: core/assets/admin.js:997
+msgid "%s was imported without a single issue. Time to make it yours."
+msgstr "%s zaimportowano bez żadnego problemu. Czas dostosować je do siebie."
+
+#: core/assets/admin.js:998
+msgid "Import time"
+msgstr "Czas importu"
+
+#: core/assets/admin.js:998
+msgid "Steps completed"
+msgstr "Ukończone kroki"
+
+#: core/assets/admin.js:999
+msgid "View your site"
+msgstr "Zobacz witrynę"
+
+#: core/assets/admin.js:1002
+msgid "Back to dashboard"
+msgstr "Powrót do kokpitu"
+
+#: core/assets/admin.js:1007
+msgid "Import complete"
+msgstr "Import zakończony"
+
+#: core/assets/admin.js:1054
+msgid ""
+"Plugins used by WPEssential demos. Install, switch on or off and delete them"
+" here."
+msgstr ""
+"Wtyczki używane przez dema WPEssential. Tutaj możesz je instalować, włączać,"
+" wyłączać i usuwać."
+
+#: core/assets/admin.js:1069
+msgid "No plugins needed"
+msgstr "Nie są potrzebne żadne wtyczki"
+
+#: core/assets/admin.js:1069
+msgid "The demos in your library run on the theme alone."
+msgstr "Dema w Twojej bibliotece działają na samym motywie."
+
+#: core/assets/admin.js:1073
+msgid "Required by some demos"
+msgstr "Wymagana przez niektóre dema"
+
+#: core/assets/admin.js:1074
+msgid "Inactive"
+msgstr "Nieaktywna"
+
+#: core/assets/admin.js:1074
+msgid "Not installed"
+msgstr "Niezainstalowana"
+
+#: core/assets/admin.js:1075
+msgid "Install & activate"
+msgstr "Zainstaluj i włącz"
+
+#: core/assets/admin.js:1077
+msgid "Deactivate"
+msgstr "Wyłącz"
+
+#: core/assets/admin.js:1079
+msgid "Delete this plugin and its files?"
+msgstr "Usunąć tę wtyczkę i jej pliki?"
+
+#: core/assets/admin.js:1085
+msgid "is active."
+msgstr "jest aktywna."
+
+#: core/assets/admin.js:1085
+msgid "is inactive."
+msgstr "jest nieaktywna."
+
+#: core/assets/admin.js:1085
+msgid "was deleted."
+msgstr "została usunięta."
+
+#: core/assets/admin.js:1088
+msgid "Plugin action failed"
+msgstr "Akcja wtyczki nie powiodła się"
+
+#: core/assets/admin.js:1096
+msgid ""
+"Activate your purchase on this domain to unlock Pro demos, automatic updates"
+" and priority support."
+msgstr ""
+"Aktywuj swój zakup w tej domenie, aby odblokować dema Pro, automatyczne "
+"aktualizacje i priorytetowe wsparcie."
+
+#: core/assets/admin.js:1118
+msgid "Domain"
+msgstr "Domena"
+
+#: core/assets/admin.js:1118
+msgid "Expires"
+msgstr "Wygasa"
+
+#: core/assets/admin.js:1118
+msgid "Lifetime"
+msgstr "Dożywotnia"
+
+#: core/assets/admin.js:1118
+msgid "Provider"
+msgstr "Dostawca"
+
+#: core/assets/admin.js:1121
+msgid "You’re all set"
+msgstr "Wszystko gotowe"
+
+#: core/assets/admin.js:1121
+msgid "This license is active on %s."
+msgstr "Ta licencja jest aktywna w %s."
+
+#: core/assets/admin.js:1121
+msgid "Plan: %s."
+msgstr "Plan: %s."
+
+#: core/assets/admin.js:1122
+msgid "All Pro demos unlocked"
+msgstr "Wszystkie dema Pro odblokowane"
+
+#: core/assets/admin.js:1122
+msgid "One-click theme updates"
+msgstr "Aktualizacje motywu jednym kliknięciem"
+
+#: core/assets/admin.js:1123
+msgid "Deactivating"
+msgstr "Dezaktywowanie"
+
+#: core/assets/admin.js:1123
+msgid "Deactivate on this domain"
+msgstr "Dezaktywuj w tej domenie"
+
+#: core/assets/admin.js:1124
+msgid "Renew to keep Pro features"
+msgstr "Odnów, aby zachować funkcje Pro"
+
+#: core/assets/admin.js:1124
+msgid "Find the key in your purchase email or your wpessential.org account."
+msgstr ""
+"Klucz znajdziesz w e-mailu z potwierdzeniem zakupu lub na swoim koncie "
+"wpessential.org."
+
+#: core/assets/admin.js:1125
+msgid "License key"
+msgstr "Klucz licencyjny"
+
+#: core/assets/admin.js:1125
+msgid "Paste your license key"
+msgstr "Wklej klucz licencyjny"
+
+#: core/assets/admin.js:1125
+msgid "Show key"
+msgstr "Pokaż klucz"
+
+#: core/assets/admin.js:1125
+msgid "Checking"
+msgstr "Sprawdzanie"
+
+#: core/assets/admin.js:1127
+msgid "Unlock every Pro demo in the library"
+msgstr "Odblokuj wszystkie dema Pro w bibliotece"
+
+#: core/assets/admin.js:1127
+msgid "Automatic updates from your dashboard"
+msgstr "Automatyczne aktualizacje z kokpitu"
+
+#: core/assets/admin.js:1127
+msgid "Priority support from the WPEssential Team"
+msgstr "Priorytetowe wsparcie od zespołu WPEssential"
+
+#: core/assets/admin.js:1128
+msgid "Don’t have a license? Sign in or pick a plan below"
+msgstr "Nie masz licencji? Zaloguj się lub wybierz plan poniżej"
+
+#: core/assets/admin.js:1143
+msgid "License activated"
+msgstr "Licencja aktywowana"
+
+#: core/assets/admin.js:1143
+msgid "Pro demos are unlocked."
+msgstr "Dema Pro są odblokowane."
+
+#: core/assets/admin.js:1163
+msgid ""
+"Deactivate the license on this domain? You can activate it on another site "
+"afterwards."
+msgstr ""
+"Dezaktywować licencję w tej domenie? Później możesz ją aktywować w innej "
+"witrynie."
+
+#: core/assets/admin.js:1169
+msgid "License deactivated"
+msgstr "Licencja dezaktywowana"
+
+#: core/assets/admin.js:1173
+msgid "Deactivation failed"
+msgstr "Dezaktywacja nie powiodła się"
+
+#: core/assets/admin.js:1188
+msgid "/ %d mo"
+msgstr "/ %d mies."
+
+#: core/assets/admin.js:1188
+msgid "one-time"
+msgstr "jednorazowo"
+
+#: core/assets/admin.js:1201
+msgid "Your WPEssential account could not be reached"
+msgstr "Nie udało się połączyć z Twoim kontem WPEssential"
+
+#: core/assets/admin.js:1213
+msgid "Sign in to your account"
+msgstr "Zaloguj się na swoje konto"
+
+#: core/assets/admin.js:1213
+msgid "Create your free account"
+msgstr "Utwórz darmowe konto"
+
+#: core/assets/admin.js:1213
+msgid ""
+"Your licenses, Pro demos and subscription in one place. New accounts include"
+" the Free plan for this website."
+msgstr ""
+"Twoje licencje, dema Pro i subskrypcja w jednym miejscu. Nowe konta obejmują"
+" plan Darmowy dla tej witryny."
+
+#: core/assets/admin.js:1214
+msgid "Activate licenses without copying keys"
+msgstr "Aktywuj licencje bez kopiowania kluczy"
+
+#: core/assets/admin.js:1214
+msgid "Upgrade, renew or switch plans in one click"
+msgstr "Przejdź na wyższy plan, odnów lub zmień plan jednym kliknięciem"
+
+#: core/assets/admin.js:1214
+msgid "Manage websites and auto-renewal"
+msgstr "Zarządzaj witrynami i automatycznym odnawianiem"
+
+#: core/assets/admin.js:1216 core/assets/admin.js:1221
+msgid "Sign in"
+msgstr "Zaloguj się"
+
+#: core/assets/admin.js:1216
+msgid "Create account"
+msgstr "Utwórz konto"
+
+#: core/assets/admin.js:1217
+msgid "Full name"
+msgstr "Imię i nazwisko"
+
+#: core/assets/admin.js:1218
+msgid "Email"
+msgstr "E-mail"
+
+#: core/assets/admin.js:1219
+msgid "Password"
+msgstr "Hasło"
+
+#: core/assets/admin.js:1221
+msgid "Signing in"
+msgstr "Logowanie"
+
+#: core/assets/admin.js:1221
+msgid "Creating account"
+msgstr "Tworzenie konta"
+
+#: core/assets/admin.js:1221
+msgid "Create free account"
+msgstr "Utwórz darmowe konto"
+
+#: core/assets/admin.js:1222
+msgid "Forgot password?"
+msgstr "Nie pamiętasz hasła?"
+
+#: core/assets/admin.js:1222
+msgid "By creating an account you agree to the WPEssential terms."
+msgstr "Tworząc konto, akceptujesz regulamin WPEssential."
+
+#: core/assets/admin.js:1223
+msgid "Continue without an account"
+msgstr "Kontynuuj bez konta"
+
+#: core/assets/admin.js:1239
+msgid "Fill in every field."
+msgstr "Wypełnij wszystkie pola."
+
+#: core/assets/admin.js:1245
+msgid "Signed in"
+msgstr "Zalogowano"
+
+#: core/assets/admin.js:1245
+msgid "Account created"
+msgstr "Utworzono konto"
+
+#: core/assets/admin.js:1266
+msgid "Refresh"
+msgstr "Odśwież"
+
+#: core/assets/admin.js:1267
+msgid "Manage account"
+msgstr "Zarządzaj kontem"
+
+#: core/assets/admin.js:1268
+msgid "Sign out"
+msgstr "Wyloguj się"
+
+#: core/assets/admin.js:1270
+msgid "Your licenses"
+msgstr "Twoje licencje"
+
+#: core/assets/admin.js:1273
+msgid "%1$d of %2$s websites"
+msgstr "%1$d z %2$s witryn"
+
+#: core/assets/admin.js:1273
+msgid "Never expires"
+msgstr "Nigdy nie wygasa"
+
+#: core/assets/admin.js:1273
+msgid "Renews %s"
+msgstr "Odnawia się %s"
+
+#: core/assets/admin.js:1273
+msgid "Ends %s"
+msgstr "Kończy się %s"
+
+#: core/assets/admin.js:1274
+msgid "Auto-renew"
+msgstr "Automatyczne odnawianie"
+
+#: core/assets/admin.js:1275
+msgid "Renew"
+msgstr "Odnów"
+
+#: core/assets/admin.js:1275
+msgid "This site"
+msgstr "Ta witryna"
+
+#: core/assets/admin.js:1275
+msgid "Activating"
+msgstr "Aktywowanie"
+
+#: core/assets/admin.js:1275
+msgid "Use on this site"
+msgstr "Użyj w tej witrynie"
+
+#: core/assets/admin.js:1276
+msgid "No licenses yet — choose a plan below."
+msgstr "Brak licencji — wybierz plan poniżej."
+
+#: core/assets/admin.js:1277
+msgid "Upgrade your plan"
+msgstr "Zmień plan na wyższy"
+
+#: core/assets/admin.js:1277
+msgid "Choose a plan"
+msgstr "Wybierz plan"
+
+#: core/assets/admin.js:1282
+msgid "Most popular"
+msgstr "Najpopularniejszy"
+
+#: core/assets/admin.js:1283
+msgid "Current plan"
+msgstr "Obecny plan"
+
+#: core/assets/admin.js:1283
+msgid "Upgrade"
+msgstr "Przejdź wyżej"
+
+#: core/assets/admin.js:1283
+msgid "Choose"
+msgstr "Wybierz"
+
+#: core/assets/admin.js:1285
+msgid ""
+"Checkout opens on wpessential.org already signed in. Upgrades credit the "
+"unused part of your current plan. Staging and local sites do not count "
+"toward your website limit."
+msgstr ""
+"Płatność otworzy się na wpessential.org, gdzie będziesz już zalogowany. Przy"
+" zmianie na wyższy plan niewykorzystana część obecnego planu zostanie "
+"zaliczona. Witryny testowe i lokalne nie wliczają się do limitu witryn."
+
+#: core/assets/admin.js:1301
+msgid "License active on this site"
+msgstr "Licencja aktywna w tej witrynie"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is on"
+msgstr "Automatyczne odnawianie jest włączone"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is off"
+msgstr "Automatyczne odnawianie jest wyłączone"
+
+#: core/assets/admin.js:1315
+msgid "Your license works until its end date."
+msgstr "Twoja licencja działa do daty zakończenia."
+
+#: core/assets/admin.js:1318
+msgid "Could not change auto-renew"
+msgstr "Nie udało się zmienić automatycznego odnawiania"
+
+#: core/assets/admin.js:1330
+msgid "Checkout opened in a new tab"
+msgstr "Płatność otwarto w nowej karcie"
+
+#: core/assets/admin.js:1330
+msgid "When payment is done, press Refresh here."
+msgstr "Po dokonaniu płatności kliknij tutaj Odśwież."
+
+#: core/assets/admin.js:1335
+msgid "Checkout could not start"
+msgstr "Nie udało się rozpocząć płatności"
+
+#: core/assets/admin.js:1343
+msgid "What your server offers and what to improve before importing."
+msgstr "Co oferuje Twój serwer i co poprawić przed importem."
+
+#: core/assets/admin.js:1343
+msgid "Copy report"
+msgstr "Kopiuj raport"
+
+#: core/assets/admin.js:1349
+msgid "Health"
+msgstr "Kondycja"
+
+#: core/assets/admin.js:1349
+msgid "Excellent"
+msgstr "Doskonała"
+
+#: core/assets/admin.js:1349
+msgid "Good"
+msgstr "Dobra"
+
+#: core/assets/admin.js:1349
+msgid "Needs work"
+msgstr "Wymaga poprawy"
+
+#: core/assets/admin.js:1349
+msgid "%d item(s) could be better. Imports still run; fixes make them faster."
+msgstr ""
+"Elementy, które można poprawić: %d. Importy nadal działają; poprawki je "
+"przyspieszą."
+
+#: core/assets/admin.js:1349
+msgid "Your server is ready for any demo."
+msgstr "Twój serwer jest gotowy na każde demo."
+
+#: core/assets/admin.js:1352
+msgid "Environment"
+msgstr "Środowisko"
+
+#: core/assets/admin.js:1356
+msgid "Report copied"
+msgstr "Skopiowano raport"
+
+#: core/assets/admin.js:1356
+msgid "Copy failed"
+msgstr "Kopiowanie nie powiodło się"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "Akcent"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr "Obramowanie"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Danger"
+msgstr "Zagrożenie"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr "Atrament"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink"
+msgstr "Na atramencie"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink Muted"
+msgstr "Na atramencie wyciszony"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Primary"
+msgstr "Na podstawowym"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "Podstawowy"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Hover"
+msgstr "Podstawowy po najechaniu"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Soft"
+msgstr "Podstawowy delikatny"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Pro"
+msgstr "Pro"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "Drugorzędny"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Star"
+msgstr "Gwiazdka"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Success"
+msgstr "Sukces"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr "Powierzchnia"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface Alt"
+msgstr "Powierzchnia alternatywna"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr "Tekst"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text Muted"
+msgstr "Tekst wyciszony"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Warning"
+msgstr "Ostrzeżenie"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank (no header/footer)"
+msgstr "Pusty (bez nagłówka/stopki)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Full Width (builder canvas)"
+msgstr "Pełna szerokość (płótno kreatora)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Landing (transparent header)"
+msgstr "Landing (przezroczysty nagłówek)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "No Title"
+msgstr "Bez tytułu"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post with sidebar"
+msgstr "Wpis z panelem bocznym"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Cormorant Garamond"
+msgstr "Cormorant Garamond"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "DM Sans"
+msgstr "DM Sans"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Manrope"
+msgstr "Manrope"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Font family name"
+msgid "Monospace"
+msgstr "Monospace"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Plus Jakarta Sans"
+msgstr "Plus Jakarta Sans"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "Space Grotesk"
+msgstr "Space Grotesk"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr "Treść"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body L"
+msgstr "Treść L"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Display"
+msgstr "Wyświetlany"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H1"
+msgstr "H1"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H2"
+msgstr "H2"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H3"
+msgstr "H3"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H4"
+msgstr "H4"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Mały"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XS"
+msgstr "XS"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Brand"
+msgstr "Marka"
+
+#: styles/dark.json
+msgctxt "Gradient name"
+msgid "Fade bottom"
+msgstr "Zanikanie u dołu"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Fade to ink"
+msgstr "Zanikanie do atramentu"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Night"
+msgstr "Noc"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Large"
+msgstr "Duży"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Medium"
+msgstr "Średni"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Small"
+msgstr "Mały"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "112"
+msgstr "112"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "12"
+msgstr "12"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "16"
+msgstr "16"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "24"
+msgstr "24"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "32"
+msgstr "32"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "48"
+msgstr "48"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "64"
+msgstr "64"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "8"
+msgstr "8"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "96"
+msgstr "96"
+
+#: styles/agency.json
+msgctxt "Style variation name"
+msgid "Agency"
+msgstr "Agencja"
+
+#: styles/dark.json
+msgctxt "Style variation name"
+msgid "Dark"
+msgstr "Ciemny"
+
+#: styles/education.json
+msgctxt "Style variation name"
+msgid "Education"
+msgstr "Edukacja"
+
+#: styles/fashion.json
+msgctxt "Style variation name"
+msgid "Fashion"
+msgstr "Moda"
+
+#: styles/health.json
+msgctxt "Style variation name"
+msgid "Health"
+msgstr "Zdrowie"
+
+#: styles/maison.json
+msgctxt "Style variation name"
+msgid "Maison"
+msgstr "Maison"
+
+#: styles/pulse.json
+msgctxt "Style variation name"
+msgid "Pulse"
+msgstr "Pulse"
+
+#: styles/restaurant.json
+msgctxt "Style variation name"
+msgid "Restaurant"
+msgstr "Restauracja"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Premium"
+msgstr "Stopka — Premium"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Simple"
+msgstr "Stopka — Prosta"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Centered"
+msgstr "Nagłówek — Wyśrodkowany"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Default"
+msgstr "Nagłówek — Domyślny"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Shop"
+msgstr "Nagłówek — Sklep"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Transparent (over dark hero)"
+msgstr "Nagłówek — Przezroczysty (na ciemnej sekcji hero)"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr "Panel boczny"

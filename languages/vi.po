@@ -1,0 +1,3778 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WPEssential 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wpessential.org/support/\n"
+"POT-Creation-Date: 2026-10-18T02:45:11+00:00\n"
+"PO-Revision-Date: 2026-10-18T02:45:11+00:00\n"
+"Last-Translator: WPEssential Team <https://wpessential.org/>\n"
+"Language-Team: WPEssential Team <https://wpessential.org/>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: wpessential\n"
+"X-Generator: WP-CLI 2.11.0\n"
+
+#. Theme Name of the theme
+#: style.css core/src/Admin.php:55 inc/patterns.php:14
+msgid "WPEssential"
+msgstr "WPEssential"
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://wpessential.org/"
+msgstr "https://wpessential.org/"
+
+#. Description of the theme
+#: style.css
+msgid ""
+"Lightweight multi-niche block theme, native for Gutenberg and Elementor. "
+"One-click demos (free & pro) via the WPEssential Core plugin."
+msgstr ""
+"Giao diện khối nhẹ, đa lĩnh vực, hỗ trợ sẵn Gutenberg và Elementor. Demo một"
+" cú nhấp (miễn phí và Pro) qua plugin WPEssential Core."
+
+#. Author of the theme
+#: style.css
+msgid "WPEssential Team"
+msgstr "Đội ngũ WPEssential"
+
+#. translators: %s: error.
+#: core/src/Account.php:55
+msgid "WPEssential could not be reached: %s"
+msgstr "Không thể kết nối tới WPEssential: %s"
+
+#: core/src/Account.php:61
+msgid "Your WPEssential session ended. Sign in again."
+msgstr "Phiên WPEssential của bạn đã kết thúc. Vui lòng đăng nhập lại."
+
+#. translators: %d: HTTP code.
+#: core/src/Account.php:65
+msgid "WPEssential answered with an unexpected response (HTTP %d)."
+msgstr "WPEssential trả về phản hồi không mong muốn (HTTP %d)."
+
+#: core/src/Account.php:68 core/assets/admin.js:83 core/assets/admin.js:94
+msgid "Something went wrong."
+msgstr "Đã có lỗi xảy ra."
+
+#: core/src/Account.php:238
+msgid "That license is not in your account."
+msgstr "Giấy phép đó không có trong tài khoản của bạn."
+
+#: core/src/Account.php:271 core/src/Rest.php:211
+msgid "Unknown action."
+msgstr "Hành động không xác định."
+
+#: core/src/Admin.php:37 core/assets/admin.js:147
+msgid "Dashboard"
+msgstr "Bảng tin"
+
+#: core/src/Admin.php:38 core/assets/admin.js:148 core/assets/admin.js:306
+msgid "Demo Library"
+msgstr "Thư viện demo"
+
+#: core/src/Admin.php:39 core/assets/admin.js:149 core/assets/admin.js:576
+#: core/assets/admin.js:1054
+msgid "Plugins"
+msgstr "Plugin"
+
+#: core/src/Admin.php:40 core/assets/admin.js:150 core/assets/admin.js:284
+#: core/assets/admin.js:1096
+msgid "License"
+msgstr "Giấy phép"
+
+#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+msgid "System Status"
+msgstr "Trạng thái hệ thống"
+
+#: core/src/Admin.php:133
+msgid ""
+"The WPEssential dashboard needs JavaScript. Enable it in your browser to "
+"import demos."
+msgstr ""
+"Bảng tin WPEssential cần JavaScript. Hãy bật JavaScript trong trình duyệt để"
+" nhập demo."
+
+#: core/src/Demos.php:49
+msgid ""
+"The online demo library could not be reached, so only the demos bundled with"
+" the theme are listed. They import fully offline."
+msgstr ""
+"Không thể kết nối tới thư viện demo trực tuyến, nên chỉ hiển thị các demo đi"
+" kèm giao diện. Các demo này có thể nhập hoàn toàn ngoại tuyến."
+
+#: core/src/Demos.php:173
+msgid ""
+"The bundled demo package is incomplete. Re-upload the theme and try again."
+msgstr "Gói demo đi kèm bị thiếu. Hãy tải lên lại giao diện và thử lại."
+
+#: core/src/Demos.php:183
+msgid "This demo has no download address in the library."
+msgstr "Demo này không có địa chỉ tải xuống trong thư viện."
+
+#. translators: %s: error message.
+#: core/src/Demos.php:196
+msgid "Downloading the demo package failed: %s"
+msgstr "Tải xuống gói demo thất bại: %s"
+
+#: core/src/Demos.php:200
+msgid "WordPress cannot write to the uploads folder. Check its permissions."
+msgstr ""
+"WordPress không thể ghi vào thư mục uploads. Hãy kiểm tra quyền của thư mục."
+
+#: core/src/Demos.php:207
+msgid "The downloaded package does not contain content.json."
+msgstr "Gói đã tải xuống không chứa content.json."
+
+#: core/src/Importer.php:47
+msgid "Checking your server"
+msgstr "Đang kiểm tra máy chủ"
+
+#: core/src/Importer.php:48
+msgid "Removing the previous demo"
+msgstr "Đang gỡ demo trước đó"
+
+#: core/src/Importer.php:49
+msgid "Preparing the demo package"
+msgstr "Đang chuẩn bị gói demo"
+
+#: core/src/Importer.php:50
+msgid "Installing plugins"
+msgstr "Đang cài đặt plugin"
+
+#: core/src/Importer.php:51
+msgid "Importing images"
+msgstr "Đang nhập hình ảnh"
+
+#: core/src/Importer.php:52
+msgid "Creating categories"
+msgstr "Đang tạo chuyên mục"
+
+#: core/src/Importer.php:53
+msgid "Building pages and posts"
+msgstr "Đang tạo trang và bài viết"
+
+#: core/src/Importer.php:54
+msgid "Adding products"
+msgstr "Đang thêm sản phẩm"
+
+#: core/src/Importer.php:55
+msgid "Creating menus"
+msgstr "Đang tạo menu"
+
+#: core/src/Importer.php:56
+msgid "Applying site settings"
+msgstr "Đang áp dụng cài đặt trang web"
+
+#: core/src/Importer.php:57
+msgid "Finishing touches"
+msgstr "Đang hoàn thiện"
+
+#: core/src/Importer.php:90
+msgid ""
+"Another import is running in a different tab. Wait for it to finish, or wait"
+" two minutes and try again."
+msgstr ""
+"Một lượt nhập khác đang chạy trong tab khác. Hãy đợi nó hoàn tất, hoặc đợi "
+"hai phút rồi thử lại."
+
+#: core/src/Importer.php:94
+msgid "This demo is no longer in the library. Refresh the page."
+msgstr "Demo này không còn trong thư viện. Hãy tải lại trang."
+
+#: core/src/Importer.php:97
+msgid "This demo is not available for the selected builder."
+msgstr "Demo này không khả dụng cho trình dựng trang đã chọn."
+
+#: core/src/Importer.php:100
+msgid ""
+"This is a Pro demo. Activate your license on the License tab to import it."
+msgstr "Đây là demo Pro. Hãy kích hoạt giấy phép trong tab Giấy phép để nhập."
+
+#. translators: 1: demo, 2: builder.
+#: core/src/Importer.php:192
+msgid "Starting import of %1$s for %2$s."
+msgstr "Bắt đầu nhập %1$s cho %2$s."
+
+#: core/src/Importer.php:207
+msgid "There is no import to continue."
+msgstr "Không có lượt nhập nào để tiếp tục."
+
+#: core/src/Importer.php:225
+msgid ""
+"Import cancelled. Everything imported so far can be removed from the Demo "
+"Library."
+msgstr ""
+"Đã hủy nhập. Mọi nội dung đã nhập đến giờ có thể được gỡ từ Thư viện demo."
+
+#: core/src/Importer.php:341
+msgid "One item stopped the server twice and was skipped."
+msgstr "Một mục đã làm máy chủ dừng hai lần và đã bị bỏ qua."
+
+#: core/src/Importer.php:341
+msgid ""
+"Raise memory_limit / max_execution_time, then re-import to fill the gap."
+msgstr ""
+"Hãy tăng memory_limit / max_execution_time, rồi nhập lại để bổ sung phần còn"
+" thiếu."
+
+#. translators: %s: error.
+#: core/src/Importer.php:358
+msgid "Unexpected error: %s"
+msgstr "Lỗi không mong muốn: %s"
+
+#. translators: %d: errors.
+#: core/src/Importer.php:411
+msgid ""
+"Import finished with %d error. The site works; review the log for what was "
+"skipped."
+msgid_plural ""
+"Import finished with %d errors. The site works; review the log for what was "
+"skipped."
+msgstr[0] ""
+"Nhập hoàn tất với %d lỗi. Trang web vẫn hoạt động; xem nhật ký để biết những"
+" gì đã bị bỏ qua."
+
+#: core/src/Importer.php:413
+msgid "Your site is ready."
+msgstr "Trang web của bạn đã sẵn sàng."
+
+#: core/src/Importer.php:445
+msgid "WooCommerce is not active, so the shop products were skipped."
+msgstr ""
+"WooCommerce chưa được kích hoạt, nên các sản phẩm cửa hàng đã bị bỏ qua."
+
+#: core/src/Importer.php:602
+msgid "Your server needs a change before the import can run safely."
+msgstr "Máy chủ của bạn cần được điều chỉnh trước khi có thể nhập an toàn."
+
+#: core/src/Importer.php:602
+msgid "Fix the items above (your host can help), then press Retry."
+msgstr ""
+"Hãy khắc phục các mục ở trên (nhà cung cấp hosting có thể hỗ trợ), rồi nhấn "
+"Thử lại."
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid ""
+"%s was imported before. Its pages stay; the new import adds fresh copies."
+msgstr ""
+"%s đã được nhập trước đó. Các trang cũ được giữ lại; lượt nhập mới sẽ thêm "
+"bản sao mới."
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid "Tick \"Remove previous demo\" next time for a clean site."
+msgstr "Lần sau hãy chọn \"Gỡ demo trước đó\" để có trang web sạch."
+
+#: core/src/Importer.php:609
+msgid "Server checks passed."
+msgstr "Đã vượt qua kiểm tra máy chủ."
+
+#. translators: %d: items.
+#: core/src/Importer.php:621
+msgid "Removed %d items from the previous demo and restored its settings."
+msgstr "Đã gỡ %d mục của demo trước đó và khôi phục cài đặt."
+
+#: core/src/Importer.php:634
+msgid "Upload a fresh copy of the theme, then press Resume."
+msgstr "Hãy tải lên một bản sao mới của giao diện, rồi nhấn Tiếp tục."
+
+#: core/src/Importer.php:634
+msgid "Check your internet connection and press Resume."
+msgstr "Hãy kiểm tra kết nối internet và nhấn Tiếp tục."
+
+#: core/src/Importer.php:640
+msgid "The demo package could not be read (content.json is damaged)."
+msgstr "Không thể đọc gói demo (content.json bị hỏng)."
+
+#: core/src/Importer.php:640
+msgid "Clear the cache on the System Status tab and retry."
+msgstr "Hãy xóa bộ nhớ đệm trong tab Trạng thái hệ thống và thử lại."
+
+#. translators: 1: pages, 2: images, 3: products.
+#: core/src/Importer.php:644
+msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
+msgstr ""
+"Gói đã sẵn sàng: %1$d trang và bài viết, %2$d hình ảnh, %3$d sản phẩm."
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid "%1$s could not be set up: %2$s"
+msgstr "Không thể thiết lập %1$s: %2$s"
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid ""
+"Install it from Plugins → Add New, then use the Plugins tab here to activate"
+" it."
+msgstr ""
+"Hãy cài đặt từ Plugin → Cài mới, rồi dùng tab Plugin tại đây để kích hoạt."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:667
+msgid "%s installed and activated."
+msgstr "Đã cài đặt và kích hoạt %s."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:669
+msgid "%s activated."
+msgstr "Đã kích hoạt %s."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:671
+msgid "%s deactivated because it conflicts with this demo."
+msgstr "Đã tắt %s vì xung đột với demo này."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:673
+msgid "%s is already active."
+msgstr "%s đã được kích hoạt."
+
+#: core/src/Importer.php:702
+msgid "file not found in the package"
+msgstr "không tìm thấy tệp trong gói"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:707
+msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
+msgstr ""
+"Đã bỏ qua hình ảnh %1$s (%2$s). Các trang sẽ dùng bản sao của giao diện thay"
+" thế."
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Image %1$s skipped (%2$s)."
+msgstr "Đã bỏ qua hình ảnh %1$s (%2$s)."
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Check that the uploads folder is writable."
+msgstr "Hãy kiểm tra thư mục uploads có quyền ghi hay không."
+
+#. translators: %s: file.
+#: core/src/Importer.php:729
+msgid "Imported image %s."
+msgstr "Đã nhập hình ảnh %s."
+
+#. translators: 1: term, 2: taxonomy.
+#. translators: 1: title, 2: post type.
+#: core/src/Importer.php:744 core/src/Importer.php:790
+msgid "Skipped \"%1$s\": %2$s is not available on this site."
+msgstr "Đã bỏ qua \"%1$s\": %2$s không khả dụng trên trang web này."
+
+#. translators: %s: term.
+#: core/src/Importer.php:751
+msgid "Category \"%s\" already exists and was reused."
+msgstr "Chuyên mục \"%s\" đã tồn tại và được dùng lại."
+
+#. translators: 1: term, 2: error.
+#: core/src/Importer.php:763
+msgid "Category \"%1$s\" was not created: %2$s"
+msgstr "Không tạo được chuyên mục \"%1$s\": %2$s"
+
+#. translators: %s: term.
+#: core/src/Importer.php:770
+msgid "Created category \"%s\"."
+msgstr "Đã tạo chuyên mục \"%s\"."
+
+#. translators: 1: title, 2: error.
+#: core/src/Importer.php:808
+msgid "\"%1$s\" could not be created: %2$s"
+msgstr "Không thể tạo \"%1$s\": %2$s"
+
+#: core/src/Importer.php:836
+msgid "post"
+msgstr "bài viết"
+
+#: core/src/Importer.php:837
+msgid "page"
+msgstr "trang"
+
+#: core/src/Importer.php:838
+msgid "event"
+msgstr "sự kiện"
+
+#: core/src/Importer.php:839
+msgid "venue"
+msgstr "địa điểm"
+
+#: core/src/Importer.php:840
+msgid "organizer"
+msgstr "ban tổ chức"
+
+#. translators: 1: type, 2: title.
+#: core/src/Importer.php:843
+msgid "Created %1$s \"%2$s\"."
+msgstr "Đã tạo %1$s \"%2$s\"."
+
+#: core/src/Importer.php:860
+msgid "The Events Calendar rejected the venue."
+msgstr "The Events Calendar đã từ chối địa điểm."
+
+#: core/src/Importer.php:864
+msgid "The Events Calendar rejected the organizer."
+msgstr "The Events Calendar đã từ chối ban tổ chức."
+
+#: core/src/Importer.php:892
+msgid "The Events Calendar rejected the event."
+msgstr "The Events Calendar đã từ chối sự kiện."
+
+#. translators: %s: product.
+#: core/src/Importer.php:1004
+msgid "Product \"%s\" could not be saved."
+msgstr "Không thể lưu sản phẩm \"%s\"."
+
+#. translators: %s: product.
+#: core/src/Importer.php:1015
+msgid "Added product \"%s\"."
+msgstr "Đã thêm sản phẩm \"%s\"."
+
+#. translators: 1: menu, 2: count.
+#: core/src/Importer.php:1118
+msgid "Created menu \"%1$s\" with %2$d links."
+msgstr "Đã tạo menu \"%1$s\" với %2$d liên kết."
+
+#: core/src/Importer.php:1164
+msgid "Home and blog pages assigned."
+msgstr "Đã thiết lập trang chủ và trang blog."
+
+#. translators: %s: option.
+#: core/src/Importer.php:1170
+msgid "Setting \"%s\" is not on the allow-list and was ignored."
+msgstr "Cài đặt \"%s\" không nằm trong danh sách cho phép và đã bị bỏ qua."
+
+#. translators: %s: preset.
+#: core/src/Importer.php:1191
+msgid "Animation style set to \"%s\"."
+msgstr "Đã đặt kiểu hiệu ứng thành \"%s\"."
+
+#: core/src/Importer.php:1204
+msgid "Elementor set to use the theme colours and fonts."
+msgstr "Đã thiết lập Elementor dùng màu sắc và phông chữ của giao diện."
+
+#: core/src/Importer.php:1219
+msgid "Default"
+msgstr "Mặc định"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Style \"%s\" was not found in the theme, so the default colours stay."
+msgstr "Không tìm thấy kiểu \"%s\" trong giao diện, nên giữ nguyên màu mặc định."
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Update the WPEssential theme, then import again."
+msgstr "Hãy cập nhật giao diện WPEssential, rồi nhập lại."
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1250
+msgid "Applied the %s colours and fonts."
+msgstr "Đã áp dụng màu sắc và phông chữ %s."
+
+#: core/src/Importer.php:1268
+msgid "demo"
+msgstr "demo"
+
+#. translators: 1: template part, 2: design.
+#: core/src/Importer.php:1320
+msgid "Template part \"%1$s\" set to the \"%2$s\" design."
+msgstr "Đã đặt thành phần mẫu \"%1$s\" sang thiết kế \"%2$s\"."
+
+#: core/src/Importer.php:1341
+msgid "Elementor Kit layout, buttons and form styles set."
+msgstr "Đã thiết lập bố cục, nút và kiểu biểu mẫu của Elementor Kit."
+
+#: core/src/Importer.php:1361
+msgid "Everywhere"
+msgstr "Mọi nơi"
+
+#: core/src/Importer.php:1369
+msgid "Free shipping"
+msgstr "Miễn phí vận chuyển"
+
+#. translators: %s: amount.
+#: core/src/Importer.php:1377
+msgid "Shipping set up with free delivery over %s."
+msgstr "Đã thiết lập vận chuyển với giao hàng miễn phí cho đơn trên %s."
+
+#. translators: %d: pages.
+#: core/src/Importer.php:1412
+msgid "Linked %d page to its new address."
+msgid_plural "Linked %d pages to their new addresses."
+msgstr[0] "Đã liên kết %d trang tới địa chỉ mới."
+
+#: core/src/Importer.php:1417
+msgid "Permalinks and caches refreshed."
+msgstr "Đã làm mới đường dẫn tĩnh và bộ nhớ đệm."
+
+#: core/src/License.php:136
+msgid ""
+"That license key looks too short. Copy it again from your purchase email."
+msgstr "Khóa giấy phép có vẻ quá ngắn. Hãy sao chép lại từ email mua hàng."
+
+#: core/src/License.php:204
+msgid ""
+"This is a Pro item. Activate your license on the License tab to unlock it."
+msgstr ""
+"Đây là mục Pro. Hãy kích hoạt giấy phép trong tab Giấy phép để mở khóa."
+
+#: core/src/License/Adapter.php:84
+msgid "The license server did not return a download link."
+msgstr "Máy chủ giấy phép không trả về liên kết tải xuống."
+
+#. translators: %s: error.
+#: core/src/License/Adapter.php:107
+msgid "The license server could not be reached: %s"
+msgstr "Không thể kết nối tới máy chủ giấy phép: %s"
+
+#. translators: %d: HTTP status.
+#: core/src/License/Adapter.php:113
+msgid ""
+"The license server answered with an unexpected response (HTTP %d). Try again"
+" in a few minutes."
+msgstr ""
+"Máy chủ giấy phép trả về phản hồi không mong muốn (HTTP %d). Hãy thử lại sau"
+" vài phút."
+
+#: core/src/License/Custom.php:42 core/src/License/Edd.php:31
+#: core/src/License/Woo.php:58
+msgid "This license key is not valid."
+msgstr "Khóa giấy phép này không hợp lệ."
+
+#: core/src/License/Edd.php:27
+msgid ""
+"This license has expired. Renew it to keep receiving demos and updates."
+msgstr ""
+"Giấy phép này đã hết hạn. Hãy gia hạn để tiếp tục nhận demo và bản cập nhật."
+
+#: core/src/License/Edd.php:28
+msgid "This license has been disabled."
+msgstr "Giấy phép này đã bị vô hiệu hóa."
+
+#: core/src/License/Edd.php:29
+msgid "This license has been revoked."
+msgstr "Giấy phép này đã bị thu hồi."
+
+#: core/src/License/Edd.php:30
+msgid "This license key does not exist."
+msgstr "Khóa giấy phép này không tồn tại."
+
+#: core/src/License/Edd.php:32
+msgid "This license is not active for this domain."
+msgstr "Giấy phép này chưa được kích hoạt cho tên miền này."
+
+#: core/src/License/Edd.php:33
+msgid "This key belongs to a different product."
+msgstr "Khóa này thuộc về một sản phẩm khác."
+
+#: core/src/License/Edd.php:34
+msgid ""
+"This license has reached its activation limit. Deactivate it on another site"
+" first."
+msgstr ""
+"Giấy phép này đã đạt giới hạn kích hoạt. Hãy hủy kích hoạt trên trang web "
+"khác trước."
+
+#: core/src/License/Edd.php:130 core/src/License/Woo.php:118
+msgid "The store did not return a download link for this license."
+msgstr "Cửa hàng không trả về liên kết tải xuống cho giấy phép này."
+
+#: core/src/Plugins.php:115
+msgid "Your account is not allowed to install plugins."
+msgstr "Tài khoản của bạn không được phép cài đặt plugin."
+
+#. translators: 1: plugin name, 2: error.
+#: core/src/Plugins.php:130
+msgid ""
+"WordPress.org did not answer for %1$s (%2$s). Check the server can reach "
+"wordpress.org, or install it manually."
+msgstr ""
+"WordPress.org không phản hồi cho %1$s (%2$s). Hãy kiểm tra máy chủ có thể "
+"kết nối tới wordpress.org, hoặc cài đặt thủ công."
+
+#: core/src/Plugins.php:145
+msgid "No download source is set for this plugin."
+msgstr "Chưa đặt nguồn tải xuống cho plugin này."
+
+#: core/src/Plugins.php:158
+msgid ""
+"The plugin could not be installed. The server may lack write access to wp-"
+"content/plugins."
+msgstr ""
+"Không thể cài đặt plugin. Máy chủ có thể không có quyền ghi vào wp-"
+"content/plugins."
+
+#: core/src/Plugins.php:174
+msgid "Plugin is not installed."
+msgstr "Plugin chưa được cài đặt."
+
+#: core/src/Plugins.php:208
+msgid "Your account is not allowed to delete plugins."
+msgstr "Tài khoản của bạn không được phép xóa plugin."
+
+#: core/src/Rest.php:101
+msgid "Demo not found."
+msgstr "Không tìm thấy demo."
+
+#: core/src/Rest.php:158
+msgid "No imported demo was found."
+msgstr "Không tìm thấy demo đã nhập nào."
+
+#. translators: 1: demo, 2: count.
+#: core/src/Rest.php:164
+msgid "%1$s removed: %2$d items deleted and your previous settings restored."
+msgstr "Đã gỡ %1$s: đã xóa %2$d mục và khôi phục cài đặt trước đó."
+
+#: core/src/Rest.php:191
+msgid "This plugin is not managed by WPEssential."
+msgstr "Plugin này không được WPEssential quản lý."
+
+#: core/src/Rest.php:323
+msgid "Branding can be changed with a White Label plan."
+msgstr "Có thể thay đổi thương hiệu với gói White Label."
+
+#: core/src/Status.php:30
+msgid "WordPress version"
+msgstr "Phiên bản WordPress"
+
+#: core/src/Status.php:33
+msgid "Update WordPress to 6.5 or newer."
+msgstr "Hãy cập nhật WordPress lên 6.5 hoặc mới hơn."
+
+#: core/src/Status.php:37
+msgid "PHP version"
+msgstr "Phiên bản PHP"
+
+#: core/src/Status.php:40
+msgid ""
+"PHP 8.1 or newer is faster and still supported. Ask your host to upgrade."
+msgstr ""
+"PHP 8.1 hoặc mới hơn nhanh hơn và vẫn được hỗ trợ. Hãy yêu cầu nhà cung cấp "
+"hosting nâng cấp."
+
+#: core/src/Status.php:44
+msgid "Memory limit"
+msgstr "Giới hạn bộ nhớ"
+
+#: core/src/Status.php:45 core/src/Status.php:52
+msgid "Unlimited"
+msgstr "Không giới hạn"
+
+#: core/src/Status.php:47
+msgid ""
+"Set memory_limit to 256M in php.ini, or define WP_MEMORY_LIMIT in wp-"
+"config.php."
+msgstr ""
+"Đặt memory_limit thành 256M trong php.ini, hoặc định nghĩa WP_MEMORY_LIMIT "
+"trong wp-config.php."
+
+#: core/src/Status.php:51
+msgid "Max execution time"
+msgstr "Thời gian thực thi tối đa"
+
+#: core/src/Status.php:54
+msgid "The importer works in short batches, so 30 seconds is enough."
+msgstr "Trình nhập hoạt động theo từng đợt ngắn, nên 30 giây là đủ."
+
+#: core/src/Status.php:58
+msgid "Max upload size"
+msgstr "Kích thước tải lên tối đa"
+
+#: core/src/Status.php:61
+msgid "Raise upload_max_filesize and post_max_size to at least 8M."
+msgstr "Hãy tăng upload_max_filesize và post_max_size lên ít nhất 8M."
+
+#: core/src/Status.php:65
+msgid "Uploads folder"
+msgstr "Thư mục uploads"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Writable"
+msgstr "Có thể ghi"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Not writable"
+msgstr "Không thể ghi"
+
+#: core/src/Status.php:68
+msgid "Give the web server write access to wp-content/uploads."
+msgstr "Hãy cấp quyền ghi vào wp-content/uploads cho máy chủ web."
+
+#: core/src/Status.php:72
+msgid "Plugins folder"
+msgstr "Thư mục plugin"
+
+#: core/src/Status.php:75
+msgid "Without write access, required plugins must be installed by hand."
+msgstr ""
+"Nếu không có quyền ghi, các plugin bắt buộc phải được cài đặt thủ công."
+
+#: core/src/Status.php:79
+msgid "ZIP support"
+msgstr "Hỗ trợ ZIP"
+
+#: core/src/Status.php:82
+msgid "Enable the PHP zip extension for faster package extraction."
+msgstr "Hãy bật phần mở rộng PHP zip để giải nén gói nhanh hơn."
+
+#: core/src/Status.php:86
+msgid "Image editor"
+msgstr "Trình chỉnh sửa ảnh"
+
+#: core/src/Status.php:87
+msgid "WebP supported"
+msgstr "Hỗ trợ WebP"
+
+#: core/src/Status.php:87
+msgid "No WebP support"
+msgstr "Không hỗ trợ WebP"
+
+#: core/src/Status.php:89
+msgid ""
+"Images still import, but WordPress cannot create smaller sizes. Ask your "
+"host to enable Imagick or GD with WebP."
+msgstr ""
+"Hình ảnh vẫn được nhập, nhưng WordPress không thể tạo các kích thước nhỏ "
+"hơn. Hãy yêu cầu nhà cung cấp hosting bật Imagick hoặc GD có hỗ trợ WebP."
+
+#: core/src/Status.php:93
+msgid "Permalinks"
+msgstr "Đường dẫn tĩnh"
+
+#: core/src/Status.php:94
+msgid "Plain"
+msgstr "Đơn giản"
+
+#: core/src/Status.php:96
+msgid ""
+"Choose \"Post name\" under Settings → Permalinks for clean shop and page "
+"addresses."
+msgstr ""
+"Chọn \"Tên bài viết\" trong Cài đặt → Đường dẫn tĩnh để có địa chỉ cửa hàng "
+"và trang gọn gàng."
+
+#: core/src/Status.php:123 core/assets/admin.js:282
+msgid "Theme"
+msgstr "Giao diện"
+
+#: core/src/Status.php:124
+msgid "Core module"
+msgstr "Mô-đun lõi"
+
+#: core/src/Status.php:124
+msgid "plugin"
+msgstr "plugin"
+
+#: core/src/Status.php:124
+msgid "built into theme"
+msgstr "tích hợp trong giao diện"
+
+#: core/src/Status.php:125
+msgid "Site address"
+msgstr "Địa chỉ trang web"
+
+#: core/src/Status.php:126
+msgid "Multisite"
+msgstr "Multisite"
+
+#: core/src/Status.php:126
+msgid "Yes"
+msgstr "Có"
+
+#: core/src/Status.php:126
+msgid "No"
+msgstr "Không"
+
+#: core/src/Status.php:127
+msgid "Server"
+msgstr "Máy chủ"
+
+#: core/src/Status.php:128
+msgid "Database"
+msgstr "Cơ sở dữ liệu"
+
+#: core/src/Status.php:129
+msgid "Active plugins"
+msgstr "Plugin đang hoạt động"
+
+#: inc/block-styles.php:16
+msgid "Secondary"
+msgstr "Phụ"
+
+#: inc/block-styles.php:17
+msgid "Outline"
+msgstr "Viền"
+
+#: inc/block-styles.php:18
+msgid "Ghost"
+msgstr "Trong suốt"
+
+#: inc/block-styles.php:19
+msgid "Dark"
+msgstr "Tối"
+
+#: inc/block-styles.php:20
+msgid "Light (on dark)"
+msgstr "Sáng (trên nền tối)"
+
+#: inc/block-styles.php:21
+msgid "Text link"
+msgstr "Liên kết văn bản"
+
+#: inc/block-styles.php:22
+msgid "Pill"
+msgstr "Viên thuốc"
+
+#: inc/block-styles.php:23
+msgid "Large"
+msgstr "Lớn"
+
+#: inc/block-styles.php:26 inc/block-styles.php:33
+msgid "Card"
+msgstr "Thẻ"
+
+#: inc/block-styles.php:27 inc/block-styles.php:34
+msgid "Card — flat"
+msgstr "Thẻ — phẳng"
+
+#: inc/block-styles.php:28 inc/block-styles.php:35
+msgid "Card — dark"
+msgstr "Thẻ — tối"
+
+#: inc/block-styles.php:29
+msgid "Section — dark"
+msgstr "Khu vực — tối"
+
+#: inc/block-styles.php:30
+msgid "Logo strip"
+msgstr "Dải logo"
+
+#: inc/block-styles.php:38
+msgid "Checklist"
+msgstr "Danh sách kiểm"
+
+#: inc/block-styles.php:39
+msgid "Timeline"
+msgstr "Dòng thời gian"
+
+#: inc/block-styles.php:42
+msgid "Overline"
+msgstr "Tiêu đề phụ trên"
+
+#: inc/block-styles.php:43
+msgid "Lead"
+msgstr "Đoạn dẫn"
+
+#: inc/block-styles.php:46
+msgid "Flush"
+msgstr "Sát lề"
+
+#: inc/block-styles.php:49
+msgid "Shadow"
+msgstr "Đổ bóng"
+
+#: inc/block-styles.php:50
+msgid "Glass frame"
+msgstr "Khung kính"
+
+#: inc/block-styles.php:53
+msgid "Pills"
+msgstr "Viên thuốc"
+
+#: inc/block-styles.php:54
+msgid "Hashtags"
+msgstr "Hashtag"
+
+#: inc/block-styles.php:57
+msgid "Soft"
+msgstr "Mềm"
+
+#: inc/core-bridge.php:53
+msgid ""
+"Install the WPEssential Core plugin to import one-click demos for Gutenberg "
+"or Elementor."
+msgstr ""
+"Cài đặt plugin WPEssential Core để nhập demo một cú nhấp cho Gutenberg hoặc "
+"Elementor."
+
+#: inc/core-bridge.php:55
+msgid "Get WPEssential Core"
+msgstr "Tải WPEssential Core"
+
+#: inc/core-bridge.php:57
+msgid "Dismiss"
+msgstr "Bỏ qua"
+
+#: inc/motion.php:21
+msgid "None"
+msgstr "Không"
+
+#: inc/motion.php:22
+msgid "No animations."
+msgstr "Không có hiệu ứng."
+
+#: inc/motion.php:25
+msgid "Subtle"
+msgstr "Tinh tế"
+
+#: inc/motion.php:26
+msgid "Short fade-up. Corporate, SaaS, finance, medical."
+msgstr "Hiện dần lên ngắn. Doanh nghiệp, SaaS, tài chính, y tế."
+
+#: inc/motion.php:29
+msgid "Editorial"
+msgstr "Biên tập"
+
+#: inc/motion.php:30
+msgid "Slow image masks and line reveals. Fashion, magazine, luxury."
+msgstr "Mặt nạ ảnh và hiệu ứng hiện dòng chậm. Thời trang, tạp chí, cao cấp."
+
+#: inc/motion.php:33
+msgid "Playful"
+msgstr "Vui nhộn"
+
+#: inc/motion.php:34
+msgid "Springy scale and stagger. Food, kids, events, creative."
+msgstr ""
+"Phóng to đàn hồi và xuất hiện so le. Ẩm thực, trẻ em, sự kiện, sáng tạo."
+
+#: inc/motion.php:37
+msgid "Dynamic (GSAP)"
+msgstr "Năng động (GSAP)"
+
+#: inc/motion.php:38
+msgid ""
+"Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, "
+"sport, launches."
+msgstr ""
+"Parallax, bộ đếm và lưới so le với GSAP ScrollTrigger. Sự kiện, thể thao, ra"
+" mắt."
+
+#: inc/multilingual.php:108
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#: inc/multilingual.php:165
+msgid "Language switcher"
+msgstr "Bộ chuyển ngôn ngữ"
+
+#: inc/multilingual.php:245 inc/patterns-shop/shop-products.php:14
+msgid "Featured"
+msgstr "Nổi bật"
+
+#: inc/multilingual.php:246
+msgid "Author"
+msgstr "Tác giả"
+
+#: inc/options.php:40
+msgid "Untitled snippet"
+msgstr "Đoạn mã chưa đặt tên"
+
+#: inc/options.php:125 inc/options.php:215
+msgid "Theme Options"
+msgstr "Tùy chọn giao diện"
+
+#: inc/options.php:153
+msgid "Saved"
+msgstr "Đã lưu"
+
+#: inc/options.php:154
+msgid "Could not save"
+msgstr "Không thể lưu"
+
+#: inc/options.php:155
+msgid "Delete this snippet?"
+msgstr "Xóa đoạn mã này?"
+
+#: inc/options.php:156
+msgid ""
+"No snippets yet. Add CSS or JavaScript without editing theme files — it "
+"survives theme updates."
+msgstr ""
+"Chưa có đoạn mã nào. Thêm CSS hoặc JavaScript mà không cần sửa tệp giao diện"
+" — vẫn giữ nguyên khi cập nhật giao diện."
+
+#: inc/options.php:215
+msgid "Loading…"
+msgstr "Đang tải…"
+
+#: inc/patterns-shop/shop-categories.php:13
+msgid "Shop by category"
+msgstr "Mua sắm theo danh mục"
+
+#: inc/patterns-shop/shop-categories.php:17
+msgid "Find what you love"
+msgstr "Tìm món bạn yêu thích"
+
+#: inc/patterns-shop/shop-products.php:18
+msgid "Customer favourites"
+msgstr "Được khách hàng yêu thích"
+
+#: inc/patterns-shop/shop-products.php:24
+msgid "View all products"
+msgstr "Xem tất cả sản phẩm"
+
+#: inc/patterns-shop/shop-products.php:34
+msgid "New arrivals"
+msgstr "Hàng mới về"
+
+#: inc/patterns-shop/shop-products.php:42
+msgid "On sale now"
+msgstr "Đang giảm giá"
+
+#: inc/patterns.php:15
+msgid "WPEssential — Heroes"
+msgstr "WPEssential — Hero"
+
+#: inc/patterns.php:16
+msgid "WPEssential — Sections"
+msgstr "WPEssential — Khu vực"
+
+#: inc/patterns.php:17
+msgid "WPEssential — Headers"
+msgstr "WPEssential — Đầu trang"
+
+#: inc/patterns.php:18
+msgid "WPEssential — Footers"
+msgstr "WPEssential — Chân trang"
+
+#: inc/patterns.php:19
+msgid "WPEssential — Full pages"
+msgstr "WPEssential — Trang hoàn chỉnh"
+
+#: inc/patterns.php:20
+msgid "WPEssential — Shop"
+msgstr "WPEssential — Cửa hàng"
+
+#: inc/patterns.php:36
+msgid "Shop — Category grid"
+msgstr "Cửa hàng — Lưới danh mục"
+
+#: inc/patterns.php:37
+msgid "Shop — Featured, new and sale products"
+msgstr "Cửa hàng — Sản phẩm nổi bật, mới và giảm giá"
+
+#: inc/seo.php:136
+msgid "Home"
+msgstr "Trang chủ"
+
+#: inc/setup.php:40
+msgid "Primary Menu"
+msgstr "Menu chính"
+
+#: inc/setup.php:41
+msgid "Mobile Menu"
+msgstr "Menu di động"
+
+#: inc/setup.php:42
+msgid "Footer Menu"
+msgstr "Menu chân trang"
+
+#: inc/setup.php:43
+msgid "Top Bar Menu"
+msgstr "Menu thanh trên cùng"
+
+#: inc/setup.php:77
+msgid "Back to top"
+msgstr "Lên đầu trang"
+
+#. translators: %d: discount percentage.
+#: inc/woocommerce.php:48
+msgid "-%d%%"
+msgstr "-%d%%"
+
+#: inc/woocommerce.php:89
+msgid "Out of stock"
+msgstr "Hết hàng"
+
+#: inc/woocommerce.php:136
+msgid "You’ve unlocked free shipping on this order!"
+msgstr "Đơn hàng này đã được miễn phí vận chuyển!"
+
+#. translators: %s: amount left for free shipping.
+#: inc/woocommerce.php:139
+msgid "Add %s more to unlock free shipping."
+msgstr "Mua thêm %s để được miễn phí vận chuyển."
+
+#: patterns/blog-hero.php
+msgctxt "Pattern title"
+msgid "Blog hero"
+msgstr "Hero blog"
+
+#: patterns/blog-hero.php:14 patterns/footer-premium.php:89
+#: patterns/footer-simple.php:18 core/assets/admin.js:301
+msgid "Blog"
+msgstr "Blog"
+
+#: patterns/blog-hero.php:18
+msgid "Guides, tutorials and product news from the WPEssential team."
+msgstr "Hướng dẫn, bài hướng dẫn và tin tức sản phẩm từ đội ngũ WPEssential."
+
+#: patterns/builders-split.php
+msgctxt "Pattern title"
+msgid "Split — image + checklist (dark)"
+msgstr "Chia đôi — ảnh + danh sách kiểm (tối)"
+
+#: patterns/builders-split.php:16
+msgid "Your builder, your choice"
+msgstr "Trình dựng trang do bạn chọn"
+
+#: patterns/builders-split.php:20
+msgid "Same design. Gutenberg or Elementor."
+msgstr "Cùng một thiết kế. Gutenberg hoặc Elementor."
+
+#: patterns/builders-split.php:24
+msgid ""
+"Colors, fonts and spacing come from one theme.json and sync into Elementor’s"
+" global kit automatically."
+msgstr ""
+"Màu sắc, phông chữ và khoảng cách đến từ một tệp theme.json duy nhất và tự "
+"động đồng bộ vào kit toàn cục của Elementor."
+
+#: patterns/builders-split.php:29
+msgid "Shared design tokens across both builders"
+msgstr "Dùng chung design token cho cả hai trình dựng trang"
+
+#: patterns/builders-split.php:31
+msgid "Elementor Pro Theme Builder locations supported"
+msgstr "Hỗ trợ các vị trí Theme Builder của Elementor Pro"
+
+#: patterns/builders-split.php:33
+msgid "Full Site Editing templates and patterns"
+msgstr "Mẫu và mẫu khối cho Chỉnh sửa toàn trang"
+
+#: patterns/builders-split.php:40
+msgid "Designer building a site"
+msgstr "Nhà thiết kế đang xây dựng trang web"
+
+#: patterns/coming-soon.php
+msgctxt "Pattern title"
+msgid "Coming soon"
+msgstr "Sắp ra mắt"
+
+#: patterns/coming-soon.php:17
+msgid "Something great is on the way"
+msgstr "Điều tuyệt vời đang đến"
+
+#: patterns/coming-soon.php:21
+msgid "We are polishing the final details. Follow us for launch news."
+msgstr ""
+"Chúng tôi đang hoàn thiện những chi tiết cuối cùng. Theo dõi chúng tôi để "
+"nhận tin ra mắt."
+
+#: patterns/comments.php
+msgctxt "Pattern title"
+msgid "Comments"
+msgstr "Bình luận"
+
+#: patterns/contact.php
+msgctxt "Pattern title"
+msgid "Contact — details + form area"
+msgstr "Liên hệ — thông tin + khu vực biểu mẫu"
+
+#: patterns/contact.php:22
+msgid "Email us"
+msgstr "Gửi email"
+
+#: patterns/contact.php:36
+msgid "Call us"
+msgstr "Gọi cho chúng tôi"
+
+#: patterns/contact.php:50
+msgid "Visit us"
+msgstr "Ghé thăm"
+
+#: patterns/contact.php:64
+msgid "Support hours"
+msgstr "Giờ hỗ trợ"
+
+#: patterns/contact.php:68
+msgid "Replies within one business day"
+msgstr "Phản hồi trong vòng một ngày làm việc"
+
+#: patterns/contact.php:76
+msgid "Send us a message"
+msgstr "Gửi tin nhắn cho chúng tôi"
+
+#: patterns/contact.php:80
+msgid ""
+"Replace the shortcode below with your form plugin (Contact Form 7, WPForms, "
+"Fluent Forms or the Elementor Form widget)."
+msgstr ""
+"Thay mã ngắn bên dưới bằng plugin biểu mẫu của bạn (Contact Form 7, WPForms,"
+" Fluent Forms hoặc widget Form của Elementor)."
+
+#: patterns/content-404.php
+msgctxt "Pattern title"
+msgid "404 content"
+msgstr "Nội dung 404"
+
+#: patterns/content-404.php:14
+msgid "Error 404"
+msgstr "Lỗi 404"
+
+#: patterns/content-404.php:18
+msgid "This page took a day off"
+msgstr "Trang này đang nghỉ phép"
+
+#: patterns/content-404.php:22
+msgid ""
+"The link may be broken or the page may have moved. Try a search or head back"
+" home."
+msgstr ""
+"Liên kết có thể bị hỏng hoặc trang đã được chuyển. Hãy thử tìm kiếm hoặc "
+"quay về trang chủ."
+
+#: patterns/content-404.php:25 patterns/header-actions.php:14
+#: patterns/header-shop.php:22 patterns/sidebar.php:14
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: patterns/content-404.php:29
+msgid "Back to home"
+msgstr "Về trang chủ"
+
+#: patterns/cta-banner.php
+msgctxt "Pattern title"
+msgid "Call to action — gradient banner"
+msgstr "Kêu gọi hành động — banner chuyển màu"
+
+#: patterns/cta-banner.php:15
+msgid "Ready to launch your next site?"
+msgstr "Sẵn sàng ra mắt trang web tiếp theo?"
+
+#: patterns/cta-banner.php:19
+msgid ""
+"Start free. Upgrade to Pro when you need premium demos and priority support."
+msgstr ""
+"Bắt đầu miễn phí. Nâng cấp lên Pro khi bạn cần demo cao cấp và hỗ trợ ưu "
+"tiên."
+
+#: patterns/cta-banner.php:24
+msgid "Get WPEssential free"
+msgstr "Nhận WPEssential miễn phí"
+
+#: patterns/cta-banner.php:28
+msgid "See Pro plans →"
+msgstr "Xem các gói Pro →"
+
+#: patterns/faq.php
+msgctxt "Pattern title"
+msgid "FAQ — accordion"
+msgstr "FAQ — accordion"
+
+#: patterns/faq.php:15 patterns/footer-premium.php:90
+msgid "FAQ"
+msgstr "FAQ"
+
+#: patterns/faq.php:19 patterns/page-faq.php:20
+msgid "Frequently asked questions"
+msgstr "Câu hỏi thường gặp"
+
+#: patterns/faq.php:24
+msgid "Is WPEssential free?"
+msgstr "WPEssential có miễn phí không?"
+
+#: patterns/faq.php:25
+msgid ""
+"Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium"
+" blocks and priority support."
+msgstr ""
+"Có. Giao diện và 12 demo miễn phí vĩnh viễn. Pro mở khóa hơn 40 demo, khối "
+"cao cấp và hỗ trợ ưu tiên."
+
+#: patterns/faq.php:30
+msgid "Which page builders are supported?"
+msgstr "Hỗ trợ những trình dựng trang nào?"
+
+#: patterns/faq.php:31
+msgid ""
+"The native block editor (Gutenberg) and Elementor. Every demo ships in both "
+"versions."
+msgstr ""
+"Trình soạn thảo khối gốc (Gutenberg) và Elementor. Mỗi demo đều có cả hai "
+"phiên bản."
+
+#: patterns/faq.php:36
+msgid "Will importing a demo delete my content?"
+msgstr "Nhập demo có xóa nội dung của tôi không?"
+
+#: patterns/faq.php:37
+msgid ""
+"No. Demo content is added alongside your existing posts, and you choose what"
+" to import."
+msgstr ""
+"Không. Nội dung demo được thêm bên cạnh các bài viết hiện có, và bạn chọn "
+"những gì cần nhập."
+
+#: patterns/faq.php:42
+msgid "Do I need Elementor Pro?"
+msgstr "Tôi có cần Elementor Pro không?"
+
+#: patterns/faq.php:43
+msgid ""
+"No. Elementor free is enough for every demo. Elementor Pro Theme Builder "
+"headers and footers are also supported."
+msgstr ""
+"Không. Elementor miễn phí là đủ cho mọi demo. Đầu trang và chân trang của "
+"Theme Builder trong Elementor Pro cũng được hỗ trợ."
+
+#: patterns/faq.php:48
+msgid "Is the theme translation-ready and RTL compatible?"
+msgstr "Giao diện có sẵn sàng dịch thuật và tương thích RTL không?"
+
+#: patterns/faq.php:49
+msgid ""
+"Yes. All strings are translatable and layouts mirror correctly for languages"
+" such as Urdu and Arabic."
+msgstr ""
+"Có. Mọi chuỗi đều có thể dịch và bố cục được đảo chiều chính xác cho các "
+"ngôn ngữ như tiếng Urdu và tiếng Ả Rập."
+
+#: patterns/features-grid.php
+msgctxt "Pattern title"
+msgid "Features — 3×2 grid"
+msgstr "Tính năng — lưới 3×2"
+
+#: patterns/features-grid.php:15
+msgid "Why WPEssential"
+msgstr "Vì sao chọn WPEssential"
+
+#: patterns/features-grid.php:19
+msgid "Everything a modern site needs, nothing it doesn’t"
+msgstr "Mọi thứ một trang web hiện đại cần, không thừa thứ gì"
+
+#: patterns/features-grid.php:23
+msgid ""
+"Built on theme.json and native blocks, with first-class Elementor support."
+msgstr "Xây dựng trên theme.json và khối gốc, hỗ trợ Elementor hàng đầu."
+
+#: patterns/features-grid.php:34
+msgid "One-click demo import"
+msgstr "Nhập demo một cú nhấp"
+
+#: patterns/features-grid.php:38
+msgid ""
+"Pick a demo, choose your builder, import. Content and settings land exactly "
+"as previewed."
+msgstr ""
+"Chọn demo, chọn trình dựng trang, nhập. Nội dung và cài đặt giống hệt bản "
+"xem trước."
+
+#: patterns/features-grid.php:48
+msgid "Gutenberg &amp; Elementor"
+msgstr "Gutenberg &amp; Elementor"
+
+#: patterns/features-grid.php:52
+msgid ""
+"Every demo ships twice — native blocks and Elementor — sharing one set of "
+"design tokens."
+msgstr ""
+"Mỗi demo có hai phiên bản — khối gốc và Elementor — dùng chung một bộ design"
+" token."
+
+#: patterns/features-grid.php:62
+msgid "Blazing fast"
+msgstr "Siêu nhanh"
+
+#: patterns/features-grid.php:66
+msgid ""
+"No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
+msgstr ""
+"Không jQuery, CSS theo từng khối và stylesheet nhỏ giúp Core Web Vitals luôn"
+" xanh."
+
+#: patterns/features-grid.php:78
+msgid "Automatic plugin setup"
+msgstr "Tự động thiết lập plugin"
+
+#: patterns/features-grid.php:82
+msgid ""
+"Required plugins install and activate themselves when you import a demo."
+msgstr "Các plugin bắt buộc tự cài đặt và kích hoạt khi bạn nhập demo."
+
+#: patterns/features-grid.php:92
+msgid "WooCommerce ready"
+msgstr "Sẵn sàng cho WooCommerce"
+
+#: patterns/features-grid.php:96
+msgid ""
+"Designed shop, product, cart, checkout and account pages — not default "
+"templates."
+msgstr ""
+"Trang cửa hàng, sản phẩm, giỏ hàng, thanh toán và tài khoản được thiết kế "
+"riêng — không phải mẫu mặc định."
+
+#: patterns/features-grid.php:106
+msgid "Pro license &amp; updates"
+msgstr "Giấy phép Pro &amp; cập nhật"
+
+#: patterns/features-grid.php:110
+msgid ""
+"Connect a license once to unlock Pro demos, premium blocks and updates."
+msgstr ""
+"Kết nối giấy phép một lần để mở khóa demo Pro, khối cao cấp và bản cập nhật."
+
+#: patterns/footer-premium.php
+msgctxt "Pattern title"
+msgid "Footer — Premium (dark, newsletter band)"
+msgstr "Chân trang — Cao cấp (tối, dải bản tin)"
+
+#: patterns/footer-premium.php:17
+msgid "Get design tips & new demos"
+msgstr "Nhận mẹo thiết kế & demo mới"
+
+#: patterns/footer-premium.php:21
+msgid "One email a month. No spam, unsubscribe anytime."
+msgstr "Một email mỗi tháng. Không spam, hủy đăng ký bất cứ lúc nào."
+
+#: patterns/footer-premium.php:28
+msgid "Subscribe"
+msgstr "Đăng ký"
+
+#: patterns/footer-premium.php:55
+msgid "Company"
+msgstr "Công ty"
+
+#: patterns/footer-premium.php:59 patterns/page-about.php:16
+msgid "About us"
+msgstr "Về chúng tôi"
+
+#: patterns/footer-premium.php:60 patterns/page-services.php:16
+#: patterns/services-grid.php:15
+msgid "Services"
+msgstr "Dịch vụ"
+
+#: patterns/footer-premium.php:61 patterns/page-pricing.php:16
+#: patterns/pricing.php:15
+msgid "Pricing"
+msgstr "Bảng giá"
+
+#: patterns/footer-premium.php:62 patterns/footer-simple.php:19
+#: patterns/header-topbar.php:18 patterns/page-contact.php:16
+msgid "Contact"
+msgstr "Liên hệ"
+
+#: patterns/footer-premium.php:70 core/assets/admin.js:301
+msgid "Shop"
+msgstr "Cửa hàng"
+
+#: patterns/footer-premium.php:74
+msgid "All products"
+msgstr "Tất cả sản phẩm"
+
+#: patterns/footer-premium.php:75
+msgid "My account"
+msgstr "Tài khoản của tôi"
+
+#: patterns/footer-premium.php:76
+msgid "Cart"
+msgstr "Giỏ hàng"
+
+#: patterns/footer-premium.php:77 patterns/header-topbar.php:18
+msgid "Track order"
+msgstr "Theo dõi đơn hàng"
+
+#: patterns/footer-premium.php:85 core/assets/admin.js:263
+msgid "Resources"
+msgstr "Tài nguyên"
+
+#: patterns/footer-premium.php:91 core/assets/admin.js:266
+msgid "Documentation"
+msgstr "Tài liệu"
+
+#: patterns/footer-premium.php:92 core/assets/admin.js:267
+msgid "Support"
+msgstr "Hỗ trợ"
+
+#: patterns/footer-premium.php:100
+msgid "All rights reserved."
+msgstr "Bảo lưu mọi quyền."
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:20
+msgid "Privacy"
+msgstr "Quyền riêng tư"
+
+#: patterns/footer-premium.php:104
+msgid "Terms"
+msgstr "Điều khoản"
+
+#: patterns/footer-simple.php
+msgctxt "Pattern title"
+msgid "Footer — Simple"
+msgstr "Chân trang — Đơn giản"
+
+#: patterns/footer-simple.php:17
+msgid "About"
+msgstr "Giới thiệu"
+
+#: patterns/header-actions.php
+msgctxt "Pattern title"
+msgid "Header actions (search, account, cart, CTA)"
+msgstr "Hành động đầu trang (tìm kiếm, tài khoản, giỏ hàng, CTA)"
+
+#: patterns/header-actions.php:23
+msgid "Switch to dark mode"
+msgstr "Chuyển sang chế độ tối"
+
+#: patterns/header-actions.php:23
+msgid "Switch to light mode"
+msgstr "Chuyển sang chế độ sáng"
+
+#: patterns/header-actions.php:29
+msgid "Get Started"
+msgstr "Bắt đầu"
+
+#: patterns/header-centered.php
+msgctxt "Pattern title"
+msgid "Header — Centered"
+msgstr "Đầu trang — Căn giữa"
+
+#: patterns/header-default.php
+msgctxt "Pattern title"
+msgid "Header — Default"
+msgstr "Đầu trang — Mặc định"
+
+#: patterns/header-shop.php
+msgctxt "Pattern title"
+msgid "Header — Shop (search + account + cart)"
+msgstr "Đầu trang — Cửa hàng (tìm kiếm + tài khoản + giỏ hàng)"
+
+#: patterns/header-shop.php:22
+msgid "Search products"
+msgstr "Tìm kiếm sản phẩm"
+
+#: patterns/header-shop.php:22
+msgid "Search products, brands and more…"
+msgstr "Tìm sản phẩm, thương hiệu và hơn thế nữa…"
+
+#: patterns/header-topbar.php
+msgctxt "Pattern title"
+msgid "Top bar"
+msgstr "Thanh trên cùng"
+
+#: patterns/header-topbar.php:14
+msgid "Free shipping on orders over $75 · 30-day returns"
+msgstr "Miễn phí vận chuyển cho đơn trên $75 · Đổi trả trong 30 ngày"
+
+#: patterns/header-topbar.php:18
+msgid "Help"
+msgstr "Trợ giúp"
+
+#: patterns/header-transparent.php
+msgctxt "Pattern title"
+msgid "Header — Transparent (over dark hero)"
+msgstr "Đầu trang — Trong suốt (trên hero tối)"
+
+#: patterns/hero-dark.php
+msgctxt "Pattern title"
+msgid "Hero — Dark with product shot"
+msgstr "Hero — Tối với ảnh sản phẩm"
+
+#: patterns/hero-dark.php:15 core/assets/admin.js:241
+msgid "NEW"
+msgstr "MỚI"
+
+#: patterns/hero-dark.php:15
+msgid "40+ demos for Gutenberg &amp; Elementor"
+msgstr "Hơn 40 demo cho Gutenberg &amp; Elementor"
+
+#: patterns/hero-dark.php:19
+msgid "Launch a premium WordPress site in minutes, not weeks"
+msgstr ""
+"Ra mắt trang web WordPress cao cấp trong vài phút, không phải vài tuần"
+
+#: patterns/hero-dark.php:23
+msgid ""
+"One-click demos for every niche, built natively for both the block editor "
+"and Elementor — fast, accessible and fully yours."
+msgstr ""
+"Demo một cú nhấp cho mọi lĩnh vực, xây dựng gốc cho cả trình soạn thảo khối "
+"và Elementor — nhanh, dễ tiếp cận và hoàn toàn thuộc về bạn."
+
+#: patterns/hero-dark.php:28 core/assets/admin.js:245
+msgid "Browse demos"
+msgstr "Xem các demo"
+
+#: patterns/hero-dark.php:32
+msgid "Watch the 2-min tour"
+msgstr "Xem giới thiệu 2 phút"
+
+#: patterns/hero-dark.php:43 patterns/stats.php:28
+msgid "Ready demos"
+msgstr "Demo có sẵn"
+
+#: patterns/hero-dark.php:53
+msgid "Page builders"
+msgstr "Trình dựng trang"
+
+#: patterns/hero-dark.php:63
+msgid "CSS on first load"
+msgstr "CSS khi tải lần đầu"
+
+#: patterns/hero-dark.php:73
+msgid "From 1,200 reviews"
+msgstr "Từ 1.200 đánh giá"
+
+#: patterns/hero-dark.php:80
+msgid "Business demo homepage built with WPEssential"
+msgstr "Trang chủ demo doanh nghiệp xây dựng bằng WPEssential"
+
+#: patterns/hero-split.php
+msgctxt "Pattern title"
+msgid "Hero — Split with image"
+msgstr "Hero — Chia đôi với hình ảnh"
+
+#: patterns/hero-split.php:17
+msgid "Multi-niche WordPress theme"
+msgstr "Giao diện WordPress đa lĩnh vực"
+
+#: patterns/hero-split.php:21
+msgid "Build any website in minutes"
+msgstr "Xây dựng mọi trang web trong vài phút"
+
+#: patterns/hero-split.php:25
+msgid ""
+"Import a ready-made demo for Gutenberg or Elementor with one click, then "
+"make it yours."
+msgstr ""
+"Nhập một demo dựng sẵn cho Gutenberg hoặc Elementor chỉ với một cú nhấp, rồi"
+" biến nó thành của bạn."
+
+#: patterns/hero-split.php:30 core/assets/admin.js:258
+msgid "Get started"
+msgstr "Bắt đầu"
+
+#: patterns/hero-split.php:34
+msgid "Learn more"
+msgstr "Tìm hiểu thêm"
+
+#: patterns/hero-split.php:41
+msgid "A WPEssential site on a laptop and phone"
+msgstr "Một trang web WPEssential trên laptop và điện thoại"
+
+#: patterns/latest-posts.php
+msgctxt "Pattern title"
+msgid "Latest posts — 3 cards"
+msgstr "Bài viết mới nhất — 3 thẻ"
+
+#: patterns/latest-posts.php:15
+msgid "From the blog"
+msgstr "Từ blog"
+
+#: patterns/latest-posts.php:19
+msgid "Guides for faster, better WordPress sites"
+msgstr "Hướng dẫn để có trang WordPress nhanh hơn, tốt hơn"
+
+#: patterns/logos.php
+msgctxt "Pattern title"
+msgid "Logo strip"
+msgstr "Dải logo"
+
+#: patterns/logos.php:14
+msgid "Trusted by 18,000+ agencies, stores and creators"
+msgstr "Được hơn 18.000 agency, cửa hàng và nhà sáng tạo tin dùng"
+
+#: patterns/maintenance.php
+msgctxt "Pattern title"
+msgid "Maintenance mode"
+msgstr "Chế độ bảo trì"
+
+#: patterns/maintenance.php:17
+msgid "We will be back shortly"
+msgstr "Chúng tôi sẽ sớm trở lại"
+
+#: patterns/maintenance.php:21
+msgid ""
+"Scheduled maintenance is underway. Thanks for your patience — we will be "
+"back online in a few minutes."
+msgstr ""
+"Đang bảo trì theo lịch. Cảm ơn bạn đã kiên nhẫn — chúng tôi sẽ trực tuyến "
+"trở lại sau vài phút."
+
+#: patterns/no-results.php
+msgctxt "Pattern title"
+msgid "No results"
+msgstr "Không có kết quả"
+
+#: patterns/no-results.php:13
+msgid "Nothing matched. Try a different search or browse the latest posts."
+msgstr ""
+"Không tìm thấy kết quả phù hợp. Hãy thử tìm kiếm khác hoặc xem các bài viết "
+"mới nhất."
+
+#: patterns/page-about.php
+msgctxt "Pattern title"
+msgid "About page"
+msgstr "Trang giới thiệu"
+
+#: patterns/page-about.php:20
+msgid "We build WordPress tools that feel premium and stay fast"
+msgstr ""
+"Chúng tôi xây dựng công cụ WordPress mang cảm giác cao cấp và luôn nhanh"
+
+#: patterns/page-about.php:24
+msgid ""
+"WPEssential started as an internal starter theme for client work. Today it "
+"powers stores, agencies and creators in more than 60 countries."
+msgstr ""
+"WPEssential khởi đầu là một giao diện khởi tạo nội bộ cho các dự án khách "
+"hàng. Ngày nay nó vận hành các cửa hàng, agency và nhà sáng tạo tại hơn 60 "
+"quốc gia."
+
+#: patterns/page-contact.php
+msgctxt "Pattern title"
+msgid "Contact page"
+msgstr "Trang liên hệ"
+
+#: patterns/page-contact.php:20
+msgid "Let’s talk about your next site"
+msgstr "Hãy trao đổi về trang web tiếp theo của bạn"
+
+#: patterns/page-contact.php:24
+msgid ""
+"Questions about demos, licensing or a custom build? Our team replies within "
+"one business day."
+msgstr ""
+"Có câu hỏi về demo, giấy phép hay xây dựng theo yêu cầu? Đội ngũ của chúng "
+"tôi phản hồi trong vòng một ngày làm việc."
+
+#: patterns/page-faq.php
+msgctxt "Pattern title"
+msgid "FAQ page"
+msgstr "Trang FAQ"
+
+#: patterns/page-faq.php:16
+msgid "Help center"
+msgstr "Trung tâm trợ giúp"
+
+#: patterns/page-faq.php:24
+msgid ""
+"Answers about demos, builders, licensing and updates. Can’t find what you "
+"need? Contact support."
+msgstr ""
+"Giải đáp về demo, trình dựng trang, giấy phép và bản cập nhật. Không tìm "
+"thấy điều bạn cần? Hãy liên hệ hỗ trợ."
+
+#: patterns/page-hero.php
+msgctxt "Pattern title"
+msgid "Page title band"
+msgstr "Dải tiêu đề trang"
+
+#: patterns/page-pricing.php
+msgctxt "Pattern title"
+msgid "Pricing page"
+msgstr "Trang bảng giá"
+
+#: patterns/page-pricing.php:20
+msgid "Simple plans that grow with you"
+msgstr "Gói đơn giản, phát triển cùng bạn"
+
+#: patterns/page-pricing.php:24
+msgid ""
+"Start free with the core theme. Upgrade for premium demos, Pro blocks and "
+"priority support."
+msgstr ""
+"Bắt đầu miễn phí với giao diện lõi. Nâng cấp để có demo cao cấp, khối Pro và"
+" hỗ trợ ưu tiên."
+
+#: patterns/page-services.php
+msgctxt "Pattern title"
+msgid "Services page"
+msgstr "Trang dịch vụ"
+
+#: patterns/page-services.php:20
+msgid "Everything you need to launch and grow"
+msgstr "Mọi thứ bạn cần để ra mắt và phát triển"
+
+#: patterns/page-services.php:24
+msgid ""
+"Strategy, design, development and care plans — delivered on a theme built "
+"for speed."
+msgstr ""
+"Gói chiến lược, thiết kế, phát triển và chăm sóc — triển khai trên giao diện"
+" được tối ưu tốc độ."
+
+#: patterns/post-card.php
+msgctxt "Pattern title"
+msgid "Post card"
+msgstr "Thẻ bài viết"
+
+#: patterns/pricing.php
+msgctxt "Pattern title"
+msgid "Pricing — 3 plans"
+msgstr "Bảng giá — 3 gói"
+
+#: patterns/pricing.php:19
+msgid "Simple pricing. Both builders included."
+msgstr "Giá đơn giản. Bao gồm cả hai trình dựng trang."
+
+#: patterns/pricing.php:23
+msgid ""
+"Start free and upgrade when you need Pro demos, premium blocks and priority "
+"support."
+msgstr ""
+"Bắt đầu miễn phí và nâng cấp khi bạn cần demo Pro, khối cao cấp và hỗ trợ ưu"
+" tiên."
+
+#: patterns/pricing.php:30 core/assets/admin.js:312
+msgid "Free"
+msgstr "Miễn phí"
+
+#: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+msgid "/ year"
+msgstr "/ năm"
+
+#: patterns/pricing.php:38
+msgid "For personal sites getting started."
+msgstr "Dành cho trang web cá nhân mới bắt đầu."
+
+#: patterns/pricing.php:43
+msgid "12 free demos"
+msgstr "12 demo miễn phí"
+
+#: patterns/pricing.php:45
+msgid "Gutenberg + Elementor"
+msgstr "Gutenberg + Elementor"
+
+#: patterns/pricing.php:47
+msgid "Core blocks &amp; patterns"
+msgstr "Khối lõi &amp; mẫu khối"
+
+#: patterns/pricing.php:49
+msgid "Community support"
+msgstr "Hỗ trợ cộng đồng"
+
+#: patterns/pricing.php:55
+msgid "Download free"
+msgstr "Tải miễn phí"
+
+#: patterns/pricing.php:60 core/assets/admin.js:312
+msgid "Pro"
+msgstr "Pro"
+
+#: patterns/pricing.php:68
+msgid "For freelancers and growing businesses."
+msgstr "Dành cho freelancer và doanh nghiệp đang phát triển."
+
+#: patterns/pricing.php:73
+msgid "All 40+ demos"
+msgstr "Toàn bộ hơn 40 demo"
+
+#: patterns/pricing.php:75
+msgid "Premium blocks &amp; widgets"
+msgstr "Khối &amp; widget cao cấp"
+
+#: patterns/pricing.php:77
+msgid "WooCommerce demos"
+msgstr "Demo WooCommerce"
+
+#: patterns/pricing.php:79
+msgid "1 year of updates"
+msgstr "1 năm cập nhật"
+
+#: patterns/pricing.php:81 core/assets/admin.js:1122
+msgid "Priority support"
+msgstr "Hỗ trợ ưu tiên"
+
+#: patterns/pricing.php:87
+msgid "Get Pro"
+msgstr "Mua Pro"
+
+#: patterns/pricing.php:92 core/assets/admin.js:301
+msgid "Agency"
+msgstr "Agency"
+
+#: patterns/pricing.php:100
+msgid "For teams building client sites."
+msgstr "Dành cho đội ngũ xây dựng trang web cho khách hàng."
+
+#: patterns/pricing.php:105
+msgid "Everything in Pro"
+msgstr "Mọi thứ trong gói Pro"
+
+#: patterns/pricing.php:107
+msgid "Unlimited sites"
+msgstr "Không giới hạn trang web"
+
+#: patterns/pricing.php:109
+msgid "White-label dashboard"
+msgstr "Bảng tin white-label"
+
+#: patterns/pricing.php:111
+msgid "Client handoff kit"
+msgstr "Bộ bàn giao cho khách hàng"
+
+#: patterns/pricing.php:117
+msgid "Get Agency"
+msgstr "Mua Agency"
+
+#: patterns/process-steps.php
+msgctxt "Pattern title"
+msgid "Process — 4 steps (dark)"
+msgstr "Quy trình — 4 bước (tối)"
+
+#: patterns/process-steps.php:15
+msgid "How it works"
+msgstr "Cách hoạt động"
+
+#: patterns/process-steps.php:19
+msgid "Live in four simple steps"
+msgstr "Hoạt động chỉ với bốn bước đơn giản"
+
+#: patterns/process-steps.php:31
+msgid "Pick a demo"
+msgstr "Chọn một demo"
+
+#: patterns/process-steps.php:35
+msgid "Browse 40+ demos and preview them live."
+msgstr "Xem hơn 40 demo và xem trước trực tiếp."
+
+#: patterns/process-steps.php:43
+msgid "Choose a builder"
+msgstr "Chọn trình dựng trang"
+
+#: patterns/process-steps.php:47
+msgid "Gutenberg or Elementor — same design."
+msgstr "Gutenberg hoặc Elementor — cùng một thiết kế."
+
+#: patterns/process-steps.php:55
+msgid "Import in one click"
+msgstr "Nhập chỉ với một cú nhấp"
+
+#: patterns/process-steps.php:59
+msgid "Plugins, content and settings are set up for you."
+msgstr "Plugin, nội dung và cài đặt được thiết lập sẵn cho bạn."
+
+#: patterns/process-steps.php:67 core/assets/admin.js:290
+msgid "Make it yours"
+msgstr "Biến nó thành của bạn"
+
+#: patterns/process-steps.php:71
+msgid "Edit text, swap images and publish."
+msgstr "Sửa văn bản, thay hình ảnh và xuất bản."
+
+#: patterns/services-grid.php
+msgctxt "Pattern title"
+msgid "Services — 3 column cards"
+msgstr "Dịch vụ — thẻ 3 cột"
+
+#: patterns/services-grid.php:19
+msgid "From idea to launch"
+msgstr "Từ ý tưởng đến ra mắt"
+
+#: patterns/services-grid.php:23
+msgid ""
+"Use WPEssential yourself, or let our team set up, customise and maintain "
+"your site."
+msgstr ""
+"Tự sử dụng WPEssential, hoặc để đội ngũ của chúng tôi thiết lập, tùy biến và"
+" bảo trì trang web của bạn."
+
+#: patterns/services-grid.php:34
+msgid "Demo setup"
+msgstr "Thiết lập demo"
+
+#: patterns/services-grid.php:38
+msgid "We import your chosen demo, connect your domain and configure plugins."
+msgstr "Chúng tôi nhập demo bạn chọn, kết nối tên miền và cấu hình plugin."
+
+#: patterns/services-grid.php:48
+msgid "Brand customisation"
+msgstr "Tùy biến thương hiệu"
+
+#: patterns/services-grid.php:52
+msgid "Your colors, fonts, logo and copy applied across every template."
+msgstr ""
+"Màu sắc, phông chữ, logo và nội dung của bạn được áp dụng trên mọi mẫu."
+
+#: patterns/services-grid.php:62
+msgid "WooCommerce launch"
+msgstr "Ra mắt WooCommerce"
+
+#: patterns/services-grid.php:66
+msgid "Products, payments, shipping zones and emails configured and tested."
+msgstr ""
+"Sản phẩm, thanh toán, khu vực vận chuyển và email được cấu hình và kiểm thử."
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Blog sidebar"
+msgstr "Thanh bên blog"
+
+#: patterns/sidebar.php:19
+msgid "Categories"
+msgstr "Chuyên mục"
+
+#: patterns/sidebar.php:27
+msgid "Recent posts"
+msgstr "Bài viết mới"
+
+#: patterns/sidebar.php:35
+msgid "Tags"
+msgstr "Thẻ"
+
+#: patterns/stats.php
+msgctxt "Pattern title"
+msgid "Stats — 4 counters"
+msgstr "Thống kê — 4 bộ đếm"
+
+#: patterns/stats.php:20
+msgid "Active installs"
+msgstr "Lượt cài đặt hoạt động"
+
+#: patterns/stats.php:36
+msgid "Average rating"
+msgstr "Đánh giá trung bình"
+
+#: patterns/stats.php:44
+msgid "Support response"
+msgstr "Phản hồi hỗ trợ"
+
+#: patterns/team.php
+msgctxt "Pattern title"
+msgid "Team — 4 members"
+msgstr "Đội ngũ — 4 thành viên"
+
+#: patterns/team.php:15
+msgid "The team"
+msgstr "Đội ngũ"
+
+#: patterns/team.php:19
+msgid "People behind WPEssential"
+msgstr "Những người đứng sau WPEssential"
+
+#: patterns/team.php:35
+msgid "Founder &amp; Lead Designer"
+msgstr "Nhà sáng lập &amp; Trưởng thiết kế"
+
+#: patterns/team.php:47
+msgid "Head of Engineering"
+msgstr "Trưởng bộ phận kỹ thuật"
+
+#: patterns/team.php:59
+msgid "Customer Success"
+msgstr "Chăm sóc khách hàng"
+
+#: patterns/team.php:71
+msgid "WooCommerce Specialist"
+msgstr "Chuyên gia WooCommerce"
+
+#: patterns/testimonials.php
+msgctxt "Pattern title"
+msgid "Testimonials — 3 cards"
+msgstr "Cảm nhận — 3 thẻ"
+
+#: patterns/testimonials.php:15
+msgid "Loved by builders"
+msgstr "Được người xây dựng web yêu thích"
+
+#: patterns/testimonials.php:19
+msgid "What our customers say"
+msgstr "Khách hàng nói gì về chúng tôi"
+
+#: patterns/testimonials.php:31
+msgid ""
+"We rebuilt three client sites on WPEssential in a week. The Elementor and "
+"block versions matching exactly is a game changer."
+msgstr ""
+"Chúng tôi đã xây dựng lại ba trang web khách hàng bằng WPEssential trong một"
+" tuần. Phiên bản Elementor và phiên bản khối khớp nhau hoàn toàn thực sự là "
+"bước ngoặt."
+
+#: patterns/testimonials.php:35
+msgid "Founder, Kitecraft Agency"
+msgstr "Nhà sáng lập, Kitecraft Agency"
+
+#: patterns/testimonials.php:43
+msgid ""
+"Our store went from 3.9s to 1.2s load time. Checkout pages look custom out "
+"of the box."
+msgstr ""
+"Thời gian tải cửa hàng của chúng tôi giảm từ 3,9 giây xuống 1,2 giây. Trang "
+"thanh toán trông như được thiết kế riêng ngay từ đầu."
+
+#: patterns/testimonials.php:47
+msgid "Owner, Fieldhouse Goods"
+msgstr "Chủ sở hữu, Fieldhouse Goods"
+
+#: patterns/testimonials.php:55
+msgid ""
+"The demo import just works — plugins, menus, homepage. I spend my time on "
+"content now, not setup."
+msgstr ""
+"Nhập demo cứ thế là chạy — plugin, menu, trang chủ. Giờ tôi dành thời gian "
+"cho nội dung, không phải thiết lập."
+
+#: patterns/testimonials.php:59
+msgid "Writer, The Quiet Desk"
+msgstr "Tác giả, The Quiet Desk"
+
+#: assets/js/options.js:65
+msgid "Custom code"
+msgstr "Mã tùy chỉnh"
+
+#: assets/js/options.js:66
+msgid "Animations"
+msgstr "Hiệu ứng"
+
+#: assets/js/options.js:84 assets/js/options.js:91 core/assets/admin.js:280
+#: core/assets/admin.js:701 core/assets/admin.js:1074
+#: core/assets/admin.js:1113
+msgid "Active"
+msgstr "Hoạt động"
+
+#: assets/js/options.js:84
+msgid "Off"
+msgstr "Tắt"
+
+#: assets/js/options.js:88
+msgid ""
+"Broke something? Open your site in safe mode to load it without snippets:"
+msgstr "Gặp sự cố? Mở trang web ở chế độ an toàn để tải mà không có đoạn mã:"
+
+#: assets/js/options.js:88
+msgid "Safe mode"
+msgstr "Chế độ an toàn"
+
+#: assets/js/options.js:90
+msgid "Snippet name"
+msgstr "Tên đoạn mã"
+
+#: assets/js/options.js:93
+msgid "Devices"
+msgstr "Thiết bị"
+
+#: assets/js/options.js:93
+msgid "All devices"
+msgstr "Mọi thiết bị"
+
+#: assets/js/options.js:93
+msgid "Desktop (1025px+)"
+msgstr "Máy tính (1025px+)"
+
+#: assets/js/options.js:93
+msgid "Tablet (768–1024px)"
+msgstr "Máy tính bảng (768–1024px)"
+
+#: assets/js/options.js:93
+msgid "Mobile (≤767px)"
+msgstr "Di động (≤767px)"
+
+#: assets/js/options.js:96
+msgid "Load in"
+msgstr "Tải tại"
+
+#: assets/js/options.js:96
+msgid "Footer (recommended)"
+msgstr "Chân trang (khuyến nghị)"
+
+#: assets/js/options.js:97
+msgid "Write JavaScript only, without <script> tags."
+msgstr "Chỉ viết JavaScript, không có thẻ <script>."
+
+#: assets/js/options.js:97
+msgid "Write CSS only, without <style> tags."
+msgstr "Chỉ viết CSS, không có thẻ <style>."
+
+#: assets/js/options.js:99
+msgid "Save snippets"
+msgstr "Lưu đoạn mã"
+
+#: assets/js/options.js:99 core/assets/admin.js:1076
+msgid "Delete"
+msgstr "Xóa"
+
+#: assets/js/options.js:116
+msgid "New script"
+msgstr "Script mới"
+
+#: assets/js/options.js:116
+msgid "New styles"
+msgstr "Style mới"
+
+#: assets/js/options.js:162
+msgid ""
+"Animations reveal sections as visitors scroll. Visitors who prefer reduced "
+"motion never see them."
+msgstr ""
+"Hiệu ứng làm hiện các khu vực khi khách truy cập cuộn trang. Khách truy cập "
+"ưu tiên giảm chuyển động sẽ không thấy chúng."
+
+#: assets/js/options.js:166
+msgid "Use GSAP for parallax and counters with any preset"
+msgstr "Dùng GSAP cho parallax và bộ đếm với bất kỳ thiết lập sẵn nào"
+
+#: assets/js/options.js:167
+msgid ""
+"Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask,"
+" --stagger, --parallax or --counter) to any block under Advanced → "
+"Additional CSS class."
+msgstr ""
+"Thêm lớp wpe-anim (và wpe-anim--fade-up, --zoom, --slide-left, --mask, "
+"--stagger, --parallax hoặc --counter) cho bất kỳ khối nào trong Nâng cao → "
+"Lớp CSS bổ sung."
+
+#: assets/js/options.js:168
+msgid "Save animations"
+msgstr "Lưu hiệu ứng"
+
+#: core/assets/admin.js:86
+msgid ""
+"The connection to your site dropped. Check your internet and try again."
+msgstr "Kết nối tới trang web đã bị ngắt. Hãy kiểm tra internet và thử lại."
+
+#: core/assets/admin.js:89
+msgid ""
+"The server sent an invalid response — usually a PHP error or a timeout. Your"
+" progress is saved."
+msgstr ""
+"Máy chủ gửi phản hồi không hợp lệ — thường do lỗi PHP hoặc hết thời gian "
+"chờ. Tiến trình của bạn đã được lưu."
+
+#: core/assets/admin.js:92
+msgid "Your login session expired. Reload the page and sign in again."
+msgstr "Phiên đăng nhập đã hết hạn. Hãy tải lại trang và đăng nhập lại."
+
+#: core/assets/admin.js:159
+msgid "Dashboard sections"
+msgstr "Các mục bảng tin"
+
+#: core/assets/admin.js:163
+msgid "Docs"
+msgstr "Tài liệu"
+
+#: core/assets/admin.js:164
+msgid "Switch dashboard colour mode"
+msgstr "Chuyển chế độ màu bảng tin"
+
+#: core/assets/admin.js:241
+msgid "%s is active"
+msgstr "%s đang hoạt động"
+
+#: core/assets/admin.js:242
+msgid "Welcome, %s. Let’s build something beautiful."
+msgstr "Chào mừng, %s. Hãy cùng tạo nên điều tuyệt đẹp."
+
+#: core/assets/admin.js:243
+msgid ""
+"Pick a demo, choose Gutenberg or Elementor, and get a finished website with "
+"pages, images, menus and a shop — in about a minute."
+msgstr ""
+"Chọn demo, chọn Gutenberg hoặc Elementor, và nhận một trang web hoàn chỉnh "
+"với trang, hình ảnh, menu và cửa hàng — chỉ trong khoảng một phút."
+
+#: core/assets/admin.js:246
+msgid "Customize site"
+msgstr "Tùy biến trang web"
+
+#: core/assets/admin.js:251
+msgid "Demo imported"
+msgstr "Demo đã nhập"
+
+#: core/assets/admin.js:251
+msgid "in 48 seconds"
+msgstr "trong 48 giây"
+
+#: core/assets/admin.js:252
+msgid "Two builders"
+msgstr "Hai trình dựng trang"
+
+#: core/assets/admin.js:259
+msgid "Three steps to launch"
+msgstr "Ba bước để ra mắt"
+
+#: core/assets/admin.js:264
+msgid "Help when you need it"
+msgstr "Trợ giúp khi bạn cần"
+
+#: core/assets/admin.js:266
+msgid "Guides for every feature"
+msgstr "Hướng dẫn cho mọi tính năng"
+
+#: core/assets/admin.js:267
+msgid "Real people, fast answers"
+msgstr "Người thật, trả lời nhanh"
+
+#: core/assets/admin.js:268
+msgid "Site Editor"
+msgstr "Trình chỉnh sửa trang"
+
+#: core/assets/admin.js:268
+msgid "Colours, fonts, header and footer"
+msgstr "Màu sắc, phông chữ, đầu trang và chân trang"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Expired"
+msgstr "Đã hết hạn"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Invalid"
+msgstr "Không hợp lệ"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Not connected"
+msgstr "Chưa kết nối"
+
+#: core/assets/admin.js:283
+msgid "Imported demo"
+msgstr "Demo đã nhập"
+
+#: core/assets/admin.js:283
+msgid "None yet"
+msgstr "Chưa có"
+
+#: core/assets/admin.js:285
+msgid "System health"
+msgstr "Tình trạng hệ thống"
+
+#: core/assets/admin.js:288
+msgid "Import a demo"
+msgstr "Nhập demo"
+
+#: core/assets/admin.js:288
+msgid "Start from a complete, ready-made website."
+msgstr "Bắt đầu từ một trang web hoàn chỉnh, dựng sẵn."
+
+#: core/assets/admin.js:288
+msgid "Open library"
+msgstr "Mở thư viện"
+
+#: core/assets/admin.js:289 core/assets/admin.js:1124
+msgid "Activate your license"
+msgstr "Kích hoạt giấy phép"
+
+#: core/assets/admin.js:289
+msgid "Unlock Pro demos, updates and support."
+msgstr "Mở khóa demo Pro, bản cập nhật và hỗ trợ."
+
+#: core/assets/admin.js:289 core/assets/admin.js:1076
+#: core/assets/admin.js:1125
+msgid "Activate"
+msgstr "Kích hoạt"
+
+#: core/assets/admin.js:290
+msgid "Swap the logo, colours and words in the Site Editor."
+msgstr "Thay logo, màu sắc và nội dung trong Trình chỉnh sửa trang."
+
+#: core/assets/admin.js:290 core/assets/admin.js:999
+msgid "Customize"
+msgstr "Tùy biến"
+
+#: core/assets/admin.js:295
+msgid "Could not load the dashboard"
+msgstr "Không thể tải bảng tin"
+
+#: core/assets/admin.js:301 core/assets/admin.js:312 core/assets/admin.js:756
+msgid "All"
+msgstr "Tất cả"
+
+#: core/assets/admin.js:301
+msgid "Business"
+msgstr "Doanh nghiệp"
+
+#: core/assets/admin.js:301
+msgid "Restaurant"
+msgstr "Nhà hàng"
+
+#: core/assets/admin.js:301
+msgid "Education"
+msgstr "Giáo dục"
+
+#: core/assets/admin.js:306
+msgid ""
+"Every demo is a complete website. Preview it, then import it for Gutenberg "
+"or Elementor — plugins, pages, images and menus included."
+msgstr ""
+"Mỗi demo là một trang web hoàn chỉnh. Hãy xem trước, rồi nhập cho Gutenberg "
+"hoặc Elementor — đã bao gồm plugin, trang, hình ảnh và menu."
+
+#: core/assets/admin.js:307
+msgid "Refreshing"
+msgstr "Đang làm mới"
+
+#: core/assets/admin.js:307
+msgid "Refresh library"
+msgstr "Làm mới thư viện"
+
+#: core/assets/admin.js:310
+msgid "Search demos"
+msgstr "Tìm demo"
+
+#: core/assets/admin.js:310
+msgid "Search demos…"
+msgstr "Tìm demo…"
+
+#: core/assets/admin.js:311
+msgid "Category"
+msgstr "Danh mục"
+
+#: core/assets/admin.js:312
+msgid "Plan"
+msgstr "Gói"
+
+#: core/assets/admin.js:313 core/assets/admin.js:519 core/assets/admin.js:576
+msgid "Builder"
+msgstr "Trình dựng trang"
+
+#: core/assets/admin.js:313
+msgid "Any builder"
+msgstr "Mọi trình dựng trang"
+
+#: core/assets/admin.js:336
+msgid "Library refreshed"
+msgstr "Đã làm mới thư viện"
+
+#: core/assets/admin.js:338
+msgid "Refresh failed"
+msgstr "Làm mới thất bại"
+
+#: core/assets/admin.js:351
+msgid "The library could not load"
+msgstr "Không thể tải thư viện"
+
+#: core/assets/admin.js:363
+msgid "The import of %s stopped"
+msgstr "Quá trình nhập %s đã dừng"
+
+#: core/assets/admin.js:363
+msgid "The import of %s was interrupted"
+msgstr "Quá trình nhập %s đã bị gián đoạn"
+
+#: core/assets/admin.js:363
+msgid "Your progress is saved. Continue exactly where it left off."
+msgstr "Tiến trình của bạn đã được lưu. Tiếp tục chính xác từ chỗ đã dừng."
+
+#: core/assets/admin.js:363
+msgid "Resume import"
+msgstr "Tiếp tục nhập"
+
+#: core/assets/admin.js:366
+msgid "%s is installed on this site"
+msgstr "%s đã được cài đặt trên trang web này"
+
+#: core/assets/admin.js:366
+msgid ""
+"You can remove everything it added and restore your previous settings at any"
+" time."
+msgstr ""
+"Bạn có thể gỡ mọi thứ nó đã thêm và khôi phục cài đặt trước đó bất cứ lúc "
+"nào."
+
+#: core/assets/admin.js:366 core/assets/admin.js:920
+msgid "Removing"
+msgstr "Đang gỡ"
+
+#: core/assets/admin.js:366
+msgid "Remove demo"
+msgstr "Gỡ demo"
+
+#: core/assets/admin.js:386
+msgid ""
+"Remove %s? Its pages, posts, products, images and menus will be deleted and "
+"your previous settings restored. Content you created yourself is not "
+"touched."
+msgstr ""
+"Gỡ %s? Các trang, bài viết, sản phẩm, hình ảnh và menu của nó sẽ bị xóa và "
+"cài đặt trước đó được khôi phục. Nội dung do bạn tự tạo không bị ảnh hưởng."
+
+#: core/assets/admin.js:392
+msgid "Demo removed"
+msgstr "Đã gỡ demo"
+
+#: core/assets/admin.js:396
+msgid "Removal failed"
+msgstr "Gỡ thất bại"
+
+#: core/assets/admin.js:416
+msgid "No demos match these filters"
+msgstr "Không có demo nào khớp với bộ lọc"
+
+#: core/assets/admin.js:416
+msgid "Try another category or clear the search."
+msgstr "Hãy thử danh mục khác hoặc xóa từ khóa tìm kiếm."
+
+#: core/assets/admin.js:416
+msgid "Clear filters"
+msgstr "Xóa bộ lọc"
+
+#: core/assets/admin.js:428
+msgid "IMPORTED"
+msgstr "ĐÃ NHẬP"
+
+#: core/assets/admin.js:430
+msgid "Live preview"
+msgstr "Xem trước trực tiếp"
+
+#: core/assets/admin.js:438
+msgid "Preview"
+msgstr "Xem trước"
+
+#: core/assets/admin.js:439
+msgid "Unlock"
+msgstr "Mở khóa"
+
+#: core/assets/admin.js:439
+msgid "Re-import"
+msgstr "Nhập lại"
+
+#: core/assets/admin.js:439 core/assets/admin.js:576
+msgid "Import"
+msgstr "Nhập"
+
+#: core/assets/admin.js:512
+msgid "Desktop"
+msgstr "Máy tính"
+
+#: core/assets/admin.js:512
+msgid "Tablet"
+msgstr "Máy tính bảng"
+
+#: core/assets/admin.js:512
+msgid "Mobile"
+msgstr "Di động"
+
+#: core/assets/admin.js:515
+msgid "%1$s on %2$s"
+msgstr "%1$s trên %2$s"
+
+#: core/assets/admin.js:520
+msgid "Device"
+msgstr "Thiết bị"
+
+#: core/assets/admin.js:521
+msgid "Unlock with Pro"
+msgstr "Mở khóa với Pro"
+
+#: core/assets/admin.js:521
+msgid "Import this demo"
+msgstr "Nhập demo này"
+
+#: core/assets/admin.js:522
+msgid "Close preview"
+msgstr "Đóng xem trước"
+
+#: core/assets/admin.js:576
+msgid "Account"
+msgstr "Tài khoản"
+
+#: core/assets/admin.js:576
+msgid "Content"
+msgstr "Nội dung"
+
+#: core/assets/admin.js:576
+msgid "Done"
+msgstr "Xong"
+
+#: core/assets/admin.js:582
+msgid "Safe import — every change can be undone."
+msgstr "Nhập an toàn — mọi thay đổi đều có thể hoàn tác."
+
+#: core/assets/admin.js:585
+msgid "Close"
+msgstr "Đóng"
+
+#: core/assets/admin.js:589
+msgid ""
+"The import keeps its progress if you close this window. You can resume it "
+"from the Demo Library. Close anyway?"
+msgstr ""
+"Quá trình nhập vẫn giữ tiến trình nếu bạn đóng cửa sổ này. Bạn có thể tiếp "
+"tục từ Thư viện demo. Vẫn đóng?"
+
+#: core/assets/admin.js:618
+msgid "Back"
+msgstr "Quay lại"
+
+#: core/assets/admin.js:640
+msgid "Unlock this Pro demo"
+msgstr "Mở khóa demo Pro này"
+
+#: core/assets/admin.js:640
+msgid "Connect your WPEssential account"
+msgstr "Kết nối tài khoản WPEssential của bạn"
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in and use a Pro license on this site — or pick a plan. Checkout opens "
+"in a new tab."
+msgstr ""
+"Đăng nhập và dùng giấy phép Pro trên trang web này — hoặc chọn một gói. "
+"Trang thanh toán sẽ mở trong tab mới."
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in or create a free account to keep your demos, licenses and updates in"
+" one place."
+msgstr ""
+"Đăng nhập hoặc tạo tài khoản miễn phí để quản lý demo, giấy phép và bản cập "
+"nhật ở một nơi."
+
+#: core/assets/admin.js:643
+msgid "A Pro license is needed"
+msgstr "Cần có giấy phép Pro"
+
+#: core/assets/admin.js:643
+msgid "Use a Pro license on this site, or choose a plan."
+msgstr "Dùng giấy phép Pro trên trang web này, hoặc chọn một gói."
+
+#: core/assets/admin.js:648 core/assets/admin.js:674 core/assets/admin.js:679
+msgid "Continue"
+msgstr "Tiếp tục"
+
+#: core/assets/admin.js:656
+msgid "Demo unlocked"
+msgstr "Đã mở khóa demo"
+
+#: core/assets/admin.js:666
+msgid "This demo has no version for this builder yet."
+msgstr "Demo này chưa có phiên bản cho trình dựng trang này."
+
+#: core/assets/admin.js:668
+msgid "Choose your page builder"
+msgstr "Chọn trình dựng trang"
+
+#: core/assets/admin.js:668
+msgid ""
+"Both versions look identical. Pick the editor you or your client will use "
+"every day."
+msgstr ""
+"Cả hai phiên bản trông giống hệt nhau. Hãy chọn trình soạn thảo mà bạn hoặc "
+"khách hàng sẽ dùng hằng ngày."
+
+#: core/assets/admin.js:669
+msgid "The native WordPress block editor. Fastest pages, no extra plugin."
+msgstr ""
+"Trình soạn thảo khối gốc của WordPress. Trang nhanh nhất, không cần thêm "
+"plugin."
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor is already installed."
+msgstr "Chỉnh sửa trực quan kéo và thả. Elementor đã được cài đặt."
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor will be installed for you."
+msgstr "Chỉnh sửa trực quan kéo và thả. Elementor sẽ được cài đặt cho bạn."
+
+#: core/assets/admin.js:678
+msgid "Plugins this demo uses"
+msgstr "Plugin demo này sử dụng"
+
+#: core/assets/admin.js:678
+msgid ""
+"We install, activate or switch off plugins so the demo works exactly like "
+"the preview."
+msgstr ""
+"Chúng tôi cài đặt, kích hoạt hoặc tắt plugin để demo hoạt động giống hệt bản"
+" xem trước."
+
+#: core/assets/admin.js:693
+msgid "No extra plugins needed — this demo runs on the theme alone."
+msgstr "Không cần thêm plugin — demo này chạy chỉ với giao diện."
+
+#: core/assets/admin.js:698
+msgid "Will be deactivated"
+msgstr "Sẽ bị tắt"
+
+#: core/assets/admin.js:698
+msgid "Not needed"
+msgstr "Không cần"
+
+#: core/assets/admin.js:702
+msgid "Will be activated"
+msgstr "Sẽ được kích hoạt"
+
+#: core/assets/admin.js:703
+msgid "Will be installed"
+msgstr "Sẽ được cài đặt"
+
+#: core/assets/admin.js:706
+msgid "Required"
+msgstr "Bắt buộc"
+
+#: core/assets/admin.js:706 core/assets/admin.js:1073
+msgid "Recommended"
+msgstr "Khuyến nghị"
+
+#: core/assets/admin.js:706
+msgid "Conflicts with this demo"
+msgstr "Xung đột với demo này"
+
+#: core/assets/admin.js:706
+msgid "Include"
+msgstr "Bao gồm"
+
+#: core/assets/admin.js:706
+msgid "Include %s"
+msgstr "Bao gồm %s"
+
+#: core/assets/admin.js:715
+msgid "Pages, posts and menus"
+msgstr "Trang, bài viết và menu"
+
+#: core/assets/admin.js:715
+msgid "%s and their navigation."
+msgstr "%s và điều hướng của chúng."
+
+#: core/assets/admin.js:716
+msgid "Images"
+msgstr "Hình ảnh"
+
+#: core/assets/admin.js:716
+msgid "Copied to your Media Library, licensed for your site."
+msgstr ""
+"Được sao chép vào Thư viện Media, được cấp phép cho trang web của bạn."
+
+#: core/assets/admin.js:717
+msgid "Shop products"
+msgstr "Sản phẩm cửa hàng"
+
+#: core/assets/admin.js:717
+msgid "Products, categories, prices and shipping."
+msgstr "Sản phẩm, danh mục, giá và vận chuyển."
+
+#: core/assets/admin.js:717
+msgid "Needs WooCommerce — enable it on the previous step."
+msgstr "Cần WooCommerce — hãy bật ở bước trước."
+
+#: core/assets/admin.js:718
+msgid "Site settings"
+msgstr "Cài đặt trang web"
+
+#: core/assets/admin.js:718
+msgid "Home page, blog page and store options."
+msgstr "Trang chủ, trang blog và tùy chọn cửa hàng."
+
+#: core/assets/admin.js:720
+msgid "What should we import?"
+msgstr "Chúng ta nên nhập những gì?"
+
+#: core/assets/admin.js:720
+msgid "Everything is on by default for a site that matches the preview."
+msgstr "Mọi thứ được bật mặc định để trang web giống bản xem trước."
+
+#: core/assets/admin.js:722
+msgid "Remove %s first"
+msgstr "Gỡ %s trước"
+
+#: core/assets/admin.js:722
+msgid "Recommended: start from a clean site instead of adding duplicates."
+msgstr "Khuyến nghị: bắt đầu từ trang web sạch thay vì thêm bản trùng lặp."
+
+#: core/assets/admin.js:723
+msgid ""
+"Your existing posts and pages are never changed. Imported items are tagged, "
+"so they can be removed in one click later."
+msgstr ""
+"Bài viết và trang hiện có của bạn không bao giờ bị thay đổi. Các mục được "
+"nhập sẽ được gắn thẻ để có thể gỡ bằng một cú nhấp sau này."
+
+#: core/assets/admin.js:730
+msgid "Start import"
+msgstr "Bắt đầu nhập"
+
+#: core/assets/admin.js:736
+msgid "Preparing"
+msgstr "Đang chuẩn bị"
+
+#: core/assets/admin.js:736 core/assets/admin.js:947
+msgid "Importing your demo…"
+msgstr "Đang nhập demo…"
+
+#: core/assets/admin.js:736
+msgid "Keep this window open. It usually takes about a minute."
+msgstr "Hãy giữ cửa sổ này mở. Thường mất khoảng một phút."
+
+#: core/assets/admin.js:739 core/assets/admin.js:943
+msgid "Cancel import"
+msgstr "Hủy nhập"
+
+#: core/assets/admin.js:756
+msgid "Info"
+msgstr "Thông tin"
+
+#: core/assets/admin.js:756
+msgid "Success"
+msgstr "Thành công"
+
+#: core/assets/admin.js:756 core/assets/admin.js:998
+msgid "Warnings"
+msgstr "Cảnh báo"
+
+#: core/assets/admin.js:756
+msgid "Errors"
+msgstr "Lỗi"
+
+#: core/assets/admin.js:756 core/assets/admin.js:920
+msgid "Copy log"
+msgstr "Sao chép nhật ký"
+
+#: core/assets/admin.js:790
+msgid "Log copied"
+msgstr "Đã sao chép nhật ký"
+
+#: core/assets/admin.js:790
+msgid "Paste it into your support ticket."
+msgstr "Dán vào phiếu hỗ trợ của bạn."
+
+#: core/assets/admin.js:816
+msgid "Stopped"
+msgstr "Đã dừng"
+
+#: core/assets/admin.js:816
+msgid "Step"
+msgstr "Bước"
+
+#: core/assets/admin.js:816
+msgid "Complete"
+msgstr "Hoàn tất"
+
+#: core/assets/admin.js:824
+msgid "%ss elapsed"
+msgstr "Đã trôi qua %s giây"
+
+#: core/assets/admin.js:850
+msgid "Resumed from the saved position."
+msgstr "Đã tiếp tục từ vị trí đã lưu."
+
+#: core/assets/admin.js:872
+msgid "Reload the page, then resume the import from the Demo Library."
+msgstr "Hãy tải lại trang, rồi tiếp tục nhập từ Thư viện demo."
+
+#: core/assets/admin.js:878
+msgid "Your progress is saved. Press Resume when the server is back."
+msgstr ""
+"Tiến trình của bạn đã được lưu. Nhấn Tiếp tục khi máy chủ hoạt động trở lại."
+
+#: core/assets/admin.js:882
+msgid "The server did not answer (%1$s). Retrying in %2$d seconds…"
+msgstr "Máy chủ không phản hồi (%1$s). Thử lại sau %2$d giây…"
+
+#: core/assets/admin.js:905
+msgid "The import stopped."
+msgstr "Quá trình nhập đã dừng."
+
+#: core/assets/admin.js:907
+msgid "Import cancelled."
+msgstr "Đã hủy nhập."
+
+#: core/assets/admin.js:907
+msgid "Resume to finish it, or remove what was imported so far."
+msgstr "Tiếp tục để hoàn tất, hoặc gỡ những gì đã nhập đến giờ."
+
+#: core/assets/admin.js:918
+msgid "Import paused"
+msgstr "Đã tạm dừng nhập"
+
+#: core/assets/admin.js:918
+msgid "The import needs your attention"
+msgstr "Quá trình nhập cần bạn chú ý"
+
+#: core/assets/admin.js:920
+msgid "Remove imported content"
+msgstr "Gỡ nội dung đã nhập"
+
+#: core/assets/admin.js:920
+msgid "Resume"
+msgstr "Tiếp tục"
+
+#: core/assets/admin.js:920
+msgid "Back to options"
+msgstr "Quay lại tùy chọn"
+
+#: core/assets/admin.js:929
+msgid "Everything was rolled back"
+msgstr "Mọi thứ đã được khôi phục"
+
+#: core/assets/admin.js:933
+msgid "Nothing to remove"
+msgstr "Không có gì để gỡ"
+
+#: core/assets/admin.js:933
+msgid "Rollback failed"
+msgstr "Khôi phục thất bại"
+
+#: core/assets/admin.js:960
+msgid "Resuming…"
+msgstr "Đang tiếp tục…"
+
+#: core/assets/admin.js:967
+msgid "Your progress is saved. Try again in a moment."
+msgstr "Tiến trình của bạn đã được lưu. Hãy thử lại sau giây lát."
+
+#: core/assets/admin.js:973
+msgid "Cancel the import? What was imported so far stays until you remove it."
+msgstr "Hủy nhập? Những gì đã nhập đến giờ vẫn được giữ cho đến khi bạn gỡ."
+
+#: core/assets/admin.js:983
+msgid "Could not cancel"
+msgstr "Không thể hủy"
+
+#: core/assets/admin.js:996
+msgid "Your website is ready!"
+msgstr "Trang web của bạn đã sẵn sàng!"
+
+#: core/assets/admin.js:997
+msgid "%1$s was imported. %2$d item(s) need a look — see the notes below."
+msgstr "Đã nhập %1$s. %2$d mục cần xem lại — xem ghi chú bên dưới."
+
+#: core/assets/admin.js:997
+msgid "%s was imported without a single issue. Time to make it yours."
+msgstr "Đã nhập %s mà không gặp vấn đề nào. Giờ hãy biến nó thành của bạn."
+
+#: core/assets/admin.js:998
+msgid "Import time"
+msgstr "Thời gian nhập"
+
+#: core/assets/admin.js:998
+msgid "Steps completed"
+msgstr "Bước đã hoàn tất"
+
+#: core/assets/admin.js:999
+msgid "View your site"
+msgstr "Xem trang web"
+
+#: core/assets/admin.js:1002
+msgid "Back to dashboard"
+msgstr "Về bảng tin"
+
+#: core/assets/admin.js:1007
+msgid "Import complete"
+msgstr "Nhập hoàn tất"
+
+#: core/assets/admin.js:1054
+msgid ""
+"Plugins used by WPEssential demos. Install, switch on or off and delete them"
+" here."
+msgstr ""
+"Các plugin được dùng bởi demo WPEssential. Cài đặt, bật hoặc tắt và xóa "
+"chúng tại đây."
+
+#: core/assets/admin.js:1069
+msgid "No plugins needed"
+msgstr "Không cần plugin"
+
+#: core/assets/admin.js:1069
+msgid "The demos in your library run on the theme alone."
+msgstr "Các demo trong thư viện của bạn chạy chỉ với giao diện."
+
+#: core/assets/admin.js:1073
+msgid "Required by some demos"
+msgstr "Bắt buộc với một số demo"
+
+#: core/assets/admin.js:1074
+msgid "Inactive"
+msgstr "Không hoạt động"
+
+#: core/assets/admin.js:1074
+msgid "Not installed"
+msgstr "Chưa cài đặt"
+
+#: core/assets/admin.js:1075
+msgid "Install & activate"
+msgstr "Cài đặt & kích hoạt"
+
+#: core/assets/admin.js:1077
+msgid "Deactivate"
+msgstr "Tắt"
+
+#: core/assets/admin.js:1079
+msgid "Delete this plugin and its files?"
+msgstr "Xóa plugin này và các tệp của nó?"
+
+#: core/assets/admin.js:1085
+msgid "is active."
+msgstr "đang hoạt động."
+
+#: core/assets/admin.js:1085
+msgid "is inactive."
+msgstr "không hoạt động."
+
+#: core/assets/admin.js:1085
+msgid "was deleted."
+msgstr "đã bị xóa."
+
+#: core/assets/admin.js:1088
+msgid "Plugin action failed"
+msgstr "Thao tác plugin thất bại"
+
+#: core/assets/admin.js:1096
+msgid ""
+"Activate your purchase on this domain to unlock Pro demos, automatic updates"
+" and priority support."
+msgstr ""
+"Kích hoạt giao dịch mua trên tên miền này để mở khóa demo Pro, cập nhật tự "
+"động và hỗ trợ ưu tiên."
+
+#: core/assets/admin.js:1118
+msgid "Domain"
+msgstr "Tên miền"
+
+#: core/assets/admin.js:1118
+msgid "Expires"
+msgstr "Hết hạn"
+
+#: core/assets/admin.js:1118
+msgid "Lifetime"
+msgstr "Trọn đời"
+
+#: core/assets/admin.js:1118
+msgid "Provider"
+msgstr "Nhà cung cấp"
+
+#: core/assets/admin.js:1121
+msgid "You’re all set"
+msgstr "Bạn đã sẵn sàng"
+
+#: core/assets/admin.js:1121
+msgid "This license is active on %s."
+msgstr "Giấy phép này đang hoạt động trên %s."
+
+#: core/assets/admin.js:1121
+msgid "Plan: %s."
+msgstr "Gói: %s."
+
+#: core/assets/admin.js:1122
+msgid "All Pro demos unlocked"
+msgstr "Đã mở khóa mọi demo Pro"
+
+#: core/assets/admin.js:1122
+msgid "One-click theme updates"
+msgstr "Cập nhật giao diện một cú nhấp"
+
+#: core/assets/admin.js:1123
+msgid "Deactivating"
+msgstr "Đang hủy kích hoạt"
+
+#: core/assets/admin.js:1123
+msgid "Deactivate on this domain"
+msgstr "Hủy kích hoạt trên tên miền này"
+
+#: core/assets/admin.js:1124
+msgid "Renew to keep Pro features"
+msgstr "Gia hạn để giữ tính năng Pro"
+
+#: core/assets/admin.js:1124
+msgid "Find the key in your purchase email or your wpessential.org account."
+msgstr "Tìm khóa trong email mua hàng hoặc tài khoản wpessential.org của bạn."
+
+#: core/assets/admin.js:1125
+msgid "License key"
+msgstr "Khóa giấy phép"
+
+#: core/assets/admin.js:1125
+msgid "Paste your license key"
+msgstr "Dán khóa giấy phép của bạn"
+
+#: core/assets/admin.js:1125
+msgid "Show key"
+msgstr "Hiện khóa"
+
+#: core/assets/admin.js:1125
+msgid "Checking"
+msgstr "Đang kiểm tra"
+
+#: core/assets/admin.js:1127
+msgid "Unlock every Pro demo in the library"
+msgstr "Mở khóa mọi demo Pro trong thư viện"
+
+#: core/assets/admin.js:1127
+msgid "Automatic updates from your dashboard"
+msgstr "Cập nhật tự động từ bảng tin"
+
+#: core/assets/admin.js:1127
+msgid "Priority support from the WPEssential Team"
+msgstr "Hỗ trợ ưu tiên từ đội ngũ WPEssential"
+
+#: core/assets/admin.js:1128
+msgid "Don’t have a license? Sign in or pick a plan below"
+msgstr "Chưa có giấy phép? Đăng nhập hoặc chọn một gói bên dưới"
+
+#: core/assets/admin.js:1143
+msgid "License activated"
+msgstr "Đã kích hoạt giấy phép"
+
+#: core/assets/admin.js:1143
+msgid "Pro demos are unlocked."
+msgstr "Đã mở khóa demo Pro."
+
+#: core/assets/admin.js:1163
+msgid ""
+"Deactivate the license on this domain? You can activate it on another site "
+"afterwards."
+msgstr ""
+"Hủy kích hoạt giấy phép trên tên miền này? Sau đó bạn có thể kích hoạt nó "
+"trên trang web khác."
+
+#: core/assets/admin.js:1169
+msgid "License deactivated"
+msgstr "Đã hủy kích hoạt giấy phép"
+
+#: core/assets/admin.js:1173
+msgid "Deactivation failed"
+msgstr "Hủy kích hoạt thất bại"
+
+#: core/assets/admin.js:1188
+msgid "/ %d mo"
+msgstr "/ %d tháng"
+
+#: core/assets/admin.js:1188
+msgid "one-time"
+msgstr "một lần"
+
+#: core/assets/admin.js:1201
+msgid "Your WPEssential account could not be reached"
+msgstr "Không thể kết nối tới tài khoản WPEssential của bạn"
+
+#: core/assets/admin.js:1213
+msgid "Sign in to your account"
+msgstr "Đăng nhập vào tài khoản"
+
+#: core/assets/admin.js:1213
+msgid "Create your free account"
+msgstr "Tạo tài khoản miễn phí"
+
+#: core/assets/admin.js:1213
+msgid ""
+"Your licenses, Pro demos and subscription in one place. New accounts include"
+" the Free plan for this website."
+msgstr ""
+"Giấy phép, demo Pro và gói đăng ký của bạn ở một nơi. Tài khoản mới bao gồm "
+"gói Miễn phí cho trang web này."
+
+#: core/assets/admin.js:1214
+msgid "Activate licenses without copying keys"
+msgstr "Kích hoạt giấy phép mà không cần sao chép khóa"
+
+#: core/assets/admin.js:1214
+msgid "Upgrade, renew or switch plans in one click"
+msgstr "Nâng cấp, gia hạn hoặc đổi gói chỉ với một cú nhấp"
+
+#: core/assets/admin.js:1214
+msgid "Manage websites and auto-renewal"
+msgstr "Quản lý trang web và tự động gia hạn"
+
+#: core/assets/admin.js:1216 core/assets/admin.js:1221
+msgid "Sign in"
+msgstr "Đăng nhập"
+
+#: core/assets/admin.js:1216
+msgid "Create account"
+msgstr "Tạo tài khoản"
+
+#: core/assets/admin.js:1217
+msgid "Full name"
+msgstr "Họ và tên"
+
+#: core/assets/admin.js:1218
+msgid "Email"
+msgstr "Email"
+
+#: core/assets/admin.js:1219
+msgid "Password"
+msgstr "Mật khẩu"
+
+#: core/assets/admin.js:1221
+msgid "Signing in"
+msgstr "Đang đăng nhập"
+
+#: core/assets/admin.js:1221
+msgid "Creating account"
+msgstr "Đang tạo tài khoản"
+
+#: core/assets/admin.js:1221
+msgid "Create free account"
+msgstr "Tạo tài khoản miễn phí"
+
+#: core/assets/admin.js:1222
+msgid "Forgot password?"
+msgstr "Quên mật khẩu?"
+
+#: core/assets/admin.js:1222
+msgid "By creating an account you agree to the WPEssential terms."
+msgstr "Khi tạo tài khoản, bạn đồng ý với điều khoản của WPEssential."
+
+#: core/assets/admin.js:1223
+msgid "Continue without an account"
+msgstr "Tiếp tục không cần tài khoản"
+
+#: core/assets/admin.js:1239
+msgid "Fill in every field."
+msgstr "Hãy điền đầy đủ mọi trường."
+
+#: core/assets/admin.js:1245
+msgid "Signed in"
+msgstr "Đã đăng nhập"
+
+#: core/assets/admin.js:1245
+msgid "Account created"
+msgstr "Đã tạo tài khoản"
+
+#: core/assets/admin.js:1266
+msgid "Refresh"
+msgstr "Làm mới"
+
+#: core/assets/admin.js:1267
+msgid "Manage account"
+msgstr "Quản lý tài khoản"
+
+#: core/assets/admin.js:1268
+msgid "Sign out"
+msgstr "Đăng xuất"
+
+#: core/assets/admin.js:1270
+msgid "Your licenses"
+msgstr "Giấy phép của bạn"
+
+#: core/assets/admin.js:1273
+msgid "%1$d of %2$s websites"
+msgstr "%1$d / %2$s trang web"
+
+#: core/assets/admin.js:1273
+msgid "Never expires"
+msgstr "Không bao giờ hết hạn"
+
+#: core/assets/admin.js:1273
+msgid "Renews %s"
+msgstr "Gia hạn %s"
+
+#: core/assets/admin.js:1273
+msgid "Ends %s"
+msgstr "Kết thúc %s"
+
+#: core/assets/admin.js:1274
+msgid "Auto-renew"
+msgstr "Tự động gia hạn"
+
+#: core/assets/admin.js:1275
+msgid "Renew"
+msgstr "Gia hạn"
+
+#: core/assets/admin.js:1275
+msgid "This site"
+msgstr "Trang web này"
+
+#: core/assets/admin.js:1275
+msgid "Activating"
+msgstr "Đang kích hoạt"
+
+#: core/assets/admin.js:1275
+msgid "Use on this site"
+msgstr "Dùng trên trang web này"
+
+#: core/assets/admin.js:1276
+msgid "No licenses yet — choose a plan below."
+msgstr "Chưa có giấy phép — hãy chọn một gói bên dưới."
+
+#: core/assets/admin.js:1277
+msgid "Upgrade your plan"
+msgstr "Nâng cấp gói"
+
+#: core/assets/admin.js:1277
+msgid "Choose a plan"
+msgstr "Chọn một gói"
+
+#: core/assets/admin.js:1282
+msgid "Most popular"
+msgstr "Phổ biến nhất"
+
+#: core/assets/admin.js:1283
+msgid "Current plan"
+msgstr "Gói hiện tại"
+
+#: core/assets/admin.js:1283
+msgid "Upgrade"
+msgstr "Nâng cấp"
+
+#: core/assets/admin.js:1283
+msgid "Choose"
+msgstr "Chọn"
+
+#: core/assets/admin.js:1285
+msgid ""
+"Checkout opens on wpessential.org already signed in. Upgrades credit the "
+"unused part of your current plan. Staging and local sites do not count "
+"toward your website limit."
+msgstr ""
+"Trang thanh toán mở trên wpessential.org với trạng thái đã đăng nhập. Khi "
+"nâng cấp, phần chưa dùng của gói hiện tại sẽ được khấu trừ. Trang staging và"
+" trang cục bộ không tính vào giới hạn trang web."
+
+#: core/assets/admin.js:1301
+msgid "License active on this site"
+msgstr "Giấy phép đang hoạt động trên trang web này"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is on"
+msgstr "Tự động gia hạn đang bật"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is off"
+msgstr "Tự động gia hạn đang tắt"
+
+#: core/assets/admin.js:1315
+msgid "Your license works until its end date."
+msgstr "Giấy phép của bạn hoạt động đến ngày kết thúc."
+
+#: core/assets/admin.js:1318
+msgid "Could not change auto-renew"
+msgstr "Không thể thay đổi tự động gia hạn"
+
+#: core/assets/admin.js:1330
+msgid "Checkout opened in a new tab"
+msgstr "Trang thanh toán đã mở trong tab mới"
+
+#: core/assets/admin.js:1330
+msgid "When payment is done, press Refresh here."
+msgstr "Khi thanh toán xong, hãy nhấn Làm mới tại đây."
+
+#: core/assets/admin.js:1335
+msgid "Checkout could not start"
+msgstr "Không thể bắt đầu thanh toán"
+
+#: core/assets/admin.js:1343
+msgid "What your server offers and what to improve before importing."
+msgstr "Những gì máy chủ của bạn cung cấp và cần cải thiện gì trước khi nhập."
+
+#: core/assets/admin.js:1343
+msgid "Copy report"
+msgstr "Sao chép báo cáo"
+
+#: core/assets/admin.js:1349
+msgid "Health"
+msgstr "Tình trạng"
+
+#: core/assets/admin.js:1349
+msgid "Excellent"
+msgstr "Xuất sắc"
+
+#: core/assets/admin.js:1349
+msgid "Good"
+msgstr "Tốt"
+
+#: core/assets/admin.js:1349
+msgid "Needs work"
+msgstr "Cần cải thiện"
+
+#: core/assets/admin.js:1349
+msgid "%d item(s) could be better. Imports still run; fixes make them faster."
+msgstr ""
+"%d mục có thể tốt hơn. Việc nhập vẫn chạy; khắc phục sẽ giúp nhanh hơn."
+
+#: core/assets/admin.js:1349
+msgid "Your server is ready for any demo."
+msgstr "Máy chủ của bạn đã sẵn sàng cho mọi demo."
+
+#: core/assets/admin.js:1352
+msgid "Environment"
+msgstr "Môi trường"
+
+#: core/assets/admin.js:1356
+msgid "Report copied"
+msgstr "Đã sao chép báo cáo"
+
+#: core/assets/admin.js:1356
+msgid "Copy failed"
+msgstr "Sao chép thất bại"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "Nhấn mạnh"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr "Viền"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Danger"
+msgstr "Nguy hiểm"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr "Mực"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink"
+msgstr "Trên mực"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink Muted"
+msgstr "Trên mực nhạt"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Primary"
+msgstr "Trên màu chính"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "Chính"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Hover"
+msgstr "Chính khi di chuột"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Soft"
+msgstr "Chính nhạt"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Pro"
+msgstr "Pro"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "Phụ"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Star"
+msgstr "Ngôi sao"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Success"
+msgstr "Thành công"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr "Bề mặt"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface Alt"
+msgstr "Bề mặt thay thế"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr "Văn bản"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text Muted"
+msgstr "Văn bản nhạt"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Warning"
+msgstr "Cảnh báo"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank (no header/footer)"
+msgstr "Trống (không đầu trang/chân trang)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Full Width (builder canvas)"
+msgstr "Toàn chiều rộng (khung trình dựng trang)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Landing (transparent header)"
+msgstr "Landing (đầu trang trong suốt)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "No Title"
+msgstr "Không tiêu đề"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post with sidebar"
+msgstr "Bài viết có thanh bên"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Cormorant Garamond"
+msgstr "Cormorant Garamond"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "DM Sans"
+msgstr "DM Sans"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Manrope"
+msgstr "Manrope"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Font family name"
+msgid "Monospace"
+msgstr "Đơn cách"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Plus Jakarta Sans"
+msgstr "Plus Jakarta Sans"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "Space Grotesk"
+msgstr "Space Grotesk"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr "Nội dung"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body L"
+msgstr "Nội dung L"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Display"
+msgstr "Hiển thị"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H1"
+msgstr "H1"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H2"
+msgstr "H2"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H3"
+msgstr "H3"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H4"
+msgstr "H4"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Nhỏ"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XS"
+msgstr "XS"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Brand"
+msgstr "Thương hiệu"
+
+#: styles/dark.json
+msgctxt "Gradient name"
+msgid "Fade bottom"
+msgstr "Mờ dần phía dưới"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Fade to ink"
+msgstr "Mờ dần sang mực"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Night"
+msgstr "Đêm"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Large"
+msgstr "Lớn"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Medium"
+msgstr "Vừa"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Small"
+msgstr "Nhỏ"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "112"
+msgstr "112"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "12"
+msgstr "12"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "16"
+msgstr "16"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "24"
+msgstr "24"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "32"
+msgstr "32"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "48"
+msgstr "48"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "64"
+msgstr "64"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "8"
+msgstr "8"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "96"
+msgstr "96"
+
+#: styles/agency.json
+msgctxt "Style variation name"
+msgid "Agency"
+msgstr "Agency"
+
+#: styles/dark.json
+msgctxt "Style variation name"
+msgid "Dark"
+msgstr "Tối"
+
+#: styles/education.json
+msgctxt "Style variation name"
+msgid "Education"
+msgstr "Giáo dục"
+
+#: styles/fashion.json
+msgctxt "Style variation name"
+msgid "Fashion"
+msgstr "Thời trang"
+
+#: styles/health.json
+msgctxt "Style variation name"
+msgid "Health"
+msgstr "Sức khỏe"
+
+#: styles/maison.json
+msgctxt "Style variation name"
+msgid "Maison"
+msgstr "Maison"
+
+#: styles/pulse.json
+msgctxt "Style variation name"
+msgid "Pulse"
+msgstr "Pulse"
+
+#: styles/restaurant.json
+msgctxt "Style variation name"
+msgid "Restaurant"
+msgstr "Nhà hàng"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Premium"
+msgstr "Chân trang — Cao cấp"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Simple"
+msgstr "Chân trang — Đơn giản"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Centered"
+msgstr "Đầu trang — Căn giữa"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Default"
+msgstr "Đầu trang — Mặc định"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Shop"
+msgstr "Đầu trang — Cửa hàng"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Transparent (over dark hero)"
+msgstr "Đầu trang — Trong suốt (trên hero tối)"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr "Thanh bên"

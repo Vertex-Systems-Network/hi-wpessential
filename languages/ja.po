@@ -1,0 +1,3653 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WPEssential 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wpessential.org/support/\n"
+"POT-Creation-Date: 2026-10-18T02:45:11+00:00\n"
+"PO-Revision-Date: 2026-10-18T02:45:11+00:00\n"
+"Last-Translator: WPEssential Team <https://wpessential.org/>\n"
+"Language-Team: WPEssential Team <https://wpessential.org/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: wpessential\n"
+"X-Generator: WP-CLI 2.11.0\n"
+
+#. Theme Name of the theme
+#: style.css core/src/Admin.php:55 inc/patterns.php:14
+msgid "WPEssential"
+msgstr "WPEssential"
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://wpessential.org/"
+msgstr "https://wpessential.org/"
+
+#. Description of the theme
+#: style.css
+msgid ""
+"Lightweight multi-niche block theme, native for Gutenberg and Elementor. "
+"One-click demos (free & pro) via the WPEssential Core plugin."
+msgstr ""
+"Gutenberg と Elementor にネイティブ対応した、軽量なマルチニッチ向けブロックテーマ。WPEssential Core "
+"プラグインでワンクリックデモ (無料 & Pro) を利用できます。"
+
+#. Author of the theme
+#: style.css
+msgid "WPEssential Team"
+msgstr "WPEssential チーム"
+
+#. translators: %s: error.
+#: core/src/Account.php:55
+msgid "WPEssential could not be reached: %s"
+msgstr "WPEssential に接続できませんでした: %s"
+
+#: core/src/Account.php:61
+msgid "Your WPEssential session ended. Sign in again."
+msgstr "WPEssential のセッションが終了しました。もう一度ログインしてください。"
+
+#. translators: %d: HTTP code.
+#: core/src/Account.php:65
+msgid "WPEssential answered with an unexpected response (HTTP %d)."
+msgstr "WPEssential から予期しない応答がありました (HTTP %d)。"
+
+#: core/src/Account.php:68 core/assets/admin.js:83 core/assets/admin.js:94
+msgid "Something went wrong."
+msgstr "問題が発生しました。"
+
+#: core/src/Account.php:238
+msgid "That license is not in your account."
+msgstr "そのライセンスはあなたのアカウントにありません。"
+
+#: core/src/Account.php:271 core/src/Rest.php:211
+msgid "Unknown action."
+msgstr "不明な操作です。"
+
+#: core/src/Admin.php:37 core/assets/admin.js:147
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+#: core/src/Admin.php:38 core/assets/admin.js:148 core/assets/admin.js:306
+msgid "Demo Library"
+msgstr "デモライブラリ"
+
+#: core/src/Admin.php:39 core/assets/admin.js:149 core/assets/admin.js:576
+#: core/assets/admin.js:1054
+msgid "Plugins"
+msgstr "プラグイン"
+
+#: core/src/Admin.php:40 core/assets/admin.js:150 core/assets/admin.js:284
+#: core/assets/admin.js:1096
+msgid "License"
+msgstr "ライセンス"
+
+#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+msgid "System Status"
+msgstr "システムステータス"
+
+#: core/src/Admin.php:133
+msgid ""
+"The WPEssential dashboard needs JavaScript. Enable it in your browser to "
+"import demos."
+msgstr ""
+"WPEssential ダッシュボードには JavaScript が必要です。デモをインポートするにはブラウザーで JavaScript "
+"を有効にしてください。"
+
+#: core/src/Demos.php:49
+msgid ""
+"The online demo library could not be reached, so only the demos bundled with"
+" the theme are listed. They import fully offline."
+msgstr ""
+"オンラインのデモライブラリに接続できなかったため、テーマに同梱されたデモのみを表示しています。これらは完全にオフラインでインポートできます。"
+
+#: core/src/Demos.php:173
+msgid ""
+"The bundled demo package is incomplete. Re-upload the theme and try again."
+msgstr "同梱のデモパッケージが不完全です。テーマを再アップロードしてもう一度お試しください。"
+
+#: core/src/Demos.php:183
+msgid "This demo has no download address in the library."
+msgstr "このデモにはライブラリ内のダウンロード先がありません。"
+
+#. translators: %s: error message.
+#: core/src/Demos.php:196
+msgid "Downloading the demo package failed: %s"
+msgstr "デモパッケージのダウンロードに失敗しました: %s"
+
+#: core/src/Demos.php:200
+msgid "WordPress cannot write to the uploads folder. Check its permissions."
+msgstr "WordPress がアップロードフォルダーに書き込めません。パーミッションを確認してください。"
+
+#: core/src/Demos.php:207
+msgid "The downloaded package does not contain content.json."
+msgstr "ダウンロードしたパッケージに content.json が含まれていません。"
+
+#: core/src/Importer.php:47
+msgid "Checking your server"
+msgstr "サーバーをチェック中"
+
+#: core/src/Importer.php:48
+msgid "Removing the previous demo"
+msgstr "以前のデモを削除中"
+
+#: core/src/Importer.php:49
+msgid "Preparing the demo package"
+msgstr "デモパッケージを準備中"
+
+#: core/src/Importer.php:50
+msgid "Installing plugins"
+msgstr "プラグインをインストール中"
+
+#: core/src/Importer.php:51
+msgid "Importing images"
+msgstr "画像をインポート中"
+
+#: core/src/Importer.php:52
+msgid "Creating categories"
+msgstr "カテゴリーを作成中"
+
+#: core/src/Importer.php:53
+msgid "Building pages and posts"
+msgstr "固定ページと投稿を作成中"
+
+#: core/src/Importer.php:54
+msgid "Adding products"
+msgstr "商品を追加中"
+
+#: core/src/Importer.php:55
+msgid "Creating menus"
+msgstr "メニューを作成中"
+
+#: core/src/Importer.php:56
+msgid "Applying site settings"
+msgstr "サイト設定を適用中"
+
+#: core/src/Importer.php:57
+msgid "Finishing touches"
+msgstr "最終調整中"
+
+#: core/src/Importer.php:90
+msgid ""
+"Another import is running in a different tab. Wait for it to finish, or wait"
+" two minutes and try again."
+msgstr "別のタブで別のインポートが実行中です。完了するまで待つか、2分後にもう一度お試しください。"
+
+#: core/src/Importer.php:94
+msgid "This demo is no longer in the library. Refresh the page."
+msgstr "このデモはライブラリにありません。ページを再読み込みしてください。"
+
+#: core/src/Importer.php:97
+msgid "This demo is not available for the selected builder."
+msgstr "このデモは選択したビルダーでは利用できません。"
+
+#: core/src/Importer.php:100
+msgid ""
+"This is a Pro demo. Activate your license on the License tab to import it."
+msgstr "これは Pro デモです。インポートするには「ライセンス」タブでライセンスを有効化してください。"
+
+#. translators: 1: demo, 2: builder.
+#: core/src/Importer.php:192
+msgid "Starting import of %1$s for %2$s."
+msgstr "%2$s 用の %1$s のインポートを開始します。"
+
+#: core/src/Importer.php:207
+msgid "There is no import to continue."
+msgstr "続行するインポートがありません。"
+
+#: core/src/Importer.php:225
+msgid ""
+"Import cancelled. Everything imported so far can be removed from the Demo "
+"Library."
+msgstr "インポートをキャンセルしました。これまでにインポートされたものはデモライブラリから削除できます。"
+
+#: core/src/Importer.php:341
+msgid "One item stopped the server twice and was skipped."
+msgstr "1件の項目がサーバーを2回停止させたため、スキップしました。"
+
+#: core/src/Importer.php:341
+msgid ""
+"Raise memory_limit / max_execution_time, then re-import to fill the gap."
+msgstr "memory_limit / max_execution_time を引き上げてから再インポートして、不足分を補ってください。"
+
+#. translators: %s: error.
+#: core/src/Importer.php:358
+msgid "Unexpected error: %s"
+msgstr "予期しないエラー: %s"
+
+#. translators: %d: errors.
+#: core/src/Importer.php:411
+msgid ""
+"Import finished with %d error. The site works; review the log for what was "
+"skipped."
+msgid_plural ""
+"Import finished with %d errors. The site works; review the log for what was "
+"skipped."
+msgstr[0] "インポートは %d 件のエラーで完了しました。サイトは動作します。スキップされた内容はログで確認してください。"
+
+#: core/src/Importer.php:413
+msgid "Your site is ready."
+msgstr "サイトの準備ができました。"
+
+#: core/src/Importer.php:445
+msgid "WooCommerce is not active, so the shop products were skipped."
+msgstr "WooCommerce が有効化されていないため、ショップの商品はスキップされました。"
+
+#: core/src/Importer.php:602
+msgid "Your server needs a change before the import can run safely."
+msgstr "インポートを安全に実行するには、サーバーの設定変更が必要です。"
+
+#: core/src/Importer.php:602
+msgid "Fix the items above (your host can help), then press Retry."
+msgstr "上記の項目を修正して (ホスティング会社に相談できます)、「再試行」を押してください。"
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid ""
+"%s was imported before. Its pages stay; the new import adds fresh copies."
+msgstr "%s は以前にインポートされています。既存のページは残り、新しいインポートでは新しいコピーが追加されます。"
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid "Tick \"Remove previous demo\" next time for a clean site."
+msgstr "次回はクリーンなサイトにするため「以前のデモを削除」にチェックを入れてください。"
+
+#: core/src/Importer.php:609
+msgid "Server checks passed."
+msgstr "サーバーチェックに合格しました。"
+
+#. translators: %d: items.
+#: core/src/Importer.php:621
+msgid "Removed %d items from the previous demo and restored its settings."
+msgstr "以前のデモから %d 件の項目を削除し、設定を復元しました。"
+
+#: core/src/Importer.php:634
+msgid "Upload a fresh copy of the theme, then press Resume."
+msgstr "テーマの新しいコピーをアップロードしてから「再開」を押してください。"
+
+#: core/src/Importer.php:634
+msgid "Check your internet connection and press Resume."
+msgstr "インターネット接続を確認して「再開」を押してください。"
+
+#: core/src/Importer.php:640
+msgid "The demo package could not be read (content.json is damaged)."
+msgstr "デモパッケージを読み込めませんでした (content.json が破損しています)。"
+
+#: core/src/Importer.php:640
+msgid "Clear the cache on the System Status tab and retry."
+msgstr "「システムステータス」タブでキャッシュをクリアして再試行してください。"
+
+#. translators: 1: pages, 2: images, 3: products.
+#: core/src/Importer.php:644
+msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
+msgstr "パッケージの準備完了: 固定ページと投稿 %1$d 件、画像 %2$d 件、商品 %3$d 件。"
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid "%1$s could not be set up: %2$s"
+msgstr "%1$s をセットアップできませんでした: %2$s"
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid ""
+"Install it from Plugins → Add New, then use the Plugins tab here to activate"
+" it."
+msgstr "「プラグイン」→「新規追加」からインストールし、ここの「プラグイン」タブで有効化してください。"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:667
+msgid "%s installed and activated."
+msgstr "%s をインストールして有効化しました。"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:669
+msgid "%s activated."
+msgstr "%s を有効化しました。"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:671
+msgid "%s deactivated because it conflicts with this demo."
+msgstr "%s はこのデモと競合するため無効化しました。"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:673
+msgid "%s is already active."
+msgstr "%s はすでに有効です。"
+
+#: core/src/Importer.php:702
+msgid "file not found in the package"
+msgstr "パッケージ内にファイルが見つかりません"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:707
+msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
+msgstr "画像 %1$s をスキップしました (%2$s)。ページではテーマのコピーが代わりに使用されます。"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Image %1$s skipped (%2$s)."
+msgstr "画像 %1$s をスキップしました (%2$s)。"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Check that the uploads folder is writable."
+msgstr "アップロードフォルダーが書き込み可能か確認してください。"
+
+#. translators: %s: file.
+#: core/src/Importer.php:729
+msgid "Imported image %s."
+msgstr "画像 %s をインポートしました。"
+
+#. translators: 1: term, 2: taxonomy.
+#. translators: 1: title, 2: post type.
+#: core/src/Importer.php:744 core/src/Importer.php:790
+msgid "Skipped \"%1$s\": %2$s is not available on this site."
+msgstr "「%1$s」をスキップしました: %2$s はこのサイトで利用できません。"
+
+#. translators: %s: term.
+#: core/src/Importer.php:751
+msgid "Category \"%s\" already exists and was reused."
+msgstr "カテゴリー「%s」はすでに存在するため再利用しました。"
+
+#. translators: 1: term, 2: error.
+#: core/src/Importer.php:763
+msgid "Category \"%1$s\" was not created: %2$s"
+msgstr "カテゴリー「%1$s」は作成されませんでした: %2$s"
+
+#. translators: %s: term.
+#: core/src/Importer.php:770
+msgid "Created category \"%s\"."
+msgstr "カテゴリー「%s」を作成しました。"
+
+#. translators: 1: title, 2: error.
+#: core/src/Importer.php:808
+msgid "\"%1$s\" could not be created: %2$s"
+msgstr "「%1$s」を作成できませんでした: %2$s"
+
+#: core/src/Importer.php:836
+msgid "post"
+msgstr "投稿"
+
+#: core/src/Importer.php:837
+msgid "page"
+msgstr "固定ページ"
+
+#: core/src/Importer.php:838
+msgid "event"
+msgstr "イベント"
+
+#: core/src/Importer.php:839
+msgid "venue"
+msgstr "会場"
+
+#: core/src/Importer.php:840
+msgid "organizer"
+msgstr "主催者"
+
+#. translators: 1: type, 2: title.
+#: core/src/Importer.php:843
+msgid "Created %1$s \"%2$s\"."
+msgstr "%1$s「%2$s」を作成しました。"
+
+#: core/src/Importer.php:860
+msgid "The Events Calendar rejected the venue."
+msgstr "The Events Calendar が会場を拒否しました。"
+
+#: core/src/Importer.php:864
+msgid "The Events Calendar rejected the organizer."
+msgstr "The Events Calendar が主催者を拒否しました。"
+
+#: core/src/Importer.php:892
+msgid "The Events Calendar rejected the event."
+msgstr "The Events Calendar がイベントを拒否しました。"
+
+#. translators: %s: product.
+#: core/src/Importer.php:1004
+msgid "Product \"%s\" could not be saved."
+msgstr "商品「%s」を保存できませんでした。"
+
+#. translators: %s: product.
+#: core/src/Importer.php:1015
+msgid "Added product \"%s\"."
+msgstr "商品「%s」を追加しました。"
+
+#. translators: 1: menu, 2: count.
+#: core/src/Importer.php:1118
+msgid "Created menu \"%1$s\" with %2$d links."
+msgstr "%2$d 件のリンクを含むメニュー「%1$s」を作成しました。"
+
+#: core/src/Importer.php:1164
+msgid "Home and blog pages assigned."
+msgstr "ホームページと投稿ページを割り当てました。"
+
+#. translators: %s: option.
+#: core/src/Importer.php:1170
+msgid "Setting \"%s\" is not on the allow-list and was ignored."
+msgstr "設定「%s」は許可リストにないため無視されました。"
+
+#. translators: %s: preset.
+#: core/src/Importer.php:1191
+msgid "Animation style set to \"%s\"."
+msgstr "アニメーションスタイルを「%s」に設定しました。"
+
+#: core/src/Importer.php:1204
+msgid "Elementor set to use the theme colours and fonts."
+msgstr "Elementor でテーマのカラーとフォントを使用するよう設定しました。"
+
+#: core/src/Importer.php:1219
+msgid "Default"
+msgstr "デフォルト"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Style \"%s\" was not found in the theme, so the default colours stay."
+msgstr "スタイル「%s」がテーマに見つからないため、デフォルトのカラーのままです。"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Update the WPEssential theme, then import again."
+msgstr "WPEssential テーマを更新してから、もう一度インポートしてください。"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1250
+msgid "Applied the %s colours and fonts."
+msgstr "%s のカラーとフォントを適用しました。"
+
+#: core/src/Importer.php:1268
+msgid "demo"
+msgstr "デモ"
+
+#. translators: 1: template part, 2: design.
+#: core/src/Importer.php:1320
+msgid "Template part \"%1$s\" set to the \"%2$s\" design."
+msgstr "テンプレートパーツ「%1$s」を「%2$s」デザインに設定しました。"
+
+#: core/src/Importer.php:1341
+msgid "Elementor Kit layout, buttons and form styles set."
+msgstr "Elementor キットのレイアウト、ボタン、フォームのスタイルを設定しました。"
+
+#: core/src/Importer.php:1361
+msgid "Everywhere"
+msgstr "すべての地域"
+
+#: core/src/Importer.php:1369
+msgid "Free shipping"
+msgstr "送料無料"
+
+#. translators: %s: amount.
+#: core/src/Importer.php:1377
+msgid "Shipping set up with free delivery over %s."
+msgstr "%s 以上の注文で送料無料となる配送を設定しました。"
+
+#. translators: %d: pages.
+#: core/src/Importer.php:1412
+msgid "Linked %d page to its new address."
+msgid_plural "Linked %d pages to their new addresses."
+msgstr[0] "%d 件のページを新しいアドレスにリンクしました。"
+
+#: core/src/Importer.php:1417
+msgid "Permalinks and caches refreshed."
+msgstr "パーマリンクとキャッシュを更新しました。"
+
+#: core/src/License.php:136
+msgid ""
+"That license key looks too short. Copy it again from your purchase email."
+msgstr "そのライセンスキーは短すぎるようです。購入時のメールからもう一度コピーしてください。"
+
+#: core/src/License.php:204
+msgid ""
+"This is a Pro item. Activate your license on the License tab to unlock it."
+msgstr "これは Pro アイテムです。ロックを解除するには「ライセンス」タブでライセンスを有効化してください。"
+
+#: core/src/License/Adapter.php:84
+msgid "The license server did not return a download link."
+msgstr "ライセンスサーバーからダウンロードリンクが返されませんでした。"
+
+#. translators: %s: error.
+#: core/src/License/Adapter.php:107
+msgid "The license server could not be reached: %s"
+msgstr "ライセンスサーバーに接続できませんでした: %s"
+
+#. translators: %d: HTTP status.
+#: core/src/License/Adapter.php:113
+msgid ""
+"The license server answered with an unexpected response (HTTP %d). Try again"
+" in a few minutes."
+msgstr "ライセンスサーバーから予期しない応答がありました (HTTP %d)。数分後にもう一度お試しください。"
+
+#: core/src/License/Custom.php:42 core/src/License/Edd.php:31
+#: core/src/License/Woo.php:58
+msgid "This license key is not valid."
+msgstr "このライセンスキーは無効です。"
+
+#: core/src/License/Edd.php:27
+msgid ""
+"This license has expired. Renew it to keep receiving demos and updates."
+msgstr "このライセンスは有効期限が切れています。デモとアップデートを引き続き受け取るには更新してください。"
+
+#: core/src/License/Edd.php:28
+msgid "This license has been disabled."
+msgstr "このライセンスは無効化されています。"
+
+#: core/src/License/Edd.php:29
+msgid "This license has been revoked."
+msgstr "このライセンスは取り消されています。"
+
+#: core/src/License/Edd.php:30
+msgid "This license key does not exist."
+msgstr "このライセンスキーは存在しません。"
+
+#: core/src/License/Edd.php:32
+msgid "This license is not active for this domain."
+msgstr "このライセンスはこのドメインで有効になっていません。"
+
+#: core/src/License/Edd.php:33
+msgid "This key belongs to a different product."
+msgstr "このキーは別の製品のものです。"
+
+#: core/src/License/Edd.php:34
+msgid ""
+"This license has reached its activation limit. Deactivate it on another site"
+" first."
+msgstr "このライセンスは有効化の上限に達しています。先に別のサイトで無効化してください。"
+
+#: core/src/License/Edd.php:130 core/src/License/Woo.php:118
+msgid "The store did not return a download link for this license."
+msgstr "ストアからこのライセンスのダウンロードリンクが返されませんでした。"
+
+#: core/src/Plugins.php:115
+msgid "Your account is not allowed to install plugins."
+msgstr "あなたのアカウントにはプラグインをインストールする権限がありません。"
+
+#. translators: 1: plugin name, 2: error.
+#: core/src/Plugins.php:130
+msgid ""
+"WordPress.org did not answer for %1$s (%2$s). Check the server can reach "
+"wordpress.org, or install it manually."
+msgstr ""
+"WordPress.org から %1$s の応答がありませんでした (%2$s)。サーバーが wordpress.org "
+"に接続できるか確認するか、手動でインストールしてください。"
+
+#: core/src/Plugins.php:145
+msgid "No download source is set for this plugin."
+msgstr "このプラグインのダウンロード元が設定されていません。"
+
+#: core/src/Plugins.php:158
+msgid ""
+"The plugin could not be installed. The server may lack write access to wp-"
+"content/plugins."
+msgstr "プラグインをインストールできませんでした。サーバーに wp-content/plugins への書き込み権限がない可能性があります。"
+
+#: core/src/Plugins.php:174
+msgid "Plugin is not installed."
+msgstr "プラグインがインストールされていません。"
+
+#: core/src/Plugins.php:208
+msgid "Your account is not allowed to delete plugins."
+msgstr "あなたのアカウントにはプラグインを削除する権限がありません。"
+
+#: core/src/Rest.php:101
+msgid "Demo not found."
+msgstr "デモが見つかりません。"
+
+#: core/src/Rest.php:158
+msgid "No imported demo was found."
+msgstr "インポート済みのデモが見つかりませんでした。"
+
+#. translators: 1: demo, 2: count.
+#: core/src/Rest.php:164
+msgid "%1$s removed: %2$d items deleted and your previous settings restored."
+msgstr "%1$s を削除しました: %2$d 件の項目を削除し、以前の設定を復元しました。"
+
+#: core/src/Rest.php:191
+msgid "This plugin is not managed by WPEssential."
+msgstr "このプラグインは WPEssential で管理されていません。"
+
+#: core/src/Rest.php:323
+msgid "Branding can be changed with a White Label plan."
+msgstr "ブランディングはホワイトラベルプランで変更できます。"
+
+#: core/src/Status.php:30
+msgid "WordPress version"
+msgstr "WordPress バージョン"
+
+#: core/src/Status.php:33
+msgid "Update WordPress to 6.5 or newer."
+msgstr "WordPress を 6.5 以降に更新してください。"
+
+#: core/src/Status.php:37
+msgid "PHP version"
+msgstr "PHP バージョン"
+
+#: core/src/Status.php:40
+msgid ""
+"PHP 8.1 or newer is faster and still supported. Ask your host to upgrade."
+msgstr "PHP 8.1 以降はより高速で、サポートも継続しています。ホスティング会社にアップグレードを依頼してください。"
+
+#: core/src/Status.php:44
+msgid "Memory limit"
+msgstr "メモリ上限"
+
+#: core/src/Status.php:45 core/src/Status.php:52
+msgid "Unlimited"
+msgstr "無制限"
+
+#: core/src/Status.php:47
+msgid ""
+"Set memory_limit to 256M in php.ini, or define WP_MEMORY_LIMIT in wp-"
+"config.php."
+msgstr ""
+"php.ini で memory_limit を 256M に設定するか、wp-config.php で WP_MEMORY_LIMIT "
+"を定義してください。"
+
+#: core/src/Status.php:51
+msgid "Max execution time"
+msgstr "最大実行時間"
+
+#: core/src/Status.php:54
+msgid "The importer works in short batches, so 30 seconds is enough."
+msgstr "インポーターは短いバッチ単位で動作するため、30秒で十分です。"
+
+#: core/src/Status.php:58
+msgid "Max upload size"
+msgstr "最大アップロードサイズ"
+
+#: core/src/Status.php:61
+msgid "Raise upload_max_filesize and post_max_size to at least 8M."
+msgstr "upload_max_filesize と post_max_size を 8M 以上に引き上げてください。"
+
+#: core/src/Status.php:65
+msgid "Uploads folder"
+msgstr "アップロードフォルダー"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Writable"
+msgstr "書き込み可能"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Not writable"
+msgstr "書き込み不可"
+
+#: core/src/Status.php:68
+msgid "Give the web server write access to wp-content/uploads."
+msgstr "Web サーバーに wp-content/uploads への書き込み権限を与えてください。"
+
+#: core/src/Status.php:72
+msgid "Plugins folder"
+msgstr "プラグインフォルダー"
+
+#: core/src/Status.php:75
+msgid "Without write access, required plugins must be installed by hand."
+msgstr "書き込み権限がない場合、必須プラグインは手動でインストールする必要があります。"
+
+#: core/src/Status.php:79
+msgid "ZIP support"
+msgstr "ZIP サポート"
+
+#: core/src/Status.php:82
+msgid "Enable the PHP zip extension for faster package extraction."
+msgstr "パッケージの展開を高速化するため、PHP の zip 拡張機能を有効にしてください。"
+
+#: core/src/Status.php:86
+msgid "Image editor"
+msgstr "画像エディター"
+
+#: core/src/Status.php:87
+msgid "WebP supported"
+msgstr "WebP 対応"
+
+#: core/src/Status.php:87
+msgid "No WebP support"
+msgstr "WebP 非対応"
+
+#: core/src/Status.php:89
+msgid ""
+"Images still import, but WordPress cannot create smaller sizes. Ask your "
+"host to enable Imagick or GD with WebP."
+msgstr ""
+"画像はインポートされますが、WordPress で小さいサイズを生成できません。ホスティング会社に WebP 対応の Imagick または GD "
+"を有効にするよう依頼してください。"
+
+#: core/src/Status.php:93
+msgid "Permalinks"
+msgstr "パーマリンク"
+
+#: core/src/Status.php:94
+msgid "Plain"
+msgstr "基本"
+
+#: core/src/Status.php:96
+msgid ""
+"Choose \"Post name\" under Settings → Permalinks for clean shop and page "
+"addresses."
+msgstr "ショップやページの URL をわかりやすくするため、「設定」→「パーマリンク」で「投稿名」を選択してください。"
+
+#: core/src/Status.php:123 core/assets/admin.js:282
+msgid "Theme"
+msgstr "テーマ"
+
+#: core/src/Status.php:124
+msgid "Core module"
+msgstr "コアモジュール"
+
+#: core/src/Status.php:124
+msgid "plugin"
+msgstr "プラグイン"
+
+#: core/src/Status.php:124
+msgid "built into theme"
+msgstr "テーマに組み込み"
+
+#: core/src/Status.php:125
+msgid "Site address"
+msgstr "サイトアドレス"
+
+#: core/src/Status.php:126
+msgid "Multisite"
+msgstr "マルチサイト"
+
+#: core/src/Status.php:126
+msgid "Yes"
+msgstr "はい"
+
+#: core/src/Status.php:126
+msgid "No"
+msgstr "いいえ"
+
+#: core/src/Status.php:127
+msgid "Server"
+msgstr "サーバー"
+
+#: core/src/Status.php:128
+msgid "Database"
+msgstr "データベース"
+
+#: core/src/Status.php:129
+msgid "Active plugins"
+msgstr "有効なプラグイン"
+
+#: inc/block-styles.php:16
+msgid "Secondary"
+msgstr "セカンダリ"
+
+#: inc/block-styles.php:17
+msgid "Outline"
+msgstr "アウトライン"
+
+#: inc/block-styles.php:18
+msgid "Ghost"
+msgstr "ゴースト"
+
+#: inc/block-styles.php:19
+msgid "Dark"
+msgstr "ダーク"
+
+#: inc/block-styles.php:20
+msgid "Light (on dark)"
+msgstr "ライト (ダーク背景用)"
+
+#: inc/block-styles.php:21
+msgid "Text link"
+msgstr "テキストリンク"
+
+#: inc/block-styles.php:22
+msgid "Pill"
+msgstr "ピル型"
+
+#: inc/block-styles.php:23
+msgid "Large"
+msgstr "大"
+
+#: inc/block-styles.php:26 inc/block-styles.php:33
+msgid "Card"
+msgstr "カード"
+
+#: inc/block-styles.php:27 inc/block-styles.php:34
+msgid "Card — flat"
+msgstr "カード — フラット"
+
+#: inc/block-styles.php:28 inc/block-styles.php:35
+msgid "Card — dark"
+msgstr "カード — ダーク"
+
+#: inc/block-styles.php:29
+msgid "Section — dark"
+msgstr "セクション — ダーク"
+
+#: inc/block-styles.php:30
+msgid "Logo strip"
+msgstr "ロゴストリップ"
+
+#: inc/block-styles.php:38
+msgid "Checklist"
+msgstr "チェックリスト"
+
+#: inc/block-styles.php:39
+msgid "Timeline"
+msgstr "タイムライン"
+
+#: inc/block-styles.php:42
+msgid "Overline"
+msgstr "オーバーライン"
+
+#: inc/block-styles.php:43
+msgid "Lead"
+msgstr "リード"
+
+#: inc/block-styles.php:46
+msgid "Flush"
+msgstr "余白なし"
+
+#: inc/block-styles.php:49
+msgid "Shadow"
+msgstr "シャドウ"
+
+#: inc/block-styles.php:50
+msgid "Glass frame"
+msgstr "ガラスフレーム"
+
+#: inc/block-styles.php:53
+msgid "Pills"
+msgstr "ピル型"
+
+#: inc/block-styles.php:54
+msgid "Hashtags"
+msgstr "ハッシュタグ"
+
+#: inc/block-styles.php:57
+msgid "Soft"
+msgstr "ソフト"
+
+#: inc/core-bridge.php:53
+msgid ""
+"Install the WPEssential Core plugin to import one-click demos for Gutenberg "
+"or Elementor."
+msgstr ""
+"WPEssential Core プラグインをインストールすると、Gutenberg または Elementor "
+"用のワンクリックデモをインポートできます。"
+
+#: inc/core-bridge.php:55
+msgid "Get WPEssential Core"
+msgstr "WPEssential Core を入手"
+
+#: inc/core-bridge.php:57
+msgid "Dismiss"
+msgstr "非表示"
+
+#: inc/motion.php:21
+msgid "None"
+msgstr "なし"
+
+#: inc/motion.php:22
+msgid "No animations."
+msgstr "アニメーションなし。"
+
+#: inc/motion.php:25
+msgid "Subtle"
+msgstr "控えめ"
+
+#: inc/motion.php:26
+msgid "Short fade-up. Corporate, SaaS, finance, medical."
+msgstr "短いフェードアップ。企業、SaaS、金融、医療向け。"
+
+#: inc/motion.php:29
+msgid "Editorial"
+msgstr "エディトリアル"
+
+#: inc/motion.php:30
+msgid "Slow image masks and line reveals. Fashion, magazine, luxury."
+msgstr "ゆっくりとした画像マスクとラインの表示。ファッション、雑誌、ラグジュアリー向け。"
+
+#: inc/motion.php:33
+msgid "Playful"
+msgstr "遊び心"
+
+#: inc/motion.php:34
+msgid "Springy scale and stagger. Food, kids, events, creative."
+msgstr "弾むようなスケールと時間差表示。飲食、子ども、イベント、クリエイティブ向け。"
+
+#: inc/motion.php:37
+msgid "Dynamic (GSAP)"
+msgstr "ダイナミック (GSAP)"
+
+#: inc/motion.php:38
+msgid ""
+"Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, "
+"sport, launches."
+msgstr "GSAP ScrollTrigger によるパララックス、カウンター、時間差グリッド。イベント、スポーツ、ローンチ向け。"
+
+#: inc/multilingual.php:108
+msgid "Language"
+msgstr "言語"
+
+#: inc/multilingual.php:165
+msgid "Language switcher"
+msgstr "言語スイッチャー"
+
+#: inc/multilingual.php:245 inc/patterns-shop/shop-products.php:14
+msgid "Featured"
+msgstr "注目"
+
+#: inc/multilingual.php:246
+msgid "Author"
+msgstr "投稿者"
+
+#: inc/options.php:40
+msgid "Untitled snippet"
+msgstr "無題のスニペット"
+
+#: inc/options.php:125 inc/options.php:215
+msgid "Theme Options"
+msgstr "テーマオプション"
+
+#: inc/options.php:153
+msgid "Saved"
+msgstr "保存しました"
+
+#: inc/options.php:154
+msgid "Could not save"
+msgstr "保存できませんでした"
+
+#: inc/options.php:155
+msgid "Delete this snippet?"
+msgstr "このスニペットを削除しますか ?"
+
+#: inc/options.php:156
+msgid ""
+"No snippets yet. Add CSS or JavaScript without editing theme files — it "
+"survives theme updates."
+msgstr "スニペットはまだありません。テーマファイルを編集せずに CSS や JavaScript を追加できます。テーマを更新しても保持されます。"
+
+#: inc/options.php:215
+msgid "Loading…"
+msgstr "読み込み中…"
+
+#: inc/patterns-shop/shop-categories.php:13
+msgid "Shop by category"
+msgstr "カテゴリーから探す"
+
+#: inc/patterns-shop/shop-categories.php:17
+msgid "Find what you love"
+msgstr "お気に入りを見つけよう"
+
+#: inc/patterns-shop/shop-products.php:18
+msgid "Customer favourites"
+msgstr "人気の商品"
+
+#: inc/patterns-shop/shop-products.php:24
+msgid "View all products"
+msgstr "すべての商品を見る"
+
+#: inc/patterns-shop/shop-products.php:34
+msgid "New arrivals"
+msgstr "新着商品"
+
+#: inc/patterns-shop/shop-products.php:42
+msgid "On sale now"
+msgstr "セール中"
+
+#: inc/patterns.php:15
+msgid "WPEssential — Heroes"
+msgstr "WPEssential — ヒーロー"
+
+#: inc/patterns.php:16
+msgid "WPEssential — Sections"
+msgstr "WPEssential — セクション"
+
+#: inc/patterns.php:17
+msgid "WPEssential — Headers"
+msgstr "WPEssential — ヘッダー"
+
+#: inc/patterns.php:18
+msgid "WPEssential — Footers"
+msgstr "WPEssential — フッター"
+
+#: inc/patterns.php:19
+msgid "WPEssential — Full pages"
+msgstr "WPEssential — フルページ"
+
+#: inc/patterns.php:20
+msgid "WPEssential — Shop"
+msgstr "WPEssential — ショップ"
+
+#: inc/patterns.php:36
+msgid "Shop — Category grid"
+msgstr "ショップ — カテゴリーグリッド"
+
+#: inc/patterns.php:37
+msgid "Shop — Featured, new and sale products"
+msgstr "ショップ — おすすめ・新着・セール商品"
+
+#: inc/seo.php:136
+msgid "Home"
+msgstr "ホーム"
+
+#: inc/setup.php:40
+msgid "Primary Menu"
+msgstr "メインメニュー"
+
+#: inc/setup.php:41
+msgid "Mobile Menu"
+msgstr "モバイルメニュー"
+
+#: inc/setup.php:42
+msgid "Footer Menu"
+msgstr "フッターメニュー"
+
+#: inc/setup.php:43
+msgid "Top Bar Menu"
+msgstr "トップバーメニュー"
+
+#: inc/setup.php:77
+msgid "Back to top"
+msgstr "トップへ戻る"
+
+#. translators: %d: discount percentage.
+#: inc/woocommerce.php:48
+msgid "-%d%%"
+msgstr "-%d%%"
+
+#: inc/woocommerce.php:89
+msgid "Out of stock"
+msgstr "在庫切れ"
+
+#: inc/woocommerce.php:136
+msgid "You’ve unlocked free shipping on this order!"
+msgstr "この注文は送料無料になりました !"
+
+#. translators: %s: amount left for free shipping.
+#: inc/woocommerce.php:139
+msgid "Add %s more to unlock free shipping."
+msgstr "あと %s で送料無料になります。"
+
+#: patterns/blog-hero.php
+msgctxt "Pattern title"
+msgid "Blog hero"
+msgstr "ブログヒーロー"
+
+#: patterns/blog-hero.php:14 patterns/footer-premium.php:89
+#: patterns/footer-simple.php:18 core/assets/admin.js:301
+msgid "Blog"
+msgstr "ブログ"
+
+#: patterns/blog-hero.php:18
+msgid "Guides, tutorials and product news from the WPEssential team."
+msgstr "WPEssential チームによるガイド、チュートリアル、製品ニュース。"
+
+#: patterns/builders-split.php
+msgctxt "Pattern title"
+msgid "Split — image + checklist (dark)"
+msgstr "分割 — 画像 + チェックリスト (ダーク)"
+
+#: patterns/builders-split.php:16
+msgid "Your builder, your choice"
+msgstr "ビルダーは自由に選べます"
+
+#: patterns/builders-split.php:20
+msgid "Same design. Gutenberg or Elementor."
+msgstr "同じデザインを、Gutenberg でも Elementor でも。"
+
+#: patterns/builders-split.php:24
+msgid ""
+"Colors, fonts and spacing come from one theme.json and sync into Elementor’s"
+" global kit automatically."
+msgstr "カラー、フォント、余白は1つの theme.json で管理され、Elementor のグローバルキットに自動で同期されます。"
+
+#: patterns/builders-split.php:29
+msgid "Shared design tokens across both builders"
+msgstr "両方のビルダーで共通のデザイントークン"
+
+#: patterns/builders-split.php:31
+msgid "Elementor Pro Theme Builder locations supported"
+msgstr "Elementor Pro テーマビルダーのロケーションに対応"
+
+#: patterns/builders-split.php:33
+msgid "Full Site Editing templates and patterns"
+msgstr "フルサイト編集のテンプレートとパターン"
+
+#: patterns/builders-split.php:40
+msgid "Designer building a site"
+msgstr "サイトを制作するデザイナー"
+
+#: patterns/coming-soon.php
+msgctxt "Pattern title"
+msgid "Coming soon"
+msgstr "近日公開"
+
+#: patterns/coming-soon.php:17
+msgid "Something great is on the way"
+msgstr "素晴らしいものを準備中です"
+
+#: patterns/coming-soon.php:21
+msgid "We are polishing the final details. Follow us for launch news."
+msgstr "最終調整を行っています。公開情報はフォローしてお待ちください。"
+
+#: patterns/comments.php
+msgctxt "Pattern title"
+msgid "Comments"
+msgstr "コメント"
+
+#: patterns/contact.php
+msgctxt "Pattern title"
+msgid "Contact — details + form area"
+msgstr "お問い合わせ — 詳細 + フォームエリア"
+
+#: patterns/contact.php:22
+msgid "Email us"
+msgstr "メールでのお問い合わせ"
+
+#: patterns/contact.php:36
+msgid "Call us"
+msgstr "お電話"
+
+#: patterns/contact.php:50
+msgid "Visit us"
+msgstr "所在地"
+
+#: patterns/contact.php:64
+msgid "Support hours"
+msgstr "サポート対応時間"
+
+#: patterns/contact.php:68
+msgid "Replies within one business day"
+msgstr "1営業日以内に返信します"
+
+#: patterns/contact.php:76
+msgid "Send us a message"
+msgstr "メッセージを送信"
+
+#: patterns/contact.php:80
+msgid ""
+"Replace the shortcode below with your form plugin (Contact Form 7, WPForms, "
+"Fluent Forms or the Elementor Form widget)."
+msgstr ""
+"下のショートコードを、お使いのフォームプラグイン (Contact Form 7、WPForms、Fluent Forms、Elementor "
+"のフォームウィジェット) に置き換えてください。"
+
+#: patterns/content-404.php
+msgctxt "Pattern title"
+msgid "404 content"
+msgstr "404 コンテンツ"
+
+#: patterns/content-404.php:14
+msgid "Error 404"
+msgstr "エラー 404"
+
+#: patterns/content-404.php:18
+msgid "This page took a day off"
+msgstr "このページはお休み中です"
+
+#: patterns/content-404.php:22
+msgid ""
+"The link may be broken or the page may have moved. Try a search or head back"
+" home."
+msgstr "リンクが切れているか、ページが移動した可能性があります。検索するか、ホームに戻ってください。"
+
+#: patterns/content-404.php:25 patterns/header-actions.php:14
+#: patterns/header-shop.php:22 patterns/sidebar.php:14
+msgid "Search"
+msgstr "検索"
+
+#: patterns/content-404.php:29
+msgid "Back to home"
+msgstr "ホームに戻る"
+
+#: patterns/cta-banner.php
+msgctxt "Pattern title"
+msgid "Call to action — gradient banner"
+msgstr "CTA — グラデーションバナー"
+
+#: patterns/cta-banner.php:15
+msgid "Ready to launch your next site?"
+msgstr "次のサイトを公開する準備はできましたか ?"
+
+#: patterns/cta-banner.php:19
+msgid ""
+"Start free. Upgrade to Pro when you need premium demos and priority support."
+msgstr "無料で始めて、プレミアムデモや優先サポートが必要になったら Pro にアップグレード。"
+
+#: patterns/cta-banner.php:24
+msgid "Get WPEssential free"
+msgstr "WPEssential を無料で入手"
+
+#: patterns/cta-banner.php:28
+msgid "See Pro plans →"
+msgstr "Pro プランを見る →"
+
+#: patterns/faq.php
+msgctxt "Pattern title"
+msgid "FAQ — accordion"
+msgstr "FAQ — アコーディオン"
+
+#: patterns/faq.php:15 patterns/footer-premium.php:90
+msgid "FAQ"
+msgstr "FAQ"
+
+#: patterns/faq.php:19 patterns/page-faq.php:20
+msgid "Frequently asked questions"
+msgstr "よくある質問"
+
+#: patterns/faq.php:24
+msgid "Is WPEssential free?"
+msgstr "WPEssential は無料ですか ?"
+
+#: patterns/faq.php:25
+msgid ""
+"Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium"
+" blocks and priority support."
+msgstr "はい。テーマと12種類のデモはずっと無料です。Pro では40種類以上のデモ、プレミアムブロック、優先サポートが利用できます。"
+
+#: patterns/faq.php:30
+msgid "Which page builders are supported?"
+msgstr "どのページビルダーに対応していますか ?"
+
+#: patterns/faq.php:31
+msgid ""
+"The native block editor (Gutenberg) and Elementor. Every demo ships in both "
+"versions."
+msgstr "ネイティブのブロックエディター (Gutenberg) と Elementor です。すべてのデモが両方のバージョンで提供されます。"
+
+#: patterns/faq.php:36
+msgid "Will importing a demo delete my content?"
+msgstr "デモをインポートするとコンテンツが削除されますか ?"
+
+#: patterns/faq.php:37
+msgid ""
+"No. Demo content is added alongside your existing posts, and you choose what"
+" to import."
+msgstr "いいえ。デモコンテンツは既存の投稿と並んで追加され、インポートする内容も選べます。"
+
+#: patterns/faq.php:42
+msgid "Do I need Elementor Pro?"
+msgstr "Elementor Pro は必要ですか ?"
+
+#: patterns/faq.php:43
+msgid ""
+"No. Elementor free is enough for every demo. Elementor Pro Theme Builder "
+"headers and footers are also supported."
+msgstr ""
+"いいえ。すべてのデモは無料版の Elementor で利用できます。Elementor Pro テーマビルダーのヘッダーとフッターにも対応しています。"
+
+#: patterns/faq.php:48
+msgid "Is the theme translation-ready and RTL compatible?"
+msgstr "テーマは翻訳対応および RTL 対応ですか ?"
+
+#: patterns/faq.php:49
+msgid ""
+"Yes. All strings are translatable and layouts mirror correctly for languages"
+" such as Urdu and Arabic."
+msgstr "はい。すべての文字列が翻訳可能で、ウルドゥー語やアラビア語などの言語ではレイアウトが正しく反転します。"
+
+#: patterns/features-grid.php
+msgctxt "Pattern title"
+msgid "Features — 3×2 grid"
+msgstr "特徴 — 3×2 グリッド"
+
+#: patterns/features-grid.php:15
+msgid "Why WPEssential"
+msgstr "WPEssential が選ばれる理由"
+
+#: patterns/features-grid.php:19
+msgid "Everything a modern site needs, nothing it doesn’t"
+msgstr "モダンなサイトに必要なものはすべて、不要なものは何もなし"
+
+#: patterns/features-grid.php:23
+msgid ""
+"Built on theme.json and native blocks, with first-class Elementor support."
+msgstr "theme.json とネイティブブロックをベースに、Elementor にも本格対応。"
+
+#: patterns/features-grid.php:34
+msgid "One-click demo import"
+msgstr "ワンクリックデモインポート"
+
+#: patterns/features-grid.php:38
+msgid ""
+"Pick a demo, choose your builder, import. Content and settings land exactly "
+"as previewed."
+msgstr "デモを選び、ビルダーを選んでインポート。コンテンツと設定がプレビューどおりに反映されます。"
+
+#: patterns/features-grid.php:48
+msgid "Gutenberg &amp; Elementor"
+msgstr "Gutenberg &amp; Elementor"
+
+#: patterns/features-grid.php:52
+msgid ""
+"Every demo ships twice — native blocks and Elementor — sharing one set of "
+"design tokens."
+msgstr "すべてのデモはネイティブブロック版と Elementor 版の2種類があり、共通のデザイントークンを使用します。"
+
+#: patterns/features-grid.php:62
+msgid "Blazing fast"
+msgstr "圧倒的な速さ"
+
+#: patterns/features-grid.php:66
+msgid ""
+"No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
+msgstr "jQuery 不要、ブロックごとの CSS、小さなスタイルシートで Core Web Vitals を良好に保ちます。"
+
+#: patterns/features-grid.php:78
+msgid "Automatic plugin setup"
+msgstr "プラグインの自動セットアップ"
+
+#: patterns/features-grid.php:82
+msgid ""
+"Required plugins install and activate themselves when you import a demo."
+msgstr "デモをインポートすると、必須プラグインが自動でインストール・有効化されます。"
+
+#: patterns/features-grid.php:92
+msgid "WooCommerce ready"
+msgstr "WooCommerce 対応"
+
+#: patterns/features-grid.php:96
+msgid ""
+"Designed shop, product, cart, checkout and account pages — not default "
+"templates."
+msgstr "ショップ、商品、カート、チェックアウト、アカウントの各ページはデフォルトテンプレートではなく、デザイン済みです。"
+
+#: patterns/features-grid.php:106
+msgid "Pro license &amp; updates"
+msgstr "Pro ライセンス &amp; アップデート"
+
+#: patterns/features-grid.php:110
+msgid ""
+"Connect a license once to unlock Pro demos, premium blocks and updates."
+msgstr "一度ライセンスを接続すれば、Pro デモ、プレミアムブロック、アップデートが利用可能になります。"
+
+#: patterns/footer-premium.php
+msgctxt "Pattern title"
+msgid "Footer — Premium (dark, newsletter band)"
+msgstr "フッター — プレミアム (ダーク、ニュースレター帯)"
+
+#: patterns/footer-premium.php:17
+msgid "Get design tips & new demos"
+msgstr "デザインのヒントと新しいデモを受け取る"
+
+#: patterns/footer-premium.php:21
+msgid "One email a month. No spam, unsubscribe anytime."
+msgstr "メールは月1回。スパムなし、いつでも配信停止できます。"
+
+#: patterns/footer-premium.php:28
+msgid "Subscribe"
+msgstr "購読する"
+
+#: patterns/footer-premium.php:55
+msgid "Company"
+msgstr "会社情報"
+
+#: patterns/footer-premium.php:59 patterns/page-about.php:16
+msgid "About us"
+msgstr "私たちについて"
+
+#: patterns/footer-premium.php:60 patterns/page-services.php:16
+#: patterns/services-grid.php:15
+msgid "Services"
+msgstr "サービス"
+
+#: patterns/footer-premium.php:61 patterns/page-pricing.php:16
+#: patterns/pricing.php:15
+msgid "Pricing"
+msgstr "料金"
+
+#: patterns/footer-premium.php:62 patterns/footer-simple.php:19
+#: patterns/header-topbar.php:18 patterns/page-contact.php:16
+msgid "Contact"
+msgstr "お問い合わせ"
+
+#: patterns/footer-premium.php:70 core/assets/admin.js:301
+msgid "Shop"
+msgstr "ショップ"
+
+#: patterns/footer-premium.php:74
+msgid "All products"
+msgstr "すべての商品"
+
+#: patterns/footer-premium.php:75
+msgid "My account"
+msgstr "マイアカウント"
+
+#: patterns/footer-premium.php:76
+msgid "Cart"
+msgstr "カート"
+
+#: patterns/footer-premium.php:77 patterns/header-topbar.php:18
+msgid "Track order"
+msgstr "注文の追跡"
+
+#: patterns/footer-premium.php:85 core/assets/admin.js:263
+msgid "Resources"
+msgstr "リソース"
+
+#: patterns/footer-premium.php:91 core/assets/admin.js:266
+msgid "Documentation"
+msgstr "ドキュメント"
+
+#: patterns/footer-premium.php:92 core/assets/admin.js:267
+msgid "Support"
+msgstr "サポート"
+
+#: patterns/footer-premium.php:100
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:20
+msgid "Privacy"
+msgstr "プライバシー"
+
+#: patterns/footer-premium.php:104
+msgid "Terms"
+msgstr "利用規約"
+
+#: patterns/footer-simple.php
+msgctxt "Pattern title"
+msgid "Footer — Simple"
+msgstr "フッター — シンプル"
+
+#: patterns/footer-simple.php:17
+msgid "About"
+msgstr "概要"
+
+#: patterns/header-actions.php
+msgctxt "Pattern title"
+msgid "Header actions (search, account, cart, CTA)"
+msgstr "ヘッダーアクション (検索、アカウント、カート、CTA)"
+
+#: patterns/header-actions.php:23
+msgid "Switch to dark mode"
+msgstr "ダークモードに切り替え"
+
+#: patterns/header-actions.php:23
+msgid "Switch to light mode"
+msgstr "ライトモードに切り替え"
+
+#: patterns/header-actions.php:29
+msgid "Get Started"
+msgstr "始める"
+
+#: patterns/header-centered.php
+msgctxt "Pattern title"
+msgid "Header — Centered"
+msgstr "ヘッダー — 中央揃え"
+
+#: patterns/header-default.php
+msgctxt "Pattern title"
+msgid "Header — Default"
+msgstr "ヘッダー — デフォルト"
+
+#: patterns/header-shop.php
+msgctxt "Pattern title"
+msgid "Header — Shop (search + account + cart)"
+msgstr "ヘッダー — ショップ (検索 + アカウント + カート)"
+
+#: patterns/header-shop.php:22
+msgid "Search products"
+msgstr "商品を検索"
+
+#: patterns/header-shop.php:22
+msgid "Search products, brands and more…"
+msgstr "商品、ブランドなどを検索…"
+
+#: patterns/header-topbar.php
+msgctxt "Pattern title"
+msgid "Top bar"
+msgstr "トップバー"
+
+#: patterns/header-topbar.php:14
+msgid "Free shipping on orders over $75 · 30-day returns"
+msgstr "$75以上のご注文で送料無料 · 30日間返品可能"
+
+#: patterns/header-topbar.php:18
+msgid "Help"
+msgstr "ヘルプ"
+
+#: patterns/header-transparent.php
+msgctxt "Pattern title"
+msgid "Header — Transparent (over dark hero)"
+msgstr "ヘッダー — 透明 (ダークヒーローの上)"
+
+#: patterns/hero-dark.php
+msgctxt "Pattern title"
+msgid "Hero — Dark with product shot"
+msgstr "ヒーロー — ダーク (商品画像付き)"
+
+#: patterns/hero-dark.php:15 core/assets/admin.js:241
+msgid "NEW"
+msgstr "NEW"
+
+#: patterns/hero-dark.php:15
+msgid "40+ demos for Gutenberg &amp; Elementor"
+msgstr "Gutenberg &amp; Elementor 対応のデモ40種類以上"
+
+#: patterns/hero-dark.php:19
+msgid "Launch a premium WordPress site in minutes, not weeks"
+msgstr "プレミアムな WordPress サイトを、数週間ではなく数分で"
+
+#: patterns/hero-dark.php:23
+msgid ""
+"One-click demos for every niche, built natively for both the block editor "
+"and Elementor — fast, accessible and fully yours."
+msgstr ""
+"あらゆるジャンルに対応したワンクリックデモ。ブロックエディターと Elementor "
+"の両方にネイティブ対応し、高速でアクセシブル、そして完全にあなたのものに。"
+
+#: patterns/hero-dark.php:28 core/assets/admin.js:245
+msgid "Browse demos"
+msgstr "デモを見る"
+
+#: patterns/hero-dark.php:32
+msgid "Watch the 2-min tour"
+msgstr "2分間のツアーを見る"
+
+#: patterns/hero-dark.php:43 patterns/stats.php:28
+msgid "Ready demos"
+msgstr "すぐ使えるデモ"
+
+#: patterns/hero-dark.php:53
+msgid "Page builders"
+msgstr "ページビルダー"
+
+#: patterns/hero-dark.php:63
+msgid "CSS on first load"
+msgstr "初回読み込み時の CSS"
+
+#: patterns/hero-dark.php:73
+msgid "From 1,200 reviews"
+msgstr "1,200件のレビューより"
+
+#: patterns/hero-dark.php:80
+msgid "Business demo homepage built with WPEssential"
+msgstr "WPEssential で作成したビジネスデモのホームページ"
+
+#: patterns/hero-split.php
+msgctxt "Pattern title"
+msgid "Hero — Split with image"
+msgstr "ヒーロー — 分割 (画像付き)"
+
+#: patterns/hero-split.php:17
+msgid "Multi-niche WordPress theme"
+msgstr "マルチニッチ WordPress テーマ"
+
+#: patterns/hero-split.php:21
+msgid "Build any website in minutes"
+msgstr "どんなサイトも数分で構築"
+
+#: patterns/hero-split.php:25
+msgid ""
+"Import a ready-made demo for Gutenberg or Elementor with one click, then "
+"make it yours."
+msgstr "Gutenberg または Elementor 用の既製デモをワンクリックでインポートし、自分好みにカスタマイズ。"
+
+#: patterns/hero-split.php:30 core/assets/admin.js:258
+msgid "Get started"
+msgstr "始める"
+
+#: patterns/hero-split.php:34
+msgid "Learn more"
+msgstr "詳しく見る"
+
+#: patterns/hero-split.php:41
+msgid "A WPEssential site on a laptop and phone"
+msgstr "ノートパソコンとスマートフォンに表示された WPEssential のサイト"
+
+#: patterns/latest-posts.php
+msgctxt "Pattern title"
+msgid "Latest posts — 3 cards"
+msgstr "最新の投稿 — 3枚のカード"
+
+#: patterns/latest-posts.php:15
+msgid "From the blog"
+msgstr "ブログから"
+
+#: patterns/latest-posts.php:19
+msgid "Guides for faster, better WordPress sites"
+msgstr "より速く、より良い WordPress サイトのためのガイド"
+
+#: patterns/logos.php
+msgctxt "Pattern title"
+msgid "Logo strip"
+msgstr "ロゴストリップ"
+
+#: patterns/logos.php:14
+msgid "Trusted by 18,000+ agencies, stores and creators"
+msgstr "18,000以上の制作会社、ストア、クリエイターに信頼されています"
+
+#: patterns/maintenance.php
+msgctxt "Pattern title"
+msgid "Maintenance mode"
+msgstr "メンテナンスモード"
+
+#: patterns/maintenance.php:17
+msgid "We will be back shortly"
+msgstr "まもなく再開します"
+
+#: patterns/maintenance.php:21
+msgid ""
+"Scheduled maintenance is underway. Thanks for your patience — we will be "
+"back online in a few minutes."
+msgstr "定期メンテナンスを実施中です。ご不便をおかけしますが、数分後には再開します。"
+
+#: patterns/no-results.php
+msgctxt "Pattern title"
+msgid "No results"
+msgstr "結果なし"
+
+#: patterns/no-results.php:13
+msgid "Nothing matched. Try a different search or browse the latest posts."
+msgstr "一致するものがありませんでした。別のキーワードで検索するか、最新の投稿をご覧ください。"
+
+#: patterns/page-about.php
+msgctxt "Pattern title"
+msgid "About page"
+msgstr "概要ページ"
+
+#: patterns/page-about.php:20
+msgid "We build WordPress tools that feel premium and stay fast"
+msgstr "プレミアムな使い心地で、高速さを保つ WordPress ツールを作っています"
+
+#: patterns/page-about.php:24
+msgid ""
+"WPEssential started as an internal starter theme for client work. Today it "
+"powers stores, agencies and creators in more than 60 countries."
+msgstr ""
+"WPEssential "
+"はクライアントワーク用の社内スターターテーマとして始まりました。現在では60か国以上のストア、制作会社、クリエイターに利用されています。"
+
+#: patterns/page-contact.php
+msgctxt "Pattern title"
+msgid "Contact page"
+msgstr "お問い合わせページ"
+
+#: patterns/page-contact.php:20
+msgid "Let’s talk about your next site"
+msgstr "次のサイトについてご相談ください"
+
+#: patterns/page-contact.php:24
+msgid ""
+"Questions about demos, licensing or a custom build? Our team replies within "
+"one business day."
+msgstr "デモ、ライセンス、カスタム制作に関するご質問はありますか ? 1営業日以内にチームから返信します。"
+
+#: patterns/page-faq.php
+msgctxt "Pattern title"
+msgid "FAQ page"
+msgstr "FAQ ページ"
+
+#: patterns/page-faq.php:16
+msgid "Help center"
+msgstr "ヘルプセンター"
+
+#: patterns/page-faq.php:24
+msgid ""
+"Answers about demos, builders, licensing and updates. Can’t find what you "
+"need? Contact support."
+msgstr "デモ、ビルダー、ライセンス、アップデートに関する回答。お探しの情報が見つからない場合はサポートにお問い合わせください。"
+
+#: patterns/page-hero.php
+msgctxt "Pattern title"
+msgid "Page title band"
+msgstr "ページタイトル帯"
+
+#: patterns/page-pricing.php
+msgctxt "Pattern title"
+msgid "Pricing page"
+msgstr "料金ページ"
+
+#: patterns/page-pricing.php:20
+msgid "Simple plans that grow with you"
+msgstr "成長に合わせて選べるシンプルなプラン"
+
+#: patterns/page-pricing.php:24
+msgid ""
+"Start free with the core theme. Upgrade for premium demos, Pro blocks and "
+"priority support."
+msgstr "コアテーマで無料で始めましょう。プレミアムデモ、Pro ブロック、優先サポートが必要ならアップグレード。"
+
+#: patterns/page-services.php
+msgctxt "Pattern title"
+msgid "Services page"
+msgstr "サービスページ"
+
+#: patterns/page-services.php:20
+msgid "Everything you need to launch and grow"
+msgstr "公開と成長に必要なすべて"
+
+#: patterns/page-services.php:24
+msgid ""
+"Strategy, design, development and care plans — delivered on a theme built "
+"for speed."
+msgstr "戦略、デザイン、開発、保守プラン — スピード重視のテーマで提供します。"
+
+#: patterns/post-card.php
+msgctxt "Pattern title"
+msgid "Post card"
+msgstr "投稿カード"
+
+#: patterns/pricing.php
+msgctxt "Pattern title"
+msgid "Pricing — 3 plans"
+msgstr "料金 — 3プラン"
+
+#: patterns/pricing.php:19
+msgid "Simple pricing. Both builders included."
+msgstr "シンプルな料金。両方のビルダーを含みます。"
+
+#: patterns/pricing.php:23
+msgid ""
+"Start free and upgrade when you need Pro demos, premium blocks and priority "
+"support."
+msgstr "無料で始めて、Pro デモ、プレミアムブロック、優先サポートが必要になったらアップグレード。"
+
+#: patterns/pricing.php:30 core/assets/admin.js:312
+msgid "Free"
+msgstr "無料"
+
+#: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+msgid "/ year"
+msgstr "/ 年"
+
+#: patterns/pricing.php:38
+msgid "For personal sites getting started."
+msgstr "これから始める個人サイト向け。"
+
+#: patterns/pricing.php:43
+msgid "12 free demos"
+msgstr "12種類の無料デモ"
+
+#: patterns/pricing.php:45
+msgid "Gutenberg + Elementor"
+msgstr "Gutenberg + Elementor"
+
+#: patterns/pricing.php:47
+msgid "Core blocks &amp; patterns"
+msgstr "コアブロック &amp; パターン"
+
+#: patterns/pricing.php:49
+msgid "Community support"
+msgstr "コミュニティサポート"
+
+#: patterns/pricing.php:55
+msgid "Download free"
+msgstr "無料ダウンロード"
+
+#: patterns/pricing.php:60 core/assets/admin.js:312
+msgid "Pro"
+msgstr "Pro"
+
+#: patterns/pricing.php:68
+msgid "For freelancers and growing businesses."
+msgstr "フリーランスや成長中のビジネス向け。"
+
+#: patterns/pricing.php:73
+msgid "All 40+ demos"
+msgstr "40種類以上の全デモ"
+
+#: patterns/pricing.php:75
+msgid "Premium blocks &amp; widgets"
+msgstr "プレミアムブロック &amp; ウィジェット"
+
+#: patterns/pricing.php:77
+msgid "WooCommerce demos"
+msgstr "WooCommerce デモ"
+
+#: patterns/pricing.php:79
+msgid "1 year of updates"
+msgstr "1年間のアップデート"
+
+#: patterns/pricing.php:81 core/assets/admin.js:1122
+msgid "Priority support"
+msgstr "優先サポート"
+
+#: patterns/pricing.php:87
+msgid "Get Pro"
+msgstr "Pro を入手"
+
+#: patterns/pricing.php:92 core/assets/admin.js:301
+msgid "Agency"
+msgstr "Agency"
+
+#: patterns/pricing.php:100
+msgid "For teams building client sites."
+msgstr "クライアントサイトを制作するチーム向け。"
+
+#: patterns/pricing.php:105
+msgid "Everything in Pro"
+msgstr "Pro のすべての機能"
+
+#: patterns/pricing.php:107
+msgid "Unlimited sites"
+msgstr "サイト数無制限"
+
+#: patterns/pricing.php:109
+msgid "White-label dashboard"
+msgstr "ホワイトラベルダッシュボード"
+
+#: patterns/pricing.php:111
+msgid "Client handoff kit"
+msgstr "クライアント引き渡しキット"
+
+#: patterns/pricing.php:117
+msgid "Get Agency"
+msgstr "Agency を入手"
+
+#: patterns/process-steps.php
+msgctxt "Pattern title"
+msgid "Process — 4 steps (dark)"
+msgstr "プロセス — 4ステップ (ダーク)"
+
+#: patterns/process-steps.php:15
+msgid "How it works"
+msgstr "使い方"
+
+#: patterns/process-steps.php:19
+msgid "Live in four simple steps"
+msgstr "4つの簡単なステップで公開"
+
+#: patterns/process-steps.php:31
+msgid "Pick a demo"
+msgstr "デモを選ぶ"
+
+#: patterns/process-steps.php:35
+msgid "Browse 40+ demos and preview them live."
+msgstr "40種類以上のデモを閲覧し、ライブプレビューできます。"
+
+#: patterns/process-steps.php:43
+msgid "Choose a builder"
+msgstr "ビルダーを選ぶ"
+
+#: patterns/process-steps.php:47
+msgid "Gutenberg or Elementor — same design."
+msgstr "Gutenberg でも Elementor でも同じデザイン。"
+
+#: patterns/process-steps.php:55
+msgid "Import in one click"
+msgstr "ワンクリックでインポート"
+
+#: patterns/process-steps.php:59
+msgid "Plugins, content and settings are set up for you."
+msgstr "プラグイン、コンテンツ、設定が自動でセットアップされます。"
+
+#: patterns/process-steps.php:67 core/assets/admin.js:290
+msgid "Make it yours"
+msgstr "自分好みにカスタマイズ"
+
+#: patterns/process-steps.php:71
+msgid "Edit text, swap images and publish."
+msgstr "テキストを編集し、画像を差し替えて公開。"
+
+#: patterns/services-grid.php
+msgctxt "Pattern title"
+msgid "Services — 3 column cards"
+msgstr "サービス — 3カラムカード"
+
+#: patterns/services-grid.php:19
+msgid "From idea to launch"
+msgstr "アイデアから公開まで"
+
+#: patterns/services-grid.php:23
+msgid ""
+"Use WPEssential yourself, or let our team set up, customise and maintain "
+"your site."
+msgstr "WPEssential をご自身で使うことも、私たちのチームにセットアップ、カスタマイズ、保守を任せることもできます。"
+
+#: patterns/services-grid.php:34
+msgid "Demo setup"
+msgstr "デモのセットアップ"
+
+#: patterns/services-grid.php:38
+msgid "We import your chosen demo, connect your domain and configure plugins."
+msgstr "お選びのデモをインポートし、ドメインを接続してプラグインを設定します。"
+
+#: patterns/services-grid.php:48
+msgid "Brand customisation"
+msgstr "ブランドのカスタマイズ"
+
+#: patterns/services-grid.php:52
+msgid "Your colors, fonts, logo and copy applied across every template."
+msgstr "カラー、フォント、ロゴ、文章をすべてのテンプレートに反映します。"
+
+#: patterns/services-grid.php:62
+msgid "WooCommerce launch"
+msgstr "WooCommerce ストア開設"
+
+#: patterns/services-grid.php:66
+msgid "Products, payments, shipping zones and emails configured and tested."
+msgstr "商品、決済、配送エリア、メールを設定・テストします。"
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Blog sidebar"
+msgstr "ブログサイドバー"
+
+#: patterns/sidebar.php:19
+msgid "Categories"
+msgstr "カテゴリー"
+
+#: patterns/sidebar.php:27
+msgid "Recent posts"
+msgstr "最近の投稿"
+
+#: patterns/sidebar.php:35
+msgid "Tags"
+msgstr "タグ"
+
+#: patterns/stats.php
+msgctxt "Pattern title"
+msgid "Stats — 4 counters"
+msgstr "統計 — 4つのカウンター"
+
+#: patterns/stats.php:20
+msgid "Active installs"
+msgstr "有効インストール数"
+
+#: patterns/stats.php:36
+msgid "Average rating"
+msgstr "平均評価"
+
+#: patterns/stats.php:44
+msgid "Support response"
+msgstr "サポート対応"
+
+#: patterns/team.php
+msgctxt "Pattern title"
+msgid "Team — 4 members"
+msgstr "チーム — 4人のメンバー"
+
+#: patterns/team.php:15
+msgid "The team"
+msgstr "チーム"
+
+#: patterns/team.php:19
+msgid "People behind WPEssential"
+msgstr "WPEssential を支える人たち"
+
+#: patterns/team.php:35
+msgid "Founder &amp; Lead Designer"
+msgstr "創業者 &amp; リードデザイナー"
+
+#: patterns/team.php:47
+msgid "Head of Engineering"
+msgstr "エンジニアリング責任者"
+
+#: patterns/team.php:59
+msgid "Customer Success"
+msgstr "カスタマーサクセス"
+
+#: patterns/team.php:71
+msgid "WooCommerce Specialist"
+msgstr "WooCommerce スペシャリスト"
+
+#: patterns/testimonials.php
+msgctxt "Pattern title"
+msgid "Testimonials — 3 cards"
+msgstr "お客様の声 — 3枚のカード"
+
+#: patterns/testimonials.php:15
+msgid "Loved by builders"
+msgstr "制作者に愛されています"
+
+#: patterns/testimonials.php:19
+msgid "What our customers say"
+msgstr "お客様の声"
+
+#: patterns/testimonials.php:31
+msgid ""
+"We rebuilt three client sites on WPEssential in a week. The Elementor and "
+"block versions matching exactly is a game changer."
+msgstr ""
+"WPEssential で3つのクライアントサイトを1週間で作り直しました。Elementor 版とブロック版が完全に一致するのは画期的です。"
+
+#: patterns/testimonials.php:35
+msgid "Founder, Kitecraft Agency"
+msgstr "創業者、Kitecraft Agency"
+
+#: patterns/testimonials.php:43
+msgid ""
+"Our store went from 3.9s to 1.2s load time. Checkout pages look custom out "
+"of the box."
+msgstr "ストアの読み込み時間が3.9秒から1.2秒になりました。チェックアウトページも最初からカスタムデザインのようです。"
+
+#: patterns/testimonials.php:47
+msgid "Owner, Fieldhouse Goods"
+msgstr "オーナー、Fieldhouse Goods"
+
+#: patterns/testimonials.php:55
+msgid ""
+"The demo import just works — plugins, menus, homepage. I spend my time on "
+"content now, not setup."
+msgstr ""
+"デモのインポートはとにかく確実に動きます — プラグイン、メニュー、ホームページまで。今はセットアップではなくコンテンツに時間を使えています。"
+
+#: patterns/testimonials.php:59
+msgid "Writer, The Quiet Desk"
+msgstr "ライター、The Quiet Desk"
+
+#: assets/js/options.js:65
+msgid "Custom code"
+msgstr "カスタムコード"
+
+#: assets/js/options.js:66
+msgid "Animations"
+msgstr "アニメーション"
+
+#: assets/js/options.js:84 assets/js/options.js:91 core/assets/admin.js:280
+#: core/assets/admin.js:701 core/assets/admin.js:1074
+#: core/assets/admin.js:1113
+msgid "Active"
+msgstr "有効"
+
+#: assets/js/options.js:84
+msgid "Off"
+msgstr "オフ"
+
+#: assets/js/options.js:88
+msgid ""
+"Broke something? Open your site in safe mode to load it without snippets:"
+msgstr "何か壊れましたか ? セーフモードでサイトを開くと、スニペットなしで読み込めます:"
+
+#: assets/js/options.js:88
+msgid "Safe mode"
+msgstr "セーフモード"
+
+#: assets/js/options.js:90
+msgid "Snippet name"
+msgstr "スニペット名"
+
+#: assets/js/options.js:93
+msgid "Devices"
+msgstr "デバイス"
+
+#: assets/js/options.js:93
+msgid "All devices"
+msgstr "すべてのデバイス"
+
+#: assets/js/options.js:93
+msgid "Desktop (1025px+)"
+msgstr "デスクトップ (1025px 以上)"
+
+#: assets/js/options.js:93
+msgid "Tablet (768–1024px)"
+msgstr "タブレット (768–1024px)"
+
+#: assets/js/options.js:93
+msgid "Mobile (≤767px)"
+msgstr "モバイル (≤767px)"
+
+#: assets/js/options.js:96
+msgid "Load in"
+msgstr "読み込み位置"
+
+#: assets/js/options.js:96
+msgid "Footer (recommended)"
+msgstr "フッター (推奨)"
+
+#: assets/js/options.js:97
+msgid "Write JavaScript only, without <script> tags."
+msgstr "<script> タグを含めず、JavaScript のみを記述してください。"
+
+#: assets/js/options.js:97
+msgid "Write CSS only, without <style> tags."
+msgstr "<style> タグを含めず、CSS のみを記述してください。"
+
+#: assets/js/options.js:99
+msgid "Save snippets"
+msgstr "スニペットを保存"
+
+#: assets/js/options.js:99 core/assets/admin.js:1076
+msgid "Delete"
+msgstr "削除"
+
+#: assets/js/options.js:116
+msgid "New script"
+msgstr "新しいスクリプト"
+
+#: assets/js/options.js:116
+msgid "New styles"
+msgstr "新しいスタイル"
+
+#: assets/js/options.js:162
+msgid ""
+"Animations reveal sections as visitors scroll. Visitors who prefer reduced "
+"motion never see them."
+msgstr "アニメーションは訪問者のスクロールに合わせてセクションを表示します。視差効果を減らす設定の訪問者には表示されません。"
+
+#: assets/js/options.js:166
+msgid "Use GSAP for parallax and counters with any preset"
+msgstr "どのプリセットでも GSAP でパララックスとカウンターを使用"
+
+#: assets/js/options.js:167
+msgid ""
+"Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask,"
+" --stagger, --parallax or --counter) to any block under Advanced → "
+"Additional CSS class."
+msgstr ""
+"任意のブロックの「高度な設定」→「追加 CSS クラス」に wpe-anim クラス (および wpe-anim--fade-"
+"up、--zoom、--slide-left、--mask、--stagger、--parallax、--counter) を追加してください。"
+
+#: assets/js/options.js:168
+msgid "Save animations"
+msgstr "アニメーションを保存"
+
+#: core/assets/admin.js:86
+msgid ""
+"The connection to your site dropped. Check your internet and try again."
+msgstr "サイトへの接続が切断されました。インターネット接続を確認してもう一度お試しください。"
+
+#: core/assets/admin.js:89
+msgid ""
+"The server sent an invalid response — usually a PHP error or a timeout. Your"
+" progress is saved."
+msgstr "サーバーから無効な応答がありました。通常は PHP エラーかタイムアウトが原因です。進行状況は保存されています。"
+
+#: core/assets/admin.js:92
+msgid "Your login session expired. Reload the page and sign in again."
+msgstr "ログインセッションの有効期限が切れました。ページを再読み込みして、もう一度ログインしてください。"
+
+#: core/assets/admin.js:159
+msgid "Dashboard sections"
+msgstr "ダッシュボードのセクション"
+
+#: core/assets/admin.js:163
+msgid "Docs"
+msgstr "ドキュメント"
+
+#: core/assets/admin.js:164
+msgid "Switch dashboard colour mode"
+msgstr "ダッシュボードのカラーモードを切り替え"
+
+#: core/assets/admin.js:241
+msgid "%s is active"
+msgstr "%s が有効です"
+
+#: core/assets/admin.js:242
+msgid "Welcome, %s. Let’s build something beautiful."
+msgstr "ようこそ、%s さん。美しいサイトを作りましょう。"
+
+#: core/assets/admin.js:243
+msgid ""
+"Pick a demo, choose Gutenberg or Elementor, and get a finished website with "
+"pages, images, menus and a shop — in about a minute."
+msgstr ""
+"デモを選び、Gutenberg か Elementor を選択するだけで、ページ、画像、メニュー、ショップを備えた完成したサイトが約1分で手に入ります。"
+
+#: core/assets/admin.js:246
+msgid "Customize site"
+msgstr "サイトをカスタマイズ"
+
+#: core/assets/admin.js:251
+msgid "Demo imported"
+msgstr "デモをインポートしました"
+
+#: core/assets/admin.js:251
+msgid "in 48 seconds"
+msgstr "48秒で"
+
+#: core/assets/admin.js:252
+msgid "Two builders"
+msgstr "2つのビルダー"
+
+#: core/assets/admin.js:259
+msgid "Three steps to launch"
+msgstr "公開までの3ステップ"
+
+#: core/assets/admin.js:264
+msgid "Help when you need it"
+msgstr "必要なときにヘルプ"
+
+#: core/assets/admin.js:266
+msgid "Guides for every feature"
+msgstr "すべての機能のガイド"
+
+#: core/assets/admin.js:267
+msgid "Real people, fast answers"
+msgstr "実際のスタッフが迅速に回答"
+
+#: core/assets/admin.js:268
+msgid "Site Editor"
+msgstr "サイトエディター"
+
+#: core/assets/admin.js:268
+msgid "Colours, fonts, header and footer"
+msgstr "カラー、フォント、ヘッダー、フッター"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Expired"
+msgstr "期限切れ"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Invalid"
+msgstr "無効"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Not connected"
+msgstr "未接続"
+
+#: core/assets/admin.js:283
+msgid "Imported demo"
+msgstr "インポート済みのデモ"
+
+#: core/assets/admin.js:283
+msgid "None yet"
+msgstr "まだありません"
+
+#: core/assets/admin.js:285
+msgid "System health"
+msgstr "システムの状態"
+
+#: core/assets/admin.js:288
+msgid "Import a demo"
+msgstr "デモをインポート"
+
+#: core/assets/admin.js:288
+msgid "Start from a complete, ready-made website."
+msgstr "完成済みのサイトから始めましょう。"
+
+#: core/assets/admin.js:288
+msgid "Open library"
+msgstr "ライブラリを開く"
+
+#: core/assets/admin.js:289 core/assets/admin.js:1124
+msgid "Activate your license"
+msgstr "ライセンスを有効化"
+
+#: core/assets/admin.js:289
+msgid "Unlock Pro demos, updates and support."
+msgstr "Pro デモ、アップデート、サポートのロックを解除。"
+
+#: core/assets/admin.js:289 core/assets/admin.js:1076
+#: core/assets/admin.js:1125
+msgid "Activate"
+msgstr "有効化"
+
+#: core/assets/admin.js:290
+msgid "Swap the logo, colours and words in the Site Editor."
+msgstr "サイトエディターでロゴ、カラー、文章を変更しましょう。"
+
+#: core/assets/admin.js:290 core/assets/admin.js:999
+msgid "Customize"
+msgstr "カスタマイズ"
+
+#: core/assets/admin.js:295
+msgid "Could not load the dashboard"
+msgstr "ダッシュボードを読み込めませんでした"
+
+#: core/assets/admin.js:301 core/assets/admin.js:312 core/assets/admin.js:756
+msgid "All"
+msgstr "すべて"
+
+#: core/assets/admin.js:301
+msgid "Business"
+msgstr "ビジネス"
+
+#: core/assets/admin.js:301
+msgid "Restaurant"
+msgstr "レストラン"
+
+#: core/assets/admin.js:301
+msgid "Education"
+msgstr "教育"
+
+#: core/assets/admin.js:306
+msgid ""
+"Every demo is a complete website. Preview it, then import it for Gutenberg "
+"or Elementor — plugins, pages, images and menus included."
+msgstr ""
+"各デモは完全なサイトです。プレビューしてから、Gutenberg または Elementor "
+"用にインポートしてください。プラグイン、ページ、画像、メニューも含まれます。"
+
+#: core/assets/admin.js:307
+msgid "Refreshing"
+msgstr "更新中"
+
+#: core/assets/admin.js:307
+msgid "Refresh library"
+msgstr "ライブラリを更新"
+
+#: core/assets/admin.js:310
+msgid "Search demos"
+msgstr "デモを検索"
+
+#: core/assets/admin.js:310
+msgid "Search demos…"
+msgstr "デモを検索…"
+
+#: core/assets/admin.js:311
+msgid "Category"
+msgstr "カテゴリー"
+
+#: core/assets/admin.js:312
+msgid "Plan"
+msgstr "プラン"
+
+#: core/assets/admin.js:313 core/assets/admin.js:519 core/assets/admin.js:576
+msgid "Builder"
+msgstr "ビルダー"
+
+#: core/assets/admin.js:313
+msgid "Any builder"
+msgstr "すべてのビルダー"
+
+#: core/assets/admin.js:336
+msgid "Library refreshed"
+msgstr "ライブラリを更新しました"
+
+#: core/assets/admin.js:338
+msgid "Refresh failed"
+msgstr "更新に失敗しました"
+
+#: core/assets/admin.js:351
+msgid "The library could not load"
+msgstr "ライブラリを読み込めませんでした"
+
+#: core/assets/admin.js:363
+msgid "The import of %s stopped"
+msgstr "%s のインポートが停止しました"
+
+#: core/assets/admin.js:363
+msgid "The import of %s was interrupted"
+msgstr "%s のインポートが中断されました"
+
+#: core/assets/admin.js:363
+msgid "Your progress is saved. Continue exactly where it left off."
+msgstr "進行状況は保存されています。中断したところから正確に続行できます。"
+
+#: core/assets/admin.js:363
+msgid "Resume import"
+msgstr "インポートを再開"
+
+#: core/assets/admin.js:366
+msgid "%s is installed on this site"
+msgstr "%s はこのサイトにインストールされています"
+
+#: core/assets/admin.js:366
+msgid ""
+"You can remove everything it added and restore your previous settings at any"
+" time."
+msgstr "追加されたものはすべていつでも削除でき、以前の設定を復元できます。"
+
+#: core/assets/admin.js:366 core/assets/admin.js:920
+msgid "Removing"
+msgstr "削除中"
+
+#: core/assets/admin.js:366
+msgid "Remove demo"
+msgstr "デモを削除"
+
+#: core/assets/admin.js:386
+msgid ""
+"Remove %s? Its pages, posts, products, images and menus will be deleted and "
+"your previous settings restored. Content you created yourself is not "
+"touched."
+msgstr ""
+"%s を削除しますか ? その固定ページ、投稿、商品、画像、メニューが削除され、以前の設定が復元されます。ご自身で作成したコンテンツには影響しません。"
+
+#: core/assets/admin.js:392
+msgid "Demo removed"
+msgstr "デモを削除しました"
+
+#: core/assets/admin.js:396
+msgid "Removal failed"
+msgstr "削除に失敗しました"
+
+#: core/assets/admin.js:416
+msgid "No demos match these filters"
+msgstr "これらのフィルターに一致するデモはありません"
+
+#: core/assets/admin.js:416
+msgid "Try another category or clear the search."
+msgstr "別のカテゴリーを試すか、検索をクリアしてください。"
+
+#: core/assets/admin.js:416
+msgid "Clear filters"
+msgstr "フィルターをクリア"
+
+#: core/assets/admin.js:428
+msgid "IMPORTED"
+msgstr "インポート済み"
+
+#: core/assets/admin.js:430
+msgid "Live preview"
+msgstr "ライブプレビュー"
+
+#: core/assets/admin.js:438
+msgid "Preview"
+msgstr "プレビュー"
+
+#: core/assets/admin.js:439
+msgid "Unlock"
+msgstr "ロック解除"
+
+#: core/assets/admin.js:439
+msgid "Re-import"
+msgstr "再インポート"
+
+#: core/assets/admin.js:439 core/assets/admin.js:576
+msgid "Import"
+msgstr "インポート"
+
+#: core/assets/admin.js:512
+msgid "Desktop"
+msgstr "デスクトップ"
+
+#: core/assets/admin.js:512
+msgid "Tablet"
+msgstr "タブレット"
+
+#: core/assets/admin.js:512
+msgid "Mobile"
+msgstr "モバイル"
+
+#: core/assets/admin.js:515
+msgid "%1$s on %2$s"
+msgstr "%2$s での %1$s"
+
+#: core/assets/admin.js:520
+msgid "Device"
+msgstr "デバイス"
+
+#: core/assets/admin.js:521
+msgid "Unlock with Pro"
+msgstr "Pro でロック解除"
+
+#: core/assets/admin.js:521
+msgid "Import this demo"
+msgstr "このデモをインポート"
+
+#: core/assets/admin.js:522
+msgid "Close preview"
+msgstr "プレビューを閉じる"
+
+#: core/assets/admin.js:576
+msgid "Account"
+msgstr "アカウント"
+
+#: core/assets/admin.js:576
+msgid "Content"
+msgstr "コンテンツ"
+
+#: core/assets/admin.js:576
+msgid "Done"
+msgstr "完了"
+
+#: core/assets/admin.js:582
+msgid "Safe import — every change can be undone."
+msgstr "安全なインポート — すべての変更は元に戻せます。"
+
+#: core/assets/admin.js:585
+msgid "Close"
+msgstr "閉じる"
+
+#: core/assets/admin.js:589
+msgid ""
+"The import keeps its progress if you close this window. You can resume it "
+"from the Demo Library. Close anyway?"
+msgstr "このウィンドウを閉じてもインポートの進行状況は保持され、デモライブラリから再開できます。閉じますか ?"
+
+#: core/assets/admin.js:618
+msgid "Back"
+msgstr "戻る"
+
+#: core/assets/admin.js:640
+msgid "Unlock this Pro demo"
+msgstr "この Pro デモのロックを解除"
+
+#: core/assets/admin.js:640
+msgid "Connect your WPEssential account"
+msgstr "WPEssential アカウントを接続"
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in and use a Pro license on this site — or pick a plan. Checkout opens "
+"in a new tab."
+msgstr "ログインしてこのサイトで Pro ライセンスを使用するか、プランを選択してください。チェックアウトは新しいタブで開きます。"
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in or create a free account to keep your demos, licenses and updates in"
+" one place."
+msgstr "ログインするか無料アカウントを作成して、デモ、ライセンス、アップデートを一か所で管理しましょう。"
+
+#: core/assets/admin.js:643
+msgid "A Pro license is needed"
+msgstr "Pro ライセンスが必要です"
+
+#: core/assets/admin.js:643
+msgid "Use a Pro license on this site, or choose a plan."
+msgstr "このサイトで Pro ライセンスを使用するか、プランを選択してください。"
+
+#: core/assets/admin.js:648 core/assets/admin.js:674 core/assets/admin.js:679
+msgid "Continue"
+msgstr "続行"
+
+#: core/assets/admin.js:656
+msgid "Demo unlocked"
+msgstr "デモのロックを解除しました"
+
+#: core/assets/admin.js:666
+msgid "This demo has no version for this builder yet."
+msgstr "このデモには、このビルダー用のバージョンがまだありません。"
+
+#: core/assets/admin.js:668
+msgid "Choose your page builder"
+msgstr "ページビルダーを選択"
+
+#: core/assets/admin.js:668
+msgid ""
+"Both versions look identical. Pick the editor you or your client will use "
+"every day."
+msgstr "どちらのバージョンも見た目は同じです。あなたやクライアントが日常的に使うエディターを選んでください。"
+
+#: core/assets/admin.js:669
+msgid "The native WordPress block editor. Fastest pages, no extra plugin."
+msgstr "WordPress ネイティブのブロックエディター。最速のページ表示で、追加のプラグインは不要です。"
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor is already installed."
+msgstr "ドラッグ & ドロップによるビジュアル編集。Elementor はインストール済みです。"
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor will be installed for you."
+msgstr "ドラッグ & ドロップによるビジュアル編集。Elementor は自動でインストールされます。"
+
+#: core/assets/admin.js:678
+msgid "Plugins this demo uses"
+msgstr "このデモで使用するプラグイン"
+
+#: core/assets/admin.js:678
+msgid ""
+"We install, activate or switch off plugins so the demo works exactly like "
+"the preview."
+msgstr "デモがプレビューどおりに動作するよう、プラグインのインストール、有効化、無効化を行います。"
+
+#: core/assets/admin.js:693
+msgid "No extra plugins needed — this demo runs on the theme alone."
+msgstr "追加のプラグインは不要です — このデモはテーマだけで動作します。"
+
+#: core/assets/admin.js:698
+msgid "Will be deactivated"
+msgstr "無効化されます"
+
+#: core/assets/admin.js:698
+msgid "Not needed"
+msgstr "不要"
+
+#: core/assets/admin.js:702
+msgid "Will be activated"
+msgstr "有効化されます"
+
+#: core/assets/admin.js:703
+msgid "Will be installed"
+msgstr "インストールされます"
+
+#: core/assets/admin.js:706
+msgid "Required"
+msgstr "必須"
+
+#: core/assets/admin.js:706 core/assets/admin.js:1073
+msgid "Recommended"
+msgstr "推奨"
+
+#: core/assets/admin.js:706
+msgid "Conflicts with this demo"
+msgstr "このデモと競合"
+
+#: core/assets/admin.js:706
+msgid "Include"
+msgstr "含める"
+
+#: core/assets/admin.js:706
+msgid "Include %s"
+msgstr "%s を含める"
+
+#: core/assets/admin.js:715
+msgid "Pages, posts and menus"
+msgstr "固定ページ、投稿、メニュー"
+
+#: core/assets/admin.js:715
+msgid "%s and their navigation."
+msgstr "%s とそのナビゲーション。"
+
+#: core/assets/admin.js:716
+msgid "Images"
+msgstr "画像"
+
+#: core/assets/admin.js:716
+msgid "Copied to your Media Library, licensed for your site."
+msgstr "メディアライブラリにコピーされ、あなたのサイトでの使用が許諾されます。"
+
+#: core/assets/admin.js:717
+msgid "Shop products"
+msgstr "ショップの商品"
+
+#: core/assets/admin.js:717
+msgid "Products, categories, prices and shipping."
+msgstr "商品、カテゴリー、価格、配送。"
+
+#: core/assets/admin.js:717
+msgid "Needs WooCommerce — enable it on the previous step."
+msgstr "WooCommerce が必要です — 前のステップで有効にしてください。"
+
+#: core/assets/admin.js:718
+msgid "Site settings"
+msgstr "サイト設定"
+
+#: core/assets/admin.js:718
+msgid "Home page, blog page and store options."
+msgstr "ホームページ、投稿ページ、ストアのオプション。"
+
+#: core/assets/admin.js:720
+msgid "What should we import?"
+msgstr "何をインポートしますか ?"
+
+#: core/assets/admin.js:720
+msgid "Everything is on by default for a site that matches the preview."
+msgstr "プレビューと同じサイトにするため、デフォルトですべてオンになっています。"
+
+#: core/assets/admin.js:722
+msgid "Remove %s first"
+msgstr "先に %s を削除"
+
+#: core/assets/admin.js:722
+msgid "Recommended: start from a clean site instead of adding duplicates."
+msgstr "推奨: 重複を追加するのではなく、クリーンなサイトから始めましょう。"
+
+#: core/assets/admin.js:723
+msgid ""
+"Your existing posts and pages are never changed. Imported items are tagged, "
+"so they can be removed in one click later."
+msgstr "既存の投稿や固定ページは一切変更されません。インポートされた項目にはタグが付くため、後からワンクリックで削除できます。"
+
+#: core/assets/admin.js:730
+msgid "Start import"
+msgstr "インポートを開始"
+
+#: core/assets/admin.js:736
+msgid "Preparing"
+msgstr "準備中"
+
+#: core/assets/admin.js:736 core/assets/admin.js:947
+msgid "Importing your demo…"
+msgstr "デモをインポート中…"
+
+#: core/assets/admin.js:736
+msgid "Keep this window open. It usually takes about a minute."
+msgstr "このウィンドウは開いたままにしてください。通常は約1分で完了します。"
+
+#: core/assets/admin.js:739 core/assets/admin.js:943
+msgid "Cancel import"
+msgstr "インポートをキャンセル"
+
+#: core/assets/admin.js:756
+msgid "Info"
+msgstr "情報"
+
+#: core/assets/admin.js:756
+msgid "Success"
+msgstr "成功"
+
+#: core/assets/admin.js:756 core/assets/admin.js:998
+msgid "Warnings"
+msgstr "警告"
+
+#: core/assets/admin.js:756
+msgid "Errors"
+msgstr "エラー"
+
+#: core/assets/admin.js:756 core/assets/admin.js:920
+msgid "Copy log"
+msgstr "ログをコピー"
+
+#: core/assets/admin.js:790
+msgid "Log copied"
+msgstr "ログをコピーしました"
+
+#: core/assets/admin.js:790
+msgid "Paste it into your support ticket."
+msgstr "サポートチケットに貼り付けてください。"
+
+#: core/assets/admin.js:816
+msgid "Stopped"
+msgstr "停止"
+
+#: core/assets/admin.js:816
+msgid "Step"
+msgstr "ステップ"
+
+#: core/assets/admin.js:816
+msgid "Complete"
+msgstr "完了"
+
+#: core/assets/admin.js:824
+msgid "%ss elapsed"
+msgstr "%s秒経過"
+
+#: core/assets/admin.js:850
+msgid "Resumed from the saved position."
+msgstr "保存された位置から再開しました。"
+
+#: core/assets/admin.js:872
+msgid "Reload the page, then resume the import from the Demo Library."
+msgstr "ページを再読み込みしてから、デモライブラリでインポートを再開してください。"
+
+#: core/assets/admin.js:878
+msgid "Your progress is saved. Press Resume when the server is back."
+msgstr "進行状況は保存されています。サーバーが復旧したら「再開」を押してください。"
+
+#: core/assets/admin.js:882
+msgid "The server did not answer (%1$s). Retrying in %2$d seconds…"
+msgstr "サーバーから応答がありませんでした (%1$s)。%2$d 秒後に再試行します…"
+
+#: core/assets/admin.js:905
+msgid "The import stopped."
+msgstr "インポートが停止しました。"
+
+#: core/assets/admin.js:907
+msgid "Import cancelled."
+msgstr "インポートをキャンセルしました。"
+
+#: core/assets/admin.js:907
+msgid "Resume to finish it, or remove what was imported so far."
+msgstr "再開して完了させるか、これまでにインポートされたものを削除してください。"
+
+#: core/assets/admin.js:918
+msgid "Import paused"
+msgstr "インポートを一時停止しました"
+
+#: core/assets/admin.js:918
+msgid "The import needs your attention"
+msgstr "インポートに対応が必要です"
+
+#: core/assets/admin.js:920
+msgid "Remove imported content"
+msgstr "インポートしたコンテンツを削除"
+
+#: core/assets/admin.js:920
+msgid "Resume"
+msgstr "再開"
+
+#: core/assets/admin.js:920
+msgid "Back to options"
+msgstr "オプションに戻る"
+
+#: core/assets/admin.js:929
+msgid "Everything was rolled back"
+msgstr "すべてロールバックしました"
+
+#: core/assets/admin.js:933
+msgid "Nothing to remove"
+msgstr "削除するものはありません"
+
+#: core/assets/admin.js:933
+msgid "Rollback failed"
+msgstr "ロールバックに失敗しました"
+
+#: core/assets/admin.js:960
+msgid "Resuming…"
+msgstr "再開中…"
+
+#: core/assets/admin.js:967
+msgid "Your progress is saved. Try again in a moment."
+msgstr "進行状況は保存されています。しばらくしてからもう一度お試しください。"
+
+#: core/assets/admin.js:973
+msgid "Cancel the import? What was imported so far stays until you remove it."
+msgstr "インポートをキャンセルしますか ? これまでにインポートされたものは、削除するまで残ります。"
+
+#: core/assets/admin.js:983
+msgid "Could not cancel"
+msgstr "キャンセルできませんでした"
+
+#: core/assets/admin.js:996
+msgid "Your website is ready!"
+msgstr "サイトの準備ができました !"
+
+#: core/assets/admin.js:997
+msgid "%1$s was imported. %2$d item(s) need a look — see the notes below."
+msgstr "%1$s をインポートしました。%2$d 件の項目に確認が必要です — 下のメモをご覧ください。"
+
+#: core/assets/admin.js:997
+msgid "%s was imported without a single issue. Time to make it yours."
+msgstr "%s は問題なくインポートされました。自分好みにカスタマイズしましょう。"
+
+#: core/assets/admin.js:998
+msgid "Import time"
+msgstr "インポート時間"
+
+#: core/assets/admin.js:998
+msgid "Steps completed"
+msgstr "完了したステップ"
+
+#: core/assets/admin.js:999
+msgid "View your site"
+msgstr "サイトを表示"
+
+#: core/assets/admin.js:1002
+msgid "Back to dashboard"
+msgstr "ダッシュボードに戻る"
+
+#: core/assets/admin.js:1007
+msgid "Import complete"
+msgstr "インポート完了"
+
+#: core/assets/admin.js:1054
+msgid ""
+"Plugins used by WPEssential demos. Install, switch on or off and delete them"
+" here."
+msgstr "WPEssential デモで使用するプラグインです。ここでインストール、有効化・無効化、削除ができます。"
+
+#: core/assets/admin.js:1069
+msgid "No plugins needed"
+msgstr "プラグインは不要です"
+
+#: core/assets/admin.js:1069
+msgid "The demos in your library run on the theme alone."
+msgstr "ライブラリ内のデモはテーマだけで動作します。"
+
+#: core/assets/admin.js:1073
+msgid "Required by some demos"
+msgstr "一部のデモで必須"
+
+#: core/assets/admin.js:1074
+msgid "Inactive"
+msgstr "無効"
+
+#: core/assets/admin.js:1074
+msgid "Not installed"
+msgstr "未インストール"
+
+#: core/assets/admin.js:1075
+msgid "Install & activate"
+msgstr "インストールして有効化"
+
+#: core/assets/admin.js:1077
+msgid "Deactivate"
+msgstr "無効化"
+
+#: core/assets/admin.js:1079
+msgid "Delete this plugin and its files?"
+msgstr "このプラグインとそのファイルを削除しますか ?"
+
+#: core/assets/admin.js:1085
+msgid "is active."
+msgstr "は有効です。"
+
+#: core/assets/admin.js:1085
+msgid "is inactive."
+msgstr "は無効です。"
+
+#: core/assets/admin.js:1085
+msgid "was deleted."
+msgstr "は削除されました。"
+
+#: core/assets/admin.js:1088
+msgid "Plugin action failed"
+msgstr "プラグインの操作に失敗しました"
+
+#: core/assets/admin.js:1096
+msgid ""
+"Activate your purchase on this domain to unlock Pro demos, automatic updates"
+" and priority support."
+msgstr "このドメインで購入したライセンスを有効化すると、Pro デモ、自動アップデート、優先サポートが利用可能になります。"
+
+#: core/assets/admin.js:1118
+msgid "Domain"
+msgstr "ドメイン"
+
+#: core/assets/admin.js:1118
+msgid "Expires"
+msgstr "有効期限"
+
+#: core/assets/admin.js:1118
+msgid "Lifetime"
+msgstr "永久"
+
+#: core/assets/admin.js:1118
+msgid "Provider"
+msgstr "提供元"
+
+#: core/assets/admin.js:1121
+msgid "You’re all set"
+msgstr "準備完了です"
+
+#: core/assets/admin.js:1121
+msgid "This license is active on %s."
+msgstr "このライセンスは %s で有効です。"
+
+#: core/assets/admin.js:1121
+msgid "Plan: %s."
+msgstr "プラン: %s。"
+
+#: core/assets/admin.js:1122
+msgid "All Pro demos unlocked"
+msgstr "すべての Pro デモのロックを解除済み"
+
+#: core/assets/admin.js:1122
+msgid "One-click theme updates"
+msgstr "ワンクリックでテーマを更新"
+
+#: core/assets/admin.js:1123
+msgid "Deactivating"
+msgstr "無効化中"
+
+#: core/assets/admin.js:1123
+msgid "Deactivate on this domain"
+msgstr "このドメインで無効化"
+
+#: core/assets/admin.js:1124
+msgid "Renew to keep Pro features"
+msgstr "Pro 機能を継続するには更新してください"
+
+#: core/assets/admin.js:1124
+msgid "Find the key in your purchase email or your wpessential.org account."
+msgstr "キーは購入時のメール、または wpessential.org のアカウントで確認できます。"
+
+#: core/assets/admin.js:1125
+msgid "License key"
+msgstr "ライセンスキー"
+
+#: core/assets/admin.js:1125
+msgid "Paste your license key"
+msgstr "ライセンスキーを貼り付け"
+
+#: core/assets/admin.js:1125
+msgid "Show key"
+msgstr "キーを表示"
+
+#: core/assets/admin.js:1125
+msgid "Checking"
+msgstr "確認中"
+
+#: core/assets/admin.js:1127
+msgid "Unlock every Pro demo in the library"
+msgstr "ライブラリ内のすべての Pro デモのロックを解除"
+
+#: core/assets/admin.js:1127
+msgid "Automatic updates from your dashboard"
+msgstr "ダッシュボードから自動アップデート"
+
+#: core/assets/admin.js:1127
+msgid "Priority support from the WPEssential Team"
+msgstr "WPEssential チームによる優先サポート"
+
+#: core/assets/admin.js:1128
+msgid "Don’t have a license? Sign in or pick a plan below"
+msgstr "ライセンスをお持ちでない場合は、ログインするか下からプランを選択してください"
+
+#: core/assets/admin.js:1143
+msgid "License activated"
+msgstr "ライセンスを有効化しました"
+
+#: core/assets/admin.js:1143
+msgid "Pro demos are unlocked."
+msgstr "Pro デモのロックが解除されました。"
+
+#: core/assets/admin.js:1163
+msgid ""
+"Deactivate the license on this domain? You can activate it on another site "
+"afterwards."
+msgstr "このドメインでライセンスを無効化しますか ? その後、別のサイトで有効化できます。"
+
+#: core/assets/admin.js:1169
+msgid "License deactivated"
+msgstr "ライセンスを無効化しました"
+
+#: core/assets/admin.js:1173
+msgid "Deactivation failed"
+msgstr "無効化に失敗しました"
+
+#: core/assets/admin.js:1188
+msgid "/ %d mo"
+msgstr "/ %d か月"
+
+#: core/assets/admin.js:1188
+msgid "one-time"
+msgstr "買い切り"
+
+#: core/assets/admin.js:1201
+msgid "Your WPEssential account could not be reached"
+msgstr "WPEssential アカウントに接続できませんでした"
+
+#: core/assets/admin.js:1213
+msgid "Sign in to your account"
+msgstr "アカウントにログイン"
+
+#: core/assets/admin.js:1213
+msgid "Create your free account"
+msgstr "無料アカウントを作成"
+
+#: core/assets/admin.js:1213
+msgid ""
+"Your licenses, Pro demos and subscription in one place. New accounts include"
+" the Free plan for this website."
+msgstr "ライセンス、Pro デモ、サブスクリプションを一か所で管理。新規アカウントには、このサイト用の無料プランが含まれます。"
+
+#: core/assets/admin.js:1214
+msgid "Activate licenses without copying keys"
+msgstr "キーをコピーせずにライセンスを有効化"
+
+#: core/assets/admin.js:1214
+msgid "Upgrade, renew or switch plans in one click"
+msgstr "ワンクリックでプランのアップグレード、更新、変更"
+
+#: core/assets/admin.js:1214
+msgid "Manage websites and auto-renewal"
+msgstr "サイトと自動更新を管理"
+
+#: core/assets/admin.js:1216 core/assets/admin.js:1221
+msgid "Sign in"
+msgstr "ログイン"
+
+#: core/assets/admin.js:1216
+msgid "Create account"
+msgstr "アカウントを作成"
+
+#: core/assets/admin.js:1217
+msgid "Full name"
+msgstr "氏名"
+
+#: core/assets/admin.js:1218
+msgid "Email"
+msgstr "メールアドレス"
+
+#: core/assets/admin.js:1219
+msgid "Password"
+msgstr "パスワード"
+
+#: core/assets/admin.js:1221
+msgid "Signing in"
+msgstr "ログイン中"
+
+#: core/assets/admin.js:1221
+msgid "Creating account"
+msgstr "アカウントを作成中"
+
+#: core/assets/admin.js:1221
+msgid "Create free account"
+msgstr "無料アカウントを作成"
+
+#: core/assets/admin.js:1222
+msgid "Forgot password?"
+msgstr "パスワードをお忘れですか ?"
+
+#: core/assets/admin.js:1222
+msgid "By creating an account you agree to the WPEssential terms."
+msgstr "アカウントを作成すると、WPEssential の利用規約に同意したことになります。"
+
+#: core/assets/admin.js:1223
+msgid "Continue without an account"
+msgstr "アカウントなしで続行"
+
+#: core/assets/admin.js:1239
+msgid "Fill in every field."
+msgstr "すべての項目を入力してください。"
+
+#: core/assets/admin.js:1245
+msgid "Signed in"
+msgstr "ログインしました"
+
+#: core/assets/admin.js:1245
+msgid "Account created"
+msgstr "アカウントを作成しました"
+
+#: core/assets/admin.js:1266
+msgid "Refresh"
+msgstr "更新"
+
+#: core/assets/admin.js:1267
+msgid "Manage account"
+msgstr "アカウントを管理"
+
+#: core/assets/admin.js:1268
+msgid "Sign out"
+msgstr "ログアウト"
+
+#: core/assets/admin.js:1270
+msgid "Your licenses"
+msgstr "あなたのライセンス"
+
+#: core/assets/admin.js:1273
+msgid "%1$d of %2$s websites"
+msgstr "%1$d / %2$s サイト"
+
+#: core/assets/admin.js:1273
+msgid "Never expires"
+msgstr "無期限"
+
+#: core/assets/admin.js:1273
+msgid "Renews %s"
+msgstr "%s に更新"
+
+#: core/assets/admin.js:1273
+msgid "Ends %s"
+msgstr "%s に終了"
+
+#: core/assets/admin.js:1274
+msgid "Auto-renew"
+msgstr "自動更新"
+
+#: core/assets/admin.js:1275
+msgid "Renew"
+msgstr "更新"
+
+#: core/assets/admin.js:1275
+msgid "This site"
+msgstr "このサイト"
+
+#: core/assets/admin.js:1275
+msgid "Activating"
+msgstr "有効化中"
+
+#: core/assets/admin.js:1275
+msgid "Use on this site"
+msgstr "このサイトで使用"
+
+#: core/assets/admin.js:1276
+msgid "No licenses yet — choose a plan below."
+msgstr "ライセンスはまだありません — 下からプランを選択してください。"
+
+#: core/assets/admin.js:1277
+msgid "Upgrade your plan"
+msgstr "プランをアップグレード"
+
+#: core/assets/admin.js:1277
+msgid "Choose a plan"
+msgstr "プランを選択"
+
+#: core/assets/admin.js:1282
+msgid "Most popular"
+msgstr "一番人気"
+
+#: core/assets/admin.js:1283
+msgid "Current plan"
+msgstr "現在のプラン"
+
+#: core/assets/admin.js:1283
+msgid "Upgrade"
+msgstr "アップグレード"
+
+#: core/assets/admin.js:1283
+msgid "Choose"
+msgstr "選択"
+
+#: core/assets/admin.js:1285
+msgid ""
+"Checkout opens on wpessential.org already signed in. Upgrades credit the "
+"unused part of your current plan. Staging and local sites do not count "
+"toward your website limit."
+msgstr ""
+"チェックアウトは wpessential.org "
+"でログインした状態で開きます。アップグレード時は現在のプランの未使用分が差し引かれます。ステージングサイトやローカルサイトはサイト数の上限に含まれません。"
+
+#: core/assets/admin.js:1301
+msgid "License active on this site"
+msgstr "このサイトでライセンスが有効です"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is on"
+msgstr "自動更新はオンです"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is off"
+msgstr "自動更新はオフです"
+
+#: core/assets/admin.js:1315
+msgid "Your license works until its end date."
+msgstr "ライセンスは終了日まで有効です。"
+
+#: core/assets/admin.js:1318
+msgid "Could not change auto-renew"
+msgstr "自動更新を変更できませんでした"
+
+#: core/assets/admin.js:1330
+msgid "Checkout opened in a new tab"
+msgstr "チェックアウトを新しいタブで開きました"
+
+#: core/assets/admin.js:1330
+msgid "When payment is done, press Refresh here."
+msgstr "支払いが完了したら、ここで「更新」を押してください。"
+
+#: core/assets/admin.js:1335
+msgid "Checkout could not start"
+msgstr "チェックアウトを開始できませんでした"
+
+#: core/assets/admin.js:1343
+msgid "What your server offers and what to improve before importing."
+msgstr "サーバーの状態と、インポート前に改善すべき点です。"
+
+#: core/assets/admin.js:1343
+msgid "Copy report"
+msgstr "レポートをコピー"
+
+#: core/assets/admin.js:1349
+msgid "Health"
+msgstr "状態"
+
+#: core/assets/admin.js:1349
+msgid "Excellent"
+msgstr "非常に良い"
+
+#: core/assets/admin.js:1349
+msgid "Good"
+msgstr "良好"
+
+#: core/assets/admin.js:1349
+msgid "Needs work"
+msgstr "要改善"
+
+#: core/assets/admin.js:1349
+msgid "%d item(s) could be better. Imports still run; fixes make them faster."
+msgstr "%d 件の項目を改善できます。インポートは実行できますが、修正すると高速になります。"
+
+#: core/assets/admin.js:1349
+msgid "Your server is ready for any demo."
+msgstr "サーバーはどのデモにも対応できる状態です。"
+
+#: core/assets/admin.js:1352
+msgid "Environment"
+msgstr "環境"
+
+#: core/assets/admin.js:1356
+msgid "Report copied"
+msgstr "レポートをコピーしました"
+
+#: core/assets/admin.js:1356
+msgid "Copy failed"
+msgstr "コピーに失敗しました"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "アクセント"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr "ボーダー"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Danger"
+msgstr "危険"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr "インク"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink"
+msgstr "インク上"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink Muted"
+msgstr "インク上 (淡色)"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Primary"
+msgstr "プライマリ上"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "プライマリ"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Hover"
+msgstr "プライマリ (ホバー)"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Soft"
+msgstr "プライマリ (ソフト)"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Pro"
+msgstr "Pro"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "セカンダリ"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Star"
+msgstr "スター"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Success"
+msgstr "成功"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr "サーフェス"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface Alt"
+msgstr "サーフェス (代替)"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr "テキスト"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text Muted"
+msgstr "テキスト (淡色)"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Warning"
+msgstr "警告"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank (no header/footer)"
+msgstr "空白 (ヘッダー/フッターなし)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Full Width (builder canvas)"
+msgstr "全幅 (ビルダーキャンバス)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Landing (transparent header)"
+msgstr "ランディング (透明ヘッダー)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "No Title"
+msgstr "タイトルなし"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post with sidebar"
+msgstr "サイドバー付き投稿"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Cormorant Garamond"
+msgstr "Cormorant Garamond"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "DM Sans"
+msgstr "DM Sans"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Manrope"
+msgstr "Manrope"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Font family name"
+msgid "Monospace"
+msgstr "等幅"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Plus Jakarta Sans"
+msgstr "Plus Jakarta Sans"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "Space Grotesk"
+msgstr "Space Grotesk"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr "本文"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body L"
+msgstr "本文 L"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Display"
+msgstr "ディスプレイ"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H1"
+msgstr "H1"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H2"
+msgstr "H2"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H3"
+msgstr "H3"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H4"
+msgstr "H4"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "小"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XS"
+msgstr "XS"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Brand"
+msgstr "ブランド"
+
+#: styles/dark.json
+msgctxt "Gradient name"
+msgid "Fade bottom"
+msgstr "下部フェード"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Fade to ink"
+msgstr "インクへフェード"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Night"
+msgstr "ナイト"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Large"
+msgstr "大"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Medium"
+msgstr "中"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Small"
+msgstr "小"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "112"
+msgstr "112"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "12"
+msgstr "12"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "16"
+msgstr "16"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "24"
+msgstr "24"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "32"
+msgstr "32"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "48"
+msgstr "48"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "64"
+msgstr "64"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "8"
+msgstr "8"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "96"
+msgstr "96"
+
+#: styles/agency.json
+msgctxt "Style variation name"
+msgid "Agency"
+msgstr "エージェンシー"
+
+#: styles/dark.json
+msgctxt "Style variation name"
+msgid "Dark"
+msgstr "ダーク"
+
+#: styles/education.json
+msgctxt "Style variation name"
+msgid "Education"
+msgstr "教育"
+
+#: styles/fashion.json
+msgctxt "Style variation name"
+msgid "Fashion"
+msgstr "ファッション"
+
+#: styles/health.json
+msgctxt "Style variation name"
+msgid "Health"
+msgstr "ヘルス"
+
+#: styles/maison.json
+msgctxt "Style variation name"
+msgid "Maison"
+msgstr "Maison"
+
+#: styles/pulse.json
+msgctxt "Style variation name"
+msgid "Pulse"
+msgstr "Pulse"
+
+#: styles/restaurant.json
+msgctxt "Style variation name"
+msgid "Restaurant"
+msgstr "レストラン"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Premium"
+msgstr "フッター — プレミアム"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Simple"
+msgstr "フッター — シンプル"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Centered"
+msgstr "ヘッダー — 中央揃え"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Default"
+msgstr "ヘッダー — デフォルト"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Shop"
+msgstr "ヘッダー — ショップ"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Transparent (over dark hero)"
+msgstr "ヘッダー — 透明 (ダークヒーローの上)"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr "サイドバー"

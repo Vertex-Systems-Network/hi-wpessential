@@ -7,6 +7,15 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// Reload the bundled translations when the locale changes (emails, user locale, switch_to_locale()).
+add_action(
+	'change_locale',
+	static function () {
+		unload_textdomain( 'wpessential', true );
+		load_theme_textdomain( 'wpessential', WPESSENTIAL_DIR . '/languages' );
+	}
+);
+
 add_action(
 	'after_setup_theme',
 	static function () {
