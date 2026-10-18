@@ -1,0 +1,42 @@
+name: Build zips
+
+on:
+  push:
+    branches: [ main, theme-foundation ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build theme, server plugin and demo packages
+        run: ./tools/build-zips.sh
+      # Each artifact downloads as its own zip from the run page (Actions → Build zips → Artifacts).
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wpessential-theme
+          path: build/wpessential.zip
+          compression-level: 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wpessential-server
+          path: build/wpessential-server.zip
+          compression-level: 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wpessential-demos
+          path: build/demos/*.zip
+          compression-level: 0
+      - name: Release (tags v*)
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" build/wpessential.zip build/wpessential-server.zip build/demos/*.zip --title "WPEssential $GITHUB_REF_NAME" --generate-notes

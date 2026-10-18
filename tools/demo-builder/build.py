@@ -43,6 +43,14 @@ def demo_json(mod):
     return d
 
 
+def with_seo(package, seo):
+    """Attach each page's meta description (read by inc/seo.php)."""
+    for item in package.get('content', []):
+        if item.get('type') == 'page' and item.get('key') in seo:
+            item.setdefault('meta', {})['_wpe_seo_description'] = seo[item['key']]
+    return package
+
+
 def zip_package(src_dir, builder, out):
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
@@ -58,7 +66,7 @@ def main():
         base = os.path.join(ROOT, 'demos', mod.ID)
         write(os.path.join(base, 'demo.json'), demo_json(mod))
         for builder in ('gutenberg', 'elementor'):
-            write(os.path.join(base, builder, 'content.json'), mod.package(builder))
+            write(os.path.join(base, builder, 'content.json'), with_seo(mod.package(builder), getattr(mod, 'SEO', {})))
             if '--zip' in sys.argv:
                 zip_package(base, builder, os.path.join(ROOT, 'dist', '%s-%s.zip' % (mod.ID, builder)))
         print('built', mod.ID)

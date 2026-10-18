@@ -522,3 +522,17 @@ DEMO = {
     'plugins': [{'slug': 'the-events-calendar', 'name': 'The Events Calendar', 'source': 'wporg', 'state': 'required'},
                 {'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'}],
 }
+
+# Unique meta description per page (playbook §1.13), stored as _wpe_seo_description.
+SEO = {
+    'home': 'Pulse 2027 in Lisbon, 13–14 May: two days, 60 speakers and three stages for people who design and build the web.',
+    'speakers': 'Meet the 60 Pulse 2027 speakers: designers, engineers and researchers shaping how the web is built.',
+    'agenda': 'The full Pulse 2027 agenda: keynotes, talks, workshops and the after-party across three stages in Lisbon.',
+    'tickets': 'Pulse 2027 tickets: conference, workshop and team passes, with early-bird prices and group discounts.',
+    'venue': 'Getting to Pulse 2027 at the Lisbon Congress Centre: travel, accessibility and partner hotels nearby.',
+    'sponsors': 'The companies sponsoring Pulse 2027 and supporting the community of people who build the web.',
+    'become-sponsor': 'Sponsor Pulse 2027: packages, audience numbers and how to put your brand in front of 2,000 web makers.',
+    'faq': 'Answers to common Pulse 2027 questions: tickets, refunds, accessibility, code of conduct and travel.',
+    'contact': 'Contact the Pulse team about tickets, speaking, sponsorship or press for Pulse 2027 in Lisbon.',
+    'blog': 'News from Pulse 2027: speaker announcements, workshop programmes and stories from the community.',
+}

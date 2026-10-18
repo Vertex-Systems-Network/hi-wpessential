@@ -450,3 +450,13 @@ DEMO = {
     'motion': 'editorial',
     'plugins': [{'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'}],
 }
+
+# Unique meta description per page (playbook §1.13), stored as _wpe_seo_description.
+SEO = {
+    'home': 'Maison is an editorial fashion house: seasonal collections, a lookbook and atelier tailoring, shipped worldwide with free returns.',
+    'lookbook': 'The Maison lookbook: the season\'s collection styled in full, with every piece linked to the shop.',
+    'atelier': 'Inside the Maison atelier: how our tailors cut, fit and finish every garment, and how to book a fitting.',
+    'contact': 'Visit a Maison store or contact our client care team for sizing, orders and atelier appointments.',
+    'help': 'Maison shipping and returns: delivery times, costs, free 30-day returns and how to send an order back.',
+    'journal': 'The Maison journal: styling notes, atelier stories and the ideas behind each collection.',
+}
