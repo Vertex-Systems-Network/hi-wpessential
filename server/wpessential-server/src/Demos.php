@@ -195,6 +195,15 @@ class Demos {
 				'pages'             => $list( $m( 'pages' ) ),
 				'highlights'        => $list( $m( 'highlights' ) ),
 				'builders'          => $builders,
+				'playground'        => Playground::enabled() ? array_combine(
+					array_keys( $builders ),
+					array_map(
+						static function ( $builder ) use ( $id ) {
+							return Playground::open_url( $id, $builder );
+						},
+						array_keys( $builders )
+					)
+				) : array(),
 			);
 		}
 		return array(
@@ -277,6 +286,7 @@ class Demos {
 			return new \WP_Error( 'not_found', __( 'Package not found.', 'wpessential-server' ), array( 'status' => 404 ) );
 		}
 		nocache_headers();
+		Playground::cors();
 		header( 'Content-Type: application/zip' );
 		header( 'Content-Length: ' . filesize( $file ) );
 		header( 'Content-Disposition: attachment; filename="' . basename( $file ) . '"' );

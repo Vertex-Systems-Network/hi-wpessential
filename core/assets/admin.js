@@ -505,14 +505,18 @@
 
 	function preview( demo ) {
 		const shots = demo.preview || {};
-		const url = demo.preview_url || '';
+		// Live demos run in WordPress Playground from the same package the import uses.
+		const live = demo.playground || {};
+		const liveBuilders = Object.keys( live );
+		let url = demo.preview_url || ( liveBuilders.length ? live[ liveBuilders[ 0 ] ] : '' );
 		const devices = [ [ 'desktop', 'monitor', __( 'Desktop', 'wpessential' ) ], [ 'tablet', 'tablet', __( 'Tablet', 'wpessential' ) ], [ 'mobile', 'phone', __( 'Mobile', 'wpessential' ) ] ];
 		const body = ( d ) => url
-			? `<iframe src="${ esc( url ) }" title="${ esc( demo.title ) }" loading="lazy"></iframe>`
+			? `<iframe src="${ esc( url ) }" title="${ esc( demo.title ) }" loading="lazy" allow="clipboard-write"></iframe>`
 			: `<img src="${ esc( shots[ d ] || shots.desktop || demo.thumbnail ) }" alt="${ esc( sprintf( __( '%1$s on %2$s', 'wpessential' ), demo.title, d ) ) }">`;
 		const { el, close } = modal( 'wpe-preview', `
 			<div class="wpe-preview__bar">
 				<div><h3>${ esc( demo.title ) }</h3><span class="wpe-muted" style="font-size:12px">${ esc( ( demo.pages || [] ).join( ' · ' ) ) }</span></div>
+				${ liveBuilders.length > 1 ? `<div class="wpe-seg" role="group" aria-label="${ esc( __( 'Builder', 'wpessential' ) ) }">${ liveBuilders.map( ( b, n ) => `<button data-live="${ esc( b ) }" aria-pressed="${ n === 0 }"><span>${ esc( 'elementor' === b ? 'Elementor' : 'Gutenberg' ) }</span></button>` ).join( '' ) }</div>` : '' }
 				<div class="wpe-seg" role="group" aria-label="${ esc( __( 'Device', 'wpessential' ) ) }">${ devices.map( ( [ id, i, l ], n ) => `<button data-device="${ id }" aria-pressed="${ n === 0 }">${ ico( i, 15 ) }<span>${ esc( l ) }</span></button>` ).join( '' ) }</div>
 				${ demo.locked ? `<button class="wpe-btn wpe-btn--grad" data-unlock>${ ico( 'lock', 16 ) }${ esc( __( 'Unlock with Pro', 'wpessential' ) ) }</button>` : `<button class="wpe-btn wpe-btn--primary" data-import>${ ico( 'download', 16 ) }${ esc( __( 'Import this demo', 'wpessential' ) ) }</button>` }
 				<button class="wpe-btn wpe-btn--ghost wpe-btn--icon wpe-modal__close" data-close aria-label="${ esc( __( 'Close preview', 'wpessential' ) ) }">${ ico( 'x' ) }</button>
@@ -526,6 +530,11 @@
 				$( '[data-shot]', el ).innerHTML = body( b.dataset.device );
 			}
 			$( '.wpe-preview__stage', el ).scrollTop = 0;
+		} ) );
+		$$( '[data-live]', el ).forEach( ( b ) => b.addEventListener( 'click', () => {
+			$$( '[data-live]', el ).forEach( ( x ) => x.setAttribute( 'aria-pressed', x === b ) );
+			url = live[ b.dataset.live ];
+			$( '[data-shot]', el ).innerHTML = body( 'desktop' );
 		} ) );
 		$( '[data-close]', el ).addEventListener( 'click', () => close() );
 		const imp = $( '[data-import]', el );

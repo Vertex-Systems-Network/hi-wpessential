@@ -29,6 +29,8 @@ class Api {
 			'/license/package'    => array( 'POST', 'license_package', $public ),
 			'/demos'              => array( 'GET', 'demos', $public ),
 			'/download'           => array( 'GET', 'download', $public ),
+			'/playground'         => array( 'GET', 'playground', $public ),
+			'/theme'              => array( 'GET', 'theme', $public ),
 			'/plans'              => array( 'GET', 'plans', $public ),
 			'/account/register'   => array( 'POST', 'signup', $public ),
 			'/account/login'      => array( 'POST', 'signin', $public ),
@@ -184,6 +186,23 @@ class Api {
 	 */
 	public function download( $request ) {
 		return Demos::download( $request );
+	}
+
+	/**
+	 * Playground blueprint for a live demo.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 * @return \WP_REST_Response|\WP_Error
+	 */
+	public function playground( $request ) {
+		return Playground::blueprint( $request );
+	}
+
+	/**
+	 * Theme zip for Playground.
+	 */
+	public function theme() {
+		return Playground::theme();
 	}
 
 	/**

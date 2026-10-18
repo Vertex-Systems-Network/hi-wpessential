@@ -65,6 +65,7 @@ final class Plugin {
 				'free_staging'  => 1,
 				'token_days'    => 30,
 				'download_mins' => 15,
+				'playground'    => 1,
 			)
 		);
 		return null === $key ? $settings : ( $settings[ $key ] ?? null );

@@ -39,3 +39,28 @@ The theme points at this server with `wpessential_core_license_config` (`api`, `
 ## Hooks
 
 `wpes_charge_renewal` (filter, return true when the gateway charged the token), `wpes_license_created`, `wpes_license_activated`, `wpes_license_action` (actions), `wpes_staging_patterns`, `wpes_rate_limit` (filters).
+
+## Live demos (WordPress Playground)
+
+There are no demo sites to host. The library's **Live demo** opens
+[WordPress Playground](https://wordpress.org/playground/) (WordPress running in the visitor's
+browser) with a blueprint from `GET /wp-json/wpessential-server/v1/playground?demo=<id>&builder=<builder>`.
+
+The blueprint does the following:
+
+1. Installs the theme from `GET …/theme`, which is the zip uploaded under **Settings → Live demos**.
+2. Installs the demo's wordpress.org plugins.
+3. Unzips the same demo package customers import. Pro packages use a short-lived signed link.
+4. Runs the WPEssential importer.
+
+Clicks, hovers, carts and page visits all happen on a real (throw-away) site.
+
+Setup:
+
+- Upload the theme zip after every release.
+- Keep **Live demos** ticked.
+
+The `/playground`, `/theme` and `/download` responses send `Access-Control-Allow-Origin: *`,
+so Playground can fetch them.
+
+The demo manifest exposes the links as `playground: { gutenberg: url, elementor: url }`.

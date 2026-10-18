@@ -173,7 +173,7 @@ class Admin {
 	public static function settings() {
 		$s = Plugin::settings();
 		echo '<div class="wrap"><h1>' . esc_html__( 'WPEssential Server settings', 'wpessential-server' ) . '</h1>';
-		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">' . wp_nonce_field( 'wpes_settings', '_wpnonce', true, false ) . '<input type="hidden" name="action" value="wpes_settings"><table class="form-table">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Nonce markup.
+		echo '<form method="post" enctype="multipart/form-data" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">' . wp_nonce_field( 'wpes_settings', '_wpnonce', true, false ) . '<input type="hidden" name="action" value="wpes_settings"><table class="form-table">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Nonce markup.
 		$rows = array(
 			'grace_days'    => array( __( 'Grace period (days)', 'wpessential-server' ), __( 'Licenses keep working this long after the end date while a renewal is paid.', 'wpessential-server' ) ),
 			'remind_days'   => array( __( 'Renew / remind before (days)', 'wpessential-server' ), __( 'Renewal orders are created (or reminders sent) this many days before the end date.', 'wpessential-server' ) ),
@@ -184,6 +184,8 @@ class Admin {
 			echo '<tr><th>' . esc_html( $row[0] ) . '</th><td><input type="number" min="1" name="' . esc_attr( $key ) . '" value="' . (int) $s[ $key ] . '">' . ( $row[1] ? '<p class="description">' . esc_html( $row[1] ) . '</p>' : '' ) . '</td></tr>';
 		}
 		echo '<tr><th>' . esc_html__( 'Free staging sites', 'wpessential-server' ) . '</th><td><label><input type="checkbox" name="free_staging" value="1"' . checked( $s['free_staging'], 1, false ) . '> ' . esc_html__( 'Do not count localhost, *.local, *.test and staging.* domains against the website limit.', 'wpessential-server' ) . '</label></td></tr>';
+		echo '<tr><th>' . esc_html__( 'Live demos', 'wpessential-server' ) . '</th><td><label><input type="checkbox" name="playground" value="1"' . checked( $s['playground'], 1, false ) . '> ' . esc_html__( 'Open demos in WordPress Playground (runs in the visitor\'s browser, no demo sites to host).', 'wpessential-server' ) . '</label>';
+		echo '<p class="description">' . ( is_readable( Playground::theme_path() ) ? esc_html( sprintf( /* translators: %s: size. */ __( 'Theme zip uploaded (%s). Upload a new one after each release:', 'wpessential-server' ), size_format( filesize( Playground::theme_path() ) ) ) ) : esc_html__( 'Upload the theme zip to enable live demos:', 'wpessential-server' ) ) . '</p><p><input type="file" name="wpes_theme_zip" accept=".zip"></p></td></tr>';
 		echo '<tr><th>' . esc_html__( 'Theme endpoint', 'wpessential-server' ) . '</th><td><code>' . esc_html( rest_url( Api::NS . '/license' ) ) . '</code><p class="description">' . esc_html__( 'Use this as the license endpoint and the demos manifest URL below in the theme.', 'wpessential-server' ) . '</p><code>' . esc_html( rest_url( Api::NS . '/demos' ) ) . '</code></td></tr>';
 		echo '</table>';
 		submit_button();
@@ -203,6 +205,10 @@ class Admin {
 			$out[ $key ] = isset( $_POST[ $key ] ) ? max( 1, (int) $_POST[ $key ] ) : Plugin::settings( $key );
 		}
 		$out['free_staging'] = empty( $_POST['free_staging'] ) ? 0 : 1;
+		$out['playground']   = empty( $_POST['playground'] ) ? 0 : 1;
+		if ( ! empty( $_FILES['wpes_theme_zip']['tmp_name'] ) && '.zip' === strtolower( substr( sanitize_file_name( wp_unslash( $_FILES['wpes_theme_zip']['name'] ?? '' ) ), -4 ) ) ) {
+			move_uploaded_file( $_FILES['wpes_theme_zip']['tmp_name'], Playground::theme_path() ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized,Generic.PHP.ForbiddenFunctions.Found -- Uploaded zip moved to the private folder.
+		}
 		update_option( 'wpes_server_settings', $out );
 		wp_safe_redirect( admin_url( 'admin.php?page=wpes-settings&updated=1' ) );
 		exit;

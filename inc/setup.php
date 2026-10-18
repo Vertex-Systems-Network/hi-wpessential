@@ -105,7 +105,7 @@ function wpessential_is_dark_scheme() {
 }
 
 /**
- * When a static front page with its own content is chosen (for example by a demo import),
+ * When a static front page with its own content (blocks or an Elementor layout) is chosen (for example by a demo import),
  * show that page instead of the built-in front-page template so it stays editable.
  *
  * @param string[] $templates Template hierarchy.
@@ -116,6 +116,11 @@ function wpessential_front_page_hierarchy( $templates ) {
 		return $templates;
 	}
 	$page = get_post( (int) get_option( 'page_on_front' ) );
-	return ( $page && '' !== trim( $page->post_content ) ) ? array() : $templates;
+	if ( ! $page ) {
+		return $templates;
+	}
+	// An Elementor page keeps its layout in post meta, so its post_content may be empty.
+	$own = '' !== trim( $page->post_content ) || 'builder' === get_post_meta( $page->ID, '_elementor_edit_mode', true );
+	return $own ? array() : $templates;
 }
 add_filter( 'frontpage_template_hierarchy', 'wpessential_front_page_hierarchy' );

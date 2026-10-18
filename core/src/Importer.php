@@ -1148,6 +1148,7 @@ class Importer {
 	 * @return null
 	 */
 	private function step_settings() {
+		self::ensure_elementor_kit();
 		$settings = (array) ( $this->content()['settings'] ?? array() );
 		$posts    = $this->job['map']['posts'];
 
@@ -1321,8 +1322,8 @@ class Importer {
 	 * @param array $values Kit settings.
 	 */
 	private function elementor_kit( array $values ) {
-		$kit_id = (int) get_option( 'elementor_active_kit' );
-		if ( ! $kit_id || ! get_post( $kit_id ) ) {
+		$kit_id = self::ensure_elementor_kit();
+		if ( ! $kit_id ) {
 			return;
 		}
 		$this->track( 'kit', array( $kit_id, get_post_meta( $kit_id, '_elementor_page_settings', true ) ) );
@@ -1409,11 +1410,32 @@ class Importer {
 	}
 
 	/**
+	 * Make sure Elementor has an active Kit. Elementor creates it on activation, but a plugin
+	 * switched on another way may have none, and Elementor then throws whenever a site option
+	 * (blogname, …) changes.
+	 *
+	 * @return int Kit ID or 0.
+	 */
+	public static function ensure_elementor_kit() {
+		if ( ! class_exists( '\\Elementor\\Core\\Kits\\Manager' ) ) {
+			return 0;
+		}
+		$kit_id = (int) get_option( 'elementor_active_kit' );
+		if ( ! $kit_id || ! get_post( $kit_id ) ) {
+			delete_option( 'elementor_active_kit' );
+			\Elementor\Core\Kits\Manager::create_default_kit();
+			$kit_id = (int) get_option( 'elementor_active_kit' );
+		}
+		return get_post( $kit_id ) ? $kit_id : 0;
+	}
+
+	/**
 	 * Remove everything the last import created and restore options.
 	 *
 	 * @return int Items removed.
 	 */
 	public static function remove() {
+		self::ensure_elementor_kit();
 		$record = self::imported();
 		$count  = 0;
 		foreach ( array_reverse( (array) ( $record['posts'] ?? array() ) ) as $id ) {

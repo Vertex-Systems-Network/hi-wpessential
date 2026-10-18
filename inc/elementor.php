@@ -45,7 +45,7 @@ function wpessential_sync_elementor_kit() {
 		return false;
 	}
 	$kit = \Elementor\Plugin::$instance->kits_manager->get_active_kit();
-	if ( ! $kit || ! $kit->get_id() ) {
+	if ( ! $kit || ! $kit->get_id() || ! get_post( $kit->get_id() ) ) {
 		return false;
 	}
 
@@ -124,7 +124,11 @@ function wpessential_sync_elementor_kit() {
 	$settings['system_colors']     = $system;
 	$settings['custom_colors']     = $custom;
 	$settings['system_typography'] = $typography;
-	$kit->save( array( 'settings' => $settings ) );
+	try {
+		$kit->save( array( 'settings' => $settings ) );
+	} catch ( \Exception $e ) {
+		return false;
+	}
 
 	if ( isset( \Elementor\Plugin::$instance->files_manager ) ) {
 		\Elementor\Plugin::$instance->files_manager->clear_cache();
