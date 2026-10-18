@@ -51,6 +51,23 @@ def maison_newsletter():
             'fields': [{'type': 'email', 'label': 'Email', 'required': True, 'placeholder': 'Your email address'}]}
 
 
+def maison_appointment():
+    return {'key': 'appointment', 'title': 'Atelier appointment — Maison', 'submit': 'Request appointment',
+            'message': 'Thank you — we will confirm your appointment by email within a few hours.',
+            'settings': {'subject': 'Appointment request: {field_id="1"}'},
+            'fields': [
+                {'type': 'name', 'label': 'Full name', 'required': True, 'size': 'medium'},
+                {'type': 'email', 'label': 'Email', 'required': True, 'size': 'medium'},
+                {'type': 'phone', 'label': 'Phone', 'size': 'medium'},
+                {'type': 'select', 'label': 'Appointment', 'required': True, 'size': 'medium',
+                 'choices': ['Personal styling (60 min)', 'Made-to-measure fitting (45 min)', 'Alterations & repairs (20 min)']},
+                {'type': 'select', 'label': 'Store', 'required': True, 'size': 'medium', 'choices': ['Paris — Le Marais', 'Milan — Brera', 'London — Marylebone']},
+                {'type': 'text', 'label': 'Preferred date and time', 'placeholder': 'e.g. Saturday 14 Nov, morning', 'size': 'medium'},
+                {'type': 'textarea', 'label': 'Anything we should prepare?', 'placeholder': 'Sizes, pieces you want to try or the item to repair.'},
+                CONSENT,
+            ]}
+
+
 def pulse_contact():
     return {'key': 'contact', 'title': 'Contact — Pulse', 'submit': 'Send message',
             'message': 'Thanks — the Pulse team replies within one working day.',
@@ -76,6 +93,23 @@ def pulse_sponsor():
                 {'type': 'text', 'label': 'Company', 'required': True, 'size': 'medium'},
                 {'type': 'email', 'label': 'Work email', 'required': True},
                 {'type': 'select', 'label': 'Package', 'choices': ['Community · €4,000', 'Gold · €12,000', 'Headline · €30,000', 'Not sure yet']},
+                CONSENT,
+            ]}
+
+
+def pulse_cfp():
+    return {'key': 'cfp', 'title': 'Call for speakers — Pulse', 'submit': 'Submit proposal',
+            'message': 'Thanks — your proposal is in. The review panel replies to everyone by 15 January.',
+            'settings': {'subject': 'Talk proposal from {field_id="1"}'},
+            'fields': [
+                {'type': 'name', 'label': 'Full name', 'required': True, 'size': 'medium'},
+                {'type': 'email', 'label': 'Email', 'required': True, 'size': 'medium'},
+                {'type': 'text', 'label': 'Role and company', 'size': 'medium'},
+                {'type': 'select', 'label': 'Track', 'required': True, 'size': 'medium',
+                 'choices': ['Design systems & tokens', 'Front-end architecture', 'AI in product', 'Accessibility', 'Brand & motion', 'Research & strategy']},
+                {'type': 'text', 'label': 'Talk title', 'required': True},
+                {'type': 'textarea', 'label': 'Abstract (about 150 words)', 'required': True},
+                {'type': 'url', 'label': 'Link to a past talk or slides', 'placeholder': 'Optional — first-time speakers welcome'},
                 CONSENT,
             ]}
 

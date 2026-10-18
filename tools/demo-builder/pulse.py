@@ -159,7 +159,7 @@ def g_footer():
     return g_cta() + '\n\n' + b.footer('Two days of design, engineering and AI talks. %s at the Lisbon Congress Centre.' % DATES,
                     [('Event', [('Speakers', '{{page:speakers}}'), ('Agenda', '{{page:agenda}}'), ('Tickets', '{{page:tickets}}'), ('Events calendar', '{{home:events/}}')]),
                      ('Attend', [('Venue & hotels', '{{page:venue}}'), ('FAQ', '{{page:faq}}'), ('My tickets', '{{woo:myaccount}}'), ('Contact', '{{page:contact}}')]),
-                     ('Company', [('Sponsors', '{{page:sponsors}}'), ('Become a sponsor', '{{page:become-sponsor}}'), ('Blog', '{{page:blog}}')])],
+                     ('Company', [('Sponsors', '{{page:sponsors}}'), ('About', '{{page:about}}'), ('Become a sponsor', '{{page:become-sponsor}}'), ('Call for speakers', '{{page:cfp}}'), ('Code of conduct', '{{page:code-of-conduct}}'), ('Gallery', '{{page:gallery}}'), ('Blog', '{{page:blog}}')])],
                     ('© Pulse Conference Lda. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">Hi WPEssential</a>'),
                     band=('See you in Lisbon.', 'Early-bird pricing until 22 March.', 'Get tickets', '{{page:tickets}}')).replace('wpe-footer__newsletter', 'wpe-footer__newsletter px-bigband')
 
@@ -253,7 +253,7 @@ def g_speakers():
                   b.section(b.group(*[g_speaker_card(s) for s in SPEAKERS], layout='grid', columns=4), className='wpe-section wpe-section--sm'),
                   b.section(b.h('Want to speak in 2028?', size='h3', align='center'),
                             b.p('The call for proposals opens in September. Send us a short pitch and a past talk.', align='center', color='text-muted'),
-                            b.buttons(b.button('Get in touch', '{{page:contact}}', style='wpe-outline'), justify='center'), bg='surface-alt', content='720px'))
+                            b.buttons(b.button('Submit a proposal', '{{page:cfp}}', style='wpe-outline'), justify='center'), bg='surface-alt', content='720px'))
 
 
 def g_agenda():
@@ -475,6 +475,119 @@ def e_contact():
 
 # Package --------------------------------------------------------------------------------
 
+# About, gallery, call for speakers and code of conduct (standard on Envato event demos and real conference sites).
+EDITIONS = [('2023', '420 attendees', 'First edition in a converted LX Factory warehouse.'),
+            ('2024', '900 attendees', 'Moved to the riverfront; added the workshop day.'),
+            ('2025', '1,600 attendees', 'Three tracks, 42 speakers and a sold-out after-party.'),
+            ('2026', '2,400 attendees', '58 talks, live captions on every stage and our first scholarship fund.')]
+NUMBERS = [('2,400', 'attendees in 2026'), ('38', 'countries'), ('4.8/5', 'average talk rating'), ('120', 'scholarship tickets')]
+VALUES = [('fas fa-microphone', 'Talks with receipts', 'Every speaker has shipped what they talk about. No sales pitches on stage.'),
+          ('fas fa-universal-access', 'Accessible by default', 'Live captions, step-free venues, quiet rooms and a free sign-language interpreter on request.'),
+          ('fas fa-hand-holding-heart', 'Open to everyone', '5% of tickets fund scholarships for students and under-represented builders.')]
+GALLERY = [('crowd', 'The main stage on Day 1, 2026'), ('hero-stage', 'Opening keynote under the riverfront roof'),
+           ('workshop', 'Design-tokens workshop at LX Factory'), ('networking', 'Coffee and conversations between sessions'),
+           ('venue', 'The Lisbon Congress Centre at sunset'), ('blog-1', 'Speakers backstage before the panel'),
+           ('blog-2', 'The after-party courtyard'), ('blog-3', 'Hallway track in the sponsor hall')]
+TOPICS = ['Design systems & tokens', 'Front-end architecture', 'AI in product', 'Accessibility', 'Brand & motion', 'Research & strategy']
+CFP_STEPS = [('1', 'Send a pitch', 'Title, a 150-word abstract and a link to any past talk. First-time speakers welcome.'),
+             ('2', 'Review', 'An anonymous panel of five reviews every proposal by 15 January.'),
+             ('3', 'Coaching', 'Selected speakers get two rehearsal calls with a speaker coach.'),
+             ('4', 'On stage', 'Flights, three hotel nights and a €500 honorarium are covered.')]
+CONDUCT = [('Be kind and inclusive', 'Pulse is for everyone, regardless of gender, identity, age, disability, appearance, race, religion or background.'),
+           ('Harassment is not tolerated', 'This includes offensive comments, deliberate intimidation, stalking, unwanted photography and unwelcome physical contact.'),
+           ('It applies everywhere', 'Talks, workshops, the after-party, online chat and social media about the event.'),
+           ('What happens if you break it', 'Organisers may warn you, remove you from the event without a refund or report the incident to the police.')]
+
+
+def g_about():
+    hist = b.group(*[b.group(b.p(y, className='px-year'), b.h(a, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='px-tile')
+                     for y, a, d in EDITIONS], layout='grid', columns=4)
+    nums = b.group(*[b.group(b.p(n, className='px-num'), b.p(t, color='text-muted', size='small'), layout='default') for n, t in NUMBERS], layout='grid', columns=4, className='px-nums')
+    vals = b.group(*[b.group(b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='px-tile') for _i, t, d in VALUES],
+                   layout='grid', columns=3)
+    story = b.columns(b.column(b.image('crowd', 'The Pulse main stage full of attendees', aspect='4/3', className='px-rounded')),
+                      b.column(b.p('Our story', className='px-chip'), b.h('Built by people who were tired of sales-pitch conferences', size='h2'),
+                               b.p('Pulse started in 2023 as a one-day meetup for 420 designers and engineers in Lisbon. Five editions later it is still independent, still run by the same four people and still has no paid keynote slots.', color='text-muted'),
+                               valign='center'), valign='center', className='wpe-gap-lg')
+    return b.join(g_title('About', 'The conference for people who design and build the web', 'Independent since 2023, in Lisbon every May.'),
+                  b.section(story, nums, className='wpe-section wpe-section--sm'),
+                  b.section(b.group(b.p('Five editions', className='px-chip'), b.h('How Pulse grew', size='h2'), layout='default'), hist, bg='surface-alt'),
+                  b.section(b.group(b.p('What we stand for', className='px-chip'), b.h('Three rules we never break', size='h2'), layout='default'), vals,
+                            b.buttons(b.button('Read the code of conduct', '{{page:code-of-conduct}}', style='wpe-outline'))))
+
+
+def g_gallery():
+    tiles = b.group(*[b.image(k, alt, aspect='4/3', className='px-rounded') for k, alt in GALLERY], layout='grid', columns=4, className='px-gallery')
+    return b.join(g_title('Gallery', 'Pulse 2026 in pictures', 'Two days, 2,400 people and a lot of very good coffee. Photos by Joana Reis.'),
+                  b.section(tiles, className='wpe-section wpe-section--sm'),
+                  b.section(b.h('Be in the 2027 photos', size='h3', align='center'),
+                            b.p('Early-bird Conference passes are on sale until 22 March.', align='center', color='text-muted'),
+                            b.buttons(b.button('Get tickets', '{{page:tickets}}'), justify='center'), bg='surface-alt', content='720px'))
+
+
+def g_cfp():
+    steps = b.group(*[b.group(b.p(n, className='px-num'), b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='px-tile')
+                      for n, t, d in CFP_STEPS], layout='grid', columns=4)
+    topics = b.p(''.join('<span class="px-tag">%s</span> ' % t for t in TOPICS), className='px-topics')
+    return b.join(g_title('Call for speakers', 'Speak at Pulse 2028', 'Proposals are open until 30 November. We especially want first-time speakers.'),
+                  b.section(b.group(b.p('How it works', className='px-chip'), b.h('From pitch to stage', size='h2'), layout='default'), steps,
+                            b.h('Topics we are looking for', level=3, size='h4'), topics, className='wpe-section wpe-section--sm'),
+                  b.section(b.columns(b.column(b.h('Send your proposal', size='h2'), b.p('It takes about ten minutes. We reply to every proposal.', color='text-muted'),
+                                               b.image('hero-stage', 'A speaker on the Pulse main stage', aspect='4/3', className='px-rounded')),
+                                      b.column(b.shortcode('[wpforms id="{{form:cfp}}" title="false"]'), className='px-form-card'), className='wpe-gap-lg'), bg='surface-alt'))
+
+
+def g_conduct():
+    items = [b.group(b.h(t, level=2, size='h4'), b.p(d, color='text-muted'), layout='default', className='px-tile') for t, d in CONDUCT]
+    report = b.group(b.h('Need help or want to report something?', level=2, size='h4'),
+                     b.p('Find anyone in a pink Pulse T-shirt, call our safety line on <a href="tel:+351912000270">+351 912 000 270</a> or email <a href="mailto:safety@pulseconf.io">safety@pulseconf.io</a>. Reports are confidential.'),
+                     layout='default', className='px-tile px-tile--accent')
+    return b.join(g_title('Code of conduct', 'A safe, welcoming event for everyone', 'All attendees, speakers, sponsors and volunteers agree to this code.'),
+                  b.section(*items, report, className='wpe-section wpe-section--sm px-conduct', content='820px'))
+
+
+def e_about():
+    return [e_title('About', 'The conference for people who design and build the web', 'Independent since 2023, in Lisbon every May.'),
+            e.container(e.row(e.col(e.image_fixed('crowd', 'The Pulse main stage full of attendees', 420), width=50),
+                              e.col(e.overline('Our story'), e.heading('Built by people who were tired of sales-pitch conferences', 2, size_px=40),
+                                    e.text('Pulse started in 2023 as a one-day meetup for 420 designers and engineers in Lisbon. Five editions later it is still independent, still run by the same four people and still has no paid keynote slots.'),
+                                    width=50, justify='center'), gap=56),
+                        e.grid(*[e.col(e.heading(n, 3, 'primary', size_px=44), e.text(t, size_px=14), gap=4) for n, t in NUMBERS], columns=4), pad=(24, 24, 72, 24)),
+            e.container(e.overline('Five editions'), e.heading('How Pulse grew'),
+                        e.grid(*[e.col(e.heading(y, 3, 'primary', size_px=28), e.heading(a, 4, size_px=18), e.text(d, size_px=14), gap=6, pad=20, radius=16, bg='surface')
+                                 for y, a, d in EDITIONS], columns=4), bg='surface-alt', pad=(88, 24, 88, 24)),
+            e.container(e.overline('What we stand for'), e.heading('Three rules we never break'),
+                        e.grid(*[e.icon_box(i, t, d) for i, t, d in VALUES], columns=3),
+                        e.button('Read the code of conduct', '{{page:code-of-conduct}}', 'outline'), pad=(88, 24, 96, 24))]
+
+
+def e_gallery():
+    return [e_title('Gallery', 'Pulse 2026 in pictures', 'Two days, 2,400 people and a lot of very good coffee. Photos by Joana Reis.'),
+            e.container(e.grid(*[e.image_fixed(k, alt, 240) for k, alt in GALLERY], columns=4), pad=(24, 24, 72, 24)),
+            e.container(e.heading('Be in the 2027 photos', 3, align='center', size_px=32), e.text('Early-bird Conference passes are on sale until 22 March.', align='center'),
+                        e.button('Get tickets', '{{page:tickets}}'), bg='surface-alt', align='center', pad=(72, 24, 72, 24))]
+
+
+def e_cfp():
+    return [e_title('Call for speakers', 'Speak at Pulse 2028', 'Proposals are open until 30 November. We especially want first-time speakers.'),
+            e.container(e.overline('How it works'), e.heading('From pitch to stage'),
+                        e.grid(*[e.col(e.heading(n, 3, 'primary', size_px=36), e.heading(t, 4, size_px=18), e.text(d, size_px=14), gap=6, pad=20, radius=16, bg='surface-alt')
+                                 for n, t, d in CFP_STEPS], columns=4),
+                        e.heading('Topics we are looking for', 3, size_px=22), e.text(''.join('<span class="px-tag">%s</span> ' % t for t in TOPICS)), pad=(24, 24, 72, 24)),
+            e.container(e.row(e.col(e.heading('Send your proposal', 2, size_px=40), e.text('It takes about ten minutes. We reply to every proposal.'),
+                                    e.image_fixed('hero-stage', 'A speaker on the Pulse main stage', 320), width=45),
+                              e.col(e.shortcode('[wpforms id="{{form:cfp}}" title="false"]'), width=55, pad=28, radius=20, border='border', bg='surface'), gap=48),
+                        bg='surface-alt', pad=(88, 24, 96, 24))]
+
+
+def e_conduct():
+    return [e_title('Code of conduct', 'A safe, welcoming event for everyone', 'All attendees, speakers, sponsors and volunteers agree to this code.'),
+            e.container(*[e.col(e.heading(t, 2, size_px=24), e.text(d), gap=6, pad=24, radius=16, bg='surface-alt') for t, d in CONDUCT],
+                        e.col(e.heading('Need help or want to report something?', 2, size_px=24),
+                              e.text('Find anyone in a pink Pulse T-shirt, call our safety line on +351 912 000 270 or email safety@pulseconf.io. Reports are confidential.'),
+                              gap=6, pad=24, radius=16, border='primary'), gap=16, pad=(24, 24, 96, 24))]
+
+
 def package(builder):
     e.HOVER = {'button': 'float', 'image': 'grow', 'icon': 'float', 'filter_rest': 'grayscale', 'invert': False, 'transition': 0.26}
     e.FONTS = {'primary': 'Space Grotesk', 'text': 'DM Sans', 'weight': '700'}
@@ -491,7 +604,9 @@ def package(builder):
              ('agenda', 'Agenda', 'agenda', g_agenda, e_agenda), ('tickets', 'Tickets', 'tickets', g_tickets, e_tickets),
              ('venue', 'Venue', 'venue', g_venue, e_venue), ('sponsors', 'Sponsors', 'sponsors', g_sponsors, e_sponsors),
              ('become-sponsor', 'Become a Sponsor', 'become-a-sponsor', g_become, e_become), ('faq', 'FAQ', 'faq', g_faq, e_faq),
-             ('contact', 'Contact', 'contact', g_contact, e_contact)]
+             ('contact', 'Contact', 'contact', g_contact, e_contact), ('about', 'About', 'about', g_about, e_about),
+             ('gallery', 'Gallery', 'gallery', g_gallery, e_gallery), ('cfp', 'Call for Speakers', 'call-for-speakers', g_cfp, e_cfp),
+             ('code-of-conduct', 'Code of Conduct', 'code-of-conduct', g_conduct, e_conduct)]
     content = [
         # The Events Calendar: venues and organizer first, events link to them.
         {'key': 'v-lcc', 'type': 'tribe_venue', 'title': 'Lisbon Congress Centre', 'slug': 'lisbon-congress-centre',
@@ -544,9 +659,9 @@ def package(builder):
             item['sale'] = pr['sale']
         products.append(item)
     menus = [{'name': 'Pulse menu', 'location': 'primary', 'items': [
-        {'title': 'Speakers', 'page': 'speakers'}, {'title': 'Agenda', 'page': 'agenda'}, {'title': 'Tickets', 'page': 'tickets'},
-        {'title': 'Venue', 'page': 'venue'}, {'title': 'Sponsors', 'page': 'sponsors'}, {'title': 'Events', 'url': '{{home:events/}}'},
-        {'title': 'Blog', 'page': 'blog'}]}]
+        {'title': 'About', 'page': 'about'}, {'title': 'Speakers', 'page': 'speakers'}, {'title': 'Agenda', 'page': 'agenda'}, {'title': 'Tickets', 'page': 'tickets'},
+        {'title': 'Venue', 'page': 'venue'}, {'title': 'Sponsors', 'page': 'sponsors'}, {'title': 'Gallery', 'page': 'gallery'},
+        {'title': 'Events', 'url': '{{home:events/}}'}, {'title': 'Blog', 'page': 'blog'}]}]
     settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'pulse', 'motion': 'dynamic',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'footer': {'content': g_footer()}},
                 'options': {'posts_per_page': 9, 'blogname': 'Pulse', 'blogdescription': 'The conference for people who design and build the web.',
@@ -557,7 +672,7 @@ def package(builder):
                                             'woocommerce_cod_settings': {'enabled': 'yes', 'title': 'Pay by bank transfer on invoice'}}}}
     if builder == 'elementor':
         settings['elementor_kit'] = e.kit(container_width=1200, button_radius=999, field_radius=14, button_padding=(14, 24))
-    return {'version': 1, 'media': media, 'terms': terms, 'forms': [forms.pulse_contact(), forms.pulse_sponsor()], 'content': content, 'products': products, 'menus': menus, 'settings': settings}
+    return {'version': 1, 'media': media, 'terms': terms, 'forms': [forms.pulse_contact(), forms.pulse_sponsor(), forms.pulse_cfp()], 'content': content, 'products': products, 'menus': menus, 'settings': settings}
 
 
 DEMO = {
@@ -565,8 +680,8 @@ DEMO = {
     'niche': ['events', 'conference', 'meetup', 'tickets'], 'type': 'pro',
     'thumbnail': 'demo:thumbnail.webp',
     'preview': {'desktop': 'demo:preview/desktop.webp', 'tablet': 'demo:preview/tablet.webp', 'mobile': 'demo:preview/mobile.webp'},
-    'pages': ['Home', 'Speakers', 'Agenda', 'Tickets', 'Venue', 'Sponsors', 'Become a Sponsor', 'Events', 'Blog', 'FAQ', 'Contact'],
-    'highlights': ['5 calendar events', '4 ticket passes', '8 speakers', 'Light & dark'],
+    'pages': ['Home', 'Speakers', 'Agenda', 'Tickets', 'Venue', 'Sponsors', 'Become a Sponsor', 'Events', 'Blog', 'FAQ', 'Contact', 'About', 'Gallery', 'Call for Speakers', 'Code of Conduct'],
+    'highlights': ['5 calendar events', '4 ticket passes', '8 speakers', 'Gallery & call for speakers', 'Light & dark'],
     'motion': 'dynamic',
     'plugins': [{'slug': 'the-events-calendar', 'name': 'The Events Calendar', 'source': 'wporg', 'state': 'required'},
                 {'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'}, forms.PLUGIN],
@@ -581,6 +696,10 @@ SEO = {
     'venue': 'Getting to Pulse 2027 at the Lisbon Congress Centre: travel, accessibility and partner hotels nearby.',
     'sponsors': 'The companies sponsoring Pulse 2027 and supporting the community of people who build the web.',
     'become-sponsor': 'Sponsor Pulse 2027: packages, audience numbers and how to put your brand in front of 2,000 web makers.',
+    'about': 'About Pulse: an independent design and engineering conference in Lisbon since 2023, with five editions and 2,400 attendees.',
+    'gallery': 'Photos from Pulse 2026 in Lisbon: the main stage, workshops, networking and the after-party.',
+    'cfp': 'Speak at Pulse 2028: how the call for proposals works, topics we want and the form to send your talk.',
+    'code-of-conduct': 'The Pulse code of conduct: what we expect from everyone at the event and how to report a problem.',
     'faq': 'Answers to common Pulse 2027 questions: tickets, refunds, accessibility, code of conduct and travel.',
     'contact': 'Contact the Pulse team about tickets, speaking, sponsorship or press for Pulse 2027 in Lisbon.',
     'blog': 'News from Pulse 2027: speaker announcements, workshop programmes and stories from the community.',
