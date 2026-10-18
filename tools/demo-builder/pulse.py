@@ -5,6 +5,7 @@ the agenda and The Events Calendar always agree.
 """
 import blocks as b
 import demo_forms as forms
+from ess_ui import html
 import elementor as e
 
 ID = 'pulse'
@@ -152,14 +153,15 @@ def g_footer():
                      ('Attend', [('Venue & hotels', '{{page:venue}}'), ('FAQ', '{{page:faq}}'), ('My tickets', '{{woo:myaccount}}'), ('Contact', '{{page:contact}}')]),
                      ('Company', [('Sponsors', '{{page:sponsors}}'), ('Become a sponsor', '{{page:become-sponsor}}'), ('Blog', '{{page:blog}}')])],
                     ('© Pulse Conference Lda. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">Hi WPEssential</a>'),
-                    band=('See you in Lisbon.', 'Early-bird pricing until 22 March.', 'Get tickets', '{{page:tickets}}'))
+                    band=('See you in Lisbon.', 'Early-bird pricing until 22 March.', 'Get tickets', '{{page:tickets}}')).replace('wpe-footer__newsletter', 'wpe-footer__newsletter px-bigband', 1)
 
 
 def g_speaker_card(s, topic=True):
     k, name, role, company, talk, track = s
-    return b.group(b.image(k, 'Portrait of ' + name, aspect='4/5', style='wpe-shadow'),
-                   b.h(name, level=3, size='h4'), b.p('%s · %s' % (role, company), color='text-muted', size='small'),
-                   b.p(talk, size='small') if topic else '', layout='default', className='wpe-speaker')
+    return b.group(b.image(k, 'Portrait of ' + name, aspect='1/1', style='wpe-shadow'),
+                   b.h(name, level=3, size='h5'), b.p('%s · %s' % (role, company), color='text-muted', size='small'),
+                   b.p(track, className='px-tag px-tag--%s' % track.lower()),
+                   b.p(talk, size='small') if topic else '', layout='default', className='wpe-speaker px-speaker')
 
 
 def g_session(t):
@@ -172,53 +174,68 @@ def g_session(t):
 
 
 def g_passes():
-    return b.shortcode('[products category="passes" columns="4" limit="4" orderby="menu_order" order="ASC"]')
+    cards = []
+    for p in PASSES:
+        name = p['name'].replace(' Pass', '')
+        price = '<strong>€%s</strong>' % p.get('sale', p['price']) + (' <s>€%s</s>' % p['price'] if p.get('sale') else '')
+        top = [b.h(name, level=3, size='h5')] + ([b.p('Most popular', className='px-badge')] if p.get('featured') else [])
+        cards.append(b.group(b.group(*top, layout='flex', justify='space-between', valign='center'),
+                             b.p(price, className='px-pass__price'), b.p(p['short'], size='small', className='px-pass__desc'),
+                             b.ul(p['inc'], style='wpe-checklist', className='px-pass__inc'),
+                             b.buttons(b.button('Get this ticket' if p.get('featured') else 'Choose', '{{home:}}?add-to-cart={{post_id:%s}}' % p['key'],
+                                                style=None if p.get('featured') else 'wpe-outline'), className='px-pass__cta'),
+                             layout='default', className='px-pass' + (' is-featured' if p.get('featured') else '')))
+    return b.group(*cards, layout='grid', columns=4, className='px-passes')
 
 
 def g_home():
-    hero = b.cover('hero-stage',
-                   b.p('%s · Lisbon Congress Centre' % DATES, style='wpe-overline', color='primary'),
-                   b.h('Design. Code. Ship.', level=1, size='display', color='on-ink'),
-                   b.p('Two days, 60 speakers and three stages for people who design and build the web. Talks, workshops and the best after-party in Europe.', color='on-ink', size='body-l'),
-                   b.buttons(b.button('Get tickets — from €79', '{{page:tickets}}'), b.button('See the agenda', '{{page:agenda}}', style='wpe-light')),
-                   dim=60, min_height=760, position='bottom left')
-    stats = b.section(b.group(*[b.group(b.p(n, className='wpe-stat-number'), b.p(t, color='text-muted'), layout='default', className='wpe-card')
+    collage = html('<div class="px-collage"><span class="px-live">● Live in Lisbon</span>'
+                   '<img src="{{media:sp-3}}" alt="Mei Lin Chen" class="px-collage__a"><img src="{{media:sp-1}}" alt="Amara Okafor" class="px-collage__b">'
+                   '<img src="{{media:sp-2}}" alt="Rohan Mehta" class="px-collage__c"><span class="px-more">60+ speakers</span></div>')
+    countdown = html('<div class="px-count" data-date="2027-05-13T09:00:00+01:00"><span><b>208</b>days</span><span><b>08</b>hours</span>'
+                     '<span><b>41</b>min</span><span><b>17</b>sec</span></div>')
+    hero = b.section(b.columns(
+        b.column(b.p('%s · Lisbon Congress Centre' % DATES, className='px-chip'),
+                 b.h('Design.<br>Code.<br><mark>Ship.</mark>', level=1, size='display', className='px-hero__title'),
+                 b.p('Two days, 60 speakers and 3 stages for people who design and build the web. Talks, workshops and the best after-party in Europe.', color='text-muted'),
+                 b.buttons(b.button('Get tickets — from €79', '{{page:tickets}}'), b.button('Watch 2026 recap', '{{page:blog}}', style='wpe-outline')),
+                 countdown, width='55%', valign='center'),
+        b.column(collage, width='45%', valign='center'), className='wpe-gap-lg'), className='wpe-section px-hero')
+    stats = b.section(b.group(*[b.group(b.p(n, className='px-stat__n'), b.p(t, color='text-muted', size='small'), layout='default', className='px-stat')
                                 for n, t in [('2', 'days of talks'), ('60+', 'speakers'), ('3', 'stages + workshops'), ('2,400', 'attendees')]],
-                              layout='grid', grid_min='12rem'), className='wpe-section wpe-section--sm')
-    sponsors = b.section(b.p('Backed by teams who ship', align='center', color='text-muted', size='small'),
-                         b.p(' · '.join(n for _, names in SPONSORS[:2] for n in names), align='center', size='h4'),
-                         className='wpe-section wpe-section--sm', content='960px')
-    speakers = b.section(
-        b.group(b.group(b.p('Speakers', style='wpe-overline'), b.h('Learn from the people building what\'s next', size='h2'), layout='default'),
-                b.buttons(b.button('All speakers', '{{page:speakers}}', style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom'),
-        b.group(*[g_speaker_card(s, False) for s in SPEAKERS], layout='grid', grid_min='10rem'))
-    agenda = b.section(
-        b.group(b.group(b.p('Agenda', style='wpe-overline'), b.h('Day 1 · Thursday 13 May', size='h2'), layout='default'),
-                b.buttons(b.button('Full agenda', '{{page:agenda}}', style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom'),
-        *[g_session(t) for t in DAY1[:4]], bg='surface-alt')
-    tickets = b.section(b.p('Tickets', style='wpe-overline', align='center'), b.h('Pick your pass', size='h2', align='center'),
+                              layout='grid', columns=4), className='wpe-section wpe-section--sm')
+    logos = b.group(b.p('Backed by teams who build the web', align='center', size='small', className='px-logos__label'),
+                    b.p(''.join('<span>%s</span>' % n for _, names in SPONSORS for n in names), className='px-logos__row'),
+                    align='full', bg='ink', color='on-ink', className='px-logos', layout='default')
+    def head(over, title, label, href):
+        return b.group(b.group(b.p(over, className='px-chip'), b.h(title, size='h2'), layout='default'),
+                       b.buttons(b.button(label + ' →', href, style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='px-head')
+    speakers = b.section(head('Speakers', 'Learn from the people building what\'s next', 'All 60 speakers', '{{page:speakers}}'),
+                         b.group(*[g_speaker_card(s, False) for s in SPEAKERS], layout='grid', columns=4))
+    agenda = b.section(head('Agenda', 'Day 1 · Thursday 13 May', 'Full agenda', '{{page:agenda}}'),
+                       b.p('<span class="is-active">Day 1 · 13 May</span><a href="{{page:agenda}}">Day 2 · 14 May</a><a href="{{page:agenda}}">Workshops · 12 May</a>', className='px-tabs'),
+                       *[g_session(t) for t in DAY1[:4]], bg='surface-alt')
+    tickets = b.section(b.p('Tickets', className='px-chip', align='center'), b.h('Pick your pass', size='h2', align='center'),
                         b.p('All prices include VAT. Student and diversity tickets are available on request.', align='center', color='text-muted'),
                         g_passes())
     venue = b.section(b.columns(
         b.column(b.image('venue', 'Lisbon Congress Centre at dusk', aspect='4/3', style='wpe-shadow'), width='55%'),
-        b.column(b.p('Venue', style='wpe-overline'), b.h('Lisbon Congress Centre, on the river', size='h2'),
+        b.column(b.p('Venue', className='px-chip'), b.h('Lisbon Congress Centre, on the river', size='h2'),
                  b.p('Ten minutes from the airport on the metro, with step-free access throughout and a terrace over the Tagus.', color='text-muted'),
                  b.ul(['Praça das Indústrias, 1300-307 Lisboa', 'Doors 08:00 · Talks 09:00 – 18:00', 'Hearing loops, live captions, quiet rooms'], style='wpe-checklist'),
-                 b.buttons(b.button('Plan your trip', '{{page:venue}}', style='wpe-outline')), valign='center'), valign='center', className='wpe-gap-lg'), bg='surface-alt')
-    quotes = b.section(b.p('2026 in their words', style='wpe-overline'), b.h('“The best two days of my year.”', size='h2'),
-                       b.columns(*[b.column(b.image(img, alt, aspect='3/2'), b.p(q), b.p('<strong>%s</strong>' % who, size='small'), style='wpe-card')
+                 b.buttons(b.button('Plan your trip →', '{{page:venue}}', style='wpe-outline')), valign='center'), valign='center', className='wpe-gap-lg'))
+    quotes = b.section(b.p('2026 in their words', className='px-chip'), b.h('“The best two days of my year.”', size='h2'),
+                       b.columns(*[b.column(b.image(img, alt, aspect='3/2'), b.p('“', className='px-qmark'), b.p(q), b.p('<strong>%s</strong>' % who, size='small'), style='wpe-card')
                                    for img, alt, q, who in [
                                        ('crowd', 'Audience at Pulse 2026', 'I left with three new collaborators and a notebook full of ideas I shipped the following month.', 'Priya S., Product Designer'),
                                        ('workshop', 'Workshop at Pulse 2026', 'The workshops were hands-on and small. I learned more in four hours than in a semester.', 'Marco R., Frontend Lead'),
                                        ('networking', 'Attendees networking', 'Tight talks, zero fluff, and the after-party was unreal. Already bought my 2027 ticket.', 'Hannah W., CTO')]]))
-    news = b.section(b.group(b.group(b.p('News', style='wpe-overline'), b.h('From the Pulse blog', size='h2'), layout='default'),
-                             b.buttons(b.button('All posts', '{{page:blog}}', style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom'),
-                     b.latest_posts(3), bg='surface-alt')
-    cta = b.section(b.group(b.h('Early-bird tickets end 22 March', size='h2', color='on-primary'),
-                            b.p('Save €150 on Conference passes. Prices go up at 23:59 Lisbon time.', color='on-primary'),
-                            b.buttons(b.button('Get your ticket', '{{page:tickets}}', style='wpe-dark')), bg='primary', className='wpe-card', layout='constrained'),
+    cta = b.section(b.group(b.group(b.h('Early-bird tickets end 22 March', size='h2', color='on-primary'),
+                                    b.p('Save €150 on Conference passes. Prices go up at 23:59 Lisbon time.', color='on-primary'), layout='default'),
+                            b.buttons(b.button('Get your ticket', '{{page:tickets}}', style='wpe-dark')),
+                            bg='primary', className='wpe-card px-cta', layout='flex', wrap='wrap', justify='space-between', valign='center'),
                     className='wpe-section wpe-section--sm')
-    return b.join(hero, stats, sponsors, speakers, agenda, tickets, venue, quotes, news, cta)
+    return b.join(hero, stats, logos, speakers, agenda, tickets, venue, quotes, cta)
 
 
 def g_title(over, title, lead):
@@ -324,22 +341,39 @@ def e_title(over, title, lead):
     return e.container(e.overline(over), e.heading(title, 1, size_px=64), e.text(lead, size_px=18), pad=(80, 24, 32, 24))
 
 
+def e_passes():
+    cards = []
+    for p in PASSES:
+        feat = p.get('featured')
+        price = '€%s' % p.get('sale', p['price'])
+        cards.append(e.col(e.heading(p['name'].replace(' Pass', ''), 3, 'on-ink' if feat else 'text', size_px=20),
+                           e.heading(price, 4, 'on-ink' if feat else 'text', size_px=40),
+                           e.text(p['short'], 'on-ink-muted' if feat else 'text-muted', size_px=14),
+                           e.icon_list(p['inc'], color_slug='on-ink' if feat else 'text'),
+                           e.button('Get this ticket' if feat else 'Choose', '{{home:}}?add-to-cart={{post_id:%s}}' % p['key'], 'primary' if feat else 'outline'),
+                           gap=12, pad=24, radius=20, border=None if feat else 'border', bg='ink' if feat else 'surface'))
+    return e.grid(*cards, columns=4)
+
+
 def e_home():
     return [
-        e.container(e.overline('%s · Lisbon Congress Centre' % DATES, 'primary'), e.heading('Design. Code. Ship.', 1, 'on-ink', size_px=112),
-                    e.text('Two days, 60 speakers and three stages for people who design and build the web. Talks, workshops and the best after-party in Europe.', 'on-ink', size_px=18),
-                    e.row(e.button('Get tickets — from €79', '{{page:tickets}}'), e.button('See the agenda', '{{page:agenda}}', 'light'), gap=12, wrap=True, mobile_direction='row'),
-                    image='hero-stage', overlay='ink', overlay_opacity=0.6, min_height=760, justify='flex-end', pad=(96, 24, 96, 24)),
+        e.container(e.row(
+            e.col(e.overline('%s · Lisbon Congress Centre' % DATES), e.heading('Design.<br>Code.<br><mark>Ship.</mark>', 1, size_px=120),
+                  e.text('Two days, 60 speakers and 3 stages for people who design and build the web. Talks, workshops and the best after-party in Europe.', size_px=17),
+                  e.row(e.button('Get tickets — from €79', '{{page:tickets}}'), e.button('Watch 2026 recap', '{{page:blog}}', 'outline'), gap=12, wrap=True, mobile_direction='row'),
+                  width=55, justify='center'),
+            e.col(e.image_fixed('sp-3', 'Mei Lin Chen on stage', 300, radius=18), e.row(e.image_fixed('sp-1', 'Amara Okafor', 200, radius=18), e.image_fixed('sp-2', 'Rohan Mehta', 200, radius=18), gap=16, mobile_direction='row'),
+                  width=45, justify='center'), gap=48), pad=(72, 24, 56, 24)),
         e.container(e.grid(e.counter(2, 'days of talks'), e.counter(60, 'speakers', '+'), e.counter(3, 'stages + workshops'), e.counter(2400, 'attendees'), columns=4),
                     pad=(56, 24, 56, 24)),
-        e.container(e.text('Backed by teams who ship', align='center'), e.heading(' · '.join(n for _, names in SPONSORS[:2] for n in names), 3, 'text-muted', align='center'), pad=(16, 24, 48, 24)),
+        e.container(e.text('Backed by teams who build the web', 'on-ink-muted', align='center'), e.heading('   '.join(n for _, names in SPONSORS for n in names), 3, 'on-ink', align='center', size_px=22), bg='ink', pad=(28, 24, 28, 24)),
         e.container(e.overline('Speakers'), e.heading("Learn from the people building what's next"),
                     e.grid(*[e_speaker(s, False) for s in SPEAKERS], columns=4), e.button('All speakers', '{{page:speakers}}', 'outline'), pad=(80, 24, 80, 24)),
         e.container(e.overline('Agenda'), e.heading('Day 1 · Thursday 13 May'), *[e_session(t) for t in DAY1[:4]], e.button('Full agenda', '{{page:agenda}}', 'outline'),
                     bg='surface-alt', pad=(80, 24, 80, 24), gap=16),
         e.container(e.overline('Tickets', align='center'), e.heading('Pick your pass', align='center'),
                     e.text('All prices include VAT. Student and diversity tickets are available on request.', align='center'),
-                    e.shortcode('[products category="passes" columns="4" limit="4" orderby="menu_order" order="ASC"]'), pad=(80, 24, 80, 24)),
+                    e_passes(), pad=(80, 24, 80, 24)),
         e.container(e.row(e.col(e.image_fixed('venue', 'Lisbon Congress Centre at dusk', 460, radius=24), width=55),
                           e.col(e.overline('Venue'), e.heading('Lisbon Congress Centre, on the river'),
                                 e.text('Ten minutes from the airport on the metro, with step-free access throughout and a terrace over the Tagus.'),
@@ -351,9 +385,6 @@ def e_home():
                            e.testimonial('The workshops were hands-on and small. I learned more in four hours than in a semester.', 'Marco R.', 'Frontend Lead'),
                            e.testimonial('Tight talks, zero fluff, and the after-party was unreal. Already bought my 2027 ticket.', 'Hannah W.', 'CTO'), columns=3),
                     pad=(80, 24, 80, 24)),
-        e.container(e.overline('News'), e.heading('From the Pulse blog'),
-                    e.grid(*[e.image_box(p['image'], p['title'], p['excerpt'], link='{{page:%s}}' % p['key'], height=240) for p in POSTS], columns=3),
-                    bg='surface-alt', pad=(80, 24, 80, 24)),
         e.container(e.container(e.heading('Early-bird tickets end 22 March', 2, 'on-primary'), e.text('Save €150 on Conference passes. Prices go up at 23:59 Lisbon time.', 'on-primary'),
                                 e.button('Get your ticket', '{{page:tickets}}', 'dark'), inner=True, bg='primary', radius=28, pad=56),
                     pad=(48, 24, 80, 24)),
@@ -378,7 +409,7 @@ def e_agenda():
 
 def e_tickets():
     return [e_title('Tickets', 'Choose your pass', 'Early-bird pricing until 22 March. Group discounts apply automatically from five passes.'),
-            e.container(e.shortcode('[products category="passes" columns="4" limit="4" orderby="menu_order" order="ASC"]'), pad=(24, 24, 56, 24)),
+            e.container(e_passes(), pad=(24, 24, 56, 24)),
             e.container(e.heading('What is included'), e.grid(*[e.container(e.heading(p['name'], 3, size_px=22), e.icon_list(p['inc']), inner=True, pad=28, radius=20, border='border', bg='surface')
                                                                for p in PASSES], columns=4), bg='surface-alt', pad=(72, 24, 72, 24)),
             e.container(e.heading('Ticket questions'), e.accordion(FAQ[:3]), pad=(72, 24, 72, 24))]
