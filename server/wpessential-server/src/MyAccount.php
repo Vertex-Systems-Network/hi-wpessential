@@ -258,7 +258,7 @@ class MyAccount {
 				continue;
 			}
 			$period = $p['months'] > 0 ? sprintf( /* translators: %d: months. */ _n( '/ %d month', '/ %d months', $p['months'], 'wpessential-server' ), $p['months'] ) : __( 'once', 'wpessential-server' );
-			echo '<article class="wpes-plan-card' . ( 'yearly' === $p['key'] ? ' is-featured' : '' ) . '"><h4>' . esc_html( $p['name'] ) . '</h4><p class="wpes-price">' . wp_kses_post( wc_price( $p['price'] ) ) . ' <small>' . esc_html( $period ) . '</small></p><ul>';
+			echo '<article class="wpes-plan-card' . ( in_array( $p['key'], array( 'yearly', 'pro' ), true ) ? ' is-featured' : '' ) . '"><h4>' . esc_html( $p['name'] ) . '</h4><p class="wpes-price">' . wp_kses_post( wc_price( $p['price'] ) ) . ' <small>' . esc_html( $period ) . '</small></p><ul>';
 			foreach ( $p['features'] as $f ) {
 				echo '<li>' . esc_html( $f ) . '</li>';
 			}

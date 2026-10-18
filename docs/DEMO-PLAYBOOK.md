@@ -153,6 +153,7 @@ Elements opt in with the block class `wpe-anim` plus `wpe-anim--fade-up|fade|zoo
 | Base | Business / multi | Indigo #4F46E5 + violet, ink #0B1020 | Plus Jakarta Sans / Inter | Transparent, centred nav, CTA | Dark gradient, centred headline + browser mockup | Soft shadow, image top | 14–20 px | subtle | WooCommerce |
 | Maison | Fashion store | Warm ivory #F6F1EA, espresso #2B211B, clay #B5643C | Cormorant Garamond / Manrope | Centred logo, split nav, utility bar | Full-bleed editorial photo, oversized serif | Borderless, tall 3:4 image, hover second image | 0 px | editorial | WooCommerce |
 | Pulse | Conference / events | Electric lime #C6F432 on night #0A0A12, magenta accent | Space Grotesk / DM Sans | Sticky pill nav, ticket CTA, countdown bar | Kinetic type + speaker collage + countdown | Bordered tiles, big numbers | 24 px pills | dynamic | The Events Calendar, Event Tickets, WooCommerce |
+| Essential | Theme & demo marketplace | VSN indigo #625BA8 → blue #6188C6 → teal #5AC8D6 on ink #07080C | Bricolage Grotesque / Plus Jakarta Sans | Pill nav, "Get Pro" CTA | Dark hero with the real Demo Library screenshot | Bordered cards, gradient CTA | 999 px pills | subtle | WooCommerce (+ WPEssential Server for licenses) |
 
 ## 8. Build, ship and preview (record)
 

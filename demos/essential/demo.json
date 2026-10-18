@@ -1,0 +1,64 @@
+{
+	"id": "essential",
+	"title": "Essential",
+	"tagline": "A theme and demo marketplace with pricing plans, services and docs — the WPEssential.org site.",
+	"niche": [
+		"marketplace",
+		"software",
+		"saas",
+		"digital products"
+	],
+	"type": "pro",
+	"thumbnail": "demo:thumbnail.webp",
+	"preview": {
+		"desktop": "demo:preview/desktop.webp",
+		"tablet": "demo:preview/tablet.webp",
+		"mobile": "demo:preview/mobile.webp"
+	},
+	"pages": [
+		"Home",
+		"Demos",
+		"Pricing",
+		"Services",
+		"Docs",
+		"Blog",
+		"Contact"
+	],
+	"highlights": [
+		"3 demo products",
+		"3 yearly plans",
+		"Docs & services",
+		"Light & dark"
+	],
+	"motion": "subtle",
+	"builders": {
+		"gutenberg": {
+			"package": "gutenberg",
+			"plugins": [
+				{
+					"slug": "woocommerce",
+					"name": "WooCommerce",
+					"source": "wporg",
+					"state": "required"
+				}
+			]
+		},
+		"elementor": {
+			"package": "elementor",
+			"plugins": [
+				{
+					"slug": "elementor",
+					"name": "Elementor",
+					"source": "wporg",
+					"state": "required"
+				},
+				{
+					"slug": "woocommerce",
+					"name": "WooCommerce",
+					"source": "wporg",
+					"state": "required"
+				}
+			]
+		}
+	}
+}

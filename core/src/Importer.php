@@ -971,6 +971,10 @@ class Importer {
 		$product->set_category_ids( $cats );
 		$product->set_image_id( $media( $item['image'] ?? '' ) );
 		$product->set_gallery_image_ids( array_filter( array_map( $media, (array) ( $item['gallery'] ?? array() ) ) ) );
+		// Product meta, e.g. the WPEssential Server plan fields (_wpes_plan, _wpes_months …) on plan products.
+		foreach ( (array) ( $item['meta'] ?? array() ) as $key => $value ) {
+			$product->update_meta_data( sanitize_key( $key ), $value );
+		}
 
 		$attributes = array();
 		foreach ( (array) ( $item['attributes'] ?? array() ) as $attr ) {

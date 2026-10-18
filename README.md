@@ -42,6 +42,7 @@ schemes, hover effects and SEO, all set up for you.
 | **Base** | Business · Agency · Shop · Blog | 7 pages, 3 articles, 8 products | Free |
 | **Maison** | Fashion store | Lookbook, atelier, journal, shop | Pro |
 | **Pulse** | Events & conferences | Speakers, agenda, tickets, venue, sponsors | Pro |
+| **Essential** | Themes & digital products | Demos, pricing plans, services, docs (the WPEssential.org site) | Pro |
 
 Every demo is available for **Gutenberg** and **Elementor**. New demos are added regularly.
 

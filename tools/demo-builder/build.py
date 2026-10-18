@@ -22,7 +22,7 @@ import importlib  # noqa: E402
 import base_elementor  # noqa: E402
 
 # Server demos built from tools/demo-builder/<id>.py. The /build-demo skill appends new ids here.
-DEMOS = ['maison', 'pulse']
+DEMOS = ['maison', 'pulse', 'essential']
 
 
 def write(path, data):
