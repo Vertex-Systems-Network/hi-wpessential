@@ -16,7 +16,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'People behind WPEssential', 'hi-wpessential' ); ?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e( 'People behind Hi WPEssential', 'hi-wpessential' ); ?></h2>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:group -->

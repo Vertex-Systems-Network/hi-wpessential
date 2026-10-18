@@ -52,7 +52,7 @@ class Admin {
 	 */
 	public static function brand() {
 		$name = License::is_active() && ! empty( License::data()['white_label'] ) ? (string) get_option( 'wpessential_core_brand', '' ) : '';
-		return $name ? $name : __( 'WPEssential', 'hi-wpessential' );
+		return $name ? $name : __( 'Hi WPEssential', 'hi-wpessential' );
 	}
 
 	/**
@@ -130,6 +130,6 @@ class Admin {
 	 * App root. The page works without JS only to explain that JS is needed.
 	 */
 	public function render() {
-		echo '<div id="wpe-app" class="wpe-app" aria-live="polite"><noscript><p>' . esc_html__( 'The WPEssential dashboard needs JavaScript. Enable it in your browser to import demos.', 'hi-wpessential' ) . '</p></noscript></div>';
+		echo '<div id="wpe-app" class="wpe-app" aria-live="polite"><noscript><p>' . esc_html__( 'The Hi WPEssential dashboard needs JavaScript. Enable it in your browser to import demos.', 'hi-wpessential' ) . '</p></noscript></div>';
 	}
 }

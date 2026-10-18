@@ -28,7 +28,7 @@
 <!-- /wp:html -->
 
 <!-- wp:paragraph {"fontSize":"body-l"} -->
-<p class="has-body-l-font-size">“<?php esc_html_e( 'We rebuilt three client sites on WPEssential in a week. The Elementor and block versions matching exactly is a game changer.', 'hi-wpessential' ); ?>”</p>
+<p class="has-body-l-font-size">“<?php esc_html_e( 'We rebuilt three client sites on Hi WPEssential in a week. The Elementor and block versions matching exactly is a game changer.', 'hi-wpessential' ); ?>”</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->

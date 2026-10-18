@@ -77,7 +77,7 @@
 
 <!-- wp:group {"className":"wpe-hero-shot","layout":{"type":"default"}} -->
 <div class="wp-block-group wpe-hero-shot"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/demo-business.webp' ) ); ?>" alt="<?php esc_attr_e( 'Business demo homepage built with WPEssential', 'hi-wpessential' ); ?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/demo-business.webp' ) ); ?>" alt="<?php esc_attr_e( 'Business demo homepage built with Hi WPEssential', 'hi-wpessential' ); ?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></section>
 <!-- /wp:group -->

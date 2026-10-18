@@ -1,4 +1,4 @@
-=== WPEssential ===
+=== Hi WPEssential ===
 Contributors: wpessential
 Requires at least: 6.5
 Tested up to: 6.8
@@ -10,13 +10,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Lightweight multi-niche block theme, native for Gutenberg and Elementor.
 
 == Description ==
-WPEssential is a fast, multi-niche block theme that is native for both Gutenberg and Elementor. Pick a demo, import it in one click with the builder you prefer, and get a complete, production-ready site: real pages, real content, real images, a working shop, light and dark schemes, hover effects and SEO, all set up for you.
+Hi WPEssential is a fast, multi-niche block theme that is native for both Gutenberg and Elementor. Pick a demo, import it in one click with the builder you prefer, and get a complete, production-ready site: real pages, real content, real images, a working shop, light and dark schemes, hover effects and SEO, all set up for you.
 
 = Two builders, one design =
 Every demo ships in a Gutenberg version (core blocks only) and an Elementor version (native widgets and Kit globals, with no HTML widgets or custom CSS). Choose your builder; the look stays the same.
 
 = Features =
-* One-click demo import with the bundled WPEssential Core plugin: required plugins, pages, posts, products, menus, images, header, footer and style. Remove a demo again with one click.
+* One-click demo import with the bundled Hi WPEssential Core plugin: required plugins, pages, posts, products, menus, images, header, footer and style. Remove a demo again with one click.
 * Live demos in the browser (WordPress Playground): click, hover and browse every page before you import.
 * theme.json v2 design system with a style variation per demo and local fonts.
 * Light / dark toggle for visitors that follows the device setting and remembers the choice.
@@ -38,10 +38,10 @@ Every demo ships in a Gutenberg version (core blocks only) and an Elementor vers
 == Installation ==
 1. In your admin, go to Appearance > Themes > Add New > Upload Theme.
 2. Upload hi-wpessential.zip and click Activate.
-3. Open WPEssential > Demo Library, preview a demo, choose Gutenberg or Elementor, and click Import.
+3. Open Hi WPEssential > Demo Library, preview a demo, choose Gutenberg or Elementor, and click Import.
 
 == Copyright ==
-WPEssential, (C) 2026 WPEssential Team. Distributed under the terms of the GNU GPL.
+Hi WPEssential, (C) 2026 WPEssential Team. Distributed under the terms of the GNU GPL.
 
 == Frequently Asked Questions ==
 
@@ -54,11 +54,11 @@ No. The importer only adds content and keeps a record, so Remove demo deletes wh
 = Which screen sizes are supported? =
 The layout steps at 1920, 1440, 1280, 1024, 768, 560, 480, 360 and 320 pixels. Each step sets the page gutter, section spacing, container width and heading sizes. From 1024 down the header switches to a compact bar with an off-canvas menu.
 
-= Do I need the WPEssential Core plugin? =
+= Do I need the Hi WPEssential Core plugin? =
 No. The theme works on its own. Core adds demo import, the header/footer builder, mega menus and Pro license activation.
 
 = How do I build an About, Services, Pricing, Contact or FAQ page? =
-Create a page, choose the "Full width" template, then pick the matching layout from the "WPEssential — Full pages" patterns. With WooCommerce active, the "WPEssential — Shop" patterns add category and product rows.
+Create a page, choose the "Full width" template, then pick the matching layout from the "Hi WPEssential — Full pages" patterns. With WooCommerce active, the "Hi WPEssential — Shop" patterns add category and product rows.
 
 = Can visitors switch between light and dark? =
 Yes. The header has a light/dark toggle. The first visit follows the device setting, and the choice is remembered in the browser. The site's own colours stay the default; the other scheme comes from the theme (the "Dark" style, or the base light palette when the site uses a dark style). Turn it off with add_filter( 'wpessential_scheme_toggle', '__return_false' ).
@@ -79,7 +79,7 @@ Yes. Without an SEO plugin the theme prints a meta description, Open Graph and T
 
 = 1.0.0 =
 * Initial release.
-* WPEssential dashboard: Demo Library with live preview, one-click import wizard (Gutenberg / Elementor), plugin manager, license activation and System Status.
+* Hi WPEssential dashboard: Demo Library with live preview, one-click import wizard (Gutenberg / Elementor), plugin manager, license activation and System Status.
 * Importer runs in short resumable steps with info, warning and error logging, automatic retry, crash-safe skipping and one-click removal.
 * Theme Options (Appearance): named CSS / JavaScript snippets with device scopes, head/footer placement, safe mode; animation presets (subtle, editorial, playful, dynamic with GSAP).
 * Dashboard sign-in / sign-up connected to the WPEssential account; licenses, plans, upgrades and auto-renewal from the import wizard and License tab.

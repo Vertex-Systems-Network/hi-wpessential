@@ -20,7 +20,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted","fontSize":"body-l"} -->
-<p class="has-text-muted-color has-text-color has-body-l-font-size"><?php esc_html_e( 'Use WPEssential yourself, or let our team set up, customise and maintain your site.', 'hi-wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color has-body-l-font-size"><?php esc_html_e( 'Use Hi WPEssential yourself, or let our team set up, customise and maintain your site.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

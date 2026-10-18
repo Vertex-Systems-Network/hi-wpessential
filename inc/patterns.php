@@ -11,13 +11,13 @@ add_action(
 	'init',
 	static function () {
 		$categories = array(
-			'wpessential'          => __( 'WPEssential', 'hi-wpessential' ),
-			'wpessential-hero'     => __( 'WPEssential — Heroes', 'hi-wpessential' ),
-			'wpessential-sections' => __( 'WPEssential — Sections', 'hi-wpessential' ),
-			'wpessential-headers'  => __( 'WPEssential — Headers', 'hi-wpessential' ),
-			'wpessential-footers'  => __( 'WPEssential — Footers', 'hi-wpessential' ),
-			'wpessential-pages'    => __( 'WPEssential — Full pages', 'hi-wpessential' ),
-			'wpessential-shop'     => __( 'WPEssential — Shop', 'hi-wpessential' ),
+			'wpessential'          => __( 'Hi WPEssential', 'hi-wpessential' ),
+			'wpessential-hero'     => __( 'Hi WPEssential — Heroes', 'hi-wpessential' ),
+			'wpessential-sections' => __( 'Hi WPEssential — Sections', 'hi-wpessential' ),
+			'wpessential-headers'  => __( 'Hi WPEssential — Headers', 'hi-wpessential' ),
+			'wpessential-footers'  => __( 'Hi WPEssential — Footers', 'hi-wpessential' ),
+			'wpessential-pages'    => __( 'Hi WPEssential — Full pages', 'hi-wpessential' ),
+			'wpessential-shop'     => __( 'Hi WPEssential — Shop', 'hi-wpessential' ),
 		);
 		foreach ( $categories as $slug => $label ) {
 			register_block_pattern_category( $slug, array( 'label' => $label ) );

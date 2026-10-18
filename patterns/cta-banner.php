@@ -21,7 +21,7 @@
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-wpe-light"} -->
-<div class="wp-block-button is-style-wpe-light"><a class="wp-block-button__link wp-element-button" href="/pricing/"><?php esc_html_e( 'Get WPEssential free', 'hi-wpessential' ); ?></a></div>
+<div class="wp-block-button is-style-wpe-light"><a class="wp-block-button__link wp-element-button" href="/pricing/"><?php esc_html_e( 'Get Hi WPEssential free', 'hi-wpessential' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-wpe-ghost"} -->

@@ -1219,7 +1219,7 @@ class Importer {
 		$data = is_array( $inline ) ? $inline : ( 'default' === $name ? array( 'title' => __( 'Default', 'hi-wpessential' ) ) : ( is_readable( $file ) ? json_decode( (string) file_get_contents( $file ), true ) : null ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local theme file.
 		if ( ! is_array( $data ) || ! class_exists( 'WP_Theme_JSON_Resolver' ) ) {
 			/* translators: %s: variation. */
-			$this->log( 'warning', sprintf( __( 'Style "%s" was not found in the theme, so the default colours stay.', 'hi-wpessential' ), $name ), __( 'Update the WPEssential theme, then import again.', 'hi-wpessential' ) );
+			$this->log( 'warning', sprintf( __( 'Style "%s" was not found in the theme, so the default colours stay.', 'hi-wpessential' ), $name ), __( 'Update the Hi WPEssential theme, then import again.', 'hi-wpessential' ) );
 			return;
 		}
 		$post_id = \WP_Theme_JSON_Resolver::get_user_global_styles_post_id();

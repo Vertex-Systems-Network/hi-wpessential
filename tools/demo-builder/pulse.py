@@ -150,7 +150,7 @@ def g_footer():
                     [('Event', [('Speakers', '{{page:speakers}}'), ('Agenda', '{{page:agenda}}'), ('Tickets', '{{page:tickets}}'), ('Events calendar', '{{home:events/}}')]),
                      ('Attend', [('Venue & hotels', '{{page:venue}}'), ('FAQ', '{{page:faq}}'), ('My tickets', '{{woo:myaccount}}'), ('Contact', '{{page:contact}}')]),
                      ('Company', [('Sponsors', '{{page:sponsors}}'), ('Become a sponsor', '{{page:become-sponsor}}'), ('Blog', '{{page:blog}}')])],
-                    ('© Pulse Conference Lda. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">WPEssential</a>'),
+                    ('© Pulse Conference Lda. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">Hi WPEssential</a>'),
                     band=('See you in Lisbon.', 'Early-bird pricing until 22 March.', 'Get tickets', '{{page:tickets}}'))
 
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:       WPEssential Core
+ * Plugin Name:       Hi WPEssential Core
  * Plugin URI:        https://wpessential.org/core/
- * Description:       One-click demo import, plugin manager and license activation for the WPEssential theme.
+ * Description:       One-click demo import, plugin manager and license activation for the Hi WPEssential theme.
  * Version:           1.0.0
  * Requires at least: 6.5
  * Requires PHP:      7.4
