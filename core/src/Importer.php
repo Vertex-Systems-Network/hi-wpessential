@@ -1011,8 +1011,15 @@ class Importer {
 		$attributes = array();
 		foreach ( (array) ( $item['attributes'] ?? array() ) as $attr ) {
 			$a = new \WC_Product_Attribute();
-			$a->set_name( $attr['name'] );
-			$a->set_options( $attr['options'] );
+			if ( ! empty( $attr['global'] ) && ( $tax = $this->global_attribute( $attr ) ) ) {
+				// Global (taxonomy) attribute, so shop filters such as filter_size work.
+				$a->set_id( wc_attribute_taxonomy_id_by_name( $tax ) );
+				$a->set_name( $tax );
+				$a->set_options( array_map( static fn( $o ) => (int) get_term_by( 'name', $o, $tax )->term_id, $attr['options'] ) );
+			} else {
+				$a->set_name( $attr['name'] );
+				$a->set_options( $attr['options'] );
+			}
 			$a->set_visible( true );
 			$a->set_variation( 'variable' === $kind );
 			$attributes[] = $a;
@@ -1053,6 +1060,31 @@ class Importer {
 	}
 
 	/**
+	 * Create (once) a global product attribute and its terms; returns the taxonomy name.
+	 *
+	 * @param array $attr Attribute: name, options.
+	 * @return string Empty on failure.
+	 */
+	private function global_attribute( $attr ) {
+		$tax = wc_attribute_taxonomy_name( $attr['name'] );
+		if ( ! wc_attribute_taxonomy_id_by_name( $tax ) ) {
+			$made = wc_create_attribute( array( 'name' => $attr['name'], 'slug' => sanitize_title( $attr['name'] ) ) );
+			if ( is_wp_error( $made ) ) {
+				return '';
+			}
+		}
+		if ( ! taxonomy_exists( $tax ) ) {
+			register_taxonomy( $tax, array( 'product' ), array( 'hierarchical' => false, 'show_ui' => false, 'query_var' => true, 'rewrite' => false ) );
+		}
+		foreach ( (array) $attr['options'] as $option ) {
+			if ( ! term_exists( $option, $tax ) ) {
+				wp_insert_term( $option, $tax );
+			}
+		}
+		return $tax;
+	}
+
+	/**
 	 * Every combination of a variable product's attributes.
 	 *
 	 * @param int   $id   Parent ID.
@@ -1064,7 +1096,9 @@ class Importer {
 			$next = array();
 			foreach ( $combos as $combo ) {
 				foreach ( $attr['options'] as $option ) {
-					$next[] = $combo + array( sanitize_title( $attr['name'] ) => $option );
+					$next[] = ! empty( $attr['global'] )
+						? $combo + array( wc_attribute_taxonomy_name( $attr['name'] ) => sanitize_title( $option ) )
+						: $combo + array( sanitize_title( $attr['name'] ) => $option );
 				}
 			}
 			$combos = $next;

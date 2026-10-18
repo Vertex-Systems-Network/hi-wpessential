@@ -41,7 +41,7 @@ TERMS = [
     ('cat-travel', 'category', 'Travel', 'travel', None),
 ]
 
-SIZES = {'name': 'Size', 'options': ['XS', 'S', 'M', 'L']}
+SIZES = {'name': 'Size', 'options': ['XS', 'S', 'M', 'L'], 'global': True}
 CARE = '<p><strong>Care.</strong> Cool wash or dry clean. Dry flat, steam to release creases.</p><p><strong>Made in</strong> our partner atelier in Porto, Portugal. Every piece is numbered inside the collar.</p>'
 
 PRODUCTS = [
