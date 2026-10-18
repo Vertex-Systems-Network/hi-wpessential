@@ -427,9 +427,9 @@ def g_pricing():
         g_hero_dark('Pricing', 'One subscription. Every theme and demo.',
                     'From $10 a month. Save 20% yearly, or pay once for lifetime — it covers the major version you buy (1.x until 2.0 ships).', toggle),
         b.group(periods, tag='section', align='full', layout='constrained', content='1200px', className='ess-section ess-section--pull'),
-        section(b.h('Compare plans', size='h1', className='ess-h2'), b.table(['Feature', 'Starter', 'Pro', 'Agency'], rows, className='ess-table')),
+        section(head('Pricing', 'Compare plans'), b.table(['Feature', 'Starter', 'Pro', 'Agency'], rows, className='ess-table')),
         section(g_band('14-day money-back guarantee', 'Not the right fit? Email us within 14 days and get a full refund. No questions.', 'Talk to sales', '{{page:contact}}')),
-        section(b.h('Frequently asked questions', size='h1', className='ess-h2'), *[b.details(q, b.p(a), style=None) for q, a in FAQ]))
+        section(head('FAQ', 'Frequently asked questions'), *[b.details(q, b.p(a), style=None) for q, a in FAQ]))
 
 
 SERVICE_ICONS = ['palette', 'download', 'cart', 'figma', 'grid', 'bolt', 'refresh', 'globe', 'shield', 'wrench', 'server', 'heart', 'code']
@@ -442,13 +442,16 @@ def g_services():
         g_hero_dark('Services', 'Your site, launched by the people who build the theme.',
                     'Design, setup, speed and care from the WPEssential team at Vertex Systems Network (Pvt.) Ltd.',
                     b.buttons(arrow('Book a free call', '{{page:contact}}'), b.button('See pricing', '{{page:pricing}}', style='wpe-ghost-light'), justify='center')),
-        section(b.h('What we do', size='h1', className='ess-h2'),
+        g_proof(),
+        section(head('Services', 'What we do'),
                 b.group(*[b.group(ico(SERVICE_ICONS[i], 'soft'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
                                   b.p('<a href="%s">%s →</a>' % (svc_link(t), price), className='ess-card__from'), layout='default', className='ess-card')
                           for i, (_, t, d, price) in enumerate(SERVICES)], layout='grid', columns=3, grid_min='17rem', className='ess-grid')),
-        section(b.h('How a project runs', size='h1', className='ess-h2'),
+        section(head('Process', 'How a project runs'),
                 b.group(*[b.group(b.p('0%d' % (i + 1), className='ess-num'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'), layout='default', className='ess-run')
                           for i, (t, d) in enumerate(steps)], layout='grid', columns=4, grid_min='12rem', className='ess-grid'), alt=True),
+        g_work(),
+        g_team(),
         section(g_band('Tell us about your project', 'Free 30-minute call. Fixed quote within 48 hours.', 'Book a free call', '{{page:contact}}')))
 
 
@@ -457,12 +460,12 @@ def g_docs():
         g_hero_dark('Documentation', 'How can we help?', None, g_search('Search the docs…', 'ess-hero__search'),
                     html('<p class="ess-hero__popular"><span>Popular:</span>%s</p>' % ''.join(chip(t, '{{page:%s}}' % k) for t, k in
                          [('Import a demo', 'post-import'), ('Gutenberg or Elementor', 'post-builders'), ('Pricing', 'pricing'), ('Contact', 'contact')]))),
-        section(b.h('Browse by topic', size='h1', className='ess-h2'),
+        section(head('Docs', 'Browse by topic'),
                 b.group(*[b.group(ico(DOC_ICONS[i], 'orange'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
                                   b.p('<a href="{{page:blog}}">Read guides <span aria-hidden="true">→</span></a>', className='ess-card__link ess-card__link--blue'),
                                   layout='default', className='ess-card') for i, (_, t, d) in enumerate(DOCS)],
                         layout='grid', columns=3, grid_min='18rem', className='ess-grid')),
-        section(b.h('Popular articles', size='h1', className='ess-h2'), b.latest_posts(3), alt=True),
+        section(head('Guides', 'Popular articles'), b.latest_posts(3), alt=True),
         section(b.group(ico('chat'), b.group(b.h('Still stuck?', level=3, className='ess-band__title'),
                                             b.p('Open a ticket and a WPEssential developer replies within one business day.', className='ess-band__text'), layout='default'),
                         b.buttons(arrow('Open a ticket', '{{page:contact}}')), layout='flex', wrap='wrap', valign='center', className='ess-band ess-band--soft')))
@@ -511,6 +514,41 @@ def svc_link(name):
     return '{{page:svc-%s}}' % svc.DETAIL[name][0]
 
 
+def g_proof():
+    return section(b.group(*[b.group(b.p(n, className='ess-proof__n'), b.p(l, className='ess-side__muted'), layout='default', className='ess-proof')
+                      for n, l in [('1,200+', 'WordPress sites delivered'), ('4.9 / 5', 'from 640 client reviews'), ('&lt; 1 day', 'average first reply'), ('12 yrs', 'building for WordPress')]],
+                    layout='grid', columns=4, grid_min='12rem', className='ess-grid'),
+            b.p('<span>Trusted by agencies, stores and publishers</span>' + ''.join('<b>%s</b>' % n for n in ['Northwind', 'Kitecraft', 'Fieldhouse', 'Lumen Studio', 'Orbitly', 'Mosaic &amp; Co']),
+                className='ess-clients'))
+
+
+def g_work():
+    return section(head('Recent work', 'Sites we built for teams like yours.', 'Every project ships on Hi WPEssential, so you can keep editing it yourself after launch.'),
+            b.group(*[b.group(b.image(img, alt, aspect='16/9'), b.group(b.p(tag, className='ess-over'), b.h(t, level=3, className='ess-card__title'),
+                                                                          b.p('✓ ' + r, className='ess-work__result'), layout='default', className='ess-work__body'),
+                              layout='default', className='ess-card ess-work') for img, alt, tag, t, r in [
+                ('site-base', 'Synergy Advisors business site', 'Business · Custom design', 'Synergy Advisors: new site and lead funnel in 3 weeks', '+62% enquiries in the first quarter'),
+                ('site-maison', 'Maison fashion store', 'WooCommerce store', 'Maison: fashion store with lookbook and 12 variable products', '2.1s → 0.9s load time on mobile'),
+                ('site-pulse', 'Pulse conference site', 'Events · Migration', 'Pulse Conference: agenda, tickets and Events Calendar', '2,400 tickets sold online')]],
+                    layout='grid', columns=3, grid_min='16rem', className='ess-grid'),
+            b.group(b.image('team-1', 'Ayesha Malik', className='ess-quote__avatar'),
+                    b.group(b.p('“They scoped it in two days, launched in three weeks and still answer our tickets the same day. It feels like having our own WordPress team.”', className='ess-quote__text'),
+                            b.p('Ayesha Malik · Marketing Lead, Fieldhouse Goods · ★★★★★', className='ess-quote__by'), layout='default'),
+                    layout='flex', wrap='nowrap', valign='center', className='ess-card ess-card--ink ess-quote'))
+
+
+def g_team():
+    return section(b.columns(
+        b.column(head('Who you will talk to', 'Real people, one team.', 'No call centre and no outsourcing — the people who build the theme run your project.'),
+                 b.group(*[b.group(b.image('team-%d' % i, n, aspect='7/8', className='ess-team__img'), b.p('<strong>%s</strong>' % n), b.p(r, className='ess-side__muted'), layout='default', className='ess-team')
+                           for i, (n, r) in enumerate([('Ayesha Malik', 'Project lead'), ('Bilal Khan', 'Lead developer'), ('Sara Ahmed', 'Client success'), ('Usman Tariq', 'WooCommerce')], 1)],
+                         layout='grid', columns=4, grid_min='7rem', className='ess-grid'), width='55%'),
+        b.column(html('<div class="ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=Lahore%2C%20Pakistan&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+                      '<div class="ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>Lahore, Pakistan · PKT (UTC+5)</span>'
+                      '<a href="https://maps.google.com/?q=Lahore%2C%20Pakistan" target="_blank" rel="noopener">Get directions ↗</a></div></div>'), width='45%'),
+        className='ess-gap', valign='center'))
+
+
 def g_contact():
     routes = [('card', 'Plans & licensing', 'Which plan fits, lifetime licences, agencies and invoices.', 'Talk to sales', '#contact-form'),
               ('palette', 'Start a project', 'Design, setup, WooCommerce, migration, speed or care plans.', 'Request a quote', '{{page:quote}}'),
@@ -553,11 +591,7 @@ def g_contact():
                                   layout='default', className='ess-card') for i_, t, d, l, h_ in routes],
                         layout='grid', columns=3, grid_min='16rem', className='ess-grid'),
                 tag='section', align='full', className='ess-page-hero', layout='constrained', content='1200px'),
-        section(b.group(*[b.group(b.p(n, className='ess-proof__n'), b.p(l, className='ess-side__muted'), layout='default', className='ess-proof')
-                          for n, l in [('1,200+', 'WordPress sites delivered'), ('4.9 / 5', 'from 640 client reviews'), ('&lt; 1 day', 'average first reply'), ('12 yrs', 'building for WordPress')]],
-                        layout='grid', columns=4, grid_min='12rem', className='ess-grid'),
-                b.p('<span>Trusted by agencies, stores and publishers</span>' + ''.join('<b>%s</b>' % n for n in ['Northwind', 'Kitecraft', 'Fieldhouse', 'Lumen Studio', 'Orbitly', 'Mosaic &amp; Co']),
-                    className='ess-clients')),
+        g_proof(),
         section(b.columns(
             b.column(b.group(html('<span id="contact-form"></span>'), b.h('Send us a message', level=2, className='ess-form__title'),
                              b.p('Fields marked * are required. We use your details only to reply.', className='ess-side__muted'),
@@ -567,33 +601,14 @@ def g_contact():
                 b.group(*[b.group(b.p('0%d' % (i + 1), className='ess-num'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
                                   layout='default', className='ess-card') for i, (t, d) in enumerate(steps)],
                         layout='grid', columns=4, grid_min='13rem', className='ess-grid'), alt=True),
-        section(head('Recent work', 'Sites we built for teams like yours.', 'Every project ships on Hi WPEssential, so you can keep editing it yourself after launch.'),
-                b.group(*[b.group(b.image(img, alt, aspect='16/9'), b.group(b.p(tag, className='ess-over'), b.h(t, level=3, className='ess-card__title'),
-                                                                              b.p('✓ ' + r, className='ess-work__result'), layout='default', className='ess-work__body'),
-                                  layout='default', className='ess-card ess-work') for img, alt, tag, t, r in [
-                    ('site-base', 'Synergy Advisors business site', 'Business · Custom design', 'Synergy Advisors: new site and lead funnel in 3 weeks', '+62% enquiries in the first quarter'),
-                    ('site-maison', 'Maison fashion store', 'WooCommerce store', 'Maison: fashion store with lookbook and 12 variable products', '2.1s → 0.9s load time on mobile'),
-                    ('site-pulse', 'Pulse conference site', 'Events · Migration', 'Pulse Conference: agenda, tickets and Events Calendar', '2,400 tickets sold online')]],
-                        layout='grid', columns=3, grid_min='16rem', className='ess-grid'),
-                b.group(b.image('team-1', 'Ayesha Malik', className='ess-quote__avatar'),
-                        b.group(b.p('“They scoped it in two days, launched in three weeks and still answer our tickets the same day. It feels like having our own WordPress team.”', className='ess-quote__text'),
-                                b.p('Ayesha Malik · Marketing Lead, Fieldhouse Goods · ★★★★★', className='ess-quote__by'), layout='default'),
-                        layout='flex', wrap='nowrap', valign='center', className='ess-card ess-card--ink ess-quote')),
+        g_work(),
         section(b.group(b.group(over('Services'), b.h('Not sure what you need? Start here.', size='h1', className='ess-h2'), layout='default'),
                         b.buttons(arrow('All services', '{{page:services}}', style='wpe-outline')),
                         layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='ess-head'),
                 b.group(*[b.group(ico(SERVICE_ICONS[i], 'soft'), b.group(b.p('<a href="%s"><strong>%s</strong></a>' % (svc_link(n), n)), b.p(price, className='ess-mono'), layout='default'),
                                   layout='flex', wrap='nowrap', valign='center', className='ess-card ess-mini') for i, (_, n, _d, price) in enumerate(SERVICES[:10])],
                         layout='grid', columns=5, grid_min='12rem', className='ess-grid')),
-        section(b.columns(
-            b.column(head('Who you will talk to', 'Real people, one team.', 'No call centre and no outsourcing — the people who build the theme run your project.'),
-                     b.group(*[b.group(b.image('team-%d' % i, n, aspect='7/8', className='ess-team__img'), b.p('<strong>%s</strong>' % n), b.p(r, className='ess-side__muted'), layout='default', className='ess-team')
-                               for i, (n, r) in enumerate([('Ayesha Malik', 'Project lead'), ('Bilal Khan', 'Lead developer'), ('Sara Ahmed', 'Client success'), ('Usman Tariq', 'WooCommerce')], 1)],
-                             layout='grid', columns=4, grid_min='7rem', className='ess-grid'), width='55%'),
-            b.column(html('<div class="ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=Lahore%2C%20Pakistan&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                          '<div class="ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>Lahore, Pakistan · PKT (UTC+5)</span>'
-                          '<a href="https://maps.google.com/?q=Lahore%2C%20Pakistan" target="_blank" rel="noopener">Get directions ↗</a></div></div>'), width='45%'),
-            className='ess-gap', valign='center')),
+        g_team(),
         section(head('FAQ', 'Questions we hear before every project.'),
                 b.columns(*[b.column(*[b.details(q, b.p(a_), style=None) for q, a_ in half]) for half in (faq[:6], faq[6:])], className='ess-gap'), alt=True),
         section(b.group(*[b.group(b.p('<strong>%s</strong>' % t), b.p(d, className='ess-side__muted'), layout='default', className='ess-card ess-trust') for t, d in trust],
@@ -634,6 +649,7 @@ def g_service(i):
             b.column(over('Who it is for'), b.h(who, size='h1', className='ess-h2'), width='50%'),
             b.column(b.group(b.h('What is included', level=3, className='ess-side__title'), b.ul(included, className='ess-check'), layout='default', className='ess-card ess-card--alt'), width='50%'),
             className='ess-gap')),
+        g_work(),
         section(head('Process', 'Brief, estimate, build, review, launch.'),
                 b.group(*[b.group(b.p('0%d' % (k + 1), className='ess-num'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'), layout='default', className='ess-card')
                           for k, (t, d) in enumerate([('Brief', 'Call or form'), ('Estimate', 'Fixed quote in 2 days'), ('Build', 'Staging previews'),
