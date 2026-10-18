@@ -97,7 +97,7 @@ class Admin {
 		wp_enqueue_style( 'wpessential-core-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts.
 		wp_enqueue_style( 'wpessential-core', wpessential_core_url( 'assets/admin.css' ), array(), WPESSENTIAL_CORE_VERSION );
 		wp_enqueue_script( 'wpessential-core', wpessential_core_url( 'assets/admin.js' ), array( 'wp-api-fetch', 'wp-i18n' ), WPESSENTIAL_CORE_VERSION, true );
-		wp_set_script_translations( 'wpessential-core', 'wpessential' );
+		wp_set_script_translations( 'wpessential-core', 'wpessential', defined( 'WPESSENTIAL_DIR' ) ? WPESSENTIAL_DIR . '/languages' : '' );
 
 		$theme = wp_get_theme();
 		$user  = wp_get_current_user();

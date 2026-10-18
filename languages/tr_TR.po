@@ -1,0 +1,3822 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WPEssential 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wpessential.org/support/\n"
+"POT-Creation-Date: 2026-10-18T02:45:11+00:00\n"
+"PO-Revision-Date: 2026-10-18T02:45:11+00:00\n"
+"Last-Translator: WPEssential Team <https://wpessential.org/>\n"
+"Language-Team: WPEssential Team <https://wpessential.org/>\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Domain: wpessential\n"
+"X-Generator: WP-CLI 2.11.0\n"
+
+#. Theme Name of the theme
+#: style.css core/src/Admin.php:55 inc/patterns.php:14
+msgid "WPEssential"
+msgstr "WPEssential"
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://wpessential.org/"
+msgstr "https://wpessential.org/"
+
+#. Description of the theme
+#: style.css
+msgid ""
+"Lightweight multi-niche block theme, native for Gutenberg and Elementor. "
+"One-click demos (free & pro) via the WPEssential Core plugin."
+msgstr ""
+"Gutenberg ve Elementor için yerel olarak geliştirilmiş, hafif ve çok amaçlı "
+"blok teması. WPEssential Core eklentisi ile tek tıkla demo kurulumu "
+"(ücretsiz ve pro)."
+
+#. Author of the theme
+#: style.css
+msgid "WPEssential Team"
+msgstr "WPEssential Ekibi"
+
+#. translators: %s: error.
+#: core/src/Account.php:55
+msgid "WPEssential could not be reached: %s"
+msgstr "WPEssential'a ulaşılamadı: %s"
+
+#: core/src/Account.php:61
+msgid "Your WPEssential session ended. Sign in again."
+msgstr "WPEssential oturumunuz sona erdi. Tekrar oturum açın."
+
+#. translators: %d: HTTP code.
+#: core/src/Account.php:65
+msgid "WPEssential answered with an unexpected response (HTTP %d)."
+msgstr "WPEssential beklenmeyen bir yanıt verdi (HTTP %d)."
+
+#: core/src/Account.php:68 core/assets/admin.js:83 core/assets/admin.js:94
+msgid "Something went wrong."
+msgstr "Bir şeyler ters gitti."
+
+#: core/src/Account.php:238
+msgid "That license is not in your account."
+msgstr "Bu lisans hesabınızda bulunmuyor."
+
+#: core/src/Account.php:271 core/src/Rest.php:211
+msgid "Unknown action."
+msgstr "Bilinmeyen işlem."
+
+#: core/src/Admin.php:37 core/assets/admin.js:147
+msgid "Dashboard"
+msgstr "Başlangıç"
+
+#: core/src/Admin.php:38 core/assets/admin.js:148 core/assets/admin.js:306
+msgid "Demo Library"
+msgstr "Demo kütüphanesi"
+
+#: core/src/Admin.php:39 core/assets/admin.js:149 core/assets/admin.js:576
+#: core/assets/admin.js:1054
+msgid "Plugins"
+msgstr "Eklentiler"
+
+#: core/src/Admin.php:40 core/assets/admin.js:150 core/assets/admin.js:284
+#: core/assets/admin.js:1096
+msgid "License"
+msgstr "Lisans"
+
+#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+msgid "System Status"
+msgstr "Sistem durumu"
+
+#: core/src/Admin.php:133
+msgid ""
+"The WPEssential dashboard needs JavaScript. Enable it in your browser to "
+"import demos."
+msgstr ""
+"WPEssential paneli JavaScript gerektirir. Demoları içe aktarmak için "
+"tarayıcınızda JavaScript'i etkinleştirin."
+
+#: core/src/Demos.php:49
+msgid ""
+"The online demo library could not be reached, so only the demos bundled with"
+" the theme are listed. They import fully offline."
+msgstr ""
+"Çevrimiçi demo kütüphanesine ulaşılamadı, bu nedenle yalnızca temayla "
+"birlikte gelen demolar listeleniyor. Bunlar tamamen çevrimdışı içe "
+"aktarılır."
+
+#: core/src/Demos.php:173
+msgid ""
+"The bundled demo package is incomplete. Re-upload the theme and try again."
+msgstr ""
+"Temayla birlikte gelen demo paketi eksik. Temayı yeniden yükleyip tekrar "
+"deneyin."
+
+#: core/src/Demos.php:183
+msgid "This demo has no download address in the library."
+msgstr "Bu demonun kütüphanede bir indirme adresi yok."
+
+#. translators: %s: error message.
+#: core/src/Demos.php:196
+msgid "Downloading the demo package failed: %s"
+msgstr "Demo paketi indirilemedi: %s"
+
+#: core/src/Demos.php:200
+msgid "WordPress cannot write to the uploads folder. Check its permissions."
+msgstr ""
+"WordPress yüklemeler klasörüne yazamıyor. Klasör izinlerini kontrol edin."
+
+#: core/src/Demos.php:207
+msgid "The downloaded package does not contain content.json."
+msgstr "İndirilen paket content.json dosyasını içermiyor."
+
+#: core/src/Importer.php:47
+msgid "Checking your server"
+msgstr "Sunucunuz kontrol ediliyor"
+
+#: core/src/Importer.php:48
+msgid "Removing the previous demo"
+msgstr "Önceki demo kaldırılıyor"
+
+#: core/src/Importer.php:49
+msgid "Preparing the demo package"
+msgstr "Demo paketi hazırlanıyor"
+
+#: core/src/Importer.php:50
+msgid "Installing plugins"
+msgstr "Eklentiler kuruluyor"
+
+#: core/src/Importer.php:51
+msgid "Importing images"
+msgstr "Görseller içe aktarılıyor"
+
+#: core/src/Importer.php:52
+msgid "Creating categories"
+msgstr "Kategoriler oluşturuluyor"
+
+#: core/src/Importer.php:53
+msgid "Building pages and posts"
+msgstr "Sayfalar ve yazılar oluşturuluyor"
+
+#: core/src/Importer.php:54
+msgid "Adding products"
+msgstr "Ürünler ekleniyor"
+
+#: core/src/Importer.php:55
+msgid "Creating menus"
+msgstr "Menüler oluşturuluyor"
+
+#: core/src/Importer.php:56
+msgid "Applying site settings"
+msgstr "Site ayarları uygulanıyor"
+
+#: core/src/Importer.php:57
+msgid "Finishing touches"
+msgstr "Son rötuşlar yapılıyor"
+
+#: core/src/Importer.php:90
+msgid ""
+"Another import is running in a different tab. Wait for it to finish, or wait"
+" two minutes and try again."
+msgstr ""
+"Başka bir sekmede başka bir içe aktarma çalışıyor. Bitmesini bekleyin ya da "
+"iki dakika bekleyip tekrar deneyin."
+
+#: core/src/Importer.php:94
+msgid "This demo is no longer in the library. Refresh the page."
+msgstr "Bu demo artık kütüphanede değil. Sayfayı yenileyin."
+
+#: core/src/Importer.php:97
+msgid "This demo is not available for the selected builder."
+msgstr "Bu demo seçilen oluşturucu için kullanılamıyor."
+
+#: core/src/Importer.php:100
+msgid ""
+"This is a Pro demo. Activate your license on the License tab to import it."
+msgstr ""
+"Bu bir Pro demo. İçe aktarmak için Lisans sekmesinden lisansınızı "
+"etkinleştirin."
+
+#. translators: 1: demo, 2: builder.
+#: core/src/Importer.php:192
+msgid "Starting import of %1$s for %2$s."
+msgstr "%2$s için %1$s içe aktarımı başlatılıyor."
+
+#: core/src/Importer.php:207
+msgid "There is no import to continue."
+msgstr "Devam ettirilecek bir içe aktarma yok."
+
+#: core/src/Importer.php:225
+msgid ""
+"Import cancelled. Everything imported so far can be removed from the Demo "
+"Library."
+msgstr ""
+"İçe aktarma iptal edildi. Şimdiye kadar içe aktarılan her şey Demo "
+"kütüphanesinden kaldırılabilir."
+
+#: core/src/Importer.php:341
+msgid "One item stopped the server twice and was skipped."
+msgstr "Bir öge sunucuyu iki kez durdurdu ve atlandı."
+
+#: core/src/Importer.php:341
+msgid ""
+"Raise memory_limit / max_execution_time, then re-import to fill the gap."
+msgstr ""
+"memory_limit / max_execution_time değerlerini artırın, ardından eksikleri "
+"tamamlamak için yeniden içe aktarın."
+
+#. translators: %s: error.
+#: core/src/Importer.php:358
+msgid "Unexpected error: %s"
+msgstr "Beklenmeyen hata: %s"
+
+#. translators: %d: errors.
+#: core/src/Importer.php:411
+msgid ""
+"Import finished with %d error. The site works; review the log for what was "
+"skipped."
+msgid_plural ""
+"Import finished with %d errors. The site works; review the log for what was "
+"skipped."
+msgstr[0] ""
+"İçe aktarma %d hatayla tamamlandı. Site çalışıyor; neyin atlandığını görmek "
+"için günlüğü inceleyin."
+msgstr[1] ""
+"İçe aktarma %d hatayla tamamlandı. Site çalışıyor; neyin atlandığını görmek "
+"için günlüğü inceleyin."
+
+#: core/src/Importer.php:413
+msgid "Your site is ready."
+msgstr "Siteniz hazır."
+
+#: core/src/Importer.php:445
+msgid "WooCommerce is not active, so the shop products were skipped."
+msgstr "WooCommerce etkin değil, bu nedenle mağaza ürünleri atlandı."
+
+#: core/src/Importer.php:602
+msgid "Your server needs a change before the import can run safely."
+msgstr ""
+"İçe aktarmanın güvenle çalışabilmesi için sunucunuzda bir değişiklik "
+"yapılması gerekiyor."
+
+#: core/src/Importer.php:602
+msgid "Fix the items above (your host can help), then press Retry."
+msgstr ""
+"Yukarıdaki sorunları giderin (barındırma sağlayıcınız yardımcı olabilir), "
+"ardından Yeniden dene düğmesine basın."
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid ""
+"%s was imported before. Its pages stay; the new import adds fresh copies."
+msgstr ""
+"%s daha önce içe aktarılmıştı. Sayfaları yerinde kalır; yeni içe aktarma "
+"yeni kopyalar ekler."
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid "Tick \"Remove previous demo\" next time for a clean site."
+msgstr ""
+"Temiz bir site için bir dahaki sefere \"Önceki demoyu kaldır\" seçeneğini "
+"işaretleyin."
+
+#: core/src/Importer.php:609
+msgid "Server checks passed."
+msgstr "Sunucu kontrolleri başarılı."
+
+#. translators: %d: items.
+#: core/src/Importer.php:621
+msgid "Removed %d items from the previous demo and restored its settings."
+msgstr "Önceki demodan %d öge kaldırıldı ve ayarları geri yüklendi."
+
+#: core/src/Importer.php:634
+msgid "Upload a fresh copy of the theme, then press Resume."
+msgstr ""
+"Temanın yeni bir kopyasını yükleyin, ardından Devam et düğmesine basın."
+
+#: core/src/Importer.php:634
+msgid "Check your internet connection and press Resume."
+msgstr "İnternet bağlantınızı kontrol edin ve Devam et düğmesine basın."
+
+#: core/src/Importer.php:640
+msgid "The demo package could not be read (content.json is damaged)."
+msgstr "Demo paketi okunamadı (content.json bozuk)."
+
+#: core/src/Importer.php:640
+msgid "Clear the cache on the System Status tab and retry."
+msgstr "Sistem durumu sekmesinden önbelleği temizleyin ve yeniden deneyin."
+
+#. translators: 1: pages, 2: images, 3: products.
+#: core/src/Importer.php:644
+msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
+msgstr "Paket hazır: %1$d sayfa ve yazı, %2$d görsel, %3$d ürün."
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid "%1$s could not be set up: %2$s"
+msgstr "%1$s kurulamadı: %2$s"
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid ""
+"Install it from Plugins → Add New, then use the Plugins tab here to activate"
+" it."
+msgstr ""
+"Eklentiyi Eklentiler → Yeni ekle bölümünden kurun, ardından etkinleştirmek "
+"için buradaki Eklentiler sekmesini kullanın."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:667
+msgid "%s installed and activated."
+msgstr "%s kuruldu ve etkinleştirildi."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:669
+msgid "%s activated."
+msgstr "%s etkinleştirildi."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:671
+msgid "%s deactivated because it conflicts with this demo."
+msgstr "%s bu demoyla çakıştığı için devre dışı bırakıldı."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:673
+msgid "%s is already active."
+msgstr "%s zaten etkin."
+
+#: core/src/Importer.php:702
+msgid "file not found in the package"
+msgstr "dosya pakette bulunamadı"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:707
+msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
+msgstr "%1$s görseli atlandı (%2$s). Sayfalar temadaki kopyayı kullanır."
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Image %1$s skipped (%2$s)."
+msgstr "%1$s görseli atlandı (%2$s)."
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Check that the uploads folder is writable."
+msgstr "Yüklemeler klasörünün yazılabilir olduğunu kontrol edin."
+
+#. translators: %s: file.
+#: core/src/Importer.php:729
+msgid "Imported image %s."
+msgstr "%s görseli içe aktarıldı."
+
+#. translators: 1: term, 2: taxonomy.
+#. translators: 1: title, 2: post type.
+#: core/src/Importer.php:744 core/src/Importer.php:790
+msgid "Skipped \"%1$s\": %2$s is not available on this site."
+msgstr "\"%1$s\" atlandı: %2$s bu sitede kullanılamıyor."
+
+#. translators: %s: term.
+#: core/src/Importer.php:751
+msgid "Category \"%s\" already exists and was reused."
+msgstr "\"%s\" kategorisi zaten var ve yeniden kullanıldı."
+
+#. translators: 1: term, 2: error.
+#: core/src/Importer.php:763
+msgid "Category \"%1$s\" was not created: %2$s"
+msgstr "\"%1$s\" kategorisi oluşturulamadı: %2$s"
+
+#. translators: %s: term.
+#: core/src/Importer.php:770
+msgid "Created category \"%s\"."
+msgstr "\"%s\" kategorisi oluşturuldu."
+
+#. translators: 1: title, 2: error.
+#: core/src/Importer.php:808
+msgid "\"%1$s\" could not be created: %2$s"
+msgstr "\"%1$s\" oluşturulamadı: %2$s"
+
+#: core/src/Importer.php:836
+msgid "post"
+msgstr "yazı"
+
+#: core/src/Importer.php:837
+msgid "page"
+msgstr "sayfa"
+
+#: core/src/Importer.php:838
+msgid "event"
+msgstr "etkinlik"
+
+#: core/src/Importer.php:839
+msgid "venue"
+msgstr "mekan"
+
+#: core/src/Importer.php:840
+msgid "organizer"
+msgstr "organizatör"
+
+#. translators: 1: type, 2: title.
+#: core/src/Importer.php:843
+msgid "Created %1$s \"%2$s\"."
+msgstr "%1$s oluşturuldu: \"%2$s\"."
+
+#: core/src/Importer.php:860
+msgid "The Events Calendar rejected the venue."
+msgstr "The Events Calendar mekanı reddetti."
+
+#: core/src/Importer.php:864
+msgid "The Events Calendar rejected the organizer."
+msgstr "The Events Calendar organizatörü reddetti."
+
+#: core/src/Importer.php:892
+msgid "The Events Calendar rejected the event."
+msgstr "The Events Calendar etkinliği reddetti."
+
+#. translators: %s: product.
+#: core/src/Importer.php:1004
+msgid "Product \"%s\" could not be saved."
+msgstr "\"%s\" ürünü kaydedilemedi."
+
+#. translators: %s: product.
+#: core/src/Importer.php:1015
+msgid "Added product \"%s\"."
+msgstr "\"%s\" ürünü eklendi."
+
+#. translators: 1: menu, 2: count.
+#: core/src/Importer.php:1118
+msgid "Created menu \"%1$s\" with %2$d links."
+msgstr "%2$d bağlantılı \"%1$s\" menüsü oluşturuldu."
+
+#: core/src/Importer.php:1164
+msgid "Home and blog pages assigned."
+msgstr "Ana sayfa ve blog sayfası atandı."
+
+#. translators: %s: option.
+#: core/src/Importer.php:1170
+msgid "Setting \"%s\" is not on the allow-list and was ignored."
+msgstr "\"%s\" ayarı izin verilenler listesinde değil ve yok sayıldı."
+
+#. translators: %s: preset.
+#: core/src/Importer.php:1191
+msgid "Animation style set to \"%s\"."
+msgstr "Animasyon stili \"%s\" olarak ayarlandı."
+
+#: core/src/Importer.php:1204
+msgid "Elementor set to use the theme colours and fonts."
+msgstr ""
+"Elementor tema renklerini ve yazı tiplerini kullanacak şekilde ayarlandı."
+
+#: core/src/Importer.php:1219
+msgid "Default"
+msgstr "Varsayılan"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Style \"%s\" was not found in the theme, so the default colours stay."
+msgstr "\"%s\" stili temada bulunamadı, bu nedenle varsayılan renkler korunuyor."
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Update the WPEssential theme, then import again."
+msgstr "WPEssential temasını güncelleyin, ardından yeniden içe aktarın."
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1250
+msgid "Applied the %s colours and fonts."
+msgstr "%s renkleri ve yazı tipleri uygulandı."
+
+#: core/src/Importer.php:1268
+msgid "demo"
+msgstr "demo"
+
+#. translators: 1: template part, 2: design.
+#: core/src/Importer.php:1320
+msgid "Template part \"%1$s\" set to the \"%2$s\" design."
+msgstr "\"%1$s\" şablon parçası \"%2$s\" tasarımına ayarlandı."
+
+#: core/src/Importer.php:1341
+msgid "Elementor Kit layout, buttons and form styles set."
+msgstr "Elementor Kit düzeni, düğme ve form stilleri ayarlandı."
+
+#: core/src/Importer.php:1361
+msgid "Everywhere"
+msgstr "Her yer"
+
+#: core/src/Importer.php:1369
+msgid "Free shipping"
+msgstr "Ücretsiz gönderim"
+
+#. translators: %s: amount.
+#: core/src/Importer.php:1377
+msgid "Shipping set up with free delivery over %s."
+msgstr "Gönderim, %s üzeri siparişlerde ücretsiz teslimatla ayarlandı."
+
+#. translators: %d: pages.
+#: core/src/Importer.php:1412
+msgid "Linked %d page to its new address."
+msgid_plural "Linked %d pages to their new addresses."
+msgstr[0] "%d sayfa yeni adresine bağlandı."
+msgstr[1] "%d sayfa yeni adreslerine bağlandı."
+
+#: core/src/Importer.php:1417
+msgid "Permalinks and caches refreshed."
+msgstr "Kalıcı bağlantılar ve önbellekler yenilendi."
+
+#: core/src/License.php:136
+msgid ""
+"That license key looks too short. Copy it again from your purchase email."
+msgstr ""
+"Bu lisans anahtarı çok kısa görünüyor. Satın alma e-postanızdan tekrar "
+"kopyalayın."
+
+#: core/src/License.php:204
+msgid ""
+"This is a Pro item. Activate your license on the License tab to unlock it."
+msgstr ""
+"Bu bir Pro öge. Kilidini açmak için Lisans sekmesinden lisansınızı "
+"etkinleştirin."
+
+#: core/src/License/Adapter.php:84
+msgid "The license server did not return a download link."
+msgstr "Lisans sunucusu bir indirme bağlantısı döndürmedi."
+
+#. translators: %s: error.
+#: core/src/License/Adapter.php:107
+msgid "The license server could not be reached: %s"
+msgstr "Lisans sunucusuna ulaşılamadı: %s"
+
+#. translators: %d: HTTP status.
+#: core/src/License/Adapter.php:113
+msgid ""
+"The license server answered with an unexpected response (HTTP %d). Try again"
+" in a few minutes."
+msgstr ""
+"Lisans sunucusu beklenmeyen bir yanıt verdi (HTTP %d). Birkaç dakika sonra "
+"tekrar deneyin."
+
+#: core/src/License/Custom.php:42 core/src/License/Edd.php:31
+#: core/src/License/Woo.php:58
+msgid "This license key is not valid."
+msgstr "Bu lisans anahtarı geçerli değil."
+
+#: core/src/License/Edd.php:27
+msgid ""
+"This license has expired. Renew it to keep receiving demos and updates."
+msgstr ""
+"Bu lisansın süresi doldu. Demo ve güncelleme almaya devam etmek için "
+"yenileyin."
+
+#: core/src/License/Edd.php:28
+msgid "This license has been disabled."
+msgstr "Bu lisans devre dışı bırakıldı."
+
+#: core/src/License/Edd.php:29
+msgid "This license has been revoked."
+msgstr "Bu lisans iptal edildi."
+
+#: core/src/License/Edd.php:30
+msgid "This license key does not exist."
+msgstr "Bu lisans anahtarı mevcut değil."
+
+#: core/src/License/Edd.php:32
+msgid "This license is not active for this domain."
+msgstr "Bu lisans bu alan adı için etkin değil."
+
+#: core/src/License/Edd.php:33
+msgid "This key belongs to a different product."
+msgstr "Bu anahtar farklı bir ürüne ait."
+
+#: core/src/License/Edd.php:34
+msgid ""
+"This license has reached its activation limit. Deactivate it on another site"
+" first."
+msgstr ""
+"Bu lisans etkinleştirme sınırına ulaştı. Önce başka bir sitede devre dışı "
+"bırakın."
+
+#: core/src/License/Edd.php:130 core/src/License/Woo.php:118
+msgid "The store did not return a download link for this license."
+msgstr "Mağaza bu lisans için bir indirme bağlantısı döndürmedi."
+
+#: core/src/Plugins.php:115
+msgid "Your account is not allowed to install plugins."
+msgstr "Hesabınızın eklenti kurma izni yok."
+
+#. translators: 1: plugin name, 2: error.
+#: core/src/Plugins.php:130
+msgid ""
+"WordPress.org did not answer for %1$s (%2$s). Check the server can reach "
+"wordpress.org, or install it manually."
+msgstr ""
+"WordPress.org %1$s için yanıt vermedi (%2$s). Sunucunun wordpress.org'a "
+"erişebildiğini kontrol edin ya da eklentiyi elle kurun."
+
+#: core/src/Plugins.php:145
+msgid "No download source is set for this plugin."
+msgstr "Bu eklenti için bir indirme kaynağı ayarlanmamış."
+
+#: core/src/Plugins.php:158
+msgid ""
+"The plugin could not be installed. The server may lack write access to wp-"
+"content/plugins."
+msgstr ""
+"Eklenti kurulamadı. Sunucunun wp-content/plugins klasörüne yazma erişimi "
+"olmayabilir."
+
+#: core/src/Plugins.php:174
+msgid "Plugin is not installed."
+msgstr "Eklenti kurulu değil."
+
+#: core/src/Plugins.php:208
+msgid "Your account is not allowed to delete plugins."
+msgstr "Hesabınızın eklenti silme izni yok."
+
+#: core/src/Rest.php:101
+msgid "Demo not found."
+msgstr "Demo bulunamadı."
+
+#: core/src/Rest.php:158
+msgid "No imported demo was found."
+msgstr "İçe aktarılmış bir demo bulunamadı."
+
+#. translators: 1: demo, 2: count.
+#: core/src/Rest.php:164
+msgid "%1$s removed: %2$d items deleted and your previous settings restored."
+msgstr ""
+"%1$s kaldırıldı: %2$d öge silindi ve önceki ayarlarınız geri yüklendi."
+
+#: core/src/Rest.php:191
+msgid "This plugin is not managed by WPEssential."
+msgstr "Bu eklenti WPEssential tarafından yönetilmiyor."
+
+#: core/src/Rest.php:323
+msgid "Branding can be changed with a White Label plan."
+msgstr "Marka, White Label planıyla değiştirilebilir."
+
+#: core/src/Status.php:30
+msgid "WordPress version"
+msgstr "WordPress sürümü"
+
+#: core/src/Status.php:33
+msgid "Update WordPress to 6.5 or newer."
+msgstr "WordPress'i 6.5 veya daha yeni bir sürüme güncelleyin."
+
+#: core/src/Status.php:37
+msgid "PHP version"
+msgstr "PHP sürümü"
+
+#: core/src/Status.php:40
+msgid ""
+"PHP 8.1 or newer is faster and still supported. Ask your host to upgrade."
+msgstr ""
+"PHP 8.1 veya daha yenisi daha hızlıdır ve hâlâ desteklenmektedir. Barındırma"
+" sağlayıcınızdan yükseltme isteyin."
+
+#: core/src/Status.php:44
+msgid "Memory limit"
+msgstr "Bellek sınırı"
+
+#: core/src/Status.php:45 core/src/Status.php:52
+msgid "Unlimited"
+msgstr "Sınırsız"
+
+#: core/src/Status.php:47
+msgid ""
+"Set memory_limit to 256M in php.ini, or define WP_MEMORY_LIMIT in wp-"
+"config.php."
+msgstr ""
+"php.ini dosyasında memory_limit değerini 256M yapın ya da wp-config.php "
+"dosyasında WP_MEMORY_LIMIT tanımlayın."
+
+#: core/src/Status.php:51
+msgid "Max execution time"
+msgstr "Maksimum çalışma süresi"
+
+#: core/src/Status.php:54
+msgid "The importer works in short batches, so 30 seconds is enough."
+msgstr ""
+"İçe aktarıcı kısa gruplar halinde çalışır, bu nedenle 30 saniye yeterlidir."
+
+#: core/src/Status.php:58
+msgid "Max upload size"
+msgstr "Maksimum yükleme boyutu"
+
+#: core/src/Status.php:61
+msgid "Raise upload_max_filesize and post_max_size to at least 8M."
+msgstr ""
+"upload_max_filesize ve post_max_size değerlerini en az 8M'ye yükseltin."
+
+#: core/src/Status.php:65
+msgid "Uploads folder"
+msgstr "Yüklemeler klasörü"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Writable"
+msgstr "Yazılabilir"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Not writable"
+msgstr "Yazılabilir değil"
+
+#: core/src/Status.php:68
+msgid "Give the web server write access to wp-content/uploads."
+msgstr "Web sunucusuna wp-content/uploads klasörü için yazma erişimi verin."
+
+#: core/src/Status.php:72
+msgid "Plugins folder"
+msgstr "Eklentiler klasörü"
+
+#: core/src/Status.php:75
+msgid "Without write access, required plugins must be installed by hand."
+msgstr "Yazma erişimi olmadan gerekli eklentilerin elle kurulması gerekir."
+
+#: core/src/Status.php:79
+msgid "ZIP support"
+msgstr "ZIP desteği"
+
+#: core/src/Status.php:82
+msgid "Enable the PHP zip extension for faster package extraction."
+msgstr "Daha hızlı paket çıkarma için PHP zip uzantısını etkinleştirin."
+
+#: core/src/Status.php:86
+msgid "Image editor"
+msgstr "Görsel düzenleyici"
+
+#: core/src/Status.php:87
+msgid "WebP supported"
+msgstr "WebP destekleniyor"
+
+#: core/src/Status.php:87
+msgid "No WebP support"
+msgstr "WebP desteği yok"
+
+#: core/src/Status.php:89
+msgid ""
+"Images still import, but WordPress cannot create smaller sizes. Ask your "
+"host to enable Imagick or GD with WebP."
+msgstr ""
+"Görseller yine içe aktarılır, ancak WordPress daha küçük boyutlar "
+"oluşturamaz. Barındırma sağlayıcınızdan WebP destekli Imagick veya GD'yi "
+"etkinleştirmesini isteyin."
+
+#: core/src/Status.php:93
+msgid "Permalinks"
+msgstr "Kalıcı bağlantılar"
+
+#: core/src/Status.php:94
+msgid "Plain"
+msgstr "Düz"
+
+#: core/src/Status.php:96
+msgid ""
+"Choose \"Post name\" under Settings → Permalinks for clean shop and page "
+"addresses."
+msgstr ""
+"Temiz mağaza ve sayfa adresleri için Ayarlar → Kalıcı bağlantılar bölümünden"
+" \"Yazı adı\" seçeneğini seçin."
+
+#: core/src/Status.php:123 core/assets/admin.js:282
+msgid "Theme"
+msgstr "Tema"
+
+#: core/src/Status.php:124
+msgid "Core module"
+msgstr "Çekirdek modül"
+
+#: core/src/Status.php:124
+msgid "plugin"
+msgstr "eklenti"
+
+#: core/src/Status.php:124
+msgid "built into theme"
+msgstr "temaya yerleşik"
+
+#: core/src/Status.php:125
+msgid "Site address"
+msgstr "Site adresi"
+
+#: core/src/Status.php:126
+msgid "Multisite"
+msgstr "Çoklu site"
+
+#: core/src/Status.php:126
+msgid "Yes"
+msgstr "Evet"
+
+#: core/src/Status.php:126
+msgid "No"
+msgstr "Hayır"
+
+#: core/src/Status.php:127
+msgid "Server"
+msgstr "Sunucu"
+
+#: core/src/Status.php:128
+msgid "Database"
+msgstr "Veritabanı"
+
+#: core/src/Status.php:129
+msgid "Active plugins"
+msgstr "Etkin eklentiler"
+
+#: inc/block-styles.php:16
+msgid "Secondary"
+msgstr "İkincil"
+
+#: inc/block-styles.php:17
+msgid "Outline"
+msgstr "Çerçeveli"
+
+#: inc/block-styles.php:18
+msgid "Ghost"
+msgstr "Hayalet"
+
+#: inc/block-styles.php:19
+msgid "Dark"
+msgstr "Koyu"
+
+#: inc/block-styles.php:20
+msgid "Light (on dark)"
+msgstr "Açık (koyu üzerinde)"
+
+#: inc/block-styles.php:21
+msgid "Text link"
+msgstr "Metin bağlantısı"
+
+#: inc/block-styles.php:22
+msgid "Pill"
+msgstr "Hap"
+
+#: inc/block-styles.php:23
+msgid "Large"
+msgstr "Büyük"
+
+#: inc/block-styles.php:26 inc/block-styles.php:33
+msgid "Card"
+msgstr "Kart"
+
+#: inc/block-styles.php:27 inc/block-styles.php:34
+msgid "Card — flat"
+msgstr "Kart — düz"
+
+#: inc/block-styles.php:28 inc/block-styles.php:35
+msgid "Card — dark"
+msgstr "Kart — koyu"
+
+#: inc/block-styles.php:29
+msgid "Section — dark"
+msgstr "Bölüm — koyu"
+
+#: inc/block-styles.php:30
+msgid "Logo strip"
+msgstr "Logo şeridi"
+
+#: inc/block-styles.php:38
+msgid "Checklist"
+msgstr "Kontrol listesi"
+
+#: inc/block-styles.php:39
+msgid "Timeline"
+msgstr "Zaman çizelgesi"
+
+#: inc/block-styles.php:42
+msgid "Overline"
+msgstr "Üst başlık"
+
+#: inc/block-styles.php:43
+msgid "Lead"
+msgstr "Giriş metni"
+
+#: inc/block-styles.php:46
+msgid "Flush"
+msgstr "Kenarsız"
+
+#: inc/block-styles.php:49
+msgid "Shadow"
+msgstr "Gölge"
+
+#: inc/block-styles.php:50
+msgid "Glass frame"
+msgstr "Cam çerçeve"
+
+#: inc/block-styles.php:53
+msgid "Pills"
+msgstr "Haplar"
+
+#: inc/block-styles.php:54
+msgid "Hashtags"
+msgstr "Hashtag'ler"
+
+#: inc/block-styles.php:57
+msgid "Soft"
+msgstr "Yumuşak"
+
+#: inc/core-bridge.php:53
+msgid ""
+"Install the WPEssential Core plugin to import one-click demos for Gutenberg "
+"or Elementor."
+msgstr ""
+"Gutenberg veya Elementor için tek tıkla demo içe aktarmak üzere WPEssential "
+"Core eklentisini kurun."
+
+#: inc/core-bridge.php:55
+msgid "Get WPEssential Core"
+msgstr "WPEssential Core'u edinin"
+
+#: inc/core-bridge.php:57
+msgid "Dismiss"
+msgstr "Kapat"
+
+#: inc/motion.php:21
+msgid "None"
+msgstr "Hiçbiri"
+
+#: inc/motion.php:22
+msgid "No animations."
+msgstr "Animasyon yok."
+
+#: inc/motion.php:25
+msgid "Subtle"
+msgstr "İnce"
+
+#: inc/motion.php:26
+msgid "Short fade-up. Corporate, SaaS, finance, medical."
+msgstr "Kısa yukarı doğru belirme. Kurumsal, SaaS, finans, sağlık."
+
+#: inc/motion.php:29
+msgid "Editorial"
+msgstr "Editoryal"
+
+#: inc/motion.php:30
+msgid "Slow image masks and line reveals. Fashion, magazine, luxury."
+msgstr "Yavaş görsel maskeleri ve satır açılışları. Moda, dergi, lüks."
+
+#: inc/motion.php:33
+msgid "Playful"
+msgstr "Eğlenceli"
+
+#: inc/motion.php:34
+msgid "Springy scale and stagger. Food, kids, events, creative."
+msgstr "Esnek ölçekleme ve kademeli geçiş. Yemek, çocuk, etkinlik, yaratıcı."
+
+#: inc/motion.php:37
+msgid "Dynamic (GSAP)"
+msgstr "Dinamik (GSAP)"
+
+#: inc/motion.php:38
+msgid ""
+"Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, "
+"sport, launches."
+msgstr ""
+"GSAP ScrollTrigger ile paralaks, sayaçlar ve kademeli ızgaralar. Etkinlik, "
+"spor, lansman."
+
+#: inc/multilingual.php:108
+msgid "Language"
+msgstr "Dil"
+
+#: inc/multilingual.php:165
+msgid "Language switcher"
+msgstr "Dil değiştirici"
+
+#: inc/multilingual.php:245 inc/patterns-shop/shop-products.php:14
+msgid "Featured"
+msgstr "Öne çıkan"
+
+#: inc/multilingual.php:246
+msgid "Author"
+msgstr "Yazar"
+
+#: inc/options.php:40
+msgid "Untitled snippet"
+msgstr "Adsız kod parçası"
+
+#: inc/options.php:125 inc/options.php:215
+msgid "Theme Options"
+msgstr "Tema seçenekleri"
+
+#: inc/options.php:153
+msgid "Saved"
+msgstr "Kaydedildi"
+
+#: inc/options.php:154
+msgid "Could not save"
+msgstr "Kaydedilemedi"
+
+#: inc/options.php:155
+msgid "Delete this snippet?"
+msgstr "Bu kod parçası silinsin mi?"
+
+#: inc/options.php:156
+msgid ""
+"No snippets yet. Add CSS or JavaScript without editing theme files — it "
+"survives theme updates."
+msgstr ""
+"Henüz kod parçası yok. Tema dosyalarını düzenlemeden CSS veya JavaScript "
+"ekleyin — tema güncellemelerinde korunur."
+
+#: inc/options.php:215
+msgid "Loading…"
+msgstr "Yükleniyor…"
+
+#: inc/patterns-shop/shop-categories.php:13
+msgid "Shop by category"
+msgstr "Kategoriye göre alışveriş"
+
+#: inc/patterns-shop/shop-categories.php:17
+msgid "Find what you love"
+msgstr "Sevdiğiniz ürünü bulun"
+
+#: inc/patterns-shop/shop-products.php:18
+msgid "Customer favourites"
+msgstr "Müşterilerin favorileri"
+
+#: inc/patterns-shop/shop-products.php:24
+msgid "View all products"
+msgstr "Tüm ürünleri görüntüle"
+
+#: inc/patterns-shop/shop-products.php:34
+msgid "New arrivals"
+msgstr "Yeni gelenler"
+
+#: inc/patterns-shop/shop-products.php:42
+msgid "On sale now"
+msgstr "Şimdi indirimde"
+
+#: inc/patterns.php:15
+msgid "WPEssential — Heroes"
+msgstr "WPEssential — Hero alanları"
+
+#: inc/patterns.php:16
+msgid "WPEssential — Sections"
+msgstr "WPEssential — Bölümler"
+
+#: inc/patterns.php:17
+msgid "WPEssential — Headers"
+msgstr "WPEssential — Üst bilgiler"
+
+#: inc/patterns.php:18
+msgid "WPEssential — Footers"
+msgstr "WPEssential — Alt bilgiler"
+
+#: inc/patterns.php:19
+msgid "WPEssential — Full pages"
+msgstr "WPEssential — Tam sayfalar"
+
+#: inc/patterns.php:20
+msgid "WPEssential — Shop"
+msgstr "WPEssential — Mağaza"
+
+#: inc/patterns.php:36
+msgid "Shop — Category grid"
+msgstr "Mağaza — Kategori ızgarası"
+
+#: inc/patterns.php:37
+msgid "Shop — Featured, new and sale products"
+msgstr "Mağaza — Öne çıkan, yeni ve indirimli ürünler"
+
+#: inc/seo.php:136
+msgid "Home"
+msgstr "Ana sayfa"
+
+#: inc/setup.php:40
+msgid "Primary Menu"
+msgstr "Birincil menü"
+
+#: inc/setup.php:41
+msgid "Mobile Menu"
+msgstr "Mobil menü"
+
+#: inc/setup.php:42
+msgid "Footer Menu"
+msgstr "Alt bilgi menüsü"
+
+#: inc/setup.php:43
+msgid "Top Bar Menu"
+msgstr "Üst çubuk menüsü"
+
+#: inc/setup.php:77
+msgid "Back to top"
+msgstr "Başa dön"
+
+#. translators: %d: discount percentage.
+#: inc/woocommerce.php:48
+msgid "-%d%%"
+msgstr "-%d%%"
+
+#: inc/woocommerce.php:89
+msgid "Out of stock"
+msgstr "Stokta yok"
+
+#: inc/woocommerce.php:136
+msgid "You’ve unlocked free shipping on this order!"
+msgstr "Bu siparişte ücretsiz gönderimin kilidini açtınız!"
+
+#. translators: %s: amount left for free shipping.
+#: inc/woocommerce.php:139
+msgid "Add %s more to unlock free shipping."
+msgstr "Ücretsiz gönderim için %s daha ekleyin."
+
+#: patterns/blog-hero.php
+msgctxt "Pattern title"
+msgid "Blog hero"
+msgstr "Blog hero alanı"
+
+#: patterns/blog-hero.php:14 patterns/footer-premium.php:89
+#: patterns/footer-simple.php:18 core/assets/admin.js:301
+msgid "Blog"
+msgstr "Blog"
+
+#: patterns/blog-hero.php:18
+msgid "Guides, tutorials and product news from the WPEssential team."
+msgstr "WPEssential ekibinden rehberler, eğitimler ve ürün haberleri."
+
+#: patterns/builders-split.php
+msgctxt "Pattern title"
+msgid "Split — image + checklist (dark)"
+msgstr "Bölünmüş — görsel + kontrol listesi (koyu)"
+
+#: patterns/builders-split.php:16
+msgid "Your builder, your choice"
+msgstr "Oluşturucunuz, seçiminiz"
+
+#: patterns/builders-split.php:20
+msgid "Same design. Gutenberg or Elementor."
+msgstr "Aynı tasarım. Gutenberg veya Elementor."
+
+#: patterns/builders-split.php:24
+msgid ""
+"Colors, fonts and spacing come from one theme.json and sync into Elementor’s"
+" global kit automatically."
+msgstr ""
+"Renkler, yazı tipleri ve boşluklar tek bir theme.json dosyasından gelir ve "
+"Elementor'un genel kitiyle otomatik olarak eşitlenir."
+
+#: patterns/builders-split.php:29
+msgid "Shared design tokens across both builders"
+msgstr "Her iki oluşturucuda ortak tasarım belirteçleri"
+
+#: patterns/builders-split.php:31
+msgid "Elementor Pro Theme Builder locations supported"
+msgstr "Elementor Pro Theme Builder konumları desteklenir"
+
+#: patterns/builders-split.php:33
+msgid "Full Site Editing templates and patterns"
+msgstr "Tam site düzenleme şablonları ve desenleri"
+
+#: patterns/builders-split.php:40
+msgid "Designer building a site"
+msgstr "Site oluşturan bir tasarımcı"
+
+#: patterns/coming-soon.php
+msgctxt "Pattern title"
+msgid "Coming soon"
+msgstr "Çok yakında"
+
+#: patterns/coming-soon.php:17
+msgid "Something great is on the way"
+msgstr "Harika bir şey yolda"
+
+#: patterns/coming-soon.php:21
+msgid "We are polishing the final details. Follow us for launch news."
+msgstr "Son ayrıntıları cilalıyoruz. Lansman haberleri için bizi takip edin."
+
+#: patterns/comments.php
+msgctxt "Pattern title"
+msgid "Comments"
+msgstr "Yorumlar"
+
+#: patterns/contact.php
+msgctxt "Pattern title"
+msgid "Contact — details + form area"
+msgstr "İletişim — bilgiler + form alanı"
+
+#: patterns/contact.php:22
+msgid "Email us"
+msgstr "Bize e-posta gönderin"
+
+#: patterns/contact.php:36
+msgid "Call us"
+msgstr "Bizi arayın"
+
+#: patterns/contact.php:50
+msgid "Visit us"
+msgstr "Bizi ziyaret edin"
+
+#: patterns/contact.php:64
+msgid "Support hours"
+msgstr "Destek saatleri"
+
+#: patterns/contact.php:68
+msgid "Replies within one business day"
+msgstr "Bir iş günü içinde yanıt"
+
+#: patterns/contact.php:76
+msgid "Send us a message"
+msgstr "Bize mesaj gönderin"
+
+#: patterns/contact.php:80
+msgid ""
+"Replace the shortcode below with your form plugin (Contact Form 7, WPForms, "
+"Fluent Forms or the Elementor Form widget)."
+msgstr ""
+"Aşağıdaki kısa kodu form eklentinizle değiştirin (Contact Form 7, WPForms, "
+"Fluent Forms veya Elementor Form bileşeni)."
+
+#: patterns/content-404.php
+msgctxt "Pattern title"
+msgid "404 content"
+msgstr "404 içeriği"
+
+#: patterns/content-404.php:14
+msgid "Error 404"
+msgstr "Hata 404"
+
+#: patterns/content-404.php:18
+msgid "This page took a day off"
+msgstr "Bu sayfa izin günü yapıyor"
+
+#: patterns/content-404.php:22
+msgid ""
+"The link may be broken or the page may have moved. Try a search or head back"
+" home."
+msgstr ""
+"Bağlantı bozuk olabilir ya da sayfa taşınmış olabilir. Arama yapmayı deneyin"
+" veya ana sayfaya dönün."
+
+#: patterns/content-404.php:25 patterns/header-actions.php:14
+#: patterns/header-shop.php:22 patterns/sidebar.php:14
+msgid "Search"
+msgstr "Ara"
+
+#: patterns/content-404.php:29
+msgid "Back to home"
+msgstr "Ana sayfaya dön"
+
+#: patterns/cta-banner.php
+msgctxt "Pattern title"
+msgid "Call to action — gradient banner"
+msgstr "Harekete geçirici mesaj — gradyan afiş"
+
+#: patterns/cta-banner.php:15
+msgid "Ready to launch your next site?"
+msgstr "Bir sonraki sitenizi yayına almaya hazır mısınız?"
+
+#: patterns/cta-banner.php:19
+msgid ""
+"Start free. Upgrade to Pro when you need premium demos and priority support."
+msgstr ""
+"Ücretsiz başlayın. Premium demolara ve öncelikli desteğe ihtiyacınız "
+"olduğunda Pro'ya yükseltin."
+
+#: patterns/cta-banner.php:24
+msgid "Get WPEssential free"
+msgstr "WPEssential'ı ücretsiz edinin"
+
+#: patterns/cta-banner.php:28
+msgid "See Pro plans →"
+msgstr "Pro planlarını görün →"
+
+#: patterns/faq.php
+msgctxt "Pattern title"
+msgid "FAQ — accordion"
+msgstr "SSS — akordeon"
+
+#: patterns/faq.php:15 patterns/footer-premium.php:90
+msgid "FAQ"
+msgstr "SSS"
+
+#: patterns/faq.php:19 patterns/page-faq.php:20
+msgid "Frequently asked questions"
+msgstr "Sıkça sorulan sorular"
+
+#: patterns/faq.php:24
+msgid "Is WPEssential free?"
+msgstr "WPEssential ücretsiz mi?"
+
+#: patterns/faq.php:25
+msgid ""
+"Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium"
+" blocks and priority support."
+msgstr ""
+"Evet. Tema ve 12 demo sonsuza kadar ücretsizdir. Pro ile 40'tan fazla demo, "
+"premium bloklar ve öncelikli destek açılır."
+
+#: patterns/faq.php:30
+msgid "Which page builders are supported?"
+msgstr "Hangi sayfa oluşturucular destekleniyor?"
+
+#: patterns/faq.php:31
+msgid ""
+"The native block editor (Gutenberg) and Elementor. Every demo ships in both "
+"versions."
+msgstr ""
+"Yerel blok düzenleyici (Gutenberg) ve Elementor. Her demo her iki sürümle "
+"birlikte gelir."
+
+#: patterns/faq.php:36
+msgid "Will importing a demo delete my content?"
+msgstr "Demo içe aktarmak içeriğimi siler mi?"
+
+#: patterns/faq.php:37
+msgid ""
+"No. Demo content is added alongside your existing posts, and you choose what"
+" to import."
+msgstr ""
+"Hayır. Demo içeriği mevcut yazılarınızın yanına eklenir ve neyi içe "
+"aktaracağınızı siz seçersiniz."
+
+#: patterns/faq.php:42
+msgid "Do I need Elementor Pro?"
+msgstr "Elementor Pro'ya ihtiyacım var mı?"
+
+#: patterns/faq.php:43
+msgid ""
+"No. Elementor free is enough for every demo. Elementor Pro Theme Builder "
+"headers and footers are also supported."
+msgstr ""
+"Hayır. Her demo için ücretsiz Elementor yeterlidir. Elementor Pro Theme "
+"Builder üst ve alt bilgileri de desteklenir."
+
+#: patterns/faq.php:48
+msgid "Is the theme translation-ready and RTL compatible?"
+msgstr "Tema çeviriye hazır ve RTL uyumlu mu?"
+
+#: patterns/faq.php:49
+msgid ""
+"Yes. All strings are translatable and layouts mirror correctly for languages"
+" such as Urdu and Arabic."
+msgstr ""
+"Evet. Tüm metinler çevrilebilir ve düzenler Urduca ve Arapça gibi diller "
+"için doğru şekilde yansıtılır."
+
+#: patterns/features-grid.php
+msgctxt "Pattern title"
+msgid "Features — 3×2 grid"
+msgstr "Özellikler — 3×2 ızgara"
+
+#: patterns/features-grid.php:15
+msgid "Why WPEssential"
+msgstr "Neden WPEssential"
+
+#: patterns/features-grid.php:19
+msgid "Everything a modern site needs, nothing it doesn’t"
+msgstr "Modern bir sitenin ihtiyaç duyduğu her şey, fazlası değil"
+
+#: patterns/features-grid.php:23
+msgid ""
+"Built on theme.json and native blocks, with first-class Elementor support."
+msgstr ""
+"theme.json ve yerel bloklar üzerine kurulu, birinci sınıf Elementor "
+"desteğiyle."
+
+#: patterns/features-grid.php:34
+msgid "One-click demo import"
+msgstr "Tek tıkla demo içe aktarma"
+
+#: patterns/features-grid.php:38
+msgid ""
+"Pick a demo, choose your builder, import. Content and settings land exactly "
+"as previewed."
+msgstr ""
+"Bir demo seçin, oluşturucunuzu belirleyin, içe aktarın. İçerik ve ayarlar "
+"tam önizlemedeki gibi gelir."
+
+#: patterns/features-grid.php:48
+msgid "Gutenberg &amp; Elementor"
+msgstr "Gutenberg &amp; Elementor"
+
+#: patterns/features-grid.php:52
+msgid ""
+"Every demo ships twice — native blocks and Elementor — sharing one set of "
+"design tokens."
+msgstr ""
+"Her demo iki kez gelir — yerel bloklar ve Elementor — ve tek bir tasarım "
+"belirteci setini paylaşır."
+
+#: patterns/features-grid.php:62
+msgid "Blazing fast"
+msgstr "Işık hızında"
+
+#: patterns/features-grid.php:66
+msgid ""
+"No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
+msgstr ""
+"jQuery yok; blok başına CSS ve küçük bir stil dosyası Core Web Vitals "
+"değerlerini yeşilde tutar."
+
+#: patterns/features-grid.php:78
+msgid "Automatic plugin setup"
+msgstr "Otomatik eklenti kurulumu"
+
+#: patterns/features-grid.php:82
+msgid ""
+"Required plugins install and activate themselves when you import a demo."
+msgstr ""
+"Bir demo içe aktardığınızda gerekli eklentiler kendiliğinden kurulur ve "
+"etkinleşir."
+
+#: patterns/features-grid.php:92
+msgid "WooCommerce ready"
+msgstr "WooCommerce'e hazır"
+
+#: patterns/features-grid.php:96
+msgid ""
+"Designed shop, product, cart, checkout and account pages — not default "
+"templates."
+msgstr ""
+"Tasarlanmış mağaza, ürün, sepet, ödeme ve hesap sayfaları — varsayılan "
+"şablonlar değil."
+
+#: patterns/features-grid.php:106
+msgid "Pro license &amp; updates"
+msgstr "Pro lisans &amp; güncellemeler"
+
+#: patterns/features-grid.php:110
+msgid ""
+"Connect a license once to unlock Pro demos, premium blocks and updates."
+msgstr ""
+"Pro demoların, premium blokların ve güncellemelerin kilidini açmak için "
+"lisansınızı bir kez bağlayın."
+
+#: patterns/footer-premium.php
+msgctxt "Pattern title"
+msgid "Footer — Premium (dark, newsletter band)"
+msgstr "Alt bilgi — Premium (koyu, bülten bandı)"
+
+#: patterns/footer-premium.php:17
+msgid "Get design tips & new demos"
+msgstr "Tasarım ipuçları ve yeni demolar alın"
+
+#: patterns/footer-premium.php:21
+msgid "One email a month. No spam, unsubscribe anytime."
+msgstr "Ayda bir e-posta. Spam yok, istediğiniz zaman abonelikten çıkın."
+
+#: patterns/footer-premium.php:28
+msgid "Subscribe"
+msgstr "Abone ol"
+
+#: patterns/footer-premium.php:55
+msgid "Company"
+msgstr "Şirket"
+
+#: patterns/footer-premium.php:59 patterns/page-about.php:16
+msgid "About us"
+msgstr "Hakkımızda"
+
+#: patterns/footer-premium.php:60 patterns/page-services.php:16
+#: patterns/services-grid.php:15
+msgid "Services"
+msgstr "Hizmetler"
+
+#: patterns/footer-premium.php:61 patterns/page-pricing.php:16
+#: patterns/pricing.php:15
+msgid "Pricing"
+msgstr "Fiyatlandırma"
+
+#: patterns/footer-premium.php:62 patterns/footer-simple.php:19
+#: patterns/header-topbar.php:18 patterns/page-contact.php:16
+msgid "Contact"
+msgstr "İletişim"
+
+#: patterns/footer-premium.php:70 core/assets/admin.js:301
+msgid "Shop"
+msgstr "Mağaza"
+
+#: patterns/footer-premium.php:74
+msgid "All products"
+msgstr "Tüm ürünler"
+
+#: patterns/footer-premium.php:75
+msgid "My account"
+msgstr "Hesabım"
+
+#: patterns/footer-premium.php:76
+msgid "Cart"
+msgstr "Sepet"
+
+#: patterns/footer-premium.php:77 patterns/header-topbar.php:18
+msgid "Track order"
+msgstr "Sipariş takibi"
+
+#: patterns/footer-premium.php:85 core/assets/admin.js:263
+msgid "Resources"
+msgstr "Kaynaklar"
+
+#: patterns/footer-premium.php:91 core/assets/admin.js:266
+msgid "Documentation"
+msgstr "Belgeler"
+
+#: patterns/footer-premium.php:92 core/assets/admin.js:267
+msgid "Support"
+msgstr "Destek"
+
+#: patterns/footer-premium.php:100
+msgid "All rights reserved."
+msgstr "Tüm hakları saklıdır."
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:20
+msgid "Privacy"
+msgstr "Gizlilik"
+
+#: patterns/footer-premium.php:104
+msgid "Terms"
+msgstr "Koşullar"
+
+#: patterns/footer-simple.php
+msgctxt "Pattern title"
+msgid "Footer — Simple"
+msgstr "Alt bilgi — Basit"
+
+#: patterns/footer-simple.php:17
+msgid "About"
+msgstr "Hakkında"
+
+#: patterns/header-actions.php
+msgctxt "Pattern title"
+msgid "Header actions (search, account, cart, CTA)"
+msgstr "Üst bilgi eylemleri (arama, hesap, sepet, CTA)"
+
+#: patterns/header-actions.php:23
+msgid "Switch to dark mode"
+msgstr "Koyu moda geç"
+
+#: patterns/header-actions.php:23
+msgid "Switch to light mode"
+msgstr "Açık moda geç"
+
+#: patterns/header-actions.php:29
+msgid "Get Started"
+msgstr "Başlayın"
+
+#: patterns/header-centered.php
+msgctxt "Pattern title"
+msgid "Header — Centered"
+msgstr "Üst bilgi — Ortalanmış"
+
+#: patterns/header-default.php
+msgctxt "Pattern title"
+msgid "Header — Default"
+msgstr "Üst bilgi — Varsayılan"
+
+#: patterns/header-shop.php
+msgctxt "Pattern title"
+msgid "Header — Shop (search + account + cart)"
+msgstr "Üst bilgi — Mağaza (arama + hesap + sepet)"
+
+#: patterns/header-shop.php:22
+msgid "Search products"
+msgstr "Ürün ara"
+
+#: patterns/header-shop.php:22
+msgid "Search products, brands and more…"
+msgstr "Ürün, marka ve daha fazlasını arayın…"
+
+#: patterns/header-topbar.php
+msgctxt "Pattern title"
+msgid "Top bar"
+msgstr "Üst çubuk"
+
+#: patterns/header-topbar.php:14
+msgid "Free shipping on orders over $75 · 30-day returns"
+msgstr "75 $ üzeri siparişlerde ücretsiz gönderim · 30 gün içinde iade"
+
+#: patterns/header-topbar.php:18
+msgid "Help"
+msgstr "Yardım"
+
+#: patterns/header-transparent.php
+msgctxt "Pattern title"
+msgid "Header — Transparent (over dark hero)"
+msgstr "Üst bilgi — Şeffaf (koyu hero üzerinde)"
+
+#: patterns/hero-dark.php
+msgctxt "Pattern title"
+msgid "Hero — Dark with product shot"
+msgstr "Hero — Ürün görselli koyu"
+
+#: patterns/hero-dark.php:15 core/assets/admin.js:241
+msgid "NEW"
+msgstr "YENİ"
+
+#: patterns/hero-dark.php:15
+msgid "40+ demos for Gutenberg &amp; Elementor"
+msgstr "Gutenberg &amp; Elementor için 40'tan fazla demo"
+
+#: patterns/hero-dark.php:19
+msgid "Launch a premium WordPress site in minutes, not weeks"
+msgstr ""
+"Premium bir WordPress sitesini haftalar değil, dakikalar içinde yayına alın"
+
+#: patterns/hero-dark.php:23
+msgid ""
+"One-click demos for every niche, built natively for both the block editor "
+"and Elementor — fast, accessible and fully yours."
+msgstr ""
+"Her sektör için tek tıkla demolar; hem blok düzenleyici hem Elementor için "
+"yerel olarak geliştirildi — hızlı, erişilebilir ve tamamen sizin."
+
+#: patterns/hero-dark.php:28 core/assets/admin.js:245
+msgid "Browse demos"
+msgstr "Demolara göz atın"
+
+#: patterns/hero-dark.php:32
+msgid "Watch the 2-min tour"
+msgstr "2 dakikalık turu izleyin"
+
+#: patterns/hero-dark.php:43 patterns/stats.php:28
+msgid "Ready demos"
+msgstr "Hazır demo"
+
+#: patterns/hero-dark.php:53
+msgid "Page builders"
+msgstr "Sayfa oluşturucu"
+
+#: patterns/hero-dark.php:63
+msgid "CSS on first load"
+msgstr "İlk yüklemede CSS"
+
+#: patterns/hero-dark.php:73
+msgid "From 1,200 reviews"
+msgstr "1.200 değerlendirmeden"
+
+#: patterns/hero-dark.php:80
+msgid "Business demo homepage built with WPEssential"
+msgstr "WPEssential ile oluşturulmuş işletme demosu ana sayfası"
+
+#: patterns/hero-split.php
+msgctxt "Pattern title"
+msgid "Hero — Split with image"
+msgstr "Hero — Görselli bölünmüş"
+
+#: patterns/hero-split.php:17
+msgid "Multi-niche WordPress theme"
+msgstr "Çok amaçlı WordPress teması"
+
+#: patterns/hero-split.php:21
+msgid "Build any website in minutes"
+msgstr "Dakikalar içinde her türlü web sitesini oluşturun"
+
+#: patterns/hero-split.php:25
+msgid ""
+"Import a ready-made demo for Gutenberg or Elementor with one click, then "
+"make it yours."
+msgstr ""
+"Gutenberg veya Elementor için hazır bir demoyu tek tıkla içe aktarın, "
+"ardından kendinize göre uyarlayın."
+
+#: patterns/hero-split.php:30 core/assets/admin.js:258
+msgid "Get started"
+msgstr "Başlayın"
+
+#: patterns/hero-split.php:34
+msgid "Learn more"
+msgstr "Daha fazla bilgi"
+
+#: patterns/hero-split.php:41
+msgid "A WPEssential site on a laptop and phone"
+msgstr "Dizüstü bilgisayarda ve telefonda bir WPEssential sitesi"
+
+#: patterns/latest-posts.php
+msgctxt "Pattern title"
+msgid "Latest posts — 3 cards"
+msgstr "Son yazılar — 3 kart"
+
+#: patterns/latest-posts.php:15
+msgid "From the blog"
+msgstr "Blogdan"
+
+#: patterns/latest-posts.php:19
+msgid "Guides for faster, better WordPress sites"
+msgstr "Daha hızlı ve daha iyi WordPress siteleri için rehberler"
+
+#: patterns/logos.php
+msgctxt "Pattern title"
+msgid "Logo strip"
+msgstr "Logo şeridi"
+
+#: patterns/logos.php:14
+msgid "Trusted by 18,000+ agencies, stores and creators"
+msgstr "18.000'den fazla ajans, mağaza ve içerik üreticisinin güvendiği tema"
+
+#: patterns/maintenance.php
+msgctxt "Pattern title"
+msgid "Maintenance mode"
+msgstr "Bakım modu"
+
+#: patterns/maintenance.php:17
+msgid "We will be back shortly"
+msgstr "Kısa süre içinde döneceğiz"
+
+#: patterns/maintenance.php:21
+msgid ""
+"Scheduled maintenance is underway. Thanks for your patience — we will be "
+"back online in a few minutes."
+msgstr ""
+"Planlı bakım çalışması sürüyor. Sabrınız için teşekkürler — birkaç dakika "
+"içinde yeniden çevrimiçi olacağız."
+
+#: patterns/no-results.php
+msgctxt "Pattern title"
+msgid "No results"
+msgstr "Sonuç yok"
+
+#: patterns/no-results.php:13
+msgid "Nothing matched. Try a different search or browse the latest posts."
+msgstr ""
+"Eşleşen bir şey bulunamadı. Farklı bir arama deneyin veya son yazılara göz "
+"atın."
+
+#: patterns/page-about.php
+msgctxt "Pattern title"
+msgid "About page"
+msgstr "Hakkımızda sayfası"
+
+#: patterns/page-about.php:20
+msgid "We build WordPress tools that feel premium and stay fast"
+msgstr "Premium hissettiren ve hızlı kalan WordPress araçları geliştiriyoruz"
+
+#: patterns/page-about.php:24
+msgid ""
+"WPEssential started as an internal starter theme for client work. Today it "
+"powers stores, agencies and creators in more than 60 countries."
+msgstr ""
+"WPEssential, müşteri projeleri için dahili bir başlangıç teması olarak "
+"doğdu. Bugün 60'tan fazla ülkede mağazalara, ajanslara ve içerik "
+"üreticilerine güç veriyor."
+
+#: patterns/page-contact.php
+msgctxt "Pattern title"
+msgid "Contact page"
+msgstr "İletişim sayfası"
+
+#: patterns/page-contact.php:20
+msgid "Let’s talk about your next site"
+msgstr "Bir sonraki siteniz hakkında konuşalım"
+
+#: patterns/page-contact.php:24
+msgid ""
+"Questions about demos, licensing or a custom build? Our team replies within "
+"one business day."
+msgstr ""
+"Demolar, lisanslama veya özel bir proje hakkında sorularınız mı var? "
+"Ekibimiz bir iş günü içinde yanıt verir."
+
+#: patterns/page-faq.php
+msgctxt "Pattern title"
+msgid "FAQ page"
+msgstr "SSS sayfası"
+
+#: patterns/page-faq.php:16
+msgid "Help center"
+msgstr "Yardım merkezi"
+
+#: patterns/page-faq.php:24
+msgid ""
+"Answers about demos, builders, licensing and updates. Can’t find what you "
+"need? Contact support."
+msgstr ""
+"Demolar, oluşturucular, lisanslama ve güncellemeler hakkında yanıtlar. "
+"Aradığınızı bulamadınız mı? Destekle iletişime geçin."
+
+#: patterns/page-hero.php
+msgctxt "Pattern title"
+msgid "Page title band"
+msgstr "Sayfa başlığı bandı"
+
+#: patterns/page-pricing.php
+msgctxt "Pattern title"
+msgid "Pricing page"
+msgstr "Fiyatlandırma sayfası"
+
+#: patterns/page-pricing.php:20
+msgid "Simple plans that grow with you"
+msgstr "Sizinle birlikte büyüyen basit planlar"
+
+#: patterns/page-pricing.php:24
+msgid ""
+"Start free with the core theme. Upgrade for premium demos, Pro blocks and "
+"priority support."
+msgstr ""
+"Çekirdek temayla ücretsiz başlayın. Premium demolar, Pro bloklar ve "
+"öncelikli destek için yükseltin."
+
+#: patterns/page-services.php
+msgctxt "Pattern title"
+msgid "Services page"
+msgstr "Hizmetler sayfası"
+
+#: patterns/page-services.php:20
+msgid "Everything you need to launch and grow"
+msgstr "Yayına almak ve büyümek için ihtiyacınız olan her şey"
+
+#: patterns/page-services.php:24
+msgid ""
+"Strategy, design, development and care plans — delivered on a theme built "
+"for speed."
+msgstr ""
+"Strateji, tasarım, geliştirme ve bakım planları — hız için tasarlanmış bir "
+"tema üzerinde."
+
+#: patterns/post-card.php
+msgctxt "Pattern title"
+msgid "Post card"
+msgstr "Yazı kartı"
+
+#: patterns/pricing.php
+msgctxt "Pattern title"
+msgid "Pricing — 3 plans"
+msgstr "Fiyatlandırma — 3 plan"
+
+#: patterns/pricing.php:19
+msgid "Simple pricing. Both builders included."
+msgstr "Basit fiyatlandırma. Her iki oluşturucu dahil."
+
+#: patterns/pricing.php:23
+msgid ""
+"Start free and upgrade when you need Pro demos, premium blocks and priority "
+"support."
+msgstr ""
+"Ücretsiz başlayın; Pro demolara, premium bloklara ve öncelikli desteğe "
+"ihtiyacınız olduğunda yükseltin."
+
+#: patterns/pricing.php:30 core/assets/admin.js:312
+msgid "Free"
+msgstr "Ücretsiz"
+
+#: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+msgid "/ year"
+msgstr "/ yıl"
+
+#: patterns/pricing.php:38
+msgid "For personal sites getting started."
+msgstr "Yeni başlayan kişisel siteler için."
+
+#: patterns/pricing.php:43
+msgid "12 free demos"
+msgstr "12 ücretsiz demo"
+
+#: patterns/pricing.php:45
+msgid "Gutenberg + Elementor"
+msgstr "Gutenberg + Elementor"
+
+#: patterns/pricing.php:47
+msgid "Core blocks &amp; patterns"
+msgstr "Çekirdek bloklar &amp; desenler"
+
+#: patterns/pricing.php:49
+msgid "Community support"
+msgstr "Topluluk desteği"
+
+#: patterns/pricing.php:55
+msgid "Download free"
+msgstr "Ücretsiz indir"
+
+#: patterns/pricing.php:60 core/assets/admin.js:312
+msgid "Pro"
+msgstr "Pro"
+
+#: patterns/pricing.php:68
+msgid "For freelancers and growing businesses."
+msgstr "Serbest çalışanlar ve büyüyen işletmeler için."
+
+#: patterns/pricing.php:73
+msgid "All 40+ demos"
+msgstr "40'tan fazla demonun tümü"
+
+#: patterns/pricing.php:75
+msgid "Premium blocks &amp; widgets"
+msgstr "Premium bloklar &amp; bileşenler"
+
+#: patterns/pricing.php:77
+msgid "WooCommerce demos"
+msgstr "WooCommerce demoları"
+
+#: patterns/pricing.php:79
+msgid "1 year of updates"
+msgstr "1 yıllık güncelleme"
+
+#: patterns/pricing.php:81 core/assets/admin.js:1122
+msgid "Priority support"
+msgstr "Öncelikli destek"
+
+#: patterns/pricing.php:87
+msgid "Get Pro"
+msgstr "Pro'yu edinin"
+
+#: patterns/pricing.php:92 core/assets/admin.js:301
+msgid "Agency"
+msgstr "Ajans"
+
+#: patterns/pricing.php:100
+msgid "For teams building client sites."
+msgstr "Müşteri siteleri geliştiren ekipler için."
+
+#: patterns/pricing.php:105
+msgid "Everything in Pro"
+msgstr "Pro'daki her şey"
+
+#: patterns/pricing.php:107
+msgid "Unlimited sites"
+msgstr "Sınırsız site"
+
+#: patterns/pricing.php:109
+msgid "White-label dashboard"
+msgstr "Beyaz etiketli panel"
+
+#: patterns/pricing.php:111
+msgid "Client handoff kit"
+msgstr "Müşteri teslim kiti"
+
+#: patterns/pricing.php:117
+msgid "Get Agency"
+msgstr "Ajans planını edinin"
+
+#: patterns/process-steps.php
+msgctxt "Pattern title"
+msgid "Process — 4 steps (dark)"
+msgstr "Süreç — 4 adım (koyu)"
+
+#: patterns/process-steps.php:15
+msgid "How it works"
+msgstr "Nasıl çalışır"
+
+#: patterns/process-steps.php:19
+msgid "Live in four simple steps"
+msgstr "Dört basit adımda yayında"
+
+#: patterns/process-steps.php:31
+msgid "Pick a demo"
+msgstr "Bir demo seçin"
+
+#: patterns/process-steps.php:35
+msgid "Browse 40+ demos and preview them live."
+msgstr "40'tan fazla demoya göz atın ve canlı önizleyin."
+
+#: patterns/process-steps.php:43
+msgid "Choose a builder"
+msgstr "Bir oluşturucu seçin"
+
+#: patterns/process-steps.php:47
+msgid "Gutenberg or Elementor — same design."
+msgstr "Gutenberg veya Elementor — aynı tasarım."
+
+#: patterns/process-steps.php:55
+msgid "Import in one click"
+msgstr "Tek tıkla içe aktarın"
+
+#: patterns/process-steps.php:59
+msgid "Plugins, content and settings are set up for you."
+msgstr "Eklentiler, içerik ve ayarlar sizin için hazırlanır."
+
+#: patterns/process-steps.php:67 core/assets/admin.js:290
+msgid "Make it yours"
+msgstr "Kendinize göre uyarlayın"
+
+#: patterns/process-steps.php:71
+msgid "Edit text, swap images and publish."
+msgstr "Metinleri düzenleyin, görselleri değiştirin ve yayımlayın."
+
+#: patterns/services-grid.php
+msgctxt "Pattern title"
+msgid "Services — 3 column cards"
+msgstr "Hizmetler — 3 sütunlu kartlar"
+
+#: patterns/services-grid.php:19
+msgid "From idea to launch"
+msgstr "Fikirden lansmana"
+
+#: patterns/services-grid.php:23
+msgid ""
+"Use WPEssential yourself, or let our team set up, customise and maintain "
+"your site."
+msgstr ""
+"WPEssential'ı kendiniz kullanın ya da sitenizi ekibimiz kursun, "
+"özelleştirsin ve bakımını yapsın."
+
+#: patterns/services-grid.php:34
+msgid "Demo setup"
+msgstr "Demo kurulumu"
+
+#: patterns/services-grid.php:38
+msgid "We import your chosen demo, connect your domain and configure plugins."
+msgstr ""
+"Seçtiğiniz demoyu içe aktarır, alan adınızı bağlar ve eklentileri "
+"yapılandırırız."
+
+#: patterns/services-grid.php:48
+msgid "Brand customisation"
+msgstr "Marka özelleştirme"
+
+#: patterns/services-grid.php:52
+msgid "Your colors, fonts, logo and copy applied across every template."
+msgstr ""
+"Renkleriniz, yazı tipleriniz, logonuz ve metinleriniz tüm şablonlara "
+"uygulanır."
+
+#: patterns/services-grid.php:62
+msgid "WooCommerce launch"
+msgstr "WooCommerce lansmanı"
+
+#: patterns/services-grid.php:66
+msgid "Products, payments, shipping zones and emails configured and tested."
+msgstr ""
+"Ürünler, ödemeler, gönderim bölgeleri ve e-postalar yapılandırılır ve test "
+"edilir."
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Blog sidebar"
+msgstr "Blog kenar çubuğu"
+
+#: patterns/sidebar.php:19
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: patterns/sidebar.php:27
+msgid "Recent posts"
+msgstr "Son yazılar"
+
+#: patterns/sidebar.php:35
+msgid "Tags"
+msgstr "Etiketler"
+
+#: patterns/stats.php
+msgctxt "Pattern title"
+msgid "Stats — 4 counters"
+msgstr "İstatistikler — 4 sayaç"
+
+#: patterns/stats.php:20
+msgid "Active installs"
+msgstr "Etkin kurulum"
+
+#: patterns/stats.php:36
+msgid "Average rating"
+msgstr "Ortalama puan"
+
+#: patterns/stats.php:44
+msgid "Support response"
+msgstr "Destek yanıt süresi"
+
+#: patterns/team.php
+msgctxt "Pattern title"
+msgid "Team — 4 members"
+msgstr "Ekip — 4 üye"
+
+#: patterns/team.php:15
+msgid "The team"
+msgstr "Ekip"
+
+#: patterns/team.php:19
+msgid "People behind WPEssential"
+msgstr "WPEssential'ın arkasındaki insanlar"
+
+#: patterns/team.php:35
+msgid "Founder &amp; Lead Designer"
+msgstr "Kurucu &amp; Baş Tasarımcı"
+
+#: patterns/team.php:47
+msgid "Head of Engineering"
+msgstr "Mühendislik Müdürü"
+
+#: patterns/team.php:59
+msgid "Customer Success"
+msgstr "Müşteri Başarısı"
+
+#: patterns/team.php:71
+msgid "WooCommerce Specialist"
+msgstr "WooCommerce Uzmanı"
+
+#: patterns/testimonials.php
+msgctxt "Pattern title"
+msgid "Testimonials — 3 cards"
+msgstr "Referanslar — 3 kart"
+
+#: patterns/testimonials.php:15
+msgid "Loved by builders"
+msgstr "Geliştiricilerin favorisi"
+
+#: patterns/testimonials.php:19
+msgid "What our customers say"
+msgstr "Müşterilerimiz ne diyor"
+
+#: patterns/testimonials.php:31
+msgid ""
+"We rebuilt three client sites on WPEssential in a week. The Elementor and "
+"block versions matching exactly is a game changer."
+msgstr ""
+"Üç müşteri sitesini bir haftada WPEssential ile yeniden oluşturduk. "
+"Elementor ve blok sürümlerinin birebir eşleşmesi oyunun kurallarını "
+"değiştiriyor."
+
+#: patterns/testimonials.php:35
+msgid "Founder, Kitecraft Agency"
+msgstr "Kurucu, Kitecraft Agency"
+
+#: patterns/testimonials.php:43
+msgid ""
+"Our store went from 3.9s to 1.2s load time. Checkout pages look custom out "
+"of the box."
+msgstr ""
+"Mağazamızın yüklenme süresi 3,9 sn'den 1,2 sn'ye düştü. Ödeme sayfaları "
+"kutudan çıktığı haliyle özel tasarım gibi görünüyor."
+
+#: patterns/testimonials.php:47
+msgid "Owner, Fieldhouse Goods"
+msgstr "Sahibi, Fieldhouse Goods"
+
+#: patterns/testimonials.php:55
+msgid ""
+"The demo import just works — plugins, menus, homepage. I spend my time on "
+"content now, not setup."
+msgstr ""
+"Demo içe aktarma sorunsuz çalışıyor — eklentiler, menüler, ana sayfa. Artık "
+"zamanımı kuruluma değil, içeriğe harcıyorum."
+
+#: patterns/testimonials.php:59
+msgid "Writer, The Quiet Desk"
+msgstr "Yazar, The Quiet Desk"
+
+#: assets/js/options.js:65
+msgid "Custom code"
+msgstr "Özel kod"
+
+#: assets/js/options.js:66
+msgid "Animations"
+msgstr "Animasyonlar"
+
+#: assets/js/options.js:84 assets/js/options.js:91 core/assets/admin.js:280
+#: core/assets/admin.js:701 core/assets/admin.js:1074
+#: core/assets/admin.js:1113
+msgid "Active"
+msgstr "Etkin"
+
+#: assets/js/options.js:84
+msgid "Off"
+msgstr "Kapalı"
+
+#: assets/js/options.js:88
+msgid ""
+"Broke something? Open your site in safe mode to load it without snippets:"
+msgstr ""
+"Bir şeyi mi bozdunuz? Sitenizi kod parçaları olmadan yüklemek için güvenli "
+"modda açın:"
+
+#: assets/js/options.js:88
+msgid "Safe mode"
+msgstr "Güvenli mod"
+
+#: assets/js/options.js:90
+msgid "Snippet name"
+msgstr "Kod parçası adı"
+
+#: assets/js/options.js:93
+msgid "Devices"
+msgstr "Cihazlar"
+
+#: assets/js/options.js:93
+msgid "All devices"
+msgstr "Tüm cihazlar"
+
+#: assets/js/options.js:93
+msgid "Desktop (1025px+)"
+msgstr "Masaüstü (1025px+)"
+
+#: assets/js/options.js:93
+msgid "Tablet (768–1024px)"
+msgstr "Tablet (768–1024px)"
+
+#: assets/js/options.js:93
+msgid "Mobile (≤767px)"
+msgstr "Mobil (≤767px)"
+
+#: assets/js/options.js:96
+msgid "Load in"
+msgstr "Yükleme yeri"
+
+#: assets/js/options.js:96
+msgid "Footer (recommended)"
+msgstr "Alt bilgi (önerilir)"
+
+#: assets/js/options.js:97
+msgid "Write JavaScript only, without <script> tags."
+msgstr "Yalnızca JavaScript yazın, <script> etiketleri olmadan."
+
+#: assets/js/options.js:97
+msgid "Write CSS only, without <style> tags."
+msgstr "Yalnızca CSS yazın, <style> etiketleri olmadan."
+
+#: assets/js/options.js:99
+msgid "Save snippets"
+msgstr "Kod parçalarını kaydet"
+
+#: assets/js/options.js:99 core/assets/admin.js:1076
+msgid "Delete"
+msgstr "Sil"
+
+#: assets/js/options.js:116
+msgid "New script"
+msgstr "Yeni betik"
+
+#: assets/js/options.js:116
+msgid "New styles"
+msgstr "Yeni stiller"
+
+#: assets/js/options.js:162
+msgid ""
+"Animations reveal sections as visitors scroll. Visitors who prefer reduced "
+"motion never see them."
+msgstr ""
+"Animasyonlar, ziyaretçiler sayfayı kaydırdıkça bölümleri görünür kılar. "
+"Azaltılmış hareketi tercih eden ziyaretçiler bunları hiç görmez."
+
+#: assets/js/options.js:166
+msgid "Use GSAP for parallax and counters with any preset"
+msgstr "Paralaks ve sayaçlar için GSAP'ı herhangi bir hazır ayarla kullanın"
+
+#: assets/js/options.js:167
+msgid ""
+"Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask,"
+" --stagger, --parallax or --counter) to any block under Advanced → "
+"Additional CSS class."
+msgstr ""
+"Herhangi bir bloğa Gelişmiş → Ek CSS sınıfı bölümünden wpe-anim sınıfını (ve"
+" wpe-anim--fade-up, --zoom, --slide-left, --mask, --stagger, --parallax veya"
+" --counter) ekleyin."
+
+#: assets/js/options.js:168
+msgid "Save animations"
+msgstr "Animasyonları kaydet"
+
+#: core/assets/admin.js:86
+msgid ""
+"The connection to your site dropped. Check your internet and try again."
+msgstr ""
+"Sitenizle bağlantı kesildi. İnternet bağlantınızı kontrol edip tekrar "
+"deneyin."
+
+#: core/assets/admin.js:89
+msgid ""
+"The server sent an invalid response — usually a PHP error or a timeout. Your"
+" progress is saved."
+msgstr ""
+"Sunucu geçersiz bir yanıt gönderdi — genellikle bir PHP hatası veya zaman "
+"aşımı. İlerlemeniz kaydedildi."
+
+#: core/assets/admin.js:92
+msgid "Your login session expired. Reload the page and sign in again."
+msgstr ""
+"Oturumunuzun süresi doldu. Sayfayı yeniden yükleyin ve tekrar oturum açın."
+
+#: core/assets/admin.js:159
+msgid "Dashboard sections"
+msgstr "Panel bölümleri"
+
+#: core/assets/admin.js:163
+msgid "Docs"
+msgstr "Belgeler"
+
+#: core/assets/admin.js:164
+msgid "Switch dashboard colour mode"
+msgstr "Panel renk modunu değiştir"
+
+#: core/assets/admin.js:241
+msgid "%s is active"
+msgstr "%s etkin"
+
+#: core/assets/admin.js:242
+msgid "Welcome, %s. Let’s build something beautiful."
+msgstr "Hoş geldiniz %s. Haydi güzel bir şey oluşturalım."
+
+#: core/assets/admin.js:243
+msgid ""
+"Pick a demo, choose Gutenberg or Elementor, and get a finished website with "
+"pages, images, menus and a shop — in about a minute."
+msgstr ""
+"Bir demo seçin, Gutenberg veya Elementor'u belirleyin ve sayfaları, "
+"görselleri, menüleri ve mağazasıyla hazır bir web sitesine yaklaşık bir "
+"dakikada sahip olun."
+
+#: core/assets/admin.js:246
+msgid "Customize site"
+msgstr "Siteyi özelleştir"
+
+#: core/assets/admin.js:251
+msgid "Demo imported"
+msgstr "Demo içe aktarıldı"
+
+#: core/assets/admin.js:251
+msgid "in 48 seconds"
+msgstr "48 saniyede"
+
+#: core/assets/admin.js:252
+msgid "Two builders"
+msgstr "İki oluşturucu"
+
+#: core/assets/admin.js:259
+msgid "Three steps to launch"
+msgstr "Yayına üç adım"
+
+#: core/assets/admin.js:264
+msgid "Help when you need it"
+msgstr "İhtiyacınız olduğunda yardım"
+
+#: core/assets/admin.js:266
+msgid "Guides for every feature"
+msgstr "Her özellik için rehberler"
+
+#: core/assets/admin.js:267
+msgid "Real people, fast answers"
+msgstr "Gerçek insanlar, hızlı yanıtlar"
+
+#: core/assets/admin.js:268
+msgid "Site Editor"
+msgstr "Site düzenleyici"
+
+#: core/assets/admin.js:268
+msgid "Colours, fonts, header and footer"
+msgstr "Renkler, yazı tipleri, üst ve alt bilgi"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Expired"
+msgstr "Süresi doldu"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Invalid"
+msgstr "Geçersiz"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Not connected"
+msgstr "Bağlı değil"
+
+#: core/assets/admin.js:283
+msgid "Imported demo"
+msgstr "İçe aktarılan demo"
+
+#: core/assets/admin.js:283
+msgid "None yet"
+msgstr "Henüz yok"
+
+#: core/assets/admin.js:285
+msgid "System health"
+msgstr "Sistem sağlığı"
+
+#: core/assets/admin.js:288
+msgid "Import a demo"
+msgstr "Demo içe aktar"
+
+#: core/assets/admin.js:288
+msgid "Start from a complete, ready-made website."
+msgstr "Eksiksiz, hazır bir web sitesiyle başlayın."
+
+#: core/assets/admin.js:288
+msgid "Open library"
+msgstr "Kütüphaneyi aç"
+
+#: core/assets/admin.js:289 core/assets/admin.js:1124
+msgid "Activate your license"
+msgstr "Lisansınızı etkinleştirin"
+
+#: core/assets/admin.js:289
+msgid "Unlock Pro demos, updates and support."
+msgstr "Pro demoların, güncellemelerin ve desteğin kilidini açın."
+
+#: core/assets/admin.js:289 core/assets/admin.js:1076
+#: core/assets/admin.js:1125
+msgid "Activate"
+msgstr "Etkinleştir"
+
+#: core/assets/admin.js:290
+msgid "Swap the logo, colours and words in the Site Editor."
+msgstr "Site düzenleyicide logoyu, renkleri ve metinleri değiştirin."
+
+#: core/assets/admin.js:290 core/assets/admin.js:999
+msgid "Customize"
+msgstr "Özelleştir"
+
+#: core/assets/admin.js:295
+msgid "Could not load the dashboard"
+msgstr "Panel yüklenemedi"
+
+#: core/assets/admin.js:301 core/assets/admin.js:312 core/assets/admin.js:756
+msgid "All"
+msgstr "Tümü"
+
+#: core/assets/admin.js:301
+msgid "Business"
+msgstr "İşletme"
+
+#: core/assets/admin.js:301
+msgid "Restaurant"
+msgstr "Restoran"
+
+#: core/assets/admin.js:301
+msgid "Education"
+msgstr "Eğitim"
+
+#: core/assets/admin.js:306
+msgid ""
+"Every demo is a complete website. Preview it, then import it for Gutenberg "
+"or Elementor — plugins, pages, images and menus included."
+msgstr ""
+"Her demo eksiksiz bir web sitesidir. Önizleyin, ardından Gutenberg veya "
+"Elementor için içe aktarın — eklentiler, sayfalar, görseller ve menüler "
+"dahil."
+
+#: core/assets/admin.js:307
+msgid "Refreshing"
+msgstr "Yenileniyor"
+
+#: core/assets/admin.js:307
+msgid "Refresh library"
+msgstr "Kütüphaneyi yenile"
+
+#: core/assets/admin.js:310
+msgid "Search demos"
+msgstr "Demo ara"
+
+#: core/assets/admin.js:310
+msgid "Search demos…"
+msgstr "Demo ara…"
+
+#: core/assets/admin.js:311
+msgid "Category"
+msgstr "Kategori"
+
+#: core/assets/admin.js:312
+msgid "Plan"
+msgstr "Plan"
+
+#: core/assets/admin.js:313 core/assets/admin.js:519 core/assets/admin.js:576
+msgid "Builder"
+msgstr "Oluşturucu"
+
+#: core/assets/admin.js:313
+msgid "Any builder"
+msgstr "Tüm oluşturucular"
+
+#: core/assets/admin.js:336
+msgid "Library refreshed"
+msgstr "Kütüphane yenilendi"
+
+#: core/assets/admin.js:338
+msgid "Refresh failed"
+msgstr "Yenileme başarısız"
+
+#: core/assets/admin.js:351
+msgid "The library could not load"
+msgstr "Kütüphane yüklenemedi"
+
+#: core/assets/admin.js:363
+msgid "The import of %s stopped"
+msgstr "%s içe aktarımı durdu"
+
+#: core/assets/admin.js:363
+msgid "The import of %s was interrupted"
+msgstr "%s içe aktarımı yarıda kesildi"
+
+#: core/assets/admin.js:363
+msgid "Your progress is saved. Continue exactly where it left off."
+msgstr "İlerlemeniz kaydedildi. Tam kaldığı yerden devam edin."
+
+#: core/assets/admin.js:363
+msgid "Resume import"
+msgstr "İçe aktarmaya devam et"
+
+#: core/assets/admin.js:366
+msgid "%s is installed on this site"
+msgstr "%s bu sitede kurulu"
+
+#: core/assets/admin.js:366
+msgid ""
+"You can remove everything it added and restore your previous settings at any"
+" time."
+msgstr ""
+"Eklediği her şeyi kaldırabilir ve önceki ayarlarınızı istediğiniz zaman geri"
+" yükleyebilirsiniz."
+
+#: core/assets/admin.js:366 core/assets/admin.js:920
+msgid "Removing"
+msgstr "Kaldırılıyor"
+
+#: core/assets/admin.js:366
+msgid "Remove demo"
+msgstr "Demoyu kaldır"
+
+#: core/assets/admin.js:386
+msgid ""
+"Remove %s? Its pages, posts, products, images and menus will be deleted and "
+"your previous settings restored. Content you created yourself is not "
+"touched."
+msgstr ""
+"%s kaldırılsın mı? Sayfaları, yazıları, ürünleri, görselleri ve menüleri "
+"silinecek ve önceki ayarlarınız geri yüklenecek. Kendi oluşturduğunuz "
+"içeriğe dokunulmaz."
+
+#: core/assets/admin.js:392
+msgid "Demo removed"
+msgstr "Demo kaldırıldı"
+
+#: core/assets/admin.js:396
+msgid "Removal failed"
+msgstr "Kaldırma başarısız"
+
+#: core/assets/admin.js:416
+msgid "No demos match these filters"
+msgstr "Bu filtrelerle eşleşen demo yok"
+
+#: core/assets/admin.js:416
+msgid "Try another category or clear the search."
+msgstr "Başka bir kategori deneyin veya aramayı temizleyin."
+
+#: core/assets/admin.js:416
+msgid "Clear filters"
+msgstr "Filtreleri temizle"
+
+#: core/assets/admin.js:428
+msgid "IMPORTED"
+msgstr "İÇE AKTARILDI"
+
+#: core/assets/admin.js:430
+msgid "Live preview"
+msgstr "Canlı önizleme"
+
+#: core/assets/admin.js:438
+msgid "Preview"
+msgstr "Önizleme"
+
+#: core/assets/admin.js:439
+msgid "Unlock"
+msgstr "Kilidi aç"
+
+#: core/assets/admin.js:439
+msgid "Re-import"
+msgstr "Yeniden içe aktar"
+
+#: core/assets/admin.js:439 core/assets/admin.js:576
+msgid "Import"
+msgstr "İçe aktar"
+
+#: core/assets/admin.js:512
+msgid "Desktop"
+msgstr "Masaüstü"
+
+#: core/assets/admin.js:512
+msgid "Tablet"
+msgstr "Tablet"
+
+#: core/assets/admin.js:512
+msgid "Mobile"
+msgstr "Mobil"
+
+#: core/assets/admin.js:515
+msgid "%1$s on %2$s"
+msgstr "%2$s üzerinde %1$s"
+
+#: core/assets/admin.js:520
+msgid "Device"
+msgstr "Cihaz"
+
+#: core/assets/admin.js:521
+msgid "Unlock with Pro"
+msgstr "Pro ile kilidi açın"
+
+#: core/assets/admin.js:521
+msgid "Import this demo"
+msgstr "Bu demoyu içe aktar"
+
+#: core/assets/admin.js:522
+msgid "Close preview"
+msgstr "Önizlemeyi kapat"
+
+#: core/assets/admin.js:576
+msgid "Account"
+msgstr "Hesap"
+
+#: core/assets/admin.js:576
+msgid "Content"
+msgstr "İçerik"
+
+#: core/assets/admin.js:576
+msgid "Done"
+msgstr "Bitti"
+
+#: core/assets/admin.js:582
+msgid "Safe import — every change can be undone."
+msgstr "Güvenli içe aktarma — her değişiklik geri alınabilir."
+
+#: core/assets/admin.js:585
+msgid "Close"
+msgstr "Kapat"
+
+#: core/assets/admin.js:589
+msgid ""
+"The import keeps its progress if you close this window. You can resume it "
+"from the Demo Library. Close anyway?"
+msgstr ""
+"Bu pencereyi kapatsanız da içe aktarma ilerlemesi korunur. Demo "
+"kütüphanesinden devam ettirebilirsiniz. Yine de kapatılsın mı?"
+
+#: core/assets/admin.js:618
+msgid "Back"
+msgstr "Geri"
+
+#: core/assets/admin.js:640
+msgid "Unlock this Pro demo"
+msgstr "Bu Pro demonun kilidini açın"
+
+#: core/assets/admin.js:640
+msgid "Connect your WPEssential account"
+msgstr "WPEssential hesabınızı bağlayın"
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in and use a Pro license on this site — or pick a plan. Checkout opens "
+"in a new tab."
+msgstr ""
+"Oturum açın ve bu sitede bir Pro lisans kullanın — ya da bir plan seçin. "
+"Ödeme yeni bir sekmede açılır."
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in or create a free account to keep your demos, licenses and updates in"
+" one place."
+msgstr ""
+"Demolarınızı, lisanslarınızı ve güncellemelerinizi tek yerde tutmak için "
+"oturum açın veya ücretsiz bir hesap oluşturun."
+
+#: core/assets/admin.js:643
+msgid "A Pro license is needed"
+msgstr "Pro lisans gerekli"
+
+#: core/assets/admin.js:643
+msgid "Use a Pro license on this site, or choose a plan."
+msgstr "Bu sitede bir Pro lisans kullanın ya da bir plan seçin."
+
+#: core/assets/admin.js:648 core/assets/admin.js:674 core/assets/admin.js:679
+msgid "Continue"
+msgstr "Devam et"
+
+#: core/assets/admin.js:656
+msgid "Demo unlocked"
+msgstr "Demonun kilidi açıldı"
+
+#: core/assets/admin.js:666
+msgid "This demo has no version for this builder yet."
+msgstr "Bu demonun henüz bu oluşturucu için bir sürümü yok."
+
+#: core/assets/admin.js:668
+msgid "Choose your page builder"
+msgstr "Sayfa oluşturucunuzu seçin"
+
+#: core/assets/admin.js:668
+msgid ""
+"Both versions look identical. Pick the editor you or your client will use "
+"every day."
+msgstr ""
+"Her iki sürüm de aynı görünür. Sizin veya müşterinizin her gün kullanacağı "
+"düzenleyiciyi seçin."
+
+#: core/assets/admin.js:669
+msgid "The native WordPress block editor. Fastest pages, no extra plugin."
+msgstr ""
+"Yerel WordPress blok düzenleyicisi. En hızlı sayfalar, ek eklenti yok."
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor is already installed."
+msgstr "Görsel sürükle-bırak düzenleme. Elementor zaten kurulu."
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor will be installed for you."
+msgstr "Görsel sürükle-bırak düzenleme. Elementor sizin için kurulacak."
+
+#: core/assets/admin.js:678
+msgid "Plugins this demo uses"
+msgstr "Bu demonun kullandığı eklentiler"
+
+#: core/assets/admin.js:678
+msgid ""
+"We install, activate or switch off plugins so the demo works exactly like "
+"the preview."
+msgstr ""
+"Demonun tam önizlemedeki gibi çalışması için eklentileri kurar, "
+"etkinleştirir veya kapatırız."
+
+#: core/assets/admin.js:693
+msgid "No extra plugins needed — this demo runs on the theme alone."
+msgstr "Ek eklenti gerekmez — bu demo yalnızca temayla çalışır."
+
+#: core/assets/admin.js:698
+msgid "Will be deactivated"
+msgstr "Devre dışı bırakılacak"
+
+#: core/assets/admin.js:698
+msgid "Not needed"
+msgstr "Gerekli değil"
+
+#: core/assets/admin.js:702
+msgid "Will be activated"
+msgstr "Etkinleştirilecek"
+
+#: core/assets/admin.js:703
+msgid "Will be installed"
+msgstr "Kurulacak"
+
+#: core/assets/admin.js:706
+msgid "Required"
+msgstr "Gerekli"
+
+#: core/assets/admin.js:706 core/assets/admin.js:1073
+msgid "Recommended"
+msgstr "Önerilen"
+
+#: core/assets/admin.js:706
+msgid "Conflicts with this demo"
+msgstr "Bu demoyla çakışıyor"
+
+#: core/assets/admin.js:706
+msgid "Include"
+msgstr "Dahil et"
+
+#: core/assets/admin.js:706
+msgid "Include %s"
+msgstr "%s dahil et"
+
+#: core/assets/admin.js:715
+msgid "Pages, posts and menus"
+msgstr "Sayfalar, yazılar ve menüler"
+
+#: core/assets/admin.js:715
+msgid "%s and their navigation."
+msgstr "%s ve bunların gezinmesi."
+
+#: core/assets/admin.js:716
+msgid "Images"
+msgstr "Görseller"
+
+#: core/assets/admin.js:716
+msgid "Copied to your Media Library, licensed for your site."
+msgstr "Ortam kütüphanenize kopyalanır, siteniz için lisanslıdır."
+
+#: core/assets/admin.js:717
+msgid "Shop products"
+msgstr "Mağaza ürünleri"
+
+#: core/assets/admin.js:717
+msgid "Products, categories, prices and shipping."
+msgstr "Ürünler, kategoriler, fiyatlar ve gönderim."
+
+#: core/assets/admin.js:717
+msgid "Needs WooCommerce — enable it on the previous step."
+msgstr "WooCommerce gerektirir — önceki adımda etkinleştirin."
+
+#: core/assets/admin.js:718
+msgid "Site settings"
+msgstr "Site ayarları"
+
+#: core/assets/admin.js:718
+msgid "Home page, blog page and store options."
+msgstr "Ana sayfa, blog sayfası ve mağaza seçenekleri."
+
+#: core/assets/admin.js:720
+msgid "What should we import?"
+msgstr "Neleri içe aktaralım?"
+
+#: core/assets/admin.js:720
+msgid "Everything is on by default for a site that matches the preview."
+msgstr "Önizlemeyle eşleşen bir site için her şey varsayılan olarak açıktır."
+
+#: core/assets/admin.js:722
+msgid "Remove %s first"
+msgstr "Önce %s demosunu kaldır"
+
+#: core/assets/admin.js:722
+msgid "Recommended: start from a clean site instead of adding duplicates."
+msgstr "Önerilen: Kopyalar eklemek yerine temiz bir siteyle başlayın."
+
+#: core/assets/admin.js:723
+msgid ""
+"Your existing posts and pages are never changed. Imported items are tagged, "
+"so they can be removed in one click later."
+msgstr ""
+"Mevcut yazılarınız ve sayfalarınız asla değiştirilmez. İçe aktarılan ögeler "
+"etiketlenir, böylece daha sonra tek tıkla kaldırılabilir."
+
+#: core/assets/admin.js:730
+msgid "Start import"
+msgstr "İçe aktarmayı başlat"
+
+#: core/assets/admin.js:736
+msgid "Preparing"
+msgstr "Hazırlanıyor"
+
+#: core/assets/admin.js:736 core/assets/admin.js:947
+msgid "Importing your demo…"
+msgstr "Demonuz içe aktarılıyor…"
+
+#: core/assets/admin.js:736
+msgid "Keep this window open. It usually takes about a minute."
+msgstr "Bu pencereyi açık tutun. Genellikle yaklaşık bir dakika sürer."
+
+#: core/assets/admin.js:739 core/assets/admin.js:943
+msgid "Cancel import"
+msgstr "İçe aktarmayı iptal et"
+
+#: core/assets/admin.js:756
+msgid "Info"
+msgstr "Bilgi"
+
+#: core/assets/admin.js:756
+msgid "Success"
+msgstr "Başarılı"
+
+#: core/assets/admin.js:756 core/assets/admin.js:998
+msgid "Warnings"
+msgstr "Uyarılar"
+
+#: core/assets/admin.js:756
+msgid "Errors"
+msgstr "Hatalar"
+
+#: core/assets/admin.js:756 core/assets/admin.js:920
+msgid "Copy log"
+msgstr "Günlüğü kopyala"
+
+#: core/assets/admin.js:790
+msgid "Log copied"
+msgstr "Günlük kopyalandı"
+
+#: core/assets/admin.js:790
+msgid "Paste it into your support ticket."
+msgstr "Destek talebinize yapıştırın."
+
+#: core/assets/admin.js:816
+msgid "Stopped"
+msgstr "Durduruldu"
+
+#: core/assets/admin.js:816
+msgid "Step"
+msgstr "Adım"
+
+#: core/assets/admin.js:816
+msgid "Complete"
+msgstr "Tamamlandı"
+
+#: core/assets/admin.js:824
+msgid "%ss elapsed"
+msgstr "%ss geçti"
+
+#: core/assets/admin.js:850
+msgid "Resumed from the saved position."
+msgstr "Kaydedilen konumdan devam edildi."
+
+#: core/assets/admin.js:872
+msgid "Reload the page, then resume the import from the Demo Library."
+msgstr ""
+"Sayfayı yeniden yükleyin, ardından içe aktarmaya Demo kütüphanesinden devam "
+"edin."
+
+#: core/assets/admin.js:878
+msgid "Your progress is saved. Press Resume when the server is back."
+msgstr ""
+"İlerlemeniz kaydedildi. Sunucu tekrar çalıştığında Devam et düğmesine basın."
+
+#: core/assets/admin.js:882
+msgid "The server did not answer (%1$s). Retrying in %2$d seconds…"
+msgstr "Sunucu yanıt vermedi (%1$s). %2$d saniye içinde yeniden deneniyor…"
+
+#: core/assets/admin.js:905
+msgid "The import stopped."
+msgstr "İçe aktarma durdu."
+
+#: core/assets/admin.js:907
+msgid "Import cancelled."
+msgstr "İçe aktarma iptal edildi."
+
+#: core/assets/admin.js:907
+msgid "Resume to finish it, or remove what was imported so far."
+msgstr ""
+"Tamamlamak için devam edin ya da şimdiye kadar içe aktarılanları kaldırın."
+
+#: core/assets/admin.js:918
+msgid "Import paused"
+msgstr "İçe aktarma duraklatıldı"
+
+#: core/assets/admin.js:918
+msgid "The import needs your attention"
+msgstr "İçe aktarma ilginizi gerektiriyor"
+
+#: core/assets/admin.js:920
+msgid "Remove imported content"
+msgstr "İçe aktarılan içeriği kaldır"
+
+#: core/assets/admin.js:920
+msgid "Resume"
+msgstr "Devam et"
+
+#: core/assets/admin.js:920
+msgid "Back to options"
+msgstr "Seçeneklere dön"
+
+#: core/assets/admin.js:929
+msgid "Everything was rolled back"
+msgstr "Her şey geri alındı"
+
+#: core/assets/admin.js:933
+msgid "Nothing to remove"
+msgstr "Kaldırılacak bir şey yok"
+
+#: core/assets/admin.js:933
+msgid "Rollback failed"
+msgstr "Geri alma başarısız"
+
+#: core/assets/admin.js:960
+msgid "Resuming…"
+msgstr "Devam ediliyor…"
+
+#: core/assets/admin.js:967
+msgid "Your progress is saved. Try again in a moment."
+msgstr "İlerlemeniz kaydedildi. Birazdan tekrar deneyin."
+
+#: core/assets/admin.js:973
+msgid "Cancel the import? What was imported so far stays until you remove it."
+msgstr ""
+"İçe aktarma iptal edilsin mi? Şimdiye kadar içe aktarılanlar siz kaldırana "
+"kadar yerinde kalır."
+
+#: core/assets/admin.js:983
+msgid "Could not cancel"
+msgstr "İptal edilemedi"
+
+#: core/assets/admin.js:996
+msgid "Your website is ready!"
+msgstr "Web siteniz hazır!"
+
+#: core/assets/admin.js:997
+msgid "%1$s was imported. %2$d item(s) need a look — see the notes below."
+msgstr ""
+"%1$s içe aktarıldı. %2$d öge kontrol edilmeli — aşağıdaki notlara bakın."
+
+#: core/assets/admin.js:997
+msgid "%s was imported without a single issue. Time to make it yours."
+msgstr ""
+"%s tek bir sorun olmadan içe aktarıldı. Şimdi kendinize göre uyarlama "
+"zamanı."
+
+#: core/assets/admin.js:998
+msgid "Import time"
+msgstr "İçe aktarma süresi"
+
+#: core/assets/admin.js:998
+msgid "Steps completed"
+msgstr "Tamamlanan adımlar"
+
+#: core/assets/admin.js:999
+msgid "View your site"
+msgstr "Sitenizi görüntüleyin"
+
+#: core/assets/admin.js:1002
+msgid "Back to dashboard"
+msgstr "Panele dön"
+
+#: core/assets/admin.js:1007
+msgid "Import complete"
+msgstr "İçe aktarma tamamlandı"
+
+#: core/assets/admin.js:1054
+msgid ""
+"Plugins used by WPEssential demos. Install, switch on or off and delete them"
+" here."
+msgstr ""
+"WPEssential demolarının kullandığı eklentiler. Bunları buradan kurun, açıp "
+"kapatın ve silin."
+
+#: core/assets/admin.js:1069
+msgid "No plugins needed"
+msgstr "Eklenti gerekmiyor"
+
+#: core/assets/admin.js:1069
+msgid "The demos in your library run on the theme alone."
+msgstr "Kütüphanenizdeki demolar yalnızca temayla çalışır."
+
+#: core/assets/admin.js:1073
+msgid "Required by some demos"
+msgstr "Bazı demolar için gerekli"
+
+#: core/assets/admin.js:1074
+msgid "Inactive"
+msgstr "Etkin değil"
+
+#: core/assets/admin.js:1074
+msgid "Not installed"
+msgstr "Kurulu değil"
+
+#: core/assets/admin.js:1075
+msgid "Install & activate"
+msgstr "Kur ve etkinleştir"
+
+#: core/assets/admin.js:1077
+msgid "Deactivate"
+msgstr "Devre dışı bırak"
+
+#: core/assets/admin.js:1079
+msgid "Delete this plugin and its files?"
+msgstr "Bu eklenti ve dosyaları silinsin mi?"
+
+#: core/assets/admin.js:1085
+msgid "is active."
+msgstr "etkin."
+
+#: core/assets/admin.js:1085
+msgid "is inactive."
+msgstr "etkin değil."
+
+#: core/assets/admin.js:1085
+msgid "was deleted."
+msgstr "silindi."
+
+#: core/assets/admin.js:1088
+msgid "Plugin action failed"
+msgstr "Eklenti işlemi başarısız"
+
+#: core/assets/admin.js:1096
+msgid ""
+"Activate your purchase on this domain to unlock Pro demos, automatic updates"
+" and priority support."
+msgstr ""
+"Pro demoların, otomatik güncellemelerin ve öncelikli desteğin kilidini açmak"
+" için satın alımınızı bu alan adında etkinleştirin."
+
+#: core/assets/admin.js:1118
+msgid "Domain"
+msgstr "Alan adı"
+
+#: core/assets/admin.js:1118
+msgid "Expires"
+msgstr "Bitiş tarihi"
+
+#: core/assets/admin.js:1118
+msgid "Lifetime"
+msgstr "Ömür boyu"
+
+#: core/assets/admin.js:1118
+msgid "Provider"
+msgstr "Sağlayıcı"
+
+#: core/assets/admin.js:1121
+msgid "You’re all set"
+msgstr "Her şey hazır"
+
+#: core/assets/admin.js:1121
+msgid "This license is active on %s."
+msgstr "Bu lisans %s üzerinde etkin."
+
+#: core/assets/admin.js:1121
+msgid "Plan: %s."
+msgstr "Plan: %s."
+
+#: core/assets/admin.js:1122
+msgid "All Pro demos unlocked"
+msgstr "Tüm Pro demoların kilidi açıldı"
+
+#: core/assets/admin.js:1122
+msgid "One-click theme updates"
+msgstr "Tek tıkla tema güncellemeleri"
+
+#: core/assets/admin.js:1123
+msgid "Deactivating"
+msgstr "Devre dışı bırakılıyor"
+
+#: core/assets/admin.js:1123
+msgid "Deactivate on this domain"
+msgstr "Bu alan adında devre dışı bırak"
+
+#: core/assets/admin.js:1124
+msgid "Renew to keep Pro features"
+msgstr "Pro özelliklerini korumak için yenileyin"
+
+#: core/assets/admin.js:1124
+msgid "Find the key in your purchase email or your wpessential.org account."
+msgstr ""
+"Anahtarı satın alma e-postanızda veya wpessential.org hesabınızda "
+"bulabilirsiniz."
+
+#: core/assets/admin.js:1125
+msgid "License key"
+msgstr "Lisans anahtarı"
+
+#: core/assets/admin.js:1125
+msgid "Paste your license key"
+msgstr "Lisans anahtarınızı yapıştırın"
+
+#: core/assets/admin.js:1125
+msgid "Show key"
+msgstr "Anahtarı göster"
+
+#: core/assets/admin.js:1125
+msgid "Checking"
+msgstr "Kontrol ediliyor"
+
+#: core/assets/admin.js:1127
+msgid "Unlock every Pro demo in the library"
+msgstr "Kütüphanedeki tüm Pro demoların kilidini açın"
+
+#: core/assets/admin.js:1127
+msgid "Automatic updates from your dashboard"
+msgstr "Panelinizden otomatik güncellemeler"
+
+#: core/assets/admin.js:1127
+msgid "Priority support from the WPEssential Team"
+msgstr "WPEssential Ekibinden öncelikli destek"
+
+#: core/assets/admin.js:1128
+msgid "Don’t have a license? Sign in or pick a plan below"
+msgstr "Lisansınız yok mu? Oturum açın veya aşağıdan bir plan seçin"
+
+#: core/assets/admin.js:1143
+msgid "License activated"
+msgstr "Lisans etkinleştirildi"
+
+#: core/assets/admin.js:1143
+msgid "Pro demos are unlocked."
+msgstr "Pro demoların kilidi açıldı."
+
+#: core/assets/admin.js:1163
+msgid ""
+"Deactivate the license on this domain? You can activate it on another site "
+"afterwards."
+msgstr ""
+"Lisans bu alan adında devre dışı bırakılsın mı? Daha sonra başka bir sitede "
+"etkinleştirebilirsiniz."
+
+#: core/assets/admin.js:1169
+msgid "License deactivated"
+msgstr "Lisans devre dışı bırakıldı"
+
+#: core/assets/admin.js:1173
+msgid "Deactivation failed"
+msgstr "Devre dışı bırakma başarısız"
+
+#: core/assets/admin.js:1188
+msgid "/ %d mo"
+msgstr "/ %d ay"
+
+#: core/assets/admin.js:1188
+msgid "one-time"
+msgstr "tek seferlik"
+
+#: core/assets/admin.js:1201
+msgid "Your WPEssential account could not be reached"
+msgstr "WPEssential hesabınıza ulaşılamadı"
+
+#: core/assets/admin.js:1213
+msgid "Sign in to your account"
+msgstr "Hesabınızda oturum açın"
+
+#: core/assets/admin.js:1213
+msgid "Create your free account"
+msgstr "Ücretsiz hesabınızı oluşturun"
+
+#: core/assets/admin.js:1213
+msgid ""
+"Your licenses, Pro demos and subscription in one place. New accounts include"
+" the Free plan for this website."
+msgstr ""
+"Lisanslarınız, Pro demolarınız ve aboneliğiniz tek yerde. Yeni hesaplar bu "
+"web sitesi için Ücretsiz planı içerir."
+
+#: core/assets/admin.js:1214
+msgid "Activate licenses without copying keys"
+msgstr "Anahtar kopyalamadan lisansları etkinleştirin"
+
+#: core/assets/admin.js:1214
+msgid "Upgrade, renew or switch plans in one click"
+msgstr "Tek tıkla yükseltin, yenileyin veya plan değiştirin"
+
+#: core/assets/admin.js:1214
+msgid "Manage websites and auto-renewal"
+msgstr "Web sitelerini ve otomatik yenilemeyi yönetin"
+
+#: core/assets/admin.js:1216 core/assets/admin.js:1221
+msgid "Sign in"
+msgstr "Oturum aç"
+
+#: core/assets/admin.js:1216
+msgid "Create account"
+msgstr "Hesap oluştur"
+
+#: core/assets/admin.js:1217
+msgid "Full name"
+msgstr "Ad soyad"
+
+#: core/assets/admin.js:1218
+msgid "Email"
+msgstr "E-posta"
+
+#: core/assets/admin.js:1219
+msgid "Password"
+msgstr "Parola"
+
+#: core/assets/admin.js:1221
+msgid "Signing in"
+msgstr "Oturum açılıyor"
+
+#: core/assets/admin.js:1221
+msgid "Creating account"
+msgstr "Hesap oluşturuluyor"
+
+#: core/assets/admin.js:1221
+msgid "Create free account"
+msgstr "Ücretsiz hesap oluştur"
+
+#: core/assets/admin.js:1222
+msgid "Forgot password?"
+msgstr "Parolanızı mı unuttunuz?"
+
+#: core/assets/admin.js:1222
+msgid "By creating an account you agree to the WPEssential terms."
+msgstr "Bir hesap oluşturarak WPEssential koşullarını kabul etmiş olursunuz."
+
+#: core/assets/admin.js:1223
+msgid "Continue without an account"
+msgstr "Hesap olmadan devam et"
+
+#: core/assets/admin.js:1239
+msgid "Fill in every field."
+msgstr "Tüm alanları doldurun."
+
+#: core/assets/admin.js:1245
+msgid "Signed in"
+msgstr "Oturum açıldı"
+
+#: core/assets/admin.js:1245
+msgid "Account created"
+msgstr "Hesap oluşturuldu"
+
+#: core/assets/admin.js:1266
+msgid "Refresh"
+msgstr "Yenile"
+
+#: core/assets/admin.js:1267
+msgid "Manage account"
+msgstr "Hesabı yönet"
+
+#: core/assets/admin.js:1268
+msgid "Sign out"
+msgstr "Oturumu kapat"
+
+#: core/assets/admin.js:1270
+msgid "Your licenses"
+msgstr "Lisanslarınız"
+
+#: core/assets/admin.js:1273
+msgid "%1$d of %2$s websites"
+msgstr "%1$d / %2$s web sitesi"
+
+#: core/assets/admin.js:1273
+msgid "Never expires"
+msgstr "Süresi dolmaz"
+
+#: core/assets/admin.js:1273
+msgid "Renews %s"
+msgstr "%s tarihinde yenilenir"
+
+#: core/assets/admin.js:1273
+msgid "Ends %s"
+msgstr "%s tarihinde sona erer"
+
+#: core/assets/admin.js:1274
+msgid "Auto-renew"
+msgstr "Otomatik yenileme"
+
+#: core/assets/admin.js:1275
+msgid "Renew"
+msgstr "Yenile"
+
+#: core/assets/admin.js:1275
+msgid "This site"
+msgstr "Bu site"
+
+#: core/assets/admin.js:1275
+msgid "Activating"
+msgstr "Etkinleştiriliyor"
+
+#: core/assets/admin.js:1275
+msgid "Use on this site"
+msgstr "Bu sitede kullan"
+
+#: core/assets/admin.js:1276
+msgid "No licenses yet — choose a plan below."
+msgstr "Henüz lisans yok — aşağıdan bir plan seçin."
+
+#: core/assets/admin.js:1277
+msgid "Upgrade your plan"
+msgstr "Planınızı yükseltin"
+
+#: core/assets/admin.js:1277
+msgid "Choose a plan"
+msgstr "Bir plan seçin"
+
+#: core/assets/admin.js:1282
+msgid "Most popular"
+msgstr "En popüler"
+
+#: core/assets/admin.js:1283
+msgid "Current plan"
+msgstr "Mevcut plan"
+
+#: core/assets/admin.js:1283
+msgid "Upgrade"
+msgstr "Yükselt"
+
+#: core/assets/admin.js:1283
+msgid "Choose"
+msgstr "Seç"
+
+#: core/assets/admin.js:1285
+msgid ""
+"Checkout opens on wpessential.org already signed in. Upgrades credit the "
+"unused part of your current plan. Staging and local sites do not count "
+"toward your website limit."
+msgstr ""
+"Ödeme, wpessential.org üzerinde oturumunuz açık olarak açılır. "
+"Yükseltmelerde mevcut planınızın kullanılmayan kısmı düşülür. Hazırlık "
+"(staging) ve yerel siteler web sitesi sınırınıza dahil edilmez."
+
+#: core/assets/admin.js:1301
+msgid "License active on this site"
+msgstr "Lisans bu sitede etkin"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is on"
+msgstr "Otomatik yenileme açık"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is off"
+msgstr "Otomatik yenileme kapalı"
+
+#: core/assets/admin.js:1315
+msgid "Your license works until its end date."
+msgstr "Lisansınız bitiş tarihine kadar çalışır."
+
+#: core/assets/admin.js:1318
+msgid "Could not change auto-renew"
+msgstr "Otomatik yenileme değiştirilemedi"
+
+#: core/assets/admin.js:1330
+msgid "Checkout opened in a new tab"
+msgstr "Ödeme yeni bir sekmede açıldı"
+
+#: core/assets/admin.js:1330
+msgid "When payment is done, press Refresh here."
+msgstr "Ödeme tamamlandığında buradan Yenile düğmesine basın."
+
+#: core/assets/admin.js:1335
+msgid "Checkout could not start"
+msgstr "Ödeme başlatılamadı"
+
+#: core/assets/admin.js:1343
+msgid "What your server offers and what to improve before importing."
+msgstr ""
+"Sunucunuzun sundukları ve içe aktarmadan önce iyileştirilmesi gerekenler."
+
+#: core/assets/admin.js:1343
+msgid "Copy report"
+msgstr "Raporu kopyala"
+
+#: core/assets/admin.js:1349
+msgid "Health"
+msgstr "Sağlık"
+
+#: core/assets/admin.js:1349
+msgid "Excellent"
+msgstr "Mükemmel"
+
+#: core/assets/admin.js:1349
+msgid "Good"
+msgstr "İyi"
+
+#: core/assets/admin.js:1349
+msgid "Needs work"
+msgstr "İyileştirilmeli"
+
+#: core/assets/admin.js:1349
+msgid "%d item(s) could be better. Imports still run; fixes make them faster."
+msgstr ""
+"%d öge daha iyi olabilir. İçe aktarmalar yine çalışır; düzeltmeler onları "
+"hızlandırır."
+
+#: core/assets/admin.js:1349
+msgid "Your server is ready for any demo."
+msgstr "Sunucunuz her demo için hazır."
+
+#: core/assets/admin.js:1352
+msgid "Environment"
+msgstr "Ortam"
+
+#: core/assets/admin.js:1356
+msgid "Report copied"
+msgstr "Rapor kopyalandı"
+
+#: core/assets/admin.js:1356
+msgid "Copy failed"
+msgstr "Kopyalama başarısız"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "Vurgu"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr "Kenarlık"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Danger"
+msgstr "Tehlike"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr "Mürekkep"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink"
+msgstr "Mürekkep üzerinde"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink Muted"
+msgstr "Mürekkep üzerinde soluk"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Primary"
+msgstr "Birincil üzerinde"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "Birincil"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Hover"
+msgstr "Birincil üzerine gelme"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Soft"
+msgstr "Birincil yumuşak"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Pro"
+msgstr "Pro"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "İkincil"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Star"
+msgstr "Yıldız"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Success"
+msgstr "Başarı"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr "Yüzey"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface Alt"
+msgstr "Alternatif yüzey"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr "Metin"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text Muted"
+msgstr "Soluk metin"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Warning"
+msgstr "Uyarı"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank (no header/footer)"
+msgstr "Boş (üst/alt bilgi yok)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Full Width (builder canvas)"
+msgstr "Tam genişlik (oluşturucu tuvali)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Landing (transparent header)"
+msgstr "Açılış sayfası (şeffaf üst bilgi)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "No Title"
+msgstr "Başlıksız"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post with sidebar"
+msgstr "Kenar çubuklu yazı"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Cormorant Garamond"
+msgstr "Cormorant Garamond"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "DM Sans"
+msgstr "DM Sans"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Manrope"
+msgstr "Manrope"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Font family name"
+msgid "Monospace"
+msgstr "Eş aralıklı"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Plus Jakarta Sans"
+msgstr "Plus Jakarta Sans"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "Space Grotesk"
+msgstr "Space Grotesk"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr "Gövde"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body L"
+msgstr "Gövde L"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Display"
+msgstr "Görüntü"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H1"
+msgstr "H1"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H2"
+msgstr "H2"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H3"
+msgstr "H3"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H4"
+msgstr "H4"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Küçük"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XS"
+msgstr "XS"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Brand"
+msgstr "Marka"
+
+#: styles/dark.json
+msgctxt "Gradient name"
+msgid "Fade bottom"
+msgstr "Alta doğru solma"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Fade to ink"
+msgstr "Mürekkebe doğru solma"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Night"
+msgstr "Gece"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Large"
+msgstr "Büyük"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Medium"
+msgstr "Orta"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Small"
+msgstr "Küçük"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "112"
+msgstr "112"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "12"
+msgstr "12"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "16"
+msgstr "16"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "24"
+msgstr "24"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "32"
+msgstr "32"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "48"
+msgstr "48"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "64"
+msgstr "64"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "8"
+msgstr "8"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "96"
+msgstr "96"
+
+#: styles/agency.json
+msgctxt "Style variation name"
+msgid "Agency"
+msgstr "Ajans"
+
+#: styles/dark.json
+msgctxt "Style variation name"
+msgid "Dark"
+msgstr "Koyu"
+
+#: styles/education.json
+msgctxt "Style variation name"
+msgid "Education"
+msgstr "Eğitim"
+
+#: styles/fashion.json
+msgctxt "Style variation name"
+msgid "Fashion"
+msgstr "Moda"
+
+#: styles/health.json
+msgctxt "Style variation name"
+msgid "Health"
+msgstr "Sağlık"
+
+#: styles/maison.json
+msgctxt "Style variation name"
+msgid "Maison"
+msgstr "Maison"
+
+#: styles/pulse.json
+msgctxt "Style variation name"
+msgid "Pulse"
+msgstr "Pulse"
+
+#: styles/restaurant.json
+msgctxt "Style variation name"
+msgid "Restaurant"
+msgstr "Restoran"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Premium"
+msgstr "Alt bilgi — Premium"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Simple"
+msgstr "Alt bilgi — Basit"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Centered"
+msgstr "Üst bilgi — Ortalanmış"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Default"
+msgstr "Üst bilgi — Varsayılan"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Shop"
+msgstr "Üst bilgi — Mağaza"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Transparent (over dark hero)"
+msgstr "Üst bilgi — Şeffaf (koyu hero üzerinde)"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr "Kenar çubuğu"

@@ -1,0 +1,3628 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WPEssential 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wpessential.org/support/\n"
+"POT-Creation-Date: 2026-10-18T02:45:11+00:00\n"
+"PO-Revision-Date: 2026-10-18T02:45:11+00:00\n"
+"Last-Translator: WPEssential Team <https://wpessential.org/>\n"
+"Language-Team: WPEssential Team <https://wpessential.org/>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: wpessential\n"
+"X-Generator: WP-CLI 2.11.0\n"
+
+#. Theme Name of the theme
+#: style.css core/src/Admin.php:55 inc/patterns.php:14
+msgid "WPEssential"
+msgstr "WPEssential"
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://wpessential.org/"
+msgstr "https://wpessential.org/"
+
+#. Description of the theme
+#: style.css
+msgid ""
+"Lightweight multi-niche block theme, native for Gutenberg and Elementor. "
+"One-click demos (free & pro) via the WPEssential Core plugin."
+msgstr ""
+"轻量级多用途区块主题，原生支持 Gutenberg 和 Elementor。通过 WPEssential Core 插件一键导入演示（免费和 Pro）。"
+
+#. Author of the theme
+#: style.css
+msgid "WPEssential Team"
+msgstr "WPEssential 团队"
+
+#. translators: %s: error.
+#: core/src/Account.php:55
+msgid "WPEssential could not be reached: %s"
+msgstr "无法连接到 WPEssential：%s"
+
+#: core/src/Account.php:61
+msgid "Your WPEssential session ended. Sign in again."
+msgstr "您的 WPEssential 会话已结束，请重新登录。"
+
+#. translators: %d: HTTP code.
+#: core/src/Account.php:65
+msgid "WPEssential answered with an unexpected response (HTTP %d)."
+msgstr "WPEssential 返回了意外的响应（HTTP %d）。"
+
+#: core/src/Account.php:68 core/assets/admin.js:83 core/assets/admin.js:94
+msgid "Something went wrong."
+msgstr "出现了问题。"
+
+#: core/src/Account.php:238
+msgid "That license is not in your account."
+msgstr "该许可证不在您的账户中。"
+
+#: core/src/Account.php:271 core/src/Rest.php:211
+msgid "Unknown action."
+msgstr "未知操作。"
+
+#: core/src/Admin.php:37 core/assets/admin.js:147
+msgid "Dashboard"
+msgstr "仪表盘"
+
+#: core/src/Admin.php:38 core/assets/admin.js:148 core/assets/admin.js:306
+msgid "Demo Library"
+msgstr "演示库"
+
+#: core/src/Admin.php:39 core/assets/admin.js:149 core/assets/admin.js:576
+#: core/assets/admin.js:1054
+msgid "Plugins"
+msgstr "插件"
+
+#: core/src/Admin.php:40 core/assets/admin.js:150 core/assets/admin.js:284
+#: core/assets/admin.js:1096
+msgid "License"
+msgstr "许可证"
+
+#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+msgid "System Status"
+msgstr "系统状态"
+
+#: core/src/Admin.php:133
+msgid ""
+"The WPEssential dashboard needs JavaScript. Enable it in your browser to "
+"import demos."
+msgstr "WPEssential 仪表盘需要 JavaScript。请在浏览器中启用它以导入演示。"
+
+#: core/src/Demos.php:49
+msgid ""
+"The online demo library could not be reached, so only the demos bundled with"
+" the theme are listed. They import fully offline."
+msgstr "无法连接到在线演示库，因此仅列出主题自带的演示。这些演示可完全离线导入。"
+
+#: core/src/Demos.php:173
+msgid ""
+"The bundled demo package is incomplete. Re-upload the theme and try again."
+msgstr "自带的演示包不完整。请重新上传主题后重试。"
+
+#: core/src/Demos.php:183
+msgid "This demo has no download address in the library."
+msgstr "此演示在演示库中没有下载地址。"
+
+#. translators: %s: error message.
+#: core/src/Demos.php:196
+msgid "Downloading the demo package failed: %s"
+msgstr "下载演示包失败：%s"
+
+#: core/src/Demos.php:200
+msgid "WordPress cannot write to the uploads folder. Check its permissions."
+msgstr "WordPress 无法写入上传文件夹。请检查其权限。"
+
+#: core/src/Demos.php:207
+msgid "The downloaded package does not contain content.json."
+msgstr "下载的包中不包含 content.json。"
+
+#: core/src/Importer.php:47
+msgid "Checking your server"
+msgstr "正在检查您的服务器"
+
+#: core/src/Importer.php:48
+msgid "Removing the previous demo"
+msgstr "正在移除之前的演示"
+
+#: core/src/Importer.php:49
+msgid "Preparing the demo package"
+msgstr "正在准备演示包"
+
+#: core/src/Importer.php:50
+msgid "Installing plugins"
+msgstr "正在安装插件"
+
+#: core/src/Importer.php:51
+msgid "Importing images"
+msgstr "正在导入图片"
+
+#: core/src/Importer.php:52
+msgid "Creating categories"
+msgstr "正在创建分类"
+
+#: core/src/Importer.php:53
+msgid "Building pages and posts"
+msgstr "正在构建页面和文章"
+
+#: core/src/Importer.php:54
+msgid "Adding products"
+msgstr "正在添加产品"
+
+#: core/src/Importer.php:55
+msgid "Creating menus"
+msgstr "正在创建菜单"
+
+#: core/src/Importer.php:56
+msgid "Applying site settings"
+msgstr "正在应用站点设置"
+
+#: core/src/Importer.php:57
+msgid "Finishing touches"
+msgstr "最后完善"
+
+#: core/src/Importer.php:90
+msgid ""
+"Another import is running in a different tab. Wait for it to finish, or wait"
+" two minutes and try again."
+msgstr "另一个导入正在其他标签页中运行。请等待其完成，或等待两分钟后重试。"
+
+#: core/src/Importer.php:94
+msgid "This demo is no longer in the library. Refresh the page."
+msgstr "此演示已不在演示库中。请刷新页面。"
+
+#: core/src/Importer.php:97
+msgid "This demo is not available for the selected builder."
+msgstr "此演示不适用于所选的构建器。"
+
+#: core/src/Importer.php:100
+msgid ""
+"This is a Pro demo. Activate your license on the License tab to import it."
+msgstr "这是 Pro 演示。请在“许可证”选项卡中激活您的许可证以导入它。"
+
+#. translators: 1: demo, 2: builder.
+#: core/src/Importer.php:192
+msgid "Starting import of %1$s for %2$s."
+msgstr "开始为 %2$s 导入 %1$s。"
+
+#: core/src/Importer.php:207
+msgid "There is no import to continue."
+msgstr "没有可继续的导入。"
+
+#: core/src/Importer.php:225
+msgid ""
+"Import cancelled. Everything imported so far can be removed from the Demo "
+"Library."
+msgstr "导入已取消。目前已导入的所有内容都可以在演示库中移除。"
+
+#: core/src/Importer.php:341
+msgid "One item stopped the server twice and was skipped."
+msgstr "有一个项目两次导致服务器停止，已被跳过。"
+
+#: core/src/Importer.php:341
+msgid ""
+"Raise memory_limit / max_execution_time, then re-import to fill the gap."
+msgstr "请提高 memory_limit / max_execution_time，然后重新导入以补全缺失内容。"
+
+#. translators: %s: error.
+#: core/src/Importer.php:358
+msgid "Unexpected error: %s"
+msgstr "意外错误：%s"
+
+#. translators: %d: errors.
+#: core/src/Importer.php:411
+msgid ""
+"Import finished with %d error. The site works; review the log for what was "
+"skipped."
+msgid_plural ""
+"Import finished with %d errors. The site works; review the log for what was "
+"skipped."
+msgstr[0] "导入完成，出现 %d 个错误。站点可正常运行；请查看日志了解跳过的内容。"
+
+#: core/src/Importer.php:413
+msgid "Your site is ready."
+msgstr "您的站点已就绪。"
+
+#: core/src/Importer.php:445
+msgid "WooCommerce is not active, so the shop products were skipped."
+msgstr "WooCommerce 未启用，因此已跳过商店产品。"
+
+#: core/src/Importer.php:602
+msgid "Your server needs a change before the import can run safely."
+msgstr "您的服务器需要进行调整，才能安全地运行导入。"
+
+#: core/src/Importer.php:602
+msgid "Fix the items above (your host can help), then press Retry."
+msgstr "请修复上述项目（您的主机商可以提供帮助），然后点击“重试”。"
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid ""
+"%s was imported before. Its pages stay; the new import adds fresh copies."
+msgstr "%s 之前已导入过。其页面将保留；新的导入会添加新的副本。"
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid "Tick \"Remove previous demo\" next time for a clean site."
+msgstr "下次请勾选“移除之前的演示”以获得干净的站点。"
+
+#: core/src/Importer.php:609
+msgid "Server checks passed."
+msgstr "服务器检查已通过。"
+
+#. translators: %d: items.
+#: core/src/Importer.php:621
+msgid "Removed %d items from the previous demo and restored its settings."
+msgstr "已从之前的演示中移除 %d 个项目并恢复了其设置。"
+
+#: core/src/Importer.php:634
+msgid "Upload a fresh copy of the theme, then press Resume."
+msgstr "请上传主题的新副本，然后点击“继续”。"
+
+#: core/src/Importer.php:634
+msgid "Check your internet connection and press Resume."
+msgstr "请检查您的网络连接，然后点击“继续”。"
+
+#: core/src/Importer.php:640
+msgid "The demo package could not be read (content.json is damaged)."
+msgstr "无法读取演示包（content.json 已损坏）。"
+
+#: core/src/Importer.php:640
+msgid "Clear the cache on the System Status tab and retry."
+msgstr "请在“系统状态”选项卡中清除缓存后重试。"
+
+#. translators: 1: pages, 2: images, 3: products.
+#: core/src/Importer.php:644
+msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
+msgstr "包已就绪：%1$d 个页面和文章，%2$d 张图片，%3$d 个产品。"
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid "%1$s could not be set up: %2$s"
+msgstr "无法设置 %1$s：%2$s"
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid ""
+"Install it from Plugins → Add New, then use the Plugins tab here to activate"
+" it."
+msgstr "请通过“插件 → 安装插件”进行安装，然后在此处的“插件”选项卡中启用它。"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:667
+msgid "%s installed and activated."
+msgstr "%s 已安装并启用。"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:669
+msgid "%s activated."
+msgstr "%s 已启用。"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:671
+msgid "%s deactivated because it conflicts with this demo."
+msgstr "%s 与此演示冲突，已被禁用。"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:673
+msgid "%s is already active."
+msgstr "%s 已处于启用状态。"
+
+#: core/src/Importer.php:702
+msgid "file not found in the package"
+msgstr "包中未找到文件"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:707
+msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
+msgstr "已跳过图片 %1$s（%2$s）。页面将改用主题自带的副本。"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Image %1$s skipped (%2$s)."
+msgstr "已跳过图片 %1$s（%2$s）。"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Check that the uploads folder is writable."
+msgstr "请检查上传文件夹是否可写。"
+
+#. translators: %s: file.
+#: core/src/Importer.php:729
+msgid "Imported image %s."
+msgstr "已导入图片 %s。"
+
+#. translators: 1: term, 2: taxonomy.
+#. translators: 1: title, 2: post type.
+#: core/src/Importer.php:744 core/src/Importer.php:790
+msgid "Skipped \"%1$s\": %2$s is not available on this site."
+msgstr "已跳过“%1$s”：此站点上不可用 %2$s。"
+
+#. translators: %s: term.
+#: core/src/Importer.php:751
+msgid "Category \"%s\" already exists and was reused."
+msgstr "分类“%s”已存在，已重复使用。"
+
+#. translators: 1: term, 2: error.
+#: core/src/Importer.php:763
+msgid "Category \"%1$s\" was not created: %2$s"
+msgstr "未创建分类“%1$s”：%2$s"
+
+#. translators: %s: term.
+#: core/src/Importer.php:770
+msgid "Created category \"%s\"."
+msgstr "已创建分类“%s”。"
+
+#. translators: 1: title, 2: error.
+#: core/src/Importer.php:808
+msgid "\"%1$s\" could not be created: %2$s"
+msgstr "无法创建“%1$s”：%2$s"
+
+#: core/src/Importer.php:836
+msgid "post"
+msgstr "文章"
+
+#: core/src/Importer.php:837
+msgid "page"
+msgstr "页面"
+
+#: core/src/Importer.php:838
+msgid "event"
+msgstr "活动"
+
+#: core/src/Importer.php:839
+msgid "venue"
+msgstr "场地"
+
+#: core/src/Importer.php:840
+msgid "organizer"
+msgstr "组织者"
+
+#. translators: 1: type, 2: title.
+#: core/src/Importer.php:843
+msgid "Created %1$s \"%2$s\"."
+msgstr "已创建%1$s“%2$s”。"
+
+#: core/src/Importer.php:860
+msgid "The Events Calendar rejected the venue."
+msgstr "The Events Calendar 拒绝了该场地。"
+
+#: core/src/Importer.php:864
+msgid "The Events Calendar rejected the organizer."
+msgstr "The Events Calendar 拒绝了该组织者。"
+
+#: core/src/Importer.php:892
+msgid "The Events Calendar rejected the event."
+msgstr "The Events Calendar 拒绝了该活动。"
+
+#. translators: %s: product.
+#: core/src/Importer.php:1004
+msgid "Product \"%s\" could not be saved."
+msgstr "无法保存产品“%s”。"
+
+#. translators: %s: product.
+#: core/src/Importer.php:1015
+msgid "Added product \"%s\"."
+msgstr "已添加产品“%s”。"
+
+#. translators: 1: menu, 2: count.
+#: core/src/Importer.php:1118
+msgid "Created menu \"%1$s\" with %2$d links."
+msgstr "已创建菜单“%1$s”，包含 %2$d 个链接。"
+
+#: core/src/Importer.php:1164
+msgid "Home and blog pages assigned."
+msgstr "已设置首页和博客页面。"
+
+#. translators: %s: option.
+#: core/src/Importer.php:1170
+msgid "Setting \"%s\" is not on the allow-list and was ignored."
+msgstr "设置“%s”不在允许列表中，已忽略。"
+
+#. translators: %s: preset.
+#: core/src/Importer.php:1191
+msgid "Animation style set to \"%s\"."
+msgstr "动画样式已设置为“%s”。"
+
+#: core/src/Importer.php:1204
+msgid "Elementor set to use the theme colours and fonts."
+msgstr "已将 Elementor 设置为使用主题的颜色和字体。"
+
+#: core/src/Importer.php:1219
+msgid "Default"
+msgstr "默认"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Style \"%s\" was not found in the theme, so the default colours stay."
+msgstr "在主题中未找到样式“%s”，因此保留默认颜色。"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Update the WPEssential theme, then import again."
+msgstr "请更新 WPEssential 主题，然后重新导入。"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1250
+msgid "Applied the %s colours and fonts."
+msgstr "已应用 %s 的颜色和字体。"
+
+#: core/src/Importer.php:1268
+msgid "demo"
+msgstr "演示"
+
+#. translators: 1: template part, 2: design.
+#: core/src/Importer.php:1320
+msgid "Template part \"%1$s\" set to the \"%2$s\" design."
+msgstr "模板部件“%1$s”已设置为“%2$s”设计。"
+
+#: core/src/Importer.php:1341
+msgid "Elementor Kit layout, buttons and form styles set."
+msgstr "已设置 Elementor 套件的布局、按钮和表单样式。"
+
+#: core/src/Importer.php:1361
+msgid "Everywhere"
+msgstr "所有地区"
+
+#: core/src/Importer.php:1369
+msgid "Free shipping"
+msgstr "免费配送"
+
+#. translators: %s: amount.
+#: core/src/Importer.php:1377
+msgid "Shipping set up with free delivery over %s."
+msgstr "已设置配送，订单满 %s 免运费。"
+
+#. translators: %d: pages.
+#: core/src/Importer.php:1412
+msgid "Linked %d page to its new address."
+msgid_plural "Linked %d pages to their new addresses."
+msgstr[0] "已将 %d 个页面链接到新地址。"
+
+#: core/src/Importer.php:1417
+msgid "Permalinks and caches refreshed."
+msgstr "固定链接和缓存已刷新。"
+
+#: core/src/License.php:136
+msgid ""
+"That license key looks too short. Copy it again from your purchase email."
+msgstr "该许可证密钥似乎太短。请从您的购买邮件中重新复制。"
+
+#: core/src/License.php:204
+msgid ""
+"This is a Pro item. Activate your license on the License tab to unlock it."
+msgstr "这是 Pro 项目。请在“许可证”选项卡中激活您的许可证以解锁。"
+
+#: core/src/License/Adapter.php:84
+msgid "The license server did not return a download link."
+msgstr "许可证服务器未返回下载链接。"
+
+#. translators: %s: error.
+#: core/src/License/Adapter.php:107
+msgid "The license server could not be reached: %s"
+msgstr "无法连接到许可证服务器：%s"
+
+#. translators: %d: HTTP status.
+#: core/src/License/Adapter.php:113
+msgid ""
+"The license server answered with an unexpected response (HTTP %d). Try again"
+" in a few minutes."
+msgstr "许可证服务器返回了意外的响应（HTTP %d）。请几分钟后重试。"
+
+#: core/src/License/Custom.php:42 core/src/License/Edd.php:31
+#: core/src/License/Woo.php:58
+msgid "This license key is not valid."
+msgstr "此许可证密钥无效。"
+
+#: core/src/License/Edd.php:27
+msgid ""
+"This license has expired. Renew it to keep receiving demos and updates."
+msgstr "此许可证已过期。请续费以继续获取演示和更新。"
+
+#: core/src/License/Edd.php:28
+msgid "This license has been disabled."
+msgstr "此许可证已被禁用。"
+
+#: core/src/License/Edd.php:29
+msgid "This license has been revoked."
+msgstr "此许可证已被撤销。"
+
+#: core/src/License/Edd.php:30
+msgid "This license key does not exist."
+msgstr "此许可证密钥不存在。"
+
+#: core/src/License/Edd.php:32
+msgid "This license is not active for this domain."
+msgstr "此许可证未在此域名上激活。"
+
+#: core/src/License/Edd.php:33
+msgid "This key belongs to a different product."
+msgstr "此密钥属于其他产品。"
+
+#: core/src/License/Edd.php:34
+msgid ""
+"This license has reached its activation limit. Deactivate it on another site"
+" first."
+msgstr "此许可证已达到激活上限。请先在其他站点上停用它。"
+
+#: core/src/License/Edd.php:130 core/src/License/Woo.php:118
+msgid "The store did not return a download link for this license."
+msgstr "商店未返回此许可证的下载链接。"
+
+#: core/src/Plugins.php:115
+msgid "Your account is not allowed to install plugins."
+msgstr "您的账户无权安装插件。"
+
+#. translators: 1: plugin name, 2: error.
+#: core/src/Plugins.php:130
+msgid ""
+"WordPress.org did not answer for %1$s (%2$s). Check the server can reach "
+"wordpress.org, or install it manually."
+msgstr "WordPress.org 未响应 %1$s（%2$s）。请检查服务器是否能访问 wordpress.org，或手动安装。"
+
+#: core/src/Plugins.php:145
+msgid "No download source is set for this plugin."
+msgstr "未为此插件设置下载来源。"
+
+#: core/src/Plugins.php:158
+msgid ""
+"The plugin could not be installed. The server may lack write access to wp-"
+"content/plugins."
+msgstr "无法安装插件。服务器可能没有 wp-content/plugins 的写入权限。"
+
+#: core/src/Plugins.php:174
+msgid "Plugin is not installed."
+msgstr "插件未安装。"
+
+#: core/src/Plugins.php:208
+msgid "Your account is not allowed to delete plugins."
+msgstr "您的账户无权删除插件。"
+
+#: core/src/Rest.php:101
+msgid "Demo not found."
+msgstr "未找到演示。"
+
+#: core/src/Rest.php:158
+msgid "No imported demo was found."
+msgstr "未找到已导入的演示。"
+
+#. translators: 1: demo, 2: count.
+#: core/src/Rest.php:164
+msgid "%1$s removed: %2$d items deleted and your previous settings restored."
+msgstr "已移除 %1$s：删除了 %2$d 个项目并恢复了您之前的设置。"
+
+#: core/src/Rest.php:191
+msgid "This plugin is not managed by WPEssential."
+msgstr "此插件不由 WPEssential 管理。"
+
+#: core/src/Rest.php:323
+msgid "Branding can be changed with a White Label plan."
+msgstr "使用白标方案可以更改品牌标识。"
+
+#: core/src/Status.php:30
+msgid "WordPress version"
+msgstr "WordPress 版本"
+
+#: core/src/Status.php:33
+msgid "Update WordPress to 6.5 or newer."
+msgstr "请将 WordPress 更新到 6.5 或更高版本。"
+
+#: core/src/Status.php:37
+msgid "PHP version"
+msgstr "PHP 版本"
+
+#: core/src/Status.php:40
+msgid ""
+"PHP 8.1 or newer is faster and still supported. Ask your host to upgrade."
+msgstr "PHP 8.1 或更高版本速度更快且仍受支持。请联系您的主机商升级。"
+
+#: core/src/Status.php:44
+msgid "Memory limit"
+msgstr "内存限制"
+
+#: core/src/Status.php:45 core/src/Status.php:52
+msgid "Unlimited"
+msgstr "无限制"
+
+#: core/src/Status.php:47
+msgid ""
+"Set memory_limit to 256M in php.ini, or define WP_MEMORY_LIMIT in wp-"
+"config.php."
+msgstr ""
+"请在 php.ini 中将 memory_limit 设置为 256M，或在 wp-config.php 中定义 WP_MEMORY_LIMIT。"
+
+#: core/src/Status.php:51
+msgid "Max execution time"
+msgstr "最大执行时间"
+
+#: core/src/Status.php:54
+msgid "The importer works in short batches, so 30 seconds is enough."
+msgstr "导入器以小批次运行，因此 30 秒就足够了。"
+
+#: core/src/Status.php:58
+msgid "Max upload size"
+msgstr "最大上传大小"
+
+#: core/src/Status.php:61
+msgid "Raise upload_max_filesize and post_max_size to at least 8M."
+msgstr "请将 upload_max_filesize 和 post_max_size 提高到至少 8M。"
+
+#: core/src/Status.php:65
+msgid "Uploads folder"
+msgstr "上传文件夹"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Writable"
+msgstr "可写"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Not writable"
+msgstr "不可写"
+
+#: core/src/Status.php:68
+msgid "Give the web server write access to wp-content/uploads."
+msgstr "请授予 Web 服务器对 wp-content/uploads 的写入权限。"
+
+#: core/src/Status.php:72
+msgid "Plugins folder"
+msgstr "插件文件夹"
+
+#: core/src/Status.php:75
+msgid "Without write access, required plugins must be installed by hand."
+msgstr "没有写入权限时，必需插件必须手动安装。"
+
+#: core/src/Status.php:79
+msgid "ZIP support"
+msgstr "ZIP 支持"
+
+#: core/src/Status.php:82
+msgid "Enable the PHP zip extension for faster package extraction."
+msgstr "启用 PHP zip 扩展以加快包的解压速度。"
+
+#: core/src/Status.php:86
+msgid "Image editor"
+msgstr "图片编辑器"
+
+#: core/src/Status.php:87
+msgid "WebP supported"
+msgstr "支持 WebP"
+
+#: core/src/Status.php:87
+msgid "No WebP support"
+msgstr "不支持 WebP"
+
+#: core/src/Status.php:89
+msgid ""
+"Images still import, but WordPress cannot create smaller sizes. Ask your "
+"host to enable Imagick or GD with WebP."
+msgstr "图片仍可导入，但 WordPress 无法生成较小的尺寸。请联系您的主机商启用支持 WebP 的 Imagick 或 GD。"
+
+#: core/src/Status.php:93
+msgid "Permalinks"
+msgstr "固定链接"
+
+#: core/src/Status.php:94
+msgid "Plain"
+msgstr "朴素"
+
+#: core/src/Status.php:96
+msgid ""
+"Choose \"Post name\" under Settings → Permalinks for clean shop and page "
+"addresses."
+msgstr "请在“设置 → 固定链接”中选择“文章名”，以获得简洁的商店和页面地址。"
+
+#: core/src/Status.php:123 core/assets/admin.js:282
+msgid "Theme"
+msgstr "主题"
+
+#: core/src/Status.php:124
+msgid "Core module"
+msgstr "核心模块"
+
+#: core/src/Status.php:124
+msgid "plugin"
+msgstr "插件"
+
+#: core/src/Status.php:124
+msgid "built into theme"
+msgstr "内置于主题"
+
+#: core/src/Status.php:125
+msgid "Site address"
+msgstr "站点地址"
+
+#: core/src/Status.php:126
+msgid "Multisite"
+msgstr "多站点"
+
+#: core/src/Status.php:126
+msgid "Yes"
+msgstr "是"
+
+#: core/src/Status.php:126
+msgid "No"
+msgstr "否"
+
+#: core/src/Status.php:127
+msgid "Server"
+msgstr "服务器"
+
+#: core/src/Status.php:128
+msgid "Database"
+msgstr "数据库"
+
+#: core/src/Status.php:129
+msgid "Active plugins"
+msgstr "已启用的插件"
+
+#: inc/block-styles.php:16
+msgid "Secondary"
+msgstr "次要"
+
+#: inc/block-styles.php:17
+msgid "Outline"
+msgstr "轮廓"
+
+#: inc/block-styles.php:18
+msgid "Ghost"
+msgstr "幽灵"
+
+#: inc/block-styles.php:19
+msgid "Dark"
+msgstr "深色"
+
+#: inc/block-styles.php:20
+msgid "Light (on dark)"
+msgstr "浅色（用于深色背景）"
+
+#: inc/block-styles.php:21
+msgid "Text link"
+msgstr "文字链接"
+
+#: inc/block-styles.php:22
+msgid "Pill"
+msgstr "胶囊"
+
+#: inc/block-styles.php:23
+msgid "Large"
+msgstr "大"
+
+#: inc/block-styles.php:26 inc/block-styles.php:33
+msgid "Card"
+msgstr "卡片"
+
+#: inc/block-styles.php:27 inc/block-styles.php:34
+msgid "Card — flat"
+msgstr "卡片 — 扁平"
+
+#: inc/block-styles.php:28 inc/block-styles.php:35
+msgid "Card — dark"
+msgstr "卡片 — 深色"
+
+#: inc/block-styles.php:29
+msgid "Section — dark"
+msgstr "区块 — 深色"
+
+#: inc/block-styles.php:30
+msgid "Logo strip"
+msgstr "Logo 条"
+
+#: inc/block-styles.php:38
+msgid "Checklist"
+msgstr "清单"
+
+#: inc/block-styles.php:39
+msgid "Timeline"
+msgstr "时间线"
+
+#: inc/block-styles.php:42
+msgid "Overline"
+msgstr "上标题"
+
+#: inc/block-styles.php:43
+msgid "Lead"
+msgstr "引言"
+
+#: inc/block-styles.php:46
+msgid "Flush"
+msgstr "无边距"
+
+#: inc/block-styles.php:49
+msgid "Shadow"
+msgstr "阴影"
+
+#: inc/block-styles.php:50
+msgid "Glass frame"
+msgstr "玻璃框"
+
+#: inc/block-styles.php:53
+msgid "Pills"
+msgstr "胶囊"
+
+#: inc/block-styles.php:54
+msgid "Hashtags"
+msgstr "话题标签"
+
+#: inc/block-styles.php:57
+msgid "Soft"
+msgstr "柔和"
+
+#: inc/core-bridge.php:53
+msgid ""
+"Install the WPEssential Core plugin to import one-click demos for Gutenberg "
+"or Elementor."
+msgstr "安装 WPEssential Core 插件即可为 Gutenberg 或 Elementor 一键导入演示。"
+
+#: inc/core-bridge.php:55
+msgid "Get WPEssential Core"
+msgstr "获取 WPEssential Core"
+
+#: inc/core-bridge.php:57
+msgid "Dismiss"
+msgstr "忽略"
+
+#: inc/motion.php:21
+msgid "None"
+msgstr "无"
+
+#: inc/motion.php:22
+msgid "No animations."
+msgstr "无动画。"
+
+#: inc/motion.php:25
+msgid "Subtle"
+msgstr "微妙"
+
+#: inc/motion.php:26
+msgid "Short fade-up. Corporate, SaaS, finance, medical."
+msgstr "短暂的淡入上移。适用于企业、SaaS、金融、医疗。"
+
+#: inc/motion.php:29
+msgid "Editorial"
+msgstr "杂志风"
+
+#: inc/motion.php:30
+msgid "Slow image masks and line reveals. Fashion, magazine, luxury."
+msgstr "缓慢的图片遮罩和逐行显现。适用于时尚、杂志、奢侈品。"
+
+#: inc/motion.php:33
+msgid "Playful"
+msgstr "活泼"
+
+#: inc/motion.php:34
+msgid "Springy scale and stagger. Food, kids, events, creative."
+msgstr "弹性缩放和交错动画。适用于餐饮、儿童、活动、创意。"
+
+#: inc/motion.php:37
+msgid "Dynamic (GSAP)"
+msgstr "动感（GSAP）"
+
+#: inc/motion.php:38
+msgid ""
+"Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, "
+"sport, launches."
+msgstr "使用 GSAP ScrollTrigger 实现视差、计数器和交错网格。适用于活动、体育、产品发布。"
+
+#: inc/multilingual.php:108
+msgid "Language"
+msgstr "语言"
+
+#: inc/multilingual.php:165
+msgid "Language switcher"
+msgstr "语言切换器"
+
+#: inc/multilingual.php:245 inc/patterns-shop/shop-products.php:14
+msgid "Featured"
+msgstr "精选"
+
+#: inc/multilingual.php:246
+msgid "Author"
+msgstr "作者"
+
+#: inc/options.php:40
+msgid "Untitled snippet"
+msgstr "未命名代码片段"
+
+#: inc/options.php:125 inc/options.php:215
+msgid "Theme Options"
+msgstr "主题选项"
+
+#: inc/options.php:153
+msgid "Saved"
+msgstr "已保存"
+
+#: inc/options.php:154
+msgid "Could not save"
+msgstr "无法保存"
+
+#: inc/options.php:155
+msgid "Delete this snippet?"
+msgstr "删除此代码片段？"
+
+#: inc/options.php:156
+msgid ""
+"No snippets yet. Add CSS or JavaScript without editing theme files — it "
+"survives theme updates."
+msgstr "还没有代码片段。无需编辑主题文件即可添加 CSS 或 JavaScript —— 主题更新后依然保留。"
+
+#: inc/options.php:215
+msgid "Loading…"
+msgstr "正在加载…"
+
+#: inc/patterns-shop/shop-categories.php:13
+msgid "Shop by category"
+msgstr "按分类选购"
+
+#: inc/patterns-shop/shop-categories.php:17
+msgid "Find what you love"
+msgstr "发现您的心仪之选"
+
+#: inc/patterns-shop/shop-products.php:18
+msgid "Customer favourites"
+msgstr "顾客最爱"
+
+#: inc/patterns-shop/shop-products.php:24
+msgid "View all products"
+msgstr "查看所有产品"
+
+#: inc/patterns-shop/shop-products.php:34
+msgid "New arrivals"
+msgstr "新品上市"
+
+#: inc/patterns-shop/shop-products.php:42
+msgid "On sale now"
+msgstr "限时特惠"
+
+#: inc/patterns.php:15
+msgid "WPEssential — Heroes"
+msgstr "WPEssential — 主视觉"
+
+#: inc/patterns.php:16
+msgid "WPEssential — Sections"
+msgstr "WPEssential — 区块"
+
+#: inc/patterns.php:17
+msgid "WPEssential — Headers"
+msgstr "WPEssential — 页眉"
+
+#: inc/patterns.php:18
+msgid "WPEssential — Footers"
+msgstr "WPEssential — 页脚"
+
+#: inc/patterns.php:19
+msgid "WPEssential — Full pages"
+msgstr "WPEssential — 完整页面"
+
+#: inc/patterns.php:20
+msgid "WPEssential — Shop"
+msgstr "WPEssential — 商店"
+
+#: inc/patterns.php:36
+msgid "Shop — Category grid"
+msgstr "商店 — 分类网格"
+
+#: inc/patterns.php:37
+msgid "Shop — Featured, new and sale products"
+msgstr "商店 — 精选、新品和特价产品"
+
+#: inc/seo.php:136
+msgid "Home"
+msgstr "首页"
+
+#: inc/setup.php:40
+msgid "Primary Menu"
+msgstr "主菜单"
+
+#: inc/setup.php:41
+msgid "Mobile Menu"
+msgstr "移动端菜单"
+
+#: inc/setup.php:42
+msgid "Footer Menu"
+msgstr "页脚菜单"
+
+#: inc/setup.php:43
+msgid "Top Bar Menu"
+msgstr "顶栏菜单"
+
+#: inc/setup.php:77
+msgid "Back to top"
+msgstr "返回顶部"
+
+#. translators: %d: discount percentage.
+#: inc/woocommerce.php:48
+msgid "-%d%%"
+msgstr "-%d%%"
+
+#: inc/woocommerce.php:89
+msgid "Out of stock"
+msgstr "缺货"
+
+#: inc/woocommerce.php:136
+msgid "You’ve unlocked free shipping on this order!"
+msgstr "此订单已享受免费配送！"
+
+#. translators: %s: amount left for free shipping.
+#: inc/woocommerce.php:139
+msgid "Add %s more to unlock free shipping."
+msgstr "再购买 %s 即可享受免费配送。"
+
+#: patterns/blog-hero.php
+msgctxt "Pattern title"
+msgid "Blog hero"
+msgstr "博客主视觉"
+
+#: patterns/blog-hero.php:14 patterns/footer-premium.php:89
+#: patterns/footer-simple.php:18 core/assets/admin.js:301
+msgid "Blog"
+msgstr "博客"
+
+#: patterns/blog-hero.php:18
+msgid "Guides, tutorials and product news from the WPEssential team."
+msgstr "来自 WPEssential 团队的指南、教程和产品资讯。"
+
+#: patterns/builders-split.php
+msgctxt "Pattern title"
+msgid "Split — image + checklist (dark)"
+msgstr "分栏 — 图片 + 清单（深色）"
+
+#: patterns/builders-split.php:16
+msgid "Your builder, your choice"
+msgstr "构建器由您选择"
+
+#: patterns/builders-split.php:20
+msgid "Same design. Gutenberg or Elementor."
+msgstr "同样的设计，Gutenberg 或 Elementor 皆可。"
+
+#: patterns/builders-split.php:24
+msgid ""
+"Colors, fonts and spacing come from one theme.json and sync into Elementor’s"
+" global kit automatically."
+msgstr "颜色、字体和间距来自同一个 theme.json，并自动同步到 Elementor 的全局套件。"
+
+#: patterns/builders-split.php:29
+msgid "Shared design tokens across both builders"
+msgstr "两种构建器共享设计令牌"
+
+#: patterns/builders-split.php:31
+msgid "Elementor Pro Theme Builder locations supported"
+msgstr "支持 Elementor Pro 主题构建器位置"
+
+#: patterns/builders-split.php:33
+msgid "Full Site Editing templates and patterns"
+msgstr "全站编辑模板和区块样板"
+
+#: patterns/builders-split.php:40
+msgid "Designer building a site"
+msgstr "正在制作网站的设计师"
+
+#: patterns/coming-soon.php
+msgctxt "Pattern title"
+msgid "Coming soon"
+msgstr "即将上线"
+
+#: patterns/coming-soon.php:17
+msgid "Something great is on the way"
+msgstr "精彩即将到来"
+
+#: patterns/coming-soon.php:21
+msgid "We are polishing the final details. Follow us for launch news."
+msgstr "我们正在打磨最后的细节。关注我们获取上线消息。"
+
+#: patterns/comments.php
+msgctxt "Pattern title"
+msgid "Comments"
+msgstr "评论"
+
+#: patterns/contact.php
+msgctxt "Pattern title"
+msgid "Contact — details + form area"
+msgstr "联系 — 详细信息 + 表单区域"
+
+#: patterns/contact.php:22
+msgid "Email us"
+msgstr "发送邮件"
+
+#: patterns/contact.php:36
+msgid "Call us"
+msgstr "致电我们"
+
+#: patterns/contact.php:50
+msgid "Visit us"
+msgstr "莅临我们"
+
+#: patterns/contact.php:64
+msgid "Support hours"
+msgstr "支持时间"
+
+#: patterns/contact.php:68
+msgid "Replies within one business day"
+msgstr "一个工作日内回复"
+
+#: patterns/contact.php:76
+msgid "Send us a message"
+msgstr "给我们留言"
+
+#: patterns/contact.php:80
+msgid ""
+"Replace the shortcode below with your form plugin (Contact Form 7, WPForms, "
+"Fluent Forms or the Elementor Form widget)."
+msgstr ""
+"请将下方的简码替换为您的表单插件（Contact Form 7、WPForms、Fluent Forms 或 Elementor 表单小工具）。"
+
+#: patterns/content-404.php
+msgctxt "Pattern title"
+msgid "404 content"
+msgstr "404 内容"
+
+#: patterns/content-404.php:14
+msgid "Error 404"
+msgstr "错误 404"
+
+#: patterns/content-404.php:18
+msgid "This page took a day off"
+msgstr "这个页面今天休息了"
+
+#: patterns/content-404.php:22
+msgid ""
+"The link may be broken or the page may have moved. Try a search or head back"
+" home."
+msgstr "链接可能已失效，或页面已被移动。请尝试搜索或返回首页。"
+
+#: patterns/content-404.php:25 patterns/header-actions.php:14
+#: patterns/header-shop.php:22 patterns/sidebar.php:14
+msgid "Search"
+msgstr "搜索"
+
+#: patterns/content-404.php:29
+msgid "Back to home"
+msgstr "返回首页"
+
+#: patterns/cta-banner.php
+msgctxt "Pattern title"
+msgid "Call to action — gradient banner"
+msgstr "行动号召 — 渐变横幅"
+
+#: patterns/cta-banner.php:15
+msgid "Ready to launch your next site?"
+msgstr "准备好上线您的下一个网站了吗？"
+
+#: patterns/cta-banner.php:19
+msgid ""
+"Start free. Upgrade to Pro when you need premium demos and priority support."
+msgstr "免费开始。需要高级演示和优先支持时再升级到 Pro。"
+
+#: patterns/cta-banner.php:24
+msgid "Get WPEssential free"
+msgstr "免费获取 WPEssential"
+
+#: patterns/cta-banner.php:28
+msgid "See Pro plans →"
+msgstr "查看 Pro 方案 →"
+
+#: patterns/faq.php
+msgctxt "Pattern title"
+msgid "FAQ — accordion"
+msgstr "常见问题 — 手风琴"
+
+#: patterns/faq.php:15 patterns/footer-premium.php:90
+msgid "FAQ"
+msgstr "常见问题"
+
+#: patterns/faq.php:19 patterns/page-faq.php:20
+msgid "Frequently asked questions"
+msgstr "常见问题解答"
+
+#: patterns/faq.php:24
+msgid "Is WPEssential free?"
+msgstr "WPEssential 是免费的吗？"
+
+#: patterns/faq.php:25
+msgid ""
+"Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium"
+" blocks and priority support."
+msgstr "是的。主题和 12 个演示永久免费。Pro 可解锁 40+ 个演示、高级区块和优先支持。"
+
+#: patterns/faq.php:30
+msgid "Which page builders are supported?"
+msgstr "支持哪些页面构建器？"
+
+#: patterns/faq.php:31
+msgid ""
+"The native block editor (Gutenberg) and Elementor. Every demo ships in both "
+"versions."
+msgstr "原生区块编辑器（Gutenberg）和 Elementor。每个演示都提供这两个版本。"
+
+#: patterns/faq.php:36
+msgid "Will importing a demo delete my content?"
+msgstr "导入演示会删除我的内容吗？"
+
+#: patterns/faq.php:37
+msgid ""
+"No. Demo content is added alongside your existing posts, and you choose what"
+" to import."
+msgstr "不会。演示内容会与您现有的文章一同添加，并且您可以选择要导入的内容。"
+
+#: patterns/faq.php:42
+msgid "Do I need Elementor Pro?"
+msgstr "我需要 Elementor Pro 吗？"
+
+#: patterns/faq.php:43
+msgid ""
+"No. Elementor free is enough for every demo. Elementor Pro Theme Builder "
+"headers and footers are also supported."
+msgstr "不需要。免费版 Elementor 即可满足所有演示。同时也支持 Elementor Pro 主题构建器的页眉和页脚。"
+
+#: patterns/faq.php:48
+msgid "Is the theme translation-ready and RTL compatible?"
+msgstr "主题是否支持翻译和 RTL？"
+
+#: patterns/faq.php:49
+msgid ""
+"Yes. All strings are translatable and layouts mirror correctly for languages"
+" such as Urdu and Arabic."
+msgstr "是的。所有字符串均可翻译，在乌尔都语和阿拉伯语等语言中布局会正确镜像。"
+
+#: patterns/features-grid.php
+msgctxt "Pattern title"
+msgid "Features — 3×2 grid"
+msgstr "功能 — 3×2 网格"
+
+#: patterns/features-grid.php:15
+msgid "Why WPEssential"
+msgstr "为什么选择 WPEssential"
+
+#: patterns/features-grid.php:19
+msgid "Everything a modern site needs, nothing it doesn’t"
+msgstr "现代网站所需的一切，不多也不少"
+
+#: patterns/features-grid.php:23
+msgid ""
+"Built on theme.json and native blocks, with first-class Elementor support."
+msgstr "基于 theme.json 和原生区块构建，并一流支持 Elementor。"
+
+#: patterns/features-grid.php:34
+msgid "One-click demo import"
+msgstr "一键导入演示"
+
+#: patterns/features-grid.php:38
+msgid ""
+"Pick a demo, choose your builder, import. Content and settings land exactly "
+"as previewed."
+msgstr "选择演示，选择构建器，导入。内容和设置与预览完全一致。"
+
+#: patterns/features-grid.php:48
+msgid "Gutenberg &amp; Elementor"
+msgstr "Gutenberg &amp; Elementor"
+
+#: patterns/features-grid.php:52
+msgid ""
+"Every demo ships twice — native blocks and Elementor — sharing one set of "
+"design tokens."
+msgstr "每个演示都提供原生区块和 Elementor 两个版本，共享同一套设计令牌。"
+
+#: patterns/features-grid.php:62
+msgid "Blazing fast"
+msgstr "极速性能"
+
+#: patterns/features-grid.php:66
+msgid ""
+"No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
+msgstr "无 jQuery、按区块加载 CSS 以及精简的样式表，让 Core Web Vitals 保持优秀。"
+
+#: patterns/features-grid.php:78
+msgid "Automatic plugin setup"
+msgstr "自动设置插件"
+
+#: patterns/features-grid.php:82
+msgid ""
+"Required plugins install and activate themselves when you import a demo."
+msgstr "导入演示时，必需插件会自动安装并启用。"
+
+#: patterns/features-grid.php:92
+msgid "WooCommerce ready"
+msgstr "支持 WooCommerce"
+
+#: patterns/features-grid.php:96
+msgid ""
+"Designed shop, product, cart, checkout and account pages — not default "
+"templates."
+msgstr "精心设计的商店、产品、购物车、结账和账户页面 —— 而非默认模板。"
+
+#: patterns/features-grid.php:106
+msgid "Pro license &amp; updates"
+msgstr "Pro 许可证 &amp; 更新"
+
+#: patterns/features-grid.php:110
+msgid ""
+"Connect a license once to unlock Pro demos, premium blocks and updates."
+msgstr "只需连接一次许可证，即可解锁 Pro 演示、高级区块和更新。"
+
+#: patterns/footer-premium.php
+msgctxt "Pattern title"
+msgid "Footer — Premium (dark, newsletter band)"
+msgstr "页脚 — 高级（深色，带订阅栏）"
+
+#: patterns/footer-premium.php:17
+msgid "Get design tips & new demos"
+msgstr "获取设计技巧和新演示"
+
+#: patterns/footer-premium.php:21
+msgid "One email a month. No spam, unsubscribe anytime."
+msgstr "每月一封邮件。无垃圾邮件，随时退订。"
+
+#: patterns/footer-premium.php:28
+msgid "Subscribe"
+msgstr "订阅"
+
+#: patterns/footer-premium.php:55
+msgid "Company"
+msgstr "公司"
+
+#: patterns/footer-premium.php:59 patterns/page-about.php:16
+msgid "About us"
+msgstr "关于我们"
+
+#: patterns/footer-premium.php:60 patterns/page-services.php:16
+#: patterns/services-grid.php:15
+msgid "Services"
+msgstr "服务"
+
+#: patterns/footer-premium.php:61 patterns/page-pricing.php:16
+#: patterns/pricing.php:15
+msgid "Pricing"
+msgstr "价格"
+
+#: patterns/footer-premium.php:62 patterns/footer-simple.php:19
+#: patterns/header-topbar.php:18 patterns/page-contact.php:16
+msgid "Contact"
+msgstr "联系"
+
+#: patterns/footer-premium.php:70 core/assets/admin.js:301
+msgid "Shop"
+msgstr "商店"
+
+#: patterns/footer-premium.php:74
+msgid "All products"
+msgstr "所有产品"
+
+#: patterns/footer-premium.php:75
+msgid "My account"
+msgstr "我的账户"
+
+#: patterns/footer-premium.php:76
+msgid "Cart"
+msgstr "购物车"
+
+#: patterns/footer-premium.php:77 patterns/header-topbar.php:18
+msgid "Track order"
+msgstr "订单跟踪"
+
+#: patterns/footer-premium.php:85 core/assets/admin.js:263
+msgid "Resources"
+msgstr "资源"
+
+#: patterns/footer-premium.php:91 core/assets/admin.js:266
+msgid "Documentation"
+msgstr "文档"
+
+#: patterns/footer-premium.php:92 core/assets/admin.js:267
+msgid "Support"
+msgstr "支持"
+
+#: patterns/footer-premium.php:100
+msgid "All rights reserved."
+msgstr "保留所有权利。"
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:20
+msgid "Privacy"
+msgstr "隐私"
+
+#: patterns/footer-premium.php:104
+msgid "Terms"
+msgstr "条款"
+
+#: patterns/footer-simple.php
+msgctxt "Pattern title"
+msgid "Footer — Simple"
+msgstr "页脚 — 简洁"
+
+#: patterns/footer-simple.php:17
+msgid "About"
+msgstr "关于"
+
+#: patterns/header-actions.php
+msgctxt "Pattern title"
+msgid "Header actions (search, account, cart, CTA)"
+msgstr "页眉操作（搜索、账户、购物车、行动号召）"
+
+#: patterns/header-actions.php:23
+msgid "Switch to dark mode"
+msgstr "切换到深色模式"
+
+#: patterns/header-actions.php:23
+msgid "Switch to light mode"
+msgstr "切换到浅色模式"
+
+#: patterns/header-actions.php:29
+msgid "Get Started"
+msgstr "立即开始"
+
+#: patterns/header-centered.php
+msgctxt "Pattern title"
+msgid "Header — Centered"
+msgstr "页眉 — 居中"
+
+#: patterns/header-default.php
+msgctxt "Pattern title"
+msgid "Header — Default"
+msgstr "页眉 — 默认"
+
+#: patterns/header-shop.php
+msgctxt "Pattern title"
+msgid "Header — Shop (search + account + cart)"
+msgstr "页眉 — 商店（搜索 + 账户 + 购物车）"
+
+#: patterns/header-shop.php:22
+msgid "Search products"
+msgstr "搜索产品"
+
+#: patterns/header-shop.php:22
+msgid "Search products, brands and more…"
+msgstr "搜索产品、品牌等…"
+
+#: patterns/header-topbar.php
+msgctxt "Pattern title"
+msgid "Top bar"
+msgstr "顶栏"
+
+#: patterns/header-topbar.php:14
+msgid "Free shipping on orders over $75 · 30-day returns"
+msgstr "订单满 $75 免费配送 · 30 天退货"
+
+#: patterns/header-topbar.php:18
+msgid "Help"
+msgstr "帮助"
+
+#: patterns/header-transparent.php
+msgctxt "Pattern title"
+msgid "Header — Transparent (over dark hero)"
+msgstr "页眉 — 透明（覆盖于深色主视觉之上）"
+
+#: patterns/hero-dark.php
+msgctxt "Pattern title"
+msgid "Hero — Dark with product shot"
+msgstr "主视觉 — 深色带产品图"
+
+#: patterns/hero-dark.php:15 core/assets/admin.js:241
+msgid "NEW"
+msgstr "新"
+
+#: patterns/hero-dark.php:15
+msgid "40+ demos for Gutenberg &amp; Elementor"
+msgstr "40+ 个 Gutenberg &amp; Elementor 演示"
+
+#: patterns/hero-dark.php:19
+msgid "Launch a premium WordPress site in minutes, not weeks"
+msgstr "几分钟内上线高端 WordPress 网站，而不是几周"
+
+#: patterns/hero-dark.php:23
+msgid ""
+"One-click demos for every niche, built natively for both the block editor "
+"and Elementor — fast, accessible and fully yours."
+msgstr "适用于各行各业的一键演示，原生支持区块编辑器和 Elementor —— 快速、无障碍，完全属于您。"
+
+#: patterns/hero-dark.php:28 core/assets/admin.js:245
+msgid "Browse demos"
+msgstr "浏览演示"
+
+#: patterns/hero-dark.php:32
+msgid "Watch the 2-min tour"
+msgstr "观看 2 分钟导览"
+
+#: patterns/hero-dark.php:43 patterns/stats.php:28
+msgid "Ready demos"
+msgstr "现成演示"
+
+#: patterns/hero-dark.php:53
+msgid "Page builders"
+msgstr "页面构建器"
+
+#: patterns/hero-dark.php:63
+msgid "CSS on first load"
+msgstr "首次加载的 CSS"
+
+#: patterns/hero-dark.php:73
+msgid "From 1,200 reviews"
+msgstr "来自 1,200 条评价"
+
+#: patterns/hero-dark.php:80
+msgid "Business demo homepage built with WPEssential"
+msgstr "使用 WPEssential 构建的商业演示首页"
+
+#: patterns/hero-split.php
+msgctxt "Pattern title"
+msgid "Hero — Split with image"
+msgstr "主视觉 — 分栏带图片"
+
+#: patterns/hero-split.php:17
+msgid "Multi-niche WordPress theme"
+msgstr "多用途 WordPress 主题"
+
+#: patterns/hero-split.php:21
+msgid "Build any website in minutes"
+msgstr "几分钟内构建任何网站"
+
+#: patterns/hero-split.php:25
+msgid ""
+"Import a ready-made demo for Gutenberg or Elementor with one click, then "
+"make it yours."
+msgstr "一键导入适用于 Gutenberg 或 Elementor 的现成演示，然后按您的需要进行个性化。"
+
+#: patterns/hero-split.php:30 core/assets/admin.js:258
+msgid "Get started"
+msgstr "开始使用"
+
+#: patterns/hero-split.php:34
+msgid "Learn more"
+msgstr "了解更多"
+
+#: patterns/hero-split.php:41
+msgid "A WPEssential site on a laptop and phone"
+msgstr "显示在笔记本电脑和手机上的 WPEssential 网站"
+
+#: patterns/latest-posts.php
+msgctxt "Pattern title"
+msgid "Latest posts — 3 cards"
+msgstr "最新文章 — 3 张卡片"
+
+#: patterns/latest-posts.php:15
+msgid "From the blog"
+msgstr "来自博客"
+
+#: patterns/latest-posts.php:19
+msgid "Guides for faster, better WordPress sites"
+msgstr "打造更快、更好的 WordPress 网站的指南"
+
+#: patterns/logos.php
+msgctxt "Pattern title"
+msgid "Logo strip"
+msgstr "Logo 条"
+
+#: patterns/logos.php:14
+msgid "Trusted by 18,000+ agencies, stores and creators"
+msgstr "深受 18,000+ 家代理机构、商店和创作者信赖"
+
+#: patterns/maintenance.php
+msgctxt "Pattern title"
+msgid "Maintenance mode"
+msgstr "维护模式"
+
+#: patterns/maintenance.php:17
+msgid "We will be back shortly"
+msgstr "我们很快回来"
+
+#: patterns/maintenance.php:21
+msgid ""
+"Scheduled maintenance is underway. Thanks for your patience — we will be "
+"back online in a few minutes."
+msgstr "正在进行计划维护。感谢您的耐心等待 —— 我们将在几分钟内恢复在线。"
+
+#: patterns/no-results.php
+msgctxt "Pattern title"
+msgid "No results"
+msgstr "无结果"
+
+#: patterns/no-results.php:13
+msgid "Nothing matched. Try a different search or browse the latest posts."
+msgstr "没有匹配的内容。请尝试其他搜索词或浏览最新文章。"
+
+#: patterns/page-about.php
+msgctxt "Pattern title"
+msgid "About page"
+msgstr "关于页面"
+
+#: patterns/page-about.php:20
+msgid "We build WordPress tools that feel premium and stay fast"
+msgstr "我们打造高端体验且始终快速的 WordPress 工具"
+
+#: patterns/page-about.php:24
+msgid ""
+"WPEssential started as an internal starter theme for client work. Today it "
+"powers stores, agencies and creators in more than 60 countries."
+msgstr "WPEssential 最初是为客户项目开发的内部入门主题。如今它为 60 多个国家/地区的商店、代理机构和创作者提供支持。"
+
+#: patterns/page-contact.php
+msgctxt "Pattern title"
+msgid "Contact page"
+msgstr "联系页面"
+
+#: patterns/page-contact.php:20
+msgid "Let’s talk about your next site"
+msgstr "聊聊您的下一个网站"
+
+#: patterns/page-contact.php:24
+msgid ""
+"Questions about demos, licensing or a custom build? Our team replies within "
+"one business day."
+msgstr "对演示、许可证或定制开发有疑问？我们的团队会在一个工作日内回复。"
+
+#: patterns/page-faq.php
+msgctxt "Pattern title"
+msgid "FAQ page"
+msgstr "常见问题页面"
+
+#: patterns/page-faq.php:16
+msgid "Help center"
+msgstr "帮助中心"
+
+#: patterns/page-faq.php:24
+msgid ""
+"Answers about demos, builders, licensing and updates. Can’t find what you "
+"need? Contact support."
+msgstr "关于演示、构建器、许可证和更新的解答。找不到需要的内容？请联系支持。"
+
+#: patterns/page-hero.php
+msgctxt "Pattern title"
+msgid "Page title band"
+msgstr "页面标题栏"
+
+#: patterns/page-pricing.php
+msgctxt "Pattern title"
+msgid "Pricing page"
+msgstr "价格页面"
+
+#: patterns/page-pricing.php:20
+msgid "Simple plans that grow with you"
+msgstr "随您成长的简单方案"
+
+#: patterns/page-pricing.php:24
+msgid ""
+"Start free with the core theme. Upgrade for premium demos, Pro blocks and "
+"priority support."
+msgstr "从免费的核心主题开始。升级即可获得高级演示、Pro 区块和优先支持。"
+
+#: patterns/page-services.php
+msgctxt "Pattern title"
+msgid "Services page"
+msgstr "服务页面"
+
+#: patterns/page-services.php:20
+msgid "Everything you need to launch and grow"
+msgstr "上线和成长所需的一切"
+
+#: patterns/page-services.php:24
+msgid ""
+"Strategy, design, development and care plans — delivered on a theme built "
+"for speed."
+msgstr "策略、设计、开发和维护方案 —— 基于为速度而生的主题交付。"
+
+#: patterns/post-card.php
+msgctxt "Pattern title"
+msgid "Post card"
+msgstr "文章卡片"
+
+#: patterns/pricing.php
+msgctxt "Pattern title"
+msgid "Pricing — 3 plans"
+msgstr "价格 — 3 个方案"
+
+#: patterns/pricing.php:19
+msgid "Simple pricing. Both builders included."
+msgstr "简单的定价。包含两种构建器。"
+
+#: patterns/pricing.php:23
+msgid ""
+"Start free and upgrade when you need Pro demos, premium blocks and priority "
+"support."
+msgstr "免费开始，需要 Pro 演示、高级区块和优先支持时再升级。"
+
+#: patterns/pricing.php:30 core/assets/admin.js:312
+msgid "Free"
+msgstr "免费"
+
+#: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+msgid "/ year"
+msgstr "/ 年"
+
+#: patterns/pricing.php:38
+msgid "For personal sites getting started."
+msgstr "适用于刚起步的个人网站。"
+
+#: patterns/pricing.php:43
+msgid "12 free demos"
+msgstr "12 个免费演示"
+
+#: patterns/pricing.php:45
+msgid "Gutenberg + Elementor"
+msgstr "Gutenberg + Elementor"
+
+#: patterns/pricing.php:47
+msgid "Core blocks &amp; patterns"
+msgstr "核心区块 &amp; 区块样板"
+
+#: patterns/pricing.php:49
+msgid "Community support"
+msgstr "社区支持"
+
+#: patterns/pricing.php:55
+msgid "Download free"
+msgstr "免费下载"
+
+#: patterns/pricing.php:60 core/assets/admin.js:312
+msgid "Pro"
+msgstr "Pro"
+
+#: patterns/pricing.php:68
+msgid "For freelancers and growing businesses."
+msgstr "适用于自由职业者和成长中的企业。"
+
+#: patterns/pricing.php:73
+msgid "All 40+ demos"
+msgstr "全部 40+ 个演示"
+
+#: patterns/pricing.php:75
+msgid "Premium blocks &amp; widgets"
+msgstr "高级区块 &amp; 小工具"
+
+#: patterns/pricing.php:77
+msgid "WooCommerce demos"
+msgstr "WooCommerce 演示"
+
+#: patterns/pricing.php:79
+msgid "1 year of updates"
+msgstr "1 年更新"
+
+#: patterns/pricing.php:81 core/assets/admin.js:1122
+msgid "Priority support"
+msgstr "优先支持"
+
+#: patterns/pricing.php:87
+msgid "Get Pro"
+msgstr "获取 Pro"
+
+#: patterns/pricing.php:92 core/assets/admin.js:301
+msgid "Agency"
+msgstr "Agency"
+
+#: patterns/pricing.php:100
+msgid "For teams building client sites."
+msgstr "适用于为客户建站的团队。"
+
+#: patterns/pricing.php:105
+msgid "Everything in Pro"
+msgstr "包含 Pro 的全部功能"
+
+#: patterns/pricing.php:107
+msgid "Unlimited sites"
+msgstr "无限站点"
+
+#: patterns/pricing.php:109
+msgid "White-label dashboard"
+msgstr "白标仪表盘"
+
+#: patterns/pricing.php:111
+msgid "Client handoff kit"
+msgstr "客户交付套件"
+
+#: patterns/pricing.php:117
+msgid "Get Agency"
+msgstr "获取 Agency"
+
+#: patterns/process-steps.php
+msgctxt "Pattern title"
+msgid "Process — 4 steps (dark)"
+msgstr "流程 — 4 个步骤（深色）"
+
+#: patterns/process-steps.php:15
+msgid "How it works"
+msgstr "使用方法"
+
+#: patterns/process-steps.php:19
+msgid "Live in four simple steps"
+msgstr "简单四步即可上线"
+
+#: patterns/process-steps.php:31
+msgid "Pick a demo"
+msgstr "选择演示"
+
+#: patterns/process-steps.php:35
+msgid "Browse 40+ demos and preview them live."
+msgstr "浏览 40+ 个演示并实时预览。"
+
+#: patterns/process-steps.php:43
+msgid "Choose a builder"
+msgstr "选择构建器"
+
+#: patterns/process-steps.php:47
+msgid "Gutenberg or Elementor — same design."
+msgstr "Gutenberg 或 Elementor —— 同样的设计。"
+
+#: patterns/process-steps.php:55
+msgid "Import in one click"
+msgstr "一键导入"
+
+#: patterns/process-steps.php:59
+msgid "Plugins, content and settings are set up for you."
+msgstr "插件、内容和设置都会为您自动设置好。"
+
+#: patterns/process-steps.php:67 core/assets/admin.js:290
+msgid "Make it yours"
+msgstr "打造专属网站"
+
+#: patterns/process-steps.php:71
+msgid "Edit text, swap images and publish."
+msgstr "编辑文字、替换图片，然后发布。"
+
+#: patterns/services-grid.php
+msgctxt "Pattern title"
+msgid "Services — 3 column cards"
+msgstr "服务 — 3 列卡片"
+
+#: patterns/services-grid.php:19
+msgid "From idea to launch"
+msgstr "从创意到上线"
+
+#: patterns/services-grid.php:23
+msgid ""
+"Use WPEssential yourself, or let our team set up, customise and maintain "
+"your site."
+msgstr "您可以自己使用 WPEssential，也可以让我们的团队为您设置、定制和维护网站。"
+
+#: patterns/services-grid.php:34
+msgid "Demo setup"
+msgstr "演示设置"
+
+#: patterns/services-grid.php:38
+msgid "We import your chosen demo, connect your domain and configure plugins."
+msgstr "我们会导入您选择的演示、连接您的域名并配置插件。"
+
+#: patterns/services-grid.php:48
+msgid "Brand customisation"
+msgstr "品牌定制"
+
+#: patterns/services-grid.php:52
+msgid "Your colors, fonts, logo and copy applied across every template."
+msgstr "将您的颜色、字体、Logo 和文案应用到每个模板。"
+
+#: patterns/services-grid.php:62
+msgid "WooCommerce launch"
+msgstr "WooCommerce 开店"
+
+#: patterns/services-grid.php:66
+msgid "Products, payments, shipping zones and emails configured and tested."
+msgstr "产品、支付、配送区域和邮件均已配置并测试。"
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Blog sidebar"
+msgstr "博客侧边栏"
+
+#: patterns/sidebar.php:19
+msgid "Categories"
+msgstr "分类"
+
+#: patterns/sidebar.php:27
+msgid "Recent posts"
+msgstr "近期文章"
+
+#: patterns/sidebar.php:35
+msgid "Tags"
+msgstr "标签"
+
+#: patterns/stats.php
+msgctxt "Pattern title"
+msgid "Stats — 4 counters"
+msgstr "统计 — 4 个计数器"
+
+#: patterns/stats.php:20
+msgid "Active installs"
+msgstr "活跃安装量"
+
+#: patterns/stats.php:36
+msgid "Average rating"
+msgstr "平均评分"
+
+#: patterns/stats.php:44
+msgid "Support response"
+msgstr "支持响应"
+
+#: patterns/team.php
+msgctxt "Pattern title"
+msgid "Team — 4 members"
+msgstr "团队 — 4 位成员"
+
+#: patterns/team.php:15
+msgid "The team"
+msgstr "团队"
+
+#: patterns/team.php:19
+msgid "People behind WPEssential"
+msgstr "WPEssential 背后的人"
+
+#: patterns/team.php:35
+msgid "Founder &amp; Lead Designer"
+msgstr "创始人 &amp; 首席设计师"
+
+#: patterns/team.php:47
+msgid "Head of Engineering"
+msgstr "工程主管"
+
+#: patterns/team.php:59
+msgid "Customer Success"
+msgstr "客户成功"
+
+#: patterns/team.php:71
+msgid "WooCommerce Specialist"
+msgstr "WooCommerce 专家"
+
+#: patterns/testimonials.php
+msgctxt "Pattern title"
+msgid "Testimonials — 3 cards"
+msgstr "客户评价 — 3 张卡片"
+
+#: patterns/testimonials.php:15
+msgid "Loved by builders"
+msgstr "深受建站者喜爱"
+
+#: patterns/testimonials.php:19
+msgid "What our customers say"
+msgstr "客户怎么说"
+
+#: patterns/testimonials.php:31
+msgid ""
+"We rebuilt three client sites on WPEssential in a week. The Elementor and "
+"block versions matching exactly is a game changer."
+msgstr "我们在一周内用 WPEssential 重建了三个客户网站。Elementor 版本与区块版本完全一致，这改变了游戏规则。"
+
+#: patterns/testimonials.php:35
+msgid "Founder, Kitecraft Agency"
+msgstr "创始人，Kitecraft Agency"
+
+#: patterns/testimonials.php:43
+msgid ""
+"Our store went from 3.9s to 1.2s load time. Checkout pages look custom out "
+"of the box."
+msgstr "我们商店的加载时间从 3.9 秒降到了 1.2 秒。结账页面开箱即有定制效果。"
+
+#: patterns/testimonials.php:47
+msgid "Owner, Fieldhouse Goods"
+msgstr "店主，Fieldhouse Goods"
+
+#: patterns/testimonials.php:55
+msgid ""
+"The demo import just works — plugins, menus, homepage. I spend my time on "
+"content now, not setup."
+msgstr "演示导入真的很省心 —— 插件、菜单、首页一应俱全。现在我把时间花在内容上，而不是设置上。"
+
+#: patterns/testimonials.php:59
+msgid "Writer, The Quiet Desk"
+msgstr "作者，The Quiet Desk"
+
+#: assets/js/options.js:65
+msgid "Custom code"
+msgstr "自定义代码"
+
+#: assets/js/options.js:66
+msgid "Animations"
+msgstr "动画"
+
+#: assets/js/options.js:84 assets/js/options.js:91 core/assets/admin.js:280
+#: core/assets/admin.js:701 core/assets/admin.js:1074
+#: core/assets/admin.js:1113
+msgid "Active"
+msgstr "已启用"
+
+#: assets/js/options.js:84
+msgid "Off"
+msgstr "关闭"
+
+#: assets/js/options.js:88
+msgid ""
+"Broke something? Open your site in safe mode to load it without snippets:"
+msgstr "出问题了？在安全模式下打开您的站点，即可在不加载代码片段的情况下访问："
+
+#: assets/js/options.js:88
+msgid "Safe mode"
+msgstr "安全模式"
+
+#: assets/js/options.js:90
+msgid "Snippet name"
+msgstr "代码片段名称"
+
+#: assets/js/options.js:93
+msgid "Devices"
+msgstr "设备"
+
+#: assets/js/options.js:93
+msgid "All devices"
+msgstr "所有设备"
+
+#: assets/js/options.js:93
+msgid "Desktop (1025px+)"
+msgstr "桌面端（1025px+）"
+
+#: assets/js/options.js:93
+msgid "Tablet (768–1024px)"
+msgstr "平板（768–1024px）"
+
+#: assets/js/options.js:93
+msgid "Mobile (≤767px)"
+msgstr "移动端（≤767px）"
+
+#: assets/js/options.js:96
+msgid "Load in"
+msgstr "加载位置"
+
+#: assets/js/options.js:96
+msgid "Footer (recommended)"
+msgstr "页脚（推荐）"
+
+#: assets/js/options.js:97
+msgid "Write JavaScript only, without <script> tags."
+msgstr "仅编写 JavaScript，不要包含 <script> 标签。"
+
+#: assets/js/options.js:97
+msgid "Write CSS only, without <style> tags."
+msgstr "仅编写 CSS，不要包含 <style> 标签。"
+
+#: assets/js/options.js:99
+msgid "Save snippets"
+msgstr "保存代码片段"
+
+#: assets/js/options.js:99 core/assets/admin.js:1076
+msgid "Delete"
+msgstr "删除"
+
+#: assets/js/options.js:116
+msgid "New script"
+msgstr "新建脚本"
+
+#: assets/js/options.js:116
+msgid "New styles"
+msgstr "新建样式"
+
+#: assets/js/options.js:162
+msgid ""
+"Animations reveal sections as visitors scroll. Visitors who prefer reduced "
+"motion never see them."
+msgstr "动画会在访客滚动时显示各个区块。偏好减少动态效果的访客不会看到这些动画。"
+
+#: assets/js/options.js:166
+msgid "Use GSAP for parallax and counters with any preset"
+msgstr "在任意预设中使用 GSAP 实现视差和计数器"
+
+#: assets/js/options.js:167
+msgid ""
+"Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask,"
+" --stagger, --parallax or --counter) to any block under Advanced → "
+"Additional CSS class."
+msgstr ""
+"在任意区块的“高级 → 额外 CSS 类”中添加 wpe-anim 类（以及 wpe-anim--fade-up、--zoom、--slide-"
+"left、--mask、--stagger、--parallax 或 --counter）。"
+
+#: assets/js/options.js:168
+msgid "Save animations"
+msgstr "保存动画"
+
+#: core/assets/admin.js:86
+msgid ""
+"The connection to your site dropped. Check your internet and try again."
+msgstr "与您站点的连接已断开。请检查网络连接后重试。"
+
+#: core/assets/admin.js:89
+msgid ""
+"The server sent an invalid response — usually a PHP error or a timeout. Your"
+" progress is saved."
+msgstr "服务器返回了无效的响应 —— 通常是 PHP 错误或超时。您的进度已保存。"
+
+#: core/assets/admin.js:92
+msgid "Your login session expired. Reload the page and sign in again."
+msgstr "您的登录会话已过期。请刷新页面并重新登录。"
+
+#: core/assets/admin.js:159
+msgid "Dashboard sections"
+msgstr "仪表盘栏目"
+
+#: core/assets/admin.js:163
+msgid "Docs"
+msgstr "文档"
+
+#: core/assets/admin.js:164
+msgid "Switch dashboard colour mode"
+msgstr "切换仪表盘颜色模式"
+
+#: core/assets/admin.js:241
+msgid "%s is active"
+msgstr "%s 已启用"
+
+#: core/assets/admin.js:242
+msgid "Welcome, %s. Let’s build something beautiful."
+msgstr "欢迎，%s。让我们一起打造精美的网站。"
+
+#: core/assets/admin.js:243
+msgid ""
+"Pick a demo, choose Gutenberg or Elementor, and get a finished website with "
+"pages, images, menus and a shop — in about a minute."
+msgstr "选择一个演示，选择 Gutenberg 或 Elementor，大约一分钟即可获得一个包含页面、图片、菜单和商店的完整网站。"
+
+#: core/assets/admin.js:246
+msgid "Customize site"
+msgstr "自定义站点"
+
+#: core/assets/admin.js:251
+msgid "Demo imported"
+msgstr "演示已导入"
+
+#: core/assets/admin.js:251
+msgid "in 48 seconds"
+msgstr "用时 48 秒"
+
+#: core/assets/admin.js:252
+msgid "Two builders"
+msgstr "两种构建器"
+
+#: core/assets/admin.js:259
+msgid "Three steps to launch"
+msgstr "三步上线"
+
+#: core/assets/admin.js:264
+msgid "Help when you need it"
+msgstr "随时提供帮助"
+
+#: core/assets/admin.js:266
+msgid "Guides for every feature"
+msgstr "每项功能都有指南"
+
+#: core/assets/admin.js:267
+msgid "Real people, fast answers"
+msgstr "真人服务，快速解答"
+
+#: core/assets/admin.js:268
+msgid "Site Editor"
+msgstr "站点编辑器"
+
+#: core/assets/admin.js:268
+msgid "Colours, fonts, header and footer"
+msgstr "颜色、字体、页眉和页脚"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Expired"
+msgstr "已过期"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Invalid"
+msgstr "无效"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Not connected"
+msgstr "未连接"
+
+#: core/assets/admin.js:283
+msgid "Imported demo"
+msgstr "已导入的演示"
+
+#: core/assets/admin.js:283
+msgid "None yet"
+msgstr "暂无"
+
+#: core/assets/admin.js:285
+msgid "System health"
+msgstr "系统健康"
+
+#: core/assets/admin.js:288
+msgid "Import a demo"
+msgstr "导入演示"
+
+#: core/assets/admin.js:288
+msgid "Start from a complete, ready-made website."
+msgstr "从一个完整的现成网站开始。"
+
+#: core/assets/admin.js:288
+msgid "Open library"
+msgstr "打开演示库"
+
+#: core/assets/admin.js:289 core/assets/admin.js:1124
+msgid "Activate your license"
+msgstr "激活您的许可证"
+
+#: core/assets/admin.js:289
+msgid "Unlock Pro demos, updates and support."
+msgstr "解锁 Pro 演示、更新和支持。"
+
+#: core/assets/admin.js:289 core/assets/admin.js:1076
+#: core/assets/admin.js:1125
+msgid "Activate"
+msgstr "激活"
+
+#: core/assets/admin.js:290
+msgid "Swap the logo, colours and words in the Site Editor."
+msgstr "在站点编辑器中更换 Logo、颜色和文字。"
+
+#: core/assets/admin.js:290 core/assets/admin.js:999
+msgid "Customize"
+msgstr "自定义"
+
+#: core/assets/admin.js:295
+msgid "Could not load the dashboard"
+msgstr "无法加载仪表盘"
+
+#: core/assets/admin.js:301 core/assets/admin.js:312 core/assets/admin.js:756
+msgid "All"
+msgstr "全部"
+
+#: core/assets/admin.js:301
+msgid "Business"
+msgstr "商业"
+
+#: core/assets/admin.js:301
+msgid "Restaurant"
+msgstr "餐厅"
+
+#: core/assets/admin.js:301
+msgid "Education"
+msgstr "教育"
+
+#: core/assets/admin.js:306
+msgid ""
+"Every demo is a complete website. Preview it, then import it for Gutenberg "
+"or Elementor — plugins, pages, images and menus included."
+msgstr "每个演示都是一个完整的网站。先预览，然后为 Gutenberg 或 Elementor 导入 —— 包含插件、页面、图片和菜单。"
+
+#: core/assets/admin.js:307
+msgid "Refreshing"
+msgstr "正在刷新"
+
+#: core/assets/admin.js:307
+msgid "Refresh library"
+msgstr "刷新演示库"
+
+#: core/assets/admin.js:310
+msgid "Search demos"
+msgstr "搜索演示"
+
+#: core/assets/admin.js:310
+msgid "Search demos…"
+msgstr "搜索演示…"
+
+#: core/assets/admin.js:311
+msgid "Category"
+msgstr "分类"
+
+#: core/assets/admin.js:312
+msgid "Plan"
+msgstr "方案"
+
+#: core/assets/admin.js:313 core/assets/admin.js:519 core/assets/admin.js:576
+msgid "Builder"
+msgstr "构建器"
+
+#: core/assets/admin.js:313
+msgid "Any builder"
+msgstr "任意构建器"
+
+#: core/assets/admin.js:336
+msgid "Library refreshed"
+msgstr "演示库已刷新"
+
+#: core/assets/admin.js:338
+msgid "Refresh failed"
+msgstr "刷新失败"
+
+#: core/assets/admin.js:351
+msgid "The library could not load"
+msgstr "无法加载演示库"
+
+#: core/assets/admin.js:363
+msgid "The import of %s stopped"
+msgstr "%s 的导入已停止"
+
+#: core/assets/admin.js:363
+msgid "The import of %s was interrupted"
+msgstr "%s 的导入已中断"
+
+#: core/assets/admin.js:363
+msgid "Your progress is saved. Continue exactly where it left off."
+msgstr "您的进度已保存。可从中断处精确继续。"
+
+#: core/assets/admin.js:363
+msgid "Resume import"
+msgstr "继续导入"
+
+#: core/assets/admin.js:366
+msgid "%s is installed on this site"
+msgstr "%s 已安装在此站点上"
+
+#: core/assets/admin.js:366
+msgid ""
+"You can remove everything it added and restore your previous settings at any"
+" time."
+msgstr "您可以随时移除它添加的所有内容并恢复之前的设置。"
+
+#: core/assets/admin.js:366 core/assets/admin.js:920
+msgid "Removing"
+msgstr "正在移除"
+
+#: core/assets/admin.js:366
+msgid "Remove demo"
+msgstr "移除演示"
+
+#: core/assets/admin.js:386
+msgid ""
+"Remove %s? Its pages, posts, products, images and menus will be deleted and "
+"your previous settings restored. Content you created yourself is not "
+"touched."
+msgstr "移除 %s？其页面、文章、产品、图片和菜单将被删除，并恢复您之前的设置。您自己创建的内容不会受到影响。"
+
+#: core/assets/admin.js:392
+msgid "Demo removed"
+msgstr "演示已移除"
+
+#: core/assets/admin.js:396
+msgid "Removal failed"
+msgstr "移除失败"
+
+#: core/assets/admin.js:416
+msgid "No demos match these filters"
+msgstr "没有符合这些筛选条件的演示"
+
+#: core/assets/admin.js:416
+msgid "Try another category or clear the search."
+msgstr "请尝试其他分类或清除搜索。"
+
+#: core/assets/admin.js:416
+msgid "Clear filters"
+msgstr "清除筛选"
+
+#: core/assets/admin.js:428
+msgid "IMPORTED"
+msgstr "已导入"
+
+#: core/assets/admin.js:430
+msgid "Live preview"
+msgstr "实时预览"
+
+#: core/assets/admin.js:438
+msgid "Preview"
+msgstr "预览"
+
+#: core/assets/admin.js:439
+msgid "Unlock"
+msgstr "解锁"
+
+#: core/assets/admin.js:439
+msgid "Re-import"
+msgstr "重新导入"
+
+#: core/assets/admin.js:439 core/assets/admin.js:576
+msgid "Import"
+msgstr "导入"
+
+#: core/assets/admin.js:512
+msgid "Desktop"
+msgstr "桌面端"
+
+#: core/assets/admin.js:512
+msgid "Tablet"
+msgstr "平板"
+
+#: core/assets/admin.js:512
+msgid "Mobile"
+msgstr "移动端"
+
+#: core/assets/admin.js:515
+msgid "%1$s on %2$s"
+msgstr "%2$s 上的 %1$s"
+
+#: core/assets/admin.js:520
+msgid "Device"
+msgstr "设备"
+
+#: core/assets/admin.js:521
+msgid "Unlock with Pro"
+msgstr "通过 Pro 解锁"
+
+#: core/assets/admin.js:521
+msgid "Import this demo"
+msgstr "导入此演示"
+
+#: core/assets/admin.js:522
+msgid "Close preview"
+msgstr "关闭预览"
+
+#: core/assets/admin.js:576
+msgid "Account"
+msgstr "账户"
+
+#: core/assets/admin.js:576
+msgid "Content"
+msgstr "内容"
+
+#: core/assets/admin.js:576
+msgid "Done"
+msgstr "完成"
+
+#: core/assets/admin.js:582
+msgid "Safe import — every change can be undone."
+msgstr "安全导入 —— 所有更改均可撤销。"
+
+#: core/assets/admin.js:585
+msgid "Close"
+msgstr "关闭"
+
+#: core/assets/admin.js:589
+msgid ""
+"The import keeps its progress if you close this window. You can resume it "
+"from the Demo Library. Close anyway?"
+msgstr "关闭此窗口后导入进度仍会保留，您可以从演示库中继续。仍要关闭吗？"
+
+#: core/assets/admin.js:618
+msgid "Back"
+msgstr "返回"
+
+#: core/assets/admin.js:640
+msgid "Unlock this Pro demo"
+msgstr "解锁此 Pro 演示"
+
+#: core/assets/admin.js:640
+msgid "Connect your WPEssential account"
+msgstr "连接您的 WPEssential 账户"
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in and use a Pro license on this site — or pick a plan. Checkout opens "
+"in a new tab."
+msgstr "登录并在此站点上使用 Pro 许可证 —— 或选择一个方案。结账将在新标签页中打开。"
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in or create a free account to keep your demos, licenses and updates in"
+" one place."
+msgstr "登录或创建免费账户，在一个地方管理您的演示、许可证和更新。"
+
+#: core/assets/admin.js:643
+msgid "A Pro license is needed"
+msgstr "需要 Pro 许可证"
+
+#: core/assets/admin.js:643
+msgid "Use a Pro license on this site, or choose a plan."
+msgstr "在此站点上使用 Pro 许可证，或选择一个方案。"
+
+#: core/assets/admin.js:648 core/assets/admin.js:674 core/assets/admin.js:679
+msgid "Continue"
+msgstr "继续"
+
+#: core/assets/admin.js:656
+msgid "Demo unlocked"
+msgstr "演示已解锁"
+
+#: core/assets/admin.js:666
+msgid "This demo has no version for this builder yet."
+msgstr "此演示暂无适用于该构建器的版本。"
+
+#: core/assets/admin.js:668
+msgid "Choose your page builder"
+msgstr "选择您的页面构建器"
+
+#: core/assets/admin.js:668
+msgid ""
+"Both versions look identical. Pick the editor you or your client will use "
+"every day."
+msgstr "两个版本外观完全相同。请选择您或您的客户日常使用的编辑器。"
+
+#: core/assets/admin.js:669
+msgid "The native WordPress block editor. Fastest pages, no extra plugin."
+msgstr "原生 WordPress 区块编辑器。页面速度最快，无需额外插件。"
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor is already installed."
+msgstr "可视化拖放编辑。Elementor 已安装。"
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor will be installed for you."
+msgstr "可视化拖放编辑。将为您安装 Elementor。"
+
+#: core/assets/admin.js:678
+msgid "Plugins this demo uses"
+msgstr "此演示使用的插件"
+
+#: core/assets/admin.js:678
+msgid ""
+"We install, activate or switch off plugins so the demo works exactly like "
+"the preview."
+msgstr "我们会安装、启用或关闭插件，使演示与预览效果完全一致。"
+
+#: core/assets/admin.js:693
+msgid "No extra plugins needed — this demo runs on the theme alone."
+msgstr "无需额外插件 —— 此演示仅依靠主题即可运行。"
+
+#: core/assets/admin.js:698
+msgid "Will be deactivated"
+msgstr "将被禁用"
+
+#: core/assets/admin.js:698
+msgid "Not needed"
+msgstr "不需要"
+
+#: core/assets/admin.js:702
+msgid "Will be activated"
+msgstr "将被启用"
+
+#: core/assets/admin.js:703
+msgid "Will be installed"
+msgstr "将被安装"
+
+#: core/assets/admin.js:706
+msgid "Required"
+msgstr "必需"
+
+#: core/assets/admin.js:706 core/assets/admin.js:1073
+msgid "Recommended"
+msgstr "推荐"
+
+#: core/assets/admin.js:706
+msgid "Conflicts with this demo"
+msgstr "与此演示冲突"
+
+#: core/assets/admin.js:706
+msgid "Include"
+msgstr "包含"
+
+#: core/assets/admin.js:706
+msgid "Include %s"
+msgstr "包含%s"
+
+#: core/assets/admin.js:715
+msgid "Pages, posts and menus"
+msgstr "页面、文章和菜单"
+
+#: core/assets/admin.js:715
+msgid "%s and their navigation."
+msgstr "%s及其导航。"
+
+#: core/assets/admin.js:716
+msgid "Images"
+msgstr "图片"
+
+#: core/assets/admin.js:716
+msgid "Copied to your Media Library, licensed for your site."
+msgstr "复制到您的媒体库，并授权在您的站点上使用。"
+
+#: core/assets/admin.js:717
+msgid "Shop products"
+msgstr "商店产品"
+
+#: core/assets/admin.js:717
+msgid "Products, categories, prices and shipping."
+msgstr "产品、分类、价格和配送。"
+
+#: core/assets/admin.js:717
+msgid "Needs WooCommerce — enable it on the previous step."
+msgstr "需要 WooCommerce —— 请在上一步中启用它。"
+
+#: core/assets/admin.js:718
+msgid "Site settings"
+msgstr "站点设置"
+
+#: core/assets/admin.js:718
+msgid "Home page, blog page and store options."
+msgstr "首页、博客页面和商店选项。"
+
+#: core/assets/admin.js:720
+msgid "What should we import?"
+msgstr "要导入哪些内容？"
+
+#: core/assets/admin.js:720
+msgid "Everything is on by default for a site that matches the preview."
+msgstr "默认全部开启，以获得与预览一致的站点。"
+
+#: core/assets/admin.js:722
+msgid "Remove %s first"
+msgstr "先移除 %s"
+
+#: core/assets/admin.js:722
+msgid "Recommended: start from a clean site instead of adding duplicates."
+msgstr "推荐：从干净的站点开始，而不是添加重复内容。"
+
+#: core/assets/admin.js:723
+msgid ""
+"Your existing posts and pages are never changed. Imported items are tagged, "
+"so they can be removed in one click later."
+msgstr "您现有的文章和页面绝不会被更改。导入的项目会被标记，以后可一键移除。"
+
+#: core/assets/admin.js:730
+msgid "Start import"
+msgstr "开始导入"
+
+#: core/assets/admin.js:736
+msgid "Preparing"
+msgstr "正在准备"
+
+#: core/assets/admin.js:736 core/assets/admin.js:947
+msgid "Importing your demo…"
+msgstr "正在导入您的演示…"
+
+#: core/assets/admin.js:736
+msgid "Keep this window open. It usually takes about a minute."
+msgstr "请保持此窗口打开。通常大约需要一分钟。"
+
+#: core/assets/admin.js:739 core/assets/admin.js:943
+msgid "Cancel import"
+msgstr "取消导入"
+
+#: core/assets/admin.js:756
+msgid "Info"
+msgstr "信息"
+
+#: core/assets/admin.js:756
+msgid "Success"
+msgstr "成功"
+
+#: core/assets/admin.js:756 core/assets/admin.js:998
+msgid "Warnings"
+msgstr "警告"
+
+#: core/assets/admin.js:756
+msgid "Errors"
+msgstr "错误"
+
+#: core/assets/admin.js:756 core/assets/admin.js:920
+msgid "Copy log"
+msgstr "复制日志"
+
+#: core/assets/admin.js:790
+msgid "Log copied"
+msgstr "日志已复制"
+
+#: core/assets/admin.js:790
+msgid "Paste it into your support ticket."
+msgstr "请将其粘贴到您的支持工单中。"
+
+#: core/assets/admin.js:816
+msgid "Stopped"
+msgstr "已停止"
+
+#: core/assets/admin.js:816
+msgid "Step"
+msgstr "步骤"
+
+#: core/assets/admin.js:816
+msgid "Complete"
+msgstr "完成"
+
+#: core/assets/admin.js:824
+msgid "%ss elapsed"
+msgstr "已用时 %s 秒"
+
+#: core/assets/admin.js:850
+msgid "Resumed from the saved position."
+msgstr "已从保存的位置继续。"
+
+#: core/assets/admin.js:872
+msgid "Reload the page, then resume the import from the Demo Library."
+msgstr "请刷新页面，然后在演示库中继续导入。"
+
+#: core/assets/admin.js:878
+msgid "Your progress is saved. Press Resume when the server is back."
+msgstr "您的进度已保存。服务器恢复后请点击“继续”。"
+
+#: core/assets/admin.js:882
+msgid "The server did not answer (%1$s). Retrying in %2$d seconds…"
+msgstr "服务器未响应（%1$s）。将在 %2$d 秒后重试…"
+
+#: core/assets/admin.js:905
+msgid "The import stopped."
+msgstr "导入已停止。"
+
+#: core/assets/admin.js:907
+msgid "Import cancelled."
+msgstr "导入已取消。"
+
+#: core/assets/admin.js:907
+msgid "Resume to finish it, or remove what was imported so far."
+msgstr "继续以完成导入，或移除目前已导入的内容。"
+
+#: core/assets/admin.js:918
+msgid "Import paused"
+msgstr "导入已暂停"
+
+#: core/assets/admin.js:918
+msgid "The import needs your attention"
+msgstr "导入需要您的处理"
+
+#: core/assets/admin.js:920
+msgid "Remove imported content"
+msgstr "移除已导入的内容"
+
+#: core/assets/admin.js:920
+msgid "Resume"
+msgstr "继续"
+
+#: core/assets/admin.js:920
+msgid "Back to options"
+msgstr "返回选项"
+
+#: core/assets/admin.js:929
+msgid "Everything was rolled back"
+msgstr "所有内容已回滚"
+
+#: core/assets/admin.js:933
+msgid "Nothing to remove"
+msgstr "没有可移除的内容"
+
+#: core/assets/admin.js:933
+msgid "Rollback failed"
+msgstr "回滚失败"
+
+#: core/assets/admin.js:960
+msgid "Resuming…"
+msgstr "正在继续…"
+
+#: core/assets/admin.js:967
+msgid "Your progress is saved. Try again in a moment."
+msgstr "您的进度已保存。请稍后重试。"
+
+#: core/assets/admin.js:973
+msgid "Cancel the import? What was imported so far stays until you remove it."
+msgstr "取消导入？目前已导入的内容会保留，直到您将其移除。"
+
+#: core/assets/admin.js:983
+msgid "Could not cancel"
+msgstr "无法取消"
+
+#: core/assets/admin.js:996
+msgid "Your website is ready!"
+msgstr "您的网站已就绪！"
+
+#: core/assets/admin.js:997
+msgid "%1$s was imported. %2$d item(s) need a look — see the notes below."
+msgstr "%1$s 已导入。有 %2$d 个项目需要查看 —— 请参阅下方的说明。"
+
+#: core/assets/admin.js:997
+msgid "%s was imported without a single issue. Time to make it yours."
+msgstr "%s 已顺利导入，没有任何问题。现在来打造您的专属网站吧。"
+
+#: core/assets/admin.js:998
+msgid "Import time"
+msgstr "导入用时"
+
+#: core/assets/admin.js:998
+msgid "Steps completed"
+msgstr "已完成步骤"
+
+#: core/assets/admin.js:999
+msgid "View your site"
+msgstr "查看您的站点"
+
+#: core/assets/admin.js:1002
+msgid "Back to dashboard"
+msgstr "返回仪表盘"
+
+#: core/assets/admin.js:1007
+msgid "Import complete"
+msgstr "导入完成"
+
+#: core/assets/admin.js:1054
+msgid ""
+"Plugins used by WPEssential demos. Install, switch on or off and delete them"
+" here."
+msgstr "WPEssential 演示所使用的插件。您可以在此安装、启用或禁用以及删除它们。"
+
+#: core/assets/admin.js:1069
+msgid "No plugins needed"
+msgstr "无需插件"
+
+#: core/assets/admin.js:1069
+msgid "The demos in your library run on the theme alone."
+msgstr "您演示库中的演示仅依靠主题即可运行。"
+
+#: core/assets/admin.js:1073
+msgid "Required by some demos"
+msgstr "部分演示需要"
+
+#: core/assets/admin.js:1074
+msgid "Inactive"
+msgstr "未启用"
+
+#: core/assets/admin.js:1074
+msgid "Not installed"
+msgstr "未安装"
+
+#: core/assets/admin.js:1075
+msgid "Install & activate"
+msgstr "安装并启用"
+
+#: core/assets/admin.js:1077
+msgid "Deactivate"
+msgstr "禁用"
+
+#: core/assets/admin.js:1079
+msgid "Delete this plugin and its files?"
+msgstr "删除此插件及其文件？"
+
+#: core/assets/admin.js:1085
+msgid "is active."
+msgstr "已启用。"
+
+#: core/assets/admin.js:1085
+msgid "is inactive."
+msgstr "未启用。"
+
+#: core/assets/admin.js:1085
+msgid "was deleted."
+msgstr "已被删除。"
+
+#: core/assets/admin.js:1088
+msgid "Plugin action failed"
+msgstr "插件操作失败"
+
+#: core/assets/admin.js:1096
+msgid ""
+"Activate your purchase on this domain to unlock Pro demos, automatic updates"
+" and priority support."
+msgstr "在此域名上激活您的购买，以解锁 Pro 演示、自动更新和优先支持。"
+
+#: core/assets/admin.js:1118
+msgid "Domain"
+msgstr "域名"
+
+#: core/assets/admin.js:1118
+msgid "Expires"
+msgstr "到期时间"
+
+#: core/assets/admin.js:1118
+msgid "Lifetime"
+msgstr "终身"
+
+#: core/assets/admin.js:1118
+msgid "Provider"
+msgstr "提供商"
+
+#: core/assets/admin.js:1121
+msgid "You’re all set"
+msgstr "一切就绪"
+
+#: core/assets/admin.js:1121
+msgid "This license is active on %s."
+msgstr "此许可证已在 %s 上激活。"
+
+#: core/assets/admin.js:1121
+msgid "Plan: %s."
+msgstr "方案：%s。"
+
+#: core/assets/admin.js:1122
+msgid "All Pro demos unlocked"
+msgstr "已解锁所有 Pro 演示"
+
+#: core/assets/admin.js:1122
+msgid "One-click theme updates"
+msgstr "一键更新主题"
+
+#: core/assets/admin.js:1123
+msgid "Deactivating"
+msgstr "正在停用"
+
+#: core/assets/admin.js:1123
+msgid "Deactivate on this domain"
+msgstr "在此域名上停用"
+
+#: core/assets/admin.js:1124
+msgid "Renew to keep Pro features"
+msgstr "续费以保留 Pro 功能"
+
+#: core/assets/admin.js:1124
+msgid "Find the key in your purchase email or your wpessential.org account."
+msgstr "您可以在购买邮件或 wpessential.org 账户中找到密钥。"
+
+#: core/assets/admin.js:1125
+msgid "License key"
+msgstr "许可证密钥"
+
+#: core/assets/admin.js:1125
+msgid "Paste your license key"
+msgstr "粘贴您的许可证密钥"
+
+#: core/assets/admin.js:1125
+msgid "Show key"
+msgstr "显示密钥"
+
+#: core/assets/admin.js:1125
+msgid "Checking"
+msgstr "正在检查"
+
+#: core/assets/admin.js:1127
+msgid "Unlock every Pro demo in the library"
+msgstr "解锁演示库中的所有 Pro 演示"
+
+#: core/assets/admin.js:1127
+msgid "Automatic updates from your dashboard"
+msgstr "从仪表盘自动更新"
+
+#: core/assets/admin.js:1127
+msgid "Priority support from the WPEssential Team"
+msgstr "WPEssential 团队提供优先支持"
+
+#: core/assets/admin.js:1128
+msgid "Don’t have a license? Sign in or pick a plan below"
+msgstr "还没有许可证？请登录或在下方选择方案"
+
+#: core/assets/admin.js:1143
+msgid "License activated"
+msgstr "许可证已激活"
+
+#: core/assets/admin.js:1143
+msgid "Pro demos are unlocked."
+msgstr "Pro 演示已解锁。"
+
+#: core/assets/admin.js:1163
+msgid ""
+"Deactivate the license on this domain? You can activate it on another site "
+"afterwards."
+msgstr "在此域名上停用许可证？之后您可以在其他站点上激活它。"
+
+#: core/assets/admin.js:1169
+msgid "License deactivated"
+msgstr "许可证已停用"
+
+#: core/assets/admin.js:1173
+msgid "Deactivation failed"
+msgstr "停用失败"
+
+#: core/assets/admin.js:1188
+msgid "/ %d mo"
+msgstr "/ %d 个月"
+
+#: core/assets/admin.js:1188
+msgid "one-time"
+msgstr "一次性"
+
+#: core/assets/admin.js:1201
+msgid "Your WPEssential account could not be reached"
+msgstr "无法连接到您的 WPEssential 账户"
+
+#: core/assets/admin.js:1213
+msgid "Sign in to your account"
+msgstr "登录您的账户"
+
+#: core/assets/admin.js:1213
+msgid "Create your free account"
+msgstr "创建免费账户"
+
+#: core/assets/admin.js:1213
+msgid ""
+"Your licenses, Pro demos and subscription in one place. New accounts include"
+" the Free plan for this website."
+msgstr "在一个地方管理您的许可证、Pro 演示和订阅。新账户包含此网站的免费方案。"
+
+#: core/assets/admin.js:1214
+msgid "Activate licenses without copying keys"
+msgstr "无需复制密钥即可激活许可证"
+
+#: core/assets/admin.js:1214
+msgid "Upgrade, renew or switch plans in one click"
+msgstr "一键升级、续费或切换方案"
+
+#: core/assets/admin.js:1214
+msgid "Manage websites and auto-renewal"
+msgstr "管理网站和自动续费"
+
+#: core/assets/admin.js:1216 core/assets/admin.js:1221
+msgid "Sign in"
+msgstr "登录"
+
+#: core/assets/admin.js:1216
+msgid "Create account"
+msgstr "创建账户"
+
+#: core/assets/admin.js:1217
+msgid "Full name"
+msgstr "姓名"
+
+#: core/assets/admin.js:1218
+msgid "Email"
+msgstr "电子邮件"
+
+#: core/assets/admin.js:1219
+msgid "Password"
+msgstr "密码"
+
+#: core/assets/admin.js:1221
+msgid "Signing in"
+msgstr "正在登录"
+
+#: core/assets/admin.js:1221
+msgid "Creating account"
+msgstr "正在创建账户"
+
+#: core/assets/admin.js:1221
+msgid "Create free account"
+msgstr "创建免费账户"
+
+#: core/assets/admin.js:1222
+msgid "Forgot password?"
+msgstr "忘记密码？"
+
+#: core/assets/admin.js:1222
+msgid "By creating an account you agree to the WPEssential terms."
+msgstr "创建账户即表示您同意 WPEssential 条款。"
+
+#: core/assets/admin.js:1223
+msgid "Continue without an account"
+msgstr "不使用账户继续"
+
+#: core/assets/admin.js:1239
+msgid "Fill in every field."
+msgstr "请填写所有字段。"
+
+#: core/assets/admin.js:1245
+msgid "Signed in"
+msgstr "已登录"
+
+#: core/assets/admin.js:1245
+msgid "Account created"
+msgstr "账户已创建"
+
+#: core/assets/admin.js:1266
+msgid "Refresh"
+msgstr "刷新"
+
+#: core/assets/admin.js:1267
+msgid "Manage account"
+msgstr "管理账户"
+
+#: core/assets/admin.js:1268
+msgid "Sign out"
+msgstr "退出登录"
+
+#: core/assets/admin.js:1270
+msgid "Your licenses"
+msgstr "您的许可证"
+
+#: core/assets/admin.js:1273
+msgid "%1$d of %2$s websites"
+msgstr "%1$d / %2$s 个网站"
+
+#: core/assets/admin.js:1273
+msgid "Never expires"
+msgstr "永不过期"
+
+#: core/assets/admin.js:1273
+msgid "Renews %s"
+msgstr "%s 续费"
+
+#: core/assets/admin.js:1273
+msgid "Ends %s"
+msgstr "%s 到期"
+
+#: core/assets/admin.js:1274
+msgid "Auto-renew"
+msgstr "自动续费"
+
+#: core/assets/admin.js:1275
+msgid "Renew"
+msgstr "续费"
+
+#: core/assets/admin.js:1275
+msgid "This site"
+msgstr "此站点"
+
+#: core/assets/admin.js:1275
+msgid "Activating"
+msgstr "正在激活"
+
+#: core/assets/admin.js:1275
+msgid "Use on this site"
+msgstr "在此站点上使用"
+
+#: core/assets/admin.js:1276
+msgid "No licenses yet — choose a plan below."
+msgstr "还没有许可证 —— 请在下方选择方案。"
+
+#: core/assets/admin.js:1277
+msgid "Upgrade your plan"
+msgstr "升级您的方案"
+
+#: core/assets/admin.js:1277
+msgid "Choose a plan"
+msgstr "选择方案"
+
+#: core/assets/admin.js:1282
+msgid "Most popular"
+msgstr "最受欢迎"
+
+#: core/assets/admin.js:1283
+msgid "Current plan"
+msgstr "当前方案"
+
+#: core/assets/admin.js:1283
+msgid "Upgrade"
+msgstr "升级"
+
+#: core/assets/admin.js:1283
+msgid "Choose"
+msgstr "选择"
+
+#: core/assets/admin.js:1285
+msgid ""
+"Checkout opens on wpessential.org already signed in. Upgrades credit the "
+"unused part of your current plan. Staging and local sites do not count "
+"toward your website limit."
+msgstr "结账将在 wpessential.org 上以已登录状态打开。升级时会抵扣当前方案未使用的部分。测试站点和本地站点不计入您的网站数量上限。"
+
+#: core/assets/admin.js:1301
+msgid "License active on this site"
+msgstr "许可证已在此站点上激活"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is on"
+msgstr "自动续费已开启"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is off"
+msgstr "自动续费已关闭"
+
+#: core/assets/admin.js:1315
+msgid "Your license works until its end date."
+msgstr "您的许可证在到期日之前均有效。"
+
+#: core/assets/admin.js:1318
+msgid "Could not change auto-renew"
+msgstr "无法更改自动续费"
+
+#: core/assets/admin.js:1330
+msgid "Checkout opened in a new tab"
+msgstr "结账已在新标签页中打开"
+
+#: core/assets/admin.js:1330
+msgid "When payment is done, press Refresh here."
+msgstr "付款完成后，请在此处点击“刷新”。"
+
+#: core/assets/admin.js:1335
+msgid "Checkout could not start"
+msgstr "无法开始结账"
+
+#: core/assets/admin.js:1343
+msgid "What your server offers and what to improve before importing."
+msgstr "您的服务器的配置情况，以及导入前需要改进的地方。"
+
+#: core/assets/admin.js:1343
+msgid "Copy report"
+msgstr "复制报告"
+
+#: core/assets/admin.js:1349
+msgid "Health"
+msgstr "健康状况"
+
+#: core/assets/admin.js:1349
+msgid "Excellent"
+msgstr "优秀"
+
+#: core/assets/admin.js:1349
+msgid "Good"
+msgstr "良好"
+
+#: core/assets/admin.js:1349
+msgid "Needs work"
+msgstr "需要改进"
+
+#: core/assets/admin.js:1349
+msgid "%d item(s) could be better. Imports still run; fixes make them faster."
+msgstr "有 %d 个项目可以改进。导入仍可运行；修复后会更快。"
+
+#: core/assets/admin.js:1349
+msgid "Your server is ready for any demo."
+msgstr "您的服务器已准备好导入任何演示。"
+
+#: core/assets/admin.js:1352
+msgid "Environment"
+msgstr "环境"
+
+#: core/assets/admin.js:1356
+msgid "Report copied"
+msgstr "报告已复制"
+
+#: core/assets/admin.js:1356
+msgid "Copy failed"
+msgstr "复制失败"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "强调色"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr "边框"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Danger"
+msgstr "危险"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr "墨色"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink"
+msgstr "墨色上"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink Muted"
+msgstr "墨色上（柔和）"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Primary"
+msgstr "主色上"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "主色"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Hover"
+msgstr "主色悬停"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Soft"
+msgstr "主色柔和"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Pro"
+msgstr "Pro"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "次要色"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Star"
+msgstr "星标"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Success"
+msgstr "成功"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr "表面"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface Alt"
+msgstr "表面（备选）"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr "文字"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text Muted"
+msgstr "文字（柔和）"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Warning"
+msgstr "警告"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank (no header/footer)"
+msgstr "空白（无页眉/页脚）"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Full Width (builder canvas)"
+msgstr "全宽（构建器画布）"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Landing (transparent header)"
+msgstr "落地页（透明页眉）"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "No Title"
+msgstr "无标题"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post with sidebar"
+msgstr "带侧边栏的文章"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Cormorant Garamond"
+msgstr "Cormorant Garamond"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "DM Sans"
+msgstr "DM Sans"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Manrope"
+msgstr "Manrope"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Font family name"
+msgid "Monospace"
+msgstr "等宽"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Plus Jakarta Sans"
+msgstr "Plus Jakarta Sans"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "Space Grotesk"
+msgstr "Space Grotesk"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr "正文"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body L"
+msgstr "正文 L"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Display"
+msgstr "展示"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H1"
+msgstr "H1"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H2"
+msgstr "H2"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H3"
+msgstr "H3"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H4"
+msgstr "H4"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "小"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XS"
+msgstr "XS"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Brand"
+msgstr "品牌"
+
+#: styles/dark.json
+msgctxt "Gradient name"
+msgid "Fade bottom"
+msgstr "底部渐隐"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Fade to ink"
+msgstr "渐变至墨色"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Night"
+msgstr "夜间"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Large"
+msgstr "大"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Medium"
+msgstr "中"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Small"
+msgstr "小"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "112"
+msgstr "112"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "12"
+msgstr "12"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "16"
+msgstr "16"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "24"
+msgstr "24"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "32"
+msgstr "32"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "48"
+msgstr "48"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "64"
+msgstr "64"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "8"
+msgstr "8"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "96"
+msgstr "96"
+
+#: styles/agency.json
+msgctxt "Style variation name"
+msgid "Agency"
+msgstr "代理机构"
+
+#: styles/dark.json
+msgctxt "Style variation name"
+msgid "Dark"
+msgstr "深色"
+
+#: styles/education.json
+msgctxt "Style variation name"
+msgid "Education"
+msgstr "教育"
+
+#: styles/fashion.json
+msgctxt "Style variation name"
+msgid "Fashion"
+msgstr "时尚"
+
+#: styles/health.json
+msgctxt "Style variation name"
+msgid "Health"
+msgstr "健康"
+
+#: styles/maison.json
+msgctxt "Style variation name"
+msgid "Maison"
+msgstr "Maison"
+
+#: styles/pulse.json
+msgctxt "Style variation name"
+msgid "Pulse"
+msgstr "Pulse"
+
+#: styles/restaurant.json
+msgctxt "Style variation name"
+msgid "Restaurant"
+msgstr "餐厅"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Premium"
+msgstr "页脚 — 高级"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Simple"
+msgstr "页脚 — 简洁"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Centered"
+msgstr "页眉 — 居中"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Default"
+msgstr "页眉 — 默认"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Shop"
+msgstr "页眉 — 商店"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Transparent (over dark hero)"
+msgstr "页眉 — 透明（覆盖于深色主视觉之上）"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr "侧边栏"

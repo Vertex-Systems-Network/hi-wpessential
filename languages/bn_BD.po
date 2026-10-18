@@ -1,0 +1,3789 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WPEssential 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wpessential.org/support/\n"
+"POT-Creation-Date: 2026-10-18T02:45:11+00:00\n"
+"PO-Revision-Date: 2026-10-18T02:45:11+00:00\n"
+"Last-Translator: WPEssential Team <https://wpessential.org/>\n"
+"Language-Team: WPEssential Team <https://wpessential.org/>\n"
+"Language: bn_BD\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Domain: wpessential\n"
+"X-Generator: WP-CLI 2.11.0\n"
+
+#. Theme Name of the theme
+#: style.css core/src/Admin.php:55 inc/patterns.php:14
+msgid "WPEssential"
+msgstr "WPEssential"
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://wpessential.org/"
+msgstr "https://wpessential.org/"
+
+#. Description of the theme
+#: style.css
+msgid ""
+"Lightweight multi-niche block theme, native for Gutenberg and Elementor. "
+"One-click demos (free & pro) via the WPEssential Core plugin."
+msgstr ""
+"Gutenberg ও Elementor-এর জন্য নেটিভ, হালকা মাল্টি-নিশ ব্লক থিম। WPEssential "
+"Core প্লাগইনের মাধ্যমে ওয়ান-ক্লিক ডেমো (ফ্রি ও প্রো)।"
+
+#. Author of the theme
+#: style.css
+msgid "WPEssential Team"
+msgstr "WPEssential টিম"
+
+#. translators: %s: error.
+#: core/src/Account.php:55
+msgid "WPEssential could not be reached: %s"
+msgstr "WPEssential-এ পৌঁছানো যায়নি: %s"
+
+#: core/src/Account.php:61
+msgid "Your WPEssential session ended. Sign in again."
+msgstr "আপনার WPEssential সেশন শেষ হয়েছে। আবার সাইন ইন করুন।"
+
+#. translators: %d: HTTP code.
+#: core/src/Account.php:65
+msgid "WPEssential answered with an unexpected response (HTTP %d)."
+msgstr "WPEssential একটি অপ্রত্যাশিত উত্তর দিয়েছে (HTTP %d)।"
+
+#: core/src/Account.php:68 core/assets/admin.js:83 core/assets/admin.js:94
+msgid "Something went wrong."
+msgstr "কিছু একটা ভুল হয়েছে।"
+
+#: core/src/Account.php:238
+msgid "That license is not in your account."
+msgstr "এই লাইসেন্সটি আপনার অ্যাকাউন্টে নেই।"
+
+#: core/src/Account.php:271 core/src/Rest.php:211
+msgid "Unknown action."
+msgstr "অজানা অ্যাকশন।"
+
+#: core/src/Admin.php:37 core/assets/admin.js:147
+msgid "Dashboard"
+msgstr "ড্যাশবোর্ড"
+
+#: core/src/Admin.php:38 core/assets/admin.js:148 core/assets/admin.js:306
+msgid "Demo Library"
+msgstr "ডেমো লাইব্রেরি"
+
+#: core/src/Admin.php:39 core/assets/admin.js:149 core/assets/admin.js:576
+#: core/assets/admin.js:1054
+msgid "Plugins"
+msgstr "প্লাগইনসমূহ"
+
+#: core/src/Admin.php:40 core/assets/admin.js:150 core/assets/admin.js:284
+#: core/assets/admin.js:1096
+msgid "License"
+msgstr "লাইসেন্স"
+
+#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+msgid "System Status"
+msgstr "সিস্টেম স্ট্যাটাস"
+
+#: core/src/Admin.php:133
+msgid ""
+"The WPEssential dashboard needs JavaScript. Enable it in your browser to "
+"import demos."
+msgstr ""
+"WPEssential ড্যাশবোর্ডের জন্য JavaScript প্রয়োজন। ডেমো ইমপোর্ট করতে আপনার "
+"ব্রাউজারে এটি চালু করুন।"
+
+#: core/src/Demos.php:49
+msgid ""
+"The online demo library could not be reached, so only the demos bundled with"
+" the theme are listed. They import fully offline."
+msgstr ""
+"অনলাইন ডেমো লাইব্রেরিতে পৌঁছানো যায়নি, তাই শুধু থিমের সাথে থাকা ডেমোগুলো "
+"দেখানো হচ্ছে। এগুলো সম্পূর্ণ অফলাইনে ইমপোর্ট হয়।"
+
+#: core/src/Demos.php:173
+msgid ""
+"The bundled demo package is incomplete. Re-upload the theme and try again."
+msgstr ""
+"থিমের সাথে থাকা ডেমো প্যাকেজটি অসম্পূর্ণ। থিমটি আবার আপলোড করে পুনরায় "
+"চেষ্টা করুন।"
+
+#: core/src/Demos.php:183
+msgid "This demo has no download address in the library."
+msgstr "লাইব্রেরিতে এই ডেমোর কোনো ডাউনলোড ঠিকানা নেই।"
+
+#. translators: %s: error message.
+#: core/src/Demos.php:196
+msgid "Downloading the demo package failed: %s"
+msgstr "ডেমো প্যাকেজ ডাউনলোড ব্যর্থ হয়েছে: %s"
+
+#: core/src/Demos.php:200
+msgid "WordPress cannot write to the uploads folder. Check its permissions."
+msgstr "WordPress আপলোড ফোল্ডারে লিখতে পারছে না। এর অনুমতিগুলো পরীক্ষা করুন।"
+
+#: core/src/Demos.php:207
+msgid "The downloaded package does not contain content.json."
+msgstr "ডাউনলোড করা প্যাকেজে content.json নেই।"
+
+#: core/src/Importer.php:47
+msgid "Checking your server"
+msgstr "আপনার সার্ভার পরীক্ষা করা হচ্ছে"
+
+#: core/src/Importer.php:48
+msgid "Removing the previous demo"
+msgstr "আগের ডেমো সরানো হচ্ছে"
+
+#: core/src/Importer.php:49
+msgid "Preparing the demo package"
+msgstr "ডেমো প্যাকেজ প্রস্তুত করা হচ্ছে"
+
+#: core/src/Importer.php:50
+msgid "Installing plugins"
+msgstr "প্লাগইন ইনস্টল করা হচ্ছে"
+
+#: core/src/Importer.php:51
+msgid "Importing images"
+msgstr "ছবি ইমপোর্ট করা হচ্ছে"
+
+#: core/src/Importer.php:52
+msgid "Creating categories"
+msgstr "বিভাগ তৈরি করা হচ্ছে"
+
+#: core/src/Importer.php:53
+msgid "Building pages and posts"
+msgstr "পাতা ও পোস্ট তৈরি করা হচ্ছে"
+
+#: core/src/Importer.php:54
+msgid "Adding products"
+msgstr "পণ্য যোগ করা হচ্ছে"
+
+#: core/src/Importer.php:55
+msgid "Creating menus"
+msgstr "মেনু তৈরি করা হচ্ছে"
+
+#: core/src/Importer.php:56
+msgid "Applying site settings"
+msgstr "সাইট সেটিংস প্রয়োগ করা হচ্ছে"
+
+#: core/src/Importer.php:57
+msgid "Finishing touches"
+msgstr "শেষ ছোঁয়া দেওয়া হচ্ছে"
+
+#: core/src/Importer.php:90
+msgid ""
+"Another import is running in a different tab. Wait for it to finish, or wait"
+" two minutes and try again."
+msgstr ""
+"অন্য একটি ট্যাবে আরেকটি ইমপোর্ট চলছে। সেটি শেষ হওয়া পর্যন্ত অপেক্ষা করুন, "
+"অথবা দুই মিনিট পর আবার চেষ্টা করুন।"
+
+#: core/src/Importer.php:94
+msgid "This demo is no longer in the library. Refresh the page."
+msgstr "এই ডেমোটি আর লাইব্রেরিতে নেই। পাতাটি রিফ্রেশ করুন।"
+
+#: core/src/Importer.php:97
+msgid "This demo is not available for the selected builder."
+msgstr "এই ডেমোটি নির্বাচিত বিল্ডারের জন্য উপলব্ধ নয়।"
+
+#: core/src/Importer.php:100
+msgid ""
+"This is a Pro demo. Activate your license on the License tab to import it."
+msgstr ""
+"এটি একটি Pro ডেমো। এটি ইমপোর্ট করতে লাইসেন্স ট্যাবে আপনার লাইসেন্স সক্রিয় "
+"করুন।"
+
+#. translators: 1: demo, 2: builder.
+#: core/src/Importer.php:192
+msgid "Starting import of %1$s for %2$s."
+msgstr "%2$s-এর জন্য %1$s ইমপোর্ট শুরু হচ্ছে।"
+
+#: core/src/Importer.php:207
+msgid "There is no import to continue."
+msgstr "চালিয়ে যাওয়ার মতো কোনো ইমপোর্ট নেই।"
+
+#: core/src/Importer.php:225
+msgid ""
+"Import cancelled. Everything imported so far can be removed from the Demo "
+"Library."
+msgstr ""
+"ইমপোর্ট বাতিল হয়েছে। এ পর্যন্ত ইমপোর্ট করা সবকিছু ডেমো লাইব্রেরি থেকে সরানো"
+" যাবে।"
+
+#: core/src/Importer.php:341
+msgid "One item stopped the server twice and was skipped."
+msgstr ""
+"একটি আইটেম সার্ভারকে দুবার থামিয়ে দিয়েছে এবং সেটি বাদ দেওয়া হয়েছে।"
+
+#: core/src/Importer.php:341
+msgid ""
+"Raise memory_limit / max_execution_time, then re-import to fill the gap."
+msgstr ""
+"memory_limit / max_execution_time বাড়ান, তারপর ঘাটতি পূরণ করতে আবার ইমপোর্ট"
+" করুন।"
+
+#. translators: %s: error.
+#: core/src/Importer.php:358
+msgid "Unexpected error: %s"
+msgstr "অপ্রত্যাশিত ত্রুটি: %s"
+
+#. translators: %d: errors.
+#: core/src/Importer.php:411
+msgid ""
+"Import finished with %d error. The site works; review the log for what was "
+"skipped."
+msgid_plural ""
+"Import finished with %d errors. The site works; review the log for what was "
+"skipped."
+msgstr[0] ""
+"ইমপোর্ট %dটি ত্রুটিসহ শেষ হয়েছে। সাইটটি কাজ করছে; কী বাদ পড়েছে তা লগে "
+"দেখুন।"
+msgstr[1] ""
+"ইমপোর্ট %dটি ত্রুটিসহ শেষ হয়েছে। সাইটটি কাজ করছে; কী বাদ পড়েছে তা লগে "
+"দেখুন।"
+
+#: core/src/Importer.php:413
+msgid "Your site is ready."
+msgstr "আপনার সাইট প্রস্তুত।"
+
+#: core/src/Importer.php:445
+msgid "WooCommerce is not active, so the shop products were skipped."
+msgstr "WooCommerce সক্রিয় নেই, তাই শপের পণ্যগুলো বাদ দেওয়া হয়েছে।"
+
+#: core/src/Importer.php:602
+msgid "Your server needs a change before the import can run safely."
+msgstr "ইমপোর্ট নিরাপদে চালানোর আগে আপনার সার্ভারে একটি পরিবর্তন প্রয়োজন।"
+
+#: core/src/Importer.php:602
+msgid "Fix the items above (your host can help), then press Retry."
+msgstr ""
+"উপরের আইটেমগুলো ঠিক করুন (আপনার হোস্ট সাহায্য করতে পারে), তারপর আবার চেষ্টা "
+"করুন চাপুন।"
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid ""
+"%s was imported before. Its pages stay; the new import adds fresh copies."
+msgstr ""
+"%s আগে ইমপোর্ট করা হয়েছিল। এর পাতাগুলো থাকবে; নতুন ইমপোর্ট নতুন কপি যোগ "
+"করবে।"
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid "Tick \"Remove previous demo\" next time for a clean site."
+msgstr "পরিষ্কার সাইটের জন্য পরের বার \"আগের ডেমো সরান\"-এ টিক দিন।"
+
+#: core/src/Importer.php:609
+msgid "Server checks passed."
+msgstr "সার্ভার পরীক্ষা সফল হয়েছে।"
+
+#. translators: %d: items.
+#: core/src/Importer.php:621
+msgid "Removed %d items from the previous demo and restored its settings."
+msgstr ""
+"আগের ডেমো থেকে %dটি আইটেম সরানো হয়েছে এবং এর সেটিংস পুনরুদ্ধার করা হয়েছে।"
+
+#: core/src/Importer.php:634
+msgid "Upload a fresh copy of the theme, then press Resume."
+msgstr "থিমের একটি নতুন কপি আপলোড করুন, তারপর আবার শুরু করুন চাপুন।"
+
+#: core/src/Importer.php:634
+msgid "Check your internet connection and press Resume."
+msgstr "আপনার ইন্টারনেট সংযোগ পরীক্ষা করুন এবং আবার শুরু করুন চাপুন।"
+
+#: core/src/Importer.php:640
+msgid "The demo package could not be read (content.json is damaged)."
+msgstr "ডেমো প্যাকেজটি পড়া যায়নি (content.json ক্ষতিগ্রস্ত)।"
+
+#: core/src/Importer.php:640
+msgid "Clear the cache on the System Status tab and retry."
+msgstr "সিস্টেম স্ট্যাটাস ট্যাবে ক্যাশ পরিষ্কার করে আবার চেষ্টা করুন।"
+
+#. translators: 1: pages, 2: images, 3: products.
+#: core/src/Importer.php:644
+msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
+msgstr "প্যাকেজ প্রস্তুত: %1$dটি পাতা ও পোস্ট, %2$dটি ছবি, %3$dটি পণ্য।"
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid "%1$s could not be set up: %2$s"
+msgstr "%1$s সেট আপ করা যায়নি: %2$s"
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid ""
+"Install it from Plugins → Add New, then use the Plugins tab here to activate"
+" it."
+msgstr ""
+"প্লাগইন → নতুন যোগ করুন থেকে এটি ইনস্টল করুন, তারপর এটি সক্রিয় করতে এখানে "
+"প্লাগইন ট্যাব ব্যবহার করুন।"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:667
+msgid "%s installed and activated."
+msgstr "%s ইনস্টল ও সক্রিয় করা হয়েছে।"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:669
+msgid "%s activated."
+msgstr "%s সক্রিয় করা হয়েছে।"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:671
+msgid "%s deactivated because it conflicts with this demo."
+msgstr "%s নিষ্ক্রিয় করা হয়েছে কারণ এটি এই ডেমোর সাথে সাংঘর্ষিক।"
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:673
+msgid "%s is already active."
+msgstr "%s ইতিমধ্যে সক্রিয়।"
+
+#: core/src/Importer.php:702
+msgid "file not found in the package"
+msgstr "প্যাকেজে ফাইল পাওয়া যায়নি"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:707
+msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
+msgstr "ছবি %1$s বাদ দেওয়া হয়েছে (%2$s)। পাতাগুলো থিমের কপি ব্যবহার করবে।"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Image %1$s skipped (%2$s)."
+msgstr "ছবি %1$s বাদ দেওয়া হয়েছে (%2$s)।"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Check that the uploads folder is writable."
+msgstr "আপলোড ফোল্ডারটি লেখার যোগ্য কিনা পরীক্ষা করুন।"
+
+#. translators: %s: file.
+#: core/src/Importer.php:729
+msgid "Imported image %s."
+msgstr "ছবি %s ইমপোর্ট করা হয়েছে।"
+
+#. translators: 1: term, 2: taxonomy.
+#. translators: 1: title, 2: post type.
+#: core/src/Importer.php:744 core/src/Importer.php:790
+msgid "Skipped \"%1$s\": %2$s is not available on this site."
+msgstr "\"%1$s\" বাদ দেওয়া হয়েছে: এই সাইটে %2$s উপলব্ধ নয়।"
+
+#. translators: %s: term.
+#: core/src/Importer.php:751
+msgid "Category \"%s\" already exists and was reused."
+msgstr "বিভাগ \"%s\" আগে থেকেই আছে এবং পুনরায় ব্যবহার করা হয়েছে।"
+
+#. translators: 1: term, 2: error.
+#: core/src/Importer.php:763
+msgid "Category \"%1$s\" was not created: %2$s"
+msgstr "বিভাগ \"%1$s\" তৈরি হয়নি: %2$s"
+
+#. translators: %s: term.
+#: core/src/Importer.php:770
+msgid "Created category \"%s\"."
+msgstr "বিভাগ \"%s\" তৈরি করা হয়েছে।"
+
+#. translators: 1: title, 2: error.
+#: core/src/Importer.php:808
+msgid "\"%1$s\" could not be created: %2$s"
+msgstr "\"%1$s\" তৈরি করা যায়নি: %2$s"
+
+#: core/src/Importer.php:836
+msgid "post"
+msgstr "পোস্ট"
+
+#: core/src/Importer.php:837
+msgid "page"
+msgstr "পাতা"
+
+#: core/src/Importer.php:838
+msgid "event"
+msgstr "ইভেন্ট"
+
+#: core/src/Importer.php:839
+msgid "venue"
+msgstr "ভেন্যু"
+
+#: core/src/Importer.php:840
+msgid "organizer"
+msgstr "আয়োজক"
+
+#. translators: 1: type, 2: title.
+#: core/src/Importer.php:843
+msgid "Created %1$s \"%2$s\"."
+msgstr "%1$s \"%2$s\" তৈরি করা হয়েছে।"
+
+#: core/src/Importer.php:860
+msgid "The Events Calendar rejected the venue."
+msgstr "The Events Calendar ভেন্যুটি প্রত্যাখ্যান করেছে।"
+
+#: core/src/Importer.php:864
+msgid "The Events Calendar rejected the organizer."
+msgstr "The Events Calendar আয়োজককে প্রত্যাখ্যান করেছে।"
+
+#: core/src/Importer.php:892
+msgid "The Events Calendar rejected the event."
+msgstr "The Events Calendar ইভেন্টটি প্রত্যাখ্যান করেছে।"
+
+#. translators: %s: product.
+#: core/src/Importer.php:1004
+msgid "Product \"%s\" could not be saved."
+msgstr "পণ্য \"%s\" সংরক্ষণ করা যায়নি।"
+
+#. translators: %s: product.
+#: core/src/Importer.php:1015
+msgid "Added product \"%s\"."
+msgstr "পণ্য \"%s\" যোগ করা হয়েছে।"
+
+#. translators: 1: menu, 2: count.
+#: core/src/Importer.php:1118
+msgid "Created menu \"%1$s\" with %2$d links."
+msgstr "%2$dটি লিংকসহ মেনু \"%1$s\" তৈরি করা হয়েছে।"
+
+#: core/src/Importer.php:1164
+msgid "Home and blog pages assigned."
+msgstr "হোম ও ব্লগ পাতা নির্ধারণ করা হয়েছে।"
+
+#. translators: %s: option.
+#: core/src/Importer.php:1170
+msgid "Setting \"%s\" is not on the allow-list and was ignored."
+msgstr "সেটিং \"%s\" অনুমোদিত তালিকায় নেই এবং উপেক্ষা করা হয়েছে।"
+
+#. translators: %s: preset.
+#: core/src/Importer.php:1191
+msgid "Animation style set to \"%s\"."
+msgstr "অ্যানিমেশন স্টাইল \"%s\"-এ সেট করা হয়েছে।"
+
+#: core/src/Importer.php:1204
+msgid "Elementor set to use the theme colours and fonts."
+msgstr "Elementor থিমের রং ও ফন্ট ব্যবহার করতে সেট করা হয়েছে।"
+
+#: core/src/Importer.php:1219
+msgid "Default"
+msgstr "ডিফল্ট"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Style \"%s\" was not found in the theme, so the default colours stay."
+msgstr "স্টাইল \"%s\" থিমে পাওয়া যায়নি, তাই ডিফল্ট রং থাকবে।"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Update the WPEssential theme, then import again."
+msgstr "WPEssential থিম আপডেট করুন, তারপর আবার ইমপোর্ট করুন।"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1250
+msgid "Applied the %s colours and fonts."
+msgstr "%s-এর রং ও ফন্ট প্রয়োগ করা হয়েছে।"
+
+#: core/src/Importer.php:1268
+msgid "demo"
+msgstr "ডেমো"
+
+#. translators: 1: template part, 2: design.
+#: core/src/Importer.php:1320
+msgid "Template part \"%1$s\" set to the \"%2$s\" design."
+msgstr "টেমপ্লেট অংশ \"%1$s\" \"%2$s\" ডিজাইনে সেট করা হয়েছে।"
+
+#: core/src/Importer.php:1341
+msgid "Elementor Kit layout, buttons and form styles set."
+msgstr "Elementor Kit লেআউট, বাটন ও ফর্ম স্টাইল সেট করা হয়েছে।"
+
+#: core/src/Importer.php:1361
+msgid "Everywhere"
+msgstr "সর্বত্র"
+
+#: core/src/Importer.php:1369
+msgid "Free shipping"
+msgstr "ফ্রি শিপিং"
+
+#. translators: %s: amount.
+#: core/src/Importer.php:1377
+msgid "Shipping set up with free delivery over %s."
+msgstr "%s-এর বেশি অর্ডারে ফ্রি ডেলিভারিসহ শিপিং সেট আপ করা হয়েছে।"
+
+#. translators: %d: pages.
+#: core/src/Importer.php:1412
+msgid "Linked %d page to its new address."
+msgid_plural "Linked %d pages to their new addresses."
+msgstr[0] "%dটি পাতাকে এর নতুন ঠিকানার সাথে লিংক করা হয়েছে।"
+msgstr[1] "%dটি পাতাকে তাদের নতুন ঠিকানার সাথে লিংক করা হয়েছে।"
+
+#: core/src/Importer.php:1417
+msgid "Permalinks and caches refreshed."
+msgstr "পার্মালিংক ও ক্যাশ রিফ্রেশ করা হয়েছে।"
+
+#: core/src/License.php:136
+msgid ""
+"That license key looks too short. Copy it again from your purchase email."
+msgstr ""
+"এই লাইসেন্স কী খুব ছোট মনে হচ্ছে। আপনার ক্রয়ের ইমেইল থেকে আবার কপি করুন।"
+
+#: core/src/License.php:204
+msgid ""
+"This is a Pro item. Activate your license on the License tab to unlock it."
+msgstr ""
+"এটি একটি Pro আইটেম। এটি আনলক করতে লাইসেন্স ট্যাবে আপনার লাইসেন্স সক্রিয় "
+"করুন।"
+
+#: core/src/License/Adapter.php:84
+msgid "The license server did not return a download link."
+msgstr "লাইসেন্স সার্ভার কোনো ডাউনলোড লিংক দেয়নি।"
+
+#. translators: %s: error.
+#: core/src/License/Adapter.php:107
+msgid "The license server could not be reached: %s"
+msgstr "লাইসেন্স সার্ভারে পৌঁছানো যায়নি: %s"
+
+#. translators: %d: HTTP status.
+#: core/src/License/Adapter.php:113
+msgid ""
+"The license server answered with an unexpected response (HTTP %d). Try again"
+" in a few minutes."
+msgstr ""
+"লাইসেন্স সার্ভার একটি অপ্রত্যাশিত উত্তর দিয়েছে (HTTP %d)। কয়েক মিনিট পর "
+"আবার চেষ্টা করুন।"
+
+#: core/src/License/Custom.php:42 core/src/License/Edd.php:31
+#: core/src/License/Woo.php:58
+msgid "This license key is not valid."
+msgstr "এই লাইসেন্স কী বৈধ নয়।"
+
+#: core/src/License/Edd.php:27
+msgid ""
+"This license has expired. Renew it to keep receiving demos and updates."
+msgstr ""
+"এই লাইসেন্সের মেয়াদ শেষ হয়েছে। ডেমো ও আপডেট পেতে থাকতে এটি নবায়ন করুন।"
+
+#: core/src/License/Edd.php:28
+msgid "This license has been disabled."
+msgstr "এই লাইসেন্সটি নিষ্ক্রিয় করা হয়েছে।"
+
+#: core/src/License/Edd.php:29
+msgid "This license has been revoked."
+msgstr "এই লাইসেন্সটি প্রত্যাহার করা হয়েছে।"
+
+#: core/src/License/Edd.php:30
+msgid "This license key does not exist."
+msgstr "এই লাইসেন্স কী-এর অস্তিত্ব নেই।"
+
+#: core/src/License/Edd.php:32
+msgid "This license is not active for this domain."
+msgstr "এই লাইসেন্সটি এই ডোমেইনের জন্য সক্রিয় নয়।"
+
+#: core/src/License/Edd.php:33
+msgid "This key belongs to a different product."
+msgstr "এই কী অন্য একটি পণ্যের।"
+
+#: core/src/License/Edd.php:34
+msgid ""
+"This license has reached its activation limit. Deactivate it on another site"
+" first."
+msgstr ""
+"এই লাইসেন্সটি এর অ্যাক্টিভেশন সীমায় পৌঁছেছে। প্রথমে অন্য একটি সাইটে এটি "
+"নিষ্ক্রিয় করুন।"
+
+#: core/src/License/Edd.php:130 core/src/License/Woo.php:118
+msgid "The store did not return a download link for this license."
+msgstr "স্টোর এই লাইসেন্সের জন্য কোনো ডাউনলোড লিংক দেয়নি।"
+
+#: core/src/Plugins.php:115
+msgid "Your account is not allowed to install plugins."
+msgstr "আপনার অ্যাকাউন্টের প্লাগইন ইনস্টল করার অনুমতি নেই।"
+
+#. translators: 1: plugin name, 2: error.
+#: core/src/Plugins.php:130
+msgid ""
+"WordPress.org did not answer for %1$s (%2$s). Check the server can reach "
+"wordpress.org, or install it manually."
+msgstr ""
+"WordPress.org %1$s-এর জন্য উত্তর দেয়নি (%2$s)। সার্ভার wordpress.org-এ "
+"পৌঁছাতে পারে কিনা পরীক্ষা করুন, অথবা এটি ম্যানুয়ালি ইনস্টল করুন।"
+
+#: core/src/Plugins.php:145
+msgid "No download source is set for this plugin."
+msgstr "এই প্লাগইনের জন্য কোনো ডাউনলোড উৎস সেট করা নেই।"
+
+#: core/src/Plugins.php:158
+msgid ""
+"The plugin could not be installed. The server may lack write access to wp-"
+"content/plugins."
+msgstr ""
+"প্লাগইনটি ইনস্টল করা যায়নি। সার্ভারের wp-content/plugins-এ লেখার অনুমতি নাও"
+" থাকতে পারে।"
+
+#: core/src/Plugins.php:174
+msgid "Plugin is not installed."
+msgstr "প্লাগইনটি ইনস্টল করা নেই।"
+
+#: core/src/Plugins.php:208
+msgid "Your account is not allowed to delete plugins."
+msgstr "আপনার অ্যাকাউন্টের প্লাগইন মুছে ফেলার অনুমতি নেই।"
+
+#: core/src/Rest.php:101
+msgid "Demo not found."
+msgstr "ডেমো পাওয়া যায়নি।"
+
+#: core/src/Rest.php:158
+msgid "No imported demo was found."
+msgstr "কোনো ইমপোর্ট করা ডেমো পাওয়া যায়নি।"
+
+#. translators: 1: demo, 2: count.
+#: core/src/Rest.php:164
+msgid "%1$s removed: %2$d items deleted and your previous settings restored."
+msgstr ""
+"%1$s সরানো হয়েছে: %2$dটি আইটেম মুছে ফেলা হয়েছে এবং আপনার আগের সেটিংস "
+"পুনরুদ্ধার করা হয়েছে।"
+
+#: core/src/Rest.php:191
+msgid "This plugin is not managed by WPEssential."
+msgstr "এই প্লাগইনটি WPEssential দ্বারা পরিচালিত নয়।"
+
+#: core/src/Rest.php:323
+msgid "Branding can be changed with a White Label plan."
+msgstr "White Label প্ল্যানের মাধ্যমে ব্র্যান্ডিং পরিবর্তন করা যায়।"
+
+#: core/src/Status.php:30
+msgid "WordPress version"
+msgstr "WordPress সংস্করণ"
+
+#: core/src/Status.php:33
+msgid "Update WordPress to 6.5 or newer."
+msgstr "WordPress 6.5 বা তার নতুন সংস্করণে আপডেট করুন।"
+
+#: core/src/Status.php:37
+msgid "PHP version"
+msgstr "PHP সংস্করণ"
+
+#: core/src/Status.php:40
+msgid ""
+"PHP 8.1 or newer is faster and still supported. Ask your host to upgrade."
+msgstr ""
+"PHP 8.1 বা নতুন সংস্করণ দ্রুততর এবং এখনও সমর্থিত। আপনার হোস্টকে আপগ্রেড করতে"
+" বলুন।"
+
+#: core/src/Status.php:44
+msgid "Memory limit"
+msgstr "মেমরি সীমা"
+
+#: core/src/Status.php:45 core/src/Status.php:52
+msgid "Unlimited"
+msgstr "সীমাহীন"
+
+#: core/src/Status.php:47
+msgid ""
+"Set memory_limit to 256M in php.ini, or define WP_MEMORY_LIMIT in wp-"
+"config.php."
+msgstr ""
+"php.ini-তে memory_limit 256M সেট করুন, অথবা wp-config.php-তে WP_MEMORY_LIMIT"
+" নির্ধারণ করুন।"
+
+#: core/src/Status.php:51
+msgid "Max execution time"
+msgstr "সর্বোচ্চ এক্সিকিউশন সময়"
+
+#: core/src/Status.php:54
+msgid "The importer works in short batches, so 30 seconds is enough."
+msgstr "ইমপোর্টার ছোট ছোট ব্যাচে কাজ করে, তাই 30 সেকেন্ডই যথেষ্ট।"
+
+#: core/src/Status.php:58
+msgid "Max upload size"
+msgstr "সর্বোচ্চ আপলোড সাইজ"
+
+#: core/src/Status.php:61
+msgid "Raise upload_max_filesize and post_max_size to at least 8M."
+msgstr "upload_max_filesize ও post_max_size কমপক্ষে 8M পর্যন্ত বাড়ান।"
+
+#: core/src/Status.php:65
+msgid "Uploads folder"
+msgstr "আপলোড ফোল্ডার"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Writable"
+msgstr "লেখার যোগ্য"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Not writable"
+msgstr "লেখার যোগ্য নয়"
+
+#: core/src/Status.php:68
+msgid "Give the web server write access to wp-content/uploads."
+msgstr "ওয়েব সার্ভারকে wp-content/uploads-এ লেখার অনুমতি দিন।"
+
+#: core/src/Status.php:72
+msgid "Plugins folder"
+msgstr "প্লাগইন ফোল্ডার"
+
+#: core/src/Status.php:75
+msgid "Without write access, required plugins must be installed by hand."
+msgstr "লেখার অনুমতি ছাড়া প্রয়োজনীয় প্লাগইনগুলো হাতে ইনস্টল করতে হবে।"
+
+#: core/src/Status.php:79
+msgid "ZIP support"
+msgstr "ZIP সমর্থন"
+
+#: core/src/Status.php:82
+msgid "Enable the PHP zip extension for faster package extraction."
+msgstr "দ্রুত প্যাকেজ এক্সট্র্যাকশনের জন্য PHP zip এক্সটেনশন চালু করুন।"
+
+#: core/src/Status.php:86
+msgid "Image editor"
+msgstr "ছবি সম্পাদক"
+
+#: core/src/Status.php:87
+msgid "WebP supported"
+msgstr "WebP সমর্থিত"
+
+#: core/src/Status.php:87
+msgid "No WebP support"
+msgstr "WebP সমর্থন নেই"
+
+#: core/src/Status.php:89
+msgid ""
+"Images still import, but WordPress cannot create smaller sizes. Ask your "
+"host to enable Imagick or GD with WebP."
+msgstr ""
+"ছবি তবুও ইমপোর্ট হবে, কিন্তু WordPress ছোট সাইজগুলো তৈরি করতে পারবে না। "
+"আপনার হোস্টকে WebP-সহ Imagick বা GD চালু করতে বলুন।"
+
+#: core/src/Status.php:93
+msgid "Permalinks"
+msgstr "পার্মালিংক"
+
+#: core/src/Status.php:94
+msgid "Plain"
+msgstr "সাধারণ"
+
+#: core/src/Status.php:96
+msgid ""
+"Choose \"Post name\" under Settings → Permalinks for clean shop and page "
+"addresses."
+msgstr ""
+"পরিষ্কার শপ ও পাতার ঠিকানার জন্য সেটিংস → পার্মালিংক-এ \"পোস্টের নাম\" "
+"নির্বাচন করুন।"
+
+#: core/src/Status.php:123 core/assets/admin.js:282
+msgid "Theme"
+msgstr "থিম"
+
+#: core/src/Status.php:124
+msgid "Core module"
+msgstr "কোর মডিউল"
+
+#: core/src/Status.php:124
+msgid "plugin"
+msgstr "প্লাগইন"
+
+#: core/src/Status.php:124
+msgid "built into theme"
+msgstr "থিমে অন্তর্ভুক্ত"
+
+#: core/src/Status.php:125
+msgid "Site address"
+msgstr "সাইটের ঠিকানা"
+
+#: core/src/Status.php:126
+msgid "Multisite"
+msgstr "মাল্টিসাইট"
+
+#: core/src/Status.php:126
+msgid "Yes"
+msgstr "হ্যাঁ"
+
+#: core/src/Status.php:126
+msgid "No"
+msgstr "না"
+
+#: core/src/Status.php:127
+msgid "Server"
+msgstr "সার্ভার"
+
+#: core/src/Status.php:128
+msgid "Database"
+msgstr "ডাটাবেস"
+
+#: core/src/Status.php:129
+msgid "Active plugins"
+msgstr "সক্রিয় প্লাগইন"
+
+#: inc/block-styles.php:16
+msgid "Secondary"
+msgstr "সেকেন্ডারি"
+
+#: inc/block-styles.php:17
+msgid "Outline"
+msgstr "আউটলাইন"
+
+#: inc/block-styles.php:18
+msgid "Ghost"
+msgstr "ঘোস্ট"
+
+#: inc/block-styles.php:19
+msgid "Dark"
+msgstr "গাঢ়"
+
+#: inc/block-styles.php:20
+msgid "Light (on dark)"
+msgstr "হালকা (গাঢ়ের উপর)"
+
+#: inc/block-styles.php:21
+msgid "Text link"
+msgstr "টেক্সট লিংক"
+
+#: inc/block-styles.php:22
+msgid "Pill"
+msgstr "পিল"
+
+#: inc/block-styles.php:23
+msgid "Large"
+msgstr "বড়"
+
+#: inc/block-styles.php:26 inc/block-styles.php:33
+msgid "Card"
+msgstr "কার্ড"
+
+#: inc/block-styles.php:27 inc/block-styles.php:34
+msgid "Card — flat"
+msgstr "কার্ড — ফ্ল্যাট"
+
+#: inc/block-styles.php:28 inc/block-styles.php:35
+msgid "Card — dark"
+msgstr "কার্ড — গাঢ়"
+
+#: inc/block-styles.php:29
+msgid "Section — dark"
+msgstr "সেকশন — গাঢ়"
+
+#: inc/block-styles.php:30
+msgid "Logo strip"
+msgstr "লোগো স্ট্রিপ"
+
+#: inc/block-styles.php:38
+msgid "Checklist"
+msgstr "চেকলিস্ট"
+
+#: inc/block-styles.php:39
+msgid "Timeline"
+msgstr "টাইমলাইন"
+
+#: inc/block-styles.php:42
+msgid "Overline"
+msgstr "ওভারলাইন"
+
+#: inc/block-styles.php:43
+msgid "Lead"
+msgstr "লিড"
+
+#: inc/block-styles.php:46
+msgid "Flush"
+msgstr "ফ্লাশ"
+
+#: inc/block-styles.php:49
+msgid "Shadow"
+msgstr "ছায়া"
+
+#: inc/block-styles.php:50
+msgid "Glass frame"
+msgstr "গ্লাস ফ্রেম"
+
+#: inc/block-styles.php:53
+msgid "Pills"
+msgstr "পিলস"
+
+#: inc/block-styles.php:54
+msgid "Hashtags"
+msgstr "হ্যাশট্যাগ"
+
+#: inc/block-styles.php:57
+msgid "Soft"
+msgstr "নরম"
+
+#: inc/core-bridge.php:53
+msgid ""
+"Install the WPEssential Core plugin to import one-click demos for Gutenberg "
+"or Elementor."
+msgstr ""
+"Gutenberg বা Elementor-এর জন্য ওয়ান-ক্লিক ডেমো ইমপোর্ট করতে WPEssential "
+"Core প্লাগইন ইনস্টল করুন।"
+
+#: inc/core-bridge.php:55
+msgid "Get WPEssential Core"
+msgstr "WPEssential Core নিন"
+
+#: inc/core-bridge.php:57
+msgid "Dismiss"
+msgstr "বাতিল করুন"
+
+#: inc/motion.php:21
+msgid "None"
+msgstr "কোনোটিই নয়"
+
+#: inc/motion.php:22
+msgid "No animations."
+msgstr "কোনো অ্যানিমেশন নেই।"
+
+#: inc/motion.php:25
+msgid "Subtle"
+msgstr "সূক্ষ্ম"
+
+#: inc/motion.php:26
+msgid "Short fade-up. Corporate, SaaS, finance, medical."
+msgstr "ছোট ফেড-আপ। কর্পোরেট, SaaS, ফাইন্যান্স, চিকিৎসা।"
+
+#: inc/motion.php:29
+msgid "Editorial"
+msgstr "সম্পাদকীয়"
+
+#: inc/motion.php:30
+msgid "Slow image masks and line reveals. Fashion, magazine, luxury."
+msgstr "ধীর ইমেজ মাস্ক ও লাইন রিভিল। ফ্যাশন, ম্যাগাজিন, বিলাসিতা।"
+
+#: inc/motion.php:33
+msgid "Playful"
+msgstr "প্রাণবন্ত"
+
+#: inc/motion.php:34
+msgid "Springy scale and stagger. Food, kids, events, creative."
+msgstr "স্প্রিংি স্কেল ও স্ট্যাগার। খাবার, শিশু, ইভেন্ট, সৃজনশীল।"
+
+#: inc/motion.php:37
+msgid "Dynamic (GSAP)"
+msgstr "ডায়নামিক (GSAP)"
+
+#: inc/motion.php:38
+msgid ""
+"Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, "
+"sport, launches."
+msgstr ""
+"GSAP ScrollTrigger দিয়ে প্যারালাক্স, কাউন্টার ও স্ট্যাগার্ড গ্রিড। ইভেন্ট, "
+"খেলাধুলা, লঞ্চ।"
+
+#: inc/multilingual.php:108
+msgid "Language"
+msgstr "ভাষা"
+
+#: inc/multilingual.php:165
+msgid "Language switcher"
+msgstr "ভাষা পরিবর্তক"
+
+#: inc/multilingual.php:245 inc/patterns-shop/shop-products.php:14
+msgid "Featured"
+msgstr "বৈশিষ্ট্যযুক্ত"
+
+#: inc/multilingual.php:246
+msgid "Author"
+msgstr "লেখক"
+
+#: inc/options.php:40
+msgid "Untitled snippet"
+msgstr "শিরোনামহীন স্নিপেট"
+
+#: inc/options.php:125 inc/options.php:215
+msgid "Theme Options"
+msgstr "থিম অপশন"
+
+#: inc/options.php:153
+msgid "Saved"
+msgstr "সংরক্ষিত"
+
+#: inc/options.php:154
+msgid "Could not save"
+msgstr "সংরক্ষণ করা যায়নি"
+
+#: inc/options.php:155
+msgid "Delete this snippet?"
+msgstr "এই স্নিপেটটি মুছে ফেলবেন?"
+
+#: inc/options.php:156
+msgid ""
+"No snippets yet. Add CSS or JavaScript without editing theme files — it "
+"survives theme updates."
+msgstr ""
+"এখনও কোনো স্নিপেট নেই। থিম ফাইল সম্পাদনা না করেই CSS বা JavaScript যোগ করুন "
+"— থিম আপডেটের পরও এটি থেকে যায়।"
+
+#: inc/options.php:215
+msgid "Loading…"
+msgstr "লোড হচ্ছে…"
+
+#: inc/patterns-shop/shop-categories.php:13
+msgid "Shop by category"
+msgstr "বিভাগ অনুযায়ী কেনাকাটা করুন"
+
+#: inc/patterns-shop/shop-categories.php:17
+msgid "Find what you love"
+msgstr "আপনার পছন্দের জিনিস খুঁজুন"
+
+#: inc/patterns-shop/shop-products.php:18
+msgid "Customer favourites"
+msgstr "গ্রাহকদের পছন্দ"
+
+#: inc/patterns-shop/shop-products.php:24
+msgid "View all products"
+msgstr "সব পণ্য দেখুন"
+
+#: inc/patterns-shop/shop-products.php:34
+msgid "New arrivals"
+msgstr "নতুন আগমন"
+
+#: inc/patterns-shop/shop-products.php:42
+msgid "On sale now"
+msgstr "এখন সেলে"
+
+#: inc/patterns.php:15
+msgid "WPEssential — Heroes"
+msgstr "WPEssential — হিরো"
+
+#: inc/patterns.php:16
+msgid "WPEssential — Sections"
+msgstr "WPEssential — সেকশন"
+
+#: inc/patterns.php:17
+msgid "WPEssential — Headers"
+msgstr "WPEssential — হেডার"
+
+#: inc/patterns.php:18
+msgid "WPEssential — Footers"
+msgstr "WPEssential — ফুটার"
+
+#: inc/patterns.php:19
+msgid "WPEssential — Full pages"
+msgstr "WPEssential — পূর্ণ পাতা"
+
+#: inc/patterns.php:20
+msgid "WPEssential — Shop"
+msgstr "WPEssential — শপ"
+
+#: inc/patterns.php:36
+msgid "Shop — Category grid"
+msgstr "শপ — বিভাগ গ্রিড"
+
+#: inc/patterns.php:37
+msgid "Shop — Featured, new and sale products"
+msgstr "শপ — বৈশিষ্ট্যযুক্ত, নতুন ও সেলের পণ্য"
+
+#: inc/seo.php:136
+msgid "Home"
+msgstr "হোম"
+
+#: inc/setup.php:40
+msgid "Primary Menu"
+msgstr "প্রাথমিক মেনু"
+
+#: inc/setup.php:41
+msgid "Mobile Menu"
+msgstr "মোবাইল মেনু"
+
+#: inc/setup.php:42
+msgid "Footer Menu"
+msgstr "ফুটার মেনু"
+
+#: inc/setup.php:43
+msgid "Top Bar Menu"
+msgstr "টপ বার মেনু"
+
+#: inc/setup.php:77
+msgid "Back to top"
+msgstr "উপরে ফিরে যান"
+
+#. translators: %d: discount percentage.
+#: inc/woocommerce.php:48
+msgid "-%d%%"
+msgstr "-%d%%"
+
+#: inc/woocommerce.php:89
+msgid "Out of stock"
+msgstr "স্টকে নেই"
+
+#: inc/woocommerce.php:136
+msgid "You’ve unlocked free shipping on this order!"
+msgstr "আপনি এই অর্ডারে ফ্রি শিপিং আনলক করেছেন!"
+
+#. translators: %s: amount left for free shipping.
+#: inc/woocommerce.php:139
+msgid "Add %s more to unlock free shipping."
+msgstr "ফ্রি শিপিং আনলক করতে আরও %s যোগ করুন।"
+
+#: patterns/blog-hero.php
+msgctxt "Pattern title"
+msgid "Blog hero"
+msgstr "ব্লগ হিরো"
+
+#: patterns/blog-hero.php:14 patterns/footer-premium.php:89
+#: patterns/footer-simple.php:18 core/assets/admin.js:301
+msgid "Blog"
+msgstr "ব্লগ"
+
+#: patterns/blog-hero.php:18
+msgid "Guides, tutorials and product news from the WPEssential team."
+msgstr "WPEssential টিমের গাইড, টিউটোরিয়াল ও পণ্যের খবর।"
+
+#: patterns/builders-split.php
+msgctxt "Pattern title"
+msgid "Split — image + checklist (dark)"
+msgstr "স্প্লিট — ছবি + চেকলিস্ট (গাঢ়)"
+
+#: patterns/builders-split.php:16
+msgid "Your builder, your choice"
+msgstr "আপনার বিল্ডার, আপনার পছন্দ"
+
+#: patterns/builders-split.php:20
+msgid "Same design. Gutenberg or Elementor."
+msgstr "একই ডিজাইন। Gutenberg বা Elementor।"
+
+#: patterns/builders-split.php:24
+msgid ""
+"Colors, fonts and spacing come from one theme.json and sync into Elementor’s"
+" global kit automatically."
+msgstr ""
+"রং, ফন্ট ও স্পেসিং একটি theme.json থেকে আসে এবং স্বয়ংক্রিয়ভাবে Elementor-"
+"এর গ্লোবাল কিটে সিঙ্ক হয়।"
+
+#: patterns/builders-split.php:29
+msgid "Shared design tokens across both builders"
+msgstr "দুই বিল্ডারেই একই ডিজাইন টোকেন"
+
+#: patterns/builders-split.php:31
+msgid "Elementor Pro Theme Builder locations supported"
+msgstr "Elementor Pro Theme Builder লোকেশন সমর্থিত"
+
+#: patterns/builders-split.php:33
+msgid "Full Site Editing templates and patterns"
+msgstr "ফুল সাইট এডিটিং টেমপ্লেট ও প্যাটার্ন"
+
+#: patterns/builders-split.php:40
+msgid "Designer building a site"
+msgstr "সাইট তৈরি করছেন একজন ডিজাইনার"
+
+#: patterns/coming-soon.php
+msgctxt "Pattern title"
+msgid "Coming soon"
+msgstr "শীঘ্রই আসছে"
+
+#: patterns/coming-soon.php:17
+msgid "Something great is on the way"
+msgstr "দারুণ কিছু আসছে"
+
+#: patterns/coming-soon.php:21
+msgid "We are polishing the final details. Follow us for launch news."
+msgstr ""
+"আমরা শেষ খুঁটিনাটিগুলো ঘষামাজা করছি। লঞ্চের খবরের জন্য আমাদের ফলো করুন।"
+
+#: patterns/comments.php
+msgctxt "Pattern title"
+msgid "Comments"
+msgstr "মন্তব্য"
+
+#: patterns/contact.php
+msgctxt "Pattern title"
+msgid "Contact — details + form area"
+msgstr "যোগাযোগ — বিবরণ + ফর্ম এলাকা"
+
+#: patterns/contact.php:22
+msgid "Email us"
+msgstr "আমাদের ইমেইল করুন"
+
+#: patterns/contact.php:36
+msgid "Call us"
+msgstr "আমাদের কল করুন"
+
+#: patterns/contact.php:50
+msgid "Visit us"
+msgstr "আমাদের কাছে আসুন"
+
+#: patterns/contact.php:64
+msgid "Support hours"
+msgstr "সাপোর্টের সময়"
+
+#: patterns/contact.php:68
+msgid "Replies within one business day"
+msgstr "এক কর্মদিবসের মধ্যে উত্তর"
+
+#: patterns/contact.php:76
+msgid "Send us a message"
+msgstr "আমাদের একটি বার্তা পাঠান"
+
+#: patterns/contact.php:80
+msgid ""
+"Replace the shortcode below with your form plugin (Contact Form 7, WPForms, "
+"Fluent Forms or the Elementor Form widget)."
+msgstr ""
+"নিচের শর্টকোডটি আপনার ফর্ম প্লাগইন (Contact Form 7, WPForms, Fluent Forms বা"
+" Elementor Form উইজেট) দিয়ে বদলে দিন।"
+
+#: patterns/content-404.php
+msgctxt "Pattern title"
+msgid "404 content"
+msgstr "404 কনটেন্ট"
+
+#: patterns/content-404.php:14
+msgid "Error 404"
+msgstr "ত্রুটি 404"
+
+#: patterns/content-404.php:18
+msgid "This page took a day off"
+msgstr "এই পাতাটি আজ ছুটিতে আছে"
+
+#: patterns/content-404.php:22
+msgid ""
+"The link may be broken or the page may have moved. Try a search or head back"
+" home."
+msgstr ""
+"লিংকটি ভাঙা হতে পারে বা পাতাটি সরে গিয়ে থাকতে পারে। একটি অনুসন্ধান করে "
+"দেখুন বা হোমে ফিরে যান।"
+
+#: patterns/content-404.php:25 patterns/header-actions.php:14
+#: patterns/header-shop.php:22 patterns/sidebar.php:14
+msgid "Search"
+msgstr "অনুসন্ধান"
+
+#: patterns/content-404.php:29
+msgid "Back to home"
+msgstr "হোমে ফিরে যান"
+
+#: patterns/cta-banner.php
+msgctxt "Pattern title"
+msgid "Call to action — gradient banner"
+msgstr "কল টু অ্যাকশন — গ্রেডিয়েন্ট ব্যানার"
+
+#: patterns/cta-banner.php:15
+msgid "Ready to launch your next site?"
+msgstr "আপনার পরের সাইট লঞ্চ করতে প্রস্তুত?"
+
+#: patterns/cta-banner.php:19
+msgid ""
+"Start free. Upgrade to Pro when you need premium demos and priority support."
+msgstr ""
+"ফ্রিতে শুরু করুন। প্রিমিয়াম ডেমো ও অগ্রাধিকার সাপোর্ট দরকার হলে Pro-তে "
+"আপগ্রেড করুন।"
+
+#: patterns/cta-banner.php:24
+msgid "Get WPEssential free"
+msgstr "WPEssential ফ্রি নিন"
+
+#: patterns/cta-banner.php:28
+msgid "See Pro plans →"
+msgstr "Pro প্ল্যান দেখুন →"
+
+#: patterns/faq.php
+msgctxt "Pattern title"
+msgid "FAQ — accordion"
+msgstr "FAQ — অ্যাকর্ডিয়ন"
+
+#: patterns/faq.php:15 patterns/footer-premium.php:90
+msgid "FAQ"
+msgstr "FAQ"
+
+#: patterns/faq.php:19 patterns/page-faq.php:20
+msgid "Frequently asked questions"
+msgstr "প্রায়শই জিজ্ঞাসিত প্রশ্ন"
+
+#: patterns/faq.php:24
+msgid "Is WPEssential free?"
+msgstr "WPEssential কি ফ্রি?"
+
+#: patterns/faq.php:25
+msgid ""
+"Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium"
+" blocks and priority support."
+msgstr ""
+"হ্যাঁ। থিম ও 12টি ডেমো চিরকাল ফ্রি। Pro দিয়ে 40+ ডেমো, প্রিমিয়াম ব্লক ও "
+"অগ্রাধিকার সাপোর্ট আনলক হয়।"
+
+#: patterns/faq.php:30
+msgid "Which page builders are supported?"
+msgstr "কোন কোন পেজ বিল্ডার সমর্থিত?"
+
+#: patterns/faq.php:31
+msgid ""
+"The native block editor (Gutenberg) and Elementor. Every demo ships in both "
+"versions."
+msgstr ""
+"নেটিভ ব্লক এডিটর (Gutenberg) ও Elementor। প্রতিটি ডেমো দুই সংস্করণেই আসে।"
+
+#: patterns/faq.php:36
+msgid "Will importing a demo delete my content?"
+msgstr "ডেমো ইমপোর্ট করলে কি আমার কনটেন্ট মুছে যাবে?"
+
+#: patterns/faq.php:37
+msgid ""
+"No. Demo content is added alongside your existing posts, and you choose what"
+" to import."
+msgstr ""
+"না। ডেমো কনটেন্ট আপনার বিদ্যমান পোস্টের পাশাপাশি যোগ হয়, এবং কী ইমপোর্ট "
+"করবেন তা আপনিই বেছে নেন।"
+
+#: patterns/faq.php:42
+msgid "Do I need Elementor Pro?"
+msgstr "আমার কি Elementor Pro লাগবে?"
+
+#: patterns/faq.php:43
+msgid ""
+"No. Elementor free is enough for every demo. Elementor Pro Theme Builder "
+"headers and footers are also supported."
+msgstr ""
+"না। প্রতিটি ডেমোর জন্য ফ্রি Elementor-ই যথেষ্ট। Elementor Pro Theme Builder "
+"হেডার ও ফুটারও সমর্থিত।"
+
+#: patterns/faq.php:48
+msgid "Is the theme translation-ready and RTL compatible?"
+msgstr "থিমটি কি অনুবাদ-প্রস্তুত ও RTL সামঞ্জস্যপূর্ণ?"
+
+#: patterns/faq.php:49
+msgid ""
+"Yes. All strings are translatable and layouts mirror correctly for languages"
+" such as Urdu and Arabic."
+msgstr ""
+"হ্যাঁ। সব স্ট্রিং অনুবাদযোগ্য এবং উর্দু ও আরবির মতো ভাষার জন্য লেআউট "
+"সঠিকভাবে উল্টে যায়।"
+
+#: patterns/features-grid.php
+msgctxt "Pattern title"
+msgid "Features — 3×2 grid"
+msgstr "বৈশিষ্ট্য — 3×2 গ্রিড"
+
+#: patterns/features-grid.php:15
+msgid "Why WPEssential"
+msgstr "কেন WPEssential"
+
+#: patterns/features-grid.php:19
+msgid "Everything a modern site needs, nothing it doesn’t"
+msgstr "আধুনিক সাইটের যা দরকার সবই, অপ্রয়োজনীয় কিছু নয়"
+
+#: patterns/features-grid.php:23
+msgid ""
+"Built on theme.json and native blocks, with first-class Elementor support."
+msgstr "theme.json ও নেটিভ ব্লকের উপর তৈরি, প্রথম সারির Elementor সমর্থনসহ।"
+
+#: patterns/features-grid.php:34
+msgid "One-click demo import"
+msgstr "ওয়ান-ক্লিক ডেমো ইমপোর্ট"
+
+#: patterns/features-grid.php:38
+msgid ""
+"Pick a demo, choose your builder, import. Content and settings land exactly "
+"as previewed."
+msgstr ""
+"একটি ডেমো বাছুন, আপনার বিল্ডার বেছে নিন, ইমপোর্ট করুন। কনটেন্ট ও সেটিংস "
+"প্রিভিউতে যেমন দেখেছেন ঠিক তেমনই আসে।"
+
+#: patterns/features-grid.php:48
+msgid "Gutenberg &amp; Elementor"
+msgstr "Gutenberg &amp; Elementor"
+
+#: patterns/features-grid.php:52
+msgid ""
+"Every demo ships twice — native blocks and Elementor — sharing one set of "
+"design tokens."
+msgstr ""
+"প্রতিটি ডেমো দুইবার আসে — নেটিভ ব্লক ও Elementor — একই ডিজাইন টোকেন সেট ভাগ "
+"করে।"
+
+#: patterns/features-grid.php:62
+msgid "Blazing fast"
+msgstr "অত্যন্ত দ্রুত"
+
+#: patterns/features-grid.php:66
+msgid ""
+"No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
+msgstr "jQuery নেই, প্রতি-ব্লক CSS ও ছোট স্টাইলশিট Core Web Vitals সবুজ রাখে।"
+
+#: patterns/features-grid.php:78
+msgid "Automatic plugin setup"
+msgstr "স্বয়ংক্রিয় প্লাগইন সেটআপ"
+
+#: patterns/features-grid.php:82
+msgid ""
+"Required plugins install and activate themselves when you import a demo."
+msgstr ""
+"ডেমো ইমপোর্ট করলে প্রয়োজনীয় প্লাগইনগুলো নিজে থেকেই ইনস্টল ও সক্রিয় হয়।"
+
+#: patterns/features-grid.php:92
+msgid "WooCommerce ready"
+msgstr "WooCommerce প্রস্তুত"
+
+#: patterns/features-grid.php:96
+msgid ""
+"Designed shop, product, cart, checkout and account pages — not default "
+"templates."
+msgstr ""
+"ডিজাইন করা শপ, পণ্য, কার্ট, চেকআউট ও অ্যাকাউন্ট পাতা — ডিফল্ট টেমপ্লেট নয়।"
+
+#: patterns/features-grid.php:106
+msgid "Pro license &amp; updates"
+msgstr "Pro লাইসেন্স &amp; আপডেট"
+
+#: patterns/features-grid.php:110
+msgid ""
+"Connect a license once to unlock Pro demos, premium blocks and updates."
+msgstr ""
+"Pro ডেমো, প্রিমিয়াম ব্লক ও আপডেট আনলক করতে একবার লাইসেন্স সংযুক্ত করুন।"
+
+#: patterns/footer-premium.php
+msgctxt "Pattern title"
+msgid "Footer — Premium (dark, newsletter band)"
+msgstr "ফুটার — প্রিমিয়াম (গাঢ়, নিউজলেটার ব্যান্ড)"
+
+#: patterns/footer-premium.php:17
+msgid "Get design tips & new demos"
+msgstr "ডিজাইন টিপস ও নতুন ডেমো পান"
+
+#: patterns/footer-premium.php:21
+msgid "One email a month. No spam, unsubscribe anytime."
+msgstr "মাসে একটি ইমেইল। কোনো স্প্যাম নয়, যেকোনো সময় আনসাবস্ক্রাইব করুন।"
+
+#: patterns/footer-premium.php:28
+msgid "Subscribe"
+msgstr "সাবস্ক্রাইব করুন"
+
+#: patterns/footer-premium.php:55
+msgid "Company"
+msgstr "কোম্পানি"
+
+#: patterns/footer-premium.php:59 patterns/page-about.php:16
+msgid "About us"
+msgstr "আমাদের সম্পর্কে"
+
+#: patterns/footer-premium.php:60 patterns/page-services.php:16
+#: patterns/services-grid.php:15
+msgid "Services"
+msgstr "সেবাসমূহ"
+
+#: patterns/footer-premium.php:61 patterns/page-pricing.php:16
+#: patterns/pricing.php:15
+msgid "Pricing"
+msgstr "মূল্য"
+
+#: patterns/footer-premium.php:62 patterns/footer-simple.php:19
+#: patterns/header-topbar.php:18 patterns/page-contact.php:16
+msgid "Contact"
+msgstr "যোগাযোগ"
+
+#: patterns/footer-premium.php:70 core/assets/admin.js:301
+msgid "Shop"
+msgstr "শপ"
+
+#: patterns/footer-premium.php:74
+msgid "All products"
+msgstr "সব পণ্য"
+
+#: patterns/footer-premium.php:75
+msgid "My account"
+msgstr "আমার অ্যাকাউন্ট"
+
+#: patterns/footer-premium.php:76
+msgid "Cart"
+msgstr "কার্ট"
+
+#: patterns/footer-premium.php:77 patterns/header-topbar.php:18
+msgid "Track order"
+msgstr "অর্ডার ট্র্যাক করুন"
+
+#: patterns/footer-premium.php:85 core/assets/admin.js:263
+msgid "Resources"
+msgstr "রিসোর্স"
+
+#: patterns/footer-premium.php:91 core/assets/admin.js:266
+msgid "Documentation"
+msgstr "ডকুমেন্টেশন"
+
+#: patterns/footer-premium.php:92 core/assets/admin.js:267
+msgid "Support"
+msgstr "সাপোর্ট"
+
+#: patterns/footer-premium.php:100
+msgid "All rights reserved."
+msgstr "সর্বস্বত্ব সংরক্ষিত।"
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:20
+msgid "Privacy"
+msgstr "গোপনীয়তা"
+
+#: patterns/footer-premium.php:104
+msgid "Terms"
+msgstr "শর্তাবলি"
+
+#: patterns/footer-simple.php
+msgctxt "Pattern title"
+msgid "Footer — Simple"
+msgstr "ফুটার — সাধারণ"
+
+#: patterns/footer-simple.php:17
+msgid "About"
+msgstr "সম্পর্কে"
+
+#: patterns/header-actions.php
+msgctxt "Pattern title"
+msgid "Header actions (search, account, cart, CTA)"
+msgstr "হেডার অ্যাকশন (অনুসন্ধান, অ্যাকাউন্ট, কার্ট, CTA)"
+
+#: patterns/header-actions.php:23
+msgid "Switch to dark mode"
+msgstr "ডার্ক মোডে যান"
+
+#: patterns/header-actions.php:23
+msgid "Switch to light mode"
+msgstr "লাইট মোডে যান"
+
+#: patterns/header-actions.php:29
+msgid "Get Started"
+msgstr "শুরু করুন"
+
+#: patterns/header-centered.php
+msgctxt "Pattern title"
+msgid "Header — Centered"
+msgstr "হেডার — কেন্দ্রীভূত"
+
+#: patterns/header-default.php
+msgctxt "Pattern title"
+msgid "Header — Default"
+msgstr "হেডার — ডিফল্ট"
+
+#: patterns/header-shop.php
+msgctxt "Pattern title"
+msgid "Header — Shop (search + account + cart)"
+msgstr "হেডার — শপ (অনুসন্ধান + অ্যাকাউন্ট + কার্ট)"
+
+#: patterns/header-shop.php:22
+msgid "Search products"
+msgstr "পণ্য অনুসন্ধান"
+
+#: patterns/header-shop.php:22
+msgid "Search products, brands and more…"
+msgstr "পণ্য, ব্র্যান্ড ও আরও অনেক কিছু অনুসন্ধান করুন…"
+
+#: patterns/header-topbar.php
+msgctxt "Pattern title"
+msgid "Top bar"
+msgstr "টপ বার"
+
+#: patterns/header-topbar.php:14
+msgid "Free shipping on orders over $75 · 30-day returns"
+msgstr "$75-এর বেশি অর্ডারে ফ্রি শিপিং · 30 দিনের রিটার্ন"
+
+#: patterns/header-topbar.php:18
+msgid "Help"
+msgstr "সাহায্য"
+
+#: patterns/header-transparent.php
+msgctxt "Pattern title"
+msgid "Header — Transparent (over dark hero)"
+msgstr "হেডার — স্বচ্ছ (গাঢ় হিরোর উপর)"
+
+#: patterns/hero-dark.php
+msgctxt "Pattern title"
+msgid "Hero — Dark with product shot"
+msgstr "হিরো — পণ্যের ছবিসহ গাঢ়"
+
+#: patterns/hero-dark.php:15 core/assets/admin.js:241
+msgid "NEW"
+msgstr "নতুন"
+
+#: patterns/hero-dark.php:15
+msgid "40+ demos for Gutenberg &amp; Elementor"
+msgstr "Gutenberg &amp; Elementor-এর জন্য 40+ ডেমো"
+
+#: patterns/hero-dark.php:19
+msgid "Launch a premium WordPress site in minutes, not weeks"
+msgstr "সপ্তাহ নয়, মিনিটেই একটি প্রিমিয়াম WordPress সাইট লঞ্চ করুন"
+
+#: patterns/hero-dark.php:23
+msgid ""
+"One-click demos for every niche, built natively for both the block editor "
+"and Elementor — fast, accessible and fully yours."
+msgstr ""
+"প্রতিটি নিশের জন্য ওয়ান-ক্লিক ডেমো, ব্লক এডিটর ও Elementor দুটির জন্যই "
+"নেটিভভাবে তৈরি — দ্রুত, সহজলভ্য এবং পুরোপুরি আপনার।"
+
+#: patterns/hero-dark.php:28 core/assets/admin.js:245
+msgid "Browse demos"
+msgstr "ডেমো ব্রাউজ করুন"
+
+#: patterns/hero-dark.php:32
+msgid "Watch the 2-min tour"
+msgstr "2 মিনিটের ট্যুর দেখুন"
+
+#: patterns/hero-dark.php:43 patterns/stats.php:28
+msgid "Ready demos"
+msgstr "প্রস্তুত ডেমো"
+
+#: patterns/hero-dark.php:53
+msgid "Page builders"
+msgstr "পেজ বিল্ডার"
+
+#: patterns/hero-dark.php:63
+msgid "CSS on first load"
+msgstr "প্রথম লোডে CSS"
+
+#: patterns/hero-dark.php:73
+msgid "From 1,200 reviews"
+msgstr "1,200টি রিভিউ থেকে"
+
+#: patterns/hero-dark.php:80
+msgid "Business demo homepage built with WPEssential"
+msgstr "WPEssential দিয়ে তৈরি বিজনেস ডেমো হোমপেজ"
+
+#: patterns/hero-split.php
+msgctxt "Pattern title"
+msgid "Hero — Split with image"
+msgstr "হিরো — ছবিসহ স্প্লিট"
+
+#: patterns/hero-split.php:17
+msgid "Multi-niche WordPress theme"
+msgstr "মাল্টি-নিশ WordPress থিম"
+
+#: patterns/hero-split.php:21
+msgid "Build any website in minutes"
+msgstr "মিনিটেই যেকোনো ওয়েবসাইট তৈরি করুন"
+
+#: patterns/hero-split.php:25
+msgid ""
+"Import a ready-made demo for Gutenberg or Elementor with one click, then "
+"make it yours."
+msgstr ""
+"এক ক্লিকে Gutenberg বা Elementor-এর জন্য একটি তৈরি ডেমো ইমপোর্ট করুন, তারপর "
+"এটিকে নিজের মতো করে নিন।"
+
+#: patterns/hero-split.php:30 core/assets/admin.js:258
+msgid "Get started"
+msgstr "শুরু করুন"
+
+#: patterns/hero-split.php:34
+msgid "Learn more"
+msgstr "আরও জানুন"
+
+#: patterns/hero-split.php:41
+msgid "A WPEssential site on a laptop and phone"
+msgstr "ল্যাপটপ ও ফোনে একটি WPEssential সাইট"
+
+#: patterns/latest-posts.php
+msgctxt "Pattern title"
+msgid "Latest posts — 3 cards"
+msgstr "সাম্প্রতিক পোস্ট — 3টি কার্ড"
+
+#: patterns/latest-posts.php:15
+msgid "From the blog"
+msgstr "ব্লগ থেকে"
+
+#: patterns/latest-posts.php:19
+msgid "Guides for faster, better WordPress sites"
+msgstr "দ্রুততর ও আরও ভালো WordPress সাইটের জন্য গাইড"
+
+#: patterns/logos.php
+msgctxt "Pattern title"
+msgid "Logo strip"
+msgstr "লোগো স্ট্রিপ"
+
+#: patterns/logos.php:14
+msgid "Trusted by 18,000+ agencies, stores and creators"
+msgstr "18,000+ এজেন্সি, স্টোর ও ক্রিয়েটরের আস্থা"
+
+#: patterns/maintenance.php
+msgctxt "Pattern title"
+msgid "Maintenance mode"
+msgstr "রক্ষণাবেক্ষণ মোড"
+
+#: patterns/maintenance.php:17
+msgid "We will be back shortly"
+msgstr "আমরা শীঘ্রই ফিরে আসব"
+
+#: patterns/maintenance.php:21
+msgid ""
+"Scheduled maintenance is underway. Thanks for your patience — we will be "
+"back online in a few minutes."
+msgstr ""
+"নির্ধারিত রক্ষণাবেক্ষণ চলছে। ধৈর্যের জন্য ধন্যবাদ — আমরা কয়েক মিনিটের মধ্যে"
+" আবার অনলাইনে ফিরব।"
+
+#: patterns/no-results.php
+msgctxt "Pattern title"
+msgid "No results"
+msgstr "কোনো ফলাফল নেই"
+
+#: patterns/no-results.php:13
+msgid "Nothing matched. Try a different search or browse the latest posts."
+msgstr ""
+"কিছুই মেলেনি। অন্য কিছু দিয়ে অনুসন্ধান করুন বা সাম্প্রতিক পোস্টগুলো দেখুন।"
+
+#: patterns/page-about.php
+msgctxt "Pattern title"
+msgid "About page"
+msgstr "পরিচিতি পাতা"
+
+#: patterns/page-about.php:20
+msgid "We build WordPress tools that feel premium and stay fast"
+msgstr ""
+"আমরা এমন WordPress টুল তৈরি করি যা প্রিমিয়াম অনুভূতি দেয় এবং দ্রুত থাকে"
+
+#: patterns/page-about.php:24
+msgid ""
+"WPEssential started as an internal starter theme for client work. Today it "
+"powers stores, agencies and creators in more than 60 countries."
+msgstr ""
+"WPEssential ক্লায়েন্টের কাজের জন্য একটি অভ্যন্তরীণ স্টার্টার থিম হিসেবে "
+"শুরু হয়েছিল। আজ এটি 60টিরও বেশি দেশে স্টোর, এজেন্সি ও ক্রিয়েটরদের সাইট "
+"চালায়।"
+
+#: patterns/page-contact.php
+msgctxt "Pattern title"
+msgid "Contact page"
+msgstr "যোগাযোগ পাতা"
+
+#: patterns/page-contact.php:20
+msgid "Let’s talk about your next site"
+msgstr "চলুন আপনার পরের সাইট নিয়ে কথা বলি"
+
+#: patterns/page-contact.php:24
+msgid ""
+"Questions about demos, licensing or a custom build? Our team replies within "
+"one business day."
+msgstr ""
+"ডেমো, লাইসেন্সিং বা কাস্টম বিল্ড নিয়ে প্রশ্ন আছে? আমাদের টিম এক কর্মদিবসের "
+"মধ্যে উত্তর দেয়।"
+
+#: patterns/page-faq.php
+msgctxt "Pattern title"
+msgid "FAQ page"
+msgstr "FAQ পাতা"
+
+#: patterns/page-faq.php:16
+msgid "Help center"
+msgstr "সহায়তা কেন্দ্র"
+
+#: patterns/page-faq.php:24
+msgid ""
+"Answers about demos, builders, licensing and updates. Can’t find what you "
+"need? Contact support."
+msgstr ""
+"ডেমো, বিল্ডার, লাইসেন্সিং ও আপডেট নিয়ে উত্তর। যা খুঁজছেন তা পাচ্ছেন না? "
+"সাপোর্টে যোগাযোগ করুন।"
+
+#: patterns/page-hero.php
+msgctxt "Pattern title"
+msgid "Page title band"
+msgstr "পাতার শিরোনাম ব্যান্ড"
+
+#: patterns/page-pricing.php
+msgctxt "Pattern title"
+msgid "Pricing page"
+msgstr "মূল্য পাতা"
+
+#: patterns/page-pricing.php:20
+msgid "Simple plans that grow with you"
+msgstr "সহজ প্ল্যান যা আপনার সাথে বড় হয়"
+
+#: patterns/page-pricing.php:24
+msgid ""
+"Start free with the core theme. Upgrade for premium demos, Pro blocks and "
+"priority support."
+msgstr ""
+"কোর থিম দিয়ে ফ্রিতে শুরু করুন। প্রিমিয়াম ডেমো, Pro ব্লক ও অগ্রাধিকার "
+"সাপোর্টের জন্য আপগ্রেড করুন।"
+
+#: patterns/page-services.php
+msgctxt "Pattern title"
+msgid "Services page"
+msgstr "সেবা পাতা"
+
+#: patterns/page-services.php:20
+msgid "Everything you need to launch and grow"
+msgstr "লঞ্চ ও বৃদ্ধির জন্য যা যা দরকার"
+
+#: patterns/page-services.php:24
+msgid ""
+"Strategy, design, development and care plans — delivered on a theme built "
+"for speed."
+msgstr ""
+"কৌশল, ডিজাইন, ডেভেলপমেন্ট ও কেয়ার প্ল্যান — গতির জন্য তৈরি থিমে সরবরাহ করা "
+"হয়।"
+
+#: patterns/post-card.php
+msgctxt "Pattern title"
+msgid "Post card"
+msgstr "পোস্ট কার্ড"
+
+#: patterns/pricing.php
+msgctxt "Pattern title"
+msgid "Pricing — 3 plans"
+msgstr "মূল্য — 3টি প্ল্যান"
+
+#: patterns/pricing.php:19
+msgid "Simple pricing. Both builders included."
+msgstr "সহজ মূল্য। দুটি বিল্ডারই অন্তর্ভুক্ত।"
+
+#: patterns/pricing.php:23
+msgid ""
+"Start free and upgrade when you need Pro demos, premium blocks and priority "
+"support."
+msgstr ""
+"ফ্রিতে শুরু করুন এবং Pro ডেমো, প্রিমিয়াম ব্লক ও অগ্রাধিকার সাপোর্ট দরকার "
+"হলে আপগ্রেড করুন।"
+
+#: patterns/pricing.php:30 core/assets/admin.js:312
+msgid "Free"
+msgstr "ফ্রি"
+
+#: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+msgid "/ year"
+msgstr "/ বছর"
+
+#: patterns/pricing.php:38
+msgid "For personal sites getting started."
+msgstr "শুরু করা ব্যক্তিগত সাইটের জন্য।"
+
+#: patterns/pricing.php:43
+msgid "12 free demos"
+msgstr "12টি ফ্রি ডেমো"
+
+#: patterns/pricing.php:45
+msgid "Gutenberg + Elementor"
+msgstr "Gutenberg + Elementor"
+
+#: patterns/pricing.php:47
+msgid "Core blocks &amp; patterns"
+msgstr "কোর ব্লক &amp; প্যাটার্ন"
+
+#: patterns/pricing.php:49
+msgid "Community support"
+msgstr "কমিউনিটি সাপোর্ট"
+
+#: patterns/pricing.php:55
+msgid "Download free"
+msgstr "ফ্রি ডাউনলোড করুন"
+
+#: patterns/pricing.php:60 core/assets/admin.js:312
+msgid "Pro"
+msgstr "Pro"
+
+#: patterns/pricing.php:68
+msgid "For freelancers and growing businesses."
+msgstr "ফ্রিল্যান্সার ও ক্রমবর্ধমান ব্যবসার জন্য।"
+
+#: patterns/pricing.php:73
+msgid "All 40+ demos"
+msgstr "সব 40+ ডেমো"
+
+#: patterns/pricing.php:75
+msgid "Premium blocks &amp; widgets"
+msgstr "প্রিমিয়াম ব্লক &amp; উইজেট"
+
+#: patterns/pricing.php:77
+msgid "WooCommerce demos"
+msgstr "WooCommerce ডেমো"
+
+#: patterns/pricing.php:79
+msgid "1 year of updates"
+msgstr "1 বছরের আপডেট"
+
+#: patterns/pricing.php:81 core/assets/admin.js:1122
+msgid "Priority support"
+msgstr "অগ্রাধিকার সাপোর্ট"
+
+#: patterns/pricing.php:87
+msgid "Get Pro"
+msgstr "Pro নিন"
+
+#: patterns/pricing.php:92 core/assets/admin.js:301
+msgid "Agency"
+msgstr "এজেন্সি"
+
+#: patterns/pricing.php:100
+msgid "For teams building client sites."
+msgstr "ক্লায়েন্ট সাইট তৈরি করা টিমের জন্য।"
+
+#: patterns/pricing.php:105
+msgid "Everything in Pro"
+msgstr "Pro-এর সবকিছু"
+
+#: patterns/pricing.php:107
+msgid "Unlimited sites"
+msgstr "সীমাহীন সাইট"
+
+#: patterns/pricing.php:109
+msgid "White-label dashboard"
+msgstr "হোয়াইট-লেবেল ড্যাশবোর্ড"
+
+#: patterns/pricing.php:111
+msgid "Client handoff kit"
+msgstr "ক্লায়েন্ট হ্যান্ডঅফ কিট"
+
+#: patterns/pricing.php:117
+msgid "Get Agency"
+msgstr "এজেন্সি নিন"
+
+#: patterns/process-steps.php
+msgctxt "Pattern title"
+msgid "Process — 4 steps (dark)"
+msgstr "প্রক্রিয়া — 4টি ধাপ (গাঢ়)"
+
+#: patterns/process-steps.php:15
+msgid "How it works"
+msgstr "যেভাবে কাজ করে"
+
+#: patterns/process-steps.php:19
+msgid "Live in four simple steps"
+msgstr "চারটি সহজ ধাপে লাইভ"
+
+#: patterns/process-steps.php:31
+msgid "Pick a demo"
+msgstr "একটি ডেমো বাছুন"
+
+#: patterns/process-steps.php:35
+msgid "Browse 40+ demos and preview them live."
+msgstr "40+ ডেমো ব্রাউজ করুন এবং লাইভ প্রিভিউ দেখুন।"
+
+#: patterns/process-steps.php:43
+msgid "Choose a builder"
+msgstr "একটি বিল্ডার বেছে নিন"
+
+#: patterns/process-steps.php:47
+msgid "Gutenberg or Elementor — same design."
+msgstr "Gutenberg বা Elementor — একই ডিজাইন।"
+
+#: patterns/process-steps.php:55
+msgid "Import in one click"
+msgstr "এক ক্লিকে ইমপোর্ট করুন"
+
+#: patterns/process-steps.php:59
+msgid "Plugins, content and settings are set up for you."
+msgstr "প্লাগইন, কনটেন্ট ও সেটিংস আপনার জন্য সেট আপ করা হয়।"
+
+#: patterns/process-steps.php:67 core/assets/admin.js:290
+msgid "Make it yours"
+msgstr "এটিকে নিজের করে নিন"
+
+#: patterns/process-steps.php:71
+msgid "Edit text, swap images and publish."
+msgstr "টেক্সট সম্পাদনা করুন, ছবি বদলান এবং প্রকাশ করুন।"
+
+#: patterns/services-grid.php
+msgctxt "Pattern title"
+msgid "Services — 3 column cards"
+msgstr "সেবা — 3 কলামের কার্ড"
+
+#: patterns/services-grid.php:19
+msgid "From idea to launch"
+msgstr "আইডিয়া থেকে লঞ্চ পর্যন্ত"
+
+#: patterns/services-grid.php:23
+msgid ""
+"Use WPEssential yourself, or let our team set up, customise and maintain "
+"your site."
+msgstr ""
+"নিজেই WPEssential ব্যবহার করুন, অথবা আমাদের টিমকে আপনার সাইট সেট আপ, "
+"কাস্টমাইজ ও রক্ষণাবেক্ষণ করতে দিন।"
+
+#: patterns/services-grid.php:34
+msgid "Demo setup"
+msgstr "ডেমো সেটআপ"
+
+#: patterns/services-grid.php:38
+msgid "We import your chosen demo, connect your domain and configure plugins."
+msgstr ""
+"আমরা আপনার বেছে নেওয়া ডেমো ইমপোর্ট করি, আপনার ডোমেইন সংযুক্ত করি এবং "
+"প্লাগইন কনফিগার করি।"
+
+#: patterns/services-grid.php:48
+msgid "Brand customisation"
+msgstr "ব্র্যান্ড কাস্টমাইজেশন"
+
+#: patterns/services-grid.php:52
+msgid "Your colors, fonts, logo and copy applied across every template."
+msgstr "আপনার রং, ফন্ট, লোগো ও লেখা প্রতিটি টেমপ্লেটে প্রয়োগ করা হয়।"
+
+#: patterns/services-grid.php:62
+msgid "WooCommerce launch"
+msgstr "WooCommerce লঞ্চ"
+
+#: patterns/services-grid.php:66
+msgid "Products, payments, shipping zones and emails configured and tested."
+msgstr "পণ্য, পেমেন্ট, শিপিং জোন ও ইমেইল কনফিগার ও পরীক্ষিত।"
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Blog sidebar"
+msgstr "ব্লগ সাইডবার"
+
+#: patterns/sidebar.php:19
+msgid "Categories"
+msgstr "বিভাগসমূহ"
+
+#: patterns/sidebar.php:27
+msgid "Recent posts"
+msgstr "সাম্প্রতিক পোস্ট"
+
+#: patterns/sidebar.php:35
+msgid "Tags"
+msgstr "ট্যাগ"
+
+#: patterns/stats.php
+msgctxt "Pattern title"
+msgid "Stats — 4 counters"
+msgstr "পরিসংখ্যান — 4টি কাউন্টার"
+
+#: patterns/stats.php:20
+msgid "Active installs"
+msgstr "সক্রিয় ইনস্টল"
+
+#: patterns/stats.php:36
+msgid "Average rating"
+msgstr "গড় রেটিং"
+
+#: patterns/stats.php:44
+msgid "Support response"
+msgstr "সাপোর্ট প্রতিক্রিয়া"
+
+#: patterns/team.php
+msgctxt "Pattern title"
+msgid "Team — 4 members"
+msgstr "টিম — 4 জন সদস্য"
+
+#: patterns/team.php:15
+msgid "The team"
+msgstr "টিম"
+
+#: patterns/team.php:19
+msgid "People behind WPEssential"
+msgstr "WPEssential-এর পেছনের মানুষেরা"
+
+#: patterns/team.php:35
+msgid "Founder &amp; Lead Designer"
+msgstr "প্রতিষ্ঠাতা &amp; প্রধান ডিজাইনার"
+
+#: patterns/team.php:47
+msgid "Head of Engineering"
+msgstr "ইঞ্জিনিয়ারিং প্রধান"
+
+#: patterns/team.php:59
+msgid "Customer Success"
+msgstr "গ্রাহক সাফল্য"
+
+#: patterns/team.php:71
+msgid "WooCommerce Specialist"
+msgstr "WooCommerce বিশেষজ্ঞ"
+
+#: patterns/testimonials.php
+msgctxt "Pattern title"
+msgid "Testimonials — 3 cards"
+msgstr "প্রশংসাপত্র — 3টি কার্ড"
+
+#: patterns/testimonials.php:15
+msgid "Loved by builders"
+msgstr "বিল্ডারদের প্রিয়"
+
+#: patterns/testimonials.php:19
+msgid "What our customers say"
+msgstr "আমাদের গ্রাহকেরা কী বলেন"
+
+#: patterns/testimonials.php:31
+msgid ""
+"We rebuilt three client sites on WPEssential in a week. The Elementor and "
+"block versions matching exactly is a game changer."
+msgstr ""
+"আমরা এক সপ্তাহে WPEssential-এ তিনটি ক্লায়েন্ট সাইট নতুন করে তৈরি করেছি। "
+"Elementor ও ব্লক সংস্করণ হুবহু মিলে যাওয়াটা গেম চেঞ্জার।"
+
+#: patterns/testimonials.php:35
+msgid "Founder, Kitecraft Agency"
+msgstr "প্রতিষ্ঠাতা, Kitecraft Agency"
+
+#: patterns/testimonials.php:43
+msgid ""
+"Our store went from 3.9s to 1.2s load time. Checkout pages look custom out "
+"of the box."
+msgstr ""
+"আমাদের স্টোরের লোড টাইম 3.9s থেকে 1.2s-এ নেমেছে। চেকআউট পাতাগুলো শুরু থেকেই "
+"কাস্টম দেখায়।"
+
+#: patterns/testimonials.php:47
+msgid "Owner, Fieldhouse Goods"
+msgstr "মালিক, Fieldhouse Goods"
+
+#: patterns/testimonials.php:55
+msgid ""
+"The demo import just works — plugins, menus, homepage. I spend my time on "
+"content now, not setup."
+msgstr ""
+"ডেমো ইমপোর্ট সহজেই কাজ করে — প্লাগইন, মেনু, হোমপেজ। এখন আমি সেটআপে নয়, "
+"কনটেন্টে সময় দিই।"
+
+#: patterns/testimonials.php:59
+msgid "Writer, The Quiet Desk"
+msgstr "লেখক, The Quiet Desk"
+
+#: assets/js/options.js:65
+msgid "Custom code"
+msgstr "কাস্টম কোড"
+
+#: assets/js/options.js:66
+msgid "Animations"
+msgstr "অ্যানিমেশন"
+
+#: assets/js/options.js:84 assets/js/options.js:91 core/assets/admin.js:280
+#: core/assets/admin.js:701 core/assets/admin.js:1074
+#: core/assets/admin.js:1113
+msgid "Active"
+msgstr "সক্রিয়"
+
+#: assets/js/options.js:84
+msgid "Off"
+msgstr "বন্ধ"
+
+#: assets/js/options.js:88
+msgid ""
+"Broke something? Open your site in safe mode to load it without snippets:"
+msgstr "কিছু ভেঙে গেছে? স্নিপেট ছাড়া লোড করতে আপনার সাইটটি সেফ মোডে খুলুন:"
+
+#: assets/js/options.js:88
+msgid "Safe mode"
+msgstr "সেফ মোড"
+
+#: assets/js/options.js:90
+msgid "Snippet name"
+msgstr "স্নিপেটের নাম"
+
+#: assets/js/options.js:93
+msgid "Devices"
+msgstr "ডিভাইস"
+
+#: assets/js/options.js:93
+msgid "All devices"
+msgstr "সব ডিভাইস"
+
+#: assets/js/options.js:93
+msgid "Desktop (1025px+)"
+msgstr "ডেস্কটপ (1025px+)"
+
+#: assets/js/options.js:93
+msgid "Tablet (768–1024px)"
+msgstr "ট্যাবলেট (768–1024px)"
+
+#: assets/js/options.js:93
+msgid "Mobile (≤767px)"
+msgstr "মোবাইল (≤767px)"
+
+#: assets/js/options.js:96
+msgid "Load in"
+msgstr "লোড করুন"
+
+#: assets/js/options.js:96
+msgid "Footer (recommended)"
+msgstr "ফুটার (প্রস্তাবিত)"
+
+#: assets/js/options.js:97
+msgid "Write JavaScript only, without <script> tags."
+msgstr "শুধু JavaScript লিখুন, <script> ট্যাগ ছাড়া।"
+
+#: assets/js/options.js:97
+msgid "Write CSS only, without <style> tags."
+msgstr "শুধু CSS লিখুন, <style> ট্যাগ ছাড়া।"
+
+#: assets/js/options.js:99
+msgid "Save snippets"
+msgstr "স্নিপেট সংরক্ষণ করুন"
+
+#: assets/js/options.js:99 core/assets/admin.js:1076
+msgid "Delete"
+msgstr "মুছে ফেলুন"
+
+#: assets/js/options.js:116
+msgid "New script"
+msgstr "নতুন স্ক্রিপ্ট"
+
+#: assets/js/options.js:116
+msgid "New styles"
+msgstr "নতুন স্টাইল"
+
+#: assets/js/options.js:162
+msgid ""
+"Animations reveal sections as visitors scroll. Visitors who prefer reduced "
+"motion never see them."
+msgstr ""
+"ভিজিটররা স্ক্রল করলে অ্যানিমেশন সেকশনগুলো দেখায়। কম মোশন পছন্দ করা ভিজিটররা"
+" এগুলো কখনো দেখেন না।"
+
+#: assets/js/options.js:166
+msgid "Use GSAP for parallax and counters with any preset"
+msgstr "যেকোনো প্রিসেটের সাথে প্যারালাক্স ও কাউন্টারের জন্য GSAP ব্যবহার করুন"
+
+#: assets/js/options.js:167
+msgid ""
+"Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask,"
+" --stagger, --parallax or --counter) to any block under Advanced → "
+"Additional CSS class."
+msgstr ""
+"উন্নত → অতিরিক্ত CSS ক্লাস-এর অধীনে যেকোনো ব্লকে wpe-anim ক্লাস (এবং wpe-"
+"anim--fade-up, --zoom, --slide-left, --mask, --stagger, --parallax বা "
+"--counter) যোগ করুন।"
+
+#: assets/js/options.js:168
+msgid "Save animations"
+msgstr "অ্যানিমেশন সংরক্ষণ করুন"
+
+#: core/assets/admin.js:86
+msgid ""
+"The connection to your site dropped. Check your internet and try again."
+msgstr ""
+"আপনার সাইটের সাথে সংযোগ বিচ্ছিন্ন হয়েছে। আপনার ইন্টারনেট পরীক্ষা করে আবার "
+"চেষ্টা করুন।"
+
+#: core/assets/admin.js:89
+msgid ""
+"The server sent an invalid response — usually a PHP error or a timeout. Your"
+" progress is saved."
+msgstr ""
+"সার্ভার একটি অবৈধ উত্তর পাঠিয়েছে — সাধারণত একটি PHP ত্রুটি বা টাইমআউট। "
+"আপনার অগ্রগতি সংরক্ষিত আছে।"
+
+#: core/assets/admin.js:92
+msgid "Your login session expired. Reload the page and sign in again."
+msgstr ""
+"আপনার লগইন সেশনের মেয়াদ শেষ হয়েছে। পাতাটি রিলোড করে আবার সাইন ইন করুন।"
+
+#: core/assets/admin.js:159
+msgid "Dashboard sections"
+msgstr "ড্যাশবোর্ড সেকশন"
+
+#: core/assets/admin.js:163
+msgid "Docs"
+msgstr "ডকস"
+
+#: core/assets/admin.js:164
+msgid "Switch dashboard colour mode"
+msgstr "ড্যাশবোর্ডের রং মোড পরিবর্তন করুন"
+
+#: core/assets/admin.js:241
+msgid "%s is active"
+msgstr "%s সক্রিয়"
+
+#: core/assets/admin.js:242
+msgid "Welcome, %s. Let’s build something beautiful."
+msgstr "স্বাগতম, %s। চলুন সুন্দর কিছু তৈরি করি।"
+
+#: core/assets/admin.js:243
+msgid ""
+"Pick a demo, choose Gutenberg or Elementor, and get a finished website with "
+"pages, images, menus and a shop — in about a minute."
+msgstr ""
+"একটি ডেমো বাছুন, Gutenberg বা Elementor বেছে নিন, এবং পাতা, ছবি, মেনু ও শপসহ"
+" একটি সম্পূর্ণ ওয়েবসাইট পান — প্রায় এক মিনিটে।"
+
+#: core/assets/admin.js:246
+msgid "Customize site"
+msgstr "সাইট কাস্টমাইজ করুন"
+
+#: core/assets/admin.js:251
+msgid "Demo imported"
+msgstr "ডেমো ইমপোর্ট হয়েছে"
+
+#: core/assets/admin.js:251
+msgid "in 48 seconds"
+msgstr "48 সেকেন্ডে"
+
+#: core/assets/admin.js:252
+msgid "Two builders"
+msgstr "দুটি বিল্ডার"
+
+#: core/assets/admin.js:259
+msgid "Three steps to launch"
+msgstr "লঞ্চের তিনটি ধাপ"
+
+#: core/assets/admin.js:264
+msgid "Help when you need it"
+msgstr "প্রয়োজনে সাহায্য"
+
+#: core/assets/admin.js:266
+msgid "Guides for every feature"
+msgstr "প্রতিটি ফিচারের জন্য গাইড"
+
+#: core/assets/admin.js:267
+msgid "Real people, fast answers"
+msgstr "আসল মানুষ, দ্রুত উত্তর"
+
+#: core/assets/admin.js:268
+msgid "Site Editor"
+msgstr "সাইট এডিটর"
+
+#: core/assets/admin.js:268
+msgid "Colours, fonts, header and footer"
+msgstr "রং, ফন্ট, হেডার ও ফুটার"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Expired"
+msgstr "মেয়াদোত্তীর্ণ"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Invalid"
+msgstr "অবৈধ"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Not connected"
+msgstr "সংযুক্ত নয়"
+
+#: core/assets/admin.js:283
+msgid "Imported demo"
+msgstr "ইমপোর্ট করা ডেমো"
+
+#: core/assets/admin.js:283
+msgid "None yet"
+msgstr "এখনও কিছু নেই"
+
+#: core/assets/admin.js:285
+msgid "System health"
+msgstr "সিস্টেমের অবস্থা"
+
+#: core/assets/admin.js:288
+msgid "Import a demo"
+msgstr "একটি ডেমো ইমপোর্ট করুন"
+
+#: core/assets/admin.js:288
+msgid "Start from a complete, ready-made website."
+msgstr "একটি সম্পূর্ণ, তৈরি ওয়েবসাইট দিয়ে শুরু করুন।"
+
+#: core/assets/admin.js:288
+msgid "Open library"
+msgstr "লাইব্রেরি খুলুন"
+
+#: core/assets/admin.js:289 core/assets/admin.js:1124
+msgid "Activate your license"
+msgstr "আপনার লাইসেন্স সক্রিয় করুন"
+
+#: core/assets/admin.js:289
+msgid "Unlock Pro demos, updates and support."
+msgstr "Pro ডেমো, আপডেট ও সাপোর্ট আনলক করুন।"
+
+#: core/assets/admin.js:289 core/assets/admin.js:1076
+#: core/assets/admin.js:1125
+msgid "Activate"
+msgstr "সক্রিয় করুন"
+
+#: core/assets/admin.js:290
+msgid "Swap the logo, colours and words in the Site Editor."
+msgstr "সাইট এডিটরে লোগো, রং ও লেখা বদলান।"
+
+#: core/assets/admin.js:290 core/assets/admin.js:999
+msgid "Customize"
+msgstr "কাস্টমাইজ করুন"
+
+#: core/assets/admin.js:295
+msgid "Could not load the dashboard"
+msgstr "ড্যাশবোর্ড লোড করা যায়নি"
+
+#: core/assets/admin.js:301 core/assets/admin.js:312 core/assets/admin.js:756
+msgid "All"
+msgstr "সব"
+
+#: core/assets/admin.js:301
+msgid "Business"
+msgstr "ব্যবসা"
+
+#: core/assets/admin.js:301
+msgid "Restaurant"
+msgstr "রেস্তোরাঁ"
+
+#: core/assets/admin.js:301
+msgid "Education"
+msgstr "শিক্ষা"
+
+#: core/assets/admin.js:306
+msgid ""
+"Every demo is a complete website. Preview it, then import it for Gutenberg "
+"or Elementor — plugins, pages, images and menus included."
+msgstr ""
+"প্রতিটি ডেমো একটি সম্পূর্ণ ওয়েবসাইট। প্রিভিউ দেখুন, তারপর Gutenberg বা "
+"Elementor-এর জন্য ইমপোর্ট করুন — প্লাগইন, পাতা, ছবি ও মেনুসহ।"
+
+#: core/assets/admin.js:307
+msgid "Refreshing"
+msgstr "রিফ্রেশ হচ্ছে"
+
+#: core/assets/admin.js:307
+msgid "Refresh library"
+msgstr "লাইব্রেরি রিফ্রেশ করুন"
+
+#: core/assets/admin.js:310
+msgid "Search demos"
+msgstr "ডেমো অনুসন্ধান"
+
+#: core/assets/admin.js:310
+msgid "Search demos…"
+msgstr "ডেমো অনুসন্ধান করুন…"
+
+#: core/assets/admin.js:311
+msgid "Category"
+msgstr "বিভাগ"
+
+#: core/assets/admin.js:312
+msgid "Plan"
+msgstr "প্ল্যান"
+
+#: core/assets/admin.js:313 core/assets/admin.js:519 core/assets/admin.js:576
+msgid "Builder"
+msgstr "বিল্ডার"
+
+#: core/assets/admin.js:313
+msgid "Any builder"
+msgstr "যেকোনো বিল্ডার"
+
+#: core/assets/admin.js:336
+msgid "Library refreshed"
+msgstr "লাইব্রেরি রিফ্রেশ হয়েছে"
+
+#: core/assets/admin.js:338
+msgid "Refresh failed"
+msgstr "রিফ্রেশ ব্যর্থ হয়েছে"
+
+#: core/assets/admin.js:351
+msgid "The library could not load"
+msgstr "লাইব্রেরি লোড করা যায়নি"
+
+#: core/assets/admin.js:363
+msgid "The import of %s stopped"
+msgstr "%s-এর ইমপোর্ট থেমে গেছে"
+
+#: core/assets/admin.js:363
+msgid "The import of %s was interrupted"
+msgstr "%s-এর ইমপোর্ট বাধাগ্রস্ত হয়েছে"
+
+#: core/assets/admin.js:363
+msgid "Your progress is saved. Continue exactly where it left off."
+msgstr ""
+"আপনার অগ্রগতি সংরক্ষিত আছে। ঠিক যেখানে থেমেছিল সেখান থেকে চালিয়ে যান।"
+
+#: core/assets/admin.js:363
+msgid "Resume import"
+msgstr "ইমপোর্ট আবার শুরু করুন"
+
+#: core/assets/admin.js:366
+msgid "%s is installed on this site"
+msgstr "%s এই সাইটে ইনস্টল করা আছে"
+
+#: core/assets/admin.js:366
+msgid ""
+"You can remove everything it added and restore your previous settings at any"
+" time."
+msgstr ""
+"এটি যা যোগ করেছে তা যেকোনো সময় সরিয়ে আপনার আগের সেটিংস পুনরুদ্ধার করতে "
+"পারবেন।"
+
+#: core/assets/admin.js:366 core/assets/admin.js:920
+msgid "Removing"
+msgstr "সরানো হচ্ছে"
+
+#: core/assets/admin.js:366
+msgid "Remove demo"
+msgstr "ডেমো সরান"
+
+#: core/assets/admin.js:386
+msgid ""
+"Remove %s? Its pages, posts, products, images and menus will be deleted and "
+"your previous settings restored. Content you created yourself is not "
+"touched."
+msgstr ""
+"%s সরাবেন? এর পাতা, পোস্ট, পণ্য, ছবি ও মেনু মুছে ফেলা হবে এবং আপনার আগের "
+"সেটিংস পুনরুদ্ধার করা হবে। আপনার নিজের তৈরি কনটেন্ট স্পর্শ করা হবে না।"
+
+#: core/assets/admin.js:392
+msgid "Demo removed"
+msgstr "ডেমো সরানো হয়েছে"
+
+#: core/assets/admin.js:396
+msgid "Removal failed"
+msgstr "সরানো ব্যর্থ হয়েছে"
+
+#: core/assets/admin.js:416
+msgid "No demos match these filters"
+msgstr "এই ফিল্টারগুলোর সাথে কোনো ডেমো মেলেনি"
+
+#: core/assets/admin.js:416
+msgid "Try another category or clear the search."
+msgstr "অন্য বিভাগ চেষ্টা করুন বা অনুসন্ধান মুছে ফেলুন।"
+
+#: core/assets/admin.js:416
+msgid "Clear filters"
+msgstr "ফিল্টার মুছুন"
+
+#: core/assets/admin.js:428
+msgid "IMPORTED"
+msgstr "ইমপোর্ট করা"
+
+#: core/assets/admin.js:430
+msgid "Live preview"
+msgstr "লাইভ প্রিভিউ"
+
+#: core/assets/admin.js:438
+msgid "Preview"
+msgstr "প্রিভিউ"
+
+#: core/assets/admin.js:439
+msgid "Unlock"
+msgstr "আনলক করুন"
+
+#: core/assets/admin.js:439
+msgid "Re-import"
+msgstr "আবার ইমপোর্ট করুন"
+
+#: core/assets/admin.js:439 core/assets/admin.js:576
+msgid "Import"
+msgstr "ইমপোর্ট করুন"
+
+#: core/assets/admin.js:512
+msgid "Desktop"
+msgstr "ডেস্কটপ"
+
+#: core/assets/admin.js:512
+msgid "Tablet"
+msgstr "ট্যাবলেট"
+
+#: core/assets/admin.js:512
+msgid "Mobile"
+msgstr "মোবাইল"
+
+#: core/assets/admin.js:515
+msgid "%1$s on %2$s"
+msgstr "%2$s-এ %1$s"
+
+#: core/assets/admin.js:520
+msgid "Device"
+msgstr "ডিভাইস"
+
+#: core/assets/admin.js:521
+msgid "Unlock with Pro"
+msgstr "Pro দিয়ে আনলক করুন"
+
+#: core/assets/admin.js:521
+msgid "Import this demo"
+msgstr "এই ডেমো ইমপোর্ট করুন"
+
+#: core/assets/admin.js:522
+msgid "Close preview"
+msgstr "প্রিভিউ বন্ধ করুন"
+
+#: core/assets/admin.js:576
+msgid "Account"
+msgstr "অ্যাকাউন্ট"
+
+#: core/assets/admin.js:576
+msgid "Content"
+msgstr "কনটেন্ট"
+
+#: core/assets/admin.js:576
+msgid "Done"
+msgstr "সম্পন্ন"
+
+#: core/assets/admin.js:582
+msgid "Safe import — every change can be undone."
+msgstr "নিরাপদ ইমপোর্ট — প্রতিটি পরিবর্তন পূর্বাবস্থায় ফেরানো যায়।"
+
+#: core/assets/admin.js:585
+msgid "Close"
+msgstr "বন্ধ করুন"
+
+#: core/assets/admin.js:589
+msgid ""
+"The import keeps its progress if you close this window. You can resume it "
+"from the Demo Library. Close anyway?"
+msgstr ""
+"এই উইন্ডো বন্ধ করলেও ইমপোর্টের অগ্রগতি থেকে যায়। আপনি ডেমো লাইব্রেরি থেকে "
+"এটি আবার শুরু করতে পারবেন। তবুও বন্ধ করবেন?"
+
+#: core/assets/admin.js:618
+msgid "Back"
+msgstr "পিছনে"
+
+#: core/assets/admin.js:640
+msgid "Unlock this Pro demo"
+msgstr "এই Pro ডেমো আনলক করুন"
+
+#: core/assets/admin.js:640
+msgid "Connect your WPEssential account"
+msgstr "আপনার WPEssential অ্যাকাউন্ট সংযুক্ত করুন"
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in and use a Pro license on this site — or pick a plan. Checkout opens "
+"in a new tab."
+msgstr ""
+"সাইন ইন করে এই সাইটে একটি Pro লাইসেন্স ব্যবহার করুন — অথবা একটি প্ল্যান "
+"বাছুন। চেকআউট নতুন ট্যাবে খোলে।"
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in or create a free account to keep your demos, licenses and updates in"
+" one place."
+msgstr ""
+"আপনার ডেমো, লাইসেন্স ও আপডেট এক জায়গায় রাখতে সাইন ইন করুন বা একটি ফ্রি "
+"অ্যাকাউন্ট তৈরি করুন।"
+
+#: core/assets/admin.js:643
+msgid "A Pro license is needed"
+msgstr "একটি Pro লাইসেন্স প্রয়োজন"
+
+#: core/assets/admin.js:643
+msgid "Use a Pro license on this site, or choose a plan."
+msgstr "এই সাইটে একটি Pro লাইসেন্স ব্যবহার করুন, অথবা একটি প্ল্যান বেছে নিন।"
+
+#: core/assets/admin.js:648 core/assets/admin.js:674 core/assets/admin.js:679
+msgid "Continue"
+msgstr "চালিয়ে যান"
+
+#: core/assets/admin.js:656
+msgid "Demo unlocked"
+msgstr "ডেমো আনলক হয়েছে"
+
+#: core/assets/admin.js:666
+msgid "This demo has no version for this builder yet."
+msgstr "এই বিল্ডারের জন্য এই ডেমোর এখনও কোনো সংস্করণ নেই।"
+
+#: core/assets/admin.js:668
+msgid "Choose your page builder"
+msgstr "আপনার পেজ বিল্ডার বেছে নিন"
+
+#: core/assets/admin.js:668
+msgid ""
+"Both versions look identical. Pick the editor you or your client will use "
+"every day."
+msgstr ""
+"দুটি সংস্করণ দেখতে হুবহু এক। আপনি বা আপনার ক্লায়েন্ট প্রতিদিন যে এডিটর "
+"ব্যবহার করবেন সেটি বাছুন।"
+
+#: core/assets/admin.js:669
+msgid "The native WordPress block editor. Fastest pages, no extra plugin."
+msgstr ""
+"নেটিভ WordPress ব্লক এডিটর। সবচেয়ে দ্রুত পাতা, কোনো অতিরিক্ত প্লাগইন নেই।"
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor is already installed."
+msgstr ""
+"ভিজ্যুয়াল ড্র্যাগ-অ্যান্ড-ড্রপ এডিটিং। Elementor ইতিমধ্যে ইনস্টল করা আছে।"
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor will be installed for you."
+msgstr ""
+"ভিজ্যুয়াল ড্র্যাগ-অ্যান্ড-ড্রপ এডিটিং। Elementor আপনার জন্য ইনস্টল করা হবে।"
+
+#: core/assets/admin.js:678
+msgid "Plugins this demo uses"
+msgstr "এই ডেমো যে প্লাগইনগুলো ব্যবহার করে"
+
+#: core/assets/admin.js:678
+msgid ""
+"We install, activate or switch off plugins so the demo works exactly like "
+"the preview."
+msgstr ""
+"আমরা প্লাগইন ইনস্টল, সক্রিয় বা বন্ধ করি যাতে ডেমোটি হুবহু প্রিভিউর মতো কাজ "
+"করে।"
+
+#: core/assets/admin.js:693
+msgid "No extra plugins needed — this demo runs on the theme alone."
+msgstr "কোনো অতিরিক্ত প্লাগইন লাগবে না — এই ডেমো শুধু থিমেই চলে।"
+
+#: core/assets/admin.js:698
+msgid "Will be deactivated"
+msgstr "নিষ্ক্রিয় করা হবে"
+
+#: core/assets/admin.js:698
+msgid "Not needed"
+msgstr "প্রয়োজন নেই"
+
+#: core/assets/admin.js:702
+msgid "Will be activated"
+msgstr "সক্রিয় করা হবে"
+
+#: core/assets/admin.js:703
+msgid "Will be installed"
+msgstr "ইনস্টল করা হবে"
+
+#: core/assets/admin.js:706
+msgid "Required"
+msgstr "আবশ্যক"
+
+#: core/assets/admin.js:706 core/assets/admin.js:1073
+msgid "Recommended"
+msgstr "প্রস্তাবিত"
+
+#: core/assets/admin.js:706
+msgid "Conflicts with this demo"
+msgstr "এই ডেমোর সাথে সাংঘর্ষিক"
+
+#: core/assets/admin.js:706
+msgid "Include"
+msgstr "অন্তর্ভুক্ত করুন"
+
+#: core/assets/admin.js:706
+msgid "Include %s"
+msgstr "%s অন্তর্ভুক্ত করুন"
+
+#: core/assets/admin.js:715
+msgid "Pages, posts and menus"
+msgstr "পাতা, পোস্ট ও মেনু"
+
+#: core/assets/admin.js:715
+msgid "%s and their navigation."
+msgstr "%s ও তাদের নেভিগেশন।"
+
+#: core/assets/admin.js:716
+msgid "Images"
+msgstr "ছবি"
+
+#: core/assets/admin.js:716
+msgid "Copied to your Media Library, licensed for your site."
+msgstr "আপনার মিডিয়া লাইব্রেরিতে কপি করা হয়, আপনার সাইটের জন্য লাইসেন্সকৃত।"
+
+#: core/assets/admin.js:717
+msgid "Shop products"
+msgstr "শপের পণ্য"
+
+#: core/assets/admin.js:717
+msgid "Products, categories, prices and shipping."
+msgstr "পণ্য, বিভাগ, মূল্য ও শিপিং।"
+
+#: core/assets/admin.js:717
+msgid "Needs WooCommerce — enable it on the previous step."
+msgstr "WooCommerce প্রয়োজন — আগের ধাপে এটি চালু করুন।"
+
+#: core/assets/admin.js:718
+msgid "Site settings"
+msgstr "সাইট সেটিংস"
+
+#: core/assets/admin.js:718
+msgid "Home page, blog page and store options."
+msgstr "হোম পাতা, ব্লগ পাতা ও স্টোর অপশন।"
+
+#: core/assets/admin.js:720
+msgid "What should we import?"
+msgstr "আমরা কী ইমপোর্ট করব?"
+
+#: core/assets/admin.js:720
+msgid "Everything is on by default for a site that matches the preview."
+msgstr "প্রিভিউর সাথে মিলে যাওয়া সাইটের জন্য ডিফল্টভাবে সবকিছু চালু থাকে।"
+
+#: core/assets/admin.js:722
+msgid "Remove %s first"
+msgstr "প্রথমে %s সরান"
+
+#: core/assets/admin.js:722
+msgid "Recommended: start from a clean site instead of adding duplicates."
+msgstr "প্রস্তাবিত: ডুপ্লিকেট যোগ না করে একটি পরিষ্কার সাইট থেকে শুরু করুন।"
+
+#: core/assets/admin.js:723
+msgid ""
+"Your existing posts and pages are never changed. Imported items are tagged, "
+"so they can be removed in one click later."
+msgstr ""
+"আপনার বিদ্যমান পোস্ট ও পাতা কখনো পরিবর্তন করা হয় না। ইমপোর্ট করা আইটেম "
+"ট্যাগ করা থাকে, তাই পরে এক ক্লিকে সেগুলো সরানো যায়।"
+
+#: core/assets/admin.js:730
+msgid "Start import"
+msgstr "ইমপোর্ট শুরু করুন"
+
+#: core/assets/admin.js:736
+msgid "Preparing"
+msgstr "প্রস্তুত হচ্ছে"
+
+#: core/assets/admin.js:736 core/assets/admin.js:947
+msgid "Importing your demo…"
+msgstr "আপনার ডেমো ইমপোর্ট হচ্ছে…"
+
+#: core/assets/admin.js:736
+msgid "Keep this window open. It usually takes about a minute."
+msgstr "এই উইন্ডোটি খোলা রাখুন। সাধারণত প্রায় এক মিনিট লাগে।"
+
+#: core/assets/admin.js:739 core/assets/admin.js:943
+msgid "Cancel import"
+msgstr "ইমপোর্ট বাতিল করুন"
+
+#: core/assets/admin.js:756
+msgid "Info"
+msgstr "তথ্য"
+
+#: core/assets/admin.js:756
+msgid "Success"
+msgstr "সফল"
+
+#: core/assets/admin.js:756 core/assets/admin.js:998
+msgid "Warnings"
+msgstr "সতর্কতা"
+
+#: core/assets/admin.js:756
+msgid "Errors"
+msgstr "ত্রুটি"
+
+#: core/assets/admin.js:756 core/assets/admin.js:920
+msgid "Copy log"
+msgstr "লগ কপি করুন"
+
+#: core/assets/admin.js:790
+msgid "Log copied"
+msgstr "লগ কপি হয়েছে"
+
+#: core/assets/admin.js:790
+msgid "Paste it into your support ticket."
+msgstr "এটি আপনার সাপোর্ট টিকিটে পেস্ট করুন।"
+
+#: core/assets/admin.js:816
+msgid "Stopped"
+msgstr "থেমে গেছে"
+
+#: core/assets/admin.js:816
+msgid "Step"
+msgstr "ধাপ"
+
+#: core/assets/admin.js:816
+msgid "Complete"
+msgstr "সম্পূর্ণ"
+
+#: core/assets/admin.js:824
+msgid "%ss elapsed"
+msgstr "%ss অতিবাহিত"
+
+#: core/assets/admin.js:850
+msgid "Resumed from the saved position."
+msgstr "সংরক্ষিত অবস্থান থেকে আবার শুরু হয়েছে।"
+
+#: core/assets/admin.js:872
+msgid "Reload the page, then resume the import from the Demo Library."
+msgstr "পাতাটি রিলোড করুন, তারপর ডেমো লাইব্রেরি থেকে ইমপোর্ট আবার শুরু করুন।"
+
+#: core/assets/admin.js:878
+msgid "Your progress is saved. Press Resume when the server is back."
+msgstr "আপনার অগ্রগতি সংরক্ষিত আছে। সার্ভার ফিরে এলে আবার শুরু করুন চাপুন।"
+
+#: core/assets/admin.js:882
+msgid "The server did not answer (%1$s). Retrying in %2$d seconds…"
+msgstr ""
+"সার্ভার উত্তর দেয়নি (%1$s)। %2$d সেকেন্ডের মধ্যে আবার চেষ্টা করা হচ্ছে…"
+
+#: core/assets/admin.js:905
+msgid "The import stopped."
+msgstr "ইমপোর্ট থেমে গেছে।"
+
+#: core/assets/admin.js:907
+msgid "Import cancelled."
+msgstr "ইমপোর্ট বাতিল হয়েছে।"
+
+#: core/assets/admin.js:907
+msgid "Resume to finish it, or remove what was imported so far."
+msgstr ""
+"এটি শেষ করতে আবার শুরু করুন, অথবা এ পর্যন্ত যা ইমপোর্ট হয়েছে তা সরান।"
+
+#: core/assets/admin.js:918
+msgid "Import paused"
+msgstr "ইমপোর্ট বিরতিতে আছে"
+
+#: core/assets/admin.js:918
+msgid "The import needs your attention"
+msgstr "ইমপোর্টে আপনার মনোযোগ প্রয়োজন"
+
+#: core/assets/admin.js:920
+msgid "Remove imported content"
+msgstr "ইমপোর্ট করা কনটেন্ট সরান"
+
+#: core/assets/admin.js:920
+msgid "Resume"
+msgstr "আবার শুরু করুন"
+
+#: core/assets/admin.js:920
+msgid "Back to options"
+msgstr "অপশনে ফিরে যান"
+
+#: core/assets/admin.js:929
+msgid "Everything was rolled back"
+msgstr "সবকিছু আগের অবস্থায় ফেরানো হয়েছে"
+
+#: core/assets/admin.js:933
+msgid "Nothing to remove"
+msgstr "সরানোর মতো কিছু নেই"
+
+#: core/assets/admin.js:933
+msgid "Rollback failed"
+msgstr "রোলব্যাক ব্যর্থ হয়েছে"
+
+#: core/assets/admin.js:960
+msgid "Resuming…"
+msgstr "আবার শুরু হচ্ছে…"
+
+#: core/assets/admin.js:967
+msgid "Your progress is saved. Try again in a moment."
+msgstr "আপনার অগ্রগতি সংরক্ষিত আছে। একটু পরে আবার চেষ্টা করুন।"
+
+#: core/assets/admin.js:973
+msgid "Cancel the import? What was imported so far stays until you remove it."
+msgstr ""
+"ইমপোর্ট বাতিল করবেন? এ পর্যন্ত যা ইমপোর্ট হয়েছে তা আপনি না সরানো পর্যন্ত "
+"থাকবে।"
+
+#: core/assets/admin.js:983
+msgid "Could not cancel"
+msgstr "বাতিল করা যায়নি"
+
+#: core/assets/admin.js:996
+msgid "Your website is ready!"
+msgstr "আপনার ওয়েবসাইট প্রস্তুত!"
+
+#: core/assets/admin.js:997
+msgid "%1$s was imported. %2$d item(s) need a look — see the notes below."
+msgstr ""
+"%1$s ইমপোর্ট হয়েছে। %2$dটি আইটেম দেখা প্রয়োজন — নিচের নোটগুলো দেখুন।"
+
+#: core/assets/admin.js:997
+msgid "%s was imported without a single issue. Time to make it yours."
+msgstr ""
+"%s কোনো সমস্যা ছাড়াই ইমপোর্ট হয়েছে। এবার এটিকে নিজের করে নেওয়ার পালা।"
+
+#: core/assets/admin.js:998
+msgid "Import time"
+msgstr "ইমপোর্টের সময়"
+
+#: core/assets/admin.js:998
+msgid "Steps completed"
+msgstr "সম্পন্ন ধাপ"
+
+#: core/assets/admin.js:999
+msgid "View your site"
+msgstr "আপনার সাইট দেখুন"
+
+#: core/assets/admin.js:1002
+msgid "Back to dashboard"
+msgstr "ড্যাশবোর্ডে ফিরে যান"
+
+#: core/assets/admin.js:1007
+msgid "Import complete"
+msgstr "ইমপোর্ট সম্পূর্ণ"
+
+#: core/assets/admin.js:1054
+msgid ""
+"Plugins used by WPEssential demos. Install, switch on or off and delete them"
+" here."
+msgstr ""
+"WPEssential ডেমোগুলোর ব্যবহৃত প্লাগইন। এখানে এগুলো ইনস্টল, চালু বা বন্ধ এবং "
+"মুছে ফেলুন।"
+
+#: core/assets/admin.js:1069
+msgid "No plugins needed"
+msgstr "কোনো প্লাগইন লাগবে না"
+
+#: core/assets/admin.js:1069
+msgid "The demos in your library run on the theme alone."
+msgstr "আপনার লাইব্রেরির ডেমোগুলো শুধু থিমেই চলে।"
+
+#: core/assets/admin.js:1073
+msgid "Required by some demos"
+msgstr "কিছু ডেমোর জন্য আবশ্যক"
+
+#: core/assets/admin.js:1074
+msgid "Inactive"
+msgstr "নিষ্ক্রিয়"
+
+#: core/assets/admin.js:1074
+msgid "Not installed"
+msgstr "ইনস্টল করা নেই"
+
+#: core/assets/admin.js:1075
+msgid "Install & activate"
+msgstr "ইনস্টল ও সক্রিয় করুন"
+
+#: core/assets/admin.js:1077
+msgid "Deactivate"
+msgstr "নিষ্ক্রিয় করুন"
+
+#: core/assets/admin.js:1079
+msgid "Delete this plugin and its files?"
+msgstr "এই প্লাগইন ও এর ফাইলগুলো মুছে ফেলবেন?"
+
+#: core/assets/admin.js:1085
+msgid "is active."
+msgstr "সক্রিয় আছে।"
+
+#: core/assets/admin.js:1085
+msgid "is inactive."
+msgstr "নিষ্ক্রিয় আছে।"
+
+#: core/assets/admin.js:1085
+msgid "was deleted."
+msgstr "মুছে ফেলা হয়েছে।"
+
+#: core/assets/admin.js:1088
+msgid "Plugin action failed"
+msgstr "প্লাগইন অ্যাকশন ব্যর্থ হয়েছে"
+
+#: core/assets/admin.js:1096
+msgid ""
+"Activate your purchase on this domain to unlock Pro demos, automatic updates"
+" and priority support."
+msgstr ""
+"Pro ডেমো, স্বয়ংক্রিয় আপডেট ও অগ্রাধিকার সাপোর্ট আনলক করতে এই ডোমেইনে আপনার"
+" ক্রয় সক্রিয় করুন।"
+
+#: core/assets/admin.js:1118
+msgid "Domain"
+msgstr "ডোমেইন"
+
+#: core/assets/admin.js:1118
+msgid "Expires"
+msgstr "মেয়াদ শেষ"
+
+#: core/assets/admin.js:1118
+msgid "Lifetime"
+msgstr "আজীবন"
+
+#: core/assets/admin.js:1118
+msgid "Provider"
+msgstr "প্রদানকারী"
+
+#: core/assets/admin.js:1121
+msgid "You’re all set"
+msgstr "আপনি পুরোপুরি প্রস্তুত"
+
+#: core/assets/admin.js:1121
+msgid "This license is active on %s."
+msgstr "এই লাইসেন্সটি %s-এ সক্রিয়।"
+
+#: core/assets/admin.js:1121
+msgid "Plan: %s."
+msgstr "প্ল্যান: %s।"
+
+#: core/assets/admin.js:1122
+msgid "All Pro demos unlocked"
+msgstr "সব Pro ডেমো আনলক হয়েছে"
+
+#: core/assets/admin.js:1122
+msgid "One-click theme updates"
+msgstr "ওয়ান-ক্লিক থিম আপডেট"
+
+#: core/assets/admin.js:1123
+msgid "Deactivating"
+msgstr "নিষ্ক্রিয় করা হচ্ছে"
+
+#: core/assets/admin.js:1123
+msgid "Deactivate on this domain"
+msgstr "এই ডোমেইনে নিষ্ক্রিয় করুন"
+
+#: core/assets/admin.js:1124
+msgid "Renew to keep Pro features"
+msgstr "Pro ফিচার রাখতে নবায়ন করুন"
+
+#: core/assets/admin.js:1124
+msgid "Find the key in your purchase email or your wpessential.org account."
+msgstr "আপনার ক্রয়ের ইমেইল বা আপনার wpessential.org অ্যাকাউন্টে কী খুঁজুন।"
+
+#: core/assets/admin.js:1125
+msgid "License key"
+msgstr "লাইসেন্স কী"
+
+#: core/assets/admin.js:1125
+msgid "Paste your license key"
+msgstr "আপনার লাইসেন্স কী পেস্ট করুন"
+
+#: core/assets/admin.js:1125
+msgid "Show key"
+msgstr "কী দেখান"
+
+#: core/assets/admin.js:1125
+msgid "Checking"
+msgstr "পরীক্ষা করা হচ্ছে"
+
+#: core/assets/admin.js:1127
+msgid "Unlock every Pro demo in the library"
+msgstr "লাইব্রেরির প্রতিটি Pro ডেমো আনলক করুন"
+
+#: core/assets/admin.js:1127
+msgid "Automatic updates from your dashboard"
+msgstr "আপনার ড্যাশবোর্ড থেকে স্বয়ংক্রিয় আপডেট"
+
+#: core/assets/admin.js:1127
+msgid "Priority support from the WPEssential Team"
+msgstr "WPEssential টিমের অগ্রাধিকার সাপোর্ট"
+
+#: core/assets/admin.js:1128
+msgid "Don’t have a license? Sign in or pick a plan below"
+msgstr "লাইসেন্স নেই? সাইন ইন করুন বা নিচে একটি প্ল্যান বাছুন"
+
+#: core/assets/admin.js:1143
+msgid "License activated"
+msgstr "লাইসেন্স সক্রিয় হয়েছে"
+
+#: core/assets/admin.js:1143
+msgid "Pro demos are unlocked."
+msgstr "Pro ডেমো আনলক হয়েছে।"
+
+#: core/assets/admin.js:1163
+msgid ""
+"Deactivate the license on this domain? You can activate it on another site "
+"afterwards."
+msgstr ""
+"এই ডোমেইনে লাইসেন্স নিষ্ক্রিয় করবেন? পরে আপনি এটি অন্য সাইটে সক্রিয় করতে "
+"পারবেন।"
+
+#: core/assets/admin.js:1169
+msgid "License deactivated"
+msgstr "লাইসেন্স নিষ্ক্রিয় হয়েছে"
+
+#: core/assets/admin.js:1173
+msgid "Deactivation failed"
+msgstr "নিষ্ক্রিয়করণ ব্যর্থ হয়েছে"
+
+#: core/assets/admin.js:1188
+msgid "/ %d mo"
+msgstr "/ %d মাস"
+
+#: core/assets/admin.js:1188
+msgid "one-time"
+msgstr "এককালীন"
+
+#: core/assets/admin.js:1201
+msgid "Your WPEssential account could not be reached"
+msgstr "আপনার WPEssential অ্যাকাউন্টে পৌঁছানো যায়নি"
+
+#: core/assets/admin.js:1213
+msgid "Sign in to your account"
+msgstr "আপনার অ্যাকাউন্টে সাইন ইন করুন"
+
+#: core/assets/admin.js:1213
+msgid "Create your free account"
+msgstr "আপনার ফ্রি অ্যাকাউন্ট তৈরি করুন"
+
+#: core/assets/admin.js:1213
+msgid ""
+"Your licenses, Pro demos and subscription in one place. New accounts include"
+" the Free plan for this website."
+msgstr ""
+"আপনার লাইসেন্স, Pro ডেমো ও সাবস্ক্রিপশন এক জায়গায়। নতুন অ্যাকাউন্টে এই "
+"ওয়েবসাইটের জন্য Free প্ল্যান অন্তর্ভুক্ত।"
+
+#: core/assets/admin.js:1214
+msgid "Activate licenses without copying keys"
+msgstr "কী কপি না করেই লাইসেন্স সক্রিয় করুন"
+
+#: core/assets/admin.js:1214
+msgid "Upgrade, renew or switch plans in one click"
+msgstr "এক ক্লিকে আপগ্রেড, নবায়ন বা প্ল্যান পরিবর্তন করুন"
+
+#: core/assets/admin.js:1214
+msgid "Manage websites and auto-renewal"
+msgstr "ওয়েবসাইট ও স্বয়ংক্রিয় নবায়ন পরিচালনা করুন"
+
+#: core/assets/admin.js:1216 core/assets/admin.js:1221
+msgid "Sign in"
+msgstr "সাইন ইন করুন"
+
+#: core/assets/admin.js:1216
+msgid "Create account"
+msgstr "অ্যাকাউন্ট তৈরি করুন"
+
+#: core/assets/admin.js:1217
+msgid "Full name"
+msgstr "পূর্ণ নাম"
+
+#: core/assets/admin.js:1218
+msgid "Email"
+msgstr "ইমেইল"
+
+#: core/assets/admin.js:1219
+msgid "Password"
+msgstr "পাসওয়ার্ড"
+
+#: core/assets/admin.js:1221
+msgid "Signing in"
+msgstr "সাইন ইন হচ্ছে"
+
+#: core/assets/admin.js:1221
+msgid "Creating account"
+msgstr "অ্যাকাউন্ট তৈরি হচ্ছে"
+
+#: core/assets/admin.js:1221
+msgid "Create free account"
+msgstr "ফ্রি অ্যাকাউন্ট তৈরি করুন"
+
+#: core/assets/admin.js:1222
+msgid "Forgot password?"
+msgstr "পাসওয়ার্ড ভুলে গেছেন?"
+
+#: core/assets/admin.js:1222
+msgid "By creating an account you agree to the WPEssential terms."
+msgstr "অ্যাকাউন্ট তৈরি করে আপনি WPEssential-এর শর্তাবলিতে সম্মত হচ্ছেন।"
+
+#: core/assets/admin.js:1223
+msgid "Continue without an account"
+msgstr "অ্যাকাউন্ট ছাড়াই চালিয়ে যান"
+
+#: core/assets/admin.js:1239
+msgid "Fill in every field."
+msgstr "প্রতিটি ঘর পূরণ করুন।"
+
+#: core/assets/admin.js:1245
+msgid "Signed in"
+msgstr "সাইন ইন হয়েছে"
+
+#: core/assets/admin.js:1245
+msgid "Account created"
+msgstr "অ্যাকাউন্ট তৈরি হয়েছে"
+
+#: core/assets/admin.js:1266
+msgid "Refresh"
+msgstr "রিফ্রেশ করুন"
+
+#: core/assets/admin.js:1267
+msgid "Manage account"
+msgstr "অ্যাকাউন্ট পরিচালনা করুন"
+
+#: core/assets/admin.js:1268
+msgid "Sign out"
+msgstr "সাইন আউট করুন"
+
+#: core/assets/admin.js:1270
+msgid "Your licenses"
+msgstr "আপনার লাইসেন্সসমূহ"
+
+#: core/assets/admin.js:1273
+msgid "%1$d of %2$s websites"
+msgstr "%2$sটির মধ্যে %1$dটি ওয়েবসাইট"
+
+#: core/assets/admin.js:1273
+msgid "Never expires"
+msgstr "মেয়াদ কখনো শেষ হয় না"
+
+#: core/assets/admin.js:1273
+msgid "Renews %s"
+msgstr "%s তারিখে নবায়ন হবে"
+
+#: core/assets/admin.js:1273
+msgid "Ends %s"
+msgstr "%s তারিখে শেষ হবে"
+
+#: core/assets/admin.js:1274
+msgid "Auto-renew"
+msgstr "স্বয়ংক্রিয় নবায়ন"
+
+#: core/assets/admin.js:1275
+msgid "Renew"
+msgstr "নবায়ন করুন"
+
+#: core/assets/admin.js:1275
+msgid "This site"
+msgstr "এই সাইট"
+
+#: core/assets/admin.js:1275
+msgid "Activating"
+msgstr "সক্রিয় করা হচ্ছে"
+
+#: core/assets/admin.js:1275
+msgid "Use on this site"
+msgstr "এই সাইটে ব্যবহার করুন"
+
+#: core/assets/admin.js:1276
+msgid "No licenses yet — choose a plan below."
+msgstr "এখনও কোনো লাইসেন্স নেই — নিচে একটি প্ল্যান বেছে নিন।"
+
+#: core/assets/admin.js:1277
+msgid "Upgrade your plan"
+msgstr "আপনার প্ল্যান আপগ্রেড করুন"
+
+#: core/assets/admin.js:1277
+msgid "Choose a plan"
+msgstr "একটি প্ল্যান বেছে নিন"
+
+#: core/assets/admin.js:1282
+msgid "Most popular"
+msgstr "সবচেয়ে জনপ্রিয়"
+
+#: core/assets/admin.js:1283
+msgid "Current plan"
+msgstr "বর্তমান প্ল্যান"
+
+#: core/assets/admin.js:1283
+msgid "Upgrade"
+msgstr "আপগ্রেড করুন"
+
+#: core/assets/admin.js:1283
+msgid "Choose"
+msgstr "বেছে নিন"
+
+#: core/assets/admin.js:1285
+msgid ""
+"Checkout opens on wpessential.org already signed in. Upgrades credit the "
+"unused part of your current plan. Staging and local sites do not count "
+"toward your website limit."
+msgstr ""
+"চেকআউট wpessential.org-এ আগে থেকেই সাইন ইন করা অবস্থায় খোলে। আপগ্রেডে আপনার"
+" বর্তমান প্ল্যানের অব্যবহৃত অংশ ক্রেডিট হিসেবে যোগ হয়। স্টেজিং ও লোকাল সাইট"
+" আপনার ওয়েবসাইট সীমায় গণনা হয় না।"
+
+#: core/assets/admin.js:1301
+msgid "License active on this site"
+msgstr "এই সাইটে লাইসেন্স সক্রিয়"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is on"
+msgstr "স্বয়ংক্রিয় নবায়ন চালু আছে"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is off"
+msgstr "স্বয়ংক্রিয় নবায়ন বন্ধ আছে"
+
+#: core/assets/admin.js:1315
+msgid "Your license works until its end date."
+msgstr "আপনার লাইসেন্স এর শেষ তারিখ পর্যন্ত কাজ করবে।"
+
+#: core/assets/admin.js:1318
+msgid "Could not change auto-renew"
+msgstr "স্বয়ংক্রিয় নবায়ন পরিবর্তন করা যায়নি"
+
+#: core/assets/admin.js:1330
+msgid "Checkout opened in a new tab"
+msgstr "চেকআউট নতুন ট্যাবে খুলেছে"
+
+#: core/assets/admin.js:1330
+msgid "When payment is done, press Refresh here."
+msgstr "পেমেন্ট সম্পন্ন হলে এখানে রিফ্রেশ চাপুন।"
+
+#: core/assets/admin.js:1335
+msgid "Checkout could not start"
+msgstr "চেকআউট শুরু করা যায়নি"
+
+#: core/assets/admin.js:1343
+msgid "What your server offers and what to improve before importing."
+msgstr "আপনার সার্ভার কী দেয় এবং ইমপোর্টের আগে কী উন্নত করতে হবে।"
+
+#: core/assets/admin.js:1343
+msgid "Copy report"
+msgstr "রিপোর্ট কপি করুন"
+
+#: core/assets/admin.js:1349
+msgid "Health"
+msgstr "স্বাস্থ্য"
+
+#: core/assets/admin.js:1349
+msgid "Excellent"
+msgstr "চমৎকার"
+
+#: core/assets/admin.js:1349
+msgid "Good"
+msgstr "ভালো"
+
+#: core/assets/admin.js:1349
+msgid "Needs work"
+msgstr "উন্নতি প্রয়োজন"
+
+#: core/assets/admin.js:1349
+msgid "%d item(s) could be better. Imports still run; fixes make them faster."
+msgstr ""
+"%dটি আইটেম আরও ভালো হতে পারে। ইমপোর্ট তবুও চলবে; সংশোধন এগুলোকে দ্রুততর করে।"
+
+#: core/assets/admin.js:1349
+msgid "Your server is ready for any demo."
+msgstr "আপনার সার্ভার যেকোনো ডেমোর জন্য প্রস্তুত।"
+
+#: core/assets/admin.js:1352
+msgid "Environment"
+msgstr "পরিবেশ"
+
+#: core/assets/admin.js:1356
+msgid "Report copied"
+msgstr "রিপোর্ট কপি হয়েছে"
+
+#: core/assets/admin.js:1356
+msgid "Copy failed"
+msgstr "কপি ব্যর্থ হয়েছে"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "অ্যাকসেন্ট"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr "বর্ডার"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Danger"
+msgstr "বিপদ"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr "ইংক"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink"
+msgstr "ইংকের উপর"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink Muted"
+msgstr "ইংকের উপর ম্লান"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Primary"
+msgstr "প্রাইমারির উপর"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "প্রাইমারি"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Hover"
+msgstr "প্রাইমারি হোভার"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Soft"
+msgstr "প্রাইমারি সফট"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Pro"
+msgstr "Pro"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "সেকেন্ডারি"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Star"
+msgstr "স্টার"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Success"
+msgstr "সাফল্য"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr "সারফেস"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface Alt"
+msgstr "বিকল্প সারফেস"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr "টেক্সট"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text Muted"
+msgstr "ম্লান টেক্সট"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Warning"
+msgstr "সতর্কতা"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank (no header/footer)"
+msgstr "ফাঁকা (হেডার/ফুটার ছাড়া)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Full Width (builder canvas)"
+msgstr "পূর্ণ প্রস্থ (বিল্ডার ক্যানভাস)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Landing (transparent header)"
+msgstr "ল্যান্ডিং (স্বচ্ছ হেডার)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "No Title"
+msgstr "শিরোনাম নেই"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post with sidebar"
+msgstr "সাইডবারসহ পোস্ট"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Cormorant Garamond"
+msgstr "Cormorant Garamond"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "DM Sans"
+msgstr "DM Sans"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Manrope"
+msgstr "Manrope"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Font family name"
+msgid "Monospace"
+msgstr "মনোস্পেস"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Plus Jakarta Sans"
+msgstr "Plus Jakarta Sans"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "Space Grotesk"
+msgstr "Space Grotesk"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr "বডি"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body L"
+msgstr "বডি L"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Display"
+msgstr "ডিসপ্লে"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H1"
+msgstr "H1"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H2"
+msgstr "H2"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H3"
+msgstr "H3"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H4"
+msgstr "H4"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "ছোট"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XS"
+msgstr "XS"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Brand"
+msgstr "ব্র্যান্ড"
+
+#: styles/dark.json
+msgctxt "Gradient name"
+msgid "Fade bottom"
+msgstr "নিচে ফেড"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Fade to ink"
+msgstr "ইংকে ফেড"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Night"
+msgstr "রাত"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Large"
+msgstr "বড়"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Medium"
+msgstr "মাঝারি"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Small"
+msgstr "ছোট"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "112"
+msgstr "112"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "12"
+msgstr "12"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "16"
+msgstr "16"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "24"
+msgstr "24"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "32"
+msgstr "32"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "48"
+msgstr "48"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "64"
+msgstr "64"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "8"
+msgstr "8"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "96"
+msgstr "96"
+
+#: styles/agency.json
+msgctxt "Style variation name"
+msgid "Agency"
+msgstr "এজেন্সি"
+
+#: styles/dark.json
+msgctxt "Style variation name"
+msgid "Dark"
+msgstr "গাঢ়"
+
+#: styles/education.json
+msgctxt "Style variation name"
+msgid "Education"
+msgstr "শিক্ষা"
+
+#: styles/fashion.json
+msgctxt "Style variation name"
+msgid "Fashion"
+msgstr "ফ্যাশন"
+
+#: styles/health.json
+msgctxt "Style variation name"
+msgid "Health"
+msgstr "স্বাস্থ্য"
+
+#: styles/maison.json
+msgctxt "Style variation name"
+msgid "Maison"
+msgstr "Maison"
+
+#: styles/pulse.json
+msgctxt "Style variation name"
+msgid "Pulse"
+msgstr "Pulse"
+
+#: styles/restaurant.json
+msgctxt "Style variation name"
+msgid "Restaurant"
+msgstr "রেস্তোরাঁ"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Premium"
+msgstr "ফুটার — প্রিমিয়াম"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Simple"
+msgstr "ফুটার — সাধারণ"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Centered"
+msgstr "হেডার — কেন্দ্রীভূত"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Default"
+msgstr "হেডার — ডিফল্ট"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Shop"
+msgstr "হেডার — শপ"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Transparent (over dark hero)"
+msgstr "হেডার — স্বচ্ছ (গাঢ় হিরোর উপর)"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr "সাইডবার"

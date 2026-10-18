@@ -1,0 +1,3754 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WPEssential 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wpessential.org/support/\n"
+"POT-Creation-Date: 2026-10-18T02:45:11+00:00\n"
+"PO-Revision-Date: 2026-10-18T02:45:11+00:00\n"
+"Last-Translator: WPEssential Team <https://wpessential.org/>\n"
+"Language-Team: WPEssential Team <https://wpessential.org/>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Domain: wpessential\n"
+"X-Generator: WP-CLI 2.11.0\n"
+
+#. Theme Name of the theme
+#: style.css core/src/Admin.php:55 inc/patterns.php:14
+msgid "WPEssential"
+msgstr "WPEssential"
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://wpessential.org/"
+msgstr "https://wpessential.org/"
+
+#. Description of the theme
+#: style.css
+msgid ""
+"Lightweight multi-niche block theme, native for Gutenberg and Elementor. "
+"One-click demos (free & pro) via the WPEssential Core plugin."
+msgstr ""
+"قالب مكوّنات خفيف متعدد الاستخدامات، متوافق أصلاً مع Gutenberg وElementor. "
+"عروض توضيحية بنقرة واحدة (مجانية وPro) عبر إضافة WPEssential Core."
+
+#. Author of the theme
+#: style.css
+msgid "WPEssential Team"
+msgstr "فريق WPEssential"
+
+#. translators: %s: error.
+#: core/src/Account.php:55
+msgid "WPEssential could not be reached: %s"
+msgstr "تعذّر الوصول إلى WPEssential: %s"
+
+#: core/src/Account.php:61
+msgid "Your WPEssential session ended. Sign in again."
+msgstr "انتهت جلستك في WPEssential. سجّل الدخول مجددًا."
+
+#. translators: %d: HTTP code.
+#: core/src/Account.php:65
+msgid "WPEssential answered with an unexpected response (HTTP %d)."
+msgstr "أعاد WPEssential استجابة غير متوقعة (HTTP %d)."
+
+#: core/src/Account.php:68 core/assets/admin.js:83 core/assets/admin.js:94
+msgid "Something went wrong."
+msgstr "حدث خطأ ما."
+
+#: core/src/Account.php:238
+msgid "That license is not in your account."
+msgstr "هذا الترخيص غير موجود في حسابك."
+
+#: core/src/Account.php:271 core/src/Rest.php:211
+msgid "Unknown action."
+msgstr "إجراء غير معروف."
+
+#: core/src/Admin.php:37 core/assets/admin.js:147
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#: core/src/Admin.php:38 core/assets/admin.js:148 core/assets/admin.js:306
+msgid "Demo Library"
+msgstr "مكتبة العروض التوضيحية"
+
+#: core/src/Admin.php:39 core/assets/admin.js:149 core/assets/admin.js:576
+#: core/assets/admin.js:1054
+msgid "Plugins"
+msgstr "الإضافات"
+
+#: core/src/Admin.php:40 core/assets/admin.js:150 core/assets/admin.js:284
+#: core/assets/admin.js:1096
+msgid "License"
+msgstr "الترخيص"
+
+#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+msgid "System Status"
+msgstr "حالة النظام"
+
+#: core/src/Admin.php:133
+msgid ""
+"The WPEssential dashboard needs JavaScript. Enable it in your browser to "
+"import demos."
+msgstr ""
+"تحتاج لوحة تحكم WPEssential إلى JavaScript. فعّلها في متصفحك لاستيراد العروض"
+" التوضيحية."
+
+#: core/src/Demos.php:49
+msgid ""
+"The online demo library could not be reached, so only the demos bundled with"
+" the theme are listed. They import fully offline."
+msgstr ""
+"تعذّر الوصول إلى مكتبة العروض التوضيحية عبر الإنترنت، لذا تُعرض فقط العروض "
+"المضمّنة مع القالب. يتم استيرادها بالكامل دون اتصال."
+
+#: core/src/Demos.php:173
+msgid ""
+"The bundled demo package is incomplete. Re-upload the theme and try again."
+msgstr ""
+"حزمة العرض التوضيحي المضمّنة غير مكتملة. أعد رفع القالب وحاول مرة أخرى."
+
+#: core/src/Demos.php:183
+msgid "This demo has no download address in the library."
+msgstr "لا يوجد عنوان تنزيل لهذا العرض التوضيحي في المكتبة."
+
+#. translators: %s: error message.
+#: core/src/Demos.php:196
+msgid "Downloading the demo package failed: %s"
+msgstr "فشل تنزيل حزمة العرض التوضيحي: %s"
+
+#: core/src/Demos.php:200
+msgid "WordPress cannot write to the uploads folder. Check its permissions."
+msgstr "لا يستطيع ووردبريس الكتابة في مجلد الرفع. تحقّق من صلاحياته."
+
+#: core/src/Demos.php:207
+msgid "The downloaded package does not contain content.json."
+msgstr "الحزمة التي تم تنزيلها لا تحتوي على content.json."
+
+#: core/src/Importer.php:47
+msgid "Checking your server"
+msgstr "جارٍ فحص الخادم"
+
+#: core/src/Importer.php:48
+msgid "Removing the previous demo"
+msgstr "جارٍ إزالة العرض التوضيحي السابق"
+
+#: core/src/Importer.php:49
+msgid "Preparing the demo package"
+msgstr "جارٍ تجهيز حزمة العرض التوضيحي"
+
+#: core/src/Importer.php:50
+msgid "Installing plugins"
+msgstr "جارٍ تنصيب الإضافات"
+
+#: core/src/Importer.php:51
+msgid "Importing images"
+msgstr "جارٍ استيراد الصور"
+
+#: core/src/Importer.php:52
+msgid "Creating categories"
+msgstr "جارٍ إنشاء التصنيفات"
+
+#: core/src/Importer.php:53
+msgid "Building pages and posts"
+msgstr "جارٍ إنشاء الصفحات والمقالات"
+
+#: core/src/Importer.php:54
+msgid "Adding products"
+msgstr "جارٍ إضافة المنتجات"
+
+#: core/src/Importer.php:55
+msgid "Creating menus"
+msgstr "جارٍ إنشاء القوائم"
+
+#: core/src/Importer.php:56
+msgid "Applying site settings"
+msgstr "جارٍ تطبيق إعدادات الموقع"
+
+#: core/src/Importer.php:57
+msgid "Finishing touches"
+msgstr "اللمسات الأخيرة"
+
+#: core/src/Importer.php:90
+msgid ""
+"Another import is running in a different tab. Wait for it to finish, or wait"
+" two minutes and try again."
+msgstr ""
+"هناك عملية استيراد أخرى قيد التشغيل في علامة تبويب مختلفة. انتظر حتى تنتهي، "
+"أو انتظر دقيقتين وحاول مرة أخرى."
+
+#: core/src/Importer.php:94
+msgid "This demo is no longer in the library. Refresh the page."
+msgstr "هذا العرض التوضيحي لم يعد موجودًا في المكتبة. حدّث الصفحة."
+
+#: core/src/Importer.php:97
+msgid "This demo is not available for the selected builder."
+msgstr "هذا العرض التوضيحي غير متاح لأداة البناء المحددة."
+
+#: core/src/Importer.php:100
+msgid ""
+"This is a Pro demo. Activate your license on the License tab to import it."
+msgstr "هذا عرض توضيحي Pro. فعّل ترخيصك من تبويب الترخيص لاستيراده."
+
+#. translators: 1: demo, 2: builder.
+#: core/src/Importer.php:192
+msgid "Starting import of %1$s for %2$s."
+msgstr "جارٍ بدء استيراد %1$s لـ %2$s."
+
+#: core/src/Importer.php:207
+msgid "There is no import to continue."
+msgstr "لا توجد عملية استيراد لمتابعتها."
+
+#: core/src/Importer.php:225
+msgid ""
+"Import cancelled. Everything imported so far can be removed from the Demo "
+"Library."
+msgstr ""
+"تم إلغاء الاستيراد. يمكن إزالة كل ما تم استيراده حتى الآن من مكتبة العروض "
+"التوضيحية."
+
+#: core/src/Importer.php:341
+msgid "One item stopped the server twice and was skipped."
+msgstr "عنصر واحد أوقف الخادم مرتين وتم تخطيه."
+
+#: core/src/Importer.php:341
+msgid ""
+"Raise memory_limit / max_execution_time, then re-import to fill the gap."
+msgstr ""
+"ارفع قيمة memory_limit / max_execution_time، ثم أعد الاستيراد لاستكمال "
+"النقص."
+
+#. translators: %s: error.
+#: core/src/Importer.php:358
+msgid "Unexpected error: %s"
+msgstr "خطأ غير متوقع: %s"
+
+#. translators: %d: errors.
+#: core/src/Importer.php:411
+msgid ""
+"Import finished with %d error. The site works; review the log for what was "
+"skipped."
+msgid_plural ""
+"Import finished with %d errors. The site works; review the log for what was "
+"skipped."
+msgstr[0] ""
+"انتهى الاستيراد دون أخطاء (%d). الموقع يعمل؛ راجع السجل لمعرفة ما تم تخطيه."
+msgstr[1] ""
+"انتهى الاستيراد مع خطأ واحد (%d). الموقع يعمل؛ راجع السجل لمعرفة ما تم "
+"تخطيه."
+msgstr[2] ""
+"انتهى الاستيراد مع خطأين (%d). الموقع يعمل؛ راجع السجل لمعرفة ما تم تخطيه."
+msgstr[3] ""
+"انتهى الاستيراد مع %d أخطاء. الموقع يعمل؛ راجع السجل لمعرفة ما تم تخطيه."
+msgstr[4] ""
+"انتهى الاستيراد مع %d خطأً. الموقع يعمل؛ راجع السجل لمعرفة ما تم تخطيه."
+msgstr[5] ""
+"انتهى الاستيراد مع %d خطأ. الموقع يعمل؛ راجع السجل لمعرفة ما تم تخطيه."
+
+#: core/src/Importer.php:413
+msgid "Your site is ready."
+msgstr "موقعك جاهز."
+
+#: core/src/Importer.php:445
+msgid "WooCommerce is not active, so the shop products were skipped."
+msgstr "WooCommerce غير مفعّل، لذا تم تخطي منتجات المتجر."
+
+#: core/src/Importer.php:602
+msgid "Your server needs a change before the import can run safely."
+msgstr "يحتاج خادمك إلى تعديل قبل أن يتمكن الاستيراد من العمل بأمان."
+
+#: core/src/Importer.php:602
+msgid "Fix the items above (your host can help), then press Retry."
+msgstr ""
+"أصلح العناصر أعلاه (يمكن لمزوّد الاستضافة المساعدة)، ثم اضغط إعادة المحاولة."
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid ""
+"%s was imported before. Its pages stay; the new import adds fresh copies."
+msgstr ""
+"تم استيراد %s من قبل. ستبقى صفحاته؛ وسيضيف الاستيراد الجديد نسخًا جديدة."
+
+#. translators: %s: demo.
+#: core/src/Importer.php:607
+msgid "Tick \"Remove previous demo\" next time for a clean site."
+msgstr ""
+"حدّد \"إزالة العرض التوضيحي السابق\" في المرة القادمة للحصول على موقع نظيف."
+
+#: core/src/Importer.php:609
+msgid "Server checks passed."
+msgstr "نجحت فحوصات الخادم."
+
+#. translators: %d: items.
+#: core/src/Importer.php:621
+msgid "Removed %d items from the previous demo and restored its settings."
+msgstr "تمت إزالة %d عنصر من العرض التوضيحي السابق واستعادة إعداداته."
+
+#: core/src/Importer.php:634
+msgid "Upload a fresh copy of the theme, then press Resume."
+msgstr "ارفع نسخة جديدة من القالب، ثم اضغط استئناف."
+
+#: core/src/Importer.php:634
+msgid "Check your internet connection and press Resume."
+msgstr "تحقّق من اتصالك بالإنترنت واضغط استئناف."
+
+#: core/src/Importer.php:640
+msgid "The demo package could not be read (content.json is damaged)."
+msgstr "تعذّرت قراءة حزمة العرض التوضيحي (ملف content.json تالف)."
+
+#: core/src/Importer.php:640
+msgid "Clear the cache on the System Status tab and retry."
+msgstr "امسح ذاكرة التخزين المؤقت من تبويب حالة النظام وأعد المحاولة."
+
+#. translators: 1: pages, 2: images, 3: products.
+#: core/src/Importer.php:644
+msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
+msgstr "الحزمة جاهزة: %1$d صفحة ومقالة، %2$d صورة، %3$d منتج."
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid "%1$s could not be set up: %2$s"
+msgstr "تعذّر إعداد %1$s: %2$s"
+
+#. translators: 1: plugin, 2: error.
+#: core/src/Importer.php:662
+msgid ""
+"Install it from Plugins → Add New, then use the Plugins tab here to activate"
+" it."
+msgstr "نصّبها من الإضافات ← أضف جديد، ثم استخدم تبويب الإضافات هنا لتفعيلها."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:667
+msgid "%s installed and activated."
+msgstr "تم تنصيب %s وتفعيلها."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:669
+msgid "%s activated."
+msgstr "تم تفعيل %s."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:671
+msgid "%s deactivated because it conflicts with this demo."
+msgstr "تم تعطيل %s لأنها تتعارض مع هذا العرض التوضيحي."
+
+#. translators: %s: plugin.
+#: core/src/Importer.php:673
+msgid "%s is already active."
+msgstr "%s مفعّلة بالفعل."
+
+#: core/src/Importer.php:702
+msgid "file not found in the package"
+msgstr "الملف غير موجود في الحزمة"
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:707
+msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
+msgstr "تم تخطي الصورة %1$s (%2$s). ستستخدم الصفحات نسخة القالب بدلاً منها."
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Image %1$s skipped (%2$s)."
+msgstr "تم تخطي الصورة %1$s (%2$s)."
+
+#. translators: 1: file, 2: error.
+#: core/src/Importer.php:721
+msgid "Check that the uploads folder is writable."
+msgstr "تحقّق من أن مجلد الرفع قابل للكتابة."
+
+#. translators: %s: file.
+#: core/src/Importer.php:729
+msgid "Imported image %s."
+msgstr "تم استيراد الصورة %s."
+
+#. translators: 1: term, 2: taxonomy.
+#. translators: 1: title, 2: post type.
+#: core/src/Importer.php:744 core/src/Importer.php:790
+msgid "Skipped \"%1$s\": %2$s is not available on this site."
+msgstr "تم تخطي \"%1$s\": %2$s غير متاح على هذا الموقع."
+
+#. translators: %s: term.
+#: core/src/Importer.php:751
+msgid "Category \"%s\" already exists and was reused."
+msgstr "التصنيف \"%s\" موجود بالفعل وتمت إعادة استخدامه."
+
+#. translators: 1: term, 2: error.
+#: core/src/Importer.php:763
+msgid "Category \"%1$s\" was not created: %2$s"
+msgstr "لم يتم إنشاء التصنيف \"%1$s\": %2$s"
+
+#. translators: %s: term.
+#: core/src/Importer.php:770
+msgid "Created category \"%s\"."
+msgstr "تم إنشاء التصنيف \"%s\"."
+
+#. translators: 1: title, 2: error.
+#: core/src/Importer.php:808
+msgid "\"%1$s\" could not be created: %2$s"
+msgstr "تعذّر إنشاء \"%1$s\": %2$s"
+
+#: core/src/Importer.php:836
+msgid "post"
+msgstr "مقالة"
+
+#: core/src/Importer.php:837
+msgid "page"
+msgstr "صفحة"
+
+#: core/src/Importer.php:838
+msgid "event"
+msgstr "فعالية"
+
+#: core/src/Importer.php:839
+msgid "venue"
+msgstr "مكان"
+
+#: core/src/Importer.php:840
+msgid "organizer"
+msgstr "منظِّم"
+
+#. translators: 1: type, 2: title.
+#: core/src/Importer.php:843
+msgid "Created %1$s \"%2$s\"."
+msgstr "تم إنشاء %1$s \"%2$s\"."
+
+#: core/src/Importer.php:860
+msgid "The Events Calendar rejected the venue."
+msgstr "رفضت The Events Calendar المكان."
+
+#: core/src/Importer.php:864
+msgid "The Events Calendar rejected the organizer."
+msgstr "رفضت The Events Calendar المنظِّم."
+
+#: core/src/Importer.php:892
+msgid "The Events Calendar rejected the event."
+msgstr "رفضت The Events Calendar الفعالية."
+
+#. translators: %s: product.
+#: core/src/Importer.php:1004
+msgid "Product \"%s\" could not be saved."
+msgstr "تعذّر حفظ المنتج \"%s\"."
+
+#. translators: %s: product.
+#: core/src/Importer.php:1015
+msgid "Added product \"%s\"."
+msgstr "تمت إضافة المنتج \"%s\"."
+
+#. translators: 1: menu, 2: count.
+#: core/src/Importer.php:1118
+msgid "Created menu \"%1$s\" with %2$d links."
+msgstr "تم إنشاء القائمة \"%1$s\" مع %2$d روابط."
+
+#: core/src/Importer.php:1164
+msgid "Home and blog pages assigned."
+msgstr "تم تعيين الصفحة الرئيسية وصفحة المدونة."
+
+#. translators: %s: option.
+#: core/src/Importer.php:1170
+msgid "Setting \"%s\" is not on the allow-list and was ignored."
+msgstr "الإعداد \"%s\" غير موجود في قائمة السماح وتم تجاهله."
+
+#. translators: %s: preset.
+#: core/src/Importer.php:1191
+msgid "Animation style set to \"%s\"."
+msgstr "تم ضبط نمط الحركة على \"%s\"."
+
+#: core/src/Importer.php:1204
+msgid "Elementor set to use the theme colours and fonts."
+msgstr "تم ضبط Elementor لاستخدام ألوان القالب وخطوطه."
+
+#: core/src/Importer.php:1219
+msgid "Default"
+msgstr "افتراضي"
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Style \"%s\" was not found in the theme, so the default colours stay."
+msgstr "لم يتم العثور على النمط \"%s\" في القالب، لذا ستبقى الألوان الافتراضية."
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Update the WPEssential theme, then import again."
+msgstr "حدّث قالب WPEssential، ثم أعد الاستيراد."
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1250
+msgid "Applied the %s colours and fonts."
+msgstr "تم تطبيق ألوان وخطوط %s."
+
+#: core/src/Importer.php:1268
+msgid "demo"
+msgstr "عرض توضيحي"
+
+#. translators: 1: template part, 2: design.
+#: core/src/Importer.php:1320
+msgid "Template part \"%1$s\" set to the \"%2$s\" design."
+msgstr "تم ضبط جزء القالب \"%1$s\" على تصميم \"%2$s\"."
+
+#: core/src/Importer.php:1341
+msgid "Elementor Kit layout, buttons and form styles set."
+msgstr "تم ضبط تخطيط Elementor Kit وأنماط الأزرار والنماذج."
+
+#: core/src/Importer.php:1361
+msgid "Everywhere"
+msgstr "في كل مكان"
+
+#: core/src/Importer.php:1369
+msgid "Free shipping"
+msgstr "شحن مجاني"
+
+#. translators: %s: amount.
+#: core/src/Importer.php:1377
+msgid "Shipping set up with free delivery over %s."
+msgstr "تم إعداد الشحن مع توصيل مجاني للطلبات التي تزيد عن %s."
+
+#. translators: %d: pages.
+#: core/src/Importer.php:1412
+msgid "Linked %d page to its new address."
+msgid_plural "Linked %d pages to their new addresses."
+msgstr[0] "لم يتم ربط أي صفحة (%d) بعنوانها الجديد."
+msgstr[1] "تم ربط صفحة واحدة (%d) بعنوانها الجديد."
+msgstr[2] "تم ربط صفحتين (%d) بعنوانيهما الجديدين."
+msgstr[3] "تم ربط %d صفحات بعناوينها الجديدة."
+msgstr[4] "تم ربط %d صفحة بعناوينها الجديدة."
+msgstr[5] "تم ربط %d صفحة بعناوينها الجديدة."
+
+#: core/src/Importer.php:1417
+msgid "Permalinks and caches refreshed."
+msgstr "تم تحديث الروابط الدائمة وذاكرة التخزين المؤقت."
+
+#: core/src/License.php:136
+msgid ""
+"That license key looks too short. Copy it again from your purchase email."
+msgstr "يبدو مفتاح الترخيص هذا قصيرًا جدًا. انسخه مجددًا من بريد الشراء."
+
+#: core/src/License.php:204
+msgid ""
+"This is a Pro item. Activate your license on the License tab to unlock it."
+msgstr "هذا عنصر Pro. فعّل ترخيصك من تبويب الترخيص لفتحه."
+
+#: core/src/License/Adapter.php:84
+msgid "The license server did not return a download link."
+msgstr "لم يُرجع خادم التراخيص رابط تنزيل."
+
+#. translators: %s: error.
+#: core/src/License/Adapter.php:107
+msgid "The license server could not be reached: %s"
+msgstr "تعذّر الوصول إلى خادم التراخيص: %s"
+
+#. translators: %d: HTTP status.
+#: core/src/License/Adapter.php:113
+msgid ""
+"The license server answered with an unexpected response (HTTP %d). Try again"
+" in a few minutes."
+msgstr ""
+"أعاد خادم التراخيص استجابة غير متوقعة (HTTP %d). حاول مرة أخرى بعد بضع "
+"دقائق."
+
+#: core/src/License/Custom.php:42 core/src/License/Edd.php:31
+#: core/src/License/Woo.php:58
+msgid "This license key is not valid."
+msgstr "مفتاح الترخيص هذا غير صالح."
+
+#: core/src/License/Edd.php:27
+msgid ""
+"This license has expired. Renew it to keep receiving demos and updates."
+msgstr ""
+"انتهت صلاحية هذا الترخيص. جدّده لمواصلة تلقي العروض التوضيحية والتحديثات."
+
+#: core/src/License/Edd.php:28
+msgid "This license has been disabled."
+msgstr "تم تعطيل هذا الترخيص."
+
+#: core/src/License/Edd.php:29
+msgid "This license has been revoked."
+msgstr "تم إلغاء هذا الترخيص."
+
+#: core/src/License/Edd.php:30
+msgid "This license key does not exist."
+msgstr "مفتاح الترخيص هذا غير موجود."
+
+#: core/src/License/Edd.php:32
+msgid "This license is not active for this domain."
+msgstr "هذا الترخيص غير مفعّل لهذا النطاق."
+
+#: core/src/License/Edd.php:33
+msgid "This key belongs to a different product."
+msgstr "هذا المفتاح يخص منتجًا مختلفًا."
+
+#: core/src/License/Edd.php:34
+msgid ""
+"This license has reached its activation limit. Deactivate it on another site"
+" first."
+msgstr "بلغ هذا الترخيص الحد الأقصى للتفعيل. عطّله على موقع آخر أولاً."
+
+#: core/src/License/Edd.php:130 core/src/License/Woo.php:118
+msgid "The store did not return a download link for this license."
+msgstr "لم يُرجع المتجر رابط تنزيل لهذا الترخيص."
+
+#: core/src/Plugins.php:115
+msgid "Your account is not allowed to install plugins."
+msgstr "حسابك غير مسموح له بتنصيب الإضافات."
+
+#. translators: 1: plugin name, 2: error.
+#: core/src/Plugins.php:130
+msgid ""
+"WordPress.org did not answer for %1$s (%2$s). Check the server can reach "
+"wordpress.org, or install it manually."
+msgstr ""
+"لم يستجب WordPress.org لـ %1$s (%2$s). تحقّق من قدرة الخادم على الوصول إلى "
+"wordpress.org، أو نصّبها يدويًا."
+
+#: core/src/Plugins.php:145
+msgid "No download source is set for this plugin."
+msgstr "لم يتم تعيين مصدر تنزيل لهذه الإضافة."
+
+#: core/src/Plugins.php:158
+msgid ""
+"The plugin could not be installed. The server may lack write access to wp-"
+"content/plugins."
+msgstr ""
+"تعذّر تنصيب الإضافة. قد لا يملك الخادم صلاحية الكتابة في wp-content/plugins."
+
+#: core/src/Plugins.php:174
+msgid "Plugin is not installed."
+msgstr "الإضافة غير منصّبة."
+
+#: core/src/Plugins.php:208
+msgid "Your account is not allowed to delete plugins."
+msgstr "حسابك غير مسموح له بحذف الإضافات."
+
+#: core/src/Rest.php:101
+msgid "Demo not found."
+msgstr "العرض التوضيحي غير موجود."
+
+#: core/src/Rest.php:158
+msgid "No imported demo was found."
+msgstr "لم يتم العثور على أي عرض توضيحي مستورد."
+
+#. translators: 1: demo, 2: count.
+#: core/src/Rest.php:164
+msgid "%1$s removed: %2$d items deleted and your previous settings restored."
+msgstr "تمت إزالة %1$s: حُذف %2$d عنصر واستُعيدت إعداداتك السابقة."
+
+#: core/src/Rest.php:191
+msgid "This plugin is not managed by WPEssential."
+msgstr "هذه الإضافة لا تُدار بواسطة WPEssential."
+
+#: core/src/Rest.php:323
+msgid "Branding can be changed with a White Label plan."
+msgstr "يمكن تغيير العلامة التجارية مع خطة White Label."
+
+#: core/src/Status.php:30
+msgid "WordPress version"
+msgstr "إصدار ووردبريس"
+
+#: core/src/Status.php:33
+msgid "Update WordPress to 6.5 or newer."
+msgstr "حدّث ووردبريس إلى الإصدار 6.5 أو أحدث."
+
+#: core/src/Status.php:37
+msgid "PHP version"
+msgstr "إصدار PHP"
+
+#: core/src/Status.php:40
+msgid ""
+"PHP 8.1 or newer is faster and still supported. Ask your host to upgrade."
+msgstr ""
+"PHP 8.1 أو أحدث أسرع ولا يزال مدعومًا. اطلب من مزوّد الاستضافة الترقية."
+
+#: core/src/Status.php:44
+msgid "Memory limit"
+msgstr "حد الذاكرة"
+
+#: core/src/Status.php:45 core/src/Status.php:52
+msgid "Unlimited"
+msgstr "غير محدود"
+
+#: core/src/Status.php:47
+msgid ""
+"Set memory_limit to 256M in php.ini, or define WP_MEMORY_LIMIT in wp-"
+"config.php."
+msgstr ""
+"اضبط memory_limit على 256M في php.ini، أو عرّف WP_MEMORY_LIMIT في wp-"
+"config.php."
+
+#: core/src/Status.php:51
+msgid "Max execution time"
+msgstr "الحد الأقصى لوقت التنفيذ"
+
+#: core/src/Status.php:54
+msgid "The importer works in short batches, so 30 seconds is enough."
+msgstr "يعمل المستورد على دفعات قصيرة، لذا تكفي 30 ثانية."
+
+#: core/src/Status.php:58
+msgid "Max upload size"
+msgstr "الحد الأقصى لحجم الرفع"
+
+#: core/src/Status.php:61
+msgid "Raise upload_max_filesize and post_max_size to at least 8M."
+msgstr "ارفع upload_max_filesize وpost_max_size إلى 8M على الأقل."
+
+#: core/src/Status.php:65
+msgid "Uploads folder"
+msgstr "مجلد الرفع"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Writable"
+msgstr "قابل للكتابة"
+
+#: core/src/Status.php:66 core/src/Status.php:73
+msgid "Not writable"
+msgstr "غير قابل للكتابة"
+
+#: core/src/Status.php:68
+msgid "Give the web server write access to wp-content/uploads."
+msgstr "امنح خادم الويب صلاحية الكتابة في wp-content/uploads."
+
+#: core/src/Status.php:72
+msgid "Plugins folder"
+msgstr "مجلد الإضافات"
+
+#: core/src/Status.php:75
+msgid "Without write access, required plugins must be installed by hand."
+msgstr "بدون صلاحية الكتابة، يجب تنصيب الإضافات المطلوبة يدويًا."
+
+#: core/src/Status.php:79
+msgid "ZIP support"
+msgstr "دعم ZIP"
+
+#: core/src/Status.php:82
+msgid "Enable the PHP zip extension for faster package extraction."
+msgstr "فعّل امتداد PHP zip لاستخراج الحزم بشكل أسرع."
+
+#: core/src/Status.php:86
+msgid "Image editor"
+msgstr "محرر الصور"
+
+#: core/src/Status.php:87
+msgid "WebP supported"
+msgstr "WebP مدعوم"
+
+#: core/src/Status.php:87
+msgid "No WebP support"
+msgstr "لا يوجد دعم لـ WebP"
+
+#: core/src/Status.php:89
+msgid ""
+"Images still import, but WordPress cannot create smaller sizes. Ask your "
+"host to enable Imagick or GD with WebP."
+msgstr ""
+"ستُستورد الصور، لكن ووردبريس لا يستطيع إنشاء أحجام أصغر. اطلب من مزوّد "
+"الاستضافة تفعيل Imagick أو GD مع دعم WebP."
+
+#: core/src/Status.php:93
+msgid "Permalinks"
+msgstr "الروابط الدائمة"
+
+#: core/src/Status.php:94
+msgid "Plain"
+msgstr "عادي"
+
+#: core/src/Status.php:96
+msgid ""
+"Choose \"Post name\" under Settings → Permalinks for clean shop and page "
+"addresses."
+msgstr ""
+"اختر \"اسم المقالة\" ضمن الإعدادات ← الروابط الدائمة للحصول على عناوين نظيفة"
+" للمتجر والصفحات."
+
+#: core/src/Status.php:123 core/assets/admin.js:282
+msgid "Theme"
+msgstr "القالب"
+
+#: core/src/Status.php:124
+msgid "Core module"
+msgstr "الوحدة الأساسية"
+
+#: core/src/Status.php:124
+msgid "plugin"
+msgstr "إضافة"
+
+#: core/src/Status.php:124
+msgid "built into theme"
+msgstr "مدمج في القالب"
+
+#: core/src/Status.php:125
+msgid "Site address"
+msgstr "عنوان الموقع"
+
+#: core/src/Status.php:126
+msgid "Multisite"
+msgstr "شبكة مواقع"
+
+#: core/src/Status.php:126
+msgid "Yes"
+msgstr "نعم"
+
+#: core/src/Status.php:126
+msgid "No"
+msgstr "لا"
+
+#: core/src/Status.php:127
+msgid "Server"
+msgstr "الخادم"
+
+#: core/src/Status.php:128
+msgid "Database"
+msgstr "قاعدة البيانات"
+
+#: core/src/Status.php:129
+msgid "Active plugins"
+msgstr "الإضافات المفعّلة"
+
+#: inc/block-styles.php:16
+msgid "Secondary"
+msgstr "ثانوي"
+
+#: inc/block-styles.php:17
+msgid "Outline"
+msgstr "محدَّد"
+
+#: inc/block-styles.php:18
+msgid "Ghost"
+msgstr "شفاف"
+
+#: inc/block-styles.php:19
+msgid "Dark"
+msgstr "داكن"
+
+#: inc/block-styles.php:20
+msgid "Light (on dark)"
+msgstr "فاتح (على داكن)"
+
+#: inc/block-styles.php:21
+msgid "Text link"
+msgstr "رابط نصي"
+
+#: inc/block-styles.php:22
+msgid "Pill"
+msgstr "كبسولة"
+
+#: inc/block-styles.php:23
+msgid "Large"
+msgstr "كبير"
+
+#: inc/block-styles.php:26 inc/block-styles.php:33
+msgid "Card"
+msgstr "بطاقة"
+
+#: inc/block-styles.php:27 inc/block-styles.php:34
+msgid "Card — flat"
+msgstr "بطاقة — مسطّحة"
+
+#: inc/block-styles.php:28 inc/block-styles.php:35
+msgid "Card — dark"
+msgstr "بطاقة — داكنة"
+
+#: inc/block-styles.php:29
+msgid "Section — dark"
+msgstr "قسم — داكن"
+
+#: inc/block-styles.php:30
+msgid "Logo strip"
+msgstr "شريط الشعارات"
+
+#: inc/block-styles.php:38
+msgid "Checklist"
+msgstr "قائمة تحقق"
+
+#: inc/block-styles.php:39
+msgid "Timeline"
+msgstr "خط زمني"
+
+#: inc/block-styles.php:42
+msgid "Overline"
+msgstr "عنوان علوي"
+
+#: inc/block-styles.php:43
+msgid "Lead"
+msgstr "مقدمة"
+
+#: inc/block-styles.php:46
+msgid "Flush"
+msgstr "بلا هوامش"
+
+#: inc/block-styles.php:49
+msgid "Shadow"
+msgstr "ظل"
+
+#: inc/block-styles.php:50
+msgid "Glass frame"
+msgstr "إطار زجاجي"
+
+#: inc/block-styles.php:53
+msgid "Pills"
+msgstr "كبسولات"
+
+#: inc/block-styles.php:54
+msgid "Hashtags"
+msgstr "وسوم هاشتاق"
+
+#: inc/block-styles.php:57
+msgid "Soft"
+msgstr "ناعم"
+
+#: inc/core-bridge.php:53
+msgid ""
+"Install the WPEssential Core plugin to import one-click demos for Gutenberg "
+"or Elementor."
+msgstr ""
+"نصّب إضافة WPEssential Core لاستيراد عروض توضيحية بنقرة واحدة لـ Gutenberg "
+"أو Elementor."
+
+#: inc/core-bridge.php:55
+msgid "Get WPEssential Core"
+msgstr "احصل على WPEssential Core"
+
+#: inc/core-bridge.php:57
+msgid "Dismiss"
+msgstr "تجاهل"
+
+#: inc/motion.php:21
+msgid "None"
+msgstr "لا شيء"
+
+#: inc/motion.php:22
+msgid "No animations."
+msgstr "بدون حركات."
+
+#: inc/motion.php:25
+msgid "Subtle"
+msgstr "خفيف"
+
+#: inc/motion.php:26
+msgid "Short fade-up. Corporate, SaaS, finance, medical."
+msgstr "ظهور قصير للأعلى. للشركات وSaaS والمالية والطب."
+
+#: inc/motion.php:29
+msgid "Editorial"
+msgstr "تحريري"
+
+#: inc/motion.php:30
+msgid "Slow image masks and line reveals. Fashion, magazine, luxury."
+msgstr "أقنعة صور بطيئة وكشف للأسطر. للأزياء والمجلات والفخامة."
+
+#: inc/motion.php:33
+msgid "Playful"
+msgstr "مرح"
+
+#: inc/motion.php:34
+msgid "Springy scale and stagger. Food, kids, events, creative."
+msgstr "تكبير نابض وتتابع. للطعام والأطفال والفعاليات والإبداع."
+
+#: inc/motion.php:37
+msgid "Dynamic (GSAP)"
+msgstr "ديناميكي (GSAP)"
+
+#: inc/motion.php:38
+msgid ""
+"Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, "
+"sport, launches."
+msgstr ""
+"تمرير متوازٍ وعدادات وشبكات متتابعة باستخدام GSAP ScrollTrigger. للفعاليات "
+"والرياضة والإطلاقات."
+
+#: inc/multilingual.php:108
+msgid "Language"
+msgstr "اللغة"
+
+#: inc/multilingual.php:165
+msgid "Language switcher"
+msgstr "مبدّل اللغة"
+
+#: inc/multilingual.php:245 inc/patterns-shop/shop-products.php:14
+msgid "Featured"
+msgstr "مميز"
+
+#: inc/multilingual.php:246
+msgid "Author"
+msgstr "الكاتب"
+
+#: inc/options.php:40
+msgid "Untitled snippet"
+msgstr "مقتطف بدون عنوان"
+
+#: inc/options.php:125 inc/options.php:215
+msgid "Theme Options"
+msgstr "خيارات القالب"
+
+#: inc/options.php:153
+msgid "Saved"
+msgstr "تم الحفظ"
+
+#: inc/options.php:154
+msgid "Could not save"
+msgstr "تعذّر الحفظ"
+
+#: inc/options.php:155
+msgid "Delete this snippet?"
+msgstr "هل تريد حذف هذا المقتطف؟"
+
+#: inc/options.php:156
+msgid ""
+"No snippets yet. Add CSS or JavaScript without editing theme files — it "
+"survives theme updates."
+msgstr ""
+"لا توجد مقتطفات بعد. أضف CSS أو JavaScript دون تعديل ملفات القالب — وسيبقى "
+"بعد تحديثات القالب."
+
+#: inc/options.php:215
+msgid "Loading…"
+msgstr "جارٍ التحميل…"
+
+#: inc/patterns-shop/shop-categories.php:13
+msgid "Shop by category"
+msgstr "تسوّق حسب التصنيف"
+
+#: inc/patterns-shop/shop-categories.php:17
+msgid "Find what you love"
+msgstr "اعثر على ما تحب"
+
+#: inc/patterns-shop/shop-products.php:18
+msgid "Customer favourites"
+msgstr "المفضّلة لدى العملاء"
+
+#: inc/patterns-shop/shop-products.php:24
+msgid "View all products"
+msgstr "عرض كل المنتجات"
+
+#: inc/patterns-shop/shop-products.php:34
+msgid "New arrivals"
+msgstr "وصل حديثًا"
+
+#: inc/patterns-shop/shop-products.php:42
+msgid "On sale now"
+msgstr "تخفيضات الآن"
+
+#: inc/patterns.php:15
+msgid "WPEssential — Heroes"
+msgstr "WPEssential — واجهات رئيسية"
+
+#: inc/patterns.php:16
+msgid "WPEssential — Sections"
+msgstr "WPEssential — أقسام"
+
+#: inc/patterns.php:17
+msgid "WPEssential — Headers"
+msgstr "WPEssential — ترويسات"
+
+#: inc/patterns.php:18
+msgid "WPEssential — Footers"
+msgstr "WPEssential — تذييلات"
+
+#: inc/patterns.php:19
+msgid "WPEssential — Full pages"
+msgstr "WPEssential — صفحات كاملة"
+
+#: inc/patterns.php:20
+msgid "WPEssential — Shop"
+msgstr "WPEssential — المتجر"
+
+#: inc/patterns.php:36
+msgid "Shop — Category grid"
+msgstr "المتجر — شبكة التصنيفات"
+
+#: inc/patterns.php:37
+msgid "Shop — Featured, new and sale products"
+msgstr "المتجر — منتجات مميزة وجديدة ومخفّضة"
+
+#: inc/seo.php:136
+msgid "Home"
+msgstr "الرئيسية"
+
+#: inc/setup.php:40
+msgid "Primary Menu"
+msgstr "القائمة الرئيسية"
+
+#: inc/setup.php:41
+msgid "Mobile Menu"
+msgstr "قائمة الجوال"
+
+#: inc/setup.php:42
+msgid "Footer Menu"
+msgstr "قائمة التذييل"
+
+#: inc/setup.php:43
+msgid "Top Bar Menu"
+msgstr "قائمة الشريط العلوي"
+
+#: inc/setup.php:77
+msgid "Back to top"
+msgstr "العودة للأعلى"
+
+#. translators: %d: discount percentage.
+#: inc/woocommerce.php:48
+msgid "-%d%%"
+msgstr "-%d%%"
+
+#: inc/woocommerce.php:89
+msgid "Out of stock"
+msgstr "غير متوفر في المخزون"
+
+#: inc/woocommerce.php:136
+msgid "You’ve unlocked free shipping on this order!"
+msgstr "لقد حصلت على شحن مجاني لهذا الطلب!"
+
+#. translators: %s: amount left for free shipping.
+#: inc/woocommerce.php:139
+msgid "Add %s more to unlock free shipping."
+msgstr "أضف %s إضافية للحصول على شحن مجاني."
+
+#: patterns/blog-hero.php
+msgctxt "Pattern title"
+msgid "Blog hero"
+msgstr "واجهة المدونة"
+
+#: patterns/blog-hero.php:14 patterns/footer-premium.php:89
+#: patterns/footer-simple.php:18 core/assets/admin.js:301
+msgid "Blog"
+msgstr "المدونة"
+
+#: patterns/blog-hero.php:18
+msgid "Guides, tutorials and product news from the WPEssential team."
+msgstr "أدلة ودروس وأخبار المنتجات من فريق WPEssential."
+
+#: patterns/builders-split.php
+msgctxt "Pattern title"
+msgid "Split — image + checklist (dark)"
+msgstr "مقسوم — صورة + قائمة تحقق (داكن)"
+
+#: patterns/builders-split.php:16
+msgid "Your builder, your choice"
+msgstr "أداة البناء التي تختارها"
+
+#: patterns/builders-split.php:20
+msgid "Same design. Gutenberg or Elementor."
+msgstr "التصميم نفسه. Gutenberg أو Elementor."
+
+#: patterns/builders-split.php:24
+msgid ""
+"Colors, fonts and spacing come from one theme.json and sync into Elementor’s"
+" global kit automatically."
+msgstr ""
+"الألوان والخطوط والمسافات تأتي من ملف theme.json واحد وتُزامَن تلقائيًا مع "
+"الطقم العام في Elementor."
+
+#: patterns/builders-split.php:29
+msgid "Shared design tokens across both builders"
+msgstr "رموز تصميم مشتركة بين أداتي البناء"
+
+#: patterns/builders-split.php:31
+msgid "Elementor Pro Theme Builder locations supported"
+msgstr "مواقع Elementor Pro Theme Builder مدعومة"
+
+#: patterns/builders-split.php:33
+msgid "Full Site Editing templates and patterns"
+msgstr "قوالب وأنماط تحرير الموقع بالكامل"
+
+#: patterns/builders-split.php:40
+msgid "Designer building a site"
+msgstr "مصمم يبني موقعًا"
+
+#: patterns/coming-soon.php
+msgctxt "Pattern title"
+msgid "Coming soon"
+msgstr "قريبًا"
+
+#: patterns/coming-soon.php:17
+msgid "Something great is on the way"
+msgstr "شيء رائع في الطريق"
+
+#: patterns/coming-soon.php:21
+msgid "We are polishing the final details. Follow us for launch news."
+msgstr "نحن نضع اللمسات الأخيرة. تابعنا لمعرفة أخبار الإطلاق."
+
+#: patterns/comments.php
+msgctxt "Pattern title"
+msgid "Comments"
+msgstr "التعليقات"
+
+#: patterns/contact.php
+msgctxt "Pattern title"
+msgid "Contact — details + form area"
+msgstr "اتصل بنا — التفاصيل + منطقة النموذج"
+
+#: patterns/contact.php:22
+msgid "Email us"
+msgstr "راسلنا بالبريد"
+
+#: patterns/contact.php:36
+msgid "Call us"
+msgstr "اتصل بنا"
+
+#: patterns/contact.php:50
+msgid "Visit us"
+msgstr "زرنا"
+
+#: patterns/contact.php:64
+msgid "Support hours"
+msgstr "ساعات الدعم"
+
+#: patterns/contact.php:68
+msgid "Replies within one business day"
+msgstr "الرد خلال يوم عمل واحد"
+
+#: patterns/contact.php:76
+msgid "Send us a message"
+msgstr "أرسل لنا رسالة"
+
+#: patterns/contact.php:80
+msgid ""
+"Replace the shortcode below with your form plugin (Contact Form 7, WPForms, "
+"Fluent Forms or the Elementor Form widget)."
+msgstr ""
+"استبدل الرمز المختصر أدناه بإضافة النماذج لديك (Contact Form 7 أو WPForms أو"
+" Fluent Forms أو عنصر Elementor Form)."
+
+#: patterns/content-404.php
+msgctxt "Pattern title"
+msgid "404 content"
+msgstr "محتوى 404"
+
+#: patterns/content-404.php:14
+msgid "Error 404"
+msgstr "خطأ 404"
+
+#: patterns/content-404.php:18
+msgid "This page took a day off"
+msgstr "هذه الصفحة في إجازة"
+
+#: patterns/content-404.php:22
+msgid ""
+"The link may be broken or the page may have moved. Try a search or head back"
+" home."
+msgstr ""
+"قد يكون الرابط معطلاً أو ربما نُقلت الصفحة. جرّب البحث أو عُد إلى الرئيسية."
+
+#: patterns/content-404.php:25 patterns/header-actions.php:14
+#: patterns/header-shop.php:22 patterns/sidebar.php:14
+msgid "Search"
+msgstr "بحث"
+
+#: patterns/content-404.php:29
+msgid "Back to home"
+msgstr "العودة إلى الرئيسية"
+
+#: patterns/cta-banner.php
+msgctxt "Pattern title"
+msgid "Call to action — gradient banner"
+msgstr "دعوة لاتخاذ إجراء — لافتة متدرجة"
+
+#: patterns/cta-banner.php:15
+msgid "Ready to launch your next site?"
+msgstr "مستعد لإطلاق موقعك القادم؟"
+
+#: patterns/cta-banner.php:19
+msgid ""
+"Start free. Upgrade to Pro when you need premium demos and priority support."
+msgstr ""
+"ابدأ مجانًا. رقِّ إلى Pro عندما تحتاج إلى عروض توضيحية مميزة ودعم ذي أولوية."
+
+#: patterns/cta-banner.php:24
+msgid "Get WPEssential free"
+msgstr "احصل على WPEssential مجانًا"
+
+#: patterns/cta-banner.php:28
+msgid "See Pro plans →"
+msgstr "اطّلع على خطط Pro ←"
+
+#: patterns/faq.php
+msgctxt "Pattern title"
+msgid "FAQ — accordion"
+msgstr "الأسئلة الشائعة — أكورديون"
+
+#: patterns/faq.php:15 patterns/footer-premium.php:90
+msgid "FAQ"
+msgstr "الأسئلة الشائعة"
+
+#: patterns/faq.php:19 patterns/page-faq.php:20
+msgid "Frequently asked questions"
+msgstr "الأسئلة المتكررة"
+
+#: patterns/faq.php:24
+msgid "Is WPEssential free?"
+msgstr "هل WPEssential مجاني؟"
+
+#: patterns/faq.php:25
+msgid ""
+"Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium"
+" blocks and priority support."
+msgstr ""
+"نعم. القالب و12 عرضًا توضيحيًا مجانية للأبد. يتيح Pro أكثر من 40 عرضًا "
+"توضيحيًا ومكوّنات مميزة ودعمًا ذا أولوية."
+
+#: patterns/faq.php:30
+msgid "Which page builders are supported?"
+msgstr "ما أدوات بناء الصفحات المدعومة؟"
+
+#: patterns/faq.php:31
+msgid ""
+"The native block editor (Gutenberg) and Elementor. Every demo ships in both "
+"versions."
+msgstr ""
+"محرر المكوّنات الأصلي (Gutenberg) وElementor. يأتي كل عرض توضيحي بالإصدارين."
+
+#: patterns/faq.php:36
+msgid "Will importing a demo delete my content?"
+msgstr "هل سيحذف استيراد عرض توضيحي المحتوى الخاص بي؟"
+
+#: patterns/faq.php:37
+msgid ""
+"No. Demo content is added alongside your existing posts, and you choose what"
+" to import."
+msgstr ""
+"لا. يُضاف المحتوى التوضيحي إلى جانب مقالاتك الحالية، وأنت تختار ما تستورده."
+
+#: patterns/faq.php:42
+msgid "Do I need Elementor Pro?"
+msgstr "هل أحتاج إلى Elementor Pro؟"
+
+#: patterns/faq.php:43
+msgid ""
+"No. Elementor free is enough for every demo. Elementor Pro Theme Builder "
+"headers and footers are also supported."
+msgstr ""
+"لا. Elementor المجاني يكفي لكل العروض التوضيحية. كما أن ترويسات وتذييلات "
+"Elementor Pro Theme Builder مدعومة."
+
+#: patterns/faq.php:48
+msgid "Is the theme translation-ready and RTL compatible?"
+msgstr "هل القالب جاهز للترجمة ومتوافق مع RTL؟"
+
+#: patterns/faq.php:49
+msgid ""
+"Yes. All strings are translatable and layouts mirror correctly for languages"
+" such as Urdu and Arabic."
+msgstr ""
+"نعم. جميع النصوص قابلة للترجمة والتخطيطات تنعكس بشكل صحيح للغات مثل الأردية "
+"والعربية."
+
+#: patterns/features-grid.php
+msgctxt "Pattern title"
+msgid "Features — 3×2 grid"
+msgstr "الميزات — شبكة 3×2"
+
+#: patterns/features-grid.php:15
+msgid "Why WPEssential"
+msgstr "لماذا WPEssential"
+
+#: patterns/features-grid.php:19
+msgid "Everything a modern site needs, nothing it doesn’t"
+msgstr "كل ما يحتاجه موقع حديث، ولا شيء لا يحتاجه"
+
+#: patterns/features-grid.php:23
+msgid ""
+"Built on theme.json and native blocks, with first-class Elementor support."
+msgstr "مبني على theme.json والمكوّنات الأصلية، مع دعم متكامل لـ Elementor."
+
+#: patterns/features-grid.php:34
+msgid "One-click demo import"
+msgstr "استيراد العروض التوضيحية بنقرة واحدة"
+
+#: patterns/features-grid.php:38
+msgid ""
+"Pick a demo, choose your builder, import. Content and settings land exactly "
+"as previewed."
+msgstr ""
+"اختر عرضًا توضيحيًا، واختر أداة البناء، واستورد. يصل المحتوى والإعدادات "
+"تمامًا كما في المعاينة."
+
+#: patterns/features-grid.php:48
+msgid "Gutenberg &amp; Elementor"
+msgstr "Gutenberg &amp; Elementor"
+
+#: patterns/features-grid.php:52
+msgid ""
+"Every demo ships twice — native blocks and Elementor — sharing one set of "
+"design tokens."
+msgstr ""
+"يأتي كل عرض توضيحي مرتين — مكوّنات أصلية وElementor — بمجموعة واحدة من رموز "
+"التصميم."
+
+#: patterns/features-grid.php:62
+msgid "Blazing fast"
+msgstr "فائق السرعة"
+
+#: patterns/features-grid.php:66
+msgid ""
+"No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
+msgstr ""
+"بدون jQuery، وCSS لكل مكوّن، وملف أنماط صغير يُبقي Core Web Vitals باللون "
+"الأخضر."
+
+#: patterns/features-grid.php:78
+msgid "Automatic plugin setup"
+msgstr "إعداد تلقائي للإضافات"
+
+#: patterns/features-grid.php:82
+msgid ""
+"Required plugins install and activate themselves when you import a demo."
+msgstr "تُنصَّب الإضافات المطلوبة وتُفعَّل تلقائيًا عند استيراد عرض توضيحي."
+
+#: patterns/features-grid.php:92
+msgid "WooCommerce ready"
+msgstr "جاهز لـ WooCommerce"
+
+#: patterns/features-grid.php:96
+msgid ""
+"Designed shop, product, cart, checkout and account pages — not default "
+"templates."
+msgstr "صفحات متجر ومنتج وسلة ودفع وحساب مصمّمة — وليست قوالب افتراضية."
+
+#: patterns/features-grid.php:106
+msgid "Pro license &amp; updates"
+msgstr "ترخيص Pro &amp; التحديثات"
+
+#: patterns/features-grid.php:110
+msgid ""
+"Connect a license once to unlock Pro demos, premium blocks and updates."
+msgstr ""
+"اربط ترخيصًا مرة واحدة لفتح عروض Pro التوضيحية والمكوّنات المميزة "
+"والتحديثات."
+
+#: patterns/footer-premium.php
+msgctxt "Pattern title"
+msgid "Footer — Premium (dark, newsletter band)"
+msgstr "التذييل — مميز (داكن، شريط النشرة البريدية)"
+
+#: patterns/footer-premium.php:17
+msgid "Get design tips & new demos"
+msgstr "احصل على نصائح التصميم والعروض التوضيحية الجديدة"
+
+#: patterns/footer-premium.php:21
+msgid "One email a month. No spam, unsubscribe anytime."
+msgstr "رسالة واحدة شهريًا. بلا رسائل مزعجة، ويمكنك إلغاء الاشتراك في أي وقت."
+
+#: patterns/footer-premium.php:28
+msgid "Subscribe"
+msgstr "اشترك"
+
+#: patterns/footer-premium.php:55
+msgid "Company"
+msgstr "الشركة"
+
+#: patterns/footer-premium.php:59 patterns/page-about.php:16
+msgid "About us"
+msgstr "من نحن"
+
+#: patterns/footer-premium.php:60 patterns/page-services.php:16
+#: patterns/services-grid.php:15
+msgid "Services"
+msgstr "الخدمات"
+
+#: patterns/footer-premium.php:61 patterns/page-pricing.php:16
+#: patterns/pricing.php:15
+msgid "Pricing"
+msgstr "الأسعار"
+
+#: patterns/footer-premium.php:62 patterns/footer-simple.php:19
+#: patterns/header-topbar.php:18 patterns/page-contact.php:16
+msgid "Contact"
+msgstr "اتصل بنا"
+
+#: patterns/footer-premium.php:70 core/assets/admin.js:301
+msgid "Shop"
+msgstr "المتجر"
+
+#: patterns/footer-premium.php:74
+msgid "All products"
+msgstr "كل المنتجات"
+
+#: patterns/footer-premium.php:75
+msgid "My account"
+msgstr "حسابي"
+
+#: patterns/footer-premium.php:76
+msgid "Cart"
+msgstr "السلة"
+
+#: patterns/footer-premium.php:77 patterns/header-topbar.php:18
+msgid "Track order"
+msgstr "تتبّع الطلب"
+
+#: patterns/footer-premium.php:85 core/assets/admin.js:263
+msgid "Resources"
+msgstr "الموارد"
+
+#: patterns/footer-premium.php:91 core/assets/admin.js:266
+msgid "Documentation"
+msgstr "الوثائق"
+
+#: patterns/footer-premium.php:92 core/assets/admin.js:267
+msgid "Support"
+msgstr "الدعم"
+
+#: patterns/footer-premium.php:100
+msgid "All rights reserved."
+msgstr "جميع الحقوق محفوظة."
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:20
+msgid "Privacy"
+msgstr "الخصوصية"
+
+#: patterns/footer-premium.php:104
+msgid "Terms"
+msgstr "الشروط"
+
+#: patterns/footer-simple.php
+msgctxt "Pattern title"
+msgid "Footer — Simple"
+msgstr "التذييل — بسيط"
+
+#: patterns/footer-simple.php:17
+msgid "About"
+msgstr "حول"
+
+#: patterns/header-actions.php
+msgctxt "Pattern title"
+msgid "Header actions (search, account, cart, CTA)"
+msgstr "إجراءات الترويسة (بحث، حساب، سلة، CTA)"
+
+#: patterns/header-actions.php:23
+msgid "Switch to dark mode"
+msgstr "التبديل إلى الوضع الداكن"
+
+#: patterns/header-actions.php:23
+msgid "Switch to light mode"
+msgstr "التبديل إلى الوضع الفاتح"
+
+#: patterns/header-actions.php:29
+msgid "Get Started"
+msgstr "ابدأ الآن"
+
+#: patterns/header-centered.php
+msgctxt "Pattern title"
+msgid "Header — Centered"
+msgstr "الترويسة — في المنتصف"
+
+#: patterns/header-default.php
+msgctxt "Pattern title"
+msgid "Header — Default"
+msgstr "الترويسة — افتراضية"
+
+#: patterns/header-shop.php
+msgctxt "Pattern title"
+msgid "Header — Shop (search + account + cart)"
+msgstr "الترويسة — المتجر (بحث + حساب + سلة)"
+
+#: patterns/header-shop.php:22
+msgid "Search products"
+msgstr "البحث في المنتجات"
+
+#: patterns/header-shop.php:22
+msgid "Search products, brands and more…"
+msgstr "ابحث عن المنتجات والعلامات التجارية والمزيد…"
+
+#: patterns/header-topbar.php
+msgctxt "Pattern title"
+msgid "Top bar"
+msgstr "الشريط العلوي"
+
+#: patterns/header-topbar.php:14
+msgid "Free shipping on orders over $75 · 30-day returns"
+msgstr "شحن مجاني للطلبات التي تزيد عن $75 · إرجاع خلال 30 يومًا"
+
+#: patterns/header-topbar.php:18
+msgid "Help"
+msgstr "مساعدة"
+
+#: patterns/header-transparent.php
+msgctxt "Pattern title"
+msgid "Header — Transparent (over dark hero)"
+msgstr "الترويسة — شفافة (فوق واجهة داكنة)"
+
+#: patterns/hero-dark.php
+msgctxt "Pattern title"
+msgid "Hero — Dark with product shot"
+msgstr "الواجهة — داكنة مع صورة منتج"
+
+#: patterns/hero-dark.php:15 core/assets/admin.js:241
+msgid "NEW"
+msgstr "جديد"
+
+#: patterns/hero-dark.php:15
+msgid "40+ demos for Gutenberg &amp; Elementor"
+msgstr "أكثر من 40 عرضًا توضيحيًا لـ Gutenberg &amp; Elementor"
+
+#: patterns/hero-dark.php:19
+msgid "Launch a premium WordPress site in minutes, not weeks"
+msgstr "أطلق موقع ووردبريس مميزًا في دقائق، لا أسابيع"
+
+#: patterns/hero-dark.php:23
+msgid ""
+"One-click demos for every niche, built natively for both the block editor "
+"and Elementor — fast, accessible and fully yours."
+msgstr ""
+"عروض توضيحية بنقرة واحدة لكل مجال، مبنية أصلاً لمحرر المكوّنات وElementor — "
+"سريعة وسهلة الوصول وملكك بالكامل."
+
+#: patterns/hero-dark.php:28 core/assets/admin.js:245
+msgid "Browse demos"
+msgstr "تصفّح العروض التوضيحية"
+
+#: patterns/hero-dark.php:32
+msgid "Watch the 2-min tour"
+msgstr "شاهد الجولة في دقيقتين"
+
+#: patterns/hero-dark.php:43 patterns/stats.php:28
+msgid "Ready demos"
+msgstr "عروض توضيحية جاهزة"
+
+#: patterns/hero-dark.php:53
+msgid "Page builders"
+msgstr "أدوات بناء الصفحات"
+
+#: patterns/hero-dark.php:63
+msgid "CSS on first load"
+msgstr "CSS عند التحميل الأول"
+
+#: patterns/hero-dark.php:73
+msgid "From 1,200 reviews"
+msgstr "من 1,200 مراجعة"
+
+#: patterns/hero-dark.php:80
+msgid "Business demo homepage built with WPEssential"
+msgstr "صفحة رئيسية لعرض توضيحي تجاري مبنية بـ WPEssential"
+
+#: patterns/hero-split.php
+msgctxt "Pattern title"
+msgid "Hero — Split with image"
+msgstr "الواجهة — مقسومة مع صورة"
+
+#: patterns/hero-split.php:17
+msgid "Multi-niche WordPress theme"
+msgstr "قالب ووردبريس متعدد الاستخدامات"
+
+#: patterns/hero-split.php:21
+msgid "Build any website in minutes"
+msgstr "ابنِ أي موقع في دقائق"
+
+#: patterns/hero-split.php:25
+msgid ""
+"Import a ready-made demo for Gutenberg or Elementor with one click, then "
+"make it yours."
+msgstr ""
+"استورد عرضًا توضيحيًا جاهزًا لـ Gutenberg أو Elementor بنقرة واحدة، ثم اجعله"
+" خاصًا بك."
+
+#: patterns/hero-split.php:30 core/assets/admin.js:258
+msgid "Get started"
+msgstr "ابدأ الآن"
+
+#: patterns/hero-split.php:34
+msgid "Learn more"
+msgstr "اعرف المزيد"
+
+#: patterns/hero-split.php:41
+msgid "A WPEssential site on a laptop and phone"
+msgstr "موقع WPEssential على حاسوب محمول وهاتف"
+
+#: patterns/latest-posts.php
+msgctxt "Pattern title"
+msgid "Latest posts — 3 cards"
+msgstr "أحدث المقالات — 3 بطاقات"
+
+#: patterns/latest-posts.php:15
+msgid "From the blog"
+msgstr "من المدونة"
+
+#: patterns/latest-posts.php:19
+msgid "Guides for faster, better WordPress sites"
+msgstr "أدلة لمواقع ووردبريس أسرع وأفضل"
+
+#: patterns/logos.php
+msgctxt "Pattern title"
+msgid "Logo strip"
+msgstr "شريط الشعارات"
+
+#: patterns/logos.php:14
+msgid "Trusted by 18,000+ agencies, stores and creators"
+msgstr "موثوق من أكثر من 18,000 وكالة ومتجر وصانع محتوى"
+
+#: patterns/maintenance.php
+msgctxt "Pattern title"
+msgid "Maintenance mode"
+msgstr "وضع الصيانة"
+
+#: patterns/maintenance.php:17
+msgid "We will be back shortly"
+msgstr "سنعود قريبًا"
+
+#: patterns/maintenance.php:21
+msgid ""
+"Scheduled maintenance is underway. Thanks for your patience — we will be "
+"back online in a few minutes."
+msgstr "تجري صيانة مجدولة. شكرًا لصبرك — سنعود للعمل خلال بضع دقائق."
+
+#: patterns/no-results.php
+msgctxt "Pattern title"
+msgid "No results"
+msgstr "لا توجد نتائج"
+
+#: patterns/no-results.php:13
+msgid "Nothing matched. Try a different search or browse the latest posts."
+msgstr "لم يتطابق شيء. جرّب بحثًا مختلفًا أو تصفّح أحدث المقالات."
+
+#: patterns/page-about.php
+msgctxt "Pattern title"
+msgid "About page"
+msgstr "صفحة من نحن"
+
+#: patterns/page-about.php:20
+msgid "We build WordPress tools that feel premium and stay fast"
+msgstr "نبني أدوات ووردبريس تبدو مميزة وتبقى سريعة"
+
+#: patterns/page-about.php:24
+msgid ""
+"WPEssential started as an internal starter theme for client work. Today it "
+"powers stores, agencies and creators in more than 60 countries."
+msgstr ""
+"بدأ WPEssential كقالب بداية داخلي لأعمال العملاء. واليوم يشغّل متاجر ووكالات"
+" وصنّاع محتوى في أكثر من 60 دولة."
+
+#: patterns/page-contact.php
+msgctxt "Pattern title"
+msgid "Contact page"
+msgstr "صفحة الاتصال"
+
+#: patterns/page-contact.php:20
+msgid "Let’s talk about your next site"
+msgstr "لنتحدث عن موقعك القادم"
+
+#: patterns/page-contact.php:24
+msgid ""
+"Questions about demos, licensing or a custom build? Our team replies within "
+"one business day."
+msgstr ""
+"أسئلة حول العروض التوضيحية أو التراخيص أو بناء مخصص؟ يرد فريقنا خلال يوم عمل"
+" واحد."
+
+#: patterns/page-faq.php
+msgctxt "Pattern title"
+msgid "FAQ page"
+msgstr "صفحة الأسئلة الشائعة"
+
+#: patterns/page-faq.php:16
+msgid "Help center"
+msgstr "مركز المساعدة"
+
+#: patterns/page-faq.php:24
+msgid ""
+"Answers about demos, builders, licensing and updates. Can’t find what you "
+"need? Contact support."
+msgstr ""
+"إجابات حول العروض التوضيحية وأدوات البناء والتراخيص والتحديثات. لم تجد ما "
+"تحتاجه؟ تواصل مع الدعم."
+
+#: patterns/page-hero.php
+msgctxt "Pattern title"
+msgid "Page title band"
+msgstr "شريط عنوان الصفحة"
+
+#: patterns/page-pricing.php
+msgctxt "Pattern title"
+msgid "Pricing page"
+msgstr "صفحة الأسعار"
+
+#: patterns/page-pricing.php:20
+msgid "Simple plans that grow with you"
+msgstr "خطط بسيطة تنمو معك"
+
+#: patterns/page-pricing.php:24
+msgid ""
+"Start free with the core theme. Upgrade for premium demos, Pro blocks and "
+"priority support."
+msgstr ""
+"ابدأ مجانًا مع القالب الأساسي. رقِّ للحصول على عروض توضيحية مميزة ومكوّنات "
+"Pro ودعم ذي أولوية."
+
+#: patterns/page-services.php
+msgctxt "Pattern title"
+msgid "Services page"
+msgstr "صفحة الخدمات"
+
+#: patterns/page-services.php:20
+msgid "Everything you need to launch and grow"
+msgstr "كل ما تحتاجه للإطلاق والنمو"
+
+#: patterns/page-services.php:24
+msgid ""
+"Strategy, design, development and care plans — delivered on a theme built "
+"for speed."
+msgstr ""
+"خطط الاستراتيجية والتصميم والتطوير والرعاية — مقدّمة على قالب مبني للسرعة."
+
+#: patterns/post-card.php
+msgctxt "Pattern title"
+msgid "Post card"
+msgstr "بطاقة مقالة"
+
+#: patterns/pricing.php
+msgctxt "Pattern title"
+msgid "Pricing — 3 plans"
+msgstr "الأسعار — 3 خطط"
+
+#: patterns/pricing.php:19
+msgid "Simple pricing. Both builders included."
+msgstr "أسعار بسيطة. أداتا البناء مشمولتان."
+
+#: patterns/pricing.php:23
+msgid ""
+"Start free and upgrade when you need Pro demos, premium blocks and priority "
+"support."
+msgstr ""
+"ابدأ مجانًا ورقِّ عندما تحتاج إلى عروض Pro التوضيحية والمكوّنات المميزة "
+"والدعم ذي الأولوية."
+
+#: patterns/pricing.php:30 core/assets/admin.js:312
+msgid "Free"
+msgstr "مجاني"
+
+#: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+msgid "/ year"
+msgstr "/ سنة"
+
+#: patterns/pricing.php:38
+msgid "For personal sites getting started."
+msgstr "للمواقع الشخصية في بدايتها."
+
+#: patterns/pricing.php:43
+msgid "12 free demos"
+msgstr "12 عرضًا توضيحيًا مجانيًا"
+
+#: patterns/pricing.php:45
+msgid "Gutenberg + Elementor"
+msgstr "Gutenberg + Elementor"
+
+#: patterns/pricing.php:47
+msgid "Core blocks &amp; patterns"
+msgstr "المكوّنات الأساسية &amp; الأنماط"
+
+#: patterns/pricing.php:49
+msgid "Community support"
+msgstr "دعم المجتمع"
+
+#: patterns/pricing.php:55
+msgid "Download free"
+msgstr "تنزيل مجاني"
+
+#: patterns/pricing.php:60 core/assets/admin.js:312
+msgid "Pro"
+msgstr "Pro"
+
+#: patterns/pricing.php:68
+msgid "For freelancers and growing businesses."
+msgstr "للمستقلين والأعمال النامية."
+
+#: patterns/pricing.php:73
+msgid "All 40+ demos"
+msgstr "كل العروض التوضيحية (40+)"
+
+#: patterns/pricing.php:75
+msgid "Premium blocks &amp; widgets"
+msgstr "مكوّنات &amp; عناصر مميزة"
+
+#: patterns/pricing.php:77
+msgid "WooCommerce demos"
+msgstr "عروض WooCommerce التوضيحية"
+
+#: patterns/pricing.php:79
+msgid "1 year of updates"
+msgstr "تحديثات لمدة سنة"
+
+#: patterns/pricing.php:81 core/assets/admin.js:1122
+msgid "Priority support"
+msgstr "دعم ذو أولوية"
+
+#: patterns/pricing.php:87
+msgid "Get Pro"
+msgstr "احصل على Pro"
+
+#: patterns/pricing.php:92 core/assets/admin.js:301
+msgid "Agency"
+msgstr "وكالة"
+
+#: patterns/pricing.php:100
+msgid "For teams building client sites."
+msgstr "للفرق التي تبني مواقع العملاء."
+
+#: patterns/pricing.php:105
+msgid "Everything in Pro"
+msgstr "كل ما في Pro"
+
+#: patterns/pricing.php:107
+msgid "Unlimited sites"
+msgstr "مواقع غير محدودة"
+
+#: patterns/pricing.php:109
+msgid "White-label dashboard"
+msgstr "لوحة تحكم بعلامة بيضاء"
+
+#: patterns/pricing.php:111
+msgid "Client handoff kit"
+msgstr "حزمة تسليم العملاء"
+
+#: patterns/pricing.php:117
+msgid "Get Agency"
+msgstr "احصل على خطة الوكالة"
+
+#: patterns/process-steps.php
+msgctxt "Pattern title"
+msgid "Process — 4 steps (dark)"
+msgstr "العملية — 4 خطوات (داكن)"
+
+#: patterns/process-steps.php:15
+msgid "How it works"
+msgstr "كيف يعمل"
+
+#: patterns/process-steps.php:19
+msgid "Live in four simple steps"
+msgstr "موقعك جاهز في أربع خطوات بسيطة"
+
+#: patterns/process-steps.php:31
+msgid "Pick a demo"
+msgstr "اختر عرضًا توضيحيًا"
+
+#: patterns/process-steps.php:35
+msgid "Browse 40+ demos and preview them live."
+msgstr "تصفّح أكثر من 40 عرضًا توضيحيًا وعاينها مباشرة."
+
+#: patterns/process-steps.php:43
+msgid "Choose a builder"
+msgstr "اختر أداة البناء"
+
+#: patterns/process-steps.php:47
+msgid "Gutenberg or Elementor — same design."
+msgstr "Gutenberg أو Elementor — التصميم نفسه."
+
+#: patterns/process-steps.php:55
+msgid "Import in one click"
+msgstr "استورد بنقرة واحدة"
+
+#: patterns/process-steps.php:59
+msgid "Plugins, content and settings are set up for you."
+msgstr "يتم إعداد الإضافات والمحتوى والإعدادات نيابةً عنك."
+
+#: patterns/process-steps.php:67 core/assets/admin.js:290
+msgid "Make it yours"
+msgstr "اجعله خاصًا بك"
+
+#: patterns/process-steps.php:71
+msgid "Edit text, swap images and publish."
+msgstr "عدّل النصوص، واستبدل الصور، وانشر."
+
+#: patterns/services-grid.php
+msgctxt "Pattern title"
+msgid "Services — 3 column cards"
+msgstr "الخدمات — بطاقات من 3 أعمدة"
+
+#: patterns/services-grid.php:19
+msgid "From idea to launch"
+msgstr "من الفكرة إلى الإطلاق"
+
+#: patterns/services-grid.php:23
+msgid ""
+"Use WPEssential yourself, or let our team set up, customise and maintain "
+"your site."
+msgstr "استخدم WPEssential بنفسك، أو دع فريقنا يُعدّ موقعك ويخصّصه ويصونه."
+
+#: patterns/services-grid.php:34
+msgid "Demo setup"
+msgstr "إعداد العرض التوضيحي"
+
+#: patterns/services-grid.php:38
+msgid "We import your chosen demo, connect your domain and configure plugins."
+msgstr "نستورد العرض التوضيحي الذي اخترته، ونربط نطاقك، ونهيّئ الإضافات."
+
+#: patterns/services-grid.php:48
+msgid "Brand customisation"
+msgstr "تخصيص العلامة التجارية"
+
+#: patterns/services-grid.php:52
+msgid "Your colors, fonts, logo and copy applied across every template."
+msgstr "ألوانك وخطوطك وشعارك ونصوصك مطبّقة على كل قالب."
+
+#: patterns/services-grid.php:62
+msgid "WooCommerce launch"
+msgstr "إطلاق WooCommerce"
+
+#: patterns/services-grid.php:66
+msgid "Products, payments, shipping zones and emails configured and tested."
+msgstr "المنتجات والمدفوعات ومناطق الشحن والرسائل البريدية مهيأة ومختبرة."
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Blog sidebar"
+msgstr "الشريط الجانبي للمدونة"
+
+#: patterns/sidebar.php:19
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: patterns/sidebar.php:27
+msgid "Recent posts"
+msgstr "أحدث المقالات"
+
+#: patterns/sidebar.php:35
+msgid "Tags"
+msgstr "الوسوم"
+
+#: patterns/stats.php
+msgctxt "Pattern title"
+msgid "Stats — 4 counters"
+msgstr "الإحصائيات — 4 عدادات"
+
+#: patterns/stats.php:20
+msgid "Active installs"
+msgstr "التنصيبات النشطة"
+
+#: patterns/stats.php:36
+msgid "Average rating"
+msgstr "متوسط التقييم"
+
+#: patterns/stats.php:44
+msgid "Support response"
+msgstr "استجابة الدعم"
+
+#: patterns/team.php
+msgctxt "Pattern title"
+msgid "Team — 4 members"
+msgstr "الفريق — 4 أعضاء"
+
+#: patterns/team.php:15
+msgid "The team"
+msgstr "الفريق"
+
+#: patterns/team.php:19
+msgid "People behind WPEssential"
+msgstr "الأشخاص وراء WPEssential"
+
+#: patterns/team.php:35
+msgid "Founder &amp; Lead Designer"
+msgstr "المؤسس &amp; المصمم الرئيسي"
+
+#: patterns/team.php:47
+msgid "Head of Engineering"
+msgstr "رئيس الهندسة"
+
+#: patterns/team.php:59
+msgid "Customer Success"
+msgstr "نجاح العملاء"
+
+#: patterns/team.php:71
+msgid "WooCommerce Specialist"
+msgstr "متخصص WooCommerce"
+
+#: patterns/testimonials.php
+msgctxt "Pattern title"
+msgid "Testimonials — 3 cards"
+msgstr "آراء العملاء — 3 بطاقات"
+
+#: patterns/testimonials.php:15
+msgid "Loved by builders"
+msgstr "محبوب من صنّاع المواقع"
+
+#: patterns/testimonials.php:19
+msgid "What our customers say"
+msgstr "ماذا يقول عملاؤنا"
+
+#: patterns/testimonials.php:31
+msgid ""
+"We rebuilt three client sites on WPEssential in a week. The Elementor and "
+"block versions matching exactly is a game changer."
+msgstr ""
+"أعدنا بناء ثلاثة مواقع لعملائنا على WPEssential في أسبوع. تطابق إصداري "
+"Elementor والمكوّنات تمامًا غيّر قواعد اللعبة."
+
+#: patterns/testimonials.php:35
+msgid "Founder, Kitecraft Agency"
+msgstr "المؤسس، Kitecraft Agency"
+
+#: patterns/testimonials.php:43
+msgid ""
+"Our store went from 3.9s to 1.2s load time. Checkout pages look custom out "
+"of the box."
+msgstr ""
+"انخفض وقت تحميل متجرنا من 3.9 ثانية إلى 1.2 ثانية. صفحات الدفع تبدو مخصصة "
+"منذ البداية."
+
+#: patterns/testimonials.php:47
+msgid "Owner, Fieldhouse Goods"
+msgstr "المالك، Fieldhouse Goods"
+
+#: patterns/testimonials.php:55
+msgid ""
+"The demo import just works — plugins, menus, homepage. I spend my time on "
+"content now, not setup."
+msgstr ""
+"استيراد العرض التوضيحي يعمل ببساطة — الإضافات والقوائم والصفحة الرئيسية. "
+"أقضي وقتي الآن في المحتوى، لا في الإعداد."
+
+#: patterns/testimonials.php:59
+msgid "Writer, The Quiet Desk"
+msgstr "كاتبة، The Quiet Desk"
+
+#: assets/js/options.js:65
+msgid "Custom code"
+msgstr "كود مخصص"
+
+#: assets/js/options.js:66
+msgid "Animations"
+msgstr "الحركات"
+
+#: assets/js/options.js:84 assets/js/options.js:91 core/assets/admin.js:280
+#: core/assets/admin.js:701 core/assets/admin.js:1074
+#: core/assets/admin.js:1113
+msgid "Active"
+msgstr "مفعّل"
+
+#: assets/js/options.js:84
+msgid "Off"
+msgstr "متوقف"
+
+#: assets/js/options.js:88
+msgid ""
+"Broke something? Open your site in safe mode to load it without snippets:"
+msgstr "تعطّل شيء ما؟ افتح موقعك في الوضع الآمن لتحميله دون المقتطفات:"
+
+#: assets/js/options.js:88
+msgid "Safe mode"
+msgstr "الوضع الآمن"
+
+#: assets/js/options.js:90
+msgid "Snippet name"
+msgstr "اسم المقتطف"
+
+#: assets/js/options.js:93
+msgid "Devices"
+msgstr "الأجهزة"
+
+#: assets/js/options.js:93
+msgid "All devices"
+msgstr "كل الأجهزة"
+
+#: assets/js/options.js:93
+msgid "Desktop (1025px+)"
+msgstr "سطح المكتب (1025px+)"
+
+#: assets/js/options.js:93
+msgid "Tablet (768–1024px)"
+msgstr "الجهاز اللوحي (768–1024px)"
+
+#: assets/js/options.js:93
+msgid "Mobile (≤767px)"
+msgstr "الجوال (≤767px)"
+
+#: assets/js/options.js:96
+msgid "Load in"
+msgstr "التحميل في"
+
+#: assets/js/options.js:96
+msgid "Footer (recommended)"
+msgstr "التذييل (موصى به)"
+
+#: assets/js/options.js:97
+msgid "Write JavaScript only, without <script> tags."
+msgstr "اكتب JavaScript فقط، دون وسوم <script>."
+
+#: assets/js/options.js:97
+msgid "Write CSS only, without <style> tags."
+msgstr "اكتب CSS فقط، دون وسوم <style>."
+
+#: assets/js/options.js:99
+msgid "Save snippets"
+msgstr "حفظ المقتطفات"
+
+#: assets/js/options.js:99 core/assets/admin.js:1076
+msgid "Delete"
+msgstr "حذف"
+
+#: assets/js/options.js:116
+msgid "New script"
+msgstr "سكربت جديد"
+
+#: assets/js/options.js:116
+msgid "New styles"
+msgstr "أنماط جديدة"
+
+#: assets/js/options.js:162
+msgid ""
+"Animations reveal sections as visitors scroll. Visitors who prefer reduced "
+"motion never see them."
+msgstr ""
+"تُظهر الحركات الأقسام أثناء تمرير الزوار. الزوار الذين يفضّلون تقليل الحركة "
+"لا يرونها أبدًا."
+
+#: assets/js/options.js:166
+msgid "Use GSAP for parallax and counters with any preset"
+msgstr "استخدم GSAP للتمرير المتوازي والعدادات مع أي إعداد مسبق"
+
+#: assets/js/options.js:167
+msgid ""
+"Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask,"
+" --stagger, --parallax or --counter) to any block under Advanced → "
+"Additional CSS class."
+msgstr ""
+"أضف الفئة wpe-anim (و wpe-anim--fade-up أو --zoom أو --slide-left أو --mask "
+"أو --stagger أو --parallax أو --counter) إلى أي مكوّن ضمن متقدم ← فئة/فئات "
+"CSS إضافية."
+
+#: assets/js/options.js:168
+msgid "Save animations"
+msgstr "حفظ الحركات"
+
+#: core/assets/admin.js:86
+msgid ""
+"The connection to your site dropped. Check your internet and try again."
+msgstr "انقطع الاتصال بموقعك. تحقّق من الإنترنت وحاول مرة أخرى."
+
+#: core/assets/admin.js:89
+msgid ""
+"The server sent an invalid response — usually a PHP error or a timeout. Your"
+" progress is saved."
+msgstr ""
+"أرسل الخادم استجابة غير صالحة — غالبًا خطأ PHP أو انتهاء المهلة. تم حفظ "
+"تقدّمك."
+
+#: core/assets/admin.js:92
+msgid "Your login session expired. Reload the page and sign in again."
+msgstr "انتهت جلسة تسجيل الدخول. أعد تحميل الصفحة وسجّل الدخول مجددًا."
+
+#: core/assets/admin.js:159
+msgid "Dashboard sections"
+msgstr "أقسام لوحة التحكم"
+
+#: core/assets/admin.js:163
+msgid "Docs"
+msgstr "الوثائق"
+
+#: core/assets/admin.js:164
+msgid "Switch dashboard colour mode"
+msgstr "تبديل وضع ألوان لوحة التحكم"
+
+#: core/assets/admin.js:241
+msgid "%s is active"
+msgstr "%s مفعّل"
+
+#: core/assets/admin.js:242
+msgid "Welcome, %s. Let’s build something beautiful."
+msgstr "مرحبًا، %s. لنبنِ شيئًا جميلاً."
+
+#: core/assets/admin.js:243
+msgid ""
+"Pick a demo, choose Gutenberg or Elementor, and get a finished website with "
+"pages, images, menus and a shop — in about a minute."
+msgstr ""
+"اختر عرضًا توضيحيًا، واختر Gutenberg أو Elementor، واحصل على موقع مكتمل "
+"بالصفحات والصور والقوائم ومتجر — في نحو دقيقة."
+
+#: core/assets/admin.js:246
+msgid "Customize site"
+msgstr "تخصيص الموقع"
+
+#: core/assets/admin.js:251
+msgid "Demo imported"
+msgstr "تم استيراد العرض التوضيحي"
+
+#: core/assets/admin.js:251
+msgid "in 48 seconds"
+msgstr "في 48 ثانية"
+
+#: core/assets/admin.js:252
+msgid "Two builders"
+msgstr "أداتا بناء"
+
+#: core/assets/admin.js:259
+msgid "Three steps to launch"
+msgstr "ثلاث خطوات للإطلاق"
+
+#: core/assets/admin.js:264
+msgid "Help when you need it"
+msgstr "مساعدة عند الحاجة"
+
+#: core/assets/admin.js:266
+msgid "Guides for every feature"
+msgstr "أدلة لكل ميزة"
+
+#: core/assets/admin.js:267
+msgid "Real people, fast answers"
+msgstr "أشخاص حقيقيون، إجابات سريعة"
+
+#: core/assets/admin.js:268
+msgid "Site Editor"
+msgstr "محرر الموقع"
+
+#: core/assets/admin.js:268
+msgid "Colours, fonts, header and footer"
+msgstr "الألوان والخطوط والترويسة والتذييل"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Expired"
+msgstr "منتهي الصلاحية"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Invalid"
+msgstr "غير صالح"
+
+#: core/assets/admin.js:280 core/assets/admin.js:1113
+msgid "Not connected"
+msgstr "غير متصل"
+
+#: core/assets/admin.js:283
+msgid "Imported demo"
+msgstr "العرض التوضيحي المستورد"
+
+#: core/assets/admin.js:283
+msgid "None yet"
+msgstr "لا شيء بعد"
+
+#: core/assets/admin.js:285
+msgid "System health"
+msgstr "صحة النظام"
+
+#: core/assets/admin.js:288
+msgid "Import a demo"
+msgstr "استيراد عرض توضيحي"
+
+#: core/assets/admin.js:288
+msgid "Start from a complete, ready-made website."
+msgstr "ابدأ من موقع كامل وجاهز."
+
+#: core/assets/admin.js:288
+msgid "Open library"
+msgstr "فتح المكتبة"
+
+#: core/assets/admin.js:289 core/assets/admin.js:1124
+msgid "Activate your license"
+msgstr "فعّل ترخيصك"
+
+#: core/assets/admin.js:289
+msgid "Unlock Pro demos, updates and support."
+msgstr "افتح عروض Pro التوضيحية والتحديثات والدعم."
+
+#: core/assets/admin.js:289 core/assets/admin.js:1076
+#: core/assets/admin.js:1125
+msgid "Activate"
+msgstr "تفعيل"
+
+#: core/assets/admin.js:290
+msgid "Swap the logo, colours and words in the Site Editor."
+msgstr "غيّر الشعار والألوان والنصوص في محرر الموقع."
+
+#: core/assets/admin.js:290 core/assets/admin.js:999
+msgid "Customize"
+msgstr "تخصيص"
+
+#: core/assets/admin.js:295
+msgid "Could not load the dashboard"
+msgstr "تعذّر تحميل لوحة التحكم"
+
+#: core/assets/admin.js:301 core/assets/admin.js:312 core/assets/admin.js:756
+msgid "All"
+msgstr "الكل"
+
+#: core/assets/admin.js:301
+msgid "Business"
+msgstr "أعمال"
+
+#: core/assets/admin.js:301
+msgid "Restaurant"
+msgstr "مطعم"
+
+#: core/assets/admin.js:301
+msgid "Education"
+msgstr "تعليم"
+
+#: core/assets/admin.js:306
+msgid ""
+"Every demo is a complete website. Preview it, then import it for Gutenberg "
+"or Elementor — plugins, pages, images and menus included."
+msgstr ""
+"كل عرض توضيحي هو موقع كامل. عاينه، ثم استورده لـ Gutenberg أو Elementor — مع"
+" الإضافات والصفحات والصور والقوائم."
+
+#: core/assets/admin.js:307
+msgid "Refreshing"
+msgstr "جارٍ التحديث"
+
+#: core/assets/admin.js:307
+msgid "Refresh library"
+msgstr "تحديث المكتبة"
+
+#: core/assets/admin.js:310
+msgid "Search demos"
+msgstr "البحث في العروض التوضيحية"
+
+#: core/assets/admin.js:310
+msgid "Search demos…"
+msgstr "ابحث في العروض التوضيحية…"
+
+#: core/assets/admin.js:311
+msgid "Category"
+msgstr "التصنيف"
+
+#: core/assets/admin.js:312
+msgid "Plan"
+msgstr "الخطة"
+
+#: core/assets/admin.js:313 core/assets/admin.js:519 core/assets/admin.js:576
+msgid "Builder"
+msgstr "أداة البناء"
+
+#: core/assets/admin.js:313
+msgid "Any builder"
+msgstr "أي أداة بناء"
+
+#: core/assets/admin.js:336
+msgid "Library refreshed"
+msgstr "تم تحديث المكتبة"
+
+#: core/assets/admin.js:338
+msgid "Refresh failed"
+msgstr "فشل التحديث"
+
+#: core/assets/admin.js:351
+msgid "The library could not load"
+msgstr "تعذّر تحميل المكتبة"
+
+#: core/assets/admin.js:363
+msgid "The import of %s stopped"
+msgstr "توقف استيراد %s"
+
+#: core/assets/admin.js:363
+msgid "The import of %s was interrupted"
+msgstr "انقطع استيراد %s"
+
+#: core/assets/admin.js:363
+msgid "Your progress is saved. Continue exactly where it left off."
+msgstr "تم حفظ تقدّمك. تابع من حيث توقفت تمامًا."
+
+#: core/assets/admin.js:363
+msgid "Resume import"
+msgstr "استئناف الاستيراد"
+
+#: core/assets/admin.js:366
+msgid "%s is installed on this site"
+msgstr "%s منصّب على هذا الموقع"
+
+#: core/assets/admin.js:366
+msgid ""
+"You can remove everything it added and restore your previous settings at any"
+" time."
+msgstr "يمكنك إزالة كل ما أضافه واستعادة إعداداتك السابقة في أي وقت."
+
+#: core/assets/admin.js:366 core/assets/admin.js:920
+msgid "Removing"
+msgstr "جارٍ الإزالة"
+
+#: core/assets/admin.js:366
+msgid "Remove demo"
+msgstr "إزالة العرض التوضيحي"
+
+#: core/assets/admin.js:386
+msgid ""
+"Remove %s? Its pages, posts, products, images and menus will be deleted and "
+"your previous settings restored. Content you created yourself is not "
+"touched."
+msgstr ""
+"إزالة %s؟ ستُحذف صفحاته ومقالاته ومنتجاته وصوره وقوائمه وتُستعاد إعداداتك "
+"السابقة. لن يُمسّ المحتوى الذي أنشأته بنفسك."
+
+#: core/assets/admin.js:392
+msgid "Demo removed"
+msgstr "تمت إزالة العرض التوضيحي"
+
+#: core/assets/admin.js:396
+msgid "Removal failed"
+msgstr "فشلت الإزالة"
+
+#: core/assets/admin.js:416
+msgid "No demos match these filters"
+msgstr "لا توجد عروض توضيحية تطابق عوامل التصفية هذه"
+
+#: core/assets/admin.js:416
+msgid "Try another category or clear the search."
+msgstr "جرّب تصنيفًا آخر أو امسح البحث."
+
+#: core/assets/admin.js:416
+msgid "Clear filters"
+msgstr "مسح عوامل التصفية"
+
+#: core/assets/admin.js:428
+msgid "IMPORTED"
+msgstr "مستورد"
+
+#: core/assets/admin.js:430
+msgid "Live preview"
+msgstr "معاينة مباشرة"
+
+#: core/assets/admin.js:438
+msgid "Preview"
+msgstr "معاينة"
+
+#: core/assets/admin.js:439
+msgid "Unlock"
+msgstr "فتح"
+
+#: core/assets/admin.js:439
+msgid "Re-import"
+msgstr "إعادة الاستيراد"
+
+#: core/assets/admin.js:439 core/assets/admin.js:576
+msgid "Import"
+msgstr "استيراد"
+
+#: core/assets/admin.js:512
+msgid "Desktop"
+msgstr "سطح المكتب"
+
+#: core/assets/admin.js:512
+msgid "Tablet"
+msgstr "جهاز لوحي"
+
+#: core/assets/admin.js:512
+msgid "Mobile"
+msgstr "الجوال"
+
+#: core/assets/admin.js:515
+msgid "%1$s on %2$s"
+msgstr "%1$s على %2$s"
+
+#: core/assets/admin.js:520
+msgid "Device"
+msgstr "الجهاز"
+
+#: core/assets/admin.js:521
+msgid "Unlock with Pro"
+msgstr "افتح مع Pro"
+
+#: core/assets/admin.js:521
+msgid "Import this demo"
+msgstr "استيراد هذا العرض التوضيحي"
+
+#: core/assets/admin.js:522
+msgid "Close preview"
+msgstr "إغلاق المعاينة"
+
+#: core/assets/admin.js:576
+msgid "Account"
+msgstr "الحساب"
+
+#: core/assets/admin.js:576
+msgid "Content"
+msgstr "المحتوى"
+
+#: core/assets/admin.js:576
+msgid "Done"
+msgstr "تم"
+
+#: core/assets/admin.js:582
+msgid "Safe import — every change can be undone."
+msgstr "استيراد آمن — يمكن التراجع عن كل تغيير."
+
+#: core/assets/admin.js:585
+msgid "Close"
+msgstr "إغلاق"
+
+#: core/assets/admin.js:589
+msgid ""
+"The import keeps its progress if you close this window. You can resume it "
+"from the Demo Library. Close anyway?"
+msgstr ""
+"يحتفظ الاستيراد بتقدّمه إذا أغلقت هذه النافذة. يمكنك استئنافه من مكتبة "
+"العروض التوضيحية. هل تريد الإغلاق على أي حال؟"
+
+#: core/assets/admin.js:618
+msgid "Back"
+msgstr "رجوع"
+
+#: core/assets/admin.js:640
+msgid "Unlock this Pro demo"
+msgstr "افتح عرض Pro التوضيحي هذا"
+
+#: core/assets/admin.js:640
+msgid "Connect your WPEssential account"
+msgstr "اربط حسابك في WPEssential"
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in and use a Pro license on this site — or pick a plan. Checkout opens "
+"in a new tab."
+msgstr ""
+"سجّل الدخول واستخدم ترخيص Pro على هذا الموقع — أو اختر خطة. تُفتح صفحة الدفع"
+" في علامة تبويب جديدة."
+
+#: core/assets/admin.js:640
+msgid ""
+"Sign in or create a free account to keep your demos, licenses and updates in"
+" one place."
+msgstr ""
+"سجّل الدخول أو أنشئ حسابًا مجانيًا للاحتفاظ بعروضك التوضيحية وتراخيصك "
+"وتحديثاتك في مكان واحد."
+
+#: core/assets/admin.js:643
+msgid "A Pro license is needed"
+msgstr "يلزم ترخيص Pro"
+
+#: core/assets/admin.js:643
+msgid "Use a Pro license on this site, or choose a plan."
+msgstr "استخدم ترخيص Pro على هذا الموقع، أو اختر خطة."
+
+#: core/assets/admin.js:648 core/assets/admin.js:674 core/assets/admin.js:679
+msgid "Continue"
+msgstr "متابعة"
+
+#: core/assets/admin.js:656
+msgid "Demo unlocked"
+msgstr "تم فتح العرض التوضيحي"
+
+#: core/assets/admin.js:666
+msgid "This demo has no version for this builder yet."
+msgstr "لا يوجد إصدار من هذا العرض التوضيحي لأداة البناء هذه بعد."
+
+#: core/assets/admin.js:668
+msgid "Choose your page builder"
+msgstr "اختر أداة بناء الصفحات"
+
+#: core/assets/admin.js:668
+msgid ""
+"Both versions look identical. Pick the editor you or your client will use "
+"every day."
+msgstr ""
+"يبدو الإصداران متطابقين. اختر المحرر الذي ستستخدمه أنت أو عميلك يوميًا."
+
+#: core/assets/admin.js:669
+msgid "The native WordPress block editor. Fastest pages, no extra plugin."
+msgstr "محرر المكوّنات الأصلي في ووردبريس. أسرع الصفحات، دون إضافة إضافية."
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor is already installed."
+msgstr "تحرير مرئي بالسحب والإفلات. Elementor منصّب بالفعل."
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor will be installed for you."
+msgstr "تحرير مرئي بالسحب والإفلات. سيتم تنصيب Elementor لك."
+
+#: core/assets/admin.js:678
+msgid "Plugins this demo uses"
+msgstr "الإضافات التي يستخدمها هذا العرض التوضيحي"
+
+#: core/assets/admin.js:678
+msgid ""
+"We install, activate or switch off plugins so the demo works exactly like "
+"the preview."
+msgstr ""
+"نقوم بتنصيب الإضافات أو تفعيلها أو إيقافها ليعمل العرض التوضيحي تمامًا كما "
+"في المعاينة."
+
+#: core/assets/admin.js:693
+msgid "No extra plugins needed — this demo runs on the theme alone."
+msgstr "لا حاجة لإضافات إضافية — يعمل هذا العرض التوضيحي بالقالب وحده."
+
+#: core/assets/admin.js:698
+msgid "Will be deactivated"
+msgstr "سيتم تعطيلها"
+
+#: core/assets/admin.js:698
+msgid "Not needed"
+msgstr "غير مطلوبة"
+
+#: core/assets/admin.js:702
+msgid "Will be activated"
+msgstr "سيتم تفعيلها"
+
+#: core/assets/admin.js:703
+msgid "Will be installed"
+msgstr "سيتم تنصيبها"
+
+#: core/assets/admin.js:706
+msgid "Required"
+msgstr "مطلوبة"
+
+#: core/assets/admin.js:706 core/assets/admin.js:1073
+msgid "Recommended"
+msgstr "موصى بها"
+
+#: core/assets/admin.js:706
+msgid "Conflicts with this demo"
+msgstr "تتعارض مع هذا العرض التوضيحي"
+
+#: core/assets/admin.js:706
+msgid "Include"
+msgstr "تضمين"
+
+#: core/assets/admin.js:706
+msgid "Include %s"
+msgstr "تضمين %s"
+
+#: core/assets/admin.js:715
+msgid "Pages, posts and menus"
+msgstr "الصفحات والمقالات والقوائم"
+
+#: core/assets/admin.js:715
+msgid "%s and their navigation."
+msgstr "%s والتنقل الخاص بها."
+
+#: core/assets/admin.js:716
+msgid "Images"
+msgstr "الصور"
+
+#: core/assets/admin.js:716
+msgid "Copied to your Media Library, licensed for your site."
+msgstr "تُنسخ إلى مكتبة الوسائط، ومرخّصة لموقعك."
+
+#: core/assets/admin.js:717
+msgid "Shop products"
+msgstr "منتجات المتجر"
+
+#: core/assets/admin.js:717
+msgid "Products, categories, prices and shipping."
+msgstr "المنتجات والتصنيفات والأسعار والشحن."
+
+#: core/assets/admin.js:717
+msgid "Needs WooCommerce — enable it on the previous step."
+msgstr "يتطلب WooCommerce — فعّله في الخطوة السابقة."
+
+#: core/assets/admin.js:718
+msgid "Site settings"
+msgstr "إعدادات الموقع"
+
+#: core/assets/admin.js:718
+msgid "Home page, blog page and store options."
+msgstr "الصفحة الرئيسية وصفحة المدونة وخيارات المتجر."
+
+#: core/assets/admin.js:720
+msgid "What should we import?"
+msgstr "ماذا نستورد؟"
+
+#: core/assets/admin.js:720
+msgid "Everything is on by default for a site that matches the preview."
+msgstr "كل شيء مفعّل افتراضيًا للحصول على موقع يطابق المعاينة."
+
+#: core/assets/admin.js:722
+msgid "Remove %s first"
+msgstr "أزل %s أولاً"
+
+#: core/assets/admin.js:722
+msgid "Recommended: start from a clean site instead of adding duplicates."
+msgstr "موصى به: ابدأ من موقع نظيف بدلاً من إضافة نسخ مكررة."
+
+#: core/assets/admin.js:723
+msgid ""
+"Your existing posts and pages are never changed. Imported items are tagged, "
+"so they can be removed in one click later."
+msgstr ""
+"لا تتغير مقالاتك وصفحاتك الحالية أبدًا. تُوسَم العناصر المستوردة، لذا يمكن "
+"إزالتها بنقرة واحدة لاحقًا."
+
+#: core/assets/admin.js:730
+msgid "Start import"
+msgstr "بدء الاستيراد"
+
+#: core/assets/admin.js:736
+msgid "Preparing"
+msgstr "جارٍ التجهيز"
+
+#: core/assets/admin.js:736 core/assets/admin.js:947
+msgid "Importing your demo…"
+msgstr "جارٍ استيراد العرض التوضيحي…"
+
+#: core/assets/admin.js:736
+msgid "Keep this window open. It usually takes about a minute."
+msgstr "أبقِ هذه النافذة مفتوحة. يستغرق الأمر عادةً نحو دقيقة."
+
+#: core/assets/admin.js:739 core/assets/admin.js:943
+msgid "Cancel import"
+msgstr "إلغاء الاستيراد"
+
+#: core/assets/admin.js:756
+msgid "Info"
+msgstr "معلومات"
+
+#: core/assets/admin.js:756
+msgid "Success"
+msgstr "نجاح"
+
+#: core/assets/admin.js:756 core/assets/admin.js:998
+msgid "Warnings"
+msgstr "تحذيرات"
+
+#: core/assets/admin.js:756
+msgid "Errors"
+msgstr "أخطاء"
+
+#: core/assets/admin.js:756 core/assets/admin.js:920
+msgid "Copy log"
+msgstr "نسخ السجل"
+
+#: core/assets/admin.js:790
+msgid "Log copied"
+msgstr "تم نسخ السجل"
+
+#: core/assets/admin.js:790
+msgid "Paste it into your support ticket."
+msgstr "الصقه في تذكرة الدعم."
+
+#: core/assets/admin.js:816
+msgid "Stopped"
+msgstr "متوقف"
+
+#: core/assets/admin.js:816
+msgid "Step"
+msgstr "خطوة"
+
+#: core/assets/admin.js:816
+msgid "Complete"
+msgstr "مكتمل"
+
+#: core/assets/admin.js:824
+msgid "%ss elapsed"
+msgstr "مضى %ss"
+
+#: core/assets/admin.js:850
+msgid "Resumed from the saved position."
+msgstr "تم الاستئناف من الموضع المحفوظ."
+
+#: core/assets/admin.js:872
+msgid "Reload the page, then resume the import from the Demo Library."
+msgstr "أعد تحميل الصفحة، ثم استأنف الاستيراد من مكتبة العروض التوضيحية."
+
+#: core/assets/admin.js:878
+msgid "Your progress is saved. Press Resume when the server is back."
+msgstr "تم حفظ تقدّمك. اضغط استئناف عندما يعود الخادم."
+
+#: core/assets/admin.js:882
+msgid "The server did not answer (%1$s). Retrying in %2$d seconds…"
+msgstr "لم يستجب الخادم (%1$s). إعادة المحاولة خلال %2$d ثانية…"
+
+#: core/assets/admin.js:905
+msgid "The import stopped."
+msgstr "توقف الاستيراد."
+
+#: core/assets/admin.js:907
+msgid "Import cancelled."
+msgstr "تم إلغاء الاستيراد."
+
+#: core/assets/admin.js:907
+msgid "Resume to finish it, or remove what was imported so far."
+msgstr "استأنف لإكماله، أو أزل ما تم استيراده حتى الآن."
+
+#: core/assets/admin.js:918
+msgid "Import paused"
+msgstr "الاستيراد متوقف مؤقتًا"
+
+#: core/assets/admin.js:918
+msgid "The import needs your attention"
+msgstr "الاستيراد يحتاج إلى انتباهك"
+
+#: core/assets/admin.js:920
+msgid "Remove imported content"
+msgstr "إزالة المحتوى المستورد"
+
+#: core/assets/admin.js:920
+msgid "Resume"
+msgstr "استئناف"
+
+#: core/assets/admin.js:920
+msgid "Back to options"
+msgstr "العودة إلى الخيارات"
+
+#: core/assets/admin.js:929
+msgid "Everything was rolled back"
+msgstr "تم التراجع عن كل شيء"
+
+#: core/assets/admin.js:933
+msgid "Nothing to remove"
+msgstr "لا شيء لإزالته"
+
+#: core/assets/admin.js:933
+msgid "Rollback failed"
+msgstr "فشل التراجع"
+
+#: core/assets/admin.js:960
+msgid "Resuming…"
+msgstr "جارٍ الاستئناف…"
+
+#: core/assets/admin.js:967
+msgid "Your progress is saved. Try again in a moment."
+msgstr "تم حفظ تقدّمك. حاول مرة أخرى بعد قليل."
+
+#: core/assets/admin.js:973
+msgid "Cancel the import? What was imported so far stays until you remove it."
+msgstr "إلغاء الاستيراد؟ سيبقى ما تم استيراده حتى الآن إلى أن تزيله."
+
+#: core/assets/admin.js:983
+msgid "Could not cancel"
+msgstr "تعذّر الإلغاء"
+
+#: core/assets/admin.js:996
+msgid "Your website is ready!"
+msgstr "موقعك جاهز!"
+
+#: core/assets/admin.js:997
+msgid "%1$s was imported. %2$d item(s) need a look — see the notes below."
+msgstr "تم استيراد %1$s. يحتاج %2$d عنصر إلى مراجعة — راجع الملاحظات أدناه."
+
+#: core/assets/admin.js:997
+msgid "%s was imported without a single issue. Time to make it yours."
+msgstr "تم استيراد %s دون أي مشكلة. حان وقت جعله خاصًا بك."
+
+#: core/assets/admin.js:998
+msgid "Import time"
+msgstr "وقت الاستيراد"
+
+#: core/assets/admin.js:998
+msgid "Steps completed"
+msgstr "الخطوات المكتملة"
+
+#: core/assets/admin.js:999
+msgid "View your site"
+msgstr "عرض موقعك"
+
+#: core/assets/admin.js:1002
+msgid "Back to dashboard"
+msgstr "العودة إلى لوحة التحكم"
+
+#: core/assets/admin.js:1007
+msgid "Import complete"
+msgstr "اكتمل الاستيراد"
+
+#: core/assets/admin.js:1054
+msgid ""
+"Plugins used by WPEssential demos. Install, switch on or off and delete them"
+" here."
+msgstr ""
+"الإضافات التي تستخدمها عروض WPEssential التوضيحية. نصّبها أو شغّلها أو "
+"أوقفها أو احذفها من هنا."
+
+#: core/assets/admin.js:1069
+msgid "No plugins needed"
+msgstr "لا حاجة لإضافات"
+
+#: core/assets/admin.js:1069
+msgid "The demos in your library run on the theme alone."
+msgstr "تعمل العروض التوضيحية في مكتبتك بالقالب وحده."
+
+#: core/assets/admin.js:1073
+msgid "Required by some demos"
+msgstr "مطلوبة لبعض العروض التوضيحية"
+
+#: core/assets/admin.js:1074
+msgid "Inactive"
+msgstr "غير مفعّلة"
+
+#: core/assets/admin.js:1074
+msgid "Not installed"
+msgstr "غير منصّبة"
+
+#: core/assets/admin.js:1075
+msgid "Install & activate"
+msgstr "تنصيب وتفعيل"
+
+#: core/assets/admin.js:1077
+msgid "Deactivate"
+msgstr "تعطيل"
+
+#: core/assets/admin.js:1079
+msgid "Delete this plugin and its files?"
+msgstr "هل تريد حذف هذه الإضافة وملفاتها؟"
+
+#: core/assets/admin.js:1085
+msgid "is active."
+msgstr "مفعّلة."
+
+#: core/assets/admin.js:1085
+msgid "is inactive."
+msgstr "غير مفعّلة."
+
+#: core/assets/admin.js:1085
+msgid "was deleted."
+msgstr "تم حذفها."
+
+#: core/assets/admin.js:1088
+msgid "Plugin action failed"
+msgstr "فشل إجراء الإضافة"
+
+#: core/assets/admin.js:1096
+msgid ""
+"Activate your purchase on this domain to unlock Pro demos, automatic updates"
+" and priority support."
+msgstr ""
+"فعّل مشترياتك على هذا النطاق لفتح عروض Pro التوضيحية والتحديثات التلقائية "
+"والدعم ذي الأولوية."
+
+#: core/assets/admin.js:1118
+msgid "Domain"
+msgstr "النطاق"
+
+#: core/assets/admin.js:1118
+msgid "Expires"
+msgstr "ينتهي"
+
+#: core/assets/admin.js:1118
+msgid "Lifetime"
+msgstr "مدى الحياة"
+
+#: core/assets/admin.js:1118
+msgid "Provider"
+msgstr "المزوّد"
+
+#: core/assets/admin.js:1121
+msgid "You’re all set"
+msgstr "كل شيء جاهز"
+
+#: core/assets/admin.js:1121
+msgid "This license is active on %s."
+msgstr "هذا الترخيص مفعّل على %s."
+
+#: core/assets/admin.js:1121
+msgid "Plan: %s."
+msgstr "الخطة: %s."
+
+#: core/assets/admin.js:1122
+msgid "All Pro demos unlocked"
+msgstr "جميع عروض Pro التوضيحية مفتوحة"
+
+#: core/assets/admin.js:1122
+msgid "One-click theme updates"
+msgstr "تحديثات القالب بنقرة واحدة"
+
+#: core/assets/admin.js:1123
+msgid "Deactivating"
+msgstr "جارٍ التعطيل"
+
+#: core/assets/admin.js:1123
+msgid "Deactivate on this domain"
+msgstr "التعطيل على هذا النطاق"
+
+#: core/assets/admin.js:1124
+msgid "Renew to keep Pro features"
+msgstr "جدّد للاحتفاظ بميزات Pro"
+
+#: core/assets/admin.js:1124
+msgid "Find the key in your purchase email or your wpessential.org account."
+msgstr "ستجد المفتاح في بريد الشراء أو في حسابك على wpessential.org."
+
+#: core/assets/admin.js:1125
+msgid "License key"
+msgstr "مفتاح الترخيص"
+
+#: core/assets/admin.js:1125
+msgid "Paste your license key"
+msgstr "الصق مفتاح الترخيص"
+
+#: core/assets/admin.js:1125
+msgid "Show key"
+msgstr "إظهار المفتاح"
+
+#: core/assets/admin.js:1125
+msgid "Checking"
+msgstr "جارٍ التحقق"
+
+#: core/assets/admin.js:1127
+msgid "Unlock every Pro demo in the library"
+msgstr "افتح كل عرض توضيحي Pro في المكتبة"
+
+#: core/assets/admin.js:1127
+msgid "Automatic updates from your dashboard"
+msgstr "تحديثات تلقائية من لوحة التحكم"
+
+#: core/assets/admin.js:1127
+msgid "Priority support from the WPEssential Team"
+msgstr "دعم ذو أولوية من فريق WPEssential"
+
+#: core/assets/admin.js:1128
+msgid "Don’t have a license? Sign in or pick a plan below"
+msgstr "ليس لديك ترخيص؟ سجّل الدخول أو اختر خطة أدناه"
+
+#: core/assets/admin.js:1143
+msgid "License activated"
+msgstr "تم تفعيل الترخيص"
+
+#: core/assets/admin.js:1143
+msgid "Pro demos are unlocked."
+msgstr "تم فتح عروض Pro التوضيحية."
+
+#: core/assets/admin.js:1163
+msgid ""
+"Deactivate the license on this domain? You can activate it on another site "
+"afterwards."
+msgstr ""
+"هل تريد تعطيل الترخيص على هذا النطاق؟ يمكنك تفعيله على موقع آخر بعد ذلك."
+
+#: core/assets/admin.js:1169
+msgid "License deactivated"
+msgstr "تم تعطيل الترخيص"
+
+#: core/assets/admin.js:1173
+msgid "Deactivation failed"
+msgstr "فشل التعطيل"
+
+#: core/assets/admin.js:1188
+msgid "/ %d mo"
+msgstr "/ %d شهر"
+
+#: core/assets/admin.js:1188
+msgid "one-time"
+msgstr "مرة واحدة"
+
+#: core/assets/admin.js:1201
+msgid "Your WPEssential account could not be reached"
+msgstr "تعذّر الوصول إلى حسابك في WPEssential"
+
+#: core/assets/admin.js:1213
+msgid "Sign in to your account"
+msgstr "سجّل الدخول إلى حسابك"
+
+#: core/assets/admin.js:1213
+msgid "Create your free account"
+msgstr "أنشئ حسابك المجاني"
+
+#: core/assets/admin.js:1213
+msgid ""
+"Your licenses, Pro demos and subscription in one place. New accounts include"
+" the Free plan for this website."
+msgstr ""
+"تراخيصك وعروض Pro التوضيحية واشتراكك في مكان واحد. تتضمن الحسابات الجديدة "
+"الخطة المجانية لهذا الموقع."
+
+#: core/assets/admin.js:1214
+msgid "Activate licenses without copying keys"
+msgstr "فعّل التراخيص دون نسخ المفاتيح"
+
+#: core/assets/admin.js:1214
+msgid "Upgrade, renew or switch plans in one click"
+msgstr "رقِّ أو جدّد أو بدّل الخطط بنقرة واحدة"
+
+#: core/assets/admin.js:1214
+msgid "Manage websites and auto-renewal"
+msgstr "أدر المواقع والتجديد التلقائي"
+
+#: core/assets/admin.js:1216 core/assets/admin.js:1221
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+#: core/assets/admin.js:1216
+msgid "Create account"
+msgstr "إنشاء حساب"
+
+#: core/assets/admin.js:1217
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+#: core/assets/admin.js:1218
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: core/assets/admin.js:1219
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: core/assets/admin.js:1221
+msgid "Signing in"
+msgstr "جارٍ تسجيل الدخول"
+
+#: core/assets/admin.js:1221
+msgid "Creating account"
+msgstr "جارٍ إنشاء الحساب"
+
+#: core/assets/admin.js:1221
+msgid "Create free account"
+msgstr "إنشاء حساب مجاني"
+
+#: core/assets/admin.js:1222
+msgid "Forgot password?"
+msgstr "هل نسيت كلمة المرور؟"
+
+#: core/assets/admin.js:1222
+msgid "By creating an account you agree to the WPEssential terms."
+msgstr "بإنشاء حساب فإنك توافق على شروط WPEssential."
+
+#: core/assets/admin.js:1223
+msgid "Continue without an account"
+msgstr "المتابعة دون حساب"
+
+#: core/assets/admin.js:1239
+msgid "Fill in every field."
+msgstr "املأ جميع الحقول."
+
+#: core/assets/admin.js:1245
+msgid "Signed in"
+msgstr "تم تسجيل الدخول"
+
+#: core/assets/admin.js:1245
+msgid "Account created"
+msgstr "تم إنشاء الحساب"
+
+#: core/assets/admin.js:1266
+msgid "Refresh"
+msgstr "تحديث"
+
+#: core/assets/admin.js:1267
+msgid "Manage account"
+msgstr "إدارة الحساب"
+
+#: core/assets/admin.js:1268
+msgid "Sign out"
+msgstr "تسجيل الخروج"
+
+#: core/assets/admin.js:1270
+msgid "Your licenses"
+msgstr "تراخيصك"
+
+#: core/assets/admin.js:1273
+msgid "%1$d of %2$s websites"
+msgstr "%1$d من %2$s مواقع"
+
+#: core/assets/admin.js:1273
+msgid "Never expires"
+msgstr "لا ينتهي أبدًا"
+
+#: core/assets/admin.js:1273
+msgid "Renews %s"
+msgstr "يتجدد في %s"
+
+#: core/assets/admin.js:1273
+msgid "Ends %s"
+msgstr "ينتهي في %s"
+
+#: core/assets/admin.js:1274
+msgid "Auto-renew"
+msgstr "تجديد تلقائي"
+
+#: core/assets/admin.js:1275
+msgid "Renew"
+msgstr "تجديد"
+
+#: core/assets/admin.js:1275
+msgid "This site"
+msgstr "هذا الموقع"
+
+#: core/assets/admin.js:1275
+msgid "Activating"
+msgstr "جارٍ التفعيل"
+
+#: core/assets/admin.js:1275
+msgid "Use on this site"
+msgstr "استخدام على هذا الموقع"
+
+#: core/assets/admin.js:1276
+msgid "No licenses yet — choose a plan below."
+msgstr "لا توجد تراخيص بعد — اختر خطة أدناه."
+
+#: core/assets/admin.js:1277
+msgid "Upgrade your plan"
+msgstr "رقِّ خطتك"
+
+#: core/assets/admin.js:1277
+msgid "Choose a plan"
+msgstr "اختر خطة"
+
+#: core/assets/admin.js:1282
+msgid "Most popular"
+msgstr "الأكثر شيوعًا"
+
+#: core/assets/admin.js:1283
+msgid "Current plan"
+msgstr "الخطة الحالية"
+
+#: core/assets/admin.js:1283
+msgid "Upgrade"
+msgstr "ترقية"
+
+#: core/assets/admin.js:1283
+msgid "Choose"
+msgstr "اختيار"
+
+#: core/assets/admin.js:1285
+msgid ""
+"Checkout opens on wpessential.org already signed in. Upgrades credit the "
+"unused part of your current plan. Staging and local sites do not count "
+"toward your website limit."
+msgstr ""
+"تُفتح صفحة الدفع على wpessential.org وأنت مسجّل الدخول بالفعل. تُحتسب قيمة "
+"الجزء غير المستخدم من خطتك الحالية عند الترقية. لا تُحتسب مواقع التجربة "
+"والمواقع المحلية ضمن حد المواقع."
+
+#: core/assets/admin.js:1301
+msgid "License active on this site"
+msgstr "الترخيص مفعّل على هذا الموقع"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is on"
+msgstr "التجديد التلقائي مفعّل"
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is off"
+msgstr "التجديد التلقائي متوقف"
+
+#: core/assets/admin.js:1315
+msgid "Your license works until its end date."
+msgstr "يعمل ترخيصك حتى تاريخ انتهائه."
+
+#: core/assets/admin.js:1318
+msgid "Could not change auto-renew"
+msgstr "تعذّر تغيير التجديد التلقائي"
+
+#: core/assets/admin.js:1330
+msgid "Checkout opened in a new tab"
+msgstr "تم فتح صفحة الدفع في علامة تبويب جديدة"
+
+#: core/assets/admin.js:1330
+msgid "When payment is done, press Refresh here."
+msgstr "عند إتمام الدفع، اضغط تحديث هنا."
+
+#: core/assets/admin.js:1335
+msgid "Checkout could not start"
+msgstr "تعذّر بدء الدفع"
+
+#: core/assets/admin.js:1343
+msgid "What your server offers and what to improve before importing."
+msgstr "ما يقدّمه خادمك وما يجب تحسينه قبل الاستيراد."
+
+#: core/assets/admin.js:1343
+msgid "Copy report"
+msgstr "نسخ التقرير"
+
+#: core/assets/admin.js:1349
+msgid "Health"
+msgstr "الصحة"
+
+#: core/assets/admin.js:1349
+msgid "Excellent"
+msgstr "ممتاز"
+
+#: core/assets/admin.js:1349
+msgid "Good"
+msgstr "جيد"
+
+#: core/assets/admin.js:1349
+msgid "Needs work"
+msgstr "يحتاج إلى تحسين"
+
+#: core/assets/admin.js:1349
+msgid "%d item(s) could be better. Imports still run; fixes make them faster."
+msgstr ""
+"%d عنصر يمكن تحسينه. ستعمل عمليات الاستيراد على أي حال؛ والإصلاحات تجعلها "
+"أسرع."
+
+#: core/assets/admin.js:1349
+msgid "Your server is ready for any demo."
+msgstr "خادمك جاهز لأي عرض توضيحي."
+
+#: core/assets/admin.js:1352
+msgid "Environment"
+msgstr "البيئة"
+
+#: core/assets/admin.js:1356
+msgid "Report copied"
+msgstr "تم نسخ التقرير"
+
+#: core/assets/admin.js:1356
+msgid "Copy failed"
+msgstr "فشل النسخ"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "مميِّز"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr "الحدود"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Danger"
+msgstr "خطر"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr "حبر"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink"
+msgstr "على الحبر"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink Muted"
+msgstr "على الحبر خافت"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Primary"
+msgstr "على الأساسي"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "أساسي"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Hover"
+msgstr "أساسي عند التمرير"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Soft"
+msgstr "أساسي ناعم"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Pro"
+msgstr "Pro"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "ثانوي"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Star"
+msgstr "نجمة"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Success"
+msgstr "نجاح"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr "السطح"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface Alt"
+msgstr "سطح بديل"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr "النص"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text Muted"
+msgstr "نص خافت"
+
+#: styles/agency.json styles/dark.json styles/education.json
+#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
+#: styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Warning"
+msgstr "تحذير"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank (no header/footer)"
+msgstr "فارغ (بلا ترويسة/تذييل)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Full Width (builder canvas)"
+msgstr "عرض كامل (لوحة أداة البناء)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Landing (transparent header)"
+msgstr "صفحة هبوط (ترويسة شفافة)"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "No Title"
+msgstr "بلا عنوان"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post with sidebar"
+msgstr "مقالة مع شريط جانبي"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Cormorant Garamond"
+msgstr "Cormorant Garamond"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "DM Sans"
+msgstr "DM Sans"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Manrope"
+msgstr "Manrope"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Font family name"
+msgid "Monospace"
+msgstr "أحادي المسافة"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Plus Jakarta Sans"
+msgstr "Plus Jakarta Sans"
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "Space Grotesk"
+msgstr "Space Grotesk"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr "النص الأساسي"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body L"
+msgstr "النص الأساسي L"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Display"
+msgstr "عرض"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H1"
+msgstr "H1"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H2"
+msgstr "H2"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H3"
+msgstr "H3"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H4"
+msgstr "H4"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "صغير"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XS"
+msgstr "XS"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Brand"
+msgstr "العلامة التجارية"
+
+#: styles/dark.json
+msgctxt "Gradient name"
+msgid "Fade bottom"
+msgstr "تلاشٍ للأسفل"
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Fade to ink"
+msgstr "تلاشٍ إلى الحبر"
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Night"
+msgstr "ليل"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Large"
+msgstr "كبير"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Medium"
+msgstr "متوسط"
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Small"
+msgstr "صغير"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "112"
+msgstr "112"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "12"
+msgstr "12"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "16"
+msgstr "16"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "24"
+msgstr "24"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "32"
+msgstr "32"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "48"
+msgstr "48"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "64"
+msgstr "64"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "8"
+msgstr "8"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "96"
+msgstr "96"
+
+#: styles/agency.json
+msgctxt "Style variation name"
+msgid "Agency"
+msgstr "وكالة"
+
+#: styles/dark.json
+msgctxt "Style variation name"
+msgid "Dark"
+msgstr "داكن"
+
+#: styles/education.json
+msgctxt "Style variation name"
+msgid "Education"
+msgstr "تعليم"
+
+#: styles/fashion.json
+msgctxt "Style variation name"
+msgid "Fashion"
+msgstr "أزياء"
+
+#: styles/health.json
+msgctxt "Style variation name"
+msgid "Health"
+msgstr "صحة"
+
+#: styles/maison.json
+msgctxt "Style variation name"
+msgid "Maison"
+msgstr "Maison"
+
+#: styles/pulse.json
+msgctxt "Style variation name"
+msgid "Pulse"
+msgstr "Pulse"
+
+#: styles/restaurant.json
+msgctxt "Style variation name"
+msgid "Restaurant"
+msgstr "مطعم"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Premium"
+msgstr "التذييل — مميز"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Simple"
+msgstr "التذييل — بسيط"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Centered"
+msgstr "الترويسة — في المنتصف"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Default"
+msgstr "الترويسة — افتراضية"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Shop"
+msgstr "الترويسة — المتجر"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Transparent (over dark hero)"
+msgstr "الترويسة — شفافة (فوق واجهة داكنة)"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr "الشريط الجانبي"

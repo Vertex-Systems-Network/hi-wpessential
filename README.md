@@ -29,7 +29,7 @@ schemes, hover effects and SEO, all set up for you.
 | ✨ **Hover & motion** | Hover effects for each niche, based on market research: zoom, lift, glow, underline and image swap. Animation presets are subtle, editorial, playful and dynamic (GSAP). |
 | 🛒 **WooCommerce** | Styled shop, product, cart, checkout and account pages, plus product badges, a second-image hover, empty states and notices. |
 | 🔍 **SEO** | Meta description, Open Graph, Twitter cards and JSON-LD (Organization, WebSite, Breadcrumbs, Article). It steps aside automatically for Yoast, Rank Math, SEOPress, AIOSEO and The SEO Framework. |
-| 🌍 **Multilingual** | WPML and Polylang compatible. It includes a language switcher, a `wpml-config.xml` and full **RTL** support (Arabic, Urdu, Hebrew, Persian). |
+| 🌍 **Multilingual** | Translated into 20 languages (Arabic, Bengali, Chinese, Dutch, French, German, Hebrew, Hindi, Indonesian, Italian, Japanese, Korean, Persian, Polish, Portuguese, Russian, Spanish, Turkish, Urdu, Vietnamese). WPML and Polylang compatible. It includes a language switcher, a `wpml-config.xml` and full **RTL** support (Arabic, Urdu, Hebrew, Persian). |
 | ♿ **Accessible** | WCAG 2.2 AA colour contrast, a skip link, visible focus states and reduced-motion support. |
 | 🧩 **Patterns** | Full-page layouts (About, Services, Pricing, Contact, FAQ), shop rows and sections ready to insert. |
 | 🛠 **Theme options** | A CSS and JavaScript snippet manager with device scopes and safe mode, and animation settings. |
