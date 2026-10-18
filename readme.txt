@@ -69,6 +69,9 @@ Yes. The theme ships a wpml-config.xml (read by both plugins), adds a language s
 = Which languages are included? =
 The theme and its dashboard ship translated into 20 languages: Arabic, Bengali, Chinese (Simplified), Dutch, French, German, Hebrew, Hindi, Indonesian, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Russian, Spanish, Turkish, Urdu and Vietnamese. Set your language under Settings > General. Translations from translate.wordpress.org, when available, take priority. To add a language, translate languages/hi-wpessential.pot with Poedit or Loco Translate.
 
+= Why don't I see Elementor's banners in the dashboard? =
+With this theme active, Elementor's upgrade banners, rating requests, promotional notices, the dashboard overview widget and the notifications feed are hidden so wp-admin stays clean. Error notices and database update notices still show. To bring them back, add add_filter( 'wpessential_elementor_quiet_admin', '__return_false' ); to a snippet or child theme.
+
 = Does it handle SEO? =
 Yes. Without an SEO plugin the theme prints a meta description, Open Graph and Twitter tags, and JSON-LD (Organization, WebSite, BreadcrumbList, Article). It steps aside automatically when Yoast SEO, Rank Math, SEOPress, All in One SEO or The SEO Framework is active.
 
