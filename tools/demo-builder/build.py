@@ -56,6 +56,13 @@ def zip_package(src_dir, builder, out):
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
         z.write(os.path.join(src_dir, builder, 'content.json'), 'content.json')
+        # Card details for the server library: demo.json, thumbnail and previews.
+        for extra in ('demo.json', 'thumbnail.webp'):
+            if os.path.isfile(os.path.join(src_dir, extra)):
+                z.write(os.path.join(src_dir, extra), extra)
+        preview = os.path.join(src_dir, 'preview')
+        for name in sorted(os.listdir(preview)) if os.path.isdir(preview) else []:
+            z.write(os.path.join(preview, name), 'preview/' + name)
         media = os.path.join(src_dir, 'media')
         for name in sorted(os.listdir(media)) if os.path.isdir(media) else []:
             z.write(os.path.join(media, name), 'media/' + name)

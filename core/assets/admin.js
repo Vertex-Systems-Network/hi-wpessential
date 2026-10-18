@@ -426,7 +426,7 @@
 				<div class="wpe-demo__media">
 					<span class="wpe-badge wpe-badge--${ d.type === 'pro' ? 'pro' : 'free' }">${ d.type === 'pro' ? ico( 'spark', 12, 3 ) + 'PRO' : 'FREE' }</span>
 					${ d.imported ? `<span class="wpe-badge wpe-badge--done">${ ico( 'check', 12, 3 ) }${ esc( __( 'IMPORTED', 'hi-wpessential' ) ) }</span>` : '' }
-					<img src="${ esc( d.thumbnail ) }" alt="${ esc( d.title ) }" loading="lazy">
+					${ d.thumbnail ? `<img src="${ esc( d.thumbnail ) }" alt="${ esc( d.title ) }" loading="lazy">` : `<div class="wpe-demo__noimg">${ esc( d.title ) }</div>` }
 					<div class="wpe-demo__overlay"><button class="wpe-btn wpe-btn--white" data-preview="${ esc( d.id ) }">${ ico( 'eye', 17 ) }${ esc( __( 'Live preview', 'hi-wpessential' ) ) }</button></div>
 				</div>
 				<div class="wpe-demo__body">
