@@ -202,7 +202,17 @@ add_action(
 		}
 		$gallery = $product->get_gallery_image_ids();
 		if ( $gallery ) {
-			echo wp_get_attachment_image( (int) $gallery[0], 'woocommerce_thumbnail', false, array( 'class' => 'wpe-hover-img', 'alt' => '', 'aria-hidden' => 'true', 'loading' => 'lazy' ) );
+			echo wp_get_attachment_image(
+				(int) $gallery[0],
+				'woocommerce_thumbnail',
+				false,
+				array(
+					'class'       => 'wpe-hover-img',
+					'alt'         => '',
+					'aria-hidden' => 'true',
+					'loading'     => 'lazy',
+				)
+			);
 		}
 	},
 	11

@@ -17,9 +17,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, HERE)
 
+import importlib  # noqa: E402
+
 import base_elementor  # noqa: E402
-import maison  # noqa: E402
-import pulse  # noqa: E402
+
+# Server demos built from tools/demo-builder/<id>.py. The /build-demo skill appends new ids here.
+DEMOS = ['maison', 'pulse']
 
 
 def write(path, data):
@@ -50,7 +53,8 @@ def zip_package(src_dir, builder, out):
 
 
 def main():
-    for mod in (maison, pulse):
+    only = [a for a in sys.argv[1:] if not a.startswith('--')]
+    for mod in (importlib.import_module(d) for d in DEMOS if not only or d in only):
         base = os.path.join(ROOT, 'demos', mod.ID)
         write(os.path.join(base, 'demo.json'), demo_json(mod))
         for builder in ('gutenberg', 'elementor'):
