@@ -38,7 +38,7 @@ add_action(
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
 
-		add_editor_style( array( 'assets/css/theme.css', 'assets/css/responsive.css' ) );
+		add_editor_style( array( 'assets/css/theme.css', 'assets/css/responsive.css', 'assets/css/marketplace.css' ) );
 
 		add_image_size( 'wpessential-card', 720, 450, true );
 

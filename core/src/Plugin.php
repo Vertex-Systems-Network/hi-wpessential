@@ -43,5 +43,6 @@ final class Plugin {
 			( new Admin() )->hooks();
 		}
 		License::schedule();
+		Contact::hooks();
 	}
 }
