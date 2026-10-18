@@ -68,14 +68,14 @@ add_action(
 		if ( 'none' === $motion['preset'] ) {
 			return;
 		}
-		wp_enqueue_style( 'wpessential-motion', WPESSENTIAL_URI . '/assets/css/motion.css', array( 'wpessential' ), WPESSENTIAL_VERSION );
+		wp_enqueue_style( 'wpessential-motion', WPESSENTIAL_URI . '/assets/css/motion.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
 		$deps = array();
 		if ( $motion['gsap'] ) {
 			wp_register_script( 'gsap', WPESSENTIAL_URI . '/assets/vendor/gsap/gsap.min.js', array(), '3.12.5', array( 'strategy' => 'defer' ) );
 			wp_register_script( 'gsap-scrolltrigger', WPESSENTIAL_URI . '/assets/vendor/gsap/ScrollTrigger.min.js', array( 'gsap' ), '3.12.5', array( 'strategy' => 'defer' ) );
 			$deps = array( 'gsap-scrolltrigger' );
 		}
-		wp_enqueue_script( 'wpessential-motion', WPESSENTIAL_URI . '/assets/js/motion.js', $deps, WPESSENTIAL_VERSION, array( 'strategy' => 'defer' ) );
+		wp_enqueue_script( 'wpessential-motion', WPESSENTIAL_URI . '/assets/js/motion.js', $deps, WPESSENTIAL_ASSET_VERSION, array( 'strategy' => 'defer' ) );
 		wp_localize_script(
 			'wpessential-motion',
 			'wpessentialMotion',

@@ -95,8 +95,8 @@ class Admin {
 			return;
 		}
 		wp_enqueue_style( 'wpessential-core-fonts', 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts.
-		wp_enqueue_style( 'wpessential-core', wpessential_core_url( 'assets/admin.css' ), array(), WPESSENTIAL_CORE_VERSION );
-		wp_enqueue_script( 'wpessential-core', wpessential_core_url( 'assets/admin.js' ), array( 'wp-api-fetch', 'wp-i18n' ), WPESSENTIAL_CORE_VERSION, true );
+		wp_enqueue_style( 'wpessential-core', wpessential_core_url( 'assets/admin.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
+		wp_enqueue_script( 'wpessential-core', wpessential_core_url( 'assets/admin.js' ), array( 'wp-api-fetch', 'wp-i18n' ), WPESSENTIAL_CORE_ASSET_VERSION, true );
 		wp_set_script_translations( 'wpessential-core', 'hi-wpessential', defined( 'WPESSENTIAL_DIR' ) ? WPESSENTIAL_DIR . '/languages' : '' );
 
 		$theme = wp_get_theme();

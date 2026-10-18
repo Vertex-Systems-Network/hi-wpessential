@@ -8,6 +8,9 @@
 defined( 'ABSPATH' ) || exit;
 
 define( 'WPESSENTIAL_VERSION', wp_get_theme( get_template() )->get( 'Version' ) );
+// Cache-busting for CSS/JS: the version stays 1.0.0 until the wordpress.org release, so the
+// file time of style.css (new on every theme update) is added to asset URLs.
+define( 'WPESSENTIAL_ASSET_VERSION', WPESSENTIAL_VERSION . '.' . (int) filemtime( get_template_directory() . '/style.css' ) );
 define( 'WPESSENTIAL_DIR', get_template_directory() );
 define( 'WPESSENTIAL_URI', get_template_directory_uri() );
 
