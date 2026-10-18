@@ -463,7 +463,8 @@ def package(builder):
         {'title': 'Journal', 'page': 'journal'}, {'title': 'Stores', 'page': 'contact'}]}]
     settings = {'front_page': 'home', 'blog_page': 'journal', 'style': 'maison', 'motion': 'editorial',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'footer': {'content': g_footer()}},
-                'options': {'posts_per_page': 9, 'blogname': 'Maison', 'blogdescription': 'Clothes made slowly, to be worn for years.'},
+                'options': {'posts_per_page': 9, 'blogname': 'Maison', 'blogdescription': 'Clothes made slowly, to be worn for years.',
+                            'wpessential_shop_title': 'All pieces', 'wpessential_shop_lead': 'Linen, wool, silk and leather — made in small runs.', 'wpessential_cart_title': 'Your bag'},
                 'woocommerce': {'free_shipping': 150, 'options': {'woocommerce_currency': 'EUR', 'woocommerce_currency_pos': 'left',
                                                                   'woocommerce_price_thousand_sep': '.', 'woocommerce_price_decimal_sep': ',',
                                                                   'woocommerce_price_num_decimals': '0', 'woocommerce_coming_soon': 'no',

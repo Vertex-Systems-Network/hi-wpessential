@@ -547,7 +547,8 @@ def package(builder):
         {'title': 'Blog', 'page': 'blog'}]}]
     settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'pulse', 'motion': 'dynamic',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'footer': {'content': g_footer()}},
-                'options': {'posts_per_page': 9, 'blogname': 'Pulse', 'blogdescription': 'The conference for people who design and build the web.'},
+                'options': {'posts_per_page': 9, 'blogname': 'Pulse', 'blogdescription': 'The conference for people who design and build the web.',
+                            'wpessential_shop_title': 'Passes & tickets', 'wpessential_shop_lead': 'All prices include VAT. Group discounts apply automatically from five passes.'},
                 'woocommerce': {'options': {'woocommerce_currency': 'EUR', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
                                             'woocommerce_coming_soon': 'no', 'woocommerce_store_pages_only': 'no',
                                             'woocommerce_enable_guest_checkout': 'yes',

@@ -1200,8 +1200,12 @@ class Importer {
 			$this->log( 'success', __( 'Home and blog pages assigned.', 'hi-wpessential' ) );
 		}
 
+		// A previous demo's shop title must not carry over.
+		delete_option( 'wpessential_shop_title' );
+		delete_option( 'wpessential_shop_lead' );
+		delete_option( 'wpessential_cart_title' );
 		foreach ( (array) ( $settings['options'] ?? array() ) as $option => $value ) {
-			if ( ! in_array( $option, (array) apply_filters( 'wpessential_core_import_options', array( 'posts_per_page', 'date_format', 'blogname', 'blogdescription', 'thumbnail_size_w', 'thumbnail_size_h' ) ), true ) ) {
+			if ( ! in_array( $option, (array) apply_filters( 'wpessential_core_import_options', array( 'posts_per_page', 'date_format', 'blogname', 'blogdescription', 'thumbnail_size_w', 'thumbnail_size_h', 'wpessential_shop_title', 'wpessential_shop_lead', 'wpessential_cart_title' ) ), true ) ) {
 				/* translators: %s: option. */
 				$this->log( 'warning', sprintf( __( 'Setting "%s" is not on the allow-list and was ignored.', 'hi-wpessential' ), $option ) );
 				continue;
