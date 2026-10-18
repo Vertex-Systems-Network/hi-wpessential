@@ -326,16 +326,7 @@ class Api {
 			if ( 'theme' === $field ) {
 				$target = Playground::theme_path();
 			} elseif ( preg_match( '/^([a-z0-9]+)-(gutenberg|elementor)$/', (string) $field, $m ) ) {
-				if ( ! get_posts( array( 'post_type' => Demos::CPT, 'post_status' => 'any', 'meta_key' => '_wpes_demo_id', 'meta_value' => $m[1], 'fields' => 'ids', 'numberposts' => 1 ) ) ) { // phpcs:ignore WordPress.DB.SlowDBQuery, WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound -- Admin-only release call.
-					$id = wp_insert_post(
-						array(
-							'post_type'   => Demos::CPT,
-							'post_status' => 'draft',
-							'post_title'  => ucfirst( $m[1] ),
-						)
-					);
-					update_post_meta( $id, '_wpes_demo_id', $m[1] );
-				}
+				Demos::ensure( $m[1] );
 				$target = Demos::package_path( $m[1], $m[2] );
 			} else {
 				continue;

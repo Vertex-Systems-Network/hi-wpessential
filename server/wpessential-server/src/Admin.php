@@ -22,6 +22,7 @@ class Admin {
 		add_action( 'admin_post_wpes_license_save', array( __CLASS__, 'save_license' ) );
 		add_action( 'admin_post_wpes_settings', array( __CLASS__, 'save_settings' ) );
 		add_action( 'admin_post_wpes_run_cron', array( __CLASS__, 'run_cron' ) );
+		add_action( 'admin_post_wpes_release', array( __CLASS__, 'save_release' ) );
 	}
 
 	/**
@@ -30,6 +31,7 @@ class Admin {
 	public static function menu() {
 		add_menu_page( __( 'WPEssential Server', 'wpessential-server' ), __( 'WPE Server', 'wpessential-server' ), 'manage_woocommerce', 'wpes-server', array( __CLASS__, 'licenses' ), 'dashicons-admin-network', 56 );
 		add_submenu_page( 'wpes-server', __( 'Licenses', 'wpessential-server' ), __( 'Licenses', 'wpessential-server' ), 'manage_woocommerce', 'wpes-server', array( __CLASS__, 'licenses' ) );
+		add_submenu_page( 'wpes-server', __( 'Upload release', 'wpessential-server' ), __( 'Upload release', 'wpessential-server' ), 'manage_options', 'wpes-release', array( __CLASS__, 'release' ) );
 		add_submenu_page( 'wpes-server', __( 'Settings', 'wpessential-server' ), __( 'Settings', 'wpessential-server' ), 'manage_options', 'wpes-settings', array( __CLASS__, 'settings' ) );
 	}
 
@@ -190,6 +192,98 @@ class Admin {
 		echo '</table>';
 		submit_button();
 		echo '</form></div>';
+	}
+
+	/**
+	 * Upload release: the same job as the CI release route, for sites where a firewall
+	 * (e.g. Cloudflare Bot Fight Mode) blocks GitHub. Takes the zips from a "Build zips" run
+	 * as they download: hi-wpessential.zip, <demo>-<builder>.zip, or hi-wpessential-demos.zip
+	 * holding the demo packages.
+	 */
+	public static function release() {
+		echo '<div class="wrap"><h1>' . esc_html__( 'Upload release', 'wpessential-server' ) . '</h1>';
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only notice.
+		$done = isset( $_GET['done'] ) ? sanitize_text_field( wp_unslash( $_GET['done'] ) ) : '';
+		if ( '' !== $done ) {
+			echo '<div class="notice notice-success"><p>' . esc_html( sprintf( /* translators: %s: uploaded packages. */ __( 'Uploaded: %s', 'wpessential-server' ), $done ) ) . '</p></div>';
+		}
+		echo '<p>' . esc_html__( 'Download the artifacts of a "Build zips" run on GitHub and upload them here. Theme zip, demo packages and the demos bundle are recognised by file name.', 'wpessential-server' ) . '</p>';
+		echo '<form method="post" enctype="multipart/form-data" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">' . wp_nonce_field( 'wpes_release', '_wpnonce', true, false ) . '<input type="hidden" name="action" value="wpes_release"><table class="form-table">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Nonce markup.
+		echo '<tr><th>' . esc_html__( 'Zip files', 'wpessential-server' ) . '</th><td><input type="file" name="wpes_zips[]" accept=".zip" multiple required></td></tr>';
+		echo '<tr><th>' . esc_html__( 'Version', 'wpessential-server' ) . '</th><td><input type="text" name="version" value="' . esc_attr( (string) get_option( 'wpes_theme_release', '1.0.0' ) ) . '"></td></tr>';
+		echo '</table>';
+		submit_button( __( 'Upload', 'wpessential-server' ) );
+		echo '</form></div>';
+	}
+
+	/**
+	 * Save an uploaded release.
+	 */
+	public static function save_release() {
+		check_admin_referer( 'wpes_release' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( esc_html__( 'Not allowed.', 'wpessential-server' ) );
+		}
+		$done = array();
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- File array, checked below.
+		$files = isset( $_FILES['wpes_zips']['tmp_name'] ) ? (array) $_FILES['wpes_zips'] : array();
+		foreach ( (array) ( $files['tmp_name'] ?? array() ) as $i => $tmp ) {
+			if ( $tmp && is_uploaded_file( $tmp ) ) {
+				$done = array_merge( $done, self::place_zip( $tmp, sanitize_file_name( (string) $files['name'][ $i ] ), true ) );
+			}
+		}
+		if ( ! empty( $_POST['version'] ) ) {
+			update_option( 'wpes_theme_release', sanitize_text_field( wp_unslash( $_POST['version'] ) ), false );
+		}
+		wp_safe_redirect( admin_url( 'admin.php?page=wpes-release&done=' . rawurlencode( $done ? implode( ', ', $done ) : __( 'nothing recognised', 'wpessential-server' ) ) ) );
+		exit;
+	}
+
+	/**
+	 * Store one zip by its file name, opening a bundle of zips.
+	 *
+	 * @param string $src    Path of the file.
+	 * @param string $name   Original file name.
+	 * @param bool   $upload Whether $src is a PHP upload.
+	 * @return string[] Stored package names.
+	 */
+	private static function place_zip( $src, $name, $upload ) {
+		$base = strtolower( preg_replace( '/(\.zip)+$/i', '', $name ) );
+		if ( 'hi-wpessential' === $base ) {
+			$target = Playground::theme_path();
+		} elseif ( preg_match( '/^([a-z0-9]+)-(gutenberg|elementor)$/', $base, $m ) ) {
+			Demos::ensure( $m[1] );
+			$target = Demos::package_path( $m[1], $m[2] );
+		} else {
+			return $upload ? self::open_bundle( $src ) : array();
+		}
+		wp_mkdir_p( dirname( $target ) );
+		$ok = $upload ? move_uploaded_file( $src, $target ) : copy( $src, $target ); // phpcs:ignore Generic.PHP.ForbiddenFunctions.Found -- Release zip moved to the private folder.
+		return $ok ? array( $base ) : array();
+	}
+
+	/**
+	 * Store the zips inside a bundle (the demos artifact).
+	 *
+	 * @param string $src Bundle path.
+	 * @return string[] Stored package names.
+	 */
+	private static function open_bundle( $src ) {
+		$zip = new \ZipArchive();
+		if ( true !== $zip->open( $src ) ) {
+			return array();
+		}
+		$done = array();
+		$tmp  = wp_tempnam( 'wpes-release' );
+		for ( $i = 0; $i < $zip->numFiles; $i++ ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- ZipArchive API.
+			$entry = (string) $zip->getNameIndex( $i );
+			if ( '.zip' === strtolower( substr( $entry, -4 ) ) && false !== file_put_contents( $tmp, $zip->getFromIndex( $i ) ) ) { // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents -- Temp file.
+				$done = array_merge( $done, self::place_zip( $tmp, basename( $entry ), false ) );
+			}
+		}
+		$zip->close();
+		wp_delete_file( $tmp );
+		return $done;
 	}
 
 	/**
