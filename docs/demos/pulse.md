@@ -40,3 +40,12 @@ vs Base: dark-first, neon lime instead of indigo, pill/tile language, sans-only 
   - Overflow audit: 0 issues.
 - **Pulse Demo Dark:** every section cloned with the Dark variable mode.
 - **Pulse Demo UI Kit:** Light and Dark boards with tokens, type, buttons, pills, fields, speaker / session / ticket cards, navigation, QR and icons.
+
+### Fixes after review
+
+- **Mobile and tablet headers:** an empty nav frame was making the pill nav too tall; it is now collapsed.
+- **Agenda and session speaker names:** they now wrap instead of being cut off.
+- **Rows that clipped on phones** (hero meta, list rows, single event): set to wrap.
+- **Month view at 768:** event pills use smaller text and padding, so no word breaks in the middle.
+- **Desktop checkout (1920, 1440, 1024):** the sidebar now holds event details, what happens next, the refund guarantee and help, instead of an empty column.
+- **Re-audit:** 0 clipped nodes, 0 overflowing text, no large empty gaps.

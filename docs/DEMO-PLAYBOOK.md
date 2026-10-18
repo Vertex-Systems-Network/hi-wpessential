@@ -11,7 +11,7 @@ Read it fully before starting a demo. Update it when a rule changes; never work 
 4. **Light and dark.** Every demo ships a light and a dark version that share the same tokens.
 5. **All breakpoints.** 1920, 1440, 1024, 768, 560, 480, 360, 320 + device mockups, exactly like the Base Demo.
 6. **Every plugin screen.** If the demo uses a plugin (WooCommerce, The Events Calendar, AffiliateWP, LearnDash, bbPress, Contact Form…), design *all* of that plugin's front-end screens and states (lists, single, cart, checkout, account, empty, error, success).
-7. **Two builders, one design.** Gutenberg uses theme blocks/patterns. Elementor uses **native Elementor widgets and Global Kit settings only** — no custom CSS, no custom code, no HTML widgets for layout.
+7. **Two builders, one design — every demo ships both.** Gutenberg-native: core blocks, theme.json styles and theme patterns only (no custom blocks, no Custom HTML block, no extra CSS). Elementor-native: native Elementor widgets and Global Kit settings only — no custom CSS, no custom code, no HTML widgets for layout. A demo is not done until both packages import cleanly and match the Figma at every breakpoint.
 8. **Never crop heads.** Any image with a person must show the full head (hair included) with breathing room above it — in the generated image, in every Figma frame/crop at every breakpoint, and in theme `object-position`. Prompts for people always say "full head visible, not cropped". Product shots may hide the face only by turning the model away or framing from a distance, never by cutting through the head. Check every image after generation and regenerate if a head is cut.
 9. **Sharp at the largest breakpoint (1920 px).** Every image must look crisp in the biggest place it is used at 1920 px, including retina. Generate at Figma AI's maximum (`gpt-image-2.5-sunburst`, 1536 × 1024), then upscale 2× with an AI upscaler to 3072 × 2048 before exporting to the theme as WebP. Never stretch a small image in a layout; regenerate it instead.
 10. **One size for every image.** All images are generated at the same size and ratio: 1536 × 1024 (3:2). Compose with the subject centred and generous margins on every side, so the same file crops to 16:9 heroes, 3:4 product cards, 1:1 tiles or 4:5 mobile without losing the subject or the head.
@@ -85,6 +85,7 @@ Elements opt in with the block class `wpe-anim` plus `wpe-anim--fade-up|fade|zoo
 - [ ] Elementor package uses only native widgets + Kit; import tested
 - [ ] Previews + thumbnail regenerated from the real import
 - [ ] No horizontal scroll at any breakpoint, light and dark
+- [ ] Figma audit: no clipped text, no word broken mid-word, no empty frame inflating headers, no tall empty column next to a long one
 - [ ] Differentiation table (§7) updated
 
 ## 7. Demo register (keep up to date)
