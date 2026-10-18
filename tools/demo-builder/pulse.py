@@ -147,8 +147,16 @@ def g_header():
     return b.join(bar, head)
 
 
+def g_cta():
+    return b.section(b.group(b.group(b.h('Early-bird tickets end 22 March', size='h2', color='on-primary'),
+                                     b.p('Save €150 on Conference passes. Prices go up at 23:59 Lisbon time.', color='on-primary'), layout='default'),
+                             b.buttons(b.button('Get your ticket →', '{{page:tickets}}', style='wpe-dark')),
+                             bg='primary', className='wpe-card px-cta', layout='flex', wrap='wrap', justify='space-between', valign='center'),
+                     className='wpe-section wpe-section--sm')
+
+
 def g_footer():
-    return b.footer('Two days of design, engineering and AI talks. %s at the Lisbon Congress Centre.' % DATES,
+    return g_cta() + '\n\n' + b.footer('Two days of design, engineering and AI talks. %s at the Lisbon Congress Centre.' % DATES,
                     [('Event', [('Speakers', '{{page:speakers}}'), ('Agenda', '{{page:agenda}}'), ('Tickets', '{{page:tickets}}'), ('Events calendar', '{{home:events/}}')]),
                      ('Attend', [('Venue & hotels', '{{page:venue}}'), ('FAQ', '{{page:faq}}'), ('My tickets', '{{woo:myaccount}}'), ('Contact', '{{page:contact}}')]),
                      ('Company', [('Sponsors', '{{page:sponsors}}'), ('Become a sponsor', '{{page:become-sponsor}}'), ('Blog', '{{page:blog}}')])],
@@ -230,12 +238,7 @@ def g_home():
                                        ('crowd', 'Audience at Pulse 2026', 'I left with three new collaborators and a notebook full of ideas I shipped the following month.', 'Priya S., Product Designer'),
                                        ('workshop', 'Workshop at Pulse 2026', 'The workshops were hands-on and small. I learned more in four hours than in a semester.', 'Marco R., Frontend Lead'),
                                        ('networking', 'Attendees networking', 'Tight talks, zero fluff, and the after-party was unreal. Already bought my 2027 ticket.', 'Hannah W., CTO')]]))
-    cta = b.section(b.group(b.group(b.h('Early-bird tickets end 22 March', size='h2', color='on-primary'),
-                                    b.p('Save €150 on Conference passes. Prices go up at 23:59 Lisbon time.', color='on-primary'), layout='default'),
-                            b.buttons(b.button('Get your ticket', '{{page:tickets}}', style='wpe-dark')),
-                            bg='primary', className='wpe-card px-cta', layout='flex', wrap='wrap', justify='space-between', valign='center'),
-                    className='wpe-section wpe-section--sm')
-    return b.join(hero, stats, logos, speakers, agenda, tickets, venue, quotes, cta)
+    return b.join(hero, stats, logos, speakers, agenda, tickets, venue, quotes)
 
 
 def g_title(over, title, lead):
@@ -271,31 +274,35 @@ def g_tickets():
                   b.section(b.h('Ticket questions', size='h2'), *[b.details(q, b.p(a)) for q, a in FAQ[:3]], content='860px'))
 
 
+HOTELS = [('Myriad by SANA', '2 min walk · river view', '€189'), ('Tivoli Oriente', '6 min walk · rooftop pool', '€149'), ('Moxy Lisboa Oriente', '8 min walk · budget friendly', '€119')]
+
+
 def g_venue():
+    routes = [('From the airport', 'Red metro line to Oriente, change to the green line — 18 minutes, €1.80.'),
+              ('From the city centre', 'Tram 15 to Belém, then a five-minute walk along the river.'),
+              ('By bike', 'Gira bike stations at the main entrance. Secure bike parking inside.')]
     return b.join(
-        b.cover('venue', b.p('Venue', style='wpe-overline', color='primary'), b.h('Lisbon Congress Centre', level=1, size='display', color='on-ink'),
-                b.p('On the Tagus riverfront, ten minutes from the airport. Step-free access throughout.', color='on-ink', size='body-l'),
-                dim=50, min_height=600, position='bottom left'),
-        b.section(b.h('Getting there', size='h2'), b.columns(*[b.column(b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), style='wpe-card')
-                                                             for t, d in [('From the airport', 'Red metro line to Oriente, change to the green line for Cais do Sodré. About 25 minutes, €1.80.'),
-                                                                          ('From the city centre', 'Tram 15 to Belém, then a five-minute walk along the river.'),
-                                                                          ('By bike', 'Gira bike stations at the main entrance. Secure bike parking inside.')]])),
-        b.section(b.h('Stay close, pay less', size='h2'), b.p('Use the code PULSE27 for these rates. Rooms are held until 10 April.', color='text-muted'),
-                  b.table(['Hotel', 'Walk', 'From'], [['Myriad by Sana', '2 min · river view', '€189'], ['Tivoli Oriente', '5 min · rooftop pool', '€149'], ['Moxy Lisboa Oriente', '8 min · budget friendly', '€99']]),
-                  bg='surface-alt'),
-        b.section(b.columns(b.column(b.image('networking', 'Attendees in the foyer', aspect='4/3')),
-                            b.column(b.h('Workshops and after-party: LX Factory', size='h2'),
-                                     b.p('Rua Rodrigues de Faria 103, 1300-501 Lisboa. A converted textile mill with eight workshop rooms and a courtyard for the party.', color='text-muted'),
-                                     b.buttons(b.button('Open in Maps', 'https://maps.google.com/?q=LX+Factory+Lisboa', style='wpe-outline')), valign='center'),
-                            valign='center', className='wpe-gap-lg')))
+        g_title('Venue &amp; travel', 'Lisbon Congress Centre', 'On the Tagus riverfront, 10 minutes from the airport. Step-free access throughout.'),
+        b.section(b.image('venue', 'Lisbon Congress Centre at dusk', aspect='2/1', className='px-rounded'), className='wpe-section wpe-section--sm'),
+        b.section(b.group(b.p('Getting here', className='px-chip'), b.h('Metro, tram or bike', size='h2'), layout='default'),
+                  b.group(*[b.group(b.p('●', className='px-dot'), b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='px-tile')
+                            for t, d in routes], layout='grid', columns=3), className='wpe-section wpe-section--sm'),
+        b.section(b.group(b.p('Partner hotels', className='px-chip'), b.h('Stay close, pay less', size='h2'),
+                          b.p('Use code PULSE27 for the rates below. Rooms held until 10 April.', color='text-muted'), layout='default'),
+                  *[b.group(b.group(b.h(n, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default'),
+                            b.p('<span class="px-badge">from %s</span> <a class="px-mini-btn" href="{{page:contact}}">Book →</a>' % p, className='px-row__end'),
+                            layout='flex', wrap='nowrap', justify='space-between', valign='center', className='px-row') for n, d, p in HOTELS],
+                  className='wpe-section wpe-section--sm'))
 
 
 def g_sponsors():
-    tiers = [b.section(b.h(tier, size='h3'), b.group(*[b.group(b.p('<strong>%s</strong>' % n, align='center', size='h4'), className='wpe-card', layout='constrained') for n in names],
-                                                      layout='grid', grid_min='12rem'), className='wpe-section wpe-section--sm') for tier, names in SPONSORS]
-    return b.join(g_title('Sponsors', 'The teams that make Pulse possible', 'Our sponsors keep ticket prices low and fund 200 diversity tickets every year.'), *tiers,
-                  b.section(b.h('Put your team in front of 2,400 builders', size='h2', align='center'),
-                            b.buttons(b.button('Become a sponsor', '{{page:become-sponsor}}'), justify='center'), bg='surface-alt', content='760px'))
+    labels = {'Platinum': 'Headline partners', 'Gold': 'Gold partners', 'Community': 'Community partners'}
+    cols = {'Platinum': 2, 'Gold': 4, 'Community': 6}
+    tiers = [b.group(b.p(labels.get(tier, tier), className='px-chip'),
+                     b.group(*[b.p(n, className='px-logo px-logo--%s' % tier.lower()) for n in names], layout='grid', columns=cols.get(tier, 4), className='px-logos-grid'),
+                     layout='default', className='px-tier') for tier, names in SPONSORS]
+    return b.join(g_title('Sponsors', 'The teams making Pulse possible', 'Pulse is independent. Our partners fund scholarships, live captions and free recordings.'),
+                  b.section(*tiers, className='wpe-section wpe-section--sm'))
 
 
 def g_become():
@@ -309,19 +316,17 @@ def g_become():
 
 
 def g_faq():
-    return b.join(g_title('FAQ', 'Questions, answered', 'Tickets, travel, accessibility and everything in between.'),
-                  b.section(*[b.details(q, b.p(a)) for q, a in FAQ], content='860px', className='wpe-section wpe-section--sm'))
+    return b.join(g_title('FAQ', 'Questions, answered', 'Still stuck? Write to tickets@pulseconf.io and we reply within a day.'),
+                  b.section(*[b.details(q, b.p(a)) for q, a in FAQ], className='wpe-section wpe-section--sm px-faq'))
 
 
 def g_contact():
-    return b.join(g_title('Contact', 'Talk to the Pulse team', 'We reply within one working day, Monday to Friday.'),
-                  b.section(b.columns(*[b.column(b.h(t, level=3, size='h4'), b.p(d), style='wpe-card') for t, d in [
-                      ('Tickets', '<a href="mailto:tickets@pulseconf.io">tickets@pulseconf.io</a>'),
-                      ('Sponsors', '<a href="mailto:partners@pulseconf.io">partners@pulseconf.io</a>'),
-                      ('Press', '<a href="mailto:press@pulseconf.io">press@pulseconf.io</a>'),
-                      ('Office', 'Rossio 42, 1100-200 Lisboa<br>+351 21 340 2290')]]), className='wpe-section wpe-section--sm'),
-                  b.section(b.h('Send us a message', size='h2'), b.p('Pick a topic so it reaches the right person first time.', color='text-muted'),
-                            b.shortcode('[wpforms id="{{form:contact}}" title="false"]'), className='wpe-section wpe-section--sm', content='720px', bg='surface-alt'))
+    cards = [('General', 'tickets@pulseconf.io'), ('Speaking', 'speakers@pulseconf.io'), ('Sponsorship', 'partners@pulseconf.io'), ('Phone', '+351 21 340 2290')]
+    side = [b.group(b.p('●', className='px-dot'), b.group(b.p('<strong>%s</strong>' % t), b.p(d, color='text-muted', size='small'), layout='default'),
+                    layout='flex', wrap='nowrap', valign='center', className='px-tile px-tile--row') for t, d in cards]
+    return b.join(g_title('Contact', 'Talk to the Pulse team', 'Tickets, press, speaking or sponsorship — pick a topic and we route it to the right person.'),
+                  b.section(b.columns(b.column(b.shortcode('[wpforms id="{{form:contact}}" title="false"]'), width='62%', className='px-form-card'),
+                                      b.column(*side, width='38%'), className='wpe-gap-lg'), className='wpe-section wpe-section--sm'))
 
 
 # Elementor ------------------------------------------------------------------------------

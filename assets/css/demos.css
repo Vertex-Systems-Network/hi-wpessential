@@ -145,3 +145,22 @@
 .bx-inline-stats b { font-size: 24px; color: var(--wp--preset--color--primary); }
 @media (max-width: 1024px) { :is(.bx-services, .bx-values).is-layout-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
 @media (max-width: 640px) { :is(.bx-services, .bx-values).is-layout-grid { grid-template-columns: minmax(0, 1fr) !important; } }
+
+/* Pulse — inner pages. */
+.px-rounded img { border-radius: 24px; width: 100%; object-fit: cover; }
+.px-tile { background: var(--wp--preset--color--surface-alt); border-radius: 16px; padding: 20px 22px; }
+.px-tile--row { gap: 14px !important; margin-bottom: 12px; }
+.px-tile--row p { margin: 0; }
+.px-dot { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--wp--preset--color--primary); color: var(--wp--preset--color--on-primary); font-size: 10px; margin: 0 0 8px; flex: none; }
+.px-row { border: 1px solid var(--wp--preset--color--border); border-radius: 14px; padding: 14px 18px; background: var(--wp--preset--color--surface); margin-top: 12px; }
+.px-row h3, .px-row p { margin: 0; }
+.px-row__end { white-space: nowrap; }
+.px-mini-btn { border: 1px solid var(--wp--preset--color--border); border-radius: 999px; padding: 4px 12px; font-size: 12px; text-decoration: none; color: inherit; margin-left: 8px; }
+.px-tier { margin-bottom: 32px; }
+.px-logo { display: grid; place-items: center; background: var(--wp--preset--color--surface-alt); border-radius: 16px; font-weight: 700; margin: 0; }
+.px-logo--platinum { min-height: 120px; font-size: 32px; }
+.px-logo--gold { min-height: 72px; font-size: 22px; }
+.px-logo--community { min-height: 64px; font-size: 16px; }
+.px-form-card { border: 1px solid var(--wp--preset--color--border); border-radius: 20px; padding: 28px !important; background: var(--wp--preset--color--surface); }
+.px-faq details { border: 1px solid var(--wp--preset--color--border); border-radius: 14px; padding: 6px 18px; margin-bottom: 10px; background: var(--wp--preset--color--surface); }
+@media (max-width: 781px) { .px-logos-grid.is-layout-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
