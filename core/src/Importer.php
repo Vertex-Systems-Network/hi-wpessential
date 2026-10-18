@@ -1010,8 +1010,9 @@ class Importer {
 
 		$attributes = array();
 		foreach ( (array) ( $item['attributes'] ?? array() ) as $attr ) {
-			$a = new \WC_Product_Attribute();
-			if ( ! empty( $attr['global'] ) && ( $tax = $this->global_attribute( $attr ) ) ) {
+			$a   = new \WC_Product_Attribute();
+			$tax = empty( $attr['global'] ) ? '' : $this->global_attribute( $attr );
+			if ( $tax ) {
 				// Global (taxonomy) attribute, so shop filters such as filter_size work.
 				$a->set_id( wc_attribute_taxonomy_id_by_name( $tax ) );
 				$a->set_name( $tax );
@@ -1068,13 +1069,28 @@ class Importer {
 	private function global_attribute( $attr ) {
 		$tax = wc_attribute_taxonomy_name( $attr['name'] );
 		if ( ! wc_attribute_taxonomy_id_by_name( $tax ) ) {
-			$made = wc_create_attribute( array( 'name' => $attr['name'], 'slug' => sanitize_title( $attr['name'] ), 'order_by' => 'menu_order' ) );
+			$made = wc_create_attribute(
+				array(
+					'name'     => $attr['name'],
+					'slug'     => sanitize_title( $attr['name'] ),
+					'order_by' => 'menu_order',
+				)
+			);
 			if ( is_wp_error( $made ) ) {
 				return '';
 			}
 		}
 		if ( ! taxonomy_exists( $tax ) ) {
-			register_taxonomy( $tax, array( 'product' ), array( 'hierarchical' => false, 'show_ui' => false, 'query_var' => true, 'rewrite' => false ) );
+			register_taxonomy(
+				$tax,
+				array( 'product' ),
+				array(
+					'hierarchical' => false,
+					'show_ui'      => false,
+					'query_var'    => true,
+					'rewrite'      => false,
+				)
+			);
 		}
 		foreach ( array_values( (array) $attr['options'] ) as $order => $option ) {
 			$term = term_exists( $option, $tax );

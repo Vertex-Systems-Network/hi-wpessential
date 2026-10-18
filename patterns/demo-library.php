@@ -34,7 +34,11 @@ $wpessential_demos = array(
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"bx-demos","layout":{"type":"grid","columnCount":3}} -->
-<div class="wp-block-group bx-demos"><?php foreach ( $wpessential_demos as $wpessential_demo ) : ?><!-- wp:group {"className":"bx-demo","layout":{"type":"default"}} -->
+<div class="wp-block-group bx-demos">
+<?php
+foreach ( $wpessential_demos as $wpessential_demo ) :
+	?>
+	<!-- wp:group {"className":"bx-demo","layout":{"type":"default"}} -->
 <div class="wp-block-group bx-demo"><!-- wp:image {"sizeSlug":"full","className":"bx-demo__img"} -->
 <figure class="wp-block-image size-full bx-demo__img"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/' . $wpessential_demo[0] . '.webp' ) ); ?>" alt="<?php echo esc_attr( $wpessential_demo[1] ); ?>"/></figure>
 <!-- /wp:image -->

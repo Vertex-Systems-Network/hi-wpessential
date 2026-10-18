@@ -306,7 +306,12 @@ add_action(
 			echo '</ul>';
 		}
 
-		$sizes = taxonomy_exists( 'pa_size' ) ? get_terms( array( 'taxonomy' => 'pa_size', 'hide_empty' => true ) ) : array();
+		$sizes = taxonomy_exists( 'pa_size' ) ? get_terms(
+			array(
+				'taxonomy'   => 'pa_size',
+				'hide_empty' => true,
+			)
+		) : array();
 		if ( $sizes && ! is_wp_error( $sizes ) ) {
 			echo '<h2 class="wpe-shop-filters__title">' . esc_html__( 'Size', 'hi-wpessential' ) . '</h2><ul class="wpe-shop-filters__chips">';
 			foreach ( $sizes as $size ) {
@@ -329,7 +334,17 @@ add_action(
 			$label             = $max ? wp_strip_all_tags( wc_price( $min ) . ' – ' . wc_price( $max ) ) : wp_strip_all_tags( wc_price( $min ) ) . '+';
 			printf(
 				'<li><a href="%1$s"%2$s>%3$s</a></li>',
-				esc_url( wpessential_shop_filter_url( $on ? array( 'min_price' => null, 'max_price' => null ) : array( 'min_price' => $min, 'max_price' => $max ? $max : null ) ) ),
+				esc_url(
+					wpessential_shop_filter_url(
+						$on ? array(
+							'min_price' => null,
+							'max_price' => null,
+						) : array(
+							'min_price' => $min,
+							'max_price' => $max ? $max : null,
+						)
+					)
+				),
 				$on ? ' aria-current="true"' : '',
 				esc_html( html_entity_decode( $label ) )
 			);
@@ -430,7 +445,19 @@ add_action(
 		foreach ( $cats as $cat ) {
 			$thumb = (int) get_term_meta( $cat->term_id, 'thumbnail_id', true );
 			if ( ! $thumb ) {
-				$ids = get_posts( array( 'post_type' => 'product', 'numberposts' => 5, 'fields' => 'ids', 'tax_query' => array( array( 'taxonomy' => 'product_cat', 'terms' => $cat->term_id ) ) ) ); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+				$ids = get_posts(
+					array(
+						'post_type'   => 'product',
+						'numberposts' => 5,
+						'fields'      => 'ids',
+						'tax_query'   => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Five IDs, shop page only.
+							array(
+								'taxonomy' => 'product_cat',
+								'terms'    => $cat->term_id,
+							),
+						),
+					)
+				); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 				foreach ( $ids as $pid ) {
 					$thumb = (int) get_post_thumbnail_id( $pid );
 					if ( $thumb ) {
