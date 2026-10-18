@@ -153,7 +153,7 @@ def g_footer():
                      ('Attend', [('Venue & hotels', '{{page:venue}}'), ('FAQ', '{{page:faq}}'), ('My tickets', '{{woo:myaccount}}'), ('Contact', '{{page:contact}}')]),
                      ('Company', [('Sponsors', '{{page:sponsors}}'), ('Become a sponsor', '{{page:become-sponsor}}'), ('Blog', '{{page:blog}}')])],
                     ('© Pulse Conference Lda. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">Hi WPEssential</a>'),
-                    band=('See you in Lisbon.', 'Early-bird pricing until 22 March.', 'Get tickets', '{{page:tickets}}')).replace('wpe-footer__newsletter', 'wpe-footer__newsletter px-bigband', 1)
+                    band=('See you in Lisbon.', 'Early-bird pricing until 22 March.', 'Get tickets', '{{page:tickets}}')).replace('wpe-footer__newsletter', 'wpe-footer__newsletter px-bigband')
 
 
 def g_speaker_card(s, topic=True):
@@ -224,7 +224,7 @@ def g_home():
                  b.p('Ten minutes from the airport on the metro, with step-free access throughout and a terrace over the Tagus.', color='text-muted'),
                  b.ul(['Praça das Indústrias, 1300-307 Lisboa', 'Doors 08:00 · Talks 09:00 – 18:00', 'Hearing loops, live captions, quiet rooms'], style='wpe-checklist'),
                  b.buttons(b.button('Plan your trip →', '{{page:venue}}', style='wpe-outline')), valign='center'), valign='center', className='wpe-gap-lg'))
-    quotes = b.section(b.p('2026 in their words', className='px-chip'), b.h('“The best two days of my year.”', size='h2'),
+    quotes = b.section(b.group(b.p('2026 in their words', className='px-chip'), b.h('“The best two days of my year.”', size='h2'), layout='default'),
                        b.columns(*[b.column(b.image(img, alt, aspect='3/2'), b.p('“', className='px-qmark'), b.p(q), b.p('<strong>%s</strong>' % who, size='small'), style='wpe-card')
                                    for img, alt, q, who in [
                                        ('crowd', 'Audience at Pulse 2026', 'I left with three new collaborators and a notebook full of ideas I shipped the following month.', 'Priya S., Product Designer'),
@@ -239,13 +239,14 @@ def g_home():
 
 
 def g_title(over, title, lead):
-    return b.section(b.p(over, style='wpe-overline'), b.h(title, level=1, size='h1'), b.p(lead, style='wpe-lead'),
-                     className='wpe-section wpe-section--sm', content='860px')
+    return b.section(b.group(b.p('<a href="{{home:}}">Home</a> › %s' % over, className='px-crumb'), b.p(over, className='px-chip'),
+                             b.h(title, level=1, size='display', className='px-title'), b.p(lead, color='text-muted'), layout='default'),
+                     className='wpe-section wpe-section--sm px-page-head', content='1200px')
 
 
 def g_speakers():
     return b.join(g_title('Speakers', '60 speakers, one stage-worthy idea each', 'Designers, engineers and founders who have shipped the things they talk about.'),
-                  b.section(b.group(*[g_speaker_card(s) for s in SPEAKERS], layout='grid', grid_min='10rem'), className='wpe-section wpe-section--sm'),
+                  b.section(b.group(*[g_speaker_card(s) for s in SPEAKERS], layout='grid', columns=4), className='wpe-section wpe-section--sm'),
                   b.section(b.h('Want to speak in 2028?', size='h3', align='center'),
                             b.p('The call for proposals opens in September. Send us a short pitch and a past talk.', align='center', color='text-muted'),
                             b.buttons(b.button('Get in touch', '{{page:contact}}', style='wpe-outline'), justify='center'), bg='surface-alt', content='720px'))
@@ -338,7 +339,7 @@ def e_session(t):
 
 
 def e_title(over, title, lead):
-    return e.container(e.overline(over), e.heading(title, 1, size_px=64), e.text(lead, size_px=18), pad=(80, 24, 32, 24))
+    return e.container(e.text('Home › ' + over, size_px=12), e.overline(over), e.heading(title, 1, size_px=72), e.text(lead, size_px=16), pad=(72, 24, 32, 24), gap=12)
 
 
 def e_passes():
