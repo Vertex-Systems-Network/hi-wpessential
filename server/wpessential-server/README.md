@@ -36,6 +36,19 @@ Runs on the seller site (wpessential.org) with WooCommerce. It is the online dem
 
 The theme points at this server with `wpessential_core_license_config` (`api`, `endpoint`) and `wpessential_core_manifest_url`.
 
+## Automatic releases from GitHub
+
+`POST /release` (administrator, application password) accepts the theme zip as `theme`, the
+`version`, and demo packages named `<demo>-<builder>` (unknown demos are created as drafts).
+The *Build zips* workflow calls it when a `v*` tag is pushed:
+
+1. On wpessential.org: Users → your admin → Application Passwords → add "GitHub".
+2. On GitHub: Settings → Secrets and variables → Actions → add `WPES_SERVER_URL`
+   (`https://wpessential.org`) and `WPES_SERVER_AUTH` (`username:application password`).
+3. Release: `git tag v1.0.1 && git push origin v1.0.1`. The tag sets the theme version.
+
+Raise `upload_max_filesize` / `post_max_size` to at least 16M; failed files are listed in `failed`.
+
 ## Hooks
 
 `wpes_charge_renewal` (filter, return true when the gateway charged the token), `wpes_license_created`, `wpes_license_activated`, `wpes_license_action` (actions), `wpes_staging_patterns`, `wpes_rate_limit` (filters).

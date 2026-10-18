@@ -38,6 +38,7 @@ class Api {
 			'/account/logout'     => array( 'POST', 'logout', $auth ),
 			'/account/license'    => array( 'POST', 'license_action', $auth ),
 			'/account/checkout'   => array( 'POST', 'checkout', $auth ),
+			'/release'            => array( 'POST', 'release', array( $this, 'can_release' ) ),
 		);
 		foreach ( $routes as $route => $def ) {
 			register_rest_route(
@@ -286,6 +287,71 @@ class Api {
 			array(
 				'success' => true,
 				'url'     => Accounts::checkout_link( $user, $product, $extra ),
+			)
+		);
+	}
+
+	/**
+	 * Release uploads need an administrator (WordPress application password over HTTPS).
+	 *
+	 * @return bool
+	 */
+	public function can_release() {
+		return current_user_can( 'manage_options' );
+	}
+
+	/**
+	 * Publish a release from CI: the theme zip (live demos) and demo packages.
+	 *
+	 * Multipart fields: `theme` (theme zip), `version`, and one file per package named
+	 * `<demo>-<builder>` (e.g. maison-elementor). A package for a demo the library does not
+	 * have yet creates a draft demo to complete in the admin.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 * @return \WP_REST_Response
+	 */
+	public function release( $request ) {
+		$files = $request->get_file_params();
+		$done  = array();
+		$fail  = array();
+		foreach ( $files as $field => $file ) {
+			if ( ! empty( $file['error'] ) ) {
+				// Usually UPLOAD_ERR_INI_SIZE: raise upload_max_filesize / post_max_size on the server.
+				$fail[ $field ] = (int) $file['error'];
+				continue;
+			}
+			if ( empty( $file['tmp_name'] ) || ! is_uploaded_file( $file['tmp_name'] ) || '.zip' !== strtolower( substr( (string) $file['name'], -4 ) ) ) {
+				continue;
+			}
+			if ( 'theme' === $field ) {
+				$target = Playground::theme_path();
+			} elseif ( preg_match( '/^([a-z0-9]+)-(gutenberg|elementor)$/', (string) $field, $m ) ) {
+				if ( ! get_posts( array( 'post_type' => Demos::CPT, 'post_status' => 'any', 'meta_key' => '_wpes_demo_id', 'meta_value' => $m[1], 'fields' => 'ids', 'numberposts' => 1 ) ) ) { // phpcs:ignore WordPress.DB.SlowDBQuery, WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound -- Admin-only release call.
+					$id = wp_insert_post(
+						array(
+							'post_type'   => Demos::CPT,
+							'post_status' => 'draft',
+							'post_title'  => ucfirst( $m[1] ),
+						)
+					);
+					update_post_meta( $id, '_wpes_demo_id', $m[1] );
+				}
+				$target = Demos::package_path( $m[1], $m[2] );
+			} else {
+				continue;
+			}
+			if ( move_uploaded_file( $file['tmp_name'], $target ) ) { // phpcs:ignore Generic.PHP.ForbiddenFunctions.Found -- Release zip moved to the private folder.
+				$done[] = $field;
+			}
+		}
+		if ( $request->get_param( 'version' ) ) {
+			update_option( 'wpes_theme_release', sanitize_text_field( $request->get_param( 'version' ) ), false );
+		}
+		return rest_ensure_response(
+			array(
+				'success'  => (bool) $done && ! $fail,
+				'uploaded' => $done,
+				'failed'   => $fail,
 			)
 		);
 	}
