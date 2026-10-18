@@ -103,7 +103,7 @@ def pages(builder, brand, email, sells=None):
 
 
 def add(package, builder, brand, email, sells=None):
-    """Append the legal pages to a package unless it already has them."""
-    have = {c.get('key') for c in package.get('content', [])}
-    package['content'] += [p for p in pages(builder, brand, email, sells) if p['key'] not in have]
+    """Add the legal pages to a package, replacing copies built for another builder."""
+    fresh = {p['key']: p for p in pages(builder, brand, email, sells)}
+    package['content'] = [fresh.pop(c.get('key'), c) for c in package.get('content', [])] + list(fresh.values())
     return package
