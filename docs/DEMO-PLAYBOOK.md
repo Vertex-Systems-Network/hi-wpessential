@@ -16,6 +16,43 @@ Read it fully before starting a demo. Update it when a rule changes; never work 
 9. **Sharp at the largest breakpoint (1920 px).** Every image must look crisp in the biggest place it is used at 1920 px, including retina. Generate at Figma AI's maximum (`gpt-image-2.5-sunburst`, 1536 × 1024), then upscale 2× with an AI upscaler to 3072 × 2048 before exporting to the theme as WebP. Never stretch a small image in a layout; regenerate it instead.
 10. **One size for every image.** All images are generated at the same size and ratio: 1536 × 1024 (3:2). Compose with the subject centred and generous margins on every side, so the same file crops to 16:9 heroes, 3:4 product cards, 1:1 tiles or 4:5 mobile without losing the subject or the head.
 11. **Accessibility.** WCAG 2.2 AA contrast in both schemes, focus states visible, motion respects `prefers-reduced-motion`.
+12. **SEO 100% — the base theme and every demo.** No demo ships with an SEO gap.
+
+    - **Semantics.**
+      - One `<h1>` per page.
+      - Headings in order (no skipped levels for styling).
+      - Landmarks: `header`, `nav`, `main`, `footer`.
+      - Buttons are buttons and links are links.
+      - No text baked into images.
+    - **Meta.**
+      - Every page and post has a unique title (≤ 60 chars) and meta description (≤ 155 chars), set in the package (`seo` per item).
+      - Canonical URL.
+      - Open Graph and Twitter cards with a 1200 × 630 share image.
+      - Clean "Post name" permalinks set on import.
+      - The theme prints these when no SEO plugin is active and stands aside for Yoast or Rank Math when one is.
+    - **Structured data (JSON-LD).**
+      - Site-wide: `Organization`/`WebSite`, plus `BreadcrumbList` on inner pages.
+      - Posts: `Article`.
+      - Shop: `Product` with `Offer` (WooCommerce).
+      - Events: `Event` with `Place` and `Offer` (The Events Calendar).
+      - FAQ blocks: `FAQPage`.
+      - Validate in the Rich Results Test.
+    - **Images.**
+      - Real descriptive `alt` text.
+      - WebP with `srcset`, plus width and height so there is no layout shift.
+      - Hero image `fetchpriority="high"` and not lazy; everything below the fold lazy.
+    - **Performance (Core Web Vitals) at 75th percentile:** LCP < 2.5 s, CLS < 0.1, INP < 200 ms.
+      - Local fonts with `font-display: swap`, and the heading font preloaded.
+      - No render-blocking scripts.
+      - Motion never hides the LCP element.
+    - **Crawl.**
+      - Core `wp-sitemap.xml`.
+      - `robots.txt` allows assets.
+      - No `noindex` left on demo pages.
+      - Every internal link resolves (no 404s).
+      - Menus and footer link every key page.
+      - Readable URLs and slugs set in the package.
+    - **Gate.** Lighthouse SEO = 100 and Accessibility ≥ 95, mobile and desktop, on every page template of every demo, both builders, before release.
 
 ## 2. Figma structure (file `5AqHWOUl6bcITWWj4PPoAF`)
 
@@ -87,6 +124,7 @@ Elements opt in with the block class `wpe-anim` plus `wpe-anim--fade-up|fade|zoo
 - [ ] No horizontal scroll at any breakpoint, light and dark
 - [ ] Figma audit: no clipped text, no word broken mid-word, no empty frame inflating headers, no tall empty column next to a long one
 - [ ] Differentiation table (§7) updated
+- [ ] SEO gate (§1.12): Lighthouse SEO 100 / A11y ≥ 95 on every template, both builders; JSON-LD valid; unique titles + descriptions; 0 broken links
 
 ## 7. Demo register (keep up to date)
 
