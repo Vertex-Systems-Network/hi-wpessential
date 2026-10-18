@@ -15,9 +15,24 @@ FAQ = [('How long does a website take?', 'Most business sites launch in four to 
        ('Can I edit the site myself?', 'Yes. Every page is built with Gutenberg or Elementor and comes with a short training session.'),
        ('Do you offer support after launch?', 'Every plan includes 30 days of support; monthly care plans are available after that.'),
        ('Which builder should I choose?', 'Both are first-class. Choose Gutenberg for speed and Elementor if your team prefers visual editing.')]
-PLANS = [('Starter', '$29', ['1 website', 'All free demos', 'Community support']),
-         ('Pro', '$79', ['3 websites', 'All Pro demos', 'Priority support', 'Header & footer builder']),
-         ('Agency', '$199', ['Unlimited websites', 'White label', 'Dedicated support'])]
+PLANS = [('Free', '$0', 'For personal sites getting started.', 'Download free', ['12 free demos', 'Gutenberg + Elementor', 'Core blocks & patterns', 'Community support']),
+         ('Pro', '$59', 'For freelancers and growing businesses.', 'Get Pro', ['All 40+ demos', 'Premium blocks & widgets', 'WooCommerce demos', '1 year of updates', 'Priority email support']),
+         ('Agency', '$199', 'For teams building client sites.', 'Get Agency', ['Everything in Pro', 'Use on unlimited sites', 'White-label dashboard', 'Client handoff kit'])]
+PLAN_FAQ = [('Can I switch between Gutenberg and Elementor later?', 'Yes. Every demo exists in both versions, and your colors and fonts carry over automatically.'),
+            ('What happens when my license expires?', 'Your site keeps working. You just stop receiving updates and new Pro demo imports until you renew.'),
+            ('Do you offer refunds?', 'Yes — a full refund within 14 days, no questions asked.')]
+VALUES = [('fas fa-bolt', 'Performance first', 'Every demo has a performance budget and is tested on a mid-range phone.'),
+          ('fas fa-circle-check', 'Accessible by default', 'WCAG 2.1 AA colors, focus states and semantic markup out of the box.'),
+          ('fas fa-layer-group', 'No lock-in', 'Content lives in core blocks or Elementor — switch themes any time.'),
+          ('fas fa-user', 'Human support', 'Real developers answer your tickets, usually within a day.')]
+SERVICE_CARDS = [('fas fa-download', 'Demo setup', 'We import your chosen demo, connect your domain and configure plugins.', 'From $149'),
+                 ('fas fa-bars', 'Brand customization', 'Your colors, fonts, logo and copy applied across every template.', 'From $399'),
+                 ('fas fa-cart-shopping', 'WooCommerce launch', 'Products, payments, shipping zones and emails configured and tested.', 'From $699'),
+                 ('fas fa-bolt', 'Speed optimization', 'Caching, image compression and Core Web Vitals tuning.', 'From $199'),
+                 ('fas fa-lock', 'Care plan', 'Monthly updates, backups, uptime monitoring and security scans.', '$49 / month'),
+                 ('fas fa-clock', 'Priority support', 'Same-day answers and screen-share sessions with a developer.', '$29 / month')]
+STEPS = [('01', 'Pick a demo', 'Browse 40+ demos and preview them live.'), ('02', 'Choose a builder', 'Gutenberg or Elementor — same design.'),
+         ('03', 'Import in one click', 'Plugins, content and settings are set up for you.'), ('04', 'Make it yours', 'Edit text, swap images and publish.')]
 
 
 def home():
@@ -60,25 +75,37 @@ def title(over, t, lead):
 
 
 def about():
-    return [title('About us', 'A small team that ships', 'We design and build WordPress websites for growing businesses.'),
-            e.container(e.row(e.col(e.image_fixed('demo-business', 'Business website on a laptop', 440, radius=16), width=50),
-                              e.col(e.heading('Our story'), e.text('Started in 2016 as two freelancers, we now help hundreds of businesses launch faster with reusable, well-made demos.'),
-                                    e.icon_list(['Design-first, always', 'Performance budgets on every page', 'Plain-language support']), width=50, justify='center'), gap=56),
-                        pad=(40, 24, 96, 24)),
-            e.container(e.heading('The team'), e.grid(*[e.image_box('team-%d' % i, n, r, height=300) for i, (n, r) in enumerate(
-                [('Ayesha Khan', 'Design Lead'), ('Daniel Reyes', 'Developer'), ('Sara Malik', 'Marketing'), ('James Carter', 'Support')], 1)], columns=4),
-                        bg='surface-alt', pad=(96, 24, 96, 24))]
+    return [title('About', 'We build WordPress themes people actually enjoy using',
+                  'Our team has shipped sites for agencies, stores and publishers since 2014. Hi WPEssential is everything we learned, packaged.'),
+            e.container(e.row(e.col(e.image_fixed('post-1', 'A designer building a site at her desk', 440, radius=16), width=46),
+                              e.col(e.overline('Our story'), e.heading('Small team, big standards'),
+                                    e.text('We started as an agency rebuilding the same sites over and over. Hi WPEssential replaces that repetition with demos you can trust: accessible markup, real performance budgets and no lock-in.'),
+                                    e.grid(e.counter(12, 'Building for WordPress', ' yrs'), e.counter(18, 'Active installs', 'k+'), e.counter(24, 'Support response', 'h'), columns=3),
+                                    width=54, justify='center'), gap=56), pad=(72, 24, 96, 24)),
+            e.container(e.overline('What we value', align='center'), e.heading('Principles behind every release', align='center'),
+                        e.grid(*[e.icon_box(i, t, d) for i, t, d in VALUES], columns=4), bg='surface-alt', pad=(96, 24, 96, 24)),
+            e.container(e.overline('The team', align='center'), e.heading('People behind Hi WPEssential', align='center'),
+                        e.grid(*[e.image_box('team-%d' % i, n, r, height=300) for i, (n, r) in enumerate(
+                            [('Ayesha Malik', 'Founder & Lead Designer'), ('Bilal Khan', 'Head of Engineering'), ('Sara Ahmed', 'Customer Success'), ('Usman Tariq', 'WooCommerce Specialist')], 1)], columns=4),
+                        pad=(96, 24, 96, 24))]
 
 
 def services():
-    return [title('Services', 'How we can help', 'From the first sketch to the hundredth blog post.'),
-            e.container(e.grid(*[e.icon_box(i, t, d) for i, t, d in SERVICES], columns=2), pad=(24, 24, 96, 24))]
+    return [title('Services', 'Services that take you from idea to launch', 'Use Hi WPEssential yourself, or let our team set up, customize and maintain your site.'),
+            e.container(e.grid(*[e.icon_box(i, t, d + '<br><strong>' + p + '</strong>') for i, t, d, p in SERVICE_CARDS], columns=3), pad=(48, 24, 96, 24)),
+            e.container(e.overline('How it works', 'on-ink', align='center'), e.heading('Live in four simple steps', 2, 'on-ink', align='center'),
+                        e.grid(*[e.col(e.heading(n, 3, 'on-ink', size_px=36), e.heading(t, 4, 'on-ink', size_px=18), e.text(d, 'on-ink-muted'), gap=8, pad=24, radius=16, border='border')
+                                 for n, t, d in STEPS], columns=4), bg='ink', pad=(96, 24, 96, 24))]
 
 
 def pricing():
-    return [title('Pricing', 'Simple, honest pricing', 'Every plan includes updates for a year and a 14-day refund.'),
-            e.container(e.grid(*[e.container(e.heading(n, 3), e.heading(p, 2, 'primary'), e.icon_list(items), e.button('Choose ' + n, '{{page:contact}}'),
-                                             inner=True, pad=32, radius=16, border='border', bg='surface') for n, p, items in PLANS], columns=3), pad=(24, 24, 96, 24))]
+    return [title('Pricing', 'Simple pricing. Every plan includes both builders.', 'Start free and upgrade when you need Pro demos, premium blocks and priority support.'),
+            e.container(e.grid(*[e.container(e.heading(n, 3), e.heading(p, 2, 'on-ink' if n == 'Pro' else 'primary'), e.text(sub, 'on-ink-muted' if n == 'Pro' else 'text-muted'),
+                                             e.button(cta, '{{page:contact}}', 'primary' if n == 'Pro' else 'outline'),
+                                             e.icon_list(items, color_slug='on-ink' if n == 'Pro' else 'text'),
+                                             inner=True, pad=32, radius=16, border=None if n == 'Pro' else 'border', bg='ink' if n == 'Pro' else 'surface')
+                                 for n, p, sub, cta, items in PLANS], columns=3), pad=(48, 24, 72, 24)),
+            e.container(e.overline('FAQ', align='center'), e.heading('Questions about plans', align='center'), e.accordion(PLAN_FAQ), pad=(48, 24, 96, 24), bg='surface-alt')]
 
 
 def contact():
