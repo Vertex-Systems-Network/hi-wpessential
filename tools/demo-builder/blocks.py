@@ -63,12 +63,13 @@ def p(text, style=None, color=None, size=None, align=None, className=None):
     return block('paragraph', attrs, '<p%s>%s</p>' % (' class="%s"' % c if c else '', text))
 
 
-def h(text, level=2, size=None, color=None, align=None, className=None):
+def h(text, level=2, size=None, color=None, align=None, className=None, anchor=None):
     c = cls('wp-block-heading', 'has-text-align-' + align if align else None, className, colors(color),
             'has-%s-font-size' % kebab(size) if size else None)
-    attrs = {'textAlign': align, 'level': level if level != 2 else None, 'className': className,
+    attrs = {'textAlign': align, 'level': level if level != 2 else None, 'anchor': anchor, 'className': className,
              'textColor': color, 'fontSize': size}
-    return block('heading', attrs, '<h%d class="%s">%s</h%d>' % (level, c, text, level))
+    id_attr = ' id="%s"' % anchor if anchor else ''
+    return block('heading', attrs, '<h%d%s class="%s">%s</h%d>' % (level, id_attr, c, text, level))
 
 
 def ul(items, style=None, className=None):

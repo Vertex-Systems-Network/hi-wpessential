@@ -38,7 +38,7 @@ add_action(
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
 
-		add_editor_style( array( 'assets/css/theme.css', 'assets/css/responsive.css' ) );
+		add_editor_style( array( 'assets/css/theme.css', 'assets/css/responsive.css', 'assets/css/marketplace.css', 'assets/css/demos.css' ) );
 
 		add_image_size( 'wpessential-card', 720, 450, true );
 
@@ -62,6 +62,10 @@ add_filter(
 	'body_class',
 	static function ( $classes ) {
 		$classes[] = 'wpessential';
+		$demo      = sanitize_key( (string) get_option( 'wpessential_active_demo', '' ) );
+		if ( $demo ) {
+			$classes[] = 'wpe-demo-' . $demo; // Lets each demo style shared screens such as the shop.
+		}
 		if ( did_action( 'elementor/loaded' ) && is_singular() && class_exists( '\Elementor\Plugin' ) ) {
 			$document = \Elementor\Plugin::$instance->documents->get( get_the_ID() );
 			if ( $document && $document->is_built_with_elementor() ) {

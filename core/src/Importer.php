@@ -50,6 +50,7 @@ class Importer {
 			'plugins'   => __( 'Installing plugins', 'hi-wpessential' ),
 			'media'     => __( 'Importing images', 'hi-wpessential' ),
 			'terms'     => __( 'Creating categories', 'hi-wpessential' ),
+			'forms'     => __( 'Creating forms', 'hi-wpessential' ),
 			'content'   => __( 'Building pages and posts', 'hi-wpessential' ),
 			'products'  => __( 'Adding products', 'hi-wpessential' ),
 			'menus'     => __( 'Creating menus', 'hi-wpessential' ),
@@ -128,7 +129,7 @@ class Importer {
 			if ( $options['media'] ) {
 				$keys[] = 'media';
 			}
-			array_push( $keys, 'terms', 'content' );
+			array_push( $keys, 'terms', 'forms', 'content' );
 			if ( $options['products'] ) {
 				$keys[] = 'products';
 			}
@@ -419,6 +420,7 @@ class Importer {
 		 * @param string $builder Builder.
 		 * @param array  $map     Old key => new ID maps.
 		 */
+		update_option( 'wpessential_active_demo', sanitize_key( $this->job['demo'] ) );
 		do_action( 'wpessential_demo_imported', $this->job['demo'], $this->job['builder'], $this->job['map'] );
 	}
 
@@ -539,7 +541,7 @@ class Importer {
 	private function tokens( $text, $late = false ) {
 		$map = $this->job['map'];
 		return preg_replace_callback(
-			'/\{\{(pattern|media|media_id|theme|home|page|post_id|term_link|woo|site):?([a-z0-9\/_.-]*)\}\}/',
+			'/\{\{(pattern|media|media_id|theme|home|page|post_id|term_link|woo|site|form):?([a-z0-9\/_.-]*)\}\}/',
 			static function ( $m ) use ( $map, $late ) {
 				switch ( $m[1] ) {
 					case 'pattern':
@@ -566,6 +568,9 @@ class Importer {
 							return $m[0];
 						}
 						return function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( $m[2] ) : home_url( '/' );
+					case 'form':
+						// WPForms form created in the forms step; empty when WPForms could not be installed.
+						return (string) ( $map['forms'][ $m[2] ] ?? 0 );
 					case 'site':
 						// The importing site's own name and admin email, e.g. in the legal pages.
 						if ( ! $late ) {
@@ -783,6 +788,27 @@ class Importer {
 	}
 
 	/**
+	 * One WPForms form from the package (installs WPForms Lite when missing).
+	 *
+	 * @param int $i Index.
+	 * @return null
+	 */
+	private function step_forms( $i ) {
+		$item = $this->content()['forms'][ $i ];
+		$id   = Forms::create( (string) $item['title'], (array) ( $item['fields'] ?? array() ), (string) ( $item['submit'] ?? '' ), (string) ( $item['message'] ?? '' ), (array) ( $item['settings'] ?? array() ) );
+		if ( is_wp_error( $id ) ) {
+			/* translators: 1: form, 2: error. */
+			$this->log( 'warning', sprintf( __( 'Form "%1$s" was not created: %2$s', 'hi-wpessential' ), $item['title'], $id->get_error_message() ) );
+			return null;
+		}
+		$this->job['map']['forms'][ $item['key'] ] = $id;
+		$this->track( 'posts', $id );
+		/* translators: %s: form. */
+		$this->log( 'success', sprintf( __( 'Created form "%s".', 'hi-wpessential' ), $item['title'] ) );
+		return null;
+	}
+
+	/**
 	 * One page or post.
 	 *
 	 * @param int $i Index.
@@ -985,8 +1011,15 @@ class Importer {
 		$attributes = array();
 		foreach ( (array) ( $item['attributes'] ?? array() ) as $attr ) {
 			$a = new \WC_Product_Attribute();
-			$a->set_name( $attr['name'] );
-			$a->set_options( $attr['options'] );
+			if ( ! empty( $attr['global'] ) && ( $tax = $this->global_attribute( $attr ) ) ) {
+				// Global (taxonomy) attribute, so shop filters such as filter_size work.
+				$a->set_id( wc_attribute_taxonomy_id_by_name( $tax ) );
+				$a->set_name( $tax );
+				$a->set_options( array_map( static fn( $o ) => (int) get_term_by( 'name', $o, $tax )->term_id, $attr['options'] ) );
+			} else {
+				$a->set_name( $attr['name'] );
+				$a->set_options( $attr['options'] );
+			}
 			$a->set_visible( true );
 			$a->set_variation( 'variable' === $kind );
 			$attributes[] = $a;
@@ -1027,6 +1060,35 @@ class Importer {
 	}
 
 	/**
+	 * Create (once) a global product attribute and its terms; returns the taxonomy name.
+	 *
+	 * @param array $attr Attribute: name, options.
+	 * @return string Empty on failure.
+	 */
+	private function global_attribute( $attr ) {
+		$tax = wc_attribute_taxonomy_name( $attr['name'] );
+		if ( ! wc_attribute_taxonomy_id_by_name( $tax ) ) {
+			$made = wc_create_attribute( array( 'name' => $attr['name'], 'slug' => sanitize_title( $attr['name'] ), 'order_by' => 'menu_order' ) );
+			if ( is_wp_error( $made ) ) {
+				return '';
+			}
+		}
+		if ( ! taxonomy_exists( $tax ) ) {
+			register_taxonomy( $tax, array( 'product' ), array( 'hierarchical' => false, 'show_ui' => false, 'query_var' => true, 'rewrite' => false ) );
+		}
+		foreach ( array_values( (array) $attr['options'] ) as $order => $option ) {
+			$term = term_exists( $option, $tax );
+			if ( ! $term ) {
+				$term = wp_insert_term( $option, $tax );
+			}
+			if ( ! is_wp_error( $term ) ) {
+				update_term_meta( (int) $term['term_id'], 'order', $order ); // Keep XS, S, M, L in the given order.
+			}
+		}
+		return $tax;
+	}
+
+	/**
 	 * Every combination of a variable product's attributes.
 	 *
 	 * @param int   $id   Parent ID.
@@ -1038,7 +1100,9 @@ class Importer {
 			$next = array();
 			foreach ( $combos as $combo ) {
 				foreach ( $attr['options'] as $option ) {
-					$next[] = $combo + array( sanitize_title( $attr['name'] ) => $option );
+					$next[] = ! empty( $attr['global'] )
+						? $combo + array( wc_attribute_taxonomy_name( $attr['name'] ) => sanitize_title( $option ) )
+						: $combo + array( sanitize_title( $attr['name'] ) => $option );
 				}
 			}
 			$combos = $next;
@@ -1174,8 +1238,15 @@ class Importer {
 			$this->log( 'success', __( 'Home and blog pages assigned.', 'hi-wpessential' ) );
 		}
 
+		// A previous demo's shop title must not carry over.
+		delete_option( 'wpessential_shop_title' );
+		delete_option( 'wpessential_shop_lead' );
+		delete_option( 'wpessential_cart_title' );
+		delete_option( 'wpessential_pdp_gallery' );
+		delete_option( 'wpessential_pdp_perks' );
+		delete_option( 'wpessential_shop_banner' );
 		foreach ( (array) ( $settings['options'] ?? array() ) as $option => $value ) {
-			if ( ! in_array( $option, (array) apply_filters( 'wpessential_core_import_options', array( 'posts_per_page', 'date_format', 'blogname', 'blogdescription', 'thumbnail_size_w', 'thumbnail_size_h' ) ), true ) ) {
+			if ( ! in_array( $option, (array) apply_filters( 'wpessential_core_import_options', array( 'posts_per_page', 'date_format', 'blogname', 'blogdescription', 'thumbnail_size_w', 'thumbnail_size_h', 'wpessential_shop_title', 'wpessential_shop_lead', 'wpessential_cart_title', 'wpessential_pdp_gallery', 'wpessential_pdp_perks', 'wpessential_shop_banner' ) ), true ) ) {
 				/* translators: %s: option. */
 				$this->log( 'warning', sprintf( __( 'Setting "%s" is not on the allow-list and was ignored.', 'hi-wpessential' ), $option ) );
 				continue;
@@ -1190,8 +1261,16 @@ class Importer {
 		} elseif ( ! empty( $settings['style'] ) ) {
 			$this->style_variation( sanitize_key( $settings['style'] ) );
 		}
-		foreach ( (array) ( $settings['parts'] ?? array() ) as $area => $spec ) {
+		$parts = (array) ( $settings['parts'] ?? array() );
+		foreach ( $parts as $area => $spec ) {
 			$this->template_part( sanitize_key( $area ), $spec );
+		}
+		// Parts this demo does not set go back to the theme's own, so a previous demo's header
+		// or footer does not stay behind.
+		foreach ( array( 'header', 'header-shop', 'header-transparent', 'footer' ) as $part ) {
+			if ( ! isset( $parts[ $part ] ) ) {
+				$this->template_part( $part, array( 'theme' => true ) );
+			}
 		}
 
 		if ( ! empty( $settings['motion'] ) ) {
@@ -1274,7 +1353,10 @@ class Importer {
 		if ( ! $area || ! is_readable( get_theme_file_path( 'parts/' . $part . '.html' ) ) ) {
 			return;
 		}
-		if ( is_array( $spec ) && ! empty( $spec['content'] ) ) {
+		if ( is_array( $spec ) && ! empty( $spec['theme'] ) ) {
+			$slug    = $part;
+			$content = (string) file_get_contents( get_theme_file_path( 'parts/' . $part . '.html' ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Theme file.
+		} elseif ( is_array( $spec ) && ! empty( $spec['content'] ) ) {
 			$slug    = __( 'demo', 'hi-wpessential' );
 			$content = $this->tokens( (string) $spec['content'], true );
 		} elseif ( is_string( $spec ) && is_readable( get_theme_file_path( 'parts/' . sanitize_key( $spec ) . '.html' ) ) ) {
@@ -1298,6 +1380,9 @@ class Importer {
 				),
 			)
 		);
+		if ( ! $existing && is_array( $spec ) && ! empty( $spec['theme'] ) ) {
+			return; // Already the theme's part.
+		}
 		if ( $existing ) {
 			$this->track( 'part_' . $part, array( $existing[0]->ID, $existing[0]->post_content ) );
 			wp_update_post(

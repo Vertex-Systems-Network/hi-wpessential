@@ -77,11 +77,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
-<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Replace the shortcode below with your form plugin (Contact Form 7, WPForms, Fluent Forms or the Elementor Form widget).', 'hi-wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Put your WPForms form ID in the shortcode below (WPForms → All Forms).', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:shortcode -->
-[contact-form-7 title="Contact"]
+[wpforms id="1" title="false"]
 <!-- /wp:shortcode --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

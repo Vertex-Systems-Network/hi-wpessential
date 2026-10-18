@@ -43,5 +43,7 @@ final class Plugin {
 			( new Admin() )->hooks();
 		}
 		License::schedule();
+		Forms::hooks();
+		Mcp::hooks();
 	}
 }
