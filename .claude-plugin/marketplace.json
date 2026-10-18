@@ -1,0 +1,19 @@
+{
+	"name": "wpessential",
+	"owner": { "name": "WPEssential Team", "url": "https://wpessential.org" },
+	"metadata": { "description": "Claude plugins for building WPEssential theme demos and designs." },
+	"plugins": [
+		{
+			"name": "hi-wpe",
+			"source": "./claude-plugins/hi-wpe",
+			"description": "Turn a UI link (Figma, Claude Design, Framer, Webflow, live site) into a complete WPEssential demo: Gutenberg + Elementor packages, images, style variation, hovers, SEO and server zips.",
+			"version": "1.0.0"
+		},
+		{
+			"name": "hi-wpe-demo",
+			"source": "./claude-plugins/hi-wpe-demo",
+			"description": "Give a Figma project link and design instructions; Claude researches the niche and designs the full demo in Figma: light/dark, 8 breakpoints, UI kit, hover states.",
+			"version": "1.0.0"
+		}
+	]
+}

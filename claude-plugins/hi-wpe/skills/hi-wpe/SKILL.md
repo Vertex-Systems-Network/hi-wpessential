@@ -1,5 +1,5 @@
 ---
-name: build-demo
+name: hi-wpe
 description: Build a complete WPEssential demo (Figma file, Gutenberg + Elementor packages, images, style variation, hovers, SEO, server zips) from a UI link — a Figma file/frame, a Claude Design / Framer / Webflow / live site URL — following docs/DEMO-PLAYBOOK.md. Use when the user gives a design link and asks for a demo.
 argument-hint: <design-url> [demo-id] [free|pro]
 ---

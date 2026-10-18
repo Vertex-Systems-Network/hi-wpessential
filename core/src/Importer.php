@@ -1174,7 +1174,10 @@ class Importer {
 			update_option( $option, $value );
 		}
 
-		if ( ! empty( $settings['style'] ) ) {
+		if ( ! empty( $settings['style_data'] ) && is_array( $settings['style_data'] ) ) {
+			// A generated demo (Hi WPE) carries its variation inline instead of a theme file.
+			$this->style_variation( 'inline', $settings['style_data'] );
+		} elseif ( ! empty( $settings['style'] ) ) {
 			$this->style_variation( sanitize_key( $settings['style'] ) );
 		}
 		foreach ( (array) ( $settings['parts'] ?? array() ) as $area => $spec ) {
@@ -1208,11 +1211,12 @@ class Importer {
 	 * exactly like choosing it under Appearance → Editor → Styles.
 	 *
 	 * @param string $name Variation file name without extension.
+	 * @param array  $inline Optional variation data (theme.json shape) used instead of a file.
 	 */
-	private function style_variation( $name ) {
+	private function style_variation( $name, $inline = null ) {
 		// "default" resets to the theme's own styles, so a previous demo's look never lingers.
 		$file = get_theme_file_path( 'styles/' . $name . '.json' );
-		$data = 'default' === $name ? array( 'title' => __( 'Default', 'wpessential' ) ) : ( is_readable( $file ) ? json_decode( (string) file_get_contents( $file ), true ) : null ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local theme file.
+		$data = is_array( $inline ) ? $inline : ( 'default' === $name ? array( 'title' => __( 'Default', 'wpessential' ) ) : ( is_readable( $file ) ? json_decode( (string) file_get_contents( $file ), true ) : null ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local theme file.
 		if ( ! is_array( $data ) || ! class_exists( 'WP_Theme_JSON_Resolver' ) ) {
 			/* translators: %s: variation. */
 			$this->log( 'warning', sprintf( __( 'Style "%s" was not found in the theme, so the default colours stay.', 'wpessential' ), $name ), __( 'Update the WPEssential theme, then import again.', 'wpessential' ) );
