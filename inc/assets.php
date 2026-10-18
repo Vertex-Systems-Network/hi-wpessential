@@ -13,6 +13,7 @@ add_action(
 		wp_enqueue_style( 'wpessential', WPESSENTIAL_URI . '/assets/css/theme.css', array(), WPESSENTIAL_ASSET_VERSION );
 		// Marketplace sections (.ess-*), used by the WPEssential.org demo in pages, header and footer.
 		wp_enqueue_style( 'wpessential-marketplace', WPESSENTIAL_URI . '/assets/css/marketplace.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
+		wp_enqueue_style( 'wpessential-demos', WPESSENTIAL_URI . '/assets/css/demos.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
 
 		if ( class_exists( 'WooCommerce' ) ) {
 			wp_enqueue_style( 'wpessential-woocommerce', WPESSENTIAL_URI . '/assets/css/woocommerce.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );

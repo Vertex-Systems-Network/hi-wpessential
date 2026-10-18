@@ -1,0 +1,47 @@
+/* Demo-specific layouts built to the Figma demo pages. Classes are prefixed per demo: mx- Maison, px- Pulse, bx- Base. */
+
+/* Maison — header: nav left, wordmark centred, utilities right. */
+.mx-topbar { justify-content: center !important; text-align: center; }
+.mx-header__inner { display: grid !important; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
+.mx-header__inner > .mx-nav { justify-self: start; }
+.mx-header__inner > .mx-logo { justify-self: center; margin: 0; letter-spacing: .28em; text-transform: uppercase; font-size: 22px; }
+.mx-header__inner > .mx-logo a { text-decoration: none; }
+.mx-header__inner > .mx-actions { justify-self: end; gap: 18px; }
+.mx-nav { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; gap: 24px; }
+@media (max-width: 900px) { .mx-nav--right { display: none; } .mx-header__inner > .mx-logo { font-size: 18px; } }
+
+/* Maison — split hero. */
+.mx-hero, .mx-split-wrap { margin-block: 0 !important; }
+.mx-hero__cols, .mx-split { gap: 0 !important; margin: 0 !important; align-items: stretch !important; }
+.mx-hero__text { padding: clamp(40px, 6vw, 96px) clamp(24px, 5vw, 80px) clamp(40px, 6vw, 96px) max(24px, calc((100vw - 1200px) / 2)); display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.mx-hero__title { font-size: clamp(48px, 6vw, 88px) !important; line-height: 1 !important; margin: 0; }
+.mx-hero__sub { font-family: var(--wp--preset--font-family--heading, serif); font-size: clamp(22px, 2.4vw, 32px); color: var(--wp--preset--color--text-muted); margin: 0; }
+.mx-hero__count { font-size: 12px; letter-spacing: .1em; margin-top: 24px; }
+.mx-hero__count span { color: var(--wp--preset--color--text-muted); letter-spacing: 0; margin-left: 8px; }
+.mx-hero__media, .mx-split__media { padding: 0 !important; }
+.mx-hero__img, .mx-split__img { margin: 0; height: 100%; }
+.mx-hero__img img { width: 100%; height: 100%; min-height: 640px; object-fit: cover; display: block; }
+.mx-split__img img { width: 100%; height: 100%; min-height: 560px; object-fit: cover; display: block; }
+.mx-split__text { padding: clamp(40px, 6vw, 96px) max(24px, calc((100vw - 1200px) / 2)) clamp(40px, 6vw, 96px) clamp(24px, 5vw, 80px); display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.mx-visit .mx-split__text .wpe-overline { color: var(--wp--preset--color--on-ink-muted); }
+
+/* Maison — section heads, links, stats, captions, promise band, newsletter. */
+.mx-head { margin-bottom: 32px; }
+.mx-link a { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 6px; color: inherit; }
+.mx-stats { gap: 40px !important; margin-block: 8px 16px; }
+.mx-stat__n { font-family: var(--wp--preset--font-family--heading, serif); font-size: 32px; margin: 0; }
+.mx-stat__l { font-size: 12px; color: var(--wp--preset--color--text-muted); margin: 0; }
+.mx-caption { font-size: 12px; color: var(--wp--preset--color--text-muted); margin-top: 12px; }
+.mx-cat h3 { margin-top: 12px; }
+.mx-promise-band { border-block: 1px solid var(--wp--preset--color--border); }
+.mx-letter .wpforms-container { max-width: 480px; margin: 24px auto 0; }
+.mx-letter .wpforms-form { display: flex; gap: 0; align-items: flex-end; }
+.mx-letter .wpforms-field-container { flex: 1; }
+.mx-letter .wpforms-field { padding: 0 !important; }
+.mx-letter .wpforms-field-label { position: absolute; left: -9999px; }
+.mx-letter .wpforms-submit-container { padding: 0 !important; }
+@media (max-width: 781px) {
+	.mx-hero__text, .mx-split__text { padding: 40px 24px; }
+	.mx-hero__img img { min-height: 420px; }
+	.mx-split__img img { min-height: 360px; }
+}

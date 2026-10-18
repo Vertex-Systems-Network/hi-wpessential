@@ -44,6 +44,13 @@ def maison_care():
             ]}
 
 
+def maison_newsletter():
+    return {'key': 'newsletter', 'title': 'Newsletter — Maison', 'submit': 'Subscribe',
+            'message': 'Welcome — the next letter arrives with the new collection.',
+            'settings': {'subject': 'New newsletter sign-up'},
+            'fields': [{'type': 'email', 'label': 'Email', 'required': True, 'placeholder': 'Your email address'}]}
+
+
 def pulse_contact():
     return {'key': 'contact', 'title': 'Contact — Pulse', 'submit': 'Send message',
             'message': 'Thanks — the Pulse team replies within one working day.',

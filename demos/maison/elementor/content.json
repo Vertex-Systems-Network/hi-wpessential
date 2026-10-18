@@ -266,6 +266,23 @@
 					]
 				}
 			]
+		},
+		{
+			"key": "newsletter",
+			"title": "Newsletter — Maison",
+			"submit": "Subscribe",
+			"message": "Welcome — the next letter arrives with the new collection.",
+			"settings": {
+				"subject": "New newsletter sign-up"
+			},
+			"fields": [
+				{
+					"type": "email",
+					"label": "Email",
+					"required": true,
+					"placeholder": "Your email address"
+				}
+			]
 		}
 	],
 	"content": [
@@ -278,16 +295,16 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "8f14e45",
+					"id": "c20ad4d",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
 						"flex_direction": "column",
 						"flex_gap": {
 							"unit": "px",
-							"size": 20,
-							"column": "20",
-							"row": "20",
+							"size": 24,
+							"column": "24",
+							"row": "24",
 							"isLinked": true
 						},
 						"boxed_width": {
@@ -297,209 +314,366 @@
 						},
 						"padding": {
 							"unit": "px",
-							"top": "96",
-							"right": "24",
-							"bottom": "96",
-							"left": "24",
-							"isLinked": false
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": true
 						},
 						"padding_mobile": {
 							"unit": "px",
-							"top": "48",
+							"top": "24",
 							"right": "20",
-							"bottom": "48",
+							"bottom": "24",
 							"left": "20",
 							"isLinked": false
-						},
-						"background_background": "classic",
-						"background_image": {
-							"url": "{{media:hero-campaign}}",
-							"id": "{{media_id:hero-campaign}}",
-							"alt": "",
-							"source": "library"
-						},
-						"background_position": "center center",
-						"background_size": "cover",
-						"background_overlay_background": "classic",
-						"__globals__": {
-							"background_overlay_color": "globals/colors?id=wpe0a16bc3"
-						},
-						"background_overlay_opacity": {
-							"unit": "px",
-							"size": 0.3,
-							"sizes": []
-						},
-						"min_height": {
-							"unit": "px",
-							"size": 760,
-							"sizes": []
-						},
-						"flex_justify_content": "flex-end"
+						}
 					},
 					"elements": [
 						{
-							"id": "c4ca423",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "Autumn / Winter 2026",
-								"header_size": "p",
-								"typography_typography": "custom",
-								"typography_font_size": {
-									"unit": "px",
-									"size": 13,
-									"sizes": []
-								},
-								"typography_font_weight": "600",
-								"typography_text_transform": "uppercase",
-								"typography_letter_spacing": {
-									"unit": "px",
-									"size": 1.6,
-									"sizes": []
-								},
-								"typography_font_family": "Manrope",
-								"__globals__": {
-									"title_color": "globals/colors?id=wpece9a5f5"
-								}
-							},
-							"elements": []
-						},
-						{
-							"id": "c81e728",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "The quiet season",
-								"header_size": "h1",
-								"__globals__": {
-									"title_color": "globals/colors?id=wpece9a5f5"
-								},
-								"typography_typography": "custom",
-								"typography_font_family": "Cormorant Garamond",
-								"typography_font_weight": "500",
-								"typography_line_height": {
-									"unit": "em",
-									"size": 1.05,
-									"sizes": []
-								},
-								"typography_font_size": {
-									"unit": "px",
-									"size": 96,
-									"sizes": []
-								},
-								"typography_font_size_tablet": {
-									"unit": "px",
-									"size": 77,
-									"sizes": []
-								},
-								"typography_font_size_mobile": {
-									"unit": "px",
-									"size": 53,
-									"sizes": []
-								}
-							},
-							"elements": []
-						},
-						{
-							"id": "eccbc87",
-							"elType": "widget",
-							"widgetType": "text-editor",
-							"settings": {
-								"editor": "<p>Linen, wool and cashmere cut to be worn for years. Made in small runs in Porto and Florence.</p>",
-								"__globals__": {
-									"text_color": "globals/colors?id=wpece9a5f5"
-								},
-								"typography_typography": "custom",
-								"typography_font_family": "Manrope",
-								"typography_font_size": {
-									"unit": "px",
-									"size": 18,
-									"sizes": []
-								}
-							},
-							"elements": []
-						},
-						{
-							"id": "1679091",
+							"id": "6512bd4",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
 								"flex_direction": "row",
 								"flex_gap": {
 									"unit": "px",
-									"size": 12,
-									"column": "12",
-									"row": "12",
+									"size": 0,
+									"column": "0",
+									"row": "0",
 									"isLinked": true
 								},
-								"flex_direction_mobile": "row",
-								"flex_wrap": "wrap"
+								"flex_direction_mobile": "column"
 							},
 							"elements": [
 								{
-									"id": "a87ff67",
-									"elType": "widget",
-									"widgetType": "button",
+									"id": "c9f0f89",
+									"elType": "container",
 									"settings": {
-										"text": "Shop the collection",
-										"link": {
-											"url": "{{woo:shop}}",
-											"is_external": "",
-											"nofollow": ""
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
 										},
-										"size": "md",
-										"__globals__": {
-											"typography_typography": "globals/typography?id=accent",
-											"background_color": "globals/colors?id=wped302e97",
-											"button_text_color": "globals/colors?id=text"
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
 										},
-										"background_background": "classic",
-										"button_hover_transition_duration": {
-											"unit": "s",
-											"size": 0.9,
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"padding": {
+											"unit": "px",
+											"top": "64",
+											"right": "64",
+											"bottom": "64",
+											"left": "24",
+											"isLinked": false
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "32",
+											"right": "20",
+											"bottom": "32",
+											"left": "20",
+											"isLinked": false
+										},
+										"flex_justify_content": "center"
+									},
+									"elements": [
+										{
+											"id": "c4ca423",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Autumn · Winter 2026",
+												"header_size": "p",
+												"typography_typography": "custom",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 13,
+													"sizes": []
+												},
+												"typography_font_weight": "600",
+												"typography_text_transform": "uppercase",
+												"typography_letter_spacing": {
+													"unit": "px",
+													"size": 1.6,
+													"sizes": []
+												},
+												"typography_font_family": "Manrope",
+												"__globals__": {
+													"title_color": "globals/colors?id=accent"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "c81e728",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "The Quiet Season",
+												"header_size": "h1",
+												"__globals__": {
+													"title_color": "globals/colors?id=text"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 88,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 70,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 48,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "eccbc87",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "linen, silk & undyed wool",
+												"header_size": "h3",
+												"__globals__": {
+													"title_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 28,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 22,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 15,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "a87ff67",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Cut in small runs in Porto and Florence. Pieces made to soften with every wear and last for decades.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Manrope",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 16,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "8f14e45",
+											"elType": "container",
+											"settings": {
+												"content_width": "full",
+												"flex_direction": "row",
+												"flex_gap": {
+													"unit": "px",
+													"size": 12,
+													"column": "12",
+													"row": "12",
+													"isLinked": true
+												},
+												"flex_direction_mobile": "row",
+												"flex_wrap": "wrap"
+											},
+											"elements": [
+												{
+													"id": "e4da3b7",
+													"elType": "widget",
+													"widgetType": "button",
+													"settings": {
+														"text": "Shop the collection",
+														"link": {
+															"url": "{{woo:shop}}",
+															"is_external": "",
+															"nofollow": ""
+														},
+														"size": "md",
+														"__globals__": {
+															"typography_typography": "globals/typography?id=accent",
+															"hover_color": "globals/colors?id=text",
+															"button_hover_border_color": "globals/colors?id=text"
+														},
+														"button_hover_transition_duration": {
+															"unit": "s",
+															"size": 0.9,
+															"sizes": []
+														},
+														"button_background_hover_background": "classic",
+														"button_background_hover_color": "rgba(0,0,0,0)",
+														"button_hover_border_color": "currentColor",
+														"border_border": "solid",
+														"border_width": {
+															"unit": "px",
+															"top": "1",
+															"right": "1",
+															"bottom": "1",
+															"left": "1",
+															"isLinked": true
+														}
+													},
+													"elements": []
+												},
+												{
+													"id": "1679091",
+													"elType": "widget",
+													"widgetType": "button",
+													"settings": {
+														"text": "View lookbook",
+														"link": {
+															"url": "{{page:lookbook}}",
+															"is_external": "",
+															"nofollow": ""
+														},
+														"size": "md",
+														"__globals__": {
+															"typography_typography": "globals/typography?id=accent",
+															"button_text_color": "globals/colors?id=text",
+															"border_color": "globals/colors?id=text",
+															"button_background_hover_color": "globals/colors?id=text",
+															"hover_color": "globals/colors?id=wped302e97"
+														},
+														"background_background": "classic",
+														"background_color": "rgba(0,0,0,0)",
+														"border_border": "solid",
+														"border_width": {
+															"unit": "px",
+															"top": "1",
+															"right": "1",
+															"bottom": "1",
+															"left": "1",
+															"isLinked": true
+														},
+														"button_hover_transition_duration": {
+															"unit": "s",
+															"size": 0.9,
+															"sizes": []
+														},
+														"button_background_hover_background": "classic"
+													},
+													"elements": []
+												}
+											],
+											"isInner": true
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "d3d9446",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
 											"sizes": []
 										}
 									},
-									"elements": []
-								},
-								{
-									"id": "e4da3b7",
-									"elType": "widget",
-									"widgetType": "button",
-									"settings": {
-										"text": "View the lookbook",
-										"link": {
-											"url": "{{page:lookbook}}",
-											"is_external": "",
-											"nofollow": ""
-										},
-										"size": "md",
-										"__globals__": {
-											"typography_typography": "globals/typography?id=accent",
-											"button_text_color": "globals/colors?id=text",
-											"border_color": "globals/colors?id=text",
-											"button_background_hover_color": "globals/colors?id=text",
-											"hover_color": "globals/colors?id=wped302e97"
-										},
-										"background_background": "classic",
-										"background_color": "rgba(0,0,0,0)",
-										"border_border": "solid",
-										"border_width": {
-											"unit": "px",
-											"top": "1",
-											"right": "1",
-											"bottom": "1",
-											"left": "1",
-											"isLinked": true
-										},
-										"button_hover_transition_duration": {
-											"unit": "s",
-											"size": 0.9,
-											"sizes": []
-										},
-										"button_background_hover_background": "classic"
-									},
-									"elements": []
+									"elements": [
+										{
+											"id": "45c48cc",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:hero-campaign}}",
+													"id": "{{media_id:hero-campaign}}",
+													"alt": "Model in an ivory linen suit in a sunlit stone courtyard",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 720,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 576,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 504,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
 								}
 							],
 							"isInner": true
@@ -508,7 +682,7 @@
 					"isInner": false
 				},
 				{
-					"id": "9bf31c7",
+					"id": "98f1370",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -544,7 +718,7 @@
 					},
 					"elements": [
 						{
-							"id": "c9f0f89",
+							"id": "c51ce41",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -571,11 +745,11 @@
 							"elements": []
 						},
 						{
-							"id": "45c48cc",
+							"id": "aab3238",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
-								"title": "Pieces for every day",
+								"title": "Wardrobe foundations",
 								"header_size": "h2",
 								"__globals__": {
 									"title_color": "globals/colors?id=text",
@@ -585,7 +759,7 @@
 							"elements": []
 						},
 						{
-							"id": "aab3238",
+							"id": "1f0e3da",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -614,7 +788,7 @@
 							},
 							"elements": [
 								{
-									"id": "d3d9446",
+									"id": "9bf31c7",
 									"elType": "widget",
 									"widgetType": "image-box",
 									"settings": {
@@ -661,7 +835,7 @@
 									"elements": []
 								},
 								{
-									"id": "6512bd4",
+									"id": "c74d97b",
 									"elType": "widget",
 									"widgetType": "image-box",
 									"settings": {
@@ -708,7 +882,7 @@
 									"elements": []
 								},
 								{
-									"id": "c20ad4d",
+									"id": "70efdf2",
 									"elType": "widget",
 									"widgetType": "image-box",
 									"settings": {
@@ -755,7 +929,7 @@
 									"elements": []
 								},
 								{
-									"id": "c51ce41",
+									"id": "6f4922f",
 									"elType": "widget",
 									"widgetType": "image-box",
 									"settings": {
@@ -808,7 +982,7 @@
 					"isInner": false
 				},
 				{
-					"id": "1f0e3da",
+					"id": "1ff1de7",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -829,7 +1003,7 @@
 							"unit": "px",
 							"top": "48",
 							"right": "24",
-							"bottom": "48",
+							"bottom": "72",
 							"left": "24",
 							"isLinked": false
 						},
@@ -837,18 +1011,18 @@
 							"unit": "px",
 							"top": "24",
 							"right": "20",
-							"bottom": "24",
+							"bottom": "36",
 							"left": "20",
 							"isLinked": false
 						}
 					},
 					"elements": [
 						{
-							"id": "c74d97b",
+							"id": "3c59dc0",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
-								"title": "Just in",
+								"title": "New in",
 								"header_size": "p",
 								"typography_typography": "custom",
 								"typography_font_size": {
@@ -871,11 +1045,11 @@
 							"elements": []
 						},
 						{
-							"id": "70efdf2",
+							"id": "b6d767d",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
-								"title": "New arrivals",
+								"title": "The first pieces of the season",
 								"header_size": "h2",
 								"__globals__": {
 									"title_color": "globals/colors?id=text",
@@ -885,11 +1059,11 @@
 							"elements": []
 						},
 						{
-							"id": "6f4922f",
+							"id": "37693cf",
 							"elType": "widget",
 							"widgetType": "shortcode",
 							"settings": {
-								"shortcode": "[products limit=\"4\" columns=\"4\" orderby=\"date\" order=\"DESC\"]"
+								"shortcode": "[products limit=\"8\" columns=\"4\" orderby=\"date\" order=\"DESC\"]"
 							},
 							"elements": []
 						}
@@ -897,7 +1071,7 @@
 					"isInner": false
 				},
 				{
-					"id": "6364d3f",
+					"id": "17e6216",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -916,17 +1090,17 @@
 						},
 						"padding": {
 							"unit": "px",
-							"top": "96",
-							"right": "24",
-							"bottom": "96",
-							"left": "24",
-							"isLinked": false
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": true
 						},
 						"padding_mobile": {
 							"unit": "px",
-							"top": "48",
+							"top": "24",
 							"right": "20",
-							"bottom": "48",
+							"bottom": "24",
 							"left": "20",
 							"isLinked": false
 						},
@@ -937,23 +1111,23 @@
 					},
 					"elements": [
 						{
-							"id": "c16a532",
+							"id": "a1d0c6e",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
 								"flex_direction": "row",
 								"flex_gap": {
 									"unit": "px",
-									"size": 64,
-									"column": "64",
-									"row": "64",
+									"size": 0,
+									"column": "0",
+									"row": "0",
 									"isLinked": true
 								},
 								"flex_direction_mobile": "column"
 							},
 							"elements": [
 								{
-									"id": "3c59dc0",
+									"id": "4e732ce",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -978,7 +1152,7 @@
 									},
 									"elements": [
 										{
-											"id": "98f1370",
+											"id": "8e296a0",
 											"elType": "widget",
 											"widgetType": "image",
 											"settings": {
@@ -1023,7 +1197,7 @@
 									"isInner": true
 								},
 								{
-									"id": "34173cb",
+									"id": "3416a75",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -1045,11 +1219,27 @@
 											"size": 100,
 											"sizes": []
 										},
+										"padding": {
+											"unit": "px",
+											"top": "48",
+											"right": "24",
+											"bottom": "48",
+											"left": "48",
+											"isLinked": false
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "24",
+											"right": "20",
+											"bottom": "24",
+											"left": "20",
+											"isLinked": false
+										},
 										"flex_justify_content": "center"
 									},
 									"elements": [
 										{
-											"id": "b6d767d",
+											"id": "02e74f1",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -1076,73 +1266,37 @@
 											"elements": []
 										},
 										{
-											"id": "37693cf",
+											"id": "33e75ff",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
-												"title": "Made slowly, by hand",
+												"title": "Made slowly, worn for years",
 												"header_size": "h2",
 												"__globals__": {
-													"title_color": "globals/colors?id=text",
-													"typography_typography": "globals/typography?id=primary"
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "1ff1de7",
-											"elType": "widget",
-											"widgetType": "text-editor",
-											"settings": {
-												"editor": "<p>Every Maison piece passes through the hands of one maker, from first cut to final press. We work in small runs, so nothing is made that will not be worn.</p>",
-												"__globals__": {
-													"text_color": "globals/colors?id=wpe07d0ec3"
+													"title_color": "globals/colors?id=text"
 												},
 												"typography_typography": "custom",
-												"typography_font_family": "Manrope",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
 												"typography_font_size": {
 													"unit": "px",
-													"size": 18,
+													"size": 48,
 													"sizes": []
-												}
-											},
-											"elements": []
-										},
-										{
-											"id": "33e75ff",
-											"elType": "widget",
-											"widgetType": "icon-list",
-											"settings": {
-												"icon_list": [
-													{
-														"_id": "8e296a0",
-														"text": "Natural fibres only: linen, wool, silk and cashmere",
-														"selected_icon": {
-															"value": "fas fa-check",
-															"library": "fa-solid"
-														}
-													},
-													{
-														"_id": "4e732ce",
-														"text": "Family ateliers in Porto and Florence",
-														"selected_icon": {
-															"value": "fas fa-check",
-															"library": "fa-solid"
-														}
-													},
-													{
-														"_id": "02e74f1",
-														"text": "Numbered and signed inside the collar",
-														"selected_icon": {
-															"value": "fas fa-check",
-															"library": "fa-solid"
-														}
-													}
-												],
-												"__globals__": {
-													"icon_color": "globals/colors?id=accent",
-													"text_color": "globals/colors?id=text",
-													"icon_typography_typography": "globals/typography?id=text"
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 38,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 26,
+													"sizes": []
 												}
 											},
 											"elements": []
@@ -1150,9 +1304,261 @@
 										{
 											"id": "6ea9ab1",
 											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Every Maison piece is cut and sewn by a family workshop we know by name. We pay above the regional wage, use natural fibres only and repair anything we make, free, for life.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpe07d0ec3",
+													"typography_typography": "globals/typography?id=text"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "d67d8ab",
+											"elType": "container",
+											"settings": {
+												"content_width": "full",
+												"flex_direction": "row",
+												"flex_gap": {
+													"unit": "px",
+													"size": 40,
+													"column": "40",
+													"row": "40",
+													"isLinked": true
+												},
+												"flex_direction_mobile": "row",
+												"flex_wrap": "wrap"
+											},
+											"elements": [
+												{
+													"id": "6364d3f",
+													"elType": "container",
+													"settings": {
+														"content_width": "full",
+														"flex_direction": "column",
+														"flex_gap": {
+															"unit": "px",
+															"size": 4,
+															"column": "4",
+															"row": "4",
+															"isLinked": true
+														}
+													},
+													"elements": [
+														{
+															"id": "34173cb",
+															"elType": "widget",
+															"widgetType": "heading",
+															"settings": {
+																"title": "6",
+																"header_size": "h3",
+																"__globals__": {
+																	"title_color": "globals/colors?id=text"
+																},
+																"typography_typography": "custom",
+																"typography_font_family": "Cormorant Garamond",
+																"typography_font_weight": "500",
+																"typography_line_height": {
+																	"unit": "em",
+																	"size": 1.05,
+																	"sizes": []
+																},
+																"typography_font_size": {
+																	"unit": "px",
+																	"size": 32,
+																	"sizes": []
+																},
+																"typography_font_size_tablet": {
+																	"unit": "px",
+																	"size": 26,
+																	"sizes": []
+																},
+																"typography_font_size_mobile": {
+																	"unit": "px",
+																	"size": 18,
+																	"sizes": []
+																}
+															},
+															"elements": []
+														},
+														{
+															"id": "c16a532",
+															"elType": "widget",
+															"widgetType": "text-editor",
+															"settings": {
+																"editor": "<p>partner ateliers</p>",
+																"__globals__": {
+																	"text_color": "globals/colors?id=wpe07d0ec3"
+																},
+																"typography_typography": "custom",
+																"typography_font_family": "Manrope",
+																"typography_font_size": {
+																	"unit": "px",
+																	"size": 13,
+																	"sizes": []
+																}
+															},
+															"elements": []
+														}
+													],
+													"isInner": true
+												},
+												{
+													"id": "1c383cd",
+													"elType": "container",
+													"settings": {
+														"content_width": "full",
+														"flex_direction": "column",
+														"flex_gap": {
+															"unit": "px",
+															"size": 4,
+															"column": "4",
+															"row": "4",
+															"isLinked": true
+														}
+													},
+													"elements": [
+														{
+															"id": "182be0c",
+															"elType": "widget",
+															"widgetType": "heading",
+															"settings": {
+																"title": "100%",
+																"header_size": "h3",
+																"__globals__": {
+																	"title_color": "globals/colors?id=text"
+																},
+																"typography_typography": "custom",
+																"typography_font_family": "Cormorant Garamond",
+																"typography_font_weight": "500",
+																"typography_line_height": {
+																	"unit": "em",
+																	"size": 1.05,
+																	"sizes": []
+																},
+																"typography_font_size": {
+																	"unit": "px",
+																	"size": 32,
+																	"sizes": []
+																},
+																"typography_font_size_tablet": {
+																	"unit": "px",
+																	"size": 26,
+																	"sizes": []
+																},
+																"typography_font_size_mobile": {
+																	"unit": "px",
+																	"size": 18,
+																	"sizes": []
+																}
+															},
+															"elements": []
+														},
+														{
+															"id": "e369853",
+															"elType": "widget",
+															"widgetType": "text-editor",
+															"settings": {
+																"editor": "<p>natural fibres</p>",
+																"__globals__": {
+																	"text_color": "globals/colors?id=wpe07d0ec3"
+																},
+																"typography_typography": "custom",
+																"typography_font_family": "Manrope",
+																"typography_font_size": {
+																	"unit": "px",
+																	"size": 13,
+																	"sizes": []
+																}
+															},
+															"elements": []
+														}
+													],
+													"isInner": true
+												},
+												{
+													"id": "a5771bc",
+													"elType": "container",
+													"settings": {
+														"content_width": "full",
+														"flex_direction": "column",
+														"flex_gap": {
+															"unit": "px",
+															"size": 4,
+															"column": "4",
+															"row": "4",
+															"isLinked": true
+														}
+													},
+													"elements": [
+														{
+															"id": "19ca14e",
+															"elType": "widget",
+															"widgetType": "heading",
+															"settings": {
+																"title": "Lifetime",
+																"header_size": "h3",
+																"__globals__": {
+																	"title_color": "globals/colors?id=text"
+																},
+																"typography_typography": "custom",
+																"typography_font_family": "Cormorant Garamond",
+																"typography_font_weight": "500",
+																"typography_line_height": {
+																	"unit": "em",
+																	"size": 1.05,
+																	"sizes": []
+																},
+																"typography_font_size": {
+																	"unit": "px",
+																	"size": 32,
+																	"sizes": []
+																},
+																"typography_font_size_tablet": {
+																	"unit": "px",
+																	"size": 26,
+																	"sizes": []
+																},
+																"typography_font_size_mobile": {
+																	"unit": "px",
+																	"size": 18,
+																	"sizes": []
+																}
+															},
+															"elements": []
+														},
+														{
+															"id": "a5bfc9e",
+															"elType": "widget",
+															"widgetType": "text-editor",
+															"settings": {
+																"editor": "<p>free repairs</p>",
+																"__globals__": {
+																	"text_color": "globals/colors?id=wpe07d0ec3"
+																},
+																"typography_typography": "custom",
+																"typography_font_family": "Manrope",
+																"typography_font_size": {
+																	"unit": "px",
+																	"size": 13,
+																	"sizes": []
+																}
+															},
+															"elements": []
+														}
+													],
+													"isInner": true
+												}
+											],
+											"isInner": true
+										},
+										{
+											"id": "d645920",
+											"elType": "widget",
 											"widgetType": "button",
 											"settings": {
-												"text": "Visit the atelier",
+												"text": "Discover the atelier",
 												"link": {
 													"url": "{{page:atelier}}",
 													"is_external": "",
@@ -1161,17 +1567,13 @@
 												"size": "md",
 												"__globals__": {
 													"typography_typography": "globals/typography?id=accent",
-													"hover_color": "globals/colors?id=text",
-													"button_hover_border_color": "globals/colors?id=text"
+													"button_text_color": "globals/colors?id=text",
+													"border_color": "globals/colors?id=text",
+													"button_background_hover_color": "globals/colors?id=text",
+													"hover_color": "globals/colors?id=wped302e97"
 												},
-												"button_hover_transition_duration": {
-													"unit": "s",
-													"size": 0.9,
-													"sizes": []
-												},
-												"button_background_hover_background": "classic",
-												"button_background_hover_color": "rgba(0,0,0,0)",
-												"button_hover_border_color": "currentColor",
+												"background_background": "classic",
+												"background_color": "rgba(0,0,0,0)",
 												"border_border": "solid",
 												"border_width": {
 													"unit": "px",
@@ -1180,7 +1582,13 @@
 													"bottom": "1",
 													"left": "1",
 													"isLinked": true
-												}
+												},
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												},
+												"button_background_hover_background": "classic"
 											},
 											"elements": []
 										}
@@ -1194,96 +1602,7 @@
 					"isInner": false
 				},
 				{
-					"id": "19ca14e",
-					"elType": "container",
-					"settings": {
-						"content_width": "boxed",
-						"flex_direction": "column",
-						"flex_gap": {
-							"unit": "px",
-							"size": 24,
-							"column": "24",
-							"row": "24",
-							"isLinked": true
-						},
-						"boxed_width": {
-							"unit": "px",
-							"size": 1200,
-							"sizes": []
-						},
-						"padding": {
-							"unit": "px",
-							"top": "48",
-							"right": "24",
-							"bottom": "48",
-							"left": "24",
-							"isLinked": false
-						},
-						"padding_mobile": {
-							"unit": "px",
-							"top": "24",
-							"right": "20",
-							"bottom": "24",
-							"left": "20",
-							"isLinked": false
-						}
-					},
-					"elements": [
-						{
-							"id": "182be0c",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "Most loved",
-								"header_size": "p",
-								"typography_typography": "custom",
-								"typography_font_size": {
-									"unit": "px",
-									"size": 13,
-									"sizes": []
-								},
-								"typography_font_weight": "600",
-								"typography_text_transform": "uppercase",
-								"typography_letter_spacing": {
-									"unit": "px",
-									"size": 1.6,
-									"sizes": []
-								},
-								"typography_font_family": "Manrope",
-								"__globals__": {
-									"title_color": "globals/colors?id=accent"
-								}
-							},
-							"elements": []
-						},
-						{
-							"id": "e369853",
-							"elType": "widget",
-							"widgetType": "heading",
-							"settings": {
-								"title": "Best sellers",
-								"header_size": "h2",
-								"__globals__": {
-									"title_color": "globals/colors?id=text",
-									"typography_typography": "globals/typography?id=primary"
-								}
-							},
-							"elements": []
-						},
-						{
-							"id": "1c383cd",
-							"elType": "widget",
-							"widgetType": "shortcode",
-							"settings": {
-								"shortcode": "[products limit=\"4\" columns=\"4\" visibility=\"featured\"]"
-							},
-							"elements": []
-						}
-					],
-					"isInner": false
-				},
-				{
-					"id": "d645920",
+					"id": "2838023",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -1304,7 +1623,7 @@
 							"unit": "px",
 							"top": "96",
 							"right": "24",
-							"bottom": "96",
+							"bottom": "72",
 							"left": "24",
 							"isLinked": false
 						},
@@ -1312,126 +1631,247 @@
 							"unit": "px",
 							"top": "48",
 							"right": "20",
-							"bottom": "48",
+							"bottom": "36",
 							"left": "20",
 							"isLinked": false
-						},
-						"background_background": "classic",
-						"background_image": {
-							"url": "{{media:lookbook-3}}",
-							"id": "{{media_id:lookbook-3}}",
-							"alt": "",
-							"source": "library"
-						},
-						"background_position": "center center",
-						"background_size": "cover",
-						"background_overlay_background": "classic",
-						"__globals__": {
-							"background_overlay_color": "globals/colors?id=wpe0a16bc3"
-						},
-						"background_overlay_opacity": {
-							"unit": "px",
-							"size": 0.4,
-							"sizes": []
-						},
-						"min_height": {
-							"unit": "px",
-							"size": 620,
-							"sizes": []
-						},
-						"flex_justify_content": "center",
-						"flex_align_items": "center"
+						}
 					},
 					"elements": [
 						{
-							"id": "a5bfc9e",
+							"id": "f717716",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
-								"title": "Fewer, better pieces.",
-								"header_size": "h2",
-								"__globals__": {
-									"title_color": "globals/colors?id=wpece9a5f5"
-								},
-								"align": "center",
+								"title": "Lookbook",
+								"header_size": "p",
 								"typography_typography": "custom",
-								"typography_font_family": "Cormorant Garamond",
-								"typography_font_weight": "500",
-								"typography_line_height": {
-									"unit": "em",
-									"size": 1.05,
-									"sizes": []
-								},
 								"typography_font_size": {
 									"unit": "px",
-									"size": 80,
+									"size": 13,
 									"sizes": []
 								},
-								"typography_font_size_tablet": {
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
 									"unit": "px",
-									"size": 64,
+									"size": 1.6,
 									"sizes": []
 								},
-								"typography_font_size_mobile": {
-									"unit": "px",
-									"size": 44,
-									"sizes": []
-								}
+								"typography_font_family": "Manrope",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								},
+								"align": "center"
 							},
 							"elements": []
 						},
 						{
-							"id": "a5771bc",
+							"id": "6c8349c",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Three ways to wear linen",
+								"header_size": "h2",
+								"__globals__": {
+									"title_color": "globals/colors?id=text",
+									"typography_typography": "globals/typography?id=primary"
+								},
+								"align": "center"
+							},
+							"elements": []
+						},
+						{
+							"id": "d9d4f49",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
-								"editor": "<p>The Autumn / Winter lookbook: twelve looks, one palette.</p>",
+								"editor": "<p>Styled in Provence by Inès Moreau</p>",
 								"__globals__": {
-									"text_color": "globals/colors?id=wpece9a5f5"
+									"text_color": "globals/colors?id=wpe07d0ec3",
+									"typography_typography": "globals/typography?id=text"
 								},
-								"align": "center",
-								"typography_typography": "custom",
-								"typography_font_family": "Manrope",
-								"typography_font_size": {
-									"unit": "px",
-									"size": 18,
-									"sizes": []
-								}
+								"align": "center"
 							},
 							"elements": []
 						},
 						{
-							"id": "d67d8ab",
-							"elType": "widget",
-							"widgetType": "button",
+							"id": "c0c7c76",
+							"elType": "container",
 							"settings": {
-								"text": "Open the lookbook",
-								"link": {
-									"url": "{{page:lookbook}}",
-									"is_external": "",
-									"nofollow": ""
-								},
-								"size": "md",
-								"__globals__": {
-									"typography_typography": "globals/typography?id=accent",
-									"background_color": "globals/colors?id=wped302e97",
-									"button_text_color": "globals/colors?id=text"
-								},
-								"background_background": "classic",
-								"align": "center",
-								"button_hover_transition_duration": {
-									"unit": "s",
-									"size": 0.9,
+								"content_width": "full",
+								"container_type": "grid",
+								"grid_columns_grid": {
+									"unit": "fr",
+									"size": 3,
 									"sizes": []
+								},
+								"grid_columns_grid_tablet": {
+									"unit": "fr",
+									"size": 2,
+									"sizes": []
+								},
+								"grid_columns_grid_mobile": {
+									"unit": "fr",
+									"size": 1,
+									"sizes": []
+								},
+								"grid_gaps": {
+									"unit": "px",
+									"column": "24",
+									"row": "24",
+									"isLinked": true
 								}
 							},
-							"elements": []
+							"elements": [
+								{
+									"id": "67c6a1e",
+									"elType": "widget",
+									"widgetType": "image-box",
+									"settings": {
+										"image": {
+											"url": "{{media:lookbook-1}}",
+											"id": "{{media_id:lookbook-1}}",
+											"alt": "",
+											"source": "library"
+										},
+										"title_text": "",
+										"description_text": "Look 01 — Camel coat, cream trousers",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"image_size": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"__globals__": {
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
+										},
+										"image_height": {
+											"unit": "px",
+											"size": 520,
+											"sizes": []
+										},
+										"image_object_fit": "cover",
+										"link": {
+											"url": "{{page:lookbook}}",
+											"is_external": "",
+											"nofollow": ""
+										},
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "642e92e",
+									"elType": "widget",
+									"widgetType": "image-box",
+									"settings": {
+										"image": {
+											"url": "{{media:lookbook-2}}",
+											"id": "{{media_id:lookbook-2}}",
+											"alt": "",
+											"source": "library"
+										},
+										"title_text": "",
+										"description_text": "Look 02 — Espresso silk, wide ivory linen",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"image_size": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"__globals__": {
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
+										},
+										"image_height": {
+											"unit": "px",
+											"size": 520,
+											"sizes": []
+										},
+										"image_object_fit": "cover",
+										"link": {
+											"url": "{{page:lookbook}}",
+											"is_external": "",
+											"nofollow": ""
+										},
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
+										}
+									},
+									"elements": []
+								},
+								{
+									"id": "f457c54",
+									"elType": "widget",
+									"widgetType": "image-box",
+									"settings": {
+										"image": {
+											"url": "{{media:lookbook-3}}",
+											"id": "{{media_id:lookbook-3}}",
+											"alt": "",
+											"source": "library"
+										},
+										"title_text": "",
+										"description_text": "Look 03 — Terracotta linen maxi",
+										"position": "top",
+										"text_align": "left",
+										"title_size": "h3",
+										"image_size": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"__globals__": {
+											"title_color": "globals/colors?id=text",
+											"description_color": "globals/colors?id=wpe07d0ec3",
+											"title_typography_typography": "globals/typography?id=primary",
+											"description_typography_typography": "globals/typography?id=text",
+											"hover_title_color": "globals/colors?id=accent"
+										},
+										"image_height": {
+											"unit": "px",
+											"size": 520,
+											"sizes": []
+										},
+										"image_object_fit": "cover",
+										"link": {
+											"url": "{{page:lookbook}}",
+											"is_external": "",
+											"nofollow": ""
+										},
+										"background_hover_transition": {
+											"unit": "s",
+											"size": 0.9,
+											"sizes": []
+										}
+									},
+									"elements": []
+								}
+							],
+							"isInner": true
 						}
 					],
 					"isInner": false
 				},
 				{
-					"id": "d9d4f49",
+					"id": "72b32a1",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -1450,24 +1890,36 @@
 						},
 						"padding": {
 							"unit": "px",
-							"top": "72",
+							"top": "56",
 							"right": "24",
-							"bottom": "72",
+							"bottom": "56",
 							"left": "24",
 							"isLinked": false
 						},
 						"padding_mobile": {
 							"unit": "px",
-							"top": "36",
+							"top": "28",
 							"right": "20",
-							"bottom": "36",
+							"bottom": "28",
 							"left": "20",
 							"isLinked": false
+						},
+						"border_border": "solid",
+						"border_width": {
+							"unit": "px",
+							"top": "1",
+							"right": "1",
+							"bottom": "1",
+							"left": "1",
+							"isLinked": true
+						},
+						"__globals__": {
+							"border_color": "globals/colors?id=wpe2de42fb"
 						}
 					},
 					"elements": [
 						{
-							"id": "6c8349c",
+							"id": "9f61408",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -1496,7 +1948,7 @@
 							},
 							"elements": [
 								{
-									"id": "3416a75",
+									"id": "9a11581",
 									"elType": "widget",
 									"widgetType": "icon-box",
 									"settings": {
@@ -1526,7 +1978,7 @@
 									"elements": []
 								},
 								{
-									"id": "a1d0c6e",
+									"id": "d82c8d1",
 									"elType": "widget",
 									"widgetType": "icon-box",
 									"settings": {
@@ -1556,7 +2008,7 @@
 									"elements": []
 								},
 								{
-									"id": "17e6216",
+									"id": "a684ece",
 									"elType": "widget",
 									"widgetType": "icon-box",
 									"settings": {
@@ -1586,7 +2038,7 @@
 									"elements": []
 								},
 								{
-									"id": "f717716",
+									"id": "b53b3a3",
 									"elType": "widget",
 									"widgetType": "icon-box",
 									"settings": {
@@ -1622,7 +2074,7 @@
 					"isInner": false
 				},
 				{
-					"id": "d82c8d1",
+					"id": "ea5d2f1",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -1654,15 +2106,11 @@
 							"bottom": "48",
 							"left": "20",
 							"isLinked": false
-						},
-						"background_background": "classic",
-						"__globals__": {
-							"background_color": "globals/colors?id=wpe6073fd3"
 						}
 					},
 					"elements": [
 						{
-							"id": "67c6a1e",
+							"id": "66f041e",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -1689,7 +2137,7 @@
 							"elements": []
 						},
 						{
-							"id": "642e92e",
+							"id": "093f65e",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -1703,7 +2151,7 @@
 							"elements": []
 						},
 						{
-							"id": "9a11581",
+							"id": "03afdbd",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -1732,7 +2180,7 @@
 							},
 							"elements": [
 								{
-									"id": "f457c54",
+									"id": "072b030",
 									"elType": "widget",
 									"widgetType": "image-box",
 									"settings": {
@@ -1779,7 +2227,7 @@
 									"elements": []
 								},
 								{
-									"id": "c0c7c76",
+									"id": "7f39f83",
 									"elType": "widget",
 									"widgetType": "image-box",
 									"settings": {
@@ -1826,7 +2274,7 @@
 									"elements": []
 								},
 								{
-									"id": "2838023",
+									"id": "44f683a",
 									"elType": "widget",
 									"widgetType": "image-box",
 									"settings": {
@@ -1877,6 +2325,391 @@
 						}
 					],
 					"isInner": false
+				},
+				{
+					"id": "d2ddea1",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": true
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "24",
+							"right": "20",
+							"bottom": "24",
+							"left": "20",
+							"isLinked": false
+						},
+						"background_background": "classic",
+						"__globals__": {
+							"background_color": "globals/colors?id=wpe0a16bc3"
+						}
+					},
+					"elements": [
+						{
+							"id": "32bb90e",
+							"elType": "container",
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "row",
+								"flex_gap": {
+									"unit": "px",
+									"size": 0,
+									"column": "0",
+									"row": "0",
+									"isLinked": true
+								},
+								"flex_direction_mobile": "column"
+							},
+							"elements": [
+								{
+									"id": "3295c76",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										}
+									},
+									"elements": [
+										{
+											"id": "fc490ca",
+											"elType": "widget",
+											"widgetType": "image",
+											"settings": {
+												"image": {
+													"url": "{{media:store-paris}}",
+													"id": "{{media_id:store-paris}}",
+													"alt": "Inside the Paris store",
+													"source": "library"
+												},
+												"image_size": "full",
+												"width": {
+													"unit": "%",
+													"size": 100,
+													"sizes": []
+												},
+												"height": {
+													"unit": "px",
+													"size": 560,
+													"sizes": []
+												},
+												"height_tablet": {
+													"unit": "px",
+													"size": 448,
+													"sizes": []
+												},
+												"height_mobile": {
+													"unit": "px",
+													"size": 392,
+													"sizes": []
+												},
+												"object-fit": "cover",
+												"object-position": "center center",
+												"background_hover_transition": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								},
+								{
+									"id": "e2c420d",
+									"elType": "container",
+									"settings": {
+										"content_width": "full",
+										"flex_direction": "column",
+										"flex_gap": {
+											"unit": "px",
+											"size": 16,
+											"column": "16",
+											"row": "16",
+											"isLinked": true
+										},
+										"width": {
+											"unit": "%",
+											"size": 50,
+											"sizes": []
+										},
+										"width_mobile": {
+											"unit": "%",
+											"size": 100,
+											"sizes": []
+										},
+										"padding": {
+											"unit": "px",
+											"top": "48",
+											"right": "24",
+											"bottom": "48",
+											"left": "64",
+											"isLinked": false
+										},
+										"padding_mobile": {
+											"unit": "px",
+											"top": "24",
+											"right": "20",
+											"bottom": "24",
+											"left": "20",
+											"isLinked": false
+										},
+										"flex_justify_content": "center"
+									},
+									"elements": [
+										{
+											"id": "735b90b",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "Visit us",
+												"header_size": "p",
+												"typography_typography": "custom",
+												"typography_font_size": {
+													"unit": "px",
+													"size": 13,
+													"sizes": []
+												},
+												"typography_font_weight": "600",
+												"typography_text_transform": "uppercase",
+												"typography_letter_spacing": {
+													"unit": "px",
+													"size": 1.6,
+													"sizes": []
+												},
+												"typography_font_family": "Manrope",
+												"__globals__": {
+													"title_color": "globals/colors?id=wpe6a92dbb"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "a3f390d",
+											"elType": "widget",
+											"widgetType": "heading",
+											"settings": {
+												"title": "14 Rue de Saintonge, Paris",
+												"header_size": "h2",
+												"__globals__": {
+													"title_color": "globals/colors?id=wpece9a5f5"
+												},
+												"typography_typography": "custom",
+												"typography_font_family": "Cormorant Garamond",
+												"typography_font_weight": "500",
+												"typography_line_height": {
+													"unit": "em",
+													"size": 1.05,
+													"sizes": []
+												},
+												"typography_font_size": {
+													"unit": "px",
+													"size": 48,
+													"sizes": []
+												},
+												"typography_font_size_tablet": {
+													"unit": "px",
+													"size": 38,
+													"sizes": []
+												},
+												"typography_font_size_mobile": {
+													"unit": "px",
+													"size": 26,
+													"sizes": []
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "14bfa6b",
+											"elType": "widget",
+											"widgetType": "text-editor",
+											"settings": {
+												"editor": "<p>Tuesday – Saturday, 11:00 – 19:00. Private fittings with our tailors by appointment.</p>",
+												"__globals__": {
+													"text_color": "globals/colors?id=wpece9a5f5",
+													"typography_typography": "globals/typography?id=text"
+												}
+											},
+											"elements": []
+										},
+										{
+											"id": "7cbbc40",
+											"elType": "widget",
+											"widgetType": "button",
+											"settings": {
+												"text": "Book a fitting",
+												"link": {
+													"url": "{{page:contact}}",
+													"is_external": "",
+													"nofollow": ""
+												},
+												"size": "md",
+												"__globals__": {
+													"typography_typography": "globals/typography?id=accent",
+													"background_color": "globals/colors?id=wped302e97",
+													"button_text_color": "globals/colors?id=text"
+												},
+												"background_background": "classic",
+												"button_hover_transition_duration": {
+													"unit": "s",
+													"size": 0.9,
+													"sizes": []
+												}
+											},
+											"elements": []
+										}
+									],
+									"isInner": true
+								}
+							],
+							"isInner": true
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "35f4a8d",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "96",
+							"right": "24",
+							"bottom": "96",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "48",
+							"right": "20",
+							"bottom": "48",
+							"left": "20",
+							"isLinked": false
+						},
+						"flex_align_items": "center"
+					},
+					"elements": [
+						{
+							"id": "ad61ab1",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "The Maison letter",
+								"header_size": "p",
+								"typography_typography": "custom",
+								"typography_font_size": {
+									"unit": "px",
+									"size": 13,
+									"sizes": []
+								},
+								"typography_font_weight": "600",
+								"typography_text_transform": "uppercase",
+								"typography_letter_spacing": {
+									"unit": "px",
+									"size": 1.6,
+									"sizes": []
+								},
+								"typography_font_family": "Manrope",
+								"__globals__": {
+									"title_color": "globals/colors?id=accent"
+								},
+								"align": "center"
+							},
+							"elements": []
+						},
+						{
+							"id": "d09bf41",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Quiet notes on new collections",
+								"header_size": "h2",
+								"__globals__": {
+									"title_color": "globals/colors?id=text",
+									"typography_typography": "globals/typography?id=primary"
+								},
+								"align": "center"
+							},
+							"elements": []
+						},
+						{
+							"id": "fbd7939",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>One letter a month: new pieces, atelier stories and private sales. No noise.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3",
+									"typography_typography": "globals/typography?id=text"
+								},
+								"align": "center"
+							},
+							"elements": []
+						},
+						{
+							"id": "28dd2c7",
+							"elType": "widget",
+							"widgetType": "shortcode",
+							"settings": {
+								"shortcode": "[wpforms id=\"{{form:newsletter}}\" title=\"false\"]"
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
 				}
 			],
 			"meta": {
@@ -1892,7 +2725,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "7f39f83",
+					"id": "9778d5d",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -1929,7 +2762,7 @@
 					},
 					"elements": [
 						{
-							"id": "66f041e",
+							"id": "d1fe173",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -1957,7 +2790,7 @@
 							"elements": []
 						},
 						{
-							"id": "093f65e",
+							"id": "f033ab3",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -1994,7 +2827,7 @@
 							"elements": []
 						},
 						{
-							"id": "072b030",
+							"id": "43ec517",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -2017,7 +2850,7 @@
 					"isInner": false
 				},
 				{
-					"id": "7cbbc40",
+					"id": "54229ab",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -2053,7 +2886,7 @@
 					},
 					"elements": [
 						{
-							"id": "14bfa6b",
+							"id": "8613985",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -2069,7 +2902,7 @@
 							},
 							"elements": [
 								{
-									"id": "03afdbd",
+									"id": "68d30a9",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -2094,7 +2927,7 @@
 									},
 									"elements": [
 										{
-											"id": "44f683a",
+											"id": "fe9fc28",
 											"elType": "widget",
 											"widgetType": "image",
 											"settings": {
@@ -2139,7 +2972,7 @@
 									"isInner": true
 								},
 								{
-									"id": "a3f390d",
+									"id": "7647966",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -2165,7 +2998,7 @@
 									},
 									"elements": [
 										{
-											"id": "ea5d2f1",
+											"id": "3ef8154",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -2192,7 +3025,7 @@
 											"elements": []
 										},
 										{
-											"id": "fc490ca",
+											"id": "93db85e",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -2206,7 +3039,7 @@
 											"elements": []
 										},
 										{
-											"id": "3295c76",
+											"id": "c7e1249",
 											"elType": "widget",
 											"widgetType": "text-editor",
 											"settings": {
@@ -2225,7 +3058,7 @@
 											"elements": []
 										},
 										{
-											"id": "735b90b",
+											"id": "2a38a4a",
 											"elType": "widget",
 											"widgetType": "shortcode",
 											"settings": {
@@ -2243,7 +3076,7 @@
 					"isInner": false
 				},
 				{
-					"id": "d1fe173",
+					"id": "f899139",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -2279,7 +3112,7 @@
 					},
 					"elements": [
 						{
-							"id": "35f4a8d",
+							"id": "ac627ab",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -2295,7 +3128,7 @@
 							},
 							"elements": [
 								{
-									"id": "28dd2c7",
+									"id": "ed3d2c2",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -2321,7 +3154,7 @@
 									},
 									"elements": [
 										{
-											"id": "d2ddea1",
+											"id": "f4b9ec3",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -2348,7 +3181,7 @@
 											"elements": []
 										},
 										{
-											"id": "ad61ab1",
+											"id": "812b4ba",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -2362,7 +3195,7 @@
 											"elements": []
 										},
 										{
-											"id": "d09bf41",
+											"id": "26657d5",
 											"elType": "widget",
 											"widgetType": "text-editor",
 											"settings": {
@@ -2381,7 +3214,7 @@
 											"elements": []
 										},
 										{
-											"id": "fbd7939",
+											"id": "e2ef524",
 											"elType": "widget",
 											"widgetType": "shortcode",
 											"settings": {
@@ -2393,7 +3226,7 @@
 									"isInner": true
 								},
 								{
-									"id": "32bb90e",
+									"id": "98dce83",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -2418,7 +3251,7 @@
 									},
 									"elements": [
 										{
-											"id": "e2c420d",
+											"id": "92cc227",
 											"elType": "widget",
 											"widgetType": "image",
 											"settings": {
@@ -2469,7 +3302,7 @@
 					"isInner": false
 				},
 				{
-					"id": "2a38a4a",
+					"id": "2723d09",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -2505,7 +3338,7 @@
 					},
 					"elements": [
 						{
-							"id": "c7e1249",
+							"id": "a3c65c2",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -2521,7 +3354,7 @@
 							},
 							"elements": [
 								{
-									"id": "43ec517",
+									"id": "ec89566",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -2546,7 +3379,7 @@
 									},
 									"elements": [
 										{
-											"id": "f033ab3",
+											"id": "38b3eff",
 											"elType": "widget",
 											"widgetType": "image",
 											"settings": {
@@ -2591,7 +3424,7 @@
 									"isInner": true
 								},
 								{
-									"id": "93db85e",
+									"id": "a97da62",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -2617,7 +3450,7 @@
 									},
 									"elements": [
 										{
-											"id": "9778d5d",
+											"id": "6974ce5",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -2644,7 +3477,7 @@
 											"elements": []
 										},
 										{
-											"id": "fe9fc28",
+											"id": "c9e1074",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -2658,7 +3491,7 @@
 											"elements": []
 										},
 										{
-											"id": "68d30a9",
+											"id": "65b9eea",
 											"elType": "widget",
 											"widgetType": "text-editor",
 											"settings": {
@@ -2677,7 +3510,7 @@
 											"elements": []
 										},
 										{
-											"id": "3ef8154",
+											"id": "f0935e4",
 											"elType": "widget",
 											"widgetType": "shortcode",
 											"settings": {
@@ -2695,7 +3528,7 @@
 					"isInner": false
 				},
 				{
-					"id": "54229ab",
+					"id": "7f6ffaa",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -2735,7 +3568,7 @@
 					},
 					"elements": [
 						{
-							"id": "7647966",
+							"id": "5f93f98",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -2750,7 +3583,7 @@
 							"elements": []
 						},
 						{
-							"id": "8613985",
+							"id": "698d51a",
 							"elType": "widget",
 							"widgetType": "button",
 							"settings": {
@@ -2804,7 +3637,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "812b4ba",
+					"id": "c45147d",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -2864,7 +3697,7 @@
 					},
 					"elements": [
 						{
-							"id": "92cc227",
+							"id": "73278a4",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -2891,7 +3724,7 @@
 							"elements": []
 						},
 						{
-							"id": "98dce83",
+							"id": "5fd0b37",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -2927,7 +3760,7 @@
 							"elements": []
 						},
 						{
-							"id": "f4b9ec3",
+							"id": "2b44928",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -2949,7 +3782,7 @@
 					"isInner": false
 				},
 				{
-					"id": "6974ce5",
+					"id": "c8ffe9a",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -2985,7 +3818,7 @@
 					},
 					"elements": [
 						{
-							"id": "ec89566",
+							"id": "202cb96",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -3001,7 +3834,7 @@
 							},
 							"elements": [
 								{
-									"id": "ed3d2c2",
+									"id": "07e1cd7",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -3026,7 +3859,7 @@
 									},
 									"elements": [
 										{
-											"id": "26657d5",
+											"id": "eb160de",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -3053,7 +3886,7 @@
 											"elements": []
 										},
 										{
-											"id": "e2ef524",
+											"id": "5ef0599",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -3070,7 +3903,7 @@
 									"isInner": true
 								},
 								{
-									"id": "38b3eff",
+									"id": "a0a080f",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -3095,7 +3928,7 @@
 									},
 									"elements": [
 										{
-											"id": "ac627ab",
+											"id": "da4fb5c",
 											"elType": "widget",
 											"widgetType": "text-editor",
 											"settings": {
@@ -3114,7 +3947,7 @@
 											"elements": []
 										},
 										{
-											"id": "f899139",
+											"id": "4c56ff4",
 											"elType": "widget",
 											"widgetType": "text-editor",
 											"settings": {
@@ -3136,7 +3969,7 @@
 					"isInner": false
 				},
 				{
-					"id": "2723d09",
+					"id": "9b86192",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -3176,7 +4009,7 @@
 					},
 					"elements": [
 						{
-							"id": "a3c65c2",
+							"id": "d1f491a",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -3205,7 +4038,7 @@
 							},
 							"elements": [
 								{
-									"id": "c9e1074",
+									"id": "3def184",
 									"elType": "widget",
 									"widgetType": "counter",
 									"settings": {
@@ -3225,7 +4058,7 @@
 									"elements": []
 								},
 								{
-									"id": "65b9eea",
+									"id": "069059b",
 									"elType": "widget",
 									"widgetType": "counter",
 									"settings": {
@@ -3245,7 +4078,7 @@
 									"elements": []
 								},
 								{
-									"id": "f0935e4",
+									"id": "ec5decc",
 									"elType": "widget",
 									"widgetType": "counter",
 									"settings": {
@@ -3265,7 +4098,7 @@
 									"elements": []
 								},
 								{
-									"id": "a97da62",
+									"id": "76dc611",
 									"elType": "widget",
 									"widgetType": "counter",
 									"settings": {
@@ -3291,7 +4124,7 @@
 					"isInner": false
 				},
 				{
-					"id": "4c56ff4",
+					"id": "a8baa56",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -3327,7 +4160,7 @@
 					},
 					"elements": [
 						{
-							"id": "da4fb5c",
+							"id": "0f28b5d",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -3343,7 +4176,7 @@
 							},
 							"elements": [
 								{
-									"id": "698d51a",
+									"id": "65ded53",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -3368,7 +4201,7 @@
 									},
 									"elements": [
 										{
-											"id": "5f93f98",
+											"id": "1afa34a",
 											"elType": "widget",
 											"widgetType": "image",
 											"settings": {
@@ -3413,7 +4246,7 @@
 									"isInner": true
 								},
 								{
-									"id": "07e1cd7",
+									"id": "1385974",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -3439,7 +4272,7 @@
 									},
 									"elements": [
 										{
-											"id": "7f6ffaa",
+											"id": "9fc3d71",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -3466,7 +4299,7 @@
 											"elements": []
 										},
 										{
-											"id": "73278a4",
+											"id": "02522a2",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -3480,13 +4313,13 @@
 											"elements": []
 										},
 										{
-											"id": "5ef0599",
+											"id": "e00da03",
 											"elType": "widget",
 											"widgetType": "icon-list",
 											"settings": {
 												"icon_list": [
 													{
-														"_id": "5fd0b37",
+														"_id": "7f1de29",
 														"text": "Fabric rests for 48 hours before cutting so it never shrinks later.",
 														"selected_icon": {
 															"value": "fas fa-check",
@@ -3494,7 +4327,7 @@
 														}
 													},
 													{
-														"_id": "2b44928",
+														"_id": "42a0e18",
 														"text": "Seams are French-finished or bound — no raw edges inside.",
 														"selected_icon": {
 															"value": "fas fa-check",
@@ -3502,7 +4335,7 @@
 														}
 													},
 													{
-														"_id": "c45147d",
+														"_id": "3988c7f",
 														"text": "Buttons are sewn with a thread shank so they last.",
 														"selected_icon": {
 															"value": "fas fa-check",
@@ -3510,7 +4343,7 @@
 														}
 													},
 													{
-														"_id": "eb160de",
+														"_id": "013d407",
 														"text": "Every piece is pressed and checked by the person who made it.",
 														"selected_icon": {
 															"value": "fas fa-check",
@@ -3536,7 +4369,7 @@
 					"isInner": false
 				},
 				{
-					"id": "9b86192",
+					"id": "a8f15ed",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -3576,7 +4409,7 @@
 					},
 					"elements": [
 						{
-							"id": "d1f491a",
+							"id": "7ef605f",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -3592,7 +4425,7 @@
 							},
 							"elements": [
 								{
-									"id": "069059b",
+									"id": "8d5e957",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -3618,7 +4451,7 @@
 									},
 									"elements": [
 										{
-											"id": "a0a080f",
+											"id": "903ce92",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -3645,7 +4478,7 @@
 											"elements": []
 										},
 										{
-											"id": "202cb96",
+											"id": "0a09c88",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -3659,7 +4492,7 @@
 											"elements": []
 										},
 										{
-											"id": "c8ffe9a",
+											"id": "2b24d49",
 											"elType": "widget",
 											"widgetType": "text-editor",
 											"settings": {
@@ -3672,7 +4505,7 @@
 											"elements": []
 										},
 										{
-											"id": "3def184",
+											"id": "a5e0013",
 											"elType": "widget",
 											"widgetType": "button",
 											"settings": {
@@ -3712,7 +4545,7 @@
 									"isInner": true
 								},
 								{
-									"id": "76dc611",
+									"id": "f221706",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -3737,7 +4570,7 @@
 									},
 									"elements": [
 										{
-											"id": "ec5decc",
+											"id": "47d1e99",
 											"elType": "widget",
 											"widgetType": "image",
 											"settings": {
@@ -3801,7 +4634,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "02522a2",
+					"id": "2a79ea2",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -3837,7 +4670,7 @@
 					},
 					"elements": [
 						{
-							"id": "1afa34a",
+							"id": "37a749d",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -3864,7 +4697,7 @@
 							"elements": []
 						},
 						{
-							"id": "65ded53",
+							"id": "b3e3e39",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -3900,7 +4733,7 @@
 							"elements": []
 						},
 						{
-							"id": "9fc3d71",
+							"id": "1d7f7ab",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -3922,7 +4755,7 @@
 					"isInner": false
 				},
 				{
-					"id": "a8baa56",
+					"id": "0777d5c",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -3958,7 +4791,7 @@
 					},
 					"elements": [
 						{
-							"id": "0f28b5d",
+							"id": "82aa4b0",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -3974,7 +4807,7 @@
 							},
 							"elements": [
 								{
-									"id": "3988c7f",
+									"id": "0640966",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -4027,7 +4860,7 @@
 									},
 									"elements": [
 										{
-											"id": "7f1de29",
+											"id": "1c9ac01",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -4041,7 +4874,7 @@
 											"elements": []
 										},
 										{
-											"id": "42a0e18",
+											"id": "6c4b761",
 											"elType": "widget",
 											"widgetType": "text-editor",
 											"settings": {
@@ -4057,7 +4890,7 @@
 									"isInner": true
 								},
 								{
-									"id": "1385974",
+									"id": "bd4c9ab",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -4110,7 +4943,7 @@
 									},
 									"elements": [
 										{
-											"id": "013d407",
+											"id": "140f696",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -4124,7 +4957,7 @@
 											"elements": []
 										},
 										{
-											"id": "e00da03",
+											"id": "b73ce39",
 											"elType": "widget",
 											"widgetType": "text-editor",
 											"settings": {
@@ -4146,7 +4979,7 @@
 					"isInner": false
 				},
 				{
-					"id": "b3e3e39",
+					"id": "bf82296",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4186,7 +5019,7 @@
 					},
 					"elements": [
 						{
-							"id": "37a749d",
+							"id": "f7e6c85",
 							"elType": "container",
 							"settings": {
 								"content_width": "full",
@@ -4202,7 +5035,7 @@
 							},
 							"elements": [
 								{
-									"id": "0a09c88",
+									"id": "9766527",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -4227,7 +5060,7 @@
 									},
 									"elements": [
 										{
-											"id": "903ce92",
+											"id": "fa7cdfa",
 											"elType": "widget",
 											"widgetType": "image",
 											"settings": {
@@ -4272,7 +5105,7 @@
 									"isInner": true
 								},
 								{
-									"id": "a8f15ed",
+									"id": "1ff8a7b",
 									"elType": "container",
 									"settings": {
 										"content_width": "full",
@@ -4298,7 +5131,7 @@
 									},
 									"elements": [
 										{
-											"id": "2b24d49",
+											"id": "7e7757b",
 											"elType": "widget",
 											"widgetType": "heading",
 											"settings": {
@@ -4312,13 +5145,13 @@
 											"elements": []
 										},
 										{
-											"id": "f221706",
+											"id": "149e967",
 											"elType": "widget",
 											"widgetType": "icon-list",
 											"settings": {
 												"icon_list": [
 													{
-														"_id": "a5e0013",
+														"_id": "5878a7a",
 														"text": "care@maison-atelier.com",
 														"selected_icon": {
 															"value": "fas fa-envelope",
@@ -4326,7 +5159,7 @@
 														}
 													},
 													{
-														"_id": "8d5e957",
+														"_id": "006f52e",
 														"text": "+33 1 42 71 18 40 (Mon–Fri, 9:00–18:00 CET)",
 														"selected_icon": {
 															"value": "fas fa-envelope",
@@ -4334,7 +5167,7 @@
 														}
 													},
 													{
-														"_id": "47d1e99",
+														"_id": "3636638",
 														"text": "Press & wholesale: studio@maison-atelier.com",
 														"selected_icon": {
 															"value": "fas fa-envelope",
@@ -4351,7 +5184,7 @@
 											"elements": []
 										},
 										{
-											"id": "7ef605f",
+											"id": "a4a042c",
 											"elType": "widget",
 											"widgetType": "button",
 											"settings": {
@@ -4399,7 +5232,7 @@
 					"isInner": false
 				},
 				{
-					"id": "6c4b761",
+					"id": "8f85517",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4435,7 +5268,7 @@
 					},
 					"elements": [
 						{
-							"id": "1d7f7ab",
+							"id": "8216124",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -4450,7 +5283,7 @@
 							"elements": []
 						},
 						{
-							"id": "2a79ea2",
+							"id": "38af861",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -4464,7 +5297,7 @@
 							"elements": []
 						},
 						{
-							"id": "1c9ac01",
+							"id": "96da2f5",
 							"elType": "widget",
 							"widgetType": "shortcode",
 							"settings": {
@@ -4476,7 +5309,7 @@
 					"isInner": false
 				},
 				{
-					"id": "140f696",
+					"id": "045117b",
 					"elType": "container",
 					"settings": {
 						"content_width": "full",
@@ -4507,7 +5340,7 @@
 					},
 					"elements": [
 						{
-							"id": "0640966",
+							"id": "8f53295",
 							"elType": "widget",
 							"widgetType": "google_maps",
 							"settings": {
@@ -4542,7 +5375,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "0777d5c",
+					"id": "6cdd60e",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4578,7 +5411,7 @@
 					},
 					"elements": [
 						{
-							"id": "b73ce39",
+							"id": "fc22130",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -4605,7 +5438,7 @@
 							"elements": []
 						},
 						{
-							"id": "bd4c9ab",
+							"id": "4c5bde7",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -4641,7 +5474,7 @@
 							"elements": []
 						},
 						{
-							"id": "82aa4b0",
+							"id": "cedebb6",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -4663,7 +5496,7 @@
 					"isInner": false
 				},
 				{
-					"id": "a4a042c",
+					"id": "58a2fc6",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4699,38 +5532,38 @@
 					},
 					"elements": [
 						{
-							"id": "149e967",
+							"id": "0aa1883",
 							"elType": "widget",
 							"widgetType": "accordion",
 							"settings": {
 								"tabs": [
 									{
-										"_id": "fa7cdfa",
+										"_id": "eecca5b",
 										"tab_title": "How long does delivery take?",
 										"tab_content": "<p>Orders placed before 2 pm ship the same day. EU and UK delivery takes 2–4 working days; the rest of the world 5–8.</p>"
 									},
 									{
-										"_id": "9766527",
+										"_id": "9872ed9",
 										"tab_title": "Is shipping free?",
 										"tab_content": "<p>Yes, on orders over €150. Below that, standard delivery is €8 and express is €15.</p>"
 									},
 									{
-										"_id": "7e7757b",
+										"_id": "31fefc0",
 										"tab_title": "How do returns work?",
 										"tab_content": "<p>You have 30 days to return unworn pieces with their tags. Start a return from My Account and print the prepaid label.</p>"
 									},
 									{
-										"_id": "5878a7a",
+										"_id": "9dcb88e",
 										"tab_title": "When will I get my refund?",
 										"tab_content": "<p>Within 5 working days of the parcel reaching our studio, to the original payment method.</p>"
 									},
 									{
-										"_id": "006f52e",
+										"_id": "a2557a7",
 										"tab_title": "How do I find my size?",
 										"tab_content": "<p>Each product page shows the garment measurements. Between sizes? Take the larger for knitwear and the smaller for tailoring.</p>"
 									},
 									{
-										"_id": "3636638",
+										"_id": "cfecdb2",
 										"tab_title": "Do you repair Maison pieces?",
 										"tab_content": "<p>Always. Email care@maison-atelier.com with a photo and we will send a free repair label.</p>"
 									}
@@ -4752,7 +5585,7 @@
 					"isInner": false
 				},
 				{
-					"id": "bf82296",
+					"id": "0336dcb",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4792,7 +5625,7 @@
 					},
 					"elements": [
 						{
-							"id": "1ff8a7b",
+							"id": "bd686fd",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -4807,7 +5640,7 @@
 							"elements": []
 						},
 						{
-							"id": "f7e6c85",
+							"id": "a597e50",
 							"elType": "widget",
 							"widgetType": "button",
 							"settings": {
@@ -4919,7 +5752,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "8f85517",
+					"id": "84d9ee4",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4955,7 +5788,7 @@
 					},
 					"elements": [
 						{
-							"id": "8216124",
+							"id": "084b6fb",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -4982,7 +5815,7 @@
 							"elements": []
 						},
 						{
-							"id": "38af861",
+							"id": "85d8ce5",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5018,7 +5851,7 @@
 							"elements": []
 						},
 						{
-							"id": "96da2f5",
+							"id": "0e65972",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5040,7 +5873,7 @@
 					"isInner": false
 				},
 				{
-					"id": "045117b",
+					"id": "757b505",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5076,7 +5909,7 @@
 					},
 					"elements": [
 						{
-							"id": "8f53295",
+							"id": "3644a68",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5111,7 +5944,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "6cdd60e",
+					"id": "eae27d7",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5147,7 +5980,7 @@
 					},
 					"elements": [
 						{
-							"id": "fc22130",
+							"id": "854d6fa",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5174,7 +6007,7 @@
 							"elements": []
 						},
 						{
-							"id": "4c5bde7",
+							"id": "e2c0be2",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5210,7 +6043,7 @@
 							"elements": []
 						},
 						{
-							"id": "cedebb6",
+							"id": "274ad47",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5232,7 +6065,7 @@
 					"isInner": false
 				},
 				{
-					"id": "9872ed9",
+					"id": "69adc1e",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5268,7 +6101,7 @@
 					},
 					"elements": [
 						{
-							"id": "eecca5b",
+							"id": "7eabe3a",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5303,7 +6136,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "cfecdb2",
+					"id": "eb16372",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5339,7 +6172,7 @@
 					},
 					"elements": [
 						{
-							"id": "31fefc0",
+							"id": "091d584",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5366,7 +6199,7 @@
 							"elements": []
 						},
 						{
-							"id": "9dcb88e",
+							"id": "b1d10e7",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5402,7 +6235,7 @@
 							"elements": []
 						},
 						{
-							"id": "a2557a7",
+							"id": "6f3ef77",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5424,7 +6257,7 @@
 					"isInner": false
 				},
 				{
-					"id": "58a2fc6",
+					"id": "979d472",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5460,7 +6293,7 @@
 					},
 					"elements": [
 						{
-							"id": "0aa1883",
+							"id": "1534b76",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5495,7 +6328,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "084b6fb",
+					"id": "63dc7ed",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5531,7 +6364,7 @@
 					},
 					"elements": [
 						{
-							"id": "bd686fd",
+							"id": "ca46c1b",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5558,7 +6391,7 @@
 							"elements": []
 						},
 						{
-							"id": "a597e50",
+							"id": "3b8a614",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5594,7 +6427,7 @@
 							"elements": []
 						},
 						{
-							"id": "0336dcb",
+							"id": "45fbc6d",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5616,7 +6449,7 @@
 					"isInner": false
 				},
 				{
-					"id": "0e65972",
+					"id": "c0e190d",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5652,7 +6485,7 @@
 					},
 					"elements": [
 						{
-							"id": "85d8ce5",
+							"id": "e96ed47",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -6001,16 +6834,16 @@
 		"motion": "editorial",
 		"parts": {
 			"header": {
-				"content": "<!-- wp:group {\"className\":\"wpe-topbar\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-topbar\"><!-- wp:group {\"className\":\"wpe-topbar__inner\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-topbar__inner\"><!-- wp:paragraph -->\n<p>Free shipping over €150 · Returns within 30 days</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph {\"className\":\"wpe-topbar__links\"} -->\n<p class=\"wpe-topbar__links\"><a href=\"{{page:help}}\">Shipping &amp; returns</a> · <a href=\"{{page:contact}}\">Stores</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->\n\n<!-- wp:pattern {\"slug\":\"wpessential/header-centered\"} /-->"
+				"content": "<!-- wp:group {\"className\":\"wpe-topbar\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-topbar\"><!-- wp:group {\"className\":\"wpe-topbar__inner mx-topbar\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"center\"}} -->\n<div class=\"wp-block-group wpe-topbar__inner mx-topbar\"><!-- wp:paragraph -->\n<p>Complimentary shipping over €150 · Free returns within 30 days · Gift wrapping on request</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"header\",\"className\":\"wpe-header mx-header\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<header class=\"wp-block-group wpe-header mx-header\"><!-- wp:group {\"className\":\"wpe-header__inner mx-header__inner\",\"layout\":{\"type\":\"default\"}} -->\n<div class=\"wp-block-group wpe-header__inner mx-header__inner\"><!-- wp:navigation {\"overlayMenu\":\"mobile\",\"className\":\"mx-nav\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"left\"}} -->\n<!-- wp:navigation-link {\"label\":\"New in\",\"url\":\"{{woo:shop}}?orderby=date\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Accessories\",\"url\":\"{{term_link:pc-accessories}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation -->\n\n<!-- wp:site-title {\"className\":\"mx-logo\"} /-->\n\n<!-- wp:group {\"className\":\"wpe-header-actions mx-actions\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"right\"}} -->\n<div class=\"wp-block-group wpe-header-actions mx-actions\"><!-- wp:navigation {\"overlayMenu\":\"never\",\"className\":\"mx-nav mx-nav\\u002d\\u002dright\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation -->\n\n<!-- wp:search {\"label\":\"Search\",\"showLabel\":false,\"buttonText\":\"Search\",\"buttonPosition\":\"button-only\",\"buttonUseIcon\":true,\"isSearchFieldHidden\":true,\"query\":{\"post_type\":\"product\"}} /-->\n\n<!-- wp:woocommerce/customer-account {\"displayStyle\":\"icon_only\",\"iconStyle\":\"line\",\"iconClass\":\"wc-block-customer-account__account-icon\"} /-->\n\n<!-- wp:woocommerce/mini-cart /--></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --></header>\n<!-- /wp:group -->"
 			},
 			"header-shop": {
-				"content": "<!-- wp:group {\"className\":\"wpe-topbar\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-topbar\"><!-- wp:group {\"className\":\"wpe-topbar__inner\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-topbar__inner\"><!-- wp:paragraph -->\n<p>Free shipping over €150 · Returns within 30 days</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph {\"className\":\"wpe-topbar__links\"} -->\n<p class=\"wpe-topbar__links\"><a href=\"{{page:help}}\">Shipping &amp; returns</a> · <a href=\"{{page:contact}}\">Stores</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->\n\n<!-- wp:pattern {\"slug\":\"wpessential/header-centered\"} /-->"
+				"content": "<!-- wp:group {\"className\":\"wpe-topbar\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-topbar\"><!-- wp:group {\"className\":\"wpe-topbar__inner mx-topbar\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"center\"}} -->\n<div class=\"wp-block-group wpe-topbar__inner mx-topbar\"><!-- wp:paragraph -->\n<p>Complimentary shipping over €150 · Free returns within 30 days · Gift wrapping on request</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"header\",\"className\":\"wpe-header mx-header\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<header class=\"wp-block-group wpe-header mx-header\"><!-- wp:group {\"className\":\"wpe-header__inner mx-header__inner\",\"layout\":{\"type\":\"default\"}} -->\n<div class=\"wp-block-group wpe-header__inner mx-header__inner\"><!-- wp:navigation {\"overlayMenu\":\"mobile\",\"className\":\"mx-nav\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"left\"}} -->\n<!-- wp:navigation-link {\"label\":\"New in\",\"url\":\"{{woo:shop}}?orderby=date\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Accessories\",\"url\":\"{{term_link:pc-accessories}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation -->\n\n<!-- wp:site-title {\"className\":\"mx-logo\"} /-->\n\n<!-- wp:group {\"className\":\"wpe-header-actions mx-actions\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"right\"}} -->\n<div class=\"wp-block-group wpe-header-actions mx-actions\"><!-- wp:navigation {\"overlayMenu\":\"never\",\"className\":\"mx-nav mx-nav\\u002d\\u002dright\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation -->\n\n<!-- wp:search {\"label\":\"Search\",\"showLabel\":false,\"buttonText\":\"Search\",\"buttonPosition\":\"button-only\",\"buttonUseIcon\":true,\"isSearchFieldHidden\":true,\"query\":{\"post_type\":\"product\"}} /-->\n\n<!-- wp:woocommerce/customer-account {\"displayStyle\":\"icon_only\",\"iconStyle\":\"line\",\"iconClass\":\"wc-block-customer-account__account-icon\"} /-->\n\n<!-- wp:woocommerce/mini-cart /--></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --></header>\n<!-- /wp:group -->"
 			},
 			"header-transparent": {
-				"content": "<!-- wp:group {\"className\":\"wpe-topbar\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-topbar\"><!-- wp:group {\"className\":\"wpe-topbar__inner\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-topbar__inner\"><!-- wp:paragraph -->\n<p>Free shipping over €150 · Returns within 30 days</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph {\"className\":\"wpe-topbar__links\"} -->\n<p class=\"wpe-topbar__links\"><a href=\"{{page:help}}\">Shipping &amp; returns</a> · <a href=\"{{page:contact}}\">Stores</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->\n\n<!-- wp:pattern {\"slug\":\"wpessential/header-centered\"} /-->"
+				"content": "<!-- wp:group {\"className\":\"wpe-topbar\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-topbar\"><!-- wp:group {\"className\":\"wpe-topbar__inner mx-topbar\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"center\"}} -->\n<div class=\"wp-block-group wpe-topbar__inner mx-topbar\"><!-- wp:paragraph -->\n<p>Complimentary shipping over €150 · Free returns within 30 days · Gift wrapping on request</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"header\",\"className\":\"wpe-header mx-header\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<header class=\"wp-block-group wpe-header mx-header\"><!-- wp:group {\"className\":\"wpe-header__inner mx-header__inner\",\"layout\":{\"type\":\"default\"}} -->\n<div class=\"wp-block-group wpe-header__inner mx-header__inner\"><!-- wp:navigation {\"overlayMenu\":\"mobile\",\"className\":\"mx-nav\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"left\"}} -->\n<!-- wp:navigation-link {\"label\":\"New in\",\"url\":\"{{woo:shop}}?orderby=date\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Accessories\",\"url\":\"{{term_link:pc-accessories}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation -->\n\n<!-- wp:site-title {\"className\":\"mx-logo\"} /-->\n\n<!-- wp:group {\"className\":\"wpe-header-actions mx-actions\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"justifyContent\":\"right\"}} -->\n<div class=\"wp-block-group wpe-header-actions mx-actions\"><!-- wp:navigation {\"overlayMenu\":\"never\",\"className\":\"mx-nav mx-nav\\u002d\\u002dright\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation -->\n\n<!-- wp:search {\"label\":\"Search\",\"showLabel\":false,\"buttonText\":\"Search\",\"buttonPosition\":\"button-only\",\"buttonUseIcon\":true,\"isSearchFieldHidden\":true,\"query\":{\"post_type\":\"product\"}} /-->\n\n<!-- wp:woocommerce/customer-account {\"displayStyle\":\"icon_only\",\"iconStyle\":\"line\",\"iconClass\":\"wc-block-customer-account__account-icon\"} /-->\n\n<!-- wp:woocommerce/mini-cart /--></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --></header>\n<!-- /wp:group -->"
 			},
 			"footer": {
-				"content": "<!-- wp:group {\"tagName\":\"footer\",\"className\":\"wpe-footer wpe-section\\u002d\\u002dmd\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<footer class=\"wp-block-group wpe-footer wpe-section--md\"><!-- wp:group {\"className\":\"wpe-footer__newsletter\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<div class=\"wp-block-group wpe-footer__newsletter\"><!-- wp:columns {\"verticalAlignment\":\"center\",\"className\":\"wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns are-vertically-aligned-center wpe-section--sm\"><!-- wp:column {\"verticalAlignment\":\"center\",\"width\":\"66%\"} -->\n<div class=\"wp-block-column is-vertically-aligned-center\" style=\"flex-basis:66%\"><!-- wp:heading {\"level\":3,\"textColor\":\"on-ink\"} -->\n<h3 class=\"wp-block-heading has-on-ink-color has-text-color\">Letters from the atelier</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"textColor\":\"on-ink\"} -->\n<p class=\"has-on-ink-color has-text-color\">New collections and repair days, once a month.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {\"verticalAlignment\":\"center\",\"width\":\"34%\"} -->\n<div class=\"wp-block-column is-vertically-aligned-center\" style=\"flex-basis:34%\"><!-- wp:buttons {\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n<div class=\"wp-block-buttons\"><!-- wp:button {\"className\":\"is-style-wpe-light\"} -->\n<div class=\"wp-block-button is-style-wpe-light\"><a class=\"wp-block-button__link wp-element-button\" href=\"{{page:contact}}\">Join the list</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div>\n<!-- /wp:group -->\n\n<!-- wp:columns {\"className\":\"wpe-footer__cols wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns wpe-footer__cols wpe-section--sm\"><!-- wp:column {\"width\":\"40%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:40%\"><!-- wp:site-title /-->\n\n<!-- wp:paragraph {\"fontSize\":\"small\"} -->\n<p class=\"has-small-font-size\">Linen, wool and cashmere made slowly in Porto and Florence. Repairs for life.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Shop</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"All products\",\"url\":\"{{woo:shop}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Outerwear\",\"url\":\"{{term_link:pc-outerwear}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Maison</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Atelier\",\"url\":\"{{page:atelier}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Stores\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Help</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Shipping \\u0026 returns\",\"url\":\"{{page:help}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"My account\",\"url\":\"{{woo:myaccount}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Cart\",\"url\":\"{{woo:cart}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Contact\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:group {\"className\":\"wpe-footer__bottom\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-footer__bottom\"><!-- wp:paragraph -->\n<p>© Maison Atelier. All rights reserved.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"{{page:privacy-policy}}\">Privacy</a> · <a href=\"{{page:terms}}\">Terms</a> · <a href=\"{{page:refund-policy}}\">Refunds</a> · <a href=\"{{page:cookie-policy}}\">Cookies</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Designed &amp; built with <a href=\"https://wpessential.org/\">Hi WPEssential</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></footer>\n<!-- /wp:group -->"
+				"content": "<!-- wp:group {\"tagName\":\"footer\",\"className\":\"wpe-footer wpe-section\\u002d\\u002dmd\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<footer class=\"wp-block-group wpe-footer wpe-section--md\"><!-- wp:columns {\"className\":\"wpe-footer__cols wpe-section\\u002d\\u002dsm\"} -->\n<div class=\"wp-block-columns wpe-footer__cols wpe-section--sm\"><!-- wp:column {\"width\":\"40%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:40%\"><!-- wp:site-title /-->\n\n<!-- wp:paragraph {\"fontSize\":\"small\"} -->\n<p class=\"has-small-font-size\">Considered clothing, made slowly in small European ateliers since 2014.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Shop</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"New in\",\"url\":\"{{woo:shop}}?orderby=date\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Dresses\",\"url\":\"{{term_link:pc-dresses}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Knitwear\",\"url\":\"{{term_link:pc-knitwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Outerwear\",\"url\":\"{{term_link:pc-outerwear}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Accessories\",\"url\":\"{{term_link:pc-accessories}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Maison</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Atelier\",\"url\":\"{{page:atelier}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Lookbook\",\"url\":\"{{page:lookbook}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Journal\",\"url\":\"{{page:journal}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Stores\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Help</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"Shipping \\u0026 returns\",\"url\":\"{{page:help}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"My account\",\"url\":\"{{woo:myaccount}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Bag\",\"url\":\"{{woo:cart}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Contact\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Visit</h2>\n<!-- /wp:heading -->\n\n<!-- wp:navigation {\"overlayMenu\":\"never\",\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\"},\"fontSize\":\"small\"} -->\n<!-- wp:navigation-link {\"label\":\"14 Rue de Saintonge, Paris\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"Tue – Sat 11:00 – 19:00\",\"url\":\"{{page:contact}}\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"+33 1 42 71 18 40\",\"url\":\"tel:+33142711840\",\"kind\":\"custom\"} /-->\n<!-- wp:navigation-link {\"label\":\"care@maison-atelier.com\",\"url\":\"mailto:care@maison-atelier.com\",\"kind\":\"custom\"} /-->\n<!-- /wp:navigation --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:group {\"className\":\"wpe-footer__bottom\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"wrap\",\"justifyContent\":\"space-between\"}} -->\n<div class=\"wp-block-group wpe-footer__bottom\"><!-- wp:paragraph -->\n<p>© Maison Atelier. All rights reserved.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><a href=\"{{page:privacy-policy}}\">Privacy</a> · <a href=\"{{page:terms}}\">Terms</a> · <a href=\"{{page:refund-policy}}\">Refunds</a> · <a href=\"{{page:cookie-policy}}\">Cookies</a></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Designed &amp; built with <a href=\"https://wpessential.org/\">Hi WPEssential</a></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></footer>\n<!-- /wp:group -->"
 			}
 		},
 		"options": {

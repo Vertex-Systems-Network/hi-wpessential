@@ -158,62 +158,89 @@ STORES = [('Paris', '14 Rue de Saintonge, 75003 Paris', 'Tue–Sat 11:00–19:00
 
 def g_header():
     topbar = b.group(
-        b.group(b.p('Free shipping over €150 · Returns within 30 days'),
-                b.p('<a href="{{page:help}}">Shipping &amp; returns</a> · <a href="{{page:contact}}">Stores</a>', className='wpe-topbar__links'),
-                className='wpe-topbar__inner', layout='flex', wrap='nowrap', justify='space-between'),
+        b.group(b.p('Complimentary shipping over €150 · Free returns within 30 days · Gift wrapping on request'),
+                className='wpe-topbar__inner mx-topbar', layout='flex', wrap='nowrap', justify='center'),
         className='wpe-topbar', content='1200px')
-    return topbar + '\n\n<!-- wp:pattern {"slug":"wpessential/header-centered"} /-->'
+    left = b.block('navigation', {'overlayMenu': 'mobile', 'className': 'mx-nav', 'layout': {'type': 'flex', 'justifyContent': 'left'}},
+                   '\n'.join(b.block('navigation-link', {'label': l, 'url': u, 'kind': 'custom'}) for l, u in
+                             [('New in', '{{woo:shop}}?orderby=date'), ('Dresses', '{{term_link:pc-dresses}}'),
+                              ('Knitwear', '{{term_link:pc-knitwear}}'), ('Accessories', '{{term_link:pc-accessories}}')]))
+    right = b.group(b.block('navigation', {'overlayMenu': 'never', 'className': 'mx-nav mx-nav--right', 'layout': {'type': 'flex', 'justifyContent': 'right'}},
+                            '\n'.join(b.block('navigation-link', {'label': l, 'url': u, 'kind': 'custom'}) for l, u in
+                                      [('Lookbook', '{{page:lookbook}}'), ('Journal', '{{page:journal}}')])),
+                    b.block('search', {'label': 'Search', 'showLabel': False, 'buttonText': 'Search', 'buttonPosition': 'button-only',
+                                       'buttonUseIcon': True, 'isSearchFieldHidden': True, 'query': {'post_type': 'product'}}),
+                    b.block('woocommerce/customer-account', {'displayStyle': 'icon_only', 'iconStyle': 'line', 'iconClass': 'wc-block-customer-account__account-icon'}),
+                    b.block('woocommerce/mini-cart'),
+                    className='wpe-header-actions mx-actions', layout='flex', wrap='nowrap', justify='right')
+    inner = b.group(left, b.block('site-title', {'className': 'mx-logo'}), right, className='wpe-header__inner mx-header__inner', layout='default')
+    return b.join(topbar, b.group(inner, tag='header', className='wpe-header mx-header', content='1200px'))
 
 
 def g_footer():
-    return b.footer('Linen, wool and cashmere made slowly in Porto and Florence. Repairs for life.',
-                    [('Shop', [('All products', '{{woo:shop}}'), ('Dresses', '{{term_link:pc-dresses}}'), ('Knitwear', '{{term_link:pc-knitwear}}'), ('Outerwear', '{{term_link:pc-outerwear}}')]),
+    return b.footer('Considered clothing, made slowly in small European ateliers since 2014.',
+                    [('Shop', [('New in', '{{woo:shop}}?orderby=date'), ('Dresses', '{{term_link:pc-dresses}}'), ('Knitwear', '{{term_link:pc-knitwear}}'), ('Outerwear', '{{term_link:pc-outerwear}}'), ('Accessories', '{{term_link:pc-accessories}}')]),
                      ('Maison', [('Atelier', '{{page:atelier}}'), ('Lookbook', '{{page:lookbook}}'), ('Journal', '{{page:journal}}'), ('Stores', '{{page:contact}}')]),
-                     ('Help', [('Shipping & returns', '{{page:help}}'), ('My account', '{{woo:myaccount}}'), ('Cart', '{{woo:cart}}'), ('Contact', '{{page:contact}}')])],
-                    ('© Maison Atelier. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">Hi WPEssential</a>'),
-                    band=('Letters from the atelier', 'New collections and repair days, once a month.', 'Join the list', '{{page:contact}}'))
+                     ('Help', [('Shipping & returns', '{{page:help}}'), ('My account', '{{woo:myaccount}}'), ('Bag', '{{woo:cart}}'), ('Contact', '{{page:contact}}')]),
+                     ('Visit', [('14 Rue de Saintonge, Paris', '{{page:contact}}'), ('Tue – Sat 11:00 – 19:00', '{{page:contact}}'), ('+33 1 42 71 18 40', 'tel:+33142711840'), ('care@maison-atelier.com', 'mailto:care@maison-atelier.com')])],
+                    ('© Maison Atelier. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">Hi WPEssential</a>'))
+
+
+LOOKS = [('lookbook-1', 'Look 01 — Camel coat, cream trousers'), ('lookbook-2', 'Look 02 — Espresso silk, wide ivory linen'),
+         ('lookbook-3', 'Look 03 — Terracotta linen maxi')]
+STATS = [('6', 'partner ateliers'), ('100%', 'natural fibres'), ('Lifetime', 'free repairs')]
 
 
 def g_home():
-    hero = b.cover('hero-campaign',
-                   b.p('Autumn / Winter 2026', style='wpe-overline', color='on-ink'),
-                   b.h('The quiet season', level=1, size='display', color='on-ink'),
-                   b.p('Linen, wool and cashmere cut to be worn for years. Made in small runs in Porto and Florence.', color='on-ink', size='body-l'),
-                   b.buttons(b.button('Shop the collection', '{{woo:shop}}', style='wpe-light'),
-                             b.button('View the lookbook', '{{page:lookbook}}', style='wpe-ghost')),
-                   dim=45, min_height=760, position='bottom left', className='wpe-hero-cover')
-    cats = b.section(
-        b.group(b.group(b.p('Shop by category', style='wpe-overline'), b.h('Pieces for every day', size='h2'), layout='default'),
-                b.buttons(b.button('All products', '{{woo:shop}}', style='wpe-outline')),
-                layout='flex', wrap='wrap', justify='space-between', valign='bottom'),
-        b.group(*[b.group(b.image(img, label, aspect='3/4', href='{{term_link:%s}}' % term),
-                          b.h('<a href="{{term_link:%s}}">%s</a>' % (term, label), level=3, size='h4'), layout='default')
-                  for term, img, label in CATEGORIES], layout='grid', grid_min='14rem'))
-    arrivals = b.section(b.p('Just in', style='wpe-overline'), b.h('New arrivals', size='h2'),
-                         b.shortcode('[products limit="4" columns="4" orderby="date" order="DESC"]'), className='wpe-section wpe-section--sm')
-    atelier = b.section(b.columns(
-        b.column(b.image('atelier-hands', 'Tailor hand-stitching ivory linen', aspect='4/5'), width='50%'),
-        b.column(b.p('The atelier', style='wpe-overline'), b.h('Made slowly, by hand', size='h2'),
-                 b.p('Every Maison piece passes through the hands of one maker, from first cut to final press. We work in small runs, so nothing is made that will not be worn.', style='wpe-lead'),
-                 b.ul(['Natural fibres only: linen, wool, silk and cashmere', 'Family ateliers in Porto and Florence', 'Numbered and signed inside the collar'], style='wpe-checklist'),
-                 b.buttons(b.button('Visit the atelier', '{{page:atelier}}')), valign='center'),
-        valign='center', className='wpe-gap-lg'), bg='surface-alt')
-    best = b.section(b.p('Most loved', style='wpe-overline'), b.h('Best sellers', size='h2'),
-                     b.shortcode('[products limit="4" columns="4" visibility="featured"]'), className='wpe-section wpe-section--sm')
-    band = b.cover('lookbook-3', b.h('Fewer, better pieces.', size='display', color='on-ink', align='center'),
-                   b.p('The Autumn / Winter lookbook: twelve looks, one palette.', color='on-ink', align='center', size='body-l'),
-                   b.buttons(b.button('Open the lookbook', '{{page:lookbook}}', style='wpe-light'), justify='center'),
-                   dim=40, min_height=620, position='center center')
-    promises = b.section(b.group(*[b.group(b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default') for t, d in PROMISES],
-                                 layout='grid', grid_min='14rem'), className='wpe-section wpe-section--sm')
-    journal = b.section(b.group(b.group(b.p('Journal', style='wpe-overline'), b.h('Notes from the studio', size='h2'), layout='default'),
-                                b.buttons(b.button('Read the journal', '{{page:journal}}', style='wpe-outline')),
-                                layout='flex', wrap='wrap', justify='space-between', valign='bottom'),
-                        b.latest_posts(3), bg='surface-alt')
-    letters = b.section(b.h('Letters from the atelier', size='h2', align='center'),
-                        b.p('New collections, studio visits and repair days, once a month. No spam, ever.', align='center', color='text-muted'),
-                        b.buttons(b.button('Join the list', '{{page:contact}}'), justify='center'), content='720px')
-    return b.join(hero, cats, arrivals, atelier, best, band, promises, journal)
+    hero = b.group(b.columns(
+        b.column(b.p('Autumn · Winter 2026', style='wpe-overline'),
+                 b.h('The Quiet Season', level=1, size='display', className='mx-hero__title'),
+                 b.p('<em>linen, silk &amp; undyed wool</em>', className='mx-hero__sub'),
+                 b.p('Cut in small runs in Porto and Florence. Pieces made to soften with every wear and last for decades.', color='text-muted'),
+                 b.buttons(b.button('Shop the collection', '{{woo:shop}}'), b.button('View lookbook', '{{page:lookbook}}', style='wpe-outline')),
+                 b.p('01 / 03 <span>— Look 01: linen suit, natural canvas tote</span>', className='mx-hero__count'),
+                 width='50%', valign='center', className='mx-hero__text'),
+        b.column(b.image('hero-campaign', 'Model in an ivory linen suit in a sunlit stone courtyard', className='mx-hero__img'), width='50%', className='mx-hero__media'),
+        className='mx-hero__cols', stack=True), align='full', className='mx-hero', layout='default')
+    def head(over, title, link, href, center=False):
+        if center:
+            return b.group(b.p(over, style='wpe-overline', align='center'), b.h(title, size='h2', align='center'), layout='default')
+        return b.group(b.group(b.p(over, style='wpe-overline'), b.h(title, size='h2'), layout='default'),
+                       b.p('<a href="%s">%s</a>' % (href, link), className='mx-link'),
+                       layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='mx-head')
+    cats = b.section(head('Shop by category', 'Wardrobe foundations', 'All categories', '{{woo:shop}}'),
+                     b.group(*[b.group(b.image(img, label, aspect='3/4', href='{{term_link:%s}}' % term),
+                                       b.h('<a href="{{term_link:%s}}">%s</a>' % (term, label), level=3, size='h4'), layout='default', className='mx-cat')
+                               for term, img, label in CATEGORIES], layout='grid', grid_min='14rem'))
+    arrivals = b.section(head('New in', 'The first pieces of the season', 'Shop new in', '{{woo:shop}}?orderby=date'),
+                         b.shortcode('[products limit="8" columns="4" orderby="date" order="DESC"]'), className='wpe-section wpe-section--sm')
+    atelier = b.group(b.columns(
+        b.column(b.image('atelier-hands', 'Tailor hand-stitching ivory linen', className='mx-split__img'), width='50%', className='mx-split__media'),
+        b.column(b.p('The atelier', style='wpe-overline'), b.h('Made slowly,<br>worn for years', size='h1'),
+                 b.p('Every Maison piece is cut and sewn by a family workshop we know by name. We pay above the regional wage, use natural fibres only and repair anything we make, free, for life.', color='text-muted'),
+                 b.group(*[b.group(b.p(n, className='mx-stat__n'), b.p(l, className='mx-stat__l'), layout='default') for n, l in STATS],
+                         layout='flex', wrap='wrap', className='mx-stats'),
+                 b.p('<a href="{{page:atelier}}">Discover the atelier</a>', className='mx-link'),
+                 width='50%', valign='center', className='mx-split__text'),
+        className='mx-split', stack=True), align='full', bg='surface-alt', className='mx-split-wrap', layout='default')
+    looks = b.section(head('Lookbook', 'Three ways to wear linen', '', '', center=True),
+                      b.p('Styled in Provence by Inès Moreau', align='center', color='text-muted'),
+                      b.group(*[b.group(b.image(k, t, aspect='3/4', href='{{page:lookbook}}'), b.p(t, className='mx-caption'), layout='default') for k, t in LOOKS],
+                              layout='grid', columns=3, className='mx-looks'))
+    promises = b.section(b.group(*[b.group(b.p('<strong>%s</strong>' % t), b.p(d, color='text-muted', size='small'), layout='default') for t, d in PROMISES],
+                                 layout='grid', grid_min='14rem', className='mx-promises'), className='wpe-section wpe-section--sm mx-promise-band')
+    journal = b.section(head('Journal', 'Notes from the studio', 'Read the journal', '{{page:journal}}'), b.latest_posts(3))
+    visit = b.group(b.columns(
+        b.column(b.image('store-paris', 'Inside the Paris store', className='mx-split__img'), width='50%', className='mx-split__media'),
+        b.column(b.p('Visit us', style='wpe-overline', color='on-ink'), b.h('14 Rue de<br>Saintonge, Paris', size='h1', color='on-ink'),
+                 b.p('Tuesday – Saturday, 11:00 – 19:00. Private fittings with our tailors by appointment.', color='on-ink'),
+                 b.buttons(b.button('Book a fitting', '{{page:contact}}', style='wpe-light')),
+                 width='50%', valign='center', className='mx-split__text'),
+        className='mx-split', stack=True), align='full', bg='ink', className='mx-split-wrap mx-visit', layout='default')
+    letter = b.section(b.p('The Maison letter', style='wpe-overline', align='center'), b.h('Quiet notes on new collections', size='h2', align='center'),
+                       b.p('One letter a month: new pieces, atelier stories and private sales. No noise.', align='center', color='text-muted'),
+                       b.shortcode('[wpforms id="{{form:newsletter}}" title="false"]'), content='560px', className='wpe-section mx-letter')
+    return b.join(hero, cats, arrivals, atelier, looks, promises, journal, visit, letter)
 
 
 def g_lookbook():
@@ -294,36 +321,44 @@ def g_help():
 # Elementor ------------------------------------------------------------------------------
 
 def e_home():
-    hero = e.container(e.overline('Autumn / Winter 2026', color_slug='on-ink'),
-                       e.heading('The quiet season', 1, 'on-ink', size_px=96),
-                       e.text('Linen, wool and cashmere cut to be worn for years. Made in small runs in Porto and Florence.', 'on-ink', size_px=18),
-                       e.row(e.button('Shop the collection', '{{woo:shop}}', 'light'), e.button('View the lookbook', '{{page:lookbook}}', 'outline'), gap=12, wrap=True, mobile_direction='row'),
-                       image='hero-campaign', overlay='ink', overlay_opacity=0.3, min_height=760, justify='flex-end', pad=(96, 24, 96, 24), gap=20)
-    cats = e.container(e.overline('Shop by category'), e.heading('Pieces for every day'),
+    hero = e.container(
+        e.row(e.col(e.overline('Autumn · Winter 2026'), e.heading('The Quiet Season', 1, size_px=88),
+                    e.heading('linen, silk & undyed wool', 3, 'text-muted', size_px=28),
+                    e.text('Cut in small runs in Porto and Florence. Pieces made to soften with every wear and last for decades.', size_px=16),
+                    e.row(e.button('Shop the collection', '{{woo:shop}}'), e.button('View lookbook', '{{page:lookbook}}', 'outline'), gap=12, wrap=True, mobile_direction='row'),
+                    width=50, justify='center', pad=(64, 64, 64, 24)),
+              e.col(e.image_fixed('hero-campaign', 'Model in an ivory linen suit in a sunlit stone courtyard', 720), width=50), gap=0),
+        pad=(0, 0, 0, 0))
+    cats = e.container(e.overline('Shop by category'), e.heading('Wardrobe foundations'),
                        e.grid(*[e.image_box(img, label, '', link='{{term_link:%s}}' % term, height=420) for term, img, label in CATEGORIES], columns=4),
                        pad=(96, 24, 48, 24))
-    arrivals = e.container(e.overline('Just in'), e.heading('New arrivals'), e.shortcode('[products limit="4" columns="4" orderby="date" order="DESC"]'), pad=(48, 24, 48, 24))
+    arrivals = e.container(e.overline('New in'), e.heading('The first pieces of the season'),
+                           e.shortcode('[products limit="8" columns="4" orderby="date" order="DESC"]'), pad=(48, 24, 72, 24))
     atelier = e.container(
         e.row(e.col(e.image_fixed('atelier-hands', 'Tailor hand-stitching ivory linen', 620), width=50),
-              e.col(e.overline('The atelier'), e.heading('Made slowly, by hand'),
-                    e.text('Every Maison piece passes through the hands of one maker, from first cut to final press. We work in small runs, so nothing is made that will not be worn.', size_px=18),
-                    e.icon_list(['Natural fibres only: linen, wool, silk and cashmere', 'Family ateliers in Porto and Florence', 'Numbered and signed inside the collar']),
-                    e.button('Visit the atelier', '{{page:atelier}}'), width=50, justify='center'), gap=64),
-        bg='surface-alt', pad=(96, 24, 96, 24))
-    best = e.container(e.overline('Most loved'), e.heading('Best sellers'), e.shortcode('[products limit="4" columns="4" visibility="featured"]'), pad=(48, 24, 48, 24))
-    band = e.container(e.heading('Fewer, better pieces.', 2, 'on-ink', align='center', size_px=80),
-                       e.text('The Autumn / Winter lookbook: twelve looks, one palette.', 'on-ink', align='center', size_px=18),
-                       e.button('Open the lookbook', '{{page:lookbook}}', 'light', align='center'),
-                       image='lookbook-3', overlay='ink', overlay_opacity=0.4, min_height=620, justify='center', align='center', pad=(96, 24, 96, 24))
+              e.col(e.overline('The atelier'), e.heading('Made slowly, worn for years', size_px=48),
+                    e.text('Every Maison piece is cut and sewn by a family workshop we know by name. We pay above the regional wage, use natural fibres only and repair anything we make, free, for life.'),
+                    e.row(*[e.col(e.heading(n, 3, size_px=32), e.text(l, size_px=13), gap=4) for n, l in STATS], gap=40, wrap=True, mobile_direction='row'),
+                    e.button('Discover the atelier', '{{page:atelier}}', 'outline'), width=50, justify='center', pad=(48, 24, 48, 48)), gap=0),
+        bg='surface-alt', pad=(0, 0, 0, 0))
+    looks = e.container(e.overline('Lookbook', align='center'), e.heading('Three ways to wear linen', align='center'),
+                        e.text('Styled in Provence by Inès Moreau', align='center'),
+                        e.grid(*[e.image_box(k, '', t, link='{{page:lookbook}}', height=520) for k, t in LOOKS], columns=3), pad=(96, 24, 72, 24))
     promises = e.container(e.grid(*[e.icon_box(icon, t, d) for (t, d), icon in zip(PROMISES, ['fas fa-truck', 'fas fa-rotate-left', 'fas fa-location-dot', 'fas fa-scissors'])], columns=4),
-                           pad=(72, 24, 72, 24))
+                           pad=(56, 24, 56, 24), border='border')
     journal = e.container(e.overline('Journal'), e.heading('Notes from the studio'),
                           e.grid(*[e.image_box(p['image'], p['title'], p['excerpt'], link='{{page:%s}}' % p['key'], height=280) for p in POSTS], columns=3),
-                          bg='surface-alt', pad=(96, 24, 96, 24))
-    letters = e.container(e.heading('Letters from the atelier', align='center'),
-                          e.text('New collections, studio visits and repair days, once a month. No spam, ever.', align='center'),
-                          e.button('Join the list', '{{page:contact}}', align='center'), pad=(96, 24, 96, 24), align='center')
-    return [hero, cats, arrivals, atelier, best, band, promises, journal]
+                          pad=(96, 24, 96, 24))
+    visit = e.container(
+        e.row(e.col(e.image_fixed('store-paris', 'Inside the Paris store', 560), width=50),
+              e.col(e.overline('Visit us', 'on-ink-muted'), e.heading('14 Rue de Saintonge, Paris', 2, 'on-ink', size_px=48),
+                    e.text('Tuesday – Saturday, 11:00 – 19:00. Private fittings with our tailors by appointment.', 'on-ink'),
+                    e.button('Book a fitting', '{{page:contact}}', 'light'), width=50, justify='center', pad=(48, 24, 48, 64)), gap=0),
+        bg='ink', pad=(0, 0, 0, 0))
+    letter = e.container(e.overline('The Maison letter', align='center'), e.heading('Quiet notes on new collections', align='center'),
+                         e.text('One letter a month: new pieces, atelier stories and private sales. No noise.', align='center'),
+                         e.shortcode('[wpforms id="{{form:newsletter}}" title="false"]'), pad=(96, 24, 96, 24), align='center')
+    return [hero, cats, arrivals, atelier, looks, promises, journal, visit, letter]
 
 
 def e_lookbook():
@@ -444,7 +479,7 @@ def package(builder):
                                                                   'woocommerce_cod_settings': {'enabled': 'yes', 'title': 'Pay in store'}}}}
     if builder == 'elementor':
         settings['elementor_kit'] = e.kit(container_width=1200, button_radius=0, field_radius=0, button_padding=(16, 28))
-    return {'version': 1, 'media': media, 'terms': terms, 'forms': [forms.maison_care()], 'content': content, 'products': products, 'menus': menus, 'settings': settings}
+    return {'version': 1, 'media': media, 'terms': terms, 'forms': [forms.maison_care(), forms.maison_newsletter()], 'content': content, 'products': products, 'menus': menus, 'settings': settings}
 
 
 DEMO = {
