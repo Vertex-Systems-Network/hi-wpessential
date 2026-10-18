@@ -31,6 +31,7 @@ class Api {
 			'/download'           => array( 'GET', 'download', $public ),
 			'/playground'         => array( 'GET', 'playground', $public ),
 			'/theme'              => array( 'GET', 'theme', $public ),
+			'/thumbnail'          => array( 'GET', 'thumbnail', $public ),
 			'/plans'              => array( 'GET', 'plans', $public ),
 			'/account/register'   => array( 'POST', 'signup', $public ),
 			'/account/login'      => array( 'POST', 'signin', $public ),
@@ -289,6 +290,23 @@ class Api {
 				'url'     => Accounts::checkout_link( $user, $product, $extra ),
 			)
 		);
+	}
+
+	/**
+	 * Demo thumbnail read from its package (public, cached).
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 * @return \WP_Error|void
+	 */
+	public function thumbnail( $request ) {
+		$image = Demos::package_image( sanitize_key( (string) $request->get_param( 'demo' ) ) );
+		if ( ! $image ) {
+			return new \WP_Error( 'not_found', __( 'No thumbnail.', 'wpessential-server' ), array( 'status' => 404 ) );
+		}
+		header( 'Content-Type: image/webp' );
+		header( 'Cache-Control: public, max-age=86400' );
+		echo $image; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Binary image.
+		exit;
 	}
 
 	/**
