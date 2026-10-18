@@ -12,11 +12,11 @@
 <!-- wp:group {"tagName":"section","align":"full","className":"wpe-section","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-group alignfull wpe-section"><!-- wp:group {"className":"wpe-center","layout":{"type":"constrained","contentSize":"760px"}} -->
 <div class="wp-block-group wpe-center"><!-- wp:paragraph {"className":"is-style-wpe-overline"} -->
-<p class="is-style-wpe-overline"><?php esc_html_e( 'The team', 'wpessential' ); ?></p>
+<p class="is-style-wpe-overline"><?php esc_html_e( 'The team', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'People behind WPEssential', 'wpessential' ); ?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e( 'People behind WPEssential', 'hi-wpessential' ); ?></h2>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:group -->
@@ -32,7 +32,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Founder &amp; Lead Designer', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Founder &amp; Lead Designer', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --><!-- wp:column {"className":"wpe-team-member"} -->
 <div class="wp-block-column wpe-team-member"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"wpe-team"} -->
@@ -44,7 +44,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Head of Engineering', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Head of Engineering', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --><!-- wp:column {"className":"wpe-team-member"} -->
 <div class="wp-block-column wpe-team-member"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"wpe-team"} -->
@@ -56,7 +56,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Customer Success', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Customer Success', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --><!-- wp:column {"className":"wpe-team-member"} -->
 <div class="wp-block-column wpe-team-member"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"wpe-team"} -->
@@ -68,7 +68,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'WooCommerce Specialist', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'WooCommerce Specialist', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

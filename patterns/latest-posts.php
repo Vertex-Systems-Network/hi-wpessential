@@ -12,11 +12,11 @@
 <!-- wp:group {"tagName":"section","align":"full","backgroundColor":"surface-alt","className":"wpe-section","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-group alignfull wpe-section has-surface-alt-background-color has-background"><!-- wp:group {"className":"wpe-center","layout":{"type":"constrained","contentSize":"760px"}} -->
 <div class="wp-block-group wpe-center"><!-- wp:paragraph {"className":"is-style-wpe-overline"} -->
-<p class="is-style-wpe-overline"><?php esc_html_e( 'From the blog', 'wpessential' ); ?></p>
+<p class="is-style-wpe-overline"><?php esc_html_e( 'From the blog', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'Guides for faster, better WordPress sites', 'wpessential' ); ?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e( 'Guides for faster, better WordPress sites', 'hi-wpessential' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 

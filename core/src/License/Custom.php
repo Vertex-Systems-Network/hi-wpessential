@@ -39,7 +39,7 @@ class Custom extends Adapter {
 			return $body;
 		}
 		if ( empty( $body['success'] ) ) {
-			return new \WP_Error( 'wpe_license_' . ( $body['status'] ?? 'invalid' ), $body['message'] ?? __( 'This license key is not valid.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_license_' . ( $body['status'] ?? 'invalid' ), $body['message'] ?? __( 'This license key is not valid.', 'hi-wpessential' ) );
 		}
 		return $this->result( $body['status'] ?? 'active', $body['expires'] ?? '', $body['plan'] ?? '', $body['message'] ?? '' ) + array(
 			'pro'         => ! empty( $body['pro'] ),

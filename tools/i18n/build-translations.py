@@ -22,7 +22,7 @@ PLURALS = {
 LANG = {'ar': 'ar', 'ja': 'ja', 'vi': 'vi', 'ur': 'ur'}
 
 strings = json.load(open(sys.argv[1], encoding='utf-8'))
-pot = polib.pofile(os.path.join(ROOT, 'languages', 'wpessential.pot'))
+pot = polib.pofile(os.path.join(ROOT, 'languages', 'hi-wpessential.pot'))
 refs = {(e.msgctxt, e.msgid): e for e in pot}
 for name in sorted(os.listdir(sys.argv[2])):
     if not name.endswith('.json'):

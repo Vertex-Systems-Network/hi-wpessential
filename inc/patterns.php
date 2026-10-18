@@ -11,13 +11,13 @@ add_action(
 	'init',
 	static function () {
 		$categories = array(
-			'wpessential'          => __( 'WPEssential', 'wpessential' ),
-			'wpessential-hero'     => __( 'WPEssential — Heroes', 'wpessential' ),
-			'wpessential-sections' => __( 'WPEssential — Sections', 'wpessential' ),
-			'wpessential-headers'  => __( 'WPEssential — Headers', 'wpessential' ),
-			'wpessential-footers'  => __( 'WPEssential — Footers', 'wpessential' ),
-			'wpessential-pages'    => __( 'WPEssential — Full pages', 'wpessential' ),
-			'wpessential-shop'     => __( 'WPEssential — Shop', 'wpessential' ),
+			'wpessential'          => __( 'WPEssential', 'hi-wpessential' ),
+			'wpessential-hero'     => __( 'WPEssential — Heroes', 'hi-wpessential' ),
+			'wpessential-sections' => __( 'WPEssential — Sections', 'hi-wpessential' ),
+			'wpessential-headers'  => __( 'WPEssential — Headers', 'hi-wpessential' ),
+			'wpessential-footers'  => __( 'WPEssential — Footers', 'hi-wpessential' ),
+			'wpessential-pages'    => __( 'WPEssential — Full pages', 'hi-wpessential' ),
+			'wpessential-shop'     => __( 'WPEssential — Shop', 'hi-wpessential' ),
 		);
 		foreach ( $categories as $slug => $label ) {
 			register_block_pattern_category( $slug, array( 'label' => $label ) );
@@ -33,8 +33,8 @@ add_action(
 			return;
 		}
 		$patterns = array(
-			'shop-categories' => __( 'Shop — Category grid', 'wpessential' ),
-			'shop-products'   => __( 'Shop — Featured, new and sale products', 'wpessential' ),
+			'shop-categories' => __( 'Shop — Category grid', 'hi-wpessential' ),
+			'shop-products'   => __( 'Shop — Featured, new and sale products', 'hi-wpessential' ),
 		);
 		foreach ( $patterns as $slug => $title ) {
 			ob_start();

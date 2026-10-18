@@ -133,7 +133,7 @@ function wpessential_seo_schema( $description, $image ) {
 			array(
 				'@type'    => 'ListItem',
 				'position' => 1,
-				'name'     => __( 'Home', 'wpessential' ),
+				'name'     => __( 'Home', 'hi-wpessential' ),
 				'item'     => $home,
 			),
 		);

@@ -1,22 +1,23 @@
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: WPEssential 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wpessential.org/support/\n"
-"POT-Creation-Date: 2026-10-18T02:45:11+00:00\n"
-"PO-Revision-Date: 2026-10-18T02:45:11+00:00\n"
 "Last-Translator: WPEssential Team <https://wpessential.org/>\n"
 "Language-Team: WPEssential Team <https://wpessential.org/>\n"
-"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-18T02:45:11+00:00\n"
+"PO-Revision-Date: 2026-10-18T02:45:11+00:00\n"
+"Language: ru_RU\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Domain: wpessential\n"
+"X-Domain: hi-wpessential\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
 #. Theme Name of the theme
-#: style.css core/src/Admin.php:55 inc/patterns.php:14
+#: style.css
+#: core/src/Admin.php:55
+#: inc/patterns.php:14
 msgid "WPEssential"
 msgstr "WPEssential"
 
@@ -28,13 +29,8 @@ msgstr "https://wpessential.org/"
 
 #. Description of the theme
 #: style.css
-msgid ""
-"Lightweight multi-niche block theme, native for Gutenberg and Elementor. "
-"One-click demos (free & pro) via the WPEssential Core plugin."
-msgstr ""
-"Лёгкая универсальная блочная тема с нативной поддержкой Gutenberg и "
-"Elementor. Демо в один клик (бесплатные и Pro) через плагин WPEssential "
-"Core."
+msgid "Lightweight multi-niche block theme, native for Gutenberg and Elementor. One-click demos (free & pro) via the WPEssential Core plugin."
+msgstr "Лёгкая универсальная блочная тема с нативной поддержкой Gutenberg и Elementor. Демо в один клик (бесплатные и Pro) через плагин WPEssential Core."
 
 #. Author of the theme
 #: style.css
@@ -55,7 +51,9 @@ msgstr "Ваш сеанс WPEssential завершён. Войдите снов�
 msgid "WPEssential answered with an unexpected response (HTTP %d)."
 msgstr "WPEssential вернул неожиданный ответ (HTTP %d)."
 
-#: core/src/Account.php:68 core/assets/admin.js:83 core/assets/admin.js:94
+#: core/src/Account.php:68
+#: core/assets/admin.js:83
+#: core/assets/admin.js:94
 msgid "Something went wrong."
 msgstr "Что-то пошло не так."
 
@@ -63,53 +61,53 @@ msgstr "Что-то пошло не так."
 msgid "That license is not in your account."
 msgstr "Этой лицензии нет в вашей учётной записи."
 
-#: core/src/Account.php:271 core/src/Rest.php:211
+#: core/src/Account.php:271
+#: core/src/Rest.php:211
 msgid "Unknown action."
 msgstr "Неизвестное действие."
 
-#: core/src/Admin.php:37 core/assets/admin.js:147
+#: core/src/Admin.php:37
+#: core/assets/admin.js:147
 msgid "Dashboard"
 msgstr "Консоль"
 
-#: core/src/Admin.php:38 core/assets/admin.js:148 core/assets/admin.js:306
+#: core/src/Admin.php:38
+#: core/assets/admin.js:148
+#: core/assets/admin.js:306
 msgid "Demo Library"
 msgstr "Библиотека демо"
 
-#: core/src/Admin.php:39 core/assets/admin.js:149 core/assets/admin.js:576
+#: core/src/Admin.php:39
+#: core/assets/admin.js:149
+#: core/assets/admin.js:576
 #: core/assets/admin.js:1054
 msgid "Plugins"
 msgstr "Плагины"
 
-#: core/src/Admin.php:40 core/assets/admin.js:150 core/assets/admin.js:284
+#: core/src/Admin.php:40
+#: core/assets/admin.js:150
+#: core/assets/admin.js:284
 #: core/assets/admin.js:1096
 msgid "License"
 msgstr "Лицензия"
 
-#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+#: core/src/Admin.php:41
+#: core/assets/admin.js:151
+#: core/assets/admin.js:1343
 msgid "System Status"
 msgstr "Состояние системы"
 
 #: core/src/Admin.php:133
-msgid ""
-"The WPEssential dashboard needs JavaScript. Enable it in your browser to "
-"import demos."
-msgstr ""
-"Для работы консоли WPEssential нужен JavaScript. Включите его в браузере, "
-"чтобы импортировать демо."
+msgid "The WPEssential dashboard needs JavaScript. Enable it in your browser to import demos."
+msgstr "Для работы консоли WPEssential нужен JavaScript. Включите его в браузере, чтобы импортировать демо."
 
 #: core/src/Demos.php:49
-msgid ""
-"The online demo library could not be reached, so only the demos bundled with"
-" the theme are listed. They import fully offline."
-msgstr ""
-"Не удалось подключиться к онлайн-библиотеке демо, поэтому показаны только "
-"демо, входящие в тему. Они импортируются полностью офлайн."
+msgid "The online demo library could not be reached, so only the demos bundled with the theme are listed. They import fully offline."
+msgstr "Не удалось подключиться к онлайн-библиотеке демо, поэтому показаны только демо, входящие в тему. Они импортируются полностью офлайн."
 
 #: core/src/Demos.php:173
-msgid ""
-"The bundled demo package is incomplete. Re-upload the theme and try again."
-msgstr ""
-"Встроенный пакет демо неполный. Загрузите тему повторно и попробуйте снова."
+msgid "The bundled demo package is incomplete. Re-upload the theme and try again."
+msgstr "Встроенный пакет демо неполный. Загрузите тему повторно и попробуйте снова."
 
 #: core/src/Demos.php:183
 msgid "This demo has no download address in the library."
@@ -122,8 +120,7 @@ msgstr "Не удалось загрузить пакет демо: %s"
 
 #: core/src/Demos.php:200
 msgid "WordPress cannot write to the uploads folder. Check its permissions."
-msgstr ""
-"WordPress не может записывать в папку загрузок. Проверьте её права доступа."
+msgstr "WordPress не может записывать в папку загрузок. Проверьте её права доступа."
 
 #: core/src/Demos.php:207
 msgid "The downloaded package does not contain content.json."
@@ -174,12 +171,8 @@ msgid "Finishing touches"
 msgstr "Последние штрихи"
 
 #: core/src/Importer.php:90
-msgid ""
-"Another import is running in a different tab. Wait for it to finish, or wait"
-" two minutes and try again."
-msgstr ""
-"В другой вкладке уже выполняется импорт. Дождитесь его завершения или "
-"подождите две минуты и повторите попытку."
+msgid "Another import is running in a different tab. Wait for it to finish, or wait two minutes and try again."
+msgstr "В другой вкладке уже выполняется импорт. Дождитесь его завершения или подождите две минуты и повторите попытку."
 
 #: core/src/Importer.php:94
 msgid "This demo is no longer in the library. Refresh the page."
@@ -190,11 +183,8 @@ msgid "This demo is not available for the selected builder."
 msgstr "Это демо недоступно для выбранного конструктора."
 
 #: core/src/Importer.php:100
-msgid ""
-"This is a Pro demo. Activate your license on the License tab to import it."
-msgstr ""
-"Это Pro-демо. Активируйте лицензию на вкладке «Лицензия», чтобы "
-"импортировать его."
+msgid "This is a Pro demo. Activate your license on the License tab to import it."
+msgstr "Это Pro-демо. Активируйте лицензию на вкладке «Лицензия», чтобы импортировать его."
 
 #. translators: 1: demo, 2: builder.
 #: core/src/Importer.php:192
@@ -206,22 +196,16 @@ msgid "There is no import to continue."
 msgstr "Нет импорта для продолжения."
 
 #: core/src/Importer.php:225
-msgid ""
-"Import cancelled. Everything imported so far can be removed from the Demo "
-"Library."
-msgstr ""
-"Импорт отменён. Всё, что уже импортировано, можно удалить в библиотеке демо."
+msgid "Import cancelled. Everything imported so far can be removed from the Demo Library."
+msgstr "Импорт отменён. Всё, что уже импортировано, можно удалить в библиотеке демо."
 
 #: core/src/Importer.php:341
 msgid "One item stopped the server twice and was skipped."
 msgstr "Один элемент дважды остановил сервер и был пропущен."
 
 #: core/src/Importer.php:341
-msgid ""
-"Raise memory_limit / max_execution_time, then re-import to fill the gap."
-msgstr ""
-"Увеличьте memory_limit / max_execution_time, затем импортируйте повторно, "
-"чтобы заполнить пробел."
+msgid "Raise memory_limit / max_execution_time, then re-import to fill the gap."
+msgstr "Увеличьте memory_limit / max_execution_time, затем импортируйте повторно, чтобы заполнить пробел."
 
 #. translators: %s: error.
 #: core/src/Importer.php:358
@@ -230,21 +214,11 @@ msgstr "Непредвиденная ошибка: %s"
 
 #. translators: %d: errors.
 #: core/src/Importer.php:411
-msgid ""
-"Import finished with %d error. The site works; review the log for what was "
-"skipped."
-msgid_plural ""
-"Import finished with %d errors. The site works; review the log for what was "
-"skipped."
-msgstr[0] ""
-"Импорт завершён с %d ошибкой. Сайт работает; посмотрите в журнале, что было "
-"пропущено."
-msgstr[1] ""
-"Импорт завершён с %d ошибками. Сайт работает; посмотрите в журнале, что было"
-" пропущено."
-msgstr[2] ""
-"Импорт завершён с %d ошибками. Сайт работает; посмотрите в журнале, что было"
-" пропущено."
+msgid "Import finished with %d error. The site works; review the log for what was skipped."
+msgid_plural "Import finished with %d errors. The site works; review the log for what was skipped."
+msgstr[0] "Импорт завершён с %d ошибкой. Сайт работает; посмотрите в журнале, что было пропущено."
+msgstr[1] "Импорт завершён с %d ошибками. Сайт работает; посмотрите в журнале, что было пропущено."
+msgstr[2] "Импорт завершён с %d ошибками. Сайт работает; посмотрите в журнале, что было пропущено."
 
 #: core/src/Importer.php:413
 msgid "Your site is ready."
@@ -260,24 +234,17 @@ msgstr "Чтобы импорт прошёл безопасно, на серве
 
 #: core/src/Importer.php:602
 msgid "Fix the items above (your host can help), then press Retry."
-msgstr ""
-"Исправьте пункты выше (хостинг-провайдер может помочь), затем нажмите "
-"«Повторить»."
+msgstr "Исправьте пункты выше (хостинг-провайдер может помочь), затем нажмите «Повторить»."
 
 #. translators: %s: demo.
 #: core/src/Importer.php:607
-msgid ""
-"%s was imported before. Its pages stay; the new import adds fresh copies."
-msgstr ""
-"%s уже импортировалось ранее. Его страницы останутся; новый импорт добавит "
-"новые копии."
+msgid "%s was imported before. Its pages stay; the new import adds fresh copies."
+msgstr "%s уже импортировалось ранее. Его страницы останутся; новый импорт добавит новые копии."
 
 #. translators: %s: demo.
 #: core/src/Importer.php:607
 msgid "Tick \"Remove previous demo\" next time for a clean site."
-msgstr ""
-"В следующий раз отметьте «Удалить предыдущее демо», чтобы получить чистый "
-"сайт."
+msgstr "В следующий раз отметьте «Удалить предыдущее демо», чтобы получить чистый сайт."
 
 #: core/src/Importer.php:609
 msgid "Server checks passed."
@@ -307,8 +274,7 @@ msgstr "Очистите кеш на вкладке «Состояние сис�
 #. translators: 1: pages, 2: images, 3: products.
 #: core/src/Importer.php:644
 msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
-msgstr ""
-"Пакет готов: страниц и записей — %1$d, изображений — %2$d, товаров — %3$d."
+msgstr "Пакет готов: страниц и записей — %1$d, изображений — %2$d, товаров — %3$d."
 
 #. translators: 1: plugin, 2: error.
 #: core/src/Importer.php:662
@@ -317,12 +283,8 @@ msgstr "Не удалось настроить %1$s: %2$s"
 
 #. translators: 1: plugin, 2: error.
 #: core/src/Importer.php:662
-msgid ""
-"Install it from Plugins → Add New, then use the Plugins tab here to activate"
-" it."
-msgstr ""
-"Установите его через Плагины → Добавить новый, затем активируйте на вкладке "
-"«Плагины» здесь."
+msgid "Install it from Plugins → Add New, then use the Plugins tab here to activate it."
+msgstr "Установите его через Плагины → Добавить новый, затем активируйте на вкладке «Плагины» здесь."
 
 #. translators: %s: plugin.
 #: core/src/Importer.php:667
@@ -351,8 +313,7 @@ msgstr "файл не найден в пакете"
 #. translators: 1: file, 2: error.
 #: core/src/Importer.php:707
 msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
-msgstr ""
-"Изображение %1$s пропущено (%2$s). На страницах используется копия из темы."
+msgstr "Изображение %1$s пропущено (%2$s). На страницах используется копия из темы."
 
 #. translators: 1: file, 2: error.
 #: core/src/Importer.php:721
@@ -371,7 +332,8 @@ msgstr "Импортировано изображение %s."
 
 #. translators: 1: term, 2: taxonomy.
 #. translators: 1: title, 2: post type.
-#: core/src/Importer.php:744 core/src/Importer.php:790
+#: core/src/Importer.php:744
+#: core/src/Importer.php:790
 msgid "Skipped \"%1$s\": %2$s is not available on this site."
 msgstr "Пропущено «%1$s»: %2$s недоступно на этом сайте."
 
@@ -523,18 +485,12 @@ msgid "Permalinks and caches refreshed."
 msgstr "Постоянные ссылки и кеш обновлены."
 
 #: core/src/License.php:136
-msgid ""
-"That license key looks too short. Copy it again from your purchase email."
-msgstr ""
-"Этот лицензионный ключ слишком короткий. Скопируйте его ещё раз из письма о "
-"покупке."
+msgid "That license key looks too short. Copy it again from your purchase email."
+msgstr "Этот лицензионный ключ слишком короткий. Скопируйте его ещё раз из письма о покупке."
 
 #: core/src/License.php:204
-msgid ""
-"This is a Pro item. Activate your license on the License tab to unlock it."
-msgstr ""
-"Это Pro-элемент. Активируйте лицензию на вкладке «Лицензия», чтобы "
-"разблокировать его."
+msgid "This is a Pro item. Activate your license on the License tab to unlock it."
+msgstr "Это Pro-элемент. Активируйте лицензию на вкладке «Лицензия», чтобы разблокировать его."
 
 #: core/src/License/Adapter.php:84
 msgid "The license server did not return a download link."
@@ -547,24 +503,18 @@ msgstr "Не удалось подключиться к серверу лице�
 
 #. translators: %d: HTTP status.
 #: core/src/License/Adapter.php:113
-msgid ""
-"The license server answered with an unexpected response (HTTP %d). Try again"
-" in a few minutes."
-msgstr ""
-"Сервер лицензий вернул неожиданный ответ (HTTP %d). Повторите попытку через "
-"несколько минут."
+msgid "The license server answered with an unexpected response (HTTP %d). Try again in a few minutes."
+msgstr "Сервер лицензий вернул неожиданный ответ (HTTP %d). Повторите попытку через несколько минут."
 
-#: core/src/License/Custom.php:42 core/src/License/Edd.php:31
+#: core/src/License/Custom.php:42
+#: core/src/License/Edd.php:31
 #: core/src/License/Woo.php:58
 msgid "This license key is not valid."
 msgstr "Этот лицензионный ключ недействителен."
 
 #: core/src/License/Edd.php:27
-msgid ""
-"This license has expired. Renew it to keep receiving demos and updates."
-msgstr ""
-"Срок действия лицензии истёк. Продлите её, чтобы и дальше получать демо и "
-"обновления."
+msgid "This license has expired. Renew it to keep receiving demos and updates."
+msgstr "Срок действия лицензии истёк. Продлите её, чтобы и дальше получать демо и обновления."
 
 #: core/src/License/Edd.php:28
 msgid "This license has been disabled."
@@ -587,14 +537,11 @@ msgid "This key belongs to a different product."
 msgstr "Этот ключ относится к другому продукту."
 
 #: core/src/License/Edd.php:34
-msgid ""
-"This license has reached its activation limit. Deactivate it on another site"
-" first."
-msgstr ""
-"Достигнут лимит активаций лицензии. Сначала деактивируйте её на другом "
-"сайте."
+msgid "This license has reached its activation limit. Deactivate it on another site first."
+msgstr "Достигнут лимит активаций лицензии. Сначала деактивируйте её на другом сайте."
 
-#: core/src/License/Edd.php:130 core/src/License/Woo.php:118
+#: core/src/License/Edd.php:130
+#: core/src/License/Woo.php:118
 msgid "The store did not return a download link for this license."
 msgstr "Магазин не вернул ссылку для загрузки по этой лицензии."
 
@@ -604,24 +551,16 @@ msgstr "Вашей учётной записи не разрешено уста�
 
 #. translators: 1: plugin name, 2: error.
 #: core/src/Plugins.php:130
-msgid ""
-"WordPress.org did not answer for %1$s (%2$s). Check the server can reach "
-"wordpress.org, or install it manually."
-msgstr ""
-"WordPress.org не ответил для %1$s (%2$s). Убедитесь, что сервер может "
-"подключиться к wordpress.org, или установите плагин вручную."
+msgid "WordPress.org did not answer for %1$s (%2$s). Check the server can reach wordpress.org, or install it manually."
+msgstr "WordPress.org не ответил для %1$s (%2$s). Убедитесь, что сервер может подключиться к wordpress.org, или установите плагин вручную."
 
 #: core/src/Plugins.php:145
 msgid "No download source is set for this plugin."
 msgstr "Для этого плагина не задан источник загрузки."
 
 #: core/src/Plugins.php:158
-msgid ""
-"The plugin could not be installed. The server may lack write access to wp-"
-"content/plugins."
-msgstr ""
-"Не удалось установить плагин. Возможно, у сервера нет прав на запись в wp-"
-"content/plugins."
+msgid "The plugin could not be installed. The server may lack write access to wp-content/plugins."
+msgstr "Не удалось установить плагин. Возможно, у сервера нет прав на запись в wp-content/plugins."
 
 #: core/src/Plugins.php:174
 msgid "Plugin is not installed."
@@ -642,9 +581,7 @@ msgstr "Импортированное демо не найдено."
 #. translators: 1: demo, 2: count.
 #: core/src/Rest.php:164
 msgid "%1$s removed: %2$d items deleted and your previous settings restored."
-msgstr ""
-"%1$s удалено: удалено элементов — %2$d, ваши прежние настройки "
-"восстановлены."
+msgstr "%1$s удалено: удалено элементов — %2$d, ваши прежние настройки восстановлены."
 
 #: core/src/Rest.php:191
 msgid "This plugin is not managed by WPEssential."
@@ -667,27 +604,21 @@ msgid "PHP version"
 msgstr "Версия PHP"
 
 #: core/src/Status.php:40
-msgid ""
-"PHP 8.1 or newer is faster and still supported. Ask your host to upgrade."
-msgstr ""
-"PHP 8.1 или новее работает быстрее и всё ещё поддерживается. Попросите "
-"хостинг-провайдера обновить его."
+msgid "PHP 8.1 or newer is faster and still supported. Ask your host to upgrade."
+msgstr "PHP 8.1 или новее работает быстрее и всё ещё поддерживается. Попросите хостинг-провайдера обновить его."
 
 #: core/src/Status.php:44
 msgid "Memory limit"
 msgstr "Лимит памяти"
 
-#: core/src/Status.php:45 core/src/Status.php:52
+#: core/src/Status.php:45
+#: core/src/Status.php:52
 msgid "Unlimited"
 msgstr "Без ограничений"
 
 #: core/src/Status.php:47
-msgid ""
-"Set memory_limit to 256M in php.ini, or define WP_MEMORY_LIMIT in wp-"
-"config.php."
-msgstr ""
-"Установите memory_limit равным 256M в php.ini или задайте WP_MEMORY_LIMIT в "
-"wp-config.php."
+msgid "Set memory_limit to 256M in php.ini, or define WP_MEMORY_LIMIT in wp-config.php."
+msgstr "Установите memory_limit равным 256M в php.ini или задайте WP_MEMORY_LIMIT в wp-config.php."
 
 #: core/src/Status.php:51
 msgid "Max execution time"
@@ -709,11 +640,13 @@ msgstr "Увеличьте upload_max_filesize и post_max_size минимум �
 msgid "Uploads folder"
 msgstr "Папка загрузок"
 
-#: core/src/Status.php:66 core/src/Status.php:73
+#: core/src/Status.php:66
+#: core/src/Status.php:73
 msgid "Writable"
 msgstr "Доступна для записи"
 
-#: core/src/Status.php:66 core/src/Status.php:73
+#: core/src/Status.php:66
+#: core/src/Status.php:73
 msgid "Not writable"
 msgstr "Недоступна для записи"
 
@@ -727,8 +660,7 @@ msgstr "Папка плагинов"
 
 #: core/src/Status.php:75
 msgid "Without write access, required plugins must be installed by hand."
-msgstr ""
-"Без прав на запись необходимые плагины придётся устанавливать вручную."
+msgstr "Без прав на запись необходимые плагины придётся устанавливать вручную."
 
 #: core/src/Status.php:79
 msgid "ZIP support"
@@ -751,13 +683,8 @@ msgid "No WebP support"
 msgstr "Нет поддержки WebP"
 
 #: core/src/Status.php:89
-msgid ""
-"Images still import, but WordPress cannot create smaller sizes. Ask your "
-"host to enable Imagick or GD with WebP."
-msgstr ""
-"Изображения всё равно импортируются, но WordPress не сможет создавать "
-"уменьшенные размеры. Попросите хостинг-провайдера включить Imagick или GD с "
-"поддержкой WebP."
+msgid "Images still import, but WordPress cannot create smaller sizes. Ask your host to enable Imagick or GD with WebP."
+msgstr "Изображения всё равно импортируются, но WordPress не сможет создавать уменьшенные размеры. Попросите хостинг-провайдера включить Imagick или GD с поддержкой WebP."
 
 #: core/src/Status.php:93
 msgid "Permalinks"
@@ -768,14 +695,11 @@ msgid "Plain"
 msgstr "Простые"
 
 #: core/src/Status.php:96
-msgid ""
-"Choose \"Post name\" under Settings → Permalinks for clean shop and page "
-"addresses."
-msgstr ""
-"Выберите «Название записи» в разделе Настройки → Постоянные ссылки, чтобы "
-"адреса магазина и страниц были понятными."
+msgid "Choose \"Post name\" under Settings → Permalinks for clean shop and page addresses."
+msgstr "Выберите «Название записи» в разделе Настройки → Постоянные ссылки, чтобы адреса магазина и страниц были понятными."
 
-#: core/src/Status.php:123 core/assets/admin.js:282
+#: core/src/Status.php:123
+#: core/assets/admin.js:282
 msgid "Theme"
 msgstr "Тема"
 
@@ -851,15 +775,18 @@ msgstr "Скруглённая"
 msgid "Large"
 msgstr "Крупная"
 
-#: inc/block-styles.php:26 inc/block-styles.php:33
+#: inc/block-styles.php:26
+#: inc/block-styles.php:33
 msgid "Card"
 msgstr "Карточка"
 
-#: inc/block-styles.php:27 inc/block-styles.php:34
+#: inc/block-styles.php:27
+#: inc/block-styles.php:34
 msgid "Card — flat"
 msgstr "Карточка — плоская"
 
-#: inc/block-styles.php:28 inc/block-styles.php:35
+#: inc/block-styles.php:28
+#: inc/block-styles.php:35
 msgid "Card — dark"
 msgstr "Карточка — тёмная"
 
@@ -912,12 +839,8 @@ msgid "Soft"
 msgstr "Мягкая"
 
 #: inc/core-bridge.php:53
-msgid ""
-"Install the WPEssential Core plugin to import one-click demos for Gutenberg "
-"or Elementor."
-msgstr ""
-"Установите плагин WPEssential Core, чтобы импортировать демо в один клик для"
-" Gutenberg или Elementor."
+msgid "Install the WPEssential Core plugin to import one-click demos for Gutenberg or Elementor."
+msgstr "Установите плагин WPEssential Core, чтобы импортировать демо в один клик для Gutenberg или Elementor."
 
 #: inc/core-bridge.php:55
 msgid "Get WPEssential Core"
@@ -941,8 +864,7 @@ msgstr "Сдержанная"
 
 #: inc/motion.php:26
 msgid "Short fade-up. Corporate, SaaS, finance, medical."
-msgstr ""
-"Короткое появление снизу. Корпоративные сайты, SaaS, финансы, медицина."
+msgstr "Короткое появление снизу. Корпоративные сайты, SaaS, финансы, медицина."
 
 #: inc/motion.php:29
 msgid "Editorial"
@@ -958,21 +880,15 @@ msgstr "Игривая"
 
 #: inc/motion.php:34
 msgid "Springy scale and stagger. Food, kids, events, creative."
-msgstr ""
-"Пружинящее масштабирование и поочерёдное появление. Еда, дети, события, "
-"творчество."
+msgstr "Пружинящее масштабирование и поочерёдное появление. Еда, дети, события, творчество."
 
 #: inc/motion.php:37
 msgid "Dynamic (GSAP)"
 msgstr "Динамичная (GSAP)"
 
 #: inc/motion.php:38
-msgid ""
-"Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, "
-"sport, launches."
-msgstr ""
-"Параллакс, счётчики и поочерёдное появление сеток с GSAP ScrollTrigger. "
-"События, спорт, запуски."
+msgid "Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, sport, launches."
+msgstr "Параллакс, счётчики и поочерёдное появление сеток с GSAP ScrollTrigger. События, спорт, запуски."
 
 #: inc/multilingual.php:108
 msgid "Language"
@@ -982,7 +898,8 @@ msgstr "Язык"
 msgid "Language switcher"
 msgstr "Переключатель языков"
 
-#: inc/multilingual.php:245 inc/patterns-shop/shop-products.php:14
+#: inc/multilingual.php:245
+#: inc/patterns-shop/shop-products.php:14
 msgid "Featured"
 msgstr "Избранное"
 
@@ -994,31 +911,28 @@ msgstr "Автор"
 msgid "Untitled snippet"
 msgstr "Фрагмент без названия"
 
-#: inc/options.php:125 inc/options.php:215
+#: inc/options.php:125
+#: inc/options.php:216
 msgid "Theme Options"
 msgstr "Параметры темы"
 
-#: inc/options.php:153
+#: inc/options.php:154
 msgid "Saved"
 msgstr "Сохранено"
 
-#: inc/options.php:154
+#: inc/options.php:155
 msgid "Could not save"
 msgstr "Не удалось сохранить"
 
-#: inc/options.php:155
+#: inc/options.php:156
 msgid "Delete this snippet?"
 msgstr "Удалить этот фрагмент?"
 
-#: inc/options.php:156
-msgid ""
-"No snippets yet. Add CSS or JavaScript without editing theme files — it "
-"survives theme updates."
-msgstr ""
-"Фрагментов пока нет. Добавляйте CSS или JavaScript без правки файлов темы — "
-"они сохранятся при обновлении темы."
+#: inc/options.php:157
+msgid "No snippets yet. Add CSS or JavaScript without editing theme files — it survives theme updates."
+msgstr "Фрагментов пока нет. Добавляйте CSS или JavaScript без правки файлов темы — они сохранятся при обновлении темы."
 
-#: inc/options.php:215
+#: inc/options.php:216
 msgid "Loading…"
 msgstr "Загрузка…"
 
@@ -1082,23 +996,23 @@ msgstr "Магазин — Избранные, новые и товары со �
 msgid "Home"
 msgstr "Главная"
 
-#: inc/setup.php:40
+#: inc/setup.php:49
 msgid "Primary Menu"
 msgstr "Основное меню"
 
-#: inc/setup.php:41
+#: inc/setup.php:50
 msgid "Mobile Menu"
 msgstr "Мобильное меню"
 
-#: inc/setup.php:42
+#: inc/setup.php:51
 msgid "Footer Menu"
 msgstr "Меню в подвале"
 
-#: inc/setup.php:43
+#: inc/setup.php:52
 msgid "Top Bar Menu"
 msgstr "Меню верхней панели"
 
-#: inc/setup.php:77
+#: inc/setup.php:86
 msgid "Back to top"
 msgstr "Наверх"
 
@@ -1125,8 +1039,10 @@ msgctxt "Pattern title"
 msgid "Blog hero"
 msgstr "Главный экран блога"
 
-#: patterns/blog-hero.php:14 patterns/footer-premium.php:89
-#: patterns/footer-simple.php:18 core/assets/admin.js:301
+#: patterns/blog-hero.php:14
+#: patterns/footer-premium.php:89
+#: patterns/footer-simple.php:18
+#: core/assets/admin.js:301
 msgid "Blog"
 msgstr "Блог"
 
@@ -1148,12 +1064,8 @@ msgid "Same design. Gutenberg or Elementor."
 msgstr "Один дизайн. Gutenberg или Elementor."
 
 #: patterns/builders-split.php:24
-msgid ""
-"Colors, fonts and spacing come from one theme.json and sync into Elementor’s"
-" global kit automatically."
-msgstr ""
-"Цвета, шрифты и отступы задаются в одном theme.json и автоматически "
-"синхронизируются с глобальным набором Elementor."
+msgid "Colors, fonts and spacing come from one theme.json and sync into Elementor’s global kit automatically."
+msgstr "Цвета, шрифты и отступы задаются в одном theme.json и автоматически синхронизируются с глобальным набором Elementor."
 
 #: patterns/builders-split.php:29
 msgid "Shared design tokens across both builders"
@@ -1219,12 +1131,8 @@ msgid "Send us a message"
 msgstr "Отправьте нам сообщение"
 
 #: patterns/contact.php:80
-msgid ""
-"Replace the shortcode below with your form plugin (Contact Form 7, WPForms, "
-"Fluent Forms or the Elementor Form widget)."
-msgstr ""
-"Замените шорткод ниже на свой плагин форм (Contact Form 7, WPForms, Fluent "
-"Forms или виджет Form в Elementor)."
+msgid "Replace the shortcode below with your form plugin (Contact Form 7, WPForms, Fluent Forms or the Elementor Form widget)."
+msgstr "Замените шорткод ниже на свой плагин форм (Contact Form 7, WPForms, Fluent Forms или виджет Form в Elementor)."
 
 #: patterns/content-404.php
 msgctxt "Pattern title"
@@ -1240,15 +1148,13 @@ msgid "This page took a day off"
 msgstr "Эта страница взяла выходной"
 
 #: patterns/content-404.php:22
-msgid ""
-"The link may be broken or the page may have moved. Try a search or head back"
-" home."
-msgstr ""
-"Возможно, ссылка неверна или страница была перемещена. Попробуйте поиск или "
-"вернитесь на главную."
+msgid "The link may be broken or the page may have moved. Try a search or head back home."
+msgstr "Возможно, ссылка неверна или страница была перемещена. Попробуйте поиск или вернитесь на главную."
 
-#: patterns/content-404.php:25 patterns/header-actions.php:14
-#: patterns/header-shop.php:22 patterns/sidebar.php:14
+#: patterns/content-404.php:25
+#: patterns/header-actions.php:14
+#: patterns/header-shop.php:22
+#: patterns/sidebar.php:14
 msgid "Search"
 msgstr "Поиск"
 
@@ -1266,11 +1172,8 @@ msgid "Ready to launch your next site?"
 msgstr "Готовы запустить следующий сайт?"
 
 #: patterns/cta-banner.php:19
-msgid ""
-"Start free. Upgrade to Pro when you need premium demos and priority support."
-msgstr ""
-"Начните бесплатно. Перейдите на Pro, когда понадобятся премиум-демо и "
-"приоритетная поддержка."
+msgid "Start free. Upgrade to Pro when you need premium demos and priority support."
+msgstr "Начните бесплатно. Перейдите на Pro, когда понадобятся премиум-демо и приоритетная поддержка."
 
 #: patterns/cta-banner.php:24
 msgid "Get WPEssential free"
@@ -1285,11 +1188,13 @@ msgctxt "Pattern title"
 msgid "FAQ — accordion"
 msgstr "FAQ — аккордеон"
 
-#: patterns/faq.php:15 patterns/footer-premium.php:90
+#: patterns/faq.php:15
+#: patterns/footer-premium.php:90
 msgid "FAQ"
 msgstr "FAQ"
 
-#: patterns/faq.php:19 patterns/page-faq.php:20
+#: patterns/faq.php:19
+#: patterns/page-faq.php:20
 msgid "Frequently asked questions"
 msgstr "Часто задаваемые вопросы"
 
@@ -1298,60 +1203,40 @@ msgid "Is WPEssential free?"
 msgstr "WPEssential бесплатна?"
 
 #: patterns/faq.php:25
-msgid ""
-"Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium"
-" blocks and priority support."
-msgstr ""
-"Да. Тема и 12 демо бесплатны навсегда. Pro открывает доступ к 40+ демо, "
-"премиум-блокам и приоритетной поддержке."
+msgid "Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium blocks and priority support."
+msgstr "Да. Тема и 12 демо бесплатны навсегда. Pro открывает доступ к 40+ демо, премиум-блокам и приоритетной поддержке."
 
 #: patterns/faq.php:30
 msgid "Which page builders are supported?"
 msgstr "Какие конструкторы страниц поддерживаются?"
 
 #: patterns/faq.php:31
-msgid ""
-"The native block editor (Gutenberg) and Elementor. Every demo ships in both "
-"versions."
-msgstr ""
-"Встроенный редактор блоков (Gutenberg) и Elementor. Каждое демо поставляется"
-" в обеих версиях."
+msgid "The native block editor (Gutenberg) and Elementor. Every demo ships in both versions."
+msgstr "Встроенный редактор блоков (Gutenberg) и Elementor. Каждое демо поставляется в обеих версиях."
 
 #: patterns/faq.php:36
 msgid "Will importing a demo delete my content?"
 msgstr "Удалит ли импорт демо мой контент?"
 
 #: patterns/faq.php:37
-msgid ""
-"No. Demo content is added alongside your existing posts, and you choose what"
-" to import."
-msgstr ""
-"Нет. Демо-контент добавляется рядом с вашими записями, и вы сами выбираете, "
-"что импортировать."
+msgid "No. Demo content is added alongside your existing posts, and you choose what to import."
+msgstr "Нет. Демо-контент добавляется рядом с вашими записями, и вы сами выбираете, что импортировать."
 
 #: patterns/faq.php:42
 msgid "Do I need Elementor Pro?"
 msgstr "Нужен ли мне Elementor Pro?"
 
 #: patterns/faq.php:43
-msgid ""
-"No. Elementor free is enough for every demo. Elementor Pro Theme Builder "
-"headers and footers are also supported."
-msgstr ""
-"Нет. Для всех демо достаточно бесплатного Elementor. Шапки и подвалы "
-"Elementor Pro Theme Builder также поддерживаются."
+msgid "No. Elementor free is enough for every demo. Elementor Pro Theme Builder headers and footers are also supported."
+msgstr "Нет. Для всех демо достаточно бесплатного Elementor. Шапки и подвалы Elementor Pro Theme Builder также поддерживаются."
 
 #: patterns/faq.php:48
 msgid "Is the theme translation-ready and RTL compatible?"
 msgstr "Готова ли тема к переводу и поддерживает ли RTL?"
 
 #: patterns/faq.php:49
-msgid ""
-"Yes. All strings are translatable and layouts mirror correctly for languages"
-" such as Urdu and Arabic."
-msgstr ""
-"Да. Все строки переводимы, а макеты корректно отзеркаливаются для таких "
-"языков, как урду и арабский."
+msgid "Yes. All strings are translatable and layouts mirror correctly for languages such as Urdu and Arabic."
+msgstr "Да. Все строки переводимы, а макеты корректно отзеркаливаются для таких языков, как урду и арабский."
 
 #: patterns/features-grid.php
 msgctxt "Pattern title"
@@ -1367,79 +1252,56 @@ msgid "Everything a modern site needs, nothing it doesn’t"
 msgstr "Всё, что нужно современному сайту, и ничего лишнего"
 
 #: patterns/features-grid.php:23
-msgid ""
-"Built on theme.json and native blocks, with first-class Elementor support."
-msgstr ""
-"Построена на theme.json и нативных блоках, с полноценной поддержкой "
-"Elementor."
+msgid "Built on theme.json and native blocks, with first-class Elementor support."
+msgstr "Построена на theme.json и нативных блоках, с полноценной поддержкой Elementor."
 
 #: patterns/features-grid.php:34
 msgid "One-click demo import"
 msgstr "Импорт демо в один клик"
 
 #: patterns/features-grid.php:38
-msgid ""
-"Pick a demo, choose your builder, import. Content and settings land exactly "
-"as previewed."
-msgstr ""
-"Выберите демо, выберите конструктор, импортируйте. Контент и настройки "
-"появятся точно как в превью."
+msgid "Pick a demo, choose your builder, import. Content and settings land exactly as previewed."
+msgstr "Выберите демо, выберите конструктор, импортируйте. Контент и настройки появятся точно как в превью."
 
 #: patterns/features-grid.php:48
 msgid "Gutenberg &amp; Elementor"
 msgstr "Gutenberg &amp; Elementor"
 
 #: patterns/features-grid.php:52
-msgid ""
-"Every demo ships twice — native blocks and Elementor — sharing one set of "
-"design tokens."
-msgstr ""
-"Каждое демо поставляется дважды — на нативных блоках и в Elementor — с общим"
-" набором дизайн-токенов."
+msgid "Every demo ships twice — native blocks and Elementor — sharing one set of design tokens."
+msgstr "Каждое демо поставляется дважды — на нативных блоках и в Elementor — с общим набором дизайн-токенов."
 
 #: patterns/features-grid.php:62
 msgid "Blazing fast"
 msgstr "Молниеносная скорость"
 
 #: patterns/features-grid.php:66
-msgid ""
-"No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
-msgstr ""
-"Без jQuery, CSS для каждого блока и компактная таблица стилей держат Core "
-"Web Vitals в зелёной зоне."
+msgid "No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
+msgstr "Без jQuery, CSS для каждого блока и компактная таблица стилей держат Core Web Vitals в зелёной зоне."
 
 #: patterns/features-grid.php:78
 msgid "Automatic plugin setup"
 msgstr "Автоматическая настройка плагинов"
 
 #: patterns/features-grid.php:82
-msgid ""
-"Required plugins install and activate themselves when you import a demo."
-msgstr ""
-"Необходимые плагины сами устанавливаются и активируются при импорте демо."
+msgid "Required plugins install and activate themselves when you import a demo."
+msgstr "Необходимые плагины сами устанавливаются и активируются при импорте демо."
 
 #: patterns/features-grid.php:92
 msgid "WooCommerce ready"
 msgstr "Готово для WooCommerce"
 
 #: patterns/features-grid.php:96
-msgid ""
-"Designed shop, product, cart, checkout and account pages — not default "
-"templates."
-msgstr ""
-"Продуманные страницы магазина, товара, корзины, оформления заказа и аккаунта"
-" — не стандартные шаблоны."
+msgid "Designed shop, product, cart, checkout and account pages — not default templates."
+msgstr "Продуманные страницы магазина, товара, корзины, оформления заказа и аккаунта — не стандартные шаблоны."
 
 #: patterns/features-grid.php:106
 msgid "Pro license &amp; updates"
 msgstr "Pro-лицензия &amp; обновления"
 
 #: patterns/features-grid.php:110
-msgid ""
-"Connect a license once to unlock Pro demos, premium blocks and updates."
-msgstr ""
-"Подключите лицензию один раз, чтобы открыть Pro-демо, премиум-блоки и "
-"обновления."
+msgid "Connect a license once to unlock Pro demos, premium blocks and updates."
+msgstr "Подключите лицензию один раз, чтобы открыть Pro-демо, премиум-блоки и обновления."
 
 #: patterns/footer-premium.php
 msgctxt "Pattern title"
@@ -1462,26 +1324,32 @@ msgstr "Подписаться"
 msgid "Company"
 msgstr "Компания"
 
-#: patterns/footer-premium.php:59 patterns/page-about.php:16
+#: patterns/footer-premium.php:59
+#: patterns/page-about.php:16
 msgid "About us"
 msgstr "О нас"
 
-#: patterns/footer-premium.php:60 patterns/page-services.php:16
+#: patterns/footer-premium.php:60
+#: patterns/page-services.php:16
 #: patterns/services-grid.php:15
 msgid "Services"
 msgstr "Услуги"
 
-#: patterns/footer-premium.php:61 patterns/page-pricing.php:16
+#: patterns/footer-premium.php:61
+#: patterns/page-pricing.php:16
 #: patterns/pricing.php:15
 msgid "Pricing"
 msgstr "Цены"
 
-#: patterns/footer-premium.php:62 patterns/footer-simple.php:19
-#: patterns/header-topbar.php:18 patterns/page-contact.php:16
+#: patterns/footer-premium.php:62
+#: patterns/footer-simple.php:19
+#: patterns/header-topbar.php:18
+#: patterns/page-contact.php:16
 msgid "Contact"
 msgstr "Контакты"
 
-#: patterns/footer-premium.php:70 core/assets/admin.js:301
+#: patterns/footer-premium.php:70
+#: core/assets/admin.js:301
 msgid "Shop"
 msgstr "Магазин"
 
@@ -1497,19 +1365,23 @@ msgstr "Мой аккаунт"
 msgid "Cart"
 msgstr "Корзина"
 
-#: patterns/footer-premium.php:77 patterns/header-topbar.php:18
+#: patterns/footer-premium.php:77
+#: patterns/header-topbar.php:18
 msgid "Track order"
 msgstr "Отследить заказ"
 
-#: patterns/footer-premium.php:85 core/assets/admin.js:263
+#: patterns/footer-premium.php:85
+#: core/assets/admin.js:263
 msgid "Resources"
 msgstr "Ресурсы"
 
-#: patterns/footer-premium.php:91 core/assets/admin.js:266
+#: patterns/footer-premium.php:91
+#: core/assets/admin.js:266
 msgid "Documentation"
 msgstr "Документация"
 
-#: patterns/footer-premium.php:92 core/assets/admin.js:267
+#: patterns/footer-premium.php:92
+#: core/assets/admin.js:267
 msgid "Support"
 msgstr "Поддержка"
 
@@ -1517,7 +1389,8 @@ msgstr "Поддержка"
 msgid "All rights reserved."
 msgstr "Все права защищены."
 
-#: patterns/footer-premium.php:104 patterns/footer-simple.php:20
+#: patterns/footer-premium.php:104
+#: patterns/footer-simple.php:20
 msgid "Privacy"
 msgstr "Конфиденциальность"
 
@@ -1597,7 +1470,8 @@ msgctxt "Pattern title"
 msgid "Hero — Dark with product shot"
 msgstr "Главный экран — Тёмный с фото товара"
 
-#: patterns/hero-dark.php:15 core/assets/admin.js:241
+#: patterns/hero-dark.php:15
+#: core/assets/admin.js:241
 msgid "NEW"
 msgstr "НОВОЕ"
 
@@ -1610,14 +1484,11 @@ msgid "Launch a premium WordPress site in minutes, not weeks"
 msgstr "Запустите премиальный сайт на WordPress за минуты, а не недели"
 
 #: patterns/hero-dark.php:23
-msgid ""
-"One-click demos for every niche, built natively for both the block editor "
-"and Elementor — fast, accessible and fully yours."
-msgstr ""
-"Демо в один клик для любой ниши, созданные нативно и для редактора блоков, и"
-" для Elementor — быстрые, доступные и полностью ваши."
+msgid "One-click demos for every niche, built natively for both the block editor and Elementor — fast, accessible and fully yours."
+msgstr "Демо в один клик для любой ниши, созданные нативно и для редактора блоков, и для Elementor — быстрые, доступные и полностью ваши."
 
-#: patterns/hero-dark.php:28 core/assets/admin.js:245
+#: patterns/hero-dark.php:28
+#: core/assets/admin.js:245
 msgid "Browse demos"
 msgstr "Смотреть демо"
 
@@ -1625,7 +1496,8 @@ msgstr "Смотреть демо"
 msgid "Watch the 2-min tour"
 msgstr "Смотреть 2-минутный обзор"
 
-#: patterns/hero-dark.php:43 patterns/stats.php:28
+#: patterns/hero-dark.php:43
+#: patterns/stats.php:28
 msgid "Ready demos"
 msgstr "Готовых демо"
 
@@ -1659,14 +1531,11 @@ msgid "Build any website in minutes"
 msgstr "Создайте любой сайт за минуты"
 
 #: patterns/hero-split.php:25
-msgid ""
-"Import a ready-made demo for Gutenberg or Elementor with one click, then "
-"make it yours."
-msgstr ""
-"Импортируйте готовое демо для Gutenberg или Elementor в один клик и "
-"настройте его под себя."
+msgid "Import a ready-made demo for Gutenberg or Elementor with one click, then make it yours."
+msgstr "Импортируйте готовое демо для Gutenberg или Elementor в один клик и настройте его под себя."
 
-#: patterns/hero-split.php:30 core/assets/admin.js:258
+#: patterns/hero-split.php:30
+#: core/assets/admin.js:258
 msgid "Get started"
 msgstr "Начать"
 
@@ -1710,12 +1579,8 @@ msgid "We will be back shortly"
 msgstr "Мы скоро вернёмся"
 
 #: patterns/maintenance.php:21
-msgid ""
-"Scheduled maintenance is underway. Thanks for your patience — we will be "
-"back online in a few minutes."
-msgstr ""
-"Идут плановые технические работы. Спасибо за терпение — через несколько "
-"минут мы снова будем онлайн."
+msgid "Scheduled maintenance is underway. Thanks for your patience — we will be back online in a few minutes."
+msgstr "Идут плановые технические работы. Спасибо за терпение — через несколько минут мы снова будем онлайн."
 
 #: patterns/no-results.php
 msgctxt "Pattern title"
@@ -1724,8 +1589,7 @@ msgstr "Нет результатов"
 
 #: patterns/no-results.php:13
 msgid "Nothing matched. Try a different search or browse the latest posts."
-msgstr ""
-"Ничего не найдено. Попробуйте другой запрос или посмотрите последние записи."
+msgstr "Ничего не найдено. Попробуйте другой запрос или посмотрите последние записи."
 
 #: patterns/page-about.php
 msgctxt "Pattern title"
@@ -1734,18 +1598,11 @@ msgstr "Страница «О нас»"
 
 #: patterns/page-about.php:20
 msgid "We build WordPress tools that feel premium and stay fast"
-msgstr ""
-"Мы создаём инструменты для WordPress, которые выглядят премиально и остаются"
-" быстрыми"
+msgstr "Мы создаём инструменты для WordPress, которые выглядят премиально и остаются быстрыми"
 
 #: patterns/page-about.php:24
-msgid ""
-"WPEssential started as an internal starter theme for client work. Today it "
-"powers stores, agencies and creators in more than 60 countries."
-msgstr ""
-"WPEssential начиналась как внутренняя стартовая тема для клиентских "
-"проектов. Сегодня на ней работают магазины, агентства и авторы более чем в "
-"60 странах."
+msgid "WPEssential started as an internal starter theme for client work. Today it powers stores, agencies and creators in more than 60 countries."
+msgstr "WPEssential начиналась как внутренняя стартовая тема для клиентских проектов. Сегодня на ней работают магазины, агентства и авторы более чем в 60 странах."
 
 #: patterns/page-contact.php
 msgctxt "Pattern title"
@@ -1757,12 +1614,8 @@ msgid "Let’s talk about your next site"
 msgstr "Давайте обсудим ваш следующий сайт"
 
 #: patterns/page-contact.php:24
-msgid ""
-"Questions about demos, licensing or a custom build? Our team replies within "
-"one business day."
-msgstr ""
-"Есть вопросы о демо, лицензиях или индивидуальной разработке? Наша команда "
-"ответит в течение одного рабочего дня."
+msgid "Questions about demos, licensing or a custom build? Our team replies within one business day."
+msgstr "Есть вопросы о демо, лицензиях или индивидуальной разработке? Наша команда ответит в течение одного рабочего дня."
 
 #: patterns/page-faq.php
 msgctxt "Pattern title"
@@ -1774,12 +1627,8 @@ msgid "Help center"
 msgstr "Справочный центр"
 
 #: patterns/page-faq.php:24
-msgid ""
-"Answers about demos, builders, licensing and updates. Can’t find what you "
-"need? Contact support."
-msgstr ""
-"Ответы о демо, конструкторах, лицензиях и обновлениях. Не нашли нужное? "
-"Обратитесь в поддержку."
+msgid "Answers about demos, builders, licensing and updates. Can’t find what you need? Contact support."
+msgstr "Ответы о демо, конструкторах, лицензиях и обновлениях. Не нашли нужное? Обратитесь в поддержку."
 
 #: patterns/page-hero.php
 msgctxt "Pattern title"
@@ -1796,12 +1645,8 @@ msgid "Simple plans that grow with you"
 msgstr "Простые тарифы, которые растут вместе с вами"
 
 #: patterns/page-pricing.php:24
-msgid ""
-"Start free with the core theme. Upgrade for premium demos, Pro blocks and "
-"priority support."
-msgstr ""
-"Начните бесплатно с базовой темой. Перейдите на платный тариф ради премиум-"
-"демо, Pro-блоков и приоритетной поддержки."
+msgid "Start free with the core theme. Upgrade for premium demos, Pro blocks and priority support."
+msgstr "Начните бесплатно с базовой темой. Перейдите на платный тариф ради премиум-демо, Pro-блоков и приоритетной поддержки."
 
 #: patterns/page-services.php
 msgctxt "Pattern title"
@@ -1813,12 +1658,8 @@ msgid "Everything you need to launch and grow"
 msgstr "Всё, что нужно для запуска и роста"
 
 #: patterns/page-services.php:24
-msgid ""
-"Strategy, design, development and care plans — delivered on a theme built "
-"for speed."
-msgstr ""
-"Стратегия, дизайн, разработка и сопровождение — на теме, созданной для "
-"скорости."
+msgid "Strategy, design, development and care plans — delivered on a theme built for speed."
+msgstr "Стратегия, дизайн, разработка и сопровождение — на теме, созданной для скорости."
 
 #: patterns/post-card.php
 msgctxt "Pattern title"
@@ -1835,18 +1676,17 @@ msgid "Simple pricing. Both builders included."
 msgstr "Простые цены. Оба конструктора включены."
 
 #: patterns/pricing.php:23
-msgid ""
-"Start free and upgrade when you need Pro demos, premium blocks and priority "
-"support."
-msgstr ""
-"Начните бесплатно и перейдите на платный тариф, когда понадобятся Pro-демо, "
-"премиум-блоки и приоритетная поддержка."
+msgid "Start free and upgrade when you need Pro demos, premium blocks and priority support."
+msgstr "Начните бесплатно и перейдите на платный тариф, когда понадобятся Pro-демо, премиум-блоки и приоритетная поддержка."
 
-#: patterns/pricing.php:30 core/assets/admin.js:312
+#: patterns/pricing.php:30
+#: core/assets/admin.js:312
 msgid "Free"
 msgstr "Бесплатно"
 
-#: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+#: patterns/pricing.php:34
+#: patterns/pricing.php:64
+#: patterns/pricing.php:96
 msgid "/ year"
 msgstr "/ год"
 
@@ -1874,7 +1714,8 @@ msgstr "Поддержка сообщества"
 msgid "Download free"
 msgstr "Скачать бесплатно"
 
-#: patterns/pricing.php:60 core/assets/admin.js:312
+#: patterns/pricing.php:60
+#: core/assets/admin.js:312
 msgid "Pro"
 msgstr "Pro"
 
@@ -1898,7 +1739,8 @@ msgstr "Демо для WooCommerce"
 msgid "1 year of updates"
 msgstr "1 год обновлений"
 
-#: patterns/pricing.php:81 core/assets/admin.js:1122
+#: patterns/pricing.php:81
+#: core/assets/admin.js:1122
 msgid "Priority support"
 msgstr "Приоритетная поддержка"
 
@@ -1906,7 +1748,8 @@ msgstr "Приоритетная поддержка"
 msgid "Get Pro"
 msgstr "Получить Pro"
 
-#: patterns/pricing.php:92 core/assets/admin.js:301
+#: patterns/pricing.php:92
+#: core/assets/admin.js:301
 msgid "Agency"
 msgstr "Агентство"
 
@@ -1971,7 +1814,8 @@ msgstr "Импорт в один клик"
 msgid "Plugins, content and settings are set up for you."
 msgstr "Плагины, контент и настройки будут подготовлены за вас."
 
-#: patterns/process-steps.php:67 core/assets/admin.js:290
+#: patterns/process-steps.php:67
+#: core/assets/admin.js:290
 msgid "Make it yours"
 msgstr "Сделайте его своим"
 
@@ -1989,12 +1833,8 @@ msgid "From idea to launch"
 msgstr "От идеи до запуска"
 
 #: patterns/services-grid.php:23
-msgid ""
-"Use WPEssential yourself, or let our team set up, customise and maintain "
-"your site."
-msgstr ""
-"Используйте WPEssential самостоятельно или доверьте нашей команде настройку,"
-" кастомизацию и поддержку сайта."
+msgid "Use WPEssential yourself, or let our team set up, customise and maintain your site."
+msgstr "Используйте WPEssential самостоятельно или доверьте нашей команде настройку, кастомизацию и поддержку сайта."
 
 #: patterns/services-grid.php:34
 msgid "Demo setup"
@@ -2002,8 +1842,7 @@ msgstr "Установка демо"
 
 #: patterns/services-grid.php:38
 msgid "We import your chosen demo, connect your domain and configure plugins."
-msgstr ""
-"Мы импортируем выбранное демо, подключим ваш домен и настроим плагины."
+msgstr "Мы импортируем выбранное демо, подключим ваш домен и настроим плагины."
 
 #: patterns/services-grid.php:48
 msgid "Brand customisation"
@@ -2098,36 +1937,24 @@ msgid "What our customers say"
 msgstr "Что говорят наши клиенты"
 
 #: patterns/testimonials.php:31
-msgid ""
-"We rebuilt three client sites on WPEssential in a week. The Elementor and "
-"block versions matching exactly is a game changer."
-msgstr ""
-"Мы пересобрали три клиентских сайта на WPEssential за неделю. Полное "
-"совпадение версий для Elementor и блоков — это прорыв."
+msgid "We rebuilt three client sites on WPEssential in a week. The Elementor and block versions matching exactly is a game changer."
+msgstr "Мы пересобрали три клиентских сайта на WPEssential за неделю. Полное совпадение версий для Elementor и блоков — это прорыв."
 
 #: patterns/testimonials.php:35
 msgid "Founder, Kitecraft Agency"
 msgstr "Основатель, Kitecraft Agency"
 
 #: patterns/testimonials.php:43
-msgid ""
-"Our store went from 3.9s to 1.2s load time. Checkout pages look custom out "
-"of the box."
-msgstr ""
-"Время загрузки нашего магазина сократилось с 3,9 до 1,2 с. Страницы "
-"оформления заказа сразу выглядят как индивидуальный дизайн."
+msgid "Our store went from 3.9s to 1.2s load time. Checkout pages look custom out of the box."
+msgstr "Время загрузки нашего магазина сократилось с 3,9 до 1,2 с. Страницы оформления заказа сразу выглядят как индивидуальный дизайн."
 
 #: patterns/testimonials.php:47
 msgid "Owner, Fieldhouse Goods"
 msgstr "Владелец, Fieldhouse Goods"
 
 #: patterns/testimonials.php:55
-msgid ""
-"The demo import just works — plugins, menus, homepage. I spend my time on "
-"content now, not setup."
-msgstr ""
-"Импорт демо просто работает — плагины, меню, главная страница. Теперь я "
-"трачу время на контент, а не на настройку."
+msgid "The demo import just works — plugins, menus, homepage. I spend my time on content now, not setup."
+msgstr "Импорт демо просто работает — плагины, меню, главная страница. Теперь я трачу время на контент, а не на настройку."
 
 #: patterns/testimonials.php:59
 msgid "Writer, The Quiet Desk"
@@ -2141,8 +1968,11 @@ msgstr "Произвольный код"
 msgid "Animations"
 msgstr "Анимации"
 
-#: assets/js/options.js:84 assets/js/options.js:91 core/assets/admin.js:280
-#: core/assets/admin.js:701 core/assets/admin.js:1074
+#: assets/js/options.js:84
+#: assets/js/options.js:91
+#: core/assets/admin.js:280
+#: core/assets/admin.js:701
+#: core/assets/admin.js:1074
 #: core/assets/admin.js:1113
 msgid "Active"
 msgstr "Активен"
@@ -2152,11 +1982,8 @@ msgid "Off"
 msgstr "Выкл."
 
 #: assets/js/options.js:88
-msgid ""
-"Broke something? Open your site in safe mode to load it without snippets:"
-msgstr ""
-"Что-то сломалось? Откройте сайт в безопасном режиме, чтобы загрузить его без"
-" фрагментов:"
+msgid "Broke something? Open your site in safe mode to load it without snippets:"
+msgstr "Что-то сломалось? Откройте сайт в безопасном режиме, чтобы загрузить его без фрагментов:"
 
 #: assets/js/options.js:88
 msgid "Safe mode"
@@ -2206,7 +2033,8 @@ msgstr "Пишите только CSS, без тегов <style>."
 msgid "Save snippets"
 msgstr "Сохранить фрагменты"
 
-#: assets/js/options.js:99 core/assets/admin.js:1076
+#: assets/js/options.js:99
+#: core/assets/admin.js:1076
 msgid "Delete"
 msgstr "Удалить"
 
@@ -2219,45 +2047,28 @@ msgid "New styles"
 msgstr "Новые стили"
 
 #: assets/js/options.js:162
-msgid ""
-"Animations reveal sections as visitors scroll. Visitors who prefer reduced "
-"motion never see them."
-msgstr ""
-"Анимации показывают секции по мере прокрутки. Посетители, предпочитающие "
-"уменьшенное движение, их не увидят."
+msgid "Animations reveal sections as visitors scroll. Visitors who prefer reduced motion never see them."
+msgstr "Анимации показывают секции по мере прокрутки. Посетители, предпочитающие уменьшенное движение, их не увидят."
 
 #: assets/js/options.js:166
 msgid "Use GSAP for parallax and counters with any preset"
 msgstr "Использовать GSAP для параллакса и счётчиков с любым пресетом"
 
 #: assets/js/options.js:167
-msgid ""
-"Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask,"
-" --stagger, --parallax or --counter) to any block under Advanced → "
-"Additional CSS class."
-msgstr ""
-"Добавьте класс wpe-anim (и wpe-anim--fade-up, --zoom, --slide-left, --mask, "
-"--stagger, --parallax или --counter) к любому блоку в разделе Дополнительно "
-"→ Дополнительные CSS-классы."
+msgid "Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask, --stagger, --parallax or --counter) to any block under Advanced → Additional CSS class."
+msgstr "Добавьте класс wpe-anim (и wpe-anim--fade-up, --zoom, --slide-left, --mask, --stagger, --parallax или --counter) к любому блоку в разделе Дополнительно → Дополнительные CSS-классы."
 
 #: assets/js/options.js:168
 msgid "Save animations"
 msgstr "Сохранить анимации"
 
 #: core/assets/admin.js:86
-msgid ""
-"The connection to your site dropped. Check your internet and try again."
-msgstr ""
-"Соединение с сайтом прервалось. Проверьте подключение к интернету и "
-"повторите попытку."
+msgid "The connection to your site dropped. Check your internet and try again."
+msgstr "Соединение с сайтом прервалось. Проверьте подключение к интернету и повторите попытку."
 
 #: core/assets/admin.js:89
-msgid ""
-"The server sent an invalid response — usually a PHP error or a timeout. Your"
-" progress is saved."
-msgstr ""
-"Сервер вернул некорректный ответ — обычно это ошибка PHP или превышение "
-"времени ожидания. Ваш прогресс сохранён."
+msgid "The server sent an invalid response — usually a PHP error or a timeout. Your progress is saved."
+msgstr "Сервер вернул некорректный ответ — обычно это ошибка PHP или превышение времени ожидания. Ваш прогресс сохранён."
 
 #: core/assets/admin.js:92
 msgid "Your login session expired. Reload the page and sign in again."
@@ -2284,12 +2095,8 @@ msgid "Welcome, %s. Let’s build something beautiful."
 msgstr "Добро пожаловать, %s. Давайте создадим что-то прекрасное."
 
 #: core/assets/admin.js:243
-msgid ""
-"Pick a demo, choose Gutenberg or Elementor, and get a finished website with "
-"pages, images, menus and a shop — in about a minute."
-msgstr ""
-"Выберите демо, выберите Gutenberg или Elementor и получите готовый сайт со "
-"страницами, изображениями, меню и магазином — примерно за минуту."
+msgid "Pick a demo, choose Gutenberg or Elementor, and get a finished website with pages, images, menus and a shop — in about a minute."
+msgstr "Выберите демо, выберите Gutenberg или Elementor и получите готовый сайт со страницами, изображениями, меню и магазином — примерно за минуту."
 
 #: core/assets/admin.js:246
 msgid "Customize site"
@@ -2331,15 +2138,18 @@ msgstr "Редактор сайта"
 msgid "Colours, fonts, header and footer"
 msgstr "Цвета, шрифты, шапка и подвал"
 
-#: core/assets/admin.js:280 core/assets/admin.js:1113
+#: core/assets/admin.js:280
+#: core/assets/admin.js:1113
 msgid "Expired"
 msgstr "Истекла"
 
-#: core/assets/admin.js:280 core/assets/admin.js:1113
+#: core/assets/admin.js:280
+#: core/assets/admin.js:1113
 msgid "Invalid"
 msgstr "Недействительна"
 
-#: core/assets/admin.js:280 core/assets/admin.js:1113
+#: core/assets/admin.js:280
+#: core/assets/admin.js:1113
 msgid "Not connected"
 msgstr "Не подключено"
 
@@ -2367,7 +2177,8 @@ msgstr "Начните с полноценного готового сайта."
 msgid "Open library"
 msgstr "Открыть библиотеку"
 
-#: core/assets/admin.js:289 core/assets/admin.js:1124
+#: core/assets/admin.js:289
+#: core/assets/admin.js:1124
 msgid "Activate your license"
 msgstr "Активируйте лицензию"
 
@@ -2375,7 +2186,8 @@ msgstr "Активируйте лицензию"
 msgid "Unlock Pro demos, updates and support."
 msgstr "Откройте доступ к Pro-демо, обновлениям и поддержке."
 
-#: core/assets/admin.js:289 core/assets/admin.js:1076
+#: core/assets/admin.js:289
+#: core/assets/admin.js:1076
 #: core/assets/admin.js:1125
 msgid "Activate"
 msgstr "Активировать"
@@ -2384,7 +2196,8 @@ msgstr "Активировать"
 msgid "Swap the logo, colours and words in the Site Editor."
 msgstr "Замените логотип, цвета и тексты в редакторе сайта."
 
-#: core/assets/admin.js:290 core/assets/admin.js:999
+#: core/assets/admin.js:290
+#: core/assets/admin.js:999
 msgid "Customize"
 msgstr "Настроить"
 
@@ -2392,7 +2205,9 @@ msgstr "Настроить"
 msgid "Could not load the dashboard"
 msgstr "Не удалось загрузить консоль"
 
-#: core/assets/admin.js:301 core/assets/admin.js:312 core/assets/admin.js:756
+#: core/assets/admin.js:301
+#: core/assets/admin.js:312
+#: core/assets/admin.js:756
 msgid "All"
 msgstr "Все"
 
@@ -2409,13 +2224,8 @@ msgid "Education"
 msgstr "Образование"
 
 #: core/assets/admin.js:306
-msgid ""
-"Every demo is a complete website. Preview it, then import it for Gutenberg "
-"or Elementor — plugins, pages, images and menus included."
-msgstr ""
-"Каждое демо — это полноценный сайт. Посмотрите превью, затем импортируйте "
-"его для Gutenberg или Elementor — плагины, страницы, изображения и меню "
-"включены."
+msgid "Every demo is a complete website. Preview it, then import it for Gutenberg or Elementor — plugins, pages, images and menus included."
+msgstr "Каждое демо — это полноценный сайт. Посмотрите превью, затем импортируйте его для Gutenberg или Elementor — плагины, страницы, изображения и меню включены."
 
 #: core/assets/admin.js:307
 msgid "Refreshing"
@@ -2441,7 +2251,9 @@ msgstr "Категория"
 msgid "Plan"
 msgstr "Тариф"
 
-#: core/assets/admin.js:313 core/assets/admin.js:519 core/assets/admin.js:576
+#: core/assets/admin.js:313
+#: core/assets/admin.js:519
+#: core/assets/admin.js:576
 msgid "Builder"
 msgstr "Конструктор"
 
@@ -2482,14 +2294,11 @@ msgid "%s is installed on this site"
 msgstr "%s установлено на этом сайте"
 
 #: core/assets/admin.js:366
-msgid ""
-"You can remove everything it added and restore your previous settings at any"
-" time."
-msgstr ""
-"Вы можете в любой момент удалить всё, что было добавлено, и восстановить "
-"прежние настройки."
+msgid "You can remove everything it added and restore your previous settings at any time."
+msgstr "Вы можете в любой момент удалить всё, что было добавлено, и восстановить прежние настройки."
 
-#: core/assets/admin.js:366 core/assets/admin.js:920
+#: core/assets/admin.js:366
+#: core/assets/admin.js:920
 msgid "Removing"
 msgstr "Удаление"
 
@@ -2498,14 +2307,8 @@ msgid "Remove demo"
 msgstr "Удалить демо"
 
 #: core/assets/admin.js:386
-msgid ""
-"Remove %s? Its pages, posts, products, images and menus will be deleted and "
-"your previous settings restored. Content you created yourself is not "
-"touched."
-msgstr ""
-"Удалить %s? Его страницы, записи, товары, изображения и меню будут удалены, "
-"а ваши прежние настройки восстановлены. Созданный вами контент не будет "
-"затронут."
+msgid "Remove %s? Its pages, posts, products, images and menus will be deleted and your previous settings restored. Content you created yourself is not touched."
+msgstr "Удалить %s? Его страницы, записи, товары, изображения и меню будут удалены, а ваши прежние настройки восстановлены. Созданный вами контент не будет затронут."
 
 #: core/assets/admin.js:392
 msgid "Demo removed"
@@ -2547,7 +2350,8 @@ msgstr "Разблокировать"
 msgid "Re-import"
 msgstr "Импортировать заново"
 
-#: core/assets/admin.js:439 core/assets/admin.js:576
+#: core/assets/admin.js:439
+#: core/assets/admin.js:576
 msgid "Import"
 msgstr "Импорт"
 
@@ -2604,12 +2408,8 @@ msgid "Close"
 msgstr "Закрыть"
 
 #: core/assets/admin.js:589
-msgid ""
-"The import keeps its progress if you close this window. You can resume it "
-"from the Demo Library. Close anyway?"
-msgstr ""
-"Если закрыть это окно, прогресс импорта сохранится. Продолжить можно из "
-"библиотеки демо. Всё равно закрыть?"
+msgid "The import keeps its progress if you close this window. You can resume it from the Demo Library. Close anyway?"
+msgstr "Если закрыть это окно, прогресс импорта сохранится. Продолжить можно из библиотеки демо. Всё равно закрыть?"
 
 #: core/assets/admin.js:618
 msgid "Back"
@@ -2624,20 +2424,12 @@ msgid "Connect your WPEssential account"
 msgstr "Подключите аккаунт WPEssential"
 
 #: core/assets/admin.js:640
-msgid ""
-"Sign in and use a Pro license on this site — or pick a plan. Checkout opens "
-"in a new tab."
-msgstr ""
-"Войдите и используйте Pro-лицензию на этом сайте — или выберите тариф. "
-"Оформление заказа откроется в новой вкладке."
+msgid "Sign in and use a Pro license on this site — or pick a plan. Checkout opens in a new tab."
+msgstr "Войдите и используйте Pro-лицензию на этом сайте — или выберите тариф. Оформление заказа откроется в новой вкладке."
 
 #: core/assets/admin.js:640
-msgid ""
-"Sign in or create a free account to keep your demos, licenses and updates in"
-" one place."
-msgstr ""
-"Войдите или создайте бесплатный аккаунт, чтобы хранить демо, лицензии и "
-"обновления в одном месте."
+msgid "Sign in or create a free account to keep your demos, licenses and updates in one place."
+msgstr "Войдите или создайте бесплатный аккаунт, чтобы хранить демо, лицензии и обновления в одном месте."
 
 #: core/assets/admin.js:643
 msgid "A Pro license is needed"
@@ -2647,7 +2439,9 @@ msgstr "Нужна Pro-лицензия"
 msgid "Use a Pro license on this site, or choose a plan."
 msgstr "Используйте Pro-лицензию на этом сайте или выберите тариф."
 
-#: core/assets/admin.js:648 core/assets/admin.js:674 core/assets/admin.js:679
+#: core/assets/admin.js:648
+#: core/assets/admin.js:674
+#: core/assets/admin.js:679
 msgid "Continue"
 msgstr "Продолжить"
 
@@ -2664,18 +2458,12 @@ msgid "Choose your page builder"
 msgstr "Выберите конструктор страниц"
 
 #: core/assets/admin.js:668
-msgid ""
-"Both versions look identical. Pick the editor you or your client will use "
-"every day."
-msgstr ""
-"Обе версии выглядят одинаково. Выберите редактор, которым вы или ваш клиент "
-"будете пользоваться каждый день."
+msgid "Both versions look identical. Pick the editor you or your client will use every day."
+msgstr "Обе версии выглядят одинаково. Выберите редактор, которым вы или ваш клиент будете пользоваться каждый день."
 
 #: core/assets/admin.js:669
 msgid "The native WordPress block editor. Fastest pages, no extra plugin."
-msgstr ""
-"Встроенный редактор блоков WordPress. Самые быстрые страницы, без "
-"дополнительных плагинов."
+msgstr "Встроенный редактор блоков WordPress. Самые быстрые страницы, без дополнительных плагинов."
 
 #: core/assets/admin.js:669
 msgid "Visual drag-and-drop editing. Elementor is already installed."
@@ -2683,21 +2471,15 @@ msgstr "Визуальное редактирование перетаскива
 
 #: core/assets/admin.js:669
 msgid "Visual drag-and-drop editing. Elementor will be installed for you."
-msgstr ""
-"Визуальное редактирование перетаскиванием. Elementor будет установлен "
-"автоматически."
+msgstr "Визуальное редактирование перетаскиванием. Elementor будет установлен автоматически."
 
 #: core/assets/admin.js:678
 msgid "Plugins this demo uses"
 msgstr "Плагины, которые использует это демо"
 
 #: core/assets/admin.js:678
-msgid ""
-"We install, activate or switch off plugins so the demo works exactly like "
-"the preview."
-msgstr ""
-"Мы устанавливаем, активируем или отключаем плагины, чтобы демо работало "
-"точно как в превью."
+msgid "We install, activate or switch off plugins so the demo works exactly like the preview."
+msgstr "Мы устанавливаем, активируем или отключаем плагины, чтобы демо работало точно как в превью."
 
 #: core/assets/admin.js:693
 msgid "No extra plugins needed — this demo runs on the theme alone."
@@ -2723,7 +2505,8 @@ msgstr "Будет установлен"
 msgid "Required"
 msgstr "Обязательный"
 
-#: core/assets/admin.js:706 core/assets/admin.js:1073
+#: core/assets/admin.js:706
+#: core/assets/admin.js:1073
 msgid "Recommended"
 msgstr "Рекомендуемый"
 
@@ -2792,12 +2575,8 @@ msgid "Recommended: start from a clean site instead of adding duplicates."
 msgstr "Рекомендуется: начните с чистого сайта, а не добавляйте дубликаты."
 
 #: core/assets/admin.js:723
-msgid ""
-"Your existing posts and pages are never changed. Imported items are tagged, "
-"so they can be removed in one click later."
-msgstr ""
-"Ваши существующие записи и страницы никогда не изменяются. Импортированные "
-"элементы помечаются, поэтому позже их можно удалить в один клик."
+msgid "Your existing posts and pages are never changed. Imported items are tagged, so they can be removed in one click later."
+msgstr "Ваши существующие записи и страницы никогда не изменяются. Импортированные элементы помечаются, поэтому позже их можно удалить в один клик."
 
 #: core/assets/admin.js:730
 msgid "Start import"
@@ -2807,7 +2586,8 @@ msgstr "Начать импорт"
 msgid "Preparing"
 msgstr "Подготовка"
 
-#: core/assets/admin.js:736 core/assets/admin.js:947
+#: core/assets/admin.js:736
+#: core/assets/admin.js:947
 msgid "Importing your demo…"
 msgstr "Импорт демо…"
 
@@ -2815,7 +2595,8 @@ msgstr "Импорт демо…"
 msgid "Keep this window open. It usually takes about a minute."
 msgstr "Не закрывайте это окно. Обычно это занимает около минуты."
 
-#: core/assets/admin.js:739 core/assets/admin.js:943
+#: core/assets/admin.js:739
+#: core/assets/admin.js:943
 msgid "Cancel import"
 msgstr "Отменить импорт"
 
@@ -2827,7 +2608,8 @@ msgstr "Информация"
 msgid "Success"
 msgstr "Успешно"
 
-#: core/assets/admin.js:756 core/assets/admin.js:998
+#: core/assets/admin.js:756
+#: core/assets/admin.js:998
 msgid "Warnings"
 msgstr "Предупреждения"
 
@@ -2835,7 +2617,8 @@ msgstr "Предупреждения"
 msgid "Errors"
 msgstr "Ошибки"
 
-#: core/assets/admin.js:756 core/assets/admin.js:920
+#: core/assets/admin.js:756
+#: core/assets/admin.js:920
 msgid "Copy log"
 msgstr "Копировать журнал"
 
@@ -2873,8 +2656,7 @@ msgstr "Перезагрузите страницу, затем продолжи
 
 #: core/assets/admin.js:878
 msgid "Your progress is saved. Press Resume when the server is back."
-msgstr ""
-"Ваш прогресс сохранён. Нажмите «Продолжить», когда сервер снова заработает."
+msgstr "Ваш прогресс сохранён. Нажмите «Продолжить», когда сервер снова заработает."
 
 #: core/assets/admin.js:882
 msgid "The server did not answer (%1$s). Retrying in %2$d seconds…"
@@ -2934,8 +2716,7 @@ msgstr "Ваш прогресс сохранён. Повторите попыт�
 
 #: core/assets/admin.js:973
 msgid "Cancel the import? What was imported so far stays until you remove it."
-msgstr ""
-"Отменить импорт? Уже импортированное останется, пока вы его не удалите."
+msgstr "Отменить импорт? Уже импортированное останется, пока вы его не удалите."
 
 #: core/assets/admin.js:983
 msgid "Could not cancel"
@@ -2947,8 +2728,7 @@ msgstr "Ваш сайт готов!"
 
 #: core/assets/admin.js:997
 msgid "%1$s was imported. %2$d item(s) need a look — see the notes below."
-msgstr ""
-"%1$s импортировано. Требуют внимания элементов: %2$d — см. примечания ниже."
+msgstr "%1$s импортировано. Требуют внимания элементов: %2$d — см. примечания ниже."
 
 #: core/assets/admin.js:997
 msgid "%s was imported without a single issue. Time to make it yours."
@@ -2975,12 +2755,8 @@ msgid "Import complete"
 msgstr "Импорт завершён"
 
 #: core/assets/admin.js:1054
-msgid ""
-"Plugins used by WPEssential demos. Install, switch on or off and delete them"
-" here."
-msgstr ""
-"Плагины, используемые демо WPEssential. Здесь их можно установить, включить,"
-" отключить и удалить."
+msgid "Plugins used by WPEssential demos. Install, switch on or off and delete them here."
+msgstr "Плагины, используемые демо WPEssential. Здесь их можно установить, включить, отключить и удалить."
 
 #: core/assets/admin.js:1069
 msgid "No plugins needed"
@@ -3031,12 +2807,8 @@ msgid "Plugin action failed"
 msgstr "Ошибка действия с плагином"
 
 #: core/assets/admin.js:1096
-msgid ""
-"Activate your purchase on this domain to unlock Pro demos, automatic updates"
-" and priority support."
-msgstr ""
-"Активируйте покупку на этом домене, чтобы получить Pro-демо, автоматические "
-"обновления и приоритетную поддержку."
+msgid "Activate your purchase on this domain to unlock Pro demos, automatic updates and priority support."
+msgstr "Активируйте покупку на этом домене, чтобы получить Pro-демо, автоматические обновления и приоритетную поддержку."
 
 #: core/assets/admin.js:1118
 msgid "Domain"
@@ -3088,8 +2860,7 @@ msgstr "Продлите, чтобы сохранить функции Pro"
 
 #: core/assets/admin.js:1124
 msgid "Find the key in your purchase email or your wpessential.org account."
-msgstr ""
-"Ключ можно найти в письме о покупке или в аккаунте на wpessential.org."
+msgstr "Ключ можно найти в письме о покупке или в аккаунте на wpessential.org."
 
 #: core/assets/admin.js:1125
 msgid "License key"
@@ -3132,12 +2903,8 @@ msgid "Pro demos are unlocked."
 msgstr "Pro-демо разблокированы."
 
 #: core/assets/admin.js:1163
-msgid ""
-"Deactivate the license on this domain? You can activate it on another site "
-"afterwards."
-msgstr ""
-"Деактивировать лицензию на этом домене? После этого её можно будет "
-"активировать на другом сайте."
+msgid "Deactivate the license on this domain? You can activate it on another site afterwards."
+msgstr "Деактивировать лицензию на этом домене? После этого её можно будет активировать на другом сайте."
 
 #: core/assets/admin.js:1169
 msgid "License deactivated"
@@ -3168,12 +2935,8 @@ msgid "Create your free account"
 msgstr "Создайте бесплатный аккаунт"
 
 #: core/assets/admin.js:1213
-msgid ""
-"Your licenses, Pro demos and subscription in one place. New accounts include"
-" the Free plan for this website."
-msgstr ""
-"Ваши лицензии, Pro-демо и подписка в одном месте. Новые аккаунты включают "
-"бесплатный тариф для этого сайта."
+msgid "Your licenses, Pro demos and subscription in one place. New accounts include the Free plan for this website."
+msgstr "Ваши лицензии, Pro-демо и подписка в одном месте. Новые аккаунты включают бесплатный тариф для этого сайта."
 
 #: core/assets/admin.js:1214
 msgid "Activate licenses without copying keys"
@@ -3187,7 +2950,8 @@ msgstr "Повышение, продление или смена тарифа в
 msgid "Manage websites and auto-renewal"
 msgstr "Управление сайтами и автопродлением"
 
-#: core/assets/admin.js:1216 core/assets/admin.js:1221
+#: core/assets/admin.js:1216
+#: core/assets/admin.js:1221
 msgid "Sign in"
 msgstr "Войти"
 
@@ -3324,14 +3088,8 @@ msgid "Choose"
 msgstr "Выбрать"
 
 #: core/assets/admin.js:1285
-msgid ""
-"Checkout opens on wpessential.org already signed in. Upgrades credit the "
-"unused part of your current plan. Staging and local sites do not count "
-"toward your website limit."
-msgstr ""
-"Оформление заказа откроется на wpessential.org с уже выполненным входом. При"
-" повышении тарифа неиспользованная часть текущего тарифа засчитывается. "
-"Тестовые и локальные сайты не учитываются в лимите сайтов."
+msgid "Checkout opens on wpessential.org already signed in. Upgrades credit the unused part of your current plan. Staging and local sites do not count toward your website limit."
+msgstr "Оформление заказа откроется на wpessential.org с уже выполненным входом. При повышении тарифа неиспользованная часть текущего тарифа засчитывается. Тестовые и локальные сайты не учитываются в лимите сайтов."
 
 #: core/assets/admin.js:1301
 msgid "License active on this site"
@@ -3391,9 +3149,7 @@ msgstr "Требует доработки"
 
 #: core/assets/admin.js:1349
 msgid "%d item(s) could be better. Imports still run; fixes make them faster."
-msgstr ""
-"Можно улучшить пунктов: %d. Импорт всё равно работает; исправления ускорят "
-"его."
+msgstr "Можно улучшить пунктов: %d. Импорт всё равно работает; исправления ускорят его."
 
 #: core/assets/admin.js:1349
 msgid "Your server is ready for any demo."
@@ -3411,135 +3167,249 @@ msgstr "Отчёт скопирован"
 msgid "Copy failed"
 msgstr "Ошибка копирования"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Accent"
 msgstr "Акцент"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Border"
 msgstr "Граница"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Danger"
 msgstr "Опасность"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Ink"
 msgstr "Чернила"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "On Ink"
 msgstr "На чернилах"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "On Ink Muted"
 msgstr "На чернилах приглушённый"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "On Primary"
 msgstr "На основном"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Primary"
 msgstr "Основной"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Primary Hover"
 msgstr "Основной при наведении"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Primary Soft"
 msgstr "Основной мягкий"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Pro"
 msgstr "Pro"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Secondary"
 msgstr "Вторичный"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Star"
 msgstr "Звезда"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Success"
 msgstr "Успех"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Surface"
 msgstr "Поверхность"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Surface Alt"
 msgstr "Поверхность альт."
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Text"
 msgstr "Текст"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Text Muted"
 msgstr "Приглушённый текст"
 
-#: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/agency.json
+#: styles/dark.json
+#: styles/education.json
+#: styles/fashion.json
+#: styles/health.json
+#: styles/maison.json
+#: styles/pulse.json
+#: styles/restaurant.json
+#: theme.json
 msgctxt "Color name"
 msgid "Warning"
 msgstr "Предупреждение"
@@ -3589,7 +3459,9 @@ msgctxt "Font family name"
 msgid "Manrope"
 msgstr "Manrope"
 
-#: styles/maison.json styles/pulse.json theme.json
+#: styles/maison.json
+#: styles/pulse.json
+#: theme.json
 msgctxt "Font family name"
 msgid "Monospace"
 msgstr "Моноширинный"
@@ -3649,7 +3521,10 @@ msgctxt "Font size name"
 msgid "XS"
 msgstr "XS"
 
-#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+#: styles/dark.json
+#: styles/maison.json
+#: styles/pulse.json
+#: theme.json
 msgctxt "Gradient name"
 msgid "Brand"
 msgstr "Бренд"
@@ -3659,27 +3534,35 @@ msgctxt "Gradient name"
 msgid "Fade bottom"
 msgstr "Затухание вниз"
 
-#: styles/maison.json styles/pulse.json theme.json
+#: styles/maison.json
+#: styles/pulse.json
+#: theme.json
 msgctxt "Gradient name"
 msgid "Fade to ink"
 msgstr "Затухание в чернила"
 
-#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+#: styles/dark.json
+#: styles/maison.json
+#: styles/pulse.json
+#: theme.json
 msgctxt "Gradient name"
 msgid "Night"
 msgstr "Ночь"
 
-#: styles/dark.json theme.json
+#: styles/dark.json
+#: theme.json
 msgctxt "Shadow name"
 msgid "Large"
 msgstr "Большая"
 
-#: styles/dark.json theme.json
+#: styles/dark.json
+#: theme.json
 msgctxt "Shadow name"
 msgid "Medium"
 msgstr "Средняя"
 
-#: styles/dark.json theme.json
+#: styles/dark.json
+#: theme.json
 msgctxt "Shadow name"
 msgid "Small"
 msgstr "Маленькая"

@@ -133,7 +133,7 @@ class License {
 	public static function activate( $key ) {
 		$key = trim( sanitize_text_field( $key ) );
 		if ( strlen( $key ) < 8 ) {
-			return new \WP_Error( 'wpe_key', __( 'That license key looks too short. Copy it again from your purchase email.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_key', __( 'That license key looks too short. Copy it again from your purchase email.', 'hi-wpessential' ) );
 		}
 		$result = self::adapter()->activate( $key, self::domain() );
 		if ( is_wp_error( $result ) ) {
@@ -201,7 +201,7 @@ class License {
 	 */
 	public static function package_url( $item, $context ) {
 		if ( ! self::is_active() ) {
-			return new \WP_Error( 'wpe_license', __( 'This is a Pro item. Activate your license on the License tab to unlock it.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_license', __( 'This is a Pro item. Activate your license on the License tab to unlock it.', 'hi-wpessential' ) );
 		}
 		return self::adapter()->package_url( self::data()['key'], self::domain(), $item, $context );
 	}

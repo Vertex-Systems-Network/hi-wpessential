@@ -18,24 +18,24 @@ function wpessential_motion_presets() {
 		'wpessential_motion_presets',
 		array(
 			'none'      => array(
-				'label' => __( 'None', 'wpessential' ),
-				'help'  => __( 'No animations.', 'wpessential' ),
+				'label' => __( 'None', 'hi-wpessential' ),
+				'help'  => __( 'No animations.', 'hi-wpessential' ),
 			),
 			'subtle'    => array(
-				'label' => __( 'Subtle', 'wpessential' ),
-				'help'  => __( 'Short fade-up. Corporate, SaaS, finance, medical.', 'wpessential' ),
+				'label' => __( 'Subtle', 'hi-wpessential' ),
+				'help'  => __( 'Short fade-up. Corporate, SaaS, finance, medical.', 'hi-wpessential' ),
 			),
 			'editorial' => array(
-				'label' => __( 'Editorial', 'wpessential' ),
-				'help'  => __( 'Slow image masks and line reveals. Fashion, magazine, luxury.', 'wpessential' ),
+				'label' => __( 'Editorial', 'hi-wpessential' ),
+				'help'  => __( 'Slow image masks and line reveals. Fashion, magazine, luxury.', 'hi-wpessential' ),
 			),
 			'playful'   => array(
-				'label' => __( 'Playful', 'wpessential' ),
-				'help'  => __( 'Springy scale and stagger. Food, kids, events, creative.', 'wpessential' ),
+				'label' => __( 'Playful', 'hi-wpessential' ),
+				'help'  => __( 'Springy scale and stagger. Food, kids, events, creative.', 'hi-wpessential' ),
 			),
 			'dynamic'   => array(
-				'label' => __( 'Dynamic (GSAP)', 'wpessential' ),
-				'help'  => __( 'Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, sport, launches.', 'wpessential' ),
+				'label' => __( 'Dynamic (GSAP)', 'hi-wpessential' ),
+				'help'  => __( 'Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, sport, launches.', 'hi-wpessential' ),
 			),
 		)
 	);

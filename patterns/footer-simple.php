@@ -14,10 +14,10 @@
 <div class="wp-block-group"><!-- wp:site-title /-->
 
 <!-- wp:navigation {"overlayMenu":"never","fontSize":"small"} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'About', 'wpessential' ); ?>","url":"/about/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Blog', 'wpessential' ); ?>","url":"/blog/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Contact', 'wpessential' ); ?>","url":"/contact/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Privacy', 'wpessential' ); ?>","url":"/privacy-policy/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'About', 'hi-wpessential' ); ?>","url":"/about/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Blog', 'hi-wpessential' ); ?>","url":"/blog/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Contact', 'hi-wpessential' ); ?>","url":"/contact/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Privacy', 'hi-wpessential' ); ?>","url":"/privacy-policy/"} /-->
 <!-- /wp:navigation -->
 
 <!-- wp:paragraph {"textColor":"text-muted","fontSize":"small"} -->

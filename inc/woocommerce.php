@@ -45,7 +45,7 @@ add_filter(
 			return $html;
 		}
 		/* translators: %d: discount percentage. */
-		return '<span class="onsale">' . esc_html( sprintf( __( '-%d%%', 'wpessential' ), $percent ) ) . '</span>';
+		return '<span class="onsale">' . esc_html( sprintf( __( '-%d%%', 'hi-wpessential' ), $percent ) ) . '</span>';
 	},
 	10,
 	3
@@ -86,7 +86,7 @@ add_action(
 	static function () {
 		global $product;
 		if ( $product && ! $product->is_in_stock() ) {
-			echo '<span class="wpe-badge-oos">' . esc_html__( 'Out of stock', 'wpessential' ) . '</span>';
+			echo '<span class="wpe-badge-oos">' . esc_html__( 'Out of stock', 'hi-wpessential' ) . '</span>';
 		}
 	},
 	9
@@ -133,10 +133,10 @@ function wpessential_free_shipping_notice() {
 	$subtotal = (float) WC()->cart->get_displayed_subtotal();
 	$percent  = min( 100, round( $subtotal / $threshold * 100 ) );
 	if ( $subtotal >= $threshold ) {
-		$message = esc_html__( 'You’ve unlocked free shipping on this order!', 'wpessential' );
+		$message = esc_html__( 'You’ve unlocked free shipping on this order!', 'hi-wpessential' );
 	} else {
 		/* translators: %s: amount left for free shipping. */
-		$message = sprintf( esc_html__( 'Add %s more to unlock free shipping.', 'wpessential' ), wp_kses_post( wc_price( $threshold - $subtotal ) ) );
+		$message = sprintf( esc_html__( 'Add %s more to unlock free shipping.', 'hi-wpessential' ), wp_kses_post( wc_price( $threshold - $subtotal ) ) );
 	}
 	printf(
 		'<div class="wpe-free-shipping">%1$s<div class="wpe-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="%2$d"><span style="width:%2$d%%"></span></div></div>',

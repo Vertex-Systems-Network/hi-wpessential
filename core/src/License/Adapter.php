@@ -81,7 +81,7 @@ abstract class Adapter {
 		if ( is_wp_error( $body ) ) {
 			return $body;
 		}
-		return empty( $body['url'] ) ? new \WP_Error( 'wpe_package', __( 'The license server did not return a download link.', 'wpessential' ) ) : esc_url_raw( $body['url'] );
+		return empty( $body['url'] ) ? new \WP_Error( 'wpe_package', __( 'The license server did not return a download link.', 'hi-wpessential' ) ) : esc_url_raw( $body['url'] );
 	}
 
 	/**
@@ -104,13 +104,13 @@ abstract class Adapter {
 		}
 		if ( is_wp_error( $response ) ) {
 			/* translators: %s: error. */
-			return new \WP_Error( 'wpe_http', sprintf( __( 'The license server could not be reached: %s', 'wpessential' ), $response->get_error_message() ) );
+			return new \WP_Error( 'wpe_http', sprintf( __( 'The license server could not be reached: %s', 'hi-wpessential' ), $response->get_error_message() ) );
 		}
 		$code = (int) wp_remote_retrieve_response_code( $response );
 		$body = json_decode( (string) wp_remote_retrieve_body( $response ), true );
 		if ( $code >= 500 || ! is_array( $body ) ) {
 			/* translators: %d: HTTP status. */
-			return new \WP_Error( 'wpe_http', sprintf( __( 'The license server answered with an unexpected response (HTTP %d). Try again in a few minutes.', 'wpessential' ), $code ) );
+			return new \WP_Error( 'wpe_http', sprintf( __( 'The license server answered with an unexpected response (HTTP %d). Try again in a few minutes.', 'hi-wpessential' ), $code ) );
 		}
 		return $body;
 	}

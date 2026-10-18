@@ -44,17 +44,17 @@ class Importer {
 	 */
 	public static function step_labels() {
 		return array(
-			'preflight' => __( 'Checking your server', 'wpessential' ),
-			'cleanup'   => __( 'Removing the previous demo', 'wpessential' ),
-			'package'   => __( 'Preparing the demo package', 'wpessential' ),
-			'plugins'   => __( 'Installing plugins', 'wpessential' ),
-			'media'     => __( 'Importing images', 'wpessential' ),
-			'terms'     => __( 'Creating categories', 'wpessential' ),
-			'content'   => __( 'Building pages and posts', 'wpessential' ),
-			'products'  => __( 'Adding products', 'wpessential' ),
-			'menus'     => __( 'Creating menus', 'wpessential' ),
-			'settings'  => __( 'Applying site settings', 'wpessential' ),
-			'finalize'  => __( 'Finishing touches', 'wpessential' ),
+			'preflight' => __( 'Checking your server', 'hi-wpessential' ),
+			'cleanup'   => __( 'Removing the previous demo', 'hi-wpessential' ),
+			'package'   => __( 'Preparing the demo package', 'hi-wpessential' ),
+			'plugins'   => __( 'Installing plugins', 'hi-wpessential' ),
+			'media'     => __( 'Importing images', 'hi-wpessential' ),
+			'terms'     => __( 'Creating categories', 'hi-wpessential' ),
+			'content'   => __( 'Building pages and posts', 'hi-wpessential' ),
+			'products'  => __( 'Adding products', 'hi-wpessential' ),
+			'menus'     => __( 'Creating menus', 'hi-wpessential' ),
+			'settings'  => __( 'Applying site settings', 'hi-wpessential' ),
+			'finalize'  => __( 'Finishing touches', 'hi-wpessential' ),
 		);
 	}
 
@@ -87,17 +87,17 @@ class Importer {
 	public static function start( $demo_id, $builder, array $options ) {
 		$running = self::current();
 		if ( ! empty( $running['status'] ) && 'running' === $running['status'] && ( time() - (int) $running['touched'] ) < 120 ) {
-			return new \WP_Error( 'wpe_busy', __( 'Another import is running in a different tab. Wait for it to finish, or wait two minutes and try again.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_busy', __( 'Another import is running in a different tab. Wait for it to finish, or wait two minutes and try again.', 'hi-wpessential' ) );
 		}
 		$demo = Demos::get( $demo_id );
 		if ( ! $demo ) {
-			return new \WP_Error( 'wpe_demo', __( 'This demo is no longer in the library. Refresh the page.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_demo', __( 'This demo is no longer in the library. Refresh the page.', 'hi-wpessential' ) );
 		}
 		if ( empty( $demo['builders'][ $builder ] ) ) {
-			return new \WP_Error( 'wpe_builder', __( 'This demo is not available for the selected builder.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_builder', __( 'This demo is not available for the selected builder.', 'hi-wpessential' ) );
 		}
 		if ( ! empty( $demo['locked'] ) ) {
-			return new \WP_Error( 'wpe_license', __( 'This is a Pro demo. Activate your license on the License tab to import it.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_license', __( 'This is a Pro demo. Activate your license on the License tab to import it.', 'hi-wpessential' ) );
 		}
 
 		$skip = array_map( 'sanitize_key', (array) ( $options['skip'] ?? array() ) );
@@ -189,7 +189,7 @@ class Importer {
 		$importer      = new self();
 		$importer->job = $job;
 		/* translators: 1: demo, 2: builder. */
-		$importer->log( 'info', sprintf( __( 'Starting import of %1$s for %2$s.', 'wpessential' ), $demo['title'], ucfirst( $builder ) ) );
+		$importer->log( 'info', sprintf( __( 'Starting import of %1$s for %2$s.', 'hi-wpessential' ), $demo['title'], ucfirst( $builder ) ) );
 		$importer->save();
 		return $importer->snapshot( 0 );
 	}
@@ -204,7 +204,7 @@ class Importer {
 		$importer      = new self();
 		$importer->job = self::current();
 		if ( empty( $importer->job['id'] ) ) {
-			return new \WP_Error( 'wpe_no_job', __( 'There is no import to continue.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_no_job', __( 'There is no import to continue.', 'hi-wpessential' ) );
 		}
 		if ( 'running' === $importer->job['status'] ) {
 			$importer->work();
@@ -222,7 +222,7 @@ class Importer {
 		$importer->job = self::current();
 		if ( ! empty( $importer->job['id'] ) && 'running' === $importer->job['status'] ) {
 			$importer->job['status'] = 'cancelled';
-			$importer->log( 'warning', __( 'Import cancelled. Everything imported so far can be removed from the Demo Library.', 'wpessential' ) );
+			$importer->log( 'warning', __( 'Import cancelled. Everything imported so far can be removed from the Demo Library.', 'hi-wpessential' ) );
 			$importer->save();
 		}
 		return $importer->snapshot( 0 );
@@ -338,7 +338,7 @@ class Importer {
 			$cursor   = $this->job['cursor'];
 			$inflight = $this->job['inflight'];
 			if ( $inflight['step'] === $step['key'] && $inflight['cursor'] === $cursor && $inflight['attempts'] >= 2 ) {
-				$this->log( 'error', __( 'One item stopped the server twice and was skipped.', 'wpessential' ), __( 'Raise memory_limit / max_execution_time, then re-import to fill the gap.', 'wpessential' ) );
+				$this->log( 'error', __( 'One item stopped the server twice and was skipped.', 'hi-wpessential' ), __( 'Raise memory_limit / max_execution_time, then re-import to fill the gap.', 'hi-wpessential' ) );
 				$this->advance( $step );
 				unset( $step );
 				continue;
@@ -355,7 +355,7 @@ class Importer {
 			} catch ( \Throwable $e ) {
 				$fatal = null;
 				/* translators: %s: error. */
-				$this->log( 'error', sprintf( __( 'Unexpected error: %s', 'wpessential' ), $e->getMessage() ) );
+				$this->log( 'error', sprintf( __( 'Unexpected error: %s', 'hi-wpessential' ), $e->getMessage() ) );
 			}
 
 			if ( is_wp_error( $fatal ) ) {
@@ -408,9 +408,9 @@ class Importer {
 		$counts                = $this->job['counts'];
 		if ( $counts['error'] ) {
 			/* translators: %d: errors. */
-			$this->log( 'warning', sprintf( _n( 'Import finished with %d error. The site works; review the log for what was skipped.', 'Import finished with %d errors. The site works; review the log for what was skipped.', $counts['error'], 'wpessential' ), $counts['error'] ) );
+			$this->log( 'warning', sprintf( _n( 'Import finished with %d error. The site works; review the log for what was skipped.', 'Import finished with %d errors. The site works; review the log for what was skipped.', $counts['error'], 'hi-wpessential' ), $counts['error'] ) );
 		} else {
-			$this->log( 'success', __( 'Your site is ready.', 'wpessential' ) );
+			$this->log( 'success', __( 'Your site is ready.', 'hi-wpessential' ) );
 		}
 		/**
 		 * Fires after a demo import.
@@ -442,7 +442,7 @@ class Importer {
 				if ( ! class_exists( 'WooCommerce' ) ) {
 					$items = $this->content()['products'] ?? array();
 					if ( $items ) {
-						$this->log( 'warning', __( 'WooCommerce is not active, so the shop products were skipped.', 'wpessential' ) );
+						$this->log( 'warning', __( 'WooCommerce is not active, so the shop products were skipped.', 'hi-wpessential' ) );
 					}
 					return 0;
 				}
@@ -599,14 +599,14 @@ class Importer {
 			$this->log( $level, $check['label'] . ': ' . $check['value'], $check['hint'] );
 		}
 		if ( $blockers ) {
-			return new \WP_Error( 'wpe_preflight', __( 'Your server needs a change before the import can run safely.', 'wpessential' ), __( 'Fix the items above (your host can help), then press Retry.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_preflight', __( 'Your server needs a change before the import can run safely.', 'hi-wpessential' ), __( 'Fix the items above (your host can help), then press Retry.', 'hi-wpessential' ) );
 		}
 		$previous = self::imported();
 		if ( ! empty( $previous['demo'] ) && ! $this->job['options']['reset'] ) {
 			/* translators: %s: demo. */
-			$this->log( 'warning', sprintf( __( '%s was imported before. Its pages stay; the new import adds fresh copies.', 'wpessential' ), $previous['title'] ), __( 'Tick "Remove previous demo" next time for a clean site.', 'wpessential' ) );
+			$this->log( 'warning', sprintf( __( '%s was imported before. Its pages stay; the new import adds fresh copies.', 'hi-wpessential' ), $previous['title'] ), __( 'Tick "Remove previous demo" next time for a clean site.', 'hi-wpessential' ) );
 		}
-		$this->log( 'success', __( 'Server checks passed.', 'wpessential' ) );
+		$this->log( 'success', __( 'Server checks passed.', 'hi-wpessential' ) );
 		return null;
 	}
 
@@ -618,7 +618,7 @@ class Importer {
 	private function step_cleanup() {
 		$removed = self::remove();
 		/* translators: %d: items. */
-		$this->log( 'success', sprintf( __( 'Removed %d items from the previous demo and restored its settings.', 'wpessential' ), $removed ) );
+		$this->log( 'success', sprintf( __( 'Removed %d items from the previous demo and restored its settings.', 'hi-wpessential' ), $removed ) );
 		return null;
 	}
 
@@ -631,17 +631,17 @@ class Importer {
 		$demo = Demos::get( $this->job['demo'] );
 		$dir  = Demos::package_dir( $demo, $this->job['builder'] );
 		if ( is_wp_error( $dir ) ) {
-			$hint = 'bundled' === $demo['source'] ? __( 'Upload a fresh copy of the theme, then press Resume.', 'wpessential' ) : __( 'Check your internet connection and press Resume.', 'wpessential' );
+			$hint = 'bundled' === $demo['source'] ? __( 'Upload a fresh copy of the theme, then press Resume.', 'hi-wpessential' ) : __( 'Check your internet connection and press Resume.', 'hi-wpessential' );
 			return new \WP_Error( $dir->get_error_code(), $dir->get_error_message(), $hint );
 		}
 		$this->job['dir'] = $dir;
 		$this->content    = null;
 		if ( ! $this->content() ) {
-			return new \WP_Error( 'wpe_package_json', __( 'The demo package could not be read (content.json is damaged).', 'wpessential' ), __( 'Clear the cache on the System Status tab and retry.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_package_json', __( 'The demo package could not be read (content.json is damaged).', 'hi-wpessential' ), __( 'Clear the cache on the System Status tab and retry.', 'hi-wpessential' ) );
 		}
 		$content = $this->content();
 		/* translators: 1: pages, 2: images, 3: products. */
-		$this->log( 'info', sprintf( __( 'Package ready: %1$d pages and posts, %2$d images, %3$d products.', 'wpessential' ), count( $content['content'] ?? array() ), count( $content['media'] ?? array() ), count( $content['products'] ?? array() ) ) );
+		$this->log( 'info', sprintf( __( 'Package ready: %1$d pages and posts, %2$d images, %3$d products.', 'hi-wpessential' ), count( $content['content'] ?? array() ), count( $content['media'] ?? array() ), count( $content['products'] ?? array() ) ) );
 		return null;
 	}
 
@@ -659,18 +659,18 @@ class Importer {
 		if ( is_wp_error( $result ) ) {
 			$level = 'required' === $state ? 'error' : 'warning';
 			/* translators: 1: plugin, 2: error. */
-			$this->log( $level, sprintf( __( '%1$s could not be set up: %2$s', 'wpessential' ), $name, $result->get_error_message() ), __( 'Install it from Plugins → Add New, then use the Plugins tab here to activate it.', 'wpessential' ) );
+			$this->log( $level, sprintf( __( '%1$s could not be set up: %2$s', 'hi-wpessential' ), $name, $result->get_error_message() ), __( 'Install it from Plugins → Add New, then use the Plugins tab here to activate it.', 'hi-wpessential' ) );
 			return null;
 		}
 		$messages = array(
 			/* translators: %s: plugin. */
-			'installed'   => __( '%s installed and activated.', 'wpessential' ),
+			'installed'   => __( '%s installed and activated.', 'hi-wpessential' ),
 			/* translators: %s: plugin. */
-			'activated'   => __( '%s activated.', 'wpessential' ),
+			'activated'   => __( '%s activated.', 'hi-wpessential' ),
 			/* translators: %s: plugin. */
-			'deactivated' => __( '%s deactivated because it conflicts with this demo.', 'wpessential' ),
+			'deactivated' => __( '%s deactivated because it conflicts with this demo.', 'hi-wpessential' ),
 			/* translators: %s: plugin. */
-			'ok'          => __( '%s is already active.', 'wpessential' ),
+			'ok'          => __( '%s is already active.', 'hi-wpessential' ),
 		);
 		$this->log( 'ok' === $result ? 'info' : 'success', sprintf( $messages[ $result ], $name ) );
 		return null;
@@ -699,12 +699,12 @@ class Importer {
 			}
 			$tmp = wp_tempnam( $item['file'] );
 			if ( ! is_readable( $path ) || ! copy( $path, $tmp ) ) {
-				$tmp = new \WP_Error( 'wpe_media_missing', __( 'file not found in the package', 'wpessential' ) );
+				$tmp = new \WP_Error( 'wpe_media_missing', __( 'file not found in the package', 'hi-wpessential' ) );
 			}
 		}
 		if ( is_wp_error( $tmp ) ) {
 			/* translators: 1: file, 2: error. */
-			$this->log( 'warning', sprintf( __( 'Image %1$s skipped (%2$s). Pages fall back to the theme copy.', 'wpessential' ), $item['file'], $tmp->get_error_message() ) );
+			$this->log( 'warning', sprintf( __( 'Image %1$s skipped (%2$s). Pages fall back to the theme copy.', 'hi-wpessential' ), $item['file'], $tmp->get_error_message() ) );
 			return null;
 		}
 		$id = media_handle_sideload(
@@ -718,7 +718,7 @@ class Importer {
 		if ( is_wp_error( $id ) ) {
 			wp_delete_file( $tmp );
 			/* translators: 1: file, 2: error. */
-			$this->log( 'warning', sprintf( __( 'Image %1$s skipped (%2$s).', 'wpessential' ), $item['file'], $id->get_error_message() ), __( 'Check that the uploads folder is writable.', 'wpessential' ) );
+			$this->log( 'warning', sprintf( __( 'Image %1$s skipped (%2$s).', 'hi-wpessential' ), $item['file'], $id->get_error_message() ), __( 'Check that the uploads folder is writable.', 'hi-wpessential' ) );
 			return null;
 		}
 		update_post_meta( $id, '_wp_attachment_image_alt', sanitize_text_field( $item['alt'] ?? '' ) );
@@ -726,7 +726,7 @@ class Importer {
 		$this->job['map']['media'][ $item['key'] ] = $id;
 		$this->track( 'posts', $id );
 		/* translators: %s: file. */
-		$this->log( 'info', sprintf( __( 'Imported image %s.', 'wpessential' ), $item['file'] ) );
+		$this->log( 'info', sprintf( __( 'Imported image %s.', 'hi-wpessential' ), $item['file'] ) );
 		return null;
 	}
 
@@ -741,14 +741,14 @@ class Importer {
 		$taxonomy = $item['taxonomy'];
 		if ( ! taxonomy_exists( $taxonomy ) ) {
 			/* translators: 1: term, 2: taxonomy. */
-			$this->log( 'info', sprintf( __( 'Skipped "%1$s": %2$s is not available on this site.', 'wpessential' ), $item['name'], $taxonomy ) );
+			$this->log( 'info', sprintf( __( 'Skipped "%1$s": %2$s is not available on this site.', 'hi-wpessential' ), $item['name'], $taxonomy ) );
 			return null;
 		}
 		$existing = term_exists( $item['slug'], $taxonomy );
 		if ( $existing ) {
 			$id = (int) $existing['term_id'];
 			/* translators: %s: term. */
-			$this->log( 'info', sprintf( __( 'Category "%s" already exists and was reused.', 'wpessential' ), $item['name'] ) );
+			$this->log( 'info', sprintf( __( 'Category "%s" already exists and was reused.', 'hi-wpessential' ), $item['name'] ) );
 		} else {
 			$created = wp_insert_term(
 				$item['name'],
@@ -760,14 +760,14 @@ class Importer {
 			);
 			if ( is_wp_error( $created ) ) {
 				/* translators: 1: term, 2: error. */
-				$this->log( 'warning', sprintf( __( 'Category "%1$s" was not created: %2$s', 'wpessential' ), $item['name'], $created->get_error_message() ) );
+				$this->log( 'warning', sprintf( __( 'Category "%1$s" was not created: %2$s', 'hi-wpessential' ), $item['name'], $created->get_error_message() ) );
 				return null;
 			}
 			$id = (int) $created['term_id'];
 			update_term_meta( $id, self::META, $this->job['demo'] );
 			$this->track( 'terms', array( $id, $taxonomy ) );
 			/* translators: %s: term. */
-			$this->log( 'info', sprintf( __( 'Created category "%s".', 'wpessential' ), $item['name'] ) );
+			$this->log( 'info', sprintf( __( 'Created category "%s".', 'hi-wpessential' ), $item['name'] ) );
 		}
 		foreach ( (array) ( $item['meta'] ?? array() ) as $key => $value ) {
 			update_term_meta( $id, $key, $this->tokens( $value ) );
@@ -787,7 +787,7 @@ class Importer {
 		$type = $item['type'] ?? 'page';
 		if ( ! post_type_exists( $type ) ) {
 			/* translators: 1: title, 2: post type. */
-			$this->log( 'info', sprintf( __( 'Skipped "%1$s": %2$s is not available on this site.', 'wpessential' ), $item['title'], $type ) );
+			$this->log( 'info', sprintf( __( 'Skipped "%1$s": %2$s is not available on this site.', 'hi-wpessential' ), $item['title'], $type ) );
 			return null;
 		}
 		$args = array(
@@ -805,7 +805,7 @@ class Importer {
 		$id   = $this->insert_post( $type, $args, $item );
 		if ( is_wp_error( $id ) ) {
 			/* translators: 1: title, 2: error. */
-			$this->log( 'error', sprintf( __( '"%1$s" could not be created: %2$s', 'wpessential' ), $item['title'], $id->get_error_message() ) );
+			$this->log( 'error', sprintf( __( '"%1$s" could not be created: %2$s', 'hi-wpessential' ), $item['title'], $id->get_error_message() ) );
 			return null;
 		}
 		update_post_meta( $id, self::META, $this->job['demo'] );
@@ -833,14 +833,14 @@ class Importer {
 			$this->elementor_meta( $id, $item );
 		}
 		$labels = array(
-			'post'            => __( 'post', 'wpessential' ),
-			'page'            => __( 'page', 'wpessential' ),
-			'tribe_events'    => __( 'event', 'wpessential' ),
-			'tribe_venue'     => __( 'venue', 'wpessential' ),
-			'tribe_organizer' => __( 'organizer', 'wpessential' ),
+			'post'            => __( 'post', 'hi-wpessential' ),
+			'page'            => __( 'page', 'hi-wpessential' ),
+			'tribe_events'    => __( 'event', 'hi-wpessential' ),
+			'tribe_venue'     => __( 'venue', 'hi-wpessential' ),
+			'tribe_organizer' => __( 'organizer', 'hi-wpessential' ),
 		);
 		/* translators: 1: type, 2: title. */
-		$this->log( 'info', sprintf( __( 'Created %1$s "%2$s".', 'wpessential' ), $labels[ $type ] ?? $type, $item['title'] ) );
+		$this->log( 'info', sprintf( __( 'Created %1$s "%2$s".', 'hi-wpessential' ), $labels[ $type ] ?? $type, $item['title'] ) );
 		return null;
 	}
 
@@ -857,11 +857,11 @@ class Importer {
 		$map = $this->job['map']['posts'];
 		if ( 'tribe_venue' === $type && function_exists( 'tribe_create_venue' ) ) {
 			$id = tribe_create_venue( $args + array( 'Venue' => $item['title'] ) + (array) ( $item['venue'] ?? array() ) );
-			return $id ? (int) $id : new \WP_Error( 'wpe_tec', __( 'The Events Calendar rejected the venue.', 'wpessential' ) );
+			return $id ? (int) $id : new \WP_Error( 'wpe_tec', __( 'The Events Calendar rejected the venue.', 'hi-wpessential' ) );
 		}
 		if ( 'tribe_organizer' === $type && function_exists( 'tribe_create_organizer' ) ) {
 			$id = tribe_create_organizer( $args + array( 'Organizer' => $item['title'] ) + (array) ( $item['organizer'] ?? array() ) );
-			return $id ? (int) $id : new \WP_Error( 'wpe_tec', __( 'The Events Calendar rejected the organizer.', 'wpessential' ) );
+			return $id ? (int) $id : new \WP_Error( 'wpe_tec', __( 'The Events Calendar rejected the organizer.', 'hi-wpessential' ) );
 		}
 		if ( 'tribe_events' === $type && function_exists( 'tribe_create_event' ) ) {
 			$event = (array) ( $item['event'] ?? array() );
@@ -889,7 +889,7 @@ class Importer {
 				$args['Organizer'] = array( 'OrganizerID' => $organizers );
 			}
 			$id = tribe_create_event( $args );
-			return $id ? (int) $id : new \WP_Error( 'wpe_tec', __( 'The Events Calendar rejected the event.', 'wpessential' ) );
+			return $id ? (int) $id : new \WP_Error( 'wpe_tec', __( 'The Events Calendar rejected the event.', 'hi-wpessential' ) );
 		}
 		return wp_insert_post( wp_slash( $args ), true );
 	}
@@ -1001,7 +1001,7 @@ class Importer {
 		$id = $product->save();
 		if ( ! $id ) {
 			/* translators: %s: product. */
-			$this->log( 'error', sprintf( __( 'Product "%s" could not be saved.', 'wpessential' ), $item['name'] ) );
+			$this->log( 'error', sprintf( __( 'Product "%s" could not be saved.', 'hi-wpessential' ), $item['name'] ) );
 			return null;
 		}
 
@@ -1012,7 +1012,7 @@ class Importer {
 		$this->track( 'posts', $id );
 		$this->job['map']['posts'][ $item['key'] ] = $id;
 		/* translators: %s: product. */
-		$this->log( 'info', sprintf( __( 'Added product "%s".', 'wpessential' ), $item['name'] ) );
+		$this->log( 'info', sprintf( __( 'Added product "%s".', 'hi-wpessential' ), $item['name'] ) );
 		return null;
 	}
 
@@ -1115,7 +1115,7 @@ class Importer {
 			}
 		}
 		/* translators: 1: menu, 2: count. */
-		$this->log( 'info', sprintf( __( 'Created menu "%1$s" with %2$d links.', 'wpessential' ), $menu['name'], count( $items ) ) );
+		$this->log( 'info', sprintf( __( 'Created menu "%1$s" with %2$d links.', 'hi-wpessential' ), $menu['name'], count( $items ) ) );
 		return null;
 	}
 
@@ -1161,13 +1161,13 @@ class Importer {
 			if ( ! empty( $settings['blog_page'] ) && isset( $posts[ $settings['blog_page'] ] ) ) {
 				update_option( 'page_for_posts', $posts[ $settings['blog_page'] ] );
 			}
-			$this->log( 'success', __( 'Home and blog pages assigned.', 'wpessential' ) );
+			$this->log( 'success', __( 'Home and blog pages assigned.', 'hi-wpessential' ) );
 		}
 
 		foreach ( (array) ( $settings['options'] ?? array() ) as $option => $value ) {
 			if ( ! in_array( $option, (array) apply_filters( 'wpessential_core_import_options', array( 'posts_per_page', 'date_format', 'blogname', 'blogdescription', 'thumbnail_size_w', 'thumbnail_size_h' ) ), true ) ) {
 				/* translators: %s: option. */
-				$this->log( 'warning', sprintf( __( 'Setting "%s" is not on the allow-list and was ignored.', 'wpessential' ), $option ) );
+				$this->log( 'warning', sprintf( __( 'Setting "%s" is not on the allow-list and was ignored.', 'hi-wpessential' ), $option ) );
 				continue;
 			}
 			$this->track( 'option', $option );
@@ -1188,7 +1188,7 @@ class Importer {
 			$this->track( 'option', 'wpessential_motion' );
 			update_option( 'wpessential_motion', array( 'preset' => sanitize_key( $settings['motion'] ) ) );
 			/* translators: %s: preset. */
-			$this->log( 'info', sprintf( __( 'Animation style set to "%s".', 'wpessential' ), $settings['motion'] ) );
+			$this->log( 'info', sprintf( __( 'Animation style set to "%s".', 'hi-wpessential' ), $settings['motion'] ) );
 		}
 		if ( class_exists( 'WooCommerce' ) && ! empty( $settings['woocommerce'] ) ) {
 			$this->woocommerce( (array) $settings['woocommerce'] );
@@ -1201,7 +1201,7 @@ class Importer {
 			if ( ! empty( $settings['elementor_kit'] ) ) {
 				$this->elementor_kit( (array) $settings['elementor_kit'] );
 			}
-			$this->log( 'info', __( 'Elementor set to use the theme colours and fonts.', 'wpessential' ) );
+			$this->log( 'info', __( 'Elementor set to use the theme colours and fonts.', 'hi-wpessential' ) );
 		}
 		return null;
 	}
@@ -1216,10 +1216,10 @@ class Importer {
 	private function style_variation( $name, $inline = null ) {
 		// "default" resets to the theme's own styles, so a previous demo's look never lingers.
 		$file = get_theme_file_path( 'styles/' . $name . '.json' );
-		$data = is_array( $inline ) ? $inline : ( 'default' === $name ? array( 'title' => __( 'Default', 'wpessential' ) ) : ( is_readable( $file ) ? json_decode( (string) file_get_contents( $file ), true ) : null ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local theme file.
+		$data = is_array( $inline ) ? $inline : ( 'default' === $name ? array( 'title' => __( 'Default', 'hi-wpessential' ) ) : ( is_readable( $file ) ? json_decode( (string) file_get_contents( $file ), true ) : null ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local theme file.
 		if ( ! is_array( $data ) || ! class_exists( 'WP_Theme_JSON_Resolver' ) ) {
 			/* translators: %s: variation. */
-			$this->log( 'warning', sprintf( __( 'Style "%s" was not found in the theme, so the default colours stay.', 'wpessential' ), $name ), __( 'Update the WPEssential theme, then import again.', 'wpessential' ) );
+			$this->log( 'warning', sprintf( __( 'Style "%s" was not found in the theme, so the default colours stay.', 'hi-wpessential' ), $name ), __( 'Update the WPEssential theme, then import again.', 'hi-wpessential' ) );
 			return;
 		}
 		$post_id = \WP_Theme_JSON_Resolver::get_user_global_styles_post_id();
@@ -1247,7 +1247,7 @@ class Importer {
 			wp_clean_theme_json_cache();
 		}
 		/* translators: %s: variation. */
-		$this->log( 'success', sprintf( __( 'Applied the %s colours and fonts.', 'wpessential' ), $styles['title'] ) );
+		$this->log( 'success', sprintf( __( 'Applied the %s colours and fonts.', 'hi-wpessential' ), $styles['title'] ) );
 	}
 
 	/**
@@ -1265,7 +1265,7 @@ class Importer {
 			return;
 		}
 		if ( is_array( $spec ) && ! empty( $spec['content'] ) ) {
-			$slug    = __( 'demo', 'wpessential' );
+			$slug    = __( 'demo', 'hi-wpessential' );
 			$content = $this->tokens( (string) $spec['content'], true );
 		} elseif ( is_string( $spec ) && is_readable( get_theme_file_path( 'parts/' . sanitize_key( $spec ) . '.html' ) ) ) {
 			$slug    = sanitize_key( $spec );
@@ -1317,7 +1317,7 @@ class Importer {
 			$this->track( 'posts', $id );
 		}
 		/* translators: 1: template part, 2: design. */
-		$this->log( 'info', sprintf( __( 'Template part "%1$s" set to the "%2$s" design.', 'wpessential' ), $part, $slug ) );
+		$this->log( 'info', sprintf( __( 'Template part "%1$s" set to the "%2$s" design.', 'hi-wpessential' ), $part, $slug ) );
 	}
 
 	/**
@@ -1338,7 +1338,7 @@ class Importer {
 			'site_description' => get_option( 'blogdescription' ),
 		);
 		update_post_meta( $kit_id, '_elementor_page_settings', array_merge( $settings, $values ) );
-		$this->log( 'info', __( 'Elementor Kit layout, buttons and form styles set.', 'wpessential' ) );
+		$this->log( 'info', __( 'Elementor Kit layout, buttons and form styles set.', 'hi-wpessential' ) );
 	}
 
 	/**
@@ -1358,7 +1358,7 @@ class Importer {
 		}
 		if ( ! empty( $woo['free_shipping'] ) && class_exists( 'WC_Shipping_Zone' ) && ! \WC_Shipping_Zones::get_zones() ) {
 			$zone = new \WC_Shipping_Zone();
-			$zone->set_zone_name( __( 'Everywhere', 'wpessential' ) );
+			$zone->set_zone_name( __( 'Everywhere', 'hi-wpessential' ) );
 			$zone->save();
 			$instance = $zone->add_shipping_method( 'free_shipping' );
 			$method   = \WC_Shipping_Zones::get_shipping_method( $instance );
@@ -1366,7 +1366,7 @@ class Importer {
 				update_option(
 					$method->get_instance_option_key(),
 					array(
-						'title'      => __( 'Free shipping', 'wpessential' ),
+						'title'      => __( 'Free shipping', 'hi-wpessential' ),
 						'requires'   => 'min_amount',
 						'min_amount' => (string) $woo['free_shipping'],
 					)
@@ -1374,7 +1374,7 @@ class Importer {
 			}
 			$zone->add_shipping_method( 'flat_rate' );
 			/* translators: %s: amount. */
-			$this->log( 'success', sprintf( __( 'Shipping set up with free delivery over %s.', 'wpessential' ), $woo['free_shipping'] ) );
+			$this->log( 'success', sprintf( __( 'Shipping set up with free delivery over %s.', 'hi-wpessential' ), $woo['free_shipping'] ) );
 		}
 	}
 
@@ -1409,12 +1409,12 @@ class Importer {
 		}
 		if ( $fixed ) {
 			/* translators: %d: pages. */
-			$this->log( 'info', sprintf( _n( 'Linked %d page to its new address.', 'Linked %d pages to their new addresses.', $fixed, 'wpessential' ), $fixed ) );
+			$this->log( 'info', sprintf( _n( 'Linked %d page to its new address.', 'Linked %d pages to their new addresses.', $fixed, 'hi-wpessential' ), $fixed ) );
 		}
 		flush_rewrite_rules( false );
 		delete_transient( 'wc_term_counts' );
 		wp_cache_flush();
-		$this->log( 'info', __( 'Permalinks and caches refreshed.', 'wpessential' ) );
+		$this->log( 'info', __( 'Permalinks and caches refreshed.', 'hi-wpessential' ) );
 		return null;
 	}
 

@@ -37,7 +37,7 @@ Every demo ships in a Gutenberg version (core blocks only) and an Elementor vers
 
 == Installation ==
 1. In your admin, go to Appearance > Themes > Add New > Upload Theme.
-2. Upload wpessential.zip and click Activate.
+2. Upload hi-wpessential.zip and click Activate.
 3. Open WPEssential > Demo Library, preview a demo, choose Gutenberg or Elementor, and click Import.
 
 == Copyright ==
@@ -67,7 +67,7 @@ Yes. The header has a light/dark toggle. The first visit follows the device sett
 Yes. The theme ships a wpml-config.xml (read by both plugins), adds a language switcher to the header menu automatically (also available as the [wpe_language_switcher] shortcode and a pattern), puts imported demo content into your default language, and supports right-to-left languages such as Arabic and Urdu.
 
 = Which languages are included? =
-The theme and its dashboard ship translated into 20 languages: Arabic, Bengali, Chinese (Simplified), Dutch, French, German, Hebrew, Hindi, Indonesian, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Russian, Spanish, Turkish, Urdu and Vietnamese. Set your language under Settings > General. Translations from translate.wordpress.org, when available, take priority. To add a language, translate languages/wpessential.pot with Poedit or Loco Translate.
+The theme and its dashboard ship translated into 20 languages: Arabic, Bengali, Chinese (Simplified), Dutch, French, German, Hebrew, Hindi, Indonesian, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Russian, Spanish, Turkish, Urdu and Vietnamese. Set your language under Settings > General. Translations from translate.wordpress.org, when available, take priority. To add a language, translate languages/hi-wpessential.pot with Poedit or Loco Translate.
 
 = Does it handle SEO? =
 Yes. Without an SEO plugin the theme prints a meta description, Open Graph and Twitter tags, and JSON-LD (Organization, WebSite, BreadcrumbList, Article). It steps aside automatically when Yoast SEO, Rank Math, SEOPress, All in One SEO or The SEO Framework is active.

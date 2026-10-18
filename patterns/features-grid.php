@@ -12,15 +12,15 @@
 <!-- wp:group {"tagName":"section","align":"full","backgroundColor":"surface-alt","className":"wpe-section","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-group alignfull wpe-section has-surface-alt-background-color has-background"><!-- wp:group {"className":"wpe-center","layout":{"type":"constrained","contentSize":"760px"}} -->
 <div class="wp-block-group wpe-center"><!-- wp:paragraph {"className":"is-style-wpe-overline"} -->
-<p class="is-style-wpe-overline"><?php esc_html_e( 'Why WPEssential', 'wpessential' ); ?></p>
+<p class="is-style-wpe-overline"><?php esc_html_e( 'Why WPEssential', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'Everything a modern site needs, nothing it doesn’t', 'wpessential' ); ?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e( 'Everything a modern site needs, nothing it doesn’t', 'hi-wpessential' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted","fontSize":"body-l"} -->
-<p class="has-text-muted-color has-text-color has-body-l-font-size"><?php esc_html_e( 'Built on theme.json and native blocks, with first-class Elementor support.', 'wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color has-body-l-font-size"><?php esc_html_e( 'Built on theme.json and native blocks, with first-class Elementor support.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -31,11 +31,11 @@
 <!-- /wp:html -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'One-click demo import', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'One-click demo import', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Pick a demo, choose your builder, import. Content and settings land exactly as previewed.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Pick a demo, choose your builder, import. Content and settings land exactly as previewed.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -45,11 +45,11 @@
 <!-- /wp:html -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Gutenberg &amp; Elementor', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Gutenberg &amp; Elementor', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Every demo ships twice — native blocks and Elementor — sharing one set of design tokens.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Every demo ships twice — native blocks and Elementor — sharing one set of design tokens.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -59,11 +59,11 @@
 <!-- /wp:html -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Blazing fast', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Blazing fast', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -75,11 +75,11 @@
 <!-- /wp:html -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Automatic plugin setup', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Automatic plugin setup', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Required plugins install and activate themselves when you import a demo.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Required plugins install and activate themselves when you import a demo.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -89,11 +89,11 @@
 <!-- /wp:html -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'WooCommerce ready', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'WooCommerce ready', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Designed shop, product, cart, checkout and account pages — not default templates.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Designed shop, product, cart, checkout and account pages — not default templates.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -103,11 +103,11 @@
 <!-- /wp:html -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Pro license &amp; updates', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Pro license &amp; updates', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Connect a license once to unlock Pro demos, premium blocks and updates.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Connect a license once to unlock Pro demos, premium blocks and updates.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

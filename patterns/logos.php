@@ -11,7 +11,7 @@
 ?>
 <!-- wp:group {"tagName":"section","align":"full","className":"wpe-section wpe-section--sm wpe-center","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-group alignfull wpe-section wpe-section--sm wpe-center"><!-- wp:paragraph {"textColor":"text-muted","fontSize":"small"} -->
-<p class="has-text-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Trusted by 18,000+ agencies, stores and creators', 'wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Trusted by 18,000+ agencies, stores and creators', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"className":"is-style-wpe-logos","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->

@@ -37,7 +37,7 @@ function wpessential_sanitize_snippet( $s ) {
 	}
 	return array(
 		'id'       => preg_replace( '/[^a-z0-9]/', '', strtolower( (string) ( $s['id'] ?? '' ) ) ) ? preg_replace( '/[^a-z0-9]/', '', strtolower( (string) $s['id'] ) ) : wp_generate_password( 8, false ),
-		'title'    => sanitize_text_field( $s['title'] ?? '' ) ? sanitize_text_field( $s['title'] ) : __( 'Untitled snippet', 'wpessential' ),
+		'title'    => sanitize_text_field( $s['title'] ?? '' ) ? sanitize_text_field( $s['title'] ) : __( 'Untitled snippet', 'hi-wpessential' ),
 		'type'     => $type,
 		'scope'    => in_array( $s['scope'] ?? '', array( 'all', 'desktop', 'tablet', 'mobile' ), true ) ? $s['scope'] : 'all',
 		'location' => in_array( $s['location'] ?? '', array( 'head', 'footer' ), true ) ? $s['location'] : 'footer',
@@ -122,7 +122,7 @@ add_action(
 add_action(
 	'admin_menu',
 	static function () {
-		add_theme_page( __( 'Theme Options', 'wpessential' ), __( 'Theme Options', 'wpessential' ), 'edit_theme_options', 'wpessential-options', 'wpessential_options_page' );
+		add_theme_page( __( 'Theme Options', 'hi-wpessential' ), __( 'Theme Options', 'hi-wpessential' ), 'edit_theme_options', 'wpessential-options', 'wpessential_options_page' );
 	}
 );
 
@@ -136,7 +136,7 @@ add_action(
 		$js  = wp_enqueue_code_editor( array( 'type' => 'text/javascript' ) );
 		wp_enqueue_style( 'wpessential-options', WPESSENTIAL_URI . '/assets/css/options.css', array(), WPESSENTIAL_VERSION );
 		wp_enqueue_script( 'wpessential-options', WPESSENTIAL_URI . '/assets/js/options.js', array( 'wp-api-fetch', 'wp-i18n', 'code-editor' ), WPESSENTIAL_VERSION, true );
-		wp_set_script_translations( 'wpessential-options', 'wpessential', WPESSENTIAL_DIR . '/languages' );
+		wp_set_script_translations( 'wpessential-options', 'hi-wpessential', WPESSENTIAL_DIR . '/languages' );
 		wp_localize_script(
 			'wpessential-options',
 			'wpessentialOptions',
@@ -151,10 +151,10 @@ add_action(
 				),
 				'safe'     => add_query_arg( 'wpe-safe-mode', '1', home_url( '/' ) ),
 				'i18n'     => array(
-					'saved'   => __( 'Saved', 'wpessential' ),
-					'error'   => __( 'Could not save', 'wpessential' ),
-					'confirm' => __( 'Delete this snippet?', 'wpessential' ),
-					'empty'   => __( 'No snippets yet. Add CSS or JavaScript without editing theme files — it survives theme updates.', 'wpessential' ),
+					'saved'   => __( 'Saved', 'hi-wpessential' ),
+					'error'   => __( 'Could not save', 'hi-wpessential' ),
+					'confirm' => __( 'Delete this snippet?', 'hi-wpessential' ),
+					'empty'   => __( 'No snippets yet. Add CSS or JavaScript without editing theme files — it survives theme updates.', 'hi-wpessential' ),
 				),
 			)
 		);
@@ -213,5 +213,5 @@ add_action(
  * Page shell (the app renders into it).
  */
 function wpessential_options_page() {
-	echo '<div class="wrap wpe-options"><h1>' . esc_html__( 'Theme Options', 'wpessential' ) . '</h1><div id="wpe-options-app"><p>' . esc_html__( 'Loading…', 'wpessential' ) . '</p></div></div>';
+	echo '<div class="wrap wpe-options"><h1>' . esc_html__( 'Theme Options', 'hi-wpessential' ) . '</h1><div id="wpe-options-app"><p>' . esc_html__( 'Loading…', 'hi-wpessential' ) . '</p></div></div>';
 }

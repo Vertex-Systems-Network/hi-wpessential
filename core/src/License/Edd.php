@@ -24,14 +24,14 @@ class Edd extends Adapter {
 	 */
 	private function message( $code ) {
 		$messages = array(
-			'expired'             => __( 'This license has expired. Renew it to keep receiving demos and updates.', 'wpessential' ),
-			'disabled'            => __( 'This license has been disabled.', 'wpessential' ),
-			'revoked'             => __( 'This license has been revoked.', 'wpessential' ),
-			'missing'             => __( 'This license key does not exist.', 'wpessential' ),
-			'invalid'             => __( 'This license key is not valid.', 'wpessential' ),
-			'site_inactive'       => __( 'This license is not active for this domain.', 'wpessential' ),
-			'item_name_mismatch'  => __( 'This key belongs to a different product.', 'wpessential' ),
-			'no_activations_left' => __( 'This license has reached its activation limit. Deactivate it on another site first.', 'wpessential' ),
+			'expired'             => __( 'This license has expired. Renew it to keep receiving demos and updates.', 'hi-wpessential' ),
+			'disabled'            => __( 'This license has been disabled.', 'hi-wpessential' ),
+			'revoked'             => __( 'This license has been revoked.', 'hi-wpessential' ),
+			'missing'             => __( 'This license key does not exist.', 'hi-wpessential' ),
+			'invalid'             => __( 'This license key is not valid.', 'hi-wpessential' ),
+			'site_inactive'       => __( 'This license is not active for this domain.', 'hi-wpessential' ),
+			'item_name_mismatch'  => __( 'This key belongs to a different product.', 'hi-wpessential' ),
+			'no_activations_left' => __( 'This license has reached its activation limit. Deactivate it on another site first.', 'hi-wpessential' ),
 		);
 		return $messages[ $code ] ?? $messages['invalid'];
 	}
@@ -127,6 +127,6 @@ class Edd extends Adapter {
 		}
 		$url = $body['download_link'] ?? ( $body['package'] ?? '' );
 		$url = apply_filters( 'wpessential_core_edd_package_url', $url, $item, $context, $body );
-		return $url ? esc_url_raw( $url ) : new \WP_Error( 'wpe_package', __( 'The store did not return a download link for this license.', 'wpessential' ) );
+		return $url ? esc_url_raw( $url ) : new \WP_Error( 'wpe_package', __( 'The store did not return a download link for this license.', 'hi-wpessential' ) );
 	}
 }

@@ -105,7 +105,7 @@ function wpessential_language_switcher( $args = array() ) {
 	}
 	return sprintf(
 		'<nav class="wpe-lang" aria-label="%s"><ul class="wpe-lang__list">%s</ul></nav>',
-		esc_attr__( 'Language', 'wpessential' ),
+		esc_attr__( 'Language', 'hi-wpessential' ),
 		$items
 	);
 }
@@ -162,7 +162,7 @@ function wpessential_ml_pattern() {
 	register_block_pattern(
 		'wpessential/language-switcher',
 		array(
-			'title'      => __( 'Language switcher', 'wpessential' ),
+			'title'      => __( 'Language switcher', 'hi-wpessential' ),
 			'categories' => array( 'wpessential' ),
 			'content'    => '<!-- wp:shortcode -->[wpe_language_switcher]<!-- /wp:shortcode -->',
 		)
@@ -242,8 +242,8 @@ add_action( 'wpessential_demo_imported', 'wpessential_ml_assign_demo', 5, 3 );
 function wpessential_ml_css_labels() {
 	$css = sprintf(
 		'.sticky .wp-block-post-title::before,.is-sticky-post .wp-block-post-title::before{content:"%1$s"}.bypostauthor .wp-block-comment-author-name::after{content:"%2$s"}',
-		esc_attr( __( 'Featured', 'wpessential' ) ),
-		esc_attr( __( 'Author', 'wpessential' ) )
+		esc_attr( __( 'Featured', 'hi-wpessential' ) ),
+		esc_attr( __( 'Author', 'hi-wpessential' ) )
 	);
 	wp_add_inline_style( 'wpessential', $css );
 }
