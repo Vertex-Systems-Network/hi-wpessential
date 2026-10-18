@@ -1068,7 +1068,7 @@ class Importer {
 	private function global_attribute( $attr ) {
 		$tax = wc_attribute_taxonomy_name( $attr['name'] );
 		if ( ! wc_attribute_taxonomy_id_by_name( $tax ) ) {
-			$made = wc_create_attribute( array( 'name' => $attr['name'], 'slug' => sanitize_title( $attr['name'] ) ) );
+			$made = wc_create_attribute( array( 'name' => $attr['name'], 'slug' => sanitize_title( $attr['name'] ), 'order_by' => 'menu_order' ) );
 			if ( is_wp_error( $made ) ) {
 				return '';
 			}
@@ -1076,9 +1076,13 @@ class Importer {
 		if ( ! taxonomy_exists( $tax ) ) {
 			register_taxonomy( $tax, array( 'product' ), array( 'hierarchical' => false, 'show_ui' => false, 'query_var' => true, 'rewrite' => false ) );
 		}
-		foreach ( (array) $attr['options'] as $option ) {
-			if ( ! term_exists( $option, $tax ) ) {
-				wp_insert_term( $option, $tax );
+		foreach ( array_values( (array) $attr['options'] ) as $order => $option ) {
+			$term = term_exists( $option, $tax );
+			if ( ! $term ) {
+				$term = wp_insert_term( $option, $tax );
+			}
+			if ( ! is_wp_error( $term ) ) {
+				update_term_meta( (int) $term['term_id'], 'order', $order ); // Keep XS, S, M, L in the given order.
 			}
 		}
 		return $tax;
@@ -1238,8 +1242,10 @@ class Importer {
 		delete_option( 'wpessential_shop_title' );
 		delete_option( 'wpessential_shop_lead' );
 		delete_option( 'wpessential_cart_title' );
+		delete_option( 'wpessential_pdp_gallery' );
+		delete_option( 'wpessential_pdp_perks' );
 		foreach ( (array) ( $settings['options'] ?? array() ) as $option => $value ) {
-			if ( ! in_array( $option, (array) apply_filters( 'wpessential_core_import_options', array( 'posts_per_page', 'date_format', 'blogname', 'blogdescription', 'thumbnail_size_w', 'thumbnail_size_h', 'wpessential_shop_title', 'wpessential_shop_lead', 'wpessential_cart_title' ) ), true ) ) {
+			if ( ! in_array( $option, (array) apply_filters( 'wpessential_core_import_options', array( 'posts_per_page', 'date_format', 'blogname', 'blogdescription', 'thumbnail_size_w', 'thumbnail_size_h', 'wpessential_shop_title', 'wpessential_shop_lead', 'wpessential_cart_title', 'wpessential_pdp_gallery', 'wpessential_pdp_perks' ) ), true ) ) {
 				/* translators: %s: option. */
 				$this->log( 'warning', sprintf( __( 'Setting "%s" is not on the allow-list and was ignored.', 'hi-wpessential' ), $option ) );
 				continue;

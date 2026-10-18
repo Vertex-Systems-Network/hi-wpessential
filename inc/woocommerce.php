@@ -28,9 +28,12 @@ add_action(
 				),
 			)
 		);
-		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
-		add_theme_support( 'wc-product-gallery-slider' );
+		// Editorial demos show the gallery as an image grid instead of a slider (option wpessential_pdp_gallery = grid).
+		if ( 'grid' !== get_option( 'wpessential_pdp_gallery', '' ) ) {
+			add_theme_support( 'wc-product-gallery-zoom' );
+			add_theme_support( 'wc-product-gallery-slider' );
+		}
 	}
 );
 
@@ -375,3 +378,26 @@ add_filter(
 	10,
 	2
 );
+
+/**
+ * Delivery, returns and care promises under the add-to-cart button (option wpessential_pdp_perks, one per line).
+ */
+add_action(
+	'woocommerce_single_product_summary',
+	static function () {
+		$perks = array_filter( array_map( 'trim', explode( "\n", (string) get_option( 'wpessential_pdp_perks', '' ) ) ) );
+		if ( ! $perks ) {
+			return;
+		}
+		echo '<ul class="wpe-pdp-perks">';
+		foreach ( $perks as $perk ) {
+			echo '<li>' . esc_html( $perk ) . '</li>';
+		}
+		echo '</ul>';
+	},
+	35
+);
+
+// WooCommerce turns the slider and zoom on for every block theme, so switch them off here for grid galleries.
+add_filter( 'woocommerce_single_product_flexslider_enabled', static fn( $on ) => 'grid' === get_option( 'wpessential_pdp_gallery', '' ) ? false : $on );
+add_filter( 'woocommerce_single_product_zoom_enabled', static fn( $on ) => 'grid' === get_option( 'wpessential_pdp_gallery', '' ) ? false : $on );
