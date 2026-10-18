@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Build the release zips into build/:
-#   wpessential.zip           theme (+ bundled Core), only the files WordPress needs (.distignore)
+#   hi-wpessential.zip        theme (+ bundled Core), only the files WordPress needs (.distignore)
 #   wpessential-server.zip    server plugin for wpessential.org
 #   demos/<id>-<builder>.zip  demo packages for the server (from dist/)
 set -euo pipefail
@@ -16,9 +16,9 @@ while IFS= read -r line; do
 	line="${line%%#*}"; line="${line// /}"
 	[ -n "$line" ] && EXCLUDES+=(--exclude="./$line")
 done < "$ROOT/.distignore"
-mkdir -p "$STAGE/wpessential"
-tar -C "$ROOT" "${EXCLUDES[@]}" --exclude='.DS_Store' --exclude='__pycache__' -cf - . | tar -C "$STAGE/wpessential" -xf -
-(cd "$STAGE" && zip -qr9 "$OUT/wpessential.zip" wpessential)
+mkdir -p "$STAGE/hi-wpessential"
+tar -C "$ROOT" "${EXCLUDES[@]}" --exclude='.DS_Store' --exclude='__pycache__' -cf - . | tar -C "$STAGE/hi-wpessential" -xf -
+(cd "$STAGE" && zip -qr9 "$OUT/hi-wpessential.zip" hi-wpessential)
 
 # Server plugin.
 mkdir -p "$STAGE/srv"

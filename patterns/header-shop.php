@@ -19,7 +19,7 @@
 <!-- wp:site-title /--></div>
 <!-- /wp:group -->
 
-<!-- wp:search {"label":"<?php esc_attr_e( 'Search products', 'wpessential' ); ?>","showLabel":false,"placeholder":"<?php esc_attr_e( 'Search products, brands and more…', 'wpessential' ); ?>","width":420,"widthUnit":"px","buttonText":"<?php esc_attr_e( 'Search', 'wpessential' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true,"query":{"post_type":"product"},"className":"wpe-header-search"} /-->
+<!-- wp:search {"label":"<?php esc_attr_e( 'Search products', 'hi-wpessential' ); ?>","showLabel":false,"placeholder":"<?php esc_attr_e( 'Search products, brands and more…', 'hi-wpessential' ); ?>","width":420,"widthUnit":"px","buttonText":"<?php esc_attr_e( 'Search', 'hi-wpessential' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true,"query":{"post_type":"product"},"className":"wpe-header-search"} /-->
 
 <!-- wp:pattern {"slug":"wpessential/header-actions"} /--></div>
 <!-- /wp:group -->

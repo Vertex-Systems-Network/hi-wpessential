@@ -11,15 +11,15 @@ defined( 'ABSPATH' ) || exit;
 add_action(
 	'change_locale',
 	static function () {
-		unload_textdomain( 'wpessential', true );
-		load_theme_textdomain( 'wpessential', WPESSENTIAL_DIR . '/languages' );
+		unload_textdomain( 'hi-wpessential', true );
+		load_theme_textdomain( 'hi-wpessential', WPESSENTIAL_DIR . '/languages' );
 	}
 );
 
 add_action(
 	'after_setup_theme',
 	static function () {
-		load_theme_textdomain( 'wpessential', WPESSENTIAL_DIR . '/languages' );
+		load_theme_textdomain( 'hi-wpessential', WPESSENTIAL_DIR . '/languages' );
 
 		add_theme_support( 'wp-block-styles' );
 		add_theme_support( 'editor-styles' );
@@ -46,10 +46,10 @@ add_action(
 		// fallback menu source for the block navigation.
 		register_nav_menus(
 			array(
-				'primary' => __( 'Primary Menu', 'wpessential' ),
-				'mobile'  => __( 'Mobile Menu', 'wpessential' ),
-				'footer'  => __( 'Footer Menu', 'wpessential' ),
-				'topbar'  => __( 'Top Bar Menu', 'wpessential' ),
+				'primary' => __( 'Primary Menu', 'hi-wpessential' ),
+				'mobile'  => __( 'Mobile Menu', 'hi-wpessential' ),
+				'footer'  => __( 'Footer Menu', 'hi-wpessential' ),
+				'topbar'  => __( 'Top Bar Menu', 'hi-wpessential' ),
 			)
 		);
 	}
@@ -83,7 +83,7 @@ add_action(
 		}
 		printf(
 			'<button type="button" class="wpe-back-to-top" aria-label="%s"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>',
-			esc_attr__( 'Back to top', 'wpessential' )
+			esc_attr__( 'Back to top', 'hi-wpessential' )
 		);
 	}
 );

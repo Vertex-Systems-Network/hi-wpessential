@@ -53,7 +53,7 @@ Every demo is available for **Gutenberg** and **Elementor**. New demos are added
 
 ## Installation
 
-1. Download `wpessential.zip` from the [latest release](../../releases/latest).
+1. Download `hi-wpessential.zip` from the [latest release](../../releases/latest).
 2. In WordPress, go to **Appearance → Themes → Add New → Upload Theme**, choose the zip and click **Activate**.
 3. Open **WPEssential → Demo Library**. Preview a demo, choose **Gutenberg** or **Elementor** and click **Import**.
 

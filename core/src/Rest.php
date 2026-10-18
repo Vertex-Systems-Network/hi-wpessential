@@ -98,7 +98,7 @@ class Rest {
 	public function demo_plugins( $request ) {
 		$demo = Demos::get( (string) $request->get_param( 'demo' ) );
 		if ( ! $demo ) {
-			return $this->respond( new \WP_Error( 'wpe_demo', __( 'Demo not found.', 'wpessential' ) ) );
+			return $this->respond( new \WP_Error( 'wpe_demo', __( 'Demo not found.', 'hi-wpessential' ) ) );
 		}
 		$plugins = (array) ( $demo['builders'][ (string) $request->get_param( 'builder' ) ]['plugins'] ?? array() );
 		return $this->respond( array_map( array( Plugins::class, 'describe' ), $plugins ) );
@@ -155,13 +155,13 @@ class Rest {
 	public function import_remove() {
 		$record = Importer::imported();
 		if ( empty( $record['demo'] ) ) {
-			return $this->respond( new \WP_Error( 'wpe_nothing', __( 'No imported demo was found.', 'wpessential' ) ) );
+			return $this->respond( new \WP_Error( 'wpe_nothing', __( 'No imported demo was found.', 'hi-wpessential' ) ) );
 		}
 		$count = Importer::remove();
 		return $this->respond(
 			array(
 				/* translators: 1: demo, 2: count. */
-				'message' => sprintf( __( '%1$s removed: %2$d items deleted and your previous settings restored.', 'wpessential' ), $record['title'], $count ),
+				'message' => sprintf( __( '%1$s removed: %2$d items deleted and your previous settings restored.', 'hi-wpessential' ), $record['title'], $count ),
 			)
 		);
 	}
@@ -188,7 +188,7 @@ class Rest {
 			}
 		}
 		if ( ! $entry ) {
-			return $this->respond( new \WP_Error( 'wpe_plugin', __( 'This plugin is not managed by WPEssential.', 'wpessential' ) ) );
+			return $this->respond( new \WP_Error( 'wpe_plugin', __( 'This plugin is not managed by WPEssential.', 'hi-wpessential' ) ) );
 		}
 		switch ( $action ) {
 			case 'install':
@@ -208,7 +208,7 @@ class Rest {
 				$result = Plugins::delete( $slug );
 				break;
 			default:
-				$result = new \WP_Error( 'wpe_action', __( 'Unknown action.', 'wpessential' ) );
+				$result = new \WP_Error( 'wpe_action', __( 'Unknown action.', 'hi-wpessential' ) );
 		}
 		return $this->respond( is_wp_error( $result ) ? $result : Plugins::describe( $entry ) );
 	}
@@ -320,7 +320,7 @@ class Rest {
 	 */
 	public function brand( $request ) {
 		if ( empty( License::data()['white_label'] ) || ! License::is_active() ) {
-			return $this->respond( new \WP_Error( 'wpe_white_label', __( 'Branding can be changed with a White Label plan.', 'wpessential' ) ) );
+			return $this->respond( new \WP_Error( 'wpe_white_label', __( 'Branding can be changed with a White Label plan.', 'hi-wpessential' ) ) );
 		}
 		update_option( 'wpessential_core_brand', sanitize_text_field( (string) $request->get_param( 'name' ) ) );
 		return $this->respond( array( 'brand' => Admin::brand() ) );

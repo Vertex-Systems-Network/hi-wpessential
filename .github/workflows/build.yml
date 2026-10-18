@@ -34,7 +34,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: wpessential-theme
-          path: build/wpessential.zip
+          path: build/hi-wpessential.zip
           compression-level: 0
       - uses: actions/upload-artifact@v4
         with:
@@ -50,13 +50,13 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" build/wpessential.zip build/wpessential-server.zip build/demos/*.zip --title "WPEssential $GITHUB_REF_NAME" --generate-notes
+        run: gh release create "$GITHUB_REF_NAME" build/hi-wpessential.zip build/wpessential-server.zip build/demos/*.zip --title "WPEssential $GITHUB_REF_NAME" --generate-notes
       # Needs repository secrets WPES_SERVER_URL (e.g. https://wpessential.org) and
       # WPES_SERVER_AUTH ("user:application-password" of an administrator). Skipped when unset.
       - name: Upload to the WPEssential server
         if: startsWith(github.ref, 'refs/tags/v') && env.WPES_SERVER_URL != ''
         run: |
-          args=(-F "version=${GITHUB_REF_NAME#v}" -F "theme=@build/wpessential.zip")
+          args=(-F "version=${GITHUB_REF_NAME#v}" -F "theme=@build/hi-wpessential.zip")
           for f in build/demos/*.zip; do n=$(basename "$f" .zip); args+=(-F "$n=@$f"); done
           res=$(curl -sS --fail-with-body -u "$WPES_SERVER_AUTH" "${args[@]}" "$WPES_SERVER_URL/wp-json/wpessential-server/v1/release")
           echo "$res"

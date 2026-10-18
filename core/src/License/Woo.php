@@ -55,7 +55,7 @@ class Woo extends Adapter {
 			return $body;
 		}
 		if ( empty( $body['success'] ) ) {
-			return new \WP_Error( 'wpe_license_invalid', $body['error'] ?? __( 'This license key is not valid.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_license_invalid', $body['error'] ?? __( 'This license key is not valid.', 'hi-wpessential' ) );
 		}
 		return $body;
 	}
@@ -115,6 +115,6 @@ class Woo extends Adapter {
 			return $body;
 		}
 		$url = $body['data']['package']['package'] ?? '';
-		return $url ? esc_url_raw( $url ) : new \WP_Error( 'wpe_package', __( 'The store did not return a download link for this license.', 'wpessential' ) );
+		return $url ? esc_url_raw( $url ) : new \WP_Error( 'wpe_package', __( 'The store did not return a download link for this license.', 'hi-wpessential' ) );
 	}
 }

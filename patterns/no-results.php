@@ -10,5 +10,5 @@
 
 ?>
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Nothing matched. Try a different search or browse the latest posts.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Nothing matched. Try a different search or browse the latest posts.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->

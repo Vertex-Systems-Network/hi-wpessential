@@ -12,15 +12,15 @@
 <!-- wp:group {"tagName":"section","align":"full","className":"wpe-section","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-group alignfull wpe-section"><!-- wp:group {"className":"wpe-center","layout":{"type":"constrained","contentSize":"760px"}} -->
 <div class="wp-block-group wpe-center"><!-- wp:paragraph {"className":"is-style-wpe-overline"} -->
-<p class="is-style-wpe-overline"><?php esc_html_e( 'Services', 'wpessential' ); ?></p>
+<p class="is-style-wpe-overline"><?php esc_html_e( 'Services', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'From idea to launch', 'wpessential' ); ?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e( 'From idea to launch', 'hi-wpessential' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted","fontSize":"body-l"} -->
-<p class="has-text-muted-color has-text-color has-body-l-font-size"><?php esc_html_e( 'Use WPEssential yourself, or let our team set up, customise and maintain your site.', 'wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color has-body-l-font-size"><?php esc_html_e( 'Use WPEssential yourself, or let our team set up, customise and maintain your site.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -31,11 +31,11 @@
 <!-- /wp:html -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Demo setup', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Demo setup', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'We import your chosen demo, connect your domain and configure plugins.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'We import your chosen demo, connect your domain and configure plugins.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -45,11 +45,11 @@
 <!-- /wp:html -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Brand customisation', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Brand customisation', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Your colors, fonts, logo and copy applied across every template.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Your colors, fonts, logo and copy applied across every template.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -59,11 +59,11 @@
 <!-- /wp:html -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'WooCommerce launch', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'WooCommerce launch', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Products, payments, shipping zones and emails configured and tested.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Products, payments, shipping zones and emails configured and tested.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

@@ -46,7 +46,7 @@ class Demos {
 				set_transient( self::CACHE, $remote, 15 * MINUTE_IN_SECONDS );
 				$notices[] = array(
 					'level'   => 'info',
-					'message' => __( 'The online demo library could not be reached, so only the demos bundled with the theme are listed. They import fully offline.', 'wpessential' ),
+					'message' => __( 'The online demo library could not be reached, so only the demos bundled with the theme are listed. They import fully offline.', 'hi-wpessential' ),
 				);
 			} else {
 				$remote = array_map(
@@ -170,7 +170,7 @@ class Demos {
 		$package = $demo['builders'][ $builder ]['package'] ?? '';
 		if ( 'bundled' === $demo['source'] ) {
 			$dir = ( $demo['dir'] ?? WPESSENTIAL_CORE_DIR . '/demos/' . $demo['id'] ) . '/' . ( $package ? $package : $builder );
-			return is_readable( $dir . '/content.json' ) ? $dir : new \WP_Error( 'wpe_package_missing', __( 'The bundled demo package is incomplete. Re-upload the theme and try again.', 'wpessential' ) );
+			return is_readable( $dir . '/content.json' ) ? $dir : new \WP_Error( 'wpe_package_missing', __( 'The bundled demo package is incomplete. Re-upload the theme and try again.', 'hi-wpessential' ) );
 		}
 
 		if ( 'licensed' === $package ) {
@@ -180,7 +180,7 @@ class Demos {
 			}
 		}
 		if ( ! wp_http_validate_url( $package ) ) {
-			return new \WP_Error( 'wpe_package_url', __( 'This demo has no download address in the library.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_package_url', __( 'This demo has no download address in the library.', 'hi-wpessential' ) );
 		}
 
 		require_once ABSPATH . 'wp-admin/includes/file.php';
@@ -193,17 +193,17 @@ class Demos {
 		$tmp = download_url( $package, 120 );
 		if ( is_wp_error( $tmp ) ) {
 			/* translators: %s: error message. */
-			return new \WP_Error( 'wpe_download', sprintf( __( 'Downloading the demo package failed: %s', 'wpessential' ), $tmp->get_error_message() ) );
+			return new \WP_Error( 'wpe_download', sprintf( __( 'Downloading the demo package failed: %s', 'hi-wpessential' ), $tmp->get_error_message() ) );
 		}
 		if ( ! WP_Filesystem() ) {
 			wp_delete_file( $tmp );
-			return new \WP_Error( 'wpe_fs', __( 'WordPress cannot write to the uploads folder. Check its permissions.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_fs', __( 'WordPress cannot write to the uploads folder. Check its permissions.', 'hi-wpessential' ) );
 		}
 		$result = unzip_file( $tmp, $dir );
 		wp_delete_file( $tmp );
 		if ( is_wp_error( $result ) ) {
 			return $result;
 		}
-		return is_readable( $dir . '/content.json' ) ? $dir : new \WP_Error( 'wpe_package_invalid', __( 'The downloaded package does not contain content.json.', 'wpessential' ) );
+		return is_readable( $dir . '/content.json' ) ? $dir : new \WP_Error( 'wpe_package_invalid', __( 'The downloaded package does not contain content.json.', 'hi-wpessential' ) );
 	}
 }

@@ -12,11 +12,11 @@
 <!-- wp:group {"tagName":"section","align":"full","backgroundColor":"ink","className":"wpe-section is-style-wpe-section-dark","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-group alignfull wpe-section is-style-wpe-section-dark has-ink-background-color has-background"><!-- wp:group {"className":"wpe-center","layout":{"type":"constrained","contentSize":"760px"}} -->
 <div class="wp-block-group wpe-center"><!-- wp:paragraph {"className":"is-style-wpe-overline"} -->
-<p class="is-style-wpe-overline"><?php esc_html_e( 'How it works', 'wpessential' ); ?></p>
+<p class="is-style-wpe-overline"><?php esc_html_e( 'How it works', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'Live in four simple steps', 'wpessential' ); ?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e( 'Live in four simple steps', 'hi-wpessential' ); ?></h2>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:group -->
@@ -28,11 +28,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Pick a demo', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Pick a demo', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Browse 40+ demos and preview them live.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Browse 40+ demos and preview them live.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --><!-- wp:column {"className":"is-style-wpe-card-dark wpe-feature-card"} -->
 <div class="wp-block-column is-style-wpe-card-dark wpe-feature-card"><!-- wp:paragraph {"className":"wpe-stat-number"} -->
@@ -40,11 +40,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Choose a builder', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Choose a builder', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Gutenberg or Elementor — same design.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Gutenberg or Elementor — same design.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --><!-- wp:column {"className":"is-style-wpe-card-dark wpe-feature-card"} -->
 <div class="wp-block-column is-style-wpe-card-dark wpe-feature-card"><!-- wp:paragraph {"className":"wpe-stat-number"} -->
@@ -52,11 +52,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Import in one click', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Import in one click', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Plugins, content and settings are set up for you.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Plugins, content and settings are set up for you.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --><!-- wp:column {"className":"is-style-wpe-card-dark wpe-feature-card"} -->
 <div class="wp-block-column is-style-wpe-card-dark wpe-feature-card"><!-- wp:paragraph {"className":"wpe-stat-number"} -->
@@ -64,11 +64,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Make it yours', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Make it yours', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Edit text, swap images and publish.', 'wpessential' ); ?></p>
+<p><?php esc_html_e( 'Edit text, swap images and publish.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

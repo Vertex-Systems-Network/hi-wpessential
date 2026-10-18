@@ -17,7 +17,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
-<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Active installs', 'wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Active installs', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"className":"wpe-stat-number"} -->
@@ -25,7 +25,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
-<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Ready demos', 'wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Ready demos', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"className":"wpe-stat-number"} -->
@@ -33,7 +33,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
-<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Average rating', 'wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Average rating', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"className":"wpe-stat-number"} -->
@@ -41,7 +41,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
-<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Support response', 'wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Support response', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

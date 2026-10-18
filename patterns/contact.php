@@ -19,7 +19,7 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"h4"} -->
-<h3 class="wp-block-heading has-h-4-font-size"><?php esc_html_e( 'Email us', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading has-h-4-font-size"><?php esc_html_e( 'Email us', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
@@ -33,7 +33,7 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"h4"} -->
-<h3 class="wp-block-heading has-h-4-font-size"><?php esc_html_e( 'Call us', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading has-h-4-font-size"><?php esc_html_e( 'Call us', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
@@ -47,7 +47,7 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"h4"} -->
-<h3 class="wp-block-heading has-h-4-font-size"><?php esc_html_e( 'Visit us', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading has-h-4-font-size"><?php esc_html_e( 'Visit us', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
@@ -61,11 +61,11 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"h4"} -->
-<h3 class="wp-block-heading has-h-4-font-size"><?php esc_html_e( 'Support hours', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading has-h-4-font-size"><?php esc_html_e( 'Support hours', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
-<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Replies within one business day', 'wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Replies within one business day', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -73,11 +73,11 @@
 
 <!-- wp:column {"width":"60%","className":"is-style-wpe-card wpe-feature-card"} -->
 <div class="wp-block-column is-style-wpe-card wpe-feature-card" style="flex-basis:60%"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php esc_html_e( 'Send us a message', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading"><?php esc_html_e( 'Send us a message', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
-<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Replace the shortcode below with your form plugin (Contact Form 7, WPForms, Fluent Forms or the Elementor Form widget).', 'wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color"><?php esc_html_e( 'Replace the shortcode below with your form plugin (Contact Form 7, WPForms, Fluent Forms or the Elementor Form widget).', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:shortcode -->

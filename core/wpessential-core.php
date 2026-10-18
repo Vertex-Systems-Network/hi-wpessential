@@ -9,7 +9,7 @@
  * Author:            WPEssential Team
  * Author URI:        https://wpessential.org/
  * License:           GPL-2.0-or-later
- * Text Domain:       wpessential
+ * Text Domain:       hi-wpessential
  *
  * This folder ships inside the theme and is loaded by functions.php only when the
  * standalone plugin is not active. To extract it, copy core/ to wp-content/plugins/wpessential-core/:

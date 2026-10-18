@@ -14,18 +14,18 @@
 <div class="wp-block-group wpe-footer__newsletter"><!-- wp:columns {"verticalAlignment":"center","className":"wpe-section--sm"} -->
 <div class="wp-block-columns are-vertically-aligned-center wpe-section--sm"><!-- wp:column {"verticalAlignment":"center","width":"66%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66%"><!-- wp:heading {"level":3,"textColor":"on-ink"} -->
-<h3 class="wp-block-heading has-on-ink-color has-text-color"><?php esc_html_e( 'Get design tips & new demos', 'wpessential' ); ?></h3>
+<h3 class="wp-block-heading has-on-ink-color has-text-color"><?php esc_html_e( 'Get design tips & new demos', 'hi-wpessential' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"on-ink"} -->
-<p class="has-on-ink-color has-text-color"><?php esc_html_e( 'One email a month. No spam, unsubscribe anytime.', 'wpessential' ); ?></p>
+<p class="has-on-ink-color has-text-color"><?php esc_html_e( 'One email a month. No spam, unsubscribe anytime.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"34%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:34%"><!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-wpe-light"} -->
-<div class="wp-block-button is-style-wpe-light"><a class="wp-block-button__link wp-element-button" href="/newsletter/"><?php esc_html_e( 'Subscribe', 'wpessential' ); ?></a></div>
+<div class="wp-block-button is-style-wpe-light"><a class="wp-block-button__link wp-element-button" href="/newsletter/"><?php esc_html_e( 'Subscribe', 'hi-wpessential' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
@@ -52,14 +52,14 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'Company', 'wpessential' ); ?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e( 'Company', 'hi-wpessential' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"fontSize":"small"} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'About us', 'wpessential' ); ?>","url":"/about/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Services', 'wpessential' ); ?>","url":"/services/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Pricing', 'wpessential' ); ?>","url":"/pricing/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Contact', 'wpessential' ); ?>","url":"/contact/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'About us', 'hi-wpessential' ); ?>","url":"/about/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Services', 'hi-wpessential' ); ?>","url":"/services/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Pricing', 'hi-wpessential' ); ?>","url":"/pricing/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Contact', 'hi-wpessential' ); ?>","url":"/contact/"} /-->
 <!-- /wp:navigation --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -67,14 +67,14 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'Shop', 'wpessential' ); ?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e( 'Shop', 'hi-wpessential' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"fontSize":"small"} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'All products', 'wpessential' ); ?>","url":"/shop/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'My account', 'wpessential' ); ?>","url":"/my-account/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Cart', 'wpessential' ); ?>","url":"/cart/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Track order', 'wpessential' ); ?>","url":"/track-order/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'All products', 'hi-wpessential' ); ?>","url":"/shop/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'My account', 'hi-wpessential' ); ?>","url":"/my-account/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Cart', 'hi-wpessential' ); ?>","url":"/cart/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Track order', 'hi-wpessential' ); ?>","url":"/track-order/"} /-->
 <!-- /wp:navigation --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -82,14 +82,14 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'Resources', 'wpessential' ); ?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e( 'Resources', 'hi-wpessential' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"fontSize":"small"} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Blog', 'wpessential' ); ?>","url":"/blog/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'FAQ', 'wpessential' ); ?>","url":"/faq/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Documentation', 'wpessential' ); ?>","url":"https://wpessential.org/docs/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Support', 'wpessential' ); ?>","url":"https://wpessential.org/support/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Blog', 'hi-wpessential' ); ?>","url":"/blog/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'FAQ', 'hi-wpessential' ); ?>","url":"/faq/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Documentation', 'hi-wpessential' ); ?>","url":"https://wpessential.org/docs/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Support', 'hi-wpessential' ); ?>","url":"https://wpessential.org/support/"} /-->
 <!-- /wp:navigation --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -97,11 +97,11 @@
 
 <!-- wp:group {"className":"wpe-footer__bottom","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"fontSize":"small"} -->
 <div class="wp-block-group wpe-footer__bottom has-small-font-size"><!-- wp:paragraph -->
-<p>© <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>. <?php esc_html_e( 'All rights reserved.', 'wpessential' ); ?></p>
+<p>© <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>. <?php esc_html_e( 'All rights reserved.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="/privacy-policy/"><?php esc_html_e( 'Privacy', 'wpessential' ); ?></a>   ·   <a href="/terms/"><?php esc_html_e( 'Terms', 'wpessential' ); ?></a></p>
+<p><a href="/privacy-policy/"><?php esc_html_e( 'Privacy', 'hi-wpessential' ); ?></a>   ·   <a href="/terms/"><?php esc_html_e( 'Terms', 'hi-wpessential' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></footer>
 <!-- /wp:group -->

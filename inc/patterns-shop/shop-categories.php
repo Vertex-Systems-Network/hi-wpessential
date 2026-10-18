@@ -10,11 +10,11 @@ defined( 'ABSPATH' ) || exit;
 <!-- wp:group {"tagName":"section","align":"full","className":"wpe-section wpe-section--md","layout":{"type":"constrained","contentSize":"1200px"}} -->
 <section class="wp-block-group alignfull wpe-section wpe-section--md"><!-- wp:group {"className":"wpe-center","layout":{"type":"constrained","contentSize":"640px"}} -->
 <div class="wp-block-group wpe-center"><!-- wp:paragraph {"className":"is-style-wpe-overline"} -->
-<p class="is-style-wpe-overline"><?php esc_html_e( 'Shop by category', 'wpessential' ); ?></p>
+<p class="is-style-wpe-overline"><?php esc_html_e( 'Shop by category', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"fontSize":"h2"} -->
-<h2 class="wp-block-heading has-h-2-font-size"><?php esc_html_e( 'Find what you love', 'wpessential' ); ?></h2>
+<h2 class="wp-block-heading has-h-2-font-size"><?php esc_html_e( 'Find what you love', 'hi-wpessential' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 

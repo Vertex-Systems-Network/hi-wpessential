@@ -232,7 +232,7 @@ for ( $i = 0; $i < 400; $i++ ) {
 		self::cors();
 		header( 'Content-Type: application/zip' );
 		header( 'Content-Length: ' . filesize( $file ) );
-		header( 'Content-Disposition: attachment; filename="wpessential.zip"' );
+		header( 'Content-Disposition: attachment; filename="hi-wpessential.zip"' );
 		header( 'Cache-Control: public, max-age=3600' );
 		readfile( $file ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_readfile -- Streaming a private file.
 		exit;

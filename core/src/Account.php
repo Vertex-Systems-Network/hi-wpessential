@@ -52,20 +52,20 @@ class Account {
 		$response = wp_safe_remote_request( self::api() . $route, $args );
 		if ( is_wp_error( $response ) ) {
 			/* translators: %s: error. */
-			return new \WP_Error( 'wpe_http', sprintf( __( 'WPEssential could not be reached: %s', 'wpessential' ), $response->get_error_message() ) );
+			return new \WP_Error( 'wpe_http', sprintf( __( 'WPEssential could not be reached: %s', 'hi-wpessential' ), $response->get_error_message() ) );
 		}
 		$code = (int) wp_remote_retrieve_response_code( $response );
 		$data = json_decode( (string) wp_remote_retrieve_body( $response ), true );
 		if ( 401 === $code && $auth ) {
 			delete_option( self::OPTION );
-			return new \WP_Error( 'wpe_signed_out', __( 'Your WPEssential session ended. Sign in again.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_signed_out', __( 'Your WPEssential session ended. Sign in again.', 'hi-wpessential' ) );
 		}
 		if ( ! is_array( $data ) ) {
 			/* translators: %d: HTTP code. */
-			return new \WP_Error( 'wpe_http', sprintf( __( 'WPEssential answered with an unexpected response (HTTP %d).', 'wpessential' ), $code ) );
+			return new \WP_Error( 'wpe_http', sprintf( __( 'WPEssential answered with an unexpected response (HTTP %d).', 'hi-wpessential' ), $code ) );
 		}
 		if ( isset( $data['success'] ) && ! $data['success'] ) {
-			return new \WP_Error( 'wpe_' . ( $data['status'] ?? 'error' ), $data['message'] ?? __( 'Something went wrong.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_' . ( $data['status'] ?? 'error' ), $data['message'] ?? __( 'Something went wrong.', 'hi-wpessential' ) );
 		}
 		if ( isset( $data['code'], $data['message'] ) && $code >= 400 ) {
 			return new \WP_Error( 'wpe_' . $data['code'], $data['message'] );
@@ -235,7 +235,7 @@ class Account {
 				return License::activate( $license['key'] );
 			}
 		}
-		return new \WP_Error( 'wpe_license', __( 'That license is not in your account.', 'wpessential' ) );
+		return new \WP_Error( 'wpe_license', __( 'That license is not in your account.', 'hi-wpessential' ) );
 	}
 
 	/**
@@ -268,7 +268,7 @@ class Account {
 	 */
 	public static function license_action( $license_id, $action, $domain = '' ) {
 		if ( ! in_array( $action, array( 'auto_renew_on', 'auto_renew_off', 'cancel', 'deactivate_domain' ), true ) ) {
-			return new \WP_Error( 'wpe_action', __( 'Unknown action.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_action', __( 'Unknown action.', 'hi-wpessential' ) );
 		}
 		$data = self::request(
 			'POST',

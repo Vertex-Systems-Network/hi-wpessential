@@ -14,11 +14,11 @@
 <section class="wp-block-group alignfull wpe-hero-dark wpe-section wpe-center"><!-- wp:site-title {"level":0} /-->
 
 <!-- wp:heading {"level":1,"fontSize":"display"} -->
-<h1 class="wp-block-heading has-display-font-size"><?php esc_html_e( 'We will be back shortly', 'wpessential' ); ?></h1>
+<h1 class="wp-block-heading has-display-font-size"><?php esc_html_e( 'We will be back shortly', 'hi-wpessential' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"is-style-wpe-lead"} -->
-<p class="is-style-wpe-lead"><?php esc_html_e( 'Scheduled maintenance is underway. Thanks for your patience — we will be back online in a few minutes.', 'wpessential' ); ?></p>
+<p class="is-style-wpe-lead"><?php esc_html_e( 'Scheduled maintenance is underway. Thanks for your patience — we will be back online in a few minutes.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph -->
 
 

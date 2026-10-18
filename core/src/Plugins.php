@@ -112,7 +112,7 @@ class Plugins {
 	 */
 	public static function install( $plugin ) {
 		if ( ! current_user_can( 'install_plugins' ) ) {
-			return new \WP_Error( 'wpe_cap', __( 'Your account is not allowed to install plugins.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_cap', __( 'Your account is not allowed to install plugins.', 'hi-wpessential' ) );
 		}
 		self::load();
 		$source = $plugin['source'] ?? 'wporg';
@@ -127,7 +127,7 @@ class Plugins {
 			);
 			if ( is_wp_error( $api ) ) {
 				/* translators: 1: plugin name, 2: error. */
-				return new \WP_Error( 'wpe_wporg', sprintf( __( 'WordPress.org did not answer for %1$s (%2$s). Check the server can reach wordpress.org, or install it manually.', 'wpessential' ), $plugin['name'] ?? $plugin['slug'], $api->get_error_message() ) );
+				return new \WP_Error( 'wpe_wporg', sprintf( __( 'WordPress.org did not answer for %1$s (%2$s). Check the server can reach wordpress.org, or install it manually.', 'hi-wpessential' ), $plugin['name'] ?? $plugin['slug'], $api->get_error_message() ) );
 			}
 			$url = $api->download_link;
 		} elseif ( 'licensed' === $source ) {
@@ -142,7 +142,7 @@ class Plugins {
 		}
 		$url = apply_filters( 'wpessential_core_plugin_package', $url, $plugin );
 		if ( ! $url ) {
-			return new \WP_Error( 'wpe_no_source', __( 'No download source is set for this plugin.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_no_source', __( 'No download source is set for this plugin.', 'hi-wpessential' ) );
 		}
 
 		$skin     = new \WP_Ajax_Upgrader_Skin();
@@ -155,7 +155,7 @@ class Plugins {
 			return $skin->get_errors();
 		}
 		if ( ! $result ) {
-			return new \WP_Error( 'wpe_install', __( 'The plugin could not be installed. The server may lack write access to wp-content/plugins.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_install', __( 'The plugin could not be installed. The server may lack write access to wp-content/plugins.', 'hi-wpessential' ) );
 		}
 		wp_clean_plugins_cache();
 		return true;
@@ -171,7 +171,7 @@ class Plugins {
 		self::load();
 		$file = self::file( $slug );
 		if ( ! $file ) {
-			return new \WP_Error( 'wpe_missing', __( 'Plugin is not installed.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_missing', __( 'Plugin is not installed.', 'hi-wpessential' ) );
 		}
 		if ( is_plugin_active( $file ) ) {
 			return true;
@@ -205,7 +205,7 @@ class Plugins {
 	 */
 	public static function delete( $slug ) {
 		if ( ! current_user_can( 'delete_plugins' ) ) {
-			return new \WP_Error( 'wpe_cap', __( 'Your account is not allowed to delete plugins.', 'wpessential' ) );
+			return new \WP_Error( 'wpe_cap', __( 'Your account is not allowed to delete plugins.', 'hi-wpessential' ) );
 		}
 		self::load();
 		$file = self::file( $slug );
