@@ -52,7 +52,7 @@ class Admin {
 	 */
 	public static function brand() {
 		$name = License::is_active() && ! empty( License::data()['white_label'] ) ? (string) get_option( 'wpessential_core_brand', '' ) : '';
-		return $name ? $name : __( 'Hi WPEssential', 'hi-wpessential' );
+		return $name ? $name : __( 'WPEssential', 'hi-wpessential' );
 	}
 
 	/**
@@ -94,7 +94,7 @@ class Admin {
 		if ( 'toplevel_page_' . self::SLUG !== $hook ) {
 			return;
 		}
-		wp_enqueue_style( 'wpessential-core-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts.
+		wp_enqueue_style( 'wpessential-core-fonts', 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts.
 		wp_enqueue_style( 'wpessential-core', wpessential_core_url( 'assets/admin.css' ), array(), WPESSENTIAL_CORE_VERSION );
 		wp_enqueue_script( 'wpessential-core', wpessential_core_url( 'assets/admin.js' ), array( 'wp-api-fetch', 'wp-i18n' ), WPESSENTIAL_CORE_VERSION, true );
 		wp_set_script_translations( 'wpessential-core', 'hi-wpessential', defined( 'WPESSENTIAL_DIR' ) ? WPESSENTIAL_DIR . '/languages' : '' );
@@ -130,6 +130,6 @@ class Admin {
 	 * App root. The page works without JS only to explain that JS is needed.
 	 */
 	public function render() {
-		echo '<div id="wpe-app" class="wpe-app" aria-live="polite"><noscript><p>' . esc_html__( 'The Hi WPEssential dashboard needs JavaScript. Enable it in your browser to import demos.', 'hi-wpessential' ) . '</p></noscript></div>';
+		echo '<div id="wpe-app" class="wpe-app" aria-live="polite"><noscript><p>' . esc_html__( 'The WPEssential dashboard needs JavaScript. Enable it in your browser to import demos.', 'hi-wpessential' ) . '</p></noscript></div>';
 	}
 }

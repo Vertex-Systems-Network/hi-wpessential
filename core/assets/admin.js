@@ -32,7 +32,7 @@
 	};
 
 	const P = {
-		logo: '<path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m3 7 9 5 9-5M12 12v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+		logo: '<defs><linearGradient id="wpe-w" x1="2" y1="12" x2="21" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5ac8d6"/><stop offset=".5" stop-color="#6188c6"/><stop offset="1" stop-color="#625ba8"/></linearGradient></defs><path d="M3 4.5 7 19l4-10.5L15 19l4-14.5" fill="none" stroke="url(#wpe-w)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21.6" cy="19.2" r="2" fill="#5ac8d6" stroke="none"/>',
 		home: '<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/>',
 		grid: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
 		plug: '<path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0V8ZM12 18v4"/>',
@@ -228,7 +228,7 @@
 	const ring = ( pct, label, cls = '' ) => {
 		const r = 84;
 		const c = 2 * Math.PI * r;
-		return `<div class="wpe-ring ${ cls }"><svg viewBox="0 0 200 200"><defs><linearGradient id="wpe-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f46e5"/><stop offset=".6" stop-color="#7c3aed"/><stop offset="1" stop-color="#db2777"/></linearGradient></defs><circle class="wpe-ring__track" cx="100" cy="100" r="${ r }"/><circle class="wpe-ring__bar" cx="100" cy="100" r="${ r }" stroke-dasharray="${ c }" stroke-dashoffset="${ c - ( c * pct ) / 100 }"/></svg><div class="wpe-ring__label"><b>${ pct }<small>%</small></b><span>${ esc( label ) }</span></div></div>`;
+		return `<div class="wpe-ring ${ cls }"><svg viewBox="0 0 200 200"><defs><linearGradient id="wpe-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#625ba8"/><stop offset=".6" stop-color="#6188c6"/><stop offset="1" stop-color="#5ac8d6"/></linearGradient></defs><circle class="wpe-ring__track" cx="100" cy="100" r="${ r }"/><circle class="wpe-ring__bar" cx="100" cy="100" r="${ r }" stroke-dasharray="${ c }" stroke-dashoffset="${ c - ( c * pct ) / 100 }"/></svg><div class="wpe-ring__label"><b>${ pct }<small>%</small></b><span>${ esc( label ) }</span></div></div>`;
 	};
 
 	/* ------------------------------------------------------------------ welcome */
@@ -1020,7 +1020,7 @@
 		const ctx = c.getContext( '2d' );
 		const W = ( c.width = host.clientWidth );
 		const H = ( c.height = host.clientHeight );
-		const colors = [ '#4f46e5', '#7c3aed', '#db2777', '#f59e0b', '#10b981', '#38bdf8' ];
+		const colors = [ '#625ba8', '#6188c6', '#5ac8d6', '#f5b547', '#3dd68c', '#ffffff' ];
 		const parts = Array.from( { length: 140 }, () => ( { x: W / 2 + ( Math.random() - 0.5 ) * 200, y: H * 0.35, vx: ( Math.random() - 0.5 ) * 14, vy: -Math.random() * 14 - 4, s: Math.random() * 6 + 4, r: Math.random() * 6, vr: ( Math.random() - 0.5 ) * 0.3, c: colors[ Math.floor( Math.random() * colors.length ) ] } ) );
 		let t = 0;
 		const tick = () => {
@@ -1051,7 +1051,7 @@
 	/* ------------------------------------------------------------------ plugins */
 
 	async function viewPlugins() {
-		view( `<div class="wpe-head"><div><h1>${ esc( __( 'Plugins', 'hi-wpessential' ) ) }</h1><p>${ esc( __( 'Plugins used by Hi WPEssential demos. Install, switch on or off and delete them here.', 'hi-wpessential' ) ) }</p></div></div><div class="wpe-card"><div class="wpe-card__body"><div class="wpe-list" id="wpe-plugins">${ [ 0, 1, 2 ].map( () => '<div class="wpe-row"><div class="wpe-skel" style="width:40px;height:40px"></div><div class="wpe-row__main"><div class="wpe-skel" style="height:12px;width:30%"></div></div></div>' ).join( '' ) }</div></div></div>` );
+		view( `<div class="wpe-head"><div><h1>${ esc( __( 'Plugins', 'hi-wpessential' ) ) }</h1><p>${ esc( __( 'Plugins used by WPEssential demos. Install, switch on or off and delete them here.', 'hi-wpessential' ) ) }</p></div></div><div class="wpe-card"><div class="wpe-card__body"><div class="wpe-list" id="wpe-plugins">${ [ 0, 1, 2 ].map( () => '<div class="wpe-row"><div class="wpe-skel" style="width:40px;height:40px"></div><div class="wpe-row__main"><div class="wpe-skel" style="height:12px;width:30%"></div></div></div>' ).join( '' ) }</div></div></div>` );
 		try {
 			state.plugins = await api( { path: '/wpessential/v1/plugins' } );
 			renderPlugins();
