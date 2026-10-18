@@ -194,9 +194,9 @@ def g_header():
 
 def g_footer():
     cols = [('Marketplace', [('Demos', '{{page:demos}}'), ('Plugins', '{{page:plugins}}'), ('Pricing', '{{page:pricing}}'), ('My account', '{{woo:myaccount}}')]),
-            ('Resources', [('Documentation', '{{page:docs}}'), ('Blog', '{{page:blog}}'), ('FAQ', '{{page:pricing}}')]),
-            ('Company', [('About', '{{page:about}}'), ('Vertex Systems Network (Pvt.) Ltd.', '{{page:about}}'), ('Services', '{{page:services}}'), ('Contact', '{{page:contact}}')]),
-            ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:contact}}'), ('Refund policy', '{{page:refund-policy}}')])]
+            ('Resources', [('Documentation', '{{page:docs}}'), ('Blog', '{{page:blog}}'), ('Changelog', '{{page:changelog}}'), ('Roadmap', '{{page:roadmap}}')]),
+            ('Company', [('About', '{{page:about}}'), ('Vertex Systems Network (Pvt.) Ltd.', '{{page:about}}'), ('Services', '{{page:services}}'), ('Care plans', '{{page:svc-care-plans}}'), ('Contact', '{{page:contact}}')]),
+            ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refund policy', '{{page:refund-policy}}')])]
     band = b.group(b.group(over('Newsletter', tone='orange'), b.h('New themes and demo drops, monthly.', level=3, className='ess-band__title'),
                            b.p('One email a month. Release notes, freebies and discounts. Unsubscribe anytime.', className='ess-band__text'), layout='default'),
                    b.shortcode('[wpforms id="{{form:newsletter}}" title="false"]'),
@@ -468,7 +468,7 @@ def g_docs():
         section(head('Guides', 'Popular articles'), b.latest_posts(3), alt=True),
         section(b.group(ico('chat'), b.group(b.h('Still stuck?', level=3, className='ess-band__title'),
                                             b.p('Open a ticket and a WPEssential developer replies within one business day.', className='ess-band__text'), layout='default'),
-                        b.buttons(arrow('Open a ticket', '{{page:contact}}')), layout='flex', wrap='wrap', valign='center', className='ess-band ess-band--soft')))
+                        b.buttons(arrow('Open a ticket', '{{page:support}}')), layout='flex', wrap='wrap', valign='center', className='ess-band ess-band--soft')))
 
 
 def g_plugins():
@@ -552,7 +552,7 @@ def g_team():
 def g_contact():
     routes = [('card', 'Plans & licensing', 'Which plan fits, lifetime licences, agencies and invoices.', 'Talk to sales', '#contact-form'),
               ('palette', 'Start a project', 'Design, setup, WooCommerce, migration, speed or care plans.', 'Request a quote', '{{page:quote}}'),
-              ('headset', 'Already a customer?', 'Bugs, demo import or licence questions go to our ticket desk.', 'Open a support ticket', '{{woo:myaccount}}')]
+              ('headset', 'Already a customer?', 'Bugs, demo import or licence questions go to our ticket desk.', 'Open a support ticket', '{{page:support}}')]
     side = [('Response times', [('Sales & pre-sales', 'Within one business day'), ('Projects & quotes', 'Scoped estimate within two business days'),
                                 ('Support', 'Through the ticket desk, by licence')]),
             ('Email us directly', [('<a href="mailto:sales@wpessential.org">sales@wpessential.org</a>', 'Plans, licences, agencies'),
@@ -563,7 +563,7 @@ def g_contact():
                           *[b.group(b.p('<strong>%s</strong>' % a_), b.p(d, className='ess-side__muted'), layout='default', className='ess-side__row') for a_, d in rows],
                           layout='default', className='ess-card ess-side') for t, rows in side]
     side_cards.append(b.group(b.h('Already a customer?', level=3, className='ess-side__title'),
-                              b.p('<a href="{{page:docs}}">Documentation →</a><br><a href="{{woo:myaccount}}">Open a ticket →</a><br><a href="{{woo:myaccount}}">My account &amp; licences →</a>'),
+                              b.p('<a href="{{page:docs}}">Documentation →</a><br><a href="{{page:support}}">Open a ticket →</a><br><a href="{{woo:myaccount}}">My account &amp; licences →</a>'),
                               layout='default', className='ess-card ess-card--ink ess-side'))
     side_cards.append(b.group(b.h('Prefer to talk?', level=3, className='ess-side__title'), b.p('Book a free 30-minute call about your project.', className='ess-side__muted'),
                               b.buttons(arrow('Book a call', '{{page:quote}}')), layout='default', className='ess-card ess-card--soft ess-side'))
@@ -616,6 +616,51 @@ def g_contact():
                 g_band('Have a project in mind?', 'Free 30-minute call and a fixed quote within two business days.', 'Request a quote', '{{page:quote}}')))
 
 
+CARE_PLANS = [('Basic', '49', ['Weekly updates & backups', 'Uptime monitoring', 'Monthly report', '1h of fixes'], False),
+              ('Growth', '129', ['Everything in Basic', 'Daily backups, 90-day history', 'Malware scans & firewall', '3h of fixes & small edits', 'Speed check every month'], True),
+              ('Business', '299', ['Everything in Growth', 'Staging site for updates', 'WooCommerce order checks', '8h of development', 'Same-day priority support'], False)]
+RELEASES = [('1.0.0', '18 Oct 2026', [('New', 'Pulse and Maison demos for Gutenberg and Elementor'), ('New', 'AI Connect (MCP): connect Claude, Cursor and other AI tools to your site'),
+                                      ('New', 'Shop filters, variation swatches and grid product gallery'), ('Fixed', 'Dark mode colours on every style variation')]),
+            ('0.9.0', '2 Oct 2026', [('New', 'Demo import wizard with resumable steps'), ('Improved', 'Theme CSS under 50 KB on first load'), ('Fixed', 'Header search visibility')])]
+ROADMAP = [('Now', ['WPEssential.org service pages', 'Variation swatches everywhere', 'Elementor version of every demo']),
+           ('Next', ['Restaurant and Course demos', 'Header & footer builder', 'Wishlist and compare']),
+           ('Later', ['AI demo generator', 'Multisite licence manager', 'Figma plugin for demo kits'])]
+
+
+def g_care_plans():
+    cards = [b.group(b.h(n, level=3, className='ess-plan__name'), b.p('$%s <small>/ month</small>' % p, className='ess-plan__price'),
+                     b.ul(inc, className='ess-check'), b.buttons(arrow('Choose ' + n, '{{page:quote}}', style=None if feat else 'wpe-outline'), className='ess-plan__cta'),
+                     layout='default', className=b.cls('ess-plan', 'is-featured' if feat else None)) for n, p, inc, feat in CARE_PLANS]
+    return section(head('Plans', 'Pick a plan — cancel any month.'), b.group(*cards, layout='grid', columns=3, grid_min='16rem', className='ess-grid'))
+
+
+def g_support():
+    side = [('Before you open a ticket', 'Search the <a href="{{page:docs}}">docs</a> — most answers are there.<br>Update the theme and the WPEssential plugin.<br>Try with other plugins switched off.', ''),
+            ('Response times', 'Pro: within 1 business day<br>Agency: same day<br>Care plans: priority queue', ''),
+            ('Need it done for you?', 'Bug fixes from $79 — <a href="{{page:svc-bug-fixes}}">we fix it, you relax</a>.', 'ess-card--soft')]
+    return b.join(g_hero_light('Support', 'How can we fix it?', 'Customers with an active licence get help from the developers who build the theme.'),
+                  section(b.columns(
+                      b.column(b.group(b.h('Open a ticket', level=2, className='ess-form__title'), wpform('support'), layout='default', className='ess-card ess-form'), width='62%'),
+                      b.column(*[b.group(b.h(t, level=3, className='ess-side__title'), b.p(d, className='ess-side__muted'), layout='default', className=b.cls('ess-card ess-side', c))
+                                 for t, d, c in side], width='38%'), className='ess-gap ess-contact-cols')))
+
+
+def g_changelog():
+    out = []
+    for v, d, items in RELEASES:
+        rows = ''.join('<li><span class="ess-tag ess-tag--%s">%s</span> %s</li>' % (t.lower(), t, x) for t, x in items)
+        out.append(b.group(b.h('Version %s <small>%s</small>' % (v, d), level=2, className='ess-release__title'), html('<ul class="ess-release">%s</ul>' % rows),
+                           layout='default', className='ess-card'))
+    return b.join(g_hero_light('Changelog', 'What’s new in Hi WPEssential', 'Every release, with what changed and why.'), section(*out))
+
+
+def g_roadmap():
+    cols = [b.group(b.h(c, level=3, className='ess-card__title'), *[b.group(b.p('<strong>%s</strong>' % i), b.p('▲ Vote', className='ess-vote'), layout='default', className='ess-card')
+                                                                    for i in items], layout='default', className='ess-card ess-card--alt') for c, items in ROADMAP]
+    return b.join(g_hero_light('Roadmap', 'What we are building next', 'Vote for features and see what is in progress. Suggest your own from My Account.'),
+                  section(b.group(*cols, layout='grid', columns=3, grid_min='16rem', className='ess-grid')))
+
+
 def g_quote():
     return b.join(
         g_hero_light('Request a quote', 'Tell us about your project', 'A few questions, then a fixed quote, scope and timeline within two business days — free, no obligation.'),
@@ -649,6 +694,7 @@ def g_service(i):
             b.column(over('Who it is for'), b.h(who, size='h1', className='ess-h2'), width='50%'),
             b.column(b.group(b.h('What is included', level=3, className='ess-side__title'), b.ul(included, className='ess-check'), layout='default', className='ess-card ess-card--alt'), width='50%'),
             className='ess-gap')),
+        *([g_care_plans()] if slug == 'care-plans' else []),
         g_work(),
         section(head('Process', 'Brief, estimate, build, review, launch.'),
                 b.group(*[b.group(b.p('0%d' % (k + 1), className='ess-num'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'), layout='default', className='ess-card')
@@ -775,7 +821,7 @@ def e_docs():
             e.container(e.heading('Popular articles'), e.grid(*[e.image_box(p['image'], p['title'], p['excerpt'], link='{{page:%s}}' % p['key'], height=220) for p in POSTS], columns=3),
                         bg='surface-alt', pad=(72, 24, 72, 24)),
             e.container(e.heading('Still stuck?', 3, align='center'), e.text('Open a ticket and a WPEssential developer replies within one business day.', align='center'),
-                        e.button('Open a ticket', '{{page:contact}}', align='center'), pad=(72, 24, 72, 24))]
+                        e.button('Open a ticket', '{{page:support}}', align='center'), pad=(72, 24, 72, 24))]
 
 
 def e_about():
@@ -822,7 +868,9 @@ def package(builder):
     pages = [('home', 'Home', 'home', g_home, e_home), ('demos', 'Demos', 'demos', g_demos, e_demos),
              ('plugins', 'Plugins', 'plugins', g_plugins, e_plugins), ('pricing', 'Pricing', 'pricing', g_pricing, e_pricing), ('services', 'Services', 'services', g_services, e_services),
              ('docs', 'Docs', 'docs', g_docs, e_docs), ('about', 'About', 'about', g_about, e_about),
-             ('contact', 'Contact', 'contact', g_contact, e_contact), ('quote', 'Request a quote', 'request-a-quote', g_quote, e_contact)]
+             ('contact', 'Contact', 'contact', g_contact, e_contact), ('quote', 'Request a quote', 'request-a-quote', g_quote, e_contact),
+             ('support', 'Support', 'support', g_support, e_contact),
+             ('changelog', 'Changelog', 'changelog', g_changelog, e_docs), ('roadmap', 'Roadmap', 'roadmap', g_roadmap, e_docs)]
     pages += [('svc-' + svc.DETAIL[n][0], n, svc.DETAIL[n][0], (lambda i=i: g_service(i)), e_services) for i, (_, n, _d, _p) in enumerate(SERVICES)]
     content = []
     for key, title, slug, g, el in pages:

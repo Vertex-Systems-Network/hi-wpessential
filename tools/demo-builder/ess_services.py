@@ -133,4 +133,19 @@ def newsletter_form():
             'fields': [{'type': 'email', 'label': 'Email', 'required': True, 'placeholder': 'you@company.com'}]}
 
 
-FORMS = [contact_form, quote_form, service_form, newsletter_form]
+def support_form():
+    return {'key': 'support', 'title': 'Support ticket — WPEssential.org', 'submit': 'Submit ticket',
+            'message': 'Thanks — your ticket is in. A developer replies within one business day.',
+            'settings': {'subject': 'Support: {field_id="5"}'},
+            'fields': [
+                {'type': 'email', 'label': 'Licence email', 'required': True, 'size': 'medium'},
+                {'type': 'text', 'label': 'Licence key', 'placeholder': 'WPE-XXXX-XXXX', 'size': 'medium'},
+                {'type': 'url', 'label': 'Site URL', 'required': True},
+                {'type': 'select', 'label': 'Builder', 'choices': ['Gutenberg', 'Elementor', 'Both / not sure'], 'size': 'medium'},
+                {'type': 'text', 'label': 'Subject', 'required': True},
+                {'type': 'textarea', 'label': 'What happened?', 'required': True, 'placeholder': 'Steps to reproduce, what you expected and what you saw.'},
+                {'type': 'url', 'label': 'Screenshot or video link', 'description': 'Paste a link (Drive, Dropbox, Loom). WPForms Lite has no file upload.'},
+            ]}
+
+
+FORMS = [contact_form, quote_form, service_form, newsletter_form, support_form]
