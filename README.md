@@ -15,7 +15,7 @@ schemes, hover effects and SEO, all set up for you.
 ## Why Hi WPEssential
 
 - **Two builders, one design.** Every demo ships in a **Gutenberg** version (core blocks only) and an **Elementor** version (native widgets and Kit globals, with no HTML widgets or custom CSS). Choose the builder you like; the look stays the same.
-- **One-click demos.** The bundled Hi WPEssential Core plugin installs the required plugins, imports the pages, posts, products, menus, images, header and footer, and applies the demo's style. You can remove a demo again with one click.
+- **One-click demos.** The bundled WPEssential Core plugin installs the required plugins, imports the pages, posts, products, menus, images, header and footer, and applies the demo's style. You can remove a demo again with one click.
 - **Try before you import.** Live demos run in your browser through WordPress Playground. You can click, hover and browse every page without installing anything.
 - **Lightweight.** It is a block theme driven by theme.json with local fonts and no jQuery. Animation scripts load only when you turn them on.
 - **Made for every screen.** Layouts are tuned at 1920, 1440, 1280, 1024, 768, 560, 480, 360 and 320 px. Below 1024 px the header becomes a compact bar with an off-canvas menu.
@@ -55,13 +55,13 @@ Every demo is available for **Gutenberg** and **Elementor**. New demos are added
 
 1. Download `hi-wpessential.zip` from the [latest release](../../releases/latest).
 2. In WordPress, go to **Appearance → Themes → Add New → Upload Theme**, choose the zip and click **Activate**.
-3. Open **Hi WPEssential → Demo Library**. Preview a demo, choose **Gutenberg** or **Elementor** and click **Import**.
+3. Open **WPEssential → Demo Library**. Preview a demo, choose **Gutenberg** or **Elementor** and click **Import**.
 
 That's it: your site is ready to edit.
 
 ## Frequently asked questions
 
-**Do I need the Hi WPEssential Core plugin?**
+**Do I need the WPEssential Core plugin?**
 No. The theme works on its own. Core comes bundled and adds demo import, live preview, plugin setup and Pro licensing.
 
 **Can I switch from Gutenberg to Elementor later?**

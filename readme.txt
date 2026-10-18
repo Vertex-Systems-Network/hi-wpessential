@@ -16,7 +16,7 @@ Hi WPEssential is a fast, multi-niche block theme that is native for both Gutenb
 Every demo ships in a Gutenberg version (core blocks only) and an Elementor version (native widgets and Kit globals, with no HTML widgets or custom CSS). Choose your builder; the look stays the same.
 
 = Features =
-* One-click demo import with the bundled Hi WPEssential Core plugin: required plugins, pages, posts, products, menus, images, header, footer and style. Remove a demo again with one click.
+* One-click demo import with the bundled WPEssential Core plugin: required plugins, pages, posts, products, menus, images, header, footer and style. Remove a demo again with one click.
 * Live demos in the browser (WordPress Playground): click, hover and browse every page before you import.
 * theme.json v2 design system with a style variation per demo and local fonts.
 * Light / dark toggle for visitors that follows the device setting and remembers the choice.
@@ -38,7 +38,7 @@ Every demo ships in a Gutenberg version (core blocks only) and an Elementor vers
 == Installation ==
 1. In your admin, go to Appearance > Themes > Add New > Upload Theme.
 2. Upload hi-wpessential.zip and click Activate.
-3. Open Hi WPEssential > Demo Library, preview a demo, choose Gutenberg or Elementor, and click Import.
+3. Open WPEssential > Demo Library, preview a demo, choose Gutenberg or Elementor, and click Import.
 
 == Copyright ==
 Hi WPEssential, (C) 2026 WPEssential Team. Distributed under the terms of the GNU GPL.
@@ -54,7 +54,7 @@ No. The importer only adds content and keeps a record, so Remove demo deletes wh
 = Which screen sizes are supported? =
 The layout steps at 1920, 1440, 1280, 1024, 768, 560, 480, 360 and 320 pixels. Each step sets the page gutter, section spacing, container width and heading sizes. From 1024 down the header switches to a compact bar with an off-canvas menu.
 
-= Do I need the Hi WPEssential Core plugin? =
+= Do I need the WPEssential Core plugin? =
 No. The theme works on its own. Core adds demo import, the header/footer builder, mega menus and Pro license activation.
 
 = How do I build an About, Services, Pricing, Contact or FAQ page? =
@@ -79,7 +79,7 @@ Yes. Without an SEO plugin the theme prints a meta description, Open Graph and T
 
 = 1.0.0 =
 * Initial release.
-* Hi WPEssential dashboard: Demo Library with live preview, one-click import wizard (Gutenberg / Elementor), plugin manager, license activation and System Status.
+* WPEssential dashboard: Demo Library with live preview, one-click import wizard (Gutenberg / Elementor), plugin manager, license activation and System Status.
 * Importer runs in short resumable steps with info, warning and error logging, automatic retry, crash-safe skipping and one-click removal.
 * Theme Options (Appearance): named CSS / JavaScript snippets with device scopes, head/footer placement, safe mode; animation presets (subtle, editorial, playful, dynamic with GSAP).
 * Dashboard sign-in / sign-up connected to the WPEssential account; licenses, plans, upgrades and auto-renewal from the import wizard and License tab.

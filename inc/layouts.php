@@ -5,7 +5,7 @@
  * Templates always contain block template parts (`header*`, `footer*`), so the
  * theme works on its own. Before a part renders, the theme asks — in order:
  *
- *   1. Hi WPEssential Core (or any plugin) via `wpessential_layout_html`
+ *   1. WPEssential Core (or any plugin) via `wpessential_layout_html`
  *      — e.g. a Site Builder layout built with Gutenberg or Elementor and
  *        matched by display conditions;
  *   2. Elementor Pro Theme Builder locations (`header` / `footer`);
