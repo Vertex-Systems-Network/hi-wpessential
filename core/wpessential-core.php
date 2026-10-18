@@ -25,6 +25,8 @@ if ( defined( 'WPESSENTIAL_CORE_VERSION' ) ) {
 }
 
 define( 'WPESSENTIAL_CORE_VERSION', '1.0.0' );
+// Asset cache-busting while the version stays 1.0.0: file time of this file, new on every update.
+define( 'WPESSENTIAL_CORE_ASSET_VERSION', WPESSENTIAL_CORE_VERSION . '.' . (int) filemtime( __FILE__ ) );
 define( 'WPESSENTIAL_CORE_FILE', __FILE__ );
 define( 'WPESSENTIAL_CORE_DIR', __DIR__ );
 

@@ -209,6 +209,7 @@ class Orders {
 						'status'      => 'active',
 						'auto_renew'  => $plan['months'] > 0 ? 1 : 0,
 						'expires_at'  => Licenses::expiry( $plan['months'] ),
+						'major'       => Licenses::lifetime_major( $plan ),
 						'order_id'    => $order_id,
 					)
 				);

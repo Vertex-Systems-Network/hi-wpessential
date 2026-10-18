@@ -15,14 +15,19 @@ defined( 'ABSPATH' ) || exit;
 class Plans {
 
 	/**
+	 * Percent off twelve monthly payments for yearly billing.
+	 */
+	const YEARLY_DISCOUNT = 20;
+
+	/**
 	 * Default plans. Prices and limits can be changed later on each product.
-	 * months: 0 = never expires (lifetime), -1 = free (no expiry, no billing).
+	 * months: 0 = lifetime (updates for the major version bought, see Licenses::validate()), -1 = free (no expiry, no billing).
 	 *
 	 * @return array
 	 */
 	public static function defaults() {
-		return array(
-			'free'        => array(
+		$plans = array(
+			'free' => array(
 				'name'     => __( 'Free', 'wpessential-server' ),
 				'price'    => '0',
 				'months'   => -1,
@@ -31,61 +36,61 @@ class Plans {
 				'pro'      => 0,
 				'features' => array( __( 'Free demos', 'wpessential-server' ), __( '1 website', 'wpessential-server' ), __( 'Community support', 'wpessential-server' ) ),
 			),
-			'monthly'     => array(
-				'name'     => __( 'Monthly', 'wpessential-server' ),
-				'price'    => '9',
-				'months'   => 1,
+		);
+		// Each tier sells monthly, yearly (20% off twelve months) and lifetime (one major version).
+		$tiers   = array(
+			'starter' => array(
+				'name'     => __( 'Starter', 'wpessential-server' ),
+				'monthly'  => 10,
+				'lifetime' => 239,
 				'sites'    => 1,
 				'white'    => 0,
-				'pro'      => 1,
-				'features' => array( __( 'All Pro demos', 'wpessential-server' ), __( '1 website', 'wpessential-server' ), __( 'Updates while subscribed', 'wpessential-server' ) ),
+				'features' => array( __( '1 theme + its demos', 'wpessential-server' ), __( 'Gutenberg & Elementor', 'wpessential-server' ), __( '1 website', 'wpessential-server' ), __( 'Updates & support', 'wpessential-server' ) ),
 			),
-			'quarterly'   => array(
-				'name'     => __( 'Quarterly', 'wpessential-server' ),
-				'price'    => '24',
-				'months'   => 3,
-				'sites'    => 3,
-				'white'    => 0,
-				'pro'      => 1,
-				'features' => array( __( 'All Pro demos', 'wpessential-server' ), __( '3 websites', 'wpessential-server' ), __( 'Priority email support', 'wpessential-server' ) ),
-			),
-			'yearly'      => array(
-				'name'     => __( 'Yearly', 'wpessential-server' ),
-				'price'    => '79',
-				'months'   => 12,
+			'pro'     => array(
+				'name'     => __( 'Pro', 'wpessential-server' ),
+				'monthly'  => 30,
+				'lifetime' => 719,
 				'sites'    => 5,
 				'white'    => 0,
-				'pro'      => 1,
-				'features' => array( __( 'All Pro demos', 'wpessential-server' ), __( '5 websites', 'wpessential-server' ), __( 'Priority support', 'wpessential-server' ) ),
+				'features' => array( __( 'All themes + every demo', 'wpessential-server' ), __( 'Early access to new demos', 'wpessential-server' ), __( '5 websites', 'wpessential-server' ), __( 'Priority support', 'wpessential-server' ) ),
 			),
-			'lifetime'    => array(
-				'name'     => __( 'Lifetime', 'wpessential-server' ),
-				'price'    => '249',
-				'months'   => 0,
-				'sites'    => 10,
-				'white'    => 0,
-				'pro'      => 1,
-				'features' => array( __( 'Pay once, use forever', 'wpessential-server' ), __( '10 websites', 'wpessential-server' ), __( 'Lifetime updates', 'wpessential-server' ) ),
-			),
-			'enterprise'  => array(
-				'name'     => __( 'Enterprise', 'wpessential-server' ),
-				'price'    => '499',
-				'months'   => 12,
-				'sites'    => 0,
-				'white'    => 0,
-				'pro'      => 1,
-				'features' => array( __( 'Unlimited websites', 'wpessential-server' ), __( 'Dedicated support', 'wpessential-server' ), __( 'Onboarding call', 'wpessential-server' ) ),
-			),
-			'white_label' => array(
-				'name'     => __( 'White Label', 'wpessential-server' ),
-				'price'    => '999',
-				'months'   => 12,
+			'agency'  => array(
+				'name'     => __( 'Agency', 'wpessential-server' ),
+				'monthly'  => 100,
+				'lifetime' => 2399,
 				'sites'    => 0,
 				'white'    => 1,
-				'pro'      => 1,
-				'features' => array( __( 'Your brand in the dashboard', 'wpessential-server' ), __( 'Unlimited client sites', 'wpessential-server' ), __( 'Dedicated support', 'wpessential-server' ) ),
+				'features' => array( __( 'Everything in Pro', 'wpessential-server' ), __( 'Unlimited websites', 'wpessential-server' ), __( 'White-label dashboard', 'wpessential-server' ), __( 'Dedicated success manager', 'wpessential-server' ) ),
 			),
 		);
+		$billing = array(
+			/* translators: %s: plan name. */
+			'monthly'  => array( __( '%s Monthly', 'wpessential-server' ), 1 ),
+			/* translators: %s: plan name. */
+			'yearly'   => array( __( '%s Yearly', 'wpessential-server' ), 12 ),
+			/* translators: %s: plan name. */
+			'lifetime' => array( __( '%s Lifetime', 'wpessential-server' ), 0 ),
+		);
+		foreach ( $tiers as $tier => $t ) {
+			foreach ( $billing as $period => $b ) {
+				if ( 'lifetime' === $period ) {
+					$price = $t['lifetime'];
+				} else {
+					$price = 'yearly' === $period ? $t['monthly'] * 12 * ( 100 - self::YEARLY_DISCOUNT ) / 100 : $t['monthly'];
+				}
+				$plans[ $tier . '_' . $period ] = array(
+					'name'     => sprintf( $b[0], $t['name'] ),
+					'price'    => (string) round( $price ),
+					'months'   => $b[1],
+					'sites'    => $t['sites'],
+					'white'    => $t['white'],
+					'pro'      => 1,
+					'features' => $t['features'],
+				);
+			}
+		}
+		return $plans;
 	}
 
 	/**

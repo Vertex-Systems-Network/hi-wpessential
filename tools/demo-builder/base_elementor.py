@@ -97,3 +97,6 @@ def package():
             item['template'] = 'page-full-width'
     data['settings']['elementor_kit'] = e.kit(container_width=1200, button_radius=10, field_radius=10)
     return data
+
+# Brand, contact email and what the site sells, used for the legal pages (tools/demo-builder/legal.py).
+LEGAL = ('{{site:name}}', '{{site:email}}', 'our products and services')

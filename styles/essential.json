@@ -1,0 +1,246 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Essential",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "primary",
+					"name": "Primary",
+					"color": "#EC7D1A"
+				},
+				{
+					"slug": "primary-hover",
+					"name": "Primary Hover",
+					"color": "#D9650A"
+				},
+				{
+					"slug": "primary-soft",
+					"name": "Primary Soft",
+					"color": "#FDF1E6"
+				},
+				{
+					"slug": "secondary",
+					"name": "Secondary",
+					"color": "#1F48A6"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#1F48A6"
+				},
+				{
+					"slug": "ink",
+					"name": "Ink",
+					"color": "#0B1A3D"
+				},
+				{
+					"slug": "text",
+					"name": "Text",
+					"color": "#0B1A3D"
+				},
+				{
+					"slug": "text-muted",
+					"name": "Text Muted",
+					"color": "#5D6780"
+				},
+				{
+					"slug": "surface",
+					"name": "Surface",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "surface-alt",
+					"name": "Surface Alt",
+					"color": "#F3F6FC"
+				},
+				{
+					"slug": "border",
+					"name": "Border",
+					"color": "#DDE4F0"
+				},
+				{
+					"slug": "on-primary",
+					"name": "On Primary",
+					"color": "#0B1A3D"
+				},
+				{
+					"slug": "on-ink",
+					"name": "On Ink",
+					"color": "#FFFFFF"
+				},
+				{
+					"slug": "on-ink-muted",
+					"name": "On Ink Muted",
+					"color": "#A9B6D3"
+				},
+				{
+					"slug": "success",
+					"name": "Success",
+					"color": "#16A34A"
+				},
+				{
+					"slug": "warning",
+					"name": "Warning",
+					"color": "#B45309"
+				},
+				{
+					"slug": "danger",
+					"name": "Danger",
+					"color": "#DC2626"
+				},
+				{
+					"slug": "pro",
+					"name": "Pro",
+					"color": "#EC7D1A"
+				},
+				{
+					"slug": "star",
+					"name": "Star",
+					"color": "#F5B700"
+				}
+			],
+			"gradients": [
+				{
+					"slug": "brand",
+					"name": "Brand",
+					"gradient": "linear-gradient(120deg,#E8701A 0%,#F7A23E 100%)"
+				},
+				{
+					"slug": "night",
+					"name": "Night",
+					"gradient": "linear-gradient(180deg,#0B1A3D 0%,#14254F 100%)"
+				},
+				{
+					"slug": "fade-bottom",
+					"name": "Fade to ink",
+					"gradient": "linear-gradient(180deg, rgba(11,26,61,0) 0%, rgba(11,26,61,0.85) 100%)"
+				}
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"slug": "body",
+					"name": "Plus Jakarta Sans",
+					"fontFamily": "\"Plus Jakarta Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Plus Jakarta Sans",
+							"fontStyle": "normal",
+							"fontWeight": "200 800",
+							"fontDisplay": "swap",
+							"src": [
+								"file:./assets/fonts/plus-jakarta-sans-var.woff2"
+							]
+						}
+					]
+				},
+				{
+					"slug": "heading",
+					"name": "Bricolage Grotesque",
+					"fontFamily": "\"Bricolage Grotesque\", \"Plus Jakarta Sans\", system-ui, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Bricolage Grotesque",
+							"fontStyle": "normal",
+							"fontWeight": "200 800",
+							"fontDisplay": "swap",
+							"src": [
+								"file:./assets/fonts/bricolage-grotesque-var.woff2"
+							]
+						}
+					]
+				},
+				{
+					"slug": "mono",
+					"name": "Monospace",
+					"fontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+				}
+			]
+		},
+		"custom": {
+			"radius": {
+				"sm": "10px",
+				"md": "14px",
+				"lg": "20px",
+				"xl": "28px",
+				"full": "999px"
+			},
+			"scheme": {
+				"dark": {
+					"primary": "#EC7D1A",
+					"primary-hover": "#F39A47",
+					"primary-soft": "#2E1E0E",
+					"secondary": "#7AA3F2",
+					"accent": "#7AA3F2",
+					"ink": "#050C20",
+					"text": "#FFFFFF",
+					"text-muted": "#A9B6D3",
+					"surface": "#081330",
+					"surface-alt": "#0E1C40",
+					"border": "#20325E",
+					"on-primary": "#0B1A3D",
+					"on-ink": "#FFFFFF",
+					"on-ink-muted": "#A9B6D3",
+					"success": "#4ADE80",
+					"warning": "#FBBF24",
+					"danger": "#F87171",
+					"pro": "#F39A47",
+					"star": "#F5B700"
+				}
+			},
+			"color": {
+				"primaryText": "#1F48A6"
+			},
+			"hover": {
+				"zoom": "1.06",
+				"lift": "-6px",
+				"productLift": "-6px",
+				"shadow": "0 24px 48px rgba(10, 10, 18, .18)",
+				"cardShadow": "0 0 0 2px #625BA8, 0 24px 48px rgba(10, 10, 18, .18)",
+				"duration": "260ms",
+				"ease": "cubic-bezier(.22, 1, .36, 1)",
+				"buttonLift": "-3px",
+				"buttonGlow": "0 10px 28px rgba(198, 244, 50, .45)",
+				"underline": "2px",
+				"imageRest": "grayscale(1)"
+			}
+		}
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--body)",
+			"fontSize": "16px",
+			"lineHeight": "1.6"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontWeight": "700",
+					"letterSpacing": "-0.03em",
+					"lineHeight": "1"
+				}
+			},
+			"button": {
+				"border": {
+					"radius": "999px"
+				},
+				"typography": {
+					"fontSize": "15px",
+					"fontWeight": "700"
+				},
+				"spacing": {
+					"padding": {
+						"top": "14px",
+						"bottom": "14px",
+						"left": "24px",
+						"right": "24px"
+					}
+				}
+			}
+		}
+	}
+}

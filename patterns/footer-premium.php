@@ -101,7 +101,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="/privacy-policy/"><?php esc_html_e( 'Privacy', 'hi-wpessential' ); ?></a>   ·   <a href="/terms/"><?php esc_html_e( 'Terms', 'hi-wpessential' ); ?></a></p>
+<p><a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>"><?php esc_html_e( 'Privacy', 'hi-wpessential' ); ?></a>   ·   <a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>"><?php esc_html_e( 'Terms', 'hi-wpessential' ); ?></a>   ·   <a href="<?php echo esc_url( home_url( '/refund-policy/' ) ); ?>"><?php esc_html_e( 'Refunds', 'hi-wpessential' ); ?></a>   ·   <a href="<?php echo esc_url( home_url( '/cookie-policy/' ) ); ?>"><?php esc_html_e( 'Cookies', 'hi-wpessential' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></footer>
 <!-- /wp:group -->

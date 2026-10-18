@@ -20,9 +20,10 @@ sys.path.insert(0, HERE)
 import importlib  # noqa: E402
 
 import base_elementor  # noqa: E402
+import legal  # noqa: E402
 
 # Server demos built from tools/demo-builder/<id>.py. The /build-demo skill appends new ids here.
-DEMOS = ['maison', 'pulse']
+DEMOS = ['maison', 'pulse', 'essential']
 
 
 def write(path, data):
@@ -66,14 +67,17 @@ def main():
         base = os.path.join(ROOT, 'demos', mod.ID)
         write(os.path.join(base, 'demo.json'), demo_json(mod))
         for builder in ('gutenberg', 'elementor'):
-            write(os.path.join(base, builder, 'content.json'), with_seo(mod.package(builder), getattr(mod, 'SEO', {})))
+            pkg = legal.add(mod.package(builder), builder, *mod.LEGAL)  # Privacy, Terms, Refund and Cookie pages on every demo.
+            write(os.path.join(base, builder, 'content.json'), with_seo(pkg, getattr(mod, 'SEO', {})))
             if '--zip' in sys.argv:
                 zip_package(base, builder, os.path.join(ROOT, 'dist', '%s-%s.zip' % (mod.ID, builder)))
         print('built', mod.ID)
 
     # Base demo: Elementor package next to the existing Gutenberg one.
     base = os.path.join(ROOT, 'core', 'demos', 'base')
-    write(os.path.join(base, 'elementor', 'content.json'), base_elementor.package())
+    write(os.path.join(base, 'elementor', 'content.json'), legal.add(base_elementor.package(), 'elementor', *base_elementor.LEGAL))
+    gpath = os.path.join(base, 'gutenberg', 'content.json')
+    write(gpath, legal.add(json.load(open(gpath, encoding='utf-8')), 'gutenberg', *base_elementor.LEGAL))
     demo = json.load(open(os.path.join(base, 'demo.json')))
     demo['builders']['elementor'] = {'package': 'elementor', 'plugins': [
         {'slug': 'elementor', 'name': 'Elementor', 'source': 'wporg', 'state': 'required'},

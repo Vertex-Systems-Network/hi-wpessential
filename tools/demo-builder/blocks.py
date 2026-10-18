@@ -228,6 +228,8 @@ def footer(about, cols, legal, band=None):
                             valign='center', className='wpe-section--sm'), className='wpe-footer__newsletter', content='1200px')
     brand = column(block('site-title'), p(about, size='small'), width='40%')
     links = [column(group(h(t, level=2), nav(items), layout='stack')) for t, items in cols]
-    bottom = group(p(legal[0]), p(legal[1]), className='wpe-footer__bottom', layout='flex', wrap='wrap', justify='space-between')
+    policies = ' · '.join('<a href="{{page:%s}}">%s</a>' % (k, t) for k, t in
+                          [('privacy-policy', 'Privacy'), ('terms', 'Terms'), ('refund-policy', 'Refunds'), ('cookie-policy', 'Cookies')])
+    bottom = group(p(legal[0]), p(policies), p(legal[1]), className='wpe-footer__bottom', layout='flex', wrap='wrap', justify='space-between')
     return group(top, columns(brand, *links, className='wpe-footer__cols wpe-section--sm'), bottom, tag='footer',
                  className='wpe-footer wpe-section--md', content='1200px')

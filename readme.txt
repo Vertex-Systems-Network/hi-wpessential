@@ -34,6 +34,7 @@ Every demo ships in a Gutenberg version (core blocks only) and an Elementor vers
 * Base (free): business, agency, shop and blog. 7 pages, 3 articles, 8 products.
 * Maison (pro): editorial fashion store with lookbook, atelier and journal.
 * Pulse (pro): events and conferences with speakers, agenda, tickets, venue and sponsors.
+* Essential (pro): a theme and demo marketplace with WooCommerce plans, services and docs, modelled on WPEssential.org.
 
 == Installation ==
 1. In your admin, go to Appearance > Themes > Add New > Upload Theme.
@@ -84,7 +85,7 @@ Yes. Without an SEO plugin the theme prints a meta description, Open Graph and T
 * Theme Options (Appearance): named CSS / JavaScript snippets with device scopes, head/footer placement, safe mode; animation presets (subtle, editorial, playful, dynamic with GSAP).
 * Dashboard sign-in / sign-up connected to the WPEssential account; licenses, plans, upgrades and auto-renewal from the import wizard and License tab.
 * Base Demo bundled: 7 pages, 3 articles, 8 WooCommerce products, menus and store settings.
-* Maison (fashion) and Pulse (events) demos, each for Gutenberg and Elementor.
+* Maison (fashion), Pulse (events) and Essential (marketplace) demos, each for Gutenberg and Elementor.
 * Every demo has a native Elementor version (widgets and Kit globals).
 * Live demos through WordPress Playground.
 * Hover effects and dark palettes for each demo.
@@ -99,6 +100,7 @@ Yes. Without an SEO plugin the theme prints a meta description, Open Graph and T
 * Manrope, (C) Mikhail Sharanda, SIL Open Font License 1.1, https://github.com/sharanda/manrope
 * Space Grotesk, (C) Florian Karsten, SIL Open Font License 1.1, https://github.com/floriankarsten/space-grotesk
 * DM Sans, (C) Colophon Foundry / Google, SIL Open Font License 1.1, https://github.com/googlefonts/dm-fonts
+* Bricolage Grotesque, (C) 2022 The Bricolage Grotesque Project Authors, SIL Open Font License 1.1, https://github.com/ateliertriay/bricolage
 * Sun and moon icons in the light/dark toggle: Font Awesome Free 6, (C) Fonticons, Inc., CC BY 4.0, https://fontawesome.com/license/free
 * Images in assets/images (hero, post-1 to post-3, demo-business, team-1 to team-4) were generated with AI for this theme by the WPEssential Team and are released under GPLv2 or later.
 * GSAP 3.12.5 and ScrollTrigger, (C) 2024 GreenSock, Standard "no charge" license, https://gsap.com/standard-license — loaded only when the Dynamic animation preset or GSAP option is on.

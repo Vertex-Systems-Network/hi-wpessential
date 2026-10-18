@@ -207,8 +207,13 @@ class MyAccount {
 				'cancelled' => __( 'Cancelled', 'wpessential-server' ),
 				'revoked'   => __( 'Revoked', 'wpessential-server' ),
 			);
-			$ends   = 'lifetime' === $shape['expires'] ? __( 'Never', 'wpessential-server' ) : date_i18n( get_option( 'date_format' ), strtotime( $shape['expires'] ) );
-			$limit  = $shape['sites_limit'] ? $shape['sites_limit'] : '∞';
+			if ( 'lifetime' === $shape['expires'] ) {
+				/* translators: %s: major version, e.g. 1.x. */
+				$ends = $shape['covers'] ? sprintf( __( 'When version %s ends', 'wpessential-server' ), $shape['covers'] ) : __( 'Never', 'wpessential-server' );
+			} else {
+				$ends = date_i18n( get_option( 'date_format' ), strtotime( $shape['expires'] ) );
+			}
+			$limit = $shape['sites_limit'] ? $shape['sites_limit'] : '∞';
 			echo '<section class="wpes-license wpes-license--' . esc_attr( $status ) . '">';
 			echo '<header><div><span class="wpes-plan">' . esc_html( $shape['plan'] ) . '</span><span class="wpes-status">' . esc_html( $labels[ $status ] ?? $status ) . '</span></div>';
 			echo '<code class="wpes-key" title="' . esc_attr__( 'License key', 'wpessential-server' ) . '">' . esc_html( $shape['key'] ) . '</code></header>';
@@ -258,7 +263,7 @@ class MyAccount {
 				continue;
 			}
 			$period = $p['months'] > 0 ? sprintf( /* translators: %d: months. */ _n( '/ %d month', '/ %d months', $p['months'], 'wpessential-server' ), $p['months'] ) : __( 'once', 'wpessential-server' );
-			echo '<article class="wpes-plan-card' . ( 'yearly' === $p['key'] ? ' is-featured' : '' ) . '"><h4>' . esc_html( $p['name'] ) . '</h4><p class="wpes-price">' . wp_kses_post( wc_price( $p['price'] ) ) . ' <small>' . esc_html( $period ) . '</small></p><ul>';
+			echo '<article class="wpes-plan-card' . ( 'pro_yearly' === $p['key'] ? ' is-featured' : '' ) . '"><h4>' . esc_html( $p['name'] ) . '</h4><p class="wpes-price">' . wp_kses_post( wc_price( $p['price'] ) ) . ' <small>' . esc_html( $period ) . '</small></p><ul>';
 			foreach ( $p['features'] as $f ) {
 				echo '<li>' . esc_html( $f ) . '</li>';
 			}

@@ -83,7 +83,7 @@ msgstr "プラグイン"
 msgid "License"
 msgstr "ライセンス"
 
-#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1363
 msgid "System Status"
 msgstr "システムステータス"
 
@@ -234,259 +234,259 @@ msgstr "サイトの準備ができました。"
 msgid "WooCommerce is not active, so the shop products were skipped."
 msgstr "WooCommerce が有効化されていないため、ショップの商品はスキップされました。"
 
-#: core/src/Importer.php:602
+#: core/src/Importer.php:608
 msgid "Your server needs a change before the import can run safely."
 msgstr "インポートを安全に実行するには、サーバーの設定変更が必要です。"
 
-#: core/src/Importer.php:602
+#: core/src/Importer.php:608
 msgid "Fix the items above (your host can help), then press Retry."
 msgstr "上記の項目を修正して (ホスティング会社に相談できます)、「再試行」を押してください。"
 
 #. translators: %s: demo.
-#: core/src/Importer.php:607
+#: core/src/Importer.php:613
 msgid ""
 "%s was imported before. Its pages stay; the new import adds fresh copies."
 msgstr "%s は以前にインポートされています。既存のページは残り、新しいインポートでは新しいコピーが追加されます。"
 
 #. translators: %s: demo.
-#: core/src/Importer.php:607
+#: core/src/Importer.php:613
 msgid "Tick \"Remove previous demo\" next time for a clean site."
 msgstr "次回はクリーンなサイトにするため「以前のデモを削除」にチェックを入れてください。"
 
-#: core/src/Importer.php:609
+#: core/src/Importer.php:615
 msgid "Server checks passed."
 msgstr "サーバーチェックに合格しました。"
 
 #. translators: %d: items.
-#: core/src/Importer.php:621
+#: core/src/Importer.php:627
 msgid "Removed %d items from the previous demo and restored its settings."
 msgstr "以前のデモから %d 件の項目を削除し、設定を復元しました。"
 
-#: core/src/Importer.php:634
+#: core/src/Importer.php:640
 msgid "Upload a fresh copy of the theme, then press Resume."
 msgstr "テーマの新しいコピーをアップロードしてから「再開」を押してください。"
 
-#: core/src/Importer.php:634
+#: core/src/Importer.php:640
 msgid "Check your internet connection and press Resume."
 msgstr "インターネット接続を確認して「再開」を押してください。"
 
-#: core/src/Importer.php:640
+#: core/src/Importer.php:646
 msgid "The demo package could not be read (content.json is damaged)."
 msgstr "デモパッケージを読み込めませんでした (content.json が破損しています)。"
 
-#: core/src/Importer.php:640
+#: core/src/Importer.php:646
 msgid "Clear the cache on the System Status tab and retry."
 msgstr "「システムステータス」タブでキャッシュをクリアして再試行してください。"
 
 #. translators: 1: pages, 2: images, 3: products.
-#: core/src/Importer.php:644
+#: core/src/Importer.php:650
 msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
 msgstr "パッケージの準備完了: 固定ページと投稿 %1$d 件、画像 %2$d 件、商品 %3$d 件。"
 
 #. translators: 1: plugin, 2: error.
-#: core/src/Importer.php:662
+#: core/src/Importer.php:668
 msgid "%1$s could not be set up: %2$s"
 msgstr "%1$s をセットアップできませんでした: %2$s"
 
 #. translators: 1: plugin, 2: error.
-#: core/src/Importer.php:662
+#: core/src/Importer.php:668
 msgid ""
 "Install it from Plugins → Add New, then use the Plugins tab here to activate"
 " it."
 msgstr "「プラグイン」→「新規追加」からインストールし、ここの「プラグイン」タブで有効化してください。"
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:667
+#: core/src/Importer.php:673
 msgid "%s installed and activated."
 msgstr "%s をインストールして有効化しました。"
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:669
+#: core/src/Importer.php:675
 msgid "%s activated."
 msgstr "%s を有効化しました。"
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:671
+#: core/src/Importer.php:677
 msgid "%s deactivated because it conflicts with this demo."
 msgstr "%s はこのデモと競合するため無効化しました。"
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:673
+#: core/src/Importer.php:679
 msgid "%s is already active."
 msgstr "%s はすでに有効です。"
 
-#: core/src/Importer.php:702
+#: core/src/Importer.php:708
 msgid "file not found in the package"
 msgstr "パッケージ内にファイルが見つかりません"
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:707
+#: core/src/Importer.php:713
 msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
 msgstr "画像 %1$s をスキップしました (%2$s)。ページではテーマのコピーが代わりに使用されます。"
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:721
+#: core/src/Importer.php:727
 msgid "Image %1$s skipped (%2$s)."
 msgstr "画像 %1$s をスキップしました (%2$s)。"
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:721
+#: core/src/Importer.php:727
 msgid "Check that the uploads folder is writable."
 msgstr "アップロードフォルダーが書き込み可能か確認してください。"
 
 #. translators: %s: file.
-#: core/src/Importer.php:729
+#: core/src/Importer.php:735
 msgid "Imported image %s."
 msgstr "画像 %s をインポートしました。"
 
 #. translators: 1: term, 2: taxonomy.
 #. translators: 1: title, 2: post type.
-#: core/src/Importer.php:744 core/src/Importer.php:790
+#: core/src/Importer.php:750 core/src/Importer.php:796
 msgid "Skipped \"%1$s\": %2$s is not available on this site."
 msgstr "「%1$s」をスキップしました: %2$s はこのサイトで利用できません。"
 
 #. translators: %s: term.
-#: core/src/Importer.php:751
+#: core/src/Importer.php:757
 msgid "Category \"%s\" already exists and was reused."
 msgstr "カテゴリー「%s」はすでに存在するため再利用しました。"
 
 #. translators: 1: term, 2: error.
-#: core/src/Importer.php:763
+#: core/src/Importer.php:769
 msgid "Category \"%1$s\" was not created: %2$s"
 msgstr "カテゴリー「%1$s」は作成されませんでした: %2$s"
 
 #. translators: %s: term.
-#: core/src/Importer.php:770
+#: core/src/Importer.php:776
 msgid "Created category \"%s\"."
 msgstr "カテゴリー「%s」を作成しました。"
 
 #. translators: 1: title, 2: error.
-#: core/src/Importer.php:808
+#: core/src/Importer.php:814
 msgid "\"%1$s\" could not be created: %2$s"
 msgstr "「%1$s」を作成できませんでした: %2$s"
 
-#: core/src/Importer.php:836
+#: core/src/Importer.php:842
 msgid "post"
 msgstr "投稿"
 
-#: core/src/Importer.php:837
+#: core/src/Importer.php:843
 msgid "page"
 msgstr "固定ページ"
 
-#: core/src/Importer.php:838
+#: core/src/Importer.php:844
 msgid "event"
 msgstr "イベント"
 
-#: core/src/Importer.php:839
+#: core/src/Importer.php:845
 msgid "venue"
 msgstr "会場"
 
-#: core/src/Importer.php:840
+#: core/src/Importer.php:846
 msgid "organizer"
 msgstr "主催者"
 
 #. translators: 1: type, 2: title.
-#: core/src/Importer.php:843
+#: core/src/Importer.php:849
 msgid "Created %1$s \"%2$s\"."
 msgstr "%1$s「%2$s」を作成しました。"
 
-#: core/src/Importer.php:860
+#: core/src/Importer.php:866
 msgid "The Events Calendar rejected the venue."
 msgstr "The Events Calendar が会場を拒否しました。"
 
-#: core/src/Importer.php:864
+#: core/src/Importer.php:870
 msgid "The Events Calendar rejected the organizer."
 msgstr "The Events Calendar が主催者を拒否しました。"
 
-#: core/src/Importer.php:892
+#: core/src/Importer.php:898
 msgid "The Events Calendar rejected the event."
 msgstr "The Events Calendar がイベントを拒否しました。"
 
 #. translators: %s: product.
-#: core/src/Importer.php:1004
+#: core/src/Importer.php:1014
 msgid "Product \"%s\" could not be saved."
 msgstr "商品「%s」を保存できませんでした。"
 
 #. translators: %s: product.
-#: core/src/Importer.php:1015
+#: core/src/Importer.php:1025
 msgid "Added product \"%s\"."
 msgstr "商品「%s」を追加しました。"
 
 #. translators: 1: menu, 2: count.
-#: core/src/Importer.php:1118
+#: core/src/Importer.php:1128
 msgid "Created menu \"%1$s\" with %2$d links."
 msgstr "%2$d 件のリンクを含むメニュー「%1$s」を作成しました。"
 
-#: core/src/Importer.php:1164
+#: core/src/Importer.php:1174
 msgid "Home and blog pages assigned."
 msgstr "ホームページと投稿ページを割り当てました。"
 
 #. translators: %s: option.
-#: core/src/Importer.php:1170
+#: core/src/Importer.php:1180
 msgid "Setting \"%s\" is not on the allow-list and was ignored."
 msgstr "設定「%s」は許可リストにないため無視されました。"
 
 #. translators: %s: preset.
-#: core/src/Importer.php:1191
+#: core/src/Importer.php:1201
 msgid "Animation style set to \"%s\"."
 msgstr "アニメーションスタイルを「%s」に設定しました。"
 
-#: core/src/Importer.php:1204
+#: core/src/Importer.php:1214
 msgid "Elementor set to use the theme colours and fonts."
 msgstr "Elementor でテーマのカラーとフォントを使用するよう設定しました。"
 
-#: core/src/Importer.php:1219
+#: core/src/Importer.php:1229
 msgid "Default"
 msgstr "デフォルト"
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1222
+#: core/src/Importer.php:1232
 msgid "Style \"%s\" was not found in the theme, so the default colours stay."
 msgstr "スタイル「%s」がテーマに見つからないため、デフォルトのカラーのままです。"
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1222
+#: core/src/Importer.php:1232
 msgid "Update the Hi WPEssential theme, then import again."
 msgstr "Hi WPEssential テーマを更新してから、もう一度インポートしてください。"
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1250
+#: core/src/Importer.php:1260
 msgid "Applied the %s colours and fonts."
 msgstr "%s のカラーとフォントを適用しました。"
 
-#: core/src/Importer.php:1268
+#: core/src/Importer.php:1278
 msgid "demo"
 msgstr "デモ"
 
 #. translators: 1: template part, 2: design.
-#: core/src/Importer.php:1320
+#: core/src/Importer.php:1330
 msgid "Template part \"%1$s\" set to the \"%2$s\" design."
 msgstr "テンプレートパーツ「%1$s」を「%2$s」デザインに設定しました。"
 
-#: core/src/Importer.php:1341
+#: core/src/Importer.php:1351
 msgid "Elementor Kit layout, buttons and form styles set."
 msgstr "Elementor キットのレイアウト、ボタン、フォームのスタイルを設定しました。"
 
-#: core/src/Importer.php:1361
+#: core/src/Importer.php:1371
 msgid "Everywhere"
 msgstr "すべての地域"
 
-#: core/src/Importer.php:1369
+#: core/src/Importer.php:1379
 msgid "Free shipping"
 msgstr "送料無料"
 
 #. translators: %s: amount.
-#: core/src/Importer.php:1377
+#: core/src/Importer.php:1387
 msgid "Shipping set up with free delivery over %s."
 msgstr "%s 以上の注文で送料無料となる配送を設定しました。"
 
 #. translators: %d: pages.
-#: core/src/Importer.php:1412
+#: core/src/Importer.php:1422
 msgid "Linked %d page to its new address."
 msgid_plural "Linked %d pages to their new addresses."
 msgstr[0] "%d 件のページを新しいアドレスにリンクしました。"
 
-#: core/src/Importer.php:1417
+#: core/src/Importer.php:1427
 msgid "Permalinks and caches refreshed."
 msgstr "パーマリンクとキャッシュを更新しました。"
 
@@ -1434,7 +1434,7 @@ msgstr "All rights reserved."
 msgid "Privacy"
 msgstr "プライバシー"
 
-#: patterns/footer-premium.php:104
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:21
 msgid "Terms"
 msgstr "利用規約"
 
@@ -1742,6 +1742,7 @@ msgid "Free"
 msgstr "無料"
 
 #: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+#: core/assets/admin.js:1193
 msgid "/ year"
 msgstr "/ 年"
 
@@ -2896,7 +2897,7 @@ msgstr "ドメイン"
 msgid "Expires"
 msgstr "有効期限"
 
-#: core/assets/admin.js:1118
+#: core/assets/admin.js:1118 core/assets/admin.js:1292
 msgid "Lifetime"
 msgstr "永久"
 
@@ -2994,181 +2995,181 @@ msgstr "ライセンスを無効化しました"
 msgid "Deactivation failed"
 msgstr "無効化に失敗しました"
 
-#: core/assets/admin.js:1188
+#: core/assets/admin.js:1195
 msgid "/ %d mo"
 msgstr "/ %d か月"
 
-#: core/assets/admin.js:1188
+#: core/assets/admin.js:1195
 msgid "one-time"
 msgstr "買い切り"
 
-#: core/assets/admin.js:1201
+#: core/assets/admin.js:1211
 msgid "Your WPEssential account could not be reached"
 msgstr "WPEssential アカウントに接続できませんでした"
 
-#: core/assets/admin.js:1213
+#: core/assets/admin.js:1223
 msgid "Sign in to your account"
 msgstr "アカウントにログイン"
 
-#: core/assets/admin.js:1213
+#: core/assets/admin.js:1223
 msgid "Create your free account"
 msgstr "無料アカウントを作成"
 
-#: core/assets/admin.js:1213
+#: core/assets/admin.js:1223
 msgid ""
 "Your licenses, Pro demos and subscription in one place. New accounts include"
 " the Free plan for this website."
 msgstr "ライセンス、Pro デモ、サブスクリプションを一か所で管理。新規アカウントには、このサイト用の無料プランが含まれます。"
 
-#: core/assets/admin.js:1214
+#: core/assets/admin.js:1224
 msgid "Activate licenses without copying keys"
 msgstr "キーをコピーせずにライセンスを有効化"
 
-#: core/assets/admin.js:1214
+#: core/assets/admin.js:1224
 msgid "Upgrade, renew or switch plans in one click"
 msgstr "ワンクリックでプランのアップグレード、更新、変更"
 
-#: core/assets/admin.js:1214
+#: core/assets/admin.js:1224
 msgid "Manage websites and auto-renewal"
 msgstr "サイトと自動更新を管理"
 
-#: core/assets/admin.js:1216 core/assets/admin.js:1221
+#: core/assets/admin.js:1226 core/assets/admin.js:1231
 msgid "Sign in"
 msgstr "ログイン"
 
-#: core/assets/admin.js:1216
+#: core/assets/admin.js:1226
 msgid "Create account"
 msgstr "アカウントを作成"
 
-#: core/assets/admin.js:1217
+#: core/assets/admin.js:1227
 msgid "Full name"
 msgstr "氏名"
 
-#: core/assets/admin.js:1218
+#: core/assets/admin.js:1228
 msgid "Email"
 msgstr "メールアドレス"
 
-#: core/assets/admin.js:1219
+#: core/assets/admin.js:1229
 msgid "Password"
 msgstr "パスワード"
 
-#: core/assets/admin.js:1221
+#: core/assets/admin.js:1231
 msgid "Signing in"
 msgstr "ログイン中"
 
-#: core/assets/admin.js:1221
+#: core/assets/admin.js:1231
 msgid "Creating account"
 msgstr "アカウントを作成中"
 
-#: core/assets/admin.js:1221
+#: core/assets/admin.js:1231
 msgid "Create free account"
 msgstr "無料アカウントを作成"
 
-#: core/assets/admin.js:1222
+#: core/assets/admin.js:1232
 msgid "Forgot password?"
 msgstr "パスワードをお忘れですか ?"
 
-#: core/assets/admin.js:1222
+#: core/assets/admin.js:1232
 msgid "By creating an account you agree to the Hi WPEssential terms."
 msgstr "アカウントを作成すると、Hi WPEssential の利用規約に同意したことになります。"
 
-#: core/assets/admin.js:1223
+#: core/assets/admin.js:1233
 msgid "Continue without an account"
 msgstr "アカウントなしで続行"
 
-#: core/assets/admin.js:1239
+#: core/assets/admin.js:1249
 msgid "Fill in every field."
 msgstr "すべての項目を入力してください。"
 
-#: core/assets/admin.js:1245
+#: core/assets/admin.js:1255
 msgid "Signed in"
 msgstr "ログインしました"
 
-#: core/assets/admin.js:1245
+#: core/assets/admin.js:1255
 msgid "Account created"
 msgstr "アカウントを作成しました"
 
-#: core/assets/admin.js:1266
+#: core/assets/admin.js:1280
 msgid "Refresh"
 msgstr "更新"
 
-#: core/assets/admin.js:1267
+#: core/assets/admin.js:1281
 msgid "Manage account"
 msgstr "アカウントを管理"
 
-#: core/assets/admin.js:1268
+#: core/assets/admin.js:1282
 msgid "Sign out"
 msgstr "ログアウト"
 
-#: core/assets/admin.js:1270
+#: core/assets/admin.js:1284
 msgid "Your licenses"
 msgstr "あなたのライセンス"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "%1$d of %2$s websites"
 msgstr "%1$d / %2$s サイト"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "Never expires"
 msgstr "無期限"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "Renews %s"
 msgstr "%s に更新"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "Ends %s"
 msgstr "%s に終了"
 
-#: core/assets/admin.js:1274
+#: core/assets/admin.js:1288
 msgid "Auto-renew"
 msgstr "自動更新"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "Renew"
 msgstr "更新"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "This site"
 msgstr "このサイト"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "Activating"
 msgstr "有効化中"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "Use on this site"
 msgstr "このサイトで使用"
 
-#: core/assets/admin.js:1276
+#: core/assets/admin.js:1290
 msgid "No licenses yet — choose a plan below."
 msgstr "ライセンスはまだありません — 下からプランを選択してください。"
 
-#: core/assets/admin.js:1277
+#: core/assets/admin.js:1291
 msgid "Upgrade your plan"
 msgstr "プランをアップグレード"
 
-#: core/assets/admin.js:1277
+#: core/assets/admin.js:1291
 msgid "Choose a plan"
 msgstr "プランを選択"
 
-#: core/assets/admin.js:1282
+#: core/assets/admin.js:1298
 msgid "Most popular"
 msgstr "一番人気"
 
-#: core/assets/admin.js:1283
+#: core/assets/admin.js:1299
 msgid "Current plan"
 msgstr "現在のプラン"
 
-#: core/assets/admin.js:1283
+#: core/assets/admin.js:1299
 msgid "Upgrade"
 msgstr "アップグレード"
 
-#: core/assets/admin.js:1283
+#: core/assets/admin.js:1299
 msgid "Choose"
 msgstr "選択"
 
-#: core/assets/admin.js:1285
+#: core/assets/admin.js:1301
 msgid ""
 "Checkout opens on wpessential.org already signed in. Upgrades credit the "
 "unused part of your current plan. Staging and local sites do not count "
@@ -3177,211 +3178,211 @@ msgstr ""
 "チェックアウトは wpessential.org "
 "でログインした状態で開きます。アップグレード時は現在のプランの未使用分が差し引かれます。ステージングサイトやローカルサイトはサイト数の上限に含まれません。"
 
-#: core/assets/admin.js:1301
+#: core/assets/admin.js:1321
 msgid "License active on this site"
 msgstr "このサイトでライセンスが有効です"
 
-#: core/assets/admin.js:1315
+#: core/assets/admin.js:1335
 msgid "Auto-renew is on"
 msgstr "自動更新はオンです"
 
-#: core/assets/admin.js:1315
+#: core/assets/admin.js:1335
 msgid "Auto-renew is off"
 msgstr "自動更新はオフです"
 
-#: core/assets/admin.js:1315
+#: core/assets/admin.js:1335
 msgid "Your license works until its end date."
 msgstr "ライセンスは終了日まで有効です。"
 
-#: core/assets/admin.js:1318
+#: core/assets/admin.js:1338
 msgid "Could not change auto-renew"
 msgstr "自動更新を変更できませんでした"
 
-#: core/assets/admin.js:1330
+#: core/assets/admin.js:1350
 msgid "Checkout opened in a new tab"
 msgstr "チェックアウトを新しいタブで開きました"
 
-#: core/assets/admin.js:1330
+#: core/assets/admin.js:1350
 msgid "When payment is done, press Refresh here."
 msgstr "支払いが完了したら、ここで「更新」を押してください。"
 
-#: core/assets/admin.js:1335
+#: core/assets/admin.js:1355
 msgid "Checkout could not start"
 msgstr "チェックアウトを開始できませんでした"
 
-#: core/assets/admin.js:1343
+#: core/assets/admin.js:1363
 msgid "What your server offers and what to improve before importing."
 msgstr "サーバーの状態と、インポート前に改善すべき点です。"
 
-#: core/assets/admin.js:1343
+#: core/assets/admin.js:1363
 msgid "Copy report"
 msgstr "レポートをコピー"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Health"
 msgstr "状態"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Excellent"
 msgstr "非常に良い"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Good"
 msgstr "良好"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Needs work"
 msgstr "要改善"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "%d item(s) could be better. Imports still run; fixes make them faster."
 msgstr "%d 件の項目を改善できます。インポートは実行できますが、修正すると高速になります。"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Your server is ready for any demo."
 msgstr "サーバーはどのデモにも対応できる状態です。"
 
-#: core/assets/admin.js:1352
+#: core/assets/admin.js:1372
 msgid "Environment"
 msgstr "環境"
 
-#: core/assets/admin.js:1356
+#: core/assets/admin.js:1376
 msgid "Report copied"
 msgstr "レポートをコピーしました"
 
-#: core/assets/admin.js:1356
+#: core/assets/admin.js:1376
 msgid "Copy failed"
 msgstr "コピーに失敗しました"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Accent"
 msgstr "アクセント"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Border"
 msgstr "ボーダー"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Danger"
 msgstr "危険"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Ink"
 msgstr "インク"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "On Ink"
 msgstr "インク上"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "On Ink Muted"
 msgstr "インク上 (淡色)"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "On Primary"
 msgstr "プライマリ上"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Primary"
 msgstr "プライマリ"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Primary Hover"
 msgstr "プライマリ (ホバー)"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Primary Soft"
 msgstr "プライマリ (ソフト)"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Pro"
 msgstr "Pro"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Secondary"
 msgstr "セカンダリ"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Star"
 msgstr "スター"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Success"
 msgstr "成功"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Surface"
 msgstr "サーフェス"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Surface Alt"
 msgstr "サーフェス (代替)"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Text"
 msgstr "テキスト"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Text Muted"
 msgstr "テキスト (淡色)"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Warning"
 msgstr "警告"
@@ -3431,12 +3432,12 @@ msgctxt "Font family name"
 msgid "Manrope"
 msgstr "Manrope"
 
-#: styles/maison.json styles/pulse.json theme.json
+#: styles/essential.json styles/maison.json styles/pulse.json theme.json
 msgctxt "Font family name"
 msgid "Monospace"
 msgstr "等幅"
 
-#: theme.json
+#: styles/essential.json theme.json
 msgctxt "Font family name"
 msgid "Plus Jakarta Sans"
 msgstr "Plus Jakarta Sans"
@@ -3491,7 +3492,8 @@ msgctxt "Font size name"
 msgid "XS"
 msgstr "XS"
 
-#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+#: styles/dark.json styles/essential.json styles/maison.json styles/pulse.json
+#: theme.json
 msgctxt "Gradient name"
 msgid "Brand"
 msgstr "ブランド"
@@ -3501,12 +3503,13 @@ msgctxt "Gradient name"
 msgid "Fade bottom"
 msgstr "下部フェード"
 
-#: styles/maison.json styles/pulse.json theme.json
+#: styles/essential.json styles/maison.json styles/pulse.json theme.json
 msgctxt "Gradient name"
 msgid "Fade to ink"
 msgstr "インクへフェード"
 
-#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+#: styles/dark.json styles/essential.json styles/maison.json styles/pulse.json
+#: theme.json
 msgctxt "Gradient name"
 msgid "Night"
 msgstr "ナイト"
@@ -3663,3 +3666,49 @@ msgstr "このデモではライブプレビューを利用できません。"
 #: core/src/Playground.php:255
 msgid "Could not build the theme package for the live preview."
 msgstr "ライブプレビュー用のテーマパッケージを作成できませんでした。"
+
+#: core/assets/admin.js:1190
+msgid "/ month"
+msgstr "/ 月"
+
+#: core/assets/admin.js:1287
+msgid "Lifetime for version %s"
+msgstr "バージョン %s の買い切り"
+
+#: core/assets/admin.js:1292
+msgid "Billing"
+msgstr "請求"
+
+#: core/assets/admin.js:1292
+msgid "Monthly"
+msgstr "月額"
+
+#: core/assets/admin.js:1292
+msgid "Yearly · save 20%"
+msgstr "年額 · 20% お得"
+
+#: core/assets/admin.js:1293
+msgid ""
+"Pay once. Lifetime covers the major version you buy: a 1.x license keeps "
+"working, with updates, until version 2.0 is released."
+msgstr ""
+"一度の支払いで利用できます。買い切りライセンスは購入したメジャーバージョンが対象です。1.x ライセンスはバージョン 2.0 "
+"が出るまでアップデート付きで使えます。"
+
+#: styles/essential.json
+msgctxt "Font family name"
+msgid "Bricolage Grotesque"
+msgstr "Bricolage Grotesque"
+
+#: styles/essential.json
+msgctxt "Style variation name"
+msgid "Essential"
+msgstr "Essential"
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:22
+msgid "Refunds"
+msgstr "返金"
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:23
+msgid "Cookies"
+msgstr "クッキー"

@@ -83,7 +83,7 @@ msgstr "प्लगइन्स"
 msgid "License"
 msgstr "लाइसेंस"
 
-#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1363
 msgid "System Status"
 msgstr "सिस्टम स्थिति"
 
@@ -250,64 +250,64 @@ msgstr "आपकी साइट तैयार है।"
 msgid "WooCommerce is not active, so the shop products were skipped."
 msgstr "WooCommerce सक्रिय नहीं है, इसलिए शॉप उत्पाद छोड़ दिए गए।"
 
-#: core/src/Importer.php:602
+#: core/src/Importer.php:608
 msgid "Your server needs a change before the import can run safely."
 msgstr "आयात सुरक्षित रूप से चलाने से पहले आपके सर्वर में बदलाव ज़रूरी है।"
 
-#: core/src/Importer.php:602
+#: core/src/Importer.php:608
 msgid "Fix the items above (your host can help), then press Retry."
 msgstr ""
 "ऊपर दिए गए आइटम ठीक करें (आपका होस्ट मदद कर सकता है), फिर पुनः प्रयास दबाएँ।"
 
 #. translators: %s: demo.
-#: core/src/Importer.php:607
+#: core/src/Importer.php:613
 msgid ""
 "%s was imported before. Its pages stay; the new import adds fresh copies."
 msgstr ""
 "%s पहले आयात किया गया था। इसके पेज बने रहेंगे; नया आयात नई प्रतियाँ जोड़ेगा।"
 
 #. translators: %s: demo.
-#: core/src/Importer.php:607
+#: core/src/Importer.php:613
 msgid "Tick \"Remove previous demo\" next time for a clean site."
 msgstr "साफ़ साइट के लिए अगली बार \"पिछला डेमो हटाएँ\" पर टिक करें।"
 
-#: core/src/Importer.php:609
+#: core/src/Importer.php:615
 msgid "Server checks passed."
 msgstr "सर्वर जाँच सफल रही।"
 
 #. translators: %d: items.
-#: core/src/Importer.php:621
+#: core/src/Importer.php:627
 msgid "Removed %d items from the previous demo and restored its settings."
 msgstr "पिछले डेमो से %d आइटम हटाए गए और उसकी सेटिंग्स पुनर्स्थापित की गईं।"
 
-#: core/src/Importer.php:634
+#: core/src/Importer.php:640
 msgid "Upload a fresh copy of the theme, then press Resume."
 msgstr "थीम की नई प्रति अपलोड करें, फिर फिर से शुरू करें दबाएँ।"
 
-#: core/src/Importer.php:634
+#: core/src/Importer.php:640
 msgid "Check your internet connection and press Resume."
 msgstr "अपना इंटरनेट कनेक्शन जाँचें और फिर से शुरू करें दबाएँ।"
 
-#: core/src/Importer.php:640
+#: core/src/Importer.php:646
 msgid "The demo package could not be read (content.json is damaged)."
 msgstr "डेमो पैकेज पढ़ा नहीं जा सका (content.json क्षतिग्रस्त है)।"
 
-#: core/src/Importer.php:640
+#: core/src/Importer.php:646
 msgid "Clear the cache on the System Status tab and retry."
 msgstr "सिस्टम स्थिति टैब पर कैश साफ़ करें और पुनः प्रयास करें।"
 
 #. translators: 1: pages, 2: images, 3: products.
-#: core/src/Importer.php:644
+#: core/src/Importer.php:650
 msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
 msgstr "पैकेज तैयार: %1$d पेज और पोस्ट, %2$d छवियाँ, %3$d उत्पाद।"
 
 #. translators: 1: plugin, 2: error.
-#: core/src/Importer.php:662
+#: core/src/Importer.php:668
 msgid "%1$s could not be set up: %2$s"
 msgstr "%1$s सेट अप नहीं हो सका: %2$s"
 
 #. translators: 1: plugin, 2: error.
-#: core/src/Importer.php:662
+#: core/src/Importer.php:668
 msgid ""
 "Install it from Plugins → Add New, then use the Plugins tab here to activate"
 " it."
@@ -316,198 +316,198 @@ msgstr ""
 "प्लगइन्स टैब का उपयोग करें।"
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:667
+#: core/src/Importer.php:673
 msgid "%s installed and activated."
 msgstr "%s इंस्टॉल और सक्रिय किया गया।"
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:669
+#: core/src/Importer.php:675
 msgid "%s activated."
 msgstr "%s सक्रिय किया गया।"
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:671
+#: core/src/Importer.php:677
 msgid "%s deactivated because it conflicts with this demo."
 msgstr "%s निष्क्रिय किया गया क्योंकि यह इस डेमो से टकराता है।"
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:673
+#: core/src/Importer.php:679
 msgid "%s is already active."
 msgstr "%s पहले से सक्रिय है।"
 
-#: core/src/Importer.php:702
+#: core/src/Importer.php:708
 msgid "file not found in the package"
 msgstr "पैकेज में फ़ाइल नहीं मिली"
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:707
+#: core/src/Importer.php:713
 msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
 msgstr "छवि %1$s छोड़ी गई (%2$s)। पेज थीम की प्रति का उपयोग करेंगे।"
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:721
+#: core/src/Importer.php:727
 msgid "Image %1$s skipped (%2$s)."
 msgstr "छवि %1$s छोड़ी गई (%2$s)।"
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:721
+#: core/src/Importer.php:727
 msgid "Check that the uploads folder is writable."
 msgstr "जाँचें कि अपलोड फ़ोल्डर लिखने योग्य है।"
 
 #. translators: %s: file.
-#: core/src/Importer.php:729
+#: core/src/Importer.php:735
 msgid "Imported image %s."
 msgstr "छवि %s आयात की गई।"
 
 #. translators: 1: term, 2: taxonomy.
 #. translators: 1: title, 2: post type.
-#: core/src/Importer.php:744 core/src/Importer.php:790
+#: core/src/Importer.php:750 core/src/Importer.php:796
 msgid "Skipped \"%1$s\": %2$s is not available on this site."
 msgstr "\"%1$s\" छोड़ा गया: इस साइट पर %2$s उपलब्ध नहीं है।"
 
 #. translators: %s: term.
-#: core/src/Importer.php:751
+#: core/src/Importer.php:757
 msgid "Category \"%s\" already exists and was reused."
 msgstr "श्रेणी \"%s\" पहले से मौजूद है और उसका पुनः उपयोग किया गया।"
 
 #. translators: 1: term, 2: error.
-#: core/src/Importer.php:763
+#: core/src/Importer.php:769
 msgid "Category \"%1$s\" was not created: %2$s"
 msgstr "श्रेणी \"%1$s\" नहीं बनाई गई: %2$s"
 
 #. translators: %s: term.
-#: core/src/Importer.php:770
+#: core/src/Importer.php:776
 msgid "Created category \"%s\"."
 msgstr "श्रेणी \"%s\" बनाई गई।"
 
 #. translators: 1: title, 2: error.
-#: core/src/Importer.php:808
+#: core/src/Importer.php:814
 msgid "\"%1$s\" could not be created: %2$s"
 msgstr "\"%1$s\" नहीं बनाया जा सका: %2$s"
 
-#: core/src/Importer.php:836
+#: core/src/Importer.php:842
 msgid "post"
 msgstr "पोस्ट"
 
-#: core/src/Importer.php:837
+#: core/src/Importer.php:843
 msgid "page"
 msgstr "पेज"
 
-#: core/src/Importer.php:838
+#: core/src/Importer.php:844
 msgid "event"
 msgstr "इवेंट"
 
-#: core/src/Importer.php:839
+#: core/src/Importer.php:845
 msgid "venue"
 msgstr "स्थल"
 
-#: core/src/Importer.php:840
+#: core/src/Importer.php:846
 msgid "organizer"
 msgstr "आयोजक"
 
 #. translators: 1: type, 2: title.
-#: core/src/Importer.php:843
+#: core/src/Importer.php:849
 msgid "Created %1$s \"%2$s\"."
 msgstr "%1$s \"%2$s\" बनाया गया।"
 
-#: core/src/Importer.php:860
+#: core/src/Importer.php:866
 msgid "The Events Calendar rejected the venue."
 msgstr "The Events Calendar ने स्थल को अस्वीकार कर दिया।"
 
-#: core/src/Importer.php:864
+#: core/src/Importer.php:870
 msgid "The Events Calendar rejected the organizer."
 msgstr "The Events Calendar ने आयोजक को अस्वीकार कर दिया।"
 
-#: core/src/Importer.php:892
+#: core/src/Importer.php:898
 msgid "The Events Calendar rejected the event."
 msgstr "The Events Calendar ने इवेंट को अस्वीकार कर दिया।"
 
 #. translators: %s: product.
-#: core/src/Importer.php:1004
+#: core/src/Importer.php:1014
 msgid "Product \"%s\" could not be saved."
 msgstr "उत्पाद \"%s\" सहेजा नहीं जा सका।"
 
 #. translators: %s: product.
-#: core/src/Importer.php:1015
+#: core/src/Importer.php:1025
 msgid "Added product \"%s\"."
 msgstr "उत्पाद \"%s\" जोड़ा गया।"
 
 #. translators: 1: menu, 2: count.
-#: core/src/Importer.php:1118
+#: core/src/Importer.php:1128
 msgid "Created menu \"%1$s\" with %2$d links."
 msgstr "%2$d लिंक के साथ मेनू \"%1$s\" बनाया गया।"
 
-#: core/src/Importer.php:1164
+#: core/src/Importer.php:1174
 msgid "Home and blog pages assigned."
 msgstr "होम और ब्लॉग पेज निर्धारित किए गए।"
 
 #. translators: %s: option.
-#: core/src/Importer.php:1170
+#: core/src/Importer.php:1180
 msgid "Setting \"%s\" is not on the allow-list and was ignored."
 msgstr "सेटिंग \"%s\" अनुमति-सूची में नहीं है और उसे अनदेखा किया गया।"
 
 #. translators: %s: preset.
-#: core/src/Importer.php:1191
+#: core/src/Importer.php:1201
 msgid "Animation style set to \"%s\"."
 msgstr "एनिमेशन शैली \"%s\" पर सेट की गई।"
 
-#: core/src/Importer.php:1204
+#: core/src/Importer.php:1214
 msgid "Elementor set to use the theme colours and fonts."
 msgstr "Elementor को थीम के रंग और फ़ॉन्ट उपयोग करने के लिए सेट किया गया।"
 
-#: core/src/Importer.php:1219
+#: core/src/Importer.php:1229
 msgid "Default"
 msgstr "डिफ़ॉल्ट"
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1222
+#: core/src/Importer.php:1232
 msgid "Style \"%s\" was not found in the theme, so the default colours stay."
 msgstr "शैली \"%s\" थीम में नहीं मिली, इसलिए डिफ़ॉल्ट रंग बने रहेंगे।"
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1222
+#: core/src/Importer.php:1232
 msgid "Update the Hi WPEssential theme, then import again."
 msgstr "Hi WPEssential थीम अपडेट करें, फिर दोबारा आयात करें।"
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1250
+#: core/src/Importer.php:1260
 msgid "Applied the %s colours and fonts."
 msgstr "%s के रंग और फ़ॉन्ट लागू किए गए।"
 
-#: core/src/Importer.php:1268
+#: core/src/Importer.php:1278
 msgid "demo"
 msgstr "डेमो"
 
 #. translators: 1: template part, 2: design.
-#: core/src/Importer.php:1320
+#: core/src/Importer.php:1330
 msgid "Template part \"%1$s\" set to the \"%2$s\" design."
 msgstr "टेम्पलेट भाग \"%1$s\" को \"%2$s\" डिज़ाइन पर सेट किया गया।"
 
-#: core/src/Importer.php:1341
+#: core/src/Importer.php:1351
 msgid "Elementor Kit layout, buttons and form styles set."
 msgstr "Elementor Kit लेआउट, बटन और फ़ॉर्म शैलियाँ सेट की गईं।"
 
-#: core/src/Importer.php:1361
+#: core/src/Importer.php:1371
 msgid "Everywhere"
 msgstr "हर जगह"
 
-#: core/src/Importer.php:1369
+#: core/src/Importer.php:1379
 msgid "Free shipping"
 msgstr "मुफ़्त शिपिंग"
 
 #. translators: %s: amount.
-#: core/src/Importer.php:1377
+#: core/src/Importer.php:1387
 msgid "Shipping set up with free delivery over %s."
 msgstr "%s से अधिक पर मुफ़्त डिलीवरी के साथ शिपिंग सेट अप की गई।"
 
 #. translators: %d: pages.
-#: core/src/Importer.php:1412
+#: core/src/Importer.php:1422
 msgid "Linked %d page to its new address."
 msgid_plural "Linked %d pages to their new addresses."
 msgstr[0] "%d पेज को उसके नए पते से लिंक किया गया।"
 msgstr[1] "%d पेजों को उनके नए पतों से लिंक किया गया।"
 
-#: core/src/Importer.php:1417
+#: core/src/Importer.php:1427
 msgid "Permalinks and caches refreshed."
 msgstr "पर्मालिंक्स और कैश रीफ़्रेश किए गए।"
 
@@ -1504,7 +1504,7 @@ msgstr "सर्वाधिकार सुरक्षित।"
 msgid "Privacy"
 msgstr "गोपनीयता"
 
-#: patterns/footer-premium.php:104
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:21
 msgid "Terms"
 msgstr "शर्तें"
 
@@ -1827,6 +1827,7 @@ msgid "Free"
 msgstr "मुफ़्त"
 
 #: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+#: core/assets/admin.js:1193
 msgid "/ year"
 msgstr "/ वर्ष"
 
@@ -3027,7 +3028,7 @@ msgstr "डोमेन"
 msgid "Expires"
 msgstr "समाप्ति"
 
-#: core/assets/admin.js:1118
+#: core/assets/admin.js:1118 core/assets/admin.js:1292
 msgid "Lifetime"
 msgstr "आजीवन"
 
@@ -3127,27 +3128,27 @@ msgstr "लाइसेंस निष्क्रिय हुआ"
 msgid "Deactivation failed"
 msgstr "निष्क्रिय करना विफल रहा"
 
-#: core/assets/admin.js:1188
+#: core/assets/admin.js:1195
 msgid "/ %d mo"
 msgstr "/ %d माह"
 
-#: core/assets/admin.js:1188
+#: core/assets/admin.js:1195
 msgid "one-time"
 msgstr "एकमुश्त"
 
-#: core/assets/admin.js:1201
+#: core/assets/admin.js:1211
 msgid "Your WPEssential account could not be reached"
 msgstr "आपके WPEssential खाते तक नहीं पहुँचा जा सका"
 
-#: core/assets/admin.js:1213
+#: core/assets/admin.js:1223
 msgid "Sign in to your account"
 msgstr "अपने खाते में साइन इन करें"
 
-#: core/assets/admin.js:1213
+#: core/assets/admin.js:1223
 msgid "Create your free account"
 msgstr "अपना मुफ़्त खाता बनाएँ"
 
-#: core/assets/admin.js:1213
+#: core/assets/admin.js:1223
 msgid ""
 "Your licenses, Pro demos and subscription in one place. New accounts include"
 " the Free plan for this website."
@@ -3155,155 +3156,155 @@ msgstr ""
 "आपके लाइसेंस, Pro डेमो और सदस्यता एक जगह। नए खातों में इस वेबसाइट के लिए "
 "Free प्लान शामिल है।"
 
-#: core/assets/admin.js:1214
+#: core/assets/admin.js:1224
 msgid "Activate licenses without copying keys"
 msgstr "कुंजियाँ कॉपी किए बिना लाइसेंस सक्रिय करें"
 
-#: core/assets/admin.js:1214
+#: core/assets/admin.js:1224
 msgid "Upgrade, renew or switch plans in one click"
 msgstr "एक क्लिक में अपग्रेड, नवीनीकरण या प्लान बदलें"
 
-#: core/assets/admin.js:1214
+#: core/assets/admin.js:1224
 msgid "Manage websites and auto-renewal"
 msgstr "वेबसाइटें और ऑटो-नवीनीकरण प्रबंधित करें"
 
-#: core/assets/admin.js:1216 core/assets/admin.js:1221
+#: core/assets/admin.js:1226 core/assets/admin.js:1231
 msgid "Sign in"
 msgstr "साइन इन करें"
 
-#: core/assets/admin.js:1216
+#: core/assets/admin.js:1226
 msgid "Create account"
 msgstr "खाता बनाएँ"
 
-#: core/assets/admin.js:1217
+#: core/assets/admin.js:1227
 msgid "Full name"
 msgstr "पूरा नाम"
 
-#: core/assets/admin.js:1218
+#: core/assets/admin.js:1228
 msgid "Email"
 msgstr "ईमेल"
 
-#: core/assets/admin.js:1219
+#: core/assets/admin.js:1229
 msgid "Password"
 msgstr "पासवर्ड"
 
-#: core/assets/admin.js:1221
+#: core/assets/admin.js:1231
 msgid "Signing in"
 msgstr "साइन इन हो रहा है"
 
-#: core/assets/admin.js:1221
+#: core/assets/admin.js:1231
 msgid "Creating account"
 msgstr "खाता बनाया जा रहा है"
 
-#: core/assets/admin.js:1221
+#: core/assets/admin.js:1231
 msgid "Create free account"
 msgstr "मुफ़्त खाता बनाएँ"
 
-#: core/assets/admin.js:1222
+#: core/assets/admin.js:1232
 msgid "Forgot password?"
 msgstr "पासवर्ड भूल गए?"
 
-#: core/assets/admin.js:1222
+#: core/assets/admin.js:1232
 msgid "By creating an account you agree to the Hi WPEssential terms."
 msgstr "खाता बनाकर आप Hi WPEssential की शर्तों से सहमत होते हैं।"
 
-#: core/assets/admin.js:1223
+#: core/assets/admin.js:1233
 msgid "Continue without an account"
 msgstr "बिना खाते के जारी रखें"
 
-#: core/assets/admin.js:1239
+#: core/assets/admin.js:1249
 msgid "Fill in every field."
 msgstr "हर फ़ील्ड भरें।"
 
-#: core/assets/admin.js:1245
+#: core/assets/admin.js:1255
 msgid "Signed in"
 msgstr "साइन इन हो गया"
 
-#: core/assets/admin.js:1245
+#: core/assets/admin.js:1255
 msgid "Account created"
 msgstr "खाता बनाया गया"
 
-#: core/assets/admin.js:1266
+#: core/assets/admin.js:1280
 msgid "Refresh"
 msgstr "रीफ़्रेश करें"
 
-#: core/assets/admin.js:1267
+#: core/assets/admin.js:1281
 msgid "Manage account"
 msgstr "खाता प्रबंधित करें"
 
-#: core/assets/admin.js:1268
+#: core/assets/admin.js:1282
 msgid "Sign out"
 msgstr "साइन आउट करें"
 
-#: core/assets/admin.js:1270
+#: core/assets/admin.js:1284
 msgid "Your licenses"
 msgstr "आपके लाइसेंस"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "%1$d of %2$s websites"
 msgstr "%2$s में से %1$d वेबसाइटें"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "Never expires"
 msgstr "कभी समाप्त नहीं होता"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "Renews %s"
 msgstr "%s को नवीनीकृत होगा"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "Ends %s"
 msgstr "%s को समाप्त होगा"
 
-#: core/assets/admin.js:1274
+#: core/assets/admin.js:1288
 msgid "Auto-renew"
 msgstr "ऑटो-नवीनीकरण"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "Renew"
 msgstr "नवीनीकृत करें"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "This site"
 msgstr "यह साइट"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "Activating"
 msgstr "सक्रिय किया जा रहा है"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "Use on this site"
 msgstr "इस साइट पर उपयोग करें"
 
-#: core/assets/admin.js:1276
+#: core/assets/admin.js:1290
 msgid "No licenses yet — choose a plan below."
 msgstr "अभी तक कोई लाइसेंस नहीं — नीचे कोई प्लान चुनें।"
 
-#: core/assets/admin.js:1277
+#: core/assets/admin.js:1291
 msgid "Upgrade your plan"
 msgstr "अपना प्लान अपग्रेड करें"
 
-#: core/assets/admin.js:1277
+#: core/assets/admin.js:1291
 msgid "Choose a plan"
 msgstr "एक प्लान चुनें"
 
-#: core/assets/admin.js:1282
+#: core/assets/admin.js:1298
 msgid "Most popular"
 msgstr "सबसे लोकप्रिय"
 
-#: core/assets/admin.js:1283
+#: core/assets/admin.js:1299
 msgid "Current plan"
 msgstr "वर्तमान प्लान"
 
-#: core/assets/admin.js:1283
+#: core/assets/admin.js:1299
 msgid "Upgrade"
 msgstr "अपग्रेड करें"
 
-#: core/assets/admin.js:1283
+#: core/assets/admin.js:1299
 msgid "Choose"
 msgstr "चुनें"
 
-#: core/assets/admin.js:1285
+#: core/assets/admin.js:1301
 msgid ""
 "Checkout opens on wpessential.org already signed in. Upgrades credit the "
 "unused part of your current plan. Staging and local sites do not count "
@@ -3313,212 +3314,212 @@ msgstr ""
 "आपके वर्तमान प्लान के अप्रयुक्त हिस्से का क्रेडिट दिया जाता है। स्टेजिंग और "
 "लोकल साइटें आपकी वेबसाइट सीमा में नहीं गिनी जातीं।"
 
-#: core/assets/admin.js:1301
+#: core/assets/admin.js:1321
 msgid "License active on this site"
 msgstr "इस साइट पर लाइसेंस सक्रिय है"
 
-#: core/assets/admin.js:1315
+#: core/assets/admin.js:1335
 msgid "Auto-renew is on"
 msgstr "ऑटो-नवीनीकरण चालू है"
 
-#: core/assets/admin.js:1315
+#: core/assets/admin.js:1335
 msgid "Auto-renew is off"
 msgstr "ऑटो-नवीनीकरण बंद है"
 
-#: core/assets/admin.js:1315
+#: core/assets/admin.js:1335
 msgid "Your license works until its end date."
 msgstr "आपका लाइसेंस अपनी समाप्ति तिथि तक काम करेगा।"
 
-#: core/assets/admin.js:1318
+#: core/assets/admin.js:1338
 msgid "Could not change auto-renew"
 msgstr "ऑटो-नवीनीकरण बदला नहीं जा सका"
 
-#: core/assets/admin.js:1330
+#: core/assets/admin.js:1350
 msgid "Checkout opened in a new tab"
 msgstr "चेकआउट नए टैब में खुला"
 
-#: core/assets/admin.js:1330
+#: core/assets/admin.js:1350
 msgid "When payment is done, press Refresh here."
 msgstr "भुगतान पूरा होने पर यहाँ रीफ़्रेश दबाएँ।"
 
-#: core/assets/admin.js:1335
+#: core/assets/admin.js:1355
 msgid "Checkout could not start"
 msgstr "चेकआउट शुरू नहीं हो सका"
 
-#: core/assets/admin.js:1343
+#: core/assets/admin.js:1363
 msgid "What your server offers and what to improve before importing."
 msgstr "आपका सर्वर क्या प्रदान करता है और आयात से पहले क्या सुधारना है।"
 
-#: core/assets/admin.js:1343
+#: core/assets/admin.js:1363
 msgid "Copy report"
 msgstr "रिपोर्ट कॉपी करें"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Health"
 msgstr "स्वास्थ्य"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Excellent"
 msgstr "उत्कृष्ट"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Good"
 msgstr "अच्छा"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Needs work"
 msgstr "सुधार की ज़रूरत"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "%d item(s) could be better. Imports still run; fixes make them faster."
 msgstr ""
 "%d आइटम बेहतर हो सकते हैं। आयात फिर भी चलेंगे; सुधार उन्हें तेज़ बनाते हैं।"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Your server is ready for any demo."
 msgstr "आपका सर्वर किसी भी डेमो के लिए तैयार है।"
 
-#: core/assets/admin.js:1352
+#: core/assets/admin.js:1372
 msgid "Environment"
 msgstr "परिवेश"
 
-#: core/assets/admin.js:1356
+#: core/assets/admin.js:1376
 msgid "Report copied"
 msgstr "रिपोर्ट कॉपी हुई"
 
-#: core/assets/admin.js:1356
+#: core/assets/admin.js:1376
 msgid "Copy failed"
 msgstr "कॉपी विफल रही"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Accent"
 msgstr "एक्सेंट"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Border"
 msgstr "बॉर्डर"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Danger"
 msgstr "खतरा"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Ink"
 msgstr "इंक"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "On Ink"
 msgstr "इंक पर"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "On Ink Muted"
 msgstr "इंक पर फीका"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "On Primary"
 msgstr "प्राथमिक पर"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Primary"
 msgstr "प्राथमिक"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Primary Hover"
 msgstr "प्राथमिक होवर"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Primary Soft"
 msgstr "प्राथमिक सॉफ़्ट"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Pro"
 msgstr "Pro"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Secondary"
 msgstr "द्वितीयक"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Star"
 msgstr "स्टार"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Success"
 msgstr "सफलता"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Surface"
 msgstr "सतह"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Surface Alt"
 msgstr "वैकल्पिक सतह"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Text"
 msgstr "टेक्स्ट"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Text Muted"
 msgstr "फीका टेक्स्ट"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Warning"
 msgstr "चेतावनी"
@@ -3568,12 +3569,12 @@ msgctxt "Font family name"
 msgid "Manrope"
 msgstr "Manrope"
 
-#: styles/maison.json styles/pulse.json theme.json
+#: styles/essential.json styles/maison.json styles/pulse.json theme.json
 msgctxt "Font family name"
 msgid "Monospace"
 msgstr "मोनोस्पेस"
 
-#: theme.json
+#: styles/essential.json theme.json
 msgctxt "Font family name"
 msgid "Plus Jakarta Sans"
 msgstr "Plus Jakarta Sans"
@@ -3628,7 +3629,8 @@ msgctxt "Font size name"
 msgid "XS"
 msgstr "XS"
 
-#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+#: styles/dark.json styles/essential.json styles/maison.json styles/pulse.json
+#: theme.json
 msgctxt "Gradient name"
 msgid "Brand"
 msgstr "ब्रांड"
@@ -3638,12 +3640,13 @@ msgctxt "Gradient name"
 msgid "Fade bottom"
 msgstr "नीचे फ़ेड"
 
-#: styles/maison.json styles/pulse.json theme.json
+#: styles/essential.json styles/maison.json styles/pulse.json theme.json
 msgctxt "Gradient name"
 msgid "Fade to ink"
 msgstr "इंक में फ़ेड"
 
-#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+#: styles/dark.json styles/essential.json styles/maison.json styles/pulse.json
+#: theme.json
 msgctxt "Gradient name"
 msgid "Night"
 msgstr "रात"
@@ -3800,3 +3803,49 @@ msgstr "इस डेमो के लिए लाइव प्रीव्य�
 #: core/src/Playground.php:255
 msgid "Could not build the theme package for the live preview."
 msgstr "लाइव प्रीव्यू के लिए थीम पैकेज नहीं बनाया जा सका।"
+
+#: core/assets/admin.js:1190
+msgid "/ month"
+msgstr "/ माह"
+
+#: core/assets/admin.js:1287
+msgid "Lifetime for version %s"
+msgstr "संस्करण %s के लिए आजीवन"
+
+#: core/assets/admin.js:1292
+msgid "Billing"
+msgstr "बिलिंग"
+
+#: core/assets/admin.js:1292
+msgid "Monthly"
+msgstr "मासिक"
+
+#: core/assets/admin.js:1292
+msgid "Yearly · save 20%"
+msgstr "वार्षिक · 20% बचत"
+
+#: core/assets/admin.js:1293
+msgid ""
+"Pay once. Lifetime covers the major version you buy: a 1.x license keeps "
+"working, with updates, until version 2.0 is released."
+msgstr ""
+"एक बार भुगतान करें। आजीवन लाइसेंस खरीदे गए मुख्य संस्करण को कवर करता है: 1.x"
+" लाइसेंस अपडेट के साथ तब तक चलता है जब तक संस्करण 2.0 जारी नहीं होता।"
+
+#: styles/essential.json
+msgctxt "Font family name"
+msgid "Bricolage Grotesque"
+msgstr "Bricolage Grotesque"
+
+#: styles/essential.json
+msgctxt "Style variation name"
+msgid "Essential"
+msgstr "Essential"
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:22
+msgid "Refunds"
+msgstr "रिफ़ंड"
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:23
+msgid "Cookies"
+msgstr "कुकीज़"

@@ -79,7 +79,7 @@ add_action(
 			$css  .= $media[ $s['scope'] ] ? '@media ' . $media[ $s['scope'] ] . "{\n" . $block . "}\n" : $block;
 		}
 		if ( $css ) {
-			wp_register_style( 'wpessential-custom', false, array( 'wpessential' ), WPESSENTIAL_VERSION );
+			wp_register_style( 'wpessential-custom', false, array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
 			wp_enqueue_style( 'wpessential-custom' );
 			wp_add_inline_style( 'wpessential-custom', $css );
 		}
@@ -134,8 +134,8 @@ add_action(
 		}
 		$css = wp_enqueue_code_editor( array( 'type' => 'text/css' ) );
 		$js  = wp_enqueue_code_editor( array( 'type' => 'text/javascript' ) );
-		wp_enqueue_style( 'wpessential-options', WPESSENTIAL_URI . '/assets/css/options.css', array(), WPESSENTIAL_VERSION );
-		wp_enqueue_script( 'wpessential-options', WPESSENTIAL_URI . '/assets/js/options.js', array( 'wp-api-fetch', 'wp-i18n', 'code-editor' ), WPESSENTIAL_VERSION, true );
+		wp_enqueue_style( 'wpessential-options', WPESSENTIAL_URI . '/assets/css/options.css', array(), WPESSENTIAL_ASSET_VERSION );
+		wp_enqueue_script( 'wpessential-options', WPESSENTIAL_URI . '/assets/js/options.js', array( 'wp-api-fetch', 'wp-i18n', 'code-editor' ), WPESSENTIAL_ASSET_VERSION, true );
 		wp_set_script_translations( 'wpessential-options', 'hi-wpessential', WPESSENTIAL_DIR . '/languages' );
 		wp_localize_script(
 			'wpessential-options',

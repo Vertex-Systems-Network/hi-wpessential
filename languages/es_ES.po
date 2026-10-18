@@ -83,7 +83,7 @@ msgstr "Plugins"
 msgid "License"
 msgstr "Licencia"
 
-#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1343
+#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1363
 msgid "System Status"
 msgstr "Estado del sistema"
 
@@ -255,20 +255,20 @@ msgstr ""
 "WooCommerce no está activo, así que se han omitido los productos de la "
 "tienda."
 
-#: core/src/Importer.php:602
+#: core/src/Importer.php:608
 msgid "Your server needs a change before the import can run safely."
 msgstr ""
 "Tu servidor necesita un cambio antes de que la importación pueda ejecutarse "
 "de forma segura."
 
-#: core/src/Importer.php:602
+#: core/src/Importer.php:608
 msgid "Fix the items above (your host can help), then press Retry."
 msgstr ""
 "Corrige los elementos anteriores (tu proveedor de alojamiento puede "
 "ayudarte) y luego pulsa Reintentar."
 
 #. translators: %s: demo.
-#: core/src/Importer.php:607
+#: core/src/Importer.php:613
 msgid ""
 "%s was imported before. Its pages stay; the new import adds fresh copies."
 msgstr ""
@@ -276,52 +276,52 @@ msgstr ""
 " copias nuevas."
 
 #. translators: %s: demo.
-#: core/src/Importer.php:607
+#: core/src/Importer.php:613
 msgid "Tick \"Remove previous demo\" next time for a clean site."
 msgstr ""
 "La próxima vez marca «Eliminar la demo anterior» para tener un sitio limpio."
 
-#: core/src/Importer.php:609
+#: core/src/Importer.php:615
 msgid "Server checks passed."
 msgstr "Las comprobaciones del servidor se han superado."
 
 #. translators: %d: items.
-#: core/src/Importer.php:621
+#: core/src/Importer.php:627
 msgid "Removed %d items from the previous demo and restored its settings."
 msgstr ""
 "Se han eliminado %d elementos de la demo anterior y se han restaurado sus "
 "ajustes."
 
-#: core/src/Importer.php:634
+#: core/src/Importer.php:640
 msgid "Upload a fresh copy of the theme, then press Resume."
 msgstr "Sube una copia nueva del tema y luego pulsa Reanudar."
 
-#: core/src/Importer.php:634
+#: core/src/Importer.php:640
 msgid "Check your internet connection and press Resume."
 msgstr "Comprueba tu conexión a internet y pulsa Reanudar."
 
-#: core/src/Importer.php:640
+#: core/src/Importer.php:646
 msgid "The demo package could not be read (content.json is damaged)."
 msgstr "No se ha podido leer el paquete de demo (content.json está dañado)."
 
-#: core/src/Importer.php:640
+#: core/src/Importer.php:646
 msgid "Clear the cache on the System Status tab and retry."
 msgstr ""
 "Vacía la caché en la pestaña Estado del sistema y vuelve a intentarlo."
 
 #. translators: 1: pages, 2: images, 3: products.
-#: core/src/Importer.php:644
+#: core/src/Importer.php:650
 msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
 msgstr ""
 "Paquete listo: %1$d páginas y entradas, %2$d imágenes, %3$d productos."
 
 #. translators: 1: plugin, 2: error.
-#: core/src/Importer.php:662
+#: core/src/Importer.php:668
 msgid "%1$s could not be set up: %2$s"
 msgstr "No se ha podido configurar %1$s: %2$s"
 
 #. translators: 1: plugin, 2: error.
-#: core/src/Importer.php:662
+#: core/src/Importer.php:668
 msgid ""
 "Install it from Plugins → Add New, then use the Plugins tab here to activate"
 " it."
@@ -330,201 +330,201 @@ msgstr ""
 "para activarlo."
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:667
+#: core/src/Importer.php:673
 msgid "%s installed and activated."
 msgstr "%s instalado y activado."
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:669
+#: core/src/Importer.php:675
 msgid "%s activated."
 msgstr "%s activado."
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:671
+#: core/src/Importer.php:677
 msgid "%s deactivated because it conflicts with this demo."
 msgstr "%s se ha desactivado porque entra en conflicto con esta demo."
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:673
+#: core/src/Importer.php:679
 msgid "%s is already active."
 msgstr "%s ya está activo."
 
-#: core/src/Importer.php:702
+#: core/src/Importer.php:708
 msgid "file not found in the package"
 msgstr "archivo no encontrado en el paquete"
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:707
+#: core/src/Importer.php:713
 msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
 msgstr "Imagen %1$s omitida (%2$s). Las páginas usan la copia del tema."
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:721
+#: core/src/Importer.php:727
 msgid "Image %1$s skipped (%2$s)."
 msgstr "Imagen %1$s omitida (%2$s)."
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:721
+#: core/src/Importer.php:727
 msgid "Check that the uploads folder is writable."
 msgstr "Comprueba que se pueda escribir en la carpeta de subidas."
 
 #. translators: %s: file.
-#: core/src/Importer.php:729
+#: core/src/Importer.php:735
 msgid "Imported image %s."
 msgstr "Imagen %s importada."
 
 #. translators: 1: term, 2: taxonomy.
 #. translators: 1: title, 2: post type.
-#: core/src/Importer.php:744 core/src/Importer.php:790
+#: core/src/Importer.php:750 core/src/Importer.php:796
 msgid "Skipped \"%1$s\": %2$s is not available on this site."
 msgstr "Se ha omitido «%1$s»: %2$s no está disponible en este sitio."
 
 #. translators: %s: term.
-#: core/src/Importer.php:751
+#: core/src/Importer.php:757
 msgid "Category \"%s\" already exists and was reused."
 msgstr "La categoría «%s» ya existe y se ha reutilizado."
 
 #. translators: 1: term, 2: error.
-#: core/src/Importer.php:763
+#: core/src/Importer.php:769
 msgid "Category \"%1$s\" was not created: %2$s"
 msgstr "No se ha creado la categoría «%1$s»: %2$s"
 
 #. translators: %s: term.
-#: core/src/Importer.php:770
+#: core/src/Importer.php:776
 msgid "Created category \"%s\"."
 msgstr "Categoría «%s» creada."
 
 #. translators: 1: title, 2: error.
-#: core/src/Importer.php:808
+#: core/src/Importer.php:814
 msgid "\"%1$s\" could not be created: %2$s"
 msgstr "No se ha podido crear «%1$s»: %2$s"
 
-#: core/src/Importer.php:836
+#: core/src/Importer.php:842
 msgid "post"
 msgstr "entrada"
 
-#: core/src/Importer.php:837
+#: core/src/Importer.php:843
 msgid "page"
 msgstr "página"
 
-#: core/src/Importer.php:838
+#: core/src/Importer.php:844
 msgid "event"
 msgstr "evento"
 
-#: core/src/Importer.php:839
+#: core/src/Importer.php:845
 msgid "venue"
 msgstr "lugar"
 
-#: core/src/Importer.php:840
+#: core/src/Importer.php:846
 msgid "organizer"
 msgstr "organizador"
 
 #. translators: 1: type, 2: title.
-#: core/src/Importer.php:843
+#: core/src/Importer.php:849
 msgid "Created %1$s \"%2$s\"."
 msgstr "Se ha creado %1$s «%2$s»."
 
-#: core/src/Importer.php:860
+#: core/src/Importer.php:866
 msgid "The Events Calendar rejected the venue."
 msgstr "The Events Calendar ha rechazado el lugar."
 
-#: core/src/Importer.php:864
+#: core/src/Importer.php:870
 msgid "The Events Calendar rejected the organizer."
 msgstr "The Events Calendar ha rechazado el organizador."
 
-#: core/src/Importer.php:892
+#: core/src/Importer.php:898
 msgid "The Events Calendar rejected the event."
 msgstr "The Events Calendar ha rechazado el evento."
 
 #. translators: %s: product.
-#: core/src/Importer.php:1004
+#: core/src/Importer.php:1014
 msgid "Product \"%s\" could not be saved."
 msgstr "No se ha podido guardar el producto «%s»."
 
 #. translators: %s: product.
-#: core/src/Importer.php:1015
+#: core/src/Importer.php:1025
 msgid "Added product \"%s\"."
 msgstr "Producto «%s» añadido."
 
 #. translators: 1: menu, 2: count.
-#: core/src/Importer.php:1118
+#: core/src/Importer.php:1128
 msgid "Created menu \"%1$s\" with %2$d links."
 msgstr "Menú «%1$s» creado con %2$d enlaces."
 
-#: core/src/Importer.php:1164
+#: core/src/Importer.php:1174
 msgid "Home and blog pages assigned."
 msgstr "Páginas de inicio y del blog asignadas."
 
 #. translators: %s: option.
-#: core/src/Importer.php:1170
+#: core/src/Importer.php:1180
 msgid "Setting \"%s\" is not on the allow-list and was ignored."
 msgstr "El ajuste «%s» no está en la lista de permitidos y se ha ignorado."
 
 #. translators: %s: preset.
-#: core/src/Importer.php:1191
+#: core/src/Importer.php:1201
 msgid "Animation style set to \"%s\"."
 msgstr "Estilo de animación establecido en «%s»."
 
-#: core/src/Importer.php:1204
+#: core/src/Importer.php:1214
 msgid "Elementor set to use the theme colours and fonts."
 msgstr "Elementor configurado para usar los colores y las fuentes del tema."
 
-#: core/src/Importer.php:1219
+#: core/src/Importer.php:1229
 msgid "Default"
 msgstr "Por defecto"
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1222
+#: core/src/Importer.php:1232
 msgid "Style \"%s\" was not found in the theme, so the default colours stay."
 msgstr ""
 "No se ha encontrado el estilo «%s» en el tema, así que se mantienen los "
 "colores por defecto."
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1222
+#: core/src/Importer.php:1232
 msgid "Update the Hi WPEssential theme, then import again."
 msgstr "Actualiza el tema Hi WPEssential y vuelve a importar."
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1250
+#: core/src/Importer.php:1260
 msgid "Applied the %s colours and fonts."
 msgstr "Se han aplicado los colores y las fuentes de %s."
 
-#: core/src/Importer.php:1268
+#: core/src/Importer.php:1278
 msgid "demo"
 msgstr "demo"
 
 #. translators: 1: template part, 2: design.
-#: core/src/Importer.php:1320
+#: core/src/Importer.php:1330
 msgid "Template part \"%1$s\" set to the \"%2$s\" design."
 msgstr "Parte de plantilla «%1$s» establecida con el diseño «%2$s»."
 
-#: core/src/Importer.php:1341
+#: core/src/Importer.php:1351
 msgid "Elementor Kit layout, buttons and form styles set."
 msgstr ""
 "Diseño, botones y estilos de formularios del kit de Elementor configurados."
 
-#: core/src/Importer.php:1361
+#: core/src/Importer.php:1371
 msgid "Everywhere"
 msgstr "En todas partes"
 
-#: core/src/Importer.php:1369
+#: core/src/Importer.php:1379
 msgid "Free shipping"
 msgstr "Envío gratuito"
 
 #. translators: %s: amount.
-#: core/src/Importer.php:1377
+#: core/src/Importer.php:1387
 msgid "Shipping set up with free delivery over %s."
 msgstr "Envío configurado con entrega gratuita a partir de %s."
 
 #. translators: %d: pages.
-#: core/src/Importer.php:1412
+#: core/src/Importer.php:1422
 msgid "Linked %d page to its new address."
 msgid_plural "Linked %d pages to their new addresses."
 msgstr[0] "Se ha vinculado %d página a su nueva dirección."
 msgstr[1] "Se han vinculado %d páginas a sus nuevas direcciones."
 
-#: core/src/Importer.php:1417
+#: core/src/Importer.php:1427
 msgid "Permalinks and caches refreshed."
 msgstr "Enlaces permanentes y cachés actualizados."
 
@@ -1528,7 +1528,7 @@ msgstr "Todos los derechos reservados."
 msgid "Privacy"
 msgstr "Privacidad"
 
-#: patterns/footer-premium.php:104
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:21
 msgid "Terms"
 msgstr "Términos"
 
@@ -1854,6 +1854,7 @@ msgid "Free"
 msgstr "Gratis"
 
 #: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
+#: core/assets/admin.js:1193
 msgid "/ year"
 msgstr "/ año"
 
@@ -3065,7 +3066,7 @@ msgstr "Dominio"
 msgid "Expires"
 msgstr "Caduca"
 
-#: core/assets/admin.js:1118
+#: core/assets/admin.js:1118 core/assets/admin.js:1292
 msgid "Lifetime"
 msgstr "De por vida"
 
@@ -3167,27 +3168,27 @@ msgstr "Licencia desactivada"
 msgid "Deactivation failed"
 msgstr "Error al desactivar"
 
-#: core/assets/admin.js:1188
+#: core/assets/admin.js:1195
 msgid "/ %d mo"
 msgstr "/ %d meses"
 
-#: core/assets/admin.js:1188
+#: core/assets/admin.js:1195
 msgid "one-time"
 msgstr "pago único"
 
-#: core/assets/admin.js:1201
+#: core/assets/admin.js:1211
 msgid "Your WPEssential account could not be reached"
 msgstr "No se ha podido conectar con tu cuenta de WPEssential"
 
-#: core/assets/admin.js:1213
+#: core/assets/admin.js:1223
 msgid "Sign in to your account"
 msgstr "Accede a tu cuenta"
 
-#: core/assets/admin.js:1213
+#: core/assets/admin.js:1223
 msgid "Create your free account"
 msgstr "Crea tu cuenta gratuita"
 
-#: core/assets/admin.js:1213
+#: core/assets/admin.js:1223
 msgid ""
 "Your licenses, Pro demos and subscription in one place. New accounts include"
 " the Free plan for this website."
@@ -3195,155 +3196,155 @@ msgstr ""
 "Tus licencias, demos Pro y suscripción en un solo lugar. Las cuentas nuevas "
 "incluyen el plan Free para esta web."
 
-#: core/assets/admin.js:1214
+#: core/assets/admin.js:1224
 msgid "Activate licenses without copying keys"
 msgstr "Activa licencias sin copiar claves"
 
-#: core/assets/admin.js:1214
+#: core/assets/admin.js:1224
 msgid "Upgrade, renew or switch plans in one click"
 msgstr "Mejora, renueva o cambia de plan con un clic"
 
-#: core/assets/admin.js:1214
+#: core/assets/admin.js:1224
 msgid "Manage websites and auto-renewal"
 msgstr "Gestiona webs y la renovación automática"
 
-#: core/assets/admin.js:1216 core/assets/admin.js:1221
+#: core/assets/admin.js:1226 core/assets/admin.js:1231
 msgid "Sign in"
 msgstr "Acceder"
 
-#: core/assets/admin.js:1216
+#: core/assets/admin.js:1226
 msgid "Create account"
 msgstr "Crear cuenta"
 
-#: core/assets/admin.js:1217
+#: core/assets/admin.js:1227
 msgid "Full name"
 msgstr "Nombre completo"
 
-#: core/assets/admin.js:1218
+#: core/assets/admin.js:1228
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: core/assets/admin.js:1219
+#: core/assets/admin.js:1229
 msgid "Password"
 msgstr "Contraseña"
 
-#: core/assets/admin.js:1221
+#: core/assets/admin.js:1231
 msgid "Signing in"
 msgstr "Accediendo"
 
-#: core/assets/admin.js:1221
+#: core/assets/admin.js:1231
 msgid "Creating account"
 msgstr "Creando la cuenta"
 
-#: core/assets/admin.js:1221
+#: core/assets/admin.js:1231
 msgid "Create free account"
 msgstr "Crear cuenta gratuita"
 
-#: core/assets/admin.js:1222
+#: core/assets/admin.js:1232
 msgid "Forgot password?"
 msgstr "¿Has olvidado tu contraseña?"
 
-#: core/assets/admin.js:1222
+#: core/assets/admin.js:1232
 msgid "By creating an account you agree to the Hi WPEssential terms."
 msgstr "Al crear una cuenta aceptas los términos de Hi WPEssential."
 
-#: core/assets/admin.js:1223
+#: core/assets/admin.js:1233
 msgid "Continue without an account"
 msgstr "Continuar sin cuenta"
 
-#: core/assets/admin.js:1239
+#: core/assets/admin.js:1249
 msgid "Fill in every field."
 msgstr "Rellena todos los campos."
 
-#: core/assets/admin.js:1245
+#: core/assets/admin.js:1255
 msgid "Signed in"
 msgstr "Sesión iniciada"
 
-#: core/assets/admin.js:1245
+#: core/assets/admin.js:1255
 msgid "Account created"
 msgstr "Cuenta creada"
 
-#: core/assets/admin.js:1266
+#: core/assets/admin.js:1280
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: core/assets/admin.js:1267
+#: core/assets/admin.js:1281
 msgid "Manage account"
 msgstr "Gestionar la cuenta"
 
-#: core/assets/admin.js:1268
+#: core/assets/admin.js:1282
 msgid "Sign out"
 msgstr "Cerrar sesión"
 
-#: core/assets/admin.js:1270
+#: core/assets/admin.js:1284
 msgid "Your licenses"
 msgstr "Tus licencias"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "%1$d of %2$s websites"
 msgstr "%1$d de %2$s webs"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "Never expires"
 msgstr "No caduca nunca"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "Renews %s"
 msgstr "Se renueva el %s"
 
-#: core/assets/admin.js:1273
+#: core/assets/admin.js:1287
 msgid "Ends %s"
 msgstr "Finaliza el %s"
 
-#: core/assets/admin.js:1274
+#: core/assets/admin.js:1288
 msgid "Auto-renew"
 msgstr "Renovación automática"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "Renew"
 msgstr "Renovar"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "This site"
 msgstr "Este sitio"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "Activating"
 msgstr "Activando"
 
-#: core/assets/admin.js:1275
+#: core/assets/admin.js:1289
 msgid "Use on this site"
 msgstr "Usar en este sitio"
 
-#: core/assets/admin.js:1276
+#: core/assets/admin.js:1290
 msgid "No licenses yet — choose a plan below."
 msgstr "Aún no hay licencias: elige un plan abajo."
 
-#: core/assets/admin.js:1277
+#: core/assets/admin.js:1291
 msgid "Upgrade your plan"
 msgstr "Mejora tu plan"
 
-#: core/assets/admin.js:1277
+#: core/assets/admin.js:1291
 msgid "Choose a plan"
 msgstr "Elige un plan"
 
-#: core/assets/admin.js:1282
+#: core/assets/admin.js:1298
 msgid "Most popular"
 msgstr "El más popular"
 
-#: core/assets/admin.js:1283
+#: core/assets/admin.js:1299
 msgid "Current plan"
 msgstr "Plan actual"
 
-#: core/assets/admin.js:1283
+#: core/assets/admin.js:1299
 msgid "Upgrade"
 msgstr "Mejorar"
 
-#: core/assets/admin.js:1283
+#: core/assets/admin.js:1299
 msgid "Choose"
 msgstr "Elegir"
 
-#: core/assets/admin.js:1285
+#: core/assets/admin.js:1301
 msgid ""
 "Checkout opens on wpessential.org already signed in. Upgrades credit the "
 "unused part of your current plan. Staging and local sites do not count "
@@ -3353,213 +3354,213 @@ msgstr ""
 "plan se abona la parte no usada de tu plan actual. Los sitios de pruebas y "
 "locales no cuentan para tu límite de webs."
 
-#: core/assets/admin.js:1301
+#: core/assets/admin.js:1321
 msgid "License active on this site"
 msgstr "Licencia activa en este sitio"
 
-#: core/assets/admin.js:1315
+#: core/assets/admin.js:1335
 msgid "Auto-renew is on"
 msgstr "La renovación automática está activada"
 
-#: core/assets/admin.js:1315
+#: core/assets/admin.js:1335
 msgid "Auto-renew is off"
 msgstr "La renovación automática está desactivada"
 
-#: core/assets/admin.js:1315
+#: core/assets/admin.js:1335
 msgid "Your license works until its end date."
 msgstr "Tu licencia funciona hasta su fecha de finalización."
 
-#: core/assets/admin.js:1318
+#: core/assets/admin.js:1338
 msgid "Could not change auto-renew"
 msgstr "No se ha podido cambiar la renovación automática"
 
-#: core/assets/admin.js:1330
+#: core/assets/admin.js:1350
 msgid "Checkout opened in a new tab"
 msgstr "El pago se ha abierto en una nueva pestaña"
 
-#: core/assets/admin.js:1330
+#: core/assets/admin.js:1350
 msgid "When payment is done, press Refresh here."
 msgstr "Cuando se complete el pago, pulsa Actualizar aquí."
 
-#: core/assets/admin.js:1335
+#: core/assets/admin.js:1355
 msgid "Checkout could not start"
 msgstr "No se ha podido iniciar el pago"
 
-#: core/assets/admin.js:1343
+#: core/assets/admin.js:1363
 msgid "What your server offers and what to improve before importing."
 msgstr "Qué ofrece tu servidor y qué mejorar antes de importar."
 
-#: core/assets/admin.js:1343
+#: core/assets/admin.js:1363
 msgid "Copy report"
 msgstr "Copiar el informe"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Health"
 msgstr "Salud"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Excellent"
 msgstr "Excelente"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Good"
 msgstr "Bueno"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Needs work"
 msgstr "Necesita mejoras"
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "%d item(s) could be better. Imports still run; fixes make them faster."
 msgstr ""
 "%d elemento(s) podrían mejorar. Las importaciones siguen funcionando; las "
 "correcciones las hacen más rápidas."
 
-#: core/assets/admin.js:1349
+#: core/assets/admin.js:1369
 msgid "Your server is ready for any demo."
 msgstr "Tu servidor está listo para cualquier demo."
 
-#: core/assets/admin.js:1352
+#: core/assets/admin.js:1372
 msgid "Environment"
 msgstr "Entorno"
 
-#: core/assets/admin.js:1356
+#: core/assets/admin.js:1376
 msgid "Report copied"
 msgstr "Informe copiado"
 
-#: core/assets/admin.js:1356
+#: core/assets/admin.js:1376
 msgid "Copy failed"
 msgstr "Error al copiar"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Accent"
 msgstr "Acento"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Border"
 msgstr "Borde"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Danger"
 msgstr "Peligro"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Ink"
 msgstr "Tinta"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "On Ink"
 msgstr "Sobre tinta"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "On Ink Muted"
 msgstr "Sobre tinta atenuado"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "On Primary"
 msgstr "Sobre primario"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Primary"
 msgstr "Primario"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Primary Hover"
 msgstr "Primario al pasar el ratón"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Primary Soft"
 msgstr "Primario suave"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Pro"
 msgstr "Pro"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Secondary"
 msgstr "Secundario"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Star"
 msgstr "Estrella"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Success"
 msgstr "Éxito"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Surface"
 msgstr "Superficie"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Surface Alt"
 msgstr "Superficie alternativa"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Text"
 msgstr "Texto"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Text Muted"
 msgstr "Texto atenuado"
 
 #: styles/agency.json styles/dark.json styles/education.json
-#: styles/fashion.json styles/health.json styles/maison.json styles/pulse.json
-#: styles/restaurant.json theme.json
+#: styles/essential.json styles/fashion.json styles/health.json
+#: styles/maison.json styles/pulse.json styles/restaurant.json theme.json
 msgctxt "Color name"
 msgid "Warning"
 msgstr "Advertencia"
@@ -3609,12 +3610,12 @@ msgctxt "Font family name"
 msgid "Manrope"
 msgstr "Manrope"
 
-#: styles/maison.json styles/pulse.json theme.json
+#: styles/essential.json styles/maison.json styles/pulse.json theme.json
 msgctxt "Font family name"
 msgid "Monospace"
 msgstr "Monoespaciada"
 
-#: theme.json
+#: styles/essential.json theme.json
 msgctxt "Font family name"
 msgid "Plus Jakarta Sans"
 msgstr "Plus Jakarta Sans"
@@ -3669,7 +3670,8 @@ msgctxt "Font size name"
 msgid "XS"
 msgstr "XS"
 
-#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+#: styles/dark.json styles/essential.json styles/maison.json styles/pulse.json
+#: theme.json
 msgctxt "Gradient name"
 msgid "Brand"
 msgstr "Marca"
@@ -3679,12 +3681,13 @@ msgctxt "Gradient name"
 msgid "Fade bottom"
 msgstr "Desvanecido inferior"
 
-#: styles/maison.json styles/pulse.json theme.json
+#: styles/essential.json styles/maison.json styles/pulse.json theme.json
 msgctxt "Gradient name"
 msgid "Fade to ink"
 msgstr "Desvanecido a tinta"
 
-#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+#: styles/dark.json styles/essential.json styles/maison.json styles/pulse.json
+#: theme.json
 msgctxt "Gradient name"
 msgid "Night"
 msgstr "Noche"
@@ -3841,3 +3844,50 @@ msgstr "La vista previa en vivo no está disponible para esta demo."
 #: core/src/Playground.php:255
 msgid "Could not build the theme package for the live preview."
 msgstr "No se pudo crear el paquete del tema para la vista previa en vivo."
+
+#: core/assets/admin.js:1190
+msgid "/ month"
+msgstr "/ mes"
+
+#: core/assets/admin.js:1287
+msgid "Lifetime for version %s"
+msgstr "De por vida para la versión %s"
+
+#: core/assets/admin.js:1292
+msgid "Billing"
+msgstr "Facturación"
+
+#: core/assets/admin.js:1292
+msgid "Monthly"
+msgstr "Mensual"
+
+#: core/assets/admin.js:1292
+msgid "Yearly · save 20%"
+msgstr "Anual · ahorra un 20 %"
+
+#: core/assets/admin.js:1293
+msgid ""
+"Pay once. Lifetime covers the major version you buy: a 1.x license keeps "
+"working, with updates, until version 2.0 is released."
+msgstr ""
+"Paga una vez. La licencia de por vida cubre la versión principal que "
+"compras: una licencia 1.x funciona, con actualizaciones, hasta que se "
+"publique la versión 2.0."
+
+#: styles/essential.json
+msgctxt "Font family name"
+msgid "Bricolage Grotesque"
+msgstr "Bricolage Grotesque"
+
+#: styles/essential.json
+msgctxt "Style variation name"
+msgid "Essential"
+msgstr "Essential"
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:22
+msgid "Refunds"
+msgstr "Reembolsos"
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:23
+msgid "Cookies"
+msgstr "Cookies"

@@ -536,3 +536,6 @@ SEO = {
     'contact': 'Contact the Pulse team about tickets, speaking, sponsorship or press for Pulse 2027 in Lisbon.',
     'blog': 'News from Pulse 2027: speaker announcements, workshop programmes and stories from the community.',
 }
+
+# Brand, contact email and what the site sells, used for the legal pages (tools/demo-builder/legal.py).
+LEGAL = ('Pulse Conference', 'tickets@pulseconf.io', 'conference passes and tickets')

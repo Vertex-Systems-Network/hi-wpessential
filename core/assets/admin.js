@@ -32,7 +32,7 @@
 	};
 
 	const P = {
-		logo: '<defs><linearGradient id="wpe-w" x1="2" y1="12" x2="21" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5ac8d6"/><stop offset=".5" stop-color="#6188c6"/><stop offset="1" stop-color="#625ba8"/></linearGradient></defs><path d="M3 4.5 7 19l4-10.5L15 19l4-14.5" fill="none" stroke="url(#wpe-w)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21.6" cy="19.2" r="2" fill="#5ac8d6" stroke="none"/>',
+		logo: '<defs><linearGradient id="wpe-w" x1="2" y1="12" x2="21" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4a90f5"/><stop offset=".5" stop-color="#2f6be0"/><stop offset="1" stop-color="#1f48a6"/></linearGradient></defs><path d="M3 4.5 7 19l4-10.5L15 19l4-14.5" fill="none" stroke="url(#wpe-w)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21.6" cy="19.2" r="2" fill="#ec7d1a" stroke="none"/>',
 		home: '<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/>',
 		grid: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
 		plug: '<path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0V8ZM12 18v4"/>',
@@ -228,7 +228,7 @@
 	const ring = ( pct, label, cls = '' ) => {
 		const r = 84;
 		const c = 2 * Math.PI * r;
-		return `<div class="wpe-ring ${ cls }"><svg viewBox="0 0 200 200"><defs><linearGradient id="wpe-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#625ba8"/><stop offset=".6" stop-color="#6188c6"/><stop offset="1" stop-color="#5ac8d6"/></linearGradient></defs><circle class="wpe-ring__track" cx="100" cy="100" r="${ r }"/><circle class="wpe-ring__bar" cx="100" cy="100" r="${ r }" stroke-dasharray="${ c }" stroke-dashoffset="${ c - ( c * pct ) / 100 }"/></svg><div class="wpe-ring__label"><b>${ pct }<small>%</small></b><span>${ esc( label ) }</span></div></div>`;
+		return `<div class="wpe-ring ${ cls }"><svg viewBox="0 0 200 200"><defs><linearGradient id="wpe-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f48a6"/><stop offset=".6" stop-color="#2f6be0"/><stop offset="1" stop-color="#4a90f5"/></linearGradient></defs><circle class="wpe-ring__track" cx="100" cy="100" r="${ r }"/><circle class="wpe-ring__bar" cx="100" cy="100" r="${ r }" stroke-dasharray="${ c }" stroke-dashoffset="${ c - ( c * pct ) / 100 }"/></svg><div class="wpe-ring__label"><b>${ pct }<small>%</small></b><span>${ esc( label ) }</span></div></div>`;
 	};
 
 	/* ------------------------------------------------------------------ welcome */
@@ -1020,7 +1020,7 @@
 		const ctx = c.getContext( '2d' );
 		const W = ( c.width = host.clientWidth );
 		const H = ( c.height = host.clientHeight );
-		const colors = [ '#625ba8', '#6188c6', '#5ac8d6', '#f5b547', '#3dd68c', '#ffffff' ];
+		const colors = [ '#1f48a6', '#2f6be0', '#ec7d1a', '#f7a23e', '#3dd68c', '#ffffff' ];
 		const parts = Array.from( { length: 140 }, () => ( { x: W / 2 + ( Math.random() - 0.5 ) * 200, y: H * 0.35, vx: ( Math.random() - 0.5 ) * 14, vy: -Math.random() * 14 - 4, s: Math.random() * 6 + 4, r: Math.random() * 6, vr: ( Math.random() - 0.5 ) * 0.3, c: colors[ Math.floor( Math.random() * colors.length ) ] } ) );
 		let t = 0;
 		const tick = () => {
@@ -1185,7 +1185,17 @@
 		return state.account;
 	}
 
-	const period = ( p ) => ( p.months > 0 ? sprintf( __( '/ %d mo', 'hi-wpessential' ), p.months ) : __( 'one-time', 'hi-wpessential' ) );
+	const period = ( p ) => {
+		if ( p.months === 1 ) {
+			return __( '/ month', 'hi-wpessential' );
+		}
+		if ( p.months === 12 ) {
+			return __( '/ year', 'hi-wpessential' );
+		}
+		return p.months > 0 ? sprintf( __( '/ %d mo', 'hi-wpessential' ), p.months ) : __( 'one-time', 'hi-wpessential' );
+	};
+	// Plans are "<tier>_<billing>" (starter_monthly …); the account screen shows one billing at a time.
+	const billingOf = ( key ) => ( key.includes( '_' ) && /_(monthly|yearly|lifetime)$/.test( key ) ? key.split( '_' ).pop() : '' );
 	const money = ( p ) => new Intl.NumberFormat( undefined, { style: 'currency', currency: p.currency || 'USD', maximumFractionDigits: p.price % 1 ? 2 : 0 } ).format( p.price );
 
 	async function renderAccount( box, opts = {} ) {
@@ -1259,7 +1269,11 @@
 		}
 
 		const statusPill = ( l ) => ( { active: 'success', expired: 'warning', cancelled: 'warning', revoked: 'danger' }[ l.status ] || '' );
-		const rank = ( k ) => [ 'free', 'monthly', 'quarterly', 'yearly', 'lifetime', 'enterprise', 'white_label' ].indexOf( k );
+		const rank = ( k ) => ( a.plans || [] ).findIndex( ( p ) => p.key === k );
+		const billing = state.billing || 'yearly';
+		const tiered = ( a.plans || [] ).some( ( p ) => billingOf( p.key ) );
+		const shown = ( a.plans || [] ).filter( ( p ) => ! tiered || ( p.key !== 'free' && billingOf( p.key ) === billing ) );
+		const featured = ( p ) => p.key === 'yearly' || p.key.startsWith( 'pro_' );
 		const best = ( a.licenses || [] ).filter( ( l ) => l.status === 'active' ).sort( ( x, y ) => rank( y.plan_key ) - rank( x.plan_key ) )[ 0 ];
 		box.innerHTML = `<div class="wpe-card"><div class="wpe-card__body">
 			<div class="wpe-acct-head"><span class="wpe-avatar">${ esc( ( a.user.name || a.user.email ).charAt( 0 ).toUpperCase() ) }<img src="${ esc( a.user.avatar ) }" alt="" width="44" height="44" onerror="this.remove()"></span><div><b>${ esc( a.user.name || a.user.email ) }</b><span class="wpe-muted">${ esc( a.user.email ) }</span></div><span class="wpe-grow"></span>
@@ -1270,23 +1284,29 @@
 			<h3 class="wpe-acct-title">${ esc( __( 'Your licenses', 'hi-wpessential' ) ) }</h3>
 			<div class="wpe-list">${ ( a.licenses || [] ).map( ( l ) => `<div class="wpe-row wpe-lic-row ${ l.here ? 'is-here' : '' }">
 				<span class="wpe-row__ico">${ ico( 'key', 18 ) }</span>
-				<div class="wpe-row__main"><b>${ esc( l.plan ) } <span class="wpe-pill wpe-pill--${ statusPill( l ) }"><i></i>${ esc( l.status ) }</span></b><span>${ esc( l.mask ) } · ${ esc( sprintf( __( '%1$d of %2$s websites', 'hi-wpessential' ), l.sites_used, l.sites_limit ? l.sites_limit : '∞' ) ) } · ${ esc( l.expires === 'lifetime' ? __( 'Never expires', 'hi-wpessential' ) : sprintf( l.auto_renew ? __( 'Renews %s', 'hi-wpessential' ) : __( 'Ends %s', 'hi-wpessential' ), l.expires ) ) }</span></div>
+				<div class="wpe-row__main"><b>${ esc( l.plan ) } <span class="wpe-pill wpe-pill--${ statusPill( l ) }"><i></i>${ esc( l.status ) }</span></b><span>${ esc( l.mask ) } · ${ esc( sprintf( __( '%1$d of %2$s websites', 'hi-wpessential' ), l.sites_used, l.sites_limit ? l.sites_limit : '∞' ) ) } · ${ esc( l.expires === 'lifetime' ? ( l.covers ? sprintf( __( 'Lifetime for version %s', 'hi-wpessential' ), l.covers ) : __( 'Never expires', 'hi-wpessential' ) ) : sprintf( l.auto_renew ? __( 'Renews %s', 'hi-wpessential' ) : __( 'Ends %s', 'hi-wpessential' ), l.expires ) ) }</span></div>
 				${ l.expires !== 'lifetime' && l.plan_key !== 'free' && l.status === 'active' ? `<label class="wpe-switch" title="${ esc( __( 'Auto-renew', 'hi-wpessential' ) ) }"><input type="checkbox" data-renew="${ l.id }" ${ l.auto_renew ? 'checked' : '' } aria-label="${ esc( __( 'Auto-renew', 'hi-wpessential' ) ) }"><span></span></label>` : '' }
 				${ l.status !== 'active' && l.plan_key !== 'free' ? `<button class="wpe-btn wpe-btn--primary wpe-btn--sm" data-buy="${ esc( l.plan_key ) }" data-license="${ l.id }" data-mode="renew">${ esc( __( 'Renew', 'hi-wpessential' ) ) }</button>` : l.here ? `<span class="wpe-pill wpe-pill--success">${ ico( 'check', 12, 3 ) }${ esc( __( 'This site', 'hi-wpessential' ) ) }</span>` : `<button class="wpe-btn wpe-btn--soft wpe-btn--sm" data-use="${ l.id }" data-busy="${ esc( __( 'Activating', 'hi-wpessential' ) ) }">${ esc( __( 'Use on this site', 'hi-wpessential' ) ) }</button>` }
 			</div>` ).join( '' ) || `<p class="wpe-muted">${ esc( __( 'No licenses yet — choose a plan below.', 'hi-wpessential' ) ) }</p>` }</div>
 			<h3 class="wpe-acct-title">${ esc( best && best.plan_key !== 'free' ? __( 'Upgrade your plan', 'hi-wpessential' ) : __( 'Choose a plan', 'hi-wpessential' ) ) }</h3>
-			<div class="wpe-plans">${ ( a.plans || [] ).map( ( p ) => {
+			${ tiered ? `<div class="wpe-seg" role="group" aria-label="${ esc( __( 'Billing', 'hi-wpessential' ) ) }">${ [ [ 'monthly', __( 'Monthly', 'hi-wpessential' ) ], [ 'yearly', __( 'Yearly · save 20%', 'hi-wpessential' ) ], [ 'lifetime', __( 'Lifetime', 'hi-wpessential' ) ] ].map( ( [ k, l ] ) => `<button type="button" class="wpe-seg__btn ${ k === billing ? 'is-on' : '' }" data-billing="${ k }" aria-pressed="${ k === billing }">${ esc( l ) }</button>` ).join( '' ) }</div>` : '' }
+			${ tiered && billing === 'lifetime' ? `<p class="wpe-muted" style="font-size:12px;margin:0 0 10px">${ esc( __( 'Pay once. Lifetime covers the major version you buy: a 1.x license keeps working, with updates, until version 2.0 is released.', 'hi-wpessential' ) ) }</p>` : '' }
+			<div class="wpe-plans">${ shown.map( ( p ) => {
 				const owned = best && best.plan_key === p.key;
 				const lower = best && rank( p.key ) < rank( best.plan_key ) && best.plan_key !== 'free';
 				const upgrade = best && best.plan_key !== 'free' && ! owned && ! lower;
-				return `<article class="wpe-plan ${ p.key === 'yearly' ? 'is-featured' : '' } ${ owned ? 'is-owned' : '' }">${ p.key === 'yearly' ? `<span class="wpe-plan__flag">${ esc( __( 'Most popular', 'hi-wpessential' ) ) }</span>` : '' }<h4>${ esc( p.name ) }</h4><p class="wpe-plan__price">${ esc( money( p ) ) }<small>${ esc( period( p ) ) }</small></p><ul>${ p.features.map( ( f ) => `<li>${ ico( 'check', 14, 3 ) }${ esc( f ) }</li>` ).join( '' ) }</ul>
-					${ owned ? `<span class="wpe-pill wpe-pill--success" style="justify-content:center">${ esc( __( 'Current plan', 'hi-wpessential' ) ) }</span>` : `<button class="wpe-btn ${ p.key === 'yearly' ? 'wpe-btn--grad' : 'wpe-btn--ghost' }" data-buy="${ esc( p.key ) }" ${ upgrade ? `data-license="${ best.id }" data-mode="upgrade"` : '' } ${ lower ? 'disabled' : '' }>${ esc( upgrade ? __( 'Upgrade', 'hi-wpessential' ) : __( 'Choose', 'hi-wpessential' ) ) }</button>` }</article>`;
+				return `<article class="wpe-plan ${ featured( p ) ? 'is-featured' : '' } ${ owned ? 'is-owned' : '' }">${ featured( p ) ? `<span class="wpe-plan__flag">${ esc( __( 'Most popular', 'hi-wpessential' ) ) }</span>` : '' }<h4>${ esc( p.name ) }</h4><p class="wpe-plan__price">${ esc( money( p ) ) }<small>${ esc( period( p ) ) }</small></p><ul>${ p.features.map( ( f ) => `<li>${ ico( 'check', 14, 3 ) }${ esc( f ) }</li>` ).join( '' ) }</ul>
+					${ owned ? `<span class="wpe-pill wpe-pill--success" style="justify-content:center">${ esc( __( 'Current plan', 'hi-wpessential' ) ) }</span>` : `<button class="wpe-btn ${ featured( p ) ? 'wpe-btn--grad' : 'wpe-btn--ghost' }" data-buy="${ esc( p.key ) }" ${ upgrade ? `data-license="${ best.id }" data-mode="upgrade"` : '' } ${ lower ? 'disabled' : '' }>${ esc( upgrade ? __( 'Upgrade', 'hi-wpessential' ) : __( 'Choose', 'hi-wpessential' ) ) }</button>` }</article>`;
 			} ).join( '' ) }</div>
 			<p class="wpe-muted" style="margin-top:14px;font-size:12px">${ esc( __( 'Checkout opens on wpessential.org already signed in. Upgrades credit the unused part of your current plan. Staging and local sites do not count toward your website limit.', 'hi-wpessential' ) ) }</p>
 		</div></div>`;
 
 		const refresh = () => renderAccount( box, opts );
 		$( '[data-acct-refresh]', box ).addEventListener( 'click', refresh );
+		$$( '[data-billing]', box ).forEach( ( b ) => b.addEventListener( 'click', () => {
+			state.billing = b.dataset.billing;
+			refresh();
+		} ) );
 		$( '[data-logout]', box ).addEventListener( 'click', async () => {
 			await api( { path: '/wpessential/v1/account/logout', method: 'POST' } ).catch( () => {} );
 			state.account = { signed_in: false };
