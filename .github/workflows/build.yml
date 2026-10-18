@@ -16,8 +16,8 @@ jobs:
       WPES_SERVER_URL: ${{ secrets.WPES_SERVER_URL }}
       WPES_SERVER_AUTH: ${{ secrets.WPES_SERVER_AUTH }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       # A tag like v1.2.0 sets the theme version, so style.css never has to be edited by hand.
@@ -31,17 +31,17 @@ jobs:
       - name: Build theme, server plugin and demo packages
         run: ./tools/build-zips.sh
       # Each artifact downloads as its own zip from the run page (Actions → Build zips → Artifacts).
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: wpessential-theme
           path: build/hi-wpessential.zip
           compression-level: 0
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: wpessential-server
           path: build/wpessential-server.zip
           compression-level: 0
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: wpessential-demos
           path: build/demos/*.zip
