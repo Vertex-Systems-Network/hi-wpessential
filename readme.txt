@@ -10,12 +10,46 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Lightweight multi-niche block theme, native for Gutenberg and Elementor.
 
 == Description ==
-WPEssential is a fast, theme.json driven block theme. Every demo ships in a Gutenberg and an Elementor version. Install the WPEssential Core plugin for one-click demo import, live demo preview, automatic plugin setup and Pro license activation.
+WPEssential is a fast, multi-niche block theme that is native for both Gutenberg and Elementor. Pick a demo, import it in one click with the builder you prefer, and get a complete, production-ready site: real pages, real content, real images, a working shop, light and dark schemes, hover effects and SEO, all set up for you.
+
+= Two builders, one design =
+Every demo ships in a Gutenberg version (core blocks only) and an Elementor version (native widgets and Kit globals, with no HTML widgets or custom CSS). Choose your builder; the look stays the same.
+
+= Features =
+* One-click demo import with the bundled WPEssential Core plugin: required plugins, pages, posts, products, menus, images, header, footer and style. Remove a demo again with one click.
+* Live demos in the browser (WordPress Playground): click, hover and browse every page before you import.
+* theme.json v2 design system with a style variation per demo and local fonts.
+* Light / dark toggle for visitors that follows the device setting and remembers the choice.
+* Hover effects tuned to each niche (zoom, lift, glow, underline, image swap) and animation presets (subtle, editorial, playful, dynamic).
+* Responsive at 1920, 1440, 1280, 1024, 768, 560, 480, 360 and 320 px, with an off-canvas menu on smaller screens.
+* WooCommerce styling for the shop, product, cart, checkout and account pages, with badges, notices and empty states.
+* Built-in SEO: meta description, Open Graph, Twitter cards and JSON-LD. It steps aside for SEO plugins.
+* WPML and Polylang compatible, with a language switcher and full right-to-left (RTL) support.
+* Accessible: WCAG 2.2 AA contrast, skip link, visible focus states and reduced-motion support.
+* Full-page patterns (About, Services, Pricing, Contact, FAQ) and shop sections.
+* Theme Options: CSS / JavaScript snippet manager with device scopes and safe mode.
+* Pro demos and license activation from your WPEssential account.
+
+= Demos =
+* Base (free): business, agency, shop and blog. 7 pages, 3 articles, 8 products.
+* Maison (pro): editorial fashion store with lookbook, atelier and journal.
+* Pulse (pro): events and conferences with speakers, agenda, tickets, venue and sponsors.
+
+== Installation ==
+1. In your admin, go to Appearance > Themes > Add New > Upload Theme.
+2. Upload wpessential.zip and click Activate.
+3. Open WPEssential > Demo Library, preview a demo, choose Gutenberg or Elementor, and click Import.
 
 == Copyright ==
 WPEssential, (C) 2026 WPEssential Team. Distributed under the terms of the GNU GPL.
 
 == Frequently Asked Questions ==
+
+= Can I switch from Gutenberg to Elementor later? =
+Yes. Remove the demo in the Demo Library and import the same demo with the other builder.
+
+= Will importing a demo overwrite my content? =
+No. The importer only adds content and keeps a record, so Remove demo deletes what it added and restores your previous style, header and footer.
 
 = Which screen sizes are supported? =
 The layout steps at 1920, 1440, 1280, 1024, 768, 560, 480, 360 and 320 pixels. Each step sets the page gutter, section spacing, container width and heading sizes. From 1024 down the header switches to a compact bar with an off-canvas menu.
@@ -44,6 +78,12 @@ Yes. Without an SEO plugin the theme prints a meta description, Open Graph and T
 * Theme Options (Appearance): named CSS / JavaScript snippets with device scopes, head/footer placement, safe mode; animation presets (subtle, editorial, playful, dynamic with GSAP).
 * Dashboard sign-in / sign-up connected to the WPEssential account; licenses, plans, upgrades and auto-renewal from the import wizard and License tab.
 * Base Demo bundled: 7 pages, 3 articles, 8 WooCommerce products, menus and store settings.
+* Maison (fashion) and Pulse (events) demos, each for Gutenberg and Elementor.
+* Every demo has a native Elementor version (widgets and Kit globals).
+* Live demos through WordPress Playground.
+* Hover effects and dark palettes for each demo.
+* Built-in SEO: meta description, Open Graph, Twitter cards and JSON-LD.
+* WPML and Polylang compatibility, language switcher and RTL support.
 
 == Resources ==
 
