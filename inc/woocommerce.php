@@ -401,3 +401,51 @@ add_action(
 // WooCommerce turns the slider and zoom on for every block theme, so switch them off here for grid galleries.
 add_filter( 'woocommerce_single_product_flexslider_enabled', static fn( $on ) => 'grid' === get_option( 'wpessential_pdp_gallery', '' ) ? false : $on );
 add_filter( 'woocommerce_single_product_zoom_enabled', static fn( $on ) => 'grid' === get_option( 'wpessential_pdp_gallery', '' ) ? false : $on );
+
+/**
+ * Shop banner and round category links above the grid (Base demo and the default theme).
+ * Demos with their own shop look turn it off with option wpessential_shop_banner = off.
+ */
+add_action(
+	'woocommerce_before_shop_loop',
+	static function () {
+		if ( ! is_shop() || 'off' === get_option( 'wpessential_shop_banner', '' ) ) {
+			return;
+		}
+		$cats = get_terms(
+			array(
+				'taxonomy'   => 'product_cat',
+				'hide_empty' => true,
+				'parent'     => 0,
+				'number'     => 6,
+				'orderby'    => 'count',
+				'order'      => 'DESC',
+				'exclude'    => array( (int) get_option( 'default_product_cat' ) ),
+			)
+		);
+		if ( ! $cats || is_wp_error( $cats ) ) {
+			return;
+		}
+		echo '<ul class="wpe-shop-cats">';
+		foreach ( $cats as $cat ) {
+			$thumb = (int) get_term_meta( $cat->term_id, 'thumbnail_id', true );
+			if ( ! $thumb ) {
+				$ids = get_posts( array( 'post_type' => 'product', 'numberposts' => 5, 'fields' => 'ids', 'tax_query' => array( array( 'taxonomy' => 'product_cat', 'terms' => $cat->term_id ) ) ) ); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+				foreach ( $ids as $pid ) {
+					$thumb = (int) get_post_thumbnail_id( $pid );
+					if ( $thumb ) {
+						break;
+					}
+				}
+			}
+			printf(
+				'<li><a href="%1$s">%2$s<span>%3$s</span></a></li>',
+				esc_url( get_term_link( $cat ) ),
+				$thumb ? wp_get_attachment_image( $thumb, 'woocommerce_thumbnail', false, array( 'alt' => '' ) ) : '<i aria-hidden="true">' . esc_html( mb_substr( $cat->name, 0, 1 ) ) . '</i>',
+				esc_html( $cat->name )
+			);
+		}
+		echo '</ul>';
+	},
+	1
+);
