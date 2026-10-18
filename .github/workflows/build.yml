@@ -61,6 +61,6 @@ jobs:
           V=$(sed -n 's/^Version: *//p' style.css)
           args=(-F "version=$V" -F "theme=@build/hi-wpessential.zip")
           for f in build/demos/*.zip; do n=$(basename "$f" .zip); args+=(-F "$n=@$f"); done
-          res=$(curl -sS --fail-with-body -u "$WPES_SERVER_AUTH" "${args[@]}" "$WPES_SERVER_URL/wp-json/wpessential-server/v1/release")
-          echo "$res"
-          echo "$res" | grep -q '"success":true'
+          code=$(curl -sS -o res.txt -w '%{http_code}' -A 'WPEssential-CI' -u "$WPES_SERVER_AUTH" "${args[@]}" "${WPES_SERVER_URL%/}/wp-json/wpessential-server/v1/release")
+          echo "HTTP $code"; head -c 2000 res.txt; echo
+          [ "$code" = 200 ] && grep -q '"success":true' res.txt
