@@ -45,6 +45,11 @@ add_action(
 				'in_footer' => true,
 			)
 		);
+
+		// Live countdown, only on pages that carry one (Pulse demo home).
+		if ( is_singular() && false !== strpos( (string) get_post_field( 'post_content', get_queried_object_id() ), 'px-count' ) ) {
+			wp_enqueue_script( 'wpessential-countdown', WPESSENTIAL_URI . '/assets/js/countdown.js', array(), WPESSENTIAL_ASSET_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );
+		}
 	}
 );
 

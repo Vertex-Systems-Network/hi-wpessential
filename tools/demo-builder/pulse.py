@@ -176,9 +176,10 @@ def g_session(t):
     time, length, track, room, title, sp = t
     return b.group(
         b.group(b.p('<strong>%s</strong>' % time), b.p(length, color='text-muted', size='small'), layout='default', className='wpe-session__time'),
-        b.group(b.p('%s · %s' % (track, room), style='wpe-overline'), b.h(title, level=3, size='h4'),
+        b.group(b.p('<span class="px-tag px-tag--%s">%s</span> <span class="px-room">%s</span>' % (track.lower().split()[0], track, room), className='px-session__tags'),
+                b.h(title, level=3, size='h5'),
                 b.p(speaker_names(sp), color='text-muted', size='small') if sp else '', layout='default', className='wpe-session__body'),
-        layout='flex', wrap='nowrap', valign='top', className='wpe-card wpe-session')
+        layout='flex', wrap='nowrap', valign='top', className='wpe-card wpe-session px-session')
 
 
 def g_passes():
@@ -256,12 +257,14 @@ def g_speakers():
 
 
 def g_agenda():
-    return b.join(g_title('Agenda', 'Two days, three stages', 'All times are Lisbon time (WEST, UTC+1). Workshops run on 12 May at LX Factory.'),
-                  b.section(b.h('Day 1 · Thursday 13 May', size='h2'), *[g_session(t) for t in DAY1], className='wpe-section wpe-section--sm'),
-                  b.section(b.h('Day 2 · Friday 14 May', size='h2'), *[g_session(t) for t in DAY2], bg='surface-alt'),
-                  b.section(b.h('Add Pulse to your calendar', size='h3', align='center'),
-                            b.buttons(b.button('Browse all events', '{{home:events/}}'), b.button('Get tickets', '{{page:tickets}}', style='wpe-outline'), justify='center'),
-                            content='720px', className='wpe-section wpe-section--sm'))
+    tabs = b.p('<a class="is-active" href="#day-1">Day 1 · Thu 13</a><a href="#day-2">Day 2 · Fri 14</a><a href="{{home:events/}}">Workshops · Wed 12</a>', className='px-tabs')
+    legend = b.p('Tracks: <span class="px-tag px-tag--design">Design</span> <span class="px-tag px-tag--engineering">Engineering</span> '
+                 '<span class="px-tag px-tag--ai">AI</span> <span class="px-tag px-tag--product">Product</span>', className='px-legend')
+    return b.join(g_title('Agenda', 'Two days, three stages', 'Times are Lisbon time (WEST, UTC+1). Workshops run on 12 May at LX Factory.'),
+                  b.section(tabs, legend, b.h('Day 1 · Thursday 13 May', size='h3', className='px-day', anchor='day-1'), *[g_session(t) for t in DAY1],
+                            b.h('Day 2 · Friday 14 May', size='h3', className='px-day', anchor='day-2'), *[g_session(t) for t in DAY2],
+                            b.buttons(b.button('Add to calendar', '{{home:events/}}', style='wpe-outline'), b.button('Get tickets', '{{page:tickets}}')),
+                            className='wpe-section wpe-section--sm'))
 
 
 def g_tickets():
@@ -306,13 +309,17 @@ def g_sponsors():
 
 
 def g_become():
-    return b.join(g_title('Partner with Pulse', 'Become a sponsor', 'Meet the designers, engineers and founders choosing the tools of the next five years.'),
-                  b.section(b.columns(*[b.column(b.h(n, level=3, size='h3'), b.p('<strong>%s</strong>' % price, size='h2'), b.ul(items, style='wpe-checklist'), style='wpe-card')
-                                        for n, price, items in PACKAGES]), className='wpe-section wpe-section--sm'),
-                  b.section(b.columns(b.column(b.image('crowd', 'Pulse audience', aspect='4/3')),
-                                      b.column(b.h('Let\'s talk', size='h2'), b.p('Tell us what you want to achieve and we will build a package around it.'),
-                                               b.ul(['Email: <a href="mailto:partners@pulseconf.io">partners@pulseconf.io</a>', 'Phone: +351 21 340 2290', 'Deck and audience data on request']),
-                                               valign='center'), valign='center', className='wpe-gap-lg'), bg='surface-alt'))
+    hero = b.section(b.columns(
+        b.column(b.p('Partner with us', className='px-chip'), b.h('Put your brand in front of 2,400 builders', level=1, size='display', className='px-title'),
+                 b.p('72% of attendees influence tooling decisions at their company. Booths, workshops and talk slots available.', color='text-muted'), valign='center'),
+        b.column(b.image('networking', 'Attendees talking at Pulse', aspect='3/2', className='px-rounded'), valign='center'), className='wpe-gap-lg'),
+        className='wpe-section px-page-head')
+    packs = b.section(b.p('Packages', className='px-chip'), b.h('Three ways to partner', size='h2'),
+                      b.group(*[b.group(b.h(n, level=3, size='h5'), b.p(price, className='px-pass__price'), b.ul(items, style='wpe-checklist', className='px-pass__inc'),
+                                        layout='default', className='px-pass') for n, price, items in PACKAGES], layout='grid', columns=3), bg='surface-alt')
+    form = b.section(b.p('Get in touch', className='px-chip'), b.h('Request the sponsor deck', size='h2'),
+                     b.shortcode('[wpforms id="{{form:sponsor}}" title="false"]'), className='wpe-section px-sponsor-form')
+    return b.join(hero, packs, form)
 
 
 def g_faq():
@@ -442,13 +449,13 @@ def e_sponsors():
 
 
 def e_become():
-    return [e_title('Partner with Pulse', 'Become a sponsor', 'Meet the designers, engineers and founders choosing the tools of the next five years.'),
-            e.container(e.grid(*[e.container(e.heading(n, 3), e.heading(price, 2, 'accent'), e.icon_list(items), inner=True, pad=32, radius=24, border='border', bg='surface')
-                                 for n, price, items in PACKAGES], columns=3), pad=(24, 24, 72, 24)),
-            e.container(e.row(e.col(e.image_fixed('crowd', 'Pulse audience', 420, radius=24), width=50),
-                              e.col(e.heading("Let's talk"), e.text('Tell us what you want to achieve and we will build a package around it.'),
-                                    e.icon_list(['partners@pulseconf.io', '+351 21 340 2290', 'Deck and audience data on request'], icon='fas fa-envelope'), width=50, justify='center'), gap=56),
-                        bg='surface-alt', pad=(72, 24, 72, 24))]
+    return [e.container(e.row(e.col(e.overline('Partner with us'), e.heading('Put your brand in front of 2,400 builders', 1, size_px=64),
+                                    e.text('72% of attendees influence tooling decisions at their company. Booths, workshops and talk slots available.'), width=50, justify='center'),
+                              e.col(e.image_fixed('networking', 'Attendees talking at Pulse', 400, radius=24), width=50), gap=56), pad=(72, 24, 72, 24)),
+            e.container(e.overline('Packages'), e.heading('Three ways to partner'),
+                        e.grid(*[e.container(e.heading(n, 3, size_px=20), e.heading(price, 2, size_px=40), e.icon_list(items), inner=True, pad=28, radius=20, bg='surface')
+                                 for n, price, items in PACKAGES], columns=3), bg='surface-alt', pad=(72, 24, 72, 24)),
+            e.container(e.overline('Get in touch'), e.heading('Request the sponsor deck'), e.shortcode('[wpforms id="{{form:sponsor}}" title="false"]'), pad=(72, 24, 96, 24))]
 
 
 def e_faq():
@@ -547,7 +554,7 @@ def package(builder):
                                             'woocommerce_cod_settings': {'enabled': 'yes', 'title': 'Pay by bank transfer on invoice'}}}}
     if builder == 'elementor':
         settings['elementor_kit'] = e.kit(container_width=1200, button_radius=999, field_radius=14, button_padding=(14, 24))
-    return {'version': 1, 'media': media, 'terms': terms, 'forms': [forms.pulse_contact()], 'content': content, 'products': products, 'menus': menus, 'settings': settings}
+    return {'version': 1, 'media': media, 'terms': terms, 'forms': [forms.pulse_contact(), forms.pulse_sponsor()], 'content': content, 'products': products, 'menus': menus, 'settings': settings}
 
 
 DEMO = {

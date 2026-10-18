@@ -67,4 +67,17 @@ def pulse_contact():
             ]}
 
 
+def pulse_sponsor():
+    return {'key': 'sponsor', 'title': 'Sponsor deck request — Pulse', 'submit': 'Send request',
+            'message': 'Thanks — the sponsor deck and audience data are on their way to your inbox.',
+            'settings': {'subject': 'Sponsor deck request from {field_id="1"}'},
+            'fields': [
+                {'type': 'name', 'label': 'Name', 'required': True, 'size': 'medium'},
+                {'type': 'text', 'label': 'Company', 'required': True, 'size': 'medium'},
+                {'type': 'email', 'label': 'Work email', 'required': True},
+                {'type': 'select', 'label': 'Package', 'choices': ['Community · €4,000', 'Gold · €12,000', 'Headline · €30,000', 'Not sure yet']},
+                CONSENT,
+            ]}
+
+
 PLUGIN = {'slug': 'wpforms-lite', 'name': 'WPForms Lite', 'source': 'wporg', 'state': 'required'}
