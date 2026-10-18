@@ -20,6 +20,9 @@ sys.path.insert(0, HERE)
 import importlib  # noqa: E402
 
 import base_elementor  # noqa: E402
+import northwind  # noqa: E402
+import elementor as e  # noqa: E402
+import copy  # noqa: E402
 import demo_forms  # noqa: E402
 import legal  # noqa: E402
 
@@ -83,9 +86,14 @@ def main():
 
     # Base demo: Elementor package next to the existing Gutenberg one.
     base = os.path.join(ROOT, 'core', 'demos', 'base')
-    write(os.path.join(base, 'elementor', 'content.json'), legal.add(base_elementor.package(), 'elementor', *base_elementor.LEGAL))
+    # Northwind Advisory pages (northwind.py) on top of the Base posts, products and media.
     gpath = os.path.join(base, 'gutenberg', 'content.json')
-    write(gpath, legal.add(json.load(open(gpath, encoding='utf-8')), 'gutenberg', *base_elementor.LEGAL))
+    source = json.load(open(gpath, encoding='utf-8'))
+    base_elementor.package()  # Sets the Base hover and font presets used by the Elementor widgets.
+    el = northwind.apply(copy.deepcopy(source), 'elementor')
+    el['settings']['elementor_kit'] = e.kit(container_width=1200, button_radius=10, field_radius=10)
+    write(os.path.join(base, 'elementor', 'content.json'), legal.add(el, 'elementor', *northwind.LEGAL))
+    write(gpath, legal.add(northwind.apply(source, 'gutenberg'), 'gutenberg', *northwind.LEGAL))
     demo = json.load(open(os.path.join(base, 'demo.json')))
     demo['builders']['elementor'] = {'package': 'elementor', 'plugins': [
         {'slug': 'elementor', 'name': 'Elementor', 'source': 'wporg', 'state': 'required'},
