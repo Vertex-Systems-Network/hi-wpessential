@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
  */
 class Install {
 
-	const DB_VERSION = '1';
+	const DB_VERSION = '2';
 
 	/**
 	 * Activation.
@@ -67,6 +67,7 @@ class Install {
 				white_label tinyint(1) NOT NULL DEFAULT 0,
 				auto_renew tinyint(1) NOT NULL DEFAULT 0,
 				expires_at datetime NULL DEFAULT NULL,
+				major smallint(5) unsigned NOT NULL DEFAULT 0,
 				created_at datetime NOT NULL,
 				updated_at datetime NOT NULL,
 				PRIMARY KEY  (id),

@@ -58,6 +58,26 @@ class Licenses {
 	}
 
 	/**
+	 * Major version of the current theme release (1 for "1.4.2"), from the last /release upload.
+	 *
+	 * @return int
+	 */
+	public static function current_major() {
+		return max( 1, (int) get_option( 'wpes_theme_release', '1' ) );
+	}
+
+	/**
+	 * Lifetime plans cover the major version they were bought for: a v1 lifetime license
+	 * works until v2 is released. Other plans are limited by their end date instead (0).
+	 *
+	 * @param array $plan Plan from Plans::from_product().
+	 * @return int
+	 */
+	public static function lifetime_major( array $plan ) {
+		return 0 === (int) $plan['months'] ? self::current_major() : 0;
+	}
+
+	/**
 	 * Create a license for a plan.
 	 *
 	 * @param int   $user_id User.
@@ -85,6 +105,7 @@ class Licenses {
 				'white_label' => $plan['white_label'] ? 1 : 0,
 				'auto_renew'  => $plan['months'] > 0 ? 1 : 0,
 				'expires_at'  => self::expiry( $plan['months'] ),
+				'major'       => self::lifetime_major( $plan ),
 				'created_at'  => $now,
 				'updated_at'  => $now,
 			)
@@ -242,6 +263,13 @@ class Licenses {
 		if ( 'cancelled' === $license['status'] ) {
 			return new \WP_Error( 'cancelled', __( 'This subscription was cancelled.', 'wpessential-server' ) );
 		}
+		if ( ! empty( $license['major'] ) && (int) $license['major'] < self::current_major() ) {
+			return new \WP_Error(
+				'major_ended',
+				/* translators: 1: version the license covers, 2: current version. */
+				sprintf( __( 'Your lifetime license covers version %1$d.x. Version %2$d is out: buy a new plan in your account to keep Pro demos and updates.', 'wpessential-server' ), (int) $license['major'], self::current_major() )
+			);
+		}
 		if ( 'expired' === $license['status'] || self::is_expired( $license ) ) {
 			return new \WP_Error( 'expired', __( 'This license has expired. Renew it in your account to keep Pro demos and updates.', 'wpessential-server' ) );
 		}
@@ -377,6 +405,7 @@ class Licenses {
 			'sites_limit' => (int) $license['sites_limit'],
 			'sites_used'  => self::used_sites( $license['id'] ),
 			'auto_renew'  => (bool) $license['auto_renew'],
+			'covers'      => empty( $license['major'] ) ? '' : (int) $license['major'] . '.x',
 		);
 	}
 

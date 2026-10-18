@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-18T05:05:08+00:00\n"
+"POT-Creation-Date: 2026-10-18T11:24:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpessential-server\n"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: src/Admin.php:65
 #: src/Demos.php:89
-#: src/Plans.php:234
+#: src/Plans.php:212
 msgid "Plan"
 msgstr ""
 
@@ -108,8 +108,8 @@ msgstr ""
 
 #: src/Admin.php:65
 #: src/Admin.php:126
-#: src/MyAccount.php:216
-#: src/Plans.php:250
+#: src/MyAccount.php:221
+#: src/Plans.php:228
 msgid "Websites"
 msgstr ""
 
@@ -119,7 +119,7 @@ msgstr ""
 
 #: src/Admin.php:65
 #: src/Admin.php:127
-#: src/MyAccount.php:217
+#: src/MyAccount.php:222
 msgid "Auto-renew"
 msgstr ""
 
@@ -127,20 +127,21 @@ msgstr ""
 msgid "No licenses found."
 msgstr ""
 
+#. translators: %s: major version, e.g. 1.x.
 #: src/Admin.php:85
-#: src/MyAccount.php:210
+#: src/MyAccount.php:212
 msgid "Never"
 msgstr ""
 
 #: src/Admin.php:86
 #: src/Admin.php:127
 #: src/Admin.php:128
-#: src/MyAccount.php:217
+#: src/MyAccount.php:222
 msgid "On"
 msgstr ""
 
 #: src/Admin.php:86
-#: src/MyAccount.php:217
+#: src/MyAccount.php:222
 msgid "Off"
 msgstr ""
 
@@ -166,7 +167,7 @@ msgid "0 = unlimited."
 msgstr ""
 
 #: src/Admin.php:128
-#: src/Plans.php:267
+#: src/Plans.php:245
 msgid "White label"
 msgstr ""
 
@@ -179,7 +180,7 @@ msgid "None yet."
 msgstr ""
 
 #: src/Admin.php:135
-#: src/MyAccount.php:223
+#: src/MyAccount.php:228
 msgid "Remove"
 msgstr ""
 
@@ -364,12 +365,12 @@ msgid "Minimum theme version"
 msgstr ""
 
 #: src/Demos.php:89
-#: src/Plans.php:26
+#: src/Plans.php:31
 msgid "Free"
 msgstr ""
 
 #: src/Demos.php:89
-#: src/Plans.php:89
+#: src/Plans.php:51
 msgid "Pro"
 msgstr ""
 
@@ -395,28 +396,33 @@ msgstr ""
 msgid "Package not found."
 msgstr ""
 
-#: src/Licenses.php:237
+#: src/Licenses.php:258
 msgid "This license key does not exist. Copy it again from your account."
 msgstr ""
 
-#: src/Licenses.php:240
+#: src/Licenses.php:261
 msgid "This license was revoked after a refund or chargeback."
 msgstr ""
 
-#: src/Licenses.php:243
+#: src/Licenses.php:264
 msgid "This subscription was cancelled."
 msgstr ""
 
-#: src/Licenses.php:246
+#. translators: 1: version the license covers, 2: current version.
+#: src/Licenses.php:270
+msgid "Your lifetime license covers version %1$d.x. Version %2$d is out: buy a new plan in your account to keep Pro demos and updates."
+msgstr ""
+
+#: src/Licenses.php:274
 msgid "This license has expired. Renew it in your account to keep Pro demos and updates."
 msgstr ""
 
-#: src/Licenses.php:297
+#: src/Licenses.php:325
 msgid "The site address is missing."
 msgstr ""
 
 #. translators: %d: site limit.
-#: src/Licenses.php:310
+#: src/Licenses.php:338
 msgid "This license is already used on %d website. Deactivate it there from your account, or upgrade your plan for more websites."
 msgid_plural "This license is already used on %d websites. Deactivate one from your account, or upgrade your plan for more websites."
 msgstr[0] ""
@@ -482,75 +488,80 @@ msgstr ""
 msgid "Revoked"
 msgstr ""
 
-#: src/MyAccount.php:214
+#. translators: %s: major version, e.g. 1.x.
+#: src/MyAccount.php:212
+msgid "When version %s ends"
+msgstr ""
+
+#: src/MyAccount.php:219
 msgid "License key"
 msgstr ""
 
-#: src/MyAccount.php:215
+#: src/MyAccount.php:220
 msgid "Renews on"
 msgstr ""
 
-#: src/MyAccount.php:215
+#: src/MyAccount.php:220
 msgid "Ends on"
 msgstr ""
 
-#: src/MyAccount.php:223
+#: src/MyAccount.php:228
 msgid "staging · free"
 msgstr ""
 
-#: src/MyAccount.php:223
+#: src/MyAccount.php:228
 msgid "Remove this website from the license?"
 msgstr ""
 
-#: src/MyAccount.php:231
+#: src/MyAccount.php:236
 msgid "Renew now"
 msgstr ""
 
-#: src/MyAccount.php:233
+#: src/MyAccount.php:238
 msgid "Turn off auto-renew"
 msgstr ""
 
-#: src/MyAccount.php:233
+#: src/MyAccount.php:238
 msgid "Stop automatic renewal? Your license keeps working until its end date."
 msgstr ""
 
-#: src/MyAccount.php:234
+#: src/MyAccount.php:239
 msgid "Turn on auto-renew"
 msgstr ""
 
-#: src/MyAccount.php:236
+#: src/MyAccount.php:241
 msgid "New key"
 msgstr ""
 
-#: src/MyAccount.php:236
+#: src/MyAccount.php:241
 msgid "Create a new key? The old key stops working and your websites must be activated again."
 msgstr ""
 
-#: src/MyAccount.php:246
+#: src/MyAccount.php:251
 msgid "Upgrade to"
 msgstr ""
 
-#: src/MyAccount.php:250
+#: src/MyAccount.php:255
 msgid "Upgrade"
 msgstr ""
 
-#: src/MyAccount.php:255
+#: src/MyAccount.php:260
 msgid "Plans"
 msgstr ""
 
 #. translators: %d: months.
-#: src/MyAccount.php:260
+#: src/MyAccount.php:265
 msgid "/ %d month"
 msgid_plural "/ %d months"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %d: months.
-#: src/MyAccount.php:260
+#: src/MyAccount.php:265
 msgid "once"
 msgstr ""
 
-#: src/MyAccount.php:265
+#: src/MyAccount.php:270
 msgid "Choose"
 msgstr ""
 
@@ -572,181 +583,133 @@ msgid "License %s renewed."
 msgstr ""
 
 #. translators: 1: key, 2: plan.
-#: src/Orders.php:216
+#: src/Orders.php:217
 msgid "License %1$s upgraded to %2$s."
 msgstr ""
 
 #. translators: %s: key.
-#: src/Orders.php:220
+#: src/Orders.php:221
 msgid "License %s created."
 msgstr ""
 
-#: src/Orders.php:273
+#: src/Orders.php:274
 msgid "Your license"
 msgstr ""
 
-#: src/Orders.php:277
+#: src/Orders.php:278
 msgid "In WordPress go to WPEssential → License, paste the key and press Activate — or sign in from the demo import wizard."
 msgstr ""
 
-#: src/Plans.php:32
+#: src/Plans.php:37
 msgid "Free demos"
 msgstr ""
 
-#: src/Plans.php:32
-#: src/Plans.php:41
-#: src/Plans.php:50
+#: src/Plans.php:37
+#: src/Plans.php:48
 msgid "1 website"
 msgstr ""
 
-#: src/Plans.php:32
+#: src/Plans.php:37
 msgid "Community support"
 msgstr ""
 
-#: src/Plans.php:35
+#: src/Plans.php:43
 msgid "Starter"
 msgstr ""
 
-#: src/Plans.php:41
+#: src/Plans.php:48
 msgid "1 theme + its demos"
 msgstr ""
 
-#: src/Plans.php:41
-msgid "1 year updates & support"
+#: src/Plans.php:48
+msgid "Gutenberg & Elementor"
 msgstr ""
 
-#: src/Plans.php:44
-msgid "Monthly"
+#: src/Plans.php:48
+msgid "Updates & support"
 msgstr ""
 
-#: src/Plans.php:50
-#: src/Plans.php:59
-#: src/Plans.php:68
-msgid "All Pro demos"
-msgstr ""
-
-#: src/Plans.php:50
-msgid "Updates while subscribed"
-msgstr ""
-
-#: src/Plans.php:53
-msgid "Quarterly"
-msgstr ""
-
-#: src/Plans.php:59
-msgid "3 websites"
-msgstr ""
-
-#: src/Plans.php:59
-msgid "Priority email support"
-msgstr ""
-
-#: src/Plans.php:62
-msgid "Yearly"
-msgstr ""
-
-#: src/Plans.php:68
-#: src/Plans.php:95
-msgid "5 websites"
-msgstr ""
-
-#: src/Plans.php:68
-#: src/Plans.php:95
-msgid "Priority support"
-msgstr ""
-
-#: src/Plans.php:71
-msgid "Lifetime"
-msgstr ""
-
-#: src/Plans.php:77
-msgid "Pay once, use forever"
-msgstr ""
-
-#: src/Plans.php:77
-msgid "10 websites"
-msgstr ""
-
-#: src/Plans.php:77
-msgid "Lifetime updates"
-msgstr ""
-
-#: src/Plans.php:80
-msgid "Enterprise"
-msgstr ""
-
-#: src/Plans.php:86
-#: src/Plans.php:104
-msgid "Unlimited websites"
-msgstr ""
-
-#: src/Plans.php:86
-#: src/Plans.php:113
-msgid "Dedicated support"
-msgstr ""
-
-#: src/Plans.php:86
-msgid "Onboarding call"
-msgstr ""
-
-#: src/Plans.php:95
+#: src/Plans.php:56
 msgid "All themes + every demo"
 msgstr ""
 
-#: src/Plans.php:98
+#: src/Plans.php:56
+msgid "Early access to new demos"
+msgstr ""
+
+#: src/Plans.php:56
+msgid "5 websites"
+msgstr ""
+
+#: src/Plans.php:56
+msgid "Priority support"
+msgstr ""
+
+#: src/Plans.php:59
 msgid "Agency"
 msgstr ""
 
-#: src/Plans.php:104
+#: src/Plans.php:64
+msgid "Everything in Pro"
+msgstr ""
+
+#: src/Plans.php:64
+msgid "Unlimited websites"
+msgstr ""
+
+#: src/Plans.php:64
 msgid "White-label dashboard"
 msgstr ""
 
-#: src/Plans.php:104
+#: src/Plans.php:64
 msgid "Dedicated success manager"
 msgstr ""
 
-#: src/Plans.php:107
-msgid "White Label"
-msgstr ""
-
-#: src/Plans.php:113
-msgid "Your brand in the dashboard"
-msgstr ""
-
-#: src/Plans.php:113
-msgid "Unlimited client sites"
+#. translators: %s: plan name.
+#: src/Plans.php:69
+msgid "%s Monthly"
 msgstr ""
 
 #. translators: %s: plan name.
-#: src/Plans.php:137
+#: src/Plans.php:71
+msgid "%s Yearly"
+msgstr ""
+
+#. translators: %s: plan name.
+#: src/Plans.php:73
+msgid "%s Lifetime"
+msgstr ""
+
+#. translators: %s: plan name.
+#: src/Plans.php:115
 msgid "WPEssential %s"
 msgstr ""
 
-#: src/Plans.php:235
+#: src/Plans.php:213
 msgid "Not a plan"
 msgstr ""
 
-#: src/Plans.php:241
+#: src/Plans.php:219
 msgid "Billing period (months)"
 msgstr ""
 
-#: src/Plans.php:242
+#: src/Plans.php:220
 msgid "0 = lifetime, -1 = free."
 msgstr ""
 
-#: src/Plans.php:251
+#: src/Plans.php:229
 msgid "0 = unlimited. Staging and local domains are not counted."
 msgstr ""
 
-#: src/Plans.php:258
+#: src/Plans.php:236
 msgid "Pro demos"
 msgstr ""
 
-#: src/Plans.php:259
+#: src/Plans.php:237
 msgid "Unlocks Pro demos and premium plugins."
 msgstr ""
 
-#: src/Plans.php:268
+#: src/Plans.php:246
 msgid "Customer can rename the dashboard and hide WPEssential branding."
 msgstr ""
 

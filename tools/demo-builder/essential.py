@@ -3,7 +3,7 @@
 Direction: the WPEssential.org Figma design (Vertex Systems Network palette: indigo #625BA8,
 blue #6188C6, teal #5AC8D6 on ink #07080C; Bricolage Grotesque + Plus Jakarta Sans).
 Images are real: demo thumbnails and previews of Base, Maison and Pulse, and screenshots of
-the WPEssential dashboard. Products are the demos and the yearly plans.
+the WPEssential dashboard. Products are the demos, the services and the monthly, yearly and lifetime plans.
 """
 import blocks as b
 import elementor as e
@@ -34,14 +34,32 @@ DEMOS = [
          short='A conference site with speakers, agenda, ticket passes and an events calendar.'),
 ]
 
-PLANS = [
-    dict(key='plan-starter', plan='starter', months=12, sites=1, white=0, name='Starter', price='59', menu_order=1, short='One theme with its demos for one website.',
-         inc=['1 theme + its demos', 'Gutenberg & Elementor', '1 site license', '1 year updates & support']),
-    dict(key='plan-pro', plan='pro', months=12, sites=5, white=0, name='Pro', price='149', menu_order=2, featured=True, short='Every theme and demo for growing studios.',
-         inc=['All themes + every demo', 'Early access to new demos', '5 site licenses', 'Priority support']),
-    dict(key='plan-agency', plan='agency', months=12, sites=0, white=1, name='Agency', price='349', menu_order=3, short='Unlimited client sites, white label and dedicated help.',
-         inc=['Everything in Pro', 'Unlimited sites', 'White-label dashboard', 'Dedicated success manager']),
+# Same plans as the WPEssential Server (Plans::defaults()): monthly price per tier, yearly is twelve
+# months less 20%, lifetime is paid once and covers the major version bought (1.x until 2.0 ships).
+YEARLY_DISCOUNT = 20
+TIERS = [
+    dict(key='starter', name='Starter', monthly=10, lifetime=239, sites=1, white=0, short='One theme with its demos for one website.',
+         inc=['1 theme + its demos', 'Gutenberg & Elementor', '1 website', 'Updates & support']),
+    dict(key='pro', name='Pro', monthly=30, lifetime=719, sites=5, white=0, featured=True, short='Every theme and demo for growing studios.',
+         inc=['All themes + every demo', 'Early access to new demos', '5 websites', 'Priority support']),
+    dict(key='agency', name='Agency', monthly=100, lifetime=2399, sites=0, white=1, short='Unlimited client sites, white label and dedicated help.',
+         inc=['Everything in Pro', 'Unlimited websites', 'White-label dashboard', 'Dedicated success manager']),
 ]
+BILLING = [('monthly', 'Monthly', 1), ('yearly', 'Yearly', 12), ('lifetime', 'Lifetime', 0)]
+
+
+def plan_price(t, period):
+    if period == 'lifetime':
+        return t['lifetime']
+    return round(t['monthly'] * 12 * (100 - YEARLY_DISCOUNT) / 100) if period == 'yearly' else t['monthly']
+
+
+PLANS = [dict(t, plan='%s_%s' % (t['key'], period), period=period, period_name=label, months=months, price=str(plan_price(t, period)),
+              menu_order=i + 1) for i, t in enumerate(TIERS) for period, label, months in BILLING]
+BILLING_NOTE = {'monthly': 'Billed monthly. Cancel any time.',
+                'yearly': 'Billed yearly — 20% less than paying monthly.',
+                'lifetime': 'Pay once. Covers the major version you buy: a 1.x license keeps working, with updates, until version 2.0 is released.'}
+
 
 FEATURES = [
     ('fas fa-layer-group', 'One theme, every niche', 'Business, fashion, events and more — each demo is a style variation of the same fast block theme.'),
@@ -72,6 +90,7 @@ FAQ = [
     ('Can I use a theme on client sites?', 'Yes. Each license activates one live site; the Agency plan is unlimited.'),
     ('What happens when my plan ends?', 'Your sites keep working. You lose updates, new demos and support until you renew.'),
     ('Do demos work with both Gutenberg and Elementor?', 'Yes. Every demo ships native versions for both builders and imports in one click.'),
+    ('How does lifetime work?', 'Pay once and keep the version you bought: a 1.x lifetime license gets every 1.x update and demo until version 2.0 is released.'),
     ('Do you offer refunds?', 'Every plan is covered by a 14-day money-back guarantee.'),
     ('Is the theme translated?', 'Hi WPEssential ships with 20 languages and works with WPML and Polylang.'),
 ]
@@ -189,13 +208,14 @@ def g_home():
                  b.p('Real WPEssential import · every step logged · 0 errors', color='text-muted', size='small', align='center'), width='55%', valign='center'),
         valign='center', className='wpe-gap-lg'), bg='surface-alt')
     pricing = b.section(b.p('Pricing', style='wpe-overline', align='center'), b.h('One subscription. Every theme and demo.', size='h2', align='center'),
-                        b.p('Yearly plans with a 14-day money-back guarantee.', align='center', color='text-muted'), g_products('plans'))
+                        b.p('From $10 a month. Save 20% yearly, or pay once for lifetime.', align='center', color='text-muted'), g_products('plans-monthly'),
+                        b.buttons(b.button('Yearly & lifetime prices', '{{page:pricing}}', style='wpe-outline'), justify='center'))
     news = b.section(b.group(b.group(b.p('Blog', style='wpe-overline'), b.h('Guides and release notes', size='h2'), layout='default'),
                              b.buttons(b.button('All posts', '{{page:blog}}', style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom'),
                      b.latest_posts(3), bg='surface-alt')
     cta = b.section(b.group(b.h('Ready to launch?', size='h2', color='on-ink', align='center'),
                             b.p('Get every theme and demo with Pro. Cancel any time.', color='on-ink', align='center'),
-                            b.buttons(b.button('Get Pro — $149/yr', '{{page:pricing}}', style='wpe-light'), justify='center'),
+                            b.buttons(b.button('Get Pro — $30/month', '{{page:pricing}}', style='wpe-light'), justify='center'),
                             className='wpe-card wpe-cta-gradient', bg='primary', color='on-primary'))
     return b.join(hero, stats, demos, features, how, pricing, news, cta)
 
@@ -214,9 +234,11 @@ def g_demos():
 
 def g_pricing():
     rows = [['Themes', '1', 'All', 'All'], ['Demos (Gutenberg + Elementor)', 'Theme demos', 'All', 'All'], ['Site licenses', '1', '5', 'Unlimited'],
-            ['Updates & support', '1 year', 'Priority', 'Dedicated'], ['White-label dashboard', '—', '—', '✓']]
-    return b.join(g_title('Pricing', 'One subscription. Every theme and demo.', 'Simple yearly plans with a 14-day money-back guarantee. Cancel any time and keep what you downloaded.'),
-                  b.section(g_products('plans'), className='wpe-section wpe-section--sm'),
+            ['Support', 'Standard', 'Priority', 'Dedicated'], ['Updates', 'While subscribed · lifetime: one major version', 'Same', 'Same'], ['White-label dashboard', '—', '—', '✓']]
+    return b.join(g_title('Pricing', 'One subscription. Every theme and demo.', 'Monthly, yearly (save 20%) or lifetime. Every plan has a 14-day money-back guarantee.'),
+                  *[b.section(b.h(label + (' · save 20%' if period == 'yearly' else ''), size='h3'), b.p(BILLING_NOTE[period], color='text-muted'),
+                              g_products('plans-' + period), className='wpe-section wpe-section--sm', bg='surface-alt' if period == 'yearly' else None)
+                    for period, label, _ in BILLING],
                   b.section(b.h('Compare plans', size='h2'), b.table(['Feature', 'Starter', 'Pro', 'Agency'], rows), bg='surface-alt'),
                   b.section(b.h('Frequently asked questions', size='h2'), *[b.details(q, b.p(a)) for q, a in FAQ], content='860px'))
 
@@ -291,12 +313,13 @@ def e_home():
                                 e.text('Real WPEssential import · every step logged · 0 errors', align='center', size_px=14), width=55, justify='center'), gap=56),
                     bg='surface-alt', pad=(80, 24, 80, 24)),
         e.container(e.overline('Pricing', align='center'), e.heading('One subscription. Every theme and demo.', align='center'),
-                    e.text('Yearly plans with a 14-day money-back guarantee.', align='center'), e_products('plans'), pad=(80, 24, 80, 24)),
+                    e.text('From $10 a month. Save 20% yearly, or pay once for lifetime.', align='center'), e_products('plans-monthly'),
+                    e.button('Yearly & lifetime prices', '{{page:pricing}}', 'outline', align='center'), pad=(80, 24, 80, 24)),
         e.container(e.overline('Blog'), e.heading('Guides and release notes'),
                     e.grid(*[e.image_box(p['image'], p['title'], p['excerpt'], link='{{page:%s}}' % p['key'], height=220) for p in POSTS], columns=3),
                     bg='surface-alt', pad=(80, 24, 80, 24)),
         e.container(e.container(e.heading('Ready to launch?', 2, 'on-primary', align='center'), e.text('Get every theme and demo with Pro. Cancel any time.', 'on-primary', align='center'),
-                                e.button('Get Pro — $149/yr', '{{page:pricing}}', 'light', align='center'), inner=True, bg='primary', radius=28, pad=56, align='center'),
+                                e.button('Get Pro — $30/month', '{{page:pricing}}', 'light', align='center'), inner=True, bg='primary', radius=28, pad=56, align='center'),
                     pad=(48, 24, 80, 24)),
     ]
 
@@ -315,10 +338,11 @@ def e_demos():
 
 
 def e_pricing():
-    return [e_title('Pricing', 'One subscription. Every theme and demo.', 'Simple yearly plans with a 14-day money-back guarantee. Cancel any time and keep what you downloaded.'),
-            e.container(e_products('plans'), pad=(24, 24, 56, 24)),
+    return [e_title('Pricing', 'One subscription. Every theme and demo.', 'Monthly, yearly (save 20%) or lifetime. Every plan has a 14-day money-back guarantee.'),
+            *[e.container(e.heading(label + (' · save 20%' if period == 'yearly' else ''), 3), e.text(BILLING_NOTE[period]), e_products('plans-' + period),
+                          bg='surface-alt' if period == 'yearly' else None, pad=(48, 24, 48, 24)) for period, label, _ in BILLING],
             e.container(e.heading('What is included'), e.grid(*[e.container(e.heading(p['name'], 3, size_px=22), e.icon_list(p['inc']), inner=True, pad=28, radius=20, border='border', bg='surface')
-                                                               for p in PLANS], columns=3), bg='surface-alt', pad=(72, 24, 72, 24)),
+                                                               for p in TIERS], columns=3), bg='surface-alt', pad=(72, 24, 72, 24)),
             e.container(e.heading('Frequently asked questions'), e.accordion(FAQ), pad=(72, 24, 72, 24))]
 
 
@@ -361,7 +385,9 @@ def package(builder):
     media = [{'key': k, 'file': k + '.webp', 'title': t, 'alt': a} for k, t, a in MEDIA]
     terms = [
         {'key': 'pc-demos', 'taxonomy': 'product_cat', 'name': 'Demos', 'slug': 'demos', 'meta': {'thumbnail_id': '{{media_id:demo-maison}}'}},
-        {'key': 'pc-plans', 'taxonomy': 'product_cat', 'name': 'Plans', 'slug': 'plans', 'meta': {'thumbnail_id': '{{media_id:shot-library}}'}},
+        {'key': 'pc-plans-monthly', 'taxonomy': 'product_cat', 'name': 'Monthly plans', 'slug': 'plans-monthly', 'meta': {'thumbnail_id': '{{media_id:shot-library}}'}},
+        {'key': 'pc-plans-yearly', 'taxonomy': 'product_cat', 'name': 'Yearly plans', 'slug': 'plans-yearly', 'meta': {'thumbnail_id': '{{media_id:shot-library}}'}},
+        {'key': 'pc-plans-lifetime', 'taxonomy': 'product_cat', 'name': 'Lifetime plans', 'slug': 'plans-lifetime', 'meta': {'thumbnail_id': '{{media_id:shot-library}}'}},
         {'key': 'pc-services', 'taxonomy': 'product_cat', 'name': 'Services', 'slug': 'services', 'meta': {'thumbnail_id': '{{media_id:shot-import}}'}},
         {'key': 'cat-news', 'taxonomy': 'category', 'name': 'News', 'slug': 'news'},
         {'key': 'cat-guides', 'taxonomy': 'category', 'name': 'Guides', 'slug': 'guides'},
@@ -388,11 +414,13 @@ def package(builder):
                          'image': d['image'], 'gallery': [d['site'], 'mobile-' + d['name'].lower()], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
                          'description': '<p>%s</p><ul><li>Native Gutenberg and Elementor versions</li><li>One-click import with required plugins</li><li>Light &amp; dark style variation</li></ul>' % d['short']})
     for pl in PLANS:
-        products.append({'key': pl['key'], 'name': pl['name'], 'slug': 'plan-' + pl['name'].lower(), 'price': pl['price'], 'categories': ['pc-plans'],
-                         'image': 'shot-library', 'virtual': True, 'sold_individually': True, 'menu_order': pl['menu_order'], 'featured': pl.get('featured', False), 'short': pl['short'],
+        products.append({'key': 'plan-' + pl['plan'], 'name': '%s %s' % (pl['name'], pl['period_name']), 'slug': 'plan-' + pl['plan'].replace('_', '-'),
+                         'price': pl['price'], 'categories': ['pc-plans-' + pl['period']], 'image': 'shot-library', 'virtual': True, 'sold_individually': True,
+                         'menu_order': pl['menu_order'], 'featured': pl.get('featured', False) and pl['period'] == 'yearly', 'short': pl['short'],
                          # WPEssential Server reads these: the order creates the license, renewals and upgrades follow the plan.
                          'meta': {'_wpes_plan': pl['plan'], '_wpes_months': pl['months'], '_wpes_sites': pl['sites'], '_wpes_white_label': pl['white'], '_wpes_pro': 1},
-                         'description': '<p>%s</p><ul>%s</ul><p>Billed yearly. 14-day money-back guarantee.</p>' % (pl['short'], ''.join('<li>%s</li>' % i for i in pl['inc']))})
+                         'description': '<p>%s</p><ul>%s</ul><p>%s 14-day money-back guarantee.</p>' % (
+                             pl['short'], ''.join('<li>%s</li>' % i for i in pl['inc']), BILLING_NOTE[pl['period']])})
     for i, (icon, name, desc, price) in enumerate(SERVICES):
         amount = price.replace('from $', '').replace(' / mo', '').replace(',', '')
         products.append({'key': 'svc-%d' % i, 'name': name, 'slug': 'service-' + name.lower().replace(' & ', '-').replace(' ', '-'),
@@ -420,7 +448,7 @@ DEMO = {
     'thumbnail': 'demo:thumbnail.webp',
     'preview': {'desktop': 'demo:preview/desktop.webp', 'tablet': 'demo:preview/tablet.webp', 'mobile': 'demo:preview/mobile.webp'},
     'pages': ['Home', 'Demos', 'Pricing', 'Services', 'Docs', 'Blog', 'Contact'],
-    'highlights': ['3 demo products', '3 yearly plans', 'Docs & services', 'Light & dark'],
+    'highlights': ['3 demo products', 'Monthly, yearly & lifetime plans', 'Docs & services', 'Light & dark'],
     'motion': 'subtle',
     'plugins': [{'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'}],
 }
@@ -428,7 +456,7 @@ DEMO = {
 SEO = {
     'home': 'Premium WordPress themes and one-click demos, native for Gutenberg and Elementor. Pick a demo, import it and launch.',
     'demos': 'Browse ready-made WordPress demos for business, fashion and events. Every demo imports in one click.',
-    'pricing': 'Simple yearly plans for every theme and demo, with a 14-day money-back guarantee.',
+    'pricing': 'Plans for every theme and demo from $10 a month: save 20% yearly or pay once for lifetime. 14-day money-back guarantee.',
     'services': 'Custom demo design, setup, speed tuning, migration and care plans from the WPEssential team.',
     'docs': 'Documentation for the Hi WPEssential theme, demo import, customising, licenses and translation.',
     'contact': 'Contact WPEssential support, sales or services. We reply within one business day.',
