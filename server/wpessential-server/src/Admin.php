@@ -23,6 +23,7 @@ class Admin {
 		add_action( 'admin_post_wpes_settings', array( __CLASS__, 'save_settings' ) );
 		add_action( 'admin_post_wpes_run_cron', array( __CLASS__, 'run_cron' ) );
 		add_action( 'admin_post_wpes_release', array( __CLASS__, 'save_release' ) );
+		add_action( 'admin_post_wpes_release_pull', array( __CLASS__, 'pull_release' ) );
 	}
 
 	/**
@@ -213,6 +214,13 @@ class Admin {
 		echo '<tr><th>' . esc_html__( 'Version', 'wpessential-server' ) . '</th><td><input type="text" name="version" value="' . esc_attr( (string) get_option( 'wpes_theme_release', '1.0.0' ) ) . '"></td></tr>';
 		echo '</table>';
 		submit_button( __( 'Upload', 'wpessential-server' ) );
+		echo '</form>';
+		echo '<h2>' . esc_html__( 'Pull from GitHub', 'wpessential-server' ) . '</h2><p>' . esc_html__( 'This site fetches the zips of the latest successful "Build zips" run itself, so a firewall in front of the site does not matter. The token needs read access to Actions on the repository.', 'wpessential-server' ) . '</p>';
+		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">' . wp_nonce_field( 'wpes_release_pull', '_wpnonce', true, false ) . '<input type="hidden" name="action" value="wpes_release_pull"><table class="form-table">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Nonce markup.
+		echo '<tr><th>' . esc_html__( 'Repository', 'wpessential-server' ) . '</th><td><input type="text" class="regular-text" name="repo" value="' . esc_attr( (string) get_option( 'wpes_github_repo', 'Vertex-Systems-Network/hi-wpessential' ) ) . '"></td></tr>';
+		echo '<tr><th>' . esc_html__( 'GitHub token', 'wpessential-server' ) . '</th><td><input type="password" class="regular-text" name="token" autocomplete="off" placeholder="' . esc_attr( get_option( 'wpes_github_token' ) ? __( 'Saved. Leave empty to keep it.', 'wpessential-server' ) : 'github_pat_…' ) . '"></td></tr>';
+		echo '</table>';
+		submit_button( __( 'Pull latest build', 'wpessential-server' ) );
 		echo '</form></div>';
 	}
 
@@ -240,6 +248,88 @@ class Admin {
 	}
 
 	/**
+	 * Fetch the artifacts of the latest successful "Build zips" run on main.
+	 */
+	public static function pull_release() {
+		check_admin_referer( 'wpes_release_pull' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( esc_html__( 'Not allowed.', 'wpessential-server' ) );
+		}
+		$repo = isset( $_POST['repo'] ) ? preg_replace( '#[^A-Za-z0-9_.\-/]#', '', sanitize_text_field( wp_unslash( $_POST['repo'] ) ) ) : '';
+		update_option( 'wpes_github_repo', $repo, false );
+		if ( ! empty( $_POST['token'] ) ) {
+			update_option( 'wpes_github_token', sanitize_text_field( wp_unslash( $_POST['token'] ) ), false );
+		}
+		$done = self::pull( $repo, (string) get_option( 'wpes_github_token' ) );
+		$note = is_wp_error( $done ) ? $done->get_error_message() : ( $done ? implode( ', ', $done ) : __( 'nothing recognised', 'wpessential-server' ) );
+		wp_safe_redirect( admin_url( 'admin.php?page=wpes-release&done=' . rawurlencode( $note ) ) );
+		exit;
+	}
+
+	/**
+	 * Download and store the latest build's artifacts.
+	 *
+	 * @param string $repo  owner/name.
+	 * @param string $token GitHub token.
+	 * @return string[]|\WP_Error Stored package names.
+	 */
+	private static function pull( $repo, $token ) {
+		$api  = 'https://api.github.com/repos/' . $repo;
+		$head = array(
+			'Accept'               => 'application/vnd.github+json',
+			'Authorization'        => 'Bearer ' . $token,
+			'X-GitHub-Api-Version' => '2022-11-28',
+		);
+		$runs = self::github_json( $api . '/actions/workflows/build.yml/runs?branch=main&status=success&per_page=1', $head );
+		if ( is_wp_error( $runs ) ) {
+			return $runs;
+		}
+		if ( empty( $runs['workflow_runs'][0]['id'] ) ) {
+			return new \WP_Error( 'no_run', __( 'No successful "Build zips" run on main yet.', 'wpessential-server' ) );
+		}
+		$list = self::github_json( $api . '/actions/runs/' . (int) $runs['workflow_runs'][0]['id'] . '/artifacts', $head );
+		if ( is_wp_error( $list ) ) {
+			return $list;
+		}
+		$done = array();
+		foreach ( (array) ( $list['artifacts'] ?? array() ) as $artifact ) {
+			if ( 'wpessential-server.zip' === $artifact['name'] || ! empty( $artifact['expired'] ) ) {
+				continue;
+			}
+			// GitHub answers with a redirect to signed storage, which must not get the token.
+			$res = wp_remote_get( $artifact['archive_download_url'], array( 'headers' => $head, 'redirection' => 0, 'timeout' => 30 ) ); // phpcs:ignore WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound -- Short args.
+			$url = wp_remote_retrieve_header( $res, 'location' );
+			$tmp = $url ? download_url( $url, 300 ) : new \WP_Error( 'download', __( 'GitHub did not return a download link.', 'wpessential-server' ) );
+			if ( is_wp_error( $tmp ) ) {
+				return $tmp;
+			}
+			$done = array_merge( $done, self::place_zip( $tmp, $artifact['name'], false ) );
+			wp_delete_file( $tmp );
+		}
+		return $done;
+	}
+
+	/**
+	 * GET a GitHub API URL.
+	 *
+	 * @param string $url  URL.
+	 * @param array  $head Headers.
+	 * @return array|\WP_Error
+	 */
+	private static function github_json( $url, $head ) {
+		$res = wp_remote_get( $url, array( 'headers' => $head, 'timeout' => 20 ) ); // phpcs:ignore WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound -- Short args.
+		if ( is_wp_error( $res ) ) {
+			return $res;
+		}
+		$code = wp_remote_retrieve_response_code( $res );
+		if ( 200 !== $code ) {
+			/* translators: 1: HTTP status, 2: GitHub message. */
+			return new \WP_Error( 'github', sprintf( __( 'GitHub returned %1$d: %2$s', 'wpessential-server' ), $code, (string) ( json_decode( wp_remote_retrieve_body( $res ), true )['message'] ?? '' ) ) );
+		}
+		return (array) json_decode( wp_remote_retrieve_body( $res ), true );
+	}
+
+	/**
 	 * Store one zip by its file name, opening a bundle of zips.
 	 *
 	 * @param string $src    Path of the file.
@@ -248,6 +338,9 @@ class Admin {
 	 * @return string[] Stored package names.
 	 */
 	private static function place_zip( $src, $name, $upload ) {
+		if ( self::is_bundle( $src ) ) {
+			return self::open_bundle( $src );
+		}
 		$base = strtolower( preg_replace( '/(\.zip)+$/i', '', $name ) );
 		if ( 'hi-wpessential' === $base ) {
 			$target = Playground::theme_path();
@@ -255,11 +348,30 @@ class Admin {
 			Demos::ensure( $m[1] );
 			$target = Demos::package_path( $m[1], $m[2] );
 		} else {
-			return $upload ? self::open_bundle( $src ) : array();
+			return array();
 		}
 		wp_mkdir_p( dirname( $target ) );
 		$ok = $upload ? move_uploaded_file( $src, $target ) : copy( $src, $target ); // phpcs:ignore Generic.PHP.ForbiddenFunctions.Found -- Release zip moved to the private folder.
 		return $ok ? array( $base ) : array();
+	}
+
+	/**
+	 * Whether a zip only holds other zips (an artifact download).
+	 *
+	 * @param string $src Path.
+	 * @return bool
+	 */
+	private static function is_bundle( $src ) {
+		$zip = new \ZipArchive();
+		if ( true !== $zip->open( $src ) ) {
+			return false;
+		}
+		$all = $zip->numFiles > 0; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- ZipArchive API.
+		for ( $i = 0; $all && $i < $zip->numFiles; $i++ ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- ZipArchive API.
+			$all = '.zip' === strtolower( substr( (string) $zip->getNameIndex( $i ), -4 ) );
+		}
+		$zip->close();
+		return $all;
 	}
 
 	/**
