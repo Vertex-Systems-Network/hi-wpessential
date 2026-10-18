@@ -391,9 +391,6 @@ def e_home():
                            e.testimonial('The workshops were hands-on and small. I learned more in four hours than in a semester.', 'Marco R.', 'Frontend Lead'),
                            e.testimonial('Tight talks, zero fluff, and the after-party was unreal. Already bought my 2027 ticket.', 'Hannah W.', 'CTO'), columns=3),
                     pad=(80, 24, 80, 24)),
-        e.container(e.container(e.heading('Early-bird tickets end 22 March', 2, 'on-primary'), e.text('Save €150 on Conference passes. Prices go up at 23:59 Lisbon time.', 'on-primary'),
-                                e.button('Get your ticket', '{{page:tickets}}', 'dark'), inner=True, bg='primary', radius=28, pad=56),
-                    pad=(48, 24, 80, 24)),
     ]
 
 
@@ -422,25 +419,26 @@ def e_tickets():
 
 
 def e_venue():
-    return [e.container(e.overline('Venue', 'primary'), e.heading('Lisbon Congress Centre', 1, 'on-ink', size_px=96),
-                        e.text('On the Tagus riverfront, ten minutes from the airport. Step-free access throughout.', 'on-ink', size_px=18),
-                        image='venue', overlay='ink', overlay_opacity=0.5, min_height=600, justify='flex-end', pad=(96, 24, 96, 24)),
-            e.container(e.heading('Getting there'), e.grid(*[e.icon_box(i, t, d) for i, t, d in [
-                ('fas fa-plane-arrival', 'From the airport', 'Red metro line to Oriente, change to the green line for Cais do Sodré. About 25 minutes, €1.80.'),
-                ('fas fa-train-tram', 'From the city centre', 'Tram 15 to Belém, then a five-minute walk along the river.'),
-                ('fas fa-bicycle', 'By bike', 'Gira bike stations at the main entrance. Secure bike parking inside.')]], columns=3), pad=(80, 24, 80, 24)),
-            e.container(e.heading('Stay close, pay less'), e.text('Use the code PULSE27 for these rates. Rooms are held until 10 April.'),
-                        e.icon_list(['Myriad by Sana — 2 min, river view — from €189', 'Tivoli Oriente — 5 min, rooftop pool — from €149', 'Moxy Lisboa Oriente — 8 min, budget friendly — from €99'], icon='fas fa-bed'),
-                        bg='surface-alt', pad=(72, 24, 72, 24)),
-            e.container(e.map_widget('Praça das Indústrias, 1300-307 Lisboa'), pad=0, boxed=False)]
+    return [e_title('Venue & travel', 'Lisbon Congress Centre', 'On the Tagus riverfront, 10 minutes from the airport. Step-free access throughout.'),
+            e.container(e.image_fixed('venue', 'Lisbon Congress Centre at dusk', 520, radius=24), pad=(8, 24, 48, 24)),
+            e.container(e.overline('Getting here'), e.heading('Metro, tram or bike'),
+                        e.grid(*[e.icon_box(i, t, d) for i, t, d in [('fas fa-plane', 'From the airport', 'Red metro line to Oriente, change to the green line — 18 minutes, €1.80.'),
+                                                                     ('fas fa-train-tram', 'From the city centre', 'Tram 15 to Belém, then a five-minute walk along the river.'),
+                                                                     ('fas fa-bicycle', 'By bike', 'Gira bike stations at the main entrance. Secure bike parking inside.')]], columns=3), pad=(48, 24, 48, 24)),
+            e.container(e.overline('Partner hotels'), e.heading('Stay close, pay less'), e.text('Use code PULSE27 for the rates below. Rooms held until 10 April.'),
+                        *[e.row(e.col(e.heading(n, 3, size_px=18), e.text(d, size_px=13), gap=2), e.button('from %s · Book' % p, '{{page:contact}}', 'outline'),
+                                gap=16, pad=16, radius=14, border='border', bg='surface', mobile_direction='row') for n, d, p in HOTELS], pad=(48, 24, 96, 24), gap=12)]
 
 
 def e_sponsors():
-    return [e_title('Sponsors', 'The teams that make Pulse possible', 'Our sponsors keep ticket prices low and fund 200 diversity tickets every year.')] + [
-        e.container(e.heading(tier, 3), e.grid(*[e.container(e.heading(n, 4, align='center', size_px=22), inner=True, pad=32, radius=20, border='border', bg='surface', justify='center')
-                                                for n in names], columns=4), pad=(32, 24, 32, 24)) for tier, names in SPONSORS] + [
-        e.container(e.heading('Put your team in front of 2,400 builders', align='center'), e.button('Become a sponsor', '{{page:become-sponsor}}', align='center'),
-                    bg='surface-alt', pad=(72, 24, 72, 24))]
+    labels = {'Platinum': 'Headline partners', 'Gold': 'Gold partners', 'Community': 'Community partners'}
+    cols = {'Platinum': 2, 'Gold': 4, 'Community': 6}
+    out = [e_title('Sponsors', 'The teams making Pulse possible', 'Pulse is independent. Our partners fund scholarships, live captions and free recordings.')]
+    for tier, names in SPONSORS:
+        out.append(e.container(e.overline(labels.get(tier, tier)),
+                               e.grid(*[e.container(e.heading(n, 3, align='center', size_px=32 if tier == 'Platinum' else 20), inner=True, bg='surface-alt', radius=16,
+                                                    pad=40 if tier == 'Platinum' else 20, justify='center') for n in names], columns=cols.get(tier, 4)), pad=(24, 24, 24, 24)))
+    return out
 
 
 def e_become():
@@ -454,17 +452,16 @@ def e_become():
 
 
 def e_faq():
-    return [e_title('FAQ', 'Questions, answered', 'Tickets, travel, accessibility and everything in between.'), e.container(e.accordion(FAQ), pad=(24, 24, 80, 24))]
+    return [e_title('FAQ', 'Questions, answered', 'Still stuck? Write to tickets@pulseconf.io and we reply within a day.'), e.container(e.accordion(FAQ), pad=(24, 24, 96, 24))]
 
 
 def e_contact():
-    return [e_title('Contact', 'Talk to the Pulse team', 'We reply within one working day, Monday to Friday.'),
-            e.container(e.grid(*[e.icon_box(i, t, d) for i, t, d in [('fas fa-ticket', 'Tickets', 'tickets@pulseconf.io'), ('fas fa-handshake', 'Sponsors', 'partners@pulseconf.io'),
-                                                                     ('fas fa-newspaper', 'Press', 'press@pulseconf.io'), ('fas fa-location-dot', 'Office', 'Rossio 42, 1100-200 Lisboa · +351 21 340 2290')]], columns=4),
-                        pad=(24, 24, 56, 24)),
-            e.container(e.heading('Send us a message'), e.text('Pick a topic so it reaches the right person first time.'),
-                        e.shortcode('[wpforms id="{{form:contact}}" title="false"]'), bg='surface-alt', pad=(72, 24, 72, 24)),
-            e.container(e.map_widget('Rossio 42, 1100-200 Lisboa'), pad=0, boxed=False)]
+    cards = [('fas fa-envelope', 'General', 'tickets@pulseconf.io'), ('fas fa-microphone', 'Speaking', 'speakers@pulseconf.io'),
+             ('fas fa-handshake', 'Sponsorship', 'partners@pulseconf.io'), ('fas fa-phone', 'Phone', '+351 21 340 2290')]
+    return [e_title('Contact', 'Talk to the Pulse team', 'Tickets, press, speaking or sponsorship — pick a topic and we route it to the right person.'),
+            e.container(e.row(e.col(e.shortcode('[wpforms id="{{form:contact}}" title="false"]'), width=62, pad=28, radius=20, border='border', bg='surface'),
+                              e.col(*[e.container(e.icon_box(i, t, d), inner=True, bg='surface-alt', radius=16, pad=18) for i, t, d in cards], width=38, gap=12), gap=40),
+                        pad=(24, 24, 96, 24))]
 
 
 # Package --------------------------------------------------------------------------------
