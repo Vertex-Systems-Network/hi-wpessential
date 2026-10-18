@@ -588,6 +588,8 @@ progress::-moz-progress-bar { background: var(--wpe-primary); }
 .wpe-stats { display: grid; grid-template-columns: repeat(var(--cols, 4), 1fr); gap: 24px; }
 .wpe-cta-banner { background: var(--wp--preset--gradient--brand); border-radius: 28px; color: #fff; }
 .wpe-cta-banner :is(h2,h3,p) { color: #fff; }
+.wpe-cta-banner .is-style-wpe-ghost .wp-block-button__link { color: #fff; border-color: rgba(255,255,255,.55); }
+.wpe-cta-banner .is-style-wpe-ghost .wp-block-button__link:hover { background: rgba(255,255,255,.14); color: #fff; }
 .wpe-pricing-card.is-featured { background: var(--wpe-ink); color: var(--wp--preset--color--on-ink-muted); border-color: transparent; box-shadow: var(--wpe-shadow-lg); transform: scale(1.03); }
 .wpe-pricing-card.is-featured :is(h3,h4,.wpe-price) { color: #fff; }
 .wpe-pricing-card.is-featured .is-style-wpe-checklist li::before { background-color: #fff; }
