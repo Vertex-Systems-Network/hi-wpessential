@@ -50,6 +50,7 @@ class Importer {
 			'plugins'   => __( 'Installing plugins', 'hi-wpessential' ),
 			'media'     => __( 'Importing images', 'hi-wpessential' ),
 			'terms'     => __( 'Creating categories', 'hi-wpessential' ),
+			'forms'     => __( 'Creating forms', 'hi-wpessential' ),
 			'content'   => __( 'Building pages and posts', 'hi-wpessential' ),
 			'products'  => __( 'Adding products', 'hi-wpessential' ),
 			'menus'     => __( 'Creating menus', 'hi-wpessential' ),
@@ -128,7 +129,7 @@ class Importer {
 			if ( $options['media'] ) {
 				$keys[] = 'media';
 			}
-			array_push( $keys, 'terms', 'content' );
+			array_push( $keys, 'terms', 'forms', 'content' );
 			if ( $options['products'] ) {
 				$keys[] = 'products';
 			}
@@ -539,7 +540,7 @@ class Importer {
 	private function tokens( $text, $late = false ) {
 		$map = $this->job['map'];
 		return preg_replace_callback(
-			'/\{\{(pattern|media|media_id|theme|home|page|post_id|term_link|woo|site):?([a-z0-9\/_.-]*)\}\}/',
+			'/\{\{(pattern|media|media_id|theme|home|page|post_id|term_link|woo|site|form):?([a-z0-9\/_.-]*)\}\}/',
 			static function ( $m ) use ( $map, $late ) {
 				switch ( $m[1] ) {
 					case 'pattern':
@@ -566,6 +567,9 @@ class Importer {
 							return $m[0];
 						}
 						return function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( $m[2] ) : home_url( '/' );
+					case 'form':
+						// WPForms form created in the forms step; empty when WPForms could not be installed.
+						return (string) ( $map['forms'][ $m[2] ] ?? 0 );
 					case 'site':
 						// The importing site's own name and admin email, e.g. in the legal pages.
 						if ( ! $late ) {
@@ -779,6 +783,27 @@ class Importer {
 			update_term_meta( $id, $key, $this->tokens( $value ) );
 		}
 		$this->job['map']['terms'][ $item['key'] ] = array( $id, $taxonomy );
+		return null;
+	}
+
+	/**
+	 * One WPForms form from the package (installs WPForms Lite when missing).
+	 *
+	 * @param int $i Index.
+	 * @return null
+	 */
+	private function step_forms( $i ) {
+		$item = $this->content()['forms'][ $i ];
+		$id   = Forms::create( (string) $item['title'], (array) ( $item['fields'] ?? array() ), (string) ( $item['submit'] ?? '' ), (string) ( $item['message'] ?? '' ), (array) ( $item['settings'] ?? array() ) );
+		if ( is_wp_error( $id ) ) {
+			/* translators: 1: form, 2: error. */
+			$this->log( 'warning', sprintf( __( 'Form "%1$s" was not created: %2$s', 'hi-wpessential' ), $item['title'], $id->get_error_message() ) );
+			return null;
+		}
+		$this->job['map']['forms'][ $item['key'] ] = $id;
+		$this->track( 'posts', $id );
+		/* translators: %s: form. */
+		$this->log( 'success', sprintf( __( 'Created form "%s".', 'hi-wpessential' ), $item['title'] ) );
 		return null;
 	}
 

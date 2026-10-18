@@ -44,5 +44,6 @@ final class Plugin {
 		}
 		License::schedule();
 		Contact::hooks();
+		Mcp::hooks();
 	}
 }
