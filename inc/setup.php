@@ -62,6 +62,10 @@ add_filter(
 	'body_class',
 	static function ( $classes ) {
 		$classes[] = 'wpessential';
+		$demo      = sanitize_key( (string) get_option( 'wpessential_active_demo', '' ) );
+		if ( $demo ) {
+			$classes[] = 'wpe-demo-' . $demo; // Lets each demo style shared screens such as the shop.
+		}
 		if ( did_action( 'elementor/loaded' ) && is_singular() && class_exists( '\Elementor\Plugin' ) ) {
 			$document = \Elementor\Plugin::$instance->documents->get( get_the_ID() );
 			if ( $document && $document->is_built_with_elementor() ) {

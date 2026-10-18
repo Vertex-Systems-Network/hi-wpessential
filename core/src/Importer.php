@@ -420,6 +420,7 @@ class Importer {
 		 * @param string $builder Builder.
 		 * @param array  $map     Old key => new ID maps.
 		 */
+		update_option( 'wpessential_active_demo', sanitize_key( $this->job['demo'] ) );
 		do_action( 'wpessential_demo_imported', $this->job['demo'], $this->job['builder'], $this->job['map'] );
 	}
 
