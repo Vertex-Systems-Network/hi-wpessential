@@ -131,6 +131,25 @@ class Demos {
 	}
 
 	/**
+	 * Create a draft demo for an id the library does not have yet.
+	 *
+	 * @param string $demo Demo id.
+	 */
+	public static function ensure( $demo ) {
+		if ( get_posts( array( 'post_type' => self::CPT, 'post_status' => 'any', 'meta_key' => '_wpes_demo_id', 'meta_value' => $demo, 'fields' => 'ids', 'numberposts' => 1 ) ) ) { // phpcs:ignore WordPress.DB.SlowDBQuery, WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound -- Admin-only release call.
+			return;
+		}
+		$id = wp_insert_post(
+			array(
+				'post_type'   => self::CPT,
+				'post_status' => 'draft',
+				'post_title'  => ucfirst( $demo ),
+			)
+		);
+		update_post_meta( $id, '_wpes_demo_id', $demo );
+	}
+
+	/**
 	 * Private path of a package.
 	 *
 	 * @param string $demo    Demo id or "plugin".
