@@ -1,810 +1,129 @@
 # Copyright (C) 2026 WPEssential Team
-# This file is distributed under the GPL-2.0-or-later.
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: WPEssential 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wpessential.org/support/\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: WPEssential Team <https://wpessential.org/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-17T23:04:17+00:00\n"
-"Language-Team: WPEssential Team <https://wpessential.org/>\n"
+"POT-Creation-Date: 2026-10-18T02:45:11+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpessential\n"
 
-#: patterns/latest-posts.php:15
-msgid "From the blog"
+#. Theme Name of the theme
+#: style.css
+#: core/src/Admin.php:55
+#: inc/patterns.php:14
+msgid "WPEssential"
 msgstr ""
 
-#: patterns/latest-posts.php:19
-msgid "Guides for faster, better WordPress sites"
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://wpessential.org/"
 msgstr ""
 
-#: patterns/builders-split.php:16
-msgid "Your builder, your choice"
+#. Description of the theme
+#: style.css
+msgid "Lightweight multi-niche block theme, native for Gutenberg and Elementor. One-click demos (free & pro) via the WPEssential Core plugin."
 msgstr ""
 
-#: patterns/builders-split.php:20
-msgid "Same design. Gutenberg or Elementor."
+#. Author of the theme
+#: style.css
+msgid "WPEssential Team"
 msgstr ""
 
-#: patterns/builders-split.php:24
-msgid "Colors, fonts and spacing come from one theme.json and sync into Elementor’s global kit automatically."
+#. translators: %s: error.
+#: core/src/Account.php:55
+msgid "WPEssential could not be reached: %s"
 msgstr ""
 
-#: patterns/builders-split.php:29
-msgid "Shared design tokens across both builders"
+#: core/src/Account.php:61
+msgid "Your WPEssential session ended. Sign in again."
 msgstr ""
 
-#: patterns/builders-split.php:31
-msgid "Elementor Pro Theme Builder locations supported"
+#. translators: %d: HTTP code.
+#: core/src/Account.php:65
+msgid "WPEssential answered with an unexpected response (HTTP %d)."
 msgstr ""
 
-#: patterns/builders-split.php:33
-msgid "Full Site Editing templates and patterns"
+#: core/src/Account.php:68
+#: core/assets/admin.js:83
+#: core/assets/admin.js:94
+msgid "Something went wrong."
 msgstr ""
 
-#: patterns/builders-split.php:40
-msgid "Designer building a site"
+#: core/src/Account.php:238
+msgid "That license is not in your account."
 msgstr ""
 
-#: patterns/logos.php:14
-msgid "Trusted by 18,000+ agencies, stores and creators"
+#: core/src/Account.php:271
+#: core/src/Rest.php:211
+msgid "Unknown action."
 msgstr ""
 
-#: patterns/footer-premium.php:17
-msgid "Get design tips & new demos"
+#: core/src/Admin.php:37
+#: core/assets/admin.js:147
+msgid "Dashboard"
 msgstr ""
 
-#: patterns/footer-premium.php:21
-msgid "One email a month. No spam, unsubscribe anytime."
+#: core/src/Admin.php:38
+#: core/assets/admin.js:148
+#: core/assets/admin.js:306
+msgid "Demo Library"
 msgstr ""
 
-#: patterns/footer-premium.php:28
-msgid "Subscribe"
+#: core/src/Admin.php:39
+#: core/assets/admin.js:149
+#: core/assets/admin.js:576
+#: core/assets/admin.js:1054
+msgid "Plugins"
 msgstr ""
 
-#: patterns/footer-premium.php:55
-msgid "Company"
+#: core/src/Admin.php:40
+#: core/assets/admin.js:150
+#: core/assets/admin.js:284
+#: core/assets/admin.js:1096
+msgid "License"
 msgstr ""
 
-#: patterns/footer-premium.php:59 patterns/page-about.php:16
-msgid "About us"
+#: core/src/Admin.php:41
+#: core/assets/admin.js:151
+#: core/assets/admin.js:1343
+msgid "System Status"
 msgstr ""
 
-#: patterns/footer-premium.php:60 patterns/services-grid.php:15 patterns/page-services.php:16
-msgid "Services"
+#: core/src/Admin.php:133
+msgid "The WPEssential dashboard needs JavaScript. Enable it in your browser to import demos."
 msgstr ""
 
-#: patterns/footer-premium.php:61 patterns/page-pricing.php:16 patterns/pricing.php:15
-msgid "Pricing"
+#: core/src/Demos.php:49
+msgid "The online demo library could not be reached, so only the demos bundled with the theme are listed. They import fully offline."
 msgstr ""
 
-#: patterns/footer-premium.php:62 patterns/page-contact.php:16 patterns/footer-simple.php:19 patterns/header-topbar.php:18
-msgid "Contact"
+#: core/src/Demos.php:173
+msgid "The bundled demo package is incomplete. Re-upload the theme and try again."
 msgstr ""
 
-#: patterns/footer-premium.php:70 core/assets/admin.js:301
-msgid "Shop"
+#: core/src/Demos.php:183
+msgid "This demo has no download address in the library."
 msgstr ""
 
-#: patterns/footer-premium.php:74
-msgid "All products"
+#. translators: %s: error message.
+#: core/src/Demos.php:196
+msgid "Downloading the demo package failed: %s"
 msgstr ""
 
-#: patterns/footer-premium.php:75
-msgid "My account"
+#: core/src/Demos.php:200
+msgid "WordPress cannot write to the uploads folder. Check its permissions."
 msgstr ""
 
-#: patterns/footer-premium.php:76
-msgid "Cart"
-msgstr ""
-
-#: patterns/footer-premium.php:77 patterns/header-topbar.php:18
-msgid "Track order"
-msgstr ""
-
-#: patterns/footer-premium.php:85 core/assets/admin.js:263
-msgid "Resources"
-msgstr ""
-
-#: patterns/footer-premium.php:89 patterns/footer-simple.php:18 core/assets/admin.js:301
-msgid "Blog"
-msgstr ""
-
-#: patterns/footer-premium.php:90 patterns/faq.php:15
-msgid "FAQ"
-msgstr ""
-
-#: patterns/footer-premium.php:91 core/assets/admin.js:266
-msgid "Documentation"
-msgstr ""
-
-#: patterns/footer-premium.php:92 core/assets/admin.js:267
-msgid "Support"
-msgstr ""
-
-#: patterns/footer-premium.php:100
-msgid "All rights reserved."
-msgstr ""
-
-#: patterns/footer-premium.php:104 patterns/footer-simple.php:20
-msgid "Privacy"
-msgstr ""
-
-#: patterns/footer-premium.php:104
-msgid "Terms"
-msgstr ""
-
-#: patterns/services-grid.php:19
-msgid "From idea to launch"
-msgstr ""
-
-#: patterns/services-grid.php:23
-msgid "Use WPEssential yourself, or let our team set up, customise and maintain your site."
-msgstr ""
-
-#: patterns/services-grid.php:34
-msgid "Demo setup"
-msgstr ""
-
-#: patterns/services-grid.php:38
-msgid "We import your chosen demo, connect your domain and configure plugins."
-msgstr ""
-
-#: patterns/services-grid.php:48
-msgid "Brand customisation"
-msgstr ""
-
-#: patterns/services-grid.php:52
-msgid "Your colors, fonts, logo and copy applied across every template."
-msgstr ""
-
-#: patterns/services-grid.php:62
-msgid "WooCommerce launch"
-msgstr ""
-
-#: patterns/services-grid.php:66
-msgid "Products, payments, shipping zones and emails configured and tested."
-msgstr ""
-
-#: patterns/features-grid.php:15
-msgid "Why WPEssential"
-msgstr ""
-
-#: patterns/features-grid.php:19
-msgid "Everything a modern site needs, nothing it doesn’t"
-msgstr ""
-
-#: patterns/features-grid.php:23
-msgid "Built on theme.json and native blocks, with first-class Elementor support."
-msgstr ""
-
-#: patterns/features-grid.php:34
-msgid "One-click demo import"
-msgstr ""
-
-#: patterns/features-grid.php:38
-msgid "Pick a demo, choose your builder, import. Content and settings land exactly as previewed."
-msgstr ""
-
-#: patterns/features-grid.php:48
-msgid "Gutenberg &amp; Elementor"
-msgstr ""
-
-#: patterns/features-grid.php:52
-msgid "Every demo ships twice — native blocks and Elementor — sharing one set of design tokens."
-msgstr ""
-
-#: patterns/features-grid.php:62
-msgid "Blazing fast"
-msgstr ""
-
-#: patterns/features-grid.php:66
-msgid "No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
-msgstr ""
-
-#: patterns/features-grid.php:78
-msgid "Automatic plugin setup"
-msgstr ""
-
-#: patterns/features-grid.php:82
-msgid "Required plugins install and activate themselves when you import a demo."
-msgstr ""
-
-#: patterns/features-grid.php:92
-msgid "WooCommerce ready"
-msgstr ""
-
-#: patterns/features-grid.php:96
-msgid "Designed shop, product, cart, checkout and account pages — not default templates."
-msgstr ""
-
-#: patterns/features-grid.php:106
-msgid "Pro license &amp; updates"
-msgstr ""
-
-#: patterns/features-grid.php:110
-msgid "Connect a license once to unlock Pro demos, premium blocks and updates."
-msgstr ""
-
-#: patterns/page-about.php:20
-msgid "We build WordPress tools that feel premium and stay fast"
-msgstr ""
-
-#: patterns/page-about.php:24
-msgid "WPEssential started as an internal starter theme for client work. Today it powers stores, agencies and creators in more than 60 countries."
-msgstr ""
-
-#: patterns/stats.php:20
-msgid "Active installs"
-msgstr ""
-
-#: patterns/stats.php:28 patterns/hero-dark.php:43
-msgid "Ready demos"
-msgstr ""
-
-#: patterns/stats.php:36
-msgid "Average rating"
-msgstr ""
-
-#: patterns/stats.php:44
-msgid "Support response"
-msgstr ""
-
-#: patterns/faq.php:19 patterns/page-faq.php:20
-msgid "Frequently asked questions"
-msgstr ""
-
-#: patterns/faq.php:24
-msgid "Is WPEssential free?"
-msgstr ""
-
-#: patterns/faq.php:25
-msgid "Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium blocks and priority support."
-msgstr ""
-
-#: patterns/faq.php:30
-msgid "Which page builders are supported?"
-msgstr ""
-
-#: patterns/faq.php:31
-msgid "The native block editor (Gutenberg) and Elementor. Every demo ships in both versions."
-msgstr ""
-
-#: patterns/faq.php:36
-msgid "Will importing a demo delete my content?"
-msgstr ""
-
-#: patterns/faq.php:37
-msgid "No. Demo content is added alongside your existing posts, and you choose what to import."
-msgstr ""
-
-#: patterns/faq.php:42
-msgid "Do I need Elementor Pro?"
-msgstr ""
-
-#: patterns/faq.php:43
-msgid "No. Elementor free is enough for every demo. Elementor Pro Theme Builder headers and footers are also supported."
-msgstr ""
-
-#: patterns/faq.php:48
-msgid "Is the theme translation-ready and RTL compatible?"
-msgstr ""
-
-#: patterns/faq.php:49
-msgid "Yes. All strings are translatable and layouts mirror correctly for languages such as Urdu and Arabic."
-msgstr ""
-
-#: patterns/header-shop.php:22
-msgid "Search products"
-msgstr ""
-
-#: patterns/header-shop.php:22
-msgid "Search products, brands and more…"
-msgstr ""
-
-#: patterns/header-shop.php:22 patterns/header-actions.php:14 patterns/header-actions.php:14 patterns/content-404.php:25 patterns/content-404.php:25 patterns/sidebar.php:14
-msgid "Search"
-msgstr ""
-
-#: patterns/team.php:15
-msgid "The team"
-msgstr ""
-
-#: patterns/team.php:19
-msgid "People behind WPEssential"
-msgstr ""
-
-#: patterns/team.php:35
-msgid "Founder &amp; Lead Designer"
-msgstr ""
-
-#: patterns/team.php:47
-msgid "Head of Engineering"
-msgstr ""
-
-#: patterns/team.php:59
-msgid "Customer Success"
-msgstr ""
-
-#: patterns/team.php:71
-msgid "WooCommerce Specialist"
-msgstr ""
-
-#: patterns/header-actions.php:23 patterns/header-actions.php:23
-msgid "Switch to dark mode"
-msgstr ""
-
-#: patterns/header-actions.php:23
-msgid "Switch to light mode"
-msgstr ""
-
-#: patterns/header-actions.php:29
-msgid "Get Started"
-msgstr ""
-
-#: patterns/coming-soon.php:17
-msgid "Something great is on the way"
-msgstr ""
-
-#: patterns/coming-soon.php:21
-msgid "We are polishing the final details. Follow us for launch news."
-msgstr ""
-
-#: patterns/content-404.php:14
-msgid "Error 404"
-msgstr ""
-
-#: patterns/content-404.php:18
-msgid "This page took a day off"
-msgstr ""
-
-#: patterns/content-404.php:22
-msgid "The link may be broken or the page may have moved. Try a search or head back home."
-msgstr ""
-
-#: patterns/content-404.php:29
-msgid "Back to home"
-msgstr ""
-
-#: patterns/process-steps.php:15
-msgid "How it works"
-msgstr ""
-
-#: patterns/process-steps.php:19
-msgid "Live in four simple steps"
-msgstr ""
-
-#: patterns/process-steps.php:31
-msgid "Pick a demo"
-msgstr ""
-
-#: patterns/process-steps.php:35
-msgid "Browse 40+ demos and preview them live."
-msgstr ""
-
-#: patterns/process-steps.php:43
-msgid "Choose a builder"
-msgstr ""
-
-#: patterns/process-steps.php:47
-msgid "Gutenberg or Elementor — same design."
-msgstr ""
-
-#: patterns/process-steps.php:55
-msgid "Import in one click"
-msgstr ""
-
-#: patterns/process-steps.php:59
-msgid "Plugins, content and settings are set up for you."
-msgstr ""
-
-#: patterns/process-steps.php:67 core/assets/admin.js:290
-msgid "Make it yours"
-msgstr ""
-
-#: patterns/process-steps.php:71
-msgid "Edit text, swap images and publish."
-msgstr ""
-
-#: patterns/page-contact.php:20
-msgid "Let’s talk about your next site"
-msgstr ""
-
-#: patterns/page-contact.php:24
-msgid "Questions about demos, licensing or a custom build? Our team replies within one business day."
-msgstr ""
-
-#: patterns/contact.php:22
-msgid "Email us"
-msgstr ""
-
-#: patterns/contact.php:36
-msgid "Call us"
-msgstr ""
-
-#: patterns/contact.php:50
-msgid "Visit us"
-msgstr ""
-
-#: patterns/contact.php:64
-msgid "Support hours"
-msgstr ""
-
-#: patterns/contact.php:68
-msgid "Replies within one business day"
-msgstr ""
-
-#: patterns/contact.php:76
-msgid "Send us a message"
-msgstr ""
-
-#: patterns/contact.php:80
-msgid "Replace the shortcode below with your form plugin (Contact Form 7, WPForms, Fluent Forms or the Elementor Form widget)."
-msgstr ""
-
-#: patterns/testimonials.php:15
-msgid "Loved by builders"
-msgstr ""
-
-#: patterns/testimonials.php:19
-msgid "What our customers say"
-msgstr ""
-
-#: patterns/testimonials.php:31
-msgid "We rebuilt three client sites on WPEssential in a week. The Elementor and block versions matching exactly is a game changer."
-msgstr ""
-
-#: patterns/testimonials.php:35
-msgid "Founder, Kitecraft Agency"
-msgstr ""
-
-#: patterns/testimonials.php:43
-msgid "Our store went from 3.9s to 1.2s load time. Checkout pages look custom out of the box."
-msgstr ""
-
-#: patterns/testimonials.php:47
-msgid "Owner, Fieldhouse Goods"
-msgstr ""
-
-#: patterns/testimonials.php:55
-msgid "The demo import just works — plugins, menus, homepage. I spend my time on content now, not setup."
-msgstr ""
-
-#: patterns/testimonials.php:59
-msgid "Writer, The Quiet Desk"
-msgstr ""
-
-#: patterns/maintenance.php:17
-msgid "We will be back shortly"
-msgstr ""
-
-#: patterns/maintenance.php:21
-msgid "Scheduled maintenance is underway. Thanks for your patience — we will be back online in a few minutes."
-msgstr ""
-
-#: patterns/cta-banner.php:15
-msgid "Ready to launch your next site?"
-msgstr ""
-
-#: patterns/cta-banner.php:19
-msgid "Start free. Upgrade to Pro when you need premium demos and priority support."
-msgstr ""
-
-#: patterns/cta-banner.php:24
-msgid "Get WPEssential free"
-msgstr ""
-
-#: patterns/cta-banner.php:28
-msgid "See Pro plans →"
-msgstr ""
-
-#: patterns/page-pricing.php:20
-msgid "Simple plans that grow with you"
-msgstr ""
-
-#: patterns/page-pricing.php:24
-msgid "Start free with the core theme. Upgrade for premium demos, Pro blocks and priority support."
-msgstr ""
-
-#: patterns/footer-simple.php:17
-msgid "About"
-msgstr ""
-
-#: patterns/pricing.php:19
-msgid "Simple pricing. Both builders included."
-msgstr ""
-
-#: patterns/pricing.php:23
-msgid "Start free and upgrade when you need Pro demos, premium blocks and priority support."
-msgstr ""
-
-#: patterns/pricing.php:30 core/assets/admin.js:312
-msgid "Free"
-msgstr ""
-
-#: patterns/pricing.php:34 patterns/pricing.php:64 patterns/pricing.php:96
-msgid "/ year"
-msgstr ""
-
-#: patterns/pricing.php:38
-msgid "For personal sites getting started."
-msgstr ""
-
-#: patterns/pricing.php:43
-msgid "12 free demos"
-msgstr ""
-
-#: patterns/pricing.php:45
-msgid "Gutenberg + Elementor"
-msgstr ""
-
-#: patterns/pricing.php:47
-msgid "Core blocks &amp; patterns"
-msgstr ""
-
-#: patterns/pricing.php:49
-msgid "Community support"
-msgstr ""
-
-#: patterns/pricing.php:55
-msgid "Download free"
-msgstr ""
-
-#: patterns/pricing.php:60 core/assets/admin.js:312
-msgid "Pro"
-msgstr ""
-
-#: patterns/pricing.php:68
-msgid "For freelancers and growing businesses."
-msgstr ""
-
-#: patterns/pricing.php:73
-msgid "All 40+ demos"
-msgstr ""
-
-#: patterns/pricing.php:75
-msgid "Premium blocks &amp; widgets"
-msgstr ""
-
-#: patterns/pricing.php:77
-msgid "WooCommerce demos"
-msgstr ""
-
-#: patterns/pricing.php:79
-msgid "1 year of updates"
-msgstr ""
-
-#: patterns/pricing.php:81 core/assets/admin.js:1113
-msgid "Priority support"
-msgstr ""
-
-#: patterns/pricing.php:87
-msgid "Get Pro"
-msgstr ""
-
-#: patterns/pricing.php:92 core/assets/admin.js:301
-msgid "Agency"
-msgstr ""
-
-#: patterns/pricing.php:100
-msgid "For teams building client sites."
-msgstr ""
-
-#: patterns/pricing.php:105
-msgid "Everything in Pro"
-msgstr ""
-
-#: patterns/pricing.php:107
-msgid "Unlimited sites"
-msgstr ""
-
-#: patterns/pricing.php:109
-msgid "White-label dashboard"
-msgstr ""
-
-#: patterns/pricing.php:111
-msgid "Client handoff kit"
-msgstr ""
-
-#: patterns/pricing.php:117
-msgid "Get Agency"
-msgstr ""
-
-#: patterns/hero-dark.php:15 core/assets/admin.js:241
-msgid "NEW"
-msgstr ""
-
-#: patterns/hero-dark.php:15
-msgid "40+ demos for Gutenberg &amp; Elementor"
-msgstr ""
-
-#: patterns/hero-dark.php:19
-msgid "Launch a premium WordPress site in minutes, not weeks"
-msgstr ""
-
-#: patterns/hero-dark.php:23
-msgid "One-click demos for every niche, built natively for both the block editor and Elementor — fast, accessible and fully yours."
-msgstr ""
-
-#: patterns/hero-dark.php:28 core/assets/admin.js:245
-msgid "Browse demos"
-msgstr ""
-
-#: patterns/hero-dark.php:32
-msgid "Watch the 2-min tour"
-msgstr ""
-
-#: patterns/hero-dark.php:53
-msgid "Page builders"
-msgstr ""
-
-#: patterns/hero-dark.php:63
-msgid "CSS on first load"
-msgstr ""
-
-#: patterns/hero-dark.php:73
-msgid "From 1,200 reviews"
-msgstr ""
-
-#: patterns/hero-dark.php:80
-msgid "Business demo homepage built with WPEssential"
-msgstr ""
-
-#: patterns/page-faq.php:16
-msgid "Help center"
-msgstr ""
-
-#: patterns/page-faq.php:24
-msgid "Answers about demos, builders, licensing and updates. Can’t find what you need? Contact support."
-msgstr ""
-
-#: patterns/sidebar.php:19
-msgid "Categories"
-msgstr ""
-
-#: patterns/sidebar.php:27
-msgid "Recent posts"
-msgstr ""
-
-#: patterns/sidebar.php:35
-msgid "Tags"
-msgstr ""
-
-#: patterns/page-services.php:20
-msgid "Everything you need to launch and grow"
-msgstr ""
-
-#: patterns/page-services.php:24
-msgid "Strategy, design, development and care plans — delivered on a theme built for speed."
-msgstr ""
-
-#: patterns/header-topbar.php:14
-msgid "Free shipping on orders over $75 · 30-day returns"
-msgstr ""
-
-#: patterns/header-topbar.php:18
-msgid "Help"
-msgstr ""
-
-#: patterns/hero-split.php:17
-msgid "Multi-niche WordPress theme"
-msgstr ""
-
-#: patterns/hero-split.php:21
-msgid "Build any website in minutes"
-msgstr ""
-
-#: patterns/hero-split.php:25
-msgid "Import a ready-made demo for Gutenberg or Elementor with one click, then make it yours."
-msgstr ""
-
-#: patterns/hero-split.php:30 core/assets/admin.js:258
-msgid "Get started"
-msgstr ""
-
-#: patterns/hero-split.php:34
-msgid "Learn more"
-msgstr ""
-
-#: patterns/hero-split.php:41
-msgid "A WPEssential site on a laptop and phone"
-msgstr ""
-
-#: assets/js/options.js:65
-msgid "Custom code"
-msgstr ""
-
-#: assets/js/options.js:66
-msgid "Animations"
-msgstr ""
-
-#: assets/js/options.js:84 assets/js/options.js:91 core/assets/admin.js:280 core/assets/admin.js:692 core/assets/admin.js:1065 core/assets/admin.js:1104
-msgid "Active"
-msgstr ""
-
-#: assets/js/options.js:84
-msgid "Off"
-msgstr ""
-
-#: assets/js/options.js:88
-msgid "Broke something? Open your site in safe mode to load it without snippets:"
-msgstr ""
-
-#: assets/js/options.js:88
-msgid "Safe mode"
-msgstr ""
-
-#: assets/js/options.js:90
-msgid "Snippet name"
-msgstr ""
-
-#: assets/js/options.js:93
-msgid "Devices"
-msgstr ""
-
-#: assets/js/options.js:93
-msgid "All devices"
-msgstr ""
-
-#: assets/js/options.js:93
-msgid "Desktop (1025px+)"
-msgstr ""
-
-#: assets/js/options.js:93
-msgid "Tablet (768–1024px)"
-msgstr ""
-
-#: assets/js/options.js:93
-msgid "Mobile (≤767px)"
-msgstr ""
-
-#: assets/js/options.js:96
-msgid "Load in"
-msgstr ""
-
-#: assets/js/options.js:96
-msgid "Footer (recommended)"
-msgstr ""
-
-#: assets/js/options.js:97
-msgid "Write JavaScript only, without <script> tags."
-msgstr ""
-
-#: assets/js/options.js:97
-msgid "Write CSS only, without <style> tags."
-msgstr ""
-
-#: assets/js/options.js:99
-msgid "Save snippets"
-msgstr ""
-
-#: assets/js/options.js:99 core/assets/admin.js:1067
-msgid "Delete"
-msgstr ""
-
-#: assets/js/options.js:116
-msgid "New script"
-msgstr ""
-
-#: assets/js/options.js:116
-msgid "New styles"
-msgstr ""
-
-#: assets/js/options.js:162
-msgid "Animations reveal sections as visitors scroll. Visitors who prefer reduced motion never see them."
-msgstr ""
-
-#: assets/js/options.js:166
-msgid "Use GSAP for parallax and counters with any preset"
-msgstr ""
-
-#: assets/js/options.js:167
-msgid "Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask, --stagger, --parallax or --counter) to any block under Advanced → Additional CSS class."
-msgstr ""
-
-#: assets/js/options.js:168
-msgid "Save animations"
+#: core/src/Demos.php:207
+msgid "The downloaded package does not contain content.json."
 msgstr ""
 
 #: core/src/Importer.php:47
@@ -869,7 +188,6 @@ msgstr ""
 
 #. translators: 1: demo, 2: builder.
 #: core/src/Importer.php:192
-#, php-format
 msgid "Starting import of %1$s for %2$s."
 msgstr ""
 
@@ -891,13 +209,11 @@ msgstr ""
 
 #. translators: %s: error.
 #: core/src/Importer.php:358
-#, php-format
 msgid "Unexpected error: %s"
 msgstr ""
 
 #. translators: %d: errors.
 #: core/src/Importer.php:411
-#, php-format
 msgid "Import finished with %d error. The site works; review the log for what was skipped."
 msgid_plural "Import finished with %d errors. The site works; review the log for what was skipped."
 msgstr[0] ""
@@ -911,256 +227,366 @@ msgstr ""
 msgid "WooCommerce is not active, so the shop products were skipped."
 msgstr ""
 
-#: core/src/Importer.php:581
+#: core/src/Importer.php:602
 msgid "Your server needs a change before the import can run safely."
 msgstr ""
 
-#: core/src/Importer.php:581
+#: core/src/Importer.php:602
 msgid "Fix the items above (your host can help), then press Retry."
 msgstr ""
 
 #. translators: %s: demo.
-#: core/src/Importer.php:586
-#, php-format
+#: core/src/Importer.php:607
 msgid "%s was imported before. Its pages stay; the new import adds fresh copies."
 msgstr ""
 
 #. translators: %s: demo.
-#: core/src/Importer.php:586
+#: core/src/Importer.php:607
 msgid "Tick \"Remove previous demo\" next time for a clean site."
 msgstr ""
 
-#: core/src/Importer.php:588
+#: core/src/Importer.php:609
 msgid "Server checks passed."
 msgstr ""
 
 #. translators: %d: items.
-#: core/src/Importer.php:600
-#, php-format
+#: core/src/Importer.php:621
 msgid "Removed %d items from the previous demo and restored its settings."
 msgstr ""
 
-#: core/src/Importer.php:613
+#: core/src/Importer.php:634
 msgid "Upload a fresh copy of the theme, then press Resume."
 msgstr ""
 
-#: core/src/Importer.php:613
+#: core/src/Importer.php:634
 msgid "Check your internet connection and press Resume."
 msgstr ""
 
-#: core/src/Importer.php:619
+#: core/src/Importer.php:640
 msgid "The demo package could not be read (content.json is damaged)."
 msgstr ""
 
-#: core/src/Importer.php:619
+#: core/src/Importer.php:640
 msgid "Clear the cache on the System Status tab and retry."
 msgstr ""
 
 #. translators: 1: pages, 2: images, 3: products.
-#: core/src/Importer.php:623
-#, php-format
+#: core/src/Importer.php:644
 msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
 msgstr ""
 
 #. translators: 1: plugin, 2: error.
-#: core/src/Importer.php:641
-#, php-format
+#: core/src/Importer.php:662
 msgid "%1$s could not be set up: %2$s"
 msgstr ""
 
 #. translators: 1: plugin, 2: error.
-#: core/src/Importer.php:641
+#: core/src/Importer.php:662
 msgid "Install it from Plugins → Add New, then use the Plugins tab here to activate it."
 msgstr ""
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:646
-#, php-format
+#: core/src/Importer.php:667
 msgid "%s installed and activated."
 msgstr ""
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:648
-#, php-format
+#: core/src/Importer.php:669
 msgid "%s activated."
 msgstr ""
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:650
-#, php-format
+#: core/src/Importer.php:671
 msgid "%s deactivated because it conflicts with this demo."
 msgstr ""
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:652
-#, php-format
+#: core/src/Importer.php:673
 msgid "%s is already active."
 msgstr ""
 
-#: core/src/Importer.php:677
+#: core/src/Importer.php:702
 msgid "file not found in the package"
 msgstr ""
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:682
-#, php-format
+#: core/src/Importer.php:707
 msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
 msgstr ""
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:696
-#, php-format
+#: core/src/Importer.php:721
 msgid "Image %1$s skipped (%2$s)."
 msgstr ""
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:696
+#: core/src/Importer.php:721
 msgid "Check that the uploads folder is writable."
 msgstr ""
 
 #. translators: %s: file.
-#: core/src/Importer.php:704
-#, php-format
+#: core/src/Importer.php:729
 msgid "Imported image %s."
 msgstr ""
 
 #. translators: 1: term, 2: taxonomy.
 #. translators: 1: title, 2: post type.
-#: core/src/Importer.php:719 core/src/Importer.php:765
-#, php-format
+#: core/src/Importer.php:744
+#: core/src/Importer.php:790
 msgid "Skipped \"%1$s\": %2$s is not available on this site."
 msgstr ""
 
 #. translators: %s: term.
-#: core/src/Importer.php:726
-#, php-format
+#: core/src/Importer.php:751
 msgid "Category \"%s\" already exists and was reused."
 msgstr ""
 
 #. translators: 1: term, 2: error.
-#: core/src/Importer.php:738
-#, php-format
+#: core/src/Importer.php:763
 msgid "Category \"%1$s\" was not created: %2$s"
 msgstr ""
 
 #. translators: %s: term.
-#: core/src/Importer.php:745
-#, php-format
+#: core/src/Importer.php:770
 msgid "Created category \"%s\"."
 msgstr ""
 
 #. translators: 1: title, 2: error.
-#: core/src/Importer.php:787
-#, php-format
+#: core/src/Importer.php:808
 msgid "\"%1$s\" could not be created: %2$s"
 msgstr ""
 
-#. translators: 1: type, 2: title.
-#: core/src/Importer.php:812
-#, php-format
-msgid "Created %1$s \"%2$s\"."
-msgstr ""
-
-#. translators: 1: type, 2: title.
-#: core/src/Importer.php:812
+#: core/src/Importer.php:836
 msgid "post"
 msgstr ""
 
-#. translators: 1: type, 2: title.
-#: core/src/Importer.php:812
+#: core/src/Importer.php:837
 msgid "page"
 msgstr ""
 
+#: core/src/Importer.php:838
+msgid "event"
+msgstr ""
+
+#: core/src/Importer.php:839
+msgid "venue"
+msgstr ""
+
+#: core/src/Importer.php:840
+msgid "organizer"
+msgstr ""
+
+#. translators: 1: type, 2: title.
+#: core/src/Importer.php:843
+msgid "Created %1$s \"%2$s\"."
+msgstr ""
+
+#: core/src/Importer.php:860
+msgid "The Events Calendar rejected the venue."
+msgstr ""
+
+#: core/src/Importer.php:864
+msgid "The Events Calendar rejected the organizer."
+msgstr ""
+
+#: core/src/Importer.php:892
+msgid "The Events Calendar rejected the event."
+msgstr ""
+
 #. translators: %s: product.
-#: core/src/Importer.php:894
-#, php-format
+#: core/src/Importer.php:1004
 msgid "Product \"%s\" could not be saved."
 msgstr ""
 
 #. translators: %s: product.
-#: core/src/Importer.php:905
-#, php-format
+#: core/src/Importer.php:1015
 msgid "Added product \"%s\"."
 msgstr ""
 
 #. translators: 1: menu, 2: count.
-#: core/src/Importer.php:1008
-#, php-format
+#: core/src/Importer.php:1118
 msgid "Created menu \"%1$s\" with %2$d links."
 msgstr ""
 
-#: core/src/Importer.php:1053
+#: core/src/Importer.php:1164
 msgid "Home and blog pages assigned."
 msgstr ""
 
 #. translators: %s: option.
-#: core/src/Importer.php:1059
-#, php-format
+#: core/src/Importer.php:1170
 msgid "Setting \"%s\" is not on the allow-list and was ignored."
 msgstr ""
 
 #. translators: %s: preset.
-#: core/src/Importer.php:1070
-#, php-format
+#: core/src/Importer.php:1191
 msgid "Animation style set to \"%s\"."
 msgstr ""
 
-#: core/src/Importer.php:1080
+#: core/src/Importer.php:1204
 msgid "Elementor set to use the theme colours and fonts."
 msgstr ""
 
-#: core/src/Importer.php:1102
+#: core/src/Importer.php:1219
+msgid "Default"
+msgstr ""
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Style \"%s\" was not found in the theme, so the default colours stay."
+msgstr ""
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1222
+msgid "Update the WPEssential theme, then import again."
+msgstr ""
+
+#. translators: %s: variation.
+#: core/src/Importer.php:1250
+msgid "Applied the %s colours and fonts."
+msgstr ""
+
+#: core/src/Importer.php:1268
+msgid "demo"
+msgstr ""
+
+#. translators: 1: template part, 2: design.
+#: core/src/Importer.php:1320
+msgid "Template part \"%1$s\" set to the \"%2$s\" design."
+msgstr ""
+
+#: core/src/Importer.php:1341
+msgid "Elementor Kit layout, buttons and form styles set."
+msgstr ""
+
+#: core/src/Importer.php:1361
 msgid "Everywhere"
 msgstr ""
 
-#: core/src/Importer.php:1110
+#: core/src/Importer.php:1369
 msgid "Free shipping"
 msgstr ""
 
 #. translators: %s: amount.
-#: core/src/Importer.php:1118
-#, php-format
+#: core/src/Importer.php:1377
 msgid "Shipping set up with free delivery over %s."
 msgstr ""
 
 #. translators: %d: pages.
-#: core/src/Importer.php:1145
-#, php-format
+#: core/src/Importer.php:1412
 msgid "Linked %d page to its new address."
 msgid_plural "Linked %d pages to their new addresses."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/src/Importer.php:1150
+#: core/src/Importer.php:1417
 msgid "Permalinks and caches refreshed."
 msgstr ""
 
-#: core/src/Admin.php:37 core/assets/admin.js:147
-msgid "Dashboard"
+#: core/src/License.php:136
+msgid "That license key looks too short. Copy it again from your purchase email."
 msgstr ""
 
-#: core/src/Admin.php:38 core/assets/admin.js:148 core/assets/admin.js:306
-msgid "Demo Library"
+#: core/src/License.php:204
+msgid "This is a Pro item. Activate your license on the License tab to unlock it."
 msgstr ""
 
-#: core/src/Admin.php:39 core/assets/admin.js:149 core/assets/admin.js:567 core/assets/admin.js:1045
-msgid "Plugins"
+#: core/src/License/Adapter.php:84
+msgid "The license server did not return a download link."
 msgstr ""
 
-#: core/src/Admin.php:40 core/assets/admin.js:150 core/assets/admin.js:284 core/assets/admin.js:1087
-msgid "License"
+#. translators: %s: error.
+#: core/src/License/Adapter.php:107
+msgid "The license server could not be reached: %s"
 msgstr ""
 
-#: core/src/Admin.php:41 core/assets/admin.js:151 core/assets/admin.js:1334
-msgid "System Status"
+#. translators: %d: HTTP status.
+#: core/src/License/Adapter.php:113
+msgid "The license server answered with an unexpected response (HTTP %d). Try again in a few minutes."
 msgstr ""
 
-#: core/src/Admin.php:55 inc/patterns.php:14
-msgid "WPEssential"
+#: core/src/License/Custom.php:42
+#: core/src/License/Edd.php:31
+#: core/src/License/Woo.php:58
+msgid "This license key is not valid."
 msgstr ""
 
-#: core/src/Admin.php:133
-msgid "The WPEssential dashboard needs JavaScript. Enable it in your browser to import demos."
+#: core/src/License/Edd.php:27
+msgid "This license has expired. Renew it to keep receiving demos and updates."
+msgstr ""
+
+#: core/src/License/Edd.php:28
+msgid "This license has been disabled."
+msgstr ""
+
+#: core/src/License/Edd.php:29
+msgid "This license has been revoked."
+msgstr ""
+
+#: core/src/License/Edd.php:30
+msgid "This license key does not exist."
+msgstr ""
+
+#: core/src/License/Edd.php:32
+msgid "This license is not active for this domain."
+msgstr ""
+
+#: core/src/License/Edd.php:33
+msgid "This key belongs to a different product."
+msgstr ""
+
+#: core/src/License/Edd.php:34
+msgid "This license has reached its activation limit. Deactivate it on another site first."
+msgstr ""
+
+#: core/src/License/Edd.php:130
+#: core/src/License/Woo.php:118
+msgid "The store did not return a download link for this license."
+msgstr ""
+
+#: core/src/Plugins.php:115
+msgid "Your account is not allowed to install plugins."
+msgstr ""
+
+#. translators: 1: plugin name, 2: error.
+#: core/src/Plugins.php:130
+msgid "WordPress.org did not answer for %1$s (%2$s). Check the server can reach wordpress.org, or install it manually."
+msgstr ""
+
+#: core/src/Plugins.php:145
+msgid "No download source is set for this plugin."
+msgstr ""
+
+#: core/src/Plugins.php:158
+msgid "The plugin could not be installed. The server may lack write access to wp-content/plugins."
+msgstr ""
+
+#: core/src/Plugins.php:174
+msgid "Plugin is not installed."
+msgstr ""
+
+#: core/src/Plugins.php:208
+msgid "Your account is not allowed to delete plugins."
+msgstr ""
+
+#: core/src/Rest.php:101
+msgid "Demo not found."
+msgstr ""
+
+#: core/src/Rest.php:158
+msgid "No imported demo was found."
+msgstr ""
+
+#. translators: 1: demo, 2: count.
+#: core/src/Rest.php:164
+msgid "%1$s removed: %2$d items deleted and your previous settings restored."
+msgstr ""
+
+#: core/src/Rest.php:191
+msgid "This plugin is not managed by WPEssential."
+msgstr ""
+
+#: core/src/Rest.php:323
+msgid "Branding can be changed with a White Label plan."
 msgstr ""
 
 #: core/src/Status.php:30
@@ -1183,7 +609,8 @@ msgstr ""
 msgid "Memory limit"
 msgstr ""
 
-#: core/src/Status.php:45 core/src/Status.php:52
+#: core/src/Status.php:45
+#: core/src/Status.php:52
 msgid "Unlimited"
 msgstr ""
 
@@ -1211,11 +638,13 @@ msgstr ""
 msgid "Uploads folder"
 msgstr ""
 
-#: core/src/Status.php:66 core/src/Status.php:73
+#: core/src/Status.php:66
+#: core/src/Status.php:73
 msgid "Writable"
 msgstr ""
 
-#: core/src/Status.php:66 core/src/Status.php:73
+#: core/src/Status.php:66
+#: core/src/Status.php:73
 msgid "Not writable"
 msgstr ""
 
@@ -1267,7 +696,8 @@ msgstr ""
 msgid "Choose \"Post name\" under Settings → Permalinks for clean shop and page addresses."
 msgstr ""
 
-#: core/src/Status.php:123 core/assets/admin.js:282
+#: core/src/Status.php:123
+#: core/assets/admin.js:282
 msgid "Theme"
 msgstr ""
 
@@ -1311,1273 +741,6 @@ msgstr ""
 msgid "Active plugins"
 msgstr ""
 
-#: core/src/Demos.php:49
-msgid "The online demo library could not be reached, so only the demos bundled with the theme are listed. They import fully offline."
-msgstr ""
-
-#: core/src/Demos.php:145
-msgid "The bundled demo package is incomplete. Re-upload the theme and try again."
-msgstr ""
-
-#: core/src/Demos.php:155
-msgid "This demo has no download address in the library."
-msgstr ""
-
-#. translators: %s: error message.
-#: core/src/Demos.php:168
-#, php-format
-msgid "Downloading the demo package failed: %s"
-msgstr ""
-
-#: core/src/Demos.php:172
-msgid "WordPress cannot write to the uploads folder. Check its permissions."
-msgstr ""
-
-#: core/src/Demos.php:179
-msgid "The downloaded package does not contain content.json."
-msgstr ""
-
-#: core/src/Rest.php:101
-msgid "Demo not found."
-msgstr ""
-
-#: core/src/Rest.php:158
-msgid "No imported demo was found."
-msgstr ""
-
-#. translators: 1: demo, 2: count.
-#: core/src/Rest.php:164
-#, php-format
-msgid "%1$s removed: %2$d items deleted and your previous settings restored."
-msgstr ""
-
-#: core/src/Rest.php:191
-msgid "This plugin is not managed by WPEssential."
-msgstr ""
-
-#: core/src/Rest.php:211 core/src/Account.php:271
-msgid "Unknown action."
-msgstr ""
-
-#: core/src/Rest.php:323
-msgid "Branding can be changed with a White Label plan."
-msgstr ""
-
-#: core/src/License.php:136
-msgid "That license key looks too short. Copy it again from your purchase email."
-msgstr ""
-
-#: core/src/License.php:204
-msgid "This is a Pro item. Activate your license on the License tab to unlock it."
-msgstr ""
-
-#: core/src/Plugins.php:115
-msgid "Your account is not allowed to install plugins."
-msgstr ""
-
-#. translators: 1: plugin name, 2: error.
-#: core/src/Plugins.php:130
-#, php-format
-msgid "WordPress.org did not answer for %1$s (%2$s). Check the server can reach wordpress.org, or install it manually."
-msgstr ""
-
-#: core/src/Plugins.php:145
-msgid "No download source is set for this plugin."
-msgstr ""
-
-#: core/src/Plugins.php:158
-msgid "The plugin could not be installed. The server may lack write access to wp-content/plugins."
-msgstr ""
-
-#: core/src/Plugins.php:174
-msgid "Plugin is not installed."
-msgstr ""
-
-#: core/src/Plugins.php:208
-msgid "Your account is not allowed to delete plugins."
-msgstr ""
-
-#. translators: %s: error.
-#: core/src/Account.php:55
-#, php-format
-msgid "WPEssential could not be reached: %s"
-msgstr ""
-
-#: core/src/Account.php:61
-msgid "Your WPEssential session ended. Sign in again."
-msgstr ""
-
-#. translators: %d: HTTP code.
-#: core/src/Account.php:65
-#, php-format
-msgid "WPEssential answered with an unexpected response (HTTP %d)."
-msgstr ""
-
-#: core/src/Account.php:68 core/assets/admin.js:83 core/assets/admin.js:94
-msgid "Something went wrong."
-msgstr ""
-
-#: core/src/Account.php:238
-msgid "That license is not in your account."
-msgstr ""
-
-#: core/src/License/Edd.php:27
-msgid "This license has expired. Renew it to keep receiving demos and updates."
-msgstr ""
-
-#: core/src/License/Edd.php:28
-msgid "This license has been disabled."
-msgstr ""
-
-#: core/src/License/Edd.php:29
-msgid "This license has been revoked."
-msgstr ""
-
-#: core/src/License/Edd.php:30
-msgid "This license key does not exist."
-msgstr ""
-
-#: core/src/License/Edd.php:31 core/src/License/Custom.php:42 core/src/License/Woo.php:58
-msgid "This license key is not valid."
-msgstr ""
-
-#: core/src/License/Edd.php:32
-msgid "This license is not active for this domain."
-msgstr ""
-
-#: core/src/License/Edd.php:33
-msgid "This key belongs to a different product."
-msgstr ""
-
-#: core/src/License/Edd.php:34
-msgid "This license has reached its activation limit. Deactivate it on another site first."
-msgstr ""
-
-#: core/src/License/Edd.php:130 core/src/License/Woo.php:118
-msgid "The store did not return a download link for this license."
-msgstr ""
-
-#: core/src/License/Adapter.php:84
-msgid "The license server did not return a download link."
-msgstr ""
-
-#. translators: %s: error.
-#: core/src/License/Adapter.php:107
-#, php-format
-msgid "The license server could not be reached: %s"
-msgstr ""
-
-#. translators: %d: HTTP status.
-#: core/src/License/Adapter.php:113
-#, php-format
-msgid "The license server answered with an unexpected response (HTTP %d). Try again in a few minutes."
-msgstr ""
-
-#: core/assets/admin.js:86
-msgid "The connection to your site dropped. Check your internet and try again."
-msgstr ""
-
-#: core/assets/admin.js:89
-msgid "The server sent an invalid response — usually a PHP error or a timeout. Your progress is saved."
-msgstr ""
-
-#: core/assets/admin.js:92
-msgid "Your login session expired. Reload the page and sign in again."
-msgstr ""
-
-#: core/assets/admin.js:159
-msgid "Dashboard sections"
-msgstr ""
-
-#: core/assets/admin.js:163
-msgid "Docs"
-msgstr ""
-
-#: core/assets/admin.js:164
-msgid "Switch dashboard colour mode"
-msgstr ""
-
-#: core/assets/admin.js:241
-#, php-format
-msgid "%s is active"
-msgstr ""
-
-#: core/assets/admin.js:242
-#, php-format
-msgid "Welcome, %s. Let’s build something beautiful."
-msgstr ""
-
-#: core/assets/admin.js:243
-msgid "Pick a demo, choose Gutenberg or Elementor, and get a finished website with pages, images, menus and a shop — in about a minute."
-msgstr ""
-
-#: core/assets/admin.js:246
-msgid "Customize site"
-msgstr ""
-
-#: core/assets/admin.js:251
-msgid "Demo imported"
-msgstr ""
-
-#: core/assets/admin.js:251
-msgid "in 48 seconds"
-msgstr ""
-
-#: core/assets/admin.js:252
-msgid "Two builders"
-msgstr ""
-
-#: core/assets/admin.js:259
-msgid "Three steps to launch"
-msgstr ""
-
-#: core/assets/admin.js:264
-msgid "Help when you need it"
-msgstr ""
-
-#: core/assets/admin.js:266
-msgid "Guides for every feature"
-msgstr ""
-
-#: core/assets/admin.js:267
-msgid "Real people, fast answers"
-msgstr ""
-
-#: core/assets/admin.js:268
-msgid "Site Editor"
-msgstr ""
-
-#: core/assets/admin.js:268
-msgid "Colours, fonts, header and footer"
-msgstr ""
-
-#: core/assets/admin.js:280 core/assets/admin.js:1104
-msgid "Expired"
-msgstr ""
-
-#: core/assets/admin.js:280 core/assets/admin.js:1104
-msgid "Invalid"
-msgstr ""
-
-#: core/assets/admin.js:280 core/assets/admin.js:1104
-msgid "Not connected"
-msgstr ""
-
-#: core/assets/admin.js:283
-msgid "Imported demo"
-msgstr ""
-
-#: core/assets/admin.js:283
-msgid "None yet"
-msgstr ""
-
-#: core/assets/admin.js:285
-msgid "System health"
-msgstr ""
-
-#: core/assets/admin.js:288
-msgid "Import a demo"
-msgstr ""
-
-#: core/assets/admin.js:288
-msgid "Start from a complete, ready-made website."
-msgstr ""
-
-#: core/assets/admin.js:288
-msgid "Open library"
-msgstr ""
-
-#: core/assets/admin.js:289 core/assets/admin.js:1115
-msgid "Activate your license"
-msgstr ""
-
-#: core/assets/admin.js:289
-msgid "Unlock Pro demos, updates and support."
-msgstr ""
-
-#: core/assets/admin.js:289 core/assets/admin.js:1067 core/assets/admin.js:1116
-msgid "Activate"
-msgstr ""
-
-#: core/assets/admin.js:290
-msgid "Swap the logo, colours and words in the Site Editor."
-msgstr ""
-
-#: core/assets/admin.js:290 core/assets/admin.js:990
-msgid "Customize"
-msgstr ""
-
-#: core/assets/admin.js:295
-msgid "Could not load the dashboard"
-msgstr ""
-
-#: core/assets/admin.js:301 core/assets/admin.js:312 core/assets/admin.js:747
-msgid "All"
-msgstr ""
-
-#: core/assets/admin.js:301
-msgid "Business"
-msgstr ""
-
-#: core/assets/admin.js:301
-msgid "Restaurant"
-msgstr ""
-
-#: core/assets/admin.js:301
-msgid "Education"
-msgstr ""
-
-#: core/assets/admin.js:306
-msgid "Every demo is a complete website. Preview it, then import it for Gutenberg or Elementor — plugins, pages, images and menus included."
-msgstr ""
-
-#: core/assets/admin.js:307
-msgid "Refreshing"
-msgstr ""
-
-#: core/assets/admin.js:307
-msgid "Refresh library"
-msgstr ""
-
-#: core/assets/admin.js:310
-msgid "Search demos"
-msgstr ""
-
-#: core/assets/admin.js:310
-msgid "Search demos…"
-msgstr ""
-
-#: core/assets/admin.js:311
-msgid "Category"
-msgstr ""
-
-#: core/assets/admin.js:312
-msgid "Plan"
-msgstr ""
-
-#: core/assets/admin.js:313 core/assets/admin.js:567
-msgid "Builder"
-msgstr ""
-
-#: core/assets/admin.js:313
-msgid "Any builder"
-msgstr ""
-
-#: core/assets/admin.js:336
-msgid "Library refreshed"
-msgstr ""
-
-#: core/assets/admin.js:338
-msgid "Refresh failed"
-msgstr ""
-
-#: core/assets/admin.js:351
-msgid "The library could not load"
-msgstr ""
-
-#: core/assets/admin.js:363
-#, php-format
-msgid "The import of %s stopped"
-msgstr ""
-
-#: core/assets/admin.js:363
-#, php-format
-msgid "The import of %s was interrupted"
-msgstr ""
-
-#: core/assets/admin.js:363
-msgid "Your progress is saved. Continue exactly where it left off."
-msgstr ""
-
-#: core/assets/admin.js:363
-msgid "Resume import"
-msgstr ""
-
-#: core/assets/admin.js:366
-#, php-format
-msgid "%s is installed on this site"
-msgstr ""
-
-#: core/assets/admin.js:366
-msgid "You can remove everything it added and restore your previous settings at any time."
-msgstr ""
-
-#: core/assets/admin.js:366 core/assets/admin.js:911
-msgid "Removing"
-msgstr ""
-
-#: core/assets/admin.js:366
-msgid "Remove demo"
-msgstr ""
-
-#: core/assets/admin.js:386
-#, php-format
-msgid "Remove %s? Its pages, posts, products, images and menus will be deleted and your previous settings restored. Content you created yourself is not touched."
-msgstr ""
-
-#: core/assets/admin.js:392
-msgid "Demo removed"
-msgstr ""
-
-#: core/assets/admin.js:396
-msgid "Removal failed"
-msgstr ""
-
-#: core/assets/admin.js:416
-msgid "No demos match these filters"
-msgstr ""
-
-#: core/assets/admin.js:416
-msgid "Try another category or clear the search."
-msgstr ""
-
-#: core/assets/admin.js:416
-msgid "Clear filters"
-msgstr ""
-
-#: core/assets/admin.js:428
-msgid "IMPORTED"
-msgstr ""
-
-#: core/assets/admin.js:430
-msgid "Live preview"
-msgstr ""
-
-#: core/assets/admin.js:438
-msgid "Preview"
-msgstr ""
-
-#: core/assets/admin.js:439
-msgid "Unlock"
-msgstr ""
-
-#: core/assets/admin.js:439
-msgid "Re-import"
-msgstr ""
-
-#: core/assets/admin.js:439 core/assets/admin.js:567
-msgid "Import"
-msgstr ""
-
-#: core/assets/admin.js:509
-msgid "Desktop"
-msgstr ""
-
-#: core/assets/admin.js:509
-msgid "Tablet"
-msgstr ""
-
-#: core/assets/admin.js:509
-msgid "Mobile"
-msgstr ""
-
-#: core/assets/admin.js:512
-#, php-format
-msgid "%1$s on %2$s"
-msgstr ""
-
-#: core/assets/admin.js:516
-msgid "Device"
-msgstr ""
-
-#: core/assets/admin.js:517
-msgid "Unlock with Pro"
-msgstr ""
-
-#: core/assets/admin.js:517
-msgid "Import this demo"
-msgstr ""
-
-#: core/assets/admin.js:518
-msgid "Close preview"
-msgstr ""
-
-#: core/assets/admin.js:567
-msgid "Account"
-msgstr ""
-
-#: core/assets/admin.js:567
-msgid "Content"
-msgstr ""
-
-#: core/assets/admin.js:567
-msgid "Done"
-msgstr ""
-
-#: core/assets/admin.js:573
-msgid "Safe import — every change can be undone."
-msgstr ""
-
-#: core/assets/admin.js:576
-msgid "Close"
-msgstr ""
-
-#: core/assets/admin.js:580
-msgid "The import keeps its progress if you close this window. You can resume it from the Demo Library. Close anyway?"
-msgstr ""
-
-#: core/assets/admin.js:609
-msgid "Back"
-msgstr ""
-
-#: core/assets/admin.js:631
-msgid "Unlock this Pro demo"
-msgstr ""
-
-#: core/assets/admin.js:631
-msgid "Connect your WPEssential account"
-msgstr ""
-
-#: core/assets/admin.js:631
-msgid "Sign in and use a Pro license on this site — or pick a plan. Checkout opens in a new tab."
-msgstr ""
-
-#: core/assets/admin.js:631
-msgid "Sign in or create a free account to keep your demos, licenses and updates in one place."
-msgstr ""
-
-#: core/assets/admin.js:634
-msgid "A Pro license is needed"
-msgstr ""
-
-#: core/assets/admin.js:634
-msgid "Use a Pro license on this site, or choose a plan."
-msgstr ""
-
-#: core/assets/admin.js:639 core/assets/admin.js:665 core/assets/admin.js:670
-msgid "Continue"
-msgstr ""
-
-#: core/assets/admin.js:647
-msgid "Demo unlocked"
-msgstr ""
-
-#: core/assets/admin.js:657
-msgid "This demo has no version for this builder yet."
-msgstr ""
-
-#: core/assets/admin.js:659
-msgid "Choose your page builder"
-msgstr ""
-
-#: core/assets/admin.js:659
-msgid "Both versions look identical. Pick the editor you or your client will use every day."
-msgstr ""
-
-#: core/assets/admin.js:660
-msgid "The native WordPress block editor. Fastest pages, no extra plugin."
-msgstr ""
-
-#: core/assets/admin.js:660
-msgid "Visual drag-and-drop editing. Elementor is already installed."
-msgstr ""
-
-#: core/assets/admin.js:660
-msgid "Visual drag-and-drop editing. Elementor will be installed for you."
-msgstr ""
-
-#: core/assets/admin.js:669
-msgid "Plugins this demo uses"
-msgstr ""
-
-#: core/assets/admin.js:669
-msgid "We install, activate or switch off plugins so the demo works exactly like the preview."
-msgstr ""
-
-#: core/assets/admin.js:684
-msgid "No extra plugins needed — this demo runs on the theme alone."
-msgstr ""
-
-#: core/assets/admin.js:689
-msgid "Will be deactivated"
-msgstr ""
-
-#: core/assets/admin.js:689
-msgid "Not needed"
-msgstr ""
-
-#: core/assets/admin.js:693
-msgid "Will be activated"
-msgstr ""
-
-#: core/assets/admin.js:694
-msgid "Will be installed"
-msgstr ""
-
-#: core/assets/admin.js:697
-msgid "Required"
-msgstr ""
-
-#: core/assets/admin.js:697 core/assets/admin.js:1064
-msgid "Recommended"
-msgstr ""
-
-#: core/assets/admin.js:697
-msgid "Conflicts with this demo"
-msgstr ""
-
-#: core/assets/admin.js:697
-msgid "Include"
-msgstr ""
-
-#: core/assets/admin.js:697
-#, php-format
-msgid "Include %s"
-msgstr ""
-
-#: core/assets/admin.js:706
-msgid "Pages, posts and menus"
-msgstr ""
-
-#: core/assets/admin.js:706
-#, php-format
-msgid "%s and their navigation."
-msgstr ""
-
-#: core/assets/admin.js:707
-msgid "Images"
-msgstr ""
-
-#: core/assets/admin.js:707
-msgid "Copied to your Media Library, licensed for your site."
-msgstr ""
-
-#: core/assets/admin.js:708
-msgid "Shop products"
-msgstr ""
-
-#: core/assets/admin.js:708
-msgid "Products, categories, prices and shipping."
-msgstr ""
-
-#: core/assets/admin.js:708
-msgid "Needs WooCommerce — enable it on the previous step."
-msgstr ""
-
-#: core/assets/admin.js:709
-msgid "Site settings"
-msgstr ""
-
-#: core/assets/admin.js:709
-msgid "Home page, blog page and store options."
-msgstr ""
-
-#: core/assets/admin.js:711
-msgid "What should we import?"
-msgstr ""
-
-#: core/assets/admin.js:711
-msgid "Everything is on by default for a site that matches the preview."
-msgstr ""
-
-#: core/assets/admin.js:713
-#, php-format
-msgid "Remove %s first"
-msgstr ""
-
-#: core/assets/admin.js:713
-msgid "Recommended: start from a clean site instead of adding duplicates."
-msgstr ""
-
-#: core/assets/admin.js:714
-msgid "Your existing posts and pages are never changed. Imported items are tagged, so they can be removed in one click later."
-msgstr ""
-
-#: core/assets/admin.js:721
-msgid "Start import"
-msgstr ""
-
-#: core/assets/admin.js:727
-msgid "Preparing"
-msgstr ""
-
-#: core/assets/admin.js:727 core/assets/admin.js:938
-msgid "Importing your demo…"
-msgstr ""
-
-#: core/assets/admin.js:727
-msgid "Keep this window open. It usually takes about a minute."
-msgstr ""
-
-#: core/assets/admin.js:730 core/assets/admin.js:934
-msgid "Cancel import"
-msgstr ""
-
-#: core/assets/admin.js:747
-msgid "Info"
-msgstr ""
-
-#: core/assets/admin.js:747
-msgid "Success"
-msgstr ""
-
-#: core/assets/admin.js:747 core/assets/admin.js:989
-msgid "Warnings"
-msgstr ""
-
-#: core/assets/admin.js:747
-msgid "Errors"
-msgstr ""
-
-#: core/assets/admin.js:747 core/assets/admin.js:911
-msgid "Copy log"
-msgstr ""
-
-#: core/assets/admin.js:781
-msgid "Log copied"
-msgstr ""
-
-#: core/assets/admin.js:781
-msgid "Paste it into your support ticket."
-msgstr ""
-
-#: core/assets/admin.js:807
-msgid "Stopped"
-msgstr ""
-
-#: core/assets/admin.js:807
-msgid "Step"
-msgstr ""
-
-#: core/assets/admin.js:807
-msgid "Complete"
-msgstr ""
-
-#: core/assets/admin.js:815
-#, php-format
-msgid "%ss elapsed"
-msgstr ""
-
-#: core/assets/admin.js:841
-msgid "Resumed from the saved position."
-msgstr ""
-
-#: core/assets/admin.js:863
-msgid "Reload the page, then resume the import from the Demo Library."
-msgstr ""
-
-#: core/assets/admin.js:869
-msgid "Your progress is saved. Press Resume when the server is back."
-msgstr ""
-
-#: core/assets/admin.js:873
-#, php-format
-msgid "The server did not answer (%1$s). Retrying in %2$d seconds…"
-msgstr ""
-
-#: core/assets/admin.js:896
-msgid "The import stopped."
-msgstr ""
-
-#: core/assets/admin.js:898
-msgid "Import cancelled."
-msgstr ""
-
-#: core/assets/admin.js:898
-msgid "Resume to finish it, or remove what was imported so far."
-msgstr ""
-
-#: core/assets/admin.js:909
-msgid "Import paused"
-msgstr ""
-
-#: core/assets/admin.js:909
-msgid "The import needs your attention"
-msgstr ""
-
-#: core/assets/admin.js:911
-msgid "Remove imported content"
-msgstr ""
-
-#: core/assets/admin.js:911
-msgid "Resume"
-msgstr ""
-
-#: core/assets/admin.js:911
-msgid "Back to options"
-msgstr ""
-
-#: core/assets/admin.js:920
-msgid "Everything was rolled back"
-msgstr ""
-
-#: core/assets/admin.js:924
-msgid "Nothing to remove"
-msgstr ""
-
-#: core/assets/admin.js:924
-msgid "Rollback failed"
-msgstr ""
-
-#: core/assets/admin.js:951
-msgid "Resuming…"
-msgstr ""
-
-#: core/assets/admin.js:958
-msgid "Your progress is saved. Try again in a moment."
-msgstr ""
-
-#: core/assets/admin.js:964
-msgid "Cancel the import? What was imported so far stays until you remove it."
-msgstr ""
-
-#: core/assets/admin.js:974
-msgid "Could not cancel"
-msgstr ""
-
-#: core/assets/admin.js:987
-msgid "Your website is ready!"
-msgstr ""
-
-#: core/assets/admin.js:988
-#, php-format
-msgid "%1$s was imported. %2$d item(s) need a look — see the notes below."
-msgstr ""
-
-#: core/assets/admin.js:988
-#, php-format
-msgid "%s was imported without a single issue. Time to make it yours."
-msgstr ""
-
-#: core/assets/admin.js:989
-msgid "Import time"
-msgstr ""
-
-#: core/assets/admin.js:989
-msgid "Steps completed"
-msgstr ""
-
-#: core/assets/admin.js:990
-msgid "View your site"
-msgstr ""
-
-#: core/assets/admin.js:993
-msgid "Back to dashboard"
-msgstr ""
-
-#: core/assets/admin.js:998
-msgid "Import complete"
-msgstr ""
-
-#: core/assets/admin.js:1045
-msgid "Plugins used by WPEssential demos. Install, switch on or off and delete them here."
-msgstr ""
-
-#: core/assets/admin.js:1060
-msgid "No plugins needed"
-msgstr ""
-
-#: core/assets/admin.js:1060
-msgid "The demos in your library run on the theme alone."
-msgstr ""
-
-#: core/assets/admin.js:1064
-msgid "Required by some demos"
-msgstr ""
-
-#: core/assets/admin.js:1065
-msgid "Inactive"
-msgstr ""
-
-#: core/assets/admin.js:1065
-msgid "Not installed"
-msgstr ""
-
-#: core/assets/admin.js:1066
-msgid "Install & activate"
-msgstr ""
-
-#: core/assets/admin.js:1068
-msgid "Deactivate"
-msgstr ""
-
-#: core/assets/admin.js:1070
-msgid "Delete this plugin and its files?"
-msgstr ""
-
-#: core/assets/admin.js:1076
-msgid "is active."
-msgstr ""
-
-#: core/assets/admin.js:1076
-msgid "is inactive."
-msgstr ""
-
-#: core/assets/admin.js:1076
-msgid "was deleted."
-msgstr ""
-
-#: core/assets/admin.js:1079
-msgid "Plugin action failed"
-msgstr ""
-
-#: core/assets/admin.js:1087
-msgid "Activate your purchase on this domain to unlock Pro demos, automatic updates and priority support."
-msgstr ""
-
-#: core/assets/admin.js:1109
-msgid "Domain"
-msgstr ""
-
-#: core/assets/admin.js:1109
-msgid "Expires"
-msgstr ""
-
-#: core/assets/admin.js:1109
-msgid "Lifetime"
-msgstr ""
-
-#: core/assets/admin.js:1109
-msgid "Provider"
-msgstr ""
-
-#: core/assets/admin.js:1112
-msgid "You’re all set"
-msgstr ""
-
-#: core/assets/admin.js:1112
-#, php-format
-msgid "This license is active on %s."
-msgstr ""
-
-#: core/assets/admin.js:1112
-#, php-format
-msgid "Plan: %s."
-msgstr ""
-
-#: core/assets/admin.js:1113
-msgid "All Pro demos unlocked"
-msgstr ""
-
-#: core/assets/admin.js:1113
-msgid "One-click theme updates"
-msgstr ""
-
-#: core/assets/admin.js:1114
-msgid "Deactivating"
-msgstr ""
-
-#: core/assets/admin.js:1114
-msgid "Deactivate on this domain"
-msgstr ""
-
-#: core/assets/admin.js:1115
-msgid "Renew to keep Pro features"
-msgstr ""
-
-#: core/assets/admin.js:1115
-msgid "Find the key in your purchase email or your wpessential.org account."
-msgstr ""
-
-#: core/assets/admin.js:1116
-msgid "License key"
-msgstr ""
-
-#: core/assets/admin.js:1116
-msgid "Paste your license key"
-msgstr ""
-
-#: core/assets/admin.js:1116
-msgid "Show key"
-msgstr ""
-
-#: core/assets/admin.js:1116
-msgid "Checking"
-msgstr ""
-
-#: core/assets/admin.js:1118
-msgid "Unlock every Pro demo in the library"
-msgstr ""
-
-#: core/assets/admin.js:1118
-msgid "Automatic updates from your dashboard"
-msgstr ""
-
-#: core/assets/admin.js:1118
-msgid "Priority support from the WPEssential Team"
-msgstr ""
-
-#: core/assets/admin.js:1119
-msgid "Don’t have a license? Sign in or pick a plan below"
-msgstr ""
-
-#: core/assets/admin.js:1134
-msgid "License activated"
-msgstr ""
-
-#: core/assets/admin.js:1134
-msgid "Pro demos are unlocked."
-msgstr ""
-
-#: core/assets/admin.js:1154
-msgid "Deactivate the license on this domain? You can activate it on another site afterwards."
-msgstr ""
-
-#: core/assets/admin.js:1160
-msgid "License deactivated"
-msgstr ""
-
-#: core/assets/admin.js:1164
-msgid "Deactivation failed"
-msgstr ""
-
-#: core/assets/admin.js:1179
-#, php-format
-msgid "/ %d mo"
-msgstr ""
-
-#: core/assets/admin.js:1179
-msgid "one-time"
-msgstr ""
-
-#: core/assets/admin.js:1192
-msgid "Your WPEssential account could not be reached"
-msgstr ""
-
-#: core/assets/admin.js:1204
-msgid "Sign in to your account"
-msgstr ""
-
-#: core/assets/admin.js:1204
-msgid "Create your free account"
-msgstr ""
-
-#: core/assets/admin.js:1204
-msgid "Your licenses, Pro demos and subscription in one place. New accounts include the Free plan for this website."
-msgstr ""
-
-#: core/assets/admin.js:1205
-msgid "Activate licenses without copying keys"
-msgstr ""
-
-#: core/assets/admin.js:1205
-msgid "Upgrade, renew or switch plans in one click"
-msgstr ""
-
-#: core/assets/admin.js:1205
-msgid "Manage websites and auto-renewal"
-msgstr ""
-
-#: core/assets/admin.js:1207 core/assets/admin.js:1212
-msgid "Sign in"
-msgstr ""
-
-#: core/assets/admin.js:1207
-msgid "Create account"
-msgstr ""
-
-#: core/assets/admin.js:1208
-msgid "Full name"
-msgstr ""
-
-#: core/assets/admin.js:1209
-msgid "Email"
-msgstr ""
-
-#: core/assets/admin.js:1210
-msgid "Password"
-msgstr ""
-
-#: core/assets/admin.js:1212
-msgid "Signing in"
-msgstr ""
-
-#: core/assets/admin.js:1212
-msgid "Creating account"
-msgstr ""
-
-#: core/assets/admin.js:1212
-msgid "Create free account"
-msgstr ""
-
-#: core/assets/admin.js:1213
-msgid "Forgot password?"
-msgstr ""
-
-#: core/assets/admin.js:1213
-msgid "By creating an account you agree to the WPEssential terms."
-msgstr ""
-
-#: core/assets/admin.js:1214
-msgid "Continue without an account"
-msgstr ""
-
-#: core/assets/admin.js:1230
-msgid "Fill in every field."
-msgstr ""
-
-#: core/assets/admin.js:1236
-msgid "Signed in"
-msgstr ""
-
-#: core/assets/admin.js:1236
-msgid "Account created"
-msgstr ""
-
-#: core/assets/admin.js:1257
-msgid "Refresh"
-msgstr ""
-
-#: core/assets/admin.js:1258
-msgid "Manage account"
-msgstr ""
-
-#: core/assets/admin.js:1259
-msgid "Sign out"
-msgstr ""
-
-#: core/assets/admin.js:1261
-msgid "Your licenses"
-msgstr ""
-
-#: core/assets/admin.js:1264
-#, php-format
-msgid "%1$d of %2$s websites"
-msgstr ""
-
-#: core/assets/admin.js:1264
-msgid "Never expires"
-msgstr ""
-
-#: core/assets/admin.js:1264
-#, php-format
-msgid "Renews %s"
-msgstr ""
-
-#: core/assets/admin.js:1264
-#, php-format
-msgid "Ends %s"
-msgstr ""
-
-#: core/assets/admin.js:1265 core/assets/admin.js:1265
-msgid "Auto-renew"
-msgstr ""
-
-#: core/assets/admin.js:1266
-msgid "Renew"
-msgstr ""
-
-#: core/assets/admin.js:1266
-msgid "This site"
-msgstr ""
-
-#: core/assets/admin.js:1266
-msgid "Activating"
-msgstr ""
-
-#: core/assets/admin.js:1266
-msgid "Use on this site"
-msgstr ""
-
-#: core/assets/admin.js:1267
-msgid "No licenses yet — choose a plan below."
-msgstr ""
-
-#: core/assets/admin.js:1268
-msgid "Upgrade your plan"
-msgstr ""
-
-#: core/assets/admin.js:1268
-msgid "Choose a plan"
-msgstr ""
-
-#: core/assets/admin.js:1273
-msgid "Most popular"
-msgstr ""
-
-#: core/assets/admin.js:1274
-msgid "Current plan"
-msgstr ""
-
-#: core/assets/admin.js:1274
-msgid "Upgrade"
-msgstr ""
-
-#: core/assets/admin.js:1274
-msgid "Choose"
-msgstr ""
-
-#: core/assets/admin.js:1276
-msgid "Checkout opens on wpessential.org already signed in. Upgrades credit the unused part of your current plan. Staging and local sites do not count toward your website limit."
-msgstr ""
-
-#: core/assets/admin.js:1292
-msgid "License active on this site"
-msgstr ""
-
-#: core/assets/admin.js:1306
-msgid "Auto-renew is on"
-msgstr ""
-
-#: core/assets/admin.js:1306
-msgid "Auto-renew is off"
-msgstr ""
-
-#: core/assets/admin.js:1306
-msgid "Your license works until its end date."
-msgstr ""
-
-#: core/assets/admin.js:1309
-msgid "Could not change auto-renew"
-msgstr ""
-
-#: core/assets/admin.js:1321
-msgid "Checkout opened in a new tab"
-msgstr ""
-
-#: core/assets/admin.js:1321
-msgid "When payment is done, press Refresh here."
-msgstr ""
-
-#: core/assets/admin.js:1326
-msgid "Checkout could not start"
-msgstr ""
-
-#: core/assets/admin.js:1334
-msgid "What your server offers and what to improve before importing."
-msgstr ""
-
-#: core/assets/admin.js:1334
-msgid "Copy report"
-msgstr ""
-
-#: core/assets/admin.js:1340
-msgid "Health"
-msgstr ""
-
-#: core/assets/admin.js:1340
-msgid "Excellent"
-msgstr ""
-
-#: core/assets/admin.js:1340
-msgid "Good"
-msgstr ""
-
-#: core/assets/admin.js:1340
-msgid "Needs work"
-msgstr ""
-
-#: core/assets/admin.js:1340
-#, php-format
-msgid "%d item(s) could be better. Imports still run; fixes make them faster."
-msgstr ""
-
-#: core/assets/admin.js:1340
-msgid "Your server is ready for any demo."
-msgstr ""
-
-#: core/assets/admin.js:1343
-msgid "Environment"
-msgstr ""
-
-#: core/assets/admin.js:1347
-msgid "Report copied"
-msgstr ""
-
-#: core/assets/admin.js:1347
-msgid "Copy failed"
-msgstr ""
-
 #: inc/block-styles.php:16
 msgid "Secondary"
 msgstr ""
@@ -2610,15 +773,18 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
-#: inc/block-styles.php:26 inc/block-styles.php:33
+#: inc/block-styles.php:26
+#: inc/block-styles.php:33
 msgid "Card"
 msgstr ""
 
-#: inc/block-styles.php:27 inc/block-styles.php:34
+#: inc/block-styles.php:27
+#: inc/block-styles.php:34
 msgid "Card — flat"
 msgstr ""
 
-#: inc/block-styles.php:28 inc/block-styles.php:35
+#: inc/block-styles.php:28
+#: inc/block-styles.php:35
 msgid "Card — dark"
 msgstr ""
 
@@ -2670,56 +836,16 @@ msgstr ""
 msgid "Soft"
 msgstr ""
 
-#: inc/setup.php:40
-msgid "Primary Menu"
+#: inc/core-bridge.php:53
+msgid "Install the WPEssential Core plugin to import one-click demos for Gutenberg or Elementor."
 msgstr ""
 
-#: inc/setup.php:41
-msgid "Mobile Menu"
+#: inc/core-bridge.php:55
+msgid "Get WPEssential Core"
 msgstr ""
 
-#: inc/setup.php:42
-msgid "Footer Menu"
-msgstr ""
-
-#: inc/setup.php:43
-msgid "Top Bar Menu"
-msgstr ""
-
-#: inc/setup.php:77
-msgid "Back to top"
-msgstr ""
-
-#: inc/patterns.php:15
-msgid "WPEssential — Heroes"
-msgstr ""
-
-#: inc/patterns.php:16
-msgid "WPEssential — Sections"
-msgstr ""
-
-#: inc/patterns.php:17
-msgid "WPEssential — Headers"
-msgstr ""
-
-#: inc/patterns.php:18
-msgid "WPEssential — Footers"
-msgstr ""
-
-#: inc/patterns.php:19
-msgid "WPEssential — Full pages"
-msgstr ""
-
-#: inc/patterns.php:20
-msgid "WPEssential — Shop"
-msgstr ""
-
-#: inc/patterns.php:36
-msgid "Shop — Category grid"
-msgstr ""
-
-#: inc/patterns.php:37
-msgid "Shop — Featured, new and sale products"
+#: inc/core-bridge.php:57
+msgid "Dismiss"
 msgstr ""
 
 #: inc/motion.php:21
@@ -2762,31 +888,29 @@ msgstr ""
 msgid "Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, sport, launches."
 msgstr ""
 
-#. translators: %d: discount percentage.
-#: inc/woocommerce.php:48
-#, php-format
-msgid "-%d%%"
+#: inc/multilingual.php:108
+msgid "Language"
 msgstr ""
 
-#: inc/woocommerce.php:89
-msgid "Out of stock"
+#: inc/multilingual.php:165
+msgid "Language switcher"
 msgstr ""
 
-#: inc/woocommerce.php:136
-msgid "You’ve unlocked free shipping on this order!"
+#: inc/multilingual.php:245
+#: inc/patterns-shop/shop-products.php:14
+msgid "Featured"
 msgstr ""
 
-#. translators: %s: amount left for free shipping.
-#: inc/woocommerce.php:139
-#, php-format
-msgid "Add %s more to unlock free shipping."
+#: inc/multilingual.php:246
+msgid "Author"
 msgstr ""
 
 #: inc/options.php:40
 msgid "Untitled snippet"
 msgstr ""
 
-#: inc/options.php:125 inc/options.php:125 inc/options.php:215
+#: inc/options.php:125
+#: inc/options.php:215
 msgid "Theme Options"
 msgstr ""
 
@@ -2810,28 +934,12 @@ msgstr ""
 msgid "Loading…"
 msgstr ""
 
-#: inc/core-bridge.php:53
-msgid "Install the WPEssential Core plugin to import one-click demos for Gutenberg or Elementor."
-msgstr ""
-
-#: inc/core-bridge.php:55
-msgid "Get WPEssential Core"
-msgstr ""
-
-#: inc/core-bridge.php:57
-msgid "Dismiss"
-msgstr ""
-
 #: inc/patterns-shop/shop-categories.php:13
 msgid "Shop by category"
 msgstr ""
 
 #: inc/patterns-shop/shop-categories.php:17
 msgid "Find what you love"
-msgstr ""
-
-#: inc/patterns-shop/shop-products.php:14
-msgid "Featured"
 msgstr ""
 
 #: inc/patterns-shop/shop-products.php:18
@@ -2848,4 +956,2571 @@ msgstr ""
 
 #: inc/patterns-shop/shop-products.php:42
 msgid "On sale now"
+msgstr ""
+
+#: inc/patterns.php:15
+msgid "WPEssential — Heroes"
+msgstr ""
+
+#: inc/patterns.php:16
+msgid "WPEssential — Sections"
+msgstr ""
+
+#: inc/patterns.php:17
+msgid "WPEssential — Headers"
+msgstr ""
+
+#: inc/patterns.php:18
+msgid "WPEssential — Footers"
+msgstr ""
+
+#: inc/patterns.php:19
+msgid "WPEssential — Full pages"
+msgstr ""
+
+#: inc/patterns.php:20
+msgid "WPEssential — Shop"
+msgstr ""
+
+#: inc/patterns.php:36
+msgid "Shop — Category grid"
+msgstr ""
+
+#: inc/patterns.php:37
+msgid "Shop — Featured, new and sale products"
+msgstr ""
+
+#: inc/seo.php:136
+msgid "Home"
+msgstr ""
+
+#: inc/setup.php:40
+msgid "Primary Menu"
+msgstr ""
+
+#: inc/setup.php:41
+msgid "Mobile Menu"
+msgstr ""
+
+#: inc/setup.php:42
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/setup.php:43
+msgid "Top Bar Menu"
+msgstr ""
+
+#: inc/setup.php:77
+msgid "Back to top"
+msgstr ""
+
+#. translators: %d: discount percentage.
+#: inc/woocommerce.php:48
+msgid "-%d%%"
+msgstr ""
+
+#: inc/woocommerce.php:89
+msgid "Out of stock"
+msgstr ""
+
+#: inc/woocommerce.php:136
+msgid "You’ve unlocked free shipping on this order!"
+msgstr ""
+
+#. translators: %s: amount left for free shipping.
+#: inc/woocommerce.php:139
+msgid "Add %s more to unlock free shipping."
+msgstr ""
+
+#: patterns/blog-hero.php
+msgctxt "Pattern title"
+msgid "Blog hero"
+msgstr ""
+
+#: patterns/blog-hero.php:14
+#: patterns/footer-premium.php:89
+#: patterns/footer-simple.php:18
+#: core/assets/admin.js:301
+msgid "Blog"
+msgstr ""
+
+#: patterns/blog-hero.php:18
+msgid "Guides, tutorials and product news from the WPEssential team."
+msgstr ""
+
+#: patterns/builders-split.php
+msgctxt "Pattern title"
+msgid "Split — image + checklist (dark)"
+msgstr ""
+
+#: patterns/builders-split.php:16
+msgid "Your builder, your choice"
+msgstr ""
+
+#: patterns/builders-split.php:20
+msgid "Same design. Gutenberg or Elementor."
+msgstr ""
+
+#: patterns/builders-split.php:24
+msgid "Colors, fonts and spacing come from one theme.json and sync into Elementor’s global kit automatically."
+msgstr ""
+
+#: patterns/builders-split.php:29
+msgid "Shared design tokens across both builders"
+msgstr ""
+
+#: patterns/builders-split.php:31
+msgid "Elementor Pro Theme Builder locations supported"
+msgstr ""
+
+#: patterns/builders-split.php:33
+msgid "Full Site Editing templates and patterns"
+msgstr ""
+
+#: patterns/builders-split.php:40
+msgid "Designer building a site"
+msgstr ""
+
+#: patterns/coming-soon.php
+msgctxt "Pattern title"
+msgid "Coming soon"
+msgstr ""
+
+#: patterns/coming-soon.php:17
+msgid "Something great is on the way"
+msgstr ""
+
+#: patterns/coming-soon.php:21
+msgid "We are polishing the final details. Follow us for launch news."
+msgstr ""
+
+#: patterns/comments.php
+msgctxt "Pattern title"
+msgid "Comments"
+msgstr ""
+
+#: patterns/contact.php
+msgctxt "Pattern title"
+msgid "Contact — details + form area"
+msgstr ""
+
+#: patterns/contact.php:22
+msgid "Email us"
+msgstr ""
+
+#: patterns/contact.php:36
+msgid "Call us"
+msgstr ""
+
+#: patterns/contact.php:50
+msgid "Visit us"
+msgstr ""
+
+#: patterns/contact.php:64
+msgid "Support hours"
+msgstr ""
+
+#: patterns/contact.php:68
+msgid "Replies within one business day"
+msgstr ""
+
+#: patterns/contact.php:76
+msgid "Send us a message"
+msgstr ""
+
+#: patterns/contact.php:80
+msgid "Replace the shortcode below with your form plugin (Contact Form 7, WPForms, Fluent Forms or the Elementor Form widget)."
+msgstr ""
+
+#: patterns/content-404.php
+msgctxt "Pattern title"
+msgid "404 content"
+msgstr ""
+
+#: patterns/content-404.php:14
+msgid "Error 404"
+msgstr ""
+
+#: patterns/content-404.php:18
+msgid "This page took a day off"
+msgstr ""
+
+#: patterns/content-404.php:22
+msgid "The link may be broken or the page may have moved. Try a search or head back home."
+msgstr ""
+
+#: patterns/content-404.php:25
+#: patterns/header-actions.php:14
+#: patterns/header-shop.php:22
+#: patterns/sidebar.php:14
+msgid "Search"
+msgstr ""
+
+#: patterns/content-404.php:29
+msgid "Back to home"
+msgstr ""
+
+#: patterns/cta-banner.php
+msgctxt "Pattern title"
+msgid "Call to action — gradient banner"
+msgstr ""
+
+#: patterns/cta-banner.php:15
+msgid "Ready to launch your next site?"
+msgstr ""
+
+#: patterns/cta-banner.php:19
+msgid "Start free. Upgrade to Pro when you need premium demos and priority support."
+msgstr ""
+
+#: patterns/cta-banner.php:24
+msgid "Get WPEssential free"
+msgstr ""
+
+#: patterns/cta-banner.php:28
+msgid "See Pro plans →"
+msgstr ""
+
+#: patterns/faq.php
+msgctxt "Pattern title"
+msgid "FAQ — accordion"
+msgstr ""
+
+#: patterns/faq.php:15
+#: patterns/footer-premium.php:90
+msgid "FAQ"
+msgstr ""
+
+#: patterns/faq.php:19
+#: patterns/page-faq.php:20
+msgid "Frequently asked questions"
+msgstr ""
+
+#: patterns/faq.php:24
+msgid "Is WPEssential free?"
+msgstr ""
+
+#: patterns/faq.php:25
+msgid "Yes. The theme and 12 demos are free forever. Pro unlocks 40+ demos, premium blocks and priority support."
+msgstr ""
+
+#: patterns/faq.php:30
+msgid "Which page builders are supported?"
+msgstr ""
+
+#: patterns/faq.php:31
+msgid "The native block editor (Gutenberg) and Elementor. Every demo ships in both versions."
+msgstr ""
+
+#: patterns/faq.php:36
+msgid "Will importing a demo delete my content?"
+msgstr ""
+
+#: patterns/faq.php:37
+msgid "No. Demo content is added alongside your existing posts, and you choose what to import."
+msgstr ""
+
+#: patterns/faq.php:42
+msgid "Do I need Elementor Pro?"
+msgstr ""
+
+#: patterns/faq.php:43
+msgid "No. Elementor free is enough for every demo. Elementor Pro Theme Builder headers and footers are also supported."
+msgstr ""
+
+#: patterns/faq.php:48
+msgid "Is the theme translation-ready and RTL compatible?"
+msgstr ""
+
+#: patterns/faq.php:49
+msgid "Yes. All strings are translatable and layouts mirror correctly for languages such as Urdu and Arabic."
+msgstr ""
+
+#: patterns/features-grid.php
+msgctxt "Pattern title"
+msgid "Features — 3×2 grid"
+msgstr ""
+
+#: patterns/features-grid.php:15
+msgid "Why WPEssential"
+msgstr ""
+
+#: patterns/features-grid.php:19
+msgid "Everything a modern site needs, nothing it doesn’t"
+msgstr ""
+
+#: patterns/features-grid.php:23
+msgid "Built on theme.json and native blocks, with first-class Elementor support."
+msgstr ""
+
+#: patterns/features-grid.php:34
+msgid "One-click demo import"
+msgstr ""
+
+#: patterns/features-grid.php:38
+msgid "Pick a demo, choose your builder, import. Content and settings land exactly as previewed."
+msgstr ""
+
+#: patterns/features-grid.php:48
+msgid "Gutenberg &amp; Elementor"
+msgstr ""
+
+#: patterns/features-grid.php:52
+msgid "Every demo ships twice — native blocks and Elementor — sharing one set of design tokens."
+msgstr ""
+
+#: patterns/features-grid.php:62
+msgid "Blazing fast"
+msgstr ""
+
+#: patterns/features-grid.php:66
+msgid "No jQuery, per-block CSS and a small stylesheet keep Core Web Vitals green."
+msgstr ""
+
+#: patterns/features-grid.php:78
+msgid "Automatic plugin setup"
+msgstr ""
+
+#: patterns/features-grid.php:82
+msgid "Required plugins install and activate themselves when you import a demo."
+msgstr ""
+
+#: patterns/features-grid.php:92
+msgid "WooCommerce ready"
+msgstr ""
+
+#: patterns/features-grid.php:96
+msgid "Designed shop, product, cart, checkout and account pages — not default templates."
+msgstr ""
+
+#: patterns/features-grid.php:106
+msgid "Pro license &amp; updates"
+msgstr ""
+
+#: patterns/features-grid.php:110
+msgid "Connect a license once to unlock Pro demos, premium blocks and updates."
+msgstr ""
+
+#: patterns/footer-premium.php
+msgctxt "Pattern title"
+msgid "Footer — Premium (dark, newsletter band)"
+msgstr ""
+
+#: patterns/footer-premium.php:17
+msgid "Get design tips & new demos"
+msgstr ""
+
+#: patterns/footer-premium.php:21
+msgid "One email a month. No spam, unsubscribe anytime."
+msgstr ""
+
+#: patterns/footer-premium.php:28
+msgid "Subscribe"
+msgstr ""
+
+#: patterns/footer-premium.php:55
+msgid "Company"
+msgstr ""
+
+#: patterns/footer-premium.php:59
+#: patterns/page-about.php:16
+msgid "About us"
+msgstr ""
+
+#: patterns/footer-premium.php:60
+#: patterns/page-services.php:16
+#: patterns/services-grid.php:15
+msgid "Services"
+msgstr ""
+
+#: patterns/footer-premium.php:61
+#: patterns/page-pricing.php:16
+#: patterns/pricing.php:15
+msgid "Pricing"
+msgstr ""
+
+#: patterns/footer-premium.php:62
+#: patterns/footer-simple.php:19
+#: patterns/header-topbar.php:18
+#: patterns/page-contact.php:16
+msgid "Contact"
+msgstr ""
+
+#: patterns/footer-premium.php:70
+#: core/assets/admin.js:301
+msgid "Shop"
+msgstr ""
+
+#: patterns/footer-premium.php:74
+msgid "All products"
+msgstr ""
+
+#: patterns/footer-premium.php:75
+msgid "My account"
+msgstr ""
+
+#: patterns/footer-premium.php:76
+msgid "Cart"
+msgstr ""
+
+#: patterns/footer-premium.php:77
+#: patterns/header-topbar.php:18
+msgid "Track order"
+msgstr ""
+
+#: patterns/footer-premium.php:85
+#: core/assets/admin.js:263
+msgid "Resources"
+msgstr ""
+
+#: patterns/footer-premium.php:91
+#: core/assets/admin.js:266
+msgid "Documentation"
+msgstr ""
+
+#: patterns/footer-premium.php:92
+#: core/assets/admin.js:267
+msgid "Support"
+msgstr ""
+
+#: patterns/footer-premium.php:100
+msgid "All rights reserved."
+msgstr ""
+
+#: patterns/footer-premium.php:104
+#: patterns/footer-simple.php:20
+msgid "Privacy"
+msgstr ""
+
+#: patterns/footer-premium.php:104
+msgid "Terms"
+msgstr ""
+
+#: patterns/footer-simple.php
+msgctxt "Pattern title"
+msgid "Footer — Simple"
+msgstr ""
+
+#: patterns/footer-simple.php:17
+msgid "About"
+msgstr ""
+
+#: patterns/header-actions.php
+msgctxt "Pattern title"
+msgid "Header actions (search, account, cart, CTA)"
+msgstr ""
+
+#: patterns/header-actions.php:23
+msgid "Switch to dark mode"
+msgstr ""
+
+#: patterns/header-actions.php:23
+msgid "Switch to light mode"
+msgstr ""
+
+#: patterns/header-actions.php:29
+msgid "Get Started"
+msgstr ""
+
+#: patterns/header-centered.php
+msgctxt "Pattern title"
+msgid "Header — Centered"
+msgstr ""
+
+#: patterns/header-default.php
+msgctxt "Pattern title"
+msgid "Header — Default"
+msgstr ""
+
+#: patterns/header-shop.php
+msgctxt "Pattern title"
+msgid "Header — Shop (search + account + cart)"
+msgstr ""
+
+#: patterns/header-shop.php:22
+msgid "Search products"
+msgstr ""
+
+#: patterns/header-shop.php:22
+msgid "Search products, brands and more…"
+msgstr ""
+
+#: patterns/header-topbar.php
+msgctxt "Pattern title"
+msgid "Top bar"
+msgstr ""
+
+#: patterns/header-topbar.php:14
+msgid "Free shipping on orders over $75 · 30-day returns"
+msgstr ""
+
+#: patterns/header-topbar.php:18
+msgid "Help"
+msgstr ""
+
+#: patterns/header-transparent.php
+msgctxt "Pattern title"
+msgid "Header — Transparent (over dark hero)"
+msgstr ""
+
+#: patterns/hero-dark.php
+msgctxt "Pattern title"
+msgid "Hero — Dark with product shot"
+msgstr ""
+
+#: patterns/hero-dark.php:15
+#: core/assets/admin.js:241
+msgid "NEW"
+msgstr ""
+
+#: patterns/hero-dark.php:15
+msgid "40+ demos for Gutenberg &amp; Elementor"
+msgstr ""
+
+#: patterns/hero-dark.php:19
+msgid "Launch a premium WordPress site in minutes, not weeks"
+msgstr ""
+
+#: patterns/hero-dark.php:23
+msgid "One-click demos for every niche, built natively for both the block editor and Elementor — fast, accessible and fully yours."
+msgstr ""
+
+#: patterns/hero-dark.php:28
+#: core/assets/admin.js:245
+msgid "Browse demos"
+msgstr ""
+
+#: patterns/hero-dark.php:32
+msgid "Watch the 2-min tour"
+msgstr ""
+
+#: patterns/hero-dark.php:43
+#: patterns/stats.php:28
+msgid "Ready demos"
+msgstr ""
+
+#: patterns/hero-dark.php:53
+msgid "Page builders"
+msgstr ""
+
+#: patterns/hero-dark.php:63
+msgid "CSS on first load"
+msgstr ""
+
+#: patterns/hero-dark.php:73
+msgid "From 1,200 reviews"
+msgstr ""
+
+#: patterns/hero-dark.php:80
+msgid "Business demo homepage built with WPEssential"
+msgstr ""
+
+#: patterns/hero-split.php
+msgctxt "Pattern title"
+msgid "Hero — Split with image"
+msgstr ""
+
+#: patterns/hero-split.php:17
+msgid "Multi-niche WordPress theme"
+msgstr ""
+
+#: patterns/hero-split.php:21
+msgid "Build any website in minutes"
+msgstr ""
+
+#: patterns/hero-split.php:25
+msgid "Import a ready-made demo for Gutenberg or Elementor with one click, then make it yours."
+msgstr ""
+
+#: patterns/hero-split.php:30
+#: core/assets/admin.js:258
+msgid "Get started"
+msgstr ""
+
+#: patterns/hero-split.php:34
+msgid "Learn more"
+msgstr ""
+
+#: patterns/hero-split.php:41
+msgid "A WPEssential site on a laptop and phone"
+msgstr ""
+
+#: patterns/latest-posts.php
+msgctxt "Pattern title"
+msgid "Latest posts — 3 cards"
+msgstr ""
+
+#: patterns/latest-posts.php:15
+msgid "From the blog"
+msgstr ""
+
+#: patterns/latest-posts.php:19
+msgid "Guides for faster, better WordPress sites"
+msgstr ""
+
+#: patterns/logos.php
+msgctxt "Pattern title"
+msgid "Logo strip"
+msgstr ""
+
+#: patterns/logos.php:14
+msgid "Trusted by 18,000+ agencies, stores and creators"
+msgstr ""
+
+#: patterns/maintenance.php
+msgctxt "Pattern title"
+msgid "Maintenance mode"
+msgstr ""
+
+#: patterns/maintenance.php:17
+msgid "We will be back shortly"
+msgstr ""
+
+#: patterns/maintenance.php:21
+msgid "Scheduled maintenance is underway. Thanks for your patience — we will be back online in a few minutes."
+msgstr ""
+
+#: patterns/no-results.php
+msgctxt "Pattern title"
+msgid "No results"
+msgstr ""
+
+#: patterns/no-results.php:13
+msgid "Nothing matched. Try a different search or browse the latest posts."
+msgstr ""
+
+#: patterns/page-about.php
+msgctxt "Pattern title"
+msgid "About page"
+msgstr ""
+
+#: patterns/page-about.php:20
+msgid "We build WordPress tools that feel premium and stay fast"
+msgstr ""
+
+#: patterns/page-about.php:24
+msgid "WPEssential started as an internal starter theme for client work. Today it powers stores, agencies and creators in more than 60 countries."
+msgstr ""
+
+#: patterns/page-contact.php
+msgctxt "Pattern title"
+msgid "Contact page"
+msgstr ""
+
+#: patterns/page-contact.php:20
+msgid "Let’s talk about your next site"
+msgstr ""
+
+#: patterns/page-contact.php:24
+msgid "Questions about demos, licensing or a custom build? Our team replies within one business day."
+msgstr ""
+
+#: patterns/page-faq.php
+msgctxt "Pattern title"
+msgid "FAQ page"
+msgstr ""
+
+#: patterns/page-faq.php:16
+msgid "Help center"
+msgstr ""
+
+#: patterns/page-faq.php:24
+msgid "Answers about demos, builders, licensing and updates. Can’t find what you need? Contact support."
+msgstr ""
+
+#: patterns/page-hero.php
+msgctxt "Pattern title"
+msgid "Page title band"
+msgstr ""
+
+#: patterns/page-pricing.php
+msgctxt "Pattern title"
+msgid "Pricing page"
+msgstr ""
+
+#: patterns/page-pricing.php:20
+msgid "Simple plans that grow with you"
+msgstr ""
+
+#: patterns/page-pricing.php:24
+msgid "Start free with the core theme. Upgrade for premium demos, Pro blocks and priority support."
+msgstr ""
+
+#: patterns/page-services.php
+msgctxt "Pattern title"
+msgid "Services page"
+msgstr ""
+
+#: patterns/page-services.php:20
+msgid "Everything you need to launch and grow"
+msgstr ""
+
+#: patterns/page-services.php:24
+msgid "Strategy, design, development and care plans — delivered on a theme built for speed."
+msgstr ""
+
+#: patterns/post-card.php
+msgctxt "Pattern title"
+msgid "Post card"
+msgstr ""
+
+#: patterns/pricing.php
+msgctxt "Pattern title"
+msgid "Pricing — 3 plans"
+msgstr ""
+
+#: patterns/pricing.php:19
+msgid "Simple pricing. Both builders included."
+msgstr ""
+
+#: patterns/pricing.php:23
+msgid "Start free and upgrade when you need Pro demos, premium blocks and priority support."
+msgstr ""
+
+#: patterns/pricing.php:30
+#: core/assets/admin.js:312
+msgid "Free"
+msgstr ""
+
+#: patterns/pricing.php:34
+#: patterns/pricing.php:64
+#: patterns/pricing.php:96
+msgid "/ year"
+msgstr ""
+
+#: patterns/pricing.php:38
+msgid "For personal sites getting started."
+msgstr ""
+
+#: patterns/pricing.php:43
+msgid "12 free demos"
+msgstr ""
+
+#: patterns/pricing.php:45
+msgid "Gutenberg + Elementor"
+msgstr ""
+
+#: patterns/pricing.php:47
+msgid "Core blocks &amp; patterns"
+msgstr ""
+
+#: patterns/pricing.php:49
+msgid "Community support"
+msgstr ""
+
+#: patterns/pricing.php:55
+msgid "Download free"
+msgstr ""
+
+#: patterns/pricing.php:60
+#: core/assets/admin.js:312
+msgid "Pro"
+msgstr ""
+
+#: patterns/pricing.php:68
+msgid "For freelancers and growing businesses."
+msgstr ""
+
+#: patterns/pricing.php:73
+msgid "All 40+ demos"
+msgstr ""
+
+#: patterns/pricing.php:75
+msgid "Premium blocks &amp; widgets"
+msgstr ""
+
+#: patterns/pricing.php:77
+msgid "WooCommerce demos"
+msgstr ""
+
+#: patterns/pricing.php:79
+msgid "1 year of updates"
+msgstr ""
+
+#: patterns/pricing.php:81
+#: core/assets/admin.js:1122
+msgid "Priority support"
+msgstr ""
+
+#: patterns/pricing.php:87
+msgid "Get Pro"
+msgstr ""
+
+#: patterns/pricing.php:92
+#: core/assets/admin.js:301
+msgid "Agency"
+msgstr ""
+
+#: patterns/pricing.php:100
+msgid "For teams building client sites."
+msgstr ""
+
+#: patterns/pricing.php:105
+msgid "Everything in Pro"
+msgstr ""
+
+#: patterns/pricing.php:107
+msgid "Unlimited sites"
+msgstr ""
+
+#: patterns/pricing.php:109
+msgid "White-label dashboard"
+msgstr ""
+
+#: patterns/pricing.php:111
+msgid "Client handoff kit"
+msgstr ""
+
+#: patterns/pricing.php:117
+msgid "Get Agency"
+msgstr ""
+
+#: patterns/process-steps.php
+msgctxt "Pattern title"
+msgid "Process — 4 steps (dark)"
+msgstr ""
+
+#: patterns/process-steps.php:15
+msgid "How it works"
+msgstr ""
+
+#: patterns/process-steps.php:19
+msgid "Live in four simple steps"
+msgstr ""
+
+#: patterns/process-steps.php:31
+msgid "Pick a demo"
+msgstr ""
+
+#: patterns/process-steps.php:35
+msgid "Browse 40+ demos and preview them live."
+msgstr ""
+
+#: patterns/process-steps.php:43
+msgid "Choose a builder"
+msgstr ""
+
+#: patterns/process-steps.php:47
+msgid "Gutenberg or Elementor — same design."
+msgstr ""
+
+#: patterns/process-steps.php:55
+msgid "Import in one click"
+msgstr ""
+
+#: patterns/process-steps.php:59
+msgid "Plugins, content and settings are set up for you."
+msgstr ""
+
+#: patterns/process-steps.php:67
+#: core/assets/admin.js:290
+msgid "Make it yours"
+msgstr ""
+
+#: patterns/process-steps.php:71
+msgid "Edit text, swap images and publish."
+msgstr ""
+
+#: patterns/services-grid.php
+msgctxt "Pattern title"
+msgid "Services — 3 column cards"
+msgstr ""
+
+#: patterns/services-grid.php:19
+msgid "From idea to launch"
+msgstr ""
+
+#: patterns/services-grid.php:23
+msgid "Use WPEssential yourself, or let our team set up, customise and maintain your site."
+msgstr ""
+
+#: patterns/services-grid.php:34
+msgid "Demo setup"
+msgstr ""
+
+#: patterns/services-grid.php:38
+msgid "We import your chosen demo, connect your domain and configure plugins."
+msgstr ""
+
+#: patterns/services-grid.php:48
+msgid "Brand customisation"
+msgstr ""
+
+#: patterns/services-grid.php:52
+msgid "Your colors, fonts, logo and copy applied across every template."
+msgstr ""
+
+#: patterns/services-grid.php:62
+msgid "WooCommerce launch"
+msgstr ""
+
+#: patterns/services-grid.php:66
+msgid "Products, payments, shipping zones and emails configured and tested."
+msgstr ""
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Blog sidebar"
+msgstr ""
+
+#: patterns/sidebar.php:19
+msgid "Categories"
+msgstr ""
+
+#: patterns/sidebar.php:27
+msgid "Recent posts"
+msgstr ""
+
+#: patterns/sidebar.php:35
+msgid "Tags"
+msgstr ""
+
+#: patterns/stats.php
+msgctxt "Pattern title"
+msgid "Stats — 4 counters"
+msgstr ""
+
+#: patterns/stats.php:20
+msgid "Active installs"
+msgstr ""
+
+#: patterns/stats.php:36
+msgid "Average rating"
+msgstr ""
+
+#: patterns/stats.php:44
+msgid "Support response"
+msgstr ""
+
+#: patterns/team.php
+msgctxt "Pattern title"
+msgid "Team — 4 members"
+msgstr ""
+
+#: patterns/team.php:15
+msgid "The team"
+msgstr ""
+
+#: patterns/team.php:19
+msgid "People behind WPEssential"
+msgstr ""
+
+#: patterns/team.php:35
+msgid "Founder &amp; Lead Designer"
+msgstr ""
+
+#: patterns/team.php:47
+msgid "Head of Engineering"
+msgstr ""
+
+#: patterns/team.php:59
+msgid "Customer Success"
+msgstr ""
+
+#: patterns/team.php:71
+msgid "WooCommerce Specialist"
+msgstr ""
+
+#: patterns/testimonials.php
+msgctxt "Pattern title"
+msgid "Testimonials — 3 cards"
+msgstr ""
+
+#: patterns/testimonials.php:15
+msgid "Loved by builders"
+msgstr ""
+
+#: patterns/testimonials.php:19
+msgid "What our customers say"
+msgstr ""
+
+#: patterns/testimonials.php:31
+msgid "We rebuilt three client sites on WPEssential in a week. The Elementor and block versions matching exactly is a game changer."
+msgstr ""
+
+#: patterns/testimonials.php:35
+msgid "Founder, Kitecraft Agency"
+msgstr ""
+
+#: patterns/testimonials.php:43
+msgid "Our store went from 3.9s to 1.2s load time. Checkout pages look custom out of the box."
+msgstr ""
+
+#: patterns/testimonials.php:47
+msgid "Owner, Fieldhouse Goods"
+msgstr ""
+
+#: patterns/testimonials.php:55
+msgid "The demo import just works — plugins, menus, homepage. I spend my time on content now, not setup."
+msgstr ""
+
+#: patterns/testimonials.php:59
+msgid "Writer, The Quiet Desk"
+msgstr ""
+
+#: assets/js/options.js:65
+msgid "Custom code"
+msgstr ""
+
+#: assets/js/options.js:66
+msgid "Animations"
+msgstr ""
+
+#: assets/js/options.js:84
+#: assets/js/options.js:91
+#: core/assets/admin.js:280
+#: core/assets/admin.js:701
+#: core/assets/admin.js:1074
+#: core/assets/admin.js:1113
+msgid "Active"
+msgstr ""
+
+#: assets/js/options.js:84
+msgid "Off"
+msgstr ""
+
+#: assets/js/options.js:88
+msgid "Broke something? Open your site in safe mode to load it without snippets:"
+msgstr ""
+
+#: assets/js/options.js:88
+msgid "Safe mode"
+msgstr ""
+
+#: assets/js/options.js:90
+msgid "Snippet name"
+msgstr ""
+
+#: assets/js/options.js:93
+msgid "Devices"
+msgstr ""
+
+#: assets/js/options.js:93
+msgid "All devices"
+msgstr ""
+
+#: assets/js/options.js:93
+msgid "Desktop (1025px+)"
+msgstr ""
+
+#: assets/js/options.js:93
+msgid "Tablet (768–1024px)"
+msgstr ""
+
+#: assets/js/options.js:93
+msgid "Mobile (≤767px)"
+msgstr ""
+
+#: assets/js/options.js:96
+msgid "Load in"
+msgstr ""
+
+#: assets/js/options.js:96
+msgid "Footer (recommended)"
+msgstr ""
+
+#: assets/js/options.js:97
+msgid "Write JavaScript only, without <script> tags."
+msgstr ""
+
+#: assets/js/options.js:97
+msgid "Write CSS only, without <style> tags."
+msgstr ""
+
+#: assets/js/options.js:99
+msgid "Save snippets"
+msgstr ""
+
+#: assets/js/options.js:99
+#: core/assets/admin.js:1076
+msgid "Delete"
+msgstr ""
+
+#: assets/js/options.js:116
+msgid "New script"
+msgstr ""
+
+#: assets/js/options.js:116
+msgid "New styles"
+msgstr ""
+
+#: assets/js/options.js:162
+msgid "Animations reveal sections as visitors scroll. Visitors who prefer reduced motion never see them."
+msgstr ""
+
+#: assets/js/options.js:166
+msgid "Use GSAP for parallax and counters with any preset"
+msgstr ""
+
+#: assets/js/options.js:167
+msgid "Add the class wpe-anim (and wpe-anim--fade-up, --zoom, --slide-left, --mask, --stagger, --parallax or --counter) to any block under Advanced → Additional CSS class."
+msgstr ""
+
+#: assets/js/options.js:168
+msgid "Save animations"
+msgstr ""
+
+#: core/assets/admin.js:86
+msgid "The connection to your site dropped. Check your internet and try again."
+msgstr ""
+
+#: core/assets/admin.js:89
+msgid "The server sent an invalid response — usually a PHP error or a timeout. Your progress is saved."
+msgstr ""
+
+#: core/assets/admin.js:92
+msgid "Your login session expired. Reload the page and sign in again."
+msgstr ""
+
+#: core/assets/admin.js:159
+msgid "Dashboard sections"
+msgstr ""
+
+#: core/assets/admin.js:163
+msgid "Docs"
+msgstr ""
+
+#: core/assets/admin.js:164
+msgid "Switch dashboard colour mode"
+msgstr ""
+
+#: core/assets/admin.js:241
+msgid "%s is active"
+msgstr ""
+
+#: core/assets/admin.js:242
+msgid "Welcome, %s. Let’s build something beautiful."
+msgstr ""
+
+#: core/assets/admin.js:243
+msgid "Pick a demo, choose Gutenberg or Elementor, and get a finished website with pages, images, menus and a shop — in about a minute."
+msgstr ""
+
+#: core/assets/admin.js:246
+msgid "Customize site"
+msgstr ""
+
+#: core/assets/admin.js:251
+msgid "Demo imported"
+msgstr ""
+
+#: core/assets/admin.js:251
+msgid "in 48 seconds"
+msgstr ""
+
+#: core/assets/admin.js:252
+msgid "Two builders"
+msgstr ""
+
+#: core/assets/admin.js:259
+msgid "Three steps to launch"
+msgstr ""
+
+#: core/assets/admin.js:264
+msgid "Help when you need it"
+msgstr ""
+
+#: core/assets/admin.js:266
+msgid "Guides for every feature"
+msgstr ""
+
+#: core/assets/admin.js:267
+msgid "Real people, fast answers"
+msgstr ""
+
+#: core/assets/admin.js:268
+msgid "Site Editor"
+msgstr ""
+
+#: core/assets/admin.js:268
+msgid "Colours, fonts, header and footer"
+msgstr ""
+
+#: core/assets/admin.js:280
+#: core/assets/admin.js:1113
+msgid "Expired"
+msgstr ""
+
+#: core/assets/admin.js:280
+#: core/assets/admin.js:1113
+msgid "Invalid"
+msgstr ""
+
+#: core/assets/admin.js:280
+#: core/assets/admin.js:1113
+msgid "Not connected"
+msgstr ""
+
+#: core/assets/admin.js:283
+msgid "Imported demo"
+msgstr ""
+
+#: core/assets/admin.js:283
+msgid "None yet"
+msgstr ""
+
+#: core/assets/admin.js:285
+msgid "System health"
+msgstr ""
+
+#: core/assets/admin.js:288
+msgid "Import a demo"
+msgstr ""
+
+#: core/assets/admin.js:288
+msgid "Start from a complete, ready-made website."
+msgstr ""
+
+#: core/assets/admin.js:288
+msgid "Open library"
+msgstr ""
+
+#: core/assets/admin.js:289
+#: core/assets/admin.js:1124
+msgid "Activate your license"
+msgstr ""
+
+#: core/assets/admin.js:289
+msgid "Unlock Pro demos, updates and support."
+msgstr ""
+
+#: core/assets/admin.js:289
+#: core/assets/admin.js:1076
+#: core/assets/admin.js:1125
+msgid "Activate"
+msgstr ""
+
+#: core/assets/admin.js:290
+msgid "Swap the logo, colours and words in the Site Editor."
+msgstr ""
+
+#: core/assets/admin.js:290
+#: core/assets/admin.js:999
+msgid "Customize"
+msgstr ""
+
+#: core/assets/admin.js:295
+msgid "Could not load the dashboard"
+msgstr ""
+
+#: core/assets/admin.js:301
+#: core/assets/admin.js:312
+#: core/assets/admin.js:756
+msgid "All"
+msgstr ""
+
+#: core/assets/admin.js:301
+msgid "Business"
+msgstr ""
+
+#: core/assets/admin.js:301
+msgid "Restaurant"
+msgstr ""
+
+#: core/assets/admin.js:301
+msgid "Education"
+msgstr ""
+
+#: core/assets/admin.js:306
+msgid "Every demo is a complete website. Preview it, then import it for Gutenberg or Elementor — plugins, pages, images and menus included."
+msgstr ""
+
+#: core/assets/admin.js:307
+msgid "Refreshing"
+msgstr ""
+
+#: core/assets/admin.js:307
+msgid "Refresh library"
+msgstr ""
+
+#: core/assets/admin.js:310
+msgid "Search demos"
+msgstr ""
+
+#: core/assets/admin.js:310
+msgid "Search demos…"
+msgstr ""
+
+#: core/assets/admin.js:311
+msgid "Category"
+msgstr ""
+
+#: core/assets/admin.js:312
+msgid "Plan"
+msgstr ""
+
+#: core/assets/admin.js:313
+#: core/assets/admin.js:519
+#: core/assets/admin.js:576
+msgid "Builder"
+msgstr ""
+
+#: core/assets/admin.js:313
+msgid "Any builder"
+msgstr ""
+
+#: core/assets/admin.js:336
+msgid "Library refreshed"
+msgstr ""
+
+#: core/assets/admin.js:338
+msgid "Refresh failed"
+msgstr ""
+
+#: core/assets/admin.js:351
+msgid "The library could not load"
+msgstr ""
+
+#: core/assets/admin.js:363
+msgid "The import of %s stopped"
+msgstr ""
+
+#: core/assets/admin.js:363
+msgid "The import of %s was interrupted"
+msgstr ""
+
+#: core/assets/admin.js:363
+msgid "Your progress is saved. Continue exactly where it left off."
+msgstr ""
+
+#: core/assets/admin.js:363
+msgid "Resume import"
+msgstr ""
+
+#: core/assets/admin.js:366
+msgid "%s is installed on this site"
+msgstr ""
+
+#: core/assets/admin.js:366
+msgid "You can remove everything it added and restore your previous settings at any time."
+msgstr ""
+
+#: core/assets/admin.js:366
+#: core/assets/admin.js:920
+msgid "Removing"
+msgstr ""
+
+#: core/assets/admin.js:366
+msgid "Remove demo"
+msgstr ""
+
+#: core/assets/admin.js:386
+msgid "Remove %s? Its pages, posts, products, images and menus will be deleted and your previous settings restored. Content you created yourself is not touched."
+msgstr ""
+
+#: core/assets/admin.js:392
+msgid "Demo removed"
+msgstr ""
+
+#: core/assets/admin.js:396
+msgid "Removal failed"
+msgstr ""
+
+#: core/assets/admin.js:416
+msgid "No demos match these filters"
+msgstr ""
+
+#: core/assets/admin.js:416
+msgid "Try another category or clear the search."
+msgstr ""
+
+#: core/assets/admin.js:416
+msgid "Clear filters"
+msgstr ""
+
+#: core/assets/admin.js:428
+msgid "IMPORTED"
+msgstr ""
+
+#: core/assets/admin.js:430
+msgid "Live preview"
+msgstr ""
+
+#: core/assets/admin.js:438
+msgid "Preview"
+msgstr ""
+
+#: core/assets/admin.js:439
+msgid "Unlock"
+msgstr ""
+
+#: core/assets/admin.js:439
+msgid "Re-import"
+msgstr ""
+
+#: core/assets/admin.js:439
+#: core/assets/admin.js:576
+msgid "Import"
+msgstr ""
+
+#: core/assets/admin.js:512
+msgid "Desktop"
+msgstr ""
+
+#: core/assets/admin.js:512
+msgid "Tablet"
+msgstr ""
+
+#: core/assets/admin.js:512
+msgid "Mobile"
+msgstr ""
+
+#: core/assets/admin.js:515
+msgid "%1$s on %2$s"
+msgstr ""
+
+#: core/assets/admin.js:520
+msgid "Device"
+msgstr ""
+
+#: core/assets/admin.js:521
+msgid "Unlock with Pro"
+msgstr ""
+
+#: core/assets/admin.js:521
+msgid "Import this demo"
+msgstr ""
+
+#: core/assets/admin.js:522
+msgid "Close preview"
+msgstr ""
+
+#: core/assets/admin.js:576
+msgid "Account"
+msgstr ""
+
+#: core/assets/admin.js:576
+msgid "Content"
+msgstr ""
+
+#: core/assets/admin.js:576
+msgid "Done"
+msgstr ""
+
+#: core/assets/admin.js:582
+msgid "Safe import — every change can be undone."
+msgstr ""
+
+#: core/assets/admin.js:585
+msgid "Close"
+msgstr ""
+
+#: core/assets/admin.js:589
+msgid "The import keeps its progress if you close this window. You can resume it from the Demo Library. Close anyway?"
+msgstr ""
+
+#: core/assets/admin.js:618
+msgid "Back"
+msgstr ""
+
+#: core/assets/admin.js:640
+msgid "Unlock this Pro demo"
+msgstr ""
+
+#: core/assets/admin.js:640
+msgid "Connect your WPEssential account"
+msgstr ""
+
+#: core/assets/admin.js:640
+msgid "Sign in and use a Pro license on this site — or pick a plan. Checkout opens in a new tab."
+msgstr ""
+
+#: core/assets/admin.js:640
+msgid "Sign in or create a free account to keep your demos, licenses and updates in one place."
+msgstr ""
+
+#: core/assets/admin.js:643
+msgid "A Pro license is needed"
+msgstr ""
+
+#: core/assets/admin.js:643
+msgid "Use a Pro license on this site, or choose a plan."
+msgstr ""
+
+#: core/assets/admin.js:648
+#: core/assets/admin.js:674
+#: core/assets/admin.js:679
+msgid "Continue"
+msgstr ""
+
+#: core/assets/admin.js:656
+msgid "Demo unlocked"
+msgstr ""
+
+#: core/assets/admin.js:666
+msgid "This demo has no version for this builder yet."
+msgstr ""
+
+#: core/assets/admin.js:668
+msgid "Choose your page builder"
+msgstr ""
+
+#: core/assets/admin.js:668
+msgid "Both versions look identical. Pick the editor you or your client will use every day."
+msgstr ""
+
+#: core/assets/admin.js:669
+msgid "The native WordPress block editor. Fastest pages, no extra plugin."
+msgstr ""
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor is already installed."
+msgstr ""
+
+#: core/assets/admin.js:669
+msgid "Visual drag-and-drop editing. Elementor will be installed for you."
+msgstr ""
+
+#: core/assets/admin.js:678
+msgid "Plugins this demo uses"
+msgstr ""
+
+#: core/assets/admin.js:678
+msgid "We install, activate or switch off plugins so the demo works exactly like the preview."
+msgstr ""
+
+#: core/assets/admin.js:693
+msgid "No extra plugins needed — this demo runs on the theme alone."
+msgstr ""
+
+#: core/assets/admin.js:698
+msgid "Will be deactivated"
+msgstr ""
+
+#: core/assets/admin.js:698
+msgid "Not needed"
+msgstr ""
+
+#: core/assets/admin.js:702
+msgid "Will be activated"
+msgstr ""
+
+#: core/assets/admin.js:703
+msgid "Will be installed"
+msgstr ""
+
+#: core/assets/admin.js:706
+msgid "Required"
+msgstr ""
+
+#: core/assets/admin.js:706
+#: core/assets/admin.js:1073
+msgid "Recommended"
+msgstr ""
+
+#: core/assets/admin.js:706
+msgid "Conflicts with this demo"
+msgstr ""
+
+#: core/assets/admin.js:706
+msgid "Include"
+msgstr ""
+
+#: core/assets/admin.js:706
+msgid "Include %s"
+msgstr ""
+
+#: core/assets/admin.js:715
+msgid "Pages, posts and menus"
+msgstr ""
+
+#: core/assets/admin.js:715
+msgid "%s and their navigation."
+msgstr ""
+
+#: core/assets/admin.js:716
+msgid "Images"
+msgstr ""
+
+#: core/assets/admin.js:716
+msgid "Copied to your Media Library, licensed for your site."
+msgstr ""
+
+#: core/assets/admin.js:717
+msgid "Shop products"
+msgstr ""
+
+#: core/assets/admin.js:717
+msgid "Products, categories, prices and shipping."
+msgstr ""
+
+#: core/assets/admin.js:717
+msgid "Needs WooCommerce — enable it on the previous step."
+msgstr ""
+
+#: core/assets/admin.js:718
+msgid "Site settings"
+msgstr ""
+
+#: core/assets/admin.js:718
+msgid "Home page, blog page and store options."
+msgstr ""
+
+#: core/assets/admin.js:720
+msgid "What should we import?"
+msgstr ""
+
+#: core/assets/admin.js:720
+msgid "Everything is on by default for a site that matches the preview."
+msgstr ""
+
+#: core/assets/admin.js:722
+msgid "Remove %s first"
+msgstr ""
+
+#: core/assets/admin.js:722
+msgid "Recommended: start from a clean site instead of adding duplicates."
+msgstr ""
+
+#: core/assets/admin.js:723
+msgid "Your existing posts and pages are never changed. Imported items are tagged, so they can be removed in one click later."
+msgstr ""
+
+#: core/assets/admin.js:730
+msgid "Start import"
+msgstr ""
+
+#: core/assets/admin.js:736
+msgid "Preparing"
+msgstr ""
+
+#: core/assets/admin.js:736
+#: core/assets/admin.js:947
+msgid "Importing your demo…"
+msgstr ""
+
+#: core/assets/admin.js:736
+msgid "Keep this window open. It usually takes about a minute."
+msgstr ""
+
+#: core/assets/admin.js:739
+#: core/assets/admin.js:943
+msgid "Cancel import"
+msgstr ""
+
+#: core/assets/admin.js:756
+msgid "Info"
+msgstr ""
+
+#: core/assets/admin.js:756
+msgid "Success"
+msgstr ""
+
+#: core/assets/admin.js:756
+#: core/assets/admin.js:998
+msgid "Warnings"
+msgstr ""
+
+#: core/assets/admin.js:756
+msgid "Errors"
+msgstr ""
+
+#: core/assets/admin.js:756
+#: core/assets/admin.js:920
+msgid "Copy log"
+msgstr ""
+
+#: core/assets/admin.js:790
+msgid "Log copied"
+msgstr ""
+
+#: core/assets/admin.js:790
+msgid "Paste it into your support ticket."
+msgstr ""
+
+#: core/assets/admin.js:816
+msgid "Stopped"
+msgstr ""
+
+#: core/assets/admin.js:816
+msgid "Step"
+msgstr ""
+
+#: core/assets/admin.js:816
+msgid "Complete"
+msgstr ""
+
+#: core/assets/admin.js:824
+msgid "%ss elapsed"
+msgstr ""
+
+#: core/assets/admin.js:850
+msgid "Resumed from the saved position."
+msgstr ""
+
+#: core/assets/admin.js:872
+msgid "Reload the page, then resume the import from the Demo Library."
+msgstr ""
+
+#: core/assets/admin.js:878
+msgid "Your progress is saved. Press Resume when the server is back."
+msgstr ""
+
+#: core/assets/admin.js:882
+msgid "The server did not answer (%1$s). Retrying in %2$d seconds…"
+msgstr ""
+
+#: core/assets/admin.js:905
+msgid "The import stopped."
+msgstr ""
+
+#: core/assets/admin.js:907
+msgid "Import cancelled."
+msgstr ""
+
+#: core/assets/admin.js:907
+msgid "Resume to finish it, or remove what was imported so far."
+msgstr ""
+
+#: core/assets/admin.js:918
+msgid "Import paused"
+msgstr ""
+
+#: core/assets/admin.js:918
+msgid "The import needs your attention"
+msgstr ""
+
+#: core/assets/admin.js:920
+msgid "Remove imported content"
+msgstr ""
+
+#: core/assets/admin.js:920
+msgid "Resume"
+msgstr ""
+
+#: core/assets/admin.js:920
+msgid "Back to options"
+msgstr ""
+
+#: core/assets/admin.js:929
+msgid "Everything was rolled back"
+msgstr ""
+
+#: core/assets/admin.js:933
+msgid "Nothing to remove"
+msgstr ""
+
+#: core/assets/admin.js:933
+msgid "Rollback failed"
+msgstr ""
+
+#: core/assets/admin.js:960
+msgid "Resuming…"
+msgstr ""
+
+#: core/assets/admin.js:967
+msgid "Your progress is saved. Try again in a moment."
+msgstr ""
+
+#: core/assets/admin.js:973
+msgid "Cancel the import? What was imported so far stays until you remove it."
+msgstr ""
+
+#: core/assets/admin.js:983
+msgid "Could not cancel"
+msgstr ""
+
+#: core/assets/admin.js:996
+msgid "Your website is ready!"
+msgstr ""
+
+#: core/assets/admin.js:997
+msgid "%1$s was imported. %2$d item(s) need a look — see the notes below."
+msgstr ""
+
+#: core/assets/admin.js:997
+msgid "%s was imported without a single issue. Time to make it yours."
+msgstr ""
+
+#: core/assets/admin.js:998
+msgid "Import time"
+msgstr ""
+
+#: core/assets/admin.js:998
+msgid "Steps completed"
+msgstr ""
+
+#: core/assets/admin.js:999
+msgid "View your site"
+msgstr ""
+
+#: core/assets/admin.js:1002
+msgid "Back to dashboard"
+msgstr ""
+
+#: core/assets/admin.js:1007
+msgid "Import complete"
+msgstr ""
+
+#: core/assets/admin.js:1054
+msgid "Plugins used by WPEssential demos. Install, switch on or off and delete them here."
+msgstr ""
+
+#: core/assets/admin.js:1069
+msgid "No plugins needed"
+msgstr ""
+
+#: core/assets/admin.js:1069
+msgid "The demos in your library run on the theme alone."
+msgstr ""
+
+#: core/assets/admin.js:1073
+msgid "Required by some demos"
+msgstr ""
+
+#: core/assets/admin.js:1074
+msgid "Inactive"
+msgstr ""
+
+#: core/assets/admin.js:1074
+msgid "Not installed"
+msgstr ""
+
+#: core/assets/admin.js:1075
+msgid "Install & activate"
+msgstr ""
+
+#: core/assets/admin.js:1077
+msgid "Deactivate"
+msgstr ""
+
+#: core/assets/admin.js:1079
+msgid "Delete this plugin and its files?"
+msgstr ""
+
+#: core/assets/admin.js:1085
+msgid "is active."
+msgstr ""
+
+#: core/assets/admin.js:1085
+msgid "is inactive."
+msgstr ""
+
+#: core/assets/admin.js:1085
+msgid "was deleted."
+msgstr ""
+
+#: core/assets/admin.js:1088
+msgid "Plugin action failed"
+msgstr ""
+
+#: core/assets/admin.js:1096
+msgid "Activate your purchase on this domain to unlock Pro demos, automatic updates and priority support."
+msgstr ""
+
+#: core/assets/admin.js:1118
+msgid "Domain"
+msgstr ""
+
+#: core/assets/admin.js:1118
+msgid "Expires"
+msgstr ""
+
+#: core/assets/admin.js:1118
+msgid "Lifetime"
+msgstr ""
+
+#: core/assets/admin.js:1118
+msgid "Provider"
+msgstr ""
+
+#: core/assets/admin.js:1121
+msgid "You’re all set"
+msgstr ""
+
+#: core/assets/admin.js:1121
+msgid "This license is active on %s."
+msgstr ""
+
+#: core/assets/admin.js:1121
+msgid "Plan: %s."
+msgstr ""
+
+#: core/assets/admin.js:1122
+msgid "All Pro demos unlocked"
+msgstr ""
+
+#: core/assets/admin.js:1122
+msgid "One-click theme updates"
+msgstr ""
+
+#: core/assets/admin.js:1123
+msgid "Deactivating"
+msgstr ""
+
+#: core/assets/admin.js:1123
+msgid "Deactivate on this domain"
+msgstr ""
+
+#: core/assets/admin.js:1124
+msgid "Renew to keep Pro features"
+msgstr ""
+
+#: core/assets/admin.js:1124
+msgid "Find the key in your purchase email or your wpessential.org account."
+msgstr ""
+
+#: core/assets/admin.js:1125
+msgid "License key"
+msgstr ""
+
+#: core/assets/admin.js:1125
+msgid "Paste your license key"
+msgstr ""
+
+#: core/assets/admin.js:1125
+msgid "Show key"
+msgstr ""
+
+#: core/assets/admin.js:1125
+msgid "Checking"
+msgstr ""
+
+#: core/assets/admin.js:1127
+msgid "Unlock every Pro demo in the library"
+msgstr ""
+
+#: core/assets/admin.js:1127
+msgid "Automatic updates from your dashboard"
+msgstr ""
+
+#: core/assets/admin.js:1127
+msgid "Priority support from the WPEssential Team"
+msgstr ""
+
+#: core/assets/admin.js:1128
+msgid "Don’t have a license? Sign in or pick a plan below"
+msgstr ""
+
+#: core/assets/admin.js:1143
+msgid "License activated"
+msgstr ""
+
+#: core/assets/admin.js:1143
+msgid "Pro demos are unlocked."
+msgstr ""
+
+#: core/assets/admin.js:1163
+msgid "Deactivate the license on this domain? You can activate it on another site afterwards."
+msgstr ""
+
+#: core/assets/admin.js:1169
+msgid "License deactivated"
+msgstr ""
+
+#: core/assets/admin.js:1173
+msgid "Deactivation failed"
+msgstr ""
+
+#: core/assets/admin.js:1188
+msgid "/ %d mo"
+msgstr ""
+
+#: core/assets/admin.js:1188
+msgid "one-time"
+msgstr ""
+
+#: core/assets/admin.js:1201
+msgid "Your WPEssential account could not be reached"
+msgstr ""
+
+#: core/assets/admin.js:1213
+msgid "Sign in to your account"
+msgstr ""
+
+#: core/assets/admin.js:1213
+msgid "Create your free account"
+msgstr ""
+
+#: core/assets/admin.js:1213
+msgid "Your licenses, Pro demos and subscription in one place. New accounts include the Free plan for this website."
+msgstr ""
+
+#: core/assets/admin.js:1214
+msgid "Activate licenses without copying keys"
+msgstr ""
+
+#: core/assets/admin.js:1214
+msgid "Upgrade, renew or switch plans in one click"
+msgstr ""
+
+#: core/assets/admin.js:1214
+msgid "Manage websites and auto-renewal"
+msgstr ""
+
+#: core/assets/admin.js:1216
+#: core/assets/admin.js:1221
+msgid "Sign in"
+msgstr ""
+
+#: core/assets/admin.js:1216
+msgid "Create account"
+msgstr ""
+
+#: core/assets/admin.js:1217
+msgid "Full name"
+msgstr ""
+
+#: core/assets/admin.js:1218
+msgid "Email"
+msgstr ""
+
+#: core/assets/admin.js:1219
+msgid "Password"
+msgstr ""
+
+#: core/assets/admin.js:1221
+msgid "Signing in"
+msgstr ""
+
+#: core/assets/admin.js:1221
+msgid "Creating account"
+msgstr ""
+
+#: core/assets/admin.js:1221
+msgid "Create free account"
+msgstr ""
+
+#: core/assets/admin.js:1222
+msgid "Forgot password?"
+msgstr ""
+
+#: core/assets/admin.js:1222
+msgid "By creating an account you agree to the WPEssential terms."
+msgstr ""
+
+#: core/assets/admin.js:1223
+msgid "Continue without an account"
+msgstr ""
+
+#: core/assets/admin.js:1239
+msgid "Fill in every field."
+msgstr ""
+
+#: core/assets/admin.js:1245
+msgid "Signed in"
+msgstr ""
+
+#: core/assets/admin.js:1245
+msgid "Account created"
+msgstr ""
+
+#: core/assets/admin.js:1266
+msgid "Refresh"
+msgstr ""
+
+#: core/assets/admin.js:1267
+msgid "Manage account"
+msgstr ""
+
+#: core/assets/admin.js:1268
+msgid "Sign out"
+msgstr ""
+
+#: core/assets/admin.js:1270
+msgid "Your licenses"
+msgstr ""
+
+#: core/assets/admin.js:1273
+msgid "%1$d of %2$s websites"
+msgstr ""
+
+#: core/assets/admin.js:1273
+msgid "Never expires"
+msgstr ""
+
+#: core/assets/admin.js:1273
+msgid "Renews %s"
+msgstr ""
+
+#: core/assets/admin.js:1273
+msgid "Ends %s"
+msgstr ""
+
+#: core/assets/admin.js:1274
+msgid "Auto-renew"
+msgstr ""
+
+#: core/assets/admin.js:1275
+msgid "Renew"
+msgstr ""
+
+#: core/assets/admin.js:1275
+msgid "This site"
+msgstr ""
+
+#: core/assets/admin.js:1275
+msgid "Activating"
+msgstr ""
+
+#: core/assets/admin.js:1275
+msgid "Use on this site"
+msgstr ""
+
+#: core/assets/admin.js:1276
+msgid "No licenses yet — choose a plan below."
+msgstr ""
+
+#: core/assets/admin.js:1277
+msgid "Upgrade your plan"
+msgstr ""
+
+#: core/assets/admin.js:1277
+msgid "Choose a plan"
+msgstr ""
+
+#: core/assets/admin.js:1282
+msgid "Most popular"
+msgstr ""
+
+#: core/assets/admin.js:1283
+msgid "Current plan"
+msgstr ""
+
+#: core/assets/admin.js:1283
+msgid "Upgrade"
+msgstr ""
+
+#: core/assets/admin.js:1283
+msgid "Choose"
+msgstr ""
+
+#: core/assets/admin.js:1285
+msgid "Checkout opens on wpessential.org already signed in. Upgrades credit the unused part of your current plan. Staging and local sites do not count toward your website limit."
+msgstr ""
+
+#: core/assets/admin.js:1301
+msgid "License active on this site"
+msgstr ""
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is on"
+msgstr ""
+
+#: core/assets/admin.js:1315
+msgid "Auto-renew is off"
+msgstr ""
+
+#: core/assets/admin.js:1315
+msgid "Your license works until its end date."
+msgstr ""
+
+#: core/assets/admin.js:1318
+msgid "Could not change auto-renew"
+msgstr ""
+
+#: core/assets/admin.js:1330
+msgid "Checkout opened in a new tab"
+msgstr ""
+
+#: core/assets/admin.js:1330
+msgid "When payment is done, press Refresh here."
+msgstr ""
+
+#: core/assets/admin.js:1335
+msgid "Checkout could not start"
+msgstr ""
+
+#: core/assets/admin.js:1343
+msgid "What your server offers and what to improve before importing."
+msgstr ""
+
+#: core/assets/admin.js:1343
+msgid "Copy report"
+msgstr ""
+
+#: core/assets/admin.js:1349
+msgid "Health"
+msgstr ""
+
+#: core/assets/admin.js:1349
+msgid "Excellent"
+msgstr ""
+
+#: core/assets/admin.js:1349
+msgid "Good"
+msgstr ""
+
+#: core/assets/admin.js:1349
+msgid "Needs work"
+msgstr ""
+
+#: core/assets/admin.js:1349
+msgid "%d item(s) could be better. Imports still run; fixes make them faster."
+msgstr ""
+
+#: core/assets/admin.js:1349
+msgid "Your server is ready for any demo."
+msgstr ""
+
+#: core/assets/admin.js:1352
+msgid "Environment"
+msgstr ""
+
+#: core/assets/admin.js:1356
+msgid "Report copied"
+msgstr ""
+
+#: core/assets/admin.js:1356
+msgid "Copy failed"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Danger"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Ink Muted"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "On Primary"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Hover"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Primary Soft"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Pro"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Star"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Success"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Surface Alt"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Text Muted"
+msgstr ""
+
+#: styles/agency.json styles/dark.json styles/education.json styles/fashion.json styles/health.json styles/maison.json styles/pulse.json styles/restaurant.json theme.json
+msgctxt "Color name"
+msgid "Warning"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank (no header/footer)"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Full Width (builder canvas)"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Landing (transparent header)"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "No Title"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Post with sidebar"
+msgstr ""
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Cormorant Garamond"
+msgstr ""
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "DM Sans"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr ""
+
+#: styles/maison.json
+msgctxt "Font family name"
+msgid "Manrope"
+msgstr ""
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Font family name"
+msgid "Monospace"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Plus Jakarta Sans"
+msgstr ""
+
+#: styles/pulse.json
+msgctxt "Font family name"
+msgid "Space Grotesk"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body L"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Display"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H1"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H2"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H3"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "H4"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XS"
+msgstr ""
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Brand"
+msgstr ""
+
+#: styles/dark.json
+msgctxt "Gradient name"
+msgid "Fade bottom"
+msgstr ""
+
+#: styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Fade to ink"
+msgstr ""
+
+#: styles/dark.json styles/maison.json styles/pulse.json theme.json
+msgctxt "Gradient name"
+msgid "Night"
+msgstr ""
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Large"
+msgstr ""
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Medium"
+msgstr ""
+
+#: styles/dark.json theme.json
+msgctxt "Shadow name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "112"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "12"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "16"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "24"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "32"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "48"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "64"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "8"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "96"
+msgstr ""
+
+#: styles/agency.json
+msgctxt "Style variation name"
+msgid "Agency"
+msgstr ""
+
+#: styles/dark.json
+msgctxt "Style variation name"
+msgid "Dark"
+msgstr ""
+
+#: styles/education.json
+msgctxt "Style variation name"
+msgid "Education"
+msgstr ""
+
+#: styles/fashion.json
+msgctxt "Style variation name"
+msgid "Fashion"
+msgstr ""
+
+#: styles/health.json
+msgctxt "Style variation name"
+msgid "Health"
+msgstr ""
+
+#: styles/maison.json
+msgctxt "Style variation name"
+msgid "Maison"
+msgstr ""
+
+#: styles/pulse.json
+msgctxt "Style variation name"
+msgid "Pulse"
+msgstr ""
+
+#: styles/restaurant.json
+msgctxt "Style variation name"
+msgid "Restaurant"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Premium"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer — Simple"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Centered"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Default"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Shop"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header — Transparent (over dark hero)"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
 msgstr ""

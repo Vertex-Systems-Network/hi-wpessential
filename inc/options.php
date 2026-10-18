@@ -136,6 +136,7 @@ add_action(
 		$js  = wp_enqueue_code_editor( array( 'type' => 'text/javascript' ) );
 		wp_enqueue_style( 'wpessential-options', WPESSENTIAL_URI . '/assets/css/options.css', array(), WPESSENTIAL_VERSION );
 		wp_enqueue_script( 'wpessential-options', WPESSENTIAL_URI . '/assets/js/options.js', array( 'wp-api-fetch', 'wp-i18n', 'code-editor' ), WPESSENTIAL_VERSION, true );
+		wp_set_script_translations( 'wpessential-options', 'wpessential', WPESSENTIAL_DIR . '/languages' );
 		wp_localize_script(
 			'wpessential-options',
 			'wpessentialOptions',
