@@ -5,6 +5,8 @@ blue #6188C6, teal #5AC8D6 on ink #07080C; Bricolage Grotesque + Plus Jakarta Sa
 Images are real: demo thumbnails and previews of Base, Maison and Pulse, and screenshots of
 the WPEssential dashboard. Products are the demos, the services and the monthly, yearly and lifetime plans.
 """
+import re
+
 import blocks as b
 import elementor as e
 
@@ -70,16 +72,25 @@ FEATURES = [
     ('fas fa-headset', 'Real support', 'Developers who build the theme answer your tickets, usually within one business day.'),
 ]
 
+# WordPress services by the WPEssential team. Prices are starting points; the order confirms the scope by email.
 SERVICES = [
     ('fas fa-palette', 'Custom demo design', 'A demo designed around your brand, built on Hi WPEssential for Gutenberg or Elementor.', 'from $1,490'),
     ('fas fa-download', 'Setup & content import', 'We install the theme, import your demo, add your logo, pages and products.', 'from $149'),
+    ('fas fa-cart-shopping', 'WooCommerce store setup', 'Products, payments, shipping, taxes and emails configured and tested end to end.', 'from $699'),
+    ('fas fa-pen-ruler', 'Figma to WordPress', 'Your Figma or Adobe XD design built as a fast, editable WordPress site.', 'from $899'),
+    ('fas fa-table-cells-large', 'Page building', 'New pages built in Gutenberg or Elementor to match your site, mobile-ready.', 'from $99 / page'),
     ('fas fa-gauge-high', 'Speed & SEO tuning', 'Core Web Vitals, image optimisation, schema and caching set up for you.', 'from $249'),
-    ('fas fa-arrows-rotate', 'Migration', 'Move an existing site to the theme without losing content or rankings.', 'from $499'),
-    ('fas fa-shield-halved', 'Care plans', 'Monthly updates, backups, uptime checks and fixes by our team.', 'from $49 / mo'),
-    ('fas fa-code', 'Custom development', 'New blocks, WooCommerce features and integrations, built to WordPress standards.', 'Quote'),
+    ('fas fa-arrows-rotate', 'Migration', 'Move an existing site to the theme or a new host without losing content or rankings.', 'from $499'),
+    ('fas fa-language', 'Multilingual setup', 'WPML or Polylang, translated menus and pages, and right-to-left support.', 'from $299'),
+    ('fas fa-shield-halved', 'Security & malware cleanup', 'Hardening, firewall, malware removal and blacklist recovery.', 'from $199'),
+    ('fas fa-screwdriver-wrench', 'Bug fixes & support', 'Broken layouts, plugin conflicts, PHP errors and white screens fixed fast.', 'from $79'),
+    ('fas fa-server', 'Hosting, domain & email', 'Hosting, SSL, domain DNS and business email set up and connected.', 'from $99'),
+    ('fas fa-heart-pulse', 'Care plans', 'Monthly updates, backups, uptime checks and fixes by our team.', 'from $49 / mo'),
+    ('fas fa-code', 'Custom development', 'New blocks, plugins, WooCommerce features and API integrations to WordPress standards.', 'Quote'),
 ]
 
-SERVICE_IMAGES = ['site-maison', 'shot-import', 'site-pulse', 'site-base', 'shot-library', 'shot-plugins']
+
+SERVICE_IMAGES = ['site-maison', 'shot-import', 'site-pulse', 'site-base', 'shot-library', 'shot-plugins'] * 3
 
 STEPS = [('Pick a demo', 'Browse the library and open a live preview of every page.'),
          ('Choose your builder', 'Gutenberg or Elementor — both versions look the same.'),
@@ -93,6 +104,16 @@ FAQ = [
     ('How does lifetime work?', 'Pay once and keep the version you bought: a 1.x lifetime license gets every 1.x update and demo until version 2.0 is released.'),
     ('Do you offer refunds?', 'Every plan is covered by a 14-day money-back guarantee.'),
     ('Is the theme translated?', 'Hi WPEssential ships with 20 languages and works with WPML and Polylang.'),
+]
+
+# Free plugins on WordPress.org by the WPEssential team (links go to wordpress.org).
+PLUGINS = [
+    ('fas fa-layer-group', 'WPEssential', 'Build complete WordPress themes with Elementor — no code. Sliders, shortcodes and theme parts in one free toolkit.',
+     'v2.0 · PHP 8', 'https://wordpress.org/plugins/wpessential/'),
+    ('fas fa-icons', 'WPEssential Icons', 'Four extra icon libraries for Elementor: Captain, Elementor, Ion and Type icons, ready in every widget.',
+     'Needs WPEssential', 'https://wordpress.org/plugins/wpessential-icons/'),
+    ('fas fa-code', 'TCI Ultimate Element Themes', 'Create themes with Elementor dynamic tags, plus lightbox video, breadcrumbs, comments and post navigation widgets.',
+     'v1.0 · Elementor', 'https://wordpress.org/plugins/tci-ultimate-element-themes/'),
 ]
 
 DOCS = [
@@ -161,8 +182,9 @@ def g_header():
 
 def g_footer():
     return b.footer('Premium WordPress themes and one-click demos for Gutenberg and Elementor. @wpessential on every network.',
-                    [('Marketplace', [('Demos', '{{page:demos}}'), ('Pricing', '{{page:pricing}}'), ('Services', '{{page:services}}'), ('My account', '{{woo:myaccount}}')]),
-                     ('Resources', [('Documentation', '{{page:docs}}'), ('Blog', '{{page:blog}}'), ('FAQ', '{{page:pricing}}'), ('Contact', '{{page:contact}}')]),
+                    [('Marketplace', [('Demos', '{{page:demos}}'), ('Plugins', '{{page:plugins}}'), ('Pricing', '{{page:pricing}}'), ('Services', '{{page:services}}'), ('My account', '{{woo:myaccount}}')]),
+                     ('Company', [('About', '{{page:about}}'), ('Services', '{{page:services}}'), ('Blog', '{{page:blog}}'), ('Contact', '{{page:contact}}')]),
+                     ('Resources', [('Documentation', '{{page:docs}}'), ('Plugins', '{{page:plugins}}'), ('FAQ', '{{page:pricing}}'), ('Support', '{{page:contact}}')]),
                      ('Follow', SOCIAL)],
                     ('© WPEssential. A Vertex Systems Network (Pvt.) Ltd. company.', 'Built with <a href="https://wpessential.org/">Hi WPEssential</a>'),
                     band=('New themes and demo drops, monthly.', 'One email a month. Release notes, freebies and discounts.', 'See pricing', '{{page:pricing}}'))
@@ -181,6 +203,21 @@ def g_cards(items, icon_title=True):
     return b.group(*[b.group(b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), *([b.p('<strong>%s</strong>' % x[3], color='primary')] if len(x) > 3 else []),
                              layout='default', className='wpe-card wpe-card--pad')
                      for x in items for t, d in [(x[1], x[2])]], layout='grid', grid_min='16rem')
+
+
+def g_plugin_cards():
+    return b.group(*[b.group(b.p('Free · WordPress.org', style='wpe-overline'), b.h(t, level=3, size='h4'), b.p(d, color='text-muted'),
+                             b.p(meta, color='text-muted', size='small'), b.buttons(b.button('Download', url, style='wpe-outline')),
+                             layout='default', className='wpe-card wpe-card--pad') for _, t, d, meta, url in PLUGINS],
+                   layout='grid', grid_min='16rem')
+
+
+def g_plugins():
+    return b.join(g_title('Plugins', 'Free WordPress plugins', 'Made by the WPEssential team and free on WordPress.org. Install them from Plugins → Add New in your dashboard.'),
+                  b.section(g_plugin_cards(), className='wpe-section wpe-section--sm'),
+                  b.section(b.h('Want everything in one place?', size='h3', align='center', color='on-ink'),
+                            b.p('Hi WPEssential and its demo library work with all three plugins out of the box.', align='center', color='on-ink'),
+                            b.buttons(b.button('Get the theme', '{{page:pricing}}'), justify='center'), bg='ink', color='on-ink', content='720px'))
 
 
 def g_home():
@@ -207,6 +244,10 @@ def g_home():
         b.column(b.image('shot-import', 'A finished import in the WPEssential wizard', style='wpe-shadow'),
                  b.p('Real WPEssential import · every step logged · 0 errors', color='text-muted', size='small', align='center'), width='55%', valign='center'),
         valign='center', className='wpe-gap-lg'), bg='surface-alt')
+    plugins = b.section(
+        b.group(b.group(b.p('Free plugins', style='wpe-overline'), b.h('Free on WordPress.org', size='h2'), layout='default'),
+                b.buttons(b.button('All plugins', '{{page:plugins}}', style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom'),
+        g_plugin_cards())
     pricing = b.section(b.p('Pricing', style='wpe-overline', align='center'), b.h('One subscription. Every theme and demo.', size='h2', align='center'),
                         b.p('From $10 a month. Save 20% yearly, or pay once for lifetime.', align='center', color='text-muted'), g_products('plans-monthly'),
                         b.buttons(b.button('Yearly & lifetime prices', '{{page:pricing}}', style='wpe-outline'), justify='center'))
@@ -217,7 +258,7 @@ def g_home():
                             b.p('Get every theme and demo with Pro. Cancel any time.', color='on-ink', align='center'),
                             b.buttons(b.button('Get Pro — $30/month', '{{page:pricing}}', style='wpe-light'), justify='center'),
                             className='wpe-card wpe-cta-gradient', bg='primary', color='on-primary'))
-    return b.join(hero, stats, demos, features, how, pricing, news, cta)
+    return b.join(hero, stats, demos, features, plugins, how, pricing, news, cta)
 
 
 def g_demos():
@@ -245,7 +286,7 @@ def g_pricing():
 
 def g_services():
     return b.join(g_title('Services', 'Your site, launched by the people who build the theme.', 'Design, setup, speed and care from the WPEssential team at Vertex Systems Network (Pvt.) Ltd.'),
-                  b.section(b.shortcode('[products category="services" columns="3" limit="6" orderby="menu_order" order="ASC"]'), className='wpe-section wpe-section--sm'),
+                  b.section(b.shortcode('[products category="services" columns="3" limit="12" orderby="menu_order" order="ASC"]'), className='wpe-section wpe-section--sm'),
                   b.section(b.h('How a project runs', size='h2'),
                             b.group(*[b.group(b.p('0%d' % (i + 1), className='wpe-stat-number'), b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default')
                                       for i, (t, d) in enumerate([('Discovery call', '30 minutes on goals, content and budget.'), ('Proposal', 'Fixed price, scope and timeline within 48 hours.'),
@@ -263,6 +304,30 @@ def g_docs():
                   b.section(b.h('Popular articles', size='h2'), b.latest_posts(3), bg='surface-alt'),
                   b.section(b.h('Still stuck?', size='h3', align='center'), b.p('Open a ticket and a WPEssential developer replies within one business day.', align='center', color='text-muted'),
                             b.buttons(b.button('Open a ticket', '{{page:contact}}'), justify='center'), content='720px'))
+
+
+ABOUT_VALUES = [('fas fa-bolt', 'Fast by default', 'Lean code, local fonts and no page-builder bloat unless you ask for it.'),
+                ('fas fa-universal-access', 'Built for everyone', 'Accessible markup, keyboard support, RTL and 20 languages out of the box.'),
+                ('fas fa-handshake', 'Honest pricing', 'Clear plans, a 14-day money-back guarantee and no hidden renewals.'),
+                ('fas fa-life-ring', 'Real support', 'The developers who build the theme answer your tickets.')]
+
+
+def g_about():
+    return b.join(g_title('About us', 'We build the WordPress tools we wanted to use.',
+                          'WPEssential is the WordPress product team of Vertex Systems Network (Pvt.) Ltd. We make Hi WPEssential, its demo library, free plugins and the services around them.'),
+                  b.section(b.columns(b.column(b.image('shot-library', 'The WPEssential Demo Library', style='wpe-shadow'), width='55%'),
+                                      b.column(b.p('Our story', style='wpe-overline'), b.h('From client work to products', size='h2'),
+                                               b.p('We spent years building WordPress sites for clients and kept solving the same problems: slow themes, demos that broke on import and builders that locked people in.', color='text-muted'),
+                                               b.p('So we built one fast theme with a style for every niche, demos that import in one click for both Gutenberg and Elementor, and a dashboard that logs every step.', color='text-muted'),
+                                               width='45%', valign='center'), valign='center', className='wpe-gap-lg'), className='wpe-section wpe-section--sm'),
+                  b.section(b.p('What we stand for', style='wpe-overline'), b.h('Our values', size='h2'), g_cards(ABOUT_VALUES), bg='surface-alt'),
+                  b.section(b.group(*[b.group(b.p(n, className='wpe-stat-number'), b.p(t, color='text-muted'), layout='default', className='wpe-card wpe-card--pad')
+                                      for n, t in [('3', 'free plugins on WordPress.org'), ('20', 'languages'), ('2', 'native builders'), ('1', 'theme for every niche')]],
+                                    layout='grid', grid_min='12rem')),
+                  b.section(b.h('Work with us', size='h3', align='center', color='on-ink'),
+                            b.p('Need a site built, moved or fixed? Our team takes on WordPress projects of every size.', align='center', color='on-ink'),
+                            b.buttons(b.button('See services', '{{page:services}}'), b.button('Contact us', '{{page:contact}}', style='wpe-light'), justify='center'),
+                            bg='ink', color='on-ink', content='720px'))
 
 
 def g_contact():
@@ -294,6 +359,20 @@ def e_products(cat, cols=3):
     return e.shortcode('[products category="%s" columns="%d" limit="%d" orderby="menu_order" order="ASC"]' % (cat, cols, cols))
 
 
+def e_plugin_cards():
+    return e.grid(*[e.container(e.overline('Free · WordPress.org'), e.heading(t, 3, size_px=22), e.text(d), e.text(meta, size_px=14),
+                                e.button('Download', url, 'outline'), inner=True, pad=28, radius=20, border='border', bg='surface', gap=12)
+                    for _, t, d, meta, url in PLUGINS], columns=3)
+
+
+def e_plugins():
+    return [e_title('Plugins', 'Free WordPress plugins', 'Made by the WPEssential team and free on WordPress.org. Install them from Plugins → Add New in your dashboard.'),
+            e.container(e_plugin_cards(), pad=(24, 24, 56, 24)),
+            e.container(e.heading('Want everything in one place?', 3, 'on-ink', align='center'),
+                        e.text('Hi WPEssential and its demo library work with all three plugins out of the box.', 'on-ink-muted', align='center'),
+                        e.button('Get the theme', '{{page:pricing}}', align='center'), bg='ink', pad=(64, 24, 64, 24), align='center')]
+
+
 def e_home():
     return [
         e.container(e.overline('Hi WPEssential · by Vertex Systems Network (Pvt.) Ltd.', 'accent', align='center'),
@@ -307,6 +386,8 @@ def e_home():
         e.container(e.overline('Demos'), e.heading('Start from a finished site'), e_products('demos'), e.button('All demos', '{{page:demos}}', 'outline'),
                     bg='surface-alt', pad=(80, 24, 80, 24)),
         e.container(e.overline('The theme'), e.heading('One theme. Every niche. Demos that do the heavy lifting.'), e_icon_cards(FEATURES), pad=(80, 24, 80, 24)),
+        e.container(e.overline('Free plugins'), e.heading('Free on WordPress.org'), e_plugin_cards(), e.button('All plugins', '{{page:plugins}}', 'outline'),
+                    pad=(80, 24, 80, 24)),
         e.container(e.row(e.col(e.overline('How it works'), e.heading('From zero to launch in four steps'),
                                 *[e.container(e.heading('%d. %s' % (i + 1, t), 3, size_px=22), e.text(d), inner=True, gap=6) for i, (t, d) in enumerate(STEPS)], width=45, justify='center'),
                           e.col(e.image('shot-import', 'A finished import in the WPEssential wizard', radius=20),
@@ -348,7 +429,7 @@ def e_pricing():
 
 def e_services():
     return [e_title('Services', 'Your site, launched by the people who build the theme.', 'Design, setup, speed and care from the WPEssential team at Vertex Systems Network (Pvt.) Ltd.'),
-            e.container(e.shortcode('[products category="services" columns="3" limit="6" orderby="menu_order" order="ASC"]'), pad=(24, 24, 72, 24)),
+            e.container(e.shortcode('[products category="services" columns="3" limit="12" orderby="menu_order" order="ASC"]'), pad=(24, 24, 72, 24)),
             e.container(e.heading('How a project runs'),
                         e.grid(*[e.container(e.heading('0%d' % (i + 1), 3, 'primary', size_px=40), e.heading(t, 3, size_px=22), e.text(d), inner=True, gap=8)
                                  for i, (t, d) in enumerate([('Discovery call', '30 minutes on goals, content and budget.'), ('Proposal', 'Fixed price, scope and timeline within 48 hours.'),
@@ -366,6 +447,23 @@ def e_docs():
                         bg='surface-alt', pad=(72, 24, 72, 24)),
             e.container(e.heading('Still stuck?', 3, align='center'), e.text('Open a ticket and a WPEssential developer replies within one business day.', align='center'),
                         e.button('Open a ticket', '{{page:contact}}', align='center'), pad=(72, 24, 72, 24))]
+
+
+def e_about():
+    return [e_title('About us', 'We build the WordPress tools we wanted to use.',
+                    'WPEssential is the WordPress product team of Vertex Systems Network (Pvt.) Ltd. We make Hi WPEssential, its demo library, free plugins and the services around them.'),
+            e.container(e.row(e.col(e.image('shot-library', 'The WPEssential Demo Library', radius=20), width=55),
+                              e.col(e.overline('Our story'), e.heading('From client work to products'),
+                                    e.text('We spent years building WordPress sites for clients and kept solving the same problems: slow themes, demos that broke on import and builders that locked people in.'),
+                                    e.text('So we built one fast theme with a style for every niche, demos that import in one click for both Gutenberg and Elementor, and a dashboard that logs every step.'),
+                                    width=45, justify='center'), gap=56), pad=(24, 24, 72, 24)),
+            e.container(e.overline('What we stand for'), e.heading('Our values'), e_icon_cards(ABOUT_VALUES, 4), bg='surface-alt', pad=(72, 24, 72, 24)),
+            e.container(e.grid(e.counter(3, 'free plugins on WordPress.org'), e.counter(20, 'languages'), e.counter(2, 'native builders'), e.counter(1, 'theme for every niche'), columns=4),
+                        pad=(56, 24, 56, 24)),
+            e.container(e.heading('Work with us', 3, 'on-ink', align='center'),
+                        e.text('Need a site built, moved or fixed? Our team takes on WordPress projects of every size.', 'on-ink-muted', align='center'),
+                        e.row(e.button('See services', '{{page:services}}'), e.button('Contact us', '{{page:contact}}', 'light'), gap=12, justify='center', wrap=True, mobile_direction='row'),
+                        bg='ink', pad=(64, 24, 64, 24), align='center')]
 
 
 def e_contact():
@@ -393,8 +491,9 @@ def package(builder):
         {'key': 'cat-guides', 'taxonomy': 'category', 'name': 'Guides', 'slug': 'guides'},
     ]
     pages = [('home', 'Home', 'home', g_home, e_home), ('demos', 'Demos', 'demos', g_demos, e_demos),
-             ('pricing', 'Pricing', 'pricing', g_pricing, e_pricing), ('services', 'Services', 'services', g_services, e_services),
-             ('docs', 'Docs', 'docs', g_docs, e_docs), ('contact', 'Contact', 'contact', g_contact, e_contact)]
+             ('plugins', 'Plugins', 'plugins', g_plugins, e_plugins), ('pricing', 'Pricing', 'pricing', g_pricing, e_pricing), ('services', 'Services', 'services', g_services, e_services),
+             ('docs', 'Docs', 'docs', g_docs, e_docs), ('about', 'About', 'about', g_about, e_about),
+             ('contact', 'Contact', 'contact', g_contact, e_contact)]
     content = []
     for key, title, slug, g, el in pages:
         item = {'key': key, 'type': 'page', 'title': title, 'slug': slug, 'template': 'page-full-width'}
@@ -422,14 +521,14 @@ def package(builder):
                          'description': '<p>%s</p><ul>%s</ul><p>%s 14-day money-back guarantee.</p>' % (
                              pl['short'], ''.join('<li>%s</li>' % i for i in pl['inc']), BILLING_NOTE[pl['period']])})
     for i, (icon, name, desc, price) in enumerate(SERVICES):
-        amount = price.replace('from $', '').replace(' / mo', '').replace(',', '')
+        amount = (re.findall(r'\$([\d,]+)', price) or [''])[0].replace(',', '')
         products.append({'key': 'svc-%d' % i, 'name': name, 'slug': 'service-' + name.lower().replace(' & ', '-').replace(' ', '-'),
                          'price': amount if amount.isdigit() else '', 'categories': ['pc-services'], 'image': SERVICE_IMAGES[i], 'virtual': True,
                          'menu_order': i + 1, 'short': desc,
                          'description': '<p>%s</p><p>After checkout we email you within one business day to book a kick-off call.</p>' % desc})
     menus = [{'name': 'Essential menu', 'location': 'primary', 'items': [
-        {'title': 'Demos', 'page': 'demos'}, {'title': 'Pricing', 'page': 'pricing'}, {'title': 'Services', 'page': 'services'},
-        {'title': 'Docs', 'page': 'docs'}, {'title': 'Blog', 'page': 'blog'}, {'title': 'Contact', 'page': 'contact'}]}]
+        {'title': 'Demos', 'page': 'demos'}, {'title': 'Plugins', 'page': 'plugins'}, {'title': 'Pricing', 'page': 'pricing'}, {'title': 'Services', 'page': 'services'},
+        {'title': 'Docs', 'page': 'docs'}, {'title': 'Blog', 'page': 'blog'}, {'title': 'About', 'page': 'about'}, {'title': 'Contact', 'page': 'contact'}]}]
     settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'essential', 'motion': 'subtle',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'footer': {'content': g_footer()}},
                 'options': {'posts_per_page': 9, 'blogname': 'WPEssential', 'blogdescription': 'Premium WordPress themes and one-click demos.'},
@@ -447,13 +546,15 @@ DEMO = {
     'niche': ['marketplace', 'software', 'saas', 'digital products'], 'type': 'pro',
     'thumbnail': 'demo:thumbnail.webp',
     'preview': {'desktop': 'demo:preview/desktop.webp', 'tablet': 'demo:preview/tablet.webp', 'mobile': 'demo:preview/mobile.webp'},
-    'pages': ['Home', 'Demos', 'Pricing', 'Services', 'Docs', 'Blog', 'Contact'],
+    'pages': ['Home', 'Demos', 'Plugins', 'About', 'Pricing', 'Services', 'Docs', 'Blog', 'Contact'],
     'highlights': ['3 demo products', 'Monthly, yearly & lifetime plans', 'Docs & services', 'Light & dark'],
     'motion': 'subtle',
     'plugins': [{'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'}],
 }
 
 SEO = {
+    'about': 'About WPEssential, the WordPress product team of Vertex Systems Network (Pvt.) Ltd.: our story, values and the people behind Hi WPEssential.',
+    'plugins': 'Free WordPress plugins by WPEssential on WordPress.org: theme building, icon libraries and Elementor dynamic widgets.',
     'home': 'Premium WordPress themes and one-click demos, native for Gutenberg and Elementor. Pick a demo, import it and launch.',
     'demos': 'Browse ready-made WordPress demos for business, fashion and events. Every demo imports in one click.',
     'pricing': 'Plans for every theme and demo from $10 a month: save 20% yearly or pay once for lifetime. 14-day money-back guarantee.',
@@ -462,3 +563,6 @@ SEO = {
     'contact': 'Contact WPEssential support, sales or services. We reply within one business day.',
     'blog': 'Guides, release notes and new demos from the WPEssential team.',
 }
+
+# Brand, contact email and what the site sells, used for the legal pages (tools/demo-builder/legal.py).
+LEGAL = ('WPEssential, a Vertex Systems Network (Pvt.) Ltd. company', 'support@wpessential.org', 'themes, demos, plans and services')

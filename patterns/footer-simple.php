@@ -14,10 +14,13 @@
 <div class="wp-block-group"><!-- wp:site-title /-->
 
 <!-- wp:navigation {"overlayMenu":"never","fontSize":"small"} -->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'About', 'hi-wpessential' ); ?>","url":"/about/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Blog', 'hi-wpessential' ); ?>","url":"/blog/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Contact', 'hi-wpessential' ); ?>","url":"/contact/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Privacy', 'hi-wpessential' ); ?>","url":"/privacy-policy/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'About', 'hi-wpessential' ); ?>","url":"<?php echo esc_url( home_url( '/about/' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Blog', 'hi-wpessential' ); ?>","url":"<?php echo esc_url( home_url( '/blog/' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Contact', 'hi-wpessential' ); ?>","url":"<?php echo esc_url( home_url( '/contact/' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Privacy', 'hi-wpessential' ); ?>","url":"<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Terms', 'hi-wpessential' ); ?>","url":"<?php echo esc_url( home_url( '/terms/' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Refunds', 'hi-wpessential' ); ?>","url":"<?php echo esc_url( home_url( '/refund-policy/' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Cookies', 'hi-wpessential' ); ?>","url":"<?php echo esc_url( home_url( '/cookie-policy/' ) ); ?>"} /-->
 <!-- /wp:navigation -->
 
 <!-- wp:paragraph {"textColor":"text-muted","fontSize":"small"} -->

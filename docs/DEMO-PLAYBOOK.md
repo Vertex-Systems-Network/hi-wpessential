@@ -72,6 +72,7 @@ Read it fully before starting a demo. Update it when a rule changes; never work 
       - Menus and footer link every key page.
       - Readable URLs and slugs set in the package.
     - **Gate.** Lighthouse SEO = 100 and Accessibility ≥ 95, mobile and desktop, on every page template of every demo, both builders, before release.
+- **1.14 Legal pages on every demo.** Privacy Policy (`privacy-policy`), Terms & Conditions (`terms`), Refund Policy (`refund-policy`) and Cookie Policy (`cookie-policy`). `tools/demo-builder/legal.py` writes them from the demo's `LEGAL = (brand, email, what it sells)`; `build.py` adds them to both packages and the footer links all four. Base uses `{{site:name}}` / `{{site:email}}` so the importing site's own name and admin email appear. The text is a starting point the site owner reviews with a legal adviser.
 
 ## 2. Figma structure (file `5AqHWOUl6bcITWWj4PPoAF`)
 
@@ -144,6 +145,7 @@ Elements opt in with the block class `wpe-anim` plus `wpe-anim--fade-up|fade|zoo
 - [ ] Figma audit: no clipped text, no word broken mid-word, no empty frame inflating headers, no tall empty column next to a long one
 - [ ] Differentiation table (§7) updated
 - [ ] Hover/focus/active states on every interactive element, matching the niche research (§1.12), in Figma, Gutenberg, Elementor and MCP builds; reduced-motion respected
+- [ ] Legal pages (§1.14): Privacy, Terms, Refund, Cookie — imported, linked in the footer, no tokens left
 - [ ] SEO gate (§1.13): Lighthouse SEO 100 / A11y ≥ 95 on every template, both builders; JSON-LD valid; unique titles + descriptions; 0 broken links
 
 ## 7. Demo register (keep up to date)

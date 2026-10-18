@@ -32,7 +32,7 @@
 	};
 
 	const P = {
-		logo: '<defs><linearGradient id="wpe-w" x1="2" y1="12" x2="21" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5ac8d6"/><stop offset=".5" stop-color="#6188c6"/><stop offset="1" stop-color="#625ba8"/></linearGradient></defs><path d="M3 4.5 7 19l4-10.5L15 19l4-14.5" fill="none" stroke="url(#wpe-w)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21.6" cy="19.2" r="2" fill="#5ac8d6" stroke="none"/>',
+		logo: '<defs><linearGradient id="wpe-w" x1="2" y1="12" x2="21" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4a90f5"/><stop offset=".5" stop-color="#2f6be0"/><stop offset="1" stop-color="#1f48a6"/></linearGradient></defs><path d="M3 4.5 7 19l4-10.5L15 19l4-14.5" fill="none" stroke="url(#wpe-w)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21.6" cy="19.2" r="2" fill="#ec7d1a" stroke="none"/>',
 		home: '<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/>',
 		grid: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
 		plug: '<path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0V8ZM12 18v4"/>',
@@ -228,7 +228,7 @@
 	const ring = ( pct, label, cls = '' ) => {
 		const r = 84;
 		const c = 2 * Math.PI * r;
-		return `<div class="wpe-ring ${ cls }"><svg viewBox="0 0 200 200"><defs><linearGradient id="wpe-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#625ba8"/><stop offset=".6" stop-color="#6188c6"/><stop offset="1" stop-color="#5ac8d6"/></linearGradient></defs><circle class="wpe-ring__track" cx="100" cy="100" r="${ r }"/><circle class="wpe-ring__bar" cx="100" cy="100" r="${ r }" stroke-dasharray="${ c }" stroke-dashoffset="${ c - ( c * pct ) / 100 }"/></svg><div class="wpe-ring__label"><b>${ pct }<small>%</small></b><span>${ esc( label ) }</span></div></div>`;
+		return `<div class="wpe-ring ${ cls }"><svg viewBox="0 0 200 200"><defs><linearGradient id="wpe-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f48a6"/><stop offset=".6" stop-color="#2f6be0"/><stop offset="1" stop-color="#4a90f5"/></linearGradient></defs><circle class="wpe-ring__track" cx="100" cy="100" r="${ r }"/><circle class="wpe-ring__bar" cx="100" cy="100" r="${ r }" stroke-dasharray="${ c }" stroke-dashoffset="${ c - ( c * pct ) / 100 }"/></svg><div class="wpe-ring__label"><b>${ pct }<small>%</small></b><span>${ esc( label ) }</span></div></div>`;
 	};
 
 	/* ------------------------------------------------------------------ welcome */
@@ -1020,7 +1020,7 @@
 		const ctx = c.getContext( '2d' );
 		const W = ( c.width = host.clientWidth );
 		const H = ( c.height = host.clientHeight );
-		const colors = [ '#625ba8', '#6188c6', '#5ac8d6', '#f5b547', '#3dd68c', '#ffffff' ];
+		const colors = [ '#1f48a6', '#2f6be0', '#ec7d1a', '#f7a23e', '#3dd68c', '#ffffff' ];
 		const parts = Array.from( { length: 140 }, () => ( { x: W / 2 + ( Math.random() - 0.5 ) * 200, y: H * 0.35, vx: ( Math.random() - 0.5 ) * 14, vy: -Math.random() * 14 - 4, s: Math.random() * 6 + 4, r: Math.random() * 6, vr: ( Math.random() - 0.5 ) * 0.3, c: colors[ Math.floor( Math.random() * colors.length ) ] } ) );
 		let t = 0;
 		const tick = () => {

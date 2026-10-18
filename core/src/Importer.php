@@ -539,7 +539,7 @@ class Importer {
 	private function tokens( $text, $late = false ) {
 		$map = $this->job['map'];
 		return preg_replace_callback(
-			'/\{\{(pattern|media|media_id|theme|home|page|post_id|term_link|woo):?([a-z0-9\/_.-]*)\}\}/',
+			'/\{\{(pattern|media|media_id|theme|home|page|post_id|term_link|woo|site):?([a-z0-9\/_.-]*)\}\}/',
 			static function ( $m ) use ( $map, $late ) {
 				switch ( $m[1] ) {
 					case 'pattern':
@@ -566,6 +566,12 @@ class Importer {
 							return $m[0];
 						}
 						return function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( $m[2] ) : home_url( '/' );
+					case 'site':
+						// The importing site's own name and admin email, e.g. in the legal pages.
+						if ( ! $late ) {
+							return $m[0];
+						}
+						return esc_html( 'email' === $m[2] ? (string) get_option( 'admin_email' ) : (string) get_option( 'blogname' ) );
 					case 'term_link':
 						if ( ! $late || empty( $map['terms'][ $m[2] ] ) ) {
 							return $late ? home_url( '/' ) : $m[0];

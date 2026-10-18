@@ -460,3 +460,6 @@ SEO = {
     'help': 'Maison shipping and returns: delivery times, costs, free 30-day returns and how to send an order back.',
     'journal': 'The Maison journal: styling notes, atelier stories and the ideas behind each collection.',
 }
+
+# Brand, contact email and what the site sells, used for the legal pages (tools/demo-builder/legal.py).
+LEGAL = ('Maison', 'care@maison-atelier.com', 'our clothing and accessories')
