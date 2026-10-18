@@ -199,6 +199,75 @@
 			"slug": "travel"
 		}
 	],
+	"forms": [
+		{
+			"key": "care",
+			"title": "Client care — Maison",
+			"submit": "Send to client care",
+			"message": "Thank you — our client care team replies within one working day.",
+			"settings": {
+				"subject": "Client care: {field_id=\"1\"}"
+			},
+			"fields": [
+				{
+					"type": "name",
+					"label": "Full name",
+					"required": true,
+					"size": "medium"
+				},
+				{
+					"type": "email",
+					"label": "Email",
+					"required": true,
+					"size": "medium"
+				},
+				{
+					"type": "select",
+					"label": "How can we help?",
+					"required": true,
+					"choices": [
+						"Sizing & fit advice",
+						"My order & delivery",
+						"Returns & exchanges",
+						"Repairs & aftercare",
+						"Book an atelier appointment",
+						"Press & wholesale"
+					]
+				},
+				{
+					"type": "text",
+					"label": "Order number",
+					"placeholder": "e.g. MA-104 233",
+					"size": "medium"
+				},
+				{
+					"type": "select",
+					"label": "Preferred store",
+					"choices": [
+						"Paris — Le Marais",
+						"Milan — Brera",
+						"London — Marylebone",
+						"Online only"
+					],
+					"size": "medium"
+				},
+				{
+					"type": "textarea",
+					"label": "Message",
+					"required": true,
+					"placeholder": "Tell us the piece, size and what you need."
+				},
+				{
+					"type": "checkbox",
+					"label": "Consent",
+					"required": true,
+					"choices": [
+						"I agree to the Privacy Policy and to being contacted about my request."
+					]
+				}
+			]
+		}
+	],
 	"content": [
 		{
 			"key": "home",
@@ -4330,7 +4399,84 @@
 					"isInner": false
 				},
 				{
-					"id": "2a79ea2",
+					"id": "6c4b761",
+					"elType": "container",
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 24,
+							"column": "24",
+							"row": "24",
+							"isLinked": true
+						},
+						"boxed_width": {
+							"unit": "px",
+							"size": 1200,
+							"sizes": []
+						},
+						"padding": {
+							"unit": "px",
+							"top": "96",
+							"right": "24",
+							"bottom": "96",
+							"left": "24",
+							"isLinked": false
+						},
+						"padding_mobile": {
+							"unit": "px",
+							"top": "48",
+							"right": "20",
+							"bottom": "48",
+							"left": "20",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "1d7f7ab",
+							"elType": "widget",
+							"widgetType": "heading",
+							"settings": {
+								"title": "Write to client care",
+								"header_size": "h2",
+								"__globals__": {
+									"title_color": "globals/colors?id=text",
+									"typography_typography": "globals/typography?id=primary"
+								},
+								"align": "center"
+							},
+							"elements": []
+						},
+						{
+							"id": "2a79ea2",
+							"elType": "widget",
+							"widgetType": "text-editor",
+							"settings": {
+								"editor": "<p>Sizing, orders, returns, repairs or an atelier appointment — tell us and the right person replies.</p>",
+								"__globals__": {
+									"text_color": "globals/colors?id=wpe07d0ec3",
+									"typography_typography": "globals/typography?id=text"
+								},
+								"align": "center"
+							},
+							"elements": []
+						},
+						{
+							"id": "1c9ac01",
+							"elType": "widget",
+							"widgetType": "shortcode",
+							"settings": {
+								"shortcode": "[wpforms id=\"{{form:care}}\" title=\"false\"]"
+							},
+							"elements": []
+						}
+					],
+					"isInner": false
+				},
+				{
+					"id": "140f696",
 					"elType": "container",
 					"settings": {
 						"content_width": "full",
@@ -4361,7 +4507,7 @@
 					},
 					"elements": [
 						{
-							"id": "1d7f7ab",
+							"id": "0640966",
 							"elType": "widget",
 							"widgetType": "google_maps",
 							"settings": {
@@ -4396,7 +4542,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "140f696",
+					"id": "0777d5c",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4432,7 +4578,7 @@
 					},
 					"elements": [
 						{
-							"id": "1c9ac01",
+							"id": "b73ce39",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -4459,7 +4605,7 @@
 							"elements": []
 						},
 						{
-							"id": "6c4b761",
+							"id": "bd4c9ab",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -4495,7 +4641,7 @@
 							"elements": []
 						},
 						{
-							"id": "0640966",
+							"id": "82aa4b0",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -4517,7 +4663,7 @@
 					"isInner": false
 				},
 				{
-					"id": "5878a7a",
+					"id": "a4a042c",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4553,38 +4699,38 @@
 					},
 					"elements": [
 						{
-							"id": "7e7757b",
+							"id": "149e967",
 							"elType": "widget",
 							"widgetType": "accordion",
 							"settings": {
 								"tabs": [
 									{
-										"_id": "b73ce39",
+										"_id": "fa7cdfa",
 										"tab_title": "How long does delivery take?",
 										"tab_content": "<p>Orders placed before 2 pm ship the same day. EU and UK delivery takes 2–4 working days; the rest of the world 5–8.</p>"
 									},
 									{
-										"_id": "bd4c9ab",
+										"_id": "9766527",
 										"tab_title": "Is shipping free?",
 										"tab_content": "<p>Yes, on orders over €150. Below that, standard delivery is €8 and express is €15.</p>"
 									},
 									{
-										"_id": "82aa4b0",
+										"_id": "7e7757b",
 										"tab_title": "How do returns work?",
 										"tab_content": "<p>You have 30 days to return unworn pieces with their tags. Start a return from My Account and print the prepaid label.</p>"
 									},
 									{
-										"_id": "0777d5c",
+										"_id": "5878a7a",
 										"tab_title": "When will I get my refund?",
 										"tab_content": "<p>Within 5 working days of the parcel reaching our studio, to the original payment method.</p>"
 									},
 									{
-										"_id": "fa7cdfa",
+										"_id": "006f52e",
 										"tab_title": "How do I find my size?",
 										"tab_content": "<p>Each product page shows the garment measurements. Between sizes? Take the larger for knitwear and the smaller for tailoring.</p>"
 									},
 									{
-										"_id": "9766527",
+										"_id": "3636638",
 										"tab_title": "Do you repair Maison pieces?",
 										"tab_content": "<p>Always. Email care@maison-atelier.com with a photo and we will send a free repair label.</p>"
 									}
@@ -4606,7 +4752,7 @@
 					"isInner": false
 				},
 				{
-					"id": "149e967",
+					"id": "bf82296",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4646,7 +4792,7 @@
 					},
 					"elements": [
 						{
-							"id": "006f52e",
+							"id": "1ff8a7b",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -4661,7 +4807,7 @@
 							"elements": []
 						},
 						{
-							"id": "3636638",
+							"id": "f7e6c85",
 							"elType": "widget",
 							"widgetType": "button",
 							"settings": {
@@ -4773,7 +4919,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "bf82296",
+					"id": "8f85517",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4809,7 +4955,7 @@
 					},
 					"elements": [
 						{
-							"id": "a4a042c",
+							"id": "8216124",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -4836,7 +4982,7 @@
 							"elements": []
 						},
 						{
-							"id": "1ff8a7b",
+							"id": "38af861",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -4872,7 +5018,7 @@
 							"elements": []
 						},
 						{
-							"id": "f7e6c85",
+							"id": "96da2f5",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -4894,7 +5040,7 @@
 					"isInner": false
 				},
 				{
-					"id": "38af861",
+					"id": "045117b",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -4930,7 +5076,7 @@
 					},
 					"elements": [
 						{
-							"id": "8216124",
+							"id": "8f53295",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -4965,7 +5111,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "045117b",
+					"id": "6cdd60e",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5001,7 +5147,7 @@
 					},
 					"elements": [
 						{
-							"id": "96da2f5",
+							"id": "fc22130",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5028,7 +5174,7 @@
 							"elements": []
 						},
 						{
-							"id": "8f85517",
+							"id": "4c5bde7",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5064,7 +5210,7 @@
 							"elements": []
 						},
 						{
-							"id": "8f53295",
+							"id": "cedebb6",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5086,7 +5232,7 @@
 					"isInner": false
 				},
 				{
-					"id": "4c5bde7",
+					"id": "9872ed9",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5122,7 +5268,7 @@
 					},
 					"elements": [
 						{
-							"id": "fc22130",
+							"id": "eecca5b",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5157,7 +5303,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "9872ed9",
+					"id": "cfecdb2",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5193,7 +5339,7 @@
 					},
 					"elements": [
 						{
-							"id": "cedebb6",
+							"id": "31fefc0",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5220,7 +5366,7 @@
 							"elements": []
 						},
 						{
-							"id": "6cdd60e",
+							"id": "9dcb88e",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5256,7 +5402,7 @@
 							"elements": []
 						},
 						{
-							"id": "eecca5b",
+							"id": "a2557a7",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5278,7 +5424,7 @@
 					"isInner": false
 				},
 				{
-					"id": "9dcb88e",
+					"id": "58a2fc6",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5314,7 +5460,7 @@
 					},
 					"elements": [
 						{
-							"id": "31fefc0",
+							"id": "0aa1883",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5349,7 +5495,7 @@
 			"content": "",
 			"elementor": [
 				{
-					"id": "58a2fc6",
+					"id": "084b6fb",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5385,7 +5531,7 @@
 					},
 					"elements": [
 						{
-							"id": "a2557a7",
+							"id": "bd686fd",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5412,7 +5558,7 @@
 							"elements": []
 						},
 						{
-							"id": "cfecdb2",
+							"id": "a597e50",
 							"elType": "widget",
 							"widgetType": "heading",
 							"settings": {
@@ -5448,7 +5594,7 @@
 							"elements": []
 						},
 						{
-							"id": "0aa1883",
+							"id": "0336dcb",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {
@@ -5470,7 +5616,7 @@
 					"isInner": false
 				},
 				{
-					"id": "a597e50",
+					"id": "0e65972",
 					"elType": "container",
 					"settings": {
 						"content_width": "boxed",
@@ -5506,7 +5652,7 @@
 					},
 					"elements": [
 						{
-							"id": "bd686fd",
+							"id": "85d8ce5",
 							"elType": "widget",
 							"widgetType": "text-editor",
 							"settings": {

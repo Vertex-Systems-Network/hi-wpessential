@@ -20,6 +20,7 @@ sys.path.insert(0, HERE)
 import importlib  # noqa: E402
 
 import base_elementor  # noqa: E402
+import demo_forms  # noqa: E402
 import legal  # noqa: E402
 
 # Server demos built from tools/demo-builder/<id>.py. The /build-demo skill appends new ids here.
@@ -88,7 +89,7 @@ def main():
     demo = json.load(open(os.path.join(base, 'demo.json')))
     demo['builders']['elementor'] = {'package': 'elementor', 'plugins': [
         {'slug': 'elementor', 'name': 'Elementor', 'source': 'wporg', 'state': 'required'},
-        {'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'recommended'}]}
+        {'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'recommended'}, demo_forms.PLUGIN]}
     with open(os.path.join(base, 'demo.json'), 'w', encoding='utf-8') as f:
         json.dump(demo, f, ensure_ascii=False, indent='\t')
         f.write('\n')

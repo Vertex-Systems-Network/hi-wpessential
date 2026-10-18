@@ -78,7 +78,9 @@ def pricing():
 def contact():
     return [title('Contact', 'Let\'s talk about your project', 'We reply within one working day.'),
             e.container(e.grid(e.icon_box('fas fa-envelope', 'Email', 'hello@wpessential.org'), e.icon_box('fas fa-phone', 'Phone', '+1 (555) 014-2290'),
-                               e.icon_box('fas fa-location-dot', 'Office', '120 Market Street, San Francisco, CA'), columns=3), pad=(24, 24, 96, 24))]
+                               e.icon_box('fas fa-location-dot', 'Office', '120 Market Street, San Francisco, CA'), columns=3), pad=(24, 24, 48, 24)),
+            e.container(e.heading('Send us a message'), e.text('Tell us what you need and we reply within one working day.'),
+                        e.shortcode('[wpforms id="{{form:contact}}" title="false"]'), bg='surface-alt', pad=(72, 24, 96, 24))]
 
 
 def faq():

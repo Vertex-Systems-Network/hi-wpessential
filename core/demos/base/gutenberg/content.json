@@ -124,6 +124,91 @@
 			}
 		}
 	],
+	"forms": [
+		{
+			"key": "contact",
+			"title": "Contact — project enquiry",
+			"submit": "Send message",
+			"message": "Thanks — we have your message and reply within one working day.",
+			"settings": {
+				"subject": "New enquiry from {field_id=\"1\"}"
+			},
+			"fields": [
+				{
+					"type": "name",
+					"label": "Full name",
+					"required": true,
+					"size": "medium"
+				},
+				{
+					"type": "email",
+					"label": "Email",
+					"required": true,
+					"size": "medium"
+				},
+				{
+					"type": "phone",
+					"label": "Phone",
+					"size": "medium"
+				},
+				{
+					"type": "text",
+					"label": "Company",
+					"size": "medium"
+				},
+				{
+					"type": "select",
+					"label": "What do you need?",
+					"required": true,
+					"choices": [
+						"Strategy & consulting",
+						"Website design",
+						"Development",
+						"Marketing & SEO",
+						"Ongoing support",
+						"Something else"
+					]
+				},
+				{
+					"type": "select",
+					"label": "Budget",
+					"choices": [
+						"Under $2,000",
+						"$2,000 – $5,000",
+						"$5,000 – $15,000",
+						"$15,000+",
+						"Not sure yet"
+					],
+					"size": "medium"
+				},
+				{
+					"type": "select",
+					"label": "When do you want to start?",
+					"choices": [
+						"As soon as possible",
+						"Within a month",
+						"In 1–3 months",
+						"Just exploring"
+					],
+					"size": "medium"
+				},
+				{
+					"type": "textarea",
+					"label": "Message",
+					"required": true,
+					"placeholder": "Tell us about your business and what you want to achieve."
+				},
+				{
+					"type": "checkbox",
+					"label": "Consent",
+					"required": true,
+					"choices": [
+						"I agree to the Privacy Policy and to being contacted about my request."
+					]
+				}
+			]
+		}
+	],
 	"content": [
 		{
 			"key": "home",
@@ -163,7 +248,7 @@
 			"title": "Contact",
 			"slug": "contact",
 			"template": "page-full-width",
-			"content": "{{pattern:wpessential/page-contact}}"
+			"content": "<!-- wp:group {\"tagName\":\"section\",\"align\":\"full\",\"className\":\"wpe-section wpe-section--sm wpe-page-hero wpe-center\",\"backgroundColor\":\"surface-alt\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"760px\"}} -->\n<section class=\"wp-block-group alignfull wpe-section wpe-section--sm wpe-page-hero wpe-center has-surface-alt-background-color has-background\"><!-- wp:paragraph {\"className\":\"is-style-wpe-overline\"} -->\n<p class=\"is-style-wpe-overline\">Contact</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading {\"level\":1,\"fontSize\":\"h1\"} -->\n<h1 class=\"wp-block-heading has-h-1-font-size\">Let’s talk about your next site</h1>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"className\":\"is-style-wpe-lead\"} -->\n<p class=\"is-style-wpe-lead\">Questions about demos, licensing or a custom build? Our team replies within one business day.</p>\n<!-- /wp:paragraph --></section>\n<!-- /wp:group -->\n\n<!-- wp:group {\"tagName\":\"section\",\"align\":\"full\",\"className\":\"wpe-section\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1200px\"}} -->\n<section class=\"wp-block-group alignfull wpe-section\"><!-- wp:columns {\"className\":\"wpe-gap-lg\"} -->\n<div class=\"wp-block-columns wpe-gap-lg\"><!-- wp:column {\"width\":\"40%\"} -->\n<div class=\"wp-block-column\" style=\"flex-basis:40%\"><!-- wp:group {\"className\":\"is-style-wpe-card wpe-feature-card\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"verticalAlignment\":\"top\"}} -->\n<div class=\"wp-block-group is-style-wpe-card wpe-feature-card\"><!-- wp:html -->\n<span class=\"wpe-icon-box\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 6h16v12H4z\"/><path d=\"M4 6l8 7 8-7\"/></svg></span>\n<!-- /wp:html -->\n\n<!-- wp:group {\"layout\":{\"type\":\"constrained\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading {\"level\":3,\"fontSize\":\"h4\"} -->\n<h3 class=\"wp-block-heading has-h-4-font-size\">Email us</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"textColor\":\"text-muted\"} -->\n<p class=\"has-text-muted-color has-text-color\">support@wpessential.org</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --><!-- wp:group {\"className\":\"is-style-wpe-card wpe-feature-card\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"verticalAlignment\":\"top\"}} -->\n<div class=\"wp-block-group is-style-wpe-card wpe-feature-card\"><!-- wp:html -->\n<span class=\"wpe-icon-box\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2\"/></svg></span>\n<!-- /wp:html -->\n\n<!-- wp:group {\"layout\":{\"type\":\"constrained\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading {\"level\":3,\"fontSize\":\"h4\"} -->\n<h3 class=\"wp-block-heading has-h-4-font-size\">Call us</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"textColor\":\"text-muted\"} -->\n<p class=\"has-text-muted-color has-text-color\">+92 42 0000 0000</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --><!-- wp:group {\"className\":\"is-style-wpe-card wpe-feature-card\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"verticalAlignment\":\"top\"}} -->\n<div class=\"wp-block-group is-style-wpe-card wpe-feature-card\"><!-- wp:html -->\n<span class=\"wpe-icon-box\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z\"/><circle cx=\"12\" cy=\"10\" r=\"2.5\"/></svg></span>\n<!-- /wp:html -->\n\n<!-- wp:group {\"layout\":{\"type\":\"constrained\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading {\"level\":3,\"fontSize\":\"h4\"} -->\n<h3 class=\"wp-block-heading has-h-4-font-size\">Visit us</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"textColor\":\"text-muted\"} -->\n<p class=\"has-text-muted-color has-text-color\">Lahore, Pakistan</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --><!-- wp:group {\"className\":\"is-style-wpe-card wpe-feature-card\",\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"verticalAlignment\":\"top\"}} -->\n<div class=\"wp-block-group is-style-wpe-card wpe-feature-card\"><!-- wp:html -->\n<span class=\"wpe-icon-box\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 3\"/></svg></span>\n<!-- /wp:html -->\n\n<!-- wp:group {\"layout\":{\"type\":\"constrained\"}} -->\n<div class=\"wp-block-group\"><!-- wp:heading {\"level\":3,\"fontSize\":\"h4\"} -->\n<h3 class=\"wp-block-heading has-h-4-font-size\">Support hours</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"textColor\":\"text-muted\"} -->\n<p class=\"has-text-muted-color has-text-color\">Replies within one business day</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {\"width\":\"60%\",\"className\":\"is-style-wpe-card wpe-feature-card\"} -->\n<div class=\"wp-block-column is-style-wpe-card wpe-feature-card\" style=\"flex-basis:60%\"><!-- wp:heading {\"level\":3} -->\n<h3 class=\"wp-block-heading\">Send us a message</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"textColor\":\"text-muted\"} -->\n<p class=\"has-text-muted-color has-text-color\">Tell us what you need and we reply within one working day.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:shortcode -->\n[wpforms id=\"{{form:contact}}\" title=\"false\"]\n<!-- /wp:shortcode --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></section>\n<!-- /wp:group -->\n\n<!-- wp:pattern {\"slug\":\"wpessential/faq\"} /-->"
 		},
 		{
 			"key": "faq",

@@ -4,6 +4,7 @@ Companies and people are fictional. Event dates are fixed (13–14 May 2027) so 
 the agenda and The Events Calendar always agree.
 """
 import blocks as b
+import demo_forms as forms
 import elementor as e
 
 ID = 'pulse'
@@ -300,7 +301,9 @@ def g_contact():
                       ('Tickets', '<a href="mailto:tickets@pulseconf.io">tickets@pulseconf.io</a>'),
                       ('Sponsors', '<a href="mailto:partners@pulseconf.io">partners@pulseconf.io</a>'),
                       ('Press', '<a href="mailto:press@pulseconf.io">press@pulseconf.io</a>'),
-                      ('Office', 'Rossio 42, 1100-200 Lisboa<br>+351 21 340 2290')]]), className='wpe-section wpe-section--sm'))
+                      ('Office', 'Rossio 42, 1100-200 Lisboa<br>+351 21 340 2290')]]), className='wpe-section wpe-section--sm'),
+                  b.section(b.h('Send us a message', size='h2'), b.p('Pick a topic so it reaches the right person first time.', color='text-muted'),
+                            b.shortcode('[wpforms id="{{form:contact}}" title="false"]'), className='wpe-section wpe-section--sm', content='720px', bg='surface-alt'))
 
 
 # Elementor ------------------------------------------------------------------------------
@@ -422,6 +425,8 @@ def e_contact():
             e.container(e.grid(*[e.icon_box(i, t, d) for i, t, d in [('fas fa-ticket', 'Tickets', 'tickets@pulseconf.io'), ('fas fa-handshake', 'Sponsors', 'partners@pulseconf.io'),
                                                                      ('fas fa-newspaper', 'Press', 'press@pulseconf.io'), ('fas fa-location-dot', 'Office', 'Rossio 42, 1100-200 Lisboa · +351 21 340 2290')]], columns=4),
                         pad=(24, 24, 56, 24)),
+            e.container(e.heading('Send us a message'), e.text('Pick a topic so it reaches the right person first time.'),
+                        e.shortcode('[wpforms id="{{form:contact}}" title="false"]'), bg='surface-alt', pad=(72, 24, 72, 24)),
             e.container(e.map_widget('Rossio 42, 1100-200 Lisboa'), pad=0, boxed=False)]
 
 
@@ -508,7 +513,7 @@ def package(builder):
                                             'woocommerce_cod_settings': {'enabled': 'yes', 'title': 'Pay by bank transfer on invoice'}}}}
     if builder == 'elementor':
         settings['elementor_kit'] = e.kit(container_width=1200, button_radius=999, field_radius=14, button_padding=(14, 24))
-    return {'version': 1, 'media': media, 'terms': terms, 'content': content, 'products': products, 'menus': menus, 'settings': settings}
+    return {'version': 1, 'media': media, 'terms': terms, 'forms': [forms.pulse_contact()], 'content': content, 'products': products, 'menus': menus, 'settings': settings}
 
 
 DEMO = {
@@ -520,7 +525,7 @@ DEMO = {
     'highlights': ['5 calendar events', '4 ticket passes', '8 speakers', 'Light & dark'],
     'motion': 'dynamic',
     'plugins': [{'slug': 'the-events-calendar', 'name': 'The Events Calendar', 'source': 'wporg', 'state': 'required'},
-                {'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'}],
+                {'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'}, forms.PLUGIN],
 }
 
 # Unique meta description per page (playbook §1.13), stored as _wpe_seo_description.

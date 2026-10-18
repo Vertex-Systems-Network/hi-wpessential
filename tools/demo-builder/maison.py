@@ -1,5 +1,6 @@
 """Maison — fashion store demo (Pro). Research and direction: docs/demos/maison.md."""
 import blocks as b
+import demo_forms as forms
 import elementor as e
 
 ID = 'maison'
@@ -274,7 +275,10 @@ def g_contact():
         b.column(b.h('Customer care', size='h2'),
                  b.ul(['Email: <a href="mailto:care@maison-atelier.com">care@maison-atelier.com</a>', 'Phone: +33 1 42 71 18 40 (Mon–Fri, 9:00–18:00 CET)', 'Press &amp; wholesale: <a href="mailto:studio@maison-atelier.com">studio@maison-atelier.com</a>']),
                  b.buttons(b.button('Shipping &amp; returns', '{{page:help}}', style='wpe-outline')), valign='center'), valign='center', className='wpe-gap-lg'), bg='surface-alt')
-    return b.join(head, stores, care)
+    form = b.section(b.h('Write to client care', size='h2', align='center'),
+                     b.p('Sizing, orders, returns, repairs or an atelier appointment — tell us and the right person replies.', align='center', color='text-muted'),
+                     b.shortcode('[wpforms id="{{form:care}}" title="false"]'), className='wpe-section', content='720px')
+    return b.join(head, stores, form, care)
 
 
 def g_help():
@@ -372,6 +376,9 @@ def e_contact():
                                 e.icon_list(['care@maison-atelier.com', '+33 1 42 71 18 40 (Mon–Fri, 9:00–18:00 CET)', 'Press & wholesale: studio@maison-atelier.com'], icon='fas fa-envelope'),
                                 e.button('Shipping & returns', '{{page:help}}', 'outline'), width=50, justify='center'), gap=64),
                     bg='surface-alt', pad=(96, 24, 96, 24)),
+        e.container(e.heading('Write to client care', align='center'),
+                    e.text('Sizing, orders, returns, repairs or an atelier appointment — tell us and the right person replies.', align='center'),
+                    e.shortcode('[wpforms id="{{form:care}}" title="false"]'), pad=(96, 24, 96, 24)),
         e.container(e.map_widget('14 Rue de Saintonge, 75003 Paris'), pad=0, boxed=False),
     ]
 
@@ -437,7 +444,7 @@ def package(builder):
                                                                   'woocommerce_cod_settings': {'enabled': 'yes', 'title': 'Pay in store'}}}}
     if builder == 'elementor':
         settings['elementor_kit'] = e.kit(container_width=1200, button_radius=0, field_radius=0, button_padding=(16, 28))
-    return {'version': 1, 'media': media, 'terms': terms, 'content': content, 'products': products, 'menus': menus, 'settings': settings}
+    return {'version': 1, 'media': media, 'terms': terms, 'forms': [forms.maison_care()], 'content': content, 'products': products, 'menus': menus, 'settings': settings}
 
 
 DEMO = {
@@ -448,7 +455,7 @@ DEMO = {
     'pages': ['Home', 'Shop', 'Lookbook', 'Atelier', 'Journal', 'Stores & Contact', 'Shipping & Returns'],
     'highlights': ['12 products', 'Variable sizes & colours', 'Lookbook', 'Light & dark'],
     'motion': 'editorial',
-    'plugins': [{'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'}],
+    'plugins': [{'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'}, forms.PLUGIN],
 }
 
 # Unique meta description per page (playbook §1.13), stored as _wpe_seo_description.
