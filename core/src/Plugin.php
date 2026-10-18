@@ -38,6 +38,7 @@ final class Plugin {
 	 */
 	private function __construct() {
 		add_action( 'rest_api_init', array( new Rest(), 'register' ) );
+		add_action( 'rest_api_init', array( Playground::class, 'routes' ) );
 		if ( is_admin() ) {
 			( new Admin() )->hooks();
 		}

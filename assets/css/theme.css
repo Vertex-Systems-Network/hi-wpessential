@@ -547,7 +547,8 @@ progress::-moz-progress-bar { background: var(--wpe-primary); }
 .wpe-footer a:hover { color: #fff; text-decoration: none; }
 .wpe-footer .wp-block-navigation .wp-block-navigation-item__content { padding: 4px 0; }
 .wpe-footer .wp-block-navigation .wp-block-navigation-item__content:hover { background: none; color: #fff; }
-.wpe-footer__newsletter { background: var(--wp--preset--gradient--brand); border-radius: 20px; padding-inline: clamp(1.25rem, 4vw, 3rem); }
+/* Two classes: in the editor, core's nested .has-global-padding rule would otherwise zero the side padding. */
+.wpe-footer .wpe-footer__newsletter { background: var(--wp--preset--gradient--brand); border-radius: 20px; padding-inline: clamp(1.25rem, 4vw, 3rem); }
 .wpe-footer .wp-block-separator { color: rgba(255,255,255,.1); }
 
 /* ---------------------------------------------------------------------

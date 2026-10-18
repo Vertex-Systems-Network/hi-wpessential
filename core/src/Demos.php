@@ -123,7 +123,14 @@ class Demos {
 			};
 			$demo['thumbnail'] = $resolve( $demo['thumbnail'] ?? '' );
 			$demo['preview']   = array_map( $resolve, (array) ( $demo['preview'] ?? array() ) );
-			$demos[]           = $demo;
+			// Live preview in WordPress Playground, served from this site.
+			foreach ( array_keys( (array) ( $demo['builders'] ?? array() ) ) as $builder ) {
+				$live = Playground::open_url( $demo, $builder );
+				if ( $live ) {
+					$demo['playground'][ $builder ] = $live;
+				}
+			}
+			$demos[] = $demo;
 		}
 		return $demos;
 	}
