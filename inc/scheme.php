@@ -72,8 +72,10 @@ function wpessential_scheme_settings() {
 	$dark = wpessential_read_theme_json_file( 'styles/dark.json' );
 
 	// A demo style variation brings its own dark palette (settings.custom.scheme.dark, slug => hex).
+	// Some WordPress versions return the whole settings tree for a missing path, so keep only colour strings.
 	$own = wp_get_global_settings( array( 'custom', 'scheme', 'dark' ) );
-	if ( is_array( $own ) && $own ) {
+	$own = is_array( $own ) ? array_filter( $own, static fn( $hex ) => is_string( $hex ) && preg_match( '/^(#|rgb|hsl)/i', $hex ) ) : array();
+	if ( $own ) {
 		$palette = array();
 		foreach ( $own as $slug => $hex ) {
 			$palette[] = array(
