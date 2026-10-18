@@ -3,8 +3,10 @@
     python3 tools/demo-builder/build.py            # write content.json + demo.json for every demo
     python3 tools/demo-builder/build.py --zip      # also write dist/<id>-<builder>.zip for the server
 
-Free demos live in core/demos/<id> (bundled with the theme). Pro demos live in demos/<id> and
-are uploaded to the WPEssential Server as zips; the zip holds content.json and media/.
+Every demo is served by the WPEssential Server: upload dist/<id>-<builder>.zip to the demo
+(WPEssential → Demos) and the server hands it out by plan (free demos to everyone, Pro demos
+through a signed link after the license and plan are checked). Base also stays bundled in
+core/demos/base as an offline fallback; Pro demo sources live in demos/<id>.
 """
 import json
 import os
@@ -43,7 +45,7 @@ def zip_package(src_dir, builder, out):
     with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
         z.write(os.path.join(src_dir, builder, 'content.json'), 'content.json')
         media = os.path.join(src_dir, 'media')
-        for name in sorted(os.listdir(media)):
+        for name in sorted(os.listdir(media)) if os.path.isdir(media) else []:
             z.write(os.path.join(media, name), 'media/' + name)
 
 
@@ -68,6 +70,10 @@ def main():
         json.dump(demo, f, ensure_ascii=False, indent='\t')
         f.write('\n')
     print('built base elementor')
+    if '--zip' in sys.argv:
+        # Base images ship inside the theme (source "theme"), so its zips hold content.json only.
+        for builder in ('gutenberg', 'elementor'):
+            zip_package(base, builder, os.path.join(ROOT, 'dist', 'base-%s.zip' % builder))
 
 
 if __name__ == '__main__':

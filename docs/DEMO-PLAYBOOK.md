@@ -95,3 +95,30 @@ Elements opt in with the block class `wpe-anim` plus `wpe-anim--fade-up|fade|zoo
 | Base | Business / multi | Indigo #4F46E5 + violet, ink #0B1020 | Plus Jakarta Sans / Inter | Transparent, centred nav, CTA | Dark gradient, centred headline + browser mockup | Soft shadow, image top | 14–20 px | subtle | WooCommerce |
 | Maison | Fashion store | Warm ivory #F6F1EA, espresso #2B211B, clay #B5643C | Cormorant Garamond / Manrope | Centred logo, split nav, utility bar | Full-bleed editorial photo, oversized serif | Borderless, tall 3:4 image, hover second image | 0 px | editorial | WooCommerce |
 | Pulse | Conference / events | Electric lime #C6F432 on night #0A0A12, magenta accent | Space Grotesk / DM Sans | Sticky pill nav, ticket CTA, countdown bar | Kinetic type + speaker collage + countdown | Bordered tiles, big numbers | 24 px pills | dynamic | The Events Calendar, Event Tickets, WooCommerce |
+
+## 8. Build, ship and preview (record)
+
+- **One source, two builders.**
+  - `tools/demo-builder/<demo>.py` holds the content.
+  - `blocks.py` writes core-block markup exactly as the editor saves it.
+  - `elementor.py` writes native widgets bound to the Kit globals.
+  - Run `python3 tools/demo-builder/build.py --zip`.
+- **Settings a package can set** (the importer applies them all and restores them on removal):
+  - `style`: the variation in `styles/`, or `default`.
+  - `parts`: the header, `header-shop` and footer, as markup or as a part slug.
+  - `options`: `blogname` / `blogdescription`.
+  - `motion`, `woocommerce`.
+  - `elementor_kit`.
+- **Distribution.**
+  - Every demo zip is uploaded to the WPEssential Server under **Demos**.
+  - Free demos download for everyone.
+  - Pro demos download through a signed link after the server checks the license, domain and plan.
+  - Base also stays bundled as an offline fallback.
+- **Live demos.**
+  - Upload the theme zip under **Server → Settings → Live demos**.
+  - The library then opens each demo in WordPress Playground: the same package and importer, in the visitor's browser, with no demo sites to host.
+- **Validate before shipping.**
+  - Import on a clean site: 0 errors.
+  - Open every page in the block editor: 0 invalid blocks.
+  - Screenshot each page at 1440 and 390: no horizontal scroll.
+  - Check the Elementor import with the Kit synced (colours, fonts, site name).

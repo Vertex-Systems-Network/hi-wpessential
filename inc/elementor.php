@@ -124,6 +124,9 @@ function wpessential_sync_elementor_kit() {
 	$settings['system_colors']     = $system;
 	$settings['custom_colors']     = $custom;
 	$settings['system_typography'] = $typography;
+	// Kit "Site identity" writes back to blogname/blogdescription on save; keep it current.
+	$settings['site_name']        = get_option( 'blogname' );
+	$settings['site_description'] = get_option( 'blogdescription' );
 	try {
 		$kit->save( array( 'settings' => $settings ) );
 	} catch ( \Exception $e ) {

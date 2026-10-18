@@ -388,6 +388,7 @@ def e_help():
 # Package --------------------------------------------------------------------------------
 
 def package(builder):
+    e.FONTS = {'primary': 'Cormorant Garamond', 'text': 'Manrope', 'weight': '500'}
     media = [{'key': k, 'file': k + '.webp', 'title': t, 'alt': a} for k, t, a in MEDIA]
     terms = []
     for key, tax, name, slug, img in TERMS:

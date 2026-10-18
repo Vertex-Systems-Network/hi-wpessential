@@ -428,6 +428,7 @@ def e_contact():
 # Package --------------------------------------------------------------------------------
 
 def package(builder):
+    e.FONTS = {'primary': 'Space Grotesk', 'text': 'DM Sans', 'weight': '700'}
     media = [{'key': k, 'file': k + '.webp', 'title': t, 'alt': a} for k, t, a in MEDIA]
     terms = [
         {'key': 'pc-passes', 'taxonomy': 'product_cat', 'name': 'Passes', 'slug': 'passes', 'meta': {'thumbnail_id': '{{media_id:hero-stage}}'}},

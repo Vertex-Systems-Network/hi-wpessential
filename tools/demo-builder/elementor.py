@@ -10,6 +10,10 @@ import itertools
 
 _seq = itertools.count(1)
 
+# Font family names of the demo's style variation. Elementor cannot mix a global font with a
+# custom size, so sized headings name the family directly (set by each demo before building).
+FONTS = {'primary': 'Plus Jakarta Sans', 'text': 'Inter'}
+
 
 def _id():
     return hashlib.md5(str(next(_seq)).encode()).hexdigest()[:7]
@@ -125,11 +129,13 @@ def heading(text, level=2, color_slug='text', align=None, size_px=None, kind='pr
         s['align'] = align
     if size_px:
         s['typography_typography'] = 'custom'
+        s['typography_font_family'] = FONTS['primary' if kind in ('primary', 'secondary') else 'text']
+        s['typography_font_weight'] = FONTS.get('weight', '600')
+        s['typography_line_height'] = size(1.05, 'em')
         s['typography_font_size'] = size(size_px)
         s['typography_font_size_tablet'] = size(round(size_px * 0.8))
-        s['typography_font_size_mobile'] = size(round(size_px * 0.62))
+        s['typography_font_size_mobile'] = size(round(size_px * 0.55))
         s['__globals__'].pop('typography_typography')
-        s['__globals__']['typography_font_family'] = font(kind)
     return widget('heading', s)
 
 
@@ -140,17 +146,17 @@ def text(html, color_slug='text-muted', align=None, size_px=None):
         s['align'] = align
     if size_px:
         s['typography_typography'] = 'custom'
+        s['typography_font_family'] = FONTS['text']
         s['typography_font_size'] = size(size_px)
         s['__globals__'].pop('typography_typography')
-        s['__globals__']['typography_font_family'] = font('text')
     return widget('text-editor', s)
 
 
 def overline(label, color_slug='accent', align=None):
     s = {'title': label, 'header_size': 'p', 'typography_typography': 'custom', 'typography_font_size': size(13),
          'typography_font_weight': '600', 'typography_text_transform': 'uppercase',
-         'typography_letter_spacing': size(1.6), '__globals__': {'title_color': color(color_slug),
-                                                                 'typography_font_family': font('text')}}
+         'typography_letter_spacing': size(1.6), 'typography_font_family': FONTS['text'],
+         '__globals__': {'title_color': color(color_slug)}}
     if align:
         s['align'] = align
     return widget('heading', s)

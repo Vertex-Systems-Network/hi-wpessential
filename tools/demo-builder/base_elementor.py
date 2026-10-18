@@ -86,6 +86,7 @@ def faq():
 
 
 def package():
+    e.FONTS = {'primary': 'Plus Jakarta Sans', 'text': 'Inter', 'weight': '800'}
     data = json.load(open(GUTENBERG))
     builders = {'home': home, 'about': about, 'services': services, 'pricing': pricing, 'contact': contact, 'faq': faq}
     for item in data['content']:

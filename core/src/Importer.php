@@ -1210,8 +1210,9 @@ class Importer {
 	 * @param string $name Variation file name without extension.
 	 */
 	private function style_variation( $name ) {
+		// "default" resets to the theme's own styles, so a previous demo's look never lingers.
 		$file = get_theme_file_path( 'styles/' . $name . '.json' );
-		$data = is_readable( $file ) ? json_decode( (string) file_get_contents( $file ), true ) : null; // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local theme file.
+		$data = 'default' === $name ? array( 'title' => __( 'Default', 'wpessential' ) ) : ( is_readable( $file ) ? json_decode( (string) file_get_contents( $file ), true ) : null ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local theme file.
 		if ( ! is_array( $data ) || ! class_exists( 'WP_Theme_JSON_Resolver' ) ) {
 			/* translators: %s: variation. */
 			$this->log( 'warning', sprintf( __( 'Style "%s" was not found in the theme, so the default colours stay.', 'wpessential' ), $name ), __( 'Update the WPEssential theme, then import again.', 'wpessential' ) );
@@ -1328,6 +1329,10 @@ class Importer {
 		}
 		$this->track( 'kit', array( $kit_id, get_post_meta( $kit_id, '_elementor_page_settings', true ) ) );
 		$settings = (array) get_post_meta( $kit_id, '_elementor_page_settings', true );
+		$values  += array(
+			'site_name'        => get_option( 'blogname' ),
+			'site_description' => get_option( 'blogdescription' ),
+		);
 		update_post_meta( $kit_id, '_elementor_page_settings', array_merge( $settings, $values ) );
 		$this->log( 'info', __( 'Elementor Kit layout, buttons and form styles set.', 'wpessential' ) );
 	}
