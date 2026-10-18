@@ -23,6 +23,7 @@ class Admin {
 		add_action( 'admin_post_wpes_settings', array( __CLASS__, 'save_settings' ) );
 		add_action( 'admin_post_wpes_run_cron', array( __CLASS__, 'run_cron' ) );
 		add_action( 'admin_post_wpes_release', array( __CLASS__, 'save_release' ) );
+		add_action( 'admin_post_wpes_license_add', array( __CLASS__, 'add_license' ) );
 		add_action( 'admin_post_wpes_release_pull', array( __CLASS__, 'pull_release' ) );
 	}
 
@@ -32,6 +33,7 @@ class Admin {
 	public static function menu() {
 		add_menu_page( __( 'WPEssential Server', 'wpessential-server' ), __( 'WPE Server', 'wpessential-server' ), 'manage_woocommerce', 'wpes-server', array( __CLASS__, 'licenses' ), 'dashicons-admin-network', 56 );
 		add_submenu_page( 'wpes-server', __( 'Licenses', 'wpessential-server' ), __( 'Licenses', 'wpessential-server' ), 'manage_woocommerce', 'wpes-server', array( __CLASS__, 'licenses' ) );
+		add_submenu_page( 'wpes-server', __( 'Add license', 'wpessential-server' ), __( 'Add license', 'wpessential-server' ), 'manage_woocommerce', 'wpes-license-new', array( __CLASS__, 'new_license' ) );
 		add_submenu_page( 'wpes-server', __( 'Upload release', 'wpessential-server' ), __( 'Upload release', 'wpessential-server' ), 'manage_options', 'wpes-release', array( __CLASS__, 'release' ) );
 		add_submenu_page( 'wpes-server', __( 'Settings', 'wpessential-server' ), __( 'Settings', 'wpessential-server' ), 'manage_options', 'wpes-settings', array( __CLASS__, 'settings' ) );
 	}
@@ -58,6 +60,7 @@ class Admin {
 			)
 		);
 		echo '<div class="wrap"><h1 class="wp-heading-inline">' . esc_html__( 'Licenses', 'wpessential-server' ) . '</h1>';
+		echo '<a class="page-title-action" href="' . esc_url( admin_url( 'admin.php?page=wpes-license-new' ) ) . '">' . esc_html__( 'Add license', 'wpessential-server' ) . '</a>';
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" style="display:inline">' . wp_nonce_field( 'wpes_run_cron', '_wpnonce', true, false ) . '<input type="hidden" name="action" value="wpes_run_cron"><button class="page-title-action">' . esc_html__( 'Run renewals now', 'wpessential-server' ) . '</button></form>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Nonce markup.
 		echo '<hr class="wp-header-end">';
 		echo '<form method="get"><input type="hidden" name="page" value="wpes-server"><p class="search-box"><select name="status"><option value="">' . esc_html__( 'All statuses', 'wpessential-server' ) . '</option>';
@@ -120,6 +123,7 @@ class Admin {
 		echo '<div class="wrap"><h1><code>' . esc_html( $license['license_key'] ) . '</code></h1>';
 		echo '<p>' . esc_html( $user ? $user->display_name . ' · ' . $user->user_email : '' ) . ( $license['order_id'] ? ' · <a href="' . esc_url( admin_url( 'post.php?post=' . (int) $license['order_id'] . '&action=edit' ) ) . '">' . esc_html( sprintf( /* translators: %d: order. */ __( 'Order #%d', 'wpessential-server' ), $license['order_id'] ) ) . '</a>' : '' ) . '</p>';
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">' . wp_nonce_field( 'wpes_license_save', '_wpnonce', true, false ) . '<input type="hidden" name="action" value="wpes_license_save"><input type="hidden" name="id" value="' . (int) $id . '"><table class="form-table">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Nonce markup.
+		echo '<tr><th>' . esc_html__( 'Plan', 'wpessential-server' ) . '</th><td>' . self::plan_select( $license['plan'] ) . '<p class="description">' . esc_html__( 'Decides Pro demo access. Websites, expiry and white label below stay as you set them.', 'wpessential-server' ) . '</p></td></tr>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in plan_select().
 		echo '<tr><th>' . esc_html__( 'Status', 'wpessential-server' ) . '</th><td><select name="status">';
 		foreach ( array( 'active', 'expired', 'cancelled', 'revoked' ) as $s ) {
 			echo '<option value="' . esc_attr( $s ) . '"' . selected( $license['status'], $s, false ) . '>' . esc_html( ucfirst( $s ) ) . '</option>';
@@ -153,6 +157,17 @@ class Admin {
 		$id      = isset( $_POST['id'] ) ? absint( $_POST['id'] ) : 0;
 		$status  = isset( $_POST['status'] ) ? sanitize_key( wp_unslash( $_POST['status'] ) ) : 'active';
 		$expires = isset( $_POST['expires'] ) ? sanitize_text_field( wp_unslash( $_POST['expires'] ) ) : '';
+		$plan    = self::plan_by_key( isset( $_POST['plan'] ) ? sanitize_key( wp_unslash( $_POST['plan'] ) ) : '' );
+		Licenses::update(
+			$id,
+			array_filter(
+				array(
+					'plan'       => $plan ? $plan['key'] : null,
+					'product_id' => $plan ? (int) $plan['product_id'] : null,
+				),
+				'is_scalar'
+			)
+		);
 		Licenses::update(
 			$id,
 			array(
@@ -167,6 +182,94 @@ class Admin {
 			Licenses::deactivate( $id, $domain );
 		}
 		wp_safe_redirect( add_query_arg( array( 'page' => 'wpes-server', 'license' => $id, 'updated' => 1 ), admin_url( 'admin.php' ) ) ); // phpcs:ignore WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound -- Short redirect args.
+		exit;
+	}
+
+	/**
+	 * Plan dropdown.
+	 *
+	 * @param string $current Selected plan key.
+	 * @return string
+	 */
+	private static function plan_select( $current = '' ) {
+		$out = '<select name="plan">';
+		foreach ( Plans::all() as $plan ) {
+			$out .= '<option value="' . esc_attr( $plan['key'] ) . '"' . selected( $current, $plan['key'], false ) . '>' . esc_html( $plan['name'] ) . '</option>';
+		}
+		return $out . '</select>';
+	}
+
+	/**
+	 * Plan by key.
+	 *
+	 * @param string $key Plan key.
+	 * @return array|null
+	 */
+	private static function plan_by_key( $key ) {
+		$id = $key ? Plans::product_id( $key ) : 0;
+		return $id ? Plans::from_product( $id ) : null;
+	}
+
+	/**
+	 * Add license: give any user any plan with a custom website limit and end date.
+	 */
+	public static function new_license() {
+		echo '<div class="wrap"><h1>' . esc_html__( 'Add license', 'wpessential-server' ) . '</h1>';
+		echo '<p>' . esc_html__( 'Give a customer a license without an order: a free upgrade, a partner deal or extra websites. Leave a field empty to use the plan default.', 'wpessential-server' ) . '</p>';
+		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">' . wp_nonce_field( 'wpes_license_add', '_wpnonce', true, false ) . '<input type="hidden" name="action" value="wpes_license_add"><table class="form-table">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Nonce markup.
+		echo '<tr><th>' . esc_html__( 'User', 'wpessential-server' ) . '</th><td><input type="text" class="regular-text" name="user" required placeholder="' . esc_attr__( 'Email or username', 'wpessential-server' ) . '"><p class="description">' . esc_html__( 'A new customer account is created for an email that has none.', 'wpessential-server' ) . '</p></td></tr>';
+		echo '<tr><th>' . esc_html__( 'Plan', 'wpessential-server' ) . '</th><td>' . self::plan_select( 'pro_yearly' ) . '</td></tr>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in plan_select().
+		echo '<tr><th>' . esc_html__( 'Websites', 'wpessential-server' ) . '</th><td><input type="number" min="0" name="sites"> <span class="description">' . esc_html__( 'Empty = plan default, 0 = unlimited.', 'wpessential-server' ) . '</span></td></tr>';
+		echo '<tr><th>' . esc_html__( 'Expires (UTC)', 'wpessential-server' ) . '</th><td><input type="date" name="expires"> <label><input type="checkbox" name="never" value="1"> ' . esc_html__( 'Never', 'wpessential-server' ) . '</label> <span class="description">' . esc_html__( 'Empty = plan default.', 'wpessential-server' ) . '</span></td></tr>';
+		echo '<tr><th>' . esc_html__( 'White label', 'wpessential-server' ) . '</th><td><select name="white"><option value="">' . esc_html__( 'Plan default', 'wpessential-server' ) . '</option><option value="1">' . esc_html__( 'On', 'wpessential-server' ) . '</option><option value="0">' . esc_html__( 'Off', 'wpessential-server' ) . '</option></select></td></tr>';
+		echo '<tr><th>' . esc_html__( 'Copies', 'wpessential-server' ) . '</th><td><input type="number" min="1" max="50" name="count" value="1"> <span class="description">' . esc_html__( 'How many license keys to create for this user.', 'wpessential-server' ) . '</span></td></tr>';
+		echo '</table>';
+		submit_button( __( 'Create license', 'wpessential-server' ) );
+		echo '</form></div>';
+	}
+
+	/**
+	 * Create licenses from the Add license form.
+	 */
+	public static function add_license() {
+		check_admin_referer( 'wpes_license_add' );
+		if ( ! current_user_can( 'manage_woocommerce' ) ) {
+			wp_die( esc_html__( 'Not allowed.', 'wpessential-server' ) );
+		}
+		$who  = isset( $_POST['user'] ) ? sanitize_text_field( wp_unslash( $_POST['user'] ) ) : '';
+		$user = is_email( $who ) ? get_user_by( 'email', $who ) : get_user_by( 'login', $who );
+		if ( ! $user && is_email( $who ) ) {
+			$uid  = wc_create_new_customer( $who );
+			$user = is_wp_error( $uid ) ? null : get_userdata( $uid );
+		}
+		$plan = self::plan_by_key( isset( $_POST['plan'] ) ? sanitize_key( wp_unslash( $_POST['plan'] ) ) : '' );
+		if ( ! $user || ! $plan ) {
+			wp_die( esc_html__( 'Unknown user or plan.', 'wpessential-server' ), '', array( 'back_link' => true ) );
+		}
+		$fields = array();
+		if ( isset( $_POST['sites'] ) && '' !== $_POST['sites'] ) {
+			$fields['sites_limit'] = max( 0, (int) $_POST['sites'] );
+		}
+		if ( ! empty( $_POST['never'] ) ) {
+			$fields['expires_at'] = null;
+			$fields['auto_renew'] = 0;
+		} elseif ( ! empty( $_POST['expires'] ) ) {
+			$fields['expires_at'] = gmdate( 'Y-m-d 23:59:59', strtotime( sanitize_text_field( wp_unslash( $_POST['expires'] ) ) ) );
+			$fields['auto_renew'] = 0;
+		}
+		if ( isset( $_POST['white'] ) && '' !== $_POST['white'] ) {
+			$fields['white_label'] = (int) $_POST['white'] ? 1 : 0;
+		}
+		$count = isset( $_POST['count'] ) ? min( 50, max( 1, (int) $_POST['count'] ) ) : 1;
+		$last  = 0;
+		for ( $i = 0; $i < $count; $i++ ) {
+			$license = Licenses::create( $user->ID, $plan );
+			if ( $license && $fields ) {
+				Licenses::update( (int) $license['id'], $fields );
+			}
+			$last = $license ? (int) $license['id'] : $last;
+		}
+		wp_safe_redirect( 1 === $count && $last ? add_query_arg( array( 'page' => 'wpes-server', 'license' => $last ), admin_url( 'admin.php' ) ) : add_query_arg( array( 'page' => 'wpes-server', 's' => $user->user_email ), admin_url( 'admin.php' ) ) ); // phpcs:ignore WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound -- Short redirect args.
 		exit;
 	}
 

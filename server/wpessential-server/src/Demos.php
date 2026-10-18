@@ -220,6 +220,27 @@ class Demos {
 	}
 
 	/**
+	 * Thumbnail stored inside a demo's package, for entries without a featured image.
+	 *
+	 * @param string $demo Demo id.
+	 * @return string Image bytes, or '' when no package has one.
+	 */
+	public static function package_image( $demo ) {
+		foreach ( array( 'gutenberg', 'elementor' ) as $builder ) {
+			$zip  = new \ZipArchive();
+			$path = self::package_path( $demo, $builder );
+			if ( $path && is_readable( $path ) && true === $zip->open( $path ) ) {
+				$image = $zip->getFromName( 'thumbnail.webp' );
+				$zip->close();
+				if ( $image ) {
+					return $image;
+				}
+			}
+		}
+		return '';
+	}
+
+	/**
 	 * Private path of a package.
 	 *
 	 * @param string $demo    Demo id or "plugin".
@@ -280,7 +301,7 @@ class Demos {
 				'type'              => $m( 'type' ) ? $m( 'type' ) : 'free',
 				'min_theme_version' => $m( 'min_theme' ),
 				'preview_url'       => $m( 'preview_url' ),
-				'thumbnail'         => (string) get_the_post_thumbnail_url( $post, 'large' ),
+				'thumbnail'         => has_post_thumbnail( $post ) ? (string) get_the_post_thumbnail_url( $post, 'large' ) : add_query_arg( 'demo', $id, rest_url( Api::NS . '/thumbnail' ) ),
 				'pages'             => $list( $m( 'pages' ) ),
 				'highlights'        => $list( $m( 'highlights' ) ),
 				'builders'          => $builders,
