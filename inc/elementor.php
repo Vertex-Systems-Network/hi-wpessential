@@ -20,6 +20,22 @@ add_action(
 );
 
 /**
+ * The palette in use: theme.json, overridden by a style variation or Site Editor colours.
+ *
+ * @return array slug => hex.
+ */
+function wpessential_active_palette() {
+	$palettes = wp_get_global_settings( array( 'color', 'palette' ) );
+	$palette  = array();
+	foreach ( array_merge( (array) ( $palettes['theme'] ?? array() ), (array) ( $palettes['custom'] ?? array() ) ) as $color ) {
+		if ( isset( $color['slug'], $color['color'] ) ) {
+			$palette[ $color['slug'] ] = $color['color'];
+		}
+	}
+	return $palette;
+}
+
+/**
  * Copy the theme.json palette and fonts into the active Elementor Kit.
  *
  * @return bool True when the kit was updated.
@@ -33,10 +49,7 @@ function wpessential_sync_elementor_kit() {
 		return false;
 	}
 
-	$palette = array();
-	foreach ( wp_get_global_settings( array( 'color', 'palette', 'theme' ) ) as $color ) {
-		$palette[ $color['slug'] ] = $color['color'];
-	}
+	$palette = wpessential_active_palette();
 
 	// Elementor's four system colors.
 	$system_map = array(
@@ -66,12 +79,13 @@ function wpessential_sync_elementor_kit() {
 		);
 	}
 
-	$fonts = array(
+	$fonts    = array(
 		'body'    => 'Inter',
 		'heading' => 'Plus Jakarta Sans',
 	);
-	foreach ( wp_get_global_settings( array( 'typography', 'fontFamilies', 'theme' ) ) as $family ) {
-		if ( isset( $fonts[ $family['slug'] ] ) && ! empty( $family['name'] ) ) {
+	$families = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
+	foreach ( array_merge( (array) ( $families['theme'] ?? array() ), (array) ( $families['custom'] ?? array() ) ) as $family ) {
+		if ( isset( $family['slug'], $fonts[ $family['slug'] ] ) && ! empty( $family['name'] ) ) {
 			$fonts[ $family['slug'] ] = $family['name'];
 		}
 	}
@@ -129,11 +143,7 @@ add_action(
 		if ( ! current_user_can( 'edit_theme_options' ) ) {
 			return;
 		}
-		$palette = array();
-		foreach ( wp_get_global_settings( array( 'color', 'palette', 'theme' ) ) as $color ) {
-			$palette[ $color['slug'] ] = $color['color'];
-		}
-		$hash = md5( wp_json_encode( $palette ) . WPESSENTIAL_VERSION );
+		$hash = md5( wp_json_encode( wpessential_active_palette() ) . WPESSENTIAL_VERSION );
 		if ( get_option( 'wpessential_kit_hash' ) === $hash ) {
 			return;
 		}

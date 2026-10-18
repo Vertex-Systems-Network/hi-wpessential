@@ -491,6 +491,28 @@ class Importer {
 	 * @param mixed  $value ID or [id, taxonomy].
 	 */
 	private function track( $type, $value ) {
+		$record = $this->record();
+		if ( 'option' === $type ) {
+			if ( ! array_key_exists( $value, $record['options'] ) ) {
+				$record['options'][ $value ] = get_option( $value, null );
+			}
+		} elseif ( in_array( $type, array( 'styles', 'kit' ), true ) || 0 === strpos( $type, 'part_' ) ) {
+			// Keep the first snapshot: it is the state before this demo.
+			if ( ! isset( $record[ $type ] ) ) {
+				$record[ $type ] = $value;
+			}
+		} else {
+			$record[ $type ][] = $value;
+		}
+		update_option( self::IMPORTED, $record, false );
+	}
+
+	/**
+	 * The removal record for this job.
+	 *
+	 * @return array
+	 */
+	private function record() {
 		$record = self::imported();
 		if ( empty( $record['demo'] ) || $record['job'] !== $this->job['id'] ) {
 			$record = array(
@@ -504,14 +526,7 @@ class Importer {
 				'options' => array(),
 			);
 		}
-		if ( 'option' === $type ) {
-			if ( ! array_key_exists( $value, $record['options'] ) ) {
-				$record['options'][ $value ] = get_option( $value, null );
-			}
-		} else {
-			$record[ $type ][] = $value;
-		}
-		update_option( self::IMPORTED, $record, false );
+		return $record;
 	}
 
 	/**
@@ -524,7 +539,7 @@ class Importer {
 	private function tokens( $text, $late = false ) {
 		$map = $this->job['map'];
 		return preg_replace_callback(
-			'/\{\{(pattern|media|media_id|theme|home|page|post_id|term_link):?([a-z0-9\/_.-]*)\}\}/',
+			'/\{\{(pattern|media|media_id|theme|home|page|post_id|term_link|woo):?([a-z0-9\/_.-]*)\}\}/',
 			static function ( $m ) use ( $map, $late ) {
 				switch ( $m[1] ) {
 					case 'pattern':
@@ -545,6 +560,12 @@ class Importer {
 						return isset( $map['posts'][ $m[2] ] ) ? (string) get_permalink( $map['posts'][ $m[2] ] ) : home_url( '/' );
 					case 'post_id':
 						return $late ? (string) ( $map['posts'][ $m[2] ] ?? 0 ) : $m[0];
+					case 'woo':
+						// WooCommerce pages exist only after the settings step.
+						if ( ! $late ) {
+							return $m[0];
+						}
+						return function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( $m[2] ) : home_url( '/' );
 					case 'term_link':
 						if ( ! $late || empty( $map['terms'][ $m[2] ] ) ) {
 							return $late ? home_url( '/' ) : $m[0];
@@ -672,7 +693,11 @@ class Importer {
 			$tmp = download_url( $item['file'], 60 );
 		} else {
 			$path = 'theme' === $source ? get_theme_file_path( 'assets/images/' . $item['file'] ) : $this->job['dir'] . '/media/' . $item['file'];
-			$tmp  = wp_tempnam( $item['file'] );
+			// Both builder packages of a demo share one media folder next to them.
+			if ( 'package' === $source && ! is_readable( $path ) ) {
+				$path = dirname( $this->job['dir'] ) . '/media/' . $item['file'];
+			}
+			$tmp = wp_tempnam( $item['file'] );
 			if ( ! is_readable( $path ) || ! copy( $path, $tmp ) ) {
 				$tmp = new \WP_Error( 'wpe_media_missing', __( 'file not found in the package', 'wpessential' ) );
 			}
@@ -765,23 +790,19 @@ class Importer {
 			$this->log( 'info', sprintf( __( 'Skipped "%1$s": %2$s is not available on this site.', 'wpessential' ), $item['title'], $type ) );
 			return null;
 		}
-		$id = wp_insert_post(
-			wp_slash(
-				array(
-					'post_type'     => $type,
-					'post_status'   => 'publish',
-					'post_title'    => $item['title'],
-					'post_name'     => $item['slug'] ?? '',
-					'post_excerpt'  => $item['excerpt'] ?? '',
-					'post_content'  => $this->tokens( $item['content'] ?? '' ),
-					'post_date'     => $item['date'] ?? current_time( 'mysql' ),
-					'menu_order'    => (int) ( $item['order'] ?? 0 ),
-					'page_template' => $item['template'] ?? '',
-					'post_author'   => get_current_user_id(),
-				)
-			),
-			true
+		$args = array(
+			'post_type'     => $type,
+			'post_status'   => 'publish',
+			'post_title'    => $item['title'],
+			'post_name'     => $item['slug'] ?? '',
+			'post_excerpt'  => $item['excerpt'] ?? '',
+			'post_content'  => $this->tokens( $item['content'] ?? '' ),
+			'post_date'     => $item['date'] ?? current_time( 'mysql' ),
+			'menu_order'    => (int) ( $item['order'] ?? 0 ),
+			'page_template' => $item['template'] ?? '',
+			'post_author'   => get_current_user_id(),
 		);
+		$id   = $this->insert_post( $type, $args, $item );
 		if ( is_wp_error( $id ) ) {
 			/* translators: 1: title, 2: error. */
 			$this->log( 'error', sprintf( __( '"%1$s" could not be created: %2$s', 'wpessential' ), $item['title'], $id->get_error_message() ) );
@@ -806,11 +827,92 @@ class Importer {
 			}
 		}
 		foreach ( (array) ( $item['meta'] ?? array() ) as $key => $value ) {
-			update_post_meta( $id, $key, $value );
+			update_post_meta( $id, $key, is_string( $value ) ? wp_slash( $this->tokens( $value, true ) ) : $value );
 		}
+		if ( ! empty( $item['elementor'] ) ) {
+			$this->elementor_meta( $id, $item );
+		}
+		$labels = array(
+			'post'            => __( 'post', 'wpessential' ),
+			'page'            => __( 'page', 'wpessential' ),
+			'tribe_events'    => __( 'event', 'wpessential' ),
+			'tribe_venue'     => __( 'venue', 'wpessential' ),
+			'tribe_organizer' => __( 'organizer', 'wpessential' ),
+		);
 		/* translators: 1: type, 2: title. */
-		$this->log( 'info', sprintf( __( 'Created %1$s "%2$s".', 'wpessential' ), 'post' === $type ? __( 'post', 'wpessential' ) : __( 'page', 'wpessential' ), $item['title'] ) );
+		$this->log( 'info', sprintf( __( 'Created %1$s "%2$s".', 'wpessential' ), $labels[ $type ] ?? $type, $item['title'] ) );
 		return null;
+	}
+
+	/**
+	 * Insert one item. Events, venues and organizers go through The Events Calendar's API so
+	 * its own tables and caches are filled; everything else is a plain post.
+	 *
+	 * @param string $type Post type.
+	 * @param array  $args wp_insert_post() arguments.
+	 * @param array  $item Package item.
+	 * @return int|\WP_Error
+	 */
+	private function insert_post( $type, array $args, array $item ) {
+		$map = $this->job['map']['posts'];
+		if ( 'tribe_venue' === $type && function_exists( 'tribe_create_venue' ) ) {
+			$id = tribe_create_venue( $args + array( 'Venue' => $item['title'] ) + (array) ( $item['venue'] ?? array() ) );
+			return $id ? (int) $id : new \WP_Error( 'wpe_tec', __( 'The Events Calendar rejected the venue.', 'wpessential' ) );
+		}
+		if ( 'tribe_organizer' === $type && function_exists( 'tribe_create_organizer' ) ) {
+			$id = tribe_create_organizer( $args + array( 'Organizer' => $item['title'] ) + (array) ( $item['organizer'] ?? array() ) );
+			return $id ? (int) $id : new \WP_Error( 'wpe_tec', __( 'The Events Calendar rejected the organizer.', 'wpessential' ) );
+		}
+		if ( 'tribe_events' === $type && function_exists( 'tribe_create_event' ) ) {
+			$event = (array) ( $item['event'] ?? array() );
+			// A fixed date, or a date relative to the import day so a demo never shows past events.
+			$day   = ! empty( $event['date'] ) ? gmdate( 'Y-m-d', strtotime( $event['date'] ) ) : gmdate( 'Y-m-d', strtotime( '+' . (int) ( $event['in_days'] ?? 30 ) . ' days', current_time( 'timestamp' ) ) ); // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp.Requested -- Local day is wanted.
+			$end   = gmdate( 'Y-m-d', strtotime( $day . ' +' . (int) ( $event['days'] ?? 0 ) . ' days' ) );
+			$args += array(
+				'EventStartDate'   => $day,
+				'EventEndDate'     => $end,
+				'EventAllDay'      => ! empty( $event['all_day'] ),
+				'EventStartHour'   => substr( $event['start'] ?? '09:00', 0, 2 ),
+				'EventStartMinute' => substr( $event['start'] ?? '09:00', 3, 2 ),
+				'EventEndHour'     => substr( $event['end'] ?? '18:00', 0, 2 ),
+				'EventEndMinute'   => substr( $event['end'] ?? '18:00', 3, 2 ),
+				'EventCost'        => $event['cost'] ?? '',
+				'EventURL'         => $this->tokens( $event['url'] ?? '', true ),
+				'EventShowMap'     => true,
+				'EventShowMapLink' => true,
+			);
+			if ( ! empty( $event['venue'] ) && isset( $map[ $event['venue'] ] ) ) {
+				$args['Venue'] = array( 'VenueID' => $map[ $event['venue'] ] );
+			}
+			$organizers = array_values( array_intersect_key( $map, array_flip( (array) ( $event['organizers'] ?? array() ) ) ) );
+			if ( $organizers ) {
+				$args['Organizer'] = array( 'OrganizerID' => $organizers );
+			}
+			$id = tribe_create_event( $args );
+			return $id ? (int) $id : new \WP_Error( 'wpe_tec', __( 'The Events Calendar rejected the event.', 'wpessential' ) );
+		}
+		return wp_insert_post( wp_slash( $args ), true );
+	}
+
+	/**
+	 * Store an Elementor layout on a page or post: native widgets only.
+	 *
+	 * @param int   $id   Post ID.
+	 * @param array $item Package item with an "elementor" element tree.
+	 */
+	private function elementor_meta( $id, array $item ) {
+		$json = $this->tokens( (string) wp_json_encode( $item['elementor'] ) );
+		update_post_meta( $id, '_elementor_data', wp_slash( $json ) );
+		update_post_meta( $id, '_elementor_edit_mode', 'builder' );
+		update_post_meta( $id, '_elementor_template_type', 'wp-' . get_post_type( $id ) );
+		update_post_meta( $id, '_elementor_version', defined( 'ELEMENTOR_VERSION' ) ? ELEMENTOR_VERSION : '3.0.0' );
+		if ( ! empty( $item['elementor_settings'] ) ) {
+			update_post_meta( $id, '_elementor_page_settings', $item['elementor_settings'] );
+		}
+		// Block theme: the "Full Width (builder canvas)" template keeps the theme header and footer.
+		if ( empty( $item['template'] ) && 'page' === get_post_type( $id ) ) {
+			update_post_meta( $id, '_wp_page_template', 'page-full-width' );
+		}
 	}
 
 	/**
@@ -838,6 +940,14 @@ class Importer {
 		$product->set_short_description( $item['short'] ?? '' );
 		$product->set_description( $item['description'] ?? '' );
 		$product->set_featured( ! empty( $item['featured'] ) );
+		// Passes, tickets and services ship nothing, so checkout skips the address and shipping.
+		$product->set_virtual( ! empty( $item['virtual'] ) );
+		if ( ! empty( $item['sold_individually'] ) ) {
+			$product->set_sold_individually( true );
+		}
+		if ( ! empty( $item['menu_order'] ) ) {
+			$product->set_menu_order( (int) $item['menu_order'] );
+		}
 		if ( 'simple' === $kind ) {
 			$product->set_regular_price( (string) $item['price'] );
 			if ( ! empty( $item['sale'] ) ) {
@@ -1054,13 +1164,20 @@ class Importer {
 		}
 
 		foreach ( (array) ( $settings['options'] ?? array() ) as $option => $value ) {
-			if ( ! in_array( $option, (array) apply_filters( 'wpessential_core_import_options', array( 'posts_per_page', 'date_format', 'blogdescription', 'thumbnail_size_w', 'thumbnail_size_h' ) ), true ) ) {
+			if ( ! in_array( $option, (array) apply_filters( 'wpessential_core_import_options', array( 'posts_per_page', 'date_format', 'blogname', 'blogdescription', 'thumbnail_size_w', 'thumbnail_size_h' ) ), true ) ) {
 				/* translators: %s: option. */
 				$this->log( 'warning', sprintf( __( 'Setting "%s" is not on the allow-list and was ignored.', 'wpessential' ), $option ) );
 				continue;
 			}
 			$this->track( 'option', $option );
 			update_option( $option, $value );
+		}
+
+		if ( ! empty( $settings['style'] ) ) {
+			$this->style_variation( sanitize_key( $settings['style'] ) );
+		}
+		foreach ( (array) ( $settings['parts'] ?? array() ) as $area => $spec ) {
+			$this->template_part( sanitize_key( $area ), $spec );
 		}
 
 		if ( ! empty( $settings['motion'] ) ) {
@@ -1077,9 +1194,141 @@ class Importer {
 				$this->track( 'option', $option );
 				update_option( $option, 'yes' );
 			}
+			if ( ! empty( $settings['elementor_kit'] ) ) {
+				$this->elementor_kit( (array) $settings['elementor_kit'] );
+			}
 			$this->log( 'info', __( 'Elementor set to use the theme colours and fonts.', 'wpessential' ) );
 		}
 		return null;
+	}
+
+	/**
+	 * Apply a theme style variation (styles/<name>.json) as the site's global styles,
+	 * exactly like choosing it under Appearance → Editor → Styles.
+	 *
+	 * @param string $name Variation file name without extension.
+	 */
+	private function style_variation( $name ) {
+		$file = get_theme_file_path( 'styles/' . $name . '.json' );
+		$data = is_readable( $file ) ? json_decode( (string) file_get_contents( $file ), true ) : null; // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local theme file.
+		if ( ! is_array( $data ) || ! class_exists( 'WP_Theme_JSON_Resolver' ) ) {
+			/* translators: %s: variation. */
+			$this->log( 'warning', sprintf( __( 'Style "%s" was not found in the theme, so the default colours stay.', 'wpessential' ), $name ), __( 'Update the WPEssential theme, then import again.', 'wpessential' ) );
+			return;
+		}
+		$post_id = \WP_Theme_JSON_Resolver::get_user_global_styles_post_id();
+		if ( ! $post_id ) {
+			return;
+		}
+		$this->track( 'styles', array( $post_id, get_post_field( 'post_content', $post_id ) ) );
+		$styles = array(
+			'version'                     => $data['version'] ?? 3,
+			'isGlobalStylesUserThemeJSON' => true,
+			'title'                       => $data['title'] ?? $name,
+			'settings'                    => $data['settings'] ?? new \stdClass(),
+			'styles'                      => $data['styles'] ?? new \stdClass(),
+		);
+		wp_update_post(
+			wp_slash(
+				array(
+					'ID'           => $post_id,
+					'post_content' => wp_json_encode( $styles ),
+				)
+			)
+		);
+		\WP_Theme_JSON_Resolver::clean_cached_data();
+		if ( function_exists( 'wp_clean_theme_json_cache' ) ) {
+			wp_clean_theme_json_cache();
+		}
+		/* translators: %s: variation. */
+		$this->log( 'success', sprintf( __( 'Applied the %s colours and fonts.', 'wpessential' ), $styles['title'] ) );
+	}
+
+	/**
+	 * Use one of the theme's header/footer designs site-wide, e.g. header => header-centered,
+	 * or block markup from the package (a demo's own top bar above a theme header pattern).
+	 * Saved as a user copy of the part, the same as editing it in the Site Editor.
+	 *
+	 * @param string       $part Template part slug, e.g. header or header-shop.
+	 * @param string|array $spec Theme part file name (parts/<slug>.html) or array( 'content' => markup ).
+	 */
+	private function template_part( $part, $spec ) {
+		// Any header*/footer* part the templates use, e.g. "header-shop" on WooCommerce pages.
+		$area = 0 === strpos( $part, 'header' ) ? 'header' : ( 0 === strpos( $part, 'footer' ) ? 'footer' : '' );
+		if ( ! $area || ! is_readable( get_theme_file_path( 'parts/' . $part . '.html' ) ) ) {
+			return;
+		}
+		if ( is_array( $spec ) && ! empty( $spec['content'] ) ) {
+			$slug    = __( 'demo', 'wpessential' );
+			$content = $this->tokens( (string) $spec['content'], true );
+		} elseif ( is_string( $spec ) && is_readable( get_theme_file_path( 'parts/' . sanitize_key( $spec ) . '.html' ) ) ) {
+			$slug    = sanitize_key( $spec );
+			$content = '<!-- wp:pattern {"slug":"wpessential/' . $slug . '"} /-->';
+		} else {
+			return;
+		}
+		$existing = get_posts(
+			array(
+				'post_type'      => 'wp_template_part',
+				'name'           => $part,
+				'post_status'    => 'any',
+				'posts_per_page' => 1,
+				'tax_query'      => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- One lookup during import.
+					array(
+						'taxonomy' => 'wp_theme',
+						'field'    => 'name',
+						'terms'    => get_stylesheet(),
+					),
+				),
+			)
+		);
+		if ( $existing ) {
+			$this->track( 'part_' . $part, array( $existing[0]->ID, $existing[0]->post_content ) );
+			wp_update_post(
+				wp_slash(
+					array(
+						'ID'           => $existing[0]->ID,
+						'post_content' => $content,
+					)
+				)
+			);
+		} else {
+			$id = wp_insert_post(
+				array(
+					'post_type'    => 'wp_template_part',
+					'post_status'  => 'publish',
+					'post_name'    => $part,
+					'post_title'   => ucwords( str_replace( '-', ' ', $part ) ),
+					'post_content' => wp_slash( $content ),
+				),
+				true
+			);
+			if ( is_wp_error( $id ) ) {
+				return;
+			}
+			wp_set_post_terms( $id, get_stylesheet(), 'wp_theme' );
+			wp_set_post_terms( $id, $area, 'wp_template_part_area' );
+			$this->track( 'posts', $id );
+		}
+		/* translators: 1: template part, 2: design. */
+		$this->log( 'info', sprintf( __( 'Template part "%1$s" set to the "%2$s" design.', 'wpessential' ), $part, $slug ) );
+	}
+
+	/**
+	 * Layout settings for the active Elementor Kit (container width, buttons, form fields).
+	 * Colours and fonts are synced from the theme by wpessential_sync_elementor_kit().
+	 *
+	 * @param array $values Kit settings.
+	 */
+	private function elementor_kit( array $values ) {
+		$kit_id = (int) get_option( 'elementor_active_kit' );
+		if ( ! $kit_id || ! get_post( $kit_id ) ) {
+			return;
+		}
+		$this->track( 'kit', array( $kit_id, get_post_meta( $kit_id, '_elementor_page_settings', true ) ) );
+		$settings = (array) get_post_meta( $kit_id, '_elementor_page_settings', true );
+		update_post_meta( $kit_id, '_elementor_page_settings', array_merge( $settings, $values ) );
+		$this->log( 'info', __( 'Elementor Kit layout, buttons and form styles set.', 'wpessential' ) );
 	}
 
 	/**
@@ -1139,6 +1388,14 @@ class Importer {
 				);
 				++$fixed;
 			}
+			$elementor = (string) get_post_meta( $id, '_elementor_data', true );
+			if ( false !== strpos( $elementor, '{{' ) ) {
+				update_post_meta( $id, '_elementor_data', wp_slash( $this->tokens( $elementor, true ) ) );
+				++$fixed;
+			}
+		}
+		if ( did_action( 'elementor/loaded' ) && isset( \Elementor\Plugin::$instance->files_manager ) ) {
+			\Elementor\Plugin::$instance->files_manager->clear_cache();
 		}
 		if ( $fixed ) {
 			/* translators: %d: pages. */
@@ -1193,6 +1450,37 @@ class Importer {
 			} else {
 				update_option( $option, $value );
 			}
+		}
+		if ( ! empty( $record['styles'][0] ) && get_post( $record['styles'][0] ) ) {
+			wp_update_post(
+				wp_slash(
+					array(
+						'ID'           => (int) $record['styles'][0],
+						'post_content' => (string) $record['styles'][1],
+					)
+				)
+			);
+			if ( class_exists( 'WP_Theme_JSON_Resolver' ) ) {
+				\WP_Theme_JSON_Resolver::clean_cached_data();
+			}
+		}
+		foreach ( array_filter(
+			array_keys( $record ),
+			static function ( $key ) {
+				return 0 === strpos( $key, 'part_' );
+			}
+		) as $part ) {
+			if ( ! empty( $record[ $part ][0] ) && get_post( $record[ $part ][0] ) ) {
+				wp_update_post(
+					array(
+						'ID'           => (int) $record[ $part ][0],
+						'post_content' => (string) $record[ $part ][1],
+					)
+				);
+			}
+		}
+		if ( ! empty( $record['kit'][0] ) && get_post( $record['kit'][0] ) ) {
+			update_post_meta( (int) $record['kit'][0], '_elementor_page_settings', $record['kit'][1] ? $record['kit'][1] : array() );
 		}
 		delete_option( self::IMPORTED );
 		$job = self::current();

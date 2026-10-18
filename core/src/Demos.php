@@ -87,14 +87,42 @@ class Demos {
 	 */
 	public static function bundled() {
 		$demos = array();
-		foreach ( (array) glob( WPESSENTIAL_CORE_DIR . '/demos/*/demo.json' ) as $file ) {
+		/**
+		 * Folders scanned for bundled demos (each holds <id>/demo.json and builder packages).
+		 *
+		 * @param string[] $dirs Absolute paths.
+		 */
+		$dirs  = (array) apply_filters( 'wpessential_core_demo_dirs', array( WPESSENTIAL_CORE_DIR . '/demos' ) );
+		$files = array();
+		foreach ( $dirs as $dir ) {
+			$files = array_merge( $files, (array) glob( trailingslashit( $dir ) . '*/demo.json' ) );
+		}
+		foreach ( $files as $file ) {
 			$demo = json_decode( (string) file_get_contents( $file ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local file.
 			if ( ! is_array( $demo ) || empty( $demo['id'] ) ) {
 				continue;
 			}
 			$demo['source']    = 'bundled';
-			$demo['thumbnail'] = self::resolve_asset( $demo['thumbnail'] ?? '' );
-			$demo['preview']   = array_map( array( __CLASS__, 'resolve_asset' ), (array) ( $demo['preview'] ?? array() ) );
+			$demo['dir']       = dirname( $file );
+			$resolve           = static function ( $value ) use ( $file ) {
+				// "demo:" paths are relative to the demo folder (development copies outside Core).
+				if ( 0 === strpos( (string) $value, 'demo:' ) ) {
+					$path = wp_normalize_path( dirname( $file ) . '/' . substr( $value, 5 ) );
+					$root = wp_normalize_path( WP_CONTENT_DIR );
+					$real = wp_normalize_path( (string) realpath( $path ) );
+					foreach ( array( $path, $real ) as $candidate ) {
+						if ( 0 === strpos( $candidate, $root ) ) {
+							return content_url( substr( $candidate, strlen( $root ) ) );
+						}
+					}
+					$theme = wp_normalize_path( get_theme_root() . '/' . get_stylesheet() );
+					$base  = wp_normalize_path( (string) realpath( $theme ) );
+					return 0 === strpos( $real, $base ) ? get_theme_file_uri( substr( $real, strlen( $base ) + 1 ) ) : '';
+				}
+				return self::resolve_asset( $value );
+			};
+			$demo['thumbnail'] = $resolve( $demo['thumbnail'] ?? '' );
+			$demo['preview']   = array_map( $resolve, (array) ( $demo['preview'] ?? array() ) );
 			$demos[]           = $demo;
 		}
 		return $demos;
@@ -141,7 +169,7 @@ class Demos {
 	public static function package_dir( $demo, $builder ) {
 		$package = $demo['builders'][ $builder ]['package'] ?? '';
 		if ( 'bundled' === $demo['source'] ) {
-			$dir = WPESSENTIAL_CORE_DIR . '/demos/' . $demo['id'] . '/' . ( $package ? $package : $builder );
+			$dir = ( $demo['dir'] ?? WPESSENTIAL_CORE_DIR . '/demos/' . $demo['id'] ) . '/' . ( $package ? $package : $builder );
 			return is_readable( $dir . '/content.json' ) ? $dir : new \WP_Error( 'wpe_package_missing', __( 'The bundled demo package is incomplete. Re-upload the theme and try again.', 'wpessential' ) );
 		}
 

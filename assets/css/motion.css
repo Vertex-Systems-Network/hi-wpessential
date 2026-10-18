@@ -24,16 +24,22 @@
 .wpe-motion .wpe-anim--zoom { transform: scale(.92); }
 .wpe-motion .wpe-anim--slide-left { transform: translate3d(calc(var(--wpe-motion-distance) * -1.5), 0, 0); }
 .wpe-motion .wpe-anim--slide-right { transform: translate3d(calc(var(--wpe-motion-distance) * 1.5), 0, 0); }
-.wpe-motion .wpe-anim--mask { opacity: 1; transform: none; clip-path: inset(0 0 100% 0); }
-.wpe-motion .wpe-anim--mask.is-in { clip-path: inset(0 0 0 0); }
+/* Clip the children, never the observed element: a fully clipped target never reports as visible. */
+.wpe-motion .wpe-anim--mask { opacity: 1; transform: none; }
+.wpe-motion .wpe-anim--mask > * { clip-path: inset(0 0 100% 0); transition: clip-path var(--wpe-motion-duration) var(--wpe-motion-ease); transition-delay: var(--wpe-delay, 0ms); }
+.wpe-motion .wpe-anim--mask.is-in > * { clip-path: inset(0 0 0 0); }
 .wpe-motion .wpe-anim--counter, .wpe-motion .wpe-anim--parallax, .wpe-motion .wpe-anim--marquee { opacity: 1; transform: none; }
 
 /* Editorial: images reveal with a curtain, headings rise from a mask. */
 .wpe-motion--editorial .wpe-anim--auto.wp-block-image,
-.wpe-motion--editorial .wpe-anim--auto .wp-block-image { opacity: 1; transform: none; clip-path: inset(100% 0 0 0); }
-.wpe-motion--editorial .wpe-anim--auto.wp-block-image.is-in { clip-path: inset(0); }
-.wpe-motion--editorial .wp-block-image img { transition: transform 1.6s var(--wpe-motion-ease); }
-.wpe-motion--editorial .wp-block-image:not(.is-in) img { transform: scale(1.12); }
+.wpe-motion--editorial .wpe-anim--auto .wp-block-image { opacity: 1; transform: none; }
+.wpe-motion--editorial .wpe-anim--auto.wp-block-image img,
+.wpe-motion--editorial .wpe-anim--auto .wp-block-image img { clip-path: inset(100% 0 0 0); }
+.wpe-motion--editorial .wpe-anim--auto.wp-block-image.is-in img,
+.wpe-motion--editorial .wpe-anim--auto.is-in .wp-block-image img { clip-path: inset(0); }
+.wpe-motion--editorial .wp-block-image img { transition: transform 1.6s var(--wpe-motion-ease), clip-path var(--wpe-motion-duration) var(--wpe-motion-ease); }
+.wpe-motion--editorial .wpe-anim--auto.wp-block-image:not(.is-in) img,
+.wpe-motion--editorial .wpe-anim--auto:not(.is-in) .wp-block-image img { transform: scale(1.12); }
 
 /* Playful: cards pop and tilt a touch. */
 .wpe-motion--playful .wpe-card.wpe-anim { transform: translate3d(0, var(--wpe-motion-distance), 0) rotate(-1.5deg) scale(.94); }

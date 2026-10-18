@@ -71,6 +71,19 @@ function wpessential_scheme_settings() {
 	$base = wpessential_read_theme_json_file( 'theme.json' );
 	$dark = wpessential_read_theme_json_file( 'styles/dark.json' );
 
+	// A demo style variation brings its own dark palette (settings.custom.scheme.dark, slug => hex).
+	$own = wp_get_global_settings( array( 'custom', 'scheme', 'dark' ) );
+	if ( is_array( $own ) && $own ) {
+		$palette = array();
+		foreach ( $own as $slug => $hex ) {
+			$palette[] = array(
+				'slug'  => $slug,
+				'color' => $hex,
+			);
+		}
+		$dark['settings']['color']['palette'] = $palette;
+	}
+
 	if ( wpessential_is_dark_scheme() ) {
 		return array(
 			'light' => $base['settings'] ?? array(),
@@ -121,6 +134,15 @@ add_action(
 		}
 		if ( $sets['light'] ) {
 			$css .= ':root[data-wpe-scheme="light"]{color-scheme:light;' . wpessential_scheme_vars( $sets['light'] ) . '}';
+		}
+		// The palette has a colour named "text", so core prints `.has-text-color { color: var(--text) !important }`,
+		// which clashes with the generic has-text-color class on every coloured block. Restore the chosen colour.
+		$palettes = wp_get_global_settings( array( 'color', 'palette' ) );
+		foreach ( array_merge( (array) ( $palettes['theme'] ?? array() ), (array) ( $palettes['custom'] ?? array() ) ) as $color ) {
+			if ( isset( $color['slug'] ) && 'text' !== $color['slug'] ) {
+				$slug = _wp_to_kebab_case( $color['slug'] );
+				$css .= '.has-' . $slug . '-color.has-text-color{color:var(--wp--preset--color--' . $slug . ') !important;}';
+			}
 		}
 		wp_add_inline_style( 'wpessential', $css );
 	},

@@ -1,0 +1,80 @@
+{
+	"id": "pulse",
+	"title": "Pulse",
+	"tagline": "A conference site with speakers, agenda, ticket sales and an events calendar.",
+	"niche": [
+		"events",
+		"conference",
+		"meetup",
+		"tickets"
+	],
+	"type": "pro",
+	"thumbnail": "demo:thumbnail.webp",
+	"preview": {
+		"desktop": "demo:preview/desktop.webp",
+		"tablet": "demo:preview/tablet.webp",
+		"mobile": "demo:preview/mobile.webp"
+	},
+	"pages": [
+		"Home",
+		"Speakers",
+		"Agenda",
+		"Tickets",
+		"Venue",
+		"Sponsors",
+		"Become a Sponsor",
+		"Events",
+		"Blog",
+		"FAQ",
+		"Contact"
+	],
+	"highlights": [
+		"5 calendar events",
+		"4 ticket passes",
+		"8 speakers",
+		"Light & dark"
+	],
+	"motion": "dynamic",
+	"builders": {
+		"gutenberg": {
+			"package": "gutenberg",
+			"plugins": [
+				{
+					"slug": "the-events-calendar",
+					"name": "The Events Calendar",
+					"source": "wporg",
+					"state": "required"
+				},
+				{
+					"slug": "woocommerce",
+					"name": "WooCommerce",
+					"source": "wporg",
+					"state": "required"
+				}
+			]
+		},
+		"elementor": {
+			"package": "elementor",
+			"plugins": [
+				{
+					"slug": "elementor",
+					"name": "Elementor",
+					"source": "wporg",
+					"state": "required"
+				},
+				{
+					"slug": "the-events-calendar",
+					"name": "The Events Calendar",
+					"source": "wporg",
+					"state": "required"
+				},
+				{
+					"slug": "woocommerce",
+					"name": "WooCommerce",
+					"source": "wporg",
+					"state": "required"
+				}
+			]
+		}
+	}
+}

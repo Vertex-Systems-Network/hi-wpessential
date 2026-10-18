@@ -2,7 +2,12 @@
 	"id": "base",
 	"title": "Base Demo",
 	"tagline": "A complete business site with a blog and a ready-to-sell shop.",
-	"niche": ["business", "agency", "shop", "blog"],
+	"niche": [
+		"business",
+		"agency",
+		"shop",
+		"blog"
+	],
 	"type": "free",
 	"thumbnail": "core:demos/base/thumbnail.webp",
 	"preview": {
@@ -10,13 +15,49 @@
 		"tablet": "core:demos/base/preview/tablet.webp",
 		"mobile": "core:demos/base/preview/mobile.webp"
 	},
-	"pages": ["Home", "About", "Services", "Pricing", "Contact", "FAQ", "Blog", "Shop"],
-	"highlights": ["7 pages", "3 articles", "8 products", "Light & dark"],
+	"pages": [
+		"Home",
+		"About",
+		"Services",
+		"Pricing",
+		"Contact",
+		"FAQ",
+		"Blog",
+		"Shop"
+	],
+	"highlights": [
+		"7 pages",
+		"3 articles",
+		"8 products",
+		"Light & dark"
+	],
 	"builders": {
 		"gutenberg": {
 			"package": "gutenberg",
 			"plugins": [
-				{ "slug": "woocommerce", "name": "WooCommerce", "source": "wporg", "state": "recommended" }
+				{
+					"slug": "woocommerce",
+					"name": "WooCommerce",
+					"source": "wporg",
+					"state": "recommended"
+				}
+			]
+		},
+		"elementor": {
+			"package": "elementor",
+			"plugins": [
+				{
+					"slug": "elementor",
+					"name": "Elementor",
+					"source": "wporg",
+					"state": "required"
+				},
+				{
+					"slug": "woocommerce",
+					"name": "WooCommerce",
+					"source": "wporg",
+					"state": "recommended"
+				}
 			]
 		}
 	}

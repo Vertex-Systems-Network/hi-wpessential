@@ -55,7 +55,7 @@ img, video { max-width: 100%; height: auto; }
 	font-weight: 600;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: var(--wpe-primary);
+	color: var(--wp--custom--color--primary-text, var(--wpe-primary));
 }
 mark, .has-inline-color mark { background: #FEF3C7; color: inherit; border-radius: 4px; padding: 0 4px; }
 code, kbd, samp { font-family: var(--wp--preset--font-family--mono); font-size: 0.875em; }
@@ -134,7 +134,7 @@ dl dd { margin: 0 0 0.75em; color: var(--wpe-muted); }
 	background: var(--wpe-surface); color: var(--wpe-text); border: 1px solid var(--wpe-border);
 }
 .is-style-wpe-secondary .wp-block-button__link:hover, .wpe-btn--secondary:hover { background: var(--wpe-primary-soft); color: var(--wpe-primary); }
-.is-style-wpe-outline .wp-block-button__link, .wpe-btn--outline { background: transparent; color: var(--wpe-primary); border: 1px solid var(--wpe-primary); }
+.is-style-wpe-outline .wp-block-button__link, .wpe-btn--outline { background: transparent; color: var(--wp--custom--color--primary-text, var(--wpe-primary)); border: 1px solid currentColor; }
 .is-style-wpe-outline .wp-block-button__link:hover, .wpe-btn--outline:hover { background: var(--wpe-primary-soft); }
 .is-style-wpe-ghost .wp-block-button__link, .wpe-btn--ghost { background: transparent; color: var(--wpe-primary); border-color: transparent; }
 .is-style-wpe-ghost .wp-block-button__link:hover, .wpe-btn--ghost:hover { background: var(--wpe-primary-soft); color: var(--wpe-primary); }
