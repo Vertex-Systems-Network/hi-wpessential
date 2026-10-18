@@ -253,20 +253,20 @@ msgid "WooCommerce is not active, so the shop products were skipped."
 msgstr ""
 "O WooCommerce não está ativo, então os produtos da loja foram ignorados."
 
-#: core/src/Importer.php:602
+#: core/src/Importer.php:608
 msgid "Your server needs a change before the import can run safely."
 msgstr ""
 "Seu servidor precisa de um ajuste antes que a importação possa ser executada"
 " com segurança."
 
-#: core/src/Importer.php:602
+#: core/src/Importer.php:608
 msgid "Fix the items above (your host can help), then press Retry."
 msgstr ""
 "Corrija os itens acima (sua hospedagem pode ajudar) e clique em Tentar "
 "novamente."
 
 #. translators: %s: demo.
-#: core/src/Importer.php:607
+#: core/src/Importer.php:613
 msgid ""
 "%s was imported before. Its pages stay; the new import adds fresh copies."
 msgstr ""
@@ -274,50 +274,50 @@ msgstr ""
 "adiciona cópias novas."
 
 #. translators: %s: demo.
-#: core/src/Importer.php:607
+#: core/src/Importer.php:613
 msgid "Tick \"Remove previous demo\" next time for a clean site."
 msgstr "Da próxima vez, marque \"Remover demo anterior\" para ter um site limpo."
 
-#: core/src/Importer.php:609
+#: core/src/Importer.php:615
 msgid "Server checks passed."
 msgstr "As verificações do servidor foram aprovadas."
 
 #. translators: %d: items.
-#: core/src/Importer.php:621
+#: core/src/Importer.php:627
 msgid "Removed %d items from the previous demo and restored its settings."
 msgstr ""
 "%d itens da demo anterior foram removidos e as configurações dela foram "
 "restauradas."
 
-#: core/src/Importer.php:634
+#: core/src/Importer.php:640
 msgid "Upload a fresh copy of the theme, then press Resume."
 msgstr "Envie uma cópia nova do tema e clique em Retomar."
 
-#: core/src/Importer.php:634
+#: core/src/Importer.php:640
 msgid "Check your internet connection and press Resume."
 msgstr "Verifique sua conexão com a internet e clique em Retomar."
 
-#: core/src/Importer.php:640
+#: core/src/Importer.php:646
 msgid "The demo package could not be read (content.json is damaged)."
 msgstr ""
 "Não foi possível ler o pacote da demo (o content.json está danificado)."
 
-#: core/src/Importer.php:640
+#: core/src/Importer.php:646
 msgid "Clear the cache on the System Status tab and retry."
 msgstr "Limpe o cache na aba Status do sistema e tente novamente."
 
 #. translators: 1: pages, 2: images, 3: products.
-#: core/src/Importer.php:644
+#: core/src/Importer.php:650
 msgid "Package ready: %1$d pages and posts, %2$d images, %3$d products."
 msgstr "Pacote pronto: %1$d páginas e posts, %2$d imagens, %3$d produtos."
 
 #. translators: 1: plugin, 2: error.
-#: core/src/Importer.php:662
+#: core/src/Importer.php:668
 msgid "%1$s could not be set up: %2$s"
 msgstr "Não foi possível configurar %1$s: %2$s"
 
 #. translators: 1: plugin, 2: error.
-#: core/src/Importer.php:662
+#: core/src/Importer.php:668
 msgid ""
 "Install it from Plugins → Add New, then use the Plugins tab here to activate"
 " it."
@@ -326,201 +326,201 @@ msgstr ""
 "ativá-lo."
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:667
+#: core/src/Importer.php:673
 msgid "%s installed and activated."
 msgstr "%s instalado e ativado."
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:669
+#: core/src/Importer.php:675
 msgid "%s activated."
 msgstr "%s ativado."
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:671
+#: core/src/Importer.php:677
 msgid "%s deactivated because it conflicts with this demo."
 msgstr "%s foi desativado porque entra em conflito com esta demo."
 
 #. translators: %s: plugin.
-#: core/src/Importer.php:673
+#: core/src/Importer.php:679
 msgid "%s is already active."
 msgstr "%s já está ativo."
 
-#: core/src/Importer.php:702
+#: core/src/Importer.php:708
 msgid "file not found in the package"
 msgstr "arquivo não encontrado no pacote"
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:707
+#: core/src/Importer.php:713
 msgid "Image %1$s skipped (%2$s). Pages fall back to the theme copy."
 msgstr "Imagem %1$s ignorada (%2$s). As páginas usam a cópia do tema."
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:721
+#: core/src/Importer.php:727
 msgid "Image %1$s skipped (%2$s)."
 msgstr "Imagem %1$s ignorada (%2$s)."
 
 #. translators: 1: file, 2: error.
-#: core/src/Importer.php:721
+#: core/src/Importer.php:727
 msgid "Check that the uploads folder is writable."
 msgstr "Verifique se a pasta de uploads tem permissão de gravação."
 
 #. translators: %s: file.
-#: core/src/Importer.php:729
+#: core/src/Importer.php:735
 msgid "Imported image %s."
 msgstr "Imagem %s importada."
 
 #. translators: 1: term, 2: taxonomy.
 #. translators: 1: title, 2: post type.
-#: core/src/Importer.php:744 core/src/Importer.php:790
+#: core/src/Importer.php:750 core/src/Importer.php:796
 msgid "Skipped \"%1$s\": %2$s is not available on this site."
 msgstr "\"%1$s\" ignorado: %2$s não está disponível neste site."
 
 #. translators: %s: term.
-#: core/src/Importer.php:751
+#: core/src/Importer.php:757
 msgid "Category \"%s\" already exists and was reused."
 msgstr "A categoria \"%s\" já existe e foi reutilizada."
 
 #. translators: 1: term, 2: error.
-#: core/src/Importer.php:763
+#: core/src/Importer.php:769
 msgid "Category \"%1$s\" was not created: %2$s"
 msgstr "A categoria \"%1$s\" não foi criada: %2$s"
 
 #. translators: %s: term.
-#: core/src/Importer.php:770
+#: core/src/Importer.php:776
 msgid "Created category \"%s\"."
 msgstr "Categoria \"%s\" criada."
 
 #. translators: 1: title, 2: error.
-#: core/src/Importer.php:808
+#: core/src/Importer.php:814
 msgid "\"%1$s\" could not be created: %2$s"
 msgstr "Não foi possível criar \"%1$s\": %2$s"
 
-#: core/src/Importer.php:836
+#: core/src/Importer.php:842
 msgid "post"
 msgstr "post"
 
-#: core/src/Importer.php:837
+#: core/src/Importer.php:843
 msgid "page"
 msgstr "página"
 
-#: core/src/Importer.php:838
+#: core/src/Importer.php:844
 msgid "event"
 msgstr "evento"
 
-#: core/src/Importer.php:839
+#: core/src/Importer.php:845
 msgid "venue"
 msgstr "local"
 
-#: core/src/Importer.php:840
+#: core/src/Importer.php:846
 msgid "organizer"
 msgstr "organizador"
 
 #. translators: 1: type, 2: title.
-#: core/src/Importer.php:843
+#: core/src/Importer.php:849
 msgid "Created %1$s \"%2$s\"."
 msgstr "%1$s \"%2$s\" criado."
 
-#: core/src/Importer.php:860
+#: core/src/Importer.php:866
 msgid "The Events Calendar rejected the venue."
 msgstr "O The Events Calendar rejeitou o local."
 
-#: core/src/Importer.php:864
+#: core/src/Importer.php:870
 msgid "The Events Calendar rejected the organizer."
 msgstr "O The Events Calendar rejeitou o organizador."
 
-#: core/src/Importer.php:892
+#: core/src/Importer.php:898
 msgid "The Events Calendar rejected the event."
 msgstr "O The Events Calendar rejeitou o evento."
 
 #. translators: %s: product.
-#: core/src/Importer.php:1008
+#: core/src/Importer.php:1014
 msgid "Product \"%s\" could not be saved."
 msgstr "Não foi possível salvar o produto \"%s\"."
 
 #. translators: %s: product.
-#: core/src/Importer.php:1019
+#: core/src/Importer.php:1025
 msgid "Added product \"%s\"."
 msgstr "Produto \"%s\" adicionado."
 
 #. translators: 1: menu, 2: count.
-#: core/src/Importer.php:1122
+#: core/src/Importer.php:1128
 msgid "Created menu \"%1$s\" with %2$d links."
 msgstr "Menu \"%1$s\" criado com %2$d links."
 
-#: core/src/Importer.php:1168
+#: core/src/Importer.php:1174
 msgid "Home and blog pages assigned."
 msgstr "Páginas inicial e do blog definidas."
 
 #. translators: %s: option.
-#: core/src/Importer.php:1174
+#: core/src/Importer.php:1180
 msgid "Setting \"%s\" is not on the allow-list and was ignored."
 msgstr "A configuração \"%s\" não está na lista de permissões e foi ignorada."
 
 #. translators: %s: preset.
-#: core/src/Importer.php:1195
+#: core/src/Importer.php:1201
 msgid "Animation style set to \"%s\"."
 msgstr "Estilo de animação definido como \"%s\"."
 
-#: core/src/Importer.php:1208
+#: core/src/Importer.php:1214
 msgid "Elementor set to use the theme colours and fonts."
 msgstr "Elementor configurado para usar as cores e fontes do tema."
 
-#: core/src/Importer.php:1223
+#: core/src/Importer.php:1229
 msgid "Default"
 msgstr "Padrão"
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1226
+#: core/src/Importer.php:1232
 msgid "Style \"%s\" was not found in the theme, so the default colours stay."
 msgstr ""
 "O estilo \"%s\" não foi encontrado no tema, então as cores padrão foram "
 "mantidas."
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1226
+#: core/src/Importer.php:1232
 msgid "Update the Hi WPEssential theme, then import again."
 msgstr "Atualize o tema Hi WPEssential e importe novamente."
 
 #. translators: %s: variation.
-#: core/src/Importer.php:1254
+#: core/src/Importer.php:1260
 msgid "Applied the %s colours and fonts."
 msgstr "As cores e fontes de %s foram aplicadas."
 
-#: core/src/Importer.php:1272
+#: core/src/Importer.php:1278
 msgid "demo"
 msgstr "demo"
 
 #. translators: 1: template part, 2: design.
-#: core/src/Importer.php:1324
+#: core/src/Importer.php:1330
 msgid "Template part \"%1$s\" set to the \"%2$s\" design."
 msgstr "Parte de modelo \"%1$s\" definida com o design \"%2$s\"."
 
-#: core/src/Importer.php:1345
+#: core/src/Importer.php:1351
 msgid "Elementor Kit layout, buttons and form styles set."
 msgstr ""
 "Layout, botões e estilos de formulário do Kit do Elementor configurados."
 
-#: core/src/Importer.php:1365
+#: core/src/Importer.php:1371
 msgid "Everywhere"
 msgstr "Em todos os lugares"
 
-#: core/src/Importer.php:1373
+#: core/src/Importer.php:1379
 msgid "Free shipping"
 msgstr "Frete grátis"
 
 #. translators: %s: amount.
-#: core/src/Importer.php:1381
+#: core/src/Importer.php:1387
 msgid "Shipping set up with free delivery over %s."
 msgstr "Frete configurado com entrega grátis acima de %s."
 
 #. translators: %d: pages.
-#: core/src/Importer.php:1416
+#: core/src/Importer.php:1422
 msgid "Linked %d page to its new address."
 msgid_plural "Linked %d pages to their new addresses."
 msgstr[0] "%d página vinculada ao seu novo endereço."
 msgstr[1] "%d páginas vinculadas aos seus novos endereços."
 
-#: core/src/Importer.php:1421
+#: core/src/Importer.php:1427
 msgid "Permalinks and caches refreshed."
 msgstr "Links permanentes e caches atualizados."
 
@@ -1523,7 +1523,7 @@ msgstr "Todos os direitos reservados."
 msgid "Privacy"
 msgstr "Privacidade"
 
-#: patterns/footer-premium.php:104
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:21
 msgid "Terms"
 msgstr "Termos"
 
@@ -3865,3 +3865,11 @@ msgstr "Bricolage Grotesque"
 msgctxt "Style variation name"
 msgid "Essential"
 msgstr "Essential"
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:22
+msgid "Refunds"
+msgstr "Reembolsos"
+
+#: patterns/footer-premium.php:104 patterns/footer-simple.php:23
+msgid "Cookies"
+msgstr "Cookies"
