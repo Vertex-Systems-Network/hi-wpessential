@@ -2,6 +2,7 @@
 import blocks as b
 import demo_forms as forms
 import elementor as e
+from ess_ui import html
 
 ID = 'maison'
 
@@ -315,7 +316,7 @@ def g_contact():
         b.column(b.shortcode('[wpforms id="{{form:care}}" title="false"]'), width='55%'),
         b.column(b.image('store-paris', 'Inside the Maison store in Paris', aspect='5/3'), *stores, width='45%'),
         className='wpe-gap-lg'), className='wpe-section wpe-section--sm')
-    return b.join(head, body)
+    return b.join(head, body, html('<div class="demo-map"><iframe title="Maison Paris on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=14%20Rue%20de%20Saintonge%20Paris&amp;z=15&amp;output=embed"></iframe></div>'))
 
 
 def g_help():
@@ -405,7 +406,8 @@ def e_contact():
     return [
         e_head('Stores & contact', 'We would love to hear from you', 'Our client care team answers within one working day, Monday to Saturday.'),
         e.container(e.row(e.col(e.shortcode('[wpforms id="{{form:care}}" title="false"]'), width=55),
-                          e.col(e.image_fixed('store-paris', 'Inside the Maison store in Paris', 320), *stores, width=45), gap=48), pad=(24, 24, 96, 24)),
+                          e.col(e.image_fixed('store-paris', 'Inside the Maison store in Paris', 320), *stores, width=45), gap=48), pad=(24, 24, 72, 24)),
+        e.container(e.map_widget('14 Rue de Saintonge, Paris'), pad=0, boxed=False),
     ]
 
 
