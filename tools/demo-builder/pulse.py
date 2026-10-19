@@ -333,7 +333,8 @@ def g_contact():
                     layout='flex', wrap='nowrap', valign='center', className='px-tile px-tile--row') for t, d in cards]
     return b.join(g_title('Contact', 'Talk to the Pulse team', 'Tickets, press, speaking or sponsorship — pick a topic and we route it to the right person.'),
                   b.section(b.columns(b.column(b.shortcode('[wpforms id="{{form:contact}}" title="false"]'), width='62%', className='px-form-card'),
-                                      b.column(*side, width='38%'), className='wpe-gap-lg'), className='wpe-section wpe-section--sm'))
+                                      b.column(*side, width='38%'), className='wpe-gap-lg'), className='wpe-section wpe-section--sm'),
+                  b.section(html('<div class="demo-map"><iframe title="Lisbon Congress Centre on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Lisbon%20Congress%20Centre&amp;z=15&amp;output=embed"></iframe></div>'), className='wpe-section wpe-section--sm'))
 
 
 # Elementor ------------------------------------------------------------------------------
@@ -470,7 +471,8 @@ def e_contact():
     return [e_title('Contact', 'Talk to the Pulse team', 'Tickets, press, speaking or sponsorship — pick a topic and we route it to the right person.'),
             e.container(e.row(e.col(e.shortcode('[wpforms id="{{form:contact}}" title="false"]'), width=62, pad=28, radius=20, border='border', bg='surface'),
                               e.col(*[e.container(e.icon_box(i, t, d), inner=True, bg='surface-alt', radius=16, pad=18) for i, t, d in cards], width=38, gap=12), gap=40),
-                        pad=(24, 24, 96, 24))]
+                        pad=(24, 24, 72, 24)),
+            e.container(e.map_widget('Lisbon Congress Centre, Lisbon'), pad=(0, 24, 96, 24))]
 
 
 # Package --------------------------------------------------------------------------------

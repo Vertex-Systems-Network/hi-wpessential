@@ -13,3 +13,5 @@ Owner decision, Oct 2026.
 3. Existing demos (Base/Northwind, Maison, Pulse, WPEssential.org) get re-checked against these rules
    and upgraded where they look plain.
 4. New demos (Business Pro, Saffron, Campus) are designed to these rules from the start.
+5. **Every demo's Contact (or Locations) page must include a Google map** of the business address,
+   in Figma and in both builders (Gutenberg iframe `.demo-map`, Elementor `google_maps` widget).
