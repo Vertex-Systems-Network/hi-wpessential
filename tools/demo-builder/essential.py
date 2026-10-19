@@ -7,6 +7,8 @@ the WPEssential dashboard. Products are the demos, the services and the monthly,
 """
 import re
 
+from urllib.parse import quote
+
 import blocks as b
 from ess_ui import arrow, chip, head, html, ico, over, plan_card
 import ess_services as svc
@@ -40,6 +42,10 @@ DEMOS = [
 
 # Same plans as the WPEssential Server (Plans::defaults()): monthly price per tier, yearly is twelve
 # months less 20%, lifetime is paid once and covers the major version bought (1.x until 2.0 ships).
+# Company details shown on About, Services and Contact. DUMMY values until the real ones are confirmed.
+OFFICE = {'street': 'Office 12, 3rd Floor, Arfa Software Technology Park', 'city': 'Ferozepur Road, Lahore 54000, Pakistan',
+          'phone': '+92 42 3500 0000', 'map': 'Arfa Software Technology Park, Lahore'}
+
 YEARLY_DISCOUNT = 20
 TIERS = [
     dict(key='starter', name='Starter', monthly=10, lifetime=239, sites=1, white=0, short='One theme with its demos for one website.',
@@ -543,9 +549,10 @@ def g_team():
                  b.group(*[b.group(b.image('team-%d' % i, n, aspect='7/8', className='ess-team__img'), b.p('<strong>%s</strong>' % n), b.p(r, className='ess-side__muted'), layout='default', className='ess-team')
                            for i, (n, r) in enumerate([('Ayesha Malik', 'Project lead'), ('Bilal Khan', 'Lead developer'), ('Sara Ahmed', 'Client success'), ('Usman Tariq', 'WooCommerce')], 1)],
                          layout='grid', columns=4, grid_min='7rem', className='ess-grid'), width='55%'),
-        b.column(html('<div class="ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=Lahore%2C%20Pakistan&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                      '<div class="ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>Lahore, Pakistan · PKT (UTC+5)</span>'
-                      '<a href="https://maps.google.com/?q=Lahore%2C%20Pakistan" target="_blank" rel="noopener">Get directions ↗</a></div></div>'), width='45%'),
+        b.column(html('<div class="ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=%s&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+                      '<div class="ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>%s<br>%s</span><span><a href="tel:%s">%s</a> · PKT (UTC+5)</span>'
+                      '<a href="https://maps.google.com/?q=%s" target="_blank" rel="noopener">Get directions ↗</a></div></div>' % (
+                          quote(OFFICE['map']), OFFICE['street'], OFFICE['city'], OFFICE['phone'].replace(' ', ''), OFFICE['phone'], quote(OFFICE['map']))), width='45%'),
         className='ess-gap', valign='center'))
 
 
@@ -558,7 +565,8 @@ def g_contact():
             ('Email us directly', [('<a href="mailto:sales@wpessential.org">sales@wpessential.org</a>', 'Plans, licences, agencies'),
                                    ('<a href="mailto:services@wpessential.org">services@wpessential.org</a>', 'Projects and care plans'),
                                    ('<a href="mailto:support@wpessential.org">support@wpessential.org</a>', 'Customers with a licence')]),
-            ('Office hours', [('Monday – Friday', 'Pakistan time (PKT, UTC+5)'), ('Vertex Systems Network (Pvt.) Ltd.', 'Registered company, Pakistan')])]
+            ('Office', [(OFFICE['street'], OFFICE['city']), ('<a href="tel:%s">%s</a>' % (OFFICE['phone'].replace(' ', ''), OFFICE['phone']), 'Monday – Friday, 9:00 – 18:00 PKT (UTC+5)'),
+                        ('Vertex Systems Network (Pvt.) Ltd.', 'Registered company, Pakistan')])]
     side_cards = [b.group(b.h(t, level=3, className='ess-side__title'),
                           *[b.group(b.p('<strong>%s</strong>' % a_), b.p(d, className='ess-side__muted'), layout='default', className='ess-side__row') for a_, d in rows],
                           layout='default', className='ess-card ess-side') for t, rows in side]
@@ -854,13 +862,13 @@ def e_team():
               e.text('No call centre and no outsourcing — the people who build the theme run your project.'),
               e.grid(*[e.image_box('team-%d' % i, n, r, height=180, people=True) for i, (n, r) in enumerate(
                   [('Ayesha Malik', 'Project lead'), ('Bilal Khan', 'Lead developer'), ('Sara Ahmed', 'Client success'), ('Usman Tariq', 'WooCommerce')], 1)], columns=4), width=55),
-        e.col(e.map_widget('Lahore, Pakistan', height=420), width=45), gap=48), pad=(80, 24, 80, 24))
+        e.col(e.map_widget(OFFICE['map'], height=420), width=45), gap=48), pad=(80, 24, 80, 24))
 
 
 def e_contact():
     side = [('fas fa-clock', 'Response times', 'Sales: within one business day<br>Projects: quote within two business days<br>Support: through the ticket desk'),
             ('fas fa-envelope', 'Email us directly', 'sales@wpessential.org<br>services@wpessential.org<br>support@wpessential.org'),
-            ('fas fa-building', 'Office hours', 'Monday – Friday, Pakistan time (UTC+5)<br>Vertex Systems Network (Pvt.) Ltd.'),
+            ('fas fa-building', 'Office', '%s<br>%s<br>%s · Mon – Fri, 9:00 – 18:00 PKT<br>Vertex Systems Network (Pvt.) Ltd.' % (OFFICE['street'], OFFICE['city'], OFFICE['phone'])),
             ('fas fa-life-ring', 'Already a customer?', '<a href="{{page:docs}}">Documentation</a> · <a href="{{page:support}}">Open a ticket</a> · <a href="{{woo:myaccount}}">My account</a>')]
     steps = [('We reply', 'A real person answers within one business day.'), ('Discovery call', '30 minutes on goals, content, budget and deadlines.'),
              ('Fixed quote', 'Scope, price and timeline in writing — no surprises.'), ('Kickoff', 'We start on the agreed date and share weekly previews.')]
