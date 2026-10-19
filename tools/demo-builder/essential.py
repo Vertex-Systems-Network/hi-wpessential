@@ -42,9 +42,14 @@ DEMOS = [
 
 # Same plans as the WPEssential Server (Plans::defaults()): monthly price per tier, yearly is twelve
 # months less 20%, lifetime is paid once and covers the major version bought (1.x until 2.0 ships).
-# Company details shown on About, Services and Contact. DUMMY values until the real ones are confirmed.
-OFFICE = {'street': 'Office 12, 3rd Floor, Arfa Software Technology Park', 'city': 'Ferozepur Road, Lahore 54000, Pakistan',
-          'phone': '+92 42 3500 0000', 'map': 'Arfa Software Technology Park, Lahore'}
+# Company details shown on About, Services and Contact.
+OFFICE = {'street': 'House 3213/4 8M, Fried Abad, Baron Bohar Gate', 'city': 'Multan, Pakistan',
+          'phone': '+92 305 1983930', 'map': 'Bohar Gate, Multan, Pakistan'}
+
+# Client names in the "Trusted by" strip (sample names until real clients are confirmed).
+CLIENTS = ['Northwind', 'Kitecraft', 'Fieldhouse', 'Lumen Studio', 'Orbitly', 'Mosaic &amp; Co', 'Bluepeak Foods', 'Indus Textiles',
+           'Crescent Realty', 'Saffron Kitchen', 'Nexa Health', 'Greenline Logistics', 'Atlas Learning', 'Pixelmint Agency',
+           'Harbor Legal', 'Zarqa Fashion', 'Summit Motors', 'Riverstone Hotels']
 
 YEARLY_DISCOUNT = 20
 TIERS = [
@@ -524,7 +529,7 @@ def g_proof():
     return section(b.group(*[b.group(b.p(n, className='ess-proof__n'), b.p(l, className='ess-side__muted'), layout='default', className='ess-proof')
                       for n, l in [('1,200+', 'WordPress sites delivered'), ('4.9 / 5', 'from 640 client reviews'), ('&lt; 1 day', 'average first reply'), ('12 yrs', 'building for WordPress')]],
                     layout='grid', columns=4, grid_min='12rem', className='ess-grid'),
-            b.p('<span>Trusted by agencies, stores and publishers</span>' + ''.join('<b>%s</b>' % n for n in ['Northwind', 'Kitecraft', 'Fieldhouse', 'Lumen Studio', 'Orbitly', 'Mosaic &amp; Co']),
+            b.p('<span>Trusted by agencies, stores and publishers</span>' + ''.join('<b>%s</b>' % n for n in CLIENTS),
                 className='ess-clients'))
 
 
@@ -840,7 +845,7 @@ def e_about():
 def e_proof():
     return e.container(e.grid(*[e.container(e.heading(n, 3, 'secondary', size_px=26), e.text(l, size_px=13), inner=True, pad=20, radius=16, bg='surface-alt', gap=4)
                                 for n, l in [('1,200+', 'WordPress sites delivered'), ('4.9 / 5', 'from 640 client reviews'), ('< 1 day', 'average first reply'), ('12 yrs', 'building for WordPress')]], columns=4),
-                       e.text('Trusted by agencies, stores and publishers: <strong>Northwind · Kitecraft · Fieldhouse · Lumen Studio · Orbitly · Mosaic &amp; Co</strong>', size_px=14),
+                       e.text('Trusted by agencies, stores and publishers: <strong>%s</strong>' % ' · '.join(CLIENTS), size_px=14),
                        pad=(48, 24, 48, 24))
 
 

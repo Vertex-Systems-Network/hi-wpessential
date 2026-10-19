@@ -379,8 +379,9 @@ ul.ess-facts { list-style: none; padding: 0; margin: 8px 0 0; max-width: 560px; 
 /* Contact — proof, recent work, testimonial, team and map. */
 .ess-proof { background: var(--wp--preset--color--surface-alt, #f3f6fc); border-radius: 16px; padding: 20px 24px; }
 .ess-proof__n { font-size: 26px; font-weight: 800; color: var(--wp--preset--color--secondary, #1f48a6); margin: 0; }
-.ess-clients { display: flex; flex-wrap: wrap; gap: 12px 44px; align-items: center; justify-content: space-between; margin-top: 28px; color: var(--wp--preset--color--text-muted, #5b6478); font-size: 14px; }
+.ess-clients { display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: center; justify-content: flex-start; margin-top: 28px; color: var(--wp--preset--color--text-muted, #5b6478); font-size: 14px; }
 .ess-clients b { font-size: 18px; letter-spacing: -.01em; }
+.ess-clients span { flex-basis: 100%; }
 .ess-work { padding: 0 !important; overflow: hidden; }
 .ess-work figure { margin: 0; }
 .ess-work img { display: block; width: 100%; object-fit: cover; object-position: top; }
