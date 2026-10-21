@@ -366,11 +366,22 @@ body:has(#yearly:target) .ess-toggle--dark a[href="#yearly"], body:has(#lifetime
 .wpforms-container .wpforms-field input:not([type=checkbox]):not([type=radio]), .wpforms-container .wpforms-field select, .wpforms-container .wpforms-field textarea { width: 100%; max-width: 100% !important; border: 1px solid var(--wp--preset--color--border, #e3e8f2); border-radius: 10px; padding: 12px 14px; background: var(--wp--preset--color--surface, #fff); color: inherit; font: inherit; }
 .wpforms-container .wpforms-field-label { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
 .wpforms-container button[type=submit] { background: var(--wp--preset--color--primary, #ec7d1a) !important; color: var(--wp--preset--color--on-primary, #fff) !important; border: 0 !important; border-radius: 999px !important; padding: 14px 28px !important; font-weight: 600; cursor: pointer; }
-.ess-news .wpforms-container { margin: 0; }
-.ess-news .wpforms-form { display: flex; gap: 8px; align-items: flex-end; }
-.ess-news .wpforms-field input:not([type=checkbox]):not([type=radio]) { background: #fff; border-color: rgba(11,26,61,.12); color: #0B1A3D; }
+/* Footer newsletter: one white pill with the email field and a navy Subscribe button (Figma 240:215). */
+.ess-news .wpforms-container { margin: 0 !important; flex: 0 1 440px; }
+.ess-news .wpforms-form { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid rgba(11,26,61,.12); border-radius: 999px; padding: 6px 6px 6px 20px; }
+.ess-news .wpforms-form > p, .ess-news .wpforms-form br, .ess-news .wpforms-field-container > p { display: none; }
+.ess-news .wpforms-field-container { flex: 1; min-width: 0; }
+.ess-news .wpforms-field { padding: 0 !important; margin: 0 !important; }
+.ess-news .wpforms-field-label { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.ess-news .wpforms-field input:not([type=checkbox]):not([type=radio]) { width: 100%; max-width: none !important; height: 40px; padding: 0 !important; border: 0 !important; background: transparent !important; color: #0B1A3D; box-shadow: none !important; }
+.ess-news .wpforms-field input:focus { outline: none; }
+.ess-news .wpforms-form:focus-within { box-shadow: 0 0 0 3px rgba(11,26,61,.25); }
 .ess-news .wpforms-field input::placeholder { color: #5B6680; }
-.ess-news .wpforms-container button[type=submit] { background: #0B1A3D !important; color: #fff !important; }
+.ess-news .wpforms-submit-container { margin: 0 !important; padding: 0 !important; }
+.ess-news .wpforms-container button[type=submit] { height: 40px; padding: 0 20px !important; background: #0B1A3D !important; color: #fff !important; font-size: 14px; }
+.ess-news .wpforms-container button[type=submit]::after { content: " ↗"; }
+.ess-news .wpforms-confirmation-container-full { margin: 0; border-radius: 16px; }
+@media (max-width: 640px) { .ess-news .wpforms-container { flex-basis: 100%; } }
 @media (max-width: 1024px) { .ess-contact-cols { flex-wrap: wrap !important; } .ess-contact-cols > .wp-block-column { flex-basis: 100% !important; } }
 .ess-side__row a { overflow-wrap: normal; word-break: normal; white-space: nowrap; }
 .ess-side__row > :last-child { text-align: right; }
