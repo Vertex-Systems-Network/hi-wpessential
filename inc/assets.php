@@ -108,7 +108,7 @@ add_filter(
 			wp_enqueue_script( 'wpessential-marketplace' );
 		}
 		if ( 'core/paragraph' === ( $block['blockName'] ?? '' ) && false !== strpos( (string) ( $block['attrs']['className'] ?? '' ), 'ess-signin' ) && is_user_logged_in() ) {
-			$content = preg_replace( '#>\s*Sign in\s*<#', '>' . esc_html__( 'My account', 'wpessential' ) . '<', $content );
+			$content = preg_replace( '#>\s*Sign in\s*<#', '>' . esc_html__( 'My account', 'hi-wpessential' ) . '<', $content );
 		}
 		return $content;
 	},
