@@ -30,7 +30,6 @@ class Mcp {
 	public static function hooks() {
 		add_action( 'rest_api_init', array( __CLASS__, 'routes' ) );
 		add_action( 'admin_menu', array( __CLASS__, 'menu' ), 20 );
-		add_action( 'admin_post_wpessential_mcp', array( __CLASS__, 'save' ) );
 	}
 
 	/**
@@ -584,40 +583,126 @@ class Mcp {
 		);
 	}
 
-	// Admin screen.
+	// Dashboard (the AI Connect tab of the WPEssential app).
 
 	/**
-	 * Submenu.
+	 * Old AI Connect screen URL opens the dashboard tab.
 	 */
 	public static function menu() {
-		add_submenu_page( Admin::SLUG, __( 'AI Connect (MCP)', 'hi-wpessential' ), __( 'AI Connect', 'hi-wpessential' ), 'manage_options', 'wpessential-mcp', array( __CLASS__, 'screen' ) );
+		$hook = add_submenu_page( '', __( 'AI Connect', 'hi-wpessential' ), '', 'manage_options', 'wpessential-mcp', '__return_null' );
+		if ( $hook ) {
+			add_action(
+				'load-' . $hook,
+				static function () {
+					wp_safe_redirect( admin_url( 'admin.php?page=' . Admin::SLUG . '#ai' ) );
+					exit;
+				}
+			);
+		}
 	}
 
 	/**
-	 * Switch on/off, create or revoke the connection password.
+	 * Client keys and labels.
+	 *
+	 * @return array key => label
 	 */
-	public static function save() {
-		check_admin_referer( 'wpessential_mcp' );
-		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'Not allowed.', 'hi-wpessential' ) );
+	public static function clients() {
+		$out = array();
+		foreach ( array_keys( self::snippets( '', '' ) ) as $label ) {
+			$out[ sanitize_title( $label ) ] = $label;
 		}
-		$do  = isset( $_POST['do'] ) ? sanitize_key( wp_unslash( $_POST['do'] ) ) : '';
-		$opt = (array) get_option( self::OPTION, array() );
+		return $out;
+	}
+
+	/**
+	 * State for the dashboard tab.
+	 *
+	 * @return array
+	 */
+	public static function state() {
+		$opt     = (array) get_option( self::OPTION, array() );
+		$clients = self::clients();
+		$client  = isset( $clients[ $opt['client'] ?? '' ] ) ? $opt['client'] : (string) array_key_first( $clients );
+		$snips   = self::snippets( self::url(), 'YOUR_TOKEN' );
+		return array(
+			'enabled' => self::enabled(),
+			'url'     => self::url(),
+			'https'   => is_ssl() || 0 === strpos( home_url(), 'https://' ),
+			'client'  => $client,
+			'clients' => array_map(
+				static fn( $key, $label ) => array(
+					'id'    => $key,
+					'label' => $label,
+				),
+				array_keys( $clients ),
+				$clients
+			),
+			// Placeholder setup of the chosen client only, while a code exists.
+			'setup'   => self::enabled() ? self::setup( $snips[ $clients[ $client ] ] ) : null,
+			'tools'   => array_values(
+				array_map(
+					static fn( $t ) => array(
+						'name'        => $t['name'],
+						'description' => $t['description'],
+					),
+					self::tools()
+				)
+			),
+		);
+	}
+
+	/**
+	 * Snippet pair as an object.
+	 *
+	 * @param array $snip array( where, code ).
+	 * @return array
+	 */
+	private static function setup( array $snip ) {
+		return array(
+			'where' => $snip[0],
+			'code'  => $snip[1],
+		);
+	}
+
+	/**
+	 * Switch on with a new code and return the setup of one client only.
+	 *
+	 * @param string $client Client key.
+	 * @return array|\WP_Error
+	 */
+	public static function connect( $client ) {
+		$clients = self::clients();
+		if ( ! isset( $clients[ $client ] ) ) {
+			return new \WP_Error( 'wpe_mcp_client', __( 'Choose an AI first.', 'hi-wpessential' ) );
+		}
 		$uid = get_current_user_id();
 		self::revoke( $uid );
-		$opt['enabled'] = 0;
-		if ( 'connect' === $do ) {
-			$made = \WP_Application_Passwords::create_new_application_password( $uid, array( 'name' => self::APP_NAME ) );
-			if ( ! is_wp_error( $made ) ) {
-				$opt['enabled'] = 1;
-				$opt['user']    = $uid;
-				// Shown once on the next screen, never stored in plain text.
-				set_transient( 'wpessential_mcp_secret_' . $uid, $made[0], 10 * MINUTE_IN_SECONDS );
-			}
+		$made = \WP_Application_Passwords::create_new_application_password( $uid, array( 'name' => self::APP_NAME ) );
+		if ( is_wp_error( $made ) ) {
+			return $made;
 		}
+		$opt            = (array) get_option( self::OPTION, array() );
+		$opt['enabled'] = 1;
+		$opt['user']    = $uid;
+		$opt['client']  = $client;
 		update_option( self::OPTION, $opt, false );
-		wp_safe_redirect( admin_url( 'admin.php?page=wpessential-mcp' ) );
-		exit;
+		$user  = wp_get_current_user();
+		$token = base64_encode( $user->user_login . ':' . str_replace( ' ', '', $made[0] ) ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- HTTP Basic auth value.
+		$state = self::state();
+		// The real code is returned once, never stored in plain text.
+		$state['setup'] = self::setup( self::snippets( self::url(), $token )[ $clients[ $client ] ] );
+		$state['fresh'] = true;
+		return $state;
+	}
+
+	/**
+	 * Switch off and delete the code.
+	 */
+	public static function disconnect() {
+		self::revoke( get_current_user_id() );
+		$opt            = (array) get_option( self::OPTION, array() );
+		$opt['enabled'] = 0;
+		update_option( self::OPTION, $opt, false );
 	}
 
 	/**
@@ -714,42 +799,5 @@ class Mcp {
 			),
 			'Any other MCP client' => array( __( 'Streamable HTTP server. Send this header with every request:', 'hi-wpessential' ), "URL: {$url}\nAuthorization: {$header}" ),
 		);
-	}
-
-	/**
-	 * Admin screen.
-	 */
-	public static function screen() {
-		$on     = self::enabled();
-		$uid    = get_current_user_id();
-		$secret = get_transient( 'wpessential_mcp_secret_' . $uid );
-		delete_transient( 'wpessential_mcp_secret_' . $uid );
-		$user  = wp_get_current_user();
-		$token = $secret ? base64_encode( $user->user_login . ':' . str_replace( ' ', '', $secret ) ) : 'YOUR_TOKEN'; // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- HTTP Basic auth value.
-		$ssl   = is_ssl() || 0 === strpos( home_url(), 'https://' );
-		echo '<div class="wrap wpe-mcp"><h1>' . esc_html__( 'AI Connect (MCP)', 'hi-wpessential' ) . '</h1>';
-		echo '<p style="max-width:760px">' . esc_html__( 'Connect Claude, Cursor, VS Code, Gemini CLI or any MCP-compatible AI to this site. Once connected, the assistant can read and edit pages, templates, styles, menus, forms, products and settings, install plugins and import demos — as you, an administrator. Switch it off any time; that also deletes the password it uses.', 'hi-wpessential' ) . '</p>';
-		if ( ! $ssl ) {
-			echo '<div class="notice notice-warning inline"><p>' . esc_html__( 'This site does not use HTTPS. Application Passwords need HTTPS on live sites; use it only for local testing.', 'hi-wpessential' ) . '</p></div>';
-		}
-		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">' . wp_nonce_field( 'wpessential_mcp', '_wpnonce', true, false ) . '<input type="hidden" name="action" value="wpessential_mcp">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Nonce markup.
-		echo '<p><strong>' . esc_html__( 'Status:', 'hi-wpessential' ) . '</strong> ' . ( $on ? '<span style="color:#16a34a">● ' . esc_html__( 'On', 'hi-wpessential' ) . '</span>' : '<span style="color:#b45309">● ' . esc_html__( 'Off', 'hi-wpessential' ) . '</span>' ) . ' &nbsp; <code>' . esc_html( self::url() ) . '</code></p>';
-		echo '<p>' . ( $on ? '<button class="button" name="do" value="connect">' . esc_html__( 'Create a new connection code', 'hi-wpessential' ) . '</button> <button class="button button-link-delete" name="do" value="off">' . esc_html__( 'Switch off and revoke', 'hi-wpessential' ) . '</button>' : '<button class="button button-primary button-hero" name="do" value="connect">' . esc_html__( 'Switch on and create connection code', 'hi-wpessential' ) . '</button>' ) . '</p></form>';
-		if ( $secret ) {
-			echo '<div class="notice notice-success inline"><p><strong>' . esc_html__( 'Copy your setup now — the code is shown only once.', 'hi-wpessential' ) . '</strong> ' . esc_html__( 'Treat it like a password. Create a new one if it gets lost.', 'hi-wpessential' ) . '</p></div>';
-		} elseif ( $on ) {
-			echo '<p class="description">' . esc_html__( 'The code was shown when it was created. Replace YOUR_TOKEN with it, or create a new code.', 'hi-wpessential' ) . '</p>';
-		}
-		if ( $on ) {
-			foreach ( self::snippets( self::url(), $token ) as $label => $snip ) {
-				echo '<h2 style="margin-top:28px">' . esc_html( $label ) . '</h2><p>' . esc_html( $snip[0] ) . '</p><textarea readonly rows="' . (int) min( 14, substr_count( $snip[1], "\n" ) + 2 ) . '" style="width:100%;max-width:900px;font-family:monospace" onclick="this.select()">' . esc_textarea( $snip[1] ) . '</textarea>';
-			}
-			echo '<h2 style="margin-top:28px">' . esc_html__( 'What the AI can do', 'hi-wpessential' ) . '</h2><ul style="list-style:disc;padding-left:20px">';
-			foreach ( self::tools() as $name => $tool ) {
-				echo '<li><code>' . esc_html( $name ) . '</code> — ' . esc_html( $tool['description'] ) . '</li>';
-			}
-			echo '</ul>';
-		}
-		echo '</div>';
 	}
 }

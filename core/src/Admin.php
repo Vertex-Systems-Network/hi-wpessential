@@ -39,6 +39,7 @@ class Admin {
 			'plugins' => __( 'Plugins', 'hi-wpessential' ),
 			'license' => __( 'License', 'hi-wpessential' ),
 			'status'  => __( 'System Status', 'hi-wpessential' ),
+			'ai'      => __( 'AI Connect', 'hi-wpessential' ),
 		);
 		foreach ( $tabs as $tab => $label ) {
 			add_submenu_page( self::SLUG, $label, $label, 'manage_options', 'welcome' === $tab ? self::SLUG : self::SLUG . '#' . $tab, 'welcome' === $tab ? array( $this, 'render' ) : '__return_null' );

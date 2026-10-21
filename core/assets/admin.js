@@ -149,6 +149,7 @@
 		[ 'plugins', __( 'Plugins', 'hi-wpessential' ), 'plug' ],
 		[ 'license', __( 'License', 'hi-wpessential' ), 'key' ],
 		[ 'status', __( 'System Status', 'hi-wpessential' ), 'pulse' ],
+		[ 'ai', __( 'AI Connect', 'hi-wpessential' ), 'spark' ],
 	];
 
 	function shell() {
@@ -192,7 +193,7 @@
 				li.classList.toggle( 'current', tab === 'welcome' ? h.endsWith( 'page=wpessential' ) : h.endsWith( '#' + tab ) );
 			}
 		} );
-		( { welcome: viewWelcome, demos: viewDemos, plugins: viewPlugins, license: viewLicense, status: viewStatus } )[ tab ]();
+		( { welcome: viewWelcome, demos: viewDemos, plugins: viewPlugins, license: viewLicense, status: viewStatus, ai: viewAi } )[ tab ]();
 	}
 
 	const view = ( html ) => {
@@ -1377,6 +1378,81 @@
 			} );
 		} catch ( e ) {
 			$( '#wpe-status' ).innerHTML = `<div class="wpe-callout wpe-callout--error">${ ico( 'error' ) }<div>${ esc( errMsg( e ) ) }</div></div>`;
+		}
+	}
+
+	/* ------------------------------------------------------------------ AI connect */
+
+	async function viewAi() {
+		view( `<div class="wpe-head"><div><span class="wpe-eyebrow">${ esc( __( 'AI Connect · MCP', 'hi-wpessential' ) ) }</span><h1>${ esc( __( 'Connect your AI assistant', 'hi-wpessential' ) ) }</h1><p>${ esc( __( 'Pick your AI, generate a code and paste it in. The assistant can then read and edit pages, templates, styles, menus, forms and products, install plugins and import demos — as you, an administrator.', 'hi-wpessential' ) ) }</p></div><span id="wpe-mcp-pill"></span></div><div class="wpe-mcp" id="wpe-mcp"><div class="wpe-skel" style="height:320px;border-radius:20px"></div></div>` );
+		try {
+			drawAi( await api( { path: '/wpessential/v1/mcp' } ) );
+		} catch ( e ) {
+			$( '#wpe-mcp' ).innerHTML = `<div class="wpe-callout wpe-callout--error">${ ico( 'error' ) }<div>${ esc( errMsg( e ) ) }</div></div>`;
+		}
+	}
+
+	function drawAi( st ) {
+		const box = $( '#wpe-mcp' );
+		if ( ! box ) {
+			return;
+		}
+		const chosen = st.clients.find( ( c ) => c.id === st.client ) || st.clients[ 0 ];
+		$( '#wpe-mcp-pill' ).innerHTML = `<span class="wpe-mcp-status ${ st.enabled ? 'is-on' : 'is-off' }">${ esc( st.enabled ? __( 'Connected', 'hi-wpessential' ) : __( 'Off', 'hi-wpessential' ) ) }</span>`;
+		box.innerHTML = `
+			${ st.https ? '' : `<div class="wpe-callout wpe-callout--warning">${ ico( 'warn' ) }<div>${ esc( __( 'This site does not use HTTPS. Application Passwords need HTTPS on live sites; use it only for local testing.', 'hi-wpessential' ) ) }</div></div>` }
+			<div class="wpe-card wpe-mcp-card">
+				<h2 class="wpe-mcp-step"><b>1</b>${ esc( __( 'Choose your AI', 'hi-wpessential' ) ) }</h2>
+				<div class="wpe-mcp-clients" role="radiogroup">${ st.clients.map( ( c ) => `<label class="wpe-mcp-client"><input type="radio" name="wpe-mcp-client" value="${ esc( c.id ) }" ${ c.id === chosen.id ? 'checked' : '' }><span><strong>${ esc( c.label ) }</strong></span></label>` ).join( '' ) }</div>
+				<h2 class="wpe-mcp-step"><b>2</b>${ esc( __( 'Generate the connection code', 'hi-wpessential' ) ) }</h2>
+				<div class="wpe-mcp-actions">
+					<button class="wpe-btn wpe-btn--grad wpe-btn--lg" data-mcp-connect>${ ico( 'spark', 16 ) }${ esc( st.enabled ? __( 'Generate a new code', 'hi-wpessential' ) : __( 'Switch on and generate', 'hi-wpessential' ) ) }</button>
+					${ st.enabled ? `<button class="wpe-btn wpe-btn--danger wpe-btn--lg" data-mcp-off>${ esc( __( 'Switch off and revoke', 'hi-wpessential' ) ) }</button>` : '' }
+				</div>
+				<p class="wpe-muted">${ esc( __( 'Only the AI you choose gets its setup. A new code replaces the old one; switching off deletes it.', 'hi-wpessential' ) ) }</p>
+			</div>
+			${ st.setup ? `<section class="wpe-card wpe-mcp-card">
+				<h2 class="wpe-mcp-step"><b>3</b>${ esc( sprintf( __( 'Paste it into %s', 'hi-wpessential' ), chosen.label ) ) }</h2>
+				${ st.fresh ? `<div class="wpe-callout wpe-callout--warning">${ ico( 'warn' ) }<div><b>${ esc( __( 'Copy it now — the code is shown only once.', 'hi-wpessential' ) ) }</b> ${ esc( __( 'Treat it like a password: never paste it into a chat. Generate a new one if it gets lost.', 'hi-wpessential' ) ) }</div></div>` : `<p class="wpe-muted">${ esc( __( 'The code was shown once when it was generated. Replace YOUR_TOKEN with it, or generate a new code.', 'hi-wpessential' ) ) }</p>` }
+				<p>${ esc( st.setup.where ) }</p>
+				<div class="wpe-mcp-code"><textarea readonly rows="${ Math.min( 16, st.setup.code.split( '\n' ).length + 1 ) }">${ esc( st.setup.code ) }</textarea><button class="wpe-btn wpe-btn--primary wpe-btn--sm" data-mcp-copy>${ ico( 'copy', 14 ) }${ esc( __( 'Copy', 'hi-wpessential' ) ) }</button></div>
+			</section>
+			<details class="wpe-card wpe-mcp-card"><summary>${ esc( sprintf( __( 'What the AI can do (%d tools)', 'hi-wpessential' ), st.tools.length ) ) }</summary><ul class="wpe-mcp-tools">${ st.tools.map( ( t ) => `<li><code>${ esc( t.name ) }</code><span>${ esc( t.description ) }</span></li>` ).join( '' ) }</ul></details>` : '' }`;
+
+		const picked = () => ( $( 'input[name="wpe-mcp-client"]:checked', box ) || {} ).value;
+		$$( 'input[name="wpe-mcp-client"]', box ).forEach( ( r ) => r.addEventListener( 'change', () => {
+			// A different AI needs its own setup: hide the old one until a code is generated.
+			const step3 = $( 'section.wpe-mcp-card', box );
+			if ( step3 ) {
+				step3.hidden = r.value !== st.client;
+			}
+		} ) );
+		$( '[data-mcp-connect]', box ).addEventListener( 'click', ( e ) => busy( e.currentTarget, async () => {
+			try {
+				drawAi( await api( { path: '/wpessential/v1/mcp/connect', method: 'POST', data: { client: picked() } } ) );
+				toast( 'success', __( 'Connection code ready', 'hi-wpessential' ), __( 'Copy it into your AI now.', 'hi-wpessential' ) );
+			} catch ( err ) {
+				toast( 'error', __( 'Could not create the code', 'hi-wpessential' ), errMsg( err ) );
+			}
+		} ) );
+		const off = $( '[data-mcp-off]', box );
+		if ( off ) {
+			off.addEventListener( 'click', ( e ) => busy( e.currentTarget, async () => {
+				try {
+					drawAi( await api( { path: '/wpessential/v1/mcp/off', method: 'POST' } ) );
+					toast( 'success', __( 'AI Connect switched off', 'hi-wpessential' ), __( 'The code no longer works.', 'hi-wpessential' ) );
+				} catch ( err ) {
+					toast( 'error', __( 'Could not switch off', 'hi-wpessential' ), errMsg( err ) );
+				}
+			} ) );
+		}
+		const copy = $( '[data-mcp-copy]', box );
+		if ( copy ) {
+			copy.addEventListener( 'click', () => {
+				const t = $( '.wpe-mcp-code textarea', box );
+				t.select();
+				navigator.clipboard.writeText( t.value ).then( () => toast( 'success', __( 'Copied', 'hi-wpessential' ) ), () => toast( 'error', __( 'Copy failed', 'hi-wpessential' ) ) );
+			} );
 		}
 	}
 
