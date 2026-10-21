@@ -122,6 +122,14 @@ def push_menus(live, package):
         print('menu', menu['name'], out['id'])
 
 
+def push_styles(package):
+    """The demo's style variation (colours, fonts and its own CSS) into the site's global styles."""
+    data = package['settings'].get('style_data')
+    if data:
+        mcp('global_styles', {'settings': data.get('settings', {}), 'styles': data.get('styles', {})})
+        print('styles', data.get('title', ''), '%d bytes of CSS' % len(data.get('styles', {}).get('css', '')))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('demo')
@@ -131,6 +139,7 @@ def main():
     ap.add_argument('--status', default='publish')
     ap.add_argument('--all', action='store_true', help='push every page of the package (twice, so new pages link to each other)')
     ap.add_argument('--alias', action='append', default=[], help='package-slug=live-slug, e.g. privacy-policy=privacy-policy-2')
+    ap.add_argument('--styles', action='store_true', help='only push the style variation and its CSS')
     ap.add_argument('--dry', action='store_true', help='only list what is missing on the live site')
     a = ap.parse_args()
     package = json.load(open(os.path.join(ROOT, '..', '..', 'demos', a.demo, 'gutenberg', 'content.json')))
@@ -140,6 +149,9 @@ def main():
         live.forms = {f['key']: '?' for f in package.get('forms', [])}
         live.resolve(src)
         print('missing:', ', '.join(sorted(live.missing)) or 'nothing')
+        return
+    if a.styles:
+        push_styles(package)
         return
     aliases = dict(x.split('=', 1) for x in a.alias)
     if a.all:
@@ -159,6 +171,7 @@ def main():
             if rnd == 1:
                 live.missing = set()
         push_menus(live, package)
+        push_styles(package)
         for part in ('header', 'header-shop', 'header-transparent', 'footer'):
             mcp('block_templates', {'id': 'hi-wpessential//' + part, 'content': live.resolve(package['settings']['parts'][part]['content'])})
             print('part', part)

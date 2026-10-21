@@ -11,9 +11,18 @@ add_action(
 	'wp_enqueue_scripts',
 	static function () {
 		wp_enqueue_style( 'wpessential', WPESSENTIAL_URI . '/assets/css/theme.css', array(), WPESSENTIAL_ASSET_VERSION );
-		// Marketplace sections (.ess-*), used by the WPEssential.org demo in pages, header and footer.
-		wp_enqueue_style( 'wpessential-marketplace', WPESSENTIAL_URI . '/assets/css/marketplace.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
 		wp_enqueue_style( 'wpessential-demos', WPESSENTIAL_URI . '/assets/css/demos.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
+		// Tabs and filters for any demo; tiny, deferred, loaded only where a page uses them.
+		wp_register_script(
+			'wpessential-components',
+			WPESSENTIAL_URI . '/assets/js/components.js',
+			array(),
+			WPESSENTIAL_ASSET_VERSION,
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
 
 		if ( class_exists( 'WooCommerce' ) ) {
 			wp_enqueue_style( 'wpessential-woocommerce', WPESSENTIAL_URI . '/assets/css/woocommerce.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
@@ -84,4 +93,55 @@ add_action(
 			wp_enqueue_style( 'wpessential-woocommerce-editor', WPESSENTIAL_URI . '/assets/css/woocommerce.css', array(), WPESSENTIAL_ASSET_VERSION );
 		}
 	}
+);
+
+/*
+ * Load the components script only where a block uses tabs or a filter, and show signed-in
+ * visitors "My account" instead of "Sign in" (any paragraph with the class wpe-signin).
+ */
+add_filter(
+	'render_block',
+	static function ( $content, $block ) {
+		if ( false !== strpos( $content, 'data-wpe-tabs' ) || false !== strpos( $content, 'data-wpe-filter' ) ) {
+			wp_enqueue_script( 'wpessential-components' );
+		}
+		if ( 'core/paragraph' === ( $block['blockName'] ?? '' ) && false !== strpos( (string) ( $block['attrs']['className'] ?? '' ), 'wpe-signin' ) && is_user_logged_in() ) {
+			$content = preg_replace( '#>\s*Sign in\s*<#', '>' . esc_html__( 'My account', 'hi-wpessential' ) . '<', $content );
+		}
+		return $content;
+	},
+	10,
+	2
+);
+
+/*
+ * A demo's own CSS lives in its style variation (Global Styles → Custom CSS). WordPress prints it
+ * with the global styles, before the theme's stylesheets, so the theme would win every tie. Print
+ * it once, right after theme.css (where demo styles always sat), so breakpoints and dark mode still follow it.
+ */
+add_action(
+	'wp_enqueue_scripts',
+	static function () {
+		global $wp_styles;
+		if ( ! function_exists( 'wp_get_global_stylesheet' ) || ! wp_style_is( 'wpessential', 'enqueued' ) ) {
+			return;
+		}
+		$css = trim( (string) wp_get_global_stylesheet( array( 'custom-css' ) ) );
+		if ( '' === $css || empty( $wp_styles->registered['global-styles'] ) ) {
+			return;
+		}
+		$after = (array) ( $wp_styles->registered['global-styles']->extra['after'] ?? array() );
+		$found = false;
+		foreach ( $after as $i => $chunk ) {
+			if ( false !== strpos( (string) $chunk, $css ) ) {
+				$after[ $i ] = str_replace( $css, '', (string) $chunk );
+				$found       = true;
+			}
+		}
+		if ( $found ) {
+			$wp_styles->registered['global-styles']->extra['after'] = $after;
+			wp_add_inline_style( 'wpessential', $css );
+		}
+	},
+	100
 );
