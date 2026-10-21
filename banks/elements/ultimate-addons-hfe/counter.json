@@ -1,0 +1,302 @@
+{
+ "kind": "elementor-widget",
+ "name": "counter",
+ "title": "Counter",
+ "categories": [],
+ "keywords": [
+  "Counter"
+ ],
+ "file": "header-footer-elementor/inc/widgets-manager/widgets/counter/counter.php",
+ "sections": [
+  {
+   "id": "section_general",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "start_number",
+     "label": "Starting Number",
+     "type": "NUMBER"
+    },
+    {
+     "name": "end_number",
+     "label": "Ending Number",
+     "type": "NUMBER"
+    },
+    {
+     "name": "prefix",
+     "label": "Prefix",
+     "type": "TEXT"
+    },
+    {
+     "name": "suffix",
+     "label": "Suffix",
+     "type": "TEXT"
+    },
+    {
+     "name": "digit_separator",
+     "label": "Digit Separator",
+     "type": "SELECT",
+     "options": [
+      "_"
+     ]
+    },
+    {
+     "name": "counter_speed",
+     "label": "Counter Speed (seconds)",
+     "type": "SLIDER"
+    }
+   ]
+  },
+  {
+   "id": "section_number",
+   "label": "Number",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "counter_content_display",
+     "label": "",
+     "type": "HIDDEN",
+     "styles": true
+    },
+    {
+     "name": "number_horizontal_alignment",
+     "label": "Horizontal Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "number_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "number_gap",
+     "label": "Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "number_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "number_text_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "number_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "counter_wrapper_display",
+     "label": "",
+     "type": "HIDDEN",
+     "styles": true
+    },
+    {
+     "name": "title_position",
+     "label": "Position",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "before",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title_horizontal_alignment",
+     "label": "Horizontal Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title_horizontal_alignment_column",
+     "label": "Horizontal Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title_vertical_alignment",
+     "label": "Vertical Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title_gap",
+     "label": "Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_text_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "title_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_prefix_style",
+   "label": "Prefix",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "prefix_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "prefix_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "prefix_text_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "prefix_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_suffix_style",
+   "label": "Suffix",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "suffix_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "suffix_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "suffix_text_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "suffix_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 34,
+  "responsive": 8
+ },
+ "source": "ultimate-addons-hfe",
+ "source_label": "Ultimate Addons (Header Footer Elementor)"
+}

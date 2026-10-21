@@ -1,0 +1,110 @@
+{
+ "kind": "elementor-widget",
+ "name": "site-logo",
+ "title": "Site Logo",
+ "categories": [
+  "happy_addons_category",
+  "happy_addons_theme_builder"
+ ],
+ "keywords": [
+  "logo",
+  " image"
+ ],
+ "file": "happy-elementor-addons/widgets/site-logo/widget.php",
+ "sections": [
+  {
+   "id": "_section_site_logo",
+   "label": "Logo",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "post_feature_image",
+     "label": "",
+     "type": "GROUP",
+     "group": ""
+    },
+    {
+     "name": "logo_type",
+     "label": "Logo",
+     "type": "CHOOSE",
+     "options": [
+      "default",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "sitelogo_image",
+     "label": "Site Logo",
+     "type": "MEDIA"
+    },
+    {
+     "name": "logosize",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_thumbnail",
+   "label": "Logo style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "logo_width",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "logo_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "logo_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "logo_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "logo_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 10,
+  "responsive": 5
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

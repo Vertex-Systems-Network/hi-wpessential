@@ -1,0 +1,309 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-woo-product-price",
+ "title": "Woo Product Price",
+ "categories": [
+  "essential-addons-elementor",
+  "woocommerce-elements"
+ ],
+ "keywords": [
+  "woocommerce",
+  "price",
+  "product",
+  "ea",
+  "essential addons",
+  "ea price",
+  "ea product",
+  "woo",
+  "woo price",
+  "woo product",
+  "EA Product Price",
+  "Product Price"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Woo_Product_Price.php",
+ "sections": [
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "content_section",
+   "label": "Content",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "sale_price_position",
+     "label": "Sale Price Position",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "row",
+      "row-reverse"
+     ]
+    },
+    {
+     "name": "stacked_price",
+     "label": "Stacked",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "price_hr",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "show_prefix",
+     "label": "Show Prefix",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "prefix_content",
+     "label": "Prefix Content",
+     "type": "CHOOSE",
+     "options": [
+      "text",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "prefix_text",
+     "label": "Prefix Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "prefix_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "show_suffix",
+     "label": "Show Suffix",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "suffix_content",
+     "label": "Suffix Content",
+     "type": "CHOOSE",
+     "options": [
+      "text",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "suffix_text",
+     "label": "Suffix Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "suffix_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "regular_peice_heading",
+     "label": "Regular Price",
+     "type": "HEADING"
+    },
+    {
+     "name": "price_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "price_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "price_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "price_text_decoration_color",
+     "label": "Text Decoration Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "peice_currency_heading",
+     "label": "Price Currency Symbol",
+     "type": "HEADING"
+    },
+    {
+     "name": "price_currency_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "price_currency_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "price_currency_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "sale_heading",
+     "label": "Sale Price",
+     "type": "HEADING"
+    },
+    {
+     "name": "sale_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "sale_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "sale_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "sale_text_decoration_color",
+     "label": "Text Decoration Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "sale_currency_heading",
+     "label": "Sale Currency Symbol",
+     "type": "HEADING"
+    },
+    {
+     "name": "sale_currency_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "sale_currency_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "sale_currency_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "prefix_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "prefix_text_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "prefix_text_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "prefix_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "prefix_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "prefix_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "suffix_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "suffix_text_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "suffix_text_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "suffix_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "suffix_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "suffix_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 42,
+  "responsive": 5
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

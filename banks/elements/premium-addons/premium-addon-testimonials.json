@@ -1,0 +1,621 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-addon-testimonials",
+ "title": "Testimonial",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium testimonials",
+  "quote",
+  "appreciate",
+  "rating",
+  "review",
+  "recommendation"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-testimonials.php",
+ "sections": [
+  {
+   "id": "testimonial_section",
+   "label": "Testimonial",
+   "tab": "",
+   "controls": [
+    {
+     "name": "multiple",
+     "label": "Multiple Testimonials",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "author_info_tab_author",
+     "label": "Author",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_testimonial_person_image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "premium_testimonial_person_name",
+     "label": "Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "author_info_tab_content",
+     "label": "Content",
+     "type": "TAB"
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_testimonial_company_name",
+     "label": "Job",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_testimonial_company_link_switcher",
+     "label": "Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_testimonial_company_link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "rating",
+     "label": "Rating Score",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_testimonial_content",
+     "label": "Content",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "person_image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "TEXT"
+    },
+    {
+     "name": "person_name",
+     "label": "Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "company_name",
+     "label": "Job",
+     "type": "TEXT"
+    },
+    {
+     "name": "link_switcher",
+     "label": "Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "rating",
+     "label": "Rating Score",
+     "type": "NUMBER"
+    },
+    {
+     "name": "content",
+     "label": "Content",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "multiple_testimonials",
+     "label": "Testimonials",
+     "type": "REPEATER"
+    },
+    {
+     "name": "carousel",
+     "label": "Carousel",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "slides_to_scroll",
+     "label": "Slides To Scroll",
+     "type": "NUMBER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "carousel_play",
+     "label": "Auto Play",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "speed",
+     "label": "Autoplay Speed",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "display_option_section",
+   "label": "Display Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "skin",
+     "label": "Choose Skin",
+     "type": "SELECT"
+    },
+    {
+     "name": "pro_skins_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "skin_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "show_image",
+     "label": "Show Author Image",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "img_position",
+     "label": "Image Position",
+     "type": "SELECT"
+    },
+    {
+     "name": "img_place",
+     "label": "Select Position",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "premium_testimonial_person_name_size",
+     "label": "Name HTML Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_testimonial_company_name_size",
+     "label": "Job HTML Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "icon_style",
+     "label": "Quotation Skin",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_testimonial_layout",
+     "label": "Layout",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "testimonials_per_row",
+     "label": "Members/Row",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "spacing",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "spacing_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "equal_height",
+     "label": "Equal Height",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "testimonial_tilt_effect",
+     "label": "Tilt Effect",
+     "type": "CHOOSE"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_1",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_testimonial_image_style",
+   "label": "Author Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_testimonial_img_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "img_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "active_border",
+     "label": "Active Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "img_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover_css_filters",
+     "label": "Hover CSS Filters",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    }
+   ]
+  },
+  {
+   "id": "heading_style_section",
+   "label": "Heading",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "heading_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "heading_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "heading_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "heading_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "person_style_section",
+   "label": "Author",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_testimonial_person_name_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "author_name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "author_name_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "name_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "company_style_section",
+   "label": "Job",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "job_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_testimonial_company_name_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "company_name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "company_name_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "job_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "rating_style_section",
+   "label": "Rating Score",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "star_size",
+     "label": "Star Size",
+     "type": "NUMBER"
+    },
+    {
+     "name": "fill",
+     "label": "Star Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "empty",
+     "label": "Empty Star Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "rating_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "rating_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "content_style_section",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_testimonial_content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "content_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_testimonial_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "quotes_style_section",
+   "label": "Quotation Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_testimonial_quote_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_testimonial_quotes_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_testimonial_upper_quote_position",
+     "label": "Top Icon Position",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_testimonial_lower_quote_position",
+     "label": "Bottom Icon Position",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "carousel_style_section",
+   "label": "Carousel Arrows",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "carousel_arrows_pos",
+     "label": "Horizontal Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "carousel_arrows_vpos",
+     "label": "Vertical Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrow_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrow_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrow_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrow_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrow_hover_background",
+     "label": "Background Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrows_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "arrow_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "arrow_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "container_style_section",
+   "label": "Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "content_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_testimonial_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "premium_testimonial_container_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_testimonial_container_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "container_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "container_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "premium_testimonial_container_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_testimonial_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 12,
+  "controls": 89,
+  "responsive": 17
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

@@ -1,0 +1,92 @@
+{
+ "kind": "block",
+ "name": "core/paragraph",
+ "title": "Paragraph",
+ "categories": [
+  "text"
+ ],
+ "keywords": [
+  "text"
+ ],
+ "description": "Start with the basic building block of all narrative.",
+ "file": "wp/wordpress/wp-includes/blocks/paragraph/block.json",
+ "attributes": {
+  "content": {
+   "type": "rich-text"
+  },
+  "dropCap": {
+   "type": "boolean",
+   "default": false
+  },
+  "placeholder": {
+   "type": "string"
+  },
+  "direction": {
+   "type": "string",
+   "enum": [
+    "ltr",
+    "rtl"
+   ]
+  }
+ },
+ "supports": {
+  "align": [
+   "wide",
+   "full"
+  ],
+  "splitting": true,
+  "anchor": true,
+  "className": false,
+  "__experimentalBorder": {
+   "color": true,
+   "radius": true,
+   "style": true,
+   "width": true
+  },
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "margin": false,
+    "padding": false
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "textAlign": true,
+   "textColumns": true,
+   "textIndent": true,
+   "__experimentalFontFamily": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalFontStyle": true,
+   "__experimentalFontWeight": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalTextTransform": true,
+   "__experimentalWritingMode": true,
+   "fitText": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "__experimentalSelector": "p",
+  "__unstablePasteTextInline": true,
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 4,
+  "supports": 11
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

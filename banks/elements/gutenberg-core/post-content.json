@@ -1,0 +1,89 @@
+{
+ "kind": "block",
+ "name": "core/post-content",
+ "title": "Content",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Displays the contents of a post or page.",
+ "file": "wp/wordpress/wp-includes/blocks/post-content/block.json",
+ "attributes": {
+  "tagName": {
+   "type": "string",
+   "default": "div"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "html": false,
+  "layout": true,
+  "background": {
+   "backgroundImage": true,
+   "backgroundSize": true,
+   "gradient": true,
+   "__experimentalDefaultControls": {
+    "backgroundImage": true
+   }
+  },
+  "dimensions": {
+   "minHeight": true
+  },
+  "spacing": {
+   "blockGap": true,
+   "padding": true,
+   "margin": true,
+   "__experimentalDefaultControls": {
+    "margin": false,
+    "padding": false
+   }
+  },
+  "color": {
+   "gradients": true,
+   "heading": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": false,
+    "text": false
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": true,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 1,
+  "supports": 11
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

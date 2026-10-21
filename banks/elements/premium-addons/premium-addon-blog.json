@@ -1,0 +1,1379 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-addon-blog",
+ "title": "Blog",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium blog",
+  "posts",
+  "grid",
+  "item",
+  "loop",
+  "query",
+  "portfolio",
+  "cpt",
+  "custom"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-blog.php",
+ "sections": [
+  {
+   "id": "general_settings_section",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_blog_skin",
+     "label": "Skin",
+     "type": "SELECT"
+    },
+    {
+     "name": "banner_skin_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "content_offset",
+     "label": "Content Offset",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_blog_grid",
+     "label": "Grid",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_layout",
+     "label": "Layout",
+     "type": "SELECT"
+    },
+    {
+     "name": "marquee_post_width",
+     "label": "Post Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "force_height",
+     "label": "Equal Height",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "force_height_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "premium_blog_columns_number",
+     "label": "Number of Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_blog_number_of_posts",
+     "label": "Posts Per Page",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "section_query_options",
+   "label": "Query",
+   "tab": "",
+   "controls": [
+    {
+     "name": "post_type_filter",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "main_q_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "_",
+     "label": "",
+     "type": "SELECT"
+    },
+    {
+     "name": "tax_",
+     "label": "",
+     "type": "SELECT2"
+    },
+    {
+     "name": "author_filter_rule",
+     "label": "Filter By Author Rule",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_blog_users",
+     "label": "Authors",
+     "type": "SELECT2"
+    },
+    {
+     "name": "posts_filter_rule",
+     "label": "Filter By Post Rule",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_blog_posts_exclude",
+     "label": "Posts",
+     "type": "Premium_Post_Filter::TYPE"
+    },
+    {
+     "name": "custom_posts_filter",
+     "label": "Posts",
+     "type": "Premium_Post_Filter::TYPE"
+    },
+    {
+     "name": "ignore_sticky_posts",
+     "label": "Ignore Sticky Posts",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_offset",
+     "label": "Offset",
+     "type": "NUMBER"
+    },
+    {
+     "name": "query_exclude_current",
+     "label": "Exclude Current Post",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_order_by",
+     "label": "Order By",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_blog_meta_key",
+     "label": "Meta Value",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_blog_order",
+     "label": "Order",
+     "type": "SELECT"
+    },
+    {
+     "name": "empty_query_text",
+     "label": "Empty Query Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_general_settings",
+   "label": "Featured Image",
+   "tab": "",
+   "controls": [
+    {
+     "name": "show_featured_image",
+     "label": "Show Featured Image",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_thumb_min_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "featured_image",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "premium_blog_hover_color_effect",
+     "label": "Overlay Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_blog_hover_image_effect",
+     "label": "Hover Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "thumb_width",
+     "label": "Width (%)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_blog_thumbnail_fit",
+     "label": "Thumbnail Fit",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "shape_divider",
+     "label": "Shape Divider",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_content_settings",
+   "label": "Display Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_blog_title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_blog_author_img_switcher",
+     "label": "Show Author Image",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_posts_columns_spacing",
+     "label": "Rows Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_blog_posts_spacing",
+     "label": "Columns Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_flip_text_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "content_vertical_alignment",
+     "label": "Vertical Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "scroll_to_offset",
+     "label": "Scroll After Pagination/Filter",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_posts_options",
+   "label": "Post Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_blog_excerpt",
+     "label": "Show Post Content",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "content_source",
+     "label": "Get Content From",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_blog_excerpt_length",
+     "label": "Excerpt Length",
+     "type": "NUMBER"
+    },
+    {
+     "name": "excerpt_length_apply",
+     "label": "Apply On Posts With Excerpt Set",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_excerpt_type",
+     "label": "Excerpt Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "read_more_full_width",
+     "label": "Full Width",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_excerpt_text",
+     "label": "Read More Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_blog_author_meta",
+     "label": "Author Meta",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_date_meta",
+     "label": "Date Meta",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_categories_meta",
+     "label": "Categories Meta",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_comments_meta",
+     "label": "Comments Meta",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_tags_meta",
+     "label": "Tags Meta",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_meta_position",
+     "label": "Meta Position",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_advanced_settings",
+   "label": "Advanced Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_blog_infinite_scroll",
+     "label": "Load More Posts On Scroll",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_cat_tabs",
+     "label": "Filter Tabs",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_article_tag_switcher",
+     "label": "Change Post Html Tag To Article",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "filter_tabs_type",
+     "label": "Get Tabs From",
+     "type": "Premium_Tax_Filter::TYPE"
+    },
+    {
+     "name": "filter_tabs_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "premium_blog_tab_label",
+     "label": "First Tab Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_blog_filter_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "filter_flag",
+     "label": "URL Flag",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_blog_new_tab",
+     "label": "Links in New Tab",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_carousel_settings",
+   "label": "Carousel",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_blog_carousel",
+     "label": "Enable Carousel",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "overflow_slides",
+     "label": "Overflow Slides",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_carousel_fade",
+     "label": "Fade",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_carousel_play",
+     "label": "Autoplay Slides",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "slides_to_scroll",
+     "label": "Slides To Scroll",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_blog_carousel_autoplay_speed",
+     "label": "Autoplay Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "carousel_speed",
+     "label": "Transition Speed (ms)",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_carousel_center",
+     "label": "Center Mode",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_carousel_spacing",
+     "label": "Slides\\' Spacing",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_blog_carousel_dots",
+     "label": "Navigation Dots",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_carousel_arrows",
+     "label": "Navigation Arrows",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "arrows_position",
+     "label": "Position",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "arrows_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "styles": true
+    },
+    {
+     "name": "arrows_gap",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrows_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_blog_carousel_arrows_pos",
+     "label": "Arrows Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_pagination_section",
+   "label": "Pagination",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_blog_paging",
+     "label": "Enable Pagination",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "max_pages",
+     "label": "Page Limit",
+     "type": "NUMBER"
+    },
+    {
+     "name": "pagination_strings",
+     "label": "Enable Pagination Next/Prev Strings",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_prev_text",
+     "label": "Previous Page String",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_blog_next_text",
+     "label": "Next Page String",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_blog_pagination_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "marquee_section",
+   "label": "Marquee Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "marquee_direction",
+     "label": "Animation Direction",
+     "type": "SELECT"
+    },
+    {
+     "name": "marquee_speed",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "marquee_draggable",
+     "label": "Make it Draggable",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "marquee_draggable_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "fading_color",
+     "label": "Fading Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_filter_style",
+   "label": "Filter",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_blog_filter_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "tab_filter_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_blog_filter_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_filter_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_blog_filter_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "tab_filter_active",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_blog_filter_active_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_background_active_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "filter_active_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "filter_active_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_filter_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_blog_filter_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_blog_filter_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_image_style_section",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_blog_plus_color",
+     "label": "Plus Sign Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_overlay_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_border_effect_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover_css_filters",
+     "label": "Hover CSS Filters",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "divider_heading",
+     "label": "Shape Divider",
+     "type": "HEADING"
+    },
+    {
+     "name": "divider_fill_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "divider_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "divider_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "divider_horizontal",
+     "label": "Horizontal Postion",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "divider_vertical",
+     "label": "Vertical Postion",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "author_image_style_section",
+   "label": "Author Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "author_img_size",
+     "label": "Author Image Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "author_img_position",
+     "label": "Author Image Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "author_image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "author_image_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_title_style_section",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_blog_title_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_blog_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_title_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "post_categories_style_section",
+   "label": "Categories",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "category_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "category_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "category_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "category_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "category_hover_background_color",
+     "label": "Hover Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "category_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "category_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "categories_repeater",
+     "label": "Categories",
+     "type": "REPEATER"
+    },
+    {
+     "name": "categories_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "categories_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_meta_style_section",
+   "label": "Metadata",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_blog_meta_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_blog_meta_color",
+     "label": "Metadata Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_meta_hover_color",
+     "label": "Links Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "separator_color",
+     "label": "Separator Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_content_style_section",
+   "label": "Content Box",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_blog_content_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_blog_post_content_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "excerpt_text_margin",
+     "label": "Text Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_blog_content_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_content_background_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "premium_blog_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "prmeium_blog_content_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "prmeium_blog_content_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_read_more_style",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_blog_read_more_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "read_more_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "read_more_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_blog_read_more_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "read_more_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "read_more_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_blog_read_more_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "read_more_hover_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "read_more_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_tags_style_section",
+   "label": "Tags",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_blog_tags_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_blog_tags_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_tags_hoer_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_box_style_section",
+   "label": "Box",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_blog_box_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "box_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "box_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "box_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "box_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "outer_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "prmeium_blog_box_padding",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "prmeium_blog_inner_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_pagination_Style",
+   "label": "Pagination",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_blog_pagination_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_blog_pagination_nomral",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "prmeium_blog_pagination_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "prmeium_blog_pagination_back_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "navigation_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "navigation_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "navigation_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "navigation_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_pagination_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "prmeium_blog_pagination_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "prmeium_blog_pagination_back_hover_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_navigation_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "hover_navigation_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "hover_navigation_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "hover_navigation_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_pagination_active",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "prmeium_blog_pagination_active_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "prmeium_blog_pagination_back_active_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "active_navigation_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "active_navigation_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "active_navigation_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "active_navigation_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "prmeium_blog_pagination_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "prmeium_blog_pagination_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pagination_overlay_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "spinner_color",
+     "label": "Spinner Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "spinner_fill_color",
+     "label": "Fill Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "carousel_dots_style",
+   "label": "Carousel Dots",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "carousel_dot_navigation_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "carousel_dot_navigation_active_color",
+     "label": "Active Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "carousel_arrows_style",
+   "label": "Carousel Arrows",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "arrow_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "disabled_arrow_color",
+     "label": "Disabled Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_carousel_arrow_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_blog_carousel_arrow_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "disabled_arrow_background",
+     "label": "Disabled Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_carousel_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_blog_carousel_arrow_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 23,
+  "controls": 206,
+  "responsive": 35
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

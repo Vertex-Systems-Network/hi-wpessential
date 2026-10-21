@@ -1,0 +1,76 @@
+{
+ "kind": "block",
+ "name": "core/comments-title",
+ "title": "Comments Title",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Displays a title with the number of comments.",
+ "file": "wp/wordpress/wp-includes/blocks/comments-title/block.json",
+ "attributes": {
+  "showPostTitle": {
+   "type": "boolean",
+   "default": true
+  },
+  "showCommentsCount": {
+   "type": "boolean",
+   "default": true
+  },
+  "level": {
+   "type": "number",
+   "default": 2
+  },
+  "levelOptions": {
+   "type": "array"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "html": false,
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true
+  },
+  "color": {
+   "gradients": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "textAlign": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true,
+    "__experimentalFontFamily": true,
+    "__experimentalFontStyle": true,
+    "__experimentalFontWeight": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 4,
+  "supports": 8
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

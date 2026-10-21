@@ -1,0 +1,672 @@
+{
+ "kind": "elementor-widget",
+ "name": "mailchimp",
+ "title": "MailChimp",
+ "categories": [],
+ "keywords": [
+  "email",
+  "mail chimp",
+  "mail",
+  "subscription"
+ ],
+ "file": "happy-elementor-addons/widgets/mailchimp/widget.php",
+ "sections": [
+  {
+   "id": "_section_mailchimp",
+   "label": "MailChimp",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "mailchimp_api_check",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "mailchimp_api_choose",
+     "label": "Choose API from",
+     "type": "SELECT",
+     "options": [
+      "global",
+      "custom"
+     ]
+    },
+    {
+     "name": "mailchimp_api",
+     "label": "MailChimp API",
+     "type": "TEXT"
+    },
+    {
+     "name": "mailchimp_lists",
+     "label": "Audience",
+     "type": "Select2::TYPE"
+    },
+    {
+     "name": "mailchimp_list_tags",
+     "label": "Tags",
+     "type": "TEXT"
+    },
+    {
+     "name": "enable_double_opt_in",
+     "label": "Enable Double Opt In?",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "_section_mailchimp_form",
+   "label": "Form",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "form_alignment",
+     "label": "Form Alignment",
+     "type": "SELECT",
+     "responsive": true,
+     "options": [
+      "horizontal",
+      "vertical"
+     ]
+    },
+    {
+     "name": "enable_name",
+     "label": "Enable Name?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "_fname_heading",
+     "label": "First Name:",
+     "type": "HEADING"
+    },
+    {
+     "name": "fname_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "fname_placeholder",
+     "label": "Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "fname_enable_icon",
+     "label": "Enable Icon With Input?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "fname_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "fname_icon_position",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "before",
+      "after"
+     ]
+    },
+    {
+     "name": "_lname_heading",
+     "label": "Last Name:",
+     "type": "HEADING"
+    },
+    {
+     "name": "lname_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "lname_placeholder",
+     "label": "Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "lname_enable_icon",
+     "label": "Enable Icon With Input?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lname_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "lname_icon_position",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "before",
+      "after"
+     ]
+    },
+    {
+     "name": "enable_phone",
+     "label": "Enable Phone?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "_phone_heading",
+     "label": "Phone:",
+     "type": "HEADING"
+    },
+    {
+     "name": "phone_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "phone_placeholder",
+     "label": "Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "phone_enable_icon",
+     "label": "Enable Icon With Input?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "phone_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "phone_icon_position",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "before",
+      "after"
+     ]
+    },
+    {
+     "name": "_email_heading",
+     "label": "Email:",
+     "type": "HEADING"
+    },
+    {
+     "name": "email_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "email_placeholder",
+     "label": "Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "email_enable_icon",
+     "label": "Enable Icon With Input?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "email_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "email_icon_position",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "before",
+      "after"
+     ]
+    },
+    {
+     "name": "_button_heading",
+     "label": "Button:",
+     "type": "HEADING"
+    },
+    {
+     "name": "button_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "button_enable_icon",
+     "label": "Enable Icon With Button?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "button_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "button_icon_position",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "before",
+      "after"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_success_error_label",
+   "label": "Success & Error",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "mailchimp_success_message",
+     "label": "Success Message",
+     "type": "TEXT"
+    },
+    {
+     "name": "mailchimp_success_message_show_in_editor",
+     "label": "Success Message Show in Editor?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "mailchimp_error_message_show_in_editor",
+     "label": "Error Message Show in Editor?",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_mailchimp_label",
+   "label": "Label",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "input_label_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "input_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "input_style",
+   "label": "Input",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "space_between_input",
+     "label": "Space Between Input (px)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_style_inputted_value_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "input_style_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "input_style_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_style_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "input_style_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "input_style_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_style_width__switch",
+     "label": "Use Width",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "input_style_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_style_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_style_margin_right",
+     "label": "Margin Right",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "inline_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_style_placeholder_heading",
+     "label": "Placeholder",
+     "type": "HEADING"
+    },
+    {
+     "name": "input_style_placeholder_color",
+     "label": "Placeholder Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_style_placeholder_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "input_icon_style_holder",
+   "label": "Input Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "input_icon_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "input_icon_color_hr",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "input_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_icon_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_icon_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "input_icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_icon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "button_style_holder",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "button_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "button_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "button_title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "button_style_use_width_height",
+     "label": "Use Width",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_style_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "button_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "button_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "button_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_background_hover",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "button_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_icon_heading",
+     "label": "Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "button_icon_padding_right",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_icon_padding_left",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "success_error",
+   "label": "Success & Error Message",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "success_error_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "success_error_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "success_error_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "success_error_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "success_heading",
+     "label": "Success:",
+     "type": "HEADING"
+    },
+    {
+     "name": "success_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "success_bg_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "success_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "error_heading",
+     "label": "Error:",
+     "type": "HEADING"
+    },
+    {
+     "name": "error_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "error_bg_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "error_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 8,
+  "controls": 99,
+  "responsive": 22
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

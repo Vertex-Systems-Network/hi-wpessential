@@ -1,0 +1,338 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-tcloud",
+ "title": "Tags Cloud",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium tags cloud",
+  "tag",
+  "cat",
+  "product",
+  "woo",
+  "query",
+  "cpt"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-tcloud.php",
+ "sections": [
+  {
+   "id": "display_options_section",
+   "label": "Display Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "words_order",
+     "label": "Words Order",
+     "type": "SELECT"
+    },
+    {
+     "name": "circle_position",
+     "label": "Circle Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "words_remove",
+     "label": "Words to Remove",
+     "type": "TEXT"
+    },
+    {
+     "name": "words_number",
+     "label": "Max Number of Words",
+     "type": "NUMBER"
+    },
+    {
+     "name": "show_posts_number",
+     "label": "Show Posts Number",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "suffix_word",
+     "label": "Replace With",
+     "type": "TEXT"
+    },
+    {
+     "name": "new_tab",
+     "label": "Open Links in New Tab",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "colors_select",
+     "label": "Words Colors",
+     "type": "SELECT"
+    },
+    {
+     "name": "words_colors",
+     "label": "Colors to Select From",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "direction",
+     "label": "Direction",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "throwable_section",
+   "label": "Throwable Effect",
+   "tab": "",
+   "controls": [
+    {
+     "name": "throwable_effect",
+     "label": "",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "query_section",
+   "label": "Query",
+   "tab": "",
+   "controls": [
+    {
+     "name": "source",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "word",
+     "label": "Word",
+     "type": "TEXT"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "weight",
+     "label": "Weight",
+     "type": "SLIDER"
+    },
+    {
+     "name": "custom_words",
+     "label": "Words",
+     "type": "REPEATER"
+    },
+    {
+     "name": "post_type_filter",
+     "label": "Post Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "filter_tabs_type",
+     "label": "Taxonomy",
+     "type": "Premium_Tax_Filter::TYPE"
+    },
+    {
+     "name": "no_tax_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "get_from_current",
+     "label": "Get from Current Page",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_parents_only",
+     "label": "Show Parent Terms Only",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "terms_number",
+     "label": "Number of Terms to Show",
+     "type": "NUMBER"
+    },
+    {
+     "name": "order_by",
+     "label": "Order By",
+     "type": "SELECT"
+    },
+    {
+     "name": "order",
+     "label": "Order",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "term_style",
+   "label": "Term",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "term_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "fsize_scale",
+     "label": "Font Size Scale (px)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "term_style_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "term_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "circle_color",
+     "label": "Circle Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "term_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "term_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "term_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "term_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "term_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "term_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "term_spacing",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "term_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "term_style_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "term_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "circle_hover_color",
+     "label": "Circle Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "term_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "term_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "term_hover_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "term_hover_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "term_hover_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "term_hover_spacing",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "term_hover_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 49,
+  "responsive": 7
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

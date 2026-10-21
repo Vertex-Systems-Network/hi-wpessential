@@ -1,0 +1,60 @@
+{
+ "kind": "block",
+ "name": "core/audio",
+ "title": "Audio",
+ "categories": [
+  "media"
+ ],
+ "keywords": [
+  "music",
+  "sound",
+  "podcast",
+  "recording"
+ ],
+ "description": "Embed a simple audio player.",
+ "file": "wp/wordpress/wp-includes/blocks/audio/block.json",
+ "attributes": {
+  "blob": {
+   "type": "string"
+  },
+  "src": {
+   "type": "string"
+  },
+  "caption": {
+   "type": "rich-text"
+  },
+  "id": {
+   "type": "number"
+  },
+  "autoplay": {
+   "type": "boolean"
+  },
+  "loop": {
+   "type": "boolean"
+  },
+  "preload": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "spacing": {
+   "margin": true,
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "margin": false,
+    "padding": false
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 7,
+  "supports": 4
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

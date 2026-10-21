@@ -1,0 +1,39 @@
+{
+ "kind": "block",
+ "name": "core/text-columns",
+ "title": "Text Columns (deprecated)",
+ "categories": [
+  "design"
+ ],
+ "keywords": [],
+ "description": "This block is deprecated. Please use the Columns block instead.",
+ "file": "wp/wordpress/wp-includes/blocks/text-columns/block.json",
+ "attributes": {
+  "content": {
+   "type": "array",
+   "default": [
+    {},
+    {}
+   ]
+  },
+  "columns": {
+   "type": "number",
+   "default": 2
+  },
+  "width": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "inserter": false,
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 3,
+  "supports": 2
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

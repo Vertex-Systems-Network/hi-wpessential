@@ -1,0 +1,88 @@
+{
+ "kind": "block",
+ "name": "core/file",
+ "title": "File",
+ "categories": [
+  "media"
+ ],
+ "keywords": [
+  "document",
+  "pdf",
+  "download"
+ ],
+ "description": "Add a link to a downloadable file.",
+ "file": "wp/wordpress/wp-includes/blocks/file/block.json",
+ "attributes": {
+  "id": {
+   "type": "number"
+  },
+  "blob": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string"
+  },
+  "fileId": {
+   "type": "string"
+  },
+  "fileName": {
+   "type": "rich-text"
+  },
+  "textLinkHref": {
+   "type": "string"
+  },
+  "textLinkTarget": {
+   "type": "string"
+  },
+  "showDownloadButton": {
+   "type": "boolean",
+   "default": true
+  },
+  "downloadButtonText": {
+   "type": "rich-text"
+  },
+  "displayPreview": {
+   "type": "boolean"
+  },
+  "previewHeight": {
+   "type": "number",
+   "default": 600
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "color": {
+   "gradients": true,
+   "link": true,
+   "text": false,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "link": true
+   }
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": true,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  },
+  "interactivity": true
+ },
+ "counts": {
+  "attributes": 11,
+  "supports": 6
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

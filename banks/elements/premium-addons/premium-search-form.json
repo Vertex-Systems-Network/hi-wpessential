@@ -1,0 +1,1356 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-search-form",
+ "title": "Search Form",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium search form",
+  "ajax"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-search-form.php",
+ "sections": [
+  {
+   "id": "query_section",
+   "label": "Query",
+   "tab": "",
+   "controls": [
+    {
+     "name": "query_type",
+     "label": "Query Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "css_selector_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "selector",
+     "label": "CSS Selector",
+     "type": "TEXT"
+    },
+    {
+     "name": "elements_effect",
+     "label": "Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "fadeout_selector",
+     "label": "Elements to Fade Out Selector",
+     "type": "TEXT"
+    },
+    {
+     "name": "highlighted_text_color",
+     "label": "Highlighted Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "query_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "custom_search_query",
+     "label": "Custom Search Query",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "type_select",
+     "label": "Post Type Select",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_posts_number",
+     "label": "Show Posts Number",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "post_types_excluded",
+     "label": "Excluded Post Types",
+     "type": "SELECT2"
+    },
+    {
+     "name": "select_field_position",
+     "label": "Select Field Position",
+     "type": "SELECT"
+    },
+    {
+     "name": "post_type_filter",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "search_in",
+     "label": "Search In",
+     "type": "SELECT"
+    },
+    {
+     "name": "_",
+     "label": "",
+     "type": "SELECT"
+    },
+    {
+     "name": "tax_",
+     "label": "",
+     "type": "SELECT2"
+    },
+    {
+     "name": "author_filter_rule",
+     "label": "Filter By Author Rule",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_blog_users",
+     "label": "Authors",
+     "type": "SELECT2"
+    },
+    {
+     "name": "premium_blog_posts_exclude",
+     "label": "Exclude Posts",
+     "type": "Premium_Post_Filter::TYPE"
+    },
+    {
+     "name": "custom_posts_filter",
+     "label": "Exclude Items",
+     "type": "Premium_Post_Filter::TYPE"
+    },
+    {
+     "name": "premium_blog_number_of_posts",
+     "label": "Posts Per Page",
+     "type": "NUMBER"
+    },
+    {
+     "name": "show_results_number",
+     "label": "Show Results Number",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "results_number_text",
+     "label": "Results Number Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_blog_order_by",
+     "label": "Order By",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_blog_order",
+     "label": "Order",
+     "type": "SELECT"
+    },
+    {
+     "name": "empty_query_text",
+     "label": "Empty Query Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "search_section",
+   "label": "Search Field",
+   "tab": "",
+   "controls": [
+    {
+     "name": "search_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "search_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "show_label",
+     "label": "Show Label",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "label_text",
+     "label": "Label Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "placeholder_text",
+     "label": "Placeholder Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "field_effects",
+     "label": "Fields Focus Effect",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "search_button_section",
+   "label": "Search Button",
+   "tab": "",
+   "controls": [
+    {
+     "name": "search_button",
+     "label": "Search Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_action",
+     "label": "Action",
+     "type": "SELECT"
+    },
+    {
+     "name": "search_page_link",
+     "label": "Search Page Link",
+     "type": "TEXT"
+    },
+    {
+     "name": "button_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "search_icon",
+     "label": "Search Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "search_icon_select",
+     "label": "Select Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "icon_position",
+     "label": "Icon Position",
+     "type": "CHOOSE",
+     "styles": true
+    },
+    {
+     "name": "icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_position",
+     "label": "Button Position",
+     "type": "SELECT",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "display_options_section",
+   "label": "Display Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "hide_on_click",
+     "label": "Hide Results on Click Outside",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "skin",
+     "label": "Skin",
+     "type": "SELECT"
+    },
+    {
+     "name": "image_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "banner_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "columns_number",
+     "label": "Number of Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "columns_spacing",
+     "label": "Columns Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "row_spacing",
+     "label": "Rows Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "show_post_thumbnail",
+     "label": "Show Thumbnail",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "show_excerpt",
+     "label": "Show Excerpt",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "excerpt_length",
+     "label": "Excerpt Length",
+     "type": "NUMBER"
+    },
+    {
+     "name": "excerpt_length_apply",
+     "label": "Apply On Posts With Excerpt Set",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "excerpt_type",
+     "label": "Excerpt Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "excerpt_text",
+     "label": "Read More Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "link_box",
+     "label": "Link Whole Box",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "new_tab",
+     "label": "Open Links in New Tab",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "remove_button",
+   "label": "Remove Keyword Button",
+   "tab": "",
+   "controls": [
+    {
+     "name": "remove_button_switcher",
+     "label": "Enable Remove Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "keyword_remove_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "pagination_section",
+   "label": "Pagination",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_blog_paging",
+     "label": "Enable Pagination",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "max_pages",
+     "label": "Page Limit",
+     "type": "NUMBER"
+    },
+    {
+     "name": "pagination_strings",
+     "label": "Enable Pagination Next/Prev Strings",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_blog_prev_text",
+     "label": "Previous Page String",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_blog_next_text",
+     "label": "Next Page String",
+     "type": "TEXT"
+    },
+    {
+     "name": "pagination_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_blog_carousel_settings",
+   "label": "Carousel",
+   "tab": "",
+   "controls": [
+    {
+     "name": "carousel",
+     "label": "Enable Carousel",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "carousel_fade",
+     "label": "Fade",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "slides_to_scroll",
+     "label": "Slides To Scroll",
+     "type": "NUMBER"
+    },
+    {
+     "name": "rows",
+     "label": "Rows",
+     "type": "NUMBER"
+    },
+    {
+     "name": "carousel_speed",
+     "label": "Transition Speed (ms)",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "carousel_center",
+     "label": "Center Mode",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "carousel_spacing",
+     "label": "Slides\\' Spacing",
+     "type": "NUMBER"
+    },
+    {
+     "name": "carousel_dots",
+     "label": "Navigation Dots",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "carousel_arrows",
+     "label": "Navigation Arrows",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "label_style",
+   "label": "Label",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "label_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "label_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "label_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "label_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "label_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "label_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "input_field_style",
+   "label": "Search Field",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "input_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "input_style_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "input_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "input_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "input_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "input_style_focus",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "input_background_color_focus",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_border_focus",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "read_more_border_radius_focus",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "input_box_shadow_focus",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "search_button_style",
+   "label": "Search Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "btn_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "btn_style_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "btn_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "btn_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "btn_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "btn_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "btn_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "btn_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "btn_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "btn_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "btn_style_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "btn_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "btn_background_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "btn_text_shadow_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "btn_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "btn_border_radius_hover",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "btn_shadow_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "btn_margin_hover",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "btn_padding_hover",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "thumbnail_style_section",
+   "label": "Thumbnail",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "thumbnail_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "thumbnail_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_effect",
+     "label": "Hover Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "overlay_color_normal",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "overlay_color",
+     "label": "Hover Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "thumbnail_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "thumbnail_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "title_style_section",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "excerpt_style_section",
+   "label": "Excerpt",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "excerpt_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "excerpt_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "excerpt_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "excerpt_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "post_container_style",
+   "label": "Post Box",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "post_box_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "post_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "post_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "post_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "post_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "post_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "post_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "post_box_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "post_background_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "post_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "post_border_radius_hover",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "post_box_shadow_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "post_box_padding_hover",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "content_style_section",
+   "label": "Content Box",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "content_background_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "content_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "content_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "readmore_style_section",
+   "label": "Read More",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "readmore_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "readmore_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "readmore_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "readmore_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "results_number_style_section",
+   "label": "Results Number",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "results_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "results_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "results_spacing",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "posts_container_style",
+   "label": "Posts Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "posts_container_max_height",
+     "label": "Maximum Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "posts_container_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "posts_container_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "posts_container_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "posts_container_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "posts_container_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "posts_container_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pagination_style_section",
+   "label": "Pagination",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "pagination_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pagination_nomral_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "pagination_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pagination_back_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "navigation_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "navigation_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "navigation_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "navigation_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "pagination_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "pagination_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pagination_back_hover_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_navigation_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "hover_navigation_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "hover_navigation_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "hover_navigation_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "pagination_active_tab",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "pagination_active_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pagination_back_active_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "active_navigation_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "active_navigation_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "active_navigation_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "active_navigation_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "pagination_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pagination_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pagination_overlay_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pagination_spinner_color",
+     "label": "Spinner Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pagination_spinner_fill_color",
+     "label": "Fill Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "carousel_dots_style",
+   "label": "Carousel Dots",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "carousel_dot_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "carousel_dot_active_color",
+     "label": "Active Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "carousel_arrows_style",
+   "label": "Carousel Arrows",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "arrows_vposition",
+     "label": "Vertical Position",
+     "type": "CHOOSE",
+     "responsive": true
+    },
+    {
+     "name": "arrow_custom_vpos",
+     "label": "Vertical Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "carousel_prev_arrow_pos",
+     "label": "Previous Arrow Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "carousel_next_arrow_pos",
+     "label": "Next Arrow Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrow_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "carousel_arrow_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "carousel_arrow_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "carousel_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "carousel_arrow_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "carousel_arrow_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "spinner_style",
+   "label": "Spinner",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "spinner_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "spinner_color",
+     "label": "Spinner Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "spinner_fill_color",
+     "label": "Fill Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "spinner_offset",
+     "label": "Offset",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 22,
+  "controls": 203,
+  "responsive": 38
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

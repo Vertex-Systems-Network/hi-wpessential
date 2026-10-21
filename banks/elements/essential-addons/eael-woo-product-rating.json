@@ -1,0 +1,179 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-woo-product-rating",
+ "title": "Woo Product Rating",
+ "categories": [
+  "essential-addons-elementor",
+  "woocommerce-elements"
+ ],
+ "keywords": [
+  "woocommerce",
+  "rating",
+  "review",
+  "comments",
+  "product",
+  "ea",
+  "essential addons",
+  "ea product",
+  "ea rating",
+  "ea review",
+  "woo",
+  "woo product",
+  "woo rating",
+  "woo review",
+  "Product Rating",
+  "EA Woo Product Rating"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Woo_Product_Rating.php",
+ "sections": [
+  {
+   "id": "eael_section_title_style",
+   "label": "Rating",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_star_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_rating_color",
+     "label": "Rating Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_rating_count_color",
+     "label": "Rating Given Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_empty_star_color",
+     "label": "Empty Star Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_star_size",
+     "label": "Star Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_star_gap",
+     "label": "Gap",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "product_rating_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "product_rating_hr1",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "eael_star_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_star_text_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_star_text_spaceing",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "rating_content_section",
+   "label": "Content",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "show_review_count",
+     "label": "Show Review Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "rating_style",
+     "label": "Rating Style",
+     "type": "SELECT",
+     "options": [
+      "style_1",
+      "style_2",
+      "style_3"
+     ]
+    },
+    {
+     "name": "rating_caption",
+     "label": "Rating Caption",
+     "type": "TEXT"
+    },
+    {
+     "name": "before_rating_caption",
+     "label": "Before Caption",
+     "type": "TEXT"
+    },
+    {
+     "name": "after_rating_caption",
+     "label": "After Caption",
+     "type": "TEXT"
+    },
+    {
+     "name": "product_rating_hr",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "show_empty_review",
+     "label": "Show Empty Review",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "empty_rating_caption",
+     "label": "Empty Rating Caption",
+     "type": "TEXT"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 20,
+  "responsive": 2
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

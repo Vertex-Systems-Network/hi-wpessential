@@ -1,0 +1,250 @@
+{
+ "kind": "elementor-widget",
+ "name": "image-stack-group",
+ "title": "Image Stack Group",
+ "categories": [],
+ "keywords": [
+  "image",
+  "stack",
+  "icon",
+  "group"
+ ],
+ "file": "happy-elementor-addons/widgets/image-stack-group/widget.php",
+ "sections": [
+  {
+   "id": "_section_icon",
+   "label": "Items",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "media_type",
+     "label": "Media Type",
+     "type": "CHOOSE",
+     "options": [
+      "img",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "icon",
+     "label": "Icon",
+     "type": "ICON"
+    },
+    {
+     "name": "selected_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "tooltip",
+     "label": "Tooltip",
+     "type": "TEXT"
+    },
+    {
+     "name": "tooltip_position",
+     "label": "Tooltip Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_bg_color",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "hr",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "border_color_item",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "images",
+     "label": "",
+     "type": "REPEATER"
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_icon",
+   "label": "Image / Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "img_size",
+     "label": "Item Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hr1",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "icon_border_size",
+     "label": "Border Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hr2",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_bg_color",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "item_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_tooltip",
+   "label": "Tooltips",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "tooltip_position",
+     "label": "Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "tooltip_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tooltip_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hr3",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "tooltip_content_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "tooltip_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tooltip_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tooltip_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 32,
+  "responsive": 8
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

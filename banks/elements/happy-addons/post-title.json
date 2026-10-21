@@ -1,0 +1,125 @@
+{
+ "kind": "elementor-widget",
+ "name": "post-title",
+ "title": "Post Title",
+ "categories": [
+  "happy_addons_category",
+  "happy_addons_theme_builder"
+ ],
+ "keywords": [
+  "post title",
+  "Title",
+  "text"
+ ],
+ "file": "happy-elementor-addons/widgets/post-title/widget.php",
+ "sections": [
+  {
+   "id": "_section_post_title",
+   "label": "Post Title",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "post_title_tag",
+     "label": "Title HTML Tag",
+     "type": "CHOOSE",
+     "options": [
+      "h1",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "size",
+     "label": "Size",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "small",
+      "medium",
+      "large",
+      "xl",
+      "xxl"
+     ]
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "enable_link",
+     "label": "Enable Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "link_type",
+     "label": "Link Type",
+     "type": "SELECT",
+     "options": [
+      "dynamic",
+      "custom"
+     ]
+    },
+    {
+     "name": "dynamic_link_options",
+     "label": "Link Options",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "dynamic_link_external",
+     "label": "Open in new window",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "dynamic_link_nofollow",
+     "label": "Add nofollow",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "custom_link",
+     "label": "Custom Link",
+     "type": "URL"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_post",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "post_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "post_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "post_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 12,
+  "responsive": 1
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

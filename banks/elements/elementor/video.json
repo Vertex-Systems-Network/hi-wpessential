@@ -1,0 +1,341 @@
+{
+ "kind": "elementor-widget",
+ "name": "video",
+ "title": "Video",
+ "categories": [
+  "basic"
+ ],
+ "keywords": [
+  "video",
+  "player",
+  "embed",
+  "youtube",
+  "vimeo",
+  "dailymotion",
+  "videopress"
+ ],
+ "file": "elementor/includes/widgets/video.php",
+ "sections": [
+  {
+   "id": "section_video",
+   "label": "Video",
+   "tab": "",
+   "controls": [
+    {
+     "name": "video_type",
+     "label": "Source",
+     "type": "SELECT",
+     "options": [
+      "youtube",
+      "vimeo",
+      "dailymotion",
+      "videopress",
+      "hosted"
+     ]
+    },
+    {
+     "name": "youtube_url",
+     "label": "Link",
+     "type": "TEXT"
+    },
+    {
+     "name": "vimeo_url",
+     "label": "Link",
+     "type": "TEXT"
+    },
+    {
+     "name": "dailymotion_url",
+     "label": "Link",
+     "type": "TEXT"
+    },
+    {
+     "name": "insert_url",
+     "label": "External URL",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "hosted_url",
+     "label": "Choose Video File",
+     "type": "MEDIA"
+    },
+    {
+     "name": "external_url",
+     "label": "URL",
+     "type": "URL"
+    },
+    {
+     "name": "videopress_url",
+     "label": "URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "start",
+     "label": "Start Time",
+     "type": "NUMBER"
+    },
+    {
+     "name": "end",
+     "label": "End Time",
+     "type": "NUMBER"
+    },
+    {
+     "name": "video_options",
+     "label": "Video Options",
+     "type": "HEADING"
+    },
+    {
+     "name": "autoplay",
+     "label": "Autoplay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "play_on_mobile",
+     "label": "Play On Mobile",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "mute",
+     "label": "Mute",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "controls",
+     "label": "Player Controls",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "showinfo",
+     "label": "Video Info",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "cc_load_policy",
+     "label": "Captions",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "logo",
+     "label": "Logo",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "yt_privacy",
+     "label": "Privacy Mode",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lazy_load",
+     "label": "Lazy Load",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "rel",
+     "label": "Suggested Videos",
+     "type": "SELECT",
+     "options": [
+      "yes"
+     ]
+    },
+    {
+     "name": "vimeo_title",
+     "label": "Intro Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "vimeo_portrait",
+     "label": "Intro Portrait",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "vimeo_byline",
+     "label": "Intro Byline",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "color",
+     "label": "Controls Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "download_button",
+     "label": "Download Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "preload",
+     "label": "Preload",
+     "type": "SELECT",
+     "options": [
+      "metadata",
+      "auto",
+      "none"
+     ]
+    },
+    {
+     "name": "poster",
+     "label": "Poster",
+     "type": "MEDIA"
+    }
+   ]
+  },
+  {
+   "id": "section_image_overlay",
+   "label": "Image Overlay",
+   "tab": "",
+   "controls": [
+    {
+     "name": "show_image_overlay",
+     "label": "Image Overlay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "image_overlay",
+     "label": "Choose Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "image_overlay",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "show_play_icon",
+     "label": "Play Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "play_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "lightbox",
+     "label": "Lightbox",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_video_style",
+   "label": "Video",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "aspect_ratio",
+     "label": "Aspect Ratio",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "169",
+      "219",
+      "43",
+      "32",
+      "11",
+      "916"
+     ]
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    }
+   ]
+  },
+  {
+   "id": "section_image_overlay_style",
+   "label": "Image Overlay",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "play_icon_title",
+     "label": "Play Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "play_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "play_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "play_icon_text_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_lightbox_style",
+   "label": "Lightbox",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "lightbox_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lightbox_ui_color",
+     "label": "UI Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lightbox_ui_color_hover",
+     "label": "UI Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lightbox_content_animation",
+     "label": "Entrance Animation",
+     "type": "ANIMATION",
+     "responsive": true
+    },
+    {
+     "name": "deprecation_warning",
+     "label": "",
+     "type": "ALERT"
+    },
+    {
+     "name": "lightbox_video_width",
+     "label": "Content Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "lightbox_content_position",
+     "label": "Content Position",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "top"
+     ]
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 48,
+  "responsive": 2
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

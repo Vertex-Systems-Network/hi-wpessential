@@ -1,0 +1,314 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-sticky-video",
+ "title": "Sticky Video",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "video",
+  "sticky",
+  "ea sticky video",
+  "ea video player",
+  "youtube",
+  "vimeo",
+  "mp4",
+  "mpg",
+  "ogg",
+  "webm",
+  "mov",
+  "avi",
+  "scrollable video",
+  "sticky control",
+  "video player",
+  "youtube content",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Sticky_Video.php",
+ "sections": [
+  {
+   "id": "eaelsv_sticky_option_section",
+   "label": "Sticky Options",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eaelsv_is_sticky",
+     "label": "Sticky",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eaelsv_sticky_position",
+     "label": "Position",
+     "type": "SELECT",
+     "options": [
+      "top-left",
+      "top-right",
+      "bottom-left",
+      "bottom-right"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_video_settings",
+   "label": "Video",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eael_video_source",
+     "label": "Source",
+     "type": "SELECT",
+     "options": [
+      "youtube",
+      "vimeo",
+      "self_hosted"
+     ]
+    },
+    {
+     "name": "eaelsv_link_youtube",
+     "label": "Link",
+     "type": "TEXT"
+    },
+    {
+     "name": "eaelsv_link_vimeo",
+     "label": "Link",
+     "type": "TEXT"
+    },
+    {
+     "name": "eaelsv_link_dailymotion",
+     "label": "Link",
+     "type": "TEXT"
+    },
+    {
+     "name": "eaelsv_link_external",
+     "label": "External URL",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eaelsv_hosted_url",
+     "label": "Choose File",
+     "type": "MEDIA"
+    },
+    {
+     "name": "eaelsv_external_url",
+     "label": "Link",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_video_self_hosted_link",
+     "label": "Choose File",
+     "type": "MEDIA"
+    },
+    {
+     "name": "eaelsv_start_time",
+     "label": "Start Time",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eaelsv_end_time",
+     "label": "End Time",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_video_video_options",
+     "label": "Video Options",
+     "type": "HEADING"
+    },
+    {
+     "name": "eaelsv_autopaly",
+     "label": "Autoplay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eaelsv_autopaly_description",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eaelsv_mute",
+     "label": "Mute",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eaelsv_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eaelsv_sh_show_bar",
+     "label": "Show Bar",
+     "type": "SWITCHER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_video_image_overlay_section",
+   "label": "Image Overlay",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eaelsv_overlay_options",
+     "label": "Image Overlay",
+     "type": "SELECT",
+     "options": [
+      "yes",
+      "transparent"
+     ]
+    },
+    {
+     "name": "eaelsv_overlay_image",
+     "label": "Choose Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "eaelsv_overlay_image_size",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "eaelsv_overlay_play_icon",
+     "label": "Play Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eaelsv_icon_new",
+     "label": "Choose Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "eaelsv_icon_new_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "eaelsv_sticky_video_interface",
+   "label": "Sticky Video Interface",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eaelsv_sticky_width",
+     "label": "Width",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "eaelsv_sticky_height",
+     "label": "Height",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "eaelsv_scroll_height_display_sticky",
+     "label": "Scroll Height To Display Sticky (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eaelsv_sticky_close_button_color",
+     "label": "Close Button Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eaelsv_sh_player_section",
+   "label": "Player",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eaelsv_sh_video_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eaelsv_sh_video_border_type",
+     "label": "Border Type",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "none",
+      "solid",
+      "double",
+      "dotted",
+      "dashed"
+     ]
+    },
+    {
+     "name": "eaelsv_sh_video_border_width",
+     "label": "Border Width",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eaelsv_sh_video_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eaelsv_sh_video_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eaelsv_sh_player_interface_section",
+   "label": "Interface",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eaelsv_sh_video_interface_color",
+     "label": "Interface Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eaelsv_sh_play_button_size",
+     "label": "Play Button Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eaelsv_sh_player_bar_section",
+   "label": "Bar",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eaelsv_sh_player_bar_padding",
+     "label": "Bar Padding",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eaelsv_sh_bar_margin",
+     "label": "Bar Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 7,
+  "controls": 37,
+  "responsive": 6
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

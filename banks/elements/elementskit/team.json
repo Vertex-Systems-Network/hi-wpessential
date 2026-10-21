@@ -1,0 +1,1047 @@
+{
+ "kind": "elementor-widget",
+ "name": "team",
+ "title": "Team",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/team/team.php",
+ "sections": [
+  {
+   "id": "ekit_team_content",
+   "label": "Team Member Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_team_style",
+     "label": "Style",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "overlay",
+      "centered_style",
+      "hover_info",
+      "overlay_details",
+      "centered_style_details",
+      "long_height_hover",
+      "long_height_details",
+      "long_height_details_hover",
+      "overlay_circle",
+      "overlay_circle_hover"
+     ]
+    },
+    {
+     "name": "ekit_team_image",
+     "label": "Choose Member Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "ekit_team_thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "ekit_team_name",
+     "label": "Member Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_team_name_size",
+     "label": "Member Name HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "ekit_team_position",
+     "label": "Member Position",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_team_toggle_icon",
+     "label": "Show Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_team_top_icons",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_team_show_short_description",
+     "label": "Show Description",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_team_short_description",
+     "label": "About Member",
+     "type": "TEXTAREA"
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_section_social",
+   "label": "Social  Profiles",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_team_socail_enable",
+     "label": "Display Social Profiles?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_team_icons",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_team_label",
+     "label": "Label",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_link",
+     "label": "Link",
+     "type": "URL",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_socialmedia_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_socialmedia_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_socialmedia_icon_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_socialmedia_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_team_socialmedia_icon_normal_text_shadow",
+     "label": "Text Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "ekit_team_socialmedai_list_box_shadow",
+     "label": "Hover",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_team_socialmedia_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_socialmedia_icon_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_socialmedia_icon_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_socialmedia_border_hover",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_team_socialmedia_icon_hover_text_shadow",
+     "label": "Text Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "ekit_team_socialmedai_list_box_shadow_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_team_social_icons",
+     "label": "Add Icon",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_popup_details",
+   "label": "Pop Up Details",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ekit_team_chose_popup",
+     "label": "Show Popup",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_team_description",
+     "label": "About Member",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "ekit_team_phone",
+     "label": "Phone",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_team_email",
+     "label": "Email",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_team_close_icon_changes",
+     "label": "Close Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_team_close_icon_alignment",
+     "label": "Close Icon Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_content_style",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_team_content_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_background_content_normal",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_team_content_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_team_content_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_background_content_hover",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_team_content_box_shadow_hover_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "team_hover_animation",
+     "label": "Hover Animation",
+     "type": "HOVER_ANIMATION"
+    },
+    {
+     "name": "overlay_height",
+     "label": "Overlay Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "content_tabs_after",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_team_content_max_weight",
+     "label": "Max Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_content_text_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "text-left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_team_content_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_content_inner_padding",
+     "label": "Content Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_content_border_color_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_team_content_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_content_overly_color_heading",
+     "label": "Hover Overy Color",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_team_content_overly_color",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_team_remove_gutters",
+     "label": "Remove Gutter?",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_image_style",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_team_image_weight",
+     "label": "Image Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_image_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_image_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_image_height_margin_bottom",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_image_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_image_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "modal_img_shadow",
+     "label": "Box Shadow (Popup)",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_team_image_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_team_image_radius",
+     "label": "Border radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_image_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_team_default_img_overlay_h",
+     "label": "Overlay",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_team_default_img_overlay",
+     "label": "Overlay",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_top_icon_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_team_top_icon_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_team_top_icon_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_top_icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_top_icon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_top_icon_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_team_top_icon_fsize",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_top_icon_hw",
+     "label": "Use Height Width",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_team_top_icon_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_top_icon_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_top_icon_colors_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_top_icon_n_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_top_icon_n_bgcolor",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_top_icon_n_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_team_top_icon_colors_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_top_icon_h_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_top_icon_h_bgcolor",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_top_icon_h_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_name_style",
+   "label": "Name",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_team_name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_team_name_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_name_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_name_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_name_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_name_margin",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_position_style",
+   "label": "Position",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_team_position_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_team_position_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_position_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_position_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_position_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_position_hover_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "ekit_team_position_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_text_content_style_tab",
+   "label": "Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_team_text_content_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_team_text_content_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_text_content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_text_content_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_text_content_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_text_content_margin_bottom",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_social_style",
+   "label": "Social  Profiles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_socialmedai_list_item_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_socialmedai_list_display",
+     "label": "Display",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "inline-block",
+      "block"
+     ]
+    },
+    {
+     "name": "ekit_socialmedai_list_border_radius",
+     "label": "Border radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_socialmedai_list_container_padding",
+     "label": "Container Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_socialmedai_list_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_socialmedai_list_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_socialmedai_list_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_socialmedai_list_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_socialmedai_list_style_use_height_and_width",
+     "label": "Use Height Width",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_socialmedai_list_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_socialmedai_list_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_socialmedai_list_line_height",
+     "label": "Line Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_overlay_style",
+   "label": "Overlay",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_team_background_overlay",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_modal_style",
+   "label": "Modal Controls",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_team_modal_heading",
+     "label": "Modal",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_team_modal_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_team_modal_name_heading",
+     "label": "Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_team_modal_name_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_modal_name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_team_modal_name_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_modal_position_heading",
+     "label": "Position",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_team_modal_position_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_modal_position_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_team_modal_position_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "modal_desc",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "modal_desc_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "modal_desc_font",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "modal_desc_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "more_options",
+     "label": "Phone and Email",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_team_info_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_team_info_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_info_hover_color",
+     "label": "Color Hover",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_team_close_icon",
+   "label": "Close Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_team_icon_colors_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_icon_primary_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_icon_secondary_color_normal",
+     "label": "Icon BG Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_team_icon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_icon_icon_box_shadow_normal_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_team_icon_colors_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_team_hover_primary_color",
+     "label": "Icon Color (Hover)",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_hover_background_color",
+     "label": "Icon BG Color (Hover)",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_team_border_icon_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_icon_box_icons_hover_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_shadow_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_team_close_icon_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_close_icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_close_icon_enable_height_width",
+     "label": "Use Height Width",
+     "type": "SWITCHER",
+     "responsive": true
+    },
+    {
+     "name": "ekit_team_close_icon_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_close_icon_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_close_icon_line_height",
+     "label": "Line Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_team_close_icon_vertical_align",
+     "label": "Vertical Position ",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 13,
+  "controls": 149,
+  "responsive": 43
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

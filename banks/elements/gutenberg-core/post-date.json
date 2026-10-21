@@ -1,0 +1,75 @@
+{
+ "kind": "block",
+ "name": "core/post-date",
+ "title": "Date",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Display a custom date.",
+ "file": "wp/wordpress/wp-includes/blocks/post-date/block.json",
+ "attributes": {
+  "datetime": {
+   "type": "string"
+  },
+  "format": {
+   "type": "string"
+  },
+  "isLink": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true,
+    "link": true
+   }
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "textAlign": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": true,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 3,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

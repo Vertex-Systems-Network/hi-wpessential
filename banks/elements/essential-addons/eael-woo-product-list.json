@@ -1,0 +1,1581 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-woo-product-list",
+ "title": "Woo Product List",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "woo",
+  "woocommerce",
+  "ea woocommerce",
+  "ea woo product list",
+  "ea woocommerce product list",
+  "product gallery",
+  "woocommerce list",
+  "gallery",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Woo_Product_List.php",
+ "sections": [
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_woo_product_list_layouts",
+   "label": "Layout",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_dynamic_template_layout",
+     "label": "Layout",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "eael_product_list_layout_general_heading",
+     "label": "General",
+     "type": "HEADING"
+    },
+    {
+     "name": "show_load_more",
+     "label": "Load More",
+     "type": "CHOOSE",
+     "options": [
+      "no",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "load_more_infinityscroll_offset",
+     "label": "Scroll Offset (px)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_product_list_layout_content_header_heading",
+     "label": "Content Header",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_woo_product_list_badge_show",
+     "label": "Badge",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_woo_product_list_rating_show",
+     "label": "Rating",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_woo_product_list_review_count_show",
+     "label": "Review Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_woo_product_list_category_show",
+     "label": "Category",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_list_layout_content_body_heading",
+     "label": "Content Body",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_woo_product_list_title_show",
+     "label": "Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_woo_product_list_excerpt_show",
+     "label": "Excerpt",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_woo_product_list_price_show",
+     "label": "Price",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_list_layout_content_footer_heading",
+     "label": "Content Footer",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_woo_product_list_total_sold_show",
+     "label": "Total Sold",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_woo_product_list_total_sold_preset_2_3_show",
+     "label": "Total Sold",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_woo_product_list_add_to_cart_button_show",
+     "label": "Add to Cart",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_woo_product_list_quick_view_button_show",
+     "label": "Quick View",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_woo_product_list_link_button_show",
+     "label": "Link",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_woo_product_list_query",
+   "label": "Query",
+   "tab": "",
+   "controls": [
+    {
+     "name": "post_type",
+     "label": "Source",
+     "type": "CHOOSE",
+     "options": [
+      "product",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_global_dynamic_source_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "ea_woo_product_list_woo_required",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eael_product_list_product_filter",
+     "label": "Filter By",
+     "type": "SELECT"
+    },
+    {
+     "name": "orderby",
+     "label": "Order By",
+     "type": "SELECT"
+    },
+    {
+     "name": "order",
+     "label": "Order",
+     "type": "CHOOSE",
+     "options": [
+      "asc",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_woo_product_list_products_count",
+     "label": "Count",
+     "type": "NUMBER"
+    },
+    {
+     "name": "product_offset",
+     "label": "Offset",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_product_show_stockout",
+     "label": "Out of Stock",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_list_products_status",
+     "label": "Status",
+     "type": "SELECT2"
+    },
+    {
+     "name": "eael_product_list_categories",
+     "label": "Categories",
+     "type": "SELECT2"
+    },
+    {
+     "name": "eael_product_list_products_in",
+     "label": "Select Products",
+     "type": "eael-select2"
+    },
+    {
+     "name": "product_type_logged_users",
+     "label": "Product Type",
+     "type": "SELECT",
+     "options": [
+      "both",
+      "purchased",
+      "not-purchased"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_woo_product_list_image",
+   "label": "Image",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_product_list_image_size",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "eael_product_list_image_clickable",
+     "label": "Clickable",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_list_image_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "image-alignment-left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_woo_product_list_content",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_product_list_content_general_heading",
+     "label": "General",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_general_button_position",
+     "label": "Buttons",
+     "type": "SELECT",
+     "options": [
+      "both",
+      "static",
+      "on-hover"
+     ]
+    },
+    {
+     "name": "eael_product_list_content_header_heading",
+     "label": "Content Header",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_header_position",
+     "label": "Position",
+     "type": "CHOOSE",
+     "options": [
+      "before-title",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_product_list_content_header_position_preset_2_3",
+     "label": "Position",
+     "type": "CHOOSE",
+     "options": [
+      "before-title",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_product_list_content_header_direction",
+     "label": "Direction",
+     "type": "CHOOSE",
+     "options": [
+      "ltr",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_product_list_content_header_badge_heading",
+     "label": "Badge",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_header_badge_preset",
+     "label": "Preset",
+     "type": "SELECT",
+     "options": [
+      "badge-preset-1",
+      "badge-preset-2",
+      "badge-preset-3"
+     ]
+    },
+    {
+     "name": "eael_product_list_content_header_badge_preset_2",
+     "label": "Preset",
+     "type": "SELECT",
+     "options": [
+      "badge-preset-1",
+      "badge-preset-2",
+      "badge-preset-3"
+     ]
+    },
+    {
+     "name": "eael_product_list_content_header_badge_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "badge-alignment-left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_product_list_content_header_badge_sale_text",
+     "label": "Sale Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_header_badge_stock_out_text",
+     "label": "Stock Out Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_body_heading",
+     "label": "Content Body",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_body_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_body_title_tag",
+     "label": "HTML Tag",
+     "type": "CHOOSE",
+     "options": [
+      "h1",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_product_list_content_body_title_clickable",
+     "label": "Clickable",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_list_content_body_excerpt_heading",
+     "label": "Excerpt",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_body_excerpt_words_count",
+     "label": "Words Count",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_product_list_content_body_excerpt_expanison_indicator",
+     "label": "Expansion Indicator",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_footer_heading",
+     "label": "Content Footer",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_footer_total_sold_heading",
+     "label": "Total Sold",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_footer_total_sold_remaining_show",
+     "label": "Remaining",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_list_content_footer_total_sold_text",
+     "label": "Total Sold Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_footer_total_sold_remaining_text",
+     "label": "Remaining Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_heading",
+     "label": "Add to Cart",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_custom_text_show",
+     "label": "Custom Text",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_simple_text",
+     "label": "Simple Product",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_variable_text",
+     "label": "Variable Product",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_grouped_text",
+     "label": "Grouped Product",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_external_text",
+     "label": "External Product",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_default_text",
+     "label": "Default Product",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_footer_quick_view_heading",
+     "label": "Quick View",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_quick_view_title_tag",
+     "label": "Title Tag",
+     "type": "CHOOSE",
+     "options": [
+      "h1",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_product_list_content_footer_quick_view_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_product_list_content_footer_not_found_heading",
+     "label": "Not Found",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_footer_not_found_text",
+     "label": "Products Not Found",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_woo_product_list_load_more",
+   "label": "Load More",
+   "tab": "",
+   "controls": [
+    {
+     "name": "show_load_more_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_product_list_container_style",
+   "label": "Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_product_list_container_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_container_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_container_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_container_normal_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_container_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_product_list_container_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_product_list_item_style",
+   "label": "Item",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_product_list_item_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_item_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_item_normal_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_item_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_product_list_item_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_product_list_item_image_style",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_product_list_item_image_wrapper_heading_style",
+     "label": "Image Wrapper",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_item_image_wrapper_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_item_image_normal_overlay_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_item_image_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_item_image_heading_style",
+     "label": "Image",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_item_image_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_product_list_item_content_style",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_product_list_content_wrapper_heading_style",
+     "label": "Content Wrapper",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_wrapper_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_wrapper_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_header_heading_style",
+     "label": "Content Header",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_header_general_custom_spacing",
+     "label": "Custom Spacing",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_list_content_body_title_style_info",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eael_product_list_content_header_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_header_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_body_heading_style",
+     "label": "Content Body",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_body_title_excerpt_price_tabs_title",
+     "label": "Title",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_content_body_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_body_title_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_body_title_excerpt_price_tabs_excerpt",
+     "label": "Excerpt",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_content_body_excerpt_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_body_excerpt_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_body_title_excerpt_price_tabs_price",
+     "label": "Price",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_content_body_price_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_body_price_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_heading_style",
+     "label": "Content Footer",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_footer_total_sold_heading_style",
+     "label": "Total Sold",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_footer_total_sold_progress_height",
+     "label": "Progress Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_total_sold_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_static_buttons_heading_style",
+     "label": "Static Buttons",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_footer_static_buttons_tabs_add_to_cart",
+     "label": "Add to Cart",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_product_list_content_footer_add_to_cart_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_product_list_content_footer_static_buttons_tabs_view_product",
+     "label": "View Product",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_content_footer_quick_view_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_quick_view_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_quick_view_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_quick_view_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_product_list_content_footer_quick_view_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_product_list_content_footer_on_hover_buttons_heading_style",
+     "label": "On Hover Buttons",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_content_footer_on_hover_buttons_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_on_hover_buttons_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_on_hover_buttons_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_content_footer_on_hover_buttons_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_product_list_content_footer_on_hover_buttons_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_product_list_color_typography_style",
+   "label": "Color &amp; Typography",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_product_list_color_typography_content_header_heading",
+     "label": "Content Header",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_badge_heading",
+     "label": "Badge",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_badge_color_tabs_sale",
+     "label": "Sale",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_badge_color_sale",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_badge_bg_color_sale",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_badge_typography_sale",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_color_typography_badge_color_tabs_stock_out",
+     "label": "Stock Out",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_badge_color_stock_out",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_badge_bg_color_stock_out",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_badge_typography_stock_out",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_badge_size",
+     "label": "Badge Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_rating_heading",
+     "label": "Star Rating",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_rating_color",
+     "label": "Rating Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_rating_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_review_count_heading",
+     "label": "Review Count",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_review_count_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_review_count_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_color_typography_category_heading",
+     "label": "Category",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_category_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_category_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_color_typography_content_body_heading",
+     "label": "Content Body",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_title_color_tabs_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_title_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_title_color_tabs_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_title_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_color_typography_excerpt_heading",
+     "label": "Excerpt",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_excerpt_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_excerpt_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_color_typography_regular_price_heading",
+     "label": "Regular Price",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_regular_price_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_regular_price_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_color_typography_sale_price_heading",
+     "label": "Sale Price",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_sale_price_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_sale_price_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_color_typography_content_footer_heading",
+     "label": "Content Footer",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_total_sold_heading",
+     "label": "Total Sold",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_total_sold_text",
+     "label": "Total Sold",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_total_sold_color",
+     "label": "Text",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_total_sold_count_color",
+     "label": "Count",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_total_sold_remaining_text",
+     "label": "Remaining",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_total_sold_remaining_color",
+     "label": "Text",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_total_sold_remaining_count_color",
+     "label": "Count",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_total_sold_progress_color",
+     "label": "Progress Outer",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_total_sold_progress_inner_color",
+     "label": "Progress Inner",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_total_sold_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_color_typography_add_to_cart_heading",
+     "label": "Add to Cart",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_add_to_cart_color_tabs_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_add_to_cart_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_add_to_cart_bg_color_normal",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_add_to_cart_color_tabs_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_add_to_cart_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_add_to_cart_bg_color_hover",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_add_to_cart_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_color_typography_buttons_quick_view_heading",
+     "label": "Quick View",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_quick_view_color_tabs_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_quick_view_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_quick_view_bg_color_normal",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_quick_view_color_tabs_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_quick_view_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_quick_view_bg_color_hover",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_quick_view_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_list_color_typography_on_hover_buttons_heading",
+     "label": "On Hover Buttons",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_list_color_typography_on_hover_buttons_color_tabs_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_on_hover_buttons_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_on_hover_buttons_bg_color_normal",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_on_hover_buttons_color_tabs_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_list_color_typography_on_hover_buttons_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_on_hover_buttons_bg_color_hover",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_list_color_typography_on_hover_buttons_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "eael_product_popup",
+   "label": "Popup",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_product_popup_title",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_popup_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_popup_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_price",
+     "label": "Price",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_popup_price_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_popup_price_color",
+     "label": "Price Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_sale_price_color",
+     "label": "Sale Price Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_content",
+     "label": "Content",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_popup_content_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_popup_content_color",
+     "label": "Content Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_sale_style",
+     "label": "Sale",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_popup_sale_typo",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_popup_sale_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_sale_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_quantity",
+     "label": "Quantity",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_popup_quantity_typo",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_popup_quantity_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_quantity_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_quantity_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_cart_button",
+     "label": "Cart Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_popup_cart_button_style_tabs_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_popup_cart_button_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_cart_button_background_preset_1",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_cart_button_background_preset_2",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_cart_button_background_preset_3",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_cart_button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_product_popup_cart_button_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_cart_button_hover_styles",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_product_popup_cart_button_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_cart_button_hover_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_cart_button_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_sku_style",
+     "label": "SKU",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_popup_sku_typo",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_popup_sku_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_sku_content_color",
+     "label": "Content Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_sku_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_close_button_style",
+     "label": " Close Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_product_popup_close_button_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_close_button_size",
+     "label": "Button Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_close_button_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_close_button_bg",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_close_button_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_close_button_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_product_popup_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_popup_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_product_popup_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 12,
+  "controls": 249,
+  "responsive": 28
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

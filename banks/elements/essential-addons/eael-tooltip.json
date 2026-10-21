@@ -1,0 +1,338 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-tooltip",
+ "title": "Tooltip",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "tooltip",
+  "ea tooltip",
+  "popover",
+  "hover",
+  "hint",
+  "floating text",
+  "glossary",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Tooltip.php",
+ "sections": [
+  {
+   "id": "eael_section_tooltip_settings",
+   "label": "Content Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_tooltip_type",
+     "label": "Content Type",
+     "type": "CHOOSE",
+     "options": [
+      "icon",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_tooltip_icon_content_new",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "eael_tooltip_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_content",
+     "label": "Content",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "eael_tooltip_content_tag",
+     "label": "Content Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "eael_tooltip_img_content",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "eael_tooltip_shortcode_content",
+     "label": "Shortcode",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "eael_tooltip_content_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_tooltip_enable_link",
+     "label": "Enable Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_tooltip_link",
+     "label": "Button Link",
+     "type": "URL"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_tooltip_hover_content_settings",
+   "label": "Tooltip Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_tooltip_hover_content",
+     "label": "Content",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "eael_tooltip_hover_dir",
+     "label": "Hover Direction",
+     "type": "SELECT",
+     "options": [
+      "left",
+      "right",
+      "top",
+      "bottom"
+     ]
+    },
+    {
+     "name": "eael_tooltip_hover_speed",
+     "label": "Hover Speed",
+     "type": "TEXT",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_tooltip_style_settings",
+   "label": "Content Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_tooltip_max_width",
+     "label": "Content Max Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_content_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_content_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_text_alignment",
+     "label": "Content Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_tooltip_content_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_tooltip_content_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_content_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_tooltip_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_tooltip_content_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_tooltip_content_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_content_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_hover_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_tooltip_hover_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_tooltip_content_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_tooltip_content_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_tooltip_hover_style_settings",
+   "label": "Tooltip Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_tooltip_hover_width",
+     "label": "Tooltip Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_hover_max_width",
+     "label": "Tooltip Max Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_hover_content_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_hover_content_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_hover_content_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_hover_content_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_hover_content_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_tooltip_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_tooltip_arrow_size",
+     "label": "Arrow Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_tooltip_arrow_color",
+     "label": "Arrow Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 40,
+  "responsive": 12
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

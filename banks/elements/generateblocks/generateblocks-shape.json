@@ -1,0 +1,51 @@
+{
+ "kind": "block",
+ "name": "generateblocks/shape",
+ "title": "Shape",
+ "categories": [
+  "generateblocks"
+ ],
+ "keywords": [
+  "icon",
+  "shape",
+  "svg",
+  "image"
+ ],
+ "description": "A custom SVG shape.",
+ "file": "generateblocks/dist/blocks/shape/block.json",
+ "attributes": {
+  "uniqueId": {
+   "type": "string",
+   "default": ""
+  },
+  "html": {
+   "type": "string"
+  },
+  "styles": {
+   "type": "object",
+   "default": {}
+  },
+  "css": {
+   "type": "string",
+   "default": ""
+  },
+  "globalClasses": {
+   "type": "array",
+   "default": []
+  },
+  "htmlAttributes": {
+   "type": "object",
+   "default": {}
+  }
+ },
+ "supports": {
+  "align": false,
+  "className": false
+ },
+ "counts": {
+  "attributes": 6,
+  "supports": 2
+ },
+ "source": "generateblocks",
+ "source_label": "GenerateBlocks"
+}

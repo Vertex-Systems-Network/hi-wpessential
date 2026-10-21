@@ -1,0 +1,602 @@
+{
+ "kind": "elementor-widget",
+ "name": "twitter-feed",
+ "title": "X Feed",
+ "categories": [],
+ "keywords": [
+  "x",
+  "x-feed",
+  "twitter-feed",
+  "twitter",
+  "feed",
+  "social media"
+ ],
+ "file": "happy-elementor-addons/widgets/twitter-feed/widget.php",
+ "sections": [
+  {
+   "id": "_section_twitter",
+   "label": "Twitter Feed",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "credentials",
+     "label": "Credentials from",
+     "type": "SELECT",
+     "options": [
+      "global",
+      "custom"
+     ]
+    },
+    {
+     "name": "credentials_set_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "user_name",
+     "label": "User Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "consumer_key",
+     "label": "Consumer Key",
+     "type": "TEXT"
+    },
+    {
+     "name": "consumer_secret",
+     "label": "Consumer Secret",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "_section_twitter_settings",
+   "label": "Twitter Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "sort_by",
+     "label": "Sort By",
+     "type": "SELECT",
+     "options": [
+      "recent-posts",
+      "old-posts",
+      "favorite_count",
+      "retweet_count"
+     ]
+    },
+    {
+     "name": "tweets_limit",
+     "label": "Number of tweets to show",
+     "type": "NUMBER"
+    },
+    {
+     "name": "remove_cache",
+     "label": "Remove Cache",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "columns",
+     "label": "Column Number",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "name": "show_twitter_logo",
+     "label": "Show Twitter Logo",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_user_image",
+     "label": "Show Profile image",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_name",
+     "label": "Show Name",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_user_name",
+     "label": "Show User Name",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_date",
+     "label": "Show Date Time",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_favorite",
+     "label": "Show Favorite Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_retweet",
+     "label": "Show Retweets Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "read_more",
+     "label": "Read More",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "read_more_text",
+     "label": "Read More Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "content_word_count",
+     "label": "Content Word Count",
+     "type": "NUMBER"
+    },
+    {
+     "name": "load_more",
+     "label": "Load More Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "load_more_text",
+     "label": "Load More Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "_section_general_settings",
+   "label": "General Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "favorite_retweet_position",
+     "label": "Footer Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "button_alignment",
+     "label": "Button Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "user_info_position",
+     "label": "User Info Position",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "top",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "link_target",
+     "label": "Link Target",
+     "type": "SELECT",
+     "options": [
+      "_self",
+      "_blank"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_twitter_style",
+   "label": "Common",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "item_spacing",
+     "label": "Spacing between Tweets",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "items_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "items_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "items_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "item_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "item_background_overlay",
+     "label": "Background Overlay",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "content_glassy_effect",
+     "label": "Content Glassy Effect",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "_section_twitter_user_info",
+   "label": "User Info",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "user_info_spacing",
+     "label": "User Info Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "twitter_logo_heading",
+     "label": "Twitter Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "twitter_icon_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "twitter_logo_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "twitter_logo_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "profile_image_heading",
+     "label": "Profile Image",
+     "type": "HEADING"
+    },
+    {
+     "name": "profile_image_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "profile_image_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "profile_image_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "profile_image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "profile_image_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "name_heading",
+     "label": "Name & User Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "name_username_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "name_typography",
+     "label": "Name Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "user_name_typography",
+     "label": "User Name Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "_tab_name_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "name_color",
+     "label": "Name Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "user_name_color",
+     "label": "User Name Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "name_hover_color",
+     "label": "Name Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "user_name_hover_color",
+     "label": "User Name Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_twitter_content",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "content_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "description_heading",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "description_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "description_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "description_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_heading",
+     "label": "Read More",
+     "type": "HEADING"
+    },
+    {
+     "name": "read_more_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "read_more_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "read_more_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "date_heading",
+     "label": "Date Time",
+     "type": "HEADING"
+    },
+    {
+     "name": "date_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "date_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "date_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_twitter_footer_button",
+   "label": "Footer & Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "favorite_retweet_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "favorite_retweet_heading",
+     "label": "Favorite & Retweet",
+     "type": "HEADING"
+    },
+    {
+     "name": "favorite_retweet_spacing",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "favorite_retweet_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "favorite_retweet_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_heading",
+     "label": "Load More Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "button_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "_tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "button_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "button_background_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_border_hover_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 7,
+  "controls": 86,
+  "responsive": 14
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

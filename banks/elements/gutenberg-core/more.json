@@ -1,0 +1,40 @@
+{
+ "kind": "block",
+ "name": "core/more",
+ "title": "More",
+ "categories": [
+  "design"
+ ],
+ "keywords": [
+  "read more"
+ ],
+ "description": "Content before this block will be shown in the excerpt on your archives page.",
+ "file": "wp/wordpress/wp-includes/blocks/more/block.json",
+ "attributes": {
+  "customText": {
+   "type": "string",
+   "default": ""
+  },
+  "noTeaser": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "customClassName": false,
+  "className": false,
+  "html": false,
+  "multiple": false,
+  "visibility": false,
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "customCSS": false
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

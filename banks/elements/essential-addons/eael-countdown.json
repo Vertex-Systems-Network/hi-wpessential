@@ -1,0 +1,587 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-countdown",
+ "title": "Countdown",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "countdown",
+  "ea countdown",
+  "count down",
+  "ea count down",
+  "timer",
+  "ea timer",
+  "chronometer",
+  "stopwatch",
+  "clock",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Countdown.php",
+ "sections": [
+  {
+   "id": "eael_section_countdown_settings_general",
+   "label": "Timer Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_countdown_type",
+     "label": "Type",
+     "type": "SELECT",
+     "options": [
+      "due_date",
+      "evergreen"
+     ]
+    },
+    {
+     "name": "eael_evergreen_counter_hours",
+     "label": "Hours",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_evergreen_counter_minutes",
+     "label": "Minutes",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_evergreen_counter_recurring",
+     "label": "Recurring Countdown",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_evergreen_counter_recurring_restart_after",
+     "label": "Restart After (In Hours)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_evergreen_counter_recurring_stop_time",
+     "label": "Recurring Countdown End Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_countdown_due_time",
+     "label": "Countdown Due Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_countdown_label_view",
+     "label": "Label Position",
+     "type": "SELECT",
+     "responsive": true,
+     "options": [
+      "eael-countdown-label-block",
+      "eael-countdown-label-inline"
+     ]
+    },
+    {
+     "name": "eael_countdown_label_padding_left",
+     "label": "Left spacing for Labels",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_countdown_settings_content",
+   "label": "Content Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_section_countdown_layout",
+     "label": "Layout",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "grid",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_countdown_days",
+     "label": "Display Days",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_countdown_days_label",
+     "label": "Custom Label for Days",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_countdown_hours",
+     "label": "Display Hours",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_countdown_hours_label",
+     "label": "Custom Label for Hours",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_countdown_minutes",
+     "label": "Display Minutes",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_countdown_minutes_label",
+     "label": "Custom Label for Minutes",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_countdown_seconds",
+     "label": "Display Seconds",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_countdown_seconds_label",
+     "label": "Custom Label for Seconds",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_countdown_separator_heading",
+     "label": "Countdown Separator",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_countdown_separator",
+     "label": "Display Separator",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_countdown_separator_style",
+     "label": "Separator Style",
+     "type": "SELECT",
+     "options": [
+      "solid",
+      "dotted"
+     ]
+    },
+    {
+     "name": "eael_countdown_separator_position_top",
+     "label": "Position Top",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_separator_position_left",
+     "label": "Position Left",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_separator_color",
+     "label": "Separator Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_separator_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "countdown_on_expire_settings",
+   "label": "Expire Action",
+   "tab": "",
+   "controls": [
+    {
+     "name": "countdown_expire_type",
+     "label": "Expire Type",
+     "type": "SELECT",
+     "options": [
+      "none",
+      "text",
+      "url",
+      "template"
+     ]
+    },
+    {
+     "name": "countdown_expiry_text_title",
+     "label": "On Expiry Title",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "countdown_expiry_text",
+     "label": "On Expiry Content",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "countdown_expiry_redirection",
+     "label": "Redirect To (URL)",
+     "type": "TEXT"
+    },
+    {
+     "name": "countdown_expiry_templates",
+     "label": "Choose Template",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_countdown_styles_general",
+   "label": "Countdown Styles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_countdown_is_gradient",
+     "label": "Use Gradient Background?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_countdown_background",
+     "label": "Box Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_countdown_background",
+     "label": "Box Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_item_bottom_margin",
+     "label": "Space Between Boxes",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_spacing",
+     "label": "Space Between Boxes",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_container_margin_bottom",
+     "label": "Space Below Container",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_box_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_countdown_box_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_countdown_styles_content",
+   "label": "Color &amp; Typography",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_countdown_digits_heading",
+     "label": "Countdown Digits",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_countdown_digits_color",
+     "label": "Digits Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_digit_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_countdown_label_heading",
+     "label": "Countdown Labels",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_countdown_label_color",
+     "label": "Label Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_countdown_styles_individual",
+   "label": "Individual Box Styling",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_countdown_days_label_heading",
+     "label": "Days",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_countdown_days_background_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_countdown_days_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_days_digit_color",
+     "label": "Digit Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_days_label_color",
+     "label": "Label Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_days_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_hours_label_heading",
+     "label": "Hours",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_countdown_hours_background_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_countdown_hours_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_hours_digit_color",
+     "label": "Digit Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_hours_label_color",
+     "label": "Label Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_hours_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_minutes_label_heading",
+     "label": "Minutes",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_countdown_minutes_background_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_countdown_minutes_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_minutes_digit_color",
+     "label": "Digit Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_minutes_label_color",
+     "label": "Label Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_minutes_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_seconds_label_heading",
+     "label": "Seconds",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_countdown_seconds_background_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_countdown_seconds_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_seconds_digit_color",
+     "label": "Digit Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_seconds_label_color",
+     "label": "Label Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_seconds_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_countdown_expire_style",
+   "label": "Expire Message",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_countdown_expire_message_alignment",
+     "label": "Text Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "heading_eael_countdown_expire_title",
+     "label": "Title Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_countdown_expire_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_expire_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_expire_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "heading_eael_countdown_expire_message",
+     "label": "Content Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_countdown_expire_message_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_countdown_expire_message_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_countdown_expire_message_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 8,
+  "controls": 81,
+  "responsive": 10
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

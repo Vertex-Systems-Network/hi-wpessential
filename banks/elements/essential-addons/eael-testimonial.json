@@ -1,0 +1,424 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-testimonial",
+ "title": "Testimonial",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "testimonial",
+  "ea testimonial",
+  "ea testimonials",
+  "testimony",
+  "review",
+  "endorsement",
+  "recommendation",
+  "reference",
+  "appreciation",
+  "feedback",
+  "star rating",
+  "social proof",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Testimonial.php",
+ "sections": [
+  {
+   "id": "eael_section_testimonial_Layouts",
+   "label": "Layout",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_testimonial_style",
+     "label": "Skin",
+     "type": "CHOOSE",
+     "options": [
+      "default-style",
+      "title",
+      "image"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_testimonial_image",
+   "label": "Image",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_testimonial_enable_avatar",
+     "label": "Display Avatar?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "image",
+     "label": "",
+     "type": "MEDIA"
+    },
+    {
+     "name": "image",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_testimonial_content",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_testimonial_name",
+     "label": "User Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_testimonial_company_title",
+     "label": "Company Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_testimonial_description",
+     "label": "Description",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "content_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_show_quote",
+     "label": "Display Quote?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_testimonial_enable_rating",
+     "label": "Display Rating?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_testimonial_rating_number",
+     "label": "Rating Number",
+     "type": "SELECT",
+     "options": [
+      "rating-one",
+      "rating-two",
+      "rating-three",
+      "rating-four",
+      "rating-five"
+     ]
+    },
+    {
+     "name": "eael_testimonial_rating_position",
+     "label": "Rating Position",
+     "type": "CHOOSE",
+     "options": [
+      "default",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_testimonial_styles_general",
+   "label": "Testimonial",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_testimonial_is_gradient_background",
+     "label": "Gradient Background",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_testimonial_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_gradient_background",
+     "label": "Gradient Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_testimonial_alignment",
+     "label": "Content Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "default",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_testimonial_user_display_block",
+     "label": "User & Company Line Break",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_testimonial_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_testimonial_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_testimonial_image_styles",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_testimonial_image_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_image_height",
+     "label": "Image Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_max_image_width",
+     "label": "Max Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_image_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_image_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_image_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_testimonial_image_rounded",
+     "label": "Rounded Avatar?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_testimonial_image_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_testimonial_typography",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_testimonial_name_heading",
+     "label": "User Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_testimonial_name_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_testimonial_name_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_company_heading",
+     "label": "Company Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_testimonial_company_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_position_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_testimonial_company_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_description_heading",
+     "label": "Testimonial Text",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_testimonial_description_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_description_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_testimonial_description_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_description_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_rating_heading",
+     "label": "Rating",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_testimonial_rating_item_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_rating_item_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_rating_item_distance",
+     "label": "Space Between Icons",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_rating_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_testimonial_quotation_typography",
+   "label": "Quotation",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_testimonial_quotation_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_quotation_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_testimonial_quotation_top",
+     "label": "Position From Top (%)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_testimonial_quotation_right",
+     "label": "Position From Right (%)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 8,
+  "controls": 52,
+  "responsive": 13
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

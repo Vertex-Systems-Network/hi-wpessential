@@ -1,0 +1,85 @@
+{
+ "kind": "block",
+ "name": "core/table",
+ "title": "Table",
+ "categories": [
+  "text"
+ ],
+ "keywords": [],
+ "description": "Create structured content in rows and columns to display information.",
+ "file": "wp/wordpress/wp-includes/blocks/table/block.json",
+ "attributes": {
+  "hasFixedLayout": {
+   "type": "boolean",
+   "default": true
+  },
+  "caption": {
+   "type": "rich-text"
+  },
+  "head": {
+   "type": "array",
+   "default": []
+  },
+  "body": {
+   "type": "array",
+   "default": []
+  },
+  "foot": {
+   "type": "array",
+   "default": []
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "color": {
+   "__experimentalSkipSerialization": true,
+   "gradients": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "margin": false,
+    "padding": false
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontStyle": true,
+   "__experimentalFontWeight": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "__experimentalBorder": {
+   "__experimentalSkipSerialization": true,
+   "color": true,
+   "style": true,
+   "width": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "style": true,
+    "width": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 5,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

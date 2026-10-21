@@ -1,0 +1,803 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-contact-form",
+ "title": "Contact Form 7",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium contact form",
+  "form7",
+  "contact"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-contactform.php",
+ "sections": [
+  {
+   "id": "premium_section_wpcf7_form",
+   "label": "Contact Form",
+   "tab": "",
+   "controls": [
+    {
+     "name": "source",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_wpcf7_form",
+     "label": "Select Form",
+     "type": "SELECT"
+    },
+    {
+     "name": "presets",
+     "label": "Select From Presets",
+     "type": "VISUAL_CHOICE"
+    },
+    {
+     "name": "presets_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "form_title",
+     "label": "Form Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "title_text",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "title_tag",
+     "label": "HTML Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "form_description",
+     "label": "Form Description",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "description_text",
+     "label": "Description",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "fields_effects",
+     "label": "Fields Focus Effect",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "labels_style_section",
+   "label": "Labels",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "label_display",
+     "label": "Display",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "label_display_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "labels_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "labels_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "labels_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "label_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "label_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "labels_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "labels_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "labels_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_title_description",
+   "label": "Title & Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_desc_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "description_heading",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "description_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "description_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "description_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "description_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_fields_styles",
+   "label": "Input/Textarea",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "field_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "field_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "text_indent",
+     "label": "Text Indent",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_width",
+     "label": "Input Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_height",
+     "label": "Input Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "textarea_width",
+     "label": "Textarea Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "textarea_height",
+     "label": "Textarea Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "input_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "field_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tab_fields_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "field_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "fields_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "field_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "field_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "field_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "tab_fields_focus",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "field_bg_focus",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_border_focus",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "focus_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_select_style",
+   "label": "Select",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "select_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "select_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "select_field_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "select_field_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "select_field_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "select_text_indent",
+     "label": "Text Indent",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "select_field_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "select_field_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "selectfield_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_radio_checkbox_style",
+   "label": "Radio/Checkbox",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "custom_select_style",
+     "label": "Custom Radio/Checkbox Style",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "radio_display",
+     "label": "Display",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "radio_checkbox_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "radio_checkbox_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "radio_checkbox_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "radio_checkbox_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "radio_checkbox_color_checked",
+     "label": "Checked Option Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "radio_checkbox_border_width",
+     "label": "Border Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "radio_checkbox_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "check_radio_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "checkbox_heading",
+     "label": "Checkboxes",
+     "type": "HEADING"
+    },
+    {
+     "name": "checkbox_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "radio_heading",
+     "label": "Radio Buttons",
+     "type": "HEADING"
+    },
+    {
+     "name": "radio_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_placeholder_style",
+   "label": "Placeholder",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "placeholder_switch",
+     "label": "Hide Placeholder",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "placeholder_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "typography_placeholder",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "section_errors_style",
+   "label": "Errors",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "tab_error_messages_alert",
+     "label": "Alert",
+     "type": "TAB"
+    },
+    {
+     "name": "error_alert_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "error_alert_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "error_alert_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "error_alert_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "error_top_spacing",
+     "label": "Top Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "error_alert_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tab_error_messages_fields",
+     "label": "Fields",
+     "type": "TAB"
+    },
+    {
+     "name": "error_field_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "error_field_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "error_field_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  },
+  {
+   "id": "section_contact_form_submit_button_styles",
+   "label": "Submit Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "button_full_width",
+     "label": "Full Width",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "button_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_button_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_elements_button_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_elements_button_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "submit_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_elements_btn_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_elements_btn_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "submit_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_elements_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_elements_button_hover_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_elements_button_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "btn_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "btn_hoverr_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_hover_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "button_hover_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "submit_hover_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_hover_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_after_submit_style",
+   "label": "After Submit Message",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "after_submit_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "after_submit_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "after_submit_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "after_submit_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "after_submit_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "after_submit_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "after_submit_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 10,
+  "controls": 117,
+  "responsive": 32
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

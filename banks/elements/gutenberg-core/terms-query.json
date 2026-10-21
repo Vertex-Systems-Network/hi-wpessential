@@ -1,0 +1,52 @@
+{
+ "kind": "block",
+ "name": "core/terms-query",
+ "title": "Terms Query",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [
+  "terms",
+  "taxonomy",
+  "categories",
+  "tags",
+  "list"
+ ],
+ "description": "An advanced block that allows displaying taxonomy terms based on different query parameters and visual configurations.",
+ "file": "wp/wordpress/wp-includes/blocks/terms-query/block.json",
+ "attributes": {
+  "termQuery": {
+   "type": "object",
+   "default": {
+    "perPage": 10,
+    "taxonomy": "category",
+    "order": "asc",
+    "orderBy": "name",
+    "include": [],
+    "hideEmpty": true,
+    "showNested": false,
+    "inherit": false
+   }
+  },
+  "tagName": {
+   "type": "string",
+   "default": "div"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "html": false,
+  "layout": true,
+  "interactivity": true
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 5
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

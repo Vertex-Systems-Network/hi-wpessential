@@ -1,0 +1,85 @@
+{
+ "kind": "block",
+ "name": "core/site-tagline",
+ "title": "Site Tagline",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [
+  "description"
+ ],
+ "description": "Describe in a few words what this site is about. This is important for search results, sharing on social media, and gives overall clarity to visitors.",
+ "file": "wp/wordpress/wp-includes/blocks/site-tagline/block.json",
+ "attributes": {
+  "level": {
+   "type": "number",
+   "default": 0
+  },
+  "levelOptions": {
+   "type": "array",
+   "default": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "html": false,
+  "color": {
+   "gradients": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "contentRole": true,
+  "spacing": {
+   "margin": true,
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "margin": false,
+    "padding": false
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "textAlign": true,
+   "__experimentalFontFamily": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalFontStyle": true,
+   "__experimentalFontWeight": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalWritingMode": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true
+  }
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 9
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

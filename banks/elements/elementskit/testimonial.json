@@ -1,0 +1,1042 @@
+{
+ "kind": "elementor-widget",
+ "name": "testimonial",
+ "title": "Testimonial",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/testimonial/testimonial.php",
+ "sections": [
+  {
+   "id": "ekit_testimonial_layout_section_tab_style",
+   "label": "Layout",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_testimonial_style",
+     "label": "Choose Style",
+     "type": "ElementsKit_IMAGECHOOSE",
+     "options": [
+      "style1",
+      "title",
+      "imagelarge",
+      "imagesmall",
+      "width"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_section_tab_style",
+   "label": "Testimonial",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_testimonial_wartermark_enable",
+     "label": "Enable Quote Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_testimonial_wartermarks",
+     "label": "Quote Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_testimonial_wartermark_position",
+     "label": "Quote Icon Position",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "top",
+      "bottom"
+     ]
+    },
+    {
+     "name": "ekit_testimonial_wartermark_mask_show_badge",
+     "label": "Show Quote Icon Badge",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_testimonial_wartermark_custom_position",
+     "label": "Custom Position",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_testimonial_wartermark_custom_position_offset_x",
+     "label": "Left",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_wartermark_custom_position_offset_y",
+     "label": "top",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_before_rating",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_testimonial_rating_enable",
+     "label": "Enable Rating",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_testimonial_title_separetor",
+     "label": "Show Separator",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "client_name",
+     "label": "Client Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "designation",
+     "label": "Designation",
+     "type": "TEXT"
+    },
+    {
+     "name": "review",
+     "label": "Testimonial Review",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "rating",
+     "label": "Testimonial Rating",
+     "type": "SELECT",
+     "options": [
+      "5",
+      "4",
+      "3",
+      "2",
+      "1"
+     ]
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "client_photo",
+     "label": "Client Avatar",
+     "type": "MEDIA"
+    },
+    {
+     "name": "client_logo",
+     "label": "Logo",
+     "type": "MEDIA"
+    },
+    {
+     "name": "use_hover_logo",
+     "label": "Display different logo on hover?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "client_logo_active",
+     "label": "Logo Active",
+     "type": "MEDIA"
+    },
+    {
+     "name": "ekit_testimonial_active",
+     "label": "Active Testimonial?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_testimonial_item_text_colors_popover",
+     "label": "Item Text Colors",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "ekit_testimonial_item_description_color",
+     "label": "Description Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_item_client_name_color",
+     "label": "Name Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_item_client_designation_color",
+     "label": "Designation Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_item_rating_color",
+     "label": "Rating Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_item_title_separator_color",
+     "label": "Title Separator Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_data",
+     "label": "Testimonial",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_layout_settings",
+   "label": "Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_testimonial_left_right_spacing",
+     "label": "Spacing Left Right",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_top_bottom_spacing",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_slidetoshow",
+     "label": "Slides To Show",
+     "type": "NUMBER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_slidesToScroll",
+     "label": "Slides To Scroll",
+     "type": "NUMBER",
+     "responsive": true
+    },
+    {
+     "name": "ekit_testimonial_speed",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ekit_testimonial_autoplay",
+     "label": "Autoplay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_testimonial_show_arrow",
+     "label": "Show Arrow",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_testimonial_show_dot",
+     "label": "Show Dots",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_testimonial_left_arrows",
+     "label": "Left Arrow Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_testimonial_right_arrows",
+     "label": "Right Arrow Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_testimonial_loop",
+     "label": "Enable Loop?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_testimonial_pause_on_hover",
+     "label": "Pause on Hover",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_section_layout",
+   "label": "Layout",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_testimonial_layout_margin",
+     "label": "Column Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_layout_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_parent_container_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_layout_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_wrapper_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_testimonial_layout_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_layout_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_testimonial_layout_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_testimonial_wrapper_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_testimonial_layout_active_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_layout_active_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_layout_hover_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_testimonial_hover_effect",
+     "label": "Hover Effect",
+     "type": "SELECT",
+     "options": [
+      "slide",
+      "fade"
+     ]
+    },
+    {
+     "name": "ekit_testimonial_wrapper_tab_active",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_testimonial_active_layout_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_active_layout_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_section_wraper_style",
+   "label": "Wrapper Content Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_testimonial_section_wraper_vertical_alignment",
+     "label": "Vertical Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_testimonial_section_wraper_horizontal_alignment",
+     "label": "Horizontal Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_testimonial_section_wraper_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_section_wraper_use_height",
+     "label": "Use Fixed Height",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_testimonial_section_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_content_description",
+   "label": "Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_testimonial_description_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_description_active_color",
+     "label": "Hover & Active Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_description_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_testimonial_description_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_section_testimonial_ratting_style",
+   "label": "Rating",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_testimonial_review_ratting_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_rating_hover_color",
+     "label": "Hover & Active Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_review_ratting_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_review_ratting_right_spacing",
+     "label": "Items Margin Right",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_review_ratting_padding",
+     "label": "Review Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_review_ratting_spacing",
+     "label": "Review Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_section_wathermark_style",
+   "label": "Quote Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_testimonial_client_watermark_normal_color_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_icon_badge_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_client_watermark_active_color_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_active_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_icon_badge_hover_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_client_watermark_hover_color_tab",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_icon_badge_active_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_client_watermark_color_tab_end",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_typography",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_icon_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_badge_devider",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_badge_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_section_wathermark_badge_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_title_separetor_tab",
+   "label": "Title Separetor",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_testimonial_client_title_separetor_normal_color_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_testimonial_title_separator_color",
+     "label": "Separator Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_title_separetor_active_color_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_testimonial_title_separator_active_color",
+     "label": "Separator Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_title_separetor_color_tab_end",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_testimonial_title_separator_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_title_separator_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_title_separator_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_client_content_section",
+   "label": "Client",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_testimonial_client_name_heading",
+     "label": "Client Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_testimonial_client_name_normal_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_name_active_color",
+     "label": "Hover & Active Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_testimonial_client_name_spacing_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_designation_heading",
+     "label": "Client Designation",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_testimonial_designation_normal_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_designation_active_color",
+     "label": "Hover & Active Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_designation_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_testimonial_client_spacing",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_logo_heading",
+     "label": "Client Logo",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_testimonial_client_logo_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_image_heading",
+     "label": "Client Image",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_testimonial_client_image_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_client_img_pos",
+     "label": "Image Position",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_testimonial_client_area_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "client_left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_testimonial_client_image_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_testimonial_client_image_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_testimonial_client_image_size",
+     "label": "Image Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_author_container_top",
+     "label": "Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_image_margin_",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_client_dot_tab",
+   "label": "Dot",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_testimonial_client_dot_bottom",
+     "label": "Dot Top Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_dot_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_dot_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_dot_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_testimonial_client_dot_border_radius",
+     "label": "Border radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_dot_spacing",
+     "label": "Margin right",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_dot_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_client_dot_active_heading",
+     "label": "Active",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_testimonial_client_dot_active_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_client_dot_active_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_dot_active_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_client_dot_active_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_testimonial_client_dot_active_scale",
+     "label": "Scale",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_testimonial_nav_style_tab",
+   "label": "Nav",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_testimonial_nav_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_nav_right_icon",
+     "label": "Prev",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_nav_left_icon",
+     "label": "Next",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_nav_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_nav_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_nav_vertical_align",
+     "label": "Vertical Align",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_nav_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_testimonial_nav_font_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_nav_background_normal",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_nav_box_shadow_normal",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_testimonial_nav_border_normal",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_testimonial_nav_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_testimonial_nav_font_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_testimonial_nav_background_hover",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_testimonial_nav_box_shadow_hover",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_testimonial_nav_border_hover",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_testimonial_nav_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_price_menu_arrow_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 12,
+  "controls": 149,
+  "responsive": 55
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

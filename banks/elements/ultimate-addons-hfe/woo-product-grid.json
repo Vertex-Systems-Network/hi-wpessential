@@ -1,0 +1,404 @@
+{
+ "kind": "elementor-widget",
+ "name": "woo-product-grid",
+ "title": "Woo Product Grid",
+ "categories": [],
+ "keywords": [
+  "Woo_Product_Grid"
+ ],
+ "file": "header-footer-elementor/inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php",
+ "sections": [
+  {
+   "id": "section_woocommerce_notice",
+   "label": "WooCommerce Required",
+   "tab": "",
+   "controls": [
+    {
+     "name": "woocommerce_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "section_general",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "columns",
+     "label": "Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "name": "products_per_page",
+     "label": "Products Per Page",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "section_content_toggles",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "show_image",
+     "label": "Show Image",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_category",
+     "label": "Show Category",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_title",
+     "label": "Show Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_rating",
+     "label": "Show Rating",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_price",
+     "label": "Show Price",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_description",
+     "label": "Show Short Description",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_add_to_cart",
+     "label": "Show Add to Cart",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_query",
+   "label": "Query",
+   "tab": "",
+   "controls": [
+    {
+     "name": "orderby",
+     "label": "Order By",
+     "type": "SELECT",
+     "options": [
+      "date",
+      "title",
+      "price",
+      "popularity",
+      "rating",
+      "rand"
+     ]
+    },
+    {
+     "name": "order",
+     "label": "Order",
+     "type": "SELECT",
+     "options": [
+      "desc",
+      "asc"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_layout_style",
+   "label": "Layout",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "column_gap",
+     "label": "Column Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "row_gap",
+     "label": "Row Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "product_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "product_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "product_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_content_area_style",
+   "label": "Card",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "content_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "content_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "product_content_padding",
+     "label": "Content Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_category_style",
+   "label": "Category",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "category_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "category_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "category_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_rating_style",
+   "label": "Rating",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "rating_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "rating_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_price_style",
+   "label": "Price",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "price_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "price_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "price_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_short_description_style",
+   "label": "Short Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "short_description_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "short_description_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "short_description_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_add_to_cart_style",
+   "label": "Add to Cart",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "add_to_cart_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "add_to_cart_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "add_to_cart_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "add_to_cart_background_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "add_to_cart_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "add_to_cart_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "add_to_cart_hover_background_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "add_to_cart_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "section_image_size_style",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "image_size",
+     "label": "Image Size",
+     "type": "SELECT",
+     "options": [
+      "thumbnail",
+      "medium",
+      "large",
+      "full",
+      "woocommerce_thumbnail",
+      "woocommerce_single"
+     ]
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 13,
+  "controls": 44,
+  "responsive": 12
+ },
+ "source": "ultimate-addons-hfe",
+ "source_label": "Ultimate Addons (Header Footer Elementor)"
+}

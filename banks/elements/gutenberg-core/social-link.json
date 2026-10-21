@@ -1,0 +1,39 @@
+{
+ "kind": "block",
+ "name": "core/social-link",
+ "title": "Social Icon",
+ "categories": [
+  "widgets"
+ ],
+ "keywords": [],
+ "description": "Display an icon linking to a social profile or site.",
+ "file": "wp/wordpress/wp-includes/blocks/social-link/block.json",
+ "attributes": {
+  "url": {
+   "type": "string"
+  },
+  "service": {
+   "type": "string"
+  },
+  "label": {
+   "type": "string"
+  },
+  "rel": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "reusable": false,
+  "html": false,
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 4,
+  "supports": 4
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

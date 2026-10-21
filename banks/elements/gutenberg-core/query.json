@@ -1,0 +1,69 @@
+{
+ "kind": "block",
+ "name": "core/query",
+ "title": "Query Loop",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [
+  "posts",
+  "list",
+  "blog",
+  "blogs",
+  "custom post types"
+ ],
+ "description": "An advanced block that allows displaying post types based on different query parameters and visual configurations.",
+ "file": "wp/wordpress/wp-includes/blocks/query/block.json",
+ "attributes": {
+  "queryId": {
+   "type": "number"
+  },
+  "query": {
+   "type": "object",
+   "default": {
+    "perPage": null,
+    "pages": 0,
+    "offset": 0,
+    "postType": "post",
+    "order": "desc",
+    "orderBy": "date",
+    "author": "",
+    "search": "",
+    "exclude": [],
+    "sticky": "",
+    "inherit": true,
+    "taxQuery": null,
+    "parents": [],
+    "format": [],
+    "excludeCurrent": null
+   }
+  },
+  "tagName": {
+   "type": "string",
+   "default": "div"
+  },
+  "namespace": {
+   "type": "string"
+  },
+  "enhancedPagination": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "html": false,
+  "layout": true,
+  "interactivity": true
+ },
+ "counts": {
+  "attributes": 5,
+  "supports": 5
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

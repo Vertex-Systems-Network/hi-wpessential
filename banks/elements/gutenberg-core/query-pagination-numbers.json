@@ -1,0 +1,51 @@
+{
+ "kind": "block",
+ "name": "core/query-pagination-numbers",
+ "title": "Page Numbers",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Displays a list of page numbers for pagination.",
+ "file": "wp/wordpress/wp-includes/blocks/query-pagination-numbers/block.json",
+ "attributes": {
+  "midSize": {
+   "type": "number",
+   "default": 2
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "reusable": false,
+  "html": false,
+  "color": {
+   "gradients": true,
+   "text": false,
+   "__experimentalDefaultControls": {
+    "background": true
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 1,
+  "supports": 6
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

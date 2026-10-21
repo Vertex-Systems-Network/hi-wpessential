@@ -1,0 +1,59 @@
+{
+ "kind": "block",
+ "name": "kadence/table-data",
+ "title": "Table Data",
+ "categories": [
+  "kadence-blocks"
+ ],
+ "keywords": [],
+ "description": "",
+ "file": "kadence-blocks/dist/blocks/table/children/data/block.json",
+ "attributes": {
+  "uniqueID": {
+   "type": "string"
+  },
+  "column": {
+   "type": "number"
+  },
+  "padding": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "tabletPadding": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "mobilePadding": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "paddingType": {
+   "type": "string",
+   "default": "px"
+  }
+ },
+ "supports": {
+  "kbMetadata": true
+ },
+ "counts": {
+  "attributes": 6,
+  "supports": 1
+ },
+ "source": "kadence",
+ "source_label": "Kadence Blocks"
+}

@@ -1,0 +1,230 @@
+{
+ "kind": "elementor-widget",
+ "name": "text-path",
+ "title": "Text Path",
+ "categories": [],
+ "keywords": [
+  "text path",
+  "word path",
+  "text on path",
+  "wordart",
+  "word art"
+ ],
+ "file": "elementor/modules/shapes/widgets/text-path.php",
+ "sections": [
+  {
+   "id": "section_content_text_path",
+   "label": "Text Path",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "path",
+     "label": "Path Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "custom_path",
+     "label": "SVG",
+     "type": "MEDIA"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "text_path_direction",
+     "label": "Text Direction",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "rtl",
+      "ltr"
+     ]
+    },
+    {
+     "name": "show_path",
+     "label": "Show Path",
+     "type": "SWITCHER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_style_text_path",
+   "label": "Text Path",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "rotation",
+     "label": "Rotate",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "text_heading",
+     "label": "Text",
+     "type": "HEADING"
+    },
+    {
+     "name": "text_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "text_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "word_spacing",
+     "label": "Word Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "start_point",
+     "label": "Starting Point",
+     "type": "SLIDER"
+    },
+    {
+     "name": "text_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "text_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "text_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "text_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_animation",
+     "label": "Hover Animation",
+     "type": "HOVER_ANIMATION"
+    },
+    {
+     "name": "hover_transition",
+     "label": "Transition Duration",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_style_path",
+   "label": "Path",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "path_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "path_fill_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_heading_normal",
+     "label": "Stroke",
+     "type": "HEADING"
+    },
+    {
+     "name": "stroke_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_width_normal",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "path_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "path_fill_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_heading_hover",
+     "label": "Stroke",
+     "type": "HEADING"
+    },
+    {
+     "name": "stroke_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_width_hover",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "stroke_transition",
+     "label": "Transition Duration",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 31,
+  "responsive": 4
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

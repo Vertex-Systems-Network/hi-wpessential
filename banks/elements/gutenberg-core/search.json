@@ -1,0 +1,104 @@
+{
+ "kind": "block",
+ "name": "core/search",
+ "title": "Search",
+ "categories": [
+  "widgets"
+ ],
+ "keywords": [
+  "find"
+ ],
+ "description": "Help visitors find your content.",
+ "file": "wp/wordpress/wp-includes/blocks/search/block.json",
+ "attributes": {
+  "label": {
+   "type": "string"
+  },
+  "showLabel": {
+   "type": "boolean",
+   "default": true
+  },
+  "placeholder": {
+   "type": "string",
+   "default": ""
+  },
+  "width": {
+   "type": "number"
+  },
+  "widthUnit": {
+   "type": "string"
+  },
+  "buttonText": {
+   "type": "string"
+  },
+  "buttonPosition": {
+   "type": "string",
+   "default": "button-outside"
+  },
+  "buttonUseIcon": {
+   "type": "boolean",
+   "default": false
+  },
+  "query": {
+   "type": "object",
+   "default": {}
+  },
+  "tagName": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": [
+   "left",
+   "center",
+   "right"
+  ],
+  "color": {
+   "gradients": true,
+   "__experimentalSkipSerialization": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "interactivity": true,
+  "typography": {
+   "__experimentalSkipSerialization": true,
+   "__experimentalSelector": ".wp-block-search__label, .wp-block-search__input, .wp-block-search__button",
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "__experimentalBorder": {
+   "color": true,
+   "radius": true,
+   "width": true,
+   "__experimentalSkipSerialization": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "radius": true,
+    "width": true
+   }
+  },
+  "spacing": {
+   "margin": true
+  },
+  "html": false
+ },
+ "counts": {
+  "attributes": 10,
+  "supports": 8
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

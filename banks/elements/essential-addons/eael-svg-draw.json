@@ -1,0 +1,242 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-svg-draw",
+ "title": "SVG Draw",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "svg",
+  "draq",
+  "ea svg",
+  "ea svg draw",
+  "animation",
+  "icon",
+  "icon animation",
+  "svg animation",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/SVG_Draw.php",
+ "sections": [
+  {
+   "id": "eael_section_svg_content_settings",
+   "label": "General",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eael_svg_src",
+     "label": "Source",
+     "type": "SELECT",
+     "options": [
+      "icon",
+      "custom"
+     ]
+    },
+    {
+     "name": "eael_svg_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "svg_html",
+     "label": "SVG Code",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "eael_svg_exclude_style",
+     "label": "Exclude Style",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_svg_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_svg_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_svg_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_svg_link",
+     "label": "Link",
+     "type": "URL"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_svg_appearance",
+   "label": "Appearance",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eael_svg_fill",
+     "label": "Fill Type",
+     "type": "SELECT",
+     "options": [
+      "none",
+      "always",
+      "after",
+      "before"
+     ]
+    },
+    {
+     "name": "eael_svg_fill_transition",
+     "label": "Fill Transition",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_svg_animation_on",
+     "label": "Animation",
+     "type": "SELECT",
+     "options": [
+      "none",
+      "page-load",
+      "page-scroll",
+      "mouse-hover"
+     ]
+    },
+    {
+     "name": "eael_svg_animation_type",
+     "label": "Draw Type",
+     "type": "SELECT",
+     "options": [
+      "none"
+     ]
+    },
+    {
+     "name": "eael_show_marker",
+     "label": "Marker",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_svg_draw_start_point",
+     "label": "Drawing Start Point(%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_svg_draw_end_point",
+     "label": "Drawing End Point(%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_svg_pause_on_hover",
+     "label": "Pause on Hover Off",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_svg_loop",
+     "label": "Repeat Drawing",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_svg_loop_delay",
+     "label": "Repeat Delay",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_svg_animation_direction",
+     "label": "Direction",
+     "type": "SELECT",
+     "options": [
+      "reverse",
+      "restart"
+     ]
+    },
+    {
+     "name": "eael_svg_drawing_speed",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_svg_stroke_dash_adjustment",
+     "label": "Path Length",
+     "type": "SLIDER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_svg_style_settings",
+   "label": "Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_svg_path_thickness",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_svg_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_svg_fill_color",
+     "label": "Fill Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "eael_svg_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_svg_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_svg_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_svg_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_svg_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 30,
+  "responsive": 2
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

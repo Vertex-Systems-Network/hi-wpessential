@@ -1,0 +1,291 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-betterdocs-search-form",
+ "title": "BetterDocs Search Form",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "knowledgebase",
+  "knowledge Base",
+  "documentation",
+  "doc",
+  "kb",
+  "betterdocs",
+  "ea betterdocs",
+  "search",
+  "search form",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Betterdocs_Search_Form.php",
+ "sections": [
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "section_search_box_settings",
+   "label": "Search Box",
+   "tab": "",
+   "controls": [
+    {
+     "name": "search_box_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "search_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_search_field_settings",
+   "label": "Search Field",
+   "tab": "",
+   "controls": [
+    {
+     "name": "section_search_field_placeholder",
+     "label": "Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "search_field_bg",
+     "label": "Field Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "search_field_text_color",
+     "label": "Field Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "search_field_text_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "search_field_padding",
+     "label": "Field Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "search_field_padding_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "search_field_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "search_field_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "field_search_icon_heading",
+     "label": "Search Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "field_search_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "field_search_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "field_close_icon_heading",
+     "label": "Close Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "search_field_close_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "search_field_close_icon_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_search_result_settings",
+   "label": "Search Result Box",
+   "tab": "",
+   "controls": [
+    {
+     "name": "result_box_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "result_box_max_width",
+     "label": "Max Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "result_box_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "result_box_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  },
+  {
+   "id": "section_search_result_item_settings",
+   "label": "Search Result List",
+   "tab": "",
+   "controls": [
+    {
+     "name": "item_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "result_box_item",
+     "label": "Item",
+     "type": "HEADING"
+    },
+    {
+     "name": "result_box_item_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "result_box_item_color",
+     "label": "Item Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "result_item_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "result_box_item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "search_result_box_item_count",
+     "label": "Count",
+     "type": "HEADING"
+    },
+    {
+     "name": "result_box_item_count_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "result_box_item_count_color",
+     "label": "Item Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "item_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "result_item_transition",
+     "label": "Transition",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "result_box_item_hover_heading",
+     "label": "Item",
+     "type": "HEADING"
+    },
+    {
+     "name": "result_box_item_hover_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "result_box_item_hover_color",
+     "label": "Item Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "result_item_hover_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "result_box_item_hover_count_heading",
+     "label": "Count",
+     "type": "HEADING"
+    },
+    {
+     "name": "result_box_item_hover_count_color",
+     "label": "Item Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 38,
+  "responsive": 7
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

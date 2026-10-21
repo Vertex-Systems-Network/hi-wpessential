@@ -1,0 +1,263 @@
+{
+ "kind": "elementor-widget",
+ "name": "divider",
+ "title": "Divider",
+ "categories": [
+  "basic"
+ ],
+ "keywords": [
+  "divider",
+  "hr",
+  "line",
+  "border"
+ ],
+ "file": "elementor/includes/widgets/divider.php",
+ "sections": [
+  {
+   "id": "section_divider",
+   "label": "Divider",
+   "tab": "",
+   "controls": [
+    {
+     "name": "style",
+     "label": "Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "separator_type",
+     "label": "",
+     "type": "HIDDEN"
+    },
+    {
+     "name": "pattern_spacing_flag",
+     "label": "",
+     "type": "HIDDEN"
+    },
+    {
+     "name": "pattern_round_flag",
+     "label": "",
+     "type": "HIDDEN"
+    },
+    {
+     "name": "width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "look",
+     "label": "Add Element",
+     "type": "CHOOSE",
+     "options": [
+      "line",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "html_tag",
+     "label": "HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "icon",
+     "label": "Icon",
+     "type": "ICONS"
+    }
+   ]
+  },
+  {
+   "id": "section_divider_style",
+   "label": "Divider",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "weight",
+     "label": "Weight",
+     "type": "SLIDER"
+    },
+    {
+     "name": "pattern_height",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pattern_size",
+     "label": "Amount",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "gap",
+     "label": "Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_text_style",
+   "label": "Text",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "text_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "text_align",
+     "label": "Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "text_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_icon_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_view",
+     "label": "View",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "stacked",
+      "framed"
+     ]
+    },
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "primary_color",
+     "label": "Primary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "secondary_color",
+     "label": "Secondary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_align",
+     "label": "Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "icon_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "rotate",
+     "label": "Rotate",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_border_width",
+     "label": "Border Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 30,
+  "responsive": 7
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

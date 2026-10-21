@@ -1,0 +1,40 @@
+{
+ "kind": "block",
+ "name": "core/template-part",
+ "title": "Template Part",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Edit the different global regions of your site, like the header, footer, sidebar, or create your own.",
+ "file": "wp/wordpress/wp-includes/blocks/template-part/block.json",
+ "attributes": {
+  "slug": {
+   "type": "string"
+  },
+  "theme": {
+   "type": "string"
+  },
+  "tagName": {
+   "type": "string"
+  },
+  "area": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "align": true,
+  "html": false,
+  "reusable": false,
+  "renaming": false,
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 4,
+  "supports": 5
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

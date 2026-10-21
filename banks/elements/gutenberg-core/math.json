@@ -1,0 +1,61 @@
+{
+ "kind": "block",
+ "name": "core/math",
+ "title": "Math",
+ "categories": [
+  "text"
+ ],
+ "keywords": [
+  "equation",
+  "formula",
+  "latex",
+  "mathematics"
+ ],
+ "description": "Display mathematical notation using LaTeX.",
+ "file": "wp/wordpress/wp-includes/blocks/math/block.json",
+ "attributes": {
+  "latex": {
+   "type": "string"
+  },
+  "mathML": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "__experimentalBorder": {
+   "color": true,
+   "radius": true,
+   "style": true,
+   "width": true
+  },
+  "color": {
+   "gradients": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "margin": false,
+    "padding": false
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 6
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

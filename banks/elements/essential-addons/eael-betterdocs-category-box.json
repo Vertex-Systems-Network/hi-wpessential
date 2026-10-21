@@ -1,0 +1,491 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-betterdocs-category-box",
+ "title": "BetterDocs Category Box",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "knowledgebase",
+  "knowledge Base",
+  "documentation",
+  "doc",
+  "kb",
+  "betterdocs",
+  "ea betterdocs",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Betterdocs_Category_Box.php",
+ "sections": [
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "section_layout_options",
+   "label": "Layout Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "layout_template",
+     "label": "Select Layout",
+     "type": "SELECT2"
+    },
+    {
+     "name": "box_column",
+     "label": "Box Column",
+     "type": "SELECT",
+     "responsive": true,
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "name": "show_icon",
+     "label": "Show Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_title",
+     "label": "Show Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "title_tag",
+     "label": "Select Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "span",
+      "p",
+      "div"
+     ]
+    },
+    {
+     "name": "show_count",
+     "label": "Show Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "count_prefix",
+     "label": "Prefix",
+     "type": "TEXT"
+    },
+    {
+     "name": "count_suffix",
+     "label": "Suffix",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "section_card_settings",
+   "label": "Box",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "column_space",
+     "label": "Box Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "column_padding",
+     "label": "Box Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "card_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "card_bg_normal",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "card_border_normal",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "card_border_radius_normal",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "card_box_shadow_normal",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "card_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "card_transition",
+     "label": "Transition",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "card_bg_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "card_border_hover",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "card_border_radius_hover",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "card_box_shadow_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_box_icon_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "category_settings_area",
+     "label": "Area",
+     "type": "HEADING"
+    },
+    {
+     "name": "category_settings_icon_area_size_normal",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "category_settings_icon",
+     "label": "Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "icon_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "category_settings_icon_size_normal",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_background_normal",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "icon_border_normal",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "icon_border_radius_normal",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_spacing",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "icon_background_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "icon_border_hover",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "icon_border_radius_hover",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "category_settings_icon_size_transition",
+     "label": "Transition",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_box_title_styles",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_styles_area_heading",
+     "label": "Area",
+     "type": "HEADING"
+    },
+    {
+     "name": "title_area_size",
+     "label": "Area Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "title_styles_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "title_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "cat_title_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_spacing",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "title_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "cat_title_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "category_title_transition",
+     "label": "Transition",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "cat_title_typography_normal",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_alignment",
+     "label": "Text Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_box_count_styles",
+   "label": "Count",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "count_styles_area_heading",
+     "label": "Area",
+     "type": "HEADING"
+    },
+    {
+     "name": "count_area_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "count_styles_heading",
+     "label": "Count",
+     "type": "HEADING"
+    },
+    {
+     "name": "count_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "count_typography_normal",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "count_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "count_box_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "count_box_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "count_box_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "count_box_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "count_box_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "count_spacing",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "count_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "count_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "count_box_bg_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "count_box_border_hover",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "count_box_border_radius_hover",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "count_box_box_shadow_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "category_count_transition",
+     "label": "Transition",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 67,
+  "responsive": 19
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

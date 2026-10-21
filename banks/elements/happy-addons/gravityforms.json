@@ -1,0 +1,468 @@
+{
+ "kind": "elementor-widget",
+ "name": "gravityforms",
+ "title": "Gravity Forms",
+ "categories": [],
+ "keywords": [
+  "gravity forms",
+  "form",
+  "contact",
+  "advanced",
+  "ninja"
+ ],
+ "file": "happy-elementor-addons/widgets/gravityforms/widget.php",
+ "sections": [
+  {
+   "id": "_section_gravityforms",
+   "label": "",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "_gravityforms_missing_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "form_id",
+     "label": "Select Your Form",
+     "type": "SELECT"
+    },
+    {
+     "name": "form_title_show",
+     "label": "Form Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ajax",
+     "label": "Enable Ajax Submit",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "_section_fields_style",
+   "label": "Form Fields",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "large_field_width",
+     "label": "Large Field Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "field_margin",
+     "label": "Field Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "field_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "field_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "field_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "field_textcolor",
+     "label": "Field Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "field_placeholder_color",
+     "label": "Field Placeholder Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_field_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "field_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "field_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "field_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_field_focus",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "field_focus_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "field_focus_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "field_focus_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "form_fields_label_section",
+   "label": "Form Fields Label",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "label_padding",
+     "label": "Label Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "sub_label_margin",
+     "label": "Sub Label Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "label_typography",
+     "label": "Label Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "sub_label_typography",
+     "label": "Sub Label Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "label_color",
+     "label": "Label Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "sub_label_color",
+     "label": "Sub Label Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "requered_label",
+     "label": "Required Label Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "form_fields_submit_sectionsubmit",
+   "label": "Submit Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "submit_btn_width",
+     "label": "Button Full Width?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "button_width",
+     "label": "Button Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_btn_position",
+     "label": "Button Position",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "submit_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "submit_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "submit_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "submit_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "submit_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "submit_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "submit_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "submit_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "submit_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "form_fields_break_section",
+   "label": "Break",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "section_break",
+     "label": "Section Break",
+     "type": "HEADING"
+    },
+    {
+     "name": "section_break_title_typography",
+     "label": "Title Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "section_break_description_typography",
+     "label": "Description Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "section_break__title",
+     "label": "Title",
+     "type": "TAB"
+    },
+    {
+     "name": "section_break_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "section_break_tab_description",
+     "label": "Description",
+     "type": "TAB"
+    },
+    {
+     "name": "section_break_description_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "page_break",
+     "label": "Page Break",
+     "type": "HEADING"
+    },
+    {
+     "name": "page_break_progress_bar_color",
+     "label": "Progress bar background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "page_break_button_paddding",
+     "label": "Button Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "page_break_button_box_shadow",
+     "label": "Button Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "page_break_button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "page_break_button_border_radius",
+     "label": "Button Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "page_break_button_typography",
+     "label": "Button Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "page_break_tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "page_break_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "page_break_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "page_break_tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "page_break_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "page_break_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "page_break_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "form_fields_list_section",
+   "label": "List",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "list_button_size",
+     "label": "Button Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_even_background_color",
+     "label": "Background Color (Even)",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "list_odd_background_color",
+     "label": "Background Color (Odd)",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 67,
+  "responsive": 11
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

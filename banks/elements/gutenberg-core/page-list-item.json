@@ -1,0 +1,49 @@
+{
+ "kind": "block",
+ "name": "core/page-list-item",
+ "title": "Page List Item",
+ "categories": [
+  "widgets"
+ ],
+ "keywords": [
+  "page",
+  "menu",
+  "navigation"
+ ],
+ "description": "Displays a page inside a list of all pages.",
+ "file": "wp/wordpress/wp-includes/blocks/page-list-item/block.json",
+ "attributes": {
+  "id": {
+   "type": "number"
+  },
+  "label": {
+   "type": "string"
+  },
+  "title": {
+   "type": "string"
+  },
+  "link": {
+   "type": "string"
+  },
+  "hasChildren": {
+   "type": "boolean"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "reusable": false,
+  "html": false,
+  "lock": false,
+  "inserter": false,
+  "__experimentalToolbar": false,
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 5,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

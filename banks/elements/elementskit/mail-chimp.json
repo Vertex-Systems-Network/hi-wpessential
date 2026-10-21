@@ -1,0 +1,758 @@
+{
+ "kind": "elementor-widget",
+ "name": "mail-chimp",
+ "title": "MailChimp",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/mail-chimp/mail-chimp.php",
+ "sections": [
+  {
+   "id": "ekit_mail_chimp_section_form",
+   "label": "Form ",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_mail_chimp_select_check_api",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "ekit_mail_chimp_select_listed_id",
+     "label": "Select List",
+     "type": "SELECT"
+    },
+    {
+     "name": "ekit_mail_chimp_double_opt_in",
+     "label": "Double Opt-in",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_mail_chimp_opt_in_success_message",
+     "label": "Opt-in Success Message",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_mail_chimp_field_type",
+     "label": "Type",
+     "type": "SELECT",
+     "options": [
+      "text",
+      "email",
+      "tel",
+      "textarea"
+     ]
+    },
+    {
+     "name": "ekit_mail_chimp_field_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_mail_chimp_field_placeholder",
+     "label": "Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_mail_chimp_field_name",
+     "label": "Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_mail_chimp_field_required",
+     "label": "Required",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_mail_chimp_field_icon_show",
+     "label": "Show Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_mail_chimp_field_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_mail_chimp_field_icon_position",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "before",
+      "after"
+     ]
+    },
+    {
+     "name": "ekit_mail_chimp_fields_repeater",
+     "label": "Form Fields",
+     "type": "REPEATER"
+    },
+    {
+     "name": "ekit_mail_chimp_submit",
+     "label": "Submit Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_mail_chimp_submit_button_heading",
+     "label": "Submit Button:",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_mail_chimp_submit_icon_show",
+     "label": "Show Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_mail_chimp_submit_icons",
+     "label": "Button Icons",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_mail_chimp_submit_icon_position",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "before",
+      "after"
+     ]
+    },
+    {
+     "name": "ekit_mail_chimp_form_style_switcher",
+     "label": "Form Style",
+     "type": "SELECT",
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    {
+     "name": "ekit_mail_chimp_success_message",
+     "label": "Success Message",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "ekit_mail_chimp_input_label_style",
+   "label": "Label",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_mail_chimp_input_label_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_mail_chimp_input_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_mail_chimp_input_wrapper_style",
+   "label": "Input Wrapper",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_mail_chimp_input_column_gap",
+     "label": "Column Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_row_gap",
+     "label": "Row Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_space_between",
+     "label": "Icon Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_hover_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_hover_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_hover_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_focus_tab",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_focus_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_focus_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_focus_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_focus_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_wrapper_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_mail_chimp_input_style",
+   "label": "Input",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_mail_chimp_input_style_width__switch",
+     "label": "Use Width",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "mailchimp_input_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "mailchimp_input_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_hover_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_hover_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_hover_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "mailchimp_input_focus_tab",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_mail_chimp_input_focus_style_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_input_focus_style_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_mail_chimp_input_focus_style_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_margin_right",
+     "label": "Margin Right",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "inline_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_placeholder_heading",
+     "label": "Placeholder",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_placeholder_color",
+     "label": "Placeholder Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_style_placeholder_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_mail_chimp_button_style_holder",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_mail_chimp_button_use_position",
+     "label": "Use Position",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_button_horizontal_position",
+     "label": "Horizontal Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_mail_chimp_button_horizontal_offset",
+     "label": "Horizontal Offset",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_button_vertical_position",
+     "label": "Vertical Position",
+     "type": "CHOOSE",
+     "options": [
+      "top",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_mail_chimp_button_vertical_offset",
+     "label": "Vertical Offset",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_button_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_mail_chimp_button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_button_border_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_button_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_mail_chimp_button_title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "ekit_mail_chimp_button_style_use_width_height",
+     "label": "Use Width",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_mail_chimp_button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_button_style_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_button_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_mail_chimp_button_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_button_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_button_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_mail_chimp_button_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_mail_chimp_button_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_button_background_hover",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_button_hover_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_mail_chimp_button_icon_heading",
+     "label": "Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_mail_chimp_button_icon_padding_right",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_button_icon_padding_left",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_simple_tab_title_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_mail_chimp_input_icon_style_holder",
+   "label": "Input Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_mail_chimp_input_icon_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_input_icon_color_hr",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_mail_chimp_input_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_icon_font_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_icon_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_mail_chimp_input_icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_input_icon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_mail_chimp_success_error",
+   "label": "Success & Error message",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_mail_chimp_message_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_success_error_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_success_error_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_success_error_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_success_error_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_mail_chimp_success_heading",
+     "label": "Success:",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_mail_chimp_success_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_success_bg_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_success_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_mail_chimp_error_heading",
+     "label": "Error:",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_mail_chimp_error_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_mail_chimp_error_bg_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_mail_chimp_error_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 7,
+  "controls": 111,
+  "responsive": 35
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

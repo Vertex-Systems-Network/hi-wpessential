@@ -1,0 +1,443 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-woo-add-to-cart",
+ "title": "Woo Add To Cart",
+ "categories": [
+  "essential-addons-elementor",
+  "woocommerce-elements"
+ ],
+ "keywords": [
+  "woocommerce",
+  "cart",
+  "product",
+  "add to cart",
+  "ea",
+  "essential addons",
+  "ea cart",
+  "ea add to cart",
+  "ea product",
+  "woo",
+  "woo product",
+  "woo cart",
+  "woo add to cart",
+  "EA Woo Add to Cart"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Woo_Add_To_Cart.php",
+ "sections": [
+  {
+   "id": "eael_add_to_cart_button",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_add_to_cart_align",
+     "label": "Button Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_text_align",
+     "label": "Text Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_add_to_cart_button_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_add_to_cart_button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_button_style_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_add_to_cart_button_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_button_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_button_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_button_style_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_add_to_cart_button_text_color_hover",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_button_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_button_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_add_to_cart_button_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_button_transition",
+     "label": "Transition Duration (s)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_cart_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_add_to_cart_quantity_section",
+   "label": "Quantity",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_add_to_cart_qt_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_add_to_cart_qt_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_add_to_cart_qt_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_style_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_add_to_cart_qt_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_style_focus",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_add_to_cart_qt_text_color_focus",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_bg_color_focus",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_border_color_focus",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_qt_transition",
+     "label": "Transition Duration (s)",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_add_to_cart_variations_style",
+   "label": "Variations",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_add_to_variations_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_variations_spacing",
+     "label": "Spacing Bottom",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_variations_select_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_variations_label_style",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_add_to_cart_variations_label_color_focus",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_variations_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_add_to_cart_variations_select_style",
+     "label": "Select field",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_add_to_cart_variations_select_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_variations_select_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "variations_select_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "variations_select_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "eael_add_to_cart_icon_style",
+   "label": "Cart Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_add_to_icon_width",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_icon_gap",
+     "label": "Gap",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_icon_style_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_add_to_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_cart_icon_style_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_add_to_icon_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_add_to_icon_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_product",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "add_to_cart_product_type",
+     "label": "Product Type (Only For Preview)",
+     "type": "SELECT",
+     "options": [
+      "simple_product",
+      "external_product",
+      "grouped_product",
+      "variable_product"
+     ]
+    },
+    {
+     "name": "add_to_cart_layout",
+     "label": "Layout",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "row",
+      "column"
+     ]
+    },
+    {
+     "name": "add_to_cart_show_quantity",
+     "label": "Show Quantity",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "add_to_cart_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "add_to_cart_icon_show",
+     "label": "Show Cart Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "add_to_cart_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "eael_ajax_add_to_cart",
+     "label": "AJAX Add to Cart",
+     "type": "SWITCHER"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 59,
+  "responsive": 7
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

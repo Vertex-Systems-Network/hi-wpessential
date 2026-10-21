@@ -1,0 +1,1162 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-business-reviews",
+ "title": "Business Reviews",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "reviews",
+  "ea reviews",
+  "business reviews",
+  "ea business reviews",
+  "google reviews",
+  "ea google reviews",
+  "ea",
+  "essential addons",
+  "testimonial",
+  "google testimonial",
+  "reviews carousel",
+  "reviews slider",
+  "carousel",
+  "slider"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Business_Reviews.php",
+ "sections": [
+  {
+   "id": "eael_section_business_reviews_general_settings",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_business_reviews_sources",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_business_reviews_google_api_type",
+     "label": "API Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_br_google_place_api_key_missing",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eael_business_reviews_business_place_id",
+     "label": "Place ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_business_reviews_sort_by",
+     "label": "Sort By",
+     "type": "SELECT",
+     "options": [
+      "most_relevant",
+      "newest"
+     ]
+    },
+    {
+     "name": "eael_business_reviews_max_reviews_places",
+     "label": "Reviews to Show",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_business_reviews_max_reviews",
+     "label": "Reviews to Show",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_business_reviews_data_cache_time",
+     "label": "Data Cache Time",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_business_reviews_localbusiness_schema",
+     "label": "Local Business Schema",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_business_reviews_layout_settings",
+   "label": "Layout",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_business_reviews_items_layout",
+     "label": "Layout Type",
+     "type": "SELECT",
+     "options": [
+      "slider",
+      "grid",
+      "preset-1",
+      "title",
+      "image"
+     ]
+    },
+    {
+     "name": "eael_business_reviews_style_preset_slider",
+     "label": "Style Preset",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "eael_business_reviews_style_preset_grid",
+     "label": "Style Preset",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "eael_business_reviews_column",
+     "label": "Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "name": "eael_business_reviews_column_preset_2",
+     "label": "Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "name": "eael_business_reviews_column_grid",
+     "label": "Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "name": "eael_business_reviews_transition_effect",
+     "label": "Effect",
+     "type": "SELECT",
+     "options": [
+      "slide",
+      "coverflow"
+     ]
+    },
+    {
+     "name": "eael_business_reviews_item_gap",
+     "label": "Item Gap",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_business_reviews_grid_row_gap",
+     "label": "Row Gap",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_grid_column_gap",
+     "label": "Column Gap",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_slider_speed",
+     "label": "Sliding Speed",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_business_reviews_autoplay",
+     "label": "Autoplay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_autoplay_delay",
+     "label": "Autoplay Delay",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_business_reviews_loop",
+     "label": "Infinite Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_pause_on_hover",
+     "label": "Pause on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_grab_cursor",
+     "label": "Grab Cursor",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_navigation",
+     "label": "Navigation",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_arrows",
+     "label": "Arrows",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_dots",
+     "label": "Dots",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_business_reviews_content",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_business_reviews_business_content",
+     "label": "Business",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_business_logo",
+     "label": "Logo",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_business_logo_icon_new",
+     "label": "Custom Logo",
+     "type": "ICONS"
+    },
+    {
+     "name": "eael_business_reviews_business_name",
+     "label": "Name",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_business_name_label",
+     "label": "Custom Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_business_reviews_business_rating",
+     "label": "Rating",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_rating_round",
+     "label": "Round Rating",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_rating_decimals",
+     "label": "Decimal Places",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_business_reviews_google_reviews_label",
+     "label": "Custom Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_business_reviews_business_address",
+     "label": "Address",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_review_content",
+     "label": "Review",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_review_time",
+     "label": "Time",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_review_text",
+     "label": "Text",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_review_text_height",
+     "label": "Text Max Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_rating",
+     "label": "Rating",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_review_rating_position",
+     "label": "Rating Position",
+     "type": "SELECT",
+     "options": [
+      "top",
+      "bottom"
+     ]
+    },
+    {
+     "name": "eael_business_reviews_review_text_translation",
+     "label": "Translation",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_review_1_star_hide",
+     "label": "Hide 1 Star Reviews",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_review_2_star_hide",
+     "label": "Hide 2 Star Reviews",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_review_3_star_hide",
+     "label": "Hide 3 Star Reviews",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_review_4_star_hide",
+     "label": "Hide 4 Star Reviews",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_review_hide_no_text",
+     "label": "Hide Reviews Without Text",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_reviewer_content",
+     "label": "Reviewer",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_reviewer_photo",
+     "label": "Avatar",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_reviewer_name",
+     "label": "Name",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_business_reviews_accessibilty",
+   "label": "Accessibilty",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_business_reviews_enable_accessibilty",
+     "label": "Enable Accessibilty",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_business_reviews_link_in_same_tab",
+     "label": "Open in same window",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_business_reviews_container_style",
+   "label": "Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_business_reviews_wrap_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_wrap_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_wrap_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_wrap_control_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_wrap_normal_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_wrap_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_wrap_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_business_reviews_wrap_control_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_wrap_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_wrap_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_wrap_hover_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_business_reviews_header_style",
+   "label": "Header",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_business_reviews_header_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_control_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_header_normal_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_header_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_business_reviews_header_control_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_header_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_header_hover_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_business_reviews_header_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_business_reviews_header_business_logo_label",
+     "label": "Business Logo",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_header_business_logo_size",
+     "label": "Logo Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_logo_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_logo_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_logo_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_name_label",
+     "label": "Business Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_header_business_name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_business_reviews_header_business_name_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_name_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_name_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_rating_label",
+     "label": "Business Rating",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_header_business_rating_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_business_reviews_header_business_rating_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_rating_star_color",
+     "label": "Star Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_rating_star_size",
+     "label": "Star Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_rating_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_rating_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_address_label",
+     "label": "Business Address",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_header_business_address_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_business_reviews_header_business_address_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_address_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_header_business_address_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_business_reviews_content_style",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_business_reviews_content_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_content_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_content_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_content_control_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_content_normal_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_content_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_content_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_business_reviews_content_control_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_content_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_content_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_content_hover_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_business_reviews_reviews_style",
+   "label": "Reviews",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_business_reviews_reviews_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_reviews_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_reviews_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_reviews_control_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_reviews_normal_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_reviews_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_reviews_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_business_reviews_reviews_control_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_reviews_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_reviews_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_reviews_hover_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_business_reviews_reviewer_photo_label",
+     "label": "Reviewer Avatar",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_reviewer_photo_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_reviewer_photo_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_reviewer_photo_size",
+     "label": "Photo Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_reviewer_name_label",
+     "label": "Reviewer Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_reviewer_name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_business_reviews_reviewer_name_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_reviewer_name_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_reviewer_name_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_time_label",
+     "label": "Review Time",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_review_time_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_business_reviews_review_time_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_time_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_time_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_text_label",
+     "label": "Review Text",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_review_text_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_business_reviews_review_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_text_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_text_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_text_outer_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_review_rating_label",
+     "label": "Review Rating",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_business_reviews_review_rating_star_color",
+     "label": "Star Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_rating_star_size",
+     "label": "Star Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_rating_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_rating_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_review_rating_star_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_business_reviews_arrows_style",
+   "label": "Arrows",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_business_reviews_arrows_type",
+     "label": "Choose Arrow",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_business_reviews_arrows_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_arrows_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_arrows_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_arrows_left_position",
+     "label": "Align Left Arrow",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_arrows_right_position",
+     "label": "Align Right Arrow",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_arrows_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_arrows_bg_color_normal",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_arrows_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_arrows_border_normal",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_arrows_border_radius_normal",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_arrows_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_arrows_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_arrows_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_arrows_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_business_reviews_dots_style",
+   "label": "Dots",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_business_reviews_dots_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_dots_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_dots_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_dots_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_active_dot_color_normal",
+     "label": "Active Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_dots_border_normal",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_business_reviews_dots_border_radius_normal",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_dots_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_business_reviews_dots_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_dots_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_business_reviews_dots_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 10,
+  "controls": 174,
+  "responsive": 41
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

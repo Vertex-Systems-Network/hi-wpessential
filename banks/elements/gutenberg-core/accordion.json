@@ -1,0 +1,97 @@
+{
+ "kind": "block",
+ "name": "core/accordion",
+ "title": "Accordion",
+ "categories": [
+  "design"
+ ],
+ "keywords": [],
+ "description": "Displays a foldable layout that groups content in collapsible sections.",
+ "file": "wp/wordpress/wp-includes/blocks/accordion/block.json",
+ "attributes": {
+  "iconPosition": {
+   "type": "string",
+   "default": "right"
+  },
+  "showIcon": {
+   "type": "boolean",
+   "default": true
+  },
+  "autoclose": {
+   "type": "boolean",
+   "default": false
+  },
+  "headingLevel": {
+   "type": "number",
+   "default": 3
+  },
+  "levelOptions": {
+   "type": "array"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "background": {
+   "backgroundImage": true,
+   "backgroundSize": true,
+   "gradient": true,
+   "__experimentalDefaultControls": {
+    "backgroundImage": true
+   }
+  },
+  "color": {
+   "background": true,
+   "gradients": true
+  },
+  "__experimentalBorder": {
+   "color": true,
+   "radius": true,
+   "style": true,
+   "width": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "radius": true,
+    "style": true,
+    "width": true
+   }
+  },
+  "spacing": {
+   "padding": true,
+   "margin": [
+    "top",
+    "bottom"
+   ],
+   "blockGap": true
+  },
+  "shadow": true,
+  "layout": true,
+  "ariaLabel": true,
+  "interactivity": true,
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "contentRole": true,
+  "listView": true
+ },
+ "counts": {
+  "attributes": 5,
+  "supports": 14
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

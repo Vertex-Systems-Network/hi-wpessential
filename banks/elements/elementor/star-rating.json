@@ -1,0 +1,144 @@
+{
+ "kind": "elementor-widget",
+ "name": "star-rating",
+ "title": "Star Rating",
+ "categories": [],
+ "keywords": [
+  "star",
+  "rating",
+  "rate",
+  "review"
+ ],
+ "file": "elementor/includes/widgets/star-rating.php",
+ "sections": [
+  {
+   "id": "section_rating",
+   "label": "Star Rating",
+   "tab": "",
+   "controls": [
+    {
+     "name": "rating_scale",
+     "label": "Rating Scale",
+     "type": "SELECT",
+     "options": [
+      "5",
+      "10"
+     ]
+    },
+    {
+     "name": "rating",
+     "label": "Rating",
+     "type": "NUMBER"
+    },
+    {
+     "name": "star_style",
+     "label": "Icon",
+     "type": "SELECT",
+     "options": [
+      "star_fontawesome",
+      "star_unicode"
+     ]
+    },
+    {
+     "name": "unmarked_star_style",
+     "label": "Unmarked Style",
+     "type": "CHOOSE",
+     "options": [
+      "solid",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "title_gap",
+     "label": "Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_stars_style",
+   "label": "Stars",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_space",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "stars_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stars_unmarked_color",
+     "label": "Unmarked Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 14,
+  "responsive": 4
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

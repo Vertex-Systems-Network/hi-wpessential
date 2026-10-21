@@ -1,0 +1,838 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-addon-modal-box",
+ "title": "Modal Box",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium modal box",
+  "popup",
+  "lightbox",
+  "advanced",
+  "embed"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-modalbox.php",
+ "sections": [
+  {
+   "id": "premium_modal_box_content_section",
+   "label": "Trigger",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_modal_box_display_on",
+     "label": "Trigger",
+     "type": "SELECT"
+    },
+    {
+     "name": "show_again_exit",
+     "label": "",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "page_exit_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "premium_modal_box_button_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_modal_box_icon_switcher",
+     "label": "Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "icon_type",
+     "label": "Icon Type",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "premium_modal_box_button_icon_selection_updated",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "custom_svg",
+     "label": "SVG Code",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "draw_svg",
+     "label": "Draw Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "path_width",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "svg_sync",
+     "label": "Draw All Paths Together",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "frames",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "svg_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "svg_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "start_point",
+     "label": "Start Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "end_point",
+     "label": "End Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "svg_hover",
+     "label": "Only Play on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "svg_yoyo",
+     "label": "Yoyo Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_modal_box_icon_position",
+     "label": "Icon Position",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_modal_box_icon_before_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "svg_icon_width",
+     "label": "Icon Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "svg_icon_height",
+     "label": "Icon Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_icon_before_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_icon_after_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_icon_rtl_before_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_icon_rtl_after_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_button_size",
+     "label": "Button Size",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_modal_box_image_src",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "premium_modal_box_selector_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "lottie_url",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_hover",
+     "label": "Only Play on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "trigger_image_animation_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_popup_delay",
+     "label": "Delay in Popup Display (Sec)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_modal_box_selector_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "trigger_zindex",
+     "label": "Trigger Z-Index",
+     "type": "NUMBER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_modal_box_selector_content_section",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_modal_box_header_switcher",
+     "label": "Header",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_modal_box_icon_selection",
+     "label": "Icon Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_modal_box_font_icon_updated",
+     "label": "Select Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "premium_modal_box_image_icon",
+     "label": "Upload Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "header_lottie_url",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "header_lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "header_lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_modal_box_font_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_modal_box_content_type",
+     "label": "Content to Show",
+     "type": "SELECT"
+    },
+    {
+     "name": "live_temp_content",
+     "label": "Template Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "modal_temp_live_btn",
+     "label": "",
+     "type": "BUTTON"
+    },
+    {
+     "name": "premium_modal_box_content_temp",
+     "label": "Templates",
+     "type": "Premium_Post_Filter::TYPE"
+    },
+    {
+     "name": "premium_modal_box_content",
+     "label": "",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "container_id",
+     "label": "Container ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "container_id_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "dismissible",
+     "label": "Dismissible",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lock_page_scroll",
+     "label": "Disable Page Scroll",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_modal_box_upper_close",
+     "label": "Upper Close Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_modal_box_lower_close",
+     "label": "Lower Close Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_modal_close_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_modal_box_animation",
+     "label": "Entrance Animation",
+     "type": "ANIMATION"
+    },
+    {
+     "name": "premium_modal_box_animation_duration",
+     "label": "Animation Duration",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_modal_box_animation_delay",
+     "label": "Animation Delay",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_modal_box_selector_style_section",
+   "label": "Trigger",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "trigger_css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "trigger_hover_css_filters",
+     "label": "Hover CSS Filters",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "selectortext",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "svg_color",
+     "label": "After Draw Fill Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "premium_modal_box_tab_selector_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_modal_box_button_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_button_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_selector_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "selector_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_modal_box_selector_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_selector_box_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_modal_box_selector_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_modal_box_tab_selector_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_modal_box_button_text_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_button_icon_hover_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color_hover",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "underline_color",
+     "label": "Line Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "first_layer_hover",
+     "label": "Layer #1 Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "second_layer_hover",
+     "label": "Layer #2 Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_selector_hover_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "selector_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_modal_box_selector_border_radius_hover",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_selector_box_shadow_hover",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_modal_box_selector_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_modal_box_header_settings",
+   "label": "Header",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_modal_box_header_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "headertext",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_modal_box_header_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "header_separator_background",
+     "label": "Separator Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_header_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  },
+  {
+   "id": "premium_modal_box_upper_close_button_section",
+   "label": "Upper Close Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_modal_box_upper_close_button_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_upper_close_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_modal_box_upper_close_button_normal_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_upper_close_button_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_upper_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_modal_upper_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_upper_close_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_modal_box_upper_close_button_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_upper_close_button_background_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_upper_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_modal_upper_border_radius_hover",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_upper_close_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_modal_box_lower_close_button_section",
+   "label": "Lower Close Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "lowerclose",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_modal_box_lower_close_button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_lower_close_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_modal_box_lower_close_button_normal_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_lower_close_button_background_normal_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_lower_close_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_modal_box_lower_close_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_lower_close_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_modal_box_lower_close_button_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_lower_close_button_background_hover_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_lower_close_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_modal_box_lower_close_border_radius_hover",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_lower_close_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_modal_box_style",
+   "label": "Modal Box",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "text_content_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "content_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_modal_box_content_background",
+     "label": "Content Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "box_background",
+     "label": "Box Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "body_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_modal_box_modal_size",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_modal_max_height",
+     "label": "Max Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "content_overflow",
+     "label": "Overflow",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_modal_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "premium_modal_box_footer_background",
+     "label": "Footer Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "footer_separator_background",
+     "label": "Separator Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "contentborder",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_modal_box_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_modal_box_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_modal_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 8,
+  "controls": 133,
+  "responsive": 15
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

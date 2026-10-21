@@ -1,0 +1,36 @@
+{
+ "kind": "block",
+ "name": "core/legacy-widget",
+ "title": "Legacy Widget",
+ "categories": [
+  "widgets"
+ ],
+ "keywords": [],
+ "description": "Display a legacy widget.",
+ "file": "wp/wordpress/wp-includes/blocks/legacy-widget/block.json",
+ "attributes": {
+  "id": {
+   "type": "string",
+   "default": null
+  },
+  "idBase": {
+   "type": "string",
+   "default": null
+  },
+  "instance": {
+   "type": "object",
+   "default": null
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "reusable": false
+ },
+ "counts": {
+  "attributes": 3,
+  "supports": 3
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

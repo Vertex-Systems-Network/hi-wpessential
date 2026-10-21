@@ -1,0 +1,734 @@
+{
+ "kind": "elementor-widget",
+ "name": "nav-menu",
+ "title": "Nav Menu",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/nav-menu/nav-menu.php",
+ "sections": [
+  {
+   "id": "elementskit_content_tab",
+   "label": "Menu Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "elementskit_nav_menu",
+     "label": "Select menu",
+     "type": "SELECT"
+    },
+    {
+     "name": "elementskit_main_menu_position",
+     "label": "Horizontal menu position",
+     "type": "SELECT",
+     "responsive": true,
+     "options": [
+      "elementskit-menu-po-left",
+      "elementskit-menu-po-center",
+      "elementskit-menu-po-right",
+      "elementskit-menu-po-justified"
+     ]
+    },
+    {
+     "name": "elementskit_nav_dropdown_as",
+     "label": "Dropdown open as",
+     "type": "SELECT",
+     "options": [
+      "ekit-nav-dropdown-hover",
+      "ekit-nav-dropdown-click"
+     ]
+    },
+    {
+     "name": "elementskit_style_tab_submenu_item_arrow",
+     "label": "Submenu Indicator",
+     "type": "SELECT",
+     "options": [
+      "elementskit_line_arrow",
+      "elementskit_plus_icon",
+      "elementskit_fill_arrow",
+      "elementskit_none"
+     ]
+    },
+    {
+     "name": "elementskit_one_page_enable",
+     "label": "Enable one page? ",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "elementskit_one_page_notice",
+     "label": "",
+     "type": "NOTICE"
+    },
+    {
+     "name": "elementskit_responsive_breakpoint",
+     "label": "Responsive Breakpoint",
+     "type": "SELECT",
+     "options": [
+      "ekit_menu_responsive_tablet",
+      "ekit_menu_responsive_mobile"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "elementskit_mobile_menu",
+   "label": "Mobile Menu Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "elementskit_nav_menu_logo",
+     "label": "Mobile Menu Logo",
+     "type": "MEDIA"
+    },
+    {
+     "name": "elementskit_nav_menu_logo_link_to",
+     "label": "Menu link",
+     "type": "SELECT",
+     "options": [
+      "home",
+      "custom"
+     ]
+    },
+    {
+     "name": "elementskit_nav_menu_logo_link",
+     "label": " Custom Link",
+     "type": "URL"
+    },
+    {
+     "name": "elementskit_hamburger_icon",
+     "label": "Hamburger Icon (Optional)",
+     "type": "ICONS"
+    },
+    {
+     "name": "submenu_click_area",
+     "label": "Submenu Click Area",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "elementskit_close_menu_on_anchor_click",
+     "label": "Close Menu on Anchor Click",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "elementskit_menu_style_tab",
+   "label": "Menu Wrapper",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "elementskit_menubar_height",
+     "label": "Menu Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_wrap_h",
+     "label": "Menu wrapper background",
+     "type": "HEADING"
+    },
+    {
+     "name": "elementskit_menubar_background",
+     "label": "Menu Panel Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "wrapper_color_mobile",
+     "label": "Mobile Wrapper Background",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_mobile_menu_panel_spacing",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_mobile_menu_panel_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_border_radius",
+     "label": "Menu border radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_menu_item_icon_spacing",
+     "label": "Menu Icon Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "elementskit_style_tab_menuitem",
+   "label": "Menu Item",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "elementskit_content_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "elementskit_menu_item_h",
+     "label": "Menu Item Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "elementskit_nav_menu_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "elementskit_item_background",
+     "label": "Item background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_menu_text_color",
+     "label": "Item text color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_text_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_menu_text_border_radius",
+     "label": "Border Radius (px)",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "elementskit_nav_menu_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "elementskit_item_background_hover",
+     "label": "Item background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_item_color_hover",
+     "label": "Item text color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_text_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_menu_text_border_radius_hover",
+     "label": "Border Radius (px)",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "elementskit_nav_menu_active_tab",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "elementskit_nav_menu_active_bg_color",
+     "label": "Item background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_nav_menu_active_text_color",
+     "label": "Item text color (Active)",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_text_border_active",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_menu_text_border_radius_active",
+     "label": "Border Radius (px)",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_item_spacing",
+     "label": "Item Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_item_margin",
+     "label": "Item Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "elementskit_style_tab_submenu_indicator",
+   "label": "Submenu Indicator",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_submenu_indicator_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_submenu_item_indicator_font_size",
+     "label": "Child Indicator Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_style_tab_submenu_indicator_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "elementskit_submenu_indicator_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_submenu_indicator_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_submenu_indicator_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_submenu_indicator_spacing",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_submenu_indicator_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "elementskit_style_tab_submenu_item",
+   "label": "Submenu Item",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "elementskit_menu_item_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "elementskit_submenu_item_spacing",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_submenu_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "elementskit_submenu_item_color",
+     "label": "Item text color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_item_background",
+     "label": "Item background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_submenu_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "elementskit_item_text_color_hover",
+     "label": "Item text color (hover)",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_item_background_hover",
+     "label": "Item background (hover)",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_submenu_active_tab",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "elementskit_nav_sub_menu_active_text_color",
+     "label": "Item text color (Active)",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_nav_sub_menu_active_bg_color",
+     "label": "Item background (Active)",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_menu_item_border_heading",
+     "label": "Sub Menu Items Border",
+     "type": "HEADING"
+    },
+    {
+     "name": "elementskit_menu_item_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_menu_item_border_last_child_heading",
+     "label": "Border Last Child",
+     "type": "HEADING"
+    },
+    {
+     "name": "elementskit_menu_item_border_last_child",
+     "label": "Border last Child",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_menu_item_border_first_child_heading",
+     "label": "Border First Child",
+     "type": "HEADING"
+    },
+    {
+     "name": "elementskit_menu_item_border_first_child",
+     "label": "Border First Child",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  },
+  {
+   "id": "elementskit_style_tab_submenu_panel",
+   "label": "Submenu Panel",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "sub_panel_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_panel_submenu_border",
+     "label": "Panel Menu Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_submenu_container_background",
+     "label": "Container background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_submenu_panel_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_submenu_container_width",
+     "label": "Conatiner width",
+     "type": "TEXT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_panel_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "elementskit_menu_toggle_style_tab",
+   "label": "Hamburger Menu",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "elementskit_menu_toggle_style_title",
+     "label": "Hamburger Toggle",
+     "type": "HEADING"
+    },
+    {
+     "name": "elementskit_menu_toggle_icon_position",
+     "label": "Position",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "elementskit_menu_toggle_spacing",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_toggle_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_toggle_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_open_typography",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_toggle_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "elementskit_menu_toggle_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_menu_toggle_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_menu_toggle_icon_color",
+     "label": "Hamburger Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_toggle_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "elementskit_menu_toggle_background_hover",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_menu_toggle_border_hover",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_menu_toggle_icon_color_hover",
+     "label": "Hamburger Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_close_style_title",
+     "label": "Close Toggle",
+     "type": "HEADING"
+    },
+    {
+     "name": "elementskit_menu_close_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "elementskit_menu_close_spacing",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_close_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_close_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_close_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_close_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "elementskit_menu_close_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_menu_close_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_menu_close_icon_color",
+     "label": "Hamburger Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "elementskit_menu_close_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "elementskit_menu_close_background_hover",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "elementskit_menu_close_border_hover",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "elementskit_menu_close_icon_color_hover",
+     "label": "Hamburger Icon Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "elementskit_mobile_menu_logo_style_tab",
+   "label": "Mobile Menu Logo",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "elementskit_mobile_menu_logo_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_mobile_menu_logo_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_mobile_menu_logo_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "elementskit_mobile_menu_logo_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 9,
+  "controls": 103,
+  "responsive": 37
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

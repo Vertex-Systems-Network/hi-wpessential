@@ -1,0 +1,73 @@
+{
+ "kind": "block",
+ "name": "generateblocks/element",
+ "title": "Container",
+ "categories": [
+  "generateblocks"
+ ],
+ "keywords": [
+  "element",
+  "container",
+  "group"
+ ],
+ "description": "An HTML element that you can add blocks inside of.",
+ "file": "generateblocks/dist/blocks/element/block.json",
+ "attributes": {
+  "uniqueId": {
+   "type": "string",
+   "default": ""
+  },
+  "tagName": {
+   "type": "string",
+   "default": "",
+   "enum": [
+    "div",
+    "section",
+    "article",
+    "aside",
+    "header",
+    "footer",
+    "nav",
+    "main",
+    "figure",
+    "a",
+    "ul",
+    "ol",
+    "li",
+    "dl",
+    "dt",
+    "dd"
+   ]
+  },
+  "styles": {
+   "type": "object",
+   "default": {}
+  },
+  "css": {
+   "type": "string",
+   "default": ""
+  },
+  "globalClasses": {
+   "type": "array",
+   "default": []
+  },
+  "htmlAttributes": {
+   "type": "object",
+   "default": {}
+  },
+  "align": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {
+  "align": false,
+  "className": false
+ },
+ "counts": {
+  "attributes": 7,
+  "supports": 2
+ },
+ "source": "generateblocks",
+ "source_label": "GenerateBlocks"
+}

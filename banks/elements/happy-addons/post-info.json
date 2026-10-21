@@ -1,0 +1,285 @@
+{
+ "kind": "elementor-widget",
+ "name": "post-info",
+ "title": "Post Info",
+ "categories": [
+  "happy_addons_category",
+  "happy_addons_theme_builder"
+ ],
+ "keywords": [
+  "post",
+  "info",
+  "date",
+  "time",
+  "author",
+  "taxonomy",
+  "comments",
+  "terms",
+  "avatar"
+ ],
+ "file": "happy-elementor-addons/widgets/post-info/widget.php",
+ "sections": [
+  {
+   "id": "_section_post_meta",
+   "label": "Meta Data",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "view",
+     "label": "Layout",
+     "type": "CHOOSE",
+     "options": [
+      "traditional",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "type",
+     "label": "Type",
+     "type": "SELECT",
+     "options": [
+      "author",
+      "date",
+      "time",
+      "comments",
+      "terms",
+      "custom"
+     ]
+    },
+    {
+     "name": "date_format",
+     "label": "Date Format",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "0",
+      "1",
+      "2",
+      "3",
+      "custom"
+     ]
+    },
+    {
+     "name": "custom_date_format",
+     "label": "Custom Date Format",
+     "type": "TEXT"
+    },
+    {
+     "name": "time_format",
+     "label": "Time Format",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "0",
+      "1",
+      "2",
+      "custom"
+     ]
+    },
+    {
+     "name": "custom_time_format",
+     "label": "Custom Time Format",
+     "type": "TEXT"
+    },
+    {
+     "name": "taxonomy",
+     "label": "Taxonomy",
+     "type": "SELECT2"
+    },
+    {
+     "name": "text_prefix",
+     "label": "Before",
+     "type": "TEXT"
+    },
+    {
+     "name": "show_avatar",
+     "label": "Avatar",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "avatar_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "comments_custom_strings",
+     "label": "Custom Format",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "string_no_comments",
+     "label": "No Comments",
+     "type": "TEXT"
+    },
+    {
+     "name": "string_one_comment",
+     "label": "One Comment",
+     "type": "TEXT"
+    },
+    {
+     "name": "string_comments",
+     "label": "Comments",
+     "type": "TEXT"
+    },
+    {
+     "name": "custom_text",
+     "label": "Custom",
+     "type": "TEXT"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "custom_url",
+     "label": "Custom URL",
+     "type": "URL"
+    },
+    {
+     "name": "show_icon",
+     "label": "Icon",
+     "type": "SELECT",
+     "options": [
+      "none",
+      "default",
+      "custom"
+     ]
+    },
+    {
+     "name": "selected_icon",
+     "label": "Choose Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "icon_list",
+     "label": "",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "_section_list_style",
+   "label": "List",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "space_between",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "divider",
+     "label": "Divider",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "divider_style",
+     "label": "Style",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "solid",
+      "double",
+      "dotted",
+      "dashed"
+     ]
+    },
+    {
+     "name": "divider_weight",
+     "label": "Weight",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "divider_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "divider_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "divider_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_icon_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_text_style",
+   "label": "Text",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "text_indent",
+     "label": "Indent",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 33,
+  "responsive": 4
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

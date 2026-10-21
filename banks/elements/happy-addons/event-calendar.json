@@ -1,0 +1,735 @@
+{
+ "kind": "elementor-widget",
+ "name": "event-calendar",
+ "title": "Event Calendar",
+ "categories": [],
+ "keywords": [
+  "event-calendar",
+  "event",
+  "calender",
+  "time",
+  "shedule",
+  "google-calender"
+ ],
+ "file": "happy-elementor-addons/widgets/event-calendar/widget.php",
+ "sections": [
+  {
+   "id": "_section_event",
+   "label": "Event",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "event_calendar_type",
+     "label": "Source",
+     "type": "SELECT",
+     "options": [
+      "manual",
+      "google_calendar",
+      "the_events_calendar"
+     ]
+    },
+    {
+     "name": "event_calendar_content_tab",
+     "label": "Content",
+     "type": "TAB"
+    },
+    {
+     "name": "title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "guest",
+     "label": "Guest/Speaker",
+     "type": "TEXT"
+    },
+    {
+     "name": "location",
+     "label": "Location",
+     "type": "TEXT"
+    },
+    {
+     "name": "image",
+     "label": "Choose Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "thumbnail",
+     "label": "Thumbnail Size",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "details_link",
+     "label": "Details Link",
+     "type": "URL"
+    },
+    {
+     "name": "all_day",
+     "label": "All Day",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "start_date",
+     "label": "Start Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "end_date",
+     "label": "End Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "start_date_allday",
+     "label": "Start Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "end_date_allday",
+     "label": "End Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "individual_style",
+     "label": "Individual Style?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "bg_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "border_color",
+     "label": "Dot Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_calendar_description_tab",
+     "label": "Description",
+     "type": "TAB"
+    },
+    {
+     "name": "description",
+     "label": "Description",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "manual_event_list",
+     "label": "",
+     "type": "REPEATER"
+    },
+    {
+     "name": "the_event_calendar_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "_section_event_google_calendar",
+   "label": "Google Calendar",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "google_calendar_api_key",
+     "label": "API Key",
+     "type": "TEXT"
+    },
+    {
+     "name": "google_calendar_id",
+     "label": "Calendar ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "google_calendar_start_date",
+     "label": "Start Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "google_calendar_end_date",
+     "label": "End Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "google_calendar_max_item",
+     "label": "Number Of Events",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "_section_the_events_calendar",
+   "label": "The Event Calendar",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "the_events_calendar_source",
+     "label": "Get Events By",
+     "type": "SELECT",
+     "options": [
+      "all",
+      "category",
+      "selected_event"
+     ]
+    },
+    {
+     "name": "the_events_calendar_category",
+     "label": "Event Category",
+     "type": "SELECT2"
+    },
+    {
+     "name": "the_events_calendar_selected",
+     "label": "Select Events",
+     "type": "SELECT2"
+    },
+    {
+     "name": "the_events_calendar_item",
+     "label": "Event Item",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "_section_event_settings",
+   "label": "Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "language",
+     "label": "Language",
+     "type": "SELECT",
+     "options": [
+      "manual",
+      "google_calendar"
+     ]
+    },
+    {
+     "name": "default_view",
+     "label": "Calendar Default View",
+     "type": "SELECT"
+    },
+    {
+     "name": "event_calendar_first_day",
+     "label": "First Day of Week",
+     "type": "SELECT",
+     "options": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "name": "show_event_popup",
+     "label": "Show Event Popup",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "allday_text",
+     "label": "All Day Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "readmore_text",
+     "label": "Read More Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "time_title",
+     "label": "Time Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "speaker_title",
+     "label": "Speaker Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "location_title",
+     "label": "Location Title",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_calendar_wrapper",
+   "label": "Calendar",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "calendar_typography",
+     "label": "Calendar Font Family",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "calendar_background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "calendar_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "calendar_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "calendar_todays_background",
+     "label": "Today\\'s Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "calendar_heading_heading",
+     "label": "Calendar Heading",
+     "type": "HEADING"
+    },
+    {
+     "name": "calendar_heading_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "calendar_heading_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "calendar_heading_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "calendar_heading_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "calendar_date_and_time_heading",
+     "label": "Date&Time",
+     "type": "HEADING"
+    },
+    {
+     "name": "calendar_date_and_time_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "calendar_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_calendar_topbar",
+   "label": "Top Bar",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "topbar_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "topbar_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "topbar_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "topbar_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "topbar_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "topbar_buttons_heading",
+     "label": "Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "topbar_buttons_space",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "topbar_buttons_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "topbar_buttons_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "topbar_buttons_normal_state",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "topbar_buttons_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "topbar_buttons_background_normal",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "topbar_buttons_border_color_normal",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "topbar_buttons_hover_state",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "topbar_buttons_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "topbar_buttons_background_hover",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "topbar_buttons_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "topbar_buttons_border_radius_normal",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_event",
+   "label": "Event",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "event_item_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_item_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_item_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_item_dot_color",
+     "label": "Dot Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_event_popup",
+   "label": "Event Popup",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "event_popup_wrapper_background",
+     "label": "Wrapper Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "event_popup_image_heading",
+     "label": "Image",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_image_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "event_popup_image_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "event_popup_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_title_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "event_popup_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_desc_heading",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_desc__margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_desc_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "event_popup_desc_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_readmore_heading",
+     "label": "Read More",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_readmore_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "event_popup_readmore_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_close_btn_heading",
+     "label": "Close Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_close_btn_font_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_close_btn_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_close_btn_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_close_btn_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "event_popup_meta_heading",
+     "label": "Meta",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_meta_item_margin",
+     "label": "Item Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_meta_icon_heading",
+     "label": "Meta Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_meta_icon_font_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_meta_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_meta_title_heading",
+     "label": "Meta Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_meta_title_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_meta_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "event_popup_meta_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_meta_content_heading",
+     "label": "Meta Content",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_meta_content_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "event_popup_meta_content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 8,
+  "controls": 111,
+  "responsive": 16
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

@@ -1,0 +1,520 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-addon-image-button",
+ "title": "Image Button",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium image button",
+  "cta",
+  "call",
+  "link",
+  "btn"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-image-button.php",
+ "sections": [
+  {
+   "id": "premium_image_button_general_section",
+   "label": "Button",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_image_button_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_image_button_link_selection",
+     "label": "Link Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_image_button_link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "premium_image_button_existing_link",
+     "label": "Existing Page",
+     "type": "Premium_Post_Filter::TYPE"
+    },
+    {
+     "name": "premium_image_button_hover_effect",
+     "label": "Hover Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "underline_style",
+     "label": "Underline Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "line_width",
+     "label": "Line Width (%)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "line_height",
+     "label": "Line Height (PX)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "line_h_position",
+     "label": "Line Horizontal Position (%)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "line_v_position",
+     "label": "Line Vertical Position (%)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_style1_dir",
+     "label": "Slide Direction",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_image_button_style3_dir",
+     "label": "Slide Direction",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_image_button_style4_dir",
+     "label": "Slide Direction",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_image_button_style5_dir",
+     "label": "Overlap Direction",
+     "type": "SELECT"
+    },
+    {
+     "name": "grow_size",
+     "label": "Grow Layer Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "grow_speed",
+     "label": "Grow Animation Speed (Sec)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "mouse_detect",
+     "label": "Detect Mouse Position",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_image_button_icon_switcher",
+     "label": "Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "icon_type",
+     "label": "Icon Type",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "premium_image_button_icon_selection_updated",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "custom_svg",
+     "label": "SVG Code",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "lottie_url",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "draw_svg",
+     "label": "Draw Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "stroke_width",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "svg_sync",
+     "label": "Draw All Paths Together",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "frames",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "start_point",
+     "label": "Start Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "end_point",
+     "label": "End Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "svg_hover",
+     "label": "Only Play on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "svg_yoyo",
+     "label": "Yoyo Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "slide_icon_type",
+     "label": "Icon Type",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "premium_image_button_style4_icon_selection_updated",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "slide_lottie_url",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "slide_lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "slide_lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_image_button_icon_position",
+     "label": "Icon Position",
+     "type": "CHOOSE",
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_icon_before_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_icon_style4_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_icon_before_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_size",
+     "label": "Size",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_image_button_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_event_switcher",
+     "label": "onclick Event",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_image_button_event_function",
+     "label": "Example: myFunction();",
+     "type": "CODE"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_image_button_style_section",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "svg_color",
+     "label": "After Draw Fill Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "premium_image_button_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_image_button_style_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_image_button_text_color_normal",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_icon_color_normal",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "premium_image_button_border_normal",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_image_button_border_radius_normal",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "button_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "button_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_icon_shadow_normal",
+     "label": "Icon Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_image_button_text_shadow_normal",
+     "label": "Text Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_image_button_box_shadow_normal",
+     "label": "Button Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_image_button_margin_normal",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_padding_normal",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_style_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "grow_effect_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "premium_image_button_text_color_hover",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_icon_color_hover",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "underline_color",
+     "label": "Line Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color_hover",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_style4_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_diagonal_overlay_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_overlap_overlay_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_background_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "premium_image_button_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_image_button_border_radius_hover",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "button_hover_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "button_hover_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_icon_shadow_hover",
+     "label": "Icon Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_image_button_style4_icon_shadow_hover",
+     "label": "Icon Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_image_button_text_shadow_hover",
+     "label": "Text Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_image_button_box_shadow_hover",
+     "label": "Button Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_image_button_margin_hover",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_image_button_padding_hover",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 83,
+  "responsive": 14
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

@@ -1,0 +1,226 @@
+{
+ "kind": "elementor-widget",
+ "name": "mega-menu-products",
+ "title": "Menu Products",
+ "categories": [
+  "essential-addons-elementor",
+  "woocommerce-elements"
+ ],
+ "keywords": [
+  "mega menu",
+  "menu",
+  "products",
+  "woocommerce",
+  "woo",
+  "best selling",
+  "featured",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Mega_Menu_Products.php",
+ "sections": [
+  {
+   "id": "eael_mm_products_query_section",
+   "label": "Query",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_mm_products_wc_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eael_mm_products_source",
+     "label": "Filter By",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_mm_products_include",
+     "label": "Select Products",
+     "type": "eael-select2"
+    },
+    {
+     "name": "eael_mm_products_categories",
+     "label": "Product Categories",
+     "type": "SELECT2"
+    },
+    {
+     "name": "eael_mm_products_tags",
+     "label": "Product Tags",
+     "type": "SELECT2"
+    },
+    {
+     "name": "eael_mm_products_exclude",
+     "label": "Exclude Products",
+     "type": "eael-select2"
+    },
+    {
+     "name": "eael_mm_products_count",
+     "label": "Products Count",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_mm_products_offset",
+     "label": "Offset",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_mm_products_order",
+     "label": "Order",
+     "type": "SELECT",
+     "options": [
+      "desc",
+      "asc"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_mm_products_layout_section",
+   "label": "Layout",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_mm_products_columns",
+     "label": "Columns",
+     "type": "NUMBER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_mm_products_gap",
+     "label": "Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_mm_products_show_title",
+     "label": "Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_mm_products_title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "eael_mm_products_show_price",
+     "label": "Price",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_mm_products_image",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    }
+   ]
+  },
+  {
+   "id": "eael_mm_products_image_style_section",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_mm_products_image_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_mm_products_image_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_mm_products_image_opacity_hover",
+     "label": "Hover Opacity",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_mm_products_text_style_section",
+   "label": "Title & Price",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_mm_products_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_mm_products_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_mm_products_title_color_hover",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_mm_products_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_mm_products_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_mm_products_price_heading",
+     "label": "Price",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_mm_products_price_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_mm_products_price_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_mm_products_price_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 27,
+  "responsive": 6
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

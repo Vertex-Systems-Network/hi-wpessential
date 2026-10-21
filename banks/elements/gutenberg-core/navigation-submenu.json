@@ -1,0 +1,75 @@
+{
+ "kind": "block",
+ "name": "core/navigation-submenu",
+ "title": "Submenu",
+ "categories": [
+  "design"
+ ],
+ "keywords": [],
+ "description": "Add a submenu to your navigation.",
+ "file": "wp/wordpress/wp-includes/blocks/navigation-submenu/block.json",
+ "attributes": {
+  "label": {
+   "type": "string"
+  },
+  "type": {
+   "type": "string"
+  },
+  "description": {
+   "type": "string"
+  },
+  "rel": {
+   "type": "string"
+  },
+  "id": {
+   "type": "number"
+  },
+  "opensInNewTab": {
+   "type": "boolean",
+   "default": false
+  },
+  "url": {
+   "type": "string"
+  },
+  "title": {
+   "type": "string"
+  },
+  "kind": {
+   "type": "string"
+  },
+  "isTopLevelItem": {
+   "type": "boolean"
+  },
+  "isParentSubmenu": {
+   "type": "boolean",
+   "default": true
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "reusable": false,
+  "html": false,
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 11,
+  "supports": 5
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

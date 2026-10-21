@@ -1,0 +1,911 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-addon-video-box",
+ "title": "Video Box",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium video box",
+  "youtube",
+  "vimeo",
+  "self",
+  "hosted",
+  "media",
+  "list",
+  "embed",
+  "dailymotion"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-videobox.php",
+ "sections": [
+  {
+   "id": "premium_video_box_general_settings",
+   "label": "Video Box",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_video_box_video_type",
+     "label": "Video Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "youtube_list",
+     "label": "Get Videos From Channel/Playlist",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "source",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "playlist_id",
+     "label": "Playlist ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "channel_id",
+     "label": "Channel ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "reload",
+     "label": "Reload Video Once Every",
+     "type": "SELECT"
+    },
+    {
+     "name": "youtube_videos_title",
+     "label": "Show Video Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "youtube_videos_title_link",
+     "label": "Link Title To Videos",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "youtube_videos_title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "youtube_videos_title_pos",
+     "label": "Title Position",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_link",
+     "label": "Link",
+     "type": "TEXT"
+    },
+    {
+     "name": "playlist_layout",
+     "label": "Layout",
+     "type": "SELECT"
+    },
+    {
+     "name": "first_column_width",
+     "label": "First Column Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_video_height",
+     "label": "Video Height (%)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "video_columns",
+     "label": "Videos/Row",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "limit_num",
+     "label": "Number of Videos",
+     "type": "NUMBER"
+    },
+    {
+     "name": "featured_video",
+     "label": "Feature The First Video",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_self_hosted",
+     "label": "URL",
+     "type": "MEDIA"
+    },
+    {
+     "name": "premium_video_box_self_hosted_remote",
+     "label": "Remote Video URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_video_box_controls",
+     "label": "Player Controls",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_video_box_mute",
+     "label": "Mute",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "play_inline",
+     "label": "Play Inline",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "cc_load_policy",
+     "label": "Captions",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "privacy_mode",
+     "label": "Privacy Mode",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_video_box_self_autoplay",
+     "label": "Autoplay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "autoplay_viewport",
+     "label": "Autoplay On Viewport",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "autoplay_reset",
+     "label": "Restart Video on Scroll Up",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "autoplay_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "premium_video_box_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "download_button",
+     "label": "Download Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "preload",
+     "label": "Preload",
+     "type": "SELECT"
+    },
+    {
+     "name": "poster",
+     "label": "Poster",
+     "type": "MEDIA"
+    },
+    {
+     "name": "premium_video_box_sticky_switcher",
+     "label": "Sticky",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_video_box_sticky_on_play",
+     "label": "Sticky Only After Played",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_video_box_sticky_position",
+     "label": "Position",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_video_box_sticky_hide",
+     "label": "Disable Sticky On",
+     "type": "SELECT2"
+    },
+    {
+     "name": "premium_video_box_animation",
+     "label": "Entrance Animation",
+     "type": "ANIMATION"
+    },
+    {
+     "name": "premium_video_box_animation_duration",
+     "label": "Animation Duration",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_video_box_animation_delay",
+     "label": "Animation Delay",
+     "type": "NUMBER"
+    },
+    {
+     "name": "sticky_info_bar_switch",
+     "label": "Info Section",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sticky_info_bar_text",
+     "label": "Text",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "premium_video_box_start",
+     "label": "Start Time",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_video_box_end",
+     "label": "End Time",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_video_box_suggested_videos",
+     "label": "Suggested Videos From",
+     "type": "SELECT"
+    },
+    {
+     "name": "vimeo_controls_color",
+     "label": "Controls Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "vimeo_title",
+     "label": "Intro Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "vimeo_portrait",
+     "label": "Intro Portrait",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "vimeo_byline",
+     "label": "Intro Byline",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "dailymotion_logo",
+     "label": "Show Logo",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "dailymotion_info",
+     "label": "Video Info",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "dm_controls_color",
+     "label": "Controls Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "aspect_ratio",
+     "label": "Aspect Ratio",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "object_fit",
+     "label": "Object Fit",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_image_switcher",
+     "label": "Overlay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_video_box_yt_thumbnail_size",
+     "label": "Thumbnail Size",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_video_box_img_effect",
+     "label": "Hover Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "mask_video_box_switcher",
+     "label": "Mask Video Shape",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "mask_shape_video_box",
+     "label": "Mask Image",
+     "type": "MEDIA",
+     "styles": true
+    },
+    {
+     "name": "mask_size",
+     "label": "Mask Size",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "mask_position_cover",
+     "label": "Mask Position",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "mask_position_contain",
+     "label": "Mask Position",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "video_box_shadow",
+     "label": "Mask Shadow",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "video_box_shadow_color",
+     "label": "Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "video_box_shadow_h",
+     "label": "Horizontal",
+     "type": "SLIDER"
+    },
+    {
+     "name": "video_box_shadow_v",
+     "label": "Vertical",
+     "type": "SLIDER"
+    },
+    {
+     "name": "video_box_shadow_blur",
+     "label": "Blur",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "video_lightbox",
+     "label": "Lightbox",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "video_lightbox_style",
+     "label": "Lightbox Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "video_lightbox_theme",
+     "label": "Lightbox Theme",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "premium_video_box_image_settings",
+   "label": "Overlay",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_video_box_image",
+     "label": "Image",
+     "type": "MEDIA"
+    }
+   ]
+  },
+  {
+   "id": "premium_video_box_play_icon_settings",
+   "label": "Play Icon",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_video_box_play_icon_switcher",
+     "label": "Play Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_video_box_icon_hor_position",
+     "label": "Horizontal Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_icon_ver_position",
+     "label": "Vertical Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "play_glow_effect",
+     "label": "Glow Effect Type",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "premium_video_box_description_text_section",
+   "label": "Description",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_video_box_video_text_switcher",
+     "label": "Video Text",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_video_box_description_text",
+     "label": "Text",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "premium_video_box_description_hor_position",
+     "label": "Horizontal Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_description_ver_position",
+     "label": "Vertical Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "video_background",
+   "label": "Background Image",
+   "tab": "",
+   "controls": [
+    {
+     "name": "background_image",
+     "label": "Select Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "video_hor_position",
+     "label": "Horizontal Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "video_ver_position",
+     "label": "Vertical Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "video_height",
+     "label": "Video Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_video_box_text_style_section",
+   "label": "Video Box",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_video_box_image_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "box_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "image_shadow_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "columns_spacing",
+     "label": "Rows Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_blog_posts_spacing",
+     "label": "Columns Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_video_box_icon_style",
+   "label": "Play Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_video_box_play_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_play_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_play_icon_color_hover",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "glow_color",
+     "label": "Glow Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "glow_size",
+     "label": "Glow Size (px)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "wave_scale",
+     "label": "Radio Wave Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_play_icon_background_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "icon_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_video_box_icon_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_icon_padding_hover",
+     "label": "Hover Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_video_box_text_style",
+   "label": "Video Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_video_box_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_text_color_hover",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "text_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_video_box_text_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_text_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_text_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "premium_video_box_sticky_options",
+   "label": "Sticky Options",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "sticky_video_width",
+     "label": "Video Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "sticky_video_margin",
+     "label": "Spaces Around",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "sticky_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "info_bar_shadow_color",
+     "label": "Shadow Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "sticky_play_icon",
+     "label": "Play Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "premium_video_box_play_icon_sticky_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_icon_sticky_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_text_sticky_size",
+     "label": "Video Text Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "sticky_close",
+     "label": "Close Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "premium_video_box_sticky_close_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_video_box_sticky_close_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "sticky_video_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "sticky_hint",
+     "label": "Info Section",
+     "type": "HEADING"
+    },
+    {
+     "name": "premium_video_box_sticky_info_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "info_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_video_box_sticky_info_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_video_title_style",
+   "label": "Video Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_video_title_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_video_title_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_video_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_video_title_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_video_title_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_video_title_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_video_title_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_video_title_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_video_title_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_video_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_lightbox_style",
+   "label": "Lightbox",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "lightbox_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lightbox_ui_color",
+     "label": "UI Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lightbox_ui_color_hover",
+     "label": "UI Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lightbox_video_width",
+     "label": "Content Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "lightbox_content_position",
+     "label": "Content Position",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "lightbox_content_animation",
+     "label": "Entrance Animation",
+     "type": "ANIMATION",
+     "responsive": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 12,
+  "controls": 140,
+  "responsive": 26
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

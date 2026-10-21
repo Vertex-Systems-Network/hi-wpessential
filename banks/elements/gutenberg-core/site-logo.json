@@ -1,0 +1,57 @@
+{
+ "kind": "block",
+ "name": "core/site-logo",
+ "title": "Site Logo",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Display an image to represent this site. Update this block and the changes apply everywhere.",
+ "file": "wp/wordpress/wp-includes/blocks/site-logo/block.json",
+ "attributes": {
+  "width": {
+   "type": "number"
+  },
+  "isLink": {
+   "type": "boolean",
+   "default": true
+  },
+  "linkTarget": {
+   "type": "string",
+   "default": "_self"
+  },
+  "shouldSyncIcon": {
+   "type": "boolean"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "align": true,
+  "alignWide": false,
+  "color": {
+   "text": false,
+   "background": false
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "margin": false,
+    "padding": false
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "filter": {
+   "duotone": true
+  }
+ },
+ "counts": {
+  "attributes": 4,
+  "supports": 8
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

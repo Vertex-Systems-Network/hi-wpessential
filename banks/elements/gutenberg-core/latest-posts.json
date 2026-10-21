@@ -1,0 +1,140 @@
+{
+ "kind": "block",
+ "name": "core/latest-posts",
+ "title": "Latest Posts",
+ "categories": [
+  "widgets"
+ ],
+ "keywords": [
+  "recent posts"
+ ],
+ "description": "Display a list of your most recent posts.",
+ "file": "wp/wordpress/wp-includes/blocks/latest-posts/block.json",
+ "attributes": {
+  "categories": {
+   "type": "array"
+  },
+  "selectedAuthor": {
+   "type": "number"
+  },
+  "postsToShow": {
+   "type": "number",
+   "default": 5
+  },
+  "displayPostContent": {
+   "type": "boolean",
+   "default": false
+  },
+  "displayPostContentRadio": {
+   "type": "string",
+   "default": "excerpt"
+  },
+  "excerptLength": {
+   "type": "number",
+   "default": 55
+  },
+  "displayAuthor": {
+   "type": "boolean",
+   "default": false
+  },
+  "displayPostDate": {
+   "type": "boolean",
+   "default": false
+  },
+  "order": {
+   "type": "string",
+   "default": "desc"
+  },
+  "orderBy": {
+   "type": "string",
+   "default": "date"
+  },
+  "displayFeaturedImage": {
+   "type": "boolean",
+   "default": false
+  },
+  "featuredImageAlign": {
+   "type": "string",
+   "enum": [
+    "left",
+    "center",
+    "right"
+   ]
+  },
+  "featuredImageSizeSlug": {
+   "type": "string",
+   "default": "thumbnail"
+  },
+  "featuredImageSizeWidth": {
+   "type": "number",
+   "default": null
+  },
+  "featuredImageSizeHeight": {
+   "type": "number",
+   "default": null
+  },
+  "addLinkToFeaturedImage": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "html": false,
+  "layout": true,
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true,
+    "link": true
+   }
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true,
+   "blockGap": {
+    "__experimentalDefault": "1.25em"
+   },
+   "__experimentalDefaultControls": {
+    "blockGap": true
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": true,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 16,
+  "supports": 9
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

@@ -1,0 +1,38 @@
+{
+ "kind": "block",
+ "name": "core/block",
+ "title": "Pattern",
+ "categories": [
+  "reusable"
+ ],
+ "keywords": [
+  "reusable"
+ ],
+ "description": "Reuse this design across your site.",
+ "file": "wp/wordpress/wp-includes/blocks/block/block.json",
+ "attributes": {
+  "ref": {
+   "type": "number"
+  },
+  "content": {
+   "type": "object",
+   "default": {}
+  }
+ },
+ "supports": {
+  "customClassName": false,
+  "html": false,
+  "inserter": false,
+  "renaming": false,
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "customCSS": false
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 6
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

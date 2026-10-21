@@ -1,0 +1,630 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-countdown-timer",
+ "title": "Countdown",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium countdown",
+  "counter",
+  "time",
+  "event",
+  "timer"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-countdown.php",
+ "sections": [
+  {
+   "id": "countdown_section",
+   "label": "Countdown",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_countdown_type",
+     "label": "Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_countdown_date_time",
+     "label": "Due Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "premium_countdown_eve_days",
+     "label": "Days",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_countdown_eve_hours",
+     "label": "Hours",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_countdown_eve_min",
+     "label": "Minutes",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_countdown_eve_reset",
+     "label": "Reset",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_countdown_eve_reset_hours",
+     "label": "Hours",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_countdown_eve_reset_min",
+     "label": "Minutes",
+     "type": "NUMBER"
+    },
+    {
+     "name": "timezone",
+     "label": "Timezone",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_countdown_units",
+     "label": "Time Units",
+     "type": "SELECT2"
+    }
+   ]
+  },
+  {
+   "id": "display_options_section",
+   "label": "Display Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "style",
+     "label": "Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "flip_language",
+     "label": "Language",
+     "type": "SELECT"
+    },
+    {
+     "name": "featured_unit",
+     "label": "Featured Time Unit",
+     "type": "SELECT"
+    },
+    {
+     "name": "featured_unit_size",
+     "label": "Featured Unit Width (PX)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "notification_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "digit_size",
+     "label": "Digit Size (px)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "unit_inside_circle",
+     "label": "Add Units Inside Digits",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "unit_position",
+     "label": "Time Units Position",
+     "type": "SELECT"
+    },
+    {
+     "name": "units_valignment",
+     "label": "Units Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_countdown_separator",
+     "label": "Digits Separator",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_countdown_separator_text",
+     "label": "Separator Shape",
+     "type": "SELECT"
+    },
+    {
+     "name": "custom_separator",
+     "label": "Separator Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "expire_section",
+   "label": "After Expire",
+   "tab": "",
+   "controls": [
+    {
+     "name": "expiration_type",
+     "label": "Choose Action",
+     "type": "SELECT"
+    },
+    {
+     "name": "change_digits",
+     "label": "Change Digits To",
+     "type": "SELECT"
+    },
+    {
+     "name": "expiration_text",
+     "label": "Text",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "expiration_url",
+     "label": "URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "restart_days",
+     "label": "Days",
+     "type": "NUMBER"
+    },
+    {
+     "name": "restart_hours",
+     "label": "Hours",
+     "type": "NUMBER"
+    },
+    {
+     "name": "restart_minutes",
+     "label": "Minutes",
+     "type": "NUMBER"
+    },
+    {
+     "name": "restart_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_countdown_transaltion",
+   "label": "Strings Translation",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_countdown_day_singular",
+     "label": "Day (Singular)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_day_plural",
+     "label": "Day (Plural)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_month_singular",
+     "label": "Month (Singular)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_month_plural",
+     "label": "Months (Plural)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_year_singular",
+     "label": "Year (Singular)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_year_plural",
+     "label": "Years (Plural)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_hour_singular",
+     "label": "Hour (Singular)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_hour_plural",
+     "label": "Hours (Plural)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_minute_singular",
+     "label": "Minute (Singular)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_minute_plural",
+     "label": "Minutes (Plural)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_second_singular",
+     "label": "Second (Singular)",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_countdown_second_plural",
+     "label": "Seconds (Plural)",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_1",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_countdown_typhography",
+   "label": "Digits",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_countdown_digit_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "circle_stroke_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "circle_stroke_width",
+     "label": "Stroke Width (px)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_countdown_digit_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_countdown_timer_digit_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "digts_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "flip_separator_color",
+     "label": "Separator Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "digits_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_countdown_units_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_countdown_digits_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_countdown_digit_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "digit_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "digit_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "digits_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "digits_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_countdown_unit_style",
+   "label": "Units",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_countdown_unit_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_countdown_unit_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_countdown_unit_backcolor",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_countdown_units_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_countdown_units_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "units_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "units_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "units_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "featured_unit_style",
+   "label": "Featured Unit",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "featured_digit_color",
+     "label": "Digit Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "featured_digit_typo",
+     "label": "Digit Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "featured_unit_color",
+     "label": "Unit Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "featured_unit_typo",
+     "label": "Unit Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "featured_unit_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "featured_digit_padding",
+     "label": "Digit Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_countdown_separator_style",
+   "label": "Separator",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_countdown_separator_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_countdown_separator_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "separator_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "boxes_style",
+   "label": "Boxes",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "boxes_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "boxes_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "boxes_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "boxes_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "boxes_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "boxes_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "boxes_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "boxes_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_countdown_exp_message",
+   "label": "Expiration Message",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_countdown_message_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_countdown_message_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_countdown_message_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_countdown_message_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_countdown_message_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "premium_countdown_message_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_countdown_message_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_countdown_message_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 11,
+  "controls": 92,
+  "responsive": 17
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

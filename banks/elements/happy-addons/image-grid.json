@@ -1,0 +1,327 @@
+{
+ "kind": "elementor-widget",
+ "name": "image-grid",
+ "title": "Image Grid",
+ "categories": [],
+ "keywords": [
+  "gallery",
+  "image",
+  "masonry",
+  "even",
+  "portfolio",
+  "filterable",
+  "grid"
+ ],
+ "file": "happy-elementor-addons/widgets/image-grid/widget.php",
+ "sections": [
+  {
+   "id": "_section_gallery",
+   "label": "Gallery",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "filter",
+     "label": "Filter Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "is_default_filter",
+     "label": "Is Default Filter?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "images",
+     "label": "",
+     "type": "GALLERY"
+    },
+    {
+     "name": "gallery",
+     "label": "",
+     "type": "REPEATER"
+    },
+    {
+     "name": "thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    }
+   ]
+  },
+  {
+   "id": "_section_advance",
+   "label": "Advance",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "show_filter",
+     "label": "Show Filter Menu",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_all_filter",
+     "label": "Show \"All\" Filter",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "all_filter_label",
+     "label": "Filter Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "columns",
+     "label": "Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "layout",
+     "label": "Layout",
+     "type": "SELECT",
+     "options": [
+      "even",
+      "masonry"
+     ]
+    },
+    {
+     "name": "enable_popup",
+     "label": "Enable Lightbox",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "disable_lightbox_on_tablet",
+     "label": "Disable On Tablet",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "disable_lightbox_on_mobile",
+     "label": "Disable On Mobile",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "popup_image",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_image",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "image_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "image_margin",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "_tab_image_effects_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "image_opacity",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "image_css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "image_opacity_hover",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "image_css_filters_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "image_background_hover_transition",
+     "label": "Transition Duration",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "image_hover_animation",
+     "label": "Hover Animation",
+     "type": "HOVER_ANIMATION"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_menu",
+   "label": "Filter Menu",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "_heading_menu",
+     "label": "Menu",
+     "type": "HEADING"
+    },
+    {
+     "name": "menu_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "_heading_buttons",
+     "label": "Filter Buttons",
+     "type": "HEADING"
+    },
+    {
+     "name": "button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "button_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "button_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "_tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "button_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "button_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_button_active",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "button_active_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_active_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_active_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 46,
+  "responsive": 8
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

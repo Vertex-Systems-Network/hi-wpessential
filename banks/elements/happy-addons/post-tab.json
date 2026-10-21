@@ -1,0 +1,460 @@
+{
+ "kind": "elementor-widget",
+ "name": "post-tab",
+ "title": "Post Tab",
+ "categories": [],
+ "keywords": [
+  "posts",
+  "post",
+  "post-tab",
+  "tab",
+  "news"
+ ],
+ "file": "happy-elementor-addons/widgets/post-tab/widget.php",
+ "sections": [
+  {
+   "id": "_section_post_tab_query",
+   "label": "Query",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "post_type",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "tax_type_",
+     "label": "Taxonomies",
+     "type": "SELECT"
+    },
+    {
+     "name": "tax_ids_",
+     "label": "Select ",
+     "type": "Select2::TYPE"
+    },
+    {
+     "name": "item_limit",
+     "label": "Item Limit",
+     "type": "NUMBER"
+    },
+    {
+     "name": "posts_orderby",
+     "label": "Order By",
+     "type": "SELECT",
+     "options": [
+      "author",
+      "comment_count",
+      "date",
+      "menu_order",
+      "rand",
+      "title"
+     ]
+    },
+    {
+     "name": "posts_order",
+     "label": "Order",
+     "type": "SELECT",
+     "options": [
+      "asc",
+      "desc"
+     ]
+    },
+    {
+     "name": "query_id",
+     "label": "Query ID",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "_section_settings",
+   "label": "Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "column",
+     "label": "Column",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "name": "title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "show_user_meta",
+     "label": "Show User Meta",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_date_meta",
+     "label": "Show Date Meta",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "excerpt",
+     "label": "Show Excerpt",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "filter_pos",
+     "label": "Filter Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "filter_align",
+     "label": "Filter Align",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "event",
+     "label": "Tab action",
+     "type": "SELECT",
+     "responsive": true,
+     "options": [
+      "click",
+      "hover"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_post_tab_filter",
+   "label": "Tab",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "tab_margin_btm",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tab_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tab_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "tab_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "tab_item",
+     "label": "Tab Item",
+     "type": "HEADING",
+     "responsive": true
+    },
+    {
+     "name": "tab_item_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tab_item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tab_item_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "tab_item_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_item_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "tab_item_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "tab_item_hvr_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_item_hvr_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "tab_item_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "tab_item_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "tab_item_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_post_tab_column",
+   "label": "Column",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "post_item_space",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "post_item_margin_btm",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "post_item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "post_item_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "post_item_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "post_item_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "post_item_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_post_tab_content",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "post_content_image",
+     "label": "Image",
+     "type": "HEADING",
+     "responsive": true
+    },
+    {
+     "name": "post_item_content_img_margin_btm",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_boder",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "image_boder_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "post_content_title",
+     "label": "Title",
+     "type": "HEADING",
+     "responsive": true
+    },
+    {
+     "name": "post_content_margin_btm",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "title_hvr_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "post_content_meta",
+     "label": "Meta",
+     "type": "HEADING",
+     "responsive": true
+    },
+    {
+     "name": "meta_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "meta_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "meta_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "meta_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "meta_hvr_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "meta__margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "post_content_excerpt",
+     "label": "Excerpt",
+     "type": "HEADING",
+     "responsive": true
+    },
+    {
+     "name": "excerpt_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "excerpt_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "excerpt_margin_top",
+     "label": "Margin Top",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 60,
+  "responsive": 21
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

@@ -1,0 +1,64 @@
+{
+ "kind": "block",
+ "name": "core/navigation-overlay-close",
+ "title": "Navigation Overlay Close",
+ "categories": [
+  "design"
+ ],
+ "keywords": [
+  "close",
+  "overlay",
+  "navigation",
+  "menu"
+ ],
+ "description": "A customizable button to close overlays.",
+ "file": "wp/wordpress/wp-includes/blocks/navigation-overlay-close/block.json",
+ "attributes": {
+  "displayMode": {
+   "type": "string",
+   "default": "icon",
+   "enum": [
+    "icon",
+    "text",
+    "both"
+   ]
+  },
+  "text": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "color": {
+   "gradients": false,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "spacing": {
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "padding": true
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 3
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

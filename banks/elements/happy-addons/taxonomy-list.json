@@ -1,0 +1,388 @@
+{
+ "kind": "elementor-widget",
+ "name": "taxonomy-list",
+ "title": "Taxonomy List",
+ "categories": [],
+ "keywords": [
+  "taxonomies",
+  "taxonomy",
+  "taxonomy-list",
+  "category",
+  "category-list",
+  "list"
+ ],
+ "file": "happy-elementor-addons/widgets/taxonomy-list/widget.php",
+ "sections": [
+  {
+   "id": "_section_taxonomy_list",
+   "label": "List",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "taxonomy_type",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "title",
+     "label": "Custom Title",
+     "type": "TEXT",
+     "options": [
+      "icon",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "individual_icon",
+     "label": "Icon",
+     "type": "CHOOSE",
+     "options": [
+      "icon",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "tax_id",
+     "label": "Select ",
+     "type": "Select2::TYPE"
+    },
+    {
+     "name": "selected_list_",
+     "label": "",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "_section_settings",
+   "label": "Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "view",
+     "label": "Layout",
+     "type": "CHOOSE",
+     "options": [
+      "list",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "common_icon_enable",
+     "label": "Common icon enable?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "common_icon",
+     "label": "Common Icon",
+     "type": "CHOOSE",
+     "options": [
+      "icon",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "item_counter_enable",
+     "label": "Item Counter Enable?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "item_counter_align",
+     "label": "Item Counter Align",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "center",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "item_counter_align_note",
+     "label": "",
+     "type": "NOTICE"
+    },
+    {
+     "name": "item_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_taxonomy_list_style",
+   "label": "List",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "list_item_common",
+     "label": "Common",
+     "type": "HEADING",
+     "responsive": true
+    },
+    {
+     "name": "list_item_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_item_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "list_item_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "list_item_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "list_item_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "advance_style",
+     "label": "Advance Style",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "list_item_first",
+     "label": "First Item",
+     "type": "HEADING",
+     "responsive": true
+    },
+    {
+     "name": "list_item_first_child_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_item_first_child_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "list_item_last",
+     "label": "Last Item",
+     "type": "HEADING",
+     "responsive": true
+    },
+    {
+     "name": "list_item_last_child_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_item_last_child_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  },
+  {
+   "id": "_section_taxonomy_list_title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "title_hvr_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_icon_style",
+   "label": "Icon & Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_line_height",
+     "label": "Icon Line Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_width",
+     "label": "Image Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_css_filter",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "image_boder",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "image_boder_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_margin_right",
+     "label": "Margin Right",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_counter_style",
+   "label": "Counter",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "counter_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "counter_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "counter_hvr_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "counter_space_between",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 48,
+  "responsive": 14
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

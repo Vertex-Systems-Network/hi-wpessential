@@ -1,0 +1,252 @@
+{
+ "kind": "elementor-widget",
+ "name": "author-meta",
+ "title": "Author Meta",
+ "categories": [
+  "happy_addons_category",
+  "happy_addons_theme_builder"
+ ],
+ "keywords": [
+  "author",
+  "author_meta",
+  "author info"
+ ],
+ "file": "happy-elementor-addons/widgets/author-meta/widget.php",
+ "sections": [
+  {
+   "id": "_section_author_meta",
+   "label": "Author Meta",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "show_author",
+     "label": "Show Author Name",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "author_meta_tag",
+     "label": "Author Name Tag",
+     "type": "CHOOSE",
+     "options": [
+      "h1",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "show_avatar",
+     "label": "Show Avatar",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_bio",
+     "label": "Show Short Bio",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_archive_btn",
+     "label": "Show Archive Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "author_link_to",
+     "label": "Link",
+     "type": "SELECT",
+     "options": [
+      "website",
+      "admin_archive"
+     ]
+    },
+    {
+     "name": "avatar_size",
+     "label": "Avatar Size",
+     "type": "NUMBER"
+    },
+    {
+     "name": "avatar_image_position",
+     "label": "Avatar Image Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_text",
+   "label": "Author Name",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "author_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "author_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "author_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_short_bio",
+   "label": "Short Bio",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "bio_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "bio_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "_section_avatar_style",
+   "label": "Avatar",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "avatar_vertical_lign",
+     "label": "Vertical Align",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "avatar_width",
+     "label": "Wdth",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "avatar_margin",
+     "label": "Avatar Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "avatar_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "avatar_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "avatar_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_button",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "author_info_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "author_info_button_hover_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "author_info_button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "author_info_button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "author_info_button_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "author_info_button_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "author_info_button_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "author_info_button_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "author_info_button_hover_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "author_info_button_hover_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "author_info_button_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 30,
+  "responsive": 4
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

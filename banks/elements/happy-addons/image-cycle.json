@@ -1,0 +1,427 @@
+{
+ "kind": "elementor-widget",
+ "name": "image-cycle",
+ "title": "Image Cycle",
+ "categories": [],
+ "keywords": [
+  "image",
+  "cycle",
+  "slider",
+  "gallery",
+  "image-slider",
+  "cycle-gallery",
+  "image-cycle",
+  "image-gallery",
+  "image-carousel",
+  "carousel",
+  "image cycle"
+ ],
+ "file": "happy-elementor-addons/widgets/image-cycle/widget.php",
+ "sections": [
+  {
+   "id": "_section_ic_contents",
+   "label": "Image Cycle Content",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ha_ic_animation_mode",
+     "label": "Animation Mode",
+     "type": "SELECT",
+     "options": [
+      "variation-1",
+      "variation-2",
+      "variation-3"
+     ]
+    },
+    {
+     "name": "ha_ic_direction",
+     "label": "Entrance Direction",
+     "type": "CHOOSE",
+     "options": [
+      "bottom",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ha_ic_image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "ha_ic_thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "ha_ic_link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "ha_ic_images",
+     "label": "Images",
+     "type": "REPEATER"
+    },
+    {
+     "name": "ha_ic_heading_divider",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ha_ic_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "ha_ic_title_second",
+     "label": "Title Second Line",
+     "type": "TEXT"
+    },
+    {
+     "name": "ha_ic_subtitle",
+     "label": "Subtitle",
+     "type": "TEXT"
+    },
+    {
+     "name": "ha_ic_title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "ha_ic_subtitle_tag",
+     "label": "Subtitle HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_ic_settings",
+   "label": "Animation Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ha_ic_radius1",
+     "label": "Initial Circle Radius",
+     "type": "NUMBER",
+     "responsive": true
+    },
+    {
+     "name": "ha_ic_radius",
+     "label": "Final Circle Radius",
+     "type": "SLIDER",
+     "responsive": true
+    },
+    {
+     "name": "ha_ic_rotation_direction",
+     "label": "Rotation Direction",
+     "type": "CHOOSE",
+     "options": [
+      "clockwise",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ha_ic_stagger",
+     "label": "Stagger Delay",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ha_ic_stagger_v3",
+     "label": "Stagger Delay",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ha_ic_entrance_duration",
+     "label": "Entrance Duration (s)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ha_ic_heading_duration",
+     "label": "Heading Fade Duration (s)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ha_ic_group_duration",
+     "label": "Group Rotation Duration (s)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ha_ic_flip_interval",
+     "label": "Card Flip Interval (s)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ha_ic_initial_scale",
+     "label": "Initial Scale",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ha_ic_initial_opacity",
+     "label": "Opacity",
+     "type": "SLIDER"
+    },
+    {
+     "name": "ha_ic_pause_rotation_on_hover",
+     "label": "Pause Rotation On Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ha_ic_play_on_appear",
+     "label": "Animation Play On Appearing",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "__ha_ic_layout_style",
+   "label": "Layout",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ha_ic_wrapper_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ha_ic_wrapper_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_ic_wrapper_min_height",
+     "label": "Min Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_ic_wrapper_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_ic_wrapper_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ha_ic_wrapper_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_ic_wrapper_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ha_ic_wrapper_overflow",
+     "label": "Overflow",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "hidden",
+      "visible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "__ha_ic_content_style",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ha_ic_headings_bg",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ha_ic_headings_gap",
+     "label": "Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_ic_headings_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ha_ic_headings_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_ic_headings_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ha_ic_headings_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_ic_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "ha_ic_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ha_ic_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ha_ic_title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "ha_ic_title_sb",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_ic_subtitle_heading",
+     "label": "Subtitle",
+     "type": "HEADING"
+    },
+    {
+     "name": "ha_ic_subtitle_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ha_ic_subtitle_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ha_ic_subtitle_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "ha_ic_subtitle_sb",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "__ha_ic_image_style",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ha_ic_image_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_ic_image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ha_ic_image_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_ic_image_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ha_ic_image_fit",
+     "label": "Object Fit",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "cover",
+      "contain",
+      "fill"
+     ]
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 54,
+  "responsive": 14
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

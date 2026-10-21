@@ -1,0 +1,431 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-woo-categories",
+ "title": "Woo Categories",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "posts",
+  "grid",
+  "item",
+  "loop",
+  "woocommerce",
+  "listing"
+ ],
+ "file": "premium-addons-for-elementor/modules/woocommerce/widgets/woo-categories.php",
+ "sections": [
+  {
+   "id": "general_section",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "layout",
+     "label": "Layout",
+     "type": "SELECT"
+    },
+    {
+     "name": "columns",
+     "label": "Category Per Row",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "thumbnail_image",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "img_width",
+     "label": "Image Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "img_height",
+     "label": "Image Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "rows_spacing",
+     "label": "Rows Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "columns_spacing",
+     "label": "Columns Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "query_section",
+   "label": "Query",
+   "tab": "",
+   "controls": [
+    {
+     "name": "categories_number",
+     "label": "Number of Categories",
+     "type": "NUMBER"
+    },
+    {
+     "name": "category_filter_rule",
+     "label": "Category Filter Rule",
+     "type": "SELECT"
+    },
+    {
+     "name": "category_filter",
+     "label": "Category Filter",
+     "type": "SELECT2"
+    },
+    {
+     "name": "orderby",
+     "label": "Order by",
+     "type": "SELECT"
+    },
+    {
+     "name": "order",
+     "label": "Order",
+     "type": "SELECT"
+    },
+    {
+     "name": "hide_empty",
+     "label": "Hide Empty Categories",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "empty_query_text",
+     "label": "Empty Query Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "display_options_section",
+   "label": "Display Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "content_position",
+     "label": "Content Position",
+     "type": "SELECT"
+    },
+    {
+     "name": "show_count",
+     "label": "Show Products Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "count_position",
+     "label": "Products Count Position",
+     "type": "SELECT"
+    },
+    {
+     "name": "show_desc",
+     "label": "Show Category Description",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "content_align",
+     "label": "Content Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "new_tab",
+     "label": "Links in New Tab",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "image_style_section",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "overlay_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_style",
+     "label": "Image Hover Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "hover_css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "img_fit",
+     "label": "Image Fit",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_style_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "image_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "image_style_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "image_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "image_hover_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "title_spacing",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_count_style",
+   "label": "Products Count",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "count_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "count_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "count_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "count_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "count_spacing",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_desc_style",
+   "label": "Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "desc_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "desc_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "desc_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "desc_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "desc_spacing",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_content_style",
+   "label": "Content Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "content_width",
+     "label": "Width (%)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "individual_style",
+     "label": "Individual Style",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "content_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "content_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "content_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "content_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "content_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "content_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "list_item_style",
+   "label": "Category Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "list_item_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "list_item_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "list_item_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "list_item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 9,
+  "controls": 58,
+  "responsive": 11
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

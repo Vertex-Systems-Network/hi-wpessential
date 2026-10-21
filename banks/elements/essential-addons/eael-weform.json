@@ -1,0 +1,379 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-weform",
+ "title": "weForm",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "contact form",
+  "ea contact form",
+  "ea we form",
+  "ea weform",
+  "ea weforms",
+  "form styler",
+  "ea form styler",
+  "elementor form",
+  "feedback",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/WeForms.php",
+ "sections": [
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_weform",
+   "label": "Select Form",
+   "tab": "",
+   "controls": [
+    {
+     "name": "wpuf_contact_form",
+     "label": "Select weForm",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_weform_styles",
+   "label": "Form Container Styles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_weform_background",
+     "label": "Form Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_alignment",
+     "label": "Form Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "default",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_weform_width",
+     "label": "Form Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_weform_max_width",
+     "label": "Form Max Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_weform_margin",
+     "label": "Form Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_weform_padding",
+     "label": "Form Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_weform_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_weform_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_weform_field_styles",
+   "label": "Form Fields Styles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_weform_input_background",
+     "label": "Input Field Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_input_width",
+     "label": "Input Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_weform_textarea_width",
+     "label": "Textarea Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_weform_input_padding",
+     "label": "Fields Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_weform_input_margin",
+     "label": "Fields Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_weform_input_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_input_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_weform_input_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_weform_focus_heading",
+     "label": "Focus State Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_weform_input_focus_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_weform_input_focus_border",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_label_style_heading",
+     "label": "Label Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_weform_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_weform_typography",
+   "label": "Color & Typography",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_weform_label_color",
+     "label": "Label Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_field_color",
+     "label": "Field Font Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_placeholder_color",
+     "label": "Placeholder Font Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_label_heading",
+     "label": "Label Typography",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_weform_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_weform_heading_input_field",
+     "label": "Input Fields Typography",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_weform_input_field_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_weform_submit_button_styles",
+   "label": "Submit Button Styles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_weform_submit_btn_width",
+     "label": "Button Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_weform_submit_btn_alignment",
+     "label": "Button Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "default",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_weform_submit_btn_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_weform_submit_btn_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_weform_submit_btn_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_weform_submit_btn_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_submit_btn_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_submit_btn_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_weform_submit_btn_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_submit_btn_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_weform_submit_btn_hover_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_submit_btn_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_submit_btn_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_weform_submit_btn_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 7,
+  "controls": 47,
+  "responsive": 13
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

@@ -1,0 +1,341 @@
+{
+ "kind": "elementor-widget",
+ "name": "wp-forms",
+ "title": "Wp Forms",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/wp-forms/wp-forms.php",
+ "sections": [
+  {
+   "id": "ekit_wpform_section_tab",
+   "label": "wpForm",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_wpform_form_id",
+     "label": "Select Your Form",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "ekit_wpForms_section_label_style",
+   "label": "Labels",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_wpForms_text_color_label",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_typography_label",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "ekit_wpForms_section_fields_style",
+   "label": "Input & Textarea",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_wpForms_input_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_wpForms_tab_fields_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_wpForms_field_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_field_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_field_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_wpForms_field_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_hr_1",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_wpForms_input_width",
+     "label": "Input Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_hr_2",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_wpForms_textarea_width",
+     "label": "Textarea Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_textarea_height",
+     "label": "Textarea Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_field_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_field_spacing",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_field_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_wpForms_tab_fields_focus",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_wpForms_focus_input_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_wpForms_focus_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_wpForms_section_field_description_style",
+   "label": "Field Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_wpForms_field_description_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_field_description_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_wpForms_field_description_spacing",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_wpForms_section_placeholder_style",
+   "label": "Placeholder",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_wpForms_field_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_wpForms_text_color_placeholder",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_wpForms_section_submit_button_style",
+   "label": "Submit Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_wpForms_button_width_type",
+     "label": "Width",
+     "type": "SELECT",
+     "options": [
+      "full-width",
+      "custom"
+     ]
+    },
+    {
+     "name": "ekit_wpForms_button_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_wpForms_button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_wpForms_button_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_wpForms_button_bg_color_normal",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_button_text_color_normal",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_wpForms_button_border_normal",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_wpForms_button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_button_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_wpForms_button_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_button_text_color_hover",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_button_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_wpForms_section_error_style",
+   "label": "Errors",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_wpForms_error_message_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_wpForms_error_field_input_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 7,
+  "controls": 43,
+  "responsive": 11
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

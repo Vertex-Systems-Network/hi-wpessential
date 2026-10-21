@@ -1,0 +1,135 @@
+{
+ "kind": "block",
+ "name": "core/media-text",
+ "title": "Media & Text",
+ "categories": [
+  "media"
+ ],
+ "keywords": [
+  "image",
+  "video"
+ ],
+ "description": "Set media and words side-by-side for a richer layout.",
+ "file": "wp/wordpress/wp-includes/blocks/media-text/block.json",
+ "attributes": {
+  "align": {
+   "type": "string",
+   "default": "none"
+  },
+  "mediaAlt": {
+   "type": "string",
+   "default": ""
+  },
+  "mediaPosition": {
+   "type": "string",
+   "default": "left"
+  },
+  "mediaId": {
+   "type": "number"
+  },
+  "mediaUrl": {
+   "type": "string"
+  },
+  "mediaLink": {
+   "type": "string"
+  },
+  "linkDestination": {
+   "type": "string"
+  },
+  "linkTarget": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string"
+  },
+  "rel": {
+   "type": "string"
+  },
+  "linkClass": {
+   "type": "string"
+  },
+  "mediaType": {
+   "type": "string"
+  },
+  "mediaWidth": {
+   "type": "number",
+   "default": 50
+  },
+  "mediaSizeSlug": {
+   "type": "string"
+  },
+  "isStackedOnMobile": {
+   "type": "boolean",
+   "default": true
+  },
+  "verticalAlignment": {
+   "type": "string"
+  },
+  "imageFill": {
+   "type": "boolean"
+  },
+  "focalPoint": {
+   "type": "object"
+  },
+  "useFeaturedImage": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "html": false,
+  "__experimentalBorder": {
+   "color": true,
+   "radius": true,
+   "style": true,
+   "width": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "radius": true,
+    "style": true,
+    "width": true
+   }
+  },
+  "color": {
+   "gradients": true,
+   "heading": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "allowedBlocks": true
+ },
+ "counts": {
+  "attributes": 19,
+  "supports": 9
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

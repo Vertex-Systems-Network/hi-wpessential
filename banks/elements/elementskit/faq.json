@@ -1,0 +1,164 @@
+{
+ "kind": "elementor-widget",
+ "name": "faq",
+ "title": "FAQ",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/faq/faq.php",
+ "sections": [
+  {
+   "id": "ekit_faq_section_tab",
+   "label": "FAQ",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_faq_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_faq_content",
+     "label": "Content",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "ekit_faq_content_items",
+     "label": "Tab content",
+     "type": "REPEATER"
+    },
+    {
+     "name": "ekit_faq_title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "ekit_faq_schema",
+     "label": "FAQ Schema",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "ekit_faq_section_title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_faq_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_faq_title_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_faq_title_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_faq_title_border_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_faq_border_radious",
+     "label": "Title Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_faq_title_padding",
+     "label": "Title Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_faq_title_margin",
+     "label": "Title Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_faq_section_content_style",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_faq_content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_faq_content_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_faq_content_background_group",
+     "label": "Content Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_faq_content_border_group",
+     "label": "Content Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_faq_content_border_radious",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_faq_content_padding",
+     "label": "Content Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_faq_content_margin",
+     "label": "Content Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_faq_container_margin",
+     "label": "Container Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 20,
+  "responsive": 0
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

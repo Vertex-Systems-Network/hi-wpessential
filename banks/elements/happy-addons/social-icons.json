@@ -1,0 +1,350 @@
+{
+ "kind": "elementor-widget",
+ "name": "social-icons",
+ "title": "Social Icons",
+ "categories": [],
+ "keywords": [
+  "social",
+  "icons",
+  "media",
+  "facebook",
+  "fb",
+  "twitter",
+  "linkedin"
+ ],
+ "file": "happy-elementor-addons/widgets/social-icons/widget.php",
+ "sections": [
+  {
+   "id": "_section_ha_social_icons_contents",
+   "label": "Icon",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ha_social_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ha_social_link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "ha_enable_text",
+     "label": "Enable Text",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ha_social_icon_title",
+     "label": "Social Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "customize",
+     "label": "Want To Customize?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "_tab_ha_social_icon_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ha_social_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ha_social_icon_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "social_icon_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_social_icon_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ha_social_icon_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ha_social_icon_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "social_icon_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ha_social_icon_list",
+     "label": "Social Icons",
+     "type": "REPEATER"
+    },
+    {
+     "name": "social_media_separator",
+     "label": "Show Separator",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "separator_type",
+     "label": "Type",
+     "type": "SELECT",
+     "options": [
+      "stroke",
+      "custom"
+     ]
+    },
+    {
+     "name": "default_separator",
+     "label": "Stroke Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "separator_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "custom_separator",
+     "label": "Custom Character",
+     "type": "TEXT"
+    },
+    {
+     "name": "ha_social_icon_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "sticky_options",
+     "label": "Enable Sticky",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "_section_common_style",
+   "label": "Common",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "_tab_normal_social_color",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "social_icons_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "social_icons_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "social_icon_common_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_social_icons_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "social_icons_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "social_icons_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "social_icon_common_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ha_social_icon_global_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_social_icon_spacing",
+     "label": "Social Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ha_social_icon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icons_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_ha_icon",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ha_social_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ha_social_icon_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hover_animation",
+     "label": "Hover Animation",
+     "type": "SELECT"
+    },
+    {
+     "name": "hover_2d_css_animation",
+     "label": "Animation",
+     "type": "SELECT"
+    },
+    {
+     "name": "hover_background_css_animation",
+     "label": "Animation",
+     "type": "SELECT",
+     "options": [
+      "hvr-fade",
+      "hvr-back-pulse",
+      "hvr-sweep-to-right",
+      "hvr-sweep-to-left",
+      "hvr-sweep-to-bottom",
+      "hvr-sweep-to-top",
+      "hvr-bounce-to-right",
+      "hvr-bounce-to-left",
+      "hvr-bounce-to-bottom",
+      "hvr-bounce-to-top",
+      "hvr-radial-out",
+      "hvr-radial-in",
+      "hvr-rectangle-in",
+      "hvr-rectangle-out",
+      "hvr-shutter-in-horizontal",
+      "hvr-shutter-out-horizontal",
+      "hvr-shutter-in-vertical",
+      "hvr-shutter-out-vertical"
+     ]
+    },
+    {
+     "name": "hover_shadow_glow_css_animation",
+     "label": "Animation",
+     "type": "SELECT",
+     "options": [
+      "hvr-glow",
+      "hvr-shadow",
+      "hvr-grow-shadow",
+      "hvr-box-shadow-outset",
+      "hvr-box-shadow-inset",
+      "hvr-float-shadow",
+      "hvr-shadow-radial"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_custom_label",
+   "label": "Social Name",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "custom_label_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "social_name_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_social_icon_separator",
+   "label": "Separator",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "custom_separator_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ha_icon_separator_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 44,
+  "responsive": 6
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

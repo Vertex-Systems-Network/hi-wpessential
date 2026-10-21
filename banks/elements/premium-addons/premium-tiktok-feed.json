@@ -1,0 +1,978 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-tiktok-feed",
+ "title": "TikTok Feed",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium tiktok feed",
+  "tiktok",
+  "feed",
+  "social",
+  "video"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-tiktok-feed.php",
+ "sections": [
+  {
+   "id": "access_credentials_section",
+   "label": "Access Credentials",
+   "tab": "",
+   "controls": [
+    {
+     "name": "tiktok_login",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "access_token",
+     "label": "Access Token",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "reload",
+     "label": "Refresh Cached Data Once Every",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "pa_tiktok_query_sec",
+   "label": "Query",
+   "tab": "",
+   "controls": [
+    {
+     "name": "scheme",
+     "label": "Scheme",
+     "type": "SELECT"
+    },
+    {
+     "name": "show_feed",
+     "label": "Videos",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sort",
+     "label": "Order By Date",
+     "type": "SELECT"
+    },
+    {
+     "name": "match_id",
+     "label": "",
+     "type": "TEXT"
+    },
+    {
+     "name": "exclude_id",
+     "label": "",
+     "type": "TEXT"
+    },
+    {
+     "name": "query_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "pa_tiktok_profile_sec",
+   "label": "Profile Header",
+   "tab": "",
+   "controls": [
+    {
+     "name": "profile_header",
+     "label": "Profile Header",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "profile_header_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "pa_tiktok_vid_sec",
+   "label": "Feed Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "vid_layout",
+     "label": "Skin",
+     "type": "SELECT"
+    },
+    {
+     "name": "info_order",
+     "label": "Info Order",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "vid_settings_heading",
+     "label": "Display Options",
+     "type": "HEADING"
+    },
+    {
+     "name": "vid_tiktok_icon",
+     "label": "TikTok Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "tiktok_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "vid_username",
+     "label": "Username",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "vid_desc",
+     "label": "Description",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "vid_desc_len",
+     "label": "Description Length (Word)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "vid_desc_postfix",
+     "label": "Postfix",
+     "type": "SELECT"
+    },
+    {
+     "name": "vid_desc_postfix_txt",
+     "label": "Read More Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "create_time",
+     "label": "Date",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "date_format",
+     "label": "Date Format",
+     "type": "TEXT"
+    },
+    {
+     "name": "like_count",
+     "label": "Likes Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "comment_count",
+     "label": "Comments Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "view_count",
+     "label": "View Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "share_count",
+     "label": "Share Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "counters_alignment",
+     "label": "Counters Alignment",
+     "type": "CHOOSE",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "videos_settings_section",
+   "label": "Video Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "pa_pin_img_height",
+     "label": "Video Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "object_fit",
+     "label": "Object Fit",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "autoplay_all",
+     "label": "Autoplay All Videos",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "autoplay_first",
+     "label": "",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "autoplay_hover",
+     "label": "",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "mute_videos",
+     "label": "Mute Videos",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "loop_videos",
+     "label": "Loop Videos",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "onclick",
+     "label": "On Click",
+     "type": "SELECT"
+    },
+    {
+     "name": "vid_play_icon",
+     "label": "Play Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "play_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "play_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "play_icon_hor",
+     "label": "Horizontal Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "play_icon_ver",
+     "label": "Vertical Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_gen_section",
+   "label": "General Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "outer_layout",
+     "label": "Layout",
+     "type": "SELECT"
+    },
+    {
+     "name": "pa_tiktok_cols",
+     "label": "Number of Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "no_of_posts",
+     "label": "Videos Per Page",
+     "type": "NUMBER",
+     "responsive": true
+    },
+    {
+     "name": "loading_animation",
+     "label": "Loading Animation",
+     "type": "SELECT"
+    },
+    {
+     "name": "pa_tiktok_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "load_more_btn",
+     "label": "Load More Button",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "pa_tiktok_carousel_settings",
+   "label": "Carousel",
+   "tab": "",
+   "controls": [
+    {
+     "name": "carousel",
+     "label": "Enable Carousel",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "fade",
+     "label": "Fade",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "auto_play",
+     "label": "Auto Play",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "autoplay_speed",
+     "label": "Autoplay Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "slides_to_scroll",
+     "label": "Slides To Scroll",
+     "type": "NUMBER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "carousel_speed",
+     "label": "Transition Speed (ms)",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "carousel_center",
+     "label": "Center Mode",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "carousel_spacing",
+     "label": "Slides\\' Spacing",
+     "type": "NUMBER"
+    },
+    {
+     "name": "carousel_dots",
+     "label": "Navigation Dots",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "carousel_arrows",
+     "label": "Navigation Arrows",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "carousel_arrows_pos",
+     "label": "Arrows Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "pa_feedbox_style_sec",
+   "label": "Feed Box",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "feed_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "feed_box_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "tiktok_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "feed_box_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "feed_box_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "feed_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_feed_cont_style_sec",
+   "label": "Feed Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "feed_cont_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "feed_cont_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "feed_cont_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "feed_cont_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "feed_cont_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "feed_cont_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_tiktok_video_style_section",
+   "label": "Video Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "feed_box_overlay",
+     "label": "Overlay",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover_css_filters",
+     "label": "Hover CSS Filters",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "feed_img_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "feed_img_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "feed_img_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_tiktok_info_style_section",
+   "label": "Feed Info",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "username_heading",
+     "label": "Username",
+     "type": "HEADING"
+    },
+    {
+     "name": "vid_username_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "vid_username_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "vid_username_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "date_heading",
+     "label": "Date",
+     "type": "HEADING"
+    },
+    {
+     "name": "date_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "date_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "date_username_padding",
+     "label": "Username/Date Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "desc_heading",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "vid_desc_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "vid_desc_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "vid_desc_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "read_more_heading",
+     "label": "Read More",
+     "type": "HEADING"
+    },
+    {
+     "name": "read_more_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "read_more_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_color_hov",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tiktok_icon_heading",
+     "label": "TikTok Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "tiktok_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tiktok_icon_back",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tiktok_icon_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "tiktok_icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tiktok_icon_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "counters_heading",
+     "label": "Counters",
+     "type": "HEADING"
+    },
+    {
+     "name": "counters_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "counters_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "counter_color_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "counter_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "counters_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "counters_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "counters_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "counters_rad",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "counters_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "counters_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "counters_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "counters_icon_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "carousel_dots_style",
+   "label": "Carousel Dots",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "dot_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "dot_color_act",
+     "label": "Active Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "carousel_arrows_style",
+   "label": "Carousel Arrows",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "arrow_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrow_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrow_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "arrow_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_tiktok_Sb_style",
+   "label": "Share Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "pa_share_btn_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pa_share_btn_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_sb_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_share_btn_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_sb_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_share_btn_Icolor_hov",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_color_hov",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_share_btn_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_tiktok_Sl_style",
+   "label": "Share Links",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "pa_sl_menu_bg",
+     "label": "Menu Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_sl_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pa_sl_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_sl_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pa_sl_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_sl_spacing_ver",
+     "label": "Vertical Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_sl_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_sl_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_sl_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_sl_color_hov",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 16,
+  "controls": 144,
+  "responsive": 31
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

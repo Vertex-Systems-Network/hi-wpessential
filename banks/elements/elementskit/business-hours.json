@@ -1,0 +1,185 @@
+{
+ "kind": "elementor-widget",
+ "name": "business-hours",
+ "title": "Business Hours",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/business-hours/business-hours.php",
+ "sections": [
+  {
+   "id": "ekit_btn_section_content",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_business_day",
+     "label": "Day",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_business_time",
+     "label": "Time",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "ekit_highlight_this_day",
+     "label": "Highlight this day",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_single_business_day_color",
+     "label": "Day Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_single_business_time_color",
+     "label": "Time Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_single_business_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_business_openday_list",
+     "label": "",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "ekit_business_item_style_section",
+   "label": "Item",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_business_item_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_business_item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_business_item_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_business_item_item_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_business_item_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  },
+  {
+   "id": "ekit_business_day_style_section",
+   "label": "Day",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_business_day_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_business_day_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_business_day_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_business_item_day_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_business_item_day_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_business_time_style_section",
+   "label": "Time",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_business_time_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_business_time_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_business_time_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_business_item_time_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_business_item_time_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 22,
+  "responsive": 12
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

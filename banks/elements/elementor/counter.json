@@ -1,0 +1,228 @@
+{
+ "kind": "elementor-widget",
+ "name": "counter",
+ "title": "Counter",
+ "categories": [],
+ "keywords": [
+  "counter"
+ ],
+ "file": "elementor/includes/widgets/counter.php",
+ "sections": [
+  {
+   "id": "section_counter",
+   "label": "Counter",
+   "tab": "",
+   "controls": [
+    {
+     "name": "starting_number",
+     "label": "Starting Number",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ending_number",
+     "label": "Ending Number",
+     "type": "NUMBER"
+    },
+    {
+     "name": "prefix",
+     "label": "Number Prefix",
+     "type": "TEXT"
+    },
+    {
+     "name": "suffix",
+     "label": "Number Suffix",
+     "type": "TEXT"
+    },
+    {
+     "name": "duration",
+     "label": "Animation Duration",
+     "type": "NUMBER"
+    },
+    {
+     "name": "thousand_separator",
+     "label": "Thousand Separator",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "thousand_separator_char",
+     "label": "Separator",
+     "type": "SELECT",
+     "options": [
+      "_"
+     ]
+    },
+    {
+     "name": "title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_counter_style",
+   "label": "Counter",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_position",
+     "label": "Title Position",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "before",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title_horizontal_alignment",
+     "label": "Title Horizontal Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title_vertical_alignment",
+     "label": "Title Vertical Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title_gap",
+     "label": "Title Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "number_position",
+     "label": "Number Position",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "number_alignment",
+     "label": "Number Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "number_gap",
+     "label": "Number Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_number",
+   "label": "Number",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "number_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "typography_number",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "number_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "number_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_title",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "typography_title",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 24,
+  "responsive": 7
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

@@ -1,0 +1,592 @@
+{
+ "kind": "elementor-widget",
+ "name": "funfact",
+ "title": "Funfact",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/funfact/funfact.php",
+ "sections": [
+  {
+   "id": "ekit_funfact_section_icon",
+   "label": "Icon",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ekit_funfact_icon_type",
+     "label": "Icon type ",
+     "type": "CHOOSE",
+     "options": [
+      "icon",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_funfact_icons__switch",
+     "label": "Add icon? ",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_funfact_icons",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_funfact_view",
+     "label": "View",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "fill-icon",
+      "framed"
+     ]
+    },
+    {
+     "name": "ekit_funfact_icon_image",
+     "label": "Choose Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "ekit_funfact_thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    }
+   ]
+  },
+  {
+   "id": "ekit_funfact_content_section",
+   "label": "Content",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ekit_funfact_number_prefix",
+     "label": "Number Prefix ",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_funfact_number",
+     "label": "Number ",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ekit_funfact_number_suffix",
+     "label": "Number Suffix ",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_funfact_title_text",
+     "label": "Title ",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_funfact_super",
+     "label": "Enable Super",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_funfact_super_text",
+     "label": "Super",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "ekit_funfact_settings_items",
+   "label": "Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ekit_funfact_style",
+     "label": "Choose Animation Style",
+     "type": "SELECT",
+     "options": [
+      "static",
+      "sliding"
+     ]
+    },
+    {
+     "name": "ekit_funfact_animation_duration",
+     "label": "Animation Duration (ms)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ekit_funfact_icon_position",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "position_top",
+      "position_left",
+      "position_right"
+     ]
+    },
+    {
+     "name": "ekit_funfact_title_size",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "ekit_funfact_separetor_one",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_funfact_hover_border_bottom",
+     "label": "Enable Hover Border Bottom",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_funfact_hover_border_bottom_color",
+     "label": "Hover Border Bottom Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_hover_border_bottom_direction",
+     "label": "Hover Direction",
+     "type": "CHOOSE",
+     "options": [
+      "hover_from_left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_funfact_hover_border_bottom_direction_hr",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_funfact_enable_vertical_border",
+     "label": "Enable Vertical Border",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_funfact_enable_vertical_border_position",
+     "label": "Border Direction",
+     "type": "CHOOSE",
+     "options": [
+      "border_left_side",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_funfact_style_section_image",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_funfact_icon_image_space",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_style_img_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_funfact_imge_border_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_funfact_icon_image_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_iamge_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_funfact_style_img_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_funfact_imge_border_hover_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_funfact_icon_image_hover_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_image_box_shadow_hv_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_funfact_icon_image_hover_animation",
+     "label": "Animation",
+     "type": "HOVER_ANIMATION",
+     "responsive": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_funfact_section_style_icon",
+   "label": "Icons",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_funfact_icon_colors_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_funfact_icon_primary_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_icon_secondary_color_normal",
+     "label": "BG Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_border_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_funfact_icon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_icon_colors_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_funfact_hover_primary_color",
+     "label": "Primary Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_hover_secondary_color",
+     "label": "Secondary Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_border_icon_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_funfact_icon_hover_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_icon_space",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_icon_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_rotate",
+     "label": "Rotate",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_icon_box_shadow_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_funfact_section_style_content",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_funfact_text_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_funfact_heading_number",
+     "label": "Number Count",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_funfact_description_color",
+     "label": "Number Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_number_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_funfact_number_count_bottom_space",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_number_count_right_space",
+     "label": "Right Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_heading_title",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_funfact_title_bottom_space",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_funfact_info_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_content_margin",
+     "label": "Content Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_funfact_super_controls",
+   "label": "Super",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_funfact_super_color",
+     "label": "Number Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_super_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_funfact_super_position_top",
+     "label": "Top",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_super_position_left_right",
+     "label": "Horizontal space",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_super_vertical_position",
+     "label": "Vertical Position",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "top",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_funfact_section_background_style",
+   "label": "Background",
+   "tab": "controls_Manager::TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_funfact_bg",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_funfact_bg_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_kit_funfact_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_funfact_border_radious",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_show_overly",
+     "label": "Enable Overlay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_funfact_bg_ovelry_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_funfact_divider_tab",
+   "label": "Devider",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_funfact_divider_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_divider_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_funfact_divider_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_funfact_enable_border_verticaly_position",
+     "label": "Border Direction",
+     "type": "CHOOSE",
+     "options": [
+      "position_top",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 9,
+  "controls": 76,
+  "responsive": 31
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

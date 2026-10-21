@@ -1,0 +1,50 @@
+{
+ "kind": "block",
+ "name": "core/home-link",
+ "title": "Home Link",
+ "categories": [
+  "design"
+ ],
+ "keywords": [],
+ "description": "Create a link that always points to the homepage of the site. Usually not necessary if there is already a site title link present in the header.",
+ "file": "wp/wordpress/wp-includes/blocks/home-link/block.json",
+ "attributes": {
+  "label": {
+   "type": "string"
+  },
+  "opensInNewTab": {
+   "type": "boolean",
+   "default": false
+  },
+  "description": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "reusable": false,
+  "html": false,
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 3,
+  "supports": 5
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

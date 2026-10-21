@@ -1,0 +1,266 @@
+{
+ "kind": "elementor-widget",
+ "name": "button",
+ "title": "Button",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/button/button.php",
+ "sections": [
+  {
+   "id": "ekit_btn_section_content",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_btn_text",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_btn_url",
+     "label": "URL",
+     "type": "URL"
+    },
+    {
+     "name": "ekit_btn_section_settings",
+     "label": "Settings",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_btn_icons__switch",
+     "label": "Add icon? ",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_btn_icons",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_btn_icon_align",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "left",
+      "right"
+     ]
+    },
+    {
+     "name": "ekit_btn_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_btn_class",
+     "label": "Class",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_btn_id",
+     "label": "id",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "ekit_btn_section_style",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "width",
+     "label": "Width (%)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_text_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_btn_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "ekit_btn_tabnormal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_btn_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_bg_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_btn_tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_btn_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_bg_hover_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    }
+   ]
+  },
+  {
+   "id": "ekit_btn_border_style_tabs",
+   "label": "Border",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_btn_border_style",
+     "label": "Border Type",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "none",
+      "solid",
+      "double",
+      "dotted",
+      "dashed",
+      "groove"
+     ]
+    },
+    {
+     "name": "ekit_btn_border_dimensions",
+     "label": "Width",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_tab_border_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_btn_border_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_tab_button_border_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_btn_hover_border_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_border_radius_h",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_btn_box_shadow_style",
+   "label": "Shadow",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_btn_box_shadow_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_btn_hover_box_shadow_group",
+     "label": "Hover Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_btn_iconw_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_btn_normal_icon_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_normal_icon_padding_left",
+     "label": "Add space after icon",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_normal_icon_padding_right",
+     "label": "Add space before icon",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_btn_normal_icon_vertical_align",
+     "label": "Move icon  Vertically",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 33,
+  "responsive": 11
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

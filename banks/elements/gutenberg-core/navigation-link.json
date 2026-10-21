@@ -1,0 +1,73 @@
+{
+ "kind": "block",
+ "name": "core/navigation-link",
+ "title": "Custom Link",
+ "categories": [
+  "design"
+ ],
+ "keywords": [],
+ "description": "Add a page, link, or another item to your navigation.",
+ "file": "wp/wordpress/wp-includes/blocks/navigation-link/block.json",
+ "attributes": {
+  "label": {
+   "type": "string"
+  },
+  "type": {
+   "type": "string"
+  },
+  "description": {
+   "type": "string"
+  },
+  "rel": {
+   "type": "string"
+  },
+  "id": {
+   "type": "number"
+  },
+  "opensInNewTab": {
+   "type": "boolean",
+   "default": false
+  },
+  "url": {
+   "type": "string"
+  },
+  "title": {
+   "type": "string"
+  },
+  "kind": {
+   "type": "string"
+  },
+  "isTopLevelLink": {
+   "type": "boolean"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "reusable": false,
+  "html": false,
+  "__experimentalSlashInserter": true,
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "renaming": false,
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 10,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

@@ -1,0 +1,606 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-addon-progressbar",
+ "title": "Progress Bar",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium progress bar",
+  "circle",
+  "chart",
+  "line",
+  "graph",
+  "percent"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-progressbar.php",
+ "sections": [
+  {
+   "id": "premium_progressbar_labels",
+   "label": "Progress Bar Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "layout_type",
+     "label": "Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "dot_size",
+     "label": "Dot Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "dot_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "circle_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_progressbar_select_label",
+     "label": "Labels",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_progressbar_left_label",
+     "label": "Left Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "title_width",
+     "label": "Title Max Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_progressbar_right_label",
+     "label": "Right Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "icon_type",
+     "label": "Icon Type",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "icon_select",
+     "label": "Select an Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "image_upload",
+     "label": "Upload Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "custom_svg",
+     "label": "SVG Code",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "lottie_source",
+     "label": "File Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "lottie_url",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "lottie_file",
+     "label": "Upload JSON File",
+     "type": "MEDIA"
+    },
+    {
+     "name": "draw_svg",
+     "label": "Draw Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "path_width",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "svg_sync",
+     "label": "Draw All Paths Together",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "frames",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "start_point",
+     "label": "Start Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "end_point",
+     "label": "End Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "svg_hover",
+     "label": "Only Play on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "svg_yoyo",
+     "label": "Yoyo Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "svg_icon_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "svg_icon_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "show_percentage_value",
+     "label": "Show Progress Value",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "text",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "number",
+     "label": "Percentage",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_progressbar_multiple_label",
+     "label": "Label",
+     "type": "REPEATER"
+    },
+    {
+     "name": "premium_progress_bar_space_percentage_switcher",
+     "label": "Enable Percentage",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_progressbar_select_label_icon",
+     "label": "Labels Indicator",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_progressbar_more_labels_align",
+     "label": "Labels Alignment",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "premium_progressbar_progress_percentage",
+     "label": "Value",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_progressbar_max_value",
+     "label": "Max Value",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_progressbar_display_format",
+     "label": "Display Format",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_progressbar_progress_style",
+     "label": "Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_progressbar_speed",
+     "label": "Speed (milliseconds)",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "premium_progressbar_progress_animation",
+     "label": "Animated",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "gradient_colors",
+     "label": "Gradient Colors",
+     "type": "TEXT"
+    },
+    {
+     "name": "half_prefix_label",
+     "label": "Prefix Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "half_suffix_label",
+     "label": "Suffix Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "magic_scroll",
+     "label": "Use With Magic Scroll",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_1",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_progressbar_progress_bar_settings",
+   "label": "Progress Bar",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_progressbar_progress_bar_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_progressbar_progress_bar_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "circle_border_width",
+     "label": "Border Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "circle_base_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "fill_colors_title",
+     "label": "Fill",
+     "type": "HEADING"
+    },
+    {
+     "name": "premium_progressbar_progress_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "circle_fill_color",
+     "label": "Select Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "base_colors_title",
+     "label": "Base",
+     "type": "HEADING"
+    },
+    {
+     "name": "premium_progressbar_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "premium_progressbar_container_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_progressbar_labels_section",
+   "label": "Labels",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_progressbar_left_label_hint",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "premium_progressbar_left_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "left_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_progressbar_left_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_progressbar_right_label_hint",
+     "label": "Percentage",
+     "type": "HEADING"
+    },
+    {
+     "name": "premium_progressbar_right_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "right_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_progressbar_right_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "icon_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "svg_color",
+     "label": "After Draw Fill Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "icon_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "icon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_progressbar_multiple_labels_section",
+   "label": "Multiple Labels",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_progressbar_multiple_label_color",
+     "label": "Labels\\' Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "more_label_typography",
+     "label": "Labels\\' Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_progressbar_value_label_color",
+     "label": "Percentage Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "percentage_typography",
+     "label": "Percentage Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "premium_progressbar_multiple_labels_arrow_section",
+   "label": "Arrow",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_progressbar_arrow_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_arrow_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_progressbar_multiple_labels_pin_section",
+   "label": "Indicator",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_progressbar_line_pin_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_pin_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_pin_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "prefix_suffix_style",
+   "label": "Prefix & Suffix",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "labels_top_spacing",
+     "label": "Top Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "prefix_title",
+     "label": "Prefix",
+     "type": "HEADING"
+    },
+    {
+     "name": "prefix_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "prefix_label_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "prefix_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "suffix_title",
+     "label": "Suffix",
+     "type": "HEADING"
+    },
+    {
+     "name": "suffix_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "suffix_label_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "suffix_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 9,
+  "controls": 90,
+  "responsive": 19
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

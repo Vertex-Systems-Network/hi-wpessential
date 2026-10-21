@@ -1,0 +1,58 @@
+{
+ "kind": "block",
+ "name": "generateblocks/loop-item",
+ "title": "Loop Item",
+ "categories": [
+  "generateblocks"
+ ],
+ "keywords": [
+  "loop",
+  "loop item"
+ ],
+ "description": "The item that is looped inside of the Looper.",
+ "file": "generateblocks/dist/blocks/loop-item/block.json",
+ "attributes": {
+  "uniqueId": {
+   "type": "string",
+   "default": ""
+  },
+  "tagName": {
+   "type": "string",
+   "default": "",
+   "enum": [
+    "div",
+    "li",
+    "a",
+    "article",
+    "section",
+    "aside"
+   ]
+  },
+  "styles": {
+   "type": "object",
+   "default": {}
+  },
+  "css": {
+   "type": "string",
+   "default": ""
+  },
+  "globalClasses": {
+   "type": "array",
+   "default": []
+  },
+  "htmlAttributes": {
+   "type": "object",
+   "default": {}
+  }
+ },
+ "supports": {
+  "align": false,
+  "className": false
+ },
+ "counts": {
+  "attributes": 6,
+  "supports": 2
+ },
+ "source": "generateblocks",
+ "source_label": "GenerateBlocks"
+}

@@ -1,0 +1,191 @@
+{
+ "kind": "block",
+ "name": "kadence/googlemaps",
+ "title": "Google Maps",
+ "categories": [
+  "kadence-blocks"
+ ],
+ "keywords": [],
+ "description": "",
+ "file": "kadence-blocks/dist/blocks/googlemaps/block.json",
+ "attributes": {
+  "uniqueID": {
+   "type": "string"
+  },
+  "width": {
+   "type": "number",
+   "default": ""
+  },
+  "heightDesktop": {
+   "type": "number",
+   "default": 450
+  },
+  "heightTablet": {
+   "type": "number",
+   "default": ""
+  },
+  "heightMobile": {
+   "type": "number",
+   "default": ""
+  },
+  "widthDesktop": {
+   "type": "number",
+   "default": ""
+  },
+  "widthTablet": {
+   "type": "number",
+   "default": ""
+  },
+  "widthMobile": {
+   "type": "number",
+   "default": ""
+  },
+  "zoom": {
+   "type": "number",
+   "default": "11"
+  },
+  "location": {
+   "type": "string",
+   "default": "Golden Gate Bridge"
+  },
+  "lat": {
+   "type": "string",
+   "default": ""
+  },
+  "lng": {
+   "type": "string",
+   "default": ""
+  },
+  "apiType": {
+   "type": "string",
+   "default": "embed",
+   "enum": [
+    "embed",
+    "javascript"
+   ]
+  },
+  "showMarker": {
+   "type": "boolean",
+   "default": true
+  },
+  "mapType": {
+   "type": "string",
+   "default": "roadmap",
+   "enum": [
+    "roadmap",
+    "satellite"
+   ]
+  },
+  "mapFilter": {
+   "type": "string",
+   "default": "standard",
+   "enum": [
+    "standard",
+    "grayscale",
+    "invert",
+    "saturate",
+    "sepia"
+   ]
+  },
+  "mapStyle": {
+   "type": "string",
+   "default": "standard"
+  },
+  "showControls": {
+   "type": "boolean",
+   "default": true
+  },
+  "customSnazzy": {
+   "type": "string",
+   "default": ""
+  },
+  "mapFilterAmount": {
+   "type": "number",
+   "default": 50
+  },
+  "marginDesktop": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "marginTablet": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "marginMobile": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "marginUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "paddingDesktop": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "paddingTablet": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "paddingMobile": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "paddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "textAlign": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    ""
+   ]
+  },
+  "kbVersion": {
+   "type": "number",
+   "default": ""
+  }
+ },
+ "supports": {
+  "kbMetadata": true,
+  "ktdynamic": true
+ },
+ "counts": {
+  "attributes": 30,
+  "supports": 2
+ },
+ "source": "kadence",
+ "source_label": "Kadence Blocks"
+}

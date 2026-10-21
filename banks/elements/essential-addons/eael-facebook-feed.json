@@ -1,0 +1,567 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-facebook-feed",
+ "title": "Facebook Feed",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "facebook",
+  "social media",
+  "facebook embed",
+  "facebook feed",
+  "ea facebook feed",
+  "fb feed",
+  "ea fb feed",
+  "facebook marketing",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Facebook_Feed.php",
+ "sections": [
+  {
+   "id": "eael_section_facebook_feed_settings_account",
+   "label": "Facebook Account Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ea_facebook_credentials_heading",
+     "label": "Credentials",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_page_id",
+     "label": "Page ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_facebook_feed_access_token",
+     "label": "Secret Key",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_facebook_feed_data_source",
+     "label": "Source",
+     "type": "SELECT",
+     "options": [
+      "posts",
+      "feed"
+     ]
+    },
+    {
+     "name": "eael_facebook_feed_cache_limit",
+     "label": "Data Cache Time",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_facebook_feed_settings_content",
+   "label": "Feed Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_facebook_feed_sort_by",
+     "label": "Sort By",
+     "type": "SELECT",
+     "options": [
+      "most-recent",
+      "least-recent"
+     ]
+    },
+    {
+     "name": "eael_facebook_feed_image_count",
+     "label": "Max Visible Items",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_facebook_feed_force_square_img",
+     "label": "Force Square Image ?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_image_render_type",
+     "label": "Image Render Type",
+     "type": "SELECT",
+     "options": [
+      "fill",
+      "cover"
+     ]
+    },
+    {
+     "name": "eael_facebook_feed_image_dimension",
+     "label": "Image Dimension (px)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_facebook_feed_settings_general",
+   "label": "General Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_facebook_feed_layout_heading",
+     "label": "Layout Settings",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_layout",
+     "label": "Layout",
+     "type": "SELECT",
+     "options": [
+      "card",
+      "overlay"
+     ]
+    },
+    {
+     "name": "eael_facebook_feed_columns",
+     "label": "Columns",
+     "type": "SELECT",
+     "options": [
+      "eael-col-1",
+      "eael-col-2",
+      "eael-col-3",
+      "eael-col-4",
+      "eael-col-5",
+      "eael-col-6"
+     ]
+    },
+    {
+     "name": "eael_facebook_feed_content_heading",
+     "label": "Content Settings",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_message",
+     "label": "Display Message",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_message_max_length",
+     "label": "Max Message Length",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_facebook_feed_likes",
+     "label": "Display Like",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_comments",
+     "label": "Display Comments",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_date",
+     "label": "Display Date",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_link_target",
+     "label": "Open link in new window",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_preview_heading",
+     "label": "Preview Content Settings",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_is_show_preview_content",
+     "label": "Show Preview Content",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_is_show_preview_thumbnail",
+     "label": "Show Preview Thumbnail",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_is_show_preview_host",
+     "label": "Show Preview Host Name",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_is_show_preview_title",
+     "label": "Show Preview Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_is_show_preview_description",
+     "label": "Show Preview Description",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_load_more_heading",
+     "label": "Pagination",
+     "type": "HEADING"
+    },
+    {
+     "name": "show_load_more",
+     "label": "Show Load More",
+     "type": "CHOOSE",
+     "options": [
+      "yes",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "loadmore_text",
+     "label": "Label",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_facebook_feed_styles_general",
+   "label": "Feed Item Styles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_facebook_feed_is_gradient_bg",
+     "label": "Use Gradient Background?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_facebook_feed_spacing",
+     "label": "Space Between Items",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_box_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_facebook_feed_box_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_gradient_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_facebook_feed_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_facebook_feed_thumbnail_style",
+     "label": "Thumbnail Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_thumbnail_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_header_style",
+     "label": "Header Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_header_layout",
+     "label": "Header Layout",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "two"
+     ]
+    },
+    {
+     "name": "eael_facebook_feed_header_gradient_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_facebook_feed_header_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_header_spacing",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_content_style",
+     "label": "Content Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_content_spacing",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_content_preview_spacing",
+     "label": "Preview Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_footer_style",
+     "label": "Footer Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_footer_gradient_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_facebook_feed_footer_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_footer_spacing",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_facebook_feed_hover_style",
+   "label": "Feed Item Hover Styles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_section_facebook_feed_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_section_facebook_feed_hover_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_section_facebook_feed_hover_header_style",
+     "label": "Header Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_section_facebook_feed_hover_header_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_section_facebook_feed_hover_header_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_section_facebook_feed_hover_content_style",
+     "label": "Content Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_section_facebook_feed_hover_content_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_section_facebook_feed_hover_content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_section_facebook_feed_hover_footer_style",
+     "label": "Footer Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_section_facebook_feed_hover_footer_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_section_facebook_feed_hover_footer_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_facebook_feed_styles_content",
+   "label": "Color &amp; Typography",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_facebook_feed_styles_page_name_heading",
+     "label": "Page Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_page_name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_facebook_feed_page_name_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_styles_date_heading",
+     "label": "Date",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_date_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_facebook_feed_date_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_styles_message_heading",
+     "label": "Content",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_message_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_facebook_feed_message_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_message_link_color",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_styles_preview_host_heading",
+     "label": "Preview Host",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_preview_host_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_facebook_feed_preview_host_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_styles_preview_title_heading",
+     "label": "Preview Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_preview_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_facebook_feed_preview_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_styles_preview_desc_heading",
+     "label": "Preview Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_preview_desc_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_facebook_feed_preview_desc_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_styles_likes_conmments_heading",
+     "label": "Likes & Comments",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_facebook_feed_likes_conmments_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_facebook_feed_likes_conmments_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_facebook_feed_overlay_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 84,
+  "responsive": 2
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

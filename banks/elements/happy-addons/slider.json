@@ -1,0 +1,390 @@
+{
+ "kind": "elementor-widget",
+ "name": "slider",
+ "title": "Slider",
+ "categories": [],
+ "keywords": [
+  "slider",
+  "image",
+  "gallery",
+  "carousel"
+ ],
+ "file": "happy-elementor-addons/widgets/slider/widget.php",
+ "sections": [
+  {
+   "id": "_section_slides",
+   "label": "Slides",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "subtitle",
+     "label": "Subtitle",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "slides",
+     "label": "",
+     "type": "REPEATER"
+    },
+    {
+     "name": "thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_settings",
+   "label": "Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "animation_speed",
+     "label": "Animation Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "autoplay",
+     "label": "Autoplay?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "autoplay_speed",
+     "label": "Autoplay Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "loop",
+     "label": "Infinite Loop?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "vertical",
+     "label": "Vertical Mode?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "slides_transition",
+     "label": "Transition",
+     "type": "SELECT",
+     "options": [
+      "slide",
+      "fade"
+     ]
+    },
+    {
+     "name": "navigation",
+     "label": "Navigation",
+     "type": "SELECT",
+     "options": [
+      "none",
+      "arrow",
+      "dots",
+      "both"
+     ]
+    },
+    {
+     "name": "arrow_prev_icon",
+     "label": "Previous Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "arrow_next_icon",
+     "label": "Next Icon",
+     "type": "ICONS"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_item",
+   "label": "Slider Item",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "item_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "item_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_content",
+   "label": "Slide Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "content_padding",
+     "label": "Content Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "content_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "_heading_title",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "title_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "title_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "_heading_subtitle",
+     "label": "Subtitle",
+     "type": "HEADING"
+    },
+    {
+     "name": "subtitle_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "subtitle_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "subtitle",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_arrow",
+   "label": "Navigation :: Arrow",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "arrow_position_toggle",
+     "label": "Position",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "arrow_position_y",
+     "label": "Vertical",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrow_position_x",
+     "label": "Horizontal",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrow_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrow_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "arrow_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "_tab_arrow_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "arrow_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrow_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_arrow_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "arrow_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrow_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrow_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_dots",
+   "label": "Navigation :: Dots",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "dots_nav_position_y",
+     "label": "Vertical Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "dots_nav_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "dots_nav_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "_tab_dots_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "dots_nav_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "dots_nav_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_dots_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "dots_nav_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_dots_active",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "dots_nav_active_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "dots_nav_active_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 52,
+  "responsive": 11
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

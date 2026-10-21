@@ -1,0 +1,633 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-addon-banner",
+ "title": "Banner",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium banner",
+  "image",
+  "box",
+  "info",
+  "cta"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-banner.php",
+ "sections": [
+  {
+   "id": "premium_banner_global_settings",
+   "label": "Image",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_banner_image",
+     "label": "Upload Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "premium_banner_image_animation",
+     "label": "Banner Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_banner_hover_effect",
+     "label": "Image Hover Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_banner_link_url_switch",
+     "label": "Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_banner_image_link_switcher",
+     "label": "Custom Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_banner_image_custom_link",
+     "label": "Link URL",
+     "type": "URL"
+    },
+    {
+     "name": "premium_banner_image_existing_page_link",
+     "label": "Existing Page",
+     "type": "Premium_Post_Filter::TYPE"
+    }
+   ]
+  },
+  {
+   "id": "content_section",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_banner_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_banner_title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_banner_description",
+     "label": "Description",
+     "type": "WYSIWYG"
+    }
+   ]
+  },
+  {
+   "id": "premium_banner_icon_section",
+   "label": "Icon",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_banner_icon_type",
+     "label": "Icon Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_banner_selected_icon",
+     "label": "Select an Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "premium_banner_icon_image",
+     "label": "Upload Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "premium_banner_lottie_source",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_banner_lottie_url",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_banner_lottie_file",
+     "label": "Upload JSON File",
+     "type": "MEDIA"
+    },
+    {
+     "name": "draw_svg",
+     "label": "Draw Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "stroke_width",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "frames",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "svg_yoyo",
+     "label": "Yoyo Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_banner_lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_banner_lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "button_section",
+   "label": "Button",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_banner_link_switcher",
+     "label": "Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_banner_more_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_banner_link_selection",
+     "label": "Link Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_banner_link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "premium_banner_existing_link",
+     "label": "Existing Page",
+     "type": "Premium_Post_Filter::TYPE"
+    }
+   ]
+  },
+  {
+   "id": "display_options_section",
+   "label": "Display Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_banner_active",
+     "label": "Always Hovered",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_banner_title_text_align",
+     "label": "Content Alignment",
+     "type": "CHOOSE",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_custom_height",
+     "label": "Minimum Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_fit",
+     "label": "Image Fit",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "mouse_tilt",
+     "label": "Mouse Tilt",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "premium_banner_responsive_section",
+   "label": "Responsive",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_banner_responsive_switcher",
+     "label": "Responsive",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_1",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_banner_opacity_style",
+   "label": "General",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_banner_image_opacity",
+     "label": "Image Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_image_bg_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_image_hover_opacity",
+     "label": "Hover Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_title_border_width",
+     "label": "Hover Border Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_style3_title_border",
+     "label": "Hover Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_inner_border_width",
+     "label": "Hover Border Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_scaled_border_color",
+     "label": "Hover Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover_css_filters",
+     "label": "Hover CSS Filters",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "premium_banner_image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_banner_image_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "image_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "image_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "blend_mode",
+     "label": "Blend Mode",
+     "type": "SELECT",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_banner_icon_style_section",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_banner_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_banner_icon_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_banner_title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_banner_color_of_title",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_banner_style2_title_bg",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_banner_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_banner_styles_of_content",
+   "label": "Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_banner_color_of_content",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_content_typhography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_banner_description_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_banner_desc_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "button_style_section",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_banner_button_typhography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "button_style_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_banner_color_of_button",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_backcolor_of_button",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_banner_button_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "button_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "button_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_button_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "premium_banner_button_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_banner_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_style_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_banner_hover_color_of_button",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "underline_color",
+     "label": "Line Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "first_layer_hover",
+     "label": "Layer #1 Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "second_layer_hover",
+     "label": "Layer #2 Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_hover_backcolor_of_button",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "button_border_radius_hover",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "button_shadow_hover",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "button_margin_hover",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_padding_hover",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_banner_container_style",
+   "label": "Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_banner_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_banner_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "premium_banner_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "gradient_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "first_layer_speed",
+     "label": "First Layer Transition Speed (sec)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "second_layer_speed",
+     "label": "Second Layer Transition Delay (sec)",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 13,
+  "controls": 90,
+  "responsive": 9
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

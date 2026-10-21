@@ -1,0 +1,203 @@
+{
+ "kind": "elementor-widget",
+ "name": "image-hover-effect",
+ "title": "Image Hover Effect",
+ "categories": [],
+ "keywords": [
+  "hover",
+  "image",
+  "effect"
+ ],
+ "file": "happy-elementor-addons/widgets/image-hover-effect/widget.php",
+ "sections": [
+  {
+   "id": "_section_image_content",
+   "label": "Image Content",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "hover_image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "hover_image_alt_tag",
+     "label": "Image ALT Tag",
+     "type": "TEXT"
+    },
+    {
+     "name": "hover_title",
+     "label": "Title",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "hover_description",
+     "label": "Description",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "hover_link",
+     "label": "Link URL",
+     "type": "URL"
+    },
+    {
+     "name": "hover_effect",
+     "label": "Hover Effect",
+     "type": "SELECT2",
+     "options": [
+      "ha-effect-apollo",
+      "ha-effect-bubba",
+      "ha-effect-chico",
+      "ha-effect-dexter",
+      "ha-effect-duke",
+      "ha-effect-goliath",
+      "ha-effect-honey",
+      "ha-effect-jazz",
+      "ha-effect-layla",
+      "ha-effect-lexi",
+      "ha-effect-lily",
+      "ha-effect-marley",
+      "ha-effect-milo",
+      "ha-effect-ming",
+      "ha-effect-moses",
+      "ha-effect-oscar",
+      "ha-effect-romeo",
+      "ha-effect-roxy",
+      "ha-effect-ruby",
+      "ha-effect-sadie",
+      "ha-effect-sarah"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_common_style",
+   "label": "Common",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "hover_container_height_width_control",
+     "label": "Container Max Width?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "hover_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hover_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "hover_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "title_typo",
+     "label": "Title Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "description_typo",
+     "label": "Description Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "description_color",
+     "label": "Description Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "title_hover_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "description_hover_color",
+     "label": "Description Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_overlay_style",
+   "label": "Background Overlay",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "_tab_overlay_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "hover_overlay_normal",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "_tab_overlay_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "hover_overlay_hover",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 23,
+  "responsive": 1
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

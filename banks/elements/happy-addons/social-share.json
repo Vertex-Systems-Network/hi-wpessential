@@ -1,0 +1,310 @@
+{
+ "kind": "elementor-widget",
+ "name": "social-share",
+ "title": "Social Share",
+ "categories": [],
+ "keywords": [
+  "social",
+  "share",
+  "facebook",
+  "twitter",
+  "instagram",
+  "linkedin"
+ ],
+ "file": "happy-elementor-addons/widgets/social-share/widget.php",
+ "sections": [
+  {
+   "id": "_section_content",
+   "label": "Buttons",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "share_network",
+     "label": "Network",
+     "type": "SELECT",
+     "options": [
+      "facebook",
+      "twitter",
+      "linkedin",
+      "email",
+      "whatsapp",
+      "telegram",
+      "viber",
+      "pinterest",
+      "tumblr",
+      "reddit",
+      "vk",
+      "xing",
+      "get-pocket",
+      "digg",
+      "stumbleupon",
+      "weibo",
+      "renren",
+      "skype"
+     ]
+    },
+    {
+     "name": "custom_link",
+     "label": "Custom Link",
+     "type": "URL"
+    },
+    {
+     "name": "hashtags",
+     "label": "Hashtags",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "share_title",
+     "label": "Custom Title",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "email_to",
+     "label": "To",
+     "type": "TEXT"
+    },
+    {
+     "name": "email_subject",
+     "label": "Subject",
+     "type": "TEXT"
+    },
+    {
+     "name": "twitter_handle",
+     "label": "Twitter Handle",
+     "type": "TEXT"
+    },
+    {
+     "name": "image",
+     "label": "Custom Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "share_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "customize",
+     "label": "Want To Customize?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "single_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "single_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "single_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "signle_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "single_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "single_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_list",
+     "label": "Share Icons",
+     "type": "REPEATER"
+    },
+    {
+     "name": "network_view",
+     "label": "View",
+     "type": "SELECT",
+     "options": [
+      "icon_and_text",
+      "icon_only",
+      "text_only"
+     ]
+    },
+    {
+     "name": "separator_show",
+     "label": "Separator",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "display",
+     "label": "Display",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "inline-block",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_button_style",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_spacing",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_spacing",
+     "label": "Icon Right Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "separator_spacing",
+     "label": "Separator Right Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "text_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "_tab_normal_color",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "separator_color",
+     "label": "Separator Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tab_common_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "common_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "common_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "common_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "separator_hover_color",
+     "label": "Separator Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 41,
+  "responsive": 8
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

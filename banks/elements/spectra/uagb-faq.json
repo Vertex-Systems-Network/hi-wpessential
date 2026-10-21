@@ -1,0 +1,682 @@
+{
+ "kind": "block",
+ "name": "uagb/faq",
+ "title": "Faq",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/faq/attributes.php",
+ "attributes": {
+  "block_id": {
+   "type": "string",
+   "default": ""
+  },
+  "layout": {
+   "type": "string",
+   "default": "accordion"
+  },
+  "inactiveOtherItems": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "expandFirstItem": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "enableSchemaSupport": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "align": {
+   "type": "string",
+   "default": "left"
+  },
+  "enableSeparator": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "rowsGap": {
+   "type": "number",
+   "default": "10"
+  },
+  "rowsGapTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "rowsGapMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "rowsGapUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "boxBgType": {
+   "type": "string",
+   "default": "color"
+  },
+  "boxBgHoverType": {
+   "type": "string",
+   "default": "color"
+  },
+  "boxBgColor": {
+   "type": "string",
+   "default": ""
+  },
+  "boxBgHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "boxPaddingTypeMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "boxPaddingTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "boxPaddingTypeDesktop": {
+   "type": "string",
+   "default": "px"
+  },
+  "vBoxPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "hBoxPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "vBoxPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "hBoxPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "vBoxPaddingDesktop": {
+   "type": "number",
+   "default": "10"
+  },
+  "hBoxPaddingDesktop": {
+   "type": "number",
+   "default": "10"
+  },
+  "questionTextColor": {
+   "type": "string",
+   "default": ""
+  },
+  "questionTextActiveColor": {
+   "type": "string",
+   "default": ""
+  },
+  "questionPaddingTypeDesktop": {
+   "type": "string",
+   "default": "px"
+  },
+  "questionPaddingTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "questionPaddingTypeMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "vquestionPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "vquestionPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "vquestionPaddingDesktop": {
+   "type": "number",
+   "default": "10"
+  },
+  "hquestionPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "hquestionPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "hquestionPaddingDesktop": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerTextColor": {
+   "type": "string",
+   "default": ""
+  },
+  "answerPaddingTypeDesktop": {
+   "type": "string",
+   "default": "px"
+  },
+  "answerPaddingTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "answerPaddingTypeMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "vanswerPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "vanswerPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "vanswerPaddingDesktop": {
+   "type": "number",
+   "default": "10"
+  },
+  "hanswerPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "hanswerPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "hanswerPaddingDesktop": {
+   "type": "number",
+   "default": "10"
+  },
+  "iconColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconActiveColor": {
+   "type": "string",
+   "default": ""
+  },
+  "gapBtwIconQUestion": {
+   "type": "number",
+   "default": "10"
+  },
+  "gapBtwIconQUestionTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "gapBtwIconQUestionMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "questionloadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "answerloadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "questionFontFamily": {
+   "type": "string",
+   "default": "Default"
+  },
+  "questionFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "questionFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "questionFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "questionFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "questionFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "questionLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "questionLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "questionLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "questionLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "answerFontFamily": {
+   "type": "string",
+   "default": "Default"
+  },
+  "answerFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "answerFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "answerFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "answerFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "answerFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "answerLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "answerLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "answerLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "answerLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "icon": {
+   "type": "string",
+   "default": "plus"
+  },
+  "iconActive": {
+   "type": "string",
+   "default": "minus"
+  },
+  "iconAlign": {
+   "type": "string",
+   "default": "row"
+  },
+  "iconSize": {
+   "type": "number",
+   "default": "12"
+  },
+  "iconSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "iconSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "iconSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "columnsGap": {
+   "type": "number",
+   "default": "10"
+  },
+  "columnsGapTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "columnsGapMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "columnsGapUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "columns": {
+   "type": "number",
+   "default": "2"
+  },
+  "tcolumns": {
+   "type": "number",
+   "default": "2"
+  },
+  "mcolumns": {
+   "type": "number",
+   "default": "1"
+  },
+  "schema": {
+   "type": "string",
+   "default": ""
+  },
+  "enableToggle": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "questionLeftPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "questionBottomPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "questionLeftPaddingDesktop": {
+   "type": "number",
+   "default": "10"
+  },
+  "questionBottomPaddingDesktop": {
+   "type": "number",
+   "default": "10"
+  },
+  "questionLeftPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "questionBottomPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "questionSpacingLink": {
+   "type": "string",
+   "default": ""
+  },
+  "answerSpacingLink": {
+   "type": "string",
+   "default": ""
+  },
+  "answerTopPadding": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerRightPadding": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerBottomPadding": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerLeftPadding": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerTopPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerRightPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerBottomPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerLeftPaddingTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerTopPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerRightPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerBottomPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "answerLeftPaddingMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "questionFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "questionTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "questionDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "answerFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "answerTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "answerDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "questionLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "questionLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "questionLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "questionLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "answerLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "answerLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "answerLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "answerLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "questionTextBgColor": {
+   "type": "string",
+   "default": ""
+  },
+  "questionTextActiveBgColor": {
+   "type": "string",
+   "default": ""
+  },
+  "borderStyle": {
+   "type": "string",
+   "default": "solid"
+  },
+  "borderWidth": {
+   "type": "number",
+   "default": "1"
+  },
+  "borderRadius": {
+   "type": "number",
+   "default": "2"
+  },
+  "borderColor": {
+   "type": "string",
+   "default": "#1e1e1e"
+  },
+  "borderHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBgSize": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBgSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBgSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBgSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "iconBgColor": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockPaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockPaddingUnitTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockPaddingUnitMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockPaddingLink": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "blockTopMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockMarginUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockMarginUnitTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockMarginUnitMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockMarginLink": {
+   "type": "boolean",
+   "default": "true"
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 166,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

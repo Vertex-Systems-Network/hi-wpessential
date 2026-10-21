@@ -1,0 +1,444 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-vscroll",
+ "title": "Vertical Scroll",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium vertical scroll",
+  "full",
+  "section",
+  "navigation",
+  "one",
+  "page"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-vscroll.php",
+ "sections": [
+  {
+   "id": "content_templates",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "template_height_hint",
+     "label": "<span style=\"line-height: 1.4em;\"><b>Important<br></b></span><ul style=\"line-height: 1.2\"><li>1- Container Height needs to be set to default.</li><li>2- It\\'s recommended that templates be the same height.</li><li>3- For navigation menu, you will need to add navigation menu items first</li></ul>",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "content_type",
+     "label": "Content Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "live_temp_content",
+     "label": "Template Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "section_template_live",
+     "label": "OR Select Existing Template",
+     "type": "BUTTON"
+    },
+    {
+     "name": "section_template",
+     "label": "OR Select Existing Template",
+     "type": "Premium_Post_Filter::TYPE"
+    },
+    {
+     "name": "template_id",
+     "label": "Container ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "section_repeater",
+     "label": "Sections",
+     "type": "REPEATER"
+    },
+    {
+     "name": "section_id",
+     "label": "Container ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "id_repeater",
+     "label": "Containers",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "nav_menu",
+   "label": "Navigation",
+   "tab": "",
+   "controls": [
+    {
+     "name": "nav_menu_switch",
+     "label": "Navigation Menu",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "navigation_menu_pos",
+     "label": "Position",
+     "type": "SELECT"
+    },
+    {
+     "name": "navigation_menu_pos_offset_top",
+     "label": "Offset Top",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "navigation_menu_pos_offset_left",
+     "label": "Offset Left",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "navigation_menu_pos_offset_right",
+     "label": "Offset Right",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "nav_menu_item",
+     "label": "List Item",
+     "type": "TEXT"
+    },
+    {
+     "name": "nav_menu_repeater",
+     "label": "Menu Items",
+     "type": "REPEATER"
+    },
+    {
+     "name": "navigation_dots",
+     "label": "Navigation Dots",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "navigation_dots_pos",
+     "label": "Horizontal Position",
+     "type": "SELECT"
+    },
+    {
+     "name": "navigation_dots_v_pos",
+     "label": "Vertical Position",
+     "type": "SELECT"
+    },
+    {
+     "name": "dots_shape",
+     "label": "Shape",
+     "type": "SELECT"
+    },
+    {
+     "name": "dots_tooltips_switcher",
+     "label": "Tooltips Text",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "dots_tooltips",
+     "label": "Dots Tooltips Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "dots_animation",
+     "label": "Entrance Animation",
+     "type": "ANIMATION"
+    },
+    {
+     "name": "dots_animation_duration",
+     "label": "Animation Duration",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "advanced_settings",
+   "label": "Scroll Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "scroll_effect",
+     "label": "Scroll Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "cube_effect_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "new_effect_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "scroll_speed",
+     "label": "Scroll Speed (sec)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "scroll_offset",
+     "label": "Scroll Offset",
+     "type": "NUMBER"
+    },
+    {
+     "name": "full_section",
+     "label": "Full Container Scroll",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "save_state",
+     "label": "Save to Browser History",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "full_section_touch",
+     "label": "Enable Full Container Scroll on Touch Devices",
+     "type": "HIDDEN"
+    },
+    {
+     "name": "full_section_overflow",
+     "label": "Check Content Overflow",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_1",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "navigation_style",
+   "label": "Navigation Dots",
+   "tab": "CONTROLS_MANAGER::TAB_STYLE",
+   "controls": [
+    {
+     "name": "tooltips_style_tab",
+     "label": "Tooltips",
+     "type": "TAB"
+    },
+    {
+     "name": "tooltips_color",
+     "label": "Tooltips Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tooltips_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "tooltips_background",
+     "label": "Tooltips Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tooltips_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "tooltips_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "tooltips_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "tooltips_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tooltips_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "dots_style_tab",
+     "label": "Dots",
+     "type": "TAB"
+    },
+    {
+     "name": "dots_color",
+     "label": "Dots Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "active_dot_color",
+     "label": "Active Dot Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "dots_border_color",
+     "label": "Dots Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "dots_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "container_style_tab",
+     "label": "Container",
+     "type": "TAB"
+    },
+    {
+     "name": "navigation_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "navigation_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "navigation_box_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "navigation_menu_style",
+   "label": "Navigation Menu",
+   "tab": "CONTROLS_MANAGER::TAB_STYLE",
+   "controls": [
+    {
+     "name": "navigation_items_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "normal_style_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "normal_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "normal_hover_color",
+     "label": "Text Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "normal_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "normal_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "active_style_tab",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "active_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "active_hover_color",
+     "label": "Text Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "active_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "active_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "navigation_items_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "navigation_items_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "navigation_items_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "navigation_items_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 67,
+  "responsive": 8
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

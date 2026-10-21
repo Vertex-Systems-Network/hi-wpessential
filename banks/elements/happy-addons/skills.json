@@ -1,0 +1,144 @@
+{
+ "kind": "elementor-widget",
+ "name": "skills",
+ "title": "Skill Bars",
+ "categories": [],
+ "keywords": [
+  "progress",
+  "skill",
+  "bar",
+  "chart"
+ ],
+ "file": "happy-elementor-addons/widgets/skills/widget.php",
+ "sections": [
+  {
+   "id": "_section_skills",
+   "label": "Skills",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "name",
+     "label": "Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "level",
+     "label": "Level (Out Of 100)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "customize",
+     "label": "Want To Customize?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "level_color",
+     "label": "Level Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "base_color",
+     "label": "Base Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "skills",
+     "label": "",
+     "type": "REPEATER"
+    },
+    {
+     "name": "view",
+     "label": "Text Position",
+     "type": "SELECT",
+     "options": [
+      "inside",
+      "outside"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_bars",
+   "label": "Skill Bars",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "spacing",
+     "label": "Spacing Between",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "_section_content",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "level_color",
+     "label": "Level Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "base_color",
+     "label": "Base Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "info_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "info_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 17,
+  "responsive": 0
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

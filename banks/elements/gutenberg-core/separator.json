@@ -1,0 +1,62 @@
+{
+ "kind": "block",
+ "name": "core/separator",
+ "title": "Separator",
+ "categories": [
+  "design"
+ ],
+ "keywords": [
+  "horizontal-line",
+  "hr",
+  "divider"
+ ],
+ "description": "Create a break between ideas or sections with a horizontal separator.",
+ "file": "wp/wordpress/wp-includes/blocks/separator/block.json",
+ "attributes": {
+  "opacity": {
+   "type": "string",
+   "default": "alpha-channel"
+  },
+  "tagName": {
+   "type": "string",
+   "default": "hr",
+   "enum": [
+    "hr",
+    "div"
+   ]
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": [
+   "center",
+   "wide",
+   "full"
+  ],
+  "color": {
+   "enableContrastChecker": false,
+   "__experimentalSkipSerialization": true,
+   "gradients": true,
+   "background": true,
+   "text": false,
+   "__experimentalDefaultControls": {
+    "background": true
+   }
+  },
+  "spacing": {
+   "margin": [
+    "top",
+    "bottom"
+   ]
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 5
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

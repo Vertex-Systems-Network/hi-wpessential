@@ -1,0 +1,65 @@
+{
+ "kind": "block",
+ "name": "core/comment-content",
+ "title": "Comment Content",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Displays the contents of a comment.",
+ "file": "wp/wordpress/wp-includes/blocks/comment-content/block.json",
+ "attributes": {},
+ "supports": {
+  "anchor": true,
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "textAlign": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": true,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  },
+  "spacing": {
+   "padding": [
+    "horizontal",
+    "vertical"
+   ],
+   "__experimentalDefaultControls": {
+    "padding": true
+   }
+  },
+  "html": false
+ },
+ "counts": {
+  "attributes": 0,
+  "supports": 6
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

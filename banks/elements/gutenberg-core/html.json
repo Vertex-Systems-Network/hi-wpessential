@@ -1,0 +1,35 @@
+{
+ "kind": "block",
+ "name": "core/html",
+ "title": "Custom HTML",
+ "categories": [
+  "widgets"
+ ],
+ "keywords": [
+  "embed"
+ ],
+ "description": "Add custom HTML code and preview it as you edit.",
+ "file": "wp/wordpress/wp-includes/blocks/html/block.json",
+ "attributes": {
+  "content": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "customClassName": false,
+  "className": false,
+  "html": false,
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "listView": true,
+  "customCSS": false,
+  "visibility": false
+ },
+ "counts": {
+  "attributes": 1,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

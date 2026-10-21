@@ -1,0 +1,87 @@
+{
+ "kind": "block",
+ "name": "core/breadcrumbs",
+ "title": "Breadcrumbs",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Display a breadcrumb trail showing the path to the current page.",
+ "file": "wp/wordpress/wp-includes/blocks/breadcrumbs/block.json",
+ "attributes": {
+  "prefersTaxonomy": {
+   "type": "boolean",
+   "default": false
+  },
+  "separator": {
+   "type": "string",
+   "default": "/"
+  },
+  "showHomeItem": {
+   "type": "boolean",
+   "default": true
+  },
+  "showCurrentItem": {
+   "type": "boolean",
+   "default": true
+  },
+  "showOnHomePage": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": false,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 5,
+  "supports": 8
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

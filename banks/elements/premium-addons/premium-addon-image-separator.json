@@ -1,0 +1,289 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-addon-image-separator",
+ "title": "Image Separator",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium image separator",
+  "divider",
+  "section",
+  "shape"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-image-separator.php",
+ "sections": [
+  {
+   "id": "premium_image_separator_general_settings",
+   "label": "Image Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "separator_type",
+     "label": "Separator Type",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "separator_icon",
+     "label": "Select an Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "custom_svg",
+     "label": "SVG Code",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "premium_image_separator_image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "lottie_url",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_image_separator_image_size",
+     "label": "Width/Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_image_separator_image_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_fit",
+     "label": "Image Fit",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "draw_svg",
+     "label": "Draw Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "stroke_width",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "svg_sync",
+     "label": "Draw All Paths Together",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "frames",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_hover",
+     "label": "Only Play on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "start_point",
+     "label": "Start Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "end_point",
+     "label": "End Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "svg_yoyo",
+     "label": "Yoyo Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_image_separator_image_gutter",
+     "label": "Gutter (%)",
+     "type": "NUMBER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_image_separator_image_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "styles": true
+    },
+    {
+     "name": "premium_image_separator_link_switcher",
+     "label": "Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_image_separator_link_type",
+     "label": "Link/URL",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_image_separator_existing_page",
+     "label": "Existing Page",
+     "type": "Premium_Post_Filter::TYPE"
+    },
+    {
+     "name": "premium_image_separator_image_link",
+     "label": "URL",
+     "type": "URL"
+    },
+    {
+     "name": "mask_switcher",
+     "label": "Mask Image Shape",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "mask_image",
+     "label": "Mask Image",
+     "type": "MEDIA",
+     "styles": true
+    },
+    {
+     "name": "mask_size",
+     "label": "Mask Size",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "mask_position_cover",
+     "label": "Mask Position",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "mask_position_contain",
+     "label": "Mask Position",
+     "type": "SELECT",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_1",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_image_separator_style",
+   "label": "Separator",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "svg_color",
+     "label": "After Draw Fill Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_hover_background_color",
+     "label": "Hover Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover_css_filters",
+     "label": "Hover CSS Filters",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "separator_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "separator_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "separator_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "separator_shadow",
+     "label": "Icon Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 43,
+  "responsive": 6
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

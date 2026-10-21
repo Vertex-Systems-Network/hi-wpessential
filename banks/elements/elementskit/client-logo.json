@@ -1,0 +1,599 @@
+{
+ "kind": "elementor-widget",
+ "name": "client-logo",
+ "title": "Client Logo",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/client-logo/client-logo.php",
+ "sections": [
+  {
+   "id": "ekit_client_logo_section_client",
+   "label": "Logo",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_client_logo_slide_style",
+     "label": "Slide Style ",
+     "type": "SELECT",
+     "options": [
+      "simple_logo_image",
+      "banner_logo_image"
+     ]
+    },
+    {
+     "name": "ekit_client_logo_list_title",
+     "label": "Client Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_client_logo_image_normal",
+     "label": "Client Logo",
+     "type": "MEDIA"
+    },
+    {
+     "name": "ekit_client_logo_enable_hover_logo",
+     "label": "Enable Hover Logo",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_client_logo_image_hover",
+     "label": "Hover Logo",
+     "type": "MEDIA"
+    },
+    {
+     "name": "ekit_client_logo_enable_link",
+     "label": "Enable Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_client_logo_website_link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "ekit_client_logo_repiter",
+     "label": "Repeater List",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "ekit_client_logo_slider_settings",
+   "label": "Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_client_logo_left_right_spacing",
+     "label": "Spacing Left Right",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_slidetosho",
+     "label": "Slides To Show",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_slidesToScroll",
+     "label": "Slides To Scroll",
+     "type": "SLIDER",
+     "responsive": true
+    },
+    {
+     "name": "ekit_client_logo_autoplay",
+     "label": "Autoplay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_client_logo_speed",
+     "label": "Speed (ms)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ekit_client_logo_pause_on_hover",
+     "label": "Pause on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_client_logo_show_arrow",
+     "label": "Show arrow",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_client_logo_loop",
+     "label": "Enable Loop?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_client_logo_left_arrow_icon",
+     "label": "Left arrow Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_client_logo_right_arrow_icon",
+     "label": "Right arrow Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_client_logo_show_dot",
+     "label": "Show dots",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_client_logo_additional_option_heading",
+     "label": "Additional Options",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_client_logo_rows",
+     "label": "Rows",
+     "type": "SELECT",
+     "options": [
+      "1",
+      "2",
+      "3"
+     ]
+    },
+    {
+     "name": "ekit_client_logo_separator",
+     "label": "Show Separator",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "ekit_client_logo_container_style_tab",
+   "label": "Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_client_logo_container_bg_color",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_client_logo_container_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_container_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_container_min_height",
+     "label": "Min Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_client_logo_image_style",
+   "label": "Logo",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_client_logo_image_style_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_client_logo_client_logo_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_client_logo_image_style_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_client_logo_background_hover_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_client_logo_background_simple_hover_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_client_logo_image_style_border_radious",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_hover_animation_driction",
+     "label": "Overlay Direction",
+     "type": "CHOOSE",
+     "options": [
+      "hover_from_left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_client_logo_hover_animation_color",
+     "label": "Hover Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_client_logo_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_border_style_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_client_logo_image_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_client_logo_image_style_border_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_client_logo_border_style_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_client_logo_image_box_shadow_hover_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_client_logo_image_style_hover_border_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_client_logo_style_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_client_logo_opacity",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_style_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_client_logo_opacity_hover",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_hover_opacity",
+     "label": "Opacity Hover",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_client_logo_section_navigation",
+   "label": "Arrows",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_client_logo_arrow_pos",
+     "label": "Position",
+     "type": "SELECT",
+     "options": [
+      "arrow_outside",
+      "arrow_inside"
+     ]
+    },
+    {
+     "name": "ekit_client_logo_arrow_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_arrow_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_arrow_border_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_client_logo_arrow_border_radious",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_arrow_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_client_logo_position_popover_toggle",
+     "label": "Arrow Position",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "ekit_client_logo_arrow_pos_head",
+     "label": "Left Arrow Position",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_client_logo_arrow_left_pos",
+     "label": "Left Arrow Position (X)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_arrow_left_vertical_pos",
+     "label": "Left Arrow Position (Y)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_arrow_right_pos_head",
+     "label": "Right Arrow Position",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_client_logo_arrow_right_pos",
+     "label": "Right Arrow Position (X)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_arrow_right_vertical_pos",
+     "label": "Right Arrow Position (Y)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_logo_arrow_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_client_logo_arrow_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_arrow_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_arrow_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_client_logo_arrow_hv_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_arrow_hover_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_client_logo_navigation_dot",
+   "label": "Dots",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_client_logo_client_logo_dot_style",
+     "label": "Dot Style",
+     "type": "SELECT",
+     "options": [
+      "dot_default",
+      "dot_dashed",
+      "dot_dotted",
+      "dot_paginated"
+     ]
+    },
+    {
+     "name": "ekit_client_logo_dots_left_right_spacing",
+     "label": "Spacing Left Right",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_dots_top_to_bottom",
+     "label": "Spacing Top To Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_dot_color",
+     "label": "Dot Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_dot_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_dot_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_dot_border_radius",
+     "label": "Border radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_dot_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_client_logo_dot_active_heading",
+     "label": "Active",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_client_logo_dot_active_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_client_logo_dot_active_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_dot_active_scale",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_client_logo_separator_section",
+   "label": "Separator",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_client_logo_separator_height",
+     "label": "Hight",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_separator_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_separator_top_bottom_position",
+     "label": "Top Bottom Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_separator_left_right_position",
+     "label": "Left Right Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_client_logo_seperator_color_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_client_logo_seperator_bg_color",
+     "label": "Separator Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_client_logo_seperator_color_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_client_logo_seperator_bg_color_hover",
+     "label": "Separator Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 7,
+  "controls": 86,
+  "responsive": 30
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

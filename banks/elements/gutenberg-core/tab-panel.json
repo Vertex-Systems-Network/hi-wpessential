@@ -1,0 +1,49 @@
+{
+ "kind": "block",
+ "name": "core/tab-panel",
+ "title": "Tab Panel",
+ "categories": [
+  "design"
+ ],
+ "keywords": [],
+ "description": "Content for a tab in a tabbed interface.",
+ "file": "wp/wordpress/wp-includes/blocks/tab-panel/block.json",
+ "attributes": {
+  "label": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "color": {
+   "background": true,
+   "text": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "layout": true,
+  "spacing": {
+   "blockGap": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "__experimentalFontFamily": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true,
+    "__experimentalFontFamily": true
+   }
+  },
+  "visibility": false
+ },
+ "counts": {
+  "attributes": 1,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

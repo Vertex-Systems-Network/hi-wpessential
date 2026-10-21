@@ -1,0 +1,90 @@
+{
+ "kind": "block",
+ "name": "core/accordion-heading",
+ "title": "Accordion Heading",
+ "categories": [
+  "design"
+ ],
+ "keywords": [],
+ "description": "Displays a heading that toggles the accordion panel.",
+ "file": "wp/wordpress/wp-includes/blocks/accordion-heading/block.json",
+ "attributes": {
+  "openByDefault": {
+   "type": "boolean",
+   "default": false
+  },
+  "title": {
+   "type": "rich-text"
+  },
+  "level": {
+   "type": "number"
+  },
+  "iconPosition": {
+   "type": "string",
+   "default": "right",
+   "enum": [
+    "left",
+    "right"
+   ]
+  },
+  "showIcon": {
+   "type": "boolean",
+   "default": true
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "color": {
+   "background": true,
+   "gradients": true
+  },
+  "align": false,
+  "interactivity": true,
+  "spacing": {
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "padding": true
+   },
+   "__experimentalSkipSerialization": true,
+   "__experimentalSelector": ".wp-block-accordion-heading__toggle"
+  },
+  "__experimentalBorder": {
+   "color": true,
+   "radius": true,
+   "style": true,
+   "width": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "radius": true,
+    "style": true,
+    "width": true
+   }
+  },
+  "typography": {
+   "__experimentalSkipSerialization": [
+    "textDecoration",
+    "letterSpacing"
+   ],
+   "fontSize": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true,
+    "fontFamily": true
+   }
+  },
+  "shadow": true,
+  "visibility": false,
+  "lock": false
+ },
+ "counts": {
+  "attributes": 5,
+  "supports": 10
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}
