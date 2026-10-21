@@ -547,3 +547,32 @@
 .wpe-plan li svg { color: var(--c-success); margin-top: 3px; }
 @media (max-width: 860px) { .wpe-auth { grid-template-columns: 1fr; } .wpe-auth__aside { padding: 24px; } .wpe-auth__form { padding: 24px; } }
 .wpe-seg:has([data-billing]) { margin-bottom: 12px; }
+
+/* AI Connect (MCP) screen */
+.wpe-mcp h1 { font-size: 28px; margin: 6px 0 0; }
+.wpe-mcp-status { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 14px; border-radius: 999px; font-weight: 700; font-size: 13px; }
+.wpe-mcp-status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.wpe-mcp-status.is-on { background: var(--c-success-soft); color: var(--c-success); }
+.wpe-mcp-status.is-off { background: var(--c-warning-soft); color: var(--c-warning); }
+.wpe-mcp-card { padding: 28px; margin-bottom: 20px; }
+.wpe-mcp-card > p { margin: 10px 0 0; }
+.wpe-mcp .wpe-callout { margin: 0 0 16px; }
+.wpe-mcp-step { display: flex; align-items: center; gap: 12px; font-size: 17px; margin: 0 0 16px; }
+.wpe-mcp-step:not(:first-of-type) { margin-top: 28px; }
+.wpe-mcp-step b { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--grad); color: var(--c-on-grad); font-size: 13px; }
+.wpe-mcp-clients { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+.wpe-mcp-client { position: relative; cursor: pointer; }
+.wpe-mcp-client input { position: absolute; opacity: 0; }
+.wpe-mcp-client span { display: flex; align-items: center; min-height: 56px; padding: 0 18px; border: 1px solid var(--c-border); border-radius: var(--r); background: var(--c-surface); transition: border-color .2s var(--ease), box-shadow .2s var(--ease), transform .2s var(--ease); }
+.wpe-mcp-client:hover span { border-color: var(--c-pro); transform: translateY(-1px); }
+.wpe-mcp-client input:checked + span { border-color: var(--c-pro); box-shadow: 0 0 0 3px rgb(236 125 26 / 18%); background: rgb(236 125 26 / 6%); }
+.wpe-mcp-client input:focus-visible + span { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+.wpe-mcp-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.wpe-mcp-code { position: relative; margin-top: 12px; }
+.wpe-mcp-code textarea { width: 100%; padding: 18px 20px; padding-right: 100px; border: 0; border-radius: var(--r); background: #0b1a3d; color: #e6ecf8; font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; resize: vertical; }
+.wpe-mcp-code .wpe-btn { position: absolute; top: 12px; right: 12px; }
+.wpe-mcp details summary { cursor: pointer; font-weight: 700; font-size: 15px; }
+.wpe-mcp-tools { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+.wpe-mcp-tools li { display: grid; grid-template-columns: 180px 1fr; gap: 12px; margin: 0; }
+.wpe-mcp-tools span { color: var(--c-muted); }
+@media (max-width: 782px) { .wpe-mcp-card { padding: 20px; } .wpe-mcp-tools li { grid-template-columns: 1fr; gap: 2px; } }

@@ -590,7 +590,38 @@ class Mcp {
 	 * Submenu.
 	 */
 	public static function menu() {
-		add_submenu_page( Admin::SLUG, __( 'AI Connect (MCP)', 'hi-wpessential' ), __( 'AI Connect', 'hi-wpessential' ), 'manage_options', 'wpessential-mcp', array( __CLASS__, 'screen' ) );
+		$hook = add_submenu_page( Admin::SLUG, __( 'AI Connect (MCP)', 'hi-wpessential' ), __( 'AI Connect', 'hi-wpessential' ), 'manage_options', 'wpessential-mcp', array( __CLASS__, 'screen' ) );
+		if ( $hook ) {
+			add_action( 'admin_print_styles-' . $hook, array( __CLASS__, 'assets' ) );
+			add_filter(
+				'admin_body_class',
+				static function ( $classes ) use ( $hook ) {
+					$screen = get_current_screen();
+					return $screen && $hook === $screen->id ? $classes . ' wpe-core-screen' : $classes;
+				}
+			);
+		}
+	}
+
+	/**
+	 * Dashboard styles on the AI Connect screen.
+	 */
+	public static function assets() {
+		wp_enqueue_style( 'wpessential-core-fonts', 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts.
+		wp_enqueue_style( 'wpessential-core', wpessential_core_url( 'assets/admin.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
+	}
+
+	/**
+	 * Client keys and labels.
+	 *
+	 * @return array key => label
+	 */
+	public static function clients() {
+		$out = array();
+		foreach ( array_keys( self::snippets( '', '' ) ) as $label ) {
+			$out[ sanitize_title( $label ) ] = $label;
+		}
+		return $out;
 	}
 
 	/**
@@ -606,6 +637,10 @@ class Mcp {
 		$uid = get_current_user_id();
 		self::revoke( $uid );
 		$opt['enabled'] = 0;
+		$client         = isset( $_POST['client'] ) ? sanitize_key( wp_unslash( $_POST['client'] ) ) : '';
+		if ( isset( self::clients()[ $client ] ) ) {
+			$opt['client'] = $client;
+		}
 		if ( 'connect' === $do ) {
 			$made = \WP_Application_Passwords::create_new_application_password( $uid, array( 'name' => self::APP_NAME ) );
 			if ( ! is_wp_error( $made ) ) {
@@ -717,39 +752,57 @@ class Mcp {
 	}
 
 	/**
-	 * Admin screen.
+	 * Admin screen: pick an AI client, generate a code, copy only that client's setup.
 	 */
 	public static function screen() {
 		$on     = self::enabled();
 		$uid    = get_current_user_id();
 		$secret = get_transient( 'wpessential_mcp_secret_' . $uid );
 		delete_transient( 'wpessential_mcp_secret_' . $uid );
-		$user  = wp_get_current_user();
-		$token = $secret ? base64_encode( $user->user_login . ':' . str_replace( ' ', '', $secret ) ) : 'YOUR_TOKEN'; // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- HTTP Basic auth value.
-		$ssl   = is_ssl() || 0 === strpos( home_url(), 'https://' );
-		echo '<div class="wrap wpe-mcp"><h1>' . esc_html__( 'AI Connect (MCP)', 'hi-wpessential' ) . '</h1>';
-		echo '<p style="max-width:760px">' . esc_html__( 'Connect Claude, Cursor, VS Code, Gemini CLI or any MCP-compatible AI to this site. Once connected, the assistant can read and edit pages, templates, styles, menus, forms, products and settings, install plugins and import demos — as you, an administrator. Switch it off any time; that also deletes the password it uses.', 'hi-wpessential' ) . '</p>';
+		$user    = wp_get_current_user();
+		$token   = $secret ? base64_encode( $user->user_login . ':' . str_replace( ' ', '', $secret ) ) : 'YOUR_TOKEN'; // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- HTTP Basic auth value.
+		$ssl     = is_ssl() || 0 === strpos( home_url(), 'https://' );
+		$clients = self::clients();
+		$opt     = (array) get_option( self::OPTION, array() );
+		$chosen  = isset( $clients[ $opt['client'] ?? '' ] ) ? $opt['client'] : (string) array_key_first( $clients );
+		$snips   = self::snippets( self::url(), $token );
+		$snip    = $snips[ $clients[ $chosen ] ];
+
+		echo '<div class="wpe-app wpe-mcp"><main class="wpe-main">';
+		echo '<div class="wpe-head"><div><span class="wpe-eyebrow">' . esc_html__( 'AI Connect · MCP', 'hi-wpessential' ) . '</span><h1>' . esc_html__( 'Connect your AI assistant', 'hi-wpessential' ) . '</h1><p>' . esc_html__( 'Pick your AI, generate a code and paste it in. The assistant can then read and edit pages, templates, styles, menus, forms and products, install plugins and import demos — as you, an administrator.', 'hi-wpessential' ) . '</p></div>';
+		echo '<span class="wpe-mcp-status ' . ( $on ? 'is-on' : 'is-off' ) . '">' . ( $on ? esc_html__( 'Connected', 'hi-wpessential' ) : esc_html__( 'Off', 'hi-wpessential' ) ) . '</span></div>';
 		if ( ! $ssl ) {
-			echo '<div class="notice notice-warning inline"><p>' . esc_html__( 'This site does not use HTTPS. Application Passwords need HTTPS on live sites; use it only for local testing.', 'hi-wpessential' ) . '</p></div>';
+			echo '<div class="wpe-callout wpe-callout--warning wpe-keep">' . esc_html__( 'This site does not use HTTPS. Application Passwords need HTTPS on live sites; use it only for local testing.', 'hi-wpessential' ) . '</div>';
 		}
-		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">' . wp_nonce_field( 'wpessential_mcp', '_wpnonce', true, false ) . '<input type="hidden" name="action" value="wpessential_mcp">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Nonce markup.
-		echo '<p><strong>' . esc_html__( 'Status:', 'hi-wpessential' ) . '</strong> ' . ( $on ? '<span style="color:#16a34a">● ' . esc_html__( 'On', 'hi-wpessential' ) . '</span>' : '<span style="color:#b45309">● ' . esc_html__( 'Off', 'hi-wpessential' ) . '</span>' ) . ' &nbsp; <code>' . esc_html( self::url() ) . '</code></p>';
-		echo '<p>' . ( $on ? '<button class="button" name="do" value="connect">' . esc_html__( 'Create a new connection code', 'hi-wpessential' ) . '</button> <button class="button button-link-delete" name="do" value="off">' . esc_html__( 'Switch off and revoke', 'hi-wpessential' ) . '</button>' : '<button class="button button-primary button-hero" name="do" value="connect">' . esc_html__( 'Switch on and create connection code', 'hi-wpessential' ) . '</button>' ) . '</p></form>';
-		if ( $secret ) {
-			echo '<div class="notice notice-success inline"><p><strong>' . esc_html__( 'Copy your setup now — the code is shown only once.', 'hi-wpessential' ) . '</strong> ' . esc_html__( 'Treat it like a password. Create a new one if it gets lost.', 'hi-wpessential' ) . '</p></div>';
-		} elseif ( $on ) {
-			echo '<p class="description">' . esc_html__( 'The code was shown when it was created. Replace YOUR_TOKEN with it, or create a new code.', 'hi-wpessential' ) . '</p>';
+
+		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" class="wpe-card wpe-mcp-card">' . wp_nonce_field( 'wpessential_mcp', '_wpnonce', true, false ) . '<input type="hidden" name="action" value="wpessential_mcp">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Nonce markup.
+		echo '<h2 class="wpe-mcp-step"><b>1</b>' . esc_html__( 'Choose your AI', 'hi-wpessential' ) . '</h2><div class="wpe-mcp-clients" role="radiogroup">';
+		foreach ( $clients as $key => $label ) {
+			echo '<label class="wpe-mcp-client"><input type="radio" name="client" value="' . esc_attr( $key ) . '"' . checked( $chosen, $key, false ) . '><span><strong>' . esc_html( $label ) . '</strong></span></label>';
 		}
+		echo '</div><h2 class="wpe-mcp-step"><b>2</b>' . esc_html__( 'Generate the connection code', 'hi-wpessential' ) . '</h2><div class="wpe-mcp-actions">';
+		echo '<button class="wpe-btn wpe-btn--grad wpe-btn--lg" name="do" value="connect">' . ( $on ? esc_html__( 'Generate a new code', 'hi-wpessential' ) : esc_html__( 'Switch on and generate', 'hi-wpessential' ) ) . '</button>';
 		if ( $on ) {
-			foreach ( self::snippets( self::url(), $token ) as $label => $snip ) {
-				echo '<h2 style="margin-top:28px">' . esc_html( $label ) . '</h2><p>' . esc_html( $snip[0] ) . '</p><textarea readonly rows="' . (int) min( 14, substr_count( $snip[1], "\n" ) + 2 ) . '" style="width:100%;max-width:900px;font-family:monospace" onclick="this.select()">' . esc_textarea( $snip[1] ) . '</textarea>';
-			}
-			echo '<h2 style="margin-top:28px">' . esc_html__( 'What the AI can do', 'hi-wpessential' ) . '</h2><ul style="list-style:disc;padding-left:20px">';
-			foreach ( self::tools() as $name => $tool ) {
-				echo '<li><code>' . esc_html( $name ) . '</code> — ' . esc_html( $tool['description'] ) . '</li>';
-			}
-			echo '</ul>';
+			echo '<button class="wpe-btn wpe-btn--danger wpe-btn--lg" name="do" value="off">' . esc_html__( 'Switch off and revoke', 'hi-wpessential' ) . '</button>';
 		}
-		echo '</div>';
+		echo '</div><p class="wpe-muted">' . esc_html__( 'A new code replaces the old one, and switching off deletes it.', 'hi-wpessential' ) . '</p></form>';
+
+		if ( $on ) {
+			echo '<section class="wpe-card wpe-mcp-card"><h2 class="wpe-mcp-step"><b>3</b>' . esc_html( sprintf( /* translators: %s: AI client name. */ __( 'Paste it into %s', 'hi-wpessential' ), $clients[ $chosen ] ) ) . '</h2>';
+			if ( $secret ) {
+				echo '<div class="wpe-callout wpe-callout--warning wpe-keep"><strong>' . esc_html__( 'Copy it now — the code is shown only once.', 'hi-wpessential' ) . '</strong> ' . esc_html__( 'Treat it like a password: never paste it into a chat. Generate a new one if it gets lost.', 'hi-wpessential' ) . '</div>';
+			} else {
+				echo '<p class="wpe-muted">' . esc_html__( 'The code was shown once when it was generated. Replace YOUR_TOKEN with it, or generate a new code.', 'hi-wpessential' ) . '</p>';
+			}
+			echo '<p>' . esc_html( $snip[0] ) . '</p><div class="wpe-mcp-code"><textarea id="wpe-mcp-snippet" readonly rows="' . (int) min( 16, substr_count( $snip[1], "\n" ) + 2 ) . '" onclick="this.select()">' . esc_textarea( $snip[1] ) . '</textarea>';
+			echo '<button type="button" class="wpe-btn wpe-btn--primary wpe-btn--sm" onclick="var t=document.getElementById(\'wpe-mcp-snippet\');t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent=\'' . esc_js( __( 'Copied', 'hi-wpessential' ) ) . '\'">' . esc_html__( 'Copy', 'hi-wpessential' ) . '</button></div></section>';
+
+			echo '<details class="wpe-card wpe-mcp-card"><summary>' . esc_html( sprintf( /* translators: %d: number of tools. */ __( 'What the AI can do (%d tools)', 'hi-wpessential' ), count( self::tools() ) ) ) . '</summary><ul class="wpe-mcp-tools">';
+			foreach ( self::tools() as $name => $tool ) {
+				echo '<li><code>' . esc_html( $name ) . '</code><span>' . esc_html( $tool['description'] ) . '</span></li>';
+			}
+			echo '</ul></details>';
+		}
+		echo '</main></div>';
 	}
 }
