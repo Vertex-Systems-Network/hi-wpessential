@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
  */
 class Install {
 
-	const DB_VERSION = '2';
+	const DB_VERSION = '3';
 
 	/**
 	 * Activation.
@@ -85,6 +85,27 @@ class Install {
 				PRIMARY KEY  (id),
 				UNIQUE KEY license_domain (license_id,domain),
 				KEY domain (domain)
+			) $charset;
+			CREATE TABLE {$wpdb->prefix}wpes_events (
+				id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+				created_at datetime NOT NULL,
+				level varchar(10) NOT NULL DEFAULT 'info',
+				event varchar(64) NOT NULL,
+				trace_id varchar(32) NOT NULL DEFAULT '',
+				source varchar(16) NOT NULL DEFAULT '',
+				license_id bigint(20) unsigned NOT NULL DEFAULT 0,
+				order_id bigint(20) unsigned NOT NULL DEFAULT 0,
+				user_id bigint(20) unsigned NOT NULL DEFAULT 0,
+				domain varchar(191) NOT NULL DEFAULT '',
+				message text NOT NULL,
+				context longtext NULL,
+				ip varchar(45) NOT NULL DEFAULT '',
+				PRIMARY KEY  (id),
+				KEY license_id (license_id),
+				KEY order_id (order_id),
+				KEY trace_id (trace_id),
+				KEY level_created (level,created_at),
+				KEY event (event)
 			) $charset;"
 		);
 	}

@@ -110,6 +110,17 @@ class Licenses {
 				'updated_at'  => $now,
 			)
 		);
+		if ( ! $wpdb->insert_id ) {
+			Events::error(
+				'license.create_failed',
+				'License could not be saved: ' . $wpdb->last_error,
+				array(
+					'user_id'  => (int) $user_id,
+					'order_id' => (int) $order_id,
+					'plan'     => $plan['key'],
+				)
+			);
+		}
 		$license = self::get( (int) $wpdb->insert_id );
 		do_action( 'wpes_license_created', $license );
 		return $license;
@@ -125,9 +136,12 @@ class Licenses {
 	public static function update( $id, array $fields ) {
 		global $wpdb;
 		list( $table )        = self::tables();
+		$before               = self::get( $id );
 		$fields['updated_at'] = current_time( 'mysql', true );
 		$wpdb->update( $table, $fields, array( 'id' => (int) $id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- Custom table.
-		return self::get( $id );
+		$after = self::get( $id );
+		Events::changed( $before, $after );
+		return $after;
 	}
 
 	/**

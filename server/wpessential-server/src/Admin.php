@@ -34,6 +34,7 @@ class Admin {
 		add_menu_page( __( 'WPEssential Server', 'wpessential-server' ), __( 'WPE Server', 'wpessential-server' ), 'manage_woocommerce', 'wpes-server', array( __CLASS__, 'licenses' ), 'dashicons-admin-network', 56 );
 		add_submenu_page( 'wpes-server', __( 'Licenses', 'wpessential-server' ), __( 'Licenses', 'wpessential-server' ), 'manage_woocommerce', 'wpes-server', array( __CLASS__, 'licenses' ) );
 		add_submenu_page( 'wpes-server', __( 'Add license', 'wpessential-server' ), __( 'Add license', 'wpessential-server' ), 'manage_woocommerce', 'wpes-license-new', array( __CLASS__, 'new_license' ) );
+		add_submenu_page( 'wpes-server', __( 'Events', 'wpessential-server' ), __( 'Events', 'wpessential-server' ), 'manage_woocommerce', 'wpes-events', array( Events::class, 'screen' ) );
 		add_submenu_page( 'wpes-server', __( 'Upload release', 'wpessential-server' ), __( 'Upload release', 'wpessential-server' ), 'manage_options', 'wpes-release', array( __CLASS__, 'release' ) );
 		add_submenu_page( 'wpes-server', __( 'Settings', 'wpessential-server' ), __( 'Settings', 'wpessential-server' ), 'manage_options', 'wpes-settings', array( __CLASS__, 'settings' ) );
 	}
@@ -143,7 +144,17 @@ class Admin {
 		}
 		echo '</td></tr></table>';
 		submit_button();
-		echo '</form></div>';
+		echo '</form>';
+		echo '<h2>' . esc_html__( 'Timeline', 'wpessential-server' ) . ' <a class="page-title-action" href="' . esc_url( admin_url( 'admin.php?page=wpes-events&license_id=' . (int) $id ) ) . '">' . esc_html__( 'All events', 'wpessential-server' ) . '</a></h2>';
+		Events::table(
+			Events::query(
+				array(
+					'license_id' => $id,
+					'per_page'   => 30,
+				)
+			)['rows']
+		);
+		echo '</div>';
 	}
 
 	/**
@@ -285,6 +296,7 @@ class Admin {
 			'remind_days'   => array( __( 'Renew / remind before (days)', 'wpessential-server' ), __( 'Renewal orders are created (or reminders sent) this many days before the end date.', 'wpessential-server' ) ),
 			'token_days'    => array( __( 'Dashboard sign-in lasts (days)', 'wpessential-server' ), '' ),
 			'download_mins' => array( __( 'Download links last (minutes)', 'wpessential-server' ), '' ),
+			'event_days'    => array( __( 'Keep events (days)', 'wpessential-server' ), __( 'Older events are deleted by the daily job (minimum 30).', 'wpessential-server' ) ),
 		);
 		foreach ( $rows as $key => $row ) {
 			echo '<tr><th>' . esc_html( $row[0] ) . '</th><td><input type="number" min="1" name="' . esc_attr( $key ) . '" value="' . (int) $s[ $key ] . '">' . ( $row[1] ? '<p class="description">' . esc_html( $row[1] ) . '</p>' : '' ) . '</td></tr>';
@@ -512,7 +524,7 @@ class Admin {
 			wp_die( esc_html__( 'Not allowed.', 'wpessential-server' ) );
 		}
 		$out = array();
-		foreach ( array( 'grace_days', 'remind_days', 'token_days', 'download_mins' ) as $key ) {
+		foreach ( array( 'grace_days', 'remind_days', 'token_days', 'download_mins', 'event_days' ) as $key ) {
 			$out[ $key ] = isset( $_POST[ $key ] ) ? max( 1, (int) $_POST[ $key ] ) : Plugin::settings( $key );
 		}
 		$out['free_staging'] = empty( $_POST['free_staging'] ) ? 0 : 1;
