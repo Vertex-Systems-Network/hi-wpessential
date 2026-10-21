@@ -46,11 +46,6 @@ DEMOS = [
 OFFICE = {'street': 'House 3213/4 8M, Fried Abad, Baron Bohar Gate', 'city': 'Multan, Pakistan',
           'phone': '+92 305 1983930', 'map': 'Bohar Gate, Multan, Pakistan'}
 
-# Client names in the "Trusted by" strip (sample names until real clients are confirmed).
-CLIENTS = ['Northwind', 'Kitecraft', 'Fieldhouse', 'Lumen Studio', 'Orbitly', 'Mosaic &amp; Co', 'Bluepeak Foods', 'Indus Textiles',
-           'Crescent Realty', 'Saffron Kitchen', 'Nexa Health', 'Greenline Logistics', 'Atlas Learning', 'Pixelmint Agency',
-           'Harbor Legal', 'Zarqa Fashion', 'Summit Motors', 'Riverstone Hotels']
-
 YEARLY_DISCOUNT = 20
 TIERS = [
     dict(key='starter', name='Starter', monthly=10, lifetime=239, sites=1, white=0, short='One theme with its demos for one website.',
@@ -453,7 +448,6 @@ def g_services():
         g_hero_dark('Services', 'Your site, launched by the people who build the theme.',
                     'Design, setup, speed and care from the WPEssential team at Vertex Systems Network (Pvt.) Ltd.',
                     b.buttons(arrow('Book a free call', '{{page:contact}}'), b.button('See pricing', '{{page:pricing}}', style='wpe-ghost-light'), justify='center')),
-        g_proof(),
         section(head('Services', 'What we do'),
                 b.group(*[b.group(ico(SERVICE_ICONS[i], 'soft'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
                                   b.p('<a href="%s">%s →</a>' % (svc_link(t), price), className='ess-card__from'), layout='default', className='ess-card')
@@ -525,40 +519,24 @@ def svc_link(name):
     return '{{page:svc-%s}}' % svc.DETAIL[name][0]
 
 
-def g_proof():
-    return section(b.group(*[b.group(b.p(n, className='ess-proof__n'), b.p(l, className='ess-side__muted'), layout='default', className='ess-proof')
-                      for n, l in [('1,200+', 'WordPress sites delivered'), ('4.9 / 5', 'from 640 client reviews'), ('&lt; 1 day', 'average first reply'), ('12 yrs', 'building for WordPress')]],
-                    layout='grid', columns=4, grid_min='12rem', className='ess-grid'),
-            b.p('<span>Trusted by agencies, stores and publishers</span>' + ''.join('<b>%s</b>' % n for n in CLIENTS),
-                className='ess-clients'))
-
-
 def g_work():
-    return section(head('Recent work', 'Sites we built for teams like yours.', 'Every project ships on Hi WPEssential, so you can keep editing it yourself after launch.'),
+    # Our own demos, without invented results or reviews.
+    return section(head('Built on Hi WPEssential', 'Sites you can open and try today.', 'Every project ships on Hi WPEssential, so you can keep editing it yourself after launch.'),
             b.group(*[b.group(b.image(img, alt, aspect='16/9'), b.group(b.p(tag, className='ess-over'), b.h(t, level=3, className='ess-card__title'),
-                                                                          b.p('✓ ' + r, className='ess-work__result'), layout='default', className='ess-work__body'),
-                              layout='default', className='ess-card ess-work') for img, alt, tag, t, r in [
-                ('site-base', 'Synergy Advisors business site', 'Business · Custom design', 'Synergy Advisors: new site and lead funnel in 3 weeks', '+62% enquiries in the first quarter'),
-                ('site-maison', 'Maison fashion store', 'WooCommerce store', 'Maison: fashion store with lookbook and 12 variable products', '2.1s → 0.9s load time on mobile'),
-                ('site-pulse', 'Pulse conference site', 'Events · Migration', 'Pulse Conference: agenda, tickets and Events Calendar', '2,400 tickets sold online')]],
-                    layout='grid', columns=3, grid_min='16rem', className='ess-grid'),
-            b.group(b.image('team-1', 'Ayesha Malik', className='ess-quote__avatar'),
-                    b.group(b.p('“They scoped it in two days, launched in three weeks and still answer our tickets the same day. It feels like having our own WordPress team.”', className='ess-quote__text'),
-                            b.p('Ayesha Malik · Marketing Lead, Fieldhouse Goods · ★★★★★', className='ess-quote__by'), layout='default'),
-                    layout='flex', wrap='nowrap', valign='center', className='ess-card ess-card--ink ess-quote'))
+                                                                          b.p('<a href="{{page:%s}}">See the demo <span aria-hidden="true">→</span></a>' % key, className='ess-card__link'),
+                                                                          layout='default', className='ess-work__body'),
+                              layout='default', className='ess-card ess-work') for img, alt, tag, t, key in [
+                ('site-base', 'Base demo home page', 'Business', 'Base: services, pricing, blog and a small shop', 'p-base'),
+                ('site-maison', 'Maison demo home page', 'WooCommerce store', 'Maison: fashion store with lookbook and atelier', 'p-maison'),
+                ('site-pulse', 'Pulse demo home page', 'Events', 'Pulse: conference site with agenda, speakers and tickets', 'p-pulse')]],
+                    layout='grid', columns=3, grid_min='16rem', className='ess-grid'))
 
 
 def g_team():
-    return section(b.columns(
-        b.column(head('Who you will talk to', 'Real people, one team.', 'No call centre and no outsourcing — the people who build the theme run your project.'),
-                 b.group(*[b.group(b.image('team-%d' % i, n, aspect='7/8', className='ess-team__img'), b.p('<strong>%s</strong>' % n), b.p(r, className='ess-side__muted'), layout='default', className='ess-team')
-                           for i, (n, r) in enumerate([('Ayesha Malik', 'Project lead'), ('Bilal Khan', 'Lead developer'), ('Sara Ahmed', 'Client success'), ('Usman Tariq', 'WooCommerce')], 1)],
-                         layout='grid', columns=4, grid_min='7rem', className='ess-grid'), width='55%'),
-        b.column(html('<div class="ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=%s&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                      '<div class="ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>%s<br>%s</span><span><a href="tel:%s">%s</a> · PKT (UTC+5)</span>'
-                      '<a href="https://maps.google.com/?q=%s" target="_blank" rel="noopener">Get directions ↗</a></div></div>' % (
-                          quote(OFFICE['map']), OFFICE['street'], OFFICE['city'], OFFICE['phone'].replace(' ', ''), OFFICE['phone'], quote(OFFICE['map']))), width='45%'),
-        className='ess-gap', valign='center'))
+    return section(html('<div class="ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=%s&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+                        '<div class="ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>%s<br>%s</span><span><a href="tel:%s">%s</a> · PKT (UTC+5)</span>'
+                        '<a href="https://maps.google.com/?q=%s" target="_blank" rel="noopener">Get directions ↗</a></div></div>' % (
+                            quote(OFFICE['map']), OFFICE['street'], OFFICE['city'], OFFICE['phone'].replace(' ', ''), OFFICE['phone'], quote(OFFICE['map']))))
 
 
 def g_contact():
@@ -604,7 +582,6 @@ def g_contact():
                                   layout='default', className='ess-card') for i_, t, d, l, h_ in routes],
                         layout='grid', columns=3, grid_min='16rem', className='ess-grid'),
                 tag='section', align='full', className='ess-page-hero', layout='constrained', content='1200px'),
-        g_proof(),
         section(b.columns(
             b.column(b.group(html('<span id="contact-form"></span>'), b.h('Send us a message', level=2, className='ess-form__title'),
                              b.p('Fields marked * are required. We use your details only to reply.', className='ess-side__muted'),
@@ -632,12 +609,16 @@ def g_contact():
 CARE_PLANS = [('Basic', '49', ['Weekly updates & backups', 'Uptime monitoring', 'Monthly report', '1h of fixes'], False),
               ('Growth', '129', ['Everything in Basic', 'Daily backups, 90-day history', 'Malware scans & firewall', '3h of fixes & small edits', 'Speed check every month'], True),
               ('Business', '299', ['Everything in Growth', 'Staging site for updates', 'WooCommerce order checks', '8h of development', 'Same-day priority support'], False)]
-RELEASES = [('1.0.0', '18 Oct 2026', [('New', 'Pulse and Maison demos for Gutenberg and Elementor'), ('New', 'AI Connect (MCP): connect Claude, Cursor and other AI tools to your site'),
-                                      ('New', 'Shop filters, variation swatches and grid product gallery'), ('Fixed', 'Dark mode colours on every style variation')]),
-            ('0.9.0', '2 Oct 2026', [('New', 'Demo import wizard with resumable steps'), ('Improved', 'Theme CSS under 50 KB on first load'), ('Fixed', 'Header search visibility')])]
-ROADMAP = [('Now', ['WPEssential.org service pages', 'Variation swatches everywhere', 'Elementor version of every demo']),
-           ('Next', ['Restaurant and Course demos', 'Header & footer builder', 'Wishlist and compare']),
-           ('Later', ['AI demo generator', 'Multisite licence manager', 'Figma plugin for demo kits'])]
+# Only what is really built. 1.0.0 is not tagged yet, so it is listed as in development.
+RELEASES = [('1.0.0', 'In development', [('New', 'Base, Maison and Pulse demos for Gutenberg and Elementor'),
+                                         ('New', 'One-click demo import with resumable steps and Remove demo'),
+                                         ('New', 'AI Connect (MCP) with connected sessions, tracking and revoke'),
+                                         ('New', 'Light and dark schemes, 20 languages and right-to-left support'),
+                                         ('New', 'Licenses and subscriptions on WooCommerce with a full event log')])]
+# From docs/STATUS.md: what is designed or planned, nothing promised beyond that.
+ROADMAP = [('Now', ['WPEssential.org rebuilt to its Figma design', 'Business Pro, Saffron and Campus demos (designed in Figma)']),
+           ('Next', ['Base, Maison and Pulse upgraded to the premium design rules', 'Automatic renewals with a saved card']),
+           ('Later', ['Minimal portfolio, News and Electronics store demos', 'Clinic, Real estate, Hotel and Nonprofit demos'])]
 
 
 def g_care_plans():
@@ -668,9 +649,9 @@ def g_changelog():
 
 
 def g_roadmap():
-    cols = [b.group(b.h(c, level=3, className='ess-card__title'), *[b.group(b.p('<strong>%s</strong>' % i), b.p('▲ Vote', className='ess-vote'), layout='default', className='ess-card')
+    cols = [b.group(b.h(c, level=3, className='ess-card__title'), *[b.group(b.p('<strong>%s</strong>' % i), layout='default', className='ess-card')
                                                                     for i in items], layout='default', className='ess-card ess-card--alt') for c, items in ROADMAP]
-    return b.join(g_hero_light('Roadmap', 'What we are building next', 'Vote for features and see what is in progress. Suggest your own from My Account.'),
+    return b.join(g_hero_light('Roadmap', 'What we are building next', 'What is in progress and what comes after it. Suggest a demo or feature through Support.'),
                   section(b.group(*cols, layout='grid', columns=3, grid_min='16rem', className='ess-grid')))
 
 
@@ -842,32 +823,18 @@ def e_about():
                         bg='ink', pad=(64, 24, 64, 24), align='center')]
 
 
-def e_proof():
-    return e.container(e.grid(*[e.container(e.heading(n, 3, 'secondary', size_px=26), e.text(l, size_px=13), inner=True, pad=20, radius=16, bg='surface-alt', gap=4)
-                                for n, l in [('1,200+', 'WordPress sites delivered'), ('4.9 / 5', 'from 640 client reviews'), ('< 1 day', 'average first reply'), ('12 yrs', 'building for WordPress')]], columns=4),
-                       e.text('Trusted by agencies, stores and publishers: <strong>%s</strong>' % ' · '.join(CLIENTS), size_px=14),
-                       pad=(48, 24, 48, 24))
-
-
 def e_work():
-    return e.container(e.overline('Recent work'), e.heading('Sites we built for teams like yours.'),
+    return e.container(e.overline('Built on Hi WPEssential'), e.heading('Sites you can open and try today.'),
                        e.text('Every project ships on Hi WPEssential, so you can keep editing it yourself after launch.'),
-                       e.grid(*[e.image_box(k, t, tag + '<br><strong>✓ ' + r + '</strong>', height=220) for k, tag, t, r in [
-                           ('site-base', 'Business · Custom design', 'Synergy Advisors: new site and lead funnel in 3 weeks', '+62% enquiries in the first quarter'),
-                           ('site-maison', 'WooCommerce store', 'Maison: fashion store with lookbook and 12 variable products', '2.1s → 0.9s load time on mobile'),
-                           ('site-pulse', 'Events · Migration', 'Pulse Conference: agenda, tickets and Events Calendar', '2,400 tickets sold online')]], columns=3),
-                       e.container(e.testimonial('They scoped it in two days, launched in three weeks and still answer our tickets the same day. It feels like having our own WordPress team.',
-                                                 'Ayesha Malik', 'Marketing Lead, Fieldhouse Goods'), inner=True, bg='surface-alt', radius=20, pad=32),
+                       e.grid(*[e.image_box(k, t, tag, height=220) for k, tag, t in [
+                           ('site-base', 'Business', 'Base: services, pricing, blog and a small shop'),
+                           ('site-maison', 'WooCommerce store', 'Maison: fashion store with lookbook and atelier'),
+                           ('site-pulse', 'Events', 'Pulse: conference site with agenda, speakers and tickets')]], columns=3),
                        pad=(80, 24, 80, 24))
 
 
 def e_team():
-    return e.container(e.row(
-        e.col(e.overline('Who you will talk to'), e.heading('Real people, one team.'),
-              e.text('No call centre and no outsourcing — the people who build the theme run your project.'),
-              e.grid(*[e.image_box('team-%d' % i, n, r, height=180, people=True) for i, (n, r) in enumerate(
-                  [('Ayesha Malik', 'Project lead'), ('Bilal Khan', 'Lead developer'), ('Sara Ahmed', 'Client success'), ('Usman Tariq', 'WooCommerce')], 1)], columns=4), width=55),
-        e.col(e.map_widget(OFFICE['map'], height=420), width=45), gap=48), pad=(80, 24, 80, 24))
+    return e.container(e.map_widget(OFFICE['map'], height=420), pad=(80, 24, 80, 24))
 
 
 def e_contact():
@@ -881,7 +848,6 @@ def e_contact():
             e.container(e_icon_cards([('fas fa-credit-card', 'Plans & licensing', 'Which plan fits, lifetime licences, agencies and invoices.'),
                                       ('fas fa-palette', 'Start a project', 'Design, setup, WooCommerce, migration, speed or care plans. <a href="{{page:quote}}">Request a quote →</a>'),
                                       ('fas fa-headset', 'Already a customer?', 'Bugs, demo import or licence questions. <a href="{{page:support}}">Open a ticket →</a>')]), pad=(8, 24, 8, 24)),
-            e_proof(),
             e.container(e.row(e.col(e.heading('Send us a message', 2, size_px=28), e.shortcode('[wpforms id="{{form:contact}}" title="false"]'), width=64, pad=32, radius=20, border='border', bg='surface'),
                               e.col(*[e.container(e.icon_box(i, t, d), inner=True, pad=20, radius=16, border='border', bg='surface') for i, t, d in side], width=36, gap=16), gap=32),
                         pad=(24, 24, 80, 24)),
@@ -899,7 +865,6 @@ def e_services():
     steps = [('Discovery call', '30 minutes on goals, content and budget.'), ('Proposal', 'Fixed price, scope and timeline within 48 hours.'),
              ('Build', 'Weekly previews on a staging site you can click through.'), ('Launch & care', 'We go live, train your team and stay on call.')]
     return [e_title('Services', 'Your site, launched by the people who build the theme.', 'Design, setup, speed and care from the WPEssential team at Vertex Systems Network (Pvt.) Ltd.'),
-            e_proof(),
             e.container(e.overline('What we do'), e.heading('Services'),
                         e_icon_cards([(i, t, d + ' <a href="%s">%s →</a>' % (svc_link(t), p)) for i, t, d, p in SERVICES]), pad=(48, 24, 72, 24)),
             e.container(e.overline('Process'), e.heading('How a project runs'),
@@ -959,7 +924,7 @@ def e_changelog():
 
 
 def e_roadmap():
-    return [e_title('Roadmap', 'What we are building next', 'Vote for features and see what is in progress. Suggest your own from My Account.'),
+    return [e_title('Roadmap', 'What we are building next', 'What is in progress and what comes after it. Suggest a demo or feature through Support.'),
             e.container(e.grid(*[e.container(e.heading(c, 3, size_px=22), e.icon_list(items, icon='fas fa-caret-up'), inner=True, pad=24, radius=20, bg='surface-alt', gap=12)
                                  for c, items in ROADMAP], columns=3), pad=(24, 24, 96, 24))]
 

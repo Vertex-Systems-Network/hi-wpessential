@@ -57,6 +57,7 @@ class Live:
         for item in package.get('products', []):
             self.keys[item['key']] = ('product', item.get('slug', ''))
         self.missing = set()
+        self.site = None
 
     def post(self, key):
         kind, slug = self.keys.get(key, ('page', key))
@@ -68,6 +69,11 @@ class Live:
             if not spec:
                 self.missing.add('form:' + key)
                 return '0'
+            # Reuse a form made by an earlier push instead of creating a copy.
+            same = [f for f in mcp('list_content', {'post_type': 'wpforms', 'per_page': 200}) if f['title'] == spec['title']]
+            if same:
+                self.forms[key] = str(same[0]['id'])
+                return self.forms[key]
             made = mcp('create_form', {'title': spec['title'], 'fields': spec['fields'], 'submit': spec.get('submit', ''), 'message': spec.get('message', '')})
             self.forms[key] = str(made['id'])
         return self.forms[key]
@@ -93,8 +99,27 @@ class Live:
                 return os.environ['WPE_URL'].rstrip('/') + '/' + arg
             if kind == 'form':
                 return self.form_id(arg)
+            if kind == 'site':
+                if self.site is None:
+                    self.site = rest('/wp/v2/settings')
+                return self.site.get('email' if arg == 'email' else 'title', '')
             return m.group(0)
-        return re.sub(r'\{\{(media|media_id|home|page|post_id|woo|form):?([a-z0-9/_.-]*)\}\}', sub, text)
+        return re.sub(r'\{\{(media|media_id|home|page|post_id|woo|form|site):?([a-z0-9/_.-]*)\}\}', sub, text)
+
+
+def push_menus(live, package):
+    """Write each package menu into the live navigation post of the same name (created when missing)."""
+    navs = {n['title']: n for n in mcp('list_content', {'post_type': 'wp_navigation', 'per_page': 50})}
+    for menu in package.get('menus', []):
+        links = []
+        for it in menu['items']:
+            hit = live.post(it['page']) if it.get('page') else None
+            url = hit['link'] if hit else it.get('url', '/')
+            links.append('<!-- wp:navigation-link %s /-->' % json.dumps({'label': it['title'], 'url': url, 'kind': 'post-type' if hit else 'custom',
+                                                                          **({'id': hit['id'], 'type': 'page'} if hit else {})}))
+        nav = navs.get(menu['name'])
+        out = mcp('save_content', {**({'id': nav['id']} if nav else {'post_type': 'wp_navigation'}), 'title': menu['name'], 'status': 'publish', 'content': ''.join(links)})
+        print('menu', menu['name'], out['id'])
 
 
 def main():
@@ -104,6 +129,8 @@ def main():
     ap.add_argument('--slug', help='live slug to write the page to (default: the package slug)')
     ap.add_argument('--part', action='store_true', help='write a template part (header, footer…)')
     ap.add_argument('--status', default='publish')
+    ap.add_argument('--all', action='store_true', help='push every page of the package (twice, so new pages link to each other)')
+    ap.add_argument('--alias', action='append', default=[], help='package-slug=live-slug, e.g. privacy-policy=privacy-policy-2')
     ap.add_argument('--dry', action='store_true', help='only list what is missing on the live site')
     a = ap.parse_args()
     package = json.load(open(os.path.join(ROOT, '..', '..', 'demos', a.demo, 'gutenberg', 'content.json')))
@@ -114,7 +141,28 @@ def main():
         live.resolve(src)
         print('missing:', ', '.join(sorted(live.missing)) or 'nothing')
         return
-    if a.part:
+    aliases = dict(x.split('=', 1) for x in a.alias)
+    if a.all:
+        pages = [x for x in package['content'] if x.get('type', 'page') == 'page' and x.get('content')]
+        for rnd in (1, 2):
+            for item in pages:
+                slug = aliases.get(item['slug'], item['slug'])
+                existing = live.posts.get(('page', slug))
+                out = mcp('save_content', {**({'id': existing['id']} if existing else {'post_type': 'page'}), 'title': item['title'],
+                                           'slug': slug, 'status': a.status, 'content': live.resolve(item['content'])})
+                if item.get('template'):
+                    rest('/wp/v2/pages/%d' % out['id'], 'POST', {'template': item['template']})
+                live.posts[('page', slug)] = {'id': out['id'], 'link': out['link'], 'slug': slug}
+                live.keys[item['key']] = ('page', slug)
+                if rnd == 2:
+                    print('page', out['id'], out['link'])
+            if rnd == 1:
+                live.missing = set()
+        push_menus(live, package)
+        for part in ('header', 'header-shop', 'header-transparent', 'footer'):
+            mcp('block_templates', {'id': 'hi-wpessential//' + part, 'content': live.resolve(package['settings']['parts'][part]['content'])})
+            print('part', part)
+    elif a.part:
         part = package['settings']['parts'][a.key]['content']
         out = mcp('block_templates', {'id': 'hi-wpessential//' + a.key, 'content': live.resolve(part)})
         print('part', a.key, out.get('status'))
