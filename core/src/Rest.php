@@ -42,6 +42,9 @@ class Rest {
 			'/account/checkout'   => array( 'POST', 'account_checkout' ),
 			'/account/action'     => array( 'POST', 'account_action' ),
 			'/brand'              => array( 'POST', 'brand' ),
+			'/mcp'                => array( 'GET', 'mcp' ),
+			'/mcp/connect'        => array( 'POST', 'mcp_connect' ),
+			'/mcp/off'            => array( 'POST', 'mcp_off' ),
 		);
 		foreach ( $routes as $route => $def ) {
 			register_rest_route(
@@ -324,5 +327,34 @@ class Rest {
 		}
 		update_option( 'wpessential_core_brand', sanitize_text_field( (string) $request->get_param( 'name' ) ) );
 		return $this->respond( array( 'brand' => Admin::brand() ) );
+	}
+
+	/**
+	 * AI Connect state.
+	 *
+	 * @return \WP_REST_Response
+	 */
+	public function mcp() {
+		return rest_ensure_response( Mcp::state() );
+	}
+
+	/**
+	 * AI Connect: new code for one client.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 * @return \WP_REST_Response|\WP_Error
+	 */
+	public function mcp_connect( $request ) {
+		return $this->respond( Mcp::connect( sanitize_key( (string) $request->get_param( 'client' ) ) ) );
+	}
+
+	/**
+	 * AI Connect: switch off and revoke.
+	 *
+	 * @return \WP_REST_Response
+	 */
+	public function mcp_off() {
+		Mcp::disconnect();
+		return rest_ensure_response( Mcp::state() );
 	}
 }
