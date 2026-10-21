@@ -1,0 +1,201 @@
+{
+ "kind": "elementor-widget",
+ "name": "social-icons",
+ "title": "Social Icons",
+ "categories": [],
+ "keywords": [
+  "social",
+  "icon",
+  "link"
+ ],
+ "file": "elementor/includes/widgets/social-icons.php",
+ "sections": [
+  {
+   "id": "section_social_icon",
+   "label": "Social Icons",
+   "tab": "",
+   "controls": [
+    {
+     "name": "social_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "item_icon_color",
+     "label": "Color",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom"
+     ]
+    },
+    {
+     "name": "item_icon_primary_color",
+     "label": "Primary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "item_icon_secondary_color",
+     "label": "Secondary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "social_icon_list",
+     "label": "Social Icons",
+     "type": "REPEATER"
+    },
+    {
+     "name": "shape",
+     "label": "Shape",
+     "type": "SELECT",
+     "options": [
+      "square",
+      "rounded",
+      "circle"
+     ]
+    },
+    {
+     "name": "columns",
+     "label": "Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_social_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_color",
+     "label": "Color",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom"
+     ]
+    },
+    {
+     "name": "icon_primary_color",
+     "label": "Primary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_secondary_color",
+     "label": "Secondary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "row_gap",
+     "label": "Rows Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_social_hover",
+   "label": "Icon Hover",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "hover_primary_color",
+     "label": "Primary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_secondary_color",
+     "label": "Secondary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_animation",
+     "label": "Hover Animation",
+     "type": "HOVER_ANIMATION"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 22,
+  "responsive": 7
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

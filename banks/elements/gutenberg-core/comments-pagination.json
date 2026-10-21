@@ -1,0 +1,61 @@
+{
+ "kind": "block",
+ "name": "core/comments-pagination",
+ "title": "Comments Pagination",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Displays a paginated navigation to next/previous set of comments, when applicable.",
+ "file": "wp/wordpress/wp-includes/blocks/comments-pagination/block.json",
+ "attributes": {
+  "paginationArrow": {
+   "type": "string",
+   "default": "none"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "reusable": false,
+  "html": false,
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true,
+    "link": true
+   }
+  },
+  "layout": {
+   "allowSwitching": false,
+   "allowInheriting": false,
+   "default": {
+    "type": "flex"
+   }
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 1,
+  "supports": 8
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

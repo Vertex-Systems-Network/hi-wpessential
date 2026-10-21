@@ -1,0 +1,255 @@
+{
+ "kind": "elementor-widget",
+ "name": "svg-draw",
+ "title": "SVG Line Draw",
+ "categories": [],
+ "keywords": [
+  "svg",
+  "icon",
+  "draw",
+  "svg line draw",
+  "Svg Line Draw",
+  "Svg",
+  "animation",
+  "creative",
+  "SVG Animation",
+  "SVG Draw",
+  "SVG",
+  "line",
+  "Line Draw",
+  "Line",
+  "Draw"
+ ],
+ "file": "happy-elementor-addons/widgets/svg-draw/widget.php",
+ "sections": [
+  {
+   "id": "ha_section_svg_draw_settings",
+   "label": "Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ha_icon_type",
+     "label": "SVG Type",
+     "type": "SELECT",
+     "options": [
+      "icon",
+      "custom_code"
+     ]
+    },
+    {
+     "name": "ha_font_icon",
+     "label": "",
+     "type": "ICONS"
+    },
+    {
+     "name": "ha_custom_svg",
+     "label": "SVG Code",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "ha_custom_svg_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "icon_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "animate_icon",
+     "label": "Enable SVG Draw?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "animation_reverse",
+     "label": "Reverse Animation?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "animate_start_point",
+     "label": "Start Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "animate_end_point",
+     "label": "End Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "scroll_action",
+     "label": "Draw Behaviour?",
+     "type": "SELECT",
+     "options": [
+      "automatic",
+      "viewport",
+      "hover"
+     ]
+    },
+    {
+     "name": "animate_trigger",
+     "label": "Start Trigger?",
+     "type": "SELECT",
+     "options": [
+      "top",
+      "center",
+      "custom"
+     ]
+    },
+    {
+     "name": "frames",
+     "label": "Draw Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "repeat_delay",
+     "label": "Repeat Delay",
+     "type": "NUMBER"
+    },
+    {
+     "name": "yoyo",
+     "label": "Swing Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "animate_offset",
+     "label": "Offset (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "draw_speed",
+     "label": "Draw Speed Factor",
+     "type": "SLIDER"
+    },
+    {
+     "name": "animation_sync",
+     "label": "Draw All Strokes Together",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "anim_rev",
+     "label": "Restart Animation",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "svg_fill",
+     "label": "Fill Color",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    }
+   ]
+  },
+  {
+   "id": "section_svg_draw_style",
+   "label": "SVG Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "fill_color",
+     "label": "Fill Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "svg_stroke",
+     "label": "After Draw Stroke Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "svg_color",
+     "label": "After Draw Fill Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "path_width",
+     "label": "Stroke Thickness",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "path_dashes",
+     "label": "Space Between Dashes",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "icon_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "svg_icon_box",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "svg_icon_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "svg_icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 34,
+  "responsive": 7
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

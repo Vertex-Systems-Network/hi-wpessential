@@ -1,0 +1,159 @@
+{
+ "kind": "elementor-widget",
+ "name": "number",
+ "title": "Number",
+ "categories": [],
+ "keywords": [
+  "number",
+  "animate",
+  "text"
+ ],
+ "file": "happy-elementor-addons/widgets/number/widget.php",
+ "sections": [
+  {
+   "id": "_section_number",
+   "label": "Number",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "number_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "animate_number",
+     "label": "Animate",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "animate_duration",
+     "label": "Duration",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "number_background_style",
+   "label": "General",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "number_width_height",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "number_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "number_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "number_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "number_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "number_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "_heading_bg",
+     "label": "Background",
+     "type": "HEADING"
+    },
+    {
+     "name": "number_background_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "_heading_bg_overlay",
+     "label": "Background Overaly",
+     "type": "HEADING"
+    },
+    {
+     "name": "number_background_overlay_color",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "number_background_overlay_blend_mode",
+     "label": "Blend Mood",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "number_background_overlay_blend_mode_opacity",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_text",
+   "label": "Text",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "number_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "number_text_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "number_text_shadow",
+     "label": "Text Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "number_text_rotate",
+     "label": "Text Rotate",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 19,
+  "responsive": 3
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

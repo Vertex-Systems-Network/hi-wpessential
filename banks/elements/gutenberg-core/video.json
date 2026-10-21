@@ -1,0 +1,81 @@
+{
+ "kind": "block",
+ "name": "core/video",
+ "title": "Video",
+ "categories": [
+  "media"
+ ],
+ "keywords": [
+  "movie"
+ ],
+ "description": "Embed a video from your media library or upload a new one.",
+ "file": "wp/wordpress/wp-includes/blocks/video/block.json",
+ "attributes": {
+  "autoplay": {
+   "type": "boolean"
+  },
+  "caption": {
+   "type": "rich-text"
+  },
+  "controls": {
+   "type": "boolean",
+   "default": true
+  },
+  "id": {
+   "type": "number"
+  },
+  "loop": {
+   "type": "boolean"
+  },
+  "muted": {
+   "type": "boolean"
+  },
+  "poster": {
+   "type": "string"
+  },
+  "preload": {
+   "type": "string",
+   "default": "metadata"
+  },
+  "blob": {
+   "type": "string"
+  },
+  "src": {
+   "type": "string"
+  },
+  "width": {
+   "type": "number"
+  },
+  "height": {
+   "type": "number"
+  },
+  "playsInline": {
+   "type": "boolean"
+  },
+  "tracks": {
+   "type": "array",
+   "default": []
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "spacing": {
+   "margin": true,
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "margin": false,
+    "padding": false
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 14,
+  "supports": 4
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

@@ -1,0 +1,434 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-team-member",
+ "title": "Team Member",
+ "categories": [
+  "essential-addons-for-elementor-lite"
+ ],
+ "keywords": [
+  "team",
+  "member",
+  "team member",
+  "ea team member",
+  "ea team members",
+  "person",
+  "card",
+  "meet the team",
+  "team builder",
+  "our team",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Team_Member.php",
+ "sections": [
+  {
+   "id": "eael_section_team_members_styles_general",
+   "label": "Layout",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_team_members_preset",
+     "label": "Skin",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "eael_team_members_preset_pro_alert",
+     "label": "Only available in pro version!",
+     "type": "HEADING"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_team_member_image",
+   "label": "Image",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_team_member_image",
+     "label": "",
+     "type": "MEDIA"
+    },
+    {
+     "name": "thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_team_member_content",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_team_member_name_heading",
+     "label": "Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_team_member_name",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_team_member_name_tag",
+     "label": "HTML Tag",
+     "type": "CHOOSE",
+     "options": [
+      "h1",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_team_member_job_position_heading",
+     "label": "Job Position",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_team_member_job_title",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_team_member_job_title_tag",
+     "label": "HTML Tag",
+     "type": "CHOOSE",
+     "options": [
+      "h1",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_team_member_description",
+     "label": "Description",
+     "type": "TEXTAREA"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_team_member_social_profiles",
+   "label": "Social Profiles",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_team_member_enable_social_profiles",
+     "label": "Display Social Profiles?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "social_new",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "eael_team_member_social_profile_links",
+     "label": "",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "content_card_style_section",
+   "label": "Content Card",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "content_card_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_enable_text_overlay",
+     "label": "Description Overlay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_team_members_overlay_background",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "default",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_team_members_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_team_members_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_team_members_image_styles",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_team_members_image_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_image_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_image_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_image_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_team_members_image_rounded",
+     "label": "Rounded Avatar?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_team_members_image_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_team_members_typography",
+   "label": "Color &amp; Typography",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_team_members_name_heading",
+     "label": "Member Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_team_members_name_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_team_members_position_heading",
+     "label": "Member Job Position",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_team_members_position_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_position_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_team_members_description_heading",
+     "label": "Member Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_team_members_description_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_description_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_team_members_social_profiles_styles",
+   "label": "Social Profiles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_team_members_social_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_social_profiles_padding",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_social_icons_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_social_icons_spacing",
+     "label": "Icon Distance",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_social_icons_used_gradient_bg",
+     "label": "Use Gradient Background",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_team_members_social_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_social_icon_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_social_icon_gradient_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_team_members_social_icon_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_team_members_social_icon_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_social_icon_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_team_members_social_icon_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_team_members_social_icon_hover_color",
+     "label": "Icon Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_social_icon_hover_background",
+     "label": "Hover Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_team_members_social_icon_hover_gradient_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_team_members_social_icon_hover_border_color",
+     "label": "Hover Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 9,
+  "controls": 56,
+  "responsive": 7
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

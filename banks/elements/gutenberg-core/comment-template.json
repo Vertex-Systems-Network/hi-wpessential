@@ -1,0 +1,56 @@
+{
+ "kind": "block",
+ "name": "core/comment-template",
+ "title": "Comment Template",
+ "categories": [
+  "design"
+ ],
+ "keywords": [],
+ "description": "Contains the block elements used to display a comment, like the title, date, author, avatar and more.",
+ "file": "wp/wordpress/wp-includes/blocks/comment-template/block.json",
+ "attributes": {},
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "html": false,
+  "reusable": false,
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": true,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 0,
+  "supports": 8
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

@@ -1,0 +1,354 @@
+{
+ "kind": "block",
+ "name": "uagb/buttons",
+ "title": "Buttons",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/buttons/attributes.php",
+ "attributes": {
+  "size": {
+   "type": "string",
+   "default": ""
+  },
+  "vPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "hPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "borderWidth": {
+   "type": "string",
+   "default": ""
+  },
+  "borderRadius": {
+   "type": "string",
+   "default": ""
+  },
+  "borderStyle": {
+   "type": "string",
+   "default": "none"
+  },
+  "borderColor": {
+   "type": "string",
+   "default": ""
+  },
+  "borderHColor": {
+   "type": "string",
+   "default": ""
+  },
+  "color": {
+   "type": "string",
+   "default": ""
+  },
+  "background": {
+   "type": "string",
+   "default": ""
+  },
+  "hColor": {
+   "type": "string",
+   "default": ""
+  },
+  "hBackground": {
+   "type": "string",
+   "default": ""
+  },
+  "sizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "sizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "sizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "lineHeightType": {
+   "type": "string",
+   "default": "px"
+  },
+  "lineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "lineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "lineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "classMigrate": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "childMigrate": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "block_id": {
+   "type": "string",
+   "default": ""
+  },
+  "align": {
+   "type": "string",
+   "default": "center"
+  },
+  "btn_count": {
+   "type": "string",
+   "default": "1"
+  },
+  "buttons": {
+   "type": "string",
+   "default": "$default_buttons_child"
+  },
+  "gap": {
+   "type": "number",
+   "default": "10"
+  },
+  "gapTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "gapMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "inheritGap": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "flexWrap": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "stack": {
+   "type": "string",
+   "default": "none"
+  },
+  "fontFamily": {
+   "type": "string",
+   "default": ""
+  },
+  "fontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "loadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "fontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "fontTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "fontDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "alignTablet": {
+   "type": "string",
+   "default": "center"
+  },
+  "alignMobile": {
+   "type": "string",
+   "default": "center"
+  },
+  "fontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "fontSizeTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "fontSizeTypeMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "fontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "fontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "fontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "buttonSize": {
+   "type": "string",
+   "default": "default"
+  },
+  "buttonSizeTablet": {
+   "type": "string",
+   "default": "default"
+  },
+  "buttonSizeMobile": {
+   "type": "string",
+   "default": "default"
+  },
+  "topPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "rightPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "leftPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "topTabletPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "rightTabletPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomTabletPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "leftTabletPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "topMobilePadding": {
+   "type": "string",
+   "default": ""
+  },
+  "rightMobilePadding": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomMobilePadding": {
+   "type": "string",
+   "default": ""
+  },
+  "leftMobilePadding": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "mobilePaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "tabletPaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "topMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "rightMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "leftMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "topMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "rightMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "leftMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "topMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "rightMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "leftMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "marginType": {
+   "type": "string",
+   "default": "px"
+  },
+  "marginLink": {
+   "type": "string",
+   "default": ""
+  },
+  "verticalAlignment": {
+   "type": "string",
+   "default": ""
+  },
+  "fontLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "fontLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "fontLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "fontLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "globalBlockStyleName": {
+   "type": "string",
+   "default": ""
+  },
+  "globalBlockStyleId": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 84,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

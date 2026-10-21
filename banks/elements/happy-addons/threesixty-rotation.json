@@ -1,0 +1,240 @@
+{
+ "kind": "elementor-widget",
+ "name": "threesixty-rotation",
+ "title": "360 Rotation",
+ "categories": [],
+ "keywords": [
+  "360 deg view",
+  "threesixty-rotation",
+  "360",
+  "slider",
+  "slider"
+ ],
+ "file": "happy-elementor-addons/widgets/threesixty-rotation/widget.php",
+ "sections": [
+  {
+   "id": "_section_threesixty_rotation",
+   "label": "Threesixty Rotation",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "images",
+     "label": "Gallery",
+     "type": "GALLERY"
+    }
+   ]
+  },
+  {
+   "id": "_section_threesixty_rotation_setting",
+   "label": "Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "auto_play",
+     "label": "Autoplay",
+     "type": "SELECT",
+     "options": [
+      "autoplay",
+      "button",
+      "none"
+     ]
+    },
+    {
+     "name": "button_align",
+     "label": "Button Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "magnify",
+     "label": "Magnify",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "zoom",
+     "label": "Magnify Zoom",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "_style_threesixty_rotation_wrapper",
+   "label": "Wrapper",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "wrapper_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "wrapper_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "wrapper_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "wrapper_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "wrapper_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "wrapper_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "sticky_title_position_left",
+     "label": "Sticky Title Position Left",
+     "type": "HIDDEN",
+     "styles": true
+    },
+    {
+     "name": "sticky_title_position_right",
+     "label": "Sticky Title Position Right",
+     "type": "HIDDEN",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_style_threesixty_rotation_magnify",
+   "label": "Magnify",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "glass_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "glass_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "glass_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "glass_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "glass_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "_style_threesixty_rotation_button",
+   "label": "AutoPlay Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "_tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "button_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "_tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "button_hover_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_hover_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "button_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "button_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_space_top",
+     "label": "Space Top",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 29,
+  "responsive": 4
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

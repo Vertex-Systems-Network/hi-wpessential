@@ -1,0 +1,701 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-post-grid",
+ "title": "Post Grid",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "post",
+  "posts",
+  "grid",
+  "ea post grid",
+  "ea posts grid",
+  "blog post",
+  "article",
+  "custom posts",
+  "masonry",
+  "content views",
+  "blog view",
+  "content marketing",
+  "blogger",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Post_Grid.php",
+ "sections": [
+  {
+   "id": "eael_section_post_grid_layout",
+   "label": "Layout",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_dynamic_template_Layout",
+     "label": "Template Layout",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_post_grid_preset_style",
+     "label": "Skin",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "layout_mode",
+     "label": "Layout",
+     "type": "CHOOSE",
+     "options": [
+      "grid",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_post_grid_columns",
+     "label": "Column",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "eael-col-1",
+      "title",
+      "text"
+     ]
+    },
+    {
+     "name": "show_load_more",
+     "label": "Load More",
+     "type": "CHOOSE",
+     "options": [
+      "no",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "load_more_infinityscroll_offset",
+     "label": "Scroll Offset (px)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "show_load_more_text",
+     "label": "Label Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_show_title",
+     "label": "Show",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "title_tag",
+     "label": "HTML Tag",
+     "type": "CHOOSE",
+     "options": [
+      "h1",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_title_length",
+     "label": "Length",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_excerpt_heading",
+     "label": "Excerpt",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_show_excerpt",
+     "label": "Show",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_excerpt_length",
+     "label": "Length",
+     "type": "NUMBER"
+    },
+    {
+     "name": "excerpt_expanison_indicator",
+     "label": "Expansion Indicator",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_read_more_text_heading",
+     "label": "Read More Text",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_show_read_more_button",
+     "label": "Show",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "read_more_button_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_post_terms_heading",
+     "label": "Post Terms",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_show_post_terms",
+     "label": "Show",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_",
+     "label": "Terms From",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_post_terms",
+     "label": "Terms From",
+     "type": "SELECT",
+     "options": [
+      "category",
+      "tags"
+     ]
+    },
+    {
+     "name": "eael_post_terms_max_length",
+     "label": "Max Terms to Show",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_post_terms_separator",
+     "label": "Terms Separator",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_post_terms_on_image_hover",
+     "label": "Terms on Image Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_meta_data_heading",
+     "label": "Meta Data",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_show_meta",
+     "label": "Show",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "meta_position",
+     "label": "Meta Position",
+     "type": "SELECT",
+     "options": [
+      "meta-entry-header",
+      "meta-entry-footer"
+     ]
+    },
+    {
+     "name": "eael_show_avatar",
+     "label": "Avatar",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_show_author",
+     "label": "Author Name",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_show_avatar_two",
+     "label": "Avatar",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_show_author_two",
+     "label": "Author Name",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_show_author_three",
+     "label": "Author Name",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_show_date",
+     "label": "Date",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_post_image_section",
+   "label": "Image",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_show_image",
+     "label": "Show",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "image",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "enable_postgrid_image_ratio",
+     "label": "Manage Ratio",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "postgrid_image_ratio",
+     "label": "Ratio",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "postgrid_image_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_show_fallback_img_all",
+     "label": "Fallback",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_post_carousel_fallback_img_all",
+     "label": "",
+     "type": "MEDIA"
+    }
+   ]
+  },
+  {
+   "id": "section_post_grid_links",
+   "label": "Link Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "image_link",
+     "label": "Image",
+     "type": "HEADING"
+    },
+    {
+     "name": "image_link_nofollow",
+     "label": "No Follow",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "image_link_target_blank",
+     "label": "Target Blank",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "title_link",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "title_link_nofollow",
+     "label": "No Follow",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "title_link_target_blank",
+     "label": "Target Blank",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "read_more_link",
+     "label": "Read More",
+     "type": "HEADING"
+    },
+    {
+     "name": "read_more_link_nofollow",
+     "label": "No Follow",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "read_more_link_target_blank",
+     "label": "Target Blank",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_post_grid_style",
+   "label": "Item",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_post_grid_style_three_alert",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eael_post_grid_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_spacing",
+     "label": "Space Between Items",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_post_grid_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_post_grid_thumbnail_style",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_post_grid_thumbnail_radius",
+     "label": "Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_meta_date_style",
+   "label": "Meta Date",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_post_grid_meta_date_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_post_grid_meta_date_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_meta_date_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_post_grid_meta_date_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_meta_date_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_meta_style_style",
+   "label": "Meta Data",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_post_grid_meta_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_meta_color_date",
+     "label": "Date Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_meta_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_post_grid_meta_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_post_grid_meta_header_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_post_grid_meta_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_meta_footer_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_typography",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_post_grid_title_style",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_post_grid_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_title_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_title_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_post_grid_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_post_grid_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_excerpt_style",
+     "label": "Excerpt Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_post_grid_excerpt_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_excerpt_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_post_grid_excerpt_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "content_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_excerpt_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_meta_terms_style",
+   "label": "Terms",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_post_grid_terms_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_terms_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_post_grid_terms_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_post_carousel_terms_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_terms_style",
+   "label": "Terms",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "terms_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "terms_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "terms_color_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "terms_spacing",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_hover_card_styles",
+   "label": "Hover Card",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_post_grid_hover_animation",
+     "label": "Animation",
+     "type": "SELECT",
+     "options": [
+      "none",
+      "fade-in",
+      "zoom-in",
+      "slide-up"
+     ]
+    },
+    {
+     "name": "eael_post_grid_bg_hover_icon_new",
+     "label": "Hover Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "eael_post_grid_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_hover_bg_radius",
+     "label": "Cards Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_hover_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_post_grid_hover_icon_fontsize",
+     "label": "Icon font size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 11,
+  "controls": 95,
+  "responsive": 12
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

@@ -1,0 +1,175 @@
+{
+ "kind": "elementor-widget",
+ "name": "site-title",
+ "title": "Site Title",
+ "categories": [],
+ "keywords": [
+  "Site_Title"
+ ],
+ "file": "header-footer-elementor/inc/widgets-manager/widgets/site-title/site-title.php",
+ "sections": [
+  {
+   "id": "section_general_fields",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "before",
+     "label": "Before Title Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "after",
+     "label": "After Title Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "icon_indent",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "custom_link",
+     "label": "Link",
+     "type": "SELECT",
+     "options": [
+      "custom",
+      "default"
+     ]
+    },
+    {
+     "name": "heading_link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "size",
+     "label": "Size",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "small",
+      "medium",
+      "large",
+      "xl",
+      "xxl"
+     ]
+    },
+    {
+     "name": "heading_tag",
+     "label": "HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6"
+     ]
+    },
+    {
+     "name": "heading_text_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_heading_typography",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "heading_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "heading_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "heading_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "blend_mode",
+     "label": "Blend Mode",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "multiply",
+      "screen",
+      "overlay",
+      "darken",
+      "lighten",
+      "color-dodge",
+      "saturation",
+      "color",
+      "difference",
+      "exclusion",
+      "hue",
+      "luminosity"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_icon",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icons_hover_color",
+     "label": "Icon Hover Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_pro_features_field",
+   "label": "Go Pro for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "uae_pro_promotion_notice",
+     "label": "",
+     "type": "NOTICE"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 16,
+  "responsive": 1
+ },
+ "source": "ultimate-addons-hfe",
+ "source_label": "Ultimate Addons (Header Footer Elementor)"
+}

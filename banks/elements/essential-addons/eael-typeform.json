@@ -1,0 +1,140 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-typeform",
+ "title": "Typeform",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "ea contact form",
+  "ea typeform",
+  "ea type form",
+  "ea type forms",
+  "contact form",
+  "form styler",
+  "elementor form",
+  "feedback",
+  "typeform",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/TypeForm.php",
+ "sections": [
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "section_info_box",
+   "label": "Typeform",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_typeform_list",
+     "label": "Typeform",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_typeform_hideheaders",
+     "label": "Hide Header",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_typeform_hidefooter",
+     "label": "Hide Footer",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_container_style",
+   "label": "Form Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_typeform_background",
+     "label": "Form Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_typeform_alignment",
+     "label": "Form Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "default",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_typeform_max_width",
+     "label": "Form Max Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_typeform_max_height",
+     "label": "Form Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_typeform_opacity",
+     "label": "Opacity",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_typeform_margin",
+     "label": "Form Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_typeform_padding",
+     "label": "Form Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_type_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_type_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_typeform_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 14,
+  "responsive": 5
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

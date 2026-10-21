@@ -1,0 +1,1431 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-woo-checkout",
+ "title": "Woo Checkout",
+ "categories": [
+  "essential-addons-elementor",
+  "woocommerce-elements"
+ ],
+ "keywords": [
+  "ea woo checkout",
+  "woocommerce",
+  "checkout",
+  "woocommerce checkout",
+  "woocommerce split checkout",
+  "split checkout",
+  "multi steps checkout",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Woo_Checkout.php",
+ "sections": [
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_general_settings",
+   "label": "General Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_layout",
+     "label": "Layout",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "eael_woo_checkout_pro_enable_warning",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_order_review_settings",
+   "label": "Order Details",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_order_details_title",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_cart_update_enable",
+     "label": "Enable Cart Update",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ea_woo_checkout_table_header_text",
+     "label": "Change Labels",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ea_woo_checkout_table_product_text",
+     "label": "Product Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_table_quantity_text",
+     "label": "Quantity Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_table_price_text",
+     "label": "Price Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_table_subtotal_text",
+     "label": "Subtotal Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_table_shipping_text",
+     "label": "Shipping Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_table_total_text",
+     "label": "Total Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_shop_link",
+     "label": "Shop Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ea_woo_checkout_shop_link_text",
+     "label": "Link Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_settings",
+   "label": "Coupon",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_coupon_hide",
+     "label": "Hide",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_link_text",
+     "label": "Link Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_form_content",
+     "label": "Form Content",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_placeholder_text",
+     "label": "Placeholder Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_button_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_login_settings",
+   "label": "Login",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ea_section_woo_login_show",
+     "label": "Show Preview of Login",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ea_section_woo_login_show_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "ea_woo_checkout_login_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ea_woo_checkout_login_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_login_message",
+     "label": "Message",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "ea_woo_checkout_login_link_text",
+     "label": "Link Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_customer_details_settings",
+   "label": "Customer Details",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_billing_title",
+     "label": "Billing Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_shipping_title",
+     "label": "Shipping Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_additional_info_title",
+     "label": "Additional Info Title",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_reordering_fields",
+   "label": "Billing/Shipping Fields",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_enable_checkout_fields_reorder",
+     "label": "Enable Reordering",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_new_field_appearing_position",
+     "label": "Unlisted Fields Appears ",
+     "type": "SELECT",
+     "options": [
+      "before",
+      "after"
+     ]
+    },
+    {
+     "name": "eael_new_checkout_fields_not_found",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "ea_woo_checkout_reorder_billing_fields_tab",
+     "label": "Billing",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_reorder_billing_fields_tab_description",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "field_label",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "field_key",
+     "label": "Title",
+     "type": "HIDDEN"
+    },
+    {
+     "name": "field_class",
+     "label": "Field Spacing",
+     "type": "SELECT",
+     "options": [
+      "form-row-first",
+      "form-row-last",
+      "form-row-wide"
+     ]
+    },
+    {
+     "name": "field_placeholder",
+     "label": "Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_billing_fields_list",
+     "label": "",
+     "type": "REPEATER"
+    },
+    {
+     "name": "ea_woo_checkout_reorder_shipping_fields_tab",
+     "label": "Shipping",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_reorder_shipping_fields_tab_description",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "ea_shipping_fields_list",
+     "label": "",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_payment_settings",
+   "label": "Payment",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_payment_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "ea_woo_checkout_place_order_text",
+     "label": "Button text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_section_title",
+   "label": "Section Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_section_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_section_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_section_bottom_gap",
+     "label": "Bottom Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_order_review_style",
+   "label": "Order Details",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_order_review_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_head",
+     "label": "Table Head",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_header_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_header_color",
+     "label": "Header Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_header_top_spacing",
+     "label": "Top Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_body",
+     "label": "Table Body",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_row_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_row_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_row_color_pro",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_row_border_color_pro",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_row_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_row_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_row_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_row_gap",
+     "label": "Row Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer",
+     "label": "Table Footer",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_color_pro",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_link_color_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_link_color",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_link_color_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_link_color_hover",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_link_color_tab_normal_pro",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_link_color_pro",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_link_color_tab_hover_pro",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_link_color_hover_pro",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_footer_top_spacing",
+     "label": "Top Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_total",
+     "label": "Total",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_total_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_order_review_total_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_order_review_shop_link",
+     "label": "Shop Link",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_shop_link_color_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_shop_link_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eea_woo_checkout_shop_link_color_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_shop_link_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_shop_link_top_spacing",
+     "label": "Top Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_login_style",
+   "label": "Login",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_login_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_login_bg_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ea_woo_checkout_login_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_icon_position",
+     "label": "Icon Position",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_links_color",
+     "label": "Links Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_links_color_hover",
+     "label": "Links Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_form",
+     "label": "Form",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_login_form_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_form_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_form_border_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ea_woo_checkout_login_form_label",
+     "label": "Form Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_login_form_label_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_login_form_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_btn",
+     "label": "Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_typo",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_login_btn_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_coupon_style",
+   "label": "Coupon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_coupon_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_bg_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_icon_position",
+     "label": "Icon Position",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_links_color",
+     "label": "Links Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_links_color_hover",
+     "label": "Links Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_form",
+     "label": "Form",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_form_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_form_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_form_border_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn",
+     "label": "Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_typo",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_coupon_btn_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_notices_style",
+   "label": "Notices",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ea_section_woo_checkout_notices_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_notices_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ea_woo_checkout_notices_style_tab_info",
+     "label": "Info",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_notices_info_bg_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_notices_info_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_notices_info_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_notices_style_tab_error",
+     "label": "Error",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_notices_error_bg_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_notices_error_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_notices_error_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_notices_style_tab_message",
+     "label": "Message",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_notices_message_bg_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_notices_message_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_notices_message_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_notices_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_notices_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ea_woo_checkout_notices_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_customer_details",
+   "label": "Customer Details",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_customer_details_label",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_label_spacing",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_field_required",
+     "label": "Required (*)",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_required_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_fields",
+     "label": "Fields",
+     "type": "HEADING"
+    },
+    {
+     "name": "inputs_height",
+     "label": "Input Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_field_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_field_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_field_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_field_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_field_tab_normal_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_field_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_field_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_customer_details_field_spacing",
+     "label": "Bottom Spacing (PX)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_pickup_point_style",
+   "label": "Pickup Point",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_pickup_point_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_pickup_point_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_pickup_point_btn_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_pickup_point_btn_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_pickup_point_btn_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ea_woo_checkout_pickup_point_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_pickup_point_btn_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_pickup_point_btn_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_pickup_point_btn_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ea_section_woo_checkout_payment_style",
+   "label": "Payment",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ea_woo_checkout_payment_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_label",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_payment_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_payment_label_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_payment_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_label_tab_hover",
+     "label": "Selected",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_payment_label_color_select",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_info",
+     "label": "Methods Info",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_payment_methods_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_methods_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_methods_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_privacy_policy",
+     "label": "Privacy Policy",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_privacy_policy_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_privacy_policy_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_privacy_policy_link_color",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_privacy_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn",
+     "label": "Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ea_woo_checkout_payment_btn_top_spacing",
+     "label": "Top Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 16,
+  "controls": 222,
+  "responsive": 31
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

@@ -1,0 +1,90 @@
+{
+ "kind": "elementor-widget",
+ "name": "rating",
+ "title": "Rating",
+ "categories": [],
+ "keywords": [
+  "star",
+  "rating",
+  "review",
+  "score",
+  "scale"
+ ],
+ "file": "elementor/includes/widgets/rating.php",
+ "sections": [
+  {
+   "id": "section_icon_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_gap",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_unmarked_color",
+     "label": "Unmarked Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_rating",
+   "label": "Rating",
+   "tab": "",
+   "controls": [
+    {
+     "name": "rating_scale",
+     "label": "Rating Scale",
+     "type": "SLIDER"
+    },
+    {
+     "name": "rating_value",
+     "label": "Rating",
+     "type": "NUMBER"
+    },
+    {
+     "name": "rating_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "icon_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 8,
+  "responsive": 3
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

@@ -1,0 +1,273 @@
+{
+ "kind": "elementor-widget",
+ "name": "site-logo",
+ "title": "Site Logo",
+ "categories": [
+  "hfe-widgets"
+ ],
+ "keywords": [
+  "Site_Logo"
+ ],
+ "file": "header-footer-elementor/inc/widgets-manager/widgets/site-logo/site-logo.php",
+ "sections": [
+  {
+   "id": "section_site_image",
+   "label": "Site Logo",
+   "tab": "",
+   "controls": [
+    {
+     "name": "site_logo_fallback",
+     "label": "Custom Image",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "custom_image",
+     "label": "Add Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "site_logo_size",
+     "label": "Image Size",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "caption_source",
+     "label": "Caption",
+     "type": "SELECT",
+     "options": [
+      "no",
+      "yes"
+     ]
+    },
+    {
+     "name": "caption",
+     "label": "Custom Caption",
+     "type": "TEXT"
+    },
+    {
+     "name": "link_to",
+     "label": "Link",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "none",
+      "file",
+      "custom"
+     ]
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "open_lightbox",
+     "label": "Lightbox",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "yes",
+      "no"
+     ]
+    },
+    {
+     "name": "view",
+     "label": "View",
+     "type": "HIDDEN"
+    }
+   ]
+  },
+  {
+   "id": "section_style_site_logo_image",
+   "label": "Site logo",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "space",
+     "label": "Max Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "separator_panel_style",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "site_logo_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "site_logo_image_border",
+     "label": "Border Style",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "none",
+      "solid",
+      "double",
+      "dotted",
+      "dashed"
+     ]
+    },
+    {
+     "name": "site_logo_image_border_size",
+     "label": "Border Width",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "site_logo_image_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "image_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "opacity",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "opacity_hover",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "background_hover_transition",
+     "label": "Transition Duration",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "css_filters_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover_animation",
+     "label": "Hover Animation",
+     "type": "HOVER_ANIMATION"
+    }
+   ]
+  },
+  {
+   "id": "section_style_caption",
+   "label": "Caption",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "caption_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "caption_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "caption_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "caption_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "caption_space",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_pro_features_field",
+   "label": "Go Pro for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "uae_pro_promotion_notice",
+     "label": "",
+     "type": "NOTICE"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 34,
+  "responsive": 6
+ },
+ "source": "ultimate-addons-hfe",
+ "source_label": "Ultimate Addons (Header Footer Elementor)"
+}

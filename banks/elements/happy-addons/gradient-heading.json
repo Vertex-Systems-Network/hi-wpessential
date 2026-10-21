@@ -1,0 +1,107 @@
+{
+ "kind": "elementor-widget",
+ "name": "gradient-heading",
+ "title": "Gradient Heading",
+ "categories": [],
+ "keywords": [
+  "gradient",
+  "advanced",
+  "heading",
+  "title",
+  "colorful"
+ ],
+ "file": "happy-elementor-addons/widgets/gradient-heading/widget.php",
+ "sections": [
+  {
+   "id": "_section_title",
+   "label": "Title",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "title",
+     "label": "Title",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "title_tag",
+     "label": "Title HTML Tag",
+     "type": "CHOOSE",
+     "options": [
+      "h1",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_title",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Foreground"
+    },
+    {
+     "name": "title",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title",
+     "label": "Text Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "blend_mode",
+     "label": "Blend Mode",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "multiply",
+      "screen",
+      "overlay",
+      "darken",
+      "lighten",
+      "color-dodge",
+      "saturation",
+      "color",
+      "difference",
+      "exclusion",
+      "hue",
+      "luminosity"
+     ]
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 8,
+  "responsive": 1
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

@@ -1,0 +1,82 @@
+{
+ "kind": "block",
+ "name": "generateblocks/text",
+ "title": "Text",
+ "categories": [
+  "generateblocks"
+ ],
+ "keywords": [
+  "text",
+  "heading",
+  "headline",
+  "paragraph"
+ ],
+ "description": "A text element where you can choose your own tag name, content, and styles.",
+ "file": "generateblocks/dist/blocks/text/block.json",
+ "attributes": {
+  "uniqueId": {
+   "type": "string",
+   "default": ""
+  },
+  "tagName": {
+   "type": "string",
+   "default": "",
+   "enum": [
+    "p",
+    "span",
+    "div",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "a",
+    "button",
+    "figcaption",
+    "li"
+   ]
+  },
+  "content": {
+   "type": "rich-text"
+  },
+  "styles": {
+   "type": "object",
+   "default": {}
+  },
+  "css": {
+   "type": "string",
+   "default": ""
+  },
+  "globalClasses": {
+   "type": "array",
+   "default": []
+  },
+  "htmlAttributes": {
+   "type": "object",
+   "default": {}
+  },
+  "icon": {
+   "type": "string"
+  },
+  "iconLocation": {
+   "type": "string",
+   "default": "before"
+  },
+  "iconOnly": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "align": false,
+  "className": false,
+  "splitting": true
+ },
+ "counts": {
+  "attributes": 10,
+  "supports": 3
+ },
+ "source": "generateblocks",
+ "source_label": "GenerateBlocks"
+}

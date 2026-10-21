@@ -1,0 +1,74 @@
+{
+ "kind": "block",
+ "name": "core/code",
+ "title": "Code",
+ "categories": [
+  "text"
+ ],
+ "keywords": [],
+ "description": "Display code snippets that respect your spacing and tabs.",
+ "file": "wp/wordpress/wp-includes/blocks/code/block.json",
+ "attributes": {
+  "content": {
+   "type": "rich-text"
+  }
+ },
+ "supports": {
+  "align": [
+   "wide"
+  ],
+  "anchor": true,
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "spacing": {
+   "margin": [
+    "top",
+    "bottom"
+   ],
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "margin": false,
+    "padding": false
+   }
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "width": true,
+    "color": true
+   }
+  },
+  "color": {
+   "text": true,
+   "background": true,
+   "gradients": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 1,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

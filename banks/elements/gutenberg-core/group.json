@@ -1,0 +1,123 @@
+{
+ "kind": "block",
+ "name": "core/group",
+ "title": "Group",
+ "categories": [
+  "design"
+ ],
+ "keywords": [
+  "container",
+  "wrapper",
+  "row",
+  "section"
+ ],
+ "description": "Gather blocks in a layout container.",
+ "file": "wp/wordpress/wp-includes/blocks/group/block.json",
+ "attributes": {
+  "tagName": {
+   "type": "string",
+   "default": "div"
+  },
+  "templateLock": {
+   "type": [
+    "string",
+    "boolean"
+   ],
+   "enum": [
+    "all",
+    "insert",
+    "contentOnly",
+    false
+   ]
+  }
+ },
+ "supports": {
+  "__experimentalOnEnter": true,
+  "__experimentalOnMerge": true,
+  "__experimentalSettings": true,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "ariaLabel": true,
+  "html": false,
+  "background": {
+   "backgroundImage": true,
+   "backgroundSize": true,
+   "gradient": true,
+   "__experimentalDefaultControls": {
+    "backgroundImage": true,
+    "gradient": true
+   }
+  },
+  "color": {
+   "gradients": true,
+   "heading": true,
+   "button": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "shadow": true,
+  "spacing": {
+   "margin": [
+    "top",
+    "bottom"
+   ],
+   "padding": true,
+   "blockGap": true,
+   "__experimentalDefaultControls": {
+    "padding": true,
+    "blockGap": true
+   }
+  },
+  "dimensions": {
+   "minHeight": true,
+   "minWidth": true
+  },
+  "__experimentalBorder": {
+   "color": true,
+   "radius": true,
+   "style": true,
+   "width": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "radius": true,
+    "style": true,
+    "width": true
+   }
+  },
+  "position": {
+   "sticky": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "layout": {
+   "allowSizingOnChildren": true
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "allowedBlocks": true
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 18
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

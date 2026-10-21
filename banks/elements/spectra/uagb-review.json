@@ -1,0 +1,482 @@
+{
+ "kind": "block",
+ "name": "uagb/review",
+ "title": "Review",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/review/attributes.php",
+ "attributes": {
+  "block_id": {
+   "type": "string",
+   "default": ""
+  },
+  "enableSchema": {
+   "type": "string",
+   "default": ""
+  },
+  "overallAlignment": {
+   "type": "string",
+   "default": "left"
+  },
+  "authorName": {
+   "type": "string",
+   "default": ""
+  },
+  "itemName": {
+   "type": "string",
+   "default": ""
+  },
+  "description": {
+   "type": "string",
+   "default": ""
+  },
+  "imgID": {
+   "type": "string",
+   "default": ""
+  },
+  "imgAlt": {
+   "type": "string",
+   "default": ""
+  },
+  "imgURL": {
+   "type": "string",
+   "default": ""
+  },
+  "items": {
+   "type": "string",
+   "default": ""
+  },
+  "parts": {
+   "type": "string",
+   "default": ""
+  },
+  "starCount": {
+   "type": "string",
+   "default": ""
+  },
+  "summaryTitle": {
+   "type": "string",
+   "default": ""
+  },
+  "summaryDescription": {
+   "type": "string",
+   "default": ""
+  },
+  "inactiveStarColor": {
+   "type": "string",
+   "default": ""
+  },
+  "activeStarColor": {
+   "type": "string",
+   "default": ""
+  },
+  "titleAlign": {
+   "type": "string",
+   "default": ""
+  },
+  "authorAlign": {
+   "type": "string",
+   "default": ""
+  },
+  "descriptionAlign": {
+   "type": "string",
+   "default": ""
+  },
+  "sku": {
+   "type": "string",
+   "default": ""
+  },
+  "identifier": {
+   "type": "string",
+   "default": ""
+  },
+  "identifierType": {
+   "type": "string",
+   "default": ""
+  },
+  "offerType": {
+   "type": "string",
+   "default": ""
+  },
+  "offerCurrency": {
+   "type": "string",
+   "default": ""
+  },
+  "offerStatus": {
+   "type": "string",
+   "default": ""
+  },
+  "offerPrice": {
+   "type": "string",
+   "default": ""
+  },
+  "offerExpiry": {
+   "type": "string",
+   "default": ""
+  },
+  "datepublish": {
+   "type": "string",
+   "default": ""
+  },
+  "ctaLink": {
+   "type": "string",
+   "default": ""
+  },
+  "ctaTarget": {
+   "type": "string",
+   "default": ""
+  },
+  "author": {
+   "type": "string",
+   "default": ""
+  },
+  "brand": {
+   "type": "string",
+   "default": ""
+  },
+  "rTitle": {
+   "type": "string",
+   "default": ""
+  },
+  "rContent": {
+   "type": "string",
+   "default": ""
+  },
+  "rAuthor": {
+   "type": "string",
+   "default": ""
+  },
+  "headingTag": {
+   "type": "string",
+   "default": ""
+  },
+  "mainimage": {
+   "type": "string",
+   "default": ""
+  },
+  "imgSize": {
+   "type": "string",
+   "default": ""
+  },
+  "showFeature": {
+   "type": "string",
+   "default": ""
+  },
+  "starColor": {
+   "type": "string",
+   "default": "#f0ad4e"
+  },
+  "selectedStars": {
+   "type": "string",
+   "default": ""
+  },
+  "descColor": {
+   "type": "string",
+   "default": ""
+  },
+  "titleColor": {
+   "type": "string",
+   "default": ""
+  },
+  "contentColor": {
+   "type": "string",
+   "default": ""
+  },
+  "headFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "headFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "headFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "headFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "headFontFamily": {
+   "type": "string",
+   "default": ""
+  },
+  "headFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "headLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "headLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "headLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "headLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "headLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "subHeadFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "subHeadFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadFontFamily": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "subHeadLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "contentLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "contentFontFamily": {
+   "type": "string",
+   "default": ""
+  },
+  "contentFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "contentFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "contentLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "contentFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "contentFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "contentFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "contentLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "contentLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "contentLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "contentVrPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "contentHrPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingTopMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBottomMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingRightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingLeftMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingTopTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBottomTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingRightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingLeftTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "spacingLink": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "mobilePaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "tabletPaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "authorColor": {
+   "type": "string",
+   "default": ""
+  },
+  "summaryColor": {
+   "type": "string",
+   "default": ""
+  },
+  "starActiveColor": {
+   "type": "string",
+   "default": "#ccd6df"
+  },
+  "starOutlineColor": {
+   "type": "string",
+   "default": ""
+  },
+  "headTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "headDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "contentTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "contentDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "headFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "contentFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "headLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "headLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "headLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "headLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "subHeadLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "contentLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "contentLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "contentLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "contentLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 116,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

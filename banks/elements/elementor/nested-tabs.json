@@ -1,0 +1,434 @@
+{
+ "kind": "elementor-widget",
+ "name": "nested-tabs",
+ "title": "Tabs",
+ "categories": [],
+ "keywords": [
+  "nested",
+  "tabs",
+  "accordion",
+  "toggle"
+ ],
+ "file": "elementor/modules/nested-tabs/widgets/nested-tabs.php",
+ "sections": [
+  {
+   "id": "section_tabs",
+   "label": "Tabs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "tab_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "tab_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "tab_icon_active",
+     "label": "Active Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "element_id",
+     "label": "CSS ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "tabs",
+     "label": "Tabs Items",
+     "type": "Control_Nested_Repeater::CONTROL_TYPE"
+    },
+    {
+     "name": "tabs_direction",
+     "label": "Direction",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "block-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "tabs_justify_horizontal",
+     "label": "Justify",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "tabs_justify_vertical",
+     "label": "Justify",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "tabs_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "title_alignment",
+     "label": "Align Title",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_tabs_responsive",
+   "label": "Additional Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "horizontal_scroll",
+     "label": "Horizontal Scroll",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "disable",
+      "enable"
+     ]
+    },
+    {
+     "name": "breakpoint_selector",
+     "label": "Breakpoint",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "section_tabs_style",
+   "label": "Tabs",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "tabs_title_space_between",
+     "label": "Gap between tabs",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tabs_title_spacing",
+     "label": "Distance from content",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tabs_title_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "tabs_title_background_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "tabs_title_border",
+     "label": "Border Color",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "tabs_title_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "tabs_title_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "tabs_title_background_color_hover",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "tabs_title_border_hover",
+     "label": "Border Color",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "tabs_title_box_shadow_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "hover_animation",
+     "label": "Hover Animation",
+     "type": "HOVER_ANIMATION"
+    },
+    {
+     "name": "tabs_title_transition_duration",
+     "label": "Transition Duration",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "tabs_title_active",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "tabs_title_background_color_active",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "tabs_title_border_active",
+     "label": "Border Color",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "tabs_title_box_shadow_active",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "tabs_title_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_title_style",
+   "label": "Titles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "title_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "title_text_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "title_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "title_text_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_text_shadow_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "title_text_stroke_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "title_active",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "title_text_color_active",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_text_shadow_active",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "title_text_stroke_active",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    }
+   ]
+  },
+  {
+   "id": "icon_section_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_position",
+     "label": "Position",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "block-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_section_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_section_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "icon_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_section_active",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "icon_color_active",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_box_style",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "box_background_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "box_border",
+     "label": "Border Color",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "box_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "box_shadow_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 57,
+  "responsive": 15
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

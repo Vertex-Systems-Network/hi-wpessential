@@ -1,0 +1,270 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-svg-drawer",
+ "title": "SVG Draw",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium svg draw",
+  "icon",
+  "animate",
+  "custom",
+  "library",
+  "animation"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-svg-drawer.php",
+ "sections": [
+  {
+   "id": "general_section",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "icon_type",
+     "label": "SVG Type",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "font_icon",
+     "label": "Select Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "custom_svg",
+     "label": "SVG Code",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "custom_svg_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "icon_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "animate_icon",
+     "label": "Draw SVG",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "animation_reverse",
+     "label": "Reverse Animation",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "animate_start_point",
+     "label": "Start Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "animate_end_point",
+     "label": "End Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "scroll_action",
+     "label": "How this animation should work?",
+     "type": "SELECT"
+    },
+    {
+     "name": "frames",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "yoyo",
+     "label": "Yoyo Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "animate_trigger",
+     "label": "When the draw should start?",
+     "type": "SELECT"
+    },
+    {
+     "name": "animate_offset",
+     "label": "Offset (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "draw_speed",
+     "label": "Decrease Draw Speed By",
+     "type": "SLIDER"
+    },
+    {
+     "name": "animation_sync",
+     "label": "Draw All Paths Together",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "anim_rev",
+     "label": "Restart Animation on Scroll Up",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "svg_fill",
+     "label": "Fill Color After Draw",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "svg_fill_speed",
+     "label": "Fill Color Speed",
+     "type": "SLIDER"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "magic_scroll",
+     "label": "Use With Magic Scroll",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "icon_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "fill_color",
+     "label": "Fill Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "svg_stroke",
+     "label": "After Draw Stroke Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "svg_color",
+     "label": "After Draw Fill Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "path_width",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "path_dashes",
+     "label": "Space Between Dashes",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "icon_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "icon_box",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "icon_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "icon_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "icon_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "icon_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "blend_mode",
+     "label": "Blend Mode",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 40,
+  "responsive": 6
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

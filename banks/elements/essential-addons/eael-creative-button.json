@@ -1,0 +1,332 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-creative-button",
+ "title": "Creative Button",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "button",
+  "ea button",
+  "creative button",
+  "ea creative button",
+  "cta",
+  "call to action",
+  "ea",
+  "marketing button",
+  "essential addons",
+  "Glassmorphism",
+  "Liquid Glass Effect",
+  "Frost Effect"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Creative_Button.php",
+ "sections": [
+  {
+   "id": "eael_section_creative_button_content",
+   "label": "Button Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "creative_button_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "creative_button_secondary_text",
+     "label": "Button Secondary Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "creative_button_link_url",
+     "label": "Link URL",
+     "type": "URL"
+    },
+    {
+     "name": "eael_creative_button_icon_new",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "eael_creative_button_icon_rotate",
+     "label": "Rotation",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_creative_button_remove_svg_color",
+     "label": "Remove Default SVG Color",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_creative_button_icon_alignment",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "left",
+      "right"
+     ]
+    },
+    {
+     "name": "eael_creative_button_icon_indent",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_wd_liquid_glass_effect_switch",
+     "label": "Enable Liquid Glass Effects",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_creative_button_settings",
+   "label": "Button Effects &amp; Styles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "creative_button_effect",
+     "label": "Set Button Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_creative_button_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_primary_typography",
+     "label": "Primary",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_creative_button_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "button_secondary_typography",
+     "label": "Secondary",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_creative_button_secondary_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_creative_button_alignment",
+     "label": "Button Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_creative_button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_creative_button_padding",
+     "label": "Button Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "use_gradient_background",
+     "label": "Use Gradient Background",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_creative_button_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_creative_button_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_creative_button_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_creative_button_gradient_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_creative_button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_creative_button_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_creative_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_creative_button_hover_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_creative_button_hover_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_creative_button_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_creative_button_hover_gradient_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_creative_button_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_wd_liquid_glass_effect_section",
+   "label": "Liquid Glass Effects",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_wd_liquid_glass_effect_notice",
+     "label": "",
+     "type": "ALERT"
+    },
+    {
+     "name": "eael_wd_liquid_glass_effect",
+     "label": "Liquid Glass Presets",
+     "type": "CHOOSE",
+     "options": [
+      "effect1",
+      "title",
+      "text"
+     ]
+    },
+    {
+     "name": "eael_wd_liquid_glass_effect_pro_alert",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eael_wd_liquid_glass_effect_settings",
+     "label": "Liquid Glass Settings",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_wd_liquid_glass_effect_brightness_effect2",
+     "label": "Brightness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_wd_liquid_glass_shadow_effect",
+     "label": "Shadow Effects",
+     "type": "SELECT2",
+     "options": [
+      "effect1",
+      "effect2",
+      "effect3",
+      "effect4"
+     ]
+    },
+    {
+     "name": "eael_wd_liquid_glass_shadow_inner",
+     "label": "Shadow Settings",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_wd_liquid_glass_shadow_effect",
+     "label": "Shadow Effects",
+     "type": "SELECT2",
+     "options": [
+      "effect1",
+      "effect2",
+      "effect3",
+      "effect4"
+     ]
+    },
+    {
+     "name": "eael_wd_liquid_glass_shadow_inner",
+     "label": "Shadow Settings",
+     "type": "HEADING"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 43,
+  "responsive": 5
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

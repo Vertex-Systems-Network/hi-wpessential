@@ -1,0 +1,314 @@
+{
+ "kind": "block",
+ "name": "uagb/icon",
+ "title": "Icon",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/icon/attributes.php",
+ "attributes": {
+  "icon": {
+   "type": "string",
+   "default": ""
+  },
+  "iconSize": {
+   "type": "number",
+   "default": "40"
+  },
+  "iconSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "iconSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "iconSizeUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "align": {
+   "type": "string",
+   "default": "center"
+  },
+  "alignTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "alignMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "rotation": {
+   "type": "number",
+   "default": "0"
+  },
+  "rotationUnit": {
+   "type": "string",
+   "default": "deg"
+  },
+  "iconView": {
+   "type": "string",
+   "default": "none"
+  },
+  "iconBorderWidth": {
+   "type": "number",
+   "default": "3"
+  },
+  "iconColor": {
+   "type": "string",
+   "default": "#333"
+  },
+  "iconBorderColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBackgroundColorType": {
+   "type": "string",
+   "default": "classic"
+  },
+  "iconBackgroundColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBackgroundGradientColor": {
+   "type": "string",
+   "default": "linear-gradient(90deg, rgb(155, 81, 224) 0%, rgb(6, 147, 227) 100%)"
+  },
+  "iconHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconHoverBorderColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconHoverBackgroundColorType": {
+   "type": "string",
+   "default": "classic"
+  },
+  "iconHoverBackgroundColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconHoverBackgroundGradientColor": {
+   "type": "string",
+   "default": "linear-gradient(90deg, rgb(155, 81, 224) 0%, rgb(6, 147, 227) 100%)"
+  },
+  "iconTopPadding": {
+   "type": "number",
+   "default": "5"
+  },
+  "iconRightPadding": {
+   "type": "number",
+   "default": "5"
+  },
+  "iconBottomPadding": {
+   "type": "number",
+   "default": "5"
+  },
+  "iconLeftPadding": {
+   "type": "number",
+   "default": "5"
+  },
+  "iconTopTabletPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "iconRightTabletPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBottomTabletPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "iconLeftTabletPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "iconTopMobilePadding": {
+   "type": "string",
+   "default": ""
+  },
+  "iconRightMobilePadding": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBottomMobilePadding": {
+   "type": "string",
+   "default": ""
+  },
+  "iconLeftMobilePadding": {
+   "type": "string",
+   "default": ""
+  },
+  "iconPaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "iconMobilePaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "iconTabletPaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "iconTopMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconRightMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBottomMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconLeftMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconTopTabletMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconRightTabletMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBottomTabletMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconLeftTabletMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconTopMobileMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconRightMobileMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBottomMobileMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconLeftMobileMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "iconMarginUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "iconMobileMarginUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "iconTabletMarginUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "iconShadowColor": {
+   "type": "string",
+   "default": "#00000070"
+  },
+  "iconShadowHOffset": {
+   "type": "number",
+   "default": "0"
+  },
+  "iconShadowVOffset": {
+   "type": "number",
+   "default": "0"
+  },
+  "iconShadowBlur": {
+   "type": "number",
+   "default": "0"
+  },
+  "useSeparateBoxShadows": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "iconBoxShadowColor": {
+   "type": "string",
+   "default": "#00000070"
+  },
+  "iconBoxShadowHOffset": {
+   "type": "number",
+   "default": "0"
+  },
+  "iconBoxShadowVOffset": {
+   "type": "number",
+   "default": "0"
+  },
+  "iconBoxShadowBlur": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBoxShadowSpread": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBoxShadowPosition": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBoxShadowColorHover": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBoxShadowHOffsetHover": {
+   "type": "number",
+   "default": "0"
+  },
+  "iconBoxShadowVOffsetHover": {
+   "type": "number",
+   "default": "0"
+  },
+  "iconBoxShadowBlurHover": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBoxShadowSpreadHover": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBoxShadowPositionHover": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBorderStyle": {
+   "type": "string",
+   "default": "default"
+  },
+  "globalBlockStyleName": {
+   "type": "string",
+   "default": ""
+  },
+  "globalBlockStyleId": {
+   "type": "string",
+   "default": ""
+  },
+  "iconAccessabilityMode": {
+   "type": "string",
+   "default": ""
+  },
+  "iconAccessabilityDesc": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 74,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

@@ -1,0 +1,98 @@
+{
+ "kind": "elementor-widget",
+ "name": "audio",
+ "title": "SoundCloud",
+ "categories": [],
+ "keywords": [
+  "audio",
+  "player",
+  "soundcloud",
+  "embed"
+ ],
+ "file": "elementor/includes/widgets/audio.php",
+ "sections": [
+  {
+   "id": "section_audio",
+   "label": "SoundCloud",
+   "tab": "",
+   "controls": [
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "visual",
+     "label": "Visual Player",
+     "type": "SELECT",
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    {
+     "name": "sc_options",
+     "label": "Additional Options",
+     "type": "HEADING"
+    },
+    {
+     "name": "sc_auto_play",
+     "label": "Autoplay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sc_buying",
+     "label": "Buy Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sc_liking",
+     "label": "Like Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sc_download",
+     "label": "Download Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sc_show_artwork",
+     "label": "Artwork",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sc_sharing",
+     "label": "Share Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sc_show_comments",
+     "label": "Comments",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sc_show_playcount",
+     "label": "Play Counts",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sc_show_user",
+     "label": "Username",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "sc_color",
+     "label": "Controls Color",
+     "type": "COLOR"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 1,
+  "controls": 13,
+  "responsive": 0
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

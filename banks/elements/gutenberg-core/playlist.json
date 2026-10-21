@@ -1,0 +1,115 @@
+{
+ "kind": "block",
+ "name": "core/playlist",
+ "title": "Playlist",
+ "categories": [
+  "media"
+ ],
+ "keywords": [
+  "music",
+  "sound"
+ ],
+ "description": "Embed a simple playlist.",
+ "file": "wp/wordpress/wp-includes/blocks/playlist/block.json",
+ "attributes": {
+  "type": {
+   "type": "string",
+   "default": "audio"
+  },
+  "order": {
+   "type": "string",
+   "default": "asc"
+  },
+  "showTracklist": {
+   "type": "boolean",
+   "default": true
+  },
+  "showImages": {
+   "type": "boolean",
+   "default": true
+  },
+  "showPlayButtonArtwork": {
+   "type": "boolean",
+   "default": false
+  },
+  "showArtists": {
+   "type": "boolean",
+   "default": true
+  },
+  "showNumbers": {
+   "type": "boolean",
+   "default": true
+  },
+  "showTrackLength": {
+   "type": "boolean",
+   "default": true
+  },
+  "waveformStyle": {
+   "type": "string",
+   "default": "bars",
+   "enum": [
+    "bars",
+    "mirror",
+    "line",
+    "blocks",
+    "dots",
+    "seekbar"
+   ]
+  },
+  "waveformColor": {
+   "type": "string"
+  },
+  "waveformGradient": {
+   "type": "string"
+  },
+  "waveformBackgroundColor": {
+   "type": "string"
+  },
+  "waveformBackgroundGradient": {
+   "type": "string"
+  },
+  "caption": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "__experimentalExposeControlsToChildren": true,
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "__experimentalBorder": {
+   "color": true,
+   "style": true,
+   "width": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "style": true,
+    "width": true
+   }
+  },
+  "interactivity": true,
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 14,
+  "supports": 8
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

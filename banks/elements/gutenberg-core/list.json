@@ -1,0 +1,89 @@
+{
+ "kind": "block",
+ "name": "core/list",
+ "title": "List",
+ "categories": [
+  "text"
+ ],
+ "keywords": [
+  "bullet list",
+  "ordered list",
+  "numbered list"
+ ],
+ "description": "An organized collection of items displayed in a specific order.",
+ "file": "wp/wordpress/wp-includes/blocks/list/block.json",
+ "attributes": {
+  "ordered": {
+   "type": "boolean",
+   "default": false
+  },
+  "values": {
+   "type": "string",
+   "default": ""
+  },
+  "type": {
+   "type": "string"
+  },
+  "start": {
+   "type": "number"
+  },
+  "reversed": {
+   "type": "boolean"
+  },
+  "placeholder": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "__experimentalBorder": {
+   "color": true,
+   "radius": true,
+   "style": true,
+   "width": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true,
+   "__experimentalDefaultControls": {
+    "margin": false,
+    "padding": false
+   }
+  },
+  "__unstablePasteTextInline": true,
+  "__experimentalOnMerge": true,
+  "__experimentalSlashInserter": true,
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "listView": true
+ },
+ "counts": {
+  "attributes": 6,
+  "supports": 11
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

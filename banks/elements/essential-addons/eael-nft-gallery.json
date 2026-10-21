@@ -1,0 +1,1098 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-nft-gallery",
+ "title": "NFT Gallery",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "gallery",
+  "nft gallery",
+  "ea nft gallery",
+  "image gallery",
+  "photo gallery",
+  "portfolio",
+  "ea portfolio",
+  "image grid",
+  "photo grid",
+  "responsive gallery",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/NFT_Gallery.php",
+ "sections": [
+  {
+   "id": "eael_section_nft_gallery_general_settings",
+   "label": "Query",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_sources",
+     "label": "Source",
+     "type": "SELECT",
+     "options": [
+      "opensea",
+      "magiceden"
+     ]
+    },
+    {
+     "name": "eael_nft_gallery_source_key",
+     "label": "API Key",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_opensea_type",
+     "label": "Type",
+     "type": "SELECT",
+     "options": [
+      "assets",
+      "collections"
+     ]
+    },
+    {
+     "name": "eael_nft_gallery_opensea_filterby",
+     "label": "Filter By",
+     "type": "SELECT",
+     "options": [
+      "collection-slug",
+      "wallet-address"
+     ]
+    },
+    {
+     "name": "eael_nft_gallery_opensea_filterby_slug",
+     "label": "Collection Slug",
+     "type": ""
+    },
+    {
+     "name": "eael_nft_gallery_opensea_filterby_wallet",
+     "label": "Collection Slug",
+     "type": ""
+    },
+    {
+     "name": "eael_nft_gallery_opensea_order",
+     "label": "Order",
+     "type": "SELECT",
+     "options": [
+      "asc",
+      "desc"
+     ]
+    },
+    {
+     "name": "eael_nft_gallery_opensea_item_limit",
+     "label": "Item Limit",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_nft_gallery_opensea_data_cache_time",
+     "label": "Data Cache Time",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_nft_gallery_magiceden_type",
+     "label": "Type",
+     "type": "SELECT",
+     "options": [
+      "collections",
+      "wallet"
+     ]
+    },
+    {
+     "name": "eael_nft_gallery_magiceden_collection_symbol",
+     "label": "Collection Symbol",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_magiceden_wallet_address",
+     "label": "Wallet Address",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_magiceden_item_limit",
+     "label": "Item Limit",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_nft_gallery_magiceden_data_cache_time",
+     "label": "Data Cache Time",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_settings",
+   "label": "Layout",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_items_layout",
+     "label": "Layout Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_nft_gallery_style_preset",
+     "label": "Style Preset",
+     "type": "SELECT",
+     "options": [
+      "preset-1",
+      "preset-2"
+     ]
+    },
+    {
+     "name": "eael_nft_gallery_column",
+     "label": "Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "name": "eael_nft_gallery_show_image",
+     "label": "NFT Image",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_nft_gallery_image_clickable",
+     "label": "Image Clickable?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_nft_gallery_show_title",
+     "label": "Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_nft_gallery_show_current_price",
+     "label": "Current Price",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_nft_gallery_show_owner",
+     "label": "Current Owner",
+     "type": "HIDDEN"
+    },
+    {
+     "name": "eael_nft_gallery_show_creator",
+     "label": "Creator",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_nft_gallery_show_last_sale_ends_in",
+     "label": "Last Sale / Ends In",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_nft_gallery_show_button",
+     "label": "Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_nft_gallery_show_chain",
+     "label": "Chain",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_content",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_section_nft_gallery_content_label",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_nft_gallery_content_owned_by_label",
+     "label": "Owner",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_content_created_by_label",
+     "label": "Creator",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_content_view_details_label",
+     "label": "View Details",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_content_no_items_label",
+     "label": "No Items",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_content_last_sale_label",
+     "label": "Last sale",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_content_ends_in_label",
+     "label": "Ends in",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "eael_nft_gallery_section_pagination",
+   "label": "Load More Button",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_pagination",
+     "label": "Show Load More",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_nft_gallery_posts_per_page",
+     "label": "Items Per Page",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_load_more_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_nomore_items_text",
+     "label": "No More Items Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_nft_gallery_button_size",
+     "label": "Size",
+     "type": "SELECT",
+     "options": [
+      "xs",
+      "sm",
+      "md",
+      "lg",
+      "xl"
+     ]
+    },
+    {
+     "name": "eael_nft_gallery_load_more_icon_new",
+     "label": "Button Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "eael_nft_gallery_button_icon_position",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "after",
+      "before"
+     ]
+    },
+    {
+     "name": "eael_nft_gallery_load_more_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_gallery_style",
+   "label": "Gallery",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_wrap_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_wrap_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_wrap_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_wrap_control_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_wrap_normal_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_wrap_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_nft_gallery_wrap_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_nft_gallery_wrap_control_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_wrap_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_wrap_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_nft_gallery_wrap_hover_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_gallery_item_style",
+   "label": "Items",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_item_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_item_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_item_overlay_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_item_control_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_item_normal_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_item_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_nft_gallery_item_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_nft_gallery_item_control_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_item_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_item_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_nft_gallery_item_hover_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_nft_image_style",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_nft_image_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_nft_image_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_nft_image_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_nft_image_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_nft_image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_nft_gallery_nft_image_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_nft_gallery_title_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_title_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_current_price_style",
+   "label": "Price",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_current_price_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_nft_gallery_current_price_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_current_price_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_current_price_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_last_sale_ends_in_style",
+   "label": "Last Sale / Ends In",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_last_sale_ends_in_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_nft_gallery_last_sale_ends_in_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_last_sale_ends_in_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_last_sale_ends_in_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_created_by_style",
+   "label": "Creator",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_created_by_image",
+     "label": "Image",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_nft_gallery_created_by_image_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_image_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_image_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_image_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_nft_gallery_created_by_image_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_label",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_nft_gallery_created_by_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_nft_gallery_created_by_label_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_label_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_link",
+     "label": "Link",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_nft_gallery_created_by_link_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_nft_gallery_created_by_control_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_created_by_link_normal_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_control_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_created_by_link_hover_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_link_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_created_by_link_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_owned_by_style",
+   "label": "Owner",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_owned_by_image",
+     "label": "Image",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_image_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_image_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_image_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_image_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_image_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_label",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_label_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_label_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_link",
+     "label": "Link",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_link_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_control_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_link_normal_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_control_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_link_hover_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_link_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_owned_by_link_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_button_style",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_button_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_nft_gallery_button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_button_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_nft_gallery_button_padding",
+     "label": "Button Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_button_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_button_border_radius_preset_1",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_button_control_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_button_normal_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_button_normal_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_button_normal_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_nft_gallery_button_normal_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_nft_gallery_button_control_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_button_hover_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_button_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_button_hover_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_nft_gallery_button_hover_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_nft_gallery_load_more_style",
+   "label": "Load More Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_nft_gallery_load_more_margin_top",
+     "label": "Top Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tab_nft_gallery_load_more_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_nft_gallery_load_more_bg_color_normal",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_load_more_text_color_normal",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_load_more_border_normal",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_nft_gallery_load_more_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_load_more_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_nft_gallery_load_more_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_load_more_icon_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_load_more_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_nft_gallery_load_more_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_nft_gallery_load_more_icon_heading",
+     "label": "Button Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_nft_gallery_load_more_icon_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tab_nft_gallery_load_more_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "nft_gallery_load_more_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "nft_gallery_load_more_text_color_hover",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "nft_gallery_load_more_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "nft_gallery_load_more_box_shadow_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 14,
+  "controls": 156,
+  "responsive": 38
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

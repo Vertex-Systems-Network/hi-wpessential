@@ -1,0 +1,229 @@
+{
+ "kind": "elementor-widget",
+ "name": "image-compare",
+ "title": "Image Compare",
+ "categories": [],
+ "keywords": [
+  "compare",
+  "image",
+  "before",
+  "after"
+ ],
+ "file": "happy-elementor-addons/widgets/image-compare/widget.php",
+ "sections": [
+  {
+   "id": "_section_images",
+   "label": "Images",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "_tab_before_image",
+     "label": "Before",
+     "type": "TAB"
+    },
+    {
+     "name": "before_image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "before_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "_tab_after_image",
+     "label": "After",
+     "type": "TAB"
+    },
+    {
+     "name": "after_image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "after_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    }
+   ]
+  },
+  {
+   "id": "_section_settings",
+   "label": "Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "offset",
+     "label": "Visibility Ratio",
+     "type": "SLIDER"
+    },
+    {
+     "name": "orientation",
+     "label": "Orientation",
+     "type": "CHOOSE",
+     "options": [
+      "horizontal",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "hide_overlay",
+     "label": "Hide Overlay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "move_handle",
+     "label": "Move Handle",
+     "type": "SELECT",
+     "options": [
+      "on_hover",
+      "on_click",
+      "on_swipe"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_handle",
+   "label": "Handle",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "handle_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_heading_bar",
+     "label": "Handle Bar",
+     "type": "HEADING"
+    },
+    {
+     "name": "bar_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "_heading_arrow",
+     "label": "Handle Arrow",
+     "type": "HEADING"
+    },
+    {
+     "name": "arrow_box_width",
+     "label": "Box Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrow_box_height",
+     "label": "Box Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "box_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "box_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_label",
+   "label": "Label",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "label_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "position_toggle",
+     "label": "Position",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "label_offset_y",
+     "label": "Vertical",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "label_offset_x",
+     "label": "Horizontal",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "label_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "label_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "label_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "label_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 29,
+  "responsive": 8
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

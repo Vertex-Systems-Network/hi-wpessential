@@ -1,0 +1,230 @@
+{
+ "kind": "elementor-widget",
+ "name": "cart",
+ "title": "Cart",
+ "categories": [],
+ "keywords": [
+  "Cart"
+ ],
+ "file": "header-footer-elementor/inc/widgets-manager/widgets/cart/cart.php",
+ "sections": [
+  {
+   "id": "section_general_fields",
+   "label": "Menu Cart",
+   "tab": "",
+   "controls": [
+    {
+     "name": "hfe_cart_type",
+     "label": "Type",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom"
+     ]
+    },
+    {
+     "name": "icon",
+     "label": "Icon",
+     "type": "SELECT",
+     "options": [
+      "bag-light",
+      "bag-medium",
+      "bag-solid"
+     ]
+    },
+    {
+     "name": "items_indicator",
+     "label": "Items Count",
+     "type": "SELECT",
+     "options": [
+      "none",
+      "bubble"
+     ]
+    },
+    {
+     "name": "show_subtotal",
+     "label": "Show Total Price",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "hide_empty_indicator",
+     "label": "Hide Empty",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_heading_typography",
+   "label": "Menu Cart",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "toggle_button_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "toggle_button_border_width",
+     "label": "Border Width",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "toggle_button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "toggle_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "toggle_button_normal_colors",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "toggle_button_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "toggle_button_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "toggle_button_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "toggle_button_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "toggle_button_hover_colors",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "toggle_button_hover_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "toggle_button_hover_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "toggle_button_hover_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "toggle_button_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "toggle_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "toggle_icon_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_icon",
+   "label": "Items Count",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "items_indicator_distance",
+     "label": "Distance",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "count_normal_colors",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "items_indicator_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "items_indicator_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "count_hover_colors",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "items_indicator_text_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "items_indicator_background_hover_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 30,
+  "responsive": 2
+ },
+ "source": "ultimate-addons-hfe",
+ "source_label": "Ultimate Addons (Header Footer Elementor)"
+}

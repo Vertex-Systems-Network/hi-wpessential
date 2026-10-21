@@ -1,0 +1,71 @@
+{
+ "kind": "block",
+ "name": "core/term-count",
+ "title": "Term Count",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Displays the post count of a taxonomy term.",
+ "file": "wp/wordpress/wp-includes/blocks/term-count/block.json",
+ "attributes": {
+  "bracketType": {
+   "type": "string",
+   "default": "round",
+   "enum": [
+    "none",
+    "round",
+    "square",
+    "curly",
+    "angle"
+   ]
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "color": {
+   "gradients": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "spacing": {
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 1,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

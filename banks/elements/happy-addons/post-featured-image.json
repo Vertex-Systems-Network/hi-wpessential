@@ -1,0 +1,150 @@
+{
+ "kind": "elementor-widget",
+ "name": "post-featured-image",
+ "title": "Post Featured Image",
+ "categories": [
+  "happy_addons_category",
+  "happy_addons_theme_builder"
+ ],
+ "keywords": [
+  "post image",
+  "image"
+ ],
+ "file": "happy-elementor-addons/widgets/post-featured-image/widget.php",
+ "sections": [
+  {
+   "id": "_section_post_thumbnail",
+   "label": "Post Featured Image",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "post_feature_image",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "image_caption",
+     "label": "Show Caption",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "enable_link",
+     "label": "Enable Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "link_type",
+     "label": "Link Type",
+     "type": "SELECT",
+     "options": [
+      "dynamic",
+      "custom"
+     ]
+    },
+    {
+     "name": "dynamic_link_options",
+     "label": "Link Options",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "dynamic_link_external",
+     "label": "Open in new window",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "dynamic_link_nofollow",
+     "label": "Add nofollow",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "custom_link",
+     "label": "Custom Link",
+     "type": "URL"
+    }
+   ]
+  },
+  {
+   "id": "_section_thumbnail_style",
+   "label": "Image Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "thumbnail_width",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "thumbnail_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "thumbnail_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "thumbnail_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "thumbnail_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_caption_style",
+   "label": "Caption Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "caption_margin",
+     "label": "Spacing (px)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "caption_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "caption_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 17,
+  "responsive": 2
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

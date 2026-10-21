@@ -1,0 +1,76 @@
+{
+ "kind": "block",
+ "name": "core/latest-comments",
+ "title": "Latest Comments",
+ "categories": [
+  "widgets"
+ ],
+ "keywords": [
+  "recent comments"
+ ],
+ "description": "Display a list of your most recent comments.",
+ "file": "wp/wordpress/wp-includes/blocks/latest-comments/block.json",
+ "attributes": {
+  "commentsToShow": {
+   "type": "number",
+   "default": 5
+  },
+  "displayAvatar": {
+   "type": "boolean",
+   "default": true
+  },
+  "displayDate": {
+   "type": "boolean",
+   "default": true
+  },
+  "displayContent": {
+   "type": "string",
+   "default": "excerpt",
+   "enum": [
+    "none",
+    "excerpt",
+    "full"
+   ]
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true,
+    "link": true
+   }
+  },
+  "html": false,
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 4,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

@@ -1,0 +1,156 @@
+{
+ "kind": "elementor-widget",
+ "name": "lottie",
+ "title": "Lottie",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/lottie/lottie.php",
+ "sections": [
+  {
+   "id": "ekit_lottie",
+   "label": "Lottie",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ekit_lottie_type",
+     "label": "Select JSON",
+     "type": "CHOOSE",
+     "options": [
+      "file",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_lottie_json",
+     "label": "",
+     "type": "MEDIA"
+    },
+    {
+     "name": "ekit_lottie_url",
+     "label": "",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_lottie_link_check",
+     "label": "Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_lottie_link",
+     "label": "",
+     "type": "URL"
+    },
+    {
+     "name": "ekit_lottie_options",
+     "label": "Animation Options",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_lottie_autoplay",
+     "label": "Autoplay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_lottie_on_scroll",
+     "label": "Start when visible",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_lottie_loop_count",
+     "label": "Loop Count",
+     "type": "SLIDER"
+    },
+    {
+     "name": "ekit_lottie_speed",
+     "label": "Speed",
+     "type": "SLIDER"
+    },
+    {
+     "name": "ekit_lottie_renderer",
+     "label": "Render Type",
+     "type": "CHOOSE",
+     "options": [
+      "svg",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_lottie_action",
+     "label": "On Hover",
+     "type": "SELECT",
+     "options": [
+      "play",
+      "pause",
+      "reverse"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_lottie_styles",
+   "label": "Lottie",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_lottie_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_lottie_opacity",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "ekit_lottie_filter",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "ekit_lottie_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_lottie_opacity_hover",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "ekit_lottie_filter_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "ekit_lottie_transition",
+     "label": "Transition",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 21,
+  "responsive": 0
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

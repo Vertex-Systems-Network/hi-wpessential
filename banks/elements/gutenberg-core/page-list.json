@@ -1,0 +1,73 @@
+{
+ "kind": "block",
+ "name": "core/page-list",
+ "title": "Page List",
+ "categories": [
+  "widgets"
+ ],
+ "keywords": [
+  "menu",
+  "navigation"
+ ],
+ "description": "Display a list of all pages.",
+ "file": "wp/wordpress/wp-includes/blocks/page-list/block.json",
+ "attributes": {
+  "parentPageID": {
+   "type": "integer",
+   "default": 0
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "reusable": false,
+  "html": false,
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "color": {
+   "text": true,
+   "background": true,
+   "link": true,
+   "gradients": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true,
+    "link": true
+   }
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true
+  },
+  "spacing": {
+   "padding": true,
+   "margin": true,
+   "__experimentalDefaultControls": {
+    "padding": false,
+    "margin": false
+   }
+  },
+  "contentRole": true
+ },
+ "counts": {
+  "attributes": 1,
+  "supports": 9
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

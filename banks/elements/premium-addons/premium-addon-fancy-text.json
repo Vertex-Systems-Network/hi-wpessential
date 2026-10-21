@@ -1,0 +1,408 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-addon-fancy-text",
+ "title": "Animated Text",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium animated text",
+  "fancy",
+  "typing",
+  "headline",
+  "heading",
+  "animation"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-fancytext.php",
+ "sections": [
+  {
+   "id": "general_section",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "style",
+     "label": "Text Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_fancy_prefix_text",
+     "label": "Before Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "text",
+     "label": "Highlighted Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_text_strings_text_field",
+     "label": "Fancy String",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_fancy_text_strings",
+     "label": "Animated Text",
+     "type": "REPEATER"
+    },
+    {
+     "name": "premium_fancy_suffix_text",
+     "label": "After Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "display",
+     "label": "Display",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_fancy_text_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "text_tag",
+     "label": "HTML Tag",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "switched_settings",
+   "label": "Switched Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "trigger",
+     "label": "Trigger On",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_fancy_text_effect",
+     "label": "Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "custom_animation",
+     "label": "Animations",
+     "type": "ANIMATION"
+    },
+    {
+     "name": "premium_fancy_text_type_speed",
+     "label": "Type Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_fancy_text_zoom_speed",
+     "label": "Animation Speed",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "premium_fancy_text_zoom_delay",
+     "label": "Animation Delay",
+     "type": "NUMBER"
+    },
+    {
+     "name": "loop_count",
+     "label": "Loop Count",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_fancy_text_back_speed",
+     "label": "Back Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_fancy_text_start_delay",
+     "label": "Start Delay",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_fancy_text_back_delay",
+     "label": "Back Delay",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_fancy_text_type_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_fancy_text_show_cursor",
+     "label": "Show Cursor",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_slide_up_speed",
+     "label": "Animation Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_slide_up_pause_time",
+     "label": "Pause Time",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_slide_up_shown_items",
+     "label": "Show Items",
+     "type": "NUMBER"
+    },
+    {
+     "name": "premium_slide_up_hover_pause",
+     "label": "Pause on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "loading_bar",
+     "label": "Loading Bar",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_fancy_slide_align",
+     "label": "Animated Text Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "highlighted_settings",
+   "label": "Highlighted Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "highlight_effect",
+     "label": "Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "pattern_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "highlight_loop_count",
+     "label": "Loop Count",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "highlighted_hover_pause",
+     "label": "Pause on Hover",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "animated_text_style_section",
+   "label": "Animated Text",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "fancy_text_typography",
+     "label": "Headline Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_fancy_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "fill_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "highlight_color",
+     "label": "Highlight Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "shadow_first_color",
+     "label": "First Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "shadow_second_color",
+     "label": "Second Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "shadow_third_color",
+     "label": "Third Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "shadow_fourth_color",
+     "label": "Fourth Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "shadow_fifth_color",
+     "label": "Fifth Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_fancy_text_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "text_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "stroke_width",
+     "label": "Stroke Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "stroke_text_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "animation_speed",
+     "label": "Animation Speed (sec)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "animation_delay",
+     "label": "Animation Delay (sec)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "text_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_fancy_cursor_text_style_tab",
+   "label": "Cursor",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_fancy_text_cursor_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "fancy_text_cursor_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_fancy_text_cursor_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "premium_prefix_suffix_style_tab",
+   "label": "Before & After Text",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "premium_prefix_text_color",
+     "label": "Before Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "premium_suffix_text_color",
+     "label": "After Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "prefix_suffix_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "loading_bar_style",
+   "label": "Loading Bar",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "loading_bar_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "loading_bar_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 8,
+  "controls": 58,
+  "responsive": 5
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

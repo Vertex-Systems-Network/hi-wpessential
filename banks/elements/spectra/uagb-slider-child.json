@@ -1,0 +1,358 @@
+{
+ "kind": "block",
+ "name": "uagb/slider-child",
+ "title": "Slider Child",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/slider-child/attributes.php",
+ "attributes": {
+  "block_id": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundType": {
+   "type": "string",
+   "default": "none"
+  },
+  "backgroundImageDesktop": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundImageTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundImageMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundPositionDesktop": {
+   "type": "array",
+   "default": "array("
+  },
+  "x": {
+   "type": "number",
+   "default": "0.5"
+  },
+  "y": {
+   "type": "number",
+   "default": "0.5"
+  },
+  "backgroundPositionTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundPositionMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundSizeDesktop": {
+   "type": "string",
+   "default": "cover"
+  },
+  "backgroundSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundRepeatDesktop": {
+   "type": "string",
+   "default": "no-repeat"
+  },
+  "backgroundRepeatTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundRepeatMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundAttachmentDesktop": {
+   "type": "string",
+   "default": "scroll"
+  },
+  "backgroundAttachmentTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundAttachmentMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundColor": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundOpacity": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientValue": {
+   "type": "string",
+   "default": "linear-gradient(90deg, rgba(6, 147, 227, 0.5) 0%, rgba(155, 81, 224, 0.5) 100%)"
+  },
+  "gradientColor1": {
+   "type": "string",
+   "default": "#06558a"
+  },
+  "gradientColor2": {
+   "type": "string",
+   "default": "#0063A1"
+  },
+  "gradientType": {
+   "type": "string",
+   "default": "linear"
+  },
+  "gradientLocation1": {
+   "type": "number",
+   "default": "0"
+  },
+  "gradientLocationTablet1": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientLocationMobile1": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientLocation2": {
+   "type": "number",
+   "default": "100"
+  },
+  "gradientLocationTablet2": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientLocationMobile2": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientAngle": {
+   "type": "number",
+   "default": "0"
+  },
+  "gradientAngleTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientAngleMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "selectGradient": {
+   "type": "string",
+   "default": "basic"
+  },
+  "backgroundImageColor": {
+   "type": "string",
+   "default": "#FFFFFF75"
+  },
+  "backgroundCustomSizeDesktop": {
+   "type": "number",
+   "default": "100"
+  },
+  "backgroundCustomSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundCustomSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundCustomSizeType": {
+   "type": "string",
+   "default": "%"
+  },
+  "overlayType": {
+   "type": "string",
+   "default": "none"
+  },
+  "customPosition": {
+   "type": "string",
+   "default": "default"
+  },
+  "xPositionDesktop": {
+   "type": "string",
+   "default": ""
+  },
+  "xPositionTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "xPositionMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "xPositionType": {
+   "type": "string",
+   "default": "px"
+  },
+  "xPositionTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "xPositionTypeMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "yPositionDesktop": {
+   "type": "string",
+   "default": ""
+  },
+  "yPositionTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "yPositionMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "yPositionType": {
+   "type": "string",
+   "default": "px"
+  },
+  "yPositionTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "yPositionTypeMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "topPaddingDesktop": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "bottomPaddingDesktop": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "leftPaddingDesktop": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "rightPaddingDesktop": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "topPaddingTablet": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "bottomPaddingTablet": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "leftPaddingTablet": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "rightPaddingTablet": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "topPaddingMobile": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "bottomPaddingMobile": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "leftPaddingMobile": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "rightPaddingMobile": {
+   "type": "string",
+   "default": "$default_padding"
+  },
+  "paddingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "paddingTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "paddingTypeMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "paddingLink": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "topMarginDesktop": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomMarginDesktop": {
+   "type": "string",
+   "default": ""
+  },
+  "leftMarginDesktop": {
+   "type": "string",
+   "default": ""
+  },
+  "rightMarginDesktop": {
+   "type": "string",
+   "default": ""
+  },
+  "topMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "leftMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "rightMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "topMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "leftMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "rightMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "marginType": {
+   "type": "string",
+   "default": "px"
+  },
+  "marginTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "marginTypeMobile": {
+   "type": "string",
+   "default": "px"
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 85,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

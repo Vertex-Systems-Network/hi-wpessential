@@ -1,0 +1,92 @@
+{
+ "kind": "block",
+ "name": "core/post-author",
+ "title": "Author (deprecated)",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "This block is deprecated. Please use the Avatar block, the Author Name block, and the Author Biography block instead.",
+ "file": "wp/wordpress/wp-includes/blocks/post-author/block.json",
+ "attributes": {
+  "textAlign": {
+   "type": "string"
+  },
+  "avatarSize": {
+   "type": "number",
+   "default": 48
+  },
+  "showAvatar": {
+   "type": "boolean",
+   "default": true
+  },
+  "showBio": {
+   "type": "boolean"
+  },
+  "byline": {
+   "type": "string"
+  },
+  "isLink": {
+   "type": "boolean",
+   "default": false
+  },
+  "linkTarget": {
+   "type": "string",
+   "default": "_self"
+  }
+ },
+ "supports": {
+  "inserter": false,
+  "anchor": true,
+  "html": false,
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": true,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  },
+  "filter": {
+   "duotone": true
+  }
+ },
+ "counts": {
+  "attributes": 7,
+  "supports": 9
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

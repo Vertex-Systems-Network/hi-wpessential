@@ -1,0 +1,246 @@
+{
+ "kind": "elementor-widget",
+ "name": "progressbar",
+ "title": "Progress Bar",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/progressbar/progressbar.php",
+ "sections": [
+  {
+   "id": "ekit_progressbar_content",
+   "label": "Progress Bar",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_progressbar_style",
+     "label": "Style",
+     "type": "SELECT",
+     "options": [
+      "skilltrack-style2",
+      "tooltip-style3",
+      "tooltip-style2",
+      "tooltip-style",
+      "pin-style",
+      "style-switch",
+      "style-ribbon"
+     ]
+    },
+    {
+     "name": "ekit_progressbar_icons",
+     "label": "Add Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_progressbar_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_progressbar_percentage",
+     "label": "Percentage",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ekit_progressbar_percentage_show",
+     "label": "Hide Percentage Number? ",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_data_duration",
+     "label": "Animation Duration",
+     "type": "SLIDER",
+     "responsive": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_progressbar_bar_style",
+   "label": "Bar",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_progressbar_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_progressbar_bar_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_bar_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_progressbar_bar_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_bar_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_bar_margin",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_progressbar_track_style",
+   "label": "Track",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_progressbar_track_color",
+     "label": "Track Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_progressbar_strip_color",
+     "label": "Stripe Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_switch_color",
+     "label": "Switch Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_track_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_progressbar_track_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_progressbar_title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_progressbar_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_progressbar_title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "ekit_progressbar_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_progressbar_percent_style",
+   "label": "Percent",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_progressbar_percent_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_percent_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_progressbar_percent_tooltip_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_percent_pin_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_percent_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_progressbar_icon_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_progressbar_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_progressbar_icon_typography",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 28,
+  "responsive": 15
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

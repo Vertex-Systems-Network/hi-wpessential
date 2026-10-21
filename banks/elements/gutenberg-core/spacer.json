@@ -1,0 +1,41 @@
+{
+ "kind": "block",
+ "name": "core/spacer",
+ "title": "Spacer",
+ "categories": [
+  "design"
+ ],
+ "keywords": [],
+ "description": "Add white space between blocks and customize its height.",
+ "file": "wp/wordpress/wp-includes/blocks/spacer/block.json",
+ "attributes": {
+  "height": {
+   "type": "string",
+   "default": "100px"
+  },
+  "width": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "spacing": {
+   "margin": [
+    "top",
+    "bottom"
+   ],
+   "__experimentalDefaultControls": {
+    "margin": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 3
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

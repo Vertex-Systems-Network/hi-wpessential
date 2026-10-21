@@ -1,0 +1,53 @@
+{
+ "kind": "block",
+ "name": "core/embed",
+ "title": "Embed",
+ "categories": [
+  "embed"
+ ],
+ "keywords": [],
+ "description": "Add a block that displays content pulled from other sites, like Twitter or YouTube.",
+ "file": "wp/wordpress/wp-includes/blocks/embed/block.json",
+ "attributes": {
+  "url": {
+   "type": "string"
+  },
+  "caption": {
+   "type": "rich-text"
+  },
+  "type": {
+   "type": "string"
+  },
+  "providerNameSlug": {
+   "type": "string"
+  },
+  "allowResponsive": {
+   "type": "boolean",
+   "default": true
+  },
+  "responsive": {
+   "type": "boolean",
+   "default": false
+  },
+  "previewable": {
+   "type": "boolean",
+   "default": true
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": true,
+  "spacing": {
+   "margin": true
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 7,
+  "supports": 4
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

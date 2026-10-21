@@ -1,0 +1,878 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-icon-list",
+ "title": "Bullet List",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium bullet list",
+  "icon",
+  "feature",
+  "list"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-icon-list.php",
+ "sections": [
+  {
+   "id": "list_items_section",
+   "label": "List Items",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "list_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "list_desc",
+     "label": "Description",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "show_icon",
+     "label": "Show Bullet",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "icon_type",
+     "label": "Bullet Type",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "premium_icon_list_font_updated",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "custom_image",
+     "label": "Custom Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "list_text_icon",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "custom_svg",
+     "label": "SVG Code",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "lottie_url",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "draw_svg",
+     "label": "Draw Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "path_width",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "svg_sync",
+     "label": "Draw All Paths Together",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "frames",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "svg_notice",
+     "label": "Reverse",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "start_point",
+     "label": "Start Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "end_point",
+     "label": "End Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "svg_hover",
+     "label": "Only Play on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "svg_yoyo",
+     "label": "Yoyo Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_list_link",
+     "label": "Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "link_select",
+     "label": "Link/URL",
+     "type": "SELECT"
+    },
+    {
+     "name": "link",
+     "label": "URL",
+     "type": "URL",
+     "styles": true
+    },
+    {
+     "name": "existing_page",
+     "label": "Existing Page",
+     "type": "Premium_Post_Filter::TYPE",
+     "styles": true
+    },
+    {
+     "name": "show_badge",
+     "label": "Badge",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "badge_title",
+     "label": "Badge Text",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "badge_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "badge_background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "show_global_style",
+     "label": "Override Global Style",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "list_box_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "svg_icon_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "svg_icon_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "svg_color",
+     "label": "After Draw Fill Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "color_normal_state",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "icon_color",
+     "label": "Icon/Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_bg",
+     "label": "Icon Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "text_icon_color",
+     "label": "Icon/Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "background_text_icon_color",
+     "label": "Icon/Text Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_list_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "desc_color",
+     "label": "Description Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "color_hover_state",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "icon_hover_color",
+     "label": "Icon/Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color_hover",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "text_icon_hover_color",
+     "label": "Icon/Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "background_text_icon_hover_color",
+     "label": "Icon/Text Background ",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_hover_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "desc_color_hov",
+     "label": "Description Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "background_hover_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "list",
+     "label": "List Items",
+     "type": "REPEATER"
+    },
+    {
+     "name": "draw_svgs_sequence",
+     "label": "Draw SVGs In Sequence",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "draw_svgs_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "frames",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "svg_yoyo",
+     "label": "Yoyo Effect",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "display_options_section",
+   "label": "Display Options",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "list_overflow",
+     "label": "List Overflow",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "overflow_render_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "layout_type",
+     "label": "Layout Type",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_icon_list_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "text_align",
+     "label": "Text Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_postion",
+     "label": "Bullet Position",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "top_icon_align",
+     "label": "Bullet Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "inline_icon_align",
+     "label": "Bullet Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "badge_align_h",
+     "label": "Badge Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "show_divider",
+     "label": "Divider",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_connector",
+     "label": "Bullet Connector",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_icon_list_animation",
+     "label": "Entrance Animation",
+     "type": "ANIMATION"
+    },
+    {
+     "name": "premium_icon_list_animation_duration",
+     "label": "Animation Duration",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_icon_list_animation_delay",
+     "label": "Animation Delay in Between (s)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "hover_effect_type",
+     "label": "Hover Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "show_bullet_transition",
+     "label": "Transition (S)",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "show_bullet_ease",
+     "label": "Easing",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "gradient_color",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    }
+   ]
+  },
+  {
+   "id": "random_badges_section",
+   "label": "Random Badges",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "badge_title",
+     "label": "Badge Text",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "badge_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "badge_background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "rbadge_selector",
+     "label": "CSS Selector",
+     "type": "TEXT"
+    },
+    {
+     "name": "rbadge_min",
+     "label": "Minimum Randomness",
+     "type": "NUMBER"
+    },
+    {
+     "name": "rbadge_max",
+     "label": "Maximum Randomness",
+     "type": "NUMBER"
+    },
+    {
+     "name": "rbadges_repeater",
+     "label": "Random Badges",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "list_style_section",
+   "label": "General",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "list_items_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "list_items_hover_color",
+     "label": "Hover Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "items_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "list_items_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "list_items_shadow_hover",
+     "label": "Hover Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "list_item_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "list_item_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_item_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_items_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_padding",
+     "label": "List Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "icon_style_section",
+   "label": "Bullet",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_render_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_color_hover",
+     "label": "Hover Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "background_render_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "icon_background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_background_hover_color",
+     "label": "Hover Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "typo_text_render_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "text_icon_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "icon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "title_style_section",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_render_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "list_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "list_title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_text_Shadow"
+    },
+    {
+     "name": "list_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "description_style_section",
+   "label": "Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "desc_render_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "list_desc_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "desc_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "desc_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "desc_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "badge_style_section",
+   "label": "Badge",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "badge_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "badge_color_render_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "badge_text_style_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "badge_background_style_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "badge_border_radius",
+     "label": "Badge Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "Badge_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_text_Shadow"
+    },
+    {
+     "name": "Badge_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "Badge_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "Badge_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "divider_style_section",
+   "label": "Divider",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "list_divider_type",
+     "label": "Divider Style",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "list_divider_width",
+     "label": " Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_divider_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_divider_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "connector_style_section",
+   "label": "Connector",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_connector_type",
+     "label": "Style",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "icon_connector_width",
+     "label": " Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_connector_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 11,
+  "controls": 133,
+  "responsive": 24
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

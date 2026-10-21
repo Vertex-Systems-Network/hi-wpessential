@@ -1,0 +1,281 @@
+{
+ "kind": "elementor-widget",
+ "name": "piechart",
+ "title": "Pie Chart",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/piechart/piechart.php",
+ "sections": [
+  {
+   "id": "ekit_piechart_content_section",
+   "label": "Content",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ekit_piechart_style",
+     "label": "Pie Chart Style",
+     "type": "SELECT",
+     "options": [
+      "simple",
+      "withcontent"
+     ]
+    },
+    {
+     "name": "ekit_piechart_content",
+     "label": "Chart Content",
+     "type": "SELECT",
+     "options": [
+      "ekit_piechart_percentage",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_piechart_percentage",
+     "label": "Percentage",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ekit_piechart_icon_type",
+     "label": "Icon type",
+     "type": "SELECT",
+     "options": [
+      "icon",
+      "image"
+     ]
+    },
+    {
+     "name": "ekit_piechart_icons",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_piechart_icon_image",
+     "label": "Choose Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "ekit_piechart_icon_image_size_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "ekit_piechart_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_piechart_item_description",
+     "label": "Description",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "ekit_piechart_content_type",
+     "label": "Content type",
+     "type": "SELECT",
+     "options": [
+      "simple",
+      "flip-card"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_piechart_section_content",
+   "label": "Title ",
+   "tab": "controls_Manager::TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_piechart_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_piechart_title_typography_group",
+     "label": "Title Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_piechart_title_margin",
+     "label": "Title margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_piechart_general_settings",
+   "label": "Content",
+   "tab": "controls_Manager::TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_piechart_content_color",
+     "label": "Content Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_piechart_content_typography_group",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_piechart_content_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_piechart_content_align",
+     "label": "Content Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_piechart_section_flip_card",
+   "label": "Flip Card ",
+   "tab": "controls_Manager::TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_piechart_flip_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_piechart_flip_back_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_piechart_section_piechart",
+   "label": "Chart",
+   "tab": "controls_Manager::TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_piechart_size",
+     "label": "Piechart Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_piechart_border_size",
+     "label": "Border Size",
+     "type": "SLIDER"
+    },
+    {
+     "name": "ekit_piechart_color_style",
+     "label": "Color Type",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "gradient"
+     ]
+    },
+    {
+     "name": "ekit_piechart_line_color",
+     "label": "Bar Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "ekit_piechart_bar_color_bg",
+     "label": "Bar Background Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "ekit_piechart_gradientColor1",
+     "label": "Gradient Color1",
+     "type": "COLOR"
+    },
+    {
+     "name": "ekit_piechart_gradientColor2",
+     "label": "Gradient Color2",
+     "type": "COLOR"
+    },
+    {
+     "name": "ekit_piechart_iocn_color",
+     "label": " Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_piechart_content_color_number",
+     "label": " Number Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_piechart_background",
+   "label": "Background ",
+   "tab": "controls_Manager::TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_piechart_wrapper_padding",
+     "label": "Wrapper Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_piechart_wrapper_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_piechart_wrapper_bg_style_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_piechart_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_piechart_bg_style_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_piechart_background_hover_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_piechart_bg_hover_animation",
+     "label": "Hover Animation",
+     "type": "HOVER_ANIMATION"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 35,
+  "responsive": 5
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

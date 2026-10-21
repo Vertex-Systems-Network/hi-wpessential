@@ -1,0 +1,125 @@
+{
+ "kind": "elementor-widget",
+ "name": "post-excerpt",
+ "title": "Post Excerpt",
+ "categories": [
+  "happy_addons_category",
+  "happy_addons_theme_builder"
+ ],
+ "keywords": [
+  "excerpt",
+  "text"
+ ],
+ "file": "happy-elementor-addons/widgets/post-excerpt/widget.php",
+ "sections": [
+  {
+   "id": "_section_post_excerpt",
+   "label": "Post Excerpt",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "excerpt_length",
+     "label": "Excerpt Length",
+     "type": "NUMBER"
+    },
+    {
+     "name": "read_more",
+     "label": "Read More",
+     "type": "TEXT"
+    },
+    {
+     "name": "read_more_new_tab",
+     "label": "Open in new window",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_excerpt",
+   "label": "Excerpt Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "excerpt_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "excerpt_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "_section_readmore_style",
+   "label": "Read More",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "readmore_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "readmore_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "readmore_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "readmore_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "readmore_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "readmore_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "readmore_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 13,
+  "responsive": 3
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

@@ -1,0 +1,161 @@
+{
+ "kind": "elementor-widget",
+ "name": "progress",
+ "title": "Progress Bar",
+ "categories": [],
+ "keywords": [
+  "progress",
+  "bar"
+ ],
+ "file": "elementor/includes/widgets/progress.php",
+ "sections": [
+  {
+   "id": "section_progress",
+   "label": "Progress Bar",
+   "tab": "",
+   "controls": [
+    {
+     "name": "title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "title_display",
+     "label": "Display Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "progress_type",
+     "label": "Type",
+     "type": "SELECT",
+     "options": [
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ]
+    },
+    {
+     "name": "percent",
+     "label": "Percentage",
+     "type": "SLIDER"
+    },
+    {
+     "name": "display_percentage",
+     "label": "Display Percentage",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "inner_text",
+     "label": "Inner Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "section_progress_style",
+   "label": "Progress Bar",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "title_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "percentage_heading",
+     "label": "Percentage",
+     "type": "HEADING"
+    },
+    {
+     "name": "bar_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "bar_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "bar_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "bar_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "inner_text_heading",
+     "label": "Inner Text",
+     "type": "HEADING"
+    },
+    {
+     "name": "bar_inline_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "bar_inner_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "bar_inner_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 20,
+  "responsive": 0
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

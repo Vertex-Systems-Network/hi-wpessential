@@ -1,0 +1,274 @@
+{
+ "kind": "elementor-widget",
+ "name": "post-info",
+ "title": "Post Info",
+ "categories": [],
+ "keywords": [
+  "Post_Info"
+ ],
+ "file": "header-footer-elementor/inc/widgets-manager/widgets/post-info/post-info.php",
+ "sections": [
+  {
+   "id": "section_general",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "view",
+     "label": "Layout",
+     "type": "CHOOSE",
+     "options": [
+      "inline",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "type",
+     "label": "Type",
+     "type": "SELECT",
+     "options": [
+      "author",
+      "time",
+      "date",
+      "terms",
+      "comments",
+      "custom"
+     ]
+    },
+    {
+     "name": "date_format",
+     "label": "Date Format",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "0",
+      "1",
+      "2",
+      "3",
+      "custom"
+     ]
+    },
+    {
+     "name": "custom_date_format",
+     "label": "Custom Date Format",
+     "type": "TEXT"
+    },
+    {
+     "name": "time_format",
+     "label": "Time Format",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "0",
+      "1",
+      "2",
+      "custom"
+     ]
+    },
+    {
+     "name": "custom_time_format",
+     "label": "Custom Time Format",
+     "type": "TEXT"
+    },
+    {
+     "name": "taxonomy",
+     "label": "Taxonomy",
+     "type": "SELECT2"
+    },
+    {
+     "name": "text_prefix",
+     "label": "Before",
+     "type": "TEXT"
+    },
+    {
+     "name": "show_avatar",
+     "label": "Avatar",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "avatar_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "comments_custom_strings",
+     "label": "Custom Format",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "string_no_comments",
+     "label": "No Comments",
+     "type": "TEXT"
+    },
+    {
+     "name": "string_one_comment",
+     "label": "One Comment",
+     "type": "TEXT"
+    },
+    {
+     "name": "string_comments",
+     "label": "Comments",
+     "type": "TEXT"
+    },
+    {
+     "name": "custom_text",
+     "label": "Custom",
+     "type": "TEXT"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "custom_url",
+     "label": "Custom URL",
+     "type": "URL"
+    },
+    {
+     "name": "show_icon",
+     "label": "Icon",
+     "type": "SELECT",
+     "options": [
+      "none",
+      "default",
+      "custom"
+     ]
+    },
+    {
+     "name": "selected_icon",
+     "label": "Choose Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "icon_list",
+     "label": "",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "section_style_list_items",
+   "label": "List Items",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "space_between",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "separator",
+     "label": "Separator",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "separator_style",
+     "label": "Style",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "solid",
+      "double",
+      "dotted",
+      "dashed"
+     ]
+    },
+    {
+     "name": "separator_weight",
+     "label": "Weight",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "separator_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "separator_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "separator_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_style_icon",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_style_text",
+   "label": "Text",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "text_indent",
+     "label": "Spacing between Icon & Text",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 33,
+  "responsive": 4
+ },
+ "source": "ultimate-addons-hfe",
+ "source_label": "Ultimate Addons (Header Footer Elementor)"
+}

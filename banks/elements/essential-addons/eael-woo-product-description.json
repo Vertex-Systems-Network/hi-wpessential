@@ -1,0 +1,109 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-woo-product-description",
+ "title": "Woo Product Description",
+ "categories": [
+  "essential-addons-elementor",
+  "woocommerce-elements"
+ ],
+ "keywords": [
+  "woocommerce",
+  "product",
+  "description",
+  "long description",
+  "content",
+  "product content",
+  "woo",
+  "ea",
+  "essential addons",
+  "ea product",
+  "woo product",
+  "Product Description"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Woo_Product_Description.php",
+ "sections": [
+  {
+   "id": "section_product_description_style",
+   "label": "Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_product_description_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_product_description_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_description_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_product_description_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_product_description_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_product_description_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_description_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_product_description_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 9,
+  "responsive": 4
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

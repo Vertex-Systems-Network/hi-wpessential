@@ -1,0 +1,706 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-textual-showcase",
+ "title": "Textual Showcase",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium textual showcase",
+  "textual",
+  "showcase",
+  "image"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-textual-showcase.php",
+ "sections": [
+  {
+   "id": "sect_gen_controls",
+   "label": "Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "normal_state",
+     "label": "Element",
+     "type": "TAB"
+    },
+    {
+     "name": "item_type",
+     "label": "Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "item_txt",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "item_txt_tag",
+     "label": "HTML Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "content_image",
+     "label": "Choose Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "item_img_fit",
+     "label": "Image Fit",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "icon",
+     "label": "Choose Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "draw_svg",
+     "label": "Draw Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "path_width",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "svg_sync",
+     "label": "Draw All Paths Together",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "frames",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "stroke_colors",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "svg_color",
+     "label": "After Draw Fill Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "lottie_url",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "start_point",
+     "label": "Start Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "end_point",
+     "label": "End Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "svg_yoyo",
+     "label": "Yoyo Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "style",
+     "label": "Element Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "item_txt_align",
+     "label": "Text Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "content_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "item_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "item_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "item_text_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "item_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "item_img_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "item_img_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "opacity",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "stroke_sw",
+     "label": "Stroke",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ts_stroke_text_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_width",
+     "label": "Stroke Fill Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "zindex",
+     "label": "Z-Index",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "hide_on_hov",
+     "label": "Hide on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "hover_state",
+     "label": "Hover Element",
+     "type": "TAB"
+    },
+    {
+     "name": "item_type_hov",
+     "label": "Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "item_txt_hov",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "item_txt_tag_hov",
+     "label": "HTML Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "content_image_hov",
+     "label": "Choose Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "thumbnail_hov",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "item_img_fit_hov",
+     "label": "Image Fit",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "icon_hov",
+     "label": "Choose Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "draw_svg_hov",
+     "label": "Draw Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "path_width_hov",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "svg_sync_hov",
+     "label": "Draw All Paths Together",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "frames_hov",
+     "label": "Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "stroke_colors_hov",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "svg_color_hov",
+     "label": "After Draw Fill Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "lottie_url_hov",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "lottie_loop_hov",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_reverse_hov",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "start_point_hov",
+     "label": "Start Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "end_point_hov",
+     "label": "End Point (%)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "svg_yoyo_hov",
+     "label": "Yoyo Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "style_hov",
+     "label": "Element Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "item_txt_align_hov",
+     "label": "Text Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "content_size_hov",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "item_icon_color_hov",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "item_text_color_hov",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "item_text_typo_hov",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "item_text_shadow_hov",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "item_img_width_hov",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "item_img_height_hov",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "opacity_hov",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "stroke_sw_hov",
+     "label": "Stroke",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ts_stroke_text_color_hov",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "stroke_width_hov",
+     "label": "Stroke Fill Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "zindex_hov",
+     "label": "Z-Index",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "transition",
+     "label": "Transition (sec)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "additional_heading",
+     "label": "Additional Options",
+     "type": "HEADING"
+    },
+    {
+     "name": "link_switcher",
+     "label": "Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "link_type",
+     "label": "Link Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "link",
+     "label": "URL",
+     "type": "URL"
+    },
+    {
+     "name": "link_existing",
+     "label": "Existing Page",
+     "type": "Premium_Post_Filter::TYPE"
+    },
+    {
+     "name": "effect",
+     "label": "Effects",
+     "type": "SELECT"
+    },
+    {
+     "name": "txt_effect",
+     "label": "Highlight Effects",
+     "type": "SELECT"
+    },
+    {
+     "name": "effect_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "mask_dir",
+     "label": "Direction",
+     "type": "SELECT"
+    },
+    {
+     "name": "line_stroke_width",
+     "label": "Line Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "anim_speed",
+     "label": "Animation Speed",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "clip_scroll",
+     "label": "",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "after_clip_color",
+     "label": "After Fill Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "con_style_heading",
+     "label": "Item Container Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "item_width",
+     "label": "Item Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "rotate",
+     "label": "Rotate (deg)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "clipped_bg",
+     "label": "",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "item_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "item_lq_effect",
+     "label": "Liquid Glass Effect",
+     "type": "SELECT"
+    },
+    {
+     "name": "item_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "item_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "item_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "content",
+     "label": "Items",
+     "type": "REPEATER"
+    },
+    {
+     "name": "cont_col_gap",
+     "label": "Horizontal Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "cont_row_gap",
+     "label": "Vertical Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "content_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "entrance_animation",
+     "label": "Entrance Animation",
+     "type": "ANIMATION"
+    },
+    {
+     "name": "en_anime_dur",
+     "label": "Animation Duration",
+     "type": "SELECT"
+    },
+    {
+     "name": "en_anime_delay",
+     "label": "Animation Delay in Between (s)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "trigger",
+     "label": "Trigger Animation on",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "content_style_sec",
+   "label": "Item Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "txt_heading",
+     "label": "Text",
+     "type": "HEADING"
+    },
+    {
+     "name": "text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "text_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover_css_filters",
+     "label": "Hover CSS Filters",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "transition",
+     "label": "Transition (sec)",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "cont_style_sec",
+   "label": "Item Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "cont_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "cont_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "cont_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "cont_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "cont_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "cont_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 115,
+  "responsive": 18
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

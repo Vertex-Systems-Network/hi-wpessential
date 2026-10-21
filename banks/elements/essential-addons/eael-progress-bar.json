@@ -1,0 +1,337 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-progress-bar",
+ "title": "Progress Bar",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "ea progessbar",
+  "ea progess bar",
+  "status bar",
+  "ea status bar",
+  "indicator",
+  "progress indicator",
+  "gradient",
+  "ea",
+  "scroll indicator",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Progress_Bar.php",
+ "sections": [
+  {
+   "id": "progress_bar_section_layout",
+   "label": "Layout",
+   "tab": "",
+   "controls": [
+    {
+     "name": "progress_bar_layout",
+     "label": "Layout",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_pricing_table_style_pro_alert",
+     "label": "Only Available in Pro Version!",
+     "type": "HEADING"
+    },
+    {
+     "name": "progress_bar_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "progress_bar_title_html_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "progress_bar_title_inner_show",
+     "label": "Inner Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "progress_bar_title_inner",
+     "label": "Inner Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "progress_bar_value_type",
+     "label": "Counter Value Type",
+     "type": "SELECT",
+     "options": [
+      "static",
+      "dynamic"
+     ]
+    },
+    {
+     "name": "progress_bar_value",
+     "label": "Counter Value",
+     "type": "SLIDER"
+    },
+    {
+     "name": "progress_bar_value_dynamic",
+     "label": "Counter Value",
+     "type": "NUMBER"
+    },
+    {
+     "name": "progress_bar_show_count",
+     "label": "Display Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "progress_bar_animation_duration",
+     "label": "Animation Duration",
+     "type": "SLIDER"
+    },
+    {
+     "name": "progress_bar_prefix_label",
+     "label": "Prefix Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "progress_bar_postfix_label",
+     "label": "Postfix Label",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "progress_bar_section_style_general_line",
+   "label": "General",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "progress_bar_line_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "progress_bar_section_style_bg",
+   "label": "Background",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "progress_bar_line_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_line_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_line_height_inner_title",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_line_bg_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "progress_bar_section_style_fill",
+   "label": "Fill",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "progress_bar_line_fill_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_line_fill_height_inner_title",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_line_fill_color",
+     "label": "Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "progress_bar_line_fill_stripe",
+     "label": "Show Stripe",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "progress_bar_line_fill_stripe_animate",
+     "label": "Stripe Animation",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "reverse",
+      "none"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "progress_bar_section_style_general_circle",
+   "label": "General",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "progress_bar_circle_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "progress_bar_circle_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_circle_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_circle_stroke_width",
+     "label": "Stroke Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_circle_stroke_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_circle_fill_color",
+     "label": "Fill Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_circle_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "progress_bar_section_style_typography",
+   "label": "Typography",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "progress_bar_title_typography",
+     "label": "Title",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "progress_bar_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_inner_title_typography",
+     "label": "Inner Title",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "progress_bar_inner_title_color",
+     "label": "Inner Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_inner_title_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "progress_bar_count_typography",
+     "label": "Counter",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "progress_bar_count_color",
+     "label": "Counter Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "progress_bar_after_typography",
+     "label": "Prefix/Postfix",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "progress_bar_after_color",
+     "label": "Prefix/Postfix Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 7,
+  "controls": 40,
+  "responsive": 1
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

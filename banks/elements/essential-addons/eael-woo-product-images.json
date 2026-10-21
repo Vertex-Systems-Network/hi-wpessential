@@ -1,0 +1,376 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-woo-product-images",
+ "title": "Woo Product Images",
+ "categories": [
+  "essential-addons-elementor",
+  "woocommerce-elements"
+ ],
+ "keywords": [
+  "woocommerce",
+  "images",
+  "product",
+  "ea",
+  "essential addons",
+  "ea product",
+  "ea product image",
+  "woo",
+  "woo product",
+  "woo image",
+  "woo product image",
+  "Product Image"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Woo_Product_Images.php",
+ "sections": [
+  {
+   "id": "eael_images_section_title_style",
+   "label": "Images",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_image_sale_flash",
+     "label": "Sale Flash",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_image_sale_flash_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_image_sale_flash_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_iamge_heading",
+     "label": "Image",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_image_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_image_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_image_zoom_box",
+     "label": "Image Popup",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_image_zoom_show",
+     "label": "Show Image Popup",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_image_zoom_box_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_image_zoom_box_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_image_zoom_box_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_image_zoom_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_image_zoom_box_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_thumb_heading",
+     "label": "Thumbnails",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_thumb_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_thumb_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_thumb_spacing",
+     "label": "Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_thumb_navigation",
+     "label": "Navigation",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_thumb_navigator_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_thumb_navigator_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_zoom_style_section",
+   "label": "Zoom",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "zoom_lens_border_style_heading",
+     "label": "Lens Border Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_zoom_lens_border_type",
+     "label": "Type",
+     "type": "SELECT",
+     "options": [
+      "solid",
+      "dashed",
+      "dotted"
+     ]
+    },
+    {
+     "name": "eael_zoom_lens_border_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true
+    },
+    {
+     "name": "eael_zoom_lens_border_color",
+     "label": "Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "eael_zoom_lens_border_radius",
+     "label": "Radius",
+     "type": "SLIDER"
+    }
+   ]
+  },
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "eael_content_section",
+   "label": "Content",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eael_pi_image_resolution",
+     "label": "Image Resolution",
+     "type": "SELECT",
+     "options": [
+      "full",
+      "large",
+      "medium_large",
+      "medium",
+      "thumbnail",
+      "1536x1536",
+      "2048x2048"
+     ]
+    },
+    {
+     "name": "eael_pi_show_loader",
+     "label": "Image Loader",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pi_effects",
+     "label": "Effects",
+     "type": "SELECT",
+     "options": [
+      "slide",
+      "cards",
+      "fade",
+      "cube",
+      "flip",
+      "coverflow"
+     ]
+    },
+    {
+     "name": "eael_pi_variation_image",
+     "label": "Update Image on Variation Change",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pi_pagination",
+     "label": "Pagination",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pi_navigation",
+     "label": "Navigation",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pi_thumbnail",
+     "label": "Thumbnail",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "thumb_image_resolution",
+     "label": "Thumbnail Resolution",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "eael_pi_select_thumb_items",
+     "label": "Thumb Items",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "eael_pi_thumb_desktop_items",
+     "label": "For Desktop",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_pi_thumb_tablet_items",
+     "label": "For Tablet",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_pi_thumb_mobile_items",
+     "label": "For Mobile",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_pi_thumb_height_for_mobile",
+     "label": "For Mobile Device Height",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_pi_thumb_position",
+     "label": "Thumb Position",
+     "type": "SELECT",
+     "options": [
+      "bottom",
+      "left",
+      "right"
+     ]
+    },
+    {
+     "name": "eael_pi_thumb_navigation",
+     "label": "Thumbnail Navigation",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_image_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_image_autoplay",
+     "label": "Autoplay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_product_image_autoplay_delay",
+     "label": "Delay",
+     "type": "SLIDER"
+    },
+    {
+     "name": "eael_pi_mouse_wheel",
+     "label": "Mouse Wheel",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pi_grab_cursor",
+     "label": "Grab Cursor",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pi_keyboard_press",
+     "label": "Key Press",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_zoom_effect_heading",
+     "label": "Zoom Effect",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_image_zoom_effect",
+     "label": "Enable",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_zoom_effect_type",
+     "label": "Effect Type",
+     "type": "SELECT",
+     "options": [
+      "lense",
+      "magnify",
+      "inside"
+     ]
+    },
+    {
+     "name": "eael_zoom_lens_size",
+     "label": "Lens Size",
+     "type": "SLIDER",
+     "responsive": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 52,
+  "responsive": 7
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

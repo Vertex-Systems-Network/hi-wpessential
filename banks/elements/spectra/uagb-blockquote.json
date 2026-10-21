@@ -1,0 +1,618 @@
+{
+ "kind": "block",
+ "name": "uagb/blockquote",
+ "title": "Blockquote",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/blockquote/attributes.php",
+ "attributes": {
+  "classMigrate": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "skinStyle": {
+   "type": "string",
+   "default": "border"
+  },
+  "align": {
+   "type": "string",
+   "default": "left"
+  },
+  "descColor": {
+   "type": "string",
+   "default": ""
+  },
+  "descFontSize": {
+   "type": "number",
+   "default": "18"
+  },
+  "descFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "descFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "descFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "descFontFamily": {
+   "type": "string",
+   "default": ""
+  },
+  "descFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "descFontStyle": {
+   "type": "string",
+   "default": "italic"
+  },
+  "descLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "descLineHeight": {
+   "type": "number",
+   "default": "1.5"
+  },
+  "descLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "descLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "descLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "descSpace": {
+   "type": "number",
+   "default": "25"
+  },
+  "descSpaceTablet": {
+   "type": "number",
+   "default": "20"
+  },
+  "descSpaceMobile": {
+   "type": "number",
+   "default": "15"
+  },
+  "descSpaceUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "author": {
+   "type": "string",
+   "default": "Author Name"
+  },
+  "authorColor": {
+   "type": "string",
+   "default": "#888888"
+  },
+  "authorFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "authorFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "authorFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "authorFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "authorFontFamily": {
+   "type": "string",
+   "default": ""
+  },
+  "authorFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "authorFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "authorLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "authorLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "authorLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "authorLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "authorLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "authorSpace": {
+   "type": "number",
+   "default": "15"
+  },
+  "authorSpaceTablet": {
+   "type": "number",
+   "default": "15"
+  },
+  "authorSpaceMobile": {
+   "type": "number",
+   "default": "15"
+  },
+  "authorImageWidth": {
+   "type": "number",
+   "default": "40"
+  },
+  "authorImageWidthTablet": {
+   "type": "number",
+   "default": "35"
+  },
+  "authorImageWidthMobile": {
+   "type": "number",
+   "default": "30"
+  },
+  "authorImageWidthUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "authorImageGap": {
+   "type": "number",
+   "default": "10"
+  },
+  "authorImageGapTablet": {
+   "type": "number",
+   "default": "10"
+  },
+  "authorImageGapMobile": {
+   "type": "number",
+   "default": "10"
+  },
+  "authorImageGapUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "authorImgBorderRadius": {
+   "type": "number",
+   "default": "100"
+  },
+  "authorImgBorderRadiusTablet": {
+   "type": "number",
+   "default": "100"
+  },
+  "authorImgBorderRadiusMobile": {
+   "type": "number",
+   "default": "100"
+  },
+  "authorImgPosition": {
+   "type": "string",
+   "default": "left"
+  },
+  "stack": {
+   "type": "string",
+   "default": "none"
+  },
+  "enableTweet": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "iconView": {
+   "type": "string",
+   "default": "icon_text"
+  },
+  "iconSkin": {
+   "type": "string",
+   "default": "classic"
+  },
+  "tweetLinkColor": {
+   "type": "string",
+   "default": "#1DA1F2"
+  },
+  "tweetBtnColor": {
+   "type": "string",
+   "default": "#fff"
+  },
+  "tweetBtnBgColor": {
+   "type": "string",
+   "default": "#1DA1F2"
+  },
+  "tweetBtnHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnBgHoverColor": {
+   "type": "string",
+   "default": "#1DA1F2"
+  },
+  "tweetBtnFontSize": {
+   "type": "number",
+   "default": "15"
+  },
+  "tweetBtnFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "tweetBtnFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnFontFamily": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "tweetBtnLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "tweetBtnHrPadding": {
+   "type": "number",
+   "default": "10"
+  },
+  "tweetBtnVrPadding": {
+   "type": "number",
+   "default": "10"
+  },
+  "paddingBtnLeftMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnRightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnTopMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnBottomMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "mobilePaddingBtnUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "paddingBtnLeftTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnRightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnTopTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnBottomTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "tabletPaddingBtnUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "tweetIconSpacing": {
+   "type": "number",
+   "default": "10"
+  },
+  "tweetIconSpacingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "borderColor": {
+   "type": "string",
+   "default": "#abb8c3"
+  },
+  "borderStyle": {
+   "type": "string",
+   "default": "solid"
+  },
+  "borderWidth": {
+   "type": "number",
+   "default": "4"
+  },
+  "borderWidthUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "borderGap": {
+   "type": "number",
+   "default": "15"
+  },
+  "borderGapTablet": {
+   "type": "number",
+   "default": "15"
+  },
+  "borderGapMobile": {
+   "type": "number",
+   "default": "15"
+  },
+  "borderGapUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "verticalPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "verticalPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "verticalPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "verticalPaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "quoteStyle": {
+   "type": "string",
+   "default": "style_2"
+  },
+  "quoteColor": {
+   "type": "string",
+   "default": "#3d3d3d"
+  },
+  "quoteSize": {
+   "type": "number",
+   "default": "25"
+  },
+  "quoteSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "quoteSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteTopMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteBottomMargin": {
+   "type": "number",
+   "default": "15"
+  },
+  "quoteLeftMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteRightMargin": {
+   "type": "number",
+   "default": "20"
+  },
+  "quoteTopMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteBottomMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteLeftMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteRightMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteTopMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteBottomMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteLeftMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteRightMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "quotetabletUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "quotemobileUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "quoteBorderRadius": {
+   "type": "number",
+   "default": "100"
+  },
+  "quoteBorderRadiusUnit": {
+   "type": "string",
+   "default": "%"
+  },
+  "quoteBgColor": {
+   "type": "string",
+   "default": "#f4f4f4"
+  },
+  "quoteHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "quoteBgHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "borderHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconTargetUrl": {
+   "type": "string",
+   "default": "current"
+  },
+  "customUrl": {
+   "type": "string",
+   "default": ""
+  },
+  "iconShareVia": {
+   "type": "string",
+   "default": ""
+  },
+  "quotePadding": {
+   "type": "number",
+   "default": "10"
+  },
+  "quotePaddingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "quotePaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "quotePaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "descTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "authorTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "descDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "authorDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "descriptionText": {
+   "type": "string",
+   "default": "Click here to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+  },
+  "descLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "descLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "descLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "descLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "authorLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "authorLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "authorLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "authorLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "tweetBtnLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "tweetBtnLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 150,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

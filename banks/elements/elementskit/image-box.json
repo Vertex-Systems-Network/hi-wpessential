@@ -1,0 +1,705 @@
+{
+ "kind": "elementor-widget",
+ "name": "image-box",
+ "title": "Image Box",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/image-box/image-box.php",
+ "sections": [
+  {
+   "id": "ekit_image_box_section_infoboxwithimage",
+   "label": "Image",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_image_box_image",
+     "label": "Choose Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "ekit_image_box_thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "ekit_image_box_style_simple",
+     "label": "Content Area",
+     "type": "SELECT",
+     "options": [
+      "simple-card",
+      "style-modern",
+      "floating-style",
+      "hover-border-bottom",
+      "style-sideline",
+      "shadow-line"
+     ]
+    },
+    {
+     "name": "enable_equal_height",
+     "label": "Equal Height?",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "enable",
+      "disable"
+     ]
+    },
+    {
+     "name": "ekit_image_box_enable_link",
+     "label": "Enable Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_image_box_website_link",
+     "label": "Link",
+     "type": "URL"
+    }
+   ]
+  },
+  {
+   "id": "ekit_image_box_section_for_image_title",
+   "label": "Body",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_image_box_title_text",
+     "label": "Title ",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_image_box_front_title_icons__switch",
+     "label": "Add icon? ",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_image_box_front_title_icons",
+     "label": "Title Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_image_box_front_title_icon_position",
+     "label": "Title Icon Position",
+     "type": "SELECT",
+     "options": [
+      "left",
+      "right"
+     ]
+    },
+    {
+     "name": "ekit_image_box_title_size",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    },
+    {
+     "name": "ekit_image_box_description_text",
+     "label": "Description",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "ekit_image_box_content_text_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_image_box_section_button",
+   "label": "Button",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_image_box_enable_btn",
+     "label": "Enable Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_image_box_btn_text",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_image_box_btn_url",
+     "label": "URL",
+     "type": "URL"
+    },
+    {
+     "name": "ekit_image_box_icons__switch",
+     "label": "Add icon? ",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_image_box_icons",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_image_box_icon_align",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "left",
+      "right"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_image_box_image_floating_box",
+   "label": "Floating Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_image_box_image_floating_box_normal_height_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_hover_height_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_hover_height",
+     "label": "Hover Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_icon_color_hover",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_tab_separetor",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_icon_font_size",
+     "label": "Icon Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_margin_top",
+     "label": "Margin Top",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_image_box_image_floating_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_image_box_image_classic_curves",
+   "label": "Classic Curves",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_image_box_image_classic_curves_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_classic_curves_margin",
+     "label": "Margin",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_image_box_border_bottom_hover",
+   "label": "Hover Border Bottom",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_image_box_border_hover_height",
+     "label": "Border Bottom Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_border_hover_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_image_box_border_hover_background_direction",
+     "label": "Hover Direction",
+     "type": "CHOOSE",
+     "options": [
+      "hover_from_left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_image_box_image_side_line",
+   "label": "Side Line",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_image_box_image_side_line_border_width",
+     "label": "Border Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_side_line_border_type",
+     "label": "Border Type",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "none",
+      "solid",
+      "double",
+      "dotted",
+      "dashed"
+     ]
+    },
+    {
+     "name": "side_line_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_image_side_line_border",
+     "label": "Border Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "side_line_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "side_line_hover_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_image_box_image_shadow_line",
+   "label": "Shadow Line",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_image_box_image_shadow_line_left_tab",
+     "label": "Left Line",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_image_shadow_left_line_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_shadow_left_line_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_image_box_image_shadow_left_line_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_image_box_image_shadow_line_right_tab",
+     "label": "Right Line",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_image_shadow_right_line_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_shadow_right_line_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_image_box_image_shadow_right_line_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    }
+   ]
+  },
+  {
+   "id": "ekit_image_box_image_section",
+   "label": "Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_image_box_border_radius",
+     "label": "Border radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_style_normal_tab_image",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_image_opacity",
+     "label": "Image opacity",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_style_hover_tab_image",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_image_opacity_hover",
+     "label": "Image opacity",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_scale_on_hover",
+     "label": "Image Scale on Hover",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_image_box_style_body_section",
+   "label": "Body",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_imagebox_genaral_border_heading_title",
+     "label": "General",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_imagebox_container_border_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "body_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_imagebox_container_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_imagebox_container_spacing",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_shadow_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_imagebox_title_border_heading_title",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_image_box_title_bottom_space",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_image_box_style_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_heading_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_style_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_heading_color_hover",
+     "label": "Color (Hover)",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_imagebox_description_border_heading_title",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_image_box_title_bottom_space_description",
+     "label": "Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_title_typography_description",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_image_box_style_normal_tab_description",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_heading_color_description",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_style_hover_tab_description",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_heading_color_hover_description",
+     "label": "Color (Hover)",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_image_box_section_style",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_image_box_text_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_typography_group",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_image_box_btn_icon_font_size",
+     "label": "Icon Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_icon_right_space",
+     "label": "Icon Space",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_image_icon_left_space",
+     "label": "Icon Space",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_button_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_btn_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_image_box_button_border_color_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_image_box_btn_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_image_box_tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_image_box_btn_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_btn_background_hover_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_image_box_button_border_hv_color_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_image_box_btn_hover_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_image_box_button_box_shadow_hover_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 11,
+  "controls": 94,
+  "responsive": 35
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

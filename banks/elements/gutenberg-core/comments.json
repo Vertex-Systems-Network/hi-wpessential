@@ -1,0 +1,74 @@
+{
+ "kind": "block",
+ "name": "core/comments",
+ "title": "Comments",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "An advanced block that allows displaying post comments using different visual configurations.",
+ "file": "wp/wordpress/wp-includes/blocks/comments/block.json",
+ "attributes": {
+  "tagName": {
+   "type": "string",
+   "default": "div"
+  },
+  "legacy": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "html": false,
+  "color": {
+   "gradients": true,
+   "heading": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true,
+    "link": true
+   }
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": true,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

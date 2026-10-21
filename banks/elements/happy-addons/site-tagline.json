@@ -1,0 +1,78 @@
+{
+ "kind": "elementor-widget",
+ "name": "site-tagline",
+ "title": "Site Tagline",
+ "categories": [
+  "happy_addons_category",
+  "happy_addons_theme_builder"
+ ],
+ "keywords": [
+  "site",
+  "tagline"
+ ],
+ "file": "happy-elementor-addons/widgets/site-tagline/widget.php",
+ "sections": [
+  {
+   "id": "_section_site_tagline",
+   "label": "Tagline",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "icon_indent",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "heading_text_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_tagline",
+   "label": "Tagline",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "tagline_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "tagline_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 6,
+  "responsive": 1
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

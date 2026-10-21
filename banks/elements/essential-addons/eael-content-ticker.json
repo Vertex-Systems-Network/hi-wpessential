@@ -1,0 +1,327 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-content-ticker",
+ "title": "Content Ticker",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "ticker",
+  "ea ticker",
+  "ea content ticker",
+  "news headline",
+  "news ticker",
+  "text rotate",
+  "text animation",
+  "text swing",
+  "text slide",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Content_Ticker.php",
+ "sections": [
+  {
+   "id": "eael_section_content_ticker_settings",
+   "label": "Ticker Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_dynamic_template_Layout",
+     "label": "Template Layout",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_ticker_type",
+     "label": "Ticker Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_ticker_type_pro_alert",
+     "label": "Custom Content available in pro version only!",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_ticker_tag_text",
+     "label": "Tag Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "section_additional_options",
+   "label": "Animation Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "carousel_effect",
+     "label": "Effect",
+     "type": "SELECT",
+     "options": [
+      "slide",
+      "fade"
+     ]
+    },
+    {
+     "name": "slider_speed",
+     "label": "Slider Speed",
+     "type": "SLIDER"
+    },
+    {
+     "name": "autoplay",
+     "label": "Autoplay",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "autoplay_speed",
+     "label": "Autoplay Speed",
+     "type": "SLIDER"
+    },
+    {
+     "name": "pause_on_hover",
+     "label": "Pause On Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "infinite_loop",
+     "label": "Infinite Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "grab_cursor",
+     "label": "Grab Cursor",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "navigation_heading",
+     "label": "Navigation",
+     "type": "HEADING"
+    },
+    {
+     "name": "arrows",
+     "label": "Arrows",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "direction",
+     "label": "Direction",
+     "type": "SELECT",
+     "options": [
+      "left",
+      "right"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_ticker_typography_settings",
+   "label": "Ticker Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_ticker_content_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ticker_content_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ticker_hover_content_color",
+     "label": "Text Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ticker_content_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_ticker_content_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_ticker_content_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_ticker_tag_style_settings",
+   "label": "Tag Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_ticker_tag_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ticker_tag_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ticker_tag_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_ticker_tag_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_ticker_tag_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_ticker_tag_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_arrows_style",
+   "label": "Arrows",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "prev_arrow",
+     "label": "Choose Prev Arrow",
+     "type": "ICONS"
+    },
+    {
+     "name": "arrow_new",
+     "label": "Choose Next Arrow",
+     "type": "ICONS"
+    },
+    {
+     "name": "arrows_size",
+     "label": "Arrows Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "left_arrow_position",
+     "label": "Align Left Arrow",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "right_arrow_position",
+     "label": "Align Right Arrow",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tab_arrows_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "arrows_bg_color_normal",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrows_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrows_border_normal",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "arrows_border_radius_normal",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "tab_arrows_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "arrows_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrows_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrows_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrows_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 42,
+  "responsive": 8
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

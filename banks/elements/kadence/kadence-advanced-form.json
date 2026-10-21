@@ -1,0 +1,41 @@
+{
+ "kind": "block",
+ "name": "kadence/advanced-form",
+ "title": "Advanced Form",
+ "categories": [
+  "kadence-blocks"
+ ],
+ "keywords": [
+  "kb",
+  "form",
+  "contact"
+ ],
+ "description": "Create an advanced contact or marketing form for your website.",
+ "file": "kadence-blocks/dist/blocks/advanced-form/block.json",
+ "attributes": {
+  "id": {
+   "type": "integer",
+   "default": 0
+  },
+  "uniqueID": {
+   "type": "string"
+  },
+  "legacyMigration": {
+   "type": "object",
+   "default": null
+  }
+ },
+ "supports": {
+  "html": false,
+  "customClassName": false,
+  "reusable": false,
+  "lock": false,
+  "kbMetadata": true
+ },
+ "counts": {
+  "attributes": 3,
+  "supports": 5
+ },
+ "source": "kadence",
+ "source_label": "Kadence Blocks"
+}

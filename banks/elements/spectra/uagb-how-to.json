@@ -1,0 +1,358 @@
+{
+ "kind": "block",
+ "name": "uagb/how-to",
+ "title": "How To",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/how-to/attributes.php",
+ "attributes": {
+  "block_id": {
+   "type": "string",
+   "default": ""
+  },
+  "overallAlignment": {
+   "type": "string",
+   "default": "left"
+  },
+  "tools_count": {
+   "type": "number",
+   "default": "1"
+  },
+  "material_count": {
+   "type": "number",
+   "default": "1"
+  },
+  "tools": {
+   "type": "string",
+   "default": ""
+  },
+  "materials": {
+   "type": "string",
+   "default": ""
+  },
+  "showTotaltime": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "showEstcost": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "showTools": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "showMaterials": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "mainimage": {
+   "type": "string",
+   "default": ""
+  },
+  "imgSize": {
+   "type": "string",
+   "default": "thumbnail"
+  },
+  "timeSpace": {
+   "type": "number",
+   "default": "5"
+  },
+  "costSpace": {
+   "type": "number",
+   "default": "5"
+  },
+  "time": {
+   "type": "string",
+   "default": "30"
+  },
+  "cost": {
+   "type": "string",
+   "default": "65"
+  },
+  "currencyType": {
+   "type": "string",
+   "default": " USD"
+  },
+  "headingAlign": {
+   "type": "string",
+   "default": "left"
+  },
+  "descriptionAlign": {
+   "type": "string",
+   "default": "left"
+  },
+  "headingColor": {
+   "type": "string",
+   "default": ""
+  },
+  "showEstcostcolor": {
+   "type": "string",
+   "default": ""
+  },
+  "showTotaltimecolor": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadingColor": {
+   "type": "string",
+   "default": ""
+  },
+  "headingTag": {
+   "type": "string",
+   "default": "h3"
+  },
+  "headSpace": {
+   "type": "number",
+   "default": "15"
+  },
+  "headFontFamily": {
+   "type": "string",
+   "default": "Default"
+  },
+  "headFontWeight": {
+   "type": "string",
+   "default": "500"
+  },
+  "headFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "headFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "headLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "headFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "headFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "headFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "headLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "headLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "headLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadFontFamily": {
+   "type": "string",
+   "default": "Default"
+  },
+  "subHeadFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "subHeadFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "subHeadLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorSpace": {
+   "type": "number",
+   "default": "15"
+  },
+  "headLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "subHeadLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "priceFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "priceFontSize": {
+   "type": "number",
+   "default": "18"
+  },
+  "priceFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "priceFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "priceFontFamily": {
+   "type": "string",
+   "default": "Default"
+  },
+  "priceFontWeight": {
+   "type": "string",
+   "default": "500"
+  },
+  "priceFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "priceLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "priceLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "priceLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "priceLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "priceLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "row_gap": {
+   "type": "number",
+   "default": "20"
+  },
+  "step_gap": {
+   "type": "string",
+   "default": ""
+  },
+  "schema": {
+   "type": "string",
+   "default": ""
+  },
+  "headTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "headDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "priceTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "priceDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "rowGapTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "rowGapMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "headLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "headLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "headLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "headLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "priceLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "priceLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "priceLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "priceLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "subHeadLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "subHeadLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 85,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

@@ -1,0 +1,551 @@
+{
+ "kind": "elementor-widget",
+ "name": "bar-chart",
+ "title": "Bar Chart",
+ "categories": [],
+ "keywords": [
+  "chart",
+  "bar",
+  "statistic",
+  "graph"
+ ],
+ "file": "happy-elementor-addons/widgets/bar-chart/widget.php",
+ "sections": [
+  {
+   "id": "_section_chart",
+   "label": "Bar Chart",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "chart_position",
+     "label": "",
+     "type": "SELECT",
+     "options": [
+      "bar"
+     ]
+    },
+    {
+     "name": "labels",
+     "label": "Labels",
+     "type": "TEXT"
+    },
+    {
+     "name": "bar_tab_content",
+     "label": "Content",
+     "type": "TAB"
+    },
+    {
+     "name": "label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "data",
+     "label": "Data",
+     "type": "TEXT"
+    },
+    {
+     "name": "bar_tab_style",
+     "label": "Style",
+     "type": "TAB"
+    },
+    {
+     "name": "background_color",
+     "label": "Background Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "background_hover_color",
+     "label": "Background Hover Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "border_color",
+     "label": "Border Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "border_hover_color",
+     "label": "Border Hover Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "chart_data",
+     "label": "",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "settings",
+   "label": "Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "chart_height",
+     "label": "Chart Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "xaxes_grid_display",
+     "label": "X Axes Grid Lines",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "yaxes_grid_display",
+     "label": "Y Axes Grid Lines",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "xaxes_labels_display",
+     "label": "Show X Axes Labels",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "yaxes_labels_display",
+     "label": "Show Y Axes Labels",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "tooltip_display",
+     "label": "Show Tooltips",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "title_display",
+     "label": "Show Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "chart_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "axis_range",
+     "label": "Scale Axis Range",
+     "type": "NUMBER"
+    },
+    {
+     "name": "step_size",
+     "label": "Step Size",
+     "type": "NUMBER"
+    },
+    {
+     "name": "legend_heading",
+     "label": "Legend",
+     "type": "HEADING"
+    },
+    {
+     "name": "legend_display",
+     "label": "Show Legend",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "legend_position",
+     "label": "Position",
+     "type": "SELECT",
+     "options": [
+      "top",
+      "left",
+      "bottom",
+      "right"
+     ]
+    },
+    {
+     "name": "legend_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "animation_heading",
+     "label": "Animation",
+     "type": "HEADING"
+    },
+    {
+     "name": "chart_animation_duration",
+     "label": "Duration",
+     "type": "NUMBER"
+    },
+    {
+     "name": "animation_options",
+     "label": "Easing",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_common",
+   "label": "Common",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "layout_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true
+    },
+    {
+     "name": "bar_width",
+     "label": "Bar Width",
+     "type": "SLIDER"
+    },
+    {
+     "name": "category_width",
+     "label": "Category Width",
+     "type": "SLIDER"
+    },
+    {
+     "name": "bar_border_width",
+     "label": "Bar Border Width",
+     "type": "SLIDER"
+    },
+    {
+     "name": "grid_color",
+     "label": "Grid Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "title_typography_toggle",
+     "label": "Title Typography",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "title_font_size",
+     "label": "Font Size",
+     "type": "SLIDER"
+    },
+    {
+     "name": "title_font_family",
+     "label": "Font Family",
+     "type": "FONT"
+    },
+    {
+     "name": "title_font_weight",
+     "label": "Font Weight",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "bold",
+      "300",
+      "400",
+      "600",
+      "700"
+     ]
+    },
+    {
+     "name": "title_font_style",
+     "label": "Font Style",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "italic",
+      "oblique"
+     ]
+    },
+    {
+     "name": "title_font_color",
+     "label": "Color",
+     "type": "COLOR"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_legend",
+   "label": "Legend",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "lagend_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "legend_box_width",
+     "label": "Box Width",
+     "type": "SLIDER"
+    },
+    {
+     "name": "legend_typography_toggle",
+     "label": "Typography",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "legend_font_size",
+     "label": "Font Size",
+     "type": "SLIDER"
+    },
+    {
+     "name": "legend_font_family",
+     "label": "Font Family",
+     "type": "FONT"
+    },
+    {
+     "name": "legend_font_weight",
+     "label": "Font Weight",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "bold",
+      "300",
+      "400",
+      "600",
+      "700"
+     ]
+    },
+    {
+     "name": "legend_font_style",
+     "label": "Font Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "legend_font_color",
+     "label": "Color",
+     "type": "COLOR"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_label",
+   "label": "Labels",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "labels_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "responsive": true
+    },
+    {
+     "name": "xaxes_label_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "labels_xaxes_typography_toggle",
+     "label": "X Axes Typography",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "labels_xaxes_font_size",
+     "label": "Font Size",
+     "type": "SLIDER"
+    },
+    {
+     "name": "labels_xaxes_font_family",
+     "label": "Font Family",
+     "type": "FONT"
+    },
+    {
+     "name": "labels_xaxes_font_weight",
+     "label": "Font Weight",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "bold",
+      "300",
+      "400",
+      "600",
+      "700"
+     ]
+    },
+    {
+     "name": "labels_xaxes_font_style",
+     "label": "Font Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "labels_xaxes_font_color",
+     "label": "Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "yaxes_label_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "labels_yaxes_typography_toggle",
+     "label": "Y Axes Typography",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "labels_yaxes_font_size",
+     "label": "Font Size",
+     "type": "SLIDER"
+    },
+    {
+     "name": "labels_yaxes_font_family",
+     "label": "Font Family",
+     "type": "FONT"
+    },
+    {
+     "name": "labels_yaxes_font_weight",
+     "label": "Font Weight",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "bold",
+      "300",
+      "400",
+      "600",
+      "700"
+     ]
+    },
+    {
+     "name": "labels_yaxes_font_style",
+     "label": "Font Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "labels_yaxes_font_color",
+     "label": "Color",
+     "type": "COLOR"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_tooltip",
+   "label": "Tooltip",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "tooltip_padding",
+     "label": "Padding",
+     "type": "SLIDER"
+    },
+    {
+     "name": "tooltip_border_width",
+     "label": "Border Width",
+     "type": "SLIDER"
+    },
+    {
+     "name": "tooltip_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER"
+    },
+    {
+     "name": "tooltip_caret_size",
+     "label": "Caret Size",
+     "type": "SLIDER"
+    },
+    {
+     "name": "tooltip_mode",
+     "label": "Mode",
+     "type": "SELECT",
+     "options": [
+      "nearest",
+      "index",
+      "x",
+      "y"
+     ]
+    },
+    {
+     "name": "tooltip_background_color",
+     "label": "Background Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "tooltip_border_color",
+     "label": "Border Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "tooltip_title_typography_toggle",
+     "label": "Title Typography",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "tooltip_title_font_size",
+     "label": "Font Size",
+     "type": "SLIDER"
+    },
+    {
+     "name": "tooltip_title_font_family",
+     "label": "Font Family",
+     "type": "FONT"
+    },
+    {
+     "name": "tooltip_title_font_weight",
+     "label": "Font Weight",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "bold",
+      "300",
+      "400",
+      "600",
+      "700"
+     ]
+    },
+    {
+     "name": "tooltip_title_font_style",
+     "label": "Font Style",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "italic",
+      "oblique"
+     ]
+    },
+    {
+     "name": "tooltip_title_font_color",
+     "label": "Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "tooltip_body_typography_toggle",
+     "label": "Body Typography",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "tooltip_body_font_size",
+     "label": "Font Size",
+     "type": "SLIDER"
+    },
+    {
+     "name": "tooltip_body_font_family",
+     "label": "Font Family",
+     "type": "FONT"
+    },
+    {
+     "name": "tooltip_body_font_weight",
+     "label": "Font Weight",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "bold",
+      "300",
+      "400",
+      "600",
+      "700"
+     ]
+    },
+    {
+     "name": "tooltip_body_font_style",
+     "label": "Font Style",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "italic",
+      "oblique"
+     ]
+    },
+    {
+     "name": "tooltip_body_font_color",
+     "label": "Color",
+     "type": "COLOR"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 81,
+  "responsive": 3
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

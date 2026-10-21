@@ -1,0 +1,196 @@
+{
+ "kind": "elementor-widget",
+ "name": "category-list",
+ "title": "Category List",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/category-list/category-list.php",
+ "sections": [
+  {
+   "id": "section_icon",
+   "label": "List",
+   "tab": "",
+   "controls": [
+    {
+     "name": "view",
+     "label": "Layout",
+     "type": "CHOOSE",
+     "options": [
+      "traditional",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "icons",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "list_bg_color",
+     "label": "Background Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "link",
+     "label": "Select Category",
+     "type": "ElementsKit_AJAXSELECT2"
+    },
+    {
+     "name": "icon_list",
+     "label": "",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "section_icon_list",
+   "label": "List",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "space_between",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "divider",
+     "label": "Divider",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "divider_style",
+     "label": "Style",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "solid",
+      "dotted",
+      "dashed"
+     ]
+    },
+    {
+     "name": "divider_weight",
+     "label": "Weight",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "divider_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "divider_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "divider_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "list_padding",
+     "label": "Padding (px)",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "list_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_icon_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_color_hover",
+     "label": "Hover",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_text_style",
+   "label": "Text",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "text_color_hover",
+     "label": "Hover",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "text_indent",
+     "label": "Left Padding",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "icon_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 23,
+  "responsive": 5
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

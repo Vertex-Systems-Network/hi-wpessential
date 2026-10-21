@@ -1,0 +1,99 @@
+{
+ "kind": "block",
+ "name": "kadence/advanced-form-file",
+ "title": "kadence/advanced-form-file",
+ "categories": [
+  "kadence-blocks"
+ ],
+ "keywords": [],
+ "description": "",
+ "file": "kadence-blocks/dist/blocks/advanced-form/fields/file/block.json",
+ "attributes": {
+  "uniqueID": {
+   "type": "string"
+  },
+  "formID": {
+   "type": "string"
+  },
+  "label": {
+   "type": "string",
+   "default": ""
+  },
+  "showLabel": {
+   "type": "boolean",
+   "default": true
+  },
+  "required": {
+   "type": "boolean",
+   "default": false
+  },
+  "requiredMessage": {
+   "type": "string"
+  },
+  "multiple": {
+   "type": "boolean",
+   "default": false
+  },
+  "multipleLimit": {
+   "type": "number",
+   "default": 5
+  },
+  "allowedTypes": {
+   "type": "array",
+   "default": [
+    "image"
+   ]
+  },
+  "maxSizeMb": {
+   "type": "number",
+   "default": 10
+  },
+  "ariaDescription": {
+   "type": "string",
+   "default": ""
+  },
+  "maxWidth": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    ""
+   ]
+  },
+  "maxWidthUnit": {
+   "type": "string",
+   "default": "%"
+  },
+  "minWidth": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    ""
+   ]
+  },
+  "minWidthUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "helpText": {
+   "type": "string",
+   "default": ""
+  },
+  "anchor": {
+   "type": "string"
+  },
+  "inputName": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "ktfieldconditional": true
+ },
+ "counts": {
+  "attributes": 18,
+  "supports": 1
+ },
+ "source": "kadence",
+ "source_label": "Kadence Blocks"
+}

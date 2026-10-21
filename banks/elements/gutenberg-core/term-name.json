@@ -1,0 +1,80 @@
+{
+ "kind": "block",
+ "name": "core/term-name",
+ "title": "Term Name",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [
+  "term title"
+ ],
+ "description": "Displays the name of a taxonomy term.",
+ "file": "wp/wordpress/wp-includes/blocks/term-name/block.json",
+ "attributes": {
+  "level": {
+   "type": "number",
+   "default": 0
+  },
+  "isLink": {
+   "type": "boolean",
+   "default": false
+  },
+  "levelOptions": {
+   "type": "array"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "html": false,
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true,
+    "link": true
+   }
+  },
+  "spacing": {
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "textAlign": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 3,
+  "supports": 8
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

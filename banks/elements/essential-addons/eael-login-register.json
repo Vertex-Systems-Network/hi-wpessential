@@ -1,0 +1,2928 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-login-register",
+ "title": "Login | Register Form",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "ea login register",
+  "ea register login",
+  "signin form",
+  "signup form",
+  "sign in form",
+  "sign up form",
+  "authentication",
+  "google",
+  "facebook",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Login_Register.php",
+ "sections": [
+  {
+   "id": "section_content_general",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "default_form_type_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "default_form_type",
+     "label": "Default Form Type",
+     "type": "SELECT",
+     "options": [
+      "login",
+      "register",
+      "lostpassword"
+     ]
+    },
+    {
+     "name": "registration_off_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "enable_reset_password",
+     "label": "Enable Reset Password Form",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "preview_reset_password",
+     "label": "Preview Reset Password Form",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "hide_for_logged_in_user",
+     "label": "Hide all Forms from Logged-in Users",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "redirect_for_logged_in_user",
+     "label": "Redirect for Logged-in Users",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "redirect_url_for_logged_in_user",
+     "label": "",
+     "type": "URL"
+    },
+    {
+     "name": "gen_lgn_content_po_toggle",
+     "label": "Login Form General",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "show_log_out_message",
+     "label": "Show Logout Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "log_out_link_text",
+     "label": "Logout Link Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "show_lost_password",
+     "label": "Show Lost your password?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lost_password_text",
+     "label": "Lost Password Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "lost_password_link_type",
+     "label": "Lost Password Link to",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom",
+      "form"
+     ]
+    },
+    {
+     "name": "lost_password_link_type_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "lost_password_url",
+     "label": "Custom Lost Password URL",
+     "type": "URL"
+    },
+    {
+     "name": "login_show_remember_me",
+     "label": "Remember Me Field",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "remember_text",
+     "label": "Remember Me Field Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "reg_hr",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "show_register_link",
+     "label": "Show Register Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "registration_link_text",
+     "label": "Register Link Text",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "registration_link_action",
+     "label": "Registration Link Action",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom",
+      "form"
+     ]
+    },
+    {
+     "name": "custom_register_url",
+     "label": "Custom Register URL",
+     "type": "URL"
+    },
+    {
+     "name": "show_register_link",
+     "label": "Show Register Link",
+     "type": "HIDDEN"
+    },
+    {
+     "name": "gen_reg_content_po_toggle",
+     "label": "Register Form General",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "show_login_link",
+     "label": "Show Login Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "login_link_text",
+     "label": "Login Link Text",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "login_link_action",
+     "label": "Login Link Action",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom",
+      "form"
+     ]
+    },
+    {
+     "name": "custom_login_url",
+     "label": "Custom Login URL",
+     "type": "URL"
+    },
+    {
+     "name": "show_login_link",
+     "label": "Show Login Link",
+     "type": "HIDDEN"
+    },
+    {
+     "name": "gen_lostpassword_content_po_toggle",
+     "label": "Lost Password Form General",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "show_login_link_lostpassword",
+     "label": "Show Login Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "login_link_text_lostpassword",
+     "label": "Login Link Text",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "login_link_action_lostpassword",
+     "label": "Login Link Action",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom",
+      "form"
+     ]
+    },
+    {
+     "name": "custom_login_url_lostpass",
+     "label": "Custom Login URL",
+     "type": "URL"
+    },
+    {
+     "name": "enable_ajax",
+     "label": "",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "enable_webhook",
+     "label": "",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_content_bot_protection",
+   "label": "Bot Protection",
+   "tab": "",
+   "controls": [
+    {
+     "name": "bot_protection_notice",
+     "label": "",
+     "type": "NOTICE"
+    },
+    {
+     "name": "google_recaptcha_heading",
+     "label": "Google reCAPTCHA",
+     "type": "HEADING"
+    },
+    {
+     "name": "enable_login_register_recaptcha",
+     "label": "Enable",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "login_register_recaptcha_version",
+     "label": "Version",
+     "type": "CHOOSE",
+     "options": [
+      "v2",
+      "title",
+      "text"
+     ]
+    },
+    {
+     "name": "login_register_recaptcha_v3_description",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "enable_login_recaptcha_heading",
+     "label": "Apply on",
+     "type": "HEADING"
+    },
+    {
+     "name": "enable_login_recaptcha",
+     "label": "Login Form",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "enable_register_recaptcha",
+     "label": "Registration Form",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "enable_lostpassword_recaptcha",
+     "label": "Lost Password Form",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_recaptcha_keys_missing",
+     "label": "",
+     "type": "NOTICE"
+    },
+    {
+     "name": "eael_recaptcha_keys_missing_v3",
+     "label": "",
+     "type": "NOTICE"
+    },
+    {
+     "name": "login_register_recaptcha_v3_score_threshold",
+     "label": "Score Threshold",
+     "type": "SLIDER"
+    },
+    {
+     "name": "cloudflare_turnstile_heading",
+     "label": "Cloudflare Turnstile",
+     "type": "HEADING"
+    },
+    {
+     "name": "enable_cloudflare_turnstile",
+     "label": "Enable",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "enable_cloudflare_turnstile_appearance_notice",
+     "label": "",
+     "type": "NOTICE"
+    },
+    {
+     "name": "cloudflare_turnstile_theme",
+     "label": "Theme",
+     "type": "CHOOSE",
+     "options": [
+      "auto",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_cloudflare_turnstile_keys_missing",
+     "label": "",
+     "type": "NOTICE"
+    },
+    {
+     "name": "enable_cloudflare_turnstile_heading",
+     "label": "Apply on",
+     "type": "HEADING"
+    },
+    {
+     "name": "enable_cloudflare_turnstile_on_login",
+     "label": "Login Form",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "enable_cloudflare_turnstile_on_register",
+     "label": "Registration Form",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "enable_cloudflare_turnstile_on_lostpassword",
+     "label": "Lost Password Form",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_content_login_fields",
+   "label": "Login Form Fields",
+   "tab": "",
+   "controls": [
+    {
+     "name": "login_label_types",
+     "label": "Labels & Placeholders",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom",
+      "none"
+     ]
+    },
+    {
+     "name": "login_labels_heading",
+     "label": "Labels",
+     "type": "HEADING"
+    },
+    {
+     "name": "login_user_label",
+     "label": "Username Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "login_password_label",
+     "label": "Password Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "login_placeholders_heading",
+     "label": "Placeholders",
+     "type": "HEADING"
+    },
+    {
+     "name": "login_user_placeholder",
+     "label": "Username Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "login_password_placeholder",
+     "label": "Password Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "login_field_width",
+     "label": "Input Fields width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "password_toggle",
+     "label": "Password Visibility Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "login_form_fields_remember_me_heading",
+     "label": "Remember Me",
+     "type": "HEADING"
+    },
+    {
+     "name": "login_form_fields_remember_me_checked",
+     "label": "Checked By Default",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "login_button_heading",
+     "label": "Login Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "login_button_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "login_button_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "login_button_icon_position",
+     "label": "Icon Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_content_lostpass_fields",
+   "label": "Lost Password Form Fields",
+   "tab": "",
+   "controls": [
+    {
+     "name": "lostpassword_label_types",
+     "label": "Label & Placeholder",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom",
+      "none"
+     ]
+    },
+    {
+     "name": "lostpassword_labels_heading",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "lostpassword_user_label",
+     "label": "Username Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "lostpassword_placeholders_heading",
+     "label": "Placeholder",
+     "type": "HEADING"
+    },
+    {
+     "name": "lostpassword_user_placeholder",
+     "label": "Username Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "lostpassword_field_width",
+     "label": "Input Field width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lostpassword_button_heading",
+     "label": "Lost Password Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "lostpassword_button_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "lost_pass_button_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "lost_pass_button_icon_position",
+     "label": "Icon Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_content_resetpass_fields",
+   "label": "Reset Password Form Fields",
+   "tab": "",
+   "controls": [
+    {
+     "name": "resetpassword_label_types",
+     "label": "Labels & Placeholders",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom",
+      "none"
+     ]
+    },
+    {
+     "name": "resetpassword_labels_heading",
+     "label": "Labels",
+     "type": "HEADING"
+    },
+    {
+     "name": "resetpassword_password_label",
+     "label": "Password Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "resetpassword_confirm_password_label",
+     "label": "Confirm Password Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "resetpassword_placeholders_heading",
+     "label": "Placeholders",
+     "type": "HEADING"
+    },
+    {
+     "name": "resetpassword_password_placeholder",
+     "label": "Password Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "resetpassword_confirm_password_placeholder",
+     "label": "Confirm Password Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "resetpassword_field_width",
+     "label": "Input Fields width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "password_toggle_resetpassword",
+     "label": "Password Visibility Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "resetpassword_button_heading",
+     "label": "Reset Password Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "resetpassword_button_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "section_content_resetpassword_options",
+   "label": "Reset Password Form Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "redirect_after_resetpassword",
+     "label": "Redirect After Password Reset",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "redirect_url_resetpassword",
+     "label": "",
+     "type": "URL"
+    }
+   ]
+  },
+  {
+   "id": "section_content_lr_form_header",
+   "label": "Form Header Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "lr_form_image",
+     "label": "Form Header Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "lr_form_image",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "lr_form_image_position",
+     "label": "Header Image Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "show_image_on_lostpassword_form",
+     "label": "Show on Lost Password Form",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lr_form_logo",
+     "label": "Form Header Logo",
+     "type": "MEDIA"
+    },
+    {
+     "name": "lr_form_logo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "lr_form_logo_position",
+     "label": "Form Logo Position",
+     "type": "CHOOSE",
+     "options": [
+      "inline",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "show_logo_on_lostpassword_form",
+     "label": "Show on Lost Password Form",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "login_form_title",
+     "label": "Login Form Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "login_form_subtitle",
+     "label": "Login Form Sub Title",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "register_form_title",
+     "label": "Register Form Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "register_form_subtitle",
+     "label": "Register Form Sub Title",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "lostpassword_form_title",
+     "label": "Lost Password Form Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "lostpassword_form_subtitle",
+     "label": "Lost Password Form Sub Title",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "resetpassword_form_title",
+     "label": "Reset Password Form Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "resetpassword_form_subtitle",
+     "label": "Reset Password Form Sub Title",
+     "type": "TEXTAREA"
+    }
+   ]
+  },
+  {
+   "id": "section_content_login_options",
+   "label": "Login Form Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "allow_login_roles",
+     "label": "Allowed User Roles",
+     "type": "SELECT2"
+    },
+    {
+     "name": "redirect_after_login",
+     "label": "Redirect After Login",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "redirect_url",
+     "label": "",
+     "type": "URL"
+    },
+    {
+     "name": "redirect_based_on_roles",
+     "label": "Redirect Based On User Roles",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "redirect_url_",
+     "label": "",
+     "type": "URL"
+    },
+    {
+     "name": "login_redirect_url_prev_page",
+     "label": "Redirect to Previous Page",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "logout_redirect_url",
+     "label": "Redirect After Logout",
+     "type": "URL"
+    },
+    {
+     "name": "enable_{$prefix}_otp_heading",
+     "label": "Email OTP Verification",
+     "type": "HEADING"
+    },
+    {
+     "name": "enable_{$prefix}_otp",
+     "label": "login",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "{$prefix}_otp_expiry",
+     "label": "OTP Expiry Time (minutes)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "{$prefix}_otp_resend_cooldown",
+     "label": "Resend Cooldown (seconds)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "{$prefix}_otp_email_subject",
+     "label": "Email Subject",
+     "type": "TEXT"
+    },
+    {
+     "name": "{$prefix}_otp_email_message",
+     "label": "Email Message",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "{$prefix}_otp_email_content_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "{$prefix}_otp_email_content_type",
+     "label": "Email Content Type",
+     "type": "SELECT",
+     "options": [
+      "html",
+      "plain"
+     ]
+    },
+    {
+     "name": "{$prefix}_otp_title_text",
+     "label": "OTP Form Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "{$prefix}_otp_subtitle_text",
+     "label": "OTP Form Subtitle",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "{$prefix}_otp_verify_button_text",
+     "label": "Verify Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "{$prefix}_otp_resend_text",
+     "label": "Resend Link Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "register_otp_show_user_flag",
+     "label": "Show Flag on User list",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_content_social_login",
+   "label": "Social Login",
+   "tab": "",
+   "controls": [
+    {
+     "name": "enable_google_login",
+     "label": "",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "enable_fb_login",
+     "label": "",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_content_terms_conditions",
+   "label": "Terms & Conditions",
+   "tab": "",
+   "controls": [
+    {
+     "name": "show_terms_conditions",
+     "label": "Enforce Terms & Conditions",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_terms_conditions_field_type",
+     "label": "Field Type",
+     "type": "SELECT",
+     "options": [
+      "toggle",
+      "checkbox"
+     ]
+    },
+    {
+     "name": "acceptance_label",
+     "label": "Acceptance Label",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "acceptance_text_source",
+     "label": "Content Source",
+     "type": "SELECT",
+     "options": [
+      "editor",
+      "custom"
+     ]
+    },
+    {
+     "name": "acceptance_text",
+     "label": "Terms and Conditions",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "acceptance_text_url",
+     "label": "Terms & Conditions URL",
+     "type": "URL"
+    }
+   ]
+  },
+  {
+   "id": "section_content_errors",
+   "label": "Validation Messages",
+   "tab": "",
+   "controls": [
+    {
+     "name": "error_messages_tab_msg",
+     "label": "Messages",
+     "type": "TAB"
+    },
+    {
+     "name": "err_message_heading",
+     "label": "Error Messages",
+     "type": "HEADING"
+    },
+    {
+     "name": "err_email",
+     "label": "Invalid Email",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_email_missing",
+     "label": "Email is missing",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_email_used",
+     "label": "Already Used Email",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_username",
+     "label": "Invalid Username",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_username_used",
+     "label": "Username already in use",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_pass",
+     "label": "Invalid Password",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_conf_pass",
+     "label": "Invalid Password Confirmed",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_conf_email",
+     "label": "Invalid Email Confirmed",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_loggedin",
+     "label": "Already Logged In",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_recaptcha",
+     "label": "reCAPTCHA Failed",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_cloudflare_turnstile",
+     "label": "Cloudflare Turnstile Failed",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_reset_password_key_expired",
+     "label": "Reset Password Expired Error",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_tc",
+     "label": "Terms & Condition Error",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_unknown",
+     "label": "Other Errors",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_restricted_role",
+     "label": "Restricted Role Error",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_phone_number_missing",
+     "label": "Phone number is missing",
+     "type": "TEXT"
+    },
+    {
+     "name": "err_phone_number_invalid",
+     "label": "Invalid phone number provided",
+     "type": "TEXT"
+    },
+    {
+     "name": "success_message_heading",
+     "label": "Success Messages",
+     "type": "HEADING"
+    },
+    {
+     "name": "success_login",
+     "label": "Successful Login",
+     "type": "TEXT"
+    },
+    {
+     "name": "success_register",
+     "label": "Successful Registration",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "success_lostpassword",
+     "label": "Lost Password Form Success",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "success_resetpassword",
+     "label": "Successful Password Reset",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "error_messages_tab_msg_position",
+     "label": "Position",
+     "type": "TAB"
+    },
+    {
+     "name": "error_messages_position_heading",
+     "label": "Set Error Message Position For",
+     "type": "HEADING"
+    },
+    {
+     "name": "err_message_position_login",
+     "label": "Login",
+     "type": "CHOOSE",
+     "options": [
+      "top",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "err_message_position_registration",
+     "label": "Registration",
+     "type": "CHOOSE",
+     "options": [
+      "top",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "err_message_position_lostpassword",
+     "label": "Forget Password",
+     "type": "CHOOSE",
+     "options": [
+      "top",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "err_message_position_reset",
+     "label": "Reset Password",
+     "type": "CHOOSE",
+     "options": [
+      "top",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_bit_integrations_promo",
+   "label": "Connect & Automate",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_bit_integrations_promo_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "section_content_register_fields",
+   "label": "Register Form Fields",
+   "tab": "",
+   "controls": [
+    {
+     "name": "register_form_field_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "field_type",
+     "label": "Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "field_type_custom_image_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "field_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "field_type_custom_image_extensions",
+     "label": "File Extensions",
+     "type": "TEXT"
+    },
+    {
+     "name": "field_type_custom_image_filename_length",
+     "label": "Max Filename Length",
+     "type": "NUMBER"
+    },
+    {
+     "name": "field_type_custom_image_filesize",
+     "label": "Max File Size (MB)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "placeholder",
+     "label": "Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "required",
+     "label": "Required",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "required_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "show_on_my_account",
+     "label": "On My Account Dashboard",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "width",
+     "label": "Field Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "register_fields",
+     "label": "",
+     "type": ""
+    },
+    {
+     "name": "show_labels",
+     "label": "Show Label",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "mark_required",
+     "label": "Show Required Mark",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "password_toggle_register",
+     "label": "Password Visibility Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "reg_button_heading",
+     "label": "Register Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "reg_button_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "reg_button_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "reg_button_icon_position",
+     "label": "Icon Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_content_register_actions",
+   "label": "Register Form Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "register_action",
+     "label": "Register Actions",
+     "type": "SELECT2",
+     "options": [
+      "redirect",
+      "auto_login",
+      "send_email"
+     ]
+    },
+    {
+     "name": "register_redirect_url",
+     "label": "Custom Redirect URL",
+     "type": "URL"
+    },
+    {
+     "name": "register_redirect_url_prev_page",
+     "label": "Redirect to Previous Page",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "register_user_role",
+     "label": "New User Role",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "section_content_reg_email",
+   "label": "Register User Email Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "reg_email_template_type",
+     "label": "Email Template Type",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom"
+     ]
+    },
+    {
+     "name": "reg_email_subject",
+     "label": "Email Subject",
+     "type": "TEXT"
+    },
+    {
+     "name": "reg_email_message",
+     "label": "Email Message",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "reg_email_content_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "reg_email_content_type",
+     "label": "Email Content Type",
+     "type": "SELECT",
+     "options": [
+      "html",
+      "plain"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_content_reg_admin_email",
+   "label": "Register Admin Email Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "reg_admin_email_template_type",
+     "label": "Email Template Type",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "custom"
+     ]
+    },
+    {
+     "name": "reg_admin_email_subject",
+     "label": "Email Subject",
+     "type": "TEXT"
+    },
+    {
+     "name": "reg_admin_email_message",
+     "label": "Email Message",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "reg_admin_email_content_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "reg_admin_email_content_type",
+     "label": "Email Content Type",
+     "type": "SELECT",
+     "options": [
+      "html",
+      "plain"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_content_lostpassword_email",
+   "label": "Lost Password Email Options",
+   "tab": "",
+   "controls": [
+    {
+     "name": "lostpassword_email_subject",
+     "label": "Email Subject",
+     "type": "TEXT"
+    },
+    {
+     "name": "lostpassword_email_message",
+     "label": "Email Message",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "lostpassword_email_content_note",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "lostpassword_email_message_reset_link_text",
+     "label": "Reset Link Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "lostpassword_email_message_reset_link_in_popup",
+     "label": "Reset Link in Popup",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lostpassword_email_message_reset_link_in_popup_warning",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "lostpassword_email_message_reset_link_popup_selector",
+     "label": "Popup Button Selector",
+     "type": "TEXT"
+    },
+    {
+     "name": "lostpassword_email_content_type",
+     "label": "Email Content Type",
+     "type": "SELECT",
+     "options": [
+      "html",
+      "plain"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_style_general",
+   "label": "General",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "form_form_wrap_po_toggle",
+     "label": "Container Box",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "eael_form_wrap_width_form_type",
+     "label": "Apply Width on",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "lostpassword"
+     ]
+    },
+    {
+     "name": "eael_form_wrap_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_wrap_width_lostpassword",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_wrap_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_wrap_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_wrap_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_form_wrap_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_form_wrap_bg_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_form_wrap_shadow",
+     "label": "Container Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "form_form_po_toggle",
+     "label": "Form",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "eael_form_wrapper_heading",
+     "label": "---Form Wrapper---",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_form_width",
+     "label": "Wrapper width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_margin",
+     "label": "Wrapper Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_padding",
+     "label": "Wrapper Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_form_border_radius",
+     "label": "Wrapper Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_form_bg_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_form_input_container",
+     "label": "---Form Style---",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_form_ic_width",
+     "label": "Form width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_ic_margin",
+     "label": "Form Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_ic_padding",
+     "label": "Form Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_ic_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_form_ic_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_form_ic_bg_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_form_shadow",
+     "label": "Form Wrapper Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_form_ic_shadow",
+     "label": "Form Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_style_{$form_type}_header_content",
+   "label": "",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "{$form_type}_fhc_po_toggle",
+     "label": "Header Content",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "{$form_type}_fhc_width",
+     "label": "Header width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_fhc_height",
+     "label": "Header height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_fhc_margin",
+     "label": "Header Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_fhc_padding",
+     "label": "Header Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_fhc_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "{$form_type}_fhc_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_header_bg",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "{$form_type}_form_img_po_toggle",
+     "label": "Form Illustration",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "{$form_type}_form_img_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_img_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_img_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_img_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_img_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "{$form_type}_form_img_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_img_shadow",
+     "label": "Illustration Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "{$form_type}_form_logo_po_toggle",
+     "label": "Form Logo",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "{$form_type}_form_logo_width",
+     "label": "width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_logo_height",
+     "label": "height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_logo_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_logo_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_logo_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "{$form_type}_form_logo_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_logo_shadow",
+     "label": "Logo Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "{$form_type}_form_title_po_toggle",
+     "label": "Title",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "{$form_type}_form_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_title_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_title_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_title_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "{$form_type}_form_title_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_title_typo",
+     "label": "Title Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "{$form_type}_form_subtitle_po_toggle",
+     "label": "Subtitle",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "{$form_type}_form_subtitle_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_subtitle_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_subtitle_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_subtitle_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_subtitle_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "{$form_type}_form_subtitle_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_form_subtitle_typo",
+     "label": "Subtitle Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "section_style_form_fields",
+   "label": "Form Fields",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_form_field_po_toggle",
+     "label": "Spacing",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "eael_form_input_fields_heading",
+     "label": "Form Input Fields",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_form_field_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_field_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_tc_fields_heading",
+     "label": "Terms & Condition Field",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_form_tc_field_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_tc_field_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_fields_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ph_align",
+     "label": "Text Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_form_label_colors_heading",
+     "label": "Colors & Border",
+     "type": "HEADING"
+    },
+    {
+     "name": "tab_form_field_style_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_field_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_field_placeholder_color",
+     "label": "Placeholder Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_field_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_field_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_field_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "tab_form_field_style_active",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_field_placeholder_color_active",
+     "label": "Placeholder Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_field_bg_color_active",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_field_border_focus",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_field_border_radius_focus",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_style_form_labels",
+   "label": "Form Labels",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_form_label_po_toggle",
+     "label": "Spacing",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "eael_form_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_label_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_form_label_c_po_toggle",
+     "label": "Colors",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "eael_label_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_label_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_form_label_b_po_toggle",
+     "label": "Border",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "eael_label_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_label_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "rmark_po_toggle",
+     "label": "Required Mark Style",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "rmark_sign",
+     "label": "Mark Sign",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "rmark_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "rmakr_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "rmark_valign",
+     "label": "Vertical Alignment",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "rmark_halign",
+     "label": "Horizontal Alignment",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lpv_po_toggle",
+     "label": "Password Visibility",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "lpv_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lvp_open_color",
+     "label": "Open Eye Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lvp_close_color",
+     "label": "Close Eye Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lpv_valign",
+     "label": "Vertical Alignment",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lpv_halign",
+     "label": "Horizontal Alignment",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lpv_po_toggle_register",
+     "label": "Register Password Visibility Style",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "lpv_size_register",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lvp_open_color_register",
+     "label": "Open Eye Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lvp_close_color_register",
+     "label": "Close Eye Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lpv_valign_register",
+     "label": "Vertical Alignment",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lpv_halign_register",
+     "label": "Horizontal Alignment",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lpv_po_toggle_resetpassword",
+     "label": "Reset Password Visibility",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "lpv_size_resetpassword",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lvp_open_color_resetpassword",
+     "label": "Open Eye Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lvp_close_color_resetpassword",
+     "label": "Close Eye Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "lpv_valign_resetpassword",
+     "label": "Vertical Alignment",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lpv_halign_resetpassword",
+     "label": "Horizontal Alignment",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_rm_fields_heading",
+     "label": "Remember Me",
+     "type": "HEADING"
+    },
+    {
+     "name": "remember_me_style_pot",
+     "label": "Style",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "remember_me_style",
+     "label": "Style",
+     "type": "SELECT",
+     "options": [
+      "lr-checkbox",
+      "lr-toggle"
+     ]
+    },
+    {
+     "name": "eael_form_rm_field_margin",
+     "label": "Container Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_rm_field_padding",
+     "label": "Container Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_rm_lbl_margin",
+     "label": "Label Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_rm_lbl_padding",
+     "label": "Label Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_rm_checkbox_margin",
+     "label": "Checkbox Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_rm_label_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_rm_label_bg_color",
+     "label": "Text Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_rm_checkbox_color",
+     "label": "Checkbox | Toggle Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_rm_label_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_form_forget_pass_fields_heading",
+     "label": "Forgot Password",
+     "type": "HEADING"
+    },
+    {
+     "name": "forget_pass_style_pot",
+     "label": "Style",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "eael_form_forget_pass_field_margin",
+     "label": "Container Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_forget_pass_field_padding",
+     "label": "Container Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_forget_pass_lbl_margin",
+     "label": "Label Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_forget_pass_lbl_padding",
+     "label": "Label Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_forget_pass_label_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_forget_pass_label_bg_color_normal",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_forget_pass_label_color_hover",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_forget_pass_label_bg_color_hover",
+     "label": "Background Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_forget_pass_label_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_form_terms_fields_heading",
+     "label": "Terms & Conditions",
+     "type": "HEADING"
+    },
+    {
+     "name": "terms_conditions_style_pot",
+     "label": "Style",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "eael_form_terms_field_margin",
+     "label": "Container Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_terms_field_padding",
+     "label": "Container Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_terms_lbl_margin",
+     "label": "Label Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_terms_lbl_padding",
+     "label": "Label Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_form_terms_checkbox_margin",
+     "label": "Checkbox Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_terms_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_terms_label_link_color",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_terms_label_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_terms_checkbox_color",
+     "label": "Checkbox | Toggle Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_terms_label_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "section_style_register_link",
+   "label": "",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "separator_login_link_for_two_forms",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "section_style_otp",
+   "label": "Email OTP Verification",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "otp_preview",
+     "label": "Preview OTP Field",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "otp_container_padding",
+     "label": "Container Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "otp_container_bg",
+     "label": "Container Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "otp_container_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "otp_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "otp_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "otp_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "otp_subtitle_heading",
+     "label": "Subtitle",
+     "type": "HEADING"
+    },
+    {
+     "name": "otp_subtitle_color",
+     "label": "Subtitle Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "otp_subtitle_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "otp_input_heading",
+     "label": "Input Field",
+     "type": "HEADING"
+    },
+    {
+     "name": "otp_input_color",
+     "label": "Input Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "otp_input_bg",
+     "label": "Input Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "otp_input_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "otp_input_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "otp_input_padding",
+     "label": "Input Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "otp_button_heading",
+     "label": "Verify Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "otp_button_color",
+     "label": "Button Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "otp_button_bg",
+     "label": "Button Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "otp_button_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "otp_button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "otp_button_padding",
+     "label": "Button Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "otp_resend_heading",
+     "label": "Resend Link",
+     "type": "HEADING"
+    },
+    {
+     "name": "otp_resend_color",
+     "label": "Resend Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "otp_resend_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "section_style_{$button_type}_btn",
+   "label": "",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "{$button_type}_button_style_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "{$button_type}_btn_pot",
+     "label": "Spacing",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "{$button_type}_btn_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$button_type}_btn_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$button_type}_btn_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "{$button_type}_btn_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "{$button_type}_btn_d_type",
+     "label": "Display as",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "row",
+      "column"
+     ]
+    },
+    {
+     "name": "{$button_type}_btn_jc",
+     "label": "Justify Content",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "flex-end",
+      "center",
+      "space-between",
+      "space-around",
+      "space-evenly"
+     ]
+    },
+    {
+     "name": "{$button_type}_btn_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "mr-auto",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "tabs_{$button_type}_btn_colors_heading",
+     "label": "Colors & Border",
+     "type": "HEADING"
+    },
+    {
+     "name": "tab_{$button_type}_btn_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "{$button_type}_btn_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "{$button_type}_btn_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "{$button_type}_btn_bg_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "{$button_type}_btn_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "{$button_type}_btn_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "tab_{$button_type}_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "{$button_type}_button_color_hover",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "{$button_type}_btn_icon_color_hover",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "{$button_type}_btn_bg_color_hover",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "{$button_type}_btn_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "{$button_type}_btn_border_radius_hover",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "{$button_type}_btn_width",
+     "label": "Button width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$button_type}_btn_height",
+     "label": "Button Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$button_type}_btn_show_spinner",
+     "label": "",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_style_{$form_type}_rc",
+   "label": "",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "{$form_type}_rc_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_rc_theme",
+     "label": "Theme",
+     "type": "SELECT",
+     "options": [
+      "light",
+      "dark"
+     ]
+    },
+    {
+     "name": "{$form_type}_rc_size",
+     "label": "Size",
+     "type": "SELECT",
+     "options": [
+      "normal",
+      "compact"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_style_{$form_type}_link",
+   "label": "",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "{$form_type}_link_style_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "{$form_type}_link_pot",
+     "label": "Spacing",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "{$form_type}_link_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_link_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_link_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "{$form_type}_link_d_type",
+     "label": "Display as",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "row",
+      "column"
+     ]
+    },
+    {
+     "name": "{$form_type}_link_jc",
+     "label": "Justify Content",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "flex-end",
+      "center",
+      "space-between",
+      "space-around",
+      "space-evenly"
+     ]
+    },
+    {
+     "name": "{$form_type}_link_ai",
+     "label": "Align Items",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "flex-start",
+      "flex-end",
+      "center",
+      "stretch",
+      "baseline",
+      "space-evenly"
+     ]
+    },
+    {
+     "name": "{$form_type}_link_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "mr-auto",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "tabs_{$form_type}_link_colors_heading",
+     "label": "Colors & Border",
+     "type": "HEADING"
+    },
+    {
+     "name": "tab_{$form_type}_link_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "{$form_type}_link_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_link_bg_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "{$form_type}_link_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "{$form_type}_link_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "tab_{$form_type}_link_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "{$form_type}_link_color_hover",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_link_bg_color_hover",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "{$form_type}_link_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "{$form_type}_link_border_radius_hover",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_link_wrap_width",
+     "label": "Link Container width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_link_width",
+     "label": "Link width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "{$form_type}_link_height",
+     "label": "Link Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 27,
+  "controls": 448,
+  "responsive": 80
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

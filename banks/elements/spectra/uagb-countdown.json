@@ -1,0 +1,682 @@
+{
+ "kind": "block",
+ "name": "uagb/countdown",
+ "title": "Countdown",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/countdown/attributes.php",
+ "attributes": {
+  "block_id": {
+   "type": "string",
+   "default": ""
+  },
+  "isFrontend": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "timerType": {
+   "type": "string",
+   "default": "date"
+  },
+  "timerEndAction": {
+   "type": "string",
+   "default": "zero"
+  },
+  "redirectURL": {
+   "type": "string",
+   "default": ""
+  },
+  "endDateTime": {
+   "type": "string",
+   "default": "2023-01-01T00:00:00Z"
+  },
+  "displayEndDateTime": {
+   "type": "string",
+   "default": "2023-01-01T00:00:00Z"
+  },
+  "showDays": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "showHours": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "showMinutes": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "showSeconds": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "showSeparator": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "separatorType": {
+   "type": "string",
+   "default": ":"
+  },
+  "ariaLiveType": {
+   "type": "string",
+   "default": "off"
+  },
+  "showLabels": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "labelDays": {
+   "type": "string",
+   "default": "__( 'DAYS', 'ultimate-addons-for-gutenberg' )"
+  },
+  "labelHours": {
+   "type": "string",
+   "default": "__( 'HOURS', 'ultimate-addons-for-gutenberg' )"
+  },
+  "labelMinutes": {
+   "type": "string",
+   "default": "__( 'MINUTES', 'ultimate-addons-for-gutenberg' )"
+  },
+  "labelSeconds": {
+   "type": "string",
+   "default": "__( 'SECONDS', 'ultimate-addons-for-gutenberg' )"
+  },
+  "digitLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "digitColor": {
+   "type": "string",
+   "default": ""
+  },
+  "digitFontFamily": {
+   "type": "string",
+   "default": "Default"
+  },
+  "digitFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "digitFontStyle": {
+   "type": "string",
+   "default": "normal"
+  },
+  "digitTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "digitDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "digitFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "digitFontSizeTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "digitFontSizeTypeMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "digitLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "digitLetterSpacingType": {
+   "type": "string",
+   "default": "em"
+  },
+  "digitFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "digitFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "digitFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "digitLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "digitLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "digitLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "digitLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "digitLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "digitLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLoadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "labelColor": {
+   "type": "string",
+   "default": ""
+  },
+  "labelFontFamily": {
+   "type": "string",
+   "default": "Default"
+  },
+  "labelFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "labelFontStyle": {
+   "type": "string",
+   "default": "normal"
+  },
+  "labelTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "labelDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "labelFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "labelFontSizeTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "labelFontSizeTypeMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "labelLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "labelLetterSpacingType": {
+   "type": "string",
+   "default": "em"
+  },
+  "labelFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "labelFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "labelFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorFontFamily": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorColor": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "separatorFontSizeTypeTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "separatorFontSizeTypeMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "separatorFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "separatorLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorRightSpacing": {
+   "type": "number",
+   "default": "26"
+  },
+  "separatorRightSpacingTablet": {
+   "type": "number",
+   "default": "14"
+  },
+  "separatorRightSpacingMobile": {
+   "type": "number",
+   "default": "12"
+  },
+  "separatorTopSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorTopSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "separatorTopSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockMarginUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockMarginUnitTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockMarginUnitMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockTopPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockPaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockPaddingUnitTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockPaddingUnitMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "boxTopPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "boxRightPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "boxLeftPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "boxBottomPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "boxTopPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "boxRightPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "boxLeftPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "boxBottomPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "boxTopPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "boxRightPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "boxLeftPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "boxBottomPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "boxPaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "boxPaddingUnitTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "boxPaddingUnitMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "align": {
+   "type": "string",
+   "default": "center"
+  },
+  "alignTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "alignMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "boxAlign": {
+   "type": "string",
+   "default": "center"
+  },
+  "boxAlignTablet": {
+   "type": "string",
+   "default": "center"
+  },
+  "boxAlignMobile": {
+   "type": "string",
+   "default": "center"
+  },
+  "boxWidth": {
+   "type": "string",
+   "default": ""
+  },
+  "boxWidthTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "boxWidthMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "isSquareBox": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "boxSpacing": {
+   "type": "number",
+   "default": "38"
+  },
+  "boxSpacingTablet": {
+   "type": "number",
+   "default": "20"
+  },
+  "boxSpacingMobile": {
+   "type": "number",
+   "default": "18"
+  },
+  "internalBoxSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "internalBoxSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "internalBoxSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "boxFlex": {
+   "type": "string",
+   "default": "column"
+  },
+  "boxFlexTablet": {
+   "type": "string",
+   "default": "column"
+  },
+  "boxFlexMobile": {
+   "type": "string",
+   "default": "column"
+  },
+  "labelVerticalAlignment": {
+   "type": "string",
+   "default": "center"
+  },
+  "labelVerticalAlignmentTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "labelVerticalAlignmentMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "boxBgType": {
+   "type": "string",
+   "default": "transparent"
+  },
+  "boxBgColor": {
+   "type": "string",
+   "default": ""
+  },
+  "useSeparateBoxShadows": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "boxShadowColor": {
+   "type": "string",
+   "default": "#00000070"
+  },
+  "boxShadowHOffset": {
+   "type": "number",
+   "default": "0"
+  },
+  "boxShadowVOffset": {
+   "type": "number",
+   "default": "0"
+  },
+  "boxShadowBlur": {
+   "type": "string",
+   "default": ""
+  },
+  "boxShadowSpread": {
+   "type": "string",
+   "default": ""
+  },
+  "boxShadowPosition": {
+   "type": "string",
+   "default": ""
+  },
+  "boxShadowColorHover": {
+   "type": "string",
+   "default": ""
+  },
+  "boxShadowHOffsetHover": {
+   "type": "number",
+   "default": "0"
+  },
+  "boxShadowVOffsetHover": {
+   "type": "number",
+   "default": "0"
+  },
+  "boxShadowBlurHover": {
+   "type": "string",
+   "default": ""
+  },
+  "boxShadowSpreadHover": {
+   "type": "string",
+   "default": ""
+  },
+  "boxShadowPositionHover": {
+   "type": "string",
+   "default": ""
+  },
+  "globalBlockStyleName": {
+   "type": "string",
+   "default": ""
+  },
+  "globalBlockStyleId": {
+   "type": "string",
+   "default": ""
+  },
+  "boxBorderStyle": {
+   "type": "string",
+   "default": "default"
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 166,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

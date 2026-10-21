@@ -1,0 +1,1558 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-weather",
+ "title": "Weather",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium weather",
+  "magazine",
+  "news",
+  "weather",
+  "forecast"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-weather.php",
+ "sections": [
+  {
+   "id": "pa_weather_general_section",
+   "label": "General Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "api_key",
+     "label": "API Key",
+     "type": "TEXT"
+    },
+    {
+     "name": "location_type",
+     "label": "Location",
+     "type": "SELECT"
+    },
+    {
+     "name": "custom_location_type",
+     "label": "Get By:",
+     "type": "SELECT"
+    },
+    {
+     "name": "city_name",
+     "label": "City Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "weather_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "unit",
+     "label": "Unit",
+     "type": "SELECT"
+    },
+    {
+     "name": "lang",
+     "label": "Language",
+     "type": "SELECT"
+    },
+    {
+     "name": "reload",
+     "label": "Reload Data Once Every",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "pa_weather_display_section",
+   "label": "Current Weather",
+   "tab": "",
+   "controls": [
+    {
+     "name": "layout",
+     "label": "Choose Layout",
+     "type": "SELECT"
+    },
+    {
+     "name": "show_temp_icon",
+     "label": "Show Temperature Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "current_weather_heading",
+     "label": "Current Weather",
+     "type": "HEADING"
+    },
+    {
+     "name": "show_current_weather",
+     "label": "Current Weather",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_curr_weather_desc",
+     "label": "Weather State",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_city",
+     "label": "Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "display_options_heading",
+     "label": "Display Options",
+     "type": "HEADING"
+    },
+    {
+     "name": "current_weather_display",
+     "label": "Current Weather Display",
+     "type": "CHOOSE",
+     "responsive": true
+    },
+    {
+     "name": "current_align",
+     "label": "Current Weather Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "city_align",
+     "label": "Title Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "cur_weather_sec_display",
+     "label": "Container Display",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "cur_weather_sec_align",
+     "label": "Container Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "cur_weather_sec_order",
+     "label": "Extra Weather Order",
+     "type": "CHOOSE",
+     "styles": true
+    },
+    {
+     "name": "cur_weather_sec_spacing",
+     "label": "Section Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "show_extra_info",
+     "label": "Additional Weather Info",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "pa_extra_weather",
+     "label": "Weather Data",
+     "type": "SELECT2"
+    },
+    {
+     "name": "extra_weather_display",
+     "label": "Display",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "extra_weather_alignment",
+     "label": "ًWeather Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "extra_weather_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "extra_weather_icon_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "extra_weather_spacing",
+     "label": "Spacing Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_daily_forecast_section",
+   "label": "Daily Forecast",
+   "tab": "",
+   "controls": [
+    {
+     "name": "enable_forecast",
+     "label": "Daily Forecast",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "weather_notice2",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "pa_hourly_forecast_section",
+   "label": "Hourly Forecast",
+   "tab": "",
+   "controls": [
+    {
+     "name": "enable_hourly",
+     "label": "Hourly Forecast",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "hourly_layout",
+     "label": "Choose Layout",
+     "type": "SELECT"
+    },
+    {
+     "name": "hourly_max",
+     "label": "Max Number of Hours",
+     "type": "NUMBER"
+    },
+    {
+     "name": "slides_to_show",
+     "label": "Hours To Show",
+     "type": "NUMBER",
+     "responsive": true
+    },
+    {
+     "name": "slides_to_scroll",
+     "label": "Slides To Scroll",
+     "type": "NUMBER",
+     "responsive": true
+    },
+    {
+     "name": "show_arrows_on_hover",
+     "label": "Display Arrows On Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "hourly_ele_min_width",
+     "label": "Element Minimum Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "hourly_weather_data",
+     "label": "Weather Data",
+     "type": "SELECT2"
+    }
+   ]
+  },
+  {
+   "id": "pa_custom_icon_section",
+   "label": "Custom Icons",
+   "tab": "",
+   "controls": [
+    {
+     "name": "enable_custom_icon",
+     "label": "Use Custom Icons",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "weather_notice3",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "draw_svg",
+     "label": "Draw Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "path_width",
+     "label": "Path Thickness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "stroke_color",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "svg_color",
+     "label": "After Draw Fill Color",
+     "type": "COLOR"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "pa_weather_outer",
+   "label": "Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "outer_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "outer_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "outer_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "outer_border_rad",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "outer_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_weather_city_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "city_name",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "city_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "city_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "city_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "city_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "city_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "city_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "city_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_weather_current",
+   "label": "Current Weather",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "pa_current_tab",
+     "label": "Current",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_current_temp",
+     "label": "Temperature",
+     "type": "HEADING"
+    },
+    {
+     "name": "temp",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "temp_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "current_temp_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "current_temp_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "current_temp_margin",
+     "label": "Icon Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_current_temp_unit",
+     "label": "Temperature Unit",
+     "type": "HEADING"
+    },
+    {
+     "name": "temp_unit_typo",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "temp_unit_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_current_desc",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "desc_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "desc_color",
+     "label": "Description Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "desc_feels_typo",
+     "label": "Feels Like Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "desc_feels_color",
+     "label": "Feels Like Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "temp_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "temp_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "temp_icon_stroke",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "temp_stork_width",
+     "label": "Stroke Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "temp_icon_margin",
+     "label": "Icon Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "desc_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_extra_tab",
+     "label": "Extra Weather",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_current_conatainer",
+     "label": "Container",
+     "type": "HEADING"
+    },
+    {
+     "name": "current_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "current_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "current_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "current_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "current_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "current_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "extra_weather_name",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "extra_weather_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "extra_weather_icon_color",
+     "label": "Icons Colors",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "extra_weather_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "extra_weather_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "extra_weather_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "extra_weather_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "extra_weather_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_weather_forecast_style",
+   "label": "Daily Forecast",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "pa_forecast_date",
+     "label": "Date",
+     "type": "HEADING"
+    },
+    {
+     "name": "forecast_date",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "forecast_date_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "forecast_date_margin",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_forecast_temp_max",
+     "label": "Max Temperature",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_forecast_temp_max_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pa_forecast_temp_max_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "max_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_forecast_temp_min",
+     "label": "Min Temperature",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_forecast_temp_min_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pa_forecast_temp_min_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "paa_forecast_temp_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_forecast_temp_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_forecast_temp_margin",
+     "label": "Icon Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "forecast_icon",
+     "label": "Weather Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "forecast_icon_color",
+     "label": "Icons Colors",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "forecast_icon_stroke",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "forecast_stork_width",
+     "label": "Stroke Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "forecast_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_b_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_forecast_cont",
+     "label": "Item Container",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_forecast_cont_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "forecast_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "forecast_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "forecast_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "forecast_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "forecast_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_forecast_cont_outer",
+     "label": "Outer Container",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_forecast_cont_outer_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "outer_forecast_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "forecast__outer_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "forecast_border_outer_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "forecast_outer_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "forecast_outer_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_weather_hourly_style",
+   "label": "Hourly Forecast",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "pa_hourly_date",
+     "label": "Hours",
+     "type": "HEADING"
+    },
+    {
+     "name": "hourly_date",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "hourly_date_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hourly_date_margin",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_hourly_temp_max",
+     "label": "Weather Details",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_hourly_temp_max_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pa_hourly_temp_max_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_hourly_temp_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_hourly_temp_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_hourly_temp_margin",
+     "label": "Icon Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hourly_icon",
+     "label": "Weather Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "hourly_icon_color",
+     "label": "Icons Colors",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hourly_icon_stroke",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hourly_stork_width",
+     "label": "Stroke Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hourly_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hourly_icon_margin",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_hourly_cont",
+     "label": "Item Container",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_hourly_cont_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "hourly_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "hourly_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "hourly_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "hourly_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hourly_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_hourly_cont_outer",
+     "label": "Outer Container",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_hourly_cont_outer_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "outer_hourly_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "hourly__outer_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "hourly_border_outer_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "hourly_outer_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hourly_outer_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_nav_style",
+   "label": "Carousel Arrows",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "nav_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "nav_arrow_height",
+     "label": "Arrow Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "nav_arrow_pos",
+     "label": "Vertical Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_nav_nomral",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_hourly_arrows_heading",
+     "label": "Hourly Forecast Arrows",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_nav_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_nav_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_nav_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_nav_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "pa_daily_arrows_heading",
+     "label": "Daily Forecast Arrows",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_daily_nav_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_daily_nav_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_daily_nav_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_daily_nav_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "pa_nav_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_arrows_heading_hov",
+     "label": "Hourly Forecast Arrows",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_nav_color_hov",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_nav_bg_hov",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_nav_border_hov",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_nav_border_radius_hov",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "pa_daily_arrows_heading_hov",
+     "label": "Daily Forecast Arrows",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_daily_nav_color_hov",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_daily_nav_bg_hov",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_daily_nav_border_hov",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_daily_nav_border_radius_hov",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "pa_nav_padding",
+     "label": "Hourly Arrows Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_daily_nav_padding",
+     "label": "Daily Arrows Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_weather_tabs_style_section",
+   "label": "Forecast Tabs",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "pa_weather_tabs",
+     "label": "Tabs",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_weather_tabs_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pa_weather_tabs_style_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_weather_tabs_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "pa_weather_tabs_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_weather_tabs_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_style_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_weather_tabs_color_hov",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_bg_hov",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "pa_weather_tabs_border_hov",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_weather_tabs_border_radius_hov",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_style_active",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_weather_tabs_color_active",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_bg_active",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "pa_weather_tabs_border_active",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_weather_tabs_border_radius_active",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_icons",
+     "label": "Icons Row",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_weather_tabs_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_icon_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "pa_weather_tabs_icon_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_weather_tabs_icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_icon_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_date",
+     "label": "Hours",
+     "type": "HEADING"
+    },
+    {
+     "name": "tabs_date",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "tabs_date_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_details",
+     "label": "Weather Details",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_weather_tabs_details_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pa_weather_tabs_details_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_details_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "pa_weather_tabs_details_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_weather_tabs_details_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_details_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_details_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tabs_forecast_icon",
+     "label": "Weather Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "tabs_forecast_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tabs_forecast_icon_stroke",
+     "label": "Stroke Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tabs_forecast_icon_stroke_width",
+     "label": "Stroke Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tabs_forecast_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_notice",
+     "label": "Notice",
+     "type": "HEADING"
+    },
+    {
+     "name": "notice_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_cont",
+     "label": "Container",
+     "type": "HEADING"
+    },
+    {
+     "name": "pa_weather_tabs_cont_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "pa_weather_tabs_cont_bg",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "pa_weather_tabs_cont_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_weather_tabs_cont_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_cont_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_weather_tabs_cont_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 13,
+  "controls": 240,
+  "responsive": 66
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

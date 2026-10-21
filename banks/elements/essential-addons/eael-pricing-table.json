@@ -1,0 +1,992 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-pricing-table",
+ "title": "Pricing Table",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "price menu",
+  "pricing",
+  "price",
+  "price table",
+  "table",
+  "ea table",
+  "ea pricing table",
+  "comparison table",
+  "pricing plan",
+  "dynamic price",
+  "woocommerce pricing",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Pricing_Table.php",
+ "sections": [
+  {
+   "id": "eael_section_pricing_table_settings",
+   "label": "Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_pricing_table_style",
+     "label": "Pricing Style",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_pricing_table_style_pro_alert",
+     "label": "Only available in pro version!",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_icon_enabled",
+     "label": "List Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_table_icon_placement",
+     "label": "Icon Placement",
+     "type": "SELECT",
+     "options": [
+      "left",
+      "right"
+     ]
+    },
+    {
+     "name": "eael_pricing_table_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_pricing_table_title_tag",
+     "label": "HTML Tag",
+     "type": "CHOOSE",
+     "options": [
+      "h1",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_pricing_table_sub_title",
+     "label": "Sub Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_pricing_table_style_2_icon_new",
+     "label": "Icon",
+     "type": "ICONS"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_price",
+   "label": "Price",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_pricing_table_price",
+     "label": "Price",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_pricing_table_onsale",
+     "label": "On Sale?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_table_onsale_price",
+     "label": "Sale Price",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_pricing_table_price_cur",
+     "label": "Price Currency",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_pricing_table_price_cur_placement",
+     "label": "Currency Placement",
+     "type": "SELECT",
+     "options": [
+      "left",
+      "right"
+     ]
+    },
+    {
+     "name": "eael_pricing_table_price_period",
+     "label": "Price Period (per)",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_pricing_table_period_separator",
+     "label": "Period Separator",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_feature",
+   "label": "Feature",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_pricing_table_item",
+     "label": "List Item",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_pricing_table_list_icon_new",
+     "label": "List Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "eael_pricing_table_icon_mood",
+     "label": "Item Active?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_table_list_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_list_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_item_tooltip_heading",
+     "label": "Tooltip",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_item_tooltip",
+     "label": "Enable",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_item_tooltip_content",
+     "label": "Content",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "eael_pricing_item_tooltip_side",
+     "label": "Appearance",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_pricing_item_tooltip_trigger",
+     "label": "Trigger",
+     "type": "SELECT",
+     "options": [
+      "hover",
+      "click"
+     ]
+    },
+    {
+     "name": "eael_pricing_item_tooltip_animation",
+     "label": "Animation Type",
+     "type": "SELECT",
+     "options": [
+      "fade",
+      "grow",
+      "swing",
+      "slide",
+      "fall"
+     ]
+    },
+    {
+     "name": "pricing_item_tooltip_animation_duration",
+     "label": "Animation Duration",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_pricing_table_toolip_arrow",
+     "label": "Arrow",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_item_tooltip_theme",
+     "label": "Theme",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "noir",
+      "light",
+      "punk",
+      "shadow",
+      "borderless"
+     ]
+    },
+    {
+     "name": "eael_pricing_table_items",
+     "label": "",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_footerr",
+   "label": "Button",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_pricing_table_button_show",
+     "label": "Display Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_table_button_icon_new",
+     "label": "Button Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "eael_pricing_table_button_icon_alignment",
+     "label": "Icon Position",
+     "type": "SELECT",
+     "options": [
+      "left",
+      "right"
+     ]
+    },
+    {
+     "name": "eael_pricing_table_button_icon_indent",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_btn",
+     "label": "Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_pricing_table_btn_link",
+     "label": "Button Link",
+     "type": "URL"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_featured",
+   "label": "Ribbon",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_pricing_table_featured",
+     "label": "Featured?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_table_featured_styles",
+     "label": "Ribbon Style",
+     "type": "SELECT",
+     "options": [
+      "ribbon-1",
+      "ribbon-2",
+      "ribbon-3",
+      "ribbon-4"
+     ]
+    },
+    {
+     "name": "eael_pricing_table_featured_tag_text",
+     "label": "Featured Tag Text",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_ribbon_alignment",
+     "label": "Ribbon Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_style_settings",
+   "label": "Pricing Table Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_pricing_table_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_container_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_container_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_border",
+     "label": "Border Type",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_pricing_table_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_hover_box_shadow",
+     "label": "Hover Box Shadow",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_table_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_pricing_table_content_alignment",
+     "label": "Content Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_header_style_settings",
+   "label": "Header",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_pricing_table_title_heading",
+     "label": "Title Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_style_2_title_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_style_1_title_line_color",
+     "label": "Line Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_pricing_table_subtitle_heading",
+     "label": "Subtitle Style",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_subtitle_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_subtitle_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_pricing_table_header_bg_heading",
+     "label": "Background",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_header_radius",
+     "label": "Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_header_bg",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_pricing_table_devider_heading",
+     "label": "Divider",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_devider_show",
+     "label": "Show",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_table_devider_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_devider_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_devider_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_devider_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_title_style_settings",
+   "label": "Pricing",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_pricing_table_price_tag_onsale_heading",
+     "label": "Original Price",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_pricing_onsale_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_price_tag_onsale_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_pricing_table_original_price_currency_heading",
+     "label": "Original Price Currency",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_original_price_currency_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_original_price_currency_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_pricing_table_original_price_currency_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_price_tag_heading",
+     "label": "Sale Price",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_pricing_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_price_tag_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_pricing_table_price_currency_heading",
+     "label": "Sale Price Currency",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_pricing_curr_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_price_cur_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_pricing_table_price_cur_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_pricing_period_heading",
+     "label": "Pricing Period",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_pricing_period_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_price_preiod_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_style_featured_list_settings",
+   "label": "Feature List",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_pricing_table_list_item_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_pricing_table_list_item_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_pricing_table_list_item_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_list_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_list_disable_item_color",
+     "label": "Disable item color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_list_item_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_list_item_icon_size_svg",
+     "label": "SVG Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_list_item_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_pricing_table_list_item_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_list_item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_list_item_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_style_3_featured_tag_settings",
+   "label": "Ribbon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_pricing_table_style_1_featured_bar_color",
+     "label": "Line Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_style_1_featured_bar_height",
+     "label": "Line Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_featured_tag_font_size",
+     "label": "Font Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_featured_tag_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_featured_tag_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_featured_tag_bg_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_tooltip_style",
+   "label": "Tooltip",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_pricing_table_tooltip_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_pricing_table_tooltip_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_tooltip_arrow_bg",
+     "label": "Arrow Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_tooltip_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_tooltip_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_tooltip_border",
+     "label": "Border Type",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_pricing_table_tooltip_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_tooltip_arrow_heading",
+     "label": "Tooltip Arrow",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_pricing_table_tooltip_arrow_size",
+     "label": "Arrow Size",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_icon_settings",
+   "label": "Icon Settings",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_pricing_table_icon_bg_show",
+     "label": "Show Background",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_table_icon_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_icon_bg_hover_color",
+     "label": "Background Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_icon_settings",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_icon_area_width",
+     "label": "Icon Area Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_icon_area_height",
+     "label": "Icon Area Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_icon_hover_color",
+     "label": "Icon Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_icon_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_pricing_table_icon_border_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_icon_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pricing_table_btn_style_settings",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_pricing_table_content_button_alignment",
+     "label": "Button Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_pricing_table_btn_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_btn_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_btn_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_btn_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_is_button_gradient_background",
+     "label": "Button Gradient Background",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_pricing_table_btn_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_pricing_table_btn_normal_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_btn_normal_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_btn_normal_bg_gradient",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_pricing_table_btn_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_pricing_table_btn_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_btn_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_pricing_table_btn_hover_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_btn_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_pricing_table_btn_hover_bg_gradient",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_pricing_table_btn_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_cta_button_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 14,
+  "controls": 138,
+  "responsive": 16
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

@@ -1,0 +1,886 @@
+{
+ "kind": "block",
+ "name": "uagb/forms",
+ "title": "Forms",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/forms/attributes.php",
+ "attributes": {
+  "block_id": {
+   "type": "string",
+   "default": ""
+  },
+  "formPaddingTop": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingRight": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingBottom": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingLeft": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingTopTab": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingRightTab": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingBottomTab": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingLeftTab": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingTopMob": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingRightMob": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingBottomMob": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingLeftMob": {
+   "type": "number",
+   "default": "25"
+  },
+  "formPaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "formPaddingUnitTab": {
+   "type": "string",
+   "default": "px"
+  },
+  "formPaddingUnitMob": {
+   "type": "string",
+   "default": "px"
+  },
+  "submitButtonText": {
+   "type": "string",
+   "default": "__( 'Submit', 'ultimate-addons-for-gutenberg' )"
+  },
+  "formLabel": {
+   "type": "string",
+   "default": "__( 'Spectra Form', 'ultimate-addons-for-gutenberg' )"
+  },
+  "buttonAlign": {
+   "type": "string",
+   "default": "left"
+  },
+  "buttonAlignTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "buttonAlignMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "confirmationType": {
+   "type": "string",
+   "default": "message"
+  },
+  "confirmationMessage": {
+   "type": "string",
+   "default": "__( 'The form has been submitted Successfully!', 'ultimate-addons-for-gutenberg' )"
+  },
+  "confirmationUrl": {
+   "type": "string",
+   "default": ""
+  },
+  "buttonSize": {
+   "type": "string",
+   "default": "medium"
+  },
+  "submitColor": {
+   "type": "string",
+   "default": ""
+  },
+  "submitBgType": {
+   "type": "string",
+   "default": "color"
+  },
+  "submitBgHoverType": {
+   "type": "string",
+   "default": "color"
+  },
+  "submitColorHover": {
+   "type": "string",
+   "default": ""
+  },
+  "submitBgColor": {
+   "type": "string",
+   "default": ""
+  },
+  "submitBgColorHover": {
+   "type": "string",
+   "default": ""
+  },
+  "toggleSize": {
+   "type": "number",
+   "default": "15"
+  },
+  "toggleSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "toggleSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "toggleColor": {
+   "type": "string",
+   "default": "#ffffff"
+  },
+  "toggleActiveColor": {
+   "type": "string",
+   "default": "#017cba"
+  },
+  "toggleDotColor": {
+   "type": "string",
+   "default": "#1e1e1e"
+  },
+  "toggleDotActiveColor": {
+   "type": "string",
+   "default": "#ffffff"
+  },
+  "toggleWidthSize": {
+   "type": "number",
+   "default": "0"
+  },
+  "toggleWidthSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "toggleWidthSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "toggleHeightSize": {
+   "type": "number",
+   "default": "0"
+  },
+  "toggleHeightSizeTablet": {
+   "type": "number",
+   "default": "0"
+  },
+  "toggleHeightSizeMobile": {
+   "type": "number",
+   "default": "0"
+  },
+  "vPaddingSubmit": {
+   "type": "string",
+   "default": ""
+  },
+  "hPaddingSubmit": {
+   "type": "string",
+   "default": ""
+  },
+  "submitTextloadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "sendAfterSubmitEmail": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "afterSubmitToEmail": {
+   "type": "string",
+   "default": ""
+  },
+  "afterSubmitBccEmail": {
+   "type": "string",
+   "default": ""
+  },
+  "afterSubmitCcEmail": {
+   "type": "string",
+   "default": ""
+  },
+  "afterSubmitEmailSubject": {
+   "type": "string",
+   "default": "__( 'Form Submission', 'ultimate-addons-for-gutenberg' )"
+  },
+  "submitTextFontFamily": {
+   "type": "string",
+   "default": "Default"
+  },
+  "submitTextFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "submitTextFontSize": {
+   "type": "number",
+   "default": "15"
+  },
+  "submitTextFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "submitTextFontSizeTablet": {
+   "type": "number",
+   "default": "15"
+  },
+  "submitTextFontSizeMobile": {
+   "type": "number",
+   "default": "15"
+  },
+  "submitTextLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "submitTextLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "submitTextLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "submitTextLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "labelloadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "labelFontFamily": {
+   "type": "string",
+   "default": "Default"
+  },
+  "labelFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "labelFontSize": {
+   "type": "number",
+   "default": "15"
+  },
+  "labelFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "labelFontSizeTablet": {
+   "type": "number",
+   "default": "15"
+  },
+  "labelFontSizeMobile": {
+   "type": "number",
+   "default": "15"
+  },
+  "labelLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "labelLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "inputloadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "inputFontFamily": {
+   "type": "string",
+   "default": "Default"
+  },
+  "inputFontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "inputFontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "inputFontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "inputFontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "inputFontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "inputLineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "inputLineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "inputLineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "inputLineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "labelColor": {
+   "type": "string",
+   "default": ""
+  },
+  "labelHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "inputColor": {
+   "type": "string",
+   "default": ""
+  },
+  "bgColor": {
+   "type": "string",
+   "default": ""
+  },
+  "bgHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "bgActiveColor": {
+   "type": "string",
+   "default": ""
+  },
+  "inputplaceholderColor": {
+   "type": "string",
+   "default": ""
+  },
+  "inputplaceholderHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "inputplaceholderActiveColor": {
+   "type": "string",
+   "default": ""
+  },
+  "inputactiveColor": {
+   "type": "string",
+   "default": ""
+  },
+  "vPaddingField": {
+   "type": "number",
+   "default": "10"
+  },
+  "hPaddingField": {
+   "type": "number",
+   "default": "10"
+  },
+  "fieldGap": {
+   "type": "number",
+   "default": "20"
+  },
+  "fieldGapTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "fieldGapMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "formStyle": {
+   "type": "string",
+   "default": "boxed"
+  },
+  "overallAlignment": {
+   "type": "string",
+   "default": "left"
+  },
+  "overallAlignmentTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "overallAlignmentMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "labelAlignment": {
+   "type": "string",
+   "default": "null"
+  },
+  "labelAlignmentTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "labelAlignmentMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "successMessageTextColor": {
+   "type": "string",
+   "default": ""
+  },
+  "successMessageBGColor": {
+   "type": "string",
+   "default": ""
+  },
+  "failedMessage": {
+   "type": "string",
+   "default": "__( 'There has been some error while submitting the form. Please verify all form fields again.', 'ultimate-addons-for-gutenberg' )"
+  },
+  "failedMessageTextColor": {
+   "type": "string",
+   "default": ""
+  },
+  "failedMessageBGColor": {
+   "type": "string",
+   "default": ""
+  },
+  "reCaptchaEnable": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "reCaptchaType": {
+   "type": "string",
+   "default": "v2"
+  },
+  "reCaptchaSiteKeyV2": {
+   "type": "string",
+   "default": ""
+  },
+  "reCaptchaSecretKeyV2": {
+   "type": "string",
+   "default": ""
+  },
+  "reCaptchaSiteKeyV3": {
+   "type": "string",
+   "default": ""
+  },
+  "reCaptchaSecretKeyV3": {
+   "type": "string",
+   "default": ""
+  },
+  "hidereCaptchaBatch": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "paddingBtnTopTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnRightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnBottomTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnLeftTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnTopMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnRightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnBottomMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnLeftMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingBtnUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "mobilePaddingBtnUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "tabletPaddingBtnUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "submitTextTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "submitTextDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "submitTextFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "labelTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "labelDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "labelFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "inputTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "inputDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "inputFontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "fieldGapType": {
+   "type": "string",
+   "default": "px"
+  },
+  "paddingFieldTop": {
+   "type": "number",
+   "default": "12"
+  },
+  "paddingFieldRight": {
+   "type": "number",
+   "default": "12"
+  },
+  "paddingFieldBottom": {
+   "type": "number",
+   "default": "12"
+  },
+  "paddingFieldLeft": {
+   "type": "number",
+   "default": "12"
+  },
+  "paddingFieldTopTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingFieldRightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingFieldBottomTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingFieldLeftTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingFieldTopMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingFieldRightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingFieldBottomMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingFieldLeftMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "paddingFieldUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "paddingFieldUnitmobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "paddingFieldUnitTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "toggleSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "captchaMessage": {
+   "type": "string",
+   "default": "__( 'Please fill up the above captcha.', 'ultimate-addons-for-gutenberg' )"
+  },
+  "labelGap": {
+   "type": "number",
+   "default": "10"
+  },
+  "labelGapTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "labelGapMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "labelGapUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "displayLabels": {
+   "type": "boolean",
+   "default": "true"
+  },
+  "submitTextLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "submitTextLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "submitTextLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "submitTextLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "inputLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "inputLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "inputLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "inputLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "labelLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "inputborderStyle": {
+   "type": "string",
+   "default": "solid"
+  },
+  "inputborderWidth": {
+   "type": "number",
+   "default": "1"
+  },
+  "inputborderRadius": {
+   "type": "number",
+   "default": "3"
+  },
+  "inputborderColor": {
+   "type": "string",
+   "default": "#BDBDBD"
+  },
+  "inputborderHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "successMessageborderStyle": {
+   "type": "string",
+   "default": "solid"
+  },
+  "successMessageborderWidth": {
+   "type": "number",
+   "default": "2"
+  },
+  "successMessageborderRadius": {
+   "type": "number",
+   "default": "3"
+  },
+  "successMessageborderColor": {
+   "type": "string",
+   "default": "green"
+  },
+  "successMessageborderHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "submitborderStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "submitborderWidth": {
+   "type": "string",
+   "default": ""
+  },
+  "submitborderRadius": {
+   "type": "number",
+   "default": "3"
+  },
+  "submitborderColor": {
+   "type": "string",
+   "default": ""
+  },
+  "submitborderHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientValue": {
+   "type": "string",
+   "default": "linear-gradient(90deg, rgba(6, 147, 227, 0.5) 0%, rgba(155, 81, 224, 0.5) 100%)"
+  },
+  "gradientColor1": {
+   "type": "string",
+   "default": "#06558a"
+  },
+  "gradientColor2": {
+   "type": "string",
+   "default": "#0063A1"
+  },
+  "gradientType": {
+   "type": "string",
+   "default": "linear"
+  },
+  "gradientLocation1": {
+   "type": "number",
+   "default": "0"
+  },
+  "gradientLocationTablet1": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientLocationMobile1": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientLocation2": {
+   "type": "number",
+   "default": "100"
+  },
+  "gradientLocationTablet2": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientLocationMobile2": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientAngle": {
+   "type": "number",
+   "default": "0"
+  },
+  "gradientAngleTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientAngleMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "selectGradient": {
+   "type": "string",
+   "default": "basic"
+  },
+  "gradientHValue": {
+   "type": "string",
+   "default": "linear-gradient(90deg, rgba(6, 147, 227, 0.5) 0%, rgba(155, 81, 224, 0.5) 100%)"
+  },
+  "gradientHColor1": {
+   "type": "string",
+   "default": "#06558a"
+  },
+  "gradientHColor2": {
+   "type": "string",
+   "default": "#0170b9"
+  },
+  "gradientHType": {
+   "type": "string",
+   "default": "linear"
+  },
+  "gradientHLocation1": {
+   "type": "number",
+   "default": "0"
+  },
+  "gradientHLocationTablet1": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientHLocationMobile1": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientHLocation2": {
+   "type": "number",
+   "default": "100"
+  },
+  "gradientHLocationTablet2": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientHLocationMobile2": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientHAngle": {
+   "type": "number",
+   "default": "0"
+  },
+  "gradientHAngleTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientHAngleMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "selectHGradient": {
+   "type": "string",
+   "default": "default"
+  },
+  "inheritFromTheme": {
+   "type": "string",
+   "default": "$inherit_from_theme"
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 217,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

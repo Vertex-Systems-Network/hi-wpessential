@@ -1,0 +1,106 @@
+{
+ "kind": "block",
+ "name": "core/post-featured-image",
+ "title": "Featured Image",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Display a post's featured image.",
+ "file": "wp/wordpress/wp-includes/blocks/post-featured-image/block.json",
+ "attributes": {
+  "isLink": {
+   "type": "boolean",
+   "default": false
+  },
+  "aspectRatio": {
+   "type": "string"
+  },
+  "width": {
+   "type": "string"
+  },
+  "height": {
+   "type": "string"
+  },
+  "scale": {
+   "type": "string",
+   "default": "cover"
+  },
+  "sizeSlug": {
+   "type": "string"
+  },
+  "rel": {
+   "type": "string",
+   "default": ""
+  },
+  "linkTarget": {
+   "type": "string",
+   "default": "_self"
+  },
+  "overlayColor": {
+   "type": "string"
+  },
+  "customOverlayColor": {
+   "type": "string"
+  },
+  "dimRatio": {
+   "type": "number",
+   "default": 0
+  },
+  "gradient": {
+   "type": "string"
+  },
+  "customGradient": {
+   "type": "string"
+  },
+  "useFirstImageFromPost": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "align": [
+   "left",
+   "right",
+   "center",
+   "wide",
+   "full"
+  ],
+  "color": {
+   "text": false,
+   "background": false
+  },
+  "__experimentalBorder": {
+   "color": true,
+   "radius": true,
+   "width": true,
+   "__experimentalSkipSerialization": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "radius": true,
+    "width": true
+   }
+  },
+  "filter": {
+   "duotone": true
+  },
+  "shadow": {
+   "__experimentalSkipSerialization": true
+  },
+  "html": false,
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 14,
+  "supports": 9
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

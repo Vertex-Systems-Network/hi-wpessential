@@ -1,0 +1,124 @@
+{
+ "kind": "elementor-widget",
+ "name": "post-content",
+ "title": "Post Content",
+ "categories": [
+  "happy_addons_category",
+  "happy_addons_theme_builder"
+ ],
+ "keywords": [
+  "content",
+  "text"
+ ],
+ "file": "happy-elementor-addons/widgets/post-content/widget.php",
+ "sections": [
+  {
+   "id": "_section_post_content",
+   "label": "Post Content",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_content",
+   "label": "Post Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ha_ps_title_style",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_typography_type",
+     "label": "Individual Typography?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "title_typography",
+     "label": "Global Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_typography_h1",
+     "label": "HTML Tag H1",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_typography_h2",
+     "label": "HTML Tag H2",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_typography_h3",
+     "label": "HTML Tag H3",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_typography_h4",
+     "label": "HTML Tag H4",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_typography_h5",
+     "label": "HTML Tag H5",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_typography_h6",
+     "label": "HTML Tag H6",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ha_ps_content_style",
+     "label": "Content",
+     "type": "HEADING"
+    },
+    {
+     "name": "content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "content_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 14,
+  "responsive": 1
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

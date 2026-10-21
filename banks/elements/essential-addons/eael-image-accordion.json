@@ -1,0 +1,424 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-image-accordion",
+ "title": "Image Accordion",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "image",
+  "ea image accordion",
+  "image effect",
+  "hover effect",
+  "creative image",
+  "gallery",
+  "ea",
+  "essential addons",
+  "Glassmorphism",
+  "Liquid Glass Effect",
+  "Frost Effect"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Image_Accordion.php",
+ "sections": [
+  {
+   "id": "eael_ia_section_data_source",
+   "label": "Data Source",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_ia_data_source",
+     "label": "Source",
+     "type": "SELECT",
+     "options": [
+      "custom",
+      "acf_repeater"
+     ]
+    },
+    {
+     "name": "eael_ia_acf_repeater_field",
+     "label": "Repeater Field",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_ia_acf_fields_heading_",
+     "label": "Field Mapping",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_ia_acf_repeater_image_",
+     "label": "Background Image",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_ia_acf_repeater_title_",
+     "label": "Title",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_ia_acf_repeater_content_",
+     "label": "Content",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_ia_acf_repeater_link_",
+     "label": "Title Link",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_ia_acf_repeater_extras_",
+     "label": "Additional Fields",
+     "type": "SELECT2"
+    }
+   ]
+  },
+  {
+   "id": "eael_ia_section_extra_data_style",
+   "label": "Additional Fields",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_ia_extra_data_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ia_extra_data_text_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_ia_extra_data_text_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_ia_extra_data_text_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_img_accordion_settings",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_img_accordion_type",
+     "label": "Accordion Style",
+     "type": "SELECT",
+     "options": [
+      "on-hover",
+      "on-click"
+     ]
+    },
+    {
+     "name": "eael_img_accordion_direction",
+     "label": "Direction",
+     "type": "SELECT",
+     "options": [
+      "accordion-direction-horizontal",
+      "accordion-direction-vertical"
+     ]
+    },
+    {
+     "name": "eael_img_accordion_content_heading",
+     "label": "Content",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_img_accordion_content_horizontal_align",
+     "label": "Horizontal Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_img_accordion_content_vertical_align",
+     "label": "Vertical Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "top",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title_tag",
+     "label": "Select Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "span",
+      "p",
+      "div"
+     ]
+    },
+    {
+     "name": "eael_accordion_is_active",
+     "label": "Make it active?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_accordion_bg",
+     "label": "Background Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "eael_accordion_tittle",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_accordion_content",
+     "label": "Content",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "eael_accordion_enable_title_link",
+     "label": "Enable Title Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_accordion_title_link",
+     "label": "Title Link",
+     "type": "URL"
+    },
+    {
+     "name": "eael_img_accordions",
+     "label": "",
+     "type": "REPEATER"
+    },
+    {
+     "name": "eael_wd_liquid_glass_effect_switch",
+     "label": "Enable Liquid Glass Effects",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_img_accordion_style_settings",
+   "label": "General",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_accordion_height",
+     "label": "Height",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "eael_accordion_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_accordion_container_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_accordion_container_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_accordion_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_accordion_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_accordion_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_accordion_img_overlay_color",
+     "label": "Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_accordion_img_hover_color",
+     "label": "Hover Overlay Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_section_img_accordion_thumbnail_style_settings",
+   "label": "Thumbnail",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_image_accordion_thumbnail_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_image_accordion_thumbnail_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_image_accordion_thumbnail_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_image_accordion_thumbnail_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_img_accordion_typography_settings",
+   "label": "Color &amp; Typography",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_accordion_title_text",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_accordion_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_accordion_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_accordion_content_text",
+     "label": "Content",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_accordion_content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_accordion_content_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "eael_wd_liquid_glass_effect_section",
+   "label": "Liquid Glass Effects",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_wd_liquid_glass_effect_notice",
+     "label": "",
+     "type": "ALERT"
+    },
+    {
+     "name": "eael_wd_liquid_glass_effect",
+     "label": "Liquid Glass Presets",
+     "type": "CHOOSE",
+     "options": [
+      "effect1",
+      "title",
+      "text"
+     ]
+    },
+    {
+     "name": "eael_wd_liquid_glass_effect_pro_alert",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eael_wd_liquid_glass_effect_settings",
+     "label": "Liquid Glass Settings",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_wd_liquid_glass_effect_brightness_effect2",
+     "label": "Brightness",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_wd_liquid_glass_shadow_effect",
+     "label": "Shadow Effects",
+     "type": "SELECT2",
+     "options": [
+      "effect1",
+      "effect2",
+      "effect3",
+      "effect4"
+     ]
+    },
+    {
+     "name": "eael_wd_liquid_glass_shadow_inner",
+     "label": "Shadow Settings",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_wd_liquid_glass_shadow_effect",
+     "label": "Shadow Effects",
+     "type": "SELECT2",
+     "options": [
+      "effect1",
+      "effect2",
+      "effect3",
+      "effect4"
+     ]
+    },
+    {
+     "name": "eael_wd_liquid_glass_shadow_inner",
+     "label": "Shadow Settings",
+     "type": "HEADING"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 7,
+  "controls": 54,
+  "responsive": 2
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

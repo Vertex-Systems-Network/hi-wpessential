@@ -1,0 +1,222 @@
+{
+ "kind": "elementor-widget",
+ "name": "toggle",
+ "title": "Toggle",
+ "categories": [],
+ "keywords": [
+  "tabs",
+  "accordion",
+  "toggle"
+ ],
+ "file": "elementor/includes/widgets/toggle.php",
+ "sections": [
+  {
+   "id": "section_toggle",
+   "label": "Toggle",
+   "tab": "",
+   "controls": [
+    {
+     "name": "tab_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "tab_content",
+     "label": "Content",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "tabs",
+     "label": "Toggle Items",
+     "type": "REPEATER"
+    },
+    {
+     "name": "selected_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "selected_active_icon",
+     "label": "Active Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "title_html_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div"
+     ]
+    },
+    {
+     "name": "faq_schema",
+     "label": "FAQ Schema",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_toggle_style",
+   "label": "Toggle",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "border_width",
+     "label": "Border Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "space_between",
+     "label": "Space Between",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "section_toggle_style_title",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_active_color",
+     "label": "Active Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "title_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_toggle_style_icon",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_active_color",
+     "label": "Active Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_space",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_toggle_style_content",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "content_background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "content_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "content_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "content_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 26,
+  "responsive": 4
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

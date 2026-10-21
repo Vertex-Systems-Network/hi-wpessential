@@ -1,0 +1,965 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-pinterest-feed",
+ "title": "Pinterest Feed",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium pinterest feed",
+  "social",
+  "pin"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-pinterest-feed.php",
+ "sections": [
+  {
+   "id": "access_credentials_section",
+   "label": "Access Credentials",
+   "tab": "",
+   "controls": [
+    {
+     "name": "pinterest_login",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "access_token",
+     "label": "Access Token",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "refresh_access_token",
+     "label": "Refresh Access Token",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "reload",
+     "label": "Refresh Cached Data Once Every",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "pa_pinterest_query_sec",
+   "label": "Query",
+   "tab": "",
+   "controls": [
+    {
+     "name": "show_feed",
+     "label": "Pins/Boards",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "endpoint",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "endpoint_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "pins_onclick",
+     "label": "On Click",
+     "type": "SELECT"
+    },
+    {
+     "name": "boards_onclick",
+     "label": "On Click",
+     "type": "SELECT"
+    },
+    {
+     "name": "match_id",
+     "label": "Filter By ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "select_boards",
+     "label": "Select Specific Board(s) By",
+     "type": "SELECT"
+    },
+    {
+     "name": "board_id",
+     "label": "",
+     "type": "Premium_Select::TYPE"
+    },
+    {
+     "name": "board_ids_text",
+     "label": "",
+     "type": "TEXT"
+    },
+    {
+     "name": "board_id_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "sort",
+     "label": "Order By Date",
+     "type": "SELECT"
+    },
+    {
+     "name": "exclude_id",
+     "label": "Exclude IDs",
+     "type": "TEXT"
+    },
+    {
+     "name": "pins_per_board",
+     "label": "Pins Per Board",
+     "type": "NUMBER",
+     "responsive": true
+    },
+    {
+     "name": "no_of_posts",
+     "label": "Items Per Page",
+     "type": "NUMBER",
+     "responsive": true
+    }
+   ]
+  },
+  {
+   "id": "pa_pinterest_profile_sec",
+   "label": "Profile Header",
+   "tab": "",
+   "controls": [
+    {
+     "name": "profile_header",
+     "label": "Profile Header",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "profile_header_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "pa_pinterest_pin_sec",
+   "label": "Pin Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "pin_layout",
+     "label": "Skin",
+     "type": "SELECT"
+    },
+    {
+     "name": "info_order",
+     "label": "Pin Info Order",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pin_settings_heading",
+     "label": "Display Options",
+     "type": "HEADING"
+    },
+    {
+     "name": "pin_pinterest_icon",
+     "label": "Pinterest Icon",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "pinterest_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pin_username",
+     "label": "Username",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "pin_desc",
+     "label": "Description",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "pin_desc_len",
+     "label": "Description Length (Word)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "pin_desc_postfix",
+     "label": "Postfix",
+     "type": "SELECT"
+    },
+    {
+     "name": "pin_desc_postfix_txt",
+     "label": "Read More Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "create_time",
+     "label": "Date",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "date_format",
+     "label": "Date Format",
+     "type": "TEXT"
+    },
+    {
+     "name": "share_pin",
+     "label": "Share Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "img_sizes",
+     "label": "Image Size",
+     "type": "SELECT"
+    },
+    {
+     "name": "pa_pin_img_height",
+     "label": "Image Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "object_fit",
+     "label": "Object Fit",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_gen_section",
+   "label": "Pins General Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "outer_layout",
+     "label": "Layout",
+     "type": "SELECT"
+    },
+    {
+     "name": "pa_pinterest_cols",
+     "label": "Number of Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pin_tilt_effect",
+     "label": "Tilt Effect",
+     "type": "CHOOSE"
+    },
+    {
+     "name": "loading_animation",
+     "label": "Loading Animation",
+     "type": "SELECT"
+    },
+    {
+     "name": "pa_pinterest_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "load_more_btn",
+     "label": "Load More Button",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "no_per_load",
+     "label": "Pins On Load More",
+     "type": "NUMBER"
+    },
+    {
+     "name": "more_btn_txt",
+     "label": "Load More Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "pa_pinterest_carousel_settings",
+   "label": "Carousel",
+   "tab": "",
+   "controls": [
+    {
+     "name": "carousel",
+     "label": "Enable Carousel",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "fade",
+     "label": "Fade",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "auto_play",
+     "label": "Auto Play",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "autoplay_speed",
+     "label": "Autoplay Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "slides_to_scroll",
+     "label": "Slides To Scroll",
+     "type": "NUMBER"
+    },
+    {
+     "name": "carousel_speed",
+     "label": "Transition Speed (ms)",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "carousel_center",
+     "label": "Center Mode",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "carousel_spacing",
+     "label": "Slides\\' Spacing",
+     "type": "NUMBER"
+    },
+    {
+     "name": "carousel_dots",
+     "label": "Navigation Dots",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "carousel_arrows",
+     "label": "Navigation Arrows",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "carousel_arrows_pos",
+     "label": "Arrows Position",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "pa_feedbox_style_sec",
+   "label": "Feed Box",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "feed_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "feed_box_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "feed_box_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "feed_box_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "feed_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_pinterest_Sb_style",
+   "label": "Share Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "pa_share_btn_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pa_share_btn_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_sb_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_share_btn_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_sb_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_share_btn_Icolor_hov",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_color_hov",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "pa_share_btn_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_share_btn_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_pinterest_Sl_style",
+   "label": "Share Links",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "pa_sl_menu_bg",
+     "label": "Menu Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_sl_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pa_sl_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_sl_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pa_sl_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_sl_spacing_ver",
+     "label": "Vertical Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pa_sl_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_sl_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pa_sl_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "pa_sl_color_hov",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_feed_cont_style_sec",
+   "label": "Feeds Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "feed_cont_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "feed_cont_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "feed_cont_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "feed_cont_border_rad",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "feed_cont_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "feed_cont_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_pinterest_image_style_section",
+   "label": "Feed Image",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "feed_box_overlay",
+     "label": "Image Overlay",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover_css_filters",
+     "label": "Hover CSS Filters",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "feed_img_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "feed_img_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "feed_img_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "pa_pinterest_info_style_section",
+   "label": "Feed Info",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "username_heading",
+     "label": "Username",
+     "type": "HEADING"
+    },
+    {
+     "name": "pin_username_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pin_username_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pin_username_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "date_heading",
+     "label": "Date",
+     "type": "HEADING"
+    },
+    {
+     "name": "date_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "date_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "date_username_padding",
+     "label": "Username/Date Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "desc_heading",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "pin_desc_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "pin_desc_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pin_desc_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "read_more_heading",
+     "label": "Read More",
+     "type": "HEADING"
+    },
+    {
+     "name": "read_more_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "read_more_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_color_hov",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pinterest_icon_heading",
+     "label": "Pinterest Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "pinterest_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pinterest_icon_back",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pinterest_icon_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "pinterest_icon_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "pinterest_icon_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "board_trigger_style",
+   "label": "CTA Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "cta_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "cta_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "cta_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "cta_style_tab_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "cta_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "cta_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "cta_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "cta_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "cta_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "cta_style_tab_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "cta_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "cta_background_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Premium_Background"
+    },
+    {
+     "name": "cta_shadow_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "cta_border_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "cta_radius_hover",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "carousel_dots_style",
+   "label": "Carousel Dots",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "dot_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "dot_color_act",
+     "label": "Active Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "dots_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "carousel_arrows_style",
+   "label": "Carousel Arrows",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "arrow_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrow_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrow_bg",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "arrow_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 16,
+  "controls": 143,
+  "responsive": 29
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

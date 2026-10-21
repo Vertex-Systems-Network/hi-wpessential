@@ -1,0 +1,510 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-addon-maps",
+ "title": "Google Maps",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium google maps",
+  "marker",
+  "pin",
+  "tooltip",
+  "location"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-maps.php",
+ "sections": [
+  {
+   "id": "premium_maps_map_settings",
+   "label": "Center Location",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_maps_api_url",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "map_id_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "premium_map_id",
+     "label": "Map ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_map_ip_location",
+     "label": "Get User Location",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_map_location_finder",
+     "label": "Latitude & Longitude Finder",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_map_notice",
+     "label": "Find Latitude & Longitude",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "premium_maps_center_lat",
+     "label": "Center Latitude",
+     "type": "TEXT"
+    },
+    {
+     "name": "premium_maps_center_long",
+     "label": "Center Longitude",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "premium_maps_map_pins_settings",
+   "label": "Markers",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_maps_markers_width",
+     "label": "Max Width",
+     "type": "NUMBER"
+    },
+    {
+     "name": "marker_content_tab",
+     "label": "Content",
+     "type": "TAB"
+    },
+    {
+     "name": "premium_map_pin_location_finder",
+     "label": "Location Finder",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_map_pin_notice",
+     "label": "Find Location",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "map_latitude",
+     "label": "Latitude",
+     "type": "TEXT"
+    },
+    {
+     "name": "map_longitude",
+     "label": "Longitude",
+     "type": "TEXT"
+    },
+    {
+     "name": "pin_title",
+     "label": "Location Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "pin_desc",
+     "label": "Description",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "advanced_view",
+     "label": "Advanced Info",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "marker_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "open_by_default",
+     "label": "Opened By Default",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "custom_id",
+     "label": "Custom ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "marker_style_tab",
+     "label": "Style",
+     "type": "TAB"
+    },
+    {
+     "name": "pin_icon",
+     "label": "Custom Icon",
+     "type": "MEDIA"
+    },
+    {
+     "name": "pin_icon_size",
+     "label": "Size",
+     "type": "SLIDER"
+    },
+    {
+     "name": "premium_maps_map_pins",
+     "label": "Map Pins",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "premium_maps_controls_section",
+   "label": "Controls",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_maps_map_type",
+     "label": "Map Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "premium_maps_map_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_maps_map_zoom",
+     "label": "Zoom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "disable_drag",
+     "label": "Disable Map Drag",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_maps_map_option_map_type_control",
+     "label": "Map Type Controls",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_maps_map_option_zoom_controls",
+     "label": "Zoom Controls",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_maps_map_option_streeview",
+     "label": "Street View Control",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_maps_map_option_fullscreen_control",
+     "label": "Fullscreen Control",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_maps_map_option_mapscroll",
+     "label": "Scroll Wheel Zoom",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_maps_marker_open",
+     "label": "Info Container Always Opened",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_maps_marker_hover_open",
+     "label": "Open Info Container on Hover",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_maps_marker_mouse_out",
+     "label": "Close Info Container on Mouse Out",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "premium_maps_map_option_cluster",
+     "label": "Marker Clustering",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "cluster_icon",
+     "label": "Cluster Icon",
+     "type": "MEDIA"
+    },
+    {
+     "name": "cluster_icon_size",
+     "label": "Icon Size (PX)",
+     "type": "SLIDER"
+    },
+    {
+     "name": "load_on_visible",
+     "label": "Load Map On Scroll",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "linked_carousel_id",
+     "label": "Connected Carousel Widget ID",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "premium_maps_custom_styling_section",
+   "label": "Map Style",
+   "tab": "",
+   "controls": [
+    {
+     "name": "premium_maps_custom_styling",
+     "label": "JSON Code",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "map_style_cloud_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_1",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "doc_2",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "premium_maps_box_style",
+   "label": "Map",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "map_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "premium_maps_box_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "premium_maps_box_shadow",
+     "label": "Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "premium_maps_box_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_maps_box_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "marker_window",
+   "label": "Marker Info",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "marker_window_width",
+     "label": "Minimum Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "marker_window_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "marker_window_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "marker_window_border_rad",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "marker_window_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "marker_window_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "title_heading",
+     "label": "Location Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "premium_maps_pin_title_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pin_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_maps_pin_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_maps_pin_title_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_maps_pin_title_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "description_heading",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "premium_maps_pin_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "pin_text_typo",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "premium_maps_pin_text_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_maps_pin_text_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "premium_maps_pin_description_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "advanced_pins_style",
+   "label": "Advanced Info",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "info_icons_color",
+     "label": "Icons Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "info_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "info_text_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "skin1_heading",
+     "label": "Get Directions Icon (Skin 1 only)",
+     "type": "HEADING"
+    },
+    {
+     "name": "directions_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "skin2_heading",
+     "label": "Get Directions Link (Skin 2, 3 only)",
+     "type": "HEADING"
+    },
+    {
+     "name": "directions_link_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "directions_link_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 8,
+  "controls": 77,
+  "responsive": 12
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

@@ -1,0 +1,88 @@
+{
+ "kind": "elementor-widget",
+ "name": "google_maps",
+ "title": "Google Maps",
+ "categories": [
+  "basic"
+ ],
+ "keywords": [
+  "google",
+  "map",
+  "embed",
+  "location"
+ ],
+ "file": "elementor/includes/widgets/google-maps.php",
+ "sections": [
+  {
+   "id": "section_map",
+   "label": "Google Maps",
+   "tab": "",
+   "controls": [
+    {
+     "name": "api_key_notification",
+     "label": "",
+     "type": "ALERT"
+    },
+    {
+     "name": "address",
+     "label": "Location",
+     "type": "TEXT"
+    },
+    {
+     "name": "zoom",
+     "label": "Zoom",
+     "type": "SLIDER"
+    },
+    {
+     "name": "height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_map_style",
+   "label": "Google Maps",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "css_filters_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover_transition",
+     "label": "Transition Duration",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 9,
+  "responsive": 1
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

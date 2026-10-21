@@ -1,0 +1,367 @@
+{
+ "kind": "elementor-widget",
+ "name": "weform",
+ "title": "weForms",
+ "categories": [],
+ "keywords": [
+  "weForms",
+  "we forms",
+  "caldera",
+  "wpf",
+  "wpform",
+  "form",
+  "contact",
+  "cf7",
+  "contact form",
+  "gravity",
+  "ninja"
+ ],
+ "file": "happy-elementor-addons/widgets/weform/widget.php",
+ "sections": [
+  {
+   "id": "_section_weforms",
+   "label": "",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "_weforms_missing_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "_weforms_install",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "form_id",
+     "label": "Select Your Form",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "_section_fields_style",
+   "label": "Form Fields",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "large_field_width",
+     "label": "Large Field Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "field_margin",
+     "label": "Field Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "field_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "field_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "field_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "field_textcolor",
+     "label": "Field Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "field_placeholder_color",
+     "label": "Field Placeholder Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_field_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "field_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "field_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "field_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_field_focus",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "field_focus_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "field_focus_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "field_focus_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "we-form-label",
+   "label": "Form Fields Label",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "label_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hr3",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "label_typography",
+     "label": "Label Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "desc_typography",
+     "label": "Help Text Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "label_color",
+     "label": "Label Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "requered_label",
+     "label": "Required Label Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "desc_color",
+     "label": "Help Text Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "submit",
+   "label": "Submit Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "submit_btn_width",
+     "label": "Button Full Width?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "button_width",
+     "label": "Button Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_btn_position",
+     "label": "Button Position",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "submit_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "submit_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "submit_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "submit_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "submit_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "submit_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "hr4",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "submit_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "submit_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "submit_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "submit_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "submit_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_break",
+   "label": "Section Break",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "break_title_typography",
+     "label": "Title Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "break_description_typography",
+     "label": "Description Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "tab_break_title",
+     "label": "Title",
+     "type": "TAB"
+    },
+    {
+     "name": "break_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_break_description",
+     "label": "Description",
+     "type": "TAB"
+    },
+    {
+     "name": "break_description_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 50,
+  "responsive": 10
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

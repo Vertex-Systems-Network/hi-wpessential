@@ -1,0 +1,359 @@
+{
+ "kind": "elementor-widget",
+ "name": "search-button",
+ "title": "Search Button",
+ "categories": [
+  "hfe-widgets"
+ ],
+ "keywords": [
+  "Search_Button"
+ ],
+ "file": "header-footer-elementor/inc/widgets-manager/widgets/search-button/search-button.php",
+ "sections": [
+  {
+   "id": "section_general_fields",
+   "label": "Search Box",
+   "tab": "",
+   "controls": [
+    {
+     "name": "layout",
+     "label": "Layout",
+     "type": "SELECT",
+     "options": [
+      "text",
+      "icon",
+      "icon_text"
+     ]
+    },
+    {
+     "name": "placeholder",
+     "label": "Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_input_style",
+   "label": "Input",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "input_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "input_icon_size",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "tab_input_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "input_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_placeholder_color",
+     "label": "Placeholder Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "border_style",
+     "label": "Border Style",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "none",
+      "solid",
+      "double",
+      "dotted",
+      "dashed"
+     ]
+    },
+    {
+     "name": "border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "border_width",
+     "label": "Border Width",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "tab_input_focus",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "input_text_color_focus",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_placeholder_hover_color",
+     "label": "Placeholder Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_background_color_focus",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "input_box_shadow_focus",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "input_border_color_focus",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_text_color_focus",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_text_background_color_focus",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_box_shadow_focus",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "icon_border_style",
+     "label": "Border Style",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "none",
+      "solid",
+      "double",
+      "dotted",
+      "dashed"
+     ]
+    },
+    {
+     "name": "icon_border_color_focus",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_border_width",
+     "label": "Border Width",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "icon_focus_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_button_style",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "button_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "button_text_color_hover",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_background_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_background_hover",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_toggle_style",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "tab_toggle_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "toggle_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_toggle_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "toggle_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "toggle_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_close_icon",
+   "label": "Close Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "close_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "normal_close_button",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_close_icon",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "hover_close_icon_text",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_pro_features_field",
+   "label": "Go Pro for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "uae_pro_promotion_notice",
+     "label": "",
+     "type": "NOTICE"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 47,
+  "responsive": 6
+ },
+ "source": "ultimate-addons-hfe",
+ "source_label": "Ultimate Addons (Header Footer Elementor)"
+}

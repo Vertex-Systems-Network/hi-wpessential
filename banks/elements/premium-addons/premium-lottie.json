@@ -1,0 +1,260 @@
+{
+ "kind": "elementor-widget",
+ "name": "premium-lottie",
+ "title": "Lottie Animations",
+ "categories": [
+  "premium-elements"
+ ],
+ "keywords": [
+  "pa",
+  "premium",
+  "premium lottie",
+  "animation",
+  "json",
+  "vector",
+  "motion"
+ ],
+ "file": "premium-addons-for-elementor/widgets/premium-lottie.php",
+ "sections": [
+  {
+   "id": "section_general_settings",
+   "label": "General Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "source",
+     "label": "File Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "lottie_url",
+     "label": "Animation JSON URL",
+     "type": "TEXT"
+    },
+    {
+     "name": "lottie_file",
+     "label": "Upload JSON File",
+     "type": "MEDIA"
+    },
+    {
+     "name": "lottie_loop",
+     "label": "Loop",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_loop_times",
+     "label": "Times",
+     "type": "NUMBER"
+    },
+    {
+     "name": "lottie_reverse",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_speed",
+     "label": "Animation Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "lottie_delay",
+     "label": "Animation Delay (sec)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "trigger",
+     "label": "Trigger",
+     "type": "SELECT"
+    },
+    {
+     "name": "hover_leave_reverse",
+     "label": "Reset on Mouse Leave",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_hover",
+     "label": "Play on Hover",
+     "type": "HIDDEN"
+    },
+    {
+     "name": "animate_on_scroll",
+     "label": "Play On Scroll",
+     "type": "HIDDEN"
+    },
+    {
+     "name": "animate_speed",
+     "label": "Speed",
+     "type": "SLIDER"
+    },
+    {
+     "name": "animate_view",
+     "label": "Viewport",
+     "type": "SLIDER"
+    },
+    {
+     "name": "animation_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "lottie_rotate",
+     "label": "Rotate (degrees)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "animation_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "link_switcher",
+     "label": "Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "link_selection",
+     "label": "Link Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "existing_link",
+     "label": "Existing Page",
+     "type": "Premium_Post_Filter::TYPE"
+    },
+    {
+     "name": "lottie_renderer",
+     "label": "Render As",
+     "type": "SELECT"
+    },
+    {
+     "name": "render_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "mouse_tilt",
+     "label": "Enable Mouse Tilt",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "mouse_tilt_rev",
+     "label": "Reverse",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_pa_docs",
+   "label": "Help & Docs",
+   "tab": "",
+   "controls": [
+    {
+     "name": "doc_",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "section_animation_style",
+   "label": "Animation",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "tab_lottie_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "lottie_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "opacity",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "tab_lottie_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "lottie_hover_background",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_opacity",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "hover_css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "lottie_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "lottie_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "lottie_adv_radius",
+     "label": "Advanced Border Radius",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "lottie_adv_radius_value",
+     "label": "Border Radius",
+     "type": "TEXT",
+     "styles": true
+    },
+    {
+     "name": "animation_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 39,
+  "responsive": 4
+ },
+ "source": "premium-addons",
+ "source_label": "Premium Addons"
+}

@@ -1,0 +1,929 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-formstack",
+ "title": "Formstack",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "forms",
+  "ea",
+  "ea formstack",
+  "ea forms",
+  "formstack",
+  "contact form",
+  "form styler",
+  "elementor form",
+  "feedback",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Formstack.php",
+ "sections": [
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "eael_global_warning",
+   "label": "Warning!",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_global_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  },
+  {
+   "id": "section_form_info_box",
+   "label": "Formstack",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_form_key",
+     "label": "Forms",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_formstack_custom_title_description",
+     "label": "Custom Title & Description",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_formstack_form_title_custom",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_formstack_form_description_custom",
+     "label": "Description",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "eael_formstack_labels_switch",
+     "label": "Labels",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_formstack_placeholder_switch",
+     "label": "Placeholder",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_errors",
+   "label": "Errors",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_formstack_error_messages",
+     "label": "Error Messages",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_formstack_validation_messages",
+     "label": "Validation Errors",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_container_style",
+   "label": "Form Container",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_form_background",
+     "label": "Form Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_form_alignment",
+     "label": "Form Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "default",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_formstack_form_max_width",
+     "label": "Form Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_form_margin",
+     "label": "Form Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_form_padding",
+     "label": "Form Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_form_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_form_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_formstack_form_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_form_title_style",
+   "label": "Title & Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_heading_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_formstack_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_formstack_form_title_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_form_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_formstack_form_title_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_description_heading",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_formstack_form_description_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_form_description_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_formstack_form_description_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_field_description_style",
+   "label": "Field Description",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_field_description_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_field_description_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_formstack_field_description_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_break_style",
+   "label": "Section Heading Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_section_break_background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_section_break_label",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_formstack_section_break_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_section_break_label_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_formstack_section_break_label_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_section_break_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_section_break_description",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_formstack_section_break_description_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_section_break_description_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_formstack_section_break_description_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_section_break_description_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_section_break_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_label_style",
+   "label": "Labels",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_text_color_label",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_typography_label",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_fields_style",
+   "label": "Input & Textarea",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_tab_fields_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_formstack_field_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_field_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_field_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_formstack_field_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_field_text_indent",
+     "label": "Text Indent",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_input_width",
+     "label": "Input Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_input_height",
+     "label": "Input Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_textarea_width",
+     "label": "Textarea Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_textarea_height",
+     "label": "Textarea Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_field_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_field_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_field_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_formstack_field_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_formstack_tab_fields_focus",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_formstack_field_bg_color_focus",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_focus_input_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_formstack_focus_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_placeholder_style",
+   "label": "Placeholder",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_text_color_placeholder",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_radio_checkbox_style",
+   "label": "Radio & Checkbox",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_custom_radio_checkbox",
+     "label": "Custom Styles",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_formstack_radio_checkbox_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_radio_checkbox_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_formstack_radio_checkbox_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_checkbox_heading",
+     "label": "Checkbox",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_formstack_checkbox_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_radio_heading",
+     "label": "Radio Buttons",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_formstack_radio_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_radio_checkbox_checked",
+     "label": "Checked",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_formstack_radio_checkbox_color_checked",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_rating_style",
+   "label": "Rating",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_rating_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_rating_bg_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_rating_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_rating_margin",
+     "label": "Margin Top",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_submit_button_style",
+   "label": "Submit Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_submit_button_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_formstack_button_width_type",
+     "label": "Width",
+     "type": "SELECT",
+     "options": [
+      "full-width",
+      "custom"
+     ]
+    },
+    {
+     "name": "eael_formstack_button_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_formstack_button_bg_color_normal",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_button_text_color_normal",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_button_border_normal",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_formstack_button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_button_margin",
+     "label": "Margin Top",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_button_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_formstack_button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_formstack_tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_formstack_button_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_button_text_color_hover",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_button_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_pagination_style",
+   "label": "Pagination",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_form_progressbar_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_formstack_pagination_progressbar",
+     "label": "Progressbar",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_formstack_show_progressbar",
+     "label": "Show Progressbar",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_formstack_progressbar_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_progressbar_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_formstack_progressbar_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_progressbar_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_formstack_progressbar_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_progressbar_bg",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_formstack_form_progressbar_filled",
+     "label": "Filled",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_formstack_progressbar_bg_filled",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_formstack_form_pagination_button",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_formstack_pagination_button_style",
+     "label": "Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_formstack_pagination_button_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_pagination_button_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_formstack_pagination_button_bg",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_pagination_button_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_formstack_pagination_button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_pagination_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_form_pagination_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_formstack_pagination_button_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_pagination_button_hover_bg",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_pagination_button_border_hover_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_formstack_section_error_style",
+   "label": "Errors",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_formstack_error_messages_heading",
+     "label": "Error Messages",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_formstack_error_message_background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_error_message_text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_error_message_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_formstack_error_message_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_error_message_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_validation_error_messages_heading",
+     "label": "Validation Messages",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_formstack_validation_message_background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_validation_message_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_formstack_validation_error_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 17,
+  "controls": 127,
+  "responsive": 30
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

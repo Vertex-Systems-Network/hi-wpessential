@@ -1,0 +1,102 @@
+{
+ "kind": "elementor-widget",
+ "name": "drop-caps",
+ "title": "Drop Caps",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/drop-caps/drop-caps.php",
+ "sections": [
+  {
+   "id": "ekit_dropcaps_content",
+   "label": "Dropcaps",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_dropcaps_text",
+     "label": "Content",
+     "type": "TEXTAREA"
+    }
+   ]
+  },
+  {
+   "id": "ekit_dropcaps_style_section",
+   "label": "Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_content_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "ekit_dropcaps_latter_style_section",
+   "label": "Dropcap Latter",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_content_dropcaps_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_content_dropcaps_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_content_dropcaps_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_content_dropcaps_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_content_dropcaps_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_content_dropcaps_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_content_dropcaps_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 10,
+  "responsive": 5
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

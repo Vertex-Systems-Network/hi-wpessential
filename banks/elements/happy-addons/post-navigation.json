@@ -1,0 +1,219 @@
+{
+ "kind": "elementor-widget",
+ "name": "post-navigation",
+ "title": "Post Navigation",
+ "categories": [
+  "happy_addons_category",
+  "happy_addons_theme_builder"
+ ],
+ "keywords": [
+  "navigation",
+  "post",
+  "page",
+  "next",
+  "prev",
+  "previous"
+ ],
+ "file": "happy-elementor-addons/widgets/post-navigation/widget.php",
+ "sections": [
+  {
+   "id": "_section_post_navigation",
+   "label": "Post Navigation",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "show_label",
+     "label": "Label",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "prev_label",
+     "label": "Previous Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "next_label",
+     "label": "Next Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "show_arrow",
+     "label": "Arrows",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "arrow",
+     "label": "Arrows Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "show_title",
+     "label": "Post Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_borders",
+     "label": "Borders",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "in_same_term",
+     "label": "In same Term",
+     "type": "SELECT2"
+    },
+    {
+     "name": "_taxonomy",
+     "label": "",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "label_style",
+   "label": "Label",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "label_color_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "label_color_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "label_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "tab_color_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "text_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "tab_color_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "arrow_style",
+   "label": "Arrow",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "arrow_color_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "arrow_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrow_color_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "arrow_hover_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "arrow_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "arrow_padding",
+     "label": "Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "borders_section_style",
+   "label": "Borders",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "sep_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "borders_width",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "borders_spacing",
+     "label": "Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 28,
+  "responsive": 4
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

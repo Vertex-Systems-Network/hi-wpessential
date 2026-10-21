@@ -1,0 +1,117 @@
+{
+ "kind": "block",
+ "name": "kadence/advanced-form-radio",
+ "title": "kadence/advanced-form-radio",
+ "categories": [
+  "kadence-blocks"
+ ],
+ "keywords": [],
+ "description": "",
+ "file": "kadence-blocks/dist/blocks/advanced-form/fields/radio/block.json",
+ "attributes": {
+  "uniqueID": {
+   "type": "string"
+  },
+  "formID": {
+   "type": "string"
+  },
+  "label": {
+   "type": "string",
+   "default": ""
+  },
+  "placeholder": {
+   "type": "string",
+   "default": ""
+  },
+  "showLabel": {
+   "type": "boolean",
+   "default": true
+  },
+  "required": {
+   "type": "boolean",
+   "default": false
+  },
+  "defaultValue": {
+   "type": "string"
+  },
+  "defaultParameter": {
+   "type": "string"
+  },
+  "ariaDescription": {
+   "type": "string",
+   "default": ""
+  },
+  "helpText": {
+   "type": "string",
+   "default": ""
+  },
+  "options": {
+   "type": "array",
+   "default": [
+    {
+     "value": "",
+     "label": "",
+     "selected": false
+    }
+   ]
+  },
+  "inline": {
+   "type": "boolean",
+   "default": false
+  },
+  "maxWidth": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    ""
+   ]
+  },
+  "maxWidthUnit": {
+   "type": "string",
+   "default": "%"
+  },
+  "minWidth": {
+   "type": "array",
+   "default": [
+    "",
+    "",
+    ""
+   ]
+  },
+  "minWidthUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "inputName": {
+   "type": "string"
+  },
+  "auto": {
+   "type": "string"
+  },
+  "autoCustom": {
+   "type": "string"
+  },
+  "requiredMessage": {
+   "type": "string"
+  },
+  "anchor": {
+   "type": "string"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "ktfieldconditional": true,
+  "reusable": false,
+  "kbMetadata": true,
+  "ktdynamic": true,
+  "kbContentLabel": "label"
+ },
+ "counts": {
+  "attributes": 21,
+  "supports": 7
+ },
+ "source": "kadence",
+ "source_label": "Kadence Blocks"
+}

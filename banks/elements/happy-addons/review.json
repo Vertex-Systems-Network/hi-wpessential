@@ -1,0 +1,321 @@
+{
+ "kind": "elementor-widget",
+ "name": "review",
+ "title": "Review",
+ "categories": [],
+ "keywords": [
+  "review",
+  "comment",
+  "feedback",
+  "testimonial"
+ ],
+ "file": "happy-elementor-addons/widgets/review/widget.php",
+ "sections": [
+  {
+   "id": "_section_review",
+   "label": "Review",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "ratting",
+     "label": "Rating",
+     "type": "SLIDER"
+    },
+    {
+     "name": "ratting_style",
+     "label": "Rating Style",
+     "type": "SELECT",
+     "options": [
+      "star",
+      "num"
+     ]
+    },
+    {
+     "name": "review",
+     "label": "Review",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "review_position",
+     "label": "Review Position",
+     "type": "SELECT",
+     "options": [
+      "before",
+      "after"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_reviewer",
+   "label": "Reviewer",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "image",
+     "label": "Photo",
+     "type": "MEDIA"
+    },
+    {
+     "name": "thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "image_position",
+     "label": "Image Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title",
+     "label": "Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "job_title",
+     "label": "Job Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "title_tag",
+     "label": "Name HTML Tag",
+     "type": "CHOOSE",
+     "options": [
+      "h1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_ratting_style",
+   "label": "Rating",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ratting_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ratting_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ratting_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ratting_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ratting_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ratting_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ratting_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_review_style",
+   "label": "Review & Reviewer",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "body_padding",
+     "label": "Text Box Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "_heading_name",
+     "label": "Name",
+     "type": "HEADING"
+    },
+    {
+     "name": "title_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "name_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "name_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "_heading_job_title",
+     "label": "Job Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "job_title_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "job_title_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "job_title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "_heading_review",
+     "label": "Review",
+     "type": "HEADING"
+    },
+    {
+     "name": "review_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "review_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "review_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "_section_photo_style",
+   "label": "Photo",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "image_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "offset_toggle",
+     "label": "Offset",
+     "type": "POPOVER_TOGGLE"
+    },
+    {
+     "name": "image_offset_x",
+     "label": "Offset X",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_offset_y",
+     "label": "Offset Y",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "image_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 40,
+  "responsive": 14
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

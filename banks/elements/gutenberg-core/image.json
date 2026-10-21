@@ -1,0 +1,117 @@
+{
+ "kind": "block",
+ "name": "core/image",
+ "title": "Image",
+ "categories": [
+  "media"
+ ],
+ "keywords": [
+  "img",
+  "photo",
+  "picture"
+ ],
+ "description": "Insert an image to make a visual statement.",
+ "file": "wp/wordpress/wp-includes/blocks/image/block.json",
+ "attributes": {
+  "blob": {
+   "type": "string"
+  },
+  "url": {
+   "type": "string"
+  },
+  "alt": {
+   "type": "string",
+   "default": ""
+  },
+  "caption": {
+   "type": "rich-text"
+  },
+  "lightbox": {
+   "type": "object"
+  },
+  "title": {
+   "type": "string"
+  },
+  "href": {
+   "type": "string"
+  },
+  "rel": {
+   "type": "string"
+  },
+  "linkClass": {
+   "type": "string"
+  },
+  "id": {
+   "type": "number"
+  },
+  "width": {
+   "type": "string"
+  },
+  "height": {
+   "type": "string"
+  },
+  "aspectRatio": {
+   "type": "string"
+  },
+  "scale": {
+   "type": "string"
+  },
+  "focalPoint": {
+   "type": "object"
+  },
+  "sizeSlug": {
+   "type": "string"
+  },
+  "linkDestination": {
+   "type": "string"
+  },
+  "linkTarget": {
+   "type": "string"
+  },
+  "isDecorative": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "interactivity": true,
+  "align": [
+   "left",
+   "center",
+   "right",
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "color": {
+   "text": false,
+   "background": false
+  },
+  "filter": {
+   "duotone": true
+  },
+  "spacing": {
+   "margin": true
+  },
+  "__experimentalBorder": {
+   "color": true,
+   "radius": true,
+   "width": true,
+   "__experimentalSkipSerialization": true,
+   "__experimentalDefaultControls": {
+    "color": true,
+    "radius": true,
+    "width": true
+   }
+  },
+  "shadow": {
+   "__experimentalSkipSerialization": true
+  }
+ },
+ "counts": {
+  "attributes": 19,
+  "supports": 8
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

@@ -1,0 +1,322 @@
+{
+ "kind": "block",
+ "name": "uagb/columns",
+ "title": "Columns",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/columns/attributes.php",
+ "attributes": {
+  "classMigrate": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "block_id": {
+   "type": "string",
+   "default": ""
+  },
+  "columns": {
+   "type": "string",
+   "default": "2"
+  },
+  "align": {
+   "type": "string",
+   "default": ""
+  },
+  "vAlign": {
+   "type": "string",
+   "default": ""
+  },
+  "stack": {
+   "type": "string",
+   "default": "mobile"
+  },
+  "topPadding": {
+   "type": "string",
+   "default": "20"
+  },
+  "bottomPadding": {
+   "type": "string",
+   "default": "20"
+  },
+  "leftPadding": {
+   "type": "string",
+   "default": "20"
+  },
+  "rightPadding": {
+   "type": "string",
+   "default": "20"
+  },
+  "topMargin": {
+   "type": "string",
+   "default": "0"
+  },
+  "bottomMargin": {
+   "type": "string",
+   "default": "0"
+  },
+  "topPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "leftPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "rightPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "topPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "leftPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "rightPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "topMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "topMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "contentWidth": {
+   "type": "string",
+   "default": "theme"
+  },
+  "width": {
+   "type": "string",
+   "default": "900"
+  },
+  "widthType": {
+   "type": "string",
+   "default": "px"
+  },
+  "tag": {
+   "type": "string",
+   "default": "section"
+  },
+  "backgroundType": {
+   "type": "string",
+   "default": "none"
+  },
+  "backgroundImage": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundPosition": {
+   "type": "string",
+   "default": "center-center"
+  },
+  "backgroundSize": {
+   "type": "string",
+   "default": "cover"
+  },
+  "backgroundRepeat": {
+   "type": "string",
+   "default": "no-repeat"
+  },
+  "backgroundAttachment": {
+   "type": "string",
+   "default": "scroll"
+  },
+  "backgroundVideo": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundColor": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientColor1": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientColor2": {
+   "type": "string",
+   "default": ""
+  },
+  "gradientType": {
+   "type": "string",
+   "default": "linear"
+  },
+  "gradientLocation1": {
+   "type": "string",
+   "default": "0"
+  },
+  "gradientLocation2": {
+   "type": "string",
+   "default": "100"
+  },
+  "gradientAngle": {
+   "type": "string",
+   "default": "0"
+  },
+  "gradientPosition": {
+   "type": "string",
+   "default": "center center"
+  },
+  "selectGradient": {
+   "type": "string",
+   "default": "basic"
+  },
+  "backgroundVideoOpacity": {
+   "type": "string",
+   "default": "50"
+  },
+  "backgroundVideoColor": {
+   "type": "string",
+   "default": ""
+  },
+  "backgroundImageColor": {
+   "type": "string",
+   "default": ""
+  },
+  "columnGap": {
+   "type": "string",
+   "default": "10"
+  },
+  "bottomType": {
+   "type": "string",
+   "default": "none"
+  },
+  "bottomColor": {
+   "type": "string",
+   "default": "#333"
+  },
+  "bottomHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomWidth": {
+   "type": "string",
+   "default": ""
+  },
+  "topType": {
+   "type": "string",
+   "default": "none"
+  },
+  "topColor": {
+   "type": "string",
+   "default": "#333"
+  },
+  "topHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "topHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "topHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "topWidth": {
+   "type": "string",
+   "default": ""
+  },
+  "bottomFlip": {
+   "type": "string",
+   "default": ""
+  },
+  "topFlip": {
+   "type": "string",
+   "default": ""
+  },
+  "mobileMarginType": {
+   "type": "string",
+   "default": "px"
+  },
+  "tabletMarginType": {
+   "type": "string",
+   "default": "px"
+  },
+  "desktopMarginType": {
+   "type": "string",
+   "default": "px"
+  },
+  "mobilePaddingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "tabletPaddingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "desktopPaddingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "boxShadowColor": {
+   "type": "string",
+   "default": ""
+  },
+  "boxShadowHOffset": {
+   "type": "number",
+   "default": "0"
+  },
+  "boxShadowVOffset": {
+   "type": "number",
+   "default": "0"
+  },
+  "boxShadowBlur": {
+   "type": "string",
+   "default": ""
+  },
+  "boxShadowSpread": {
+   "type": "string",
+   "default": ""
+  },
+  "boxShadowPosition": {
+   "type": "string",
+   "default": "outset"
+  },
+  "gradientValue": {
+   "type": "string",
+   "default": "linear-gradient(90deg, rgb(6, 147, 227, 0.5) 0%, rgb(155, 81, 224, 0.5) 100%)"
+  },
+  "overlayType": {
+   "type": "string",
+   "default": "color"
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 76,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

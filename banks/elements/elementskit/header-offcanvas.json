@@ -1,0 +1,385 @@
+{
+ "kind": "elementor-widget",
+ "name": "header-offcanvas",
+ "title": "Header Offcanvas",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/header-offcanvas/header-offcanvas.php",
+ "sections": [
+  {
+   "id": "ekit_header_search",
+   "label": "Header Offcanvas",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_offcanvas_content",
+     "label": "Content",
+     "type": "ElementsKit_WIDGETAREA"
+    },
+    {
+     "name": "ekit__offcanvas_seacrh_overlay_bg_color",
+     "label": "Overlay color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_hamburger_tab",
+     "label": "Hamburger",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_offcanvas_menu_type",
+     "label": "Menu Type:",
+     "type": "SELECT",
+     "options": [
+      "icon",
+      "text",
+      "icon_with_text"
+     ]
+    },
+    {
+     "name": "ekit_offcanvas_menu_icons",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_offcanvas_menu_icons_position",
+     "label": "Icon Positioin",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "before",
+      "after"
+     ]
+    },
+    {
+     "name": "ekit_offcanvas_menu_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_offcanvas_close_tab",
+     "label": "Closed",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_offcanvas_menu_close_type",
+     "label": "Close Menu Type:",
+     "type": "SELECT",
+     "options": [
+      "icon",
+      "text",
+      "icon_with_text"
+     ]
+    },
+    {
+     "name": "ekit_offcanvas_menu_close_icons",
+     "label": "Close Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_offcanvas_menu_close_icons_position",
+     "label": "Icon Positioin",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "before",
+      "after"
+     ]
+    },
+    {
+     "name": "ekit_offcanvas_menu_close_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_offcanvas_icons_spacing",
+     "label": "Icons Gap",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_disable_bodyscroll",
+     "label": "Disable Scroll",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "ekit_header_search_setting",
+   "label": "Offcanvas Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_header_search_style",
+     "label": "Offcanvas Style",
+     "type": "SELECT",
+     "options": [
+      "ekit-slide",
+      "ekit-fade"
+     ]
+    },
+    {
+     "name": "ekit_header_search_transition",
+     "label": "Transition Duration (s)",
+     "type": "NUMBER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_header_offcanvas_section_tab_style",
+   "label": "Offcanvas",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_header_offcanvas_style_hamburger_tab",
+     "label": "Hamburger",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_offcanvas_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_icon_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_icon_hover_title",
+     "label": "Hover",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_offcanvas_icon_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_icon_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_icon_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_text_font_hr",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_offcanvas_icon_font_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_text_typo",
+     "label": "Text Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_offcanvas_humburger_text_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_header_search",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_offcanvas_border_radius",
+     "label": "Border radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_header_offcanvas_style_close_tab",
+     "label": "Closed",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_offcanvas_close_icon_color",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_close_icon_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_close_icon_hover_title",
+     "label": "Hover",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_offcanvas_close_icon_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_close_icon_bg_color_hover",
+     "label": "Background Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_close_icon_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_close_icon_font_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_close_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "close_btn_size",
+     "label": "Box Size (px)",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_close_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_header_search_close",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_offcanvas_close_border_radius",
+     "label": "Border radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_close_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_close_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_offcanvas_panel_style_tab",
+   "label": "Offcanvas Panel",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eit_offcanvas_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_offcanvas_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_offcanvas_position",
+     "label": "Position",
+     "type": "CHOOSE",
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_offcanvas_panel_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 51,
+  "responsive": 19
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

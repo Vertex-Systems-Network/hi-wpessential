@@ -1,0 +1,166 @@
+{
+ "kind": "elementor-widget",
+ "name": "back-to-top",
+ "title": "Back to Top",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/back-to-top/back-to-top.php",
+ "sections": [
+  {
+   "id": "ekit_back_to_top_content_section",
+   "label": "Layout and Content",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_button_appearance",
+     "label": "Appearance",
+     "type": "SELECT",
+     "options": [
+      "icon_only",
+      "text_only",
+      "progress_indicator"
+     ]
+    },
+    {
+     "name": "ekit_btn_icons",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "ekit_btn_text",
+     "label": "Button Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_button_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "description",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_back_to_top_setting_section",
+   "label": "Setting",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_offset_top",
+     "label": "Offset Top (px)",
+     "type": "NUMBER"
+    },
+    {
+     "name": "ekit_show_button_after_switch",
+     "label": "Show button on scroll",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_show_button_after",
+     "label": "Enter scrolled value (px)",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "ekit_back_to_top_style_section",
+   "label": "Button Style",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_btn_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_button_size",
+     "label": "Button Size (px)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "ekit_button_width",
+     "label": "Width (px)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "ekit_button_height",
+     "label": "Height (px)",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "ekit_button_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_button_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_button_prgoress_foreground",
+     "label": "Line Foreground color",
+     "type": "COLOR"
+    },
+    {
+     "name": "ekit_button_prgoress_background",
+     "label": "Line Background Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "ekit_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_button_normal_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_button_normal_bg_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_button_hover_clr",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_button_hover_bg_clr",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 21,
+  "responsive": 2
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

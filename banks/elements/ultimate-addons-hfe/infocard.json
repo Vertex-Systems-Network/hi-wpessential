@@ -1,0 +1,351 @@
+{
+ "kind": "elementor-widget",
+ "name": "infocard",
+ "title": "Infocard",
+ "categories": [],
+ "keywords": [
+  "Infocard"
+ ],
+ "file": "header-footer-elementor/inc/widgets-manager/widgets/infocard/infocard.php",
+ "sections": [
+  {
+   "id": "section_general_field",
+   "label": "General",
+   "tab": "",
+   "controls": [
+    {
+     "name": "infocard_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "infocard_description",
+     "label": "Description",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "infocard_overall_align",
+     "label": "Overall Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_icon_field",
+   "label": "Icon",
+   "tab": "",
+   "controls": [
+    {
+     "name": "infocard_select_icon",
+     "label": "Select Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "infocard_icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "infocard_icon_bgsize",
+     "label": "Background Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "infocard_icon_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "infocard_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "infocard_icon_bgcolor",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "infocard_icon_border",
+     "label": "Border Style",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "infocard_icon_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "infocard_icon_border_size",
+     "label": "Border Width",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "infocard_icon_border_radius",
+     "label": "Rounded Corners",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "infocard_icon_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "infocard_icon_hover_color",
+     "label": "Icon Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "infocard_icon_hover_bgcolor",
+     "label": "Background Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "infocard_icon_hover_border",
+     "label": "Border Hover Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_cta_field",
+   "label": "Call To Action",
+   "tab": "",
+   "controls": [
+    {
+     "name": "infocard_cta_type",
+     "label": "Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "infocard_link_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "infocard_button_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "infocard_text_link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "infocard_button_size",
+     "label": "Size",
+     "type": "SELECT"
+    },
+    {
+     "name": "infocard_button_colors",
+     "label": "Colors",
+     "type": "HEADING"
+    },
+    {
+     "name": "infocard_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "infocard_button_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "btn_background_color",
+     "label": "Background Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "infocard_button_border",
+     "label": "Border Style",
+     "type": "SELECT",
+     "styles": true
+    },
+    {
+     "name": "infocard_button_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "infocard_button_border_size",
+     "label": "Border Width",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "infocard_button_radius",
+     "label": "Rounded Corners",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "infocard_button_custom_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "infocard_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "infocard_button_hover_color",
+     "label": "Text Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "infocard_button_hover_bgcolor",
+     "label": "Background Hover Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "infocard_button_border_hover_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_typography_field",
+   "label": "Typography",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "infocard_title_typo",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "infocard_title_tag",
+     "label": "Title Tag",
+     "type": "SELECT"
+    },
+    {
+     "name": "title_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "infocard_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "infocard_desc_typo",
+     "label": "Description",
+     "type": "HEADING"
+    },
+    {
+     "name": "desc_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "infocard_desc_color",
+     "label": "Description Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "infocard_link_typo",
+     "label": "CTA Link Text",
+     "type": "HEADING"
+    },
+    {
+     "name": "infocard_button_typo",
+     "label": "CTA Button Text",
+     "type": "HEADING"
+    },
+    {
+     "name": "cta_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "infocard_cta_color",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "infocard_cta_hover_color",
+     "label": "Link Hover Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_margin_field",
+   "label": "Margins",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "infocard_responsive_icon_margin",
+     "label": "Icon Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "infocard_title_margin",
+     "label": "Title Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "infocard_desc_margin",
+     "label": "Description Margins",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "infocard_cta_margin",
+     "label": "CTA Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 51,
+  "responsive": 9
+ },
+ "source": "ultimate-addons-hfe",
+ "source_label": "Ultimate Addons (Header Footer Elementor)"
+}

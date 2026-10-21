@@ -1,0 +1,52 @@
+{
+ "kind": "block",
+ "name": "core/tabs",
+ "title": "Tabs",
+ "categories": [
+  "design"
+ ],
+ "keywords": [],
+ "description": "Display content in a tabbed interface to help users navigate detailed content with ease.",
+ "file": "wp/wordpress/wp-includes/blocks/tabs/block.json",
+ "attributes": {
+  "activeTabIndex": {
+   "type": "number",
+   "default": 0
+  },
+  "editorActiveTabIndex": {
+   "type": "number"
+  }
+ },
+ "supports": {
+  "align": true,
+  "anchor": true,
+  "color": {
+   "text": true,
+   "background": true,
+   "__experimentalDefaultControls": {
+    "text": true,
+    "background": true
+   }
+  },
+  "layout": {
+   "allowEditing": false
+  },
+  "html": false,
+  "interactivity": true,
+  "spacing": {
+   "blockGap": true,
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "__experimentalFontFamily": true
+  }
+ },
+ "counts": {
+  "attributes": 2,
+  "supports": 8
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

@@ -1,0 +1,155 @@
+{
+ "kind": "elementor-widget",
+ "name": "icon",
+ "title": "Icon",
+ "categories": [
+  "basic"
+ ],
+ "keywords": [
+  "icon"
+ ],
+ "file": "elementor/includes/widgets/icon.php",
+ "sections": [
+  {
+   "id": "section_icon",
+   "label": "Icon",
+   "tab": "",
+   "controls": [
+    {
+     "name": "selected_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "view",
+     "label": "View",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "stacked",
+      "framed"
+     ]
+    },
+    {
+     "name": "shape",
+     "label": "Shape",
+     "type": "SELECT",
+     "options": [
+      "square",
+      "rounded",
+      "circle"
+     ]
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    }
+   ]
+  },
+  {
+   "id": "section_style_icon",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "icon_colors_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "primary_color",
+     "label": "Primary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "secondary_color",
+     "label": "Secondary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_colors_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "hover_primary_color",
+     "label": "Primary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_secondary_color",
+     "label": "Secondary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "hover_animation",
+     "label": "Hover Animation",
+     "type": "HOVER_ANIMATION"
+    },
+    {
+     "name": "size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "fit_to_size",
+     "label": "Fit to Size",
+     "type": "SWITCHER",
+     "styles": true
+    },
+    {
+     "name": "icon_padding",
+     "label": "Padding",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "rotate",
+     "label": "Rotate",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "border_width",
+     "label": "Border Width",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 18,
+  "responsive": 4
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

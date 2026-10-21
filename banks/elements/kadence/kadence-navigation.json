@@ -1,0 +1,48 @@
+{
+ "kind": "block",
+ "name": "kadence/navigation",
+ "title": "Navigation (Adv)",
+ "categories": [
+  "kadence-blocks"
+ ],
+ "keywords": [
+  "menu",
+  "navigation",
+  "links"
+ ],
+ "description": "An advanced navigation block.",
+ "file": "kadence-blocks/dist/blocks/navigation/block.json",
+ "attributes": {
+  "uniqueID": {
+   "type": "string"
+  },
+  "id": {
+   "type": "integer",
+   "default": 0
+  },
+  "templateKey": {
+   "type": "string",
+   "default": ""
+  },
+  "makePost": {
+   "type": "boolean",
+   "default": false
+  }
+ },
+ "supports": {
+  "align": [
+   "wide",
+   "full"
+  ],
+  "reusable": false,
+  "ariaLabel": true,
+  "html": false,
+  "customClassName": false
+ },
+ "counts": {
+  "attributes": 4,
+  "supports": 5
+ },
+ "source": "kadence",
+ "source_label": "Kadence Blocks"
+}

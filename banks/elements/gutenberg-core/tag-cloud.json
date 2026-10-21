@@ -1,0 +1,71 @@
+{
+ "kind": "block",
+ "name": "core/tag-cloud",
+ "title": "Tag Cloud",
+ "categories": [
+  "widgets"
+ ],
+ "keywords": [],
+ "description": "A cloud of popular keywords, each sized by how often it appears.",
+ "file": "wp/wordpress/wp-includes/blocks/tag-cloud/block.json",
+ "attributes": {
+  "numberOfTags": {
+   "type": "number",
+   "default": 45
+  },
+  "taxonomy": {
+   "type": "string",
+   "default": "post_tag"
+  },
+  "showTagCounts": {
+   "type": "boolean",
+   "default": false
+  },
+  "smallestFontSize": {
+   "type": "string",
+   "default": "8pt"
+  },
+  "largestFontSize": {
+   "type": "string",
+   "default": "22pt"
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "align": true,
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "lineHeight": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalLetterSpacing": true
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": true,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 5,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

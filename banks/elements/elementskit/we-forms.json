@@ -1,0 +1,304 @@
+{
+ "kind": "elementor-widget",
+ "name": "we-forms",
+ "title": "We Forms",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/we-forms/we-forms.php",
+ "sections": [
+  {
+   "id": "ekit_weform_section_tab",
+   "label": "weForm",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_weform_form_id",
+     "label": "Select Your Form",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "ekit_weform__section_fields_style",
+   "label": "Fields",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_weform_large_field_width",
+     "label": "Input Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_field_margin",
+     "label": "Input Spacing",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_field_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_field_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_field_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_weform_field_textcolor",
+     "label": "Input Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_field_placeholder_color",
+     "label": "Input Placeholder Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_tab_field_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_weform_field_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_weform_field_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_weform_field_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_tab_field_focus",
+     "label": "Focus",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_weform_field_focus_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_weform_field_focus_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_weform_field_focus_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_weform_form-label",
+   "label": "Label",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_weform_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_label_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_hr3",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_weform_label_typography",
+     "label": "Label Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_weform_desc_typography",
+     "label": "Help Text Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_weform_label_color",
+     "label": "Label Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_requered_label",
+     "label": "Required Label Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_desc_color",
+     "label": "Help Text Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_weform_submit",
+   "label": "Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_weform_submit_btn_width",
+     "label": "Button Full Width?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "ekit_weform_button_width",
+     "label": "Button Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_submit_btn_position",
+     "label": "Button Position",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "ekit_weform_submit_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_submit_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_submit_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_weform_submit_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_weform_submit_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_submit_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_weform_submit_text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "ekit_weform_hr4",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "ekit_weform_tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_weform_submit_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_submit_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "ekit_weform_submit_hover_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_submit_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_weform_submit_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 4,
+  "controls": 42,
+  "responsive": 10
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

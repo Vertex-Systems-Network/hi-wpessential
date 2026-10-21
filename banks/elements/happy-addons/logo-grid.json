@@ -1,0 +1,190 @@
+{
+ "kind": "elementor-widget",
+ "name": "logo-grid",
+ "title": "Logo Grid",
+ "categories": [],
+ "keywords": [
+  "logo",
+  "grid",
+  "brand",
+  "client"
+ ],
+ "file": "happy-elementor-addons/widgets/logo-grid/widget.php",
+ "sections": [
+  {
+   "id": "_section_logo",
+   "label": "Logo Grid",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "image",
+     "label": "Logo",
+     "type": "MEDIA"
+    },
+    {
+     "name": "link",
+     "label": "Website Url",
+     "type": "URL"
+    },
+    {
+     "name": "name",
+     "label": "Brand Name",
+     "type": "TEXT"
+    },
+    {
+     "name": "logo_list",
+     "label": "",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "_section_settings",
+   "label": "Settings",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "layout",
+     "label": "Grid Layout",
+     "type": "SELECT",
+     "options": [
+      "box",
+      "border",
+      "tictactoe"
+     ]
+    },
+    {
+     "name": "columns",
+     "label": "Columns",
+     "type": "SELECT",
+     "responsive": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_grid",
+   "label": "Grid",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "grid_border_type",
+     "label": "Border Type",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "none",
+      "solid",
+      "double",
+      "dotted",
+      "dashed",
+      "groove"
+     ]
+    },
+    {
+     "name": "grid_border_width",
+     "label": "Border Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "grid_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "grid_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "grid_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "grid_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "_tab_image_effects_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "image_opacity",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "image_css_filters",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "image_opacity_hover",
+     "label": "Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "image_css_filters_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Css_Filter"
+    },
+    {
+     "name": "image_bg_hover_transition",
+     "label": "Transition Duration",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "hover_animation",
+     "label": "Hover Animation",
+     "type": "HOVER_ANIMATION"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 23,
+  "responsive": 5
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

@@ -1,0 +1,164 @@
+{
+ "kind": "elementor-widget",
+ "name": "heading",
+ "title": "Heading",
+ "categories": [
+  "basic"
+ ],
+ "keywords": [
+  "heading",
+  "title",
+  "text"
+ ],
+ "file": "elementor/includes/widgets/heading.php",
+ "sections": [
+  {
+   "id": "section_title",
+   "label": "Heading",
+   "tab": "",
+   "controls": [
+    {
+     "name": "title",
+     "label": "Title",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "size",
+     "label": "Size",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "small",
+      "medium",
+      "large",
+      "xl",
+      "xxl"
+     ]
+    },
+    {
+     "name": "header_size",
+     "label": "HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "div",
+      "span",
+      "p"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_title_style",
+   "label": "Heading",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "text_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "blend_mode",
+     "label": "Blend Mode",
+     "type": "SELECT",
+     "styles": true,
+     "options": [
+      "multiply",
+      "screen",
+      "overlay",
+      "darken",
+      "lighten",
+      "color-dodge",
+      "saturation",
+      "color",
+      "difference",
+      "exclusion",
+      "hue",
+      "luminosity"
+     ]
+    },
+    {
+     "name": "separator",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "title_colors_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "title_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_colors_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "title_hover_color",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_hover_color_transition_duration",
+     "label": "Transition Duration",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "type",
+     "label": "",
+     "type": "RAW_HTML"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 16,
+  "responsive": 1
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

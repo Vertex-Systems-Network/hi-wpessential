@@ -1,0 +1,466 @@
+{
+ "kind": "block",
+ "name": "uagb/icon-list",
+ "title": "Icon List",
+ "categories": [],
+ "keywords": [],
+ "description": "",
+ "file": "ultimate-addons-for-gutenberg/includes/blocks/icon-list/attributes.php",
+ "attributes": {
+  "classMigrate": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "childMigrate": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "align": {
+   "type": "string",
+   "default": "left"
+  },
+  "alignTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "alignMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "icon_count": {
+   "type": "string",
+   "default": "1"
+  },
+  "icons": {
+   "type": "array",
+   "default": "array("
+  },
+  "label": {
+   "type": "string",
+   "default": "__( 'Label #1', 'ultimate-addons-for-gutenberg' )"
+  },
+  "image_icon": {
+   "type": "string",
+   "default": "icon"
+  },
+  "icon": {
+   "type": "string",
+   "default": ""
+  },
+  "image": {
+   "type": "string",
+   "default": ""
+  },
+  "icon_color": {
+   "type": "string",
+   "default": ""
+  },
+  "icon_hover_color": {
+   "type": "string",
+   "default": ""
+  },
+  "icon_bg_color": {
+   "type": "string",
+   "default": ""
+  },
+  "icon_bg_hover_color": {
+   "type": "string",
+   "default": ""
+  },
+  "icon_border_color": {
+   "type": "string",
+   "default": ""
+  },
+  "icon_border_hover_color": {
+   "type": "string",
+   "default": ""
+  },
+  "label_color": {
+   "type": "string",
+   "default": ""
+  },
+  "label_hover_color": {
+   "type": "string",
+   "default": ""
+  },
+  "link": {
+   "type": "string",
+   "default": "#"
+  },
+  "target": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "gap": {
+   "type": "string",
+   "default": "10"
+  },
+  "gapTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "gapMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "gapType": {
+   "type": "string",
+   "default": "px"
+  },
+  "inner_gap": {
+   "type": "string",
+   "default": "15"
+  },
+  "innerGapTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "innerGapMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "innerGapType": {
+   "type": "string",
+   "default": "px"
+  },
+  "size": {
+   "type": "string",
+   "default": "16"
+  },
+  "sizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "sizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "sizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "bgSize": {
+   "type": "string",
+   "default": "0"
+  },
+  "bgSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "bgSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "bgSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "border": {
+   "type": "string",
+   "default": "0"
+  },
+  "borderTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "borderMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "borderType": {
+   "type": "string",
+   "default": "px"
+  },
+  "borderRadius": {
+   "type": "string",
+   "default": "0"
+  },
+  "borderRadiusTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "borderRadiusMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "borderRadiusType": {
+   "type": "string",
+   "default": "px"
+  },
+  "fontSize": {
+   "type": "string",
+   "default": ""
+  },
+  "fontSizeType": {
+   "type": "string",
+   "default": "px"
+  },
+  "fontSizeMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "fontSizeTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "lineHeight": {
+   "type": "string",
+   "default": ""
+  },
+  "lineHeightType": {
+   "type": "string",
+   "default": "em"
+  },
+  "lineHeightMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "lineHeightTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "fontFamily": {
+   "type": "string",
+   "default": ""
+  },
+  "fontWeight": {
+   "type": "string",
+   "default": ""
+  },
+  "loadGoogleFonts": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "icon_layout": {
+   "type": "string",
+   "default": "vertical"
+  },
+  "iconLayoutTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "iconLayoutMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "fontStyle": {
+   "type": "string",
+   "default": ""
+  },
+  "fontTransform": {
+   "type": "string",
+   "default": ""
+  },
+  "fontDecoration": {
+   "type": "string",
+   "default": ""
+  },
+  "hideLabel": {
+   "type": "boolean",
+   "default": "false"
+  },
+  "iconPosition": {
+   "type": "string",
+   "default": "middle"
+  },
+  "iconPositionTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "iconPositionMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "iconPlacement": {
+   "type": "string",
+   "default": "before"
+  },
+  "iconColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBgColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBgHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBorderColor": {
+   "type": "string",
+   "default": ""
+  },
+  "iconBorderHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "labelColor": {
+   "type": "string",
+   "default": ""
+  },
+  "labelHoverColor": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLetterSpacing": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLetterSpacingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLetterSpacingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "labelLetterSpacingType": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockTopMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomMargin": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomMarginTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomMarginMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockMarginUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockMarginUnitTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockMarginUnitMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockMarginLink": {
+   "type": "string",
+   "default": ""
+  },
+  "parentIcon": {
+   "type": "string",
+   "default": "circle-arrow-right"
+  },
+  "blockTopPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomPadding": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomPaddingTablet": {
+   "type": "string",
+   "default": ""
+  },
+  "blockTopPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockRightPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockLeftPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockBottomPaddingMobile": {
+   "type": "string",
+   "default": ""
+  },
+  "blockPaddingUnit": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockPaddingUnitTablet": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockPaddingUnitMobile": {
+   "type": "string",
+   "default": "px"
+  },
+  "blockPaddingLink": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {},
+ "counts": {
+  "attributes": 112,
+  "supports": 0
+ },
+ "source": "spectra",
+ "source_label": "Spectra"
+}

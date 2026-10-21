@@ -1,0 +1,84 @@
+{
+ "kind": "elementor-widget",
+ "name": "calendly",
+ "title": "Calendly",
+ "categories": [],
+ "keywords": [
+  "info",
+  "blurb",
+  "box",
+  "text",
+  "content"
+ ],
+ "file": "happy-elementor-addons/widgets/calendly/widget.php",
+ "sections": [
+  {
+   "id": "_section_calendly",
+   "label": "Calendly",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "calendly_username",
+     "label": "Username",
+     "type": "TEXT"
+    },
+    {
+     "name": "calendly_time",
+     "label": "Time Slot",
+     "type": "SELECT",
+     "options": [
+      "15min",
+      "30min",
+      "60min"
+     ]
+    },
+    {
+     "name": "event_type_details",
+     "label": "Hide Event Type Details",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_calendly",
+   "label": "Calendly",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "_calendly_pro_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "text_color",
+     "label": "Text Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "button_link_color",
+     "label": "Button & Link Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "background_color",
+     "label": "Background Color",
+     "type": "COLOR"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 8,
+  "responsive": 1
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

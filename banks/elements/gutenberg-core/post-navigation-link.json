@@ -1,0 +1,68 @@
+{
+ "kind": "block",
+ "name": "core/post-navigation-link",
+ "title": "Post Navigation Link",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Displays the next or previous post link that is adjacent to the current post.",
+ "file": "wp/wordpress/wp-includes/blocks/post-navigation-link/block.json",
+ "attributes": {
+  "type": {
+   "type": "string",
+   "default": "next"
+  },
+  "label": {
+   "type": "string"
+  },
+  "showTitle": {
+   "type": "boolean",
+   "default": false
+  },
+  "linkLabel": {
+   "type": "boolean",
+   "default": false
+  },
+  "arrow": {
+   "type": "string",
+   "default": "none"
+  },
+  "taxonomy": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "reusable": false,
+  "html": false,
+  "color": {
+   "link": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "textAlign": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalWritingMode": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  }
+ },
+ "counts": {
+  "attributes": 6,
+  "supports": 6
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

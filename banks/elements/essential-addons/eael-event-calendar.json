@@ -1,0 +1,1675 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-event-calendar",
+ "title": "Event Calendar",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "event",
+  "events",
+  "calendar",
+  "ea calendar",
+  "ea event calendar",
+  "eventon",
+  "google calendar",
+  "event marketing",
+  "scheduled events",
+  "event calendar",
+  "modern events",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Event_Calendar.php",
+ "sections": [
+  {
+   "id": "eael_event_section",
+   "label": "Events",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eael_event_calendar_type",
+     "label": "Source",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_event_display_layout",
+     "label": "Layout",
+     "type": "SELECT",
+     "options": [
+      "calendar",
+      "table"
+     ]
+    },
+    {
+     "name": "eael_the_event_calendar_warning_text",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eael_event_calendar_pro_enable_warning",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eaelec_event_info_tab",
+     "label": "General",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_event_title",
+     "label": "Title",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_event_link",
+     "label": "Event Link",
+     "type": "URL"
+    },
+    {
+     "name": "eael_event_redirection",
+     "label": "Redirect to Event Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_event_all_day",
+     "label": "All Day",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_event_start_date",
+     "label": "Start Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_event_end_date",
+     "label": "End Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_event_start_date_allday",
+     "label": "Start Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_event_end_date_allday",
+     "label": "End Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_event_bg_color",
+     "label": "Event Background Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "eael_event_text_color",
+     "label": "Event Text Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "eael_event_border_color",
+     "label": "Popup Ribbon Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "eael_event_location",
+     "label": "Location",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_event_category",
+     "label": "Category",
+     "type": "TEXT"
+    },
+    {
+     "name": "eaelec_event_content_tab",
+     "label": "Content",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_event_description",
+     "label": "Description",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "eael_event_items",
+     "label": "Event",
+     "type": "REPEATER"
+    }
+   ]
+  },
+  {
+   "id": "eael_event_google_calendar",
+   "label": "Google Calendar",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eael_event_google_api_key",
+     "label": "API Key",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_event_calendar_id",
+     "label": "Calendar ID",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_google_calendar_start_date",
+     "label": "Start Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_google_calendar_end_date",
+     "label": "End Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_google_calendar_max_result",
+     "label": "Max Result",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "eael_event_the_events_calendar",
+   "label": "The Event Calendar",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eael_the_events_calendar_fetch",
+     "label": "Get Events",
+     "type": "SELECT",
+     "options": [
+      "all",
+      "date_range"
+     ]
+    },
+    {
+     "name": "eael_the_events_calendar_start_date",
+     "label": "Start Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_the_events_calendar_end_date",
+     "label": "End Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_the_events_calendar_category",
+     "label": "Event Category",
+     "type": "SELECT2"
+    },
+    {
+     "name": "eael_the_events_calendar_max_result",
+     "label": "Max Result",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_section",
+   "label": "Calendar",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eael_event_calendar_language",
+     "label": "Language",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_event_time_format",
+     "label": "24-Hour Time Format",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_event_calendar_default_view",
+     "label": "Default View",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_event_default_date_type",
+     "label": "Start Date",
+     "type": "SELECT",
+     "options": [
+      "current",
+      "custom"
+     ]
+    },
+    {
+     "name": "eael_event_calendar_default_date",
+     "label": "",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_event_calendar_first_day",
+     "label": "First Day of Week",
+     "type": "SELECT",
+     "options": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "name": "eael_event_details_link_hide",
+     "label": "Hide Event Details Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_old_events_hide",
+     "label": "Hide Old Events",
+     "type": "SELECT",
+     "options": [
+      "yes",
+      "start"
+     ]
+    },
+    {
+     "name": "eael_event_multi_days_event_day_count",
+     "label": "Multi-Days Event Day Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_event_details_text",
+     "label": "Event Details Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_event_location_display",
+     "label": "Show Event Location",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_event_limit",
+     "label": "Event Limit",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_event_calendar_show_search",
+     "label": "Show Search",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_event_calendar_search_placeholder",
+     "label": "Search Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_event_on_featured_color",
+     "label": "Featured Event Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "eael_event_random_bg_color",
+     "label": "Random Background Color",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_event_global_bg_color",
+     "label": "Event Background Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "eael_event_global_text_color",
+     "label": "Event Text Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "eael_calendar_column_heading_formats",
+     "label": "Calendar Table Heading Date Format",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_calendar_column_heading_month",
+     "label": "Month View",
+     "type": "SELECT",
+     "options": [
+      "dddd"
+     ]
+    },
+    {
+     "name": "eael_calendar_column_heading_week",
+     "label": "Week View",
+     "type": "SELECT"
+    },
+    {
+     "name": "_heading_popup_settings",
+     "label": "Popup",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_event_popup_date_format",
+     "label": "Date Format",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_event_global_popup_ribbon_color",
+     "label": "Ribbon Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "eael_event_show_thumbnail",
+     "label": "Thumbnail",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_event_thumbnail_position",
+     "label": "Position",
+     "type": "CHOOSE",
+     "options": [
+      "header",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_table_layout_section",
+   "label": "Calendar",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "eael_table_ec_default_date_type",
+     "label": "Start Date",
+     "type": "SELECT",
+     "options": [
+      "current",
+      "custom"
+     ]
+    },
+    {
+     "name": "eael_table_event_calendar_default_date",
+     "label": "",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "eael_ec_show_search",
+     "label": "Search",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_ec_search_placeholder",
+     "label": "Placeholder",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_ec_search_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_ec_search_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_ec_show_title",
+     "label": "Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_ec_title_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_ec_event_details_link",
+     "label": "Event Details Link",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_ec_title_on_new_tab",
+     "label": "Open in new Window",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_ec_show_description",
+     "label": "Description",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_ec_desc_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_ec_description_limit",
+     "label": "Word Count",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_ec_desc_see_more",
+     "label": "Expansion Indicator",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_ec_desc_see_more_link",
+     "label": "Linkable",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_ec_show_date",
+     "label": "Date",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_ec_date_label",
+     "label": "Label",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_ec_date_time_format",
+     "label": "Visibility",
+     "type": "SELECT",
+     "options": [
+      "date-time",
+      "time-date",
+      "date",
+      "time"
+     ]
+    },
+    {
+     "name": "eael_ec_enable_custom_date_format",
+     "label": "Custom Date Format",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_ec_custom_date_format",
+     "label": "Date Format",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_ec_date_format",
+     "label": "Date Format",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_ec_time_format",
+     "label": "Time Format",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_ec_date_time_separator",
+     "label": "Date Time Separator",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_ec_date_to_date_separator",
+     "label": "Event Time Separator",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_ec_show_pagination",
+     "label": "Pagination",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_ec_item_per_page",
+     "label": "Item Per Page",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_ec_pagination_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_data_cache",
+   "label": "Data Cache Setting",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_event_calendar_data_cache_limit",
+     "label": "Data Cache Time",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_search_styling",
+   "label": "Search Input",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_event_calendar_search_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_event_calendar_search_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_event_calendar_search_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_event_calendar_search_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_search_label_styling",
+   "label": "Search Label",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_event_calendar_search_label_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_event_calendar_search_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_label_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_label_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_table_layout_styling",
+   "label": "Table",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_ec_table_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_ec_table_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_table_header_styling",
+   "label": "Header",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_ec_table_header_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_ec_table_header_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ec_table_header_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_ec_table_header_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_ec_table_header",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_table_Body_styling",
+   "label": "Body",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_ec_table_body_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_ec_table_body_style_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "eael_ec_table_body_style_even_row",
+     "label": "Row Even",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_ec_table_body_text_color_even",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ec_table_body_content_linked_color",
+     "label": "Linked Text",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ec_table_body_background_even",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_ec_table_body_style_odd_row",
+     "label": "Row Odd",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_ec_table_body_text_color_odd",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ec_table_body_content_linked_color_odd",
+     "label": "Linked Text",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_ec_table_body_background_odd",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_ec_table_body_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_ec_table_body",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_ec_table_body_see_more",
+     "label": "Expansion Indicator",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_ec_table_body_see_more_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_ec_table_body_see_more_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_table_pagination_styling",
+   "label": "Pagination",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_event_calendar_table_pagination_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_style_normal_tab",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_style_hover_tab",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_color_hover",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_background_hover",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_border_color_hover",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_style_active_tab",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_color_active",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_background_active",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_border_color_active",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_table_pagination_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_interface",
+   "label": "Calendar",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "calendar_background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "calendar_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_calendar_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "calendar_inside",
+     "label": "Inside Space",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "calendar_outside",
+     "label": "Outside Space",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "calendar_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "calendar_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "calendar_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "buttons_style_heading",
+     "label": "Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "calendar_button_typography_normal",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "button_normal_state",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "button_color_normal",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_background_normal",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_border_normal",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "button_border_radius_normal",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "buttons_margin",
+     "label": "Space",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_hover_state",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "button_color_hover",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_background_hover",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_border_hover",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "button_border_radius_hover",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_active_state",
+     "label": "Active",
+     "type": "TAB"
+    },
+    {
+     "name": "button_color_active",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_background_active",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "button_border_active",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "button_border_radius_active",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "buttons_margin_active",
+     "label": "Space",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "calendar_week_days",
+   "label": "Day",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "days_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "days_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "days_position_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "days_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    }
+   ]
+  },
+  {
+   "id": "calendar_week_time",
+   "label": "Time",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "time_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "time_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "date_styles",
+   "label": "Date",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "date_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "date_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "date_number_background",
+     "label": "Number Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "date_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "date_position_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "date_padding",
+     "label": "Inside Space",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "date_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "date_margin",
+     "label": "Outside Space",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "today_date_setting",
+     "label": "Today Date",
+     "type": "HEADING"
+    },
+    {
+     "name": "today_date_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "today_date_background",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "calendar_list_view",
+   "label": "List view",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_list_view_header_heading",
+     "label": "Header",
+     "type": "HEADING"
+    },
+    {
+     "name": "list_row_header_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "list_header_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_list_view_body_heading",
+     "label": "Body",
+     "type": "HEADING"
+    },
+    {
+     "name": "list_element_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "list_element_even_color",
+     "label": "Even row Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "list_element_odd_color",
+     "label": "Odd row Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eaelec_event_section",
+   "label": "Events",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_event_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "day_event_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "day_event_padding",
+     "label": "Inside Space",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "day_event_margin",
+     "label": "Outside Space",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_more_event",
+     "label": "More Event Text",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_more_event_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_event_calendar_event_container_height",
+     "label": "Cell Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "event_popup",
+   "label": "Event Popup",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "event_popup_title_heading",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "event_popup_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_date_heading",
+     "label": "Date",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_date_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "event_popup_date_color",
+     "label": "Date Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_date_icon",
+     "label": "Date Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_date_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "event_popup_date_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_location_heading",
+     "label": "Location",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_location_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "event_popup_location_color",
+     "label": "Location Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_location_icon",
+     "label": "Location Icon",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_location_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "event_popup_location_icon_color",
+     "label": "Icon Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_content_heading",
+     "label": "Content",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_content_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "event_popup_content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_heading_thumbnail_style",
+     "label": "Thumbnail",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_thumbnail_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "event_popup_thumbnail_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_close_button_style",
+     "label": " Close Button",
+     "type": "HEADING"
+    },
+    {
+     "name": "close_button_icon_size",
+     "label": "Icon Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "close_button_size",
+     "label": "Button Size",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "close_button_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "close_button_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "close_button_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "close_button_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "close_button_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "event_popup_ext_link_heading",
+     "label": "External Link",
+     "type": "HEADING"
+    },
+    {
+     "name": "event_popup_ext_link_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "event_popup_ext_link_color",
+     "label": "Date Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "event_popup_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "event_popup_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "event_popup_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "event_popup_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_search_calendar_input_styling",
+   "label": "Search Input",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_event_calendar_search_calendar_input_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_calendar_input_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_event_calendar_search_calendar_input_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_calendar_input_placeholder_color",
+     "label": "Placeholder Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_calendar_input_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_event_calendar_search_calendar_input_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_event_calendar_search_calendar_input_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_calendar_input_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_event_calendar_search_calendar_input_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_search_calendar_input_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_event_calendar_search_suggestions_styling",
+   "label": "Search Suggestions",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_event_calendar_suggestions_container_heading",
+     "label": "Container",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_event_calendar_suggestions_background",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_event_calendar_suggestions_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_event_calendar_suggestions_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_suggestions_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "eael_event_calendar_suggestion_item_heading",
+     "label": "Suggestion Item",
+     "type": "HEADING"
+    },
+    {
+     "name": "eael_event_calendar_suggestion_title_typography",
+     "label": "Title Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_event_calendar_suggestion_title_color",
+     "label": "Title Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_suggestion_meta_typography",
+     "label": "Meta Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_event_calendar_suggestion_meta_color",
+     "label": "Meta Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_suggestion_item_hover_bg",
+     "label": "Hover Background color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_event_calendar_suggestion_item_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 21,
+  "controls": 253,
+  "responsive": 24
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

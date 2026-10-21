@@ -1,0 +1,207 @@
+{
+ "kind": "elementor-widget",
+ "name": "text-editor",
+ "title": "Text Editor",
+ "categories": [
+  "basic"
+ ],
+ "keywords": [
+  "text",
+  "editor"
+ ],
+ "file": "elementor/includes/widgets/text-editor.php",
+ "sections": [
+  {
+   "id": "section_editor",
+   "label": "Text Editor",
+   "tab": "",
+   "controls": [
+    {
+     "name": "editor",
+     "label": "",
+     "type": "WYSIWYG"
+    },
+    {
+     "name": "drop_cap",
+     "label": "Drop Cap",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "text_columns",
+     "label": "Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+     ]
+    },
+    {
+     "name": "column_gap",
+     "label": "Columns Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_style",
+   "label": "Text Editor",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "text_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "paragraph_spacing",
+     "label": "Paragraph Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "separator",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "colors_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "link_color",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "colors_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "link_hover_color",
+     "label": "Link Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "link_hover_color_transition_duration",
+     "label": "Transition Duration",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_drop_cap",
+   "label": "Drop Cap",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "drop_cap_view",
+     "label": "View",
+     "type": "SELECT",
+     "options": [
+      "default",
+      "stacked",
+      "framed"
+     ]
+    },
+    {
+     "name": "drop_cap_primary_color",
+     "label": "Primary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "drop_cap_secondary_color",
+     "label": "Secondary Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "drop_cap_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Shadow"
+    },
+    {
+     "name": "drop_cap_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "drop_cap_space",
+     "label": "Space",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "drop_cap_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "drop_cap_border_width",
+     "label": "Border Width",
+     "type": "DIMENSIONS",
+     "styles": true
+    },
+    {
+     "name": "drop_cap_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 3,
+  "controls": 24,
+  "responsive": 4
+ },
+ "source": "elementor",
+ "source_label": "Elementor"
+}

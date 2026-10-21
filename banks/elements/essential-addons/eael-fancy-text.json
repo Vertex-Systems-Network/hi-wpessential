@@ -1,0 +1,248 @@
+{
+ "kind": "elementor-widget",
+ "name": "eael-fancy-text",
+ "title": "Fancy Text",
+ "categories": [
+  "essential-addons-elementor"
+ ],
+ "keywords": [
+  "ea fancy text",
+  "ea typing text",
+  "animated headline",
+  "Headline",
+  "typewriter",
+  "text effect",
+  "text typing effect",
+  "text animation",
+  "animated heading",
+  "ea",
+  "essential addons"
+ ],
+ "file": "essential-addons-for-elementor-lite/includes/Elements/Fancy_Text.php",
+ "sections": [
+  {
+   "id": "eael_fancy_text_content",
+   "label": "Fancy Text",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_fancy_text_prefix",
+     "label": "Prefix Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_fancy_text_strings_text_field",
+     "label": "Fancy String",
+     "type": "TEXT"
+    },
+    {
+     "name": "eael_fancy_text_strings",
+     "label": "Fancy Text Strings",
+     "type": "REPEATER"
+    },
+    {
+     "name": "eael_fancy_text_suffix",
+     "label": "Suffix Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "eael_fancy_text_settings",
+   "label": "Fancy Text Settings",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_fancy_text_style",
+     "label": "Style Type",
+     "type": "SELECT"
+    },
+    {
+     "name": "eael_fancy_text_alignment",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_fancy_text_transition_type",
+     "label": "Animation Type",
+     "type": "SELECT",
+     "options": [
+      "typing",
+      "swing"
+     ]
+    },
+    {
+     "name": "eael_fancy_text_animation_start_on",
+     "label": "Animation Starts",
+     "type": "SELECT",
+     "options": [
+      "page_load",
+      "view_port"
+     ]
+    },
+    {
+     "name": "eael_fancy_text_speed",
+     "label": "Typing Speed",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_fancy_text_delay",
+     "label": "Delay on Change",
+     "type": "NUMBER"
+    },
+    {
+     "name": "eael_fancy_text_loop",
+     "label": "Loop the animation",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "eael_fancy_text_cursor",
+     "label": "Display Type Cursor",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "eael_section_pro",
+   "label": "Go Premium for More Features",
+   "tab": "",
+   "controls": [
+    {
+     "name": "eael_control_get_pro",
+     "label": "Unlock more possibilities",
+     "type": "CHOOSE",
+     "options": [
+      "1",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eael_fancy_text_prefix_styles",
+   "label": "Prefix Text Styles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_fancy_text_prefix_color",
+     "label": "Prefix Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  },
+  {
+   "id": "eael_fancy_text_strings_styles",
+   "label": "Fancy Text Styles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_fancy_text_color_selector",
+     "label": "Choose Background Type",
+     "type": "CHOOSE",
+     "options": [
+      "solid-color",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "eael_fancy_text_strings_background_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_fancy_text_color_gradient",
+     "label": "Gradient Color",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "eael_fancy_text_strings_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "eael_fancy_text_strings_color",
+     "label": "Solid Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_fancy_text_cursor_color",
+     "label": "Typing Cursor Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "eael_fancy_text_strings_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_fancy_text_strings_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "eael_fancy_text_strings_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "eael_fancy_text_strings_border_radius",
+     "label": "Border Radius",
+     "type": "SLIDER",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "eael_fancy_text_suffix_styles",
+   "label": "Suffix Text Styles",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "eael_fancy_text_suffix_color",
+     "label": "Suffix Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ending_typography",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 6,
+  "controls": 27,
+  "responsive": 3
+ },
+ "source": "essential-addons",
+ "source_label": "Essential Addons Lite"
+}

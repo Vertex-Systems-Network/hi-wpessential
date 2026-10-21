@@ -1,0 +1,80 @@
+{
+ "kind": "block",
+ "name": "core/post-terms",
+ "title": "Post Terms",
+ "categories": [
+  "theme"
+ ],
+ "keywords": [],
+ "description": "Post terms.",
+ "file": "wp/wordpress/wp-includes/blocks/post-terms/block.json",
+ "attributes": {
+  "term": {
+   "type": "string"
+  },
+  "separator": {
+   "type": "string",
+   "default": ", "
+  },
+  "prefix": {
+   "type": "string",
+   "default": ""
+  },
+  "suffix": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {
+  "anchor": true,
+  "html": false,
+  "color": {
+   "gradients": true,
+   "link": true,
+   "__experimentalDefaultControls": {
+    "background": true,
+    "text": true,
+    "link": true
+   }
+  },
+  "spacing": {
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "fontSize": true,
+   "lineHeight": true,
+   "textAlign": true,
+   "__experimentalFontFamily": true,
+   "__experimentalFontWeight": true,
+   "__experimentalFontStyle": true,
+   "__experimentalTextTransform": true,
+   "__experimentalTextDecoration": true,
+   "__experimentalLetterSpacing": true,
+   "__experimentalDefaultControls": {
+    "fontSize": true
+   }
+  },
+  "interactivity": {
+   "clientNavigation": true
+  },
+  "__experimentalBorder": {
+   "radius": true,
+   "color": true,
+   "width": true,
+   "style": true,
+   "__experimentalDefaultControls": {
+    "radius": true,
+    "color": true,
+    "width": true,
+    "style": true
+   }
+  }
+ },
+ "counts": {
+  "attributes": 4,
+  "supports": 7
+ },
+ "source": "gutenberg-core",
+ "source_label": "Gutenberg core"
+}

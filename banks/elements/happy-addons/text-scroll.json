@@ -1,0 +1,107 @@
+{
+ "kind": "elementor-widget",
+ "name": "text-scroll",
+ "title": "Text Scroll",
+ "categories": [],
+ "keywords": [
+  "Text",
+  "text scroll",
+  "Text Scroll",
+  "scroll"
+ ],
+ "file": "happy-elementor-addons/widgets/text-scroll/widget.php",
+ "sections": [
+  {
+   "id": "section_text_scroll",
+   "label": "Text Scroll",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "text_scroll_type",
+     "label": "Scroll Type",
+     "type": "SELECT",
+     "options": [
+      "vertical_line_highlight",
+      "horizontal_line_highlight",
+      "vertical_line_mask",
+      "horizontal_line_mask"
+     ]
+    },
+    {
+     "name": "scroll_text",
+     "label": "Scroll Text",
+     "type": "TEXTAREA"
+    }
+   ]
+  },
+  {
+   "id": "section_text_scroll_style",
+   "label": "Text Scroll",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "text_scroll_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "start",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "text_scroll_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "text_scroll_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "text_scroll_stroke",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Text_Stroke"
+    },
+    {
+     "name": "text_scroll_bg_color",
+     "label": "Background",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "text_scroll_masking_opacity",
+     "label": "Masking Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "text_scroll_highlight_opacity",
+     "label": "Highlight Opacity",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "text_scroll_padding",
+     "label": "Line Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 10,
+  "responsive": 2
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

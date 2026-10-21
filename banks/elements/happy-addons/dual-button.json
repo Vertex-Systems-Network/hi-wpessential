@@ -1,0 +1,396 @@
+{
+ "kind": "elementor-widget",
+ "name": "dual-button",
+ "title": "Dual Button",
+ "categories": [],
+ "keywords": [
+  "button",
+  "btn",
+  "dual",
+  "advance",
+  "link"
+ ],
+ "file": "happy-elementor-addons/widgets/dual-button/widget.php",
+ "sections": [
+  {
+   "id": "_section_button",
+   "label": "Dual Buttons",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "_tab_button_primary",
+     "label": "Primary",
+     "type": "TAB"
+    },
+    {
+     "name": "left_button_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "left_button_link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "left_button_icon",
+     "label": "Icon",
+     "type": "ICON"
+    },
+    {
+     "name": "left_button_selected_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "left_button_icon_position",
+     "label": "Icon Position",
+     "type": "CHOOSE",
+     "options": [
+      "before",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "left_button_icon_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "_tab_button_connector",
+     "label": "Connector",
+     "type": "TAB"
+    },
+    {
+     "name": "button_connector_hide",
+     "label": "Hide Connector?",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "button_connector_type",
+     "label": "Connector Type",
+     "type": "CHOOSE",
+     "options": [
+      "text",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "button_connector_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "button_connector_icon",
+     "label": "Icon",
+     "type": "ICON"
+    },
+    {
+     "name": "button_connector_selected_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "_tab_button_secondary",
+     "label": "Secondary",
+     "type": "TAB"
+    },
+    {
+     "name": "right_button_text",
+     "label": "Text",
+     "type": "TEXT"
+    },
+    {
+     "name": "right_button_link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "right_button_icon",
+     "label": "Icon",
+     "type": "ICON"
+    },
+    {
+     "name": "right_button_selected_icon",
+     "label": "Icon",
+     "type": "ICONS"
+    },
+    {
+     "name": "right_button_icon_position",
+     "label": "Icon Position",
+     "type": "CHOOSE",
+     "options": [
+      "before",
+      "title",
+      "icon"
+     ]
+    },
+    {
+     "name": "right_button_icon_spacing",
+     "label": "Icon Spacing",
+     "type": "SLIDER",
+     "styles": true
+    },
+    {
+     "name": "buttons_layout",
+     "label": "Layout",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "queue",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_common",
+   "label": "Common",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_gap",
+     "label": "Space Between Buttons",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "button_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "button_align_x",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_left_button",
+   "label": "Primary Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "left_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "left_button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "left_button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "left_button_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "left_button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "_tab_left_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "left_button_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "left_button_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tabs_left_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "left_button_hover_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "left_button_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "left_button_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "_section_style_connector",
+   "label": "Connector",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "connector_notice",
+     "label": "",
+     "type": "RAW_HTML"
+    },
+    {
+     "name": "connector_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "connector_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "connector_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "connector_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "_section_style_right_button",
+   "label": "Secondary Button",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "right_button_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "right_button_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "right_button_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "right_button_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "right_button_box_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "_tab_right_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "right_button_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "right_button_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "_tabs_right_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "right_button_hover_text_color",
+     "label": "Text Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "right_button_hover_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "right_button_hover_border_color",
+     "label": "Border Color",
+     "type": "COLOR",
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 5,
+  "controls": 55,
+  "responsive": 8
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

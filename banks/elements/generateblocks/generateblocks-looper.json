@@ -1,0 +1,63 @@
+{
+ "kind": "block",
+ "name": "generateblocks/looper",
+ "title": "Looper",
+ "categories": [
+  "generateblocks"
+ ],
+ "keywords": [
+  "query",
+  "loop",
+  "posts"
+ ],
+ "description": "Loops its children based on the data provided by the Query block.",
+ "file": "generateblocks/dist/blocks/looper/block.json",
+ "attributes": {
+  "uniqueId": {
+   "type": "string",
+   "default": ""
+  },
+  "tagName": {
+   "type": "string",
+   "default": "",
+   "enum": [
+    "div",
+    "section",
+    "article",
+    "aside",
+    "header",
+    "footer",
+    "nav",
+    "main",
+    "ul",
+    "ol"
+   ]
+  },
+  "styles": {
+   "type": "object",
+   "default": {}
+  },
+  "css": {
+   "type": "string",
+   "default": ""
+  },
+  "globalClasses": {
+   "type": "array",
+   "default": []
+  },
+  "htmlAttributes": {
+   "type": "object",
+   "default": {}
+  }
+ },
+ "supports": {
+  "align": false,
+  "className": false
+ },
+ "counts": {
+  "attributes": 6,
+  "supports": 2
+ },
+ "source": "generateblocks",
+ "source_label": "GenerateBlocks"
+}

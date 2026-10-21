@@ -1,0 +1,356 @@
+{
+ "kind": "elementor-widget",
+ "name": "basic-posts",
+ "title": "Basic Posts",
+ "categories": [],
+ "keywords": [
+  "Basic_Posts"
+ ],
+ "file": "header-footer-elementor/inc/widgets-manager/widgets/basic-posts/basic-posts.php",
+ "sections": [
+  {
+   "id": "section_query",
+   "label": "Query",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "orderby",
+     "label": "Order By",
+     "type": "SELECT",
+     "options": [
+      "date",
+      "title",
+      "menu_order",
+      "rand",
+      "comment_count"
+     ]
+    },
+    {
+     "name": "order",
+     "label": "Order",
+     "type": "SELECT",
+     "options": [
+      "asc",
+      "desc"
+     ]
+    },
+    {
+     "name": "exclude_current",
+     "label": "Exclude Current Post",
+     "type": "SWITCHER"
+    }
+   ]
+  },
+  {
+   "id": "section_general",
+   "label": "General",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "posts_per_page",
+     "label": "Posts Per Page",
+     "type": "NUMBER"
+    },
+    {
+     "name": "columns",
+     "label": "Columns",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_image",
+   "label": "Featured Image",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "show_image",
+     "label": "Show Featured Image",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "image_size",
+     "label": "Image Size",
+     "type": "SELECT"
+    }
+   ]
+  },
+  {
+   "id": "section_content",
+   "label": "Title",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "show_title",
+     "label": "Show Title",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "title_tag",
+     "label": "Title HTML Tag",
+     "type": "SELECT",
+     "options": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "section_meta",
+   "label": "Meta",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "show_meta",
+     "label": "Show Meta Data",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_date",
+     "label": "Show Date",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_author",
+     "label": "Show Author",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "show_comments",
+     "label": "Show Comments Count",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "meta_separator",
+     "label": "Meta Separator",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "section_excerpt",
+   "label": "Excerpt",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "show_excerpt",
+     "label": "Show Excerpt",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "excerpt_length",
+     "label": "Excerpt Length",
+     "type": "NUMBER"
+    }
+   ]
+  },
+  {
+   "id": "section_read_more",
+   "label": "Call to Action",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "show_read_more",
+     "label": "Show Read More",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "read_more_text",
+     "label": "Read More Text",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "section_layout_style",
+   "label": "Layout",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "column_gap",
+     "label": "Column Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "row_gap",
+     "label": "Row Gap",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_card_style",
+   "label": "Card",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "card_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "card_border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "card_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "card_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "card_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_title_style",
+   "label": "Title",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "title_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "title_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_meta_style",
+   "label": "Meta",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "meta_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "meta_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "meta_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_excerpt_style",
+   "label": "Excerpt",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "excerpt_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "excerpt_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "excerpt_spacing",
+     "label": "Bottom Spacing",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "section_read_more_style",
+   "label": "Call to Action",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "read_more_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_hover_color",
+     "label": "Hover Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "read_more_typography",
+     "label": "Typography",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 13,
+  "controls": 38,
+  "responsive": 8
+ },
+ "source": "ultimate-addons-hfe",
+ "source_label": "Ultimate Addons (Header Footer Elementor)"
+}

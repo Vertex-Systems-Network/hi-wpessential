@@ -1,0 +1,795 @@
+{
+ "kind": "elementor-widget",
+ "name": "countdown-timer",
+ "title": "Countdown Timer",
+ "categories": [],
+ "keywords": [],
+ "file": "elementskit-lite/widgets/countdown-timer/countdown-timer.php",
+ "sections": [
+  {
+   "id": "section_tab",
+   "label": "Presets",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_style",
+     "label": "Choose Style",
+     "type": "ElementsKit_IMAGECHOOSE",
+     "options": [
+      "style1",
+      "title",
+      "imagelarge",
+      "imagesmall",
+      "width"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ekit_countdown_timer_timer_setting",
+   "label": "Timer Settings  ",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_due_time",
+     "label": "Countdown Due Date",
+     "type": "DATE_TIME"
+    },
+    {
+     "name": "ekit_countdown_timer_content_setting",
+     "label": "Custom Labels",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_label",
+     "label": "Weeks",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_countdown_timer_days_label",
+     "label": "Days",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_label",
+     "label": "Hours",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_hours_label",
+     "label": "Minutes",
+     "type": "TEXT"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_hours_label",
+     "label": "Seconds",
+     "type": "TEXT"
+    }
+   ]
+  },
+  {
+   "id": "ekit_countdown_timer_on_expire_settings",
+   "label": "Expire Action",
+   "tab": "",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_title",
+     "label": "On Expiry Title",
+     "type": "TEXTAREA"
+    },
+    {
+     "name": "ekit_countdown_timer_expiry_content",
+     "label": "On Expiry Content",
+     "type": "TEXTAREA"
+    }
+   ]
+  },
+  {
+   "id": "ekit_countdown_timer_content_style",
+   "label": "Content",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_days_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_days_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_days__line_height",
+     "label": "Line Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_content_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_countdown_timer_weeks_style",
+   "label": "Weeks",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_weeks_heading_digits",
+     "label": "Digits",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_digits_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_digits_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_digits_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_label_title",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_label_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_label_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_label_border_color",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_label_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_label_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_lebel_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_heading_general",
+     "label": "General",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_border_color_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_weeks_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_countdown_timer_days_style",
+   "label": "Days",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_days_heading_digits",
+     "label": "Digits",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_days_digits_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_days_digits_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_days_digits_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_days_label_title",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_days_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_days_label_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_days_label_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_days_label_border_color",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_days_label_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_days_label_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_countdown_timer_days_lebel_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_days_heading_general",
+     "label": "General",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_days_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_days_border_color_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_days_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_days_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_countdown_timer_hours_style",
+   "label": "Hours",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_hours_heading_digits",
+     "label": "Digits",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_digits_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_hours_digits_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_digits_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_hours_label_title",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_hours_label_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_label_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_label_border_color",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_label_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_hours_label_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_lebel_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_hours_heading_general",
+     "label": "General",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_border_color_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_hours_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_hours_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_countdown_timer_minutes_style",
+   "label": "Minutes",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_minutes_heading_digits",
+     "label": "Digits",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_digits_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_digits_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_digits_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_label_title",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_label_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_label_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_label_border_color",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_label_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_label_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_lebel_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_heading_general",
+     "label": "General",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_border_color_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_minutes_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_countdown_timer_seconds_style",
+   "label": "Seconds",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_seconds_heading_digits",
+     "label": "Digits",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_digits_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_digits_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_digits_margin_bottom",
+     "label": "Margin Bottom",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_label_title",
+     "label": "Label",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_label_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_label_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_label_background_group",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_label_border_color",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_label_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_label_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_lebel_margin",
+     "label": "Margin",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_heading_general",
+     "label": "General",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_background",
+     "label": "Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_border_color_group",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_seconds_box_shadow_group",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  },
+  {
+   "id": "ekit_countdown_timer_expired_style",
+   "label": "Expire Actions",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_expire_actions_heading_title",
+     "label": "Title",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_expire_actions_title_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_expire_actions_title_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_expire_actions_heading_content",
+     "label": "Content",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_expire_actions_content_typography_group",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Typography"
+    },
+    {
+     "name": "ekit_countdown_timer_expire_actions_content_color",
+     "label": "Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_expire_actions_heading_general",
+     "label": "General",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_expire_actions_background_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_expire_actions_border_color",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "ekit_countdown_timer_expire_actions_border_radious_open",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_expire_actions_padding",
+     "label": "Padding",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  },
+  {
+   "id": "ekit_countdown_timer_bg_style",
+   "label": "Background",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "ekit_countdown_timer_content_height",
+     "label": "Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_content_line_height",
+     "label": "Line Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "ekit_countdown_timer_outer_section_bg_style",
+     "label": "Outer Part",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_outer_background_group",
+     "label": "Outer Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    },
+    {
+     "name": "ekit_countdown_timer_inner_section_bg_style",
+     "label": "Inner Part",
+     "type": "HEADING"
+    },
+    {
+     "name": "ekit_countdown_timer_inner_background_group",
+     "label": "Inner Background",
+     "type": "GROUP",
+     "group": "Group_Control_Background"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 11,
+  "controls": 116,
+  "responsive": 28
+ },
+ "source": "elementskit",
+ "source_label": "ElementsKit Lite"
+}

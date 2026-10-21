@@ -1,0 +1,165 @@
+{
+ "kind": "elementor-widget",
+ "name": "lordicon",
+ "title": "LordIcon",
+ "categories": [],
+ "keywords": [
+  "icon",
+  "lordicon",
+  "info",
+  "box",
+  "icon"
+ ],
+ "file": "happy-elementor-addons/widgets/lordicon/widget.php",
+ "sections": [
+  {
+   "id": "_section_icon",
+   "label": "Content",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "icon_method",
+     "label": "Icon Method",
+     "type": "SELECT",
+     "options": [
+      "cdn",
+      "file"
+     ]
+    },
+    {
+     "name": "icon_cdn",
+     "label": "Paste CDN",
+     "type": "TEXT"
+    },
+    {
+     "name": "icon_json",
+     "label": "JSON File",
+     "type": "MEDIA"
+    },
+    {
+     "name": "animation_trigger",
+     "label": "Animation Trigger",
+     "type": "SELECT",
+     "options": [
+      "loop",
+      "click",
+      "hover",
+      "loop-on-hover",
+      "morph",
+      "morph-two-way"
+     ]
+    },
+    {
+     "name": "target",
+     "label": "Target",
+     "type": "SELECT",
+     "options": [
+      "widget",
+      "icon",
+      "column",
+      "section",
+      "custom"
+     ]
+    },
+    {
+     "name": "custom_target",
+     "label": "Custom Target",
+     "type": "TEXT"
+    },
+    {
+     "name": "pulse_effect",
+     "label": "Pulse Effect",
+     "type": "SWITCHER"
+    },
+    {
+     "name": "pulse_color",
+     "label": "Pulse Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_style_icon",
+   "label": "Icon",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "icon_size",
+     "label": "Size",
+     "type": "SLIDER",
+     "responsive": true
+    },
+    {
+     "name": "primary_color",
+     "label": "Primary Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "secondary_color",
+     "label": "Secondary Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "tertiary_color",
+     "label": "Tertiary Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "quaternary_color",
+     "label": "Quaternary Color",
+     "type": "COLOR"
+    },
+    {
+     "name": "icon_stroke",
+     "label": "Stroke",
+     "type": "SLIDER"
+    },
+    {
+     "name": "icon_bg_color",
+     "label": "Background Color",
+     "type": "COLOR",
+     "styles": true
+    },
+    {
+     "name": "icon_border",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "icon_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "icon_shadow",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 19,
+  "responsive": 3
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}

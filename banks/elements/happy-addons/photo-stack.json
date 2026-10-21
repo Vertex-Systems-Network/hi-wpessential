@@ -1,0 +1,195 @@
+{
+ "kind": "elementor-widget",
+ "name": "photo-stack",
+ "title": "Photo Stack",
+ "categories": [],
+ "keywords": [
+  "photo",
+  "img-box",
+  "photo-gallery"
+ ],
+ "file": "happy-elementor-addons/widgets/photo-stack/widget.php",
+ "sections": [
+  {
+   "id": "_section_photo_stack",
+   "label": "Photo Stack",
+   "tab": "TAB_CONTENT",
+   "controls": [
+    {
+     "name": "image",
+     "label": "Image",
+     "type": "MEDIA"
+    },
+    {
+     "name": "thumbnail",
+     "label": "",
+     "type": "GROUP",
+     "group": "Group_Control_Image_Size"
+    },
+    {
+     "name": "image_masking",
+     "label": "",
+     "type": "GROUP",
+     "group": ""
+    },
+    {
+     "name": "link",
+     "label": "Link",
+     "type": "URL"
+    },
+    {
+     "name": "image_offset_y",
+     "label": "Offset Y",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_offset_x",
+     "label": "Offset X",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_z_index",
+     "label": "Z-Index",
+     "type": "NUMBER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_list",
+     "label": "Items",
+     "type": "REPEATER"
+    },
+    {
+     "name": "image_infinite_animation",
+     "label": "Infinite Animation",
+     "type": "SELECT",
+     "options": [
+      "ha-bounce-sm",
+      "ha-bounce-md",
+      "ha-bounce-lg",
+      "ha-fade",
+      "ha-rotating",
+      "ha-rotating-inverse",
+      "ha-scale-sm",
+      "ha-scale-md",
+      "ha-scale-lg"
+     ]
+    },
+    {
+     "name": "hover_animation_style",
+     "label": "Hover Animation",
+     "type": "SELECT",
+     "options": [
+      "none",
+      "fly-sm",
+      "fly",
+      "fly-lg",
+      "scale-sm",
+      "scale",
+      "scale-lg",
+      "scale-inverse-sm",
+      "scale-inverse",
+      "scale-inverse-lg"
+     ]
+    },
+    {
+     "name": "animation_speed",
+     "label": "Animation speed",
+     "type": "NUMBER",
+     "styles": true
+    },
+    {
+     "name": "image_container_align",
+     "label": "Alignment",
+     "type": "CHOOSE",
+     "responsive": true,
+     "styles": true,
+     "options": [
+      "left",
+      "title",
+      "icon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "_section_photo_stack_style",
+   "label": "Common",
+   "tab": "TAB_STYLE",
+   "controls": [
+    {
+     "name": "image_container_width",
+     "label": "Width",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_container_height",
+     "label": "Minimum Height",
+     "type": "SLIDER",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "image_layers_overflow",
+     "label": "Overflow",
+     "type": "SELECT",
+     "responsive": true,
+     "styles": true
+    },
+    {
+     "name": "hr",
+     "label": "",
+     "type": "DIVIDER"
+    },
+    {
+     "name": "tab_button_normal",
+     "label": "Normal",
+     "type": "TAB"
+    },
+    {
+     "name": "img_box_shadow",
+     "label": "Box Shadow",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "tab_button_hover",
+     "label": "Hover",
+     "type": "TAB"
+    },
+    {
+     "name": "img_box_shadow_hover",
+     "label": "Box Shadow Hover",
+     "type": "GROUP",
+     "group": "Group_Control_Box_Shadow"
+    },
+    {
+     "name": "border",
+     "label": "Border",
+     "type": "GROUP",
+     "group": "Group_Control_Border"
+    },
+    {
+     "name": "image_border_radius",
+     "label": "Border Radius",
+     "type": "DIMENSIONS",
+     "responsive": true,
+     "styles": true
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "sections": 2,
+  "controls": 22,
+  "responsive": 8
+ },
+ "source": "happy-addons",
+ "source_label": "Happy Addons"
+}
