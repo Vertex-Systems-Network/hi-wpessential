@@ -180,6 +180,14 @@ class Orders {
 		}
 		$user_id = $order->get_customer_id();
 		$ids     = array();
+		Events::log(
+			'order.fulfil',
+			sprintf( 'Fulfilling licenses for order #%d.', $order_id ),
+			array(
+				'order_id' => $order_id,
+				'user_id'  => $user_id,
+			)
+		);
 		foreach ( $order->get_items() as $item ) {
 			$plan = Plans::from_product( $item->get_product_id() );
 			if ( ! $plan ) {
@@ -187,6 +195,16 @@ class Orders {
 			}
 			$renew   = (int) $item->get_meta( '_wpes_renew' );
 			$upgrade = (int) $item->get_meta( '_wpes_upgrade' );
+			if ( ( $renew && ! Licenses::get( $renew ) ) || ( $upgrade && ! Licenses::get( $upgrade ) ) ) {
+				Events::error(
+					'order.license_missing',
+					sprintf( 'Order #%1$d points at license #%2$d, which does not exist. A new license is created instead.', $order_id, $renew ? $renew : $upgrade ),
+					array(
+						'order_id' => $order_id,
+						'user_id'  => $user_id,
+					)
+				);
+			}
 			if ( $renew && ( $license = Licenses::get( $renew ) ) ) { // phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.Found,Squiz.PHP.DisallowMultipleAssignments.FoundInControlStructure -- Compact lookup.
 				$license = Licenses::update(
 					$renew,
@@ -198,6 +216,7 @@ class Orders {
 				);
 				/* translators: %s: key. */
 				$order->add_order_note( sprintf( __( 'License %s renewed.', 'wpessential-server' ), $license['license_key'] ) );
+				Events::log( 'subscription.renewed', sprintf( 'License %1$s renewed until %2$s.', $license['license_key'], (string) $license['expires_at'] ), Events::of( $license, array( 'order_id' => $order_id ) ) );
 			} elseif ( $upgrade && ( $license = Licenses::get( $upgrade ) ) ) { // phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.Found,Squiz.PHP.DisallowMultipleAssignments.FoundInControlStructure -- Compact lookup.
 				$license = Licenses::update(
 					$upgrade,
@@ -215,6 +234,7 @@ class Orders {
 				);
 				/* translators: 1: key, 2: plan. */
 				$order->add_order_note( sprintf( __( 'License %1$s upgraded to %2$s.', 'wpessential-server' ), $license['license_key'], $plan['name'] ) );
+				Events::log( 'subscription.upgraded', sprintf( 'License %1$s upgraded to %2$s.', $license['license_key'], $plan['name'] ), Events::of( $license, array( 'order_id' => $order_id ) ) );
 			} else {
 				$license = Licenses::create( $user_id, $plan, $order_id );
 				/* translators: %s: key. */
@@ -236,6 +256,19 @@ class Orders {
 	 */
 	public static function revoke( $order_id ) {
 		$order = wc_get_order( $order_id );
+		if ( ! $order ) {
+			Events::error( 'order.refund_missing', sprintf( 'Refunded order #%d not found.', $order_id ), array( 'order_id' => $order_id ) );
+			return;
+		}
+		Events::log(
+			'order.refund_revoke',
+			sprintf( 'Order #%d refunded; revoking its licenses.', $order_id ),
+			array(
+				'order_id' => $order_id,
+				'user_id'  => $order->get_customer_id(),
+			),
+			'warning'
+		);
 		foreach ( (array) $order->get_meta( '_wpes_licenses' ) as $id ) {
 			$license = Licenses::get( $id );
 			if ( $license && (int) $license['order_id'] === (int) $order_id ) {

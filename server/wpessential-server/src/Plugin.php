@@ -38,6 +38,7 @@ final class Plugin {
 	 */
 	private function __construct() {
 		Install::maybe_upgrade();
+		Events::hooks();
 		Plans::hooks();
 		Orders::hooks();
 		Renewals::hooks();
@@ -66,6 +67,7 @@ final class Plugin {
 				'token_days'    => 30,
 				'download_mins' => 15,
 				'playground'    => 1,
+				'event_days'    => 365,
 			)
 		);
 		return null === $key ? $settings : ( $settings[ $key ] ?? null );

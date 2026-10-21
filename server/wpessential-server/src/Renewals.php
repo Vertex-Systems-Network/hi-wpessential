@@ -63,28 +63,50 @@ class Renewals {
 			$wpdb->prepare( "SELECT * FROM {$table} WHERE status = 'active' AND expires_at IS NOT NULL AND expires_at <= %s", gmdate( 'Y-m-d H:i:s', time() + $remind * DAY_IN_SECONDS ) ), // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- Table name.
 			ARRAY_A
 		);
+		$run = Events::begin( 'cron' );
+		Events::log( 'renewal.run_start', sprintf( 'Renewal run started: %d license(s) due.', count( (array) $due ) ), array( 'due' => count( (array) $due ) ) );
 		foreach ( (array) $due as $license ) {
-			if ( Licenses::is_expired( $license ) ) {
-				Licenses::update( $license['id'], array( 'status' => 'expired' ) );
-				self::mail( $license, 'expired' );
-				++$counts['expired'];
-				continue;
-			}
-			if ( $license['auto_renew'] ) {
-				$result = self::renewal_order( $license );
-				if ( $result ) {
-					++$counts['renewal_orders'];
-					if ( 'charged' === $result ) {
-						++$counts['charged'];
-					}
-				}
-			} elseif ( ! get_option( 'wpes_reminded_' . $license['id'] . '_' . $license['expires_at'] ) ) {
-				self::mail( $license, 'reminder' );
-				update_option( 'wpes_reminded_' . $license['id'] . '_' . $license['expires_at'], 1, false );
-				++$counts['reminders'];
+			// Each license gets its own trace so its steps read as one story.
+			Events::begin( 'cron' );
+			try {
+				self::process( $license, $counts );
+			} catch ( \Throwable $e ) {
+				Events::error( 'renewal.exception', $e->getMessage(), Events::of( $license, array( 'file' => basename( $e->getFile() ) . ':' . $e->getLine() ) ) );
 			}
 		}
+		Events::begin( 'cron' );
+		Events::log( 'renewal.run_end', 'Renewal run finished.', array_merge( $counts, array( 'run' => $run ) ) );
+		Events::end();
 		return $counts;
+	}
+
+	/**
+	 * One due license.
+	 *
+	 * @param array $license License.
+	 * @param array $counts  Counts (by reference).
+	 */
+	private static function process( $license, array &$counts ) {
+		if ( Licenses::is_expired( $license ) ) {
+			Licenses::update( $license['id'], array( 'status' => 'expired' ) );
+			self::mail( $license, 'expired' );
+			++$counts['expired'];
+			return;
+		}
+		if ( $license['auto_renew'] ) {
+			$result = self::renewal_order( $license );
+			if ( $result ) {
+				++$counts['renewal_orders'];
+				if ( 'charged' === $result ) {
+					++$counts['charged'];
+				}
+			}
+		} elseif ( ! get_option( 'wpes_reminded_' . $license['id'] . '_' . $license['expires_at'] ) ) {
+			self::mail( $license, 'reminder' );
+			update_option( 'wpes_reminded_' . $license['id'] . '_' . $license['expires_at'], 1, false );
+			++$counts['reminders'];
+			Events::log( 'subscription.reminder_sent', sprintf( 'Reminder sent: license %1$s ends %2$s and auto-renew is off.', $license['license_key'], $license['expires_at'] ), Events::of( $license ) );
+		}
 	}
 
 	/**
@@ -113,11 +135,14 @@ class Renewals {
 	 * @return string|false "charged", "invoiced" or false.
 	 */
 	public static function renewal_order( $license ) {
-		if ( self::pending_order( $license ) ) {
+		$pending = self::pending_order( $license );
+		if ( $pending ) {
+			Events::log( 'renewal.awaiting_payment', sprintf( 'Renewal order #%1$d for license %2$s is still %3$s.', $pending->get_id(), $license['license_key'], $pending->get_status() ), Events::of( $license, array( 'order_id' => $pending->get_id() ) ), 'warning' );
 			return false;
 		}
 		$product = wc_get_product( (int) $license['product_id'] );
 		if ( ! $product ) {
+			Events::error( 'renewal.product_missing', sprintf( 'Plan product #%1$d of license %2$s no longer exists; no renewal order created.', $license['product_id'], $license['license_key'] ), Events::of( $license ) );
 			return false;
 		}
 		$last  = $license['order_id'] ? wc_get_order( (int) $license['order_id'] ) : null;
@@ -144,20 +169,44 @@ class Renewals {
 		/* translators: %s: key. */
 		$order->add_order_note( sprintf( __( 'Automatic renewal for license %s.', 'wpessential-server' ), $license['license_key'] ) );
 		$order->save();
+		$ctx = Events::of(
+			$license,
+			array(
+				'order_id' => $order->get_id(),
+				'total'    => $order->get_total(),
+				'gateway'  => $order->get_payment_method(),
+			)
+		);
+		Events::log( 'renewal.order_created', sprintf( 'Renewal order #%1$d created for license %2$s.', $order->get_id(), $license['license_key'] ), $ctx );
 
 		if ( (float) $order->get_total() <= 0 ) {
 			$order->payment_complete();
+			Events::log( 'renewal.free', 'Renewal total is 0; completed without payment.', $ctx );
 			return 'charged';
 		}
 
-		$token   = self::token( $license, $order->get_payment_method() );
-		$charged = $token ? (bool) apply_filters( 'wpes_charge_renewal', false, $order, $token, $license ) : false;
-		if ( $charged ) {
-			return 'charged';
+		$token = self::token( $license, $order->get_payment_method() );
+		if ( $token ) {
+			$charged = false;
+			try {
+				$charged = (bool) apply_filters( 'wpes_charge_renewal', false, $order, $token, $license );
+			} catch ( \Throwable $e ) {
+				Events::error( 'renewal.charge_exception', $e->getMessage(), $ctx );
+			}
+			if ( $charged ) {
+				Events::log( 'renewal.charged', sprintf( 'Saved card charged for renewal order #%d.', $order->get_id() ), array_merge( $ctx, array( 'token' => $token->get_id() ) ) );
+				return 'charged';
+			}
+			Events::error( 'renewal.charge_failed', sprintf( 'Saved card could not be charged for renewal order #%d; invoice sent instead.', $order->get_id() ), array_merge( $ctx, array( 'token' => $token->get_id() ) ) );
+		} else {
+			Events::log( 'renewal.no_saved_card', 'No saved card for this gateway; invoice sent.', $ctx );
 		}
 		$mailer = WC()->mailer()->get_emails();
 		if ( isset( $mailer['WC_Email_Customer_Invoice'] ) ) {
 			$mailer['WC_Email_Customer_Invoice']->trigger( $order->get_id(), $order );
+			Events::log( 'renewal.invoiced', sprintf( 'Invoice with pay link emailed for renewal order #%d.', $order->get_id() ), $ctx );
+		} else {
+			Events::error( 'renewal.invoice_missing', 'WooCommerce invoice email is not available; the customer was not emailed.', $ctx );
 		}
 		return 'invoiced';
 	}
@@ -200,6 +249,7 @@ class Renewals {
 		}
 		$mailer  = WC()->mailer();
 		$message = $mailer->wrap_message( $subject, '<p>' . esc_html( $body ) . '</p><p><a href="' . esc_url( $link ) . '">' . esc_html__( 'Manage your licenses', 'wpessential-server' ) . '</a></p>' );
-		$mailer->send( $user->user_email, $subject, $message );
+		$sent    = $mailer->send( $user->user_email, $subject, $message );
+		Events::log( $sent ? 'mail.' . $type : 'mail.' . $type . '_failed', $subject, Events::of( $license ), $sent ? 'info' : 'error' );
 	}
 }
