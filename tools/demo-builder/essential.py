@@ -80,7 +80,7 @@ FEATURES = [
     ('fas fa-layer-group', 'One theme, every niche', 'Business, fashion, events and more — each demo is a style variation of the same fast block theme.'),
     ('fas fa-wand-magic-sparkles', 'Gutenberg or Elementor', 'Every demo ships a native version for both builders. Pick one in the wizard; they look the same.'),
     ('fas fa-download', 'One-click import', 'Pages, menus, products and images in under two minutes, with each step logged and resumable.'),
-    ('fas fa-gauge-high', 'Fast by default', 'Local fonts, no jQuery on the front end and a 95+ PageSpeed score out of the box.'),
+    ('fas fa-gauge-high', 'Fast by default', 'Local fonts, no jQuery on the front end and scripts only where a page needs them.'),
     ('fas fa-language', 'Ready for every language', 'WPML and Polylang compatible, RTL ready and translated into 20 languages.'),
     ('fas fa-headset', 'Real support', 'Developers who build the theme answer your tickets, usually within one business day.'),
 ]
@@ -318,7 +318,7 @@ def g_home():
         html('<p class="ess-hero__popular"><span>Popular:</span>%s</p>' % ''.join(
             chip(t, '{{page:%s}}' % k) for t, k in [('Fashion store', 'p-maison'), ('Events', 'p-pulse'), ('Business', 'p-base'), ('Pricing', 'pricing'), ('Services', 'services'), ('Docs', 'docs')])),
         html('<ul class="ess-hero__stats">%s</ul>' % ''.join('<li><b>%s</b><span>%s</span></li>' % x for x in
-                                                            [('3', 'ready demos'), ('2', 'native builders'), ('20', 'languages'), ('95+', 'PageSpeed score')])),
+                                                            [('3', 'ready demos'), ('2', 'native builders'), ('20', 'languages'), ('8', 'breakpoints')])),
         html('<div class="ess-hero__shots"><img src="{{media:demo-pulse}}" alt="Pulse demo" class="is-left"><img src="{{media:demo-maison}}" alt="Maison demo" class="is-mid"><img src="{{media:demo-base}}" alt="Base demo" class="is-right"></div>'),
         tag='section', align='full', className='ess-hero', layout='constrained', content='1200px')
     cats = b.group(html('<p class="ess-cats">%s</p>' % ''.join(
