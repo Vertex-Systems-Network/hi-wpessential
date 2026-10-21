@@ -45,6 +45,7 @@ class Rest {
 			'/mcp'                => array( 'GET', 'mcp' ),
 			'/mcp/connect'        => array( 'POST', 'mcp_connect' ),
 			'/mcp/off'            => array( 'POST', 'mcp_off' ),
+			'/mcp/revoke'         => array( 'POST', 'mcp_revoke' ),
 		);
 		foreach ( $routes as $route => $def ) {
 			register_rest_route(
@@ -356,5 +357,15 @@ class Rest {
 	public function mcp_off() {
 		Mcp::disconnect();
 		return rest_ensure_response( Mcp::state() );
+	}
+
+	/**
+	 * AI Connect: revoke one session.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 * @return \WP_REST_Response|\WP_Error
+	 */
+	public function mcp_revoke( $request ) {
+		return $this->respond( Mcp::revoke_session( sanitize_text_field( (string) $request->get_param( 'id' ) ) ) );
 	}
 }

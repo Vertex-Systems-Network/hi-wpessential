@@ -1392,6 +1392,44 @@
 		}
 	}
 
+	const ago = ( ts ) => {
+		if ( ! ts ) {
+			return __( 'never', 'hi-wpessential' );
+		}
+		const s = Math.max( 0, Math.floor( Date.now() / 1000 ) - ts );
+		if ( s < 60 ) {
+			return __( 'just now', 'hi-wpessential' );
+		}
+		if ( s < 3600 ) {
+			return sprintf( __( '%d min ago', 'hi-wpessential' ), Math.floor( s / 60 ) );
+		}
+		if ( s < 86400 ) {
+			return sprintf( __( '%d h ago', 'hi-wpessential' ), Math.floor( s / 3600 ) );
+		}
+		return new Date( ts * 1000 ).toLocaleString();
+	};
+
+	function sessionsCard( list ) {
+		return `<section class="wpe-card wpe-mcp-card">
+			<h2 class="wpe-mcp-step"><b>${ list.length }</b>${ esc( __( 'Connected sessions', 'hi-wpessential' ) ) }</h2>
+			${ list.length ? `<div class="wpe-mcp-sessions">${ list.map( ( x ) => `
+				<div class="wpe-mcp-session">
+					<div class="wpe-mcp-session__head">
+						<div><strong>${ esc( x.client ) }</strong><span class="wpe-muted"> · ${ esc( x.user ) }</span></div>
+						<button class="wpe-btn wpe-btn--danger wpe-btn--sm" data-mcp-revoke="${ esc( x.id ) }">${ esc( __( 'Revoke', 'hi-wpessential' ) ) }</button>
+					</div>
+					<div class="wpe-mcp-session__meta">
+						<span>${ esc( __( 'Created', 'hi-wpessential' ) ) }: <b>${ esc( ago( x.created ) ) }</b></span>
+						<span>${ esc( __( 'Last used', 'hi-wpessential' ) ) }: <b>${ esc( ago( x.last_used ) ) }</b></span>
+						<span>${ esc( __( 'IP', 'hi-wpessential' ) ) }: <b>${ esc( x.last_ip || '—' ) }</b></span>
+						<span>${ esc( __( 'Calls', 'hi-wpessential' ) ) }: <b>${ x.calls }</b></span>
+						<span>${ esc( __( 'Errors', 'hi-wpessential' ) ) }: <b class="${ x.errors ? 'wpe-mcp-bad' : '' }">${ x.errors }</b></span>
+					</div>
+					${ x.recent.length ? `<details><summary>${ esc( sprintf( __( 'Recent activity (%d)', 'hi-wpessential' ), x.recent.length ) ) }</summary><ul class="wpe-mcp-log">${ x.recent.map( ( r ) => `<li class="${ r.error ? 'is-error' : '' }"><code>${ esc( r.tool ) }</code><span>${ esc( r.target ) }</span><time>${ esc( ago( r.at ) ) }</time>${ r.error ? `<em>${ esc( r.error ) }</em>` : '' }</li>` ).join( '' ) }</ul></details>` : `<p class="wpe-muted">${ esc( __( 'No calls yet.', 'hi-wpessential' ) ) }</p>` }
+				</div>` ).join( '' ) }</div>` : `<p class="wpe-muted">${ esc( __( 'No AI is connected right now.', 'hi-wpessential' ) ) }</p>` }
+		</section>`;
+	}
+
 	function drawAi( st ) {
 		const box = $( '#wpe-mcp' );
 		if ( ! box ) {
@@ -1407,9 +1445,9 @@
 				<h2 class="wpe-mcp-step"><b>2</b>${ esc( __( 'Generate the connection code', 'hi-wpessential' ) ) }</h2>
 				<div class="wpe-mcp-actions">
 					<button class="wpe-btn wpe-btn--grad wpe-btn--lg" data-mcp-connect>${ ico( 'spark', 16 ) }${ esc( st.enabled ? __( 'Generate a new code', 'hi-wpessential' ) : __( 'Switch on and generate', 'hi-wpessential' ) ) }</button>
-					${ st.enabled ? `<button class="wpe-btn wpe-btn--danger wpe-btn--lg" data-mcp-off>${ esc( __( 'Switch off and revoke', 'hi-wpessential' ) ) }</button>` : '' }
+					${ st.enabled ? `<button class="wpe-btn wpe-btn--danger wpe-btn--lg" data-mcp-off>${ esc( __( 'Revoke all and switch off', 'hi-wpessential' ) ) }</button>` : '' }
 				</div>
-				<p class="wpe-muted">${ esc( __( 'Only the AI you choose gets its setup. A new code replaces the old one; switching off deletes it.', 'hi-wpessential' ) ) }</p>
+				<p class="wpe-muted">${ esc( __( 'Only the AI you choose gets its setup. Each code is its own session below; revoke any one, or all at once.', 'hi-wpessential' ) ) }</p>
 			</div>
 			${ st.setup ? `<section class="wpe-card wpe-mcp-card">
 				<h2 class="wpe-mcp-step"><b>3</b>${ esc( sprintf( __( 'Paste it into %s', 'hi-wpessential' ), chosen.label ) ) }</h2>
@@ -1417,7 +1455,9 @@
 				<p>${ esc( st.setup.where ) }</p>
 				<div class="wpe-mcp-code"><textarea readonly rows="${ Math.min( 16, st.setup.code.split( '\n' ).length + 1 ) }">${ esc( st.setup.code ) }</textarea><button class="wpe-btn wpe-btn--primary wpe-btn--sm" data-mcp-copy>${ ico( 'copy', 14 ) }${ esc( __( 'Copy', 'hi-wpessential' ) ) }</button></div>
 			</section>
-			<details class="wpe-card wpe-mcp-card"><summary>${ esc( sprintf( __( 'What the AI can do (%d tools)', 'hi-wpessential' ), st.tools.length ) ) }</summary><ul class="wpe-mcp-tools">${ st.tools.map( ( t ) => `<li><code>${ esc( t.name ) }</code><span>${ esc( t.description ) }</span></li>` ).join( '' ) }</ul></details>` : '' }`;
+${ sessionsCard( st.sessions || [] ) }
+			<details class="wpe-card wpe-mcp-card"><summary>${ esc( sprintf( __( 'What the AI can do (%d tools)', 'hi-wpessential' ), st.tools.length ) ) }</summary><ul class="wpe-mcp-tools">${ st.tools.map( ( t ) => `<li><code>${ esc( t.name ) }</code><span>${ esc( t.description ) }</span></li>` ).join( '' ) }</ul></details>` : '' }
+			${ sessionsCard( st.sessions || [] ) }`;
 
 		const picked = () => ( $( 'input[name="wpe-mcp-client"]:checked', box ) || {} ).value;
 		$$( 'input[name="wpe-mcp-client"]', box ).forEach( ( r ) => r.addEventListener( 'change', () => {
@@ -1446,6 +1486,19 @@
 				}
 			} ) );
 		}
+		$$( '[data-mcp-revoke]', box ).forEach( ( b ) => b.addEventListener( 'click', () => {
+			if ( ! window.confirm( __( 'Revoke this session? That AI will lose access at once.', 'hi-wpessential' ) ) ) {
+				return;
+			}
+			busy( b, async () => {
+				try {
+					drawAi( await api( { path: '/wpessential/v1/mcp/revoke', method: 'POST', data: { id: b.dataset.mcpRevoke } } ) );
+					toast( 'success', __( 'Session revoked', 'hi-wpessential' ), __( 'Its code no longer works.', 'hi-wpessential' ) );
+				} catch ( err ) {
+					toast( 'error', __( 'Could not revoke', 'hi-wpessential' ), errMsg( err ) );
+				}
+			} );
+		} ) );
 		const copy = $( '[data-mcp-copy]', box );
 		if ( copy ) {
 			copy.addEventListener( 'click', () => {
