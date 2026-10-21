@@ -45,5 +45,6 @@ final class Plugin {
 		License::schedule();
 		Forms::hooks();
 		Mcp::hooks();
+		McpBuilder::hooks();
 	}
 }
