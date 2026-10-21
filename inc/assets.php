@@ -14,6 +14,17 @@ add_action(
 		// Marketplace sections (.ess-*), used by the WPEssential.org demo in pages, header and footer.
 		wp_enqueue_style( 'wpessential-marketplace', WPESSENTIAL_URI . '/assets/css/marketplace.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
 		wp_enqueue_style( 'wpessential-demos', WPESSENTIAL_URI . '/assets/css/demos.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
+		// Pricing tabs and demo filters; tiny, deferred, only where those sections exist.
+		wp_register_script(
+			'wpessential-marketplace',
+			WPESSENTIAL_URI . '/assets/js/marketplace.js',
+			array(),
+			WPESSENTIAL_ASSET_VERSION,
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
 
 		if ( class_exists( 'WooCommerce' ) ) {
 			wp_enqueue_style( 'wpessential-woocommerce', WPESSENTIAL_URI . '/assets/css/woocommerce.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
@@ -84,4 +95,23 @@ add_action(
 			wp_enqueue_style( 'wpessential-woocommerce-editor', WPESSENTIAL_URI . '/assets/css/woocommerce.css', array(), WPESSENTIAL_ASSET_VERSION );
 		}
 	}
+);
+
+/*
+ * Marketplace behaviour: load the script only with a pricing toggle or demo filter on the page,
+ * and show signed-in visitors "My account" instead of "Sign in" in the header.
+ */
+add_filter(
+	'render_block',
+	static function ( $content, $block ) {
+		if ( false !== strpos( $content, 'data-ess-toggle' ) || false !== strpos( $content, 'data-ess-filter' ) ) {
+			wp_enqueue_script( 'wpessential-marketplace' );
+		}
+		if ( 'core/paragraph' === ( $block['blockName'] ?? '' ) && false !== strpos( (string) ( $block['attrs']['className'] ?? '' ), 'ess-signin' ) && is_user_logged_in() ) {
+			$content = preg_replace( '#>\s*Sign in\s*<#', '>' . esc_html__( 'My account', 'wpessential' ) . '<', $content );
+		}
+		return $content;
+	},
+	10,
+	2
 );
