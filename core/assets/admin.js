@@ -4,7 +4,7 @@
 
 	const cfg = window.wpessentialCore;
 	const api = window.wp.apiFetch;
-	const { __, sprintf } = window.wp.i18n;
+	const { __, _n, sprintf } = window.wp.i18n;
 	const root = document.getElementById( 'wpe-app' );
 	if ( ! root || ! cfg ) {
 		return;
@@ -1411,7 +1411,7 @@
 
 	function sessionsCard( list ) {
 		return `<section class="wpe-card wpe-mcp-card">
-			<h2 class="wpe-mcp-step"><b>${ list.length }</b>${ esc( __( 'Connected sessions', 'hi-wpessential' ) ) }</h2>
+			<h2 class="wpe-mcp-step">${ esc( __( 'Connected sessions', 'hi-wpessential' ) ) }<span class="wpe-mcp-count">${ esc( sprintf( _n( '%d active', '%d active', list.length, 'hi-wpessential' ), list.length ) ) }</span></h2>
 			${ list.length ? `<div class="wpe-mcp-sessions">${ list.map( ( x ) => `
 				<div class="wpe-mcp-session">
 					<div class="wpe-mcp-session__head">
