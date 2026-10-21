@@ -576,3 +576,16 @@
 .wpe-mcp-tools li { display: grid; grid-template-columns: 180px 1fr; gap: 12px; margin: 0; }
 .wpe-mcp-tools span { color: var(--c-muted); }
 @media (max-width: 782px) { .wpe-mcp-card { padding: 20px; } .wpe-mcp-tools li { grid-template-columns: 1fr; gap: 2px; } }
+.wpe-mcp-sessions { display: grid; gap: 12px; }
+.wpe-mcp-session { border: 1px solid var(--c-border); border-radius: var(--r); padding: 16px 18px; background: var(--c-surface-2); }
+.wpe-mcp-session__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.wpe-mcp-session__meta { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 10px 0; font-size: 13px; color: var(--c-muted); }
+.wpe-mcp-session__meta b { color: var(--c-text); font-weight: 600; }
+.wpe-mcp-session details summary { font-size: 13px; }
+.wpe-mcp-bad { color: var(--c-danger) !important; }
+.wpe-mcp-log { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; font-size: 13px; }
+.wpe-mcp-log li { display: grid; grid-template-columns: 160px 1fr auto; gap: 10px; margin: 0; align-items: baseline; }
+.wpe-mcp-log li em { grid-column: 1 / -1; color: var(--c-danger); font-style: normal; }
+.wpe-mcp-log span { color: var(--c-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wpe-mcp-log time { color: var(--c-faint); }
+@media (max-width: 782px) { .wpe-mcp-log li { grid-template-columns: 1fr; gap: 2px; } }
