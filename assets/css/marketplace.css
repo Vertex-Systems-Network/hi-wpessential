@@ -286,9 +286,9 @@ body:has(#yearly:target) .ess-toggle--dark a[href="#yearly"], body:has(#lifetime
 
 /* Footer (Figma) */
 .ess-footer { background: var(--wp--preset--color--ink); color: var(--wp--preset--color--on-ink-muted); padding: clamp(48px, 6vw, 64px) 24px 32px; }
-.ess-news { border-radius: 24px; padding: clamp(24px, 3.5vw, 40px) clamp(24px, 3.5vw, 48px); background: linear-gradient(110deg, rgba(31,72,166,.35), #1F48A6); border: 1px solid rgba(255,255,255,.1); gap: 24px; }
-.ess-news .ess-band__title { color: #fff; }
-.ess-news .ess-band__text { color: var(--wp--preset--color--on-ink-muted); }
+.ess-news { border-radius: 24px; padding: clamp(24px, 3.5vw, 40px) clamp(24px, 3.5vw, 48px); background: linear-gradient(110deg, #E8701A, #F7A23E); border: 1px solid rgba(255,255,255,.2); gap: 24px; color: #0B1A3D; }
+.ess-news .ess-over, .ess-news .ess-band__title { color: #0B1A3D; }
+.ess-news .ess-band__text { color: rgba(11,26,61,.78); }
 .wpe-newsletter { display: flex; gap: 6px; padding: 6px 6px 6px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); min-width: min(100%, 380px); }
 .wpe-newsletter input[type=email] { flex: 1; border: 0; background: transparent; color: #fff; font: inherit; font-size: 14px; outline: 0; min-width: 0; }
 .wpe-newsletter input[type=email]::placeholder { color: var(--wp--preset--color--on-ink-muted); }
@@ -368,6 +368,9 @@ body:has(#yearly:target) .ess-toggle--dark a[href="#yearly"], body:has(#lifetime
 .wpforms-container button[type=submit] { background: var(--wp--preset--color--primary, #ec7d1a) !important; color: var(--wp--preset--color--on-primary, #fff) !important; border: 0 !important; border-radius: 999px !important; padding: 14px 28px !important; font-weight: 600; cursor: pointer; }
 .ess-news .wpforms-container { margin: 0; }
 .ess-news .wpforms-form { display: flex; gap: 8px; align-items: flex-end; }
+.ess-news .wpforms-field input:not([type=checkbox]):not([type=radio]) { background: #fff; border-color: rgba(11,26,61,.12); color: #0B1A3D; }
+.ess-news .wpforms-field input::placeholder { color: #5B6680; }
+.ess-news .wpforms-container button[type=submit] { background: #0B1A3D !important; color: #fff !important; }
 @media (max-width: 1024px) { .ess-contact-cols { flex-wrap: wrap !important; } .ess-contact-cols > .wp-block-column { flex-basis: 100% !important; } }
 .ess-side__row a { overflow-wrap: normal; word-break: normal; white-space: nowrap; }
 .ess-side__row > :last-child { text-align: right; }
