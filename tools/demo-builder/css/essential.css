@@ -363,9 +363,6 @@ body:has(#yearly:target) .ess-toggle--dark a[href="#yearly"], body:has(#lifetime
 .ess-num { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--wp--preset--color--primary-soft, #fdf1e6); color: var(--wp--preset--color--primary, #ec7d1a); font-weight: 700; }
 
 /* WPForms in theme colours. */
-.wpforms-container .wpforms-field input:not([type=checkbox]):not([type=radio]), .wpforms-container .wpforms-field select, .wpforms-container .wpforms-field textarea { width: 100%; max-width: 100% !important; border: 1px solid var(--wp--preset--color--border, #e3e8f2); border-radius: 10px; padding: 12px 14px; background: var(--wp--preset--color--surface, #fff); color: inherit; font: inherit; }
-.wpforms-container .wpforms-field-label { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
-.wpforms-container button[type=submit] { background: var(--wp--preset--color--primary, #ec7d1a) !important; color: var(--wp--preset--color--on-primary, #fff) !important; border: 0 !important; border-radius: 999px !important; padding: 14px 28px !important; font-weight: 600; cursor: pointer; }
 /* Footer newsletter: one white pill with the email field and a navy Subscribe button (Figma 240:215). */
 .ess-news .wpforms-container { margin: 0 !important; flex: 0 1 440px; }
 .ess-news .wpforms-form { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid rgba(11,26,61,.12); border-radius: 999px; padding: 6px 6px 6px 20px; }
@@ -414,8 +411,6 @@ ul.ess-facts { list-style: none; padding: 0; margin: 8px 0 0; max-width: 560px; 
 .ess-map__card { position: absolute; left: 20px; bottom: 20px; background: #fff; border-radius: 14px; padding: 14px 18px; display: grid; gap: 4px; font-size: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, .12); color: #0e1630; }
 .ess-map__card span { color: #5b6478; font-size: 13px; }
 .ess-map__card a { color: var(--wp--preset--color--secondary, #1f48a6); font-weight: 600; }
-.wpforms-field-divider h3 { font-size: 15px !important; margin: 20px 0 2px !important; padding-top: 16px; border-top: 1px solid var(--wp--preset--color--border, #e3e8f2); }
-.wpforms-field-divider:first-child h3 { border-top: 0; padding-top: 0; margin-top: 0 !important; }
 @media (max-width: 781px) { .ess-quote { flex-direction: column; align-items: flex-start !important; } .ess-clients { justify-content: flex-start; } }
 .ess-quote__avatar { width: 72px !important; } .ess-quote > .wp-block-group { flex: 1; }
 @media (max-width: 640px) {
@@ -434,17 +429,6 @@ ul.ess-facts { list-style: none; padding: 0; margin: 8px 0 0; max-width: 560px; 
 .ess-tag--fixed { background: var(--wp--preset--color--primary-soft, #fdf1e6); color: #9a4b0a; }
 .ess-vote { font-size: 13px; color: var(--wp--preset--color--secondary, #1f48a6); margin: 6px 0 0; }
 
-/* Header search opens as an overlay over the actions, so the menu never moves. */
-.ess-header .wp-block-search { position: relative; width: 38px; height: 38px; flex: 0 0 38px; }
-.ess-header .wp-block-search .wp-block-search__inside-wrapper { width: 38px !important; }
-.ess-header .wp-block-search:not(.wp-block-search__searchfield-hidden) .wp-block-search__inside-wrapper { position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: min(420px, calc(100vw - 32px)) !important; max-width: none !important; z-index: 30; padding: 4px 4px 4px 18px !important; background: var(--wp--preset--color--surface, #fff); border: 1px solid var(--wp--preset--color--border, #e3e8f2) !important; border-radius: 999px; box-shadow: 0 18px 40px rgba(11, 26, 61, .16); }
-.ess-header .wp-block-search:not(.wp-block-search__searchfield-hidden) .wp-block-search__input { width: 100% !important; min-width: 0; }
-/* Pricing tabs: hidden periods stay hidden until their tab is chosen. */
-.ess-period[hidden], .ess-demo[hidden] { display: none !important; }
-.ess-toggle a { cursor: pointer; }
-@media (max-width: 782px) {
-	.ess-header .wp-block-search:not(.wp-block-search__searchfield-hidden) .wp-block-search__inside-wrapper { position: fixed; top: 14px; left: 16px; right: 16px; width: auto !important; transform: none; }
-}
 /* Phone/tablet header: menu button left, logo next to it, actions right (the menu no longer stretches). */
 @media (max-width: 1024px) {
 	.ess-header .wpe-header__inner > .wp-block-navigation { flex: 0 0 auto; }

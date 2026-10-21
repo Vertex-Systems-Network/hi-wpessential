@@ -1,14 +1,17 @@
 /**
- * WPEssential.org marketplace: pricing period tabs and demo category filters.
- * Without JavaScript the monthly plans and every demo stay visible.
+ * Components every demo can use, with no jQuery:
+ * - Tabs: links in [data-wpe-tabs] (href="#panel-id") show one .wpe-tab-panel at a time; the first
+ *   link with .is-on (or the URL hash) opens first. Without JavaScript every panel stays visible.
+ * - Filter: links in [data-wpe-filter] (href="#category", "#all") hide .wpe-filter-item elements
+ *   that lack the class wpe-cat-<category>.
  */
 ( function () {
 	'use strict';
 
-	// Pricing: one period at a time, chosen by the toggle; #yearly / #lifetime links open that tab.
-	document.querySelectorAll( '[data-ess-toggle]' ).forEach( function ( toggle ) {
+	// Tabs.
+	document.querySelectorAll( '[data-wpe-tabs]' ).forEach( function ( toggle ) {
 		var scope = toggle.closest( 'main, body' ) || document;
-		var periods = scope.querySelectorAll( '.ess-period' );
+		var periods = scope.querySelectorAll( '.wpe-tab-panel' );
 		if ( ! periods.length ) {
 			return;
 		}
@@ -35,12 +38,13 @@
 			} );
 		} );
 		var start = window.location.hash.slice( 1 );
-		show( scope.querySelector( '.ess-period[id="' + start + '"]' ) ? start : 'monthly' );
+		var first = toggle.querySelector( 'a.is-on' ) || links[ 0 ];
+		show( start && scope.querySelector( '.wpe-tab-panel[id="' + start + '"]' ) ? start : first.getAttribute( 'href' ).slice( 1 ) );
 	} );
 
-	// Demo library: category chips hide the cards of other categories.
-	document.querySelectorAll( '[data-ess-filter]' ).forEach( function ( bar ) {
-		var cards = document.querySelectorAll( '.ess-demo' );
+	// Filter.
+	document.querySelectorAll( '[data-wpe-filter]' ).forEach( function ( bar ) {
+		var cards = document.querySelectorAll( '.wpe-filter-item' );
 		var chips = bar.querySelectorAll( 'a[href^="#"]' );
 		chips.forEach( function ( a ) {
 			a.setAttribute( 'aria-pressed', a.classList.contains( 'is-on' ) ? 'true' : 'false' );
@@ -52,7 +56,7 @@
 					c.setAttribute( 'aria-pressed', c === a ? 'true' : 'false' );
 				} );
 				cards.forEach( function ( card ) {
-					card.hidden = 'all' !== cat && ! card.classList.contains( 'ess-cat-' + cat );
+					card.hidden = 'all' !== cat && ! card.classList.contains( 'wpe-cat-' + cat );
 				} );
 			} );
 		} );

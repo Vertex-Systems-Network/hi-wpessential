@@ -730,3 +730,24 @@ body:has(.wp-block-navigation__responsive-container.is-menu-open) { overflow: hi
 .wpe-lang__item a:hover, .wpe-lang__item a:focus-visible { background: var(--wpe-surface-alt, rgba(0,0,0,.05)); }
 .wpe-lang__item.is-current a { font-weight: 700; }
 .wpe-lang__item img { width: 18px; height: auto; border-radius: 2px; }
+
+/* ---------- Components shared by every demo (assets/js/components.js) ---------- */
+
+/* Header search (icon button): opens as an overlay over the header actions, so the menu never moves. */
+.wpe-header .wp-block-search__button-only { position: relative; }
+.wpe-header .wp-block-search__button-only:not(.wp-block-search__searchfield-hidden) .wp-block-search__inside-wrapper { position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: min(420px, calc(100vw - 32px)) !important; max-width: none !important; z-index: 30; padding: 4px 4px 4px 18px !important; background: var(--wp--preset--color--surface, #fff); border: 1px solid var(--wp--preset--color--border, #e3e8f2) !important; border-radius: 999px; box-shadow: 0 18px 40px rgba(11, 26, 61, .16); }
+.wpe-header .wp-block-search__button-only:not(.wp-block-search__searchfield-hidden) .wp-block-search__input { width: 100% !important; min-width: 0; }
+@media (max-width: 782px) {
+	.wpe-header .wp-block-search__button-only:not(.wp-block-search__searchfield-hidden) .wp-block-search__inside-wrapper { position: fixed; top: 14px; left: 16px; right: 16px; width: auto !important; transform: none; }
+}
+
+/* Tabs and filters: panels/items hidden by the script stay hidden. */
+.wpe-tab-panel[hidden], .wpe-filter-item[hidden] { display: none !important; }
+[data-wpe-tabs] a, [data-wpe-filter] a { cursor: pointer; }
+
+/* WPForms in theme colours. */
+.wpforms-container .wpforms-field input:not([type=checkbox]):not([type=radio]), .wpforms-container .wpforms-field select, .wpforms-container .wpforms-field textarea { width: 100%; max-width: 100% !important; border: 1px solid var(--wp--preset--color--border, #e3e8f2); border-radius: 10px; padding: 12px 14px; background: var(--wp--preset--color--surface, #fff); color: inherit; font: inherit; }
+.wpforms-container .wpforms-field-label { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+.wpforms-container button[type=submit] { background: var(--wp--preset--color--primary, #ec7d1a) !important; color: var(--wp--preset--color--on-primary, #fff) !important; border: 0 !important; border-radius: 999px !important; padding: 14px 28px !important; font-weight: 600; cursor: pointer; }
+.wpforms-field-divider h3 { font-size: 15px !important; margin: 20px 0 2px !important; padding-top: 16px; border-top: 1px solid var(--wp--preset--color--border, #e3e8f2); }
+.wpforms-field-divider:first-child h3 { border-top: 0; padding-top: 0; margin-top: 0 !important; }

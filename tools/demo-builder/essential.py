@@ -5,6 +5,8 @@ blue #6188C6, teal #5AC8D6 on ink #07080C; Bricolage Grotesque + Plus Jakarta Sa
 Images are real: demo thumbnails and previews of Base, Maison and Pulse, and screenshots of
 the WPEssential dashboard. Products are the demos, the services and the monthly, yearly and lifetime plans.
 """
+import json
+import os
 import re
 
 from urllib.parse import quote
@@ -191,7 +193,7 @@ def g_header():
                            b.group(b.block('search', {'label': 'Search', 'showLabel': False, 'buttonText': 'Search', 'buttonPosition': 'button-only',
                                                       'buttonUseIcon': True, 'isSearchFieldHidden': True}),
                                    b.block('woocommerce/mini-cart'),
-                                   b.p('<a href="{{woo:myaccount}}">Sign in</a>', className='ess-signin'),
+                                   b.p('<a href="{{woo:myaccount}}">Sign in</a>', className='ess-signin wpe-signin'),
                                    b.buttons(arrow('Get Pro', '{{page:pricing}}')),
                                    layout='flex', wrap='nowrap', className='wpe-header-actions ess-actions'),
                            className='wpe-header__inner', layout='flex', wrap='nowrap', justify='space-between'),
@@ -281,10 +283,10 @@ DEMO_CATS = [('business', 'Business'), ('shop', 'Shop'), ('fashion', 'Fashion'),
 
 
 def demo_filter(cls='ess-cats'):
-    """Category chips that filter the demo cards on the page (assets/js/marketplace.js); counts come from DEMO_CARDS."""
+    """Category chips that filter the demo cards on the page (assets/js/components.js); counts come from DEMO_CARDS."""
     count = lambda k: sum(1 for d in DEMO_CARDS if k in d[6])
     chips = [chip('All <i>%d</i>' % len(DEMO_CARDS), '#all', 'is-on')] + [chip('%s <i>%d</i>' % (t, count(k)), '#' + k) for k, t in DEMO_CATS if count(k)]
-    return html('<p class="%s" data-ess-filter>%s</p>' % (cls, ''.join(chips)))
+    return html('<p class="%s" data-wpe-filter>%s</p>' % (cls, ''.join(chips)))
 ICON_FOR = {'Custom demo design': 'palette', 'Migration': 'refresh', 'Speed & SEO tuning': 'bolt', 'Care plans': 'headset'}
 DOC_ICONS = ['book', 'layers', 'palette', 'key', 'globe', 'code']
 
@@ -298,7 +300,7 @@ def g_demo_card(key, name, badges, price, text, image, cats=()):
                 b.p(text, className='ess-demo__text'),
                 html('<div class="ess-demo__meta"><span>Gutenberg &amp; Elementor</span><span class="ess-gb" title="Gutenberg">G</span><span class="ess-gb" title="Elementor">E</span></div>'),
                 layout='default', className='ess-demo__body'),
-        layout='default', className=' '.join(['ess-demo'] + ['ess-cat-' + c for c in cats]))
+        layout='default', className=' '.join(['ess-demo', 'wpe-filter-item'] + ['wpe-cat-' + c for c in cats]))
 
 
 def g_plugin_card(icon, name, text, meta, url, first=False):
@@ -426,14 +428,14 @@ def g_demos():
 
 
 def g_periods():
-    """All three billing periods; the toggle (assets/js/marketplace.js) shows one at a time, monthly first."""
+    """All three billing periods; the toggle (assets/js/components.js) shows one at a time, monthly first."""
     return b.group(*[b.group(g_plan_cards(period), b.p(BILLING_NOTE[period], align='center', className='ess-note'),
-                             layout='default', className='ess-period').replace('{"className":"ess-period"', '{"anchor":"%s","className":"ess-period"' % period, 1).replace('class="wp-block-group ess-period"', 'id="%s" class="wp-block-group ess-period"' % period, 1)
+                             layout='default', className='ess-period wpe-tab-panel').replace('{"className":"ess-period wpe-tab-panel"', '{"anchor":"%s","className":"ess-period wpe-tab-panel"' % period, 1).replace('class="wp-block-group ess-period wpe-tab-panel"', 'id="%s" class="wp-block-group ess-period wpe-tab-panel"' % period, 1)
                      for period, _, _ in BILLING], layout='default', className='ess-periods')
 
 
 def g_toggle(dark=False):
-    return html('<p class="ess-toggle%s" data-ess-toggle>%s</p>' % (' ess-toggle--dark' if dark else '', ''.join(
+    return html('<p class="ess-toggle%s" data-wpe-tabs>%s</p>' % (' ess-toggle--dark' if dark else '', ''.join(
         '<a href="#%s"%s>%s</a>' % (k, ' class="is-on"' if k == 'monthly' else '', t) for k, t in [('monthly', 'Monthly'), ('yearly', 'Yearly · save 20%'), ('lifetime', 'Lifetime')])))
 
 
@@ -944,6 +946,15 @@ def e_roadmap():
 
 # Package --------------------------------------------------------------------------------
 
+def style_data():
+    """The essential style variation plus this demo's own CSS (css/essential.css). It travels in the
+    package and lands in the site's global styles, so the base theme carries no demo CSS."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    data = json.load(open(os.path.join(here, '..', '..', 'styles', 'essential.json')))
+    data.setdefault('styles', {})['css'] = open(os.path.join(here, 'css', 'essential.css')).read()
+    return data
+
+
 def package(builder):
     e.HOVER = {'button': 'float', 'image': 'grow', 'icon': 'float', 'filter_rest': None, 'invert': False, 'transition': 0.24}
     e.FONTS = {'primary': 'Bricolage Grotesque', 'text': 'Plus Jakarta Sans', 'weight': '700'}
@@ -999,7 +1010,7 @@ def package(builder):
     menus = [{'name': 'Essential menu', 'location': 'primary', 'items': [
         {'title': 'Demos', 'page': 'demos'}, {'title': 'Plugins', 'page': 'plugins'}, {'title': 'Docs', 'page': 'docs'}, {'title': 'Services', 'page': 'services'},
         {'title': 'Pricing', 'page': 'pricing'}, {'title': 'Blog', 'page': 'blog'}]}]
-    settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'essential', 'motion': 'subtle',
+    settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'essential', 'style_data': style_data(), 'motion': 'subtle',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'footer': {'content': g_footer()}},
                 'options': {'posts_per_page': 9, 'blogname': 'WPEssential', 'blogdescription': 'Premium WordPress themes and one-click demos.'},
                 'woocommerce': {'options': {'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
