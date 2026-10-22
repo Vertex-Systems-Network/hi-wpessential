@@ -31,7 +31,7 @@ To turn the value into CSS, add the key to `wpessential_site_targets()`:
 'my_space' => array( '.my-section', 'padding-block' ),
 ```
 
-Responsive values are written for desktop, tablet (`max-width: 1023px`) and mobile (`max-width: 767px`).
+Responsive values are written for every switched-on breakpoint, with the theme's media queries (1920 `min-width: 1920px`, 1280 `max-width: 1439px`, 1024 `max-width: 1279px`, 768 `max-width: 1023px`, 560 `max-width: 767px`, 480 `max-width: 559px`, 360 `max-width: 479px`, 320 `max-width: 359px`).
 
 ### Anywhere else (JavaScript)
 
@@ -55,16 +55,29 @@ if ( ctl.devices ) { label.appendChild( ctl.devices ); } // Responsive controls 
 
 ### Colour (`color`)
 
-![Colour control](images/control-color.png)
+![Colour control](images/pickr.png)
 
-A popover with two tabs:
+The colour picker is [Pickr](https://github.com/Simonwep/pickr) (MIT, bundled in `assets/vendor/pickr`, no CDN). It has:
 
-- **Global:** the site palette.
-- **Custom:** any colour, with opacity.
+- a colour area, hue and **opacity** sliders
+- the site palette as swatches
+- HEXA / RGBA input and Clear
+- a text field next to the chip for any `#hex`, `rgb()`, `hsl()` or `var()` value
 
-There is also a field where you can type a hex, `rgb()`, `hsl()` or `var()` value.
+Value: `#7c3aed`, or 8-digit hex with opacity such as `#EC7D1A80`.
 
-Value: `#7c3aed`, or 8-digit hex with opacity.
+### Breakpoints (`breakpoints`)
+
+![Breakpoints control](images/control-breakpoints.png)
+
+**Site Settings → Layout → Breakpoints you edit** switches the theme's breakpoints on or off for editing:
+
+- Wide screen 1920+, Desktop 1440 (base, always on), Laptop 1280, Tablet landscape 1024, Tablet 768, Mobile landscape 560, Mobile 480, Small mobile 360, Smallest 320.
+- Every responsive control shows one icon per switched-on breakpoint.
+- Clicking an icon resizes the preview to that width.
+- Only switched-on breakpoints are written to CSS.
+
+Value: `1280|768|560|480`. An empty value means the default (768 and 560); `-` means desktop only.
 
 ### Slider (`range`) and responsive slider
 
@@ -72,13 +85,13 @@ Value: `#7c3aed`, or 8-digit hex with opacity.
 
 A slider and a number box with its unit. Give the field `'units' => array( 'px', 'em', 'rem', '%', 'vw' )` to get a unit select.
 
-With `'responsive' => true` the label shows Elementor's device buttons; each device keeps its own value.
+With `'responsive' => true` the label shows one icon per switched-on breakpoint (see Breakpoints); each breakpoint keeps its own value.
 
 | Setting | Value |
 | --- | --- |
 | Plain | `24` |
 | Other unit | `{"size":2,"unit":"em"}` |
-| Responsive | `{"desktop":"120","tablet":"80","mobile":"56"}` |
+| Responsive | `{"desktop":"120","768":"80","480":"56"}` (old `tablet` / `mobile` keys still read as 768 / 560) |
 
 ### Dimensions (`dimensions`)
 

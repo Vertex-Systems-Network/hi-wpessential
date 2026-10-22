@@ -309,8 +309,8 @@ function wpessential_site_fields_base() {
 			'fields'      => array(
 				'content_width' => $px( __( 'Content width', 'hi-wpessential' ), 480, 1200 ),
 				'wide_width'    => $px( __( 'Wide width', 'hi-wpessential' ), 900, 1920 ),
-				'section_space' => $px( __( 'Space between sections (desktop)', 'hi-wpessential' ), 24, 200 ),
-				'gutter'        => $px( __( 'Side space on desktop', 'hi-wpessential' ), 0, 120 ),
+				'section_space' => $px( __( 'Space between sections', 'hi-wpessential' ), 24, 200 ),
+				'gutter'        => $px( __( 'Side space', 'hi-wpessential' ), 0, 120 ),
 				'gutter_mobile' => $px( __( 'Side space on phones', 'hi-wpessential' ), 0, 48 ),
 				'block_gap'     => $px( __( 'Space between blocks', 'hi-wpessential' ), 0, 80 ),
 				'header_height' => $px( __( 'Header height', 'hi-wpessential' ), 48, 120 ),
@@ -483,6 +483,23 @@ function wpessential_site_values() {
 }
 
 /**
+ * A colour: #rgb, #rrggbb, #rrggbbaa (with opacity), rgb()/rgba(), hsl()/hsla() or a var().
+ *
+ * @param mixed $value Value.
+ * @return string
+ */
+function wpessential_site_color( $value ) {
+	$value = trim( (string) $value );
+	if ( preg_match( '/^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i', $value ) ) {
+		return $value;
+	}
+	if ( preg_match( '/^(rgba?|hsla?)\(\s*[0-9.%,\s\/-]+\)$/i', $value ) || preg_match( '/^var\(--[a-z0-9-]+\)$/i', $value ) ) {
+		return $value;
+	}
+	return '';
+}
+
+/**
  * One value cleaned for its type.
  *
  * @param array $field Field.
@@ -500,7 +517,7 @@ function wpessential_site_clean( array $field, $value ) {
 		case 'fonts':
 			return implode( '|', array_filter( array_map( 'trim', explode( '|', (string) $value ) ), static fn( $f ) => isset( wpessential_google_fonts()[ $f ] ) ) );
 		case 'color':
-			return (string) sanitize_hex_color( $value );
+			return wpessential_site_color( $value );
 		case 'toggle':
 			return (bool) $value;
 		case 'range':
@@ -512,6 +529,10 @@ function wpessential_site_clean( array $field, $value ) {
 		case 'select':
 		case 'choose':
 			return array_key_exists( (string) $value, $field['choices'] ) ? (string) $value : '';
+		case 'breakpoints':
+			$on = implode( '|', array_intersect( array_keys( wpessential_site_breakpoints() ), explode( '|', (string) $value ) ) );
+			// "-" keeps "desktop only" apart from "" (the theme default).
+			return '' === $on && '' !== (string) $value ? '-' : $on;
 		case 'dimensions':
 		case 'typography':
 		case 'shadow':
@@ -1207,7 +1228,9 @@ add_action(
 		$ver = wp_get_theme()->get( 'Version' ) . '.' . (int) filemtime( WPESSENTIAL_DIR . '/assets/js/customizer-controls.js' );
 		wp_enqueue_style( 'wpessential-customizer', get_theme_file_uri( 'assets/css/customizer-controls.css' ), array(), $ver );
 		wp_enqueue_media();
-		wp_enqueue_script( 'wpessential-controls', get_theme_file_uri( 'assets/js/wpe-controls.js' ), array( 'wp-i18n' ), $ver, true );
+		wp_enqueue_style( 'wpessential-pickr', get_theme_file_uri( 'assets/vendor/pickr/nano.min.css' ), array(), '1.9.1' );
+		wp_enqueue_script( 'wpessential-pickr', get_theme_file_uri( 'assets/vendor/pickr/pickr.min.js' ), array(), '1.9.1', true );
+		wp_enqueue_script( 'wpessential-controls', get_theme_file_uri( 'assets/js/wpe-controls.js' ), array( 'wp-i18n', 'wpessential-pickr' ), $ver, true );
 		wp_enqueue_script( 'wpessential-customizer', get_theme_file_uri( 'assets/js/customizer-controls.js' ), array( 'customize-controls', 'wpessential-controls' ), $ver, true );
 		// The site's own palette (the demo's when it has one), each colour once.
 		$origins = (array) wp_get_global_settings( array( 'color', 'palette' ) );
@@ -1223,11 +1246,19 @@ add_action(
 			'wpessential-controls',
 			'wpessentialControls',
 			array(
-				'palette'     => $palette,
-				'themeFonts'  => array_keys( wpessential_site_fonts() ),
-				'themeStacks' => array_map( static fn( $f ) => $f[0], wpessential_site_fonts() ),
-				'fontFiles'   => array_map( static fn( $f ) => $f[1] ? get_theme_file_uri( 'assets/fonts/' . $f[1][0] ) : '', wpessential_site_fonts() ),
-				'googleList'  => get_theme_file_uri( 'assets/data/google-fonts.json' ),
+				'palette'       => $palette,
+				'themeFonts'    => array_keys( wpessential_site_fonts() ),
+				'themeStacks'   => array_map( static fn( $f ) => $f[0], wpessential_site_fonts() ),
+				'fontFiles'     => array_map( static fn( $f ) => $f[1] ? get_theme_file_uri( 'assets/fonts/' . $f[1][0] ) : '', wpessential_site_fonts() ),
+				'googleList'    => get_theme_file_uri( 'assets/data/google-fonts.json' ),
+				'breakpoints'   => array_map(
+					static fn( $b ) => array(
+						'label' => $b[0],
+						'width' => $b[2],
+					),
+					wpessential_site_breakpoints()
+				),
+				'breakpointsOn' => wpessential_site_breakpoints_on(),
 			)
 		);
 	}
@@ -1237,6 +1268,10 @@ add_action(
 add_action(
 	'admin_menu',
 	static function () {
+		// With the Core plugin, Site Settings sits in the WPEssential menu; otherwise under Appearance.
+		if ( class_exists( '\\WPEssential\\Core\\Admin' ) ) {
+			return;
+		}
 		add_theme_page(
 			__( 'Site Settings', 'hi-wpessential' ),
 			__( 'Site Settings', 'hi-wpessential' ),
