@@ -88,6 +88,15 @@ function wpessential_google_families() {
 	foreach ( array_filter( array_map( 'trim', explode( '|', (string) ( $v['fonts_extra'] ?? '' ) ) ) ) as $family ) {
 		$out[] = $family;
 	}
+	// Families picked in the Global typography sets.
+	foreach ( $v as $key => $val ) {
+		if ( 0 === strpos( $key, 'typo_' ) && function_exists( 'wpessential_site_json' ) ) {
+			$family = (string) ( wpessential_site_json( $val )['family'] ?? '' );
+			if ( 0 === strpos( $family, 'google:' ) ) {
+				$out[] = substr( $family, 7 );
+			}
+		}
+	}
 	return array_values( array_unique( array_filter( $out, static fn( $f ) => isset( wpessential_google_fonts()[ $f ] ) ) ) );
 }
 

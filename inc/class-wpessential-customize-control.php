@@ -44,13 +44,20 @@ if ( ! class_exists( 'WPEssential_Customize_Control' ) ) {
 				$kind = 'buttons';
 			}
 			$data = array(
-				'type'    => $kind,
-				'min'     => $f['min'] ?? null,
-				'max'     => $f['max'] ?? null,
-				'step'    => $f['step'] ?? null,
-				'unit'    => $f['unit'] ?? null,
-				'choices' => $f['choices'] ?? null,
+				'type'       => $kind,
+				'min'        => $f['min'] ?? null,
+				'max'        => $f['max'] ?? null,
+				'step'       => $f['step'] ?? null,
+				'unit'       => $f['unit'] ?? null,
+				'choices'    => $f['choices'] ?? null,
+				'responsive' => ! empty( $f['responsive'] ) ? true : null,
+				'units'      => $f['units'] ?? null,
+				'tab'        => $f['tab'] ?? null,
 			);
+			if ( 'heading' === $kind ) {
+				echo '<h3 class="wpec-heading">' . esc_html( $this->label ) . '</h3>';
+				return;
+			}
 			?>
 			<div class="wpec wpec--<?php echo esc_attr( $kind ); ?>" data-wpec="<?php echo esc_attr( wp_json_encode( array_filter( $data, static fn( $x ) => null !== $x ) ) ); ?>">
 				<div class="wpec__head">
@@ -63,7 +70,7 @@ if ( ! class_exists( 'WPEssential_Customize_Control' ) ) {
 					<p class="wpec__help"><?php echo esc_html( $f['help'] ); ?></p>
 				<?php endif; ?>
 				<div class="wpec__ui"></div>
-				<input type="hidden" class="wpec__value" <?php $this->link(); ?> value="<?php echo esc_attr( (string) $this->value() ); ?>">
+				<input type="hidden" class="wpec__value" <?php $this->link(); ?> value="<?php echo esc_attr( is_scalar( $this->value() ) ? (string) $this->value() : '' ); ?>">
 			</div>
 			<?php
 		}
