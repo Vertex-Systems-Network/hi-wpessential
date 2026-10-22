@@ -37,11 +37,24 @@ function wpessential_site_fonts() {
 }
 
 /**
- * Sections and their settings. Each setting: type, label, default '' (= theme default).
+ * Sections and their settings, with the Elementor-style controls applied.
  *
  * @return array
  */
 function wpessential_site_fields() {
+	static $fields = null;
+	if ( null === $fields ) {
+		$fields = wpessential_site_fields_upgrade( wpessential_site_fields_base() );
+	}
+	return $fields;
+}
+
+/**
+ * Sections and their settings. Each setting: type, label, default '' (= theme default).
+ *
+ * @return array
+ */
+function wpessential_site_fields_base() {
 	$colours = array(
 		'primary'       => __( 'Primary (brand)', 'hi-wpessential' ),
 		'primary-hover' => __( 'Primary on hover', 'hi-wpessential' ),
@@ -491,9 +504,25 @@ function wpessential_site_clean( array $field, $value ) {
 		case 'toggle':
 			return (bool) $value;
 		case 'range':
+			if ( is_string( $value ) && '' !== $value && '{' === $value[0] ) {
+				$tree = wpessential_site_clean_tree( wpessential_site_json( $value ) );
+				return $tree ? wp_json_encode( $tree ) : '';
+			}
 			return is_numeric( $value ) ? (string) ( 0 + $value ) : '';
 		case 'select':
+		case 'choose':
 			return array_key_exists( (string) $value, $field['choices'] ) ? (string) $value : '';
+		case 'dimensions':
+		case 'typography':
+		case 'shadow':
+		case 'gradient':
+		case 'background':
+			$tree = wpessential_site_clean_tree( wpessential_site_json( $value ) );
+			return $tree ? wp_json_encode( $tree ) : '';
+	}
+	if ( ! empty( $field['responsive'] ) && is_string( $value ) && '' !== $value && '{' === $value[0] ) {
+		$tree = wpessential_site_clean_tree( wpessential_site_json( $value ) );
+		return $tree ? wp_json_encode( $tree ) : '';
 	}
 	return sanitize_text_field( (string) $value );
 }
@@ -525,6 +554,21 @@ add_action(
 			);
 			foreach ( $s['fields'] as $key => $f ) {
 				$id = 'wpessential_site[' . $key . ']';
+				if ( 'heading' === $f['type'] ) {
+					$wp->add_control(
+						new WPEssential_Customize_Control(
+							$wp,
+							'wpessential_site_' . $key,
+							array(
+								'label'    => $f['label'],
+								'section'  => $section,
+								'settings' => array(),
+								'field'    => $f,
+							)
+						)
+					);
+					continue;
+				}
 				$wp->add_setting(
 					$id,
 					array(
@@ -559,6 +603,11 @@ add_action(
  * @return string
  */
 function wpessential_site_len( array $v, $key, $unit = 'px' ) {
+	if ( isset( $v[ $key ] ) && ! is_numeric( $v[ $key ] ) ) {
+		// Responsive value: the desktop size (other devices are written as media queries).
+		$d = wpessential_site_json( $v[ $key ] );
+		return isset( $d['desktop'] ) ? wpessential_site_size( $d['desktop'], $unit ) : '';
+	}
 	return isset( $v[ $key ] ) && is_numeric( $v[ $key ] ) ? ( 0 + $v[ $key ] ) . $unit : '';
 }
 
@@ -598,6 +647,10 @@ function wpessential_site_gradient( $slug, array $v ) {
 	if ( ! in_array( $slug, array( 'brand', 'night' ), true ) ) {
 		return '';
 	}
+	$own = wpessential_site_json( $v[ 'grad_' . $slug ] ?? '' );
+	if ( $own ) {
+		return wpessential_site_gradient_css( $own );
+	}
 	$from = $v[ 'grad_' . $slug . '_from' ] ?? '';
 	$to   = $v[ 'grad_' . $slug . '_to' ] ?? '';
 	if ( 'brand' === $slug && ! empty( $v['grad_brand_auto'] ) ) {
@@ -624,6 +677,10 @@ function wpessential_site_gradient( $slug, array $v ) {
  * @return string
  */
 function wpessential_site_shadow( array $preset, array $v ) {
+	$box = wpessential_site_json( $v[ 'shadow_' . $preset['slug'] ] ?? '' );
+	if ( $box ) {
+		return wpessential_site_shadow_css( $box );
+	}
 	$own = trim( (string) ( $v[ 'shadow_' . $preset['slug'] ] ?? '' ) );
 	if ( '' !== $own ) {
 		return preg_replace( '/[^a-z0-9#%.,() \-]/i', '', $own );
@@ -793,6 +850,13 @@ add_filter(
 			if ( wpessential_site_len( $v, $key ) ) {
 				foreach ( $sides as $side ) {
 					$button['spacing']['padding'][ $side ] = wpessential_site_len( $v, $key );
+				}
+				$pad = wpessential_site_json( $v['btn_padding'] ?? '' );
+				if ( ! empty( $pad['desktop'] ) && is_array( $pad['desktop'] ) && '' !== wpessential_site_dims( $pad['desktop'] ) ) {
+					$sides = explode( ' ', wpessential_site_dims( $pad['desktop'] ) );
+					foreach ( array( 'top', 'right', 'bottom', 'left' ) as $n => $side ) {
+						$button['spacing']['padding'][ $side ] = $sides[ $n ];
+					}
 				}
 			}
 		}
@@ -1055,6 +1119,7 @@ function wpessential_site_css() {
 	if ( $dark_grads ) {
 		$css .= ':root[data-wpe-scheme]{' . $dark_grads . '}';
 	}
+	$css .= wpessential_site_controls_css( $v );
 	if ( ! empty( $v['motion_off'] ) ) {
 		$css .= '*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}';
 	}
@@ -1101,7 +1166,9 @@ add_action(
 	static function () {
 		$ver = wp_get_theme()->get( 'Version' ) . '.' . (int) filemtime( WPESSENTIAL_DIR . '/assets/js/customizer-controls.js' );
 		wp_enqueue_style( 'wpessential-customizer', get_theme_file_uri( 'assets/css/customizer-controls.css' ), array(), $ver );
-		wp_enqueue_script( 'wpessential-customizer', get_theme_file_uri( 'assets/js/customizer-controls.js' ), array( 'customize-controls', 'wp-i18n' ), $ver, true );
+		wp_enqueue_media();
+		wp_enqueue_script( 'wpessential-controls', get_theme_file_uri( 'assets/js/wpe-controls.js' ), array( 'wp-i18n' ), $ver, true );
+		wp_enqueue_script( 'wpessential-customizer', get_theme_file_uri( 'assets/js/customizer-controls.js' ), array( 'customize-controls', 'wpessential-controls' ), $ver, true );
 		// The site's own palette (the demo's when it has one), each colour once.
 		$origins = (array) wp_get_global_settings( array( 'color', 'palette' ) );
 		$palette = array();
@@ -1113,8 +1180,8 @@ add_action(
 			}
 		}
 		wp_localize_script(
-			'wpessential-customizer',
-			'wpessentialCustomizer',
+			'wpessential-controls',
+			'wpessentialControls',
 			array(
 				'palette'     => $palette,
 				'themeFonts'  => array_keys( wpessential_site_fonts() ),
