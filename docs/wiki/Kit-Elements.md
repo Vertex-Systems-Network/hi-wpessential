@@ -14,6 +14,7 @@ WPEssential elements are defined once and work as both a Gutenberg block and an 
 | Image | Responsive srcset, dark-mode image, lightbox, aspect ratio / fit per breakpoint, CSS filters |
 | Icon list | Repeater items, icons or numbers, inline / grid, dividers, icon shapes |
 | Info box | Icon, image or number; top / left / right per breakpoint; badge; button; link on box, title or button; stacked / framed icons; box and media hover effects; equal height |
+| Accordion | Native details/summary (no JavaScript), one or many open, FAQ schema, numbers, own icon per item, open icon, style presets, open-item colours |
 
 ## What every element offers
 
