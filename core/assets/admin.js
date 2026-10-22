@@ -140,6 +140,8 @@
 		status: null,
 		plugins: null,
 		filter: { q: '', cat: 'all', type: 'all', builder: 'all' },
+		elements: null,
+		elFilter: { q: '', cat: 'all' },
 		mode: store.get( 'mode', window.matchMedia( '(prefers-color-scheme: dark)' ).matches ? 'dark' : 'light' ),
 	};
 
@@ -147,6 +149,7 @@
 		[ 'welcome', __( 'Dashboard', 'hi-wpessential' ), 'home' ],
 		[ 'demos', __( 'Demo Library', 'hi-wpessential' ), 'grid' ],
 		[ 'plugins', __( 'Plugins', 'hi-wpessential' ), 'plug' ],
+		[ 'elements', __( 'Elements', 'hi-wpessential' ), 'layers' ],
 		[ 'license', __( 'License', 'hi-wpessential' ), 'key' ],
 		[ 'status', __( 'System Status', 'hi-wpessential' ), 'pulse' ],
 		[ 'ai', __( 'AI Connect', 'hi-wpessential' ), 'spark' ],
@@ -193,7 +196,7 @@
 				li.classList.toggle( 'current', tab === 'welcome' ? h.endsWith( 'page=wpessential' ) : h.endsWith( '#' + tab ) );
 			}
 		} );
-		( { welcome: viewWelcome, demos: viewDemos, plugins: viewPlugins, license: viewLicense, status: viewStatus, ai: viewAi } )[ tab ]();
+		( { welcome: viewWelcome, demos: viewDemos, plugins: viewPlugins, elements: viewElements, license: viewLicense, status: viewStatus, ai: viewAi } )[ tab ]();
 	}
 
 	const view = ( html ) => {
@@ -1089,6 +1092,83 @@
 				toast( 'error', __( 'Plugin action failed', 'hi-wpessential' ), errMsg( e ) );
 			}
 		} ) ) );
+	}
+
+	/* ------------------------------------------------------------------ elements */
+
+	const EL_CATS = {
+		basic: __( 'Basic', 'hi-wpessential' ),
+		media: __( 'Media', 'hi-wpessential' ),
+		content: __( 'Content', 'hi-wpessential' ),
+		woo: __( 'WooCommerce', 'hi-wpessential' ),
+	};
+
+	async function viewElements() {
+		view( `<div class="wpe-head"><div><h1>${ esc( __( 'Elements', 'hi-wpessential' ) ) }</h1><p>${ esc( __( 'The WPEssential kit: one design, a Gutenberg block and an Elementor widget each. Switch off the ones you do not use and they are not loaded anywhere.', 'hi-wpessential' ) ) }</p></div><div class="wpe-el-bulk" id="wpe-el-bulk"></div></div>
+			<div class="wpe-card wpe-toolbar" id="wpe-el-bar"></div>
+			<div class="wpe-el-grid" id="wpe-elements">${ [ 0, 1, 2, 3 ].map( () => '<div class="wpe-skel" style="height:168px;border-radius:18px"></div>' ).join( '' ) }</div>` );
+		try {
+			state.elements = await api( { path: '/wpessential/v1/elements' } );
+			renderElements();
+		} catch ( e ) {
+			$( '#wpe-elements' ).innerHTML = `<div class="wpe-callout wpe-callout--error">${ ico( 'error' ) }<div>${ esc( errMsg( e ) ) }</div></div>`;
+		}
+	}
+
+	async function saveElements( states, msg ) {
+		try {
+			state.elements = await api( { path: '/wpessential/v1/elements/toggle', method: 'POST', data: { states } } );
+			toast( 'success', msg, __( 'Reload the editor to see the change.', 'hi-wpessential' ) );
+		} catch ( e ) {
+			toast( 'error', __( 'Could not save', 'hi-wpessential' ), errMsg( e ) );
+		}
+		renderElements();
+	}
+
+	function renderElements() {
+		const box = $( '#wpe-elements' );
+		if ( ! box ) {
+			return;
+		}
+		const all = state.elements;
+		const f = state.elFilter;
+		const on = all.filter( ( el ) => el.enabled ).length;
+		const cats = [ 'all', ...new Set( all.map( ( el ) => el.category ) ) ];
+		$( '#wpe-el-bulk' ).innerHTML = `<span class="wpe-pill wpe-pill--success"><i></i>${ esc( sprintf( /* translators: 1: elements on, 2: all elements. */ __( '%1$d of %2$d on', 'hi-wpessential' ), on, all.length ) ) }</span>
+			<button class="wpe-btn wpe-btn--ghost wpe-btn--sm" data-bulk="1">${ ico( 'check', 15 ) }${ esc( __( 'All on', 'hi-wpessential' ) ) }</button>
+			<button class="wpe-btn wpe-btn--ghost wpe-btn--sm" data-bulk="0">${ ico( 'x', 15 ) }${ esc( __( 'All off', 'hi-wpessential' ) ) }</button>`;
+		const bar = $( '#wpe-el-bar' );
+		if ( ! bar.dataset.ready ) {
+			bar.dataset.ready = '1';
+			bar.innerHTML = `<label class="wpe-search"><span class="wpe-sr">${ esc( __( 'Search elements', 'hi-wpessential' ) ) }</span>${ ico( 'search', 17 ) }<input type="search" value="${ esc( f.q ) }" placeholder="${ esc( __( 'Search elements…', 'hi-wpessential' ) ) }" data-el-q></label>
+				<div class="wpe-chips" role="group" aria-label="${ esc( __( 'Category', 'hi-wpessential' ) ) }">${ cats.map( ( c ) => `<button class="wpe-chip" data-el-cat="${ esc( c ) }" aria-pressed="${ f.cat === c }">${ esc( 'all' === c ? __( 'All', 'hi-wpessential' ) : EL_CATS[ c ] || c ) }</button>` ).join( '' ) }</div>`;
+			$( '[data-el-q]', bar ).addEventListener( 'input', ( e ) => {
+				f.q = e.target.value;
+				renderElements();
+			} );
+			$$( '[data-el-cat]', bar ).forEach( ( b ) => b.addEventListener( 'click', () => {
+				f.cat = b.dataset.elCat;
+				$$( '[data-el-cat]', bar ).forEach( ( x ) => x.setAttribute( 'aria-pressed', x === b ? 'true' : 'false' ) );
+				renderElements();
+			} ) );
+		}
+		const q = f.q.trim().toLowerCase();
+		const list = all.filter( ( el ) => ( 'all' === f.cat || el.category === f.cat ) && ( ! q || ( el.title + ' ' + el.description ).toLowerCase().includes( q ) ) );
+		box.innerHTML = list.length ? list.map( ( el ) => `<article class="wpe-el${ el.enabled ? ' is-on' : '' }">
+				<div class="wpe-el__top"><span class="wpe-el__ico"><span class="dashicons dashicons-${ esc( el.icon ) }" aria-hidden="true"></span></span>
+				<label class="wpe-switch"><span class="wpe-sr">${ esc( sprintf( /* translators: %s: element name. */ __( 'Use %s', 'hi-wpessential' ), el.title ) ) }</span><input type="checkbox" data-el="${ esc( el.name ) }"${ el.enabled ? ' checked' : '' }><span></span></label></div>
+				<h3>${ esc( el.title ) }</h3><p>${ esc( el.description ) }</p>
+				<div class="wpe-el__meta"><span title="Gutenberg">${ ico( 'gutenberg', 14 ) }</span><span title="Elementor">${ ico( 'elementor', 14 ) }</span><span>${ esc( sprintf( /* translators: %d: number of options. */ _n( '%d option', '%d options', el.options, 'hi-wpessential' ), el.options ) ) }</span><span class="wpe-el__cat">${ esc( EL_CATS[ el.category ] || el.category ) }</span></div>
+			</article>` ).join( '' ) : `<div class="wpe-empty"><span class="wpe-empty__ico">${ ico( 'search', 28 ) }</span><h3>${ esc( __( 'No elements found', 'hi-wpessential' ) ) }</h3></div>`;
+		$$( '[data-el]', box ).forEach( ( i ) => i.addEventListener( 'change', () => {
+			const el = all.find( ( x ) => x.name === i.dataset.el );
+			i.closest( '.wpe-el' ).classList.toggle( 'is-on', i.checked );
+			saveElements( { [ el.name ]: i.checked }, sprintf( i.checked ? /* translators: %s: element. */ __( '%s is on', 'hi-wpessential' ) : /* translators: %s: element. */ __( '%s is off', 'hi-wpessential' ), el.title ) );
+		} ) );
+		$$( '[data-bulk]' ).forEach( ( b ) => b.addEventListener( 'click', () => {
+			const v = '1' === b.dataset.bulk;
+			saveElements( Object.fromEntries( all.map( ( el ) => [ el.name, v ] ) ), v ? __( 'All elements are on', 'hi-wpessential' ) : __( 'All elements are off', 'hi-wpessential' ) );
+		} ) );
 	}
 
 	/* ------------------------------------------------------------------ license */

@@ -42,6 +42,8 @@ class Rest {
 			'/account/checkout'   => array( 'POST', 'account_checkout' ),
 			'/account/action'     => array( 'POST', 'account_action' ),
 			'/brand'              => array( 'POST', 'brand' ),
+			'/elements'           => array( 'GET', 'elements' ),
+			'/elements/toggle'    => array( 'POST', 'elements_toggle' ),
 			'/mcp'                => array( 'GET', 'mcp' ),
 			'/mcp/connect'        => array( 'POST', 'mcp_connect' ),
 			'/mcp/off'            => array( 'POST', 'mcp_off' ),
@@ -175,6 +177,24 @@ class Rest {
 	 */
 	public function plugins() {
 		return $this->respond( Plugins::catalogue() );
+	}
+
+	/**
+	 * GET /elements: the kit elements and whether each is on.
+	 */
+	public function elements() {
+		return $this->respond( Kit::catalogue() );
+	}
+
+	/**
+	 * POST /elements/toggle: { states: { name: bool } }.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 */
+	public function elements_toggle( $request ) {
+		$states = (array) $request->get_param( 'states' );
+		Kit::set_enabled( array_map( 'rest_sanitize_boolean', $states ) );
+		return $this->respond( Kit::catalogue() );
 	}
 
 	/**

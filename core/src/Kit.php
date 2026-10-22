@@ -61,6 +61,11 @@ class Kit {
 	private static $defs = null;
 
 	/**
+	 * Option holding the elements switched off on the Elements screen. Every element is on by default.
+	 */
+	const OFF_OPTION = 'wpessential_kit_disabled';
+
+	/**
 	 * Hooks.
 	 */
 	public static function hooks() {
@@ -68,6 +73,67 @@ class Kit {
 		add_action( 'elementor/widgets/register', array( __CLASS__, 'register_widgets' ) );
 		add_action( 'elementor/elements/categories_registered', array( __CLASS__, 'elementor_category' ) );
 		add_filter( 'block_categories_all', array( __CLASS__, 'block_category' ) );
+	}
+
+	/**
+	 * Names of the elements switched off.
+	 *
+	 * @return string[]
+	 */
+	public static function disabled() {
+		return array_values( array_filter( array_map( 'sanitize_key', (array) get_option( self::OFF_OPTION, array() ) ) ) );
+	}
+
+	/**
+	 * Switch elements on or off.
+	 *
+	 * @param array $states Name => bool.
+	 */
+	public static function set_enabled( array $states ) {
+		$off = array_fill_keys( self::disabled(), true );
+		foreach ( $states as $name => $on ) {
+			$name = sanitize_key( $name );
+			if ( ! isset( self::defs()[ $name ] ) ) {
+				continue;
+			}
+			if ( $on ) {
+				unset( $off[ $name ] );
+			} else {
+				$off[ $name ] = true;
+			}
+		}
+		update_option( self::OFF_OPTION, array_keys( $off ), false );
+	}
+
+	/**
+	 * Definitions of the elements that are switched on.
+	 *
+	 * @return array
+	 */
+	public static function enabled_defs() {
+		return array_diff_key( self::defs(), array_flip( self::disabled() ) );
+	}
+
+	/**
+	 * Elements for the Elements screen.
+	 *
+	 * @return array
+	 */
+	public static function catalogue() {
+		$off = self::disabled();
+		$out = array();
+		foreach ( self::defs() as $name => $def ) {
+			$out[] = array(
+				'name'        => $name,
+				'title'       => trim( str_replace( '(WPEssential)', '', (string) $def['title'] ) ),
+				'description' => (string) ( $def['description'] ?? '' ),
+				'category'    => (string) ( $def['category'] ?? 'basic' ),
+				'icon'        => (string) ( $def['icon'] ?? 'star-filled' ),
+				'options'     => count( self::attributes( $def ) ) + count( self::groups( $def ) ),
+				'enabled'     => ! in_array( $name, $off, true ),
+			);
+		}
+		return $out;
 	}
 
 	/**
@@ -166,7 +232,7 @@ class Kit {
 		wp_register_script( 'wpessential-kit-editor', wpessential_core_url( 'assets/kit-editor.js' ), array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n' ), WPESSENTIAL_CORE_ASSET_VERSION, true );
 		wp_register_style( 'wpessential-kit-common', wpessential_core_url( 'kit/common.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
 		$editor = array();
-		foreach ( self::defs() as $name => $def ) {
+		foreach ( self::enabled_defs() as $name => $def ) {
 			$handle = 'wpessential-kit-' . $name;
 			wp_register_style( $handle, wpessential_core_url( 'kit/' . $name . '/style.css' ), array( 'wpessential-kit-common' ), WPESSENTIAL_CORE_ASSET_VERSION );
 			$attrs = array();
@@ -240,7 +306,7 @@ class Kit {
 	 * @param \Elementor\Widgets_Manager $manager Manager.
 	 */
 	public static function register_widgets( $manager ) {
-		foreach ( array_keys( self::defs() ) as $name ) {
+		foreach ( array_keys( self::enabled_defs() ) as $name ) {
 			$class = __NAMESPACE__ . '\\Kit\\Elements\\' . str_replace( ' ', '', ucwords( str_replace( '-', ' ', $name ) ) );
 			if ( class_exists( $class ) ) {
 				$manager->register( new $class() );
