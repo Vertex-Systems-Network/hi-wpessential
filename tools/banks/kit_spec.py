@@ -1,0 +1,105 @@
+"""Write a spec for every WPEssential kit element from the elements catalog.
+
+    python3 tools/banks/kit_spec.py   ->  banks/kit/<element>.json and banks/kit/README.md
+
+For each element type the spec lists the benchmark elements (the two richest per builder), every
+option they offer (merged and de-duplicated, split into content, style and grouped controls), and
+the extras every kit element must have on top. Priority = how many plugins ship that type.
+"""
+import json
+import os
+import re
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+BANK = os.path.join(ROOT, 'banks')
+
+# What every kit element has, whatever the competitors offer (theme tokens and docs/DEMO-PLAYBOOK.md).
+BASELINE = {
+    'breakpoints': ['1920', '1440', '1024', '768', '560', '480', '360', '320'],
+    'responsive': 'Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.',
+    'schemes': 'Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.',
+    'hover': ['zoom', 'lift', 'glow', 'underline', 'image swap', 'greyscale to colour'],
+    'hover_note': 'Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.',
+    'motion': ['none', 'subtle', 'editorial', 'playful', 'dynamic'],
+    'accessibility': ['WCAG 2.2 AA contrast in both schemes', 'keyboard operable with visible focus', 'ARIA roles/states for interactive parts',
+                      'prefers-reduced-motion respected', 'nothing important only on hover'],
+    'seo': ['semantic HTML tags selectable (h1–h6, p, div, section, article…)', 'schema where the type has one (FAQPage, Product, Event, Review…)'],
+    'performance': ['no jQuery', 'CSS and JS load only on pages that use the element', 'images lazy with width/height'],
+    'builders': ['Gutenberg block (block.json, server render)', 'Elementor widget (native controls, Kit globals)', 'same options and output in both'],
+    'i18n': ['every string translatable (hi-wpessential)', 'RTL'],
+}
+
+SKIP = {'Other'}
+
+
+def slug(text):
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+
+
+def options(ref):
+    item = json.load(open(os.path.join(BANK, 'elements', ref + '.json')))
+    content, style, groups = set(), set(), set()
+    if item['kind'] == 'elementor-widget':
+        for s in item['sections']:
+            tab = (s.get('tab') or '').upper()
+            for c in s['controls']:
+                if c['type'] in ('TAB', 'HEADING', 'DIVIDER', 'RAW_HTML', 'HIDDEN', 'NOTICE', ''):
+                    continue
+                label = (c.get('label') or c.get('name') or '').strip()
+                if not label or '$' in label:
+                    continue
+                if c['type'] == 'GROUP':
+                    groups.add(c.get('group', '').replace('Group_Control_', ''))
+                elif 'STYLE' in tab or c.get('styles'):
+                    style.add(label)
+                else:
+                    content.add(label)
+    else:
+        for name in item['attributes']:
+            label = re.sub(r'(?<!^)(?=[A-Z])', ' ', name).replace('_', ' ').strip().capitalize()
+            (style if re.search(r'color|colour|font|size|padding|margin|border|radius|shadow|background|gap|width|height|spacing|align|weight|line', name, re.I) else content).add(label)
+        groups.update('supports.' + k for k in item['supports'])
+    return item, content, style, groups
+
+
+def main():
+    catalog = json.load(open(os.path.join(BANK, 'catalog.json')))
+    os.makedirs(os.path.join(BANK, 'kit'), exist_ok=True)
+    rows = []
+    for t, v in catalog.items():
+        if t in SKIP:
+            continue
+        bench = []
+        for builder in ('Elementor', 'Gutenberg'):
+            bench += [x for x in v['items'] if x['builder'] == builder][:2]
+        content, style, groups, refs = set(), set(), set(), []
+        for b in bench:
+            item, c, s, g = options(b['ref'])
+            content |= c
+            style |= s
+            groups |= g
+            refs.append({'ref': b['ref'], 'title': b['title'], 'source': b['source'], 'builder': b['builder'], 'options': b['size']})
+        spec = {
+            'element': t, 'slug': 'wpe-' + slug(t.split(':')[-1].split('/')[0]), 'priority': len(v['sources']),
+            'offered_by': v['sources'], 'benchmarks': refs,
+            'must_match': {'content': sorted(content, key=str.lower), 'style': sorted(style, key=str.lower), 'grouped': sorted(groups)},
+            'baseline': BASELINE, 'status': 'spec',
+        }
+        json.dump(spec, open(os.path.join(BANK, 'kit', spec['slug'] + '.json'), 'w'), indent=1, ensure_ascii=False)
+        rows.append((spec['priority'], v['count'], t, spec['slug'], len(content), len(style), len(groups), max((r['options'] for r in refs), default=0)))
+    rows.sort(key=lambda r: (-r[0], -r[1]))
+    lines = ['# WPEssential kit — element specs', '',
+             'Generated by `tools/banks/kit_spec.py`. One spec per element type in `banks/kit/<slug>.json`: the benchmark elements (two richest per builder), '
+             'every option they offer (merged), and the baseline every kit element adds (8 breakpoints, light/dark, hover presets, motion, accessibility, SEO, '
+             'performance, Gutenberg + Elementor). Build order follows priority (how many plugins ship the type).', '',
+             '| # | Element | Kit slug | Plugins with it | Elements in bank | Content options | Style options | Grouped / supports | Richest benchmark |',
+             '| --- | --- | --- | --- | --- | --- | --- | --- | --- |']
+    lines += ['| %d | %s | `%s` | %d | %d | %d | %d | %d | %d |' % (i + 1, r[2], r[3], r[0], r[1], r[4], r[5], r[6], r[7]) for i, r in enumerate(rows)]
+    lines += ['', '## Baseline for every element', '']
+    lines += ['- **%s:** %s' % (k.replace('_', ' ').capitalize(), ', '.join(v) if isinstance(v, list) else v) for k, v in BASELINE.items()]
+    open(os.path.join(BANK, 'kit', 'README.md'), 'w').write('\n'.join(lines) + '\n')
+    print(len(rows), 'specs')
+
+
+if __name__ == '__main__':
+    main()

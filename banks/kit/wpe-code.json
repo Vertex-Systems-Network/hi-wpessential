@@ -1,0 +1,180 @@
+{
+ "element": "Code / embed / HTML",
+ "slug": "wpe-code",
+ "priority": 5,
+ "offered_by": [
+  "Elementor",
+  "ElementsKit Lite",
+  "Essential Addons Lite",
+  "Gutenberg core",
+  "Happy Addons"
+ ],
+ "benchmarks": [
+  {
+   "ref": "essential-addons/eael-code-snippet",
+   "title": "Code Snippet",
+   "source": "Essential Addons Lite",
+   "builder": "Elementor",
+   "options": 58
+  },
+  {
+   "ref": "elementskit/tablepress",
+   "title": "TablePress",
+   "source": "ElementsKit Lite",
+   "builder": "Elementor",
+   "options": 40
+  },
+  {
+   "ref": "gutenberg-core/file",
+   "title": "File",
+   "source": "Gutenberg core",
+   "builder": "Gutenberg",
+   "options": 17
+  },
+  {
+   "ref": "gutenberg-core/code",
+   "title": "Code",
+   "source": "Gutenberg core",
+   "builder": "Gutenberg",
+   "options": 8
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Blob",
+   "Code Snippet",
+   "Content",
+   "Content Type",
+   "Copy button",
+   "Copy button tooltip",
+   "Display preview",
+   "Download button text",
+   "File id",
+   "File Name",
+   "File name",
+   "file_icon",
+   "file_icon_custom",
+   "Header bar",
+   "Href",
+   "Icon (Collapsed)",
+   "Icon (Expanded)",
+   "Icon Type",
+   "Id",
+   "Language icon",
+   "Line numbers",
+   "Programming Language",
+   "Responsive",
+   "Responsive Breakpoint",
+   "Select Table",
+   "Show download button",
+   "Text (Collapsed)",
+   "Text (Expanded)",
+   "Text link href",
+   "Text link target",
+   "Theme",
+   "Type",
+   "View Mode",
+   "Window buttons"
+  ],
+  "style": [
+   "Background",
+   "Background Color",
+   "Body Alignment",
+   "Border Color",
+   "Border Radius",
+   "Border Style",
+   "Border Width",
+   "Cell Padding",
+   "Color",
+   "Footer Info Hide",
+   "Footer Text And Navigation gap",
+   "Header Alignment",
+   "Height",
+   "Hover And Active Background",
+   "Hover Background",
+   "Icon Size",
+   "Line Number Background",
+   "Line Number Color",
+   "Margin",
+   "Nav Hide",
+   "Padding",
+   "Pagination And Serach Gap",
+   "Pagination Hide",
+   "Position",
+   "Preview height",
+   "Radius",
+   "Search Hide",
+   "Text Color",
+   "Width"
+  ],
+  "grouped": [
+   "Background",
+   "Border",
+   "Box_Shadow",
+   "Typography",
+   "supports.__experimentalBorder",
+   "supports.align",
+   "supports.anchor",
+   "supports.color",
+   "supports.interactivity",
+   "supports.spacing",
+   "supports.typography"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

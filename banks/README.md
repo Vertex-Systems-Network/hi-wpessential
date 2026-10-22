@@ -29,7 +29,7 @@ refreshed when a plugin updates.
 | Kadence Blocks | Gutenberg | 62 |
 | Spectra | Gutenberg | 50 |
 | GenerateBlocks | Gutenberg | 9 |
-| **Total** | | **508** |
+| **Total** | | **507** |
 
 **Not in the bank yet** (no free source to read): Elementor Pro (the GPL copy on GitHub was not
 reachable from the build session), JetElements, Ultimate Addons for Elementor Pro, Spectra Pro,
@@ -44,8 +44,15 @@ python3 tools/banks/extract.py --src <that folder> --wp <a WordPress install>   
 python3 tools/banks/catalog.py
 ```
 
+## Kit specs
+
+`python3 tools/banks/kit_spec.py` writes one spec per element type to [kit/](kit/README.md): the benchmark
+elements (two richest per builder), every option they offer, and the baseline every kit element adds
+(8 breakpoints, light/dark, hover presets, motion, accessibility, SEO, performance, Gutenberg + Elementor).
+45 specs; 7 niche elements stay under "Other" (Weather, World Clock, How To, Retina, EasyJobs, Spectra AI, Unsupported).
+
 ## Next
 
-1. Sort the 98 elements still under "Other" into types.
-2. For each type, write our kit element's spec: every option of the richest element, plus what none of them has (our breakpoints, dark mode, hover presets from the niche research, accessibility).
-3. Design the kit in Figma (UI Kit, light and dark), then build each element as a block and a widget.
+1. Review the specs with the owner and pick the first batch (highest priority: Posts grid, Image, Button, Menu, Heading, Text, Forms, Icon list, Accordion, Testimonial, Info box, Counter, Gallery).
+2. Design the kit in Figma (UI Kit, light and dark, every state) from the specs.
+3. Build each element as a Gutenberg block and an Elementor widget in Core, then rebuild the demos from the kit.

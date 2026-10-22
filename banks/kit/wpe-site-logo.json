@@ -1,0 +1,189 @@
+{
+ "element": "Site logo / title",
+ "slug": "wpe-site-logo",
+ "priority": 4,
+ "offered_by": [
+  "ElementsKit Lite",
+  "Gutenberg core",
+  "Happy Addons",
+  "Ultimate Addons (Header Footer Elementor)"
+ ],
+ "benchmarks": [
+  {
+   "ref": "elementskit/client-logo",
+   "title": "Client Logo",
+   "source": "ElementsKit Lite",
+   "builder": "Elementor",
+   "options": 86
+  },
+  {
+   "ref": "ultimate-addons-hfe/site-logo",
+   "title": "Site Logo",
+   "source": "Ultimate Addons (Header Footer Elementor)",
+   "builder": "Elementor",
+   "options": 34
+  },
+  {
+   "ref": "gutenberg-core/site-logo",
+   "title": "Site Logo",
+   "source": "Gutenberg core",
+   "builder": "Gutenberg",
+   "options": 12
+  },
+  {
+   "ref": "gutenberg-core/site-tagline",
+   "title": "Site Tagline",
+   "source": "Gutenberg core",
+   "builder": "Gutenberg",
+   "options": 11
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Add Image",
+   "Autoplay",
+   "Caption",
+   "Client Logo",
+   "Client Name",
+   "Custom Caption",
+   "Custom Image",
+   "Enable Hover Logo",
+   "Enable Link",
+   "Enable Loop?",
+   "Hover Logo",
+   "Is link",
+   "Left arrow Icon",
+   "Level",
+   "Level options",
+   "Lightbox",
+   "Link",
+   "Link target",
+   "Pause on Hover",
+   "Repeater List",
+   "Right arrow Icon",
+   "Rows",
+   "Should sync icon",
+   "Show arrow",
+   "Show dots",
+   "Show Separator",
+   "Slide Style",
+   "Slides To Scroll",
+   "Speed (ms)"
+  ],
+  "style": [
+   "Alignment",
+   "Arrow Position",
+   "Background",
+   "Background Color",
+   "Border Color",
+   "Border Radius",
+   "Border radius",
+   "Border Style",
+   "Border Width",
+   "Color",
+   "Dot Color",
+   "Dot Style",
+   "Height",
+   "Hight",
+   "Hover Animation",
+   "Left Arrow Position (X)",
+   "Left Arrow Position (Y)",
+   "Left Right Position",
+   "Margin",
+   "Max Width",
+   "Min Height",
+   "Opacity",
+   "Opacity Hover",
+   "Overlay Direction",
+   "Padding",
+   "Position",
+   "Right Arrow Position (X)",
+   "Right Arrow Position (Y)",
+   "Size",
+   "Slides To Show",
+   "Spacing",
+   "Spacing Left Right",
+   "Spacing Top To Bottom",
+   "Text Color",
+   "Top Bottom Position",
+   "Transition Duration",
+   "Width"
+  ],
+  "grouped": [
+   "Background",
+   "Border",
+   "Box_Shadow",
+   "Css_Filter",
+   "Image_Size",
+   "Text_Shadow",
+   "Typography",
+   "supports.__experimentalBorder",
+   "supports.align",
+   "supports.alignWide",
+   "supports.anchor",
+   "supports.color",
+   "supports.contentRole",
+   "supports.filter",
+   "supports.html",
+   "supports.interactivity",
+   "supports.spacing",
+   "supports.typography"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

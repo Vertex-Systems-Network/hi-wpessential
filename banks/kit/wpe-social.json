@@ -1,0 +1,177 @@
+{
+ "element": "Social",
+ "slug": "wpe-social",
+ "priority": 3,
+ "offered_by": [
+  "ElementsKit Lite",
+  "Happy Addons",
+  "Spectra"
+ ],
+ "benchmarks": [
+  {
+   "ref": "happy-addons/social-share",
+   "title": "Social Share",
+   "source": "Happy Addons",
+   "builder": "Elementor",
+   "options": 41
+  },
+  {
+   "ref": "elementskit/social-share",
+   "title": "Social Share",
+   "source": "ElementsKit Lite",
+   "builder": "Elementor",
+   "options": 33
+  },
+  {
+   "ref": "spectra/uagb-social-share",
+   "title": "Social Share",
+   "source": "Spectra",
+   "builder": "Gutenberg",
+   "options": 35
+  },
+  {
+   "ref": "spectra/uagb-social-share-child",
+   "title": "Social Share Child",
+   "source": "Spectra",
+   "builder": "Gutenberg",
+   "options": 8
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Add Social Media",
+   "Button Text",
+   "Child migrate",
+   "Choose Style",
+   "Class migrate",
+   "Custom Image",
+   "Custom Link",
+   "Custom Title",
+   "Hashtags",
+   "Icon",
+   "Icon Position",
+   "Image",
+   "Image icon",
+   "Network",
+   "Separator",
+   "Share Icons",
+   "Social count",
+   "Social layout",
+   "Social Media",
+   "Socials",
+   "Stack",
+   "Subject",
+   "To",
+   "Twitter Handle",
+   "Type",
+   "View",
+   "Want To Customize?"
+  ],
+  "style": [
+   "Align",
+   "Align mobile",
+   "Align tablet",
+   "Alignment",
+   "Background Color",
+   "Bg size",
+   "Bg size mobile",
+   "Bg size tablet",
+   "Bg size type",
+   "Border Color",
+   "Border Radius",
+   "Border radius",
+   "Border radius mobile",
+   "Border radius tablet",
+   "Color",
+   "Decoration",
+   "Display",
+   "Gap",
+   "Gap mobile",
+   "Gap tablet",
+   "Height",
+   "Icon bg color",
+   "Icon bg hover color",
+   "Icon color",
+   "Icon hover color",
+   "Icon Right Spacing",
+   "Icon Size",
+   "Label",
+   "Line Height",
+   "Margin",
+   "Padding",
+   "Separator Color",
+   "Separator Right Spacing",
+   "Size",
+   "Size mobile",
+   "Size tablet",
+   "Size type",
+   "Spacing",
+   "Spacing Left",
+   "Spacing Right",
+   "Use Height Width",
+   "Width"
+  ],
+  "grouped": [
+   "Border",
+   "Box_Shadow",
+   "Text_Shadow",
+   "Typography"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

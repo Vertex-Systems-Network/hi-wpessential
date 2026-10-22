@@ -1,0 +1,181 @@
+{
+ "element": "Alert / notice",
+ "slug": "wpe-alert",
+ "priority": 2,
+ "offered_by": [
+  "Elementor",
+  "Spectra"
+ ],
+ "benchmarks": [
+  {
+   "ref": "elementor/alert",
+   "title": "Alert",
+   "source": "Elementor",
+   "builder": "Elementor",
+   "options": 22
+  },
+  {
+   "ref": "spectra/uagb-inline-notice",
+   "title": "Inline Notice",
+   "source": "Spectra",
+   "builder": "Gutenberg",
+   "options": 77
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Block id",
+   "C id",
+   "Close cookie days",
+   "Content",
+   "Cookies",
+   "Desc decoration",
+   "Desc transform",
+   "Dismiss Icon",
+   "Icon",
+   "Layout",
+   "Notice dismiss",
+   "Title",
+   "Title decoration",
+   "Title transform",
+   "Type"
+  ],
+  "style": [
+   "Background Color",
+   "Color",
+   "Content bg color",
+   "Content bottom padding",
+   "Content hr padding",
+   "Content left padding",
+   "Content padding link",
+   "Content padding unit",
+   "Content right padding",
+   "Content top padding",
+   "Content vr padding",
+   "Desc font family",
+   "Desc font size",
+   "Desc font size mobile",
+   "Desc font size tablet",
+   "Desc font size type",
+   "Desc font style",
+   "Desc font weight",
+   "Desc letter spacing",
+   "Desc letter spacing mobile",
+   "Desc letter spacing tablet",
+   "Desc letter spacing type",
+   "Desc line height",
+   "Desc line height mobile",
+   "Desc line height tablet",
+   "Desc line height type",
+   "Desc load google fonts",
+   "Font size",
+   "Highlight width",
+   "Highlight width mobile",
+   "Highlight width tablet",
+   "Horizontal Position",
+   "Icon size",
+   "Icon size mob",
+   "Icon size tab",
+   "Icon size unit",
+   "Mobile content padding unit",
+   "Mobile title padding unit",
+   "Notice alignment",
+   "Notice color",
+   "Notice dismiss color",
+   "Side Border Color",
+   "Side Border Width",
+   "Size",
+   "Tablet content padding unit",
+   "Tablet title padding unit",
+   "Text Color",
+   "Text color",
+   "Title bottom padding",
+   "Title color",
+   "Title font family",
+   "Title font size",
+   "Title font size mobile",
+   "Title font size tablet",
+   "Title font size type",
+   "Title font style",
+   "Title font weight",
+   "Title hr padding",
+   "Title left padding",
+   "Title letter spacing",
+   "Title letter spacing mobile",
+   "Title letter spacing tablet",
+   "Title letter spacing type",
+   "Title line height",
+   "Title line height mobile",
+   "Title line height tablet",
+   "Title line height type",
+   "Title load google fonts",
+   "Title padding link",
+   "Title padding unit",
+   "Title right padding",
+   "Title top padding",
+   "Title vr padding",
+   "Transition Duration",
+   "Vertical Position"
+  ],
+  "grouped": [
+   "Text_Shadow",
+   "Typography"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

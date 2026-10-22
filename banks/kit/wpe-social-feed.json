@@ -1,0 +1,181 @@
+{
+ "element": "Social feed",
+ "slug": "wpe-social-feed",
+ "priority": 3,
+ "offered_by": [
+  "Essential Addons Lite",
+  "Happy Addons",
+  "Premium Addons"
+ ],
+ "benchmarks": [
+  {
+   "ref": "premium-addons/premium-tiktok-feed",
+   "title": "TikTok Feed",
+   "source": "Premium Addons",
+   "builder": "Elementor",
+   "options": 144
+  },
+  {
+   "ref": "premium-addons/premium-pinterest-feed",
+   "title": "Pinterest Feed",
+   "source": "Premium Addons",
+   "builder": "Elementor",
+   "options": 143
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Access Token",
+   "Auto Play",
+   "Autoplay All Videos",
+   "Autoplay Speed",
+   "autoplay_first",
+   "autoplay_hover",
+   "board_id",
+   "board_ids_text",
+   "Center Mode",
+   "Comments Count",
+   "Date",
+   "Date Format",
+   "Description",
+   "Description Length (Word)",
+   "Enable Carousel",
+   "Exclude IDs",
+   "exclude_id",
+   "Fade",
+   "Filter By ID",
+   "Image Size",
+   "Items Per Page",
+   "Layout",
+   "Likes Count",
+   "Load More Button",
+   "Load More Text",
+   "Loading Animation",
+   "Loop Videos",
+   "match_id",
+   "Mute Videos",
+   "Navigation Arrows",
+   "Navigation Dots",
+   "On Click",
+   "Order By Date",
+   "Pins On Load More",
+   "Pins Per Board",
+   "Pins/Boards",
+   "Pinterest Icon",
+   "Play Icon",
+   "Postfix",
+   "Profile Header",
+   "Read More Text",
+   "Refresh Access Token",
+   "Refresh Cached Data Once Every",
+   "Scheme",
+   "Select Specific Board(s) By",
+   "Share Button",
+   "Skin",
+   "Slides To Scroll",
+   "Slides\\' Spacing",
+   "Source",
+   "TikTok Icon",
+   "Tilt Effect",
+   "Username",
+   "Videos",
+   "Videos Per Page",
+   "View Count"
+  ],
+  "style": [
+   "Active Color",
+   "Arrows Position",
+   "Background Color",
+   "Border Radius",
+   "Color",
+   "Counters Alignment",
+   "Horizontal Position",
+   "Hover Color",
+   "Icon Color",
+   "Icon Size",
+   "Icon Spacing",
+   "Image Height",
+   "Info Order",
+   "Liquid Glass Effect",
+   "Margin",
+   "Menu Background Color",
+   "Number of Columns",
+   "Object Fit",
+   "Padding",
+   "Pin Info Order",
+   "Size",
+   "Slides To Scroll",
+   "Spacing",
+   "Text Color",
+   "Transition Speed (ms)",
+   "Username/Date Margin",
+   "Vertical Position",
+   "Vertical Spacing",
+   "Video Height"
+  ],
+  "grouped": [
+   "Border",
+   "Box_Shadow",
+   "Css_Filter",
+   "Premium_Background",
+   "Text_Shadow",
+   "Typography"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}
