@@ -47,5 +47,6 @@ final class Plugin {
 		Mcp::hooks();
 		McpBuilder::hooks();
 		Kit::hooks();
+		PageSettings::hooks();
 	}
 }

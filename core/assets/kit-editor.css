@@ -38,3 +38,22 @@ span.wpek-unit { display: inline-grid; place-items: center; background: #f0f0f0;
 .wpek-image-field__url { margin-top: 10px; }
 
 .wpek-code textarea { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+
+/* Page settings panel */
+.wpep-row { margin-bottom: 16px; }
+.wpep-label { display: block; margin-bottom: 8px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+.wpep-length .components-base-control { margin-bottom: 6px; }
+.wpep-units { display: inline-flex; flex-wrap: wrap; padding: 2px; border-radius: 6px; background: #f0f0f0; }
+.wpep-unit { min-width: 30px; height: 22px; padding: 0 6px; border: 0; border-radius: 4px; background: transparent; color: #50575e; font-size: 11px; font-weight: 600; cursor: pointer; }
+.wpep-unit.is-active { background: #fff; color: var(--wp-admin-theme-color, #3858e9); box-shadow: 0 1px 2px rgb(0 0 0 / 12%); }
+.wpep-swatches { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.wpep-swatch { width: 28px; height: 28px; padding: 0; border: 1px solid rgb(0 0 0 / 15%); border-radius: 50%; cursor: pointer; }
+.wpep-swatch.is-active { outline: 2px solid var(--wp-admin-theme-color, #3858e9); outline-offset: 2px; }
+.wpep-custom-color { display: flex; align-items: center; gap: 8px; }
+.wpep-custom-color input[type="color"] { flex: none; width: 36px; height: 32px; padding: 2px; border: 1px solid #949494; border-radius: 4px; background: #fff; }
+.wpep-drop { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; padding: 18px 12px; border: 1.5px dashed #c3c4c7; border-radius: 10px; background: #fafafa; cursor: pointer; }
+.wpep-drop span { color: #757575; font-size: 12px; }
+.wpep-thumb { display: block; width: 100%; padding: 0; border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; cursor: pointer; }
+.wpep-thumb img { display: block; width: 100%; max-height: 140px; object-fit: cover; }
+.wpep-actions { display: flex; gap: 8px; margin-top: 8px; }
+.wpep-code textarea { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
