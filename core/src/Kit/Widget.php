@@ -145,6 +145,12 @@ abstract class Widget extends \Elementor\Widget_Base {
 						'unit' => $a['unit'] ?? 'px',
 					) : $a['default'] );
 				}
+				if ( 'repeater' === $a['type'] ) {
+					$args['type']        = \Elementor\Controls_Manager::REPEATER;
+					$args['fields']      = self::repeater_fields( $a['fields'], $types );
+					$args['title_field'] = '{{{ ' . ( $a['title_field'] ?? 'text' ) . ' }}}';
+					$args['default']     = array_map( static fn( $item ) => self::elementor_default( $a['fields'], $item ), $a['default'] ?? array() );
+				}
 				if ( ! empty( $a['responsive'] ) ) {
 					$this->add_responsive_control( $key, $args );
 				} else {
@@ -177,6 +183,60 @@ abstract class Widget extends \Elementor\Widget_Base {
 			)
 		);
 		$this->end_controls_section();
+	}
+
+	/**
+	 * Elementor repeater fields from our item fields.
+	 *
+	 * @param array $fields Item fields.
+	 * @param array $types  Our type => Elementor control type.
+	 * @return array
+	 */
+	private static function repeater_fields( array $fields, array $types ) {
+		$repeater = new \Elementor\Repeater();
+		foreach ( $fields as $key => $f ) {
+			$args = array(
+				'label'       => $f['label'] ?? $key,
+				'type'        => $types[ $f['type'] ] ?? \Elementor\Controls_Manager::TEXT,
+				'label_block' => in_array( $f['type'], array( 'text', 'textarea', 'url' ), true ),
+			);
+			if ( 'select' === $f['type'] ) {
+				$args['options'] = $f['options'];
+			}
+			if ( 'icon' === $f['type'] ) {
+				$args['skin']        = 'inline';
+				$args['label_block'] = false;
+			}
+			if ( 'textarea' === $f['type'] ) {
+				$args['rows'] = 2;
+			}
+			$repeater->add_control( $key, $args );
+		}
+		return $repeater->get_controls();
+	}
+
+	/**
+	 * One default item in Elementor's shape (icons, toggles).
+	 *
+	 * @param array $fields Item fields.
+	 * @param array $item   Our default item.
+	 * @return array
+	 */
+	private static function elementor_default( array $fields, array $item ) {
+		foreach ( $fields as $key => $f ) {
+			if ( ! isset( $item[ $key ] ) ) {
+				continue;
+			}
+			if ( 'icon' === $f['type'] && is_array( $item[ $key ] ) && 'wpessential' === ( $item[ $key ]['library'] ?? '' ) ) {
+				$item[ $key ] = array(
+					'value'   => 'wpei wpei-' . $item[ $key ]['value'],
+					'library' => 'wpessential',
+				);
+			} elseif ( 'toggle' === $f['type'] ) {
+				$item[ $key ] = $item[ $key ] ? 'yes' : '';
+			}
+		}
+		return $item;
 	}
 
 	/**

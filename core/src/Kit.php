@@ -354,7 +354,7 @@ class Kit {
 			wp_register_style( $handle, wpessential_core_url( 'kit/' . $name . '/style.css' ), array( 'wpessential-kit-common' ), WPESSENTIAL_CORE_ASSET_VERSION );
 			$attrs = array();
 			foreach ( self::attributes( $def ) as $key => $a ) {
-				$attrs[ $key ] = ! empty( $a['responsive'] ) || in_array( $a['type'], array( 'breakpoints', 'image', 'icon' ), true ) ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? array( 'number', 'string' ) : 'string' ) );
+				$attrs[ $key ] = ! empty( $a['responsive'] ) || 'repeater' === $a['type'] ? array( 'type' => 'array' ) : ( in_array( $a['type'], array( 'breakpoints', 'image', 'icon' ), true ) ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? array( 'number', 'string' ) : 'string' ) ) );
 			}
 			foreach ( self::attributes( $def ) as $key => $a ) {
 				// Defaults in the block too, so the sidebar shows the value the page really uses.
@@ -451,10 +451,16 @@ class Kit {
 		if ( empty( $defs[ $name ] ) ) {
 			return '';
 		}
-		$def = $defs[ $name ];
-		$a   = array();
+		$def   = $defs[ $name ];
+		$a     = array();
+		$attrs = self::attributes( $def );
 		foreach ( self::defaults( $def ) as $key => $default ) {
-			$value     = $attributes[ $key ] ?? $default;
+			$value = $attributes[ $key ] ?? $default;
+			// A list of items is taken as saved: merging it with the default items would bring them back.
+			if ( 'repeater' === ( $attrs[ $key ]['type'] ?? '' ) ) {
+				$a[ $key ] = is_array( $value ) ? array_values( array_filter( $value, 'is_array' ) ) : array();
+				continue;
+			}
 			$a[ $key ] = is_array( $default ) ? array_replace( $default, array_filter( (array) $value, static fn( $v ) => '' !== $v && null !== $v ) ) : $value;
 		}
 		wp_enqueue_style( 'wpessential-kit-' . $name );
@@ -631,6 +637,12 @@ class Kit {
 				$v = $settings[ $k ] ?? '';
 				if ( 'icon' === $opt['type'] ) {
 					return is_array( $v ) && ! empty( $v['value'] ) ? $v : array();
+				}
+				if ( 'repeater' === $opt['type'] ) {
+					return array_map(
+						static fn( $item ) => self::from_elementor( array( 'attributes' => $opt['fields'] ), (array) $item ),
+						is_array( $v ) ? array_values( $v ) : array()
+					);
 				}
 				if ( 'range' === $opt['type'] && is_array( $v ) ) {
 					if ( ! isset( $v['size'] ) || '' === $v['size'] || null === $v['size'] ) {

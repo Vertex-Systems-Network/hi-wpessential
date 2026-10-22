@@ -199,6 +199,75 @@
 		);
 	}
 
+	function RepeaterField( p ) {
+		var items = Array.isArray( p.value ) ? p.value : [];
+		var openState = useState( -1 );
+		var fields = p.opt.fields || {};
+		var titleKey = p.opt.title_field || 'text';
+		var update = function ( next ) {
+			p.onChange( next );
+		};
+		var blank = function () {
+			var item = {};
+			Object.keys( fields ).forEach( function ( k ) {
+				if ( undefined !== fields[ k ][ 'default' ] ) {
+					item[ k ] = fields[ k ][ 'default' ];
+				}
+			} );
+			return item;
+		};
+		var move = function ( i, d ) {
+			var next = items.slice();
+			var t = next[ i ];
+			next[ i ] = next[ i + d ];
+			next[ i + d ] = t;
+			update( next );
+			openState[ 1 ]( i + d );
+		};
+		return el( 'div', { className: 'wpek-repeater' },
+			el( 'span', { className: 'wpek-label' }, p.label + ' (' + items.length + ')' ),
+			items.map( function ( item, i ) {
+				var open = openState[ 0 ] === i;
+				var title = item[ titleKey ] ? String( item[ titleKey ] ).replace( /<[^>]+>/g, '' ) : __( 'Item', 'hi-wpessential' ) + ' ' + ( i + 1 );
+				return el( 'div', { key: i, className: 'wpek-repeater__item' + ( open ? ' is-open' : '' ) },
+					el( 'div', { className: 'wpek-repeater__head' },
+						el( 'button', { type: 'button', className: 'wpek-repeater__title', 'aria-expanded': open, onClick: function () {
+							openState[ 1 ]( open ? -1 : i );
+						} }, title ),
+						el( c.Button, { icon: 'arrow-up-alt2', label: __( 'Move up', 'hi-wpessential' ), size: 'small', disabled: 0 === i, onClick: function () {
+							move( i, -1 );
+						} } ),
+						el( c.Button, { icon: 'arrow-down-alt2', label: __( 'Move down', 'hi-wpessential' ), size: 'small', disabled: i === items.length - 1, onClick: function () {
+							move( i, 1 );
+						} } ),
+						el( c.Button, { icon: 'admin-page', label: __( 'Duplicate', 'hi-wpessential' ), size: 'small', onClick: function () {
+							var next = items.slice();
+							next.splice( i + 1, 0, Object.assign( {}, item ) );
+							update( next );
+						} } ),
+						el( c.Button, { icon: 'trash', label: __( 'Remove', 'hi-wpessential' ), size: 'small', isDestructive: true, onClick: function () {
+							update( items.filter( function ( x, j ) {
+								return j !== i;
+							} ) );
+						} } )
+					),
+					open ? el( 'div', { className: 'wpek-repeater__body' }, Object.keys( fields ).map( function ( k ) {
+						return el( 'div', { key: k, style: { marginBottom: 12 } }, control( k, fields[ k ], item[ k ], function ( v ) {
+							var next = items.slice();
+							next[ i ] = Object.assign( {}, item );
+							next[ i ][ k ] = v;
+							update( next );
+						} ) );
+					} ) ) : null
+				);
+			} ),
+			el( c.Button, { variant: 'secondary', icon: 'plus', className: 'wpek-repeater__add', onClick: function () {
+				update( items.concat( [ blank() ] ) );
+				openState[ 1 ]( items.length );
+			} }, __( 'Add item', 'hi-wpessential' ) )
+		);
+	}
+
 	function control( key, opt, value, onChange ) {
 		var label = opt.label || key;
 		switch ( opt.type ) {
@@ -206,6 +275,8 @@
 				return el( ImageField, { label: label, value: value, onChange: onChange } );
 			case 'icon':
 				return el( IconField, { label: label, value: value, onChange: onChange } );
+			case 'repeater':
+				return el( RepeaterField, { label: label, opt: opt, value: value, onChange: onChange } );
 			case 'html':
 			case 'textarea':
 				return el( c.TextareaControl, { label: label, value: value || '', onChange: onChange, rows: opt.code ? 6 : 3, className: opt.code ? 'wpek-code' : undefined, help: opt.code ? __( 'Example: selector { border-radius: 20px; } selector:hover { opacity: .8; }', 'hi-wpessential' ) : undefined, __nextHasNoMarginBottom: true } );
