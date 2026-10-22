@@ -9,6 +9,7 @@
 namespace WPEssential\Core\Kit;
 
 use WPEssential\Core\Kit;
+use WPEssential\Core\Kit\Groups;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -139,6 +140,11 @@ abstract class Widget extends \Elementor\Widget_Base {
 					$this->add_responsive_control( $key, $args );
 				} else {
 					$this->add_control( $key, $args );
+				}
+			}
+			foreach ( $def['groups'] ?? array() as $key => $group ) {
+				if ( ( $group['panel'] ?? 'style' ) === $panel ) {
+					Groups::elementor( $this, $key, $group );
 				}
 			}
 			$this->end_controls_section();

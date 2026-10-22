@@ -1,0 +1,37 @@
+/* WPEssential kit — options shared by every element (Advanced panel). */
+
+/* Transform, normal and hover; values come from the element's custom properties. */
+.wpek-tf { transform: translate(var(--wpek-tx, 0), var(--wpek-ty, 0)) rotate(var(--wpek-rot, 0deg)) scale(var(--wpek-sc, 1)); transition: transform var(--wpek-dur, 300ms) var(--wp--custom--hover--ease, cubic-bezier(.2, .8, .2, 1)), opacity var(--wpek-dur, 300ms), box-shadow var(--wpek-dur, 300ms), background-color var(--wpek-dur, 300ms), border-color var(--wpek-dur, 300ms); }
+.wpek-tf:is(:hover, :focus-within) { transform: translate(var(--wpek-tx, 0), var(--wpek-h-ty, var(--wpek-ty, 0))) rotate(var(--wpek-h-rot, var(--wpek-rot, 0deg))) scale(var(--wpek-h-sc, var(--wpek-sc, 1))); }
+
+/* Entrance animations, played as the element scrolls into view. */
+@media (prefers-reduced-motion: no-preference) {
+	.wpek-anim { animation-duration: var(--wpek-adur, 800ms); animation-delay: var(--wpek-adelay, 0ms); animation-timing-function: cubic-bezier(.2, .8, .2, 1); animation-fill-mode: both; }
+	@supports (animation-timeline: view()) {
+		.wpek-anim { animation-timeline: view(); animation-range: entry 0% entry 60%; animation-delay: 0ms; }
+	}
+	.wpek-anim-fade { animation-name: wpek-fade; }
+	.wpek-anim-fade-up { animation-name: wpek-fade-up; }
+	.wpek-anim-fade-down { animation-name: wpek-fade-down; }
+	.wpek-anim-fade-left { animation-name: wpek-fade-left; }
+	.wpek-anim-fade-right { animation-name: wpek-fade-right; }
+	.wpek-anim-zoom-in { animation-name: wpek-zoom-in; }
+	.wpek-anim-zoom-out { animation-name: wpek-zoom-out; }
+	.wpek-anim-slide-up { animation-name: wpek-slide-up; }
+	.wpek-anim-flip-x { animation-name: wpek-flip-x; }
+	.wpek-anim-blur-in { animation-name: wpek-blur-in; }
+	.wpek-anim-reveal { animation-name: wpek-reveal; }
+	.wpek-anim-rotate-in { animation-name: wpek-rotate-in; }
+}
+@keyframes wpek-fade { from { opacity: 0; } }
+@keyframes wpek-fade-up { from { opacity: 0; transform: translateY(32px); } }
+@keyframes wpek-fade-down { from { opacity: 0; transform: translateY(-32px); } }
+@keyframes wpek-fade-left { from { opacity: 0; transform: translateX(40px); } }
+@keyframes wpek-fade-right { from { opacity: 0; transform: translateX(-40px); } }
+@keyframes wpek-zoom-in { from { opacity: 0; transform: scale(.9); } }
+@keyframes wpek-zoom-out { from { opacity: 0; transform: scale(1.1); } }
+@keyframes wpek-slide-up { from { transform: translateY(100%); } }
+@keyframes wpek-flip-x { from { opacity: 0; transform: perspective(800px) rotateX(-70deg); } }
+@keyframes wpek-blur-in { from { opacity: 0; filter: blur(12px); } }
+@keyframes wpek-reveal { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+@keyframes wpek-rotate-in { from { opacity: 0; transform: rotate(-8deg) translateY(24px); } }

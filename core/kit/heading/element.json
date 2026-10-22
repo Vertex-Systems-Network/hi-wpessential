@@ -75,56 +75,6 @@
 				"right": "--wpek-align:right;--wpek-mx:0 0 0 auto"
 			}
 		},
-		"size": {
-			"type": "range",
-			"panel": "style",
-			"label": "Font size",
-			"responsive": true,
-			"css": "--wpek-size",
-			"unit": "px",
-			"min": 12,
-			"max": 160,
-			"default": ""
-		},
-		"weight": {
-			"type": "select",
-			"panel": "style",
-			"label": "Weight",
-			"css": "--wpek-weight",
-			"default": "",
-			"options": {
-				"": "Default",
-				"400": "Regular",
-				"500": "Medium",
-				"600": "Semi bold",
-				"700": "Bold",
-				"800": "Extra bold"
-			}
-		},
-		"lineHeight": {
-			"type": "range",
-			"panel": "style",
-			"label": "Line height",
-			"responsive": true,
-			"css": "--wpek-lh",
-			"unit": "",
-			"min": 0.8,
-			"max": 2,
-			"step": 0.05,
-			"default": ""
-		},
-		"tracking": {
-			"type": "range",
-			"panel": "style",
-			"label": "Letter spacing",
-			"responsive": true,
-			"css": "--wpek-ls",
-			"unit": "em",
-			"min": -0.1,
-			"max": 0.3,
-			"step": 0.005,
-			"default": ""
-		},
 		"maxWidth": {
 			"type": "range",
 			"panel": "style",
@@ -134,13 +84,6 @@
 			"unit": "ch",
 			"min": 8,
 			"max": 80,
-			"default": ""
-		},
-		"color": {
-			"type": "color",
-			"panel": "style",
-			"label": "Colour",
-			"css": "--wpek-color",
 			"default": ""
 		},
 		"accentStyle": {
@@ -154,13 +97,6 @@
 				"outline": "Outline",
 				"highlight": "Highlighter"
 			}
-		},
-		"eyebrowColor": {
-			"type": "color",
-			"panel": "style",
-			"label": "Eyebrow colour",
-			"css": "--wpek-eyebrow",
-			"default": ""
 		},
 		"spaceBelow": {
 			"type": "range",
@@ -194,6 +130,47 @@
 				"fade-up": "Fade up",
 				"reveal": "Reveal"
 			}
+		}
+	},
+	"groups": {
+		"titleTypography": {
+			"type": "typography",
+			"label": "Title typography",
+			"selector": ".wpe-heading__title",
+			"panel": "style"
+		},
+		"titleColor": {
+			"type": "colors",
+			"label": "Title colour",
+			"prop": "color",
+			"selector": ".wpe-heading__title",
+			"panel": "style"
+		},
+		"accentTypography": {
+			"type": "typography",
+			"label": "Accent typography",
+			"selector": ".wpe-heading__accent",
+			"panel": "style"
+		},
+		"eyebrowTypography": {
+			"type": "typography",
+			"label": "Eyebrow typography",
+			"selector": ".wpe-heading__eyebrow",
+			"panel": "style"
+		},
+		"eyebrowColor": {
+			"type": "colors",
+			"label": "Eyebrow colour",
+			"prop": "color",
+			"selector": ".wpe-heading__eyebrow",
+			"panel": "style"
+		},
+		"titleMargin": {
+			"type": "spacing",
+			"label": "Title margin",
+			"prop": "margin",
+			"selector": ".wpe-heading__title",
+			"panel": "style"
 		}
 	}
 }
