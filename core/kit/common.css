@@ -35,3 +35,16 @@
 @keyframes wpek-blur-in { from { opacity: 0; filter: blur(12px); } }
 @keyframes wpek-reveal { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
 @keyframes wpek-rotate-in { from { opacity: 0; transform: rotate(-8deg) translateY(24px); } }
+
+/* Transition options (duration, easing, delay) for every state change. */
+.wpek-tr, .wpek-tr * { transition-duration: var(--wpek-dur, 300ms); transition-timing-function: var(--wpek-ease, var(--wp--custom--hover--ease, cubic-bezier(.2, .8, .2, 1))); transition-delay: var(--wpek-tdelay, 0ms); }
+
+/* Hover presets: values come from the demo's hover tokens, so one demo restyles every element. */
+[class*="wpek-hp-"] { transition: transform var(--wp--custom--hover--duration, .35s) var(--wp--custom--hover--ease, ease), box-shadow var(--wp--custom--hover--duration, .35s), filter var(--wp--custom--hover--duration, .35s), opacity var(--wp--custom--hover--duration, .35s); }
+.wpek-hp-lift:is(:hover, :focus-within) { transform: translateY(var(--wp--custom--hover--lift, -4px)); box-shadow: var(--wp--custom--hover--shadow, 0 18px 40px rgba(11, 26, 61, .14)); }
+.wpek-hp-zoom:is(:hover, :focus-within) { transform: scale(var(--wp--custom--hover--zoom, 1.04)); }
+.wpek-hp-glow:is(:hover, :focus-within) { box-shadow: 0 0 0 4px color-mix(in srgb, var(--wp--preset--color--primary, #ec7d1a) 22%, transparent), 0 14px 36px color-mix(in srgb, var(--wp--preset--color--primary, #ec7d1a) 35%, transparent); }
+.wpek-hp-shadow:is(:hover, :focus-within) { box-shadow: var(--wp--custom--hover--card-shadow, 0 24px 60px rgba(11, 26, 61, .18)); }
+:has(> .wpek-hp-dim:hover) > .wpek-hp-dim:not(:hover) { opacity: .55; filter: saturate(.6); }
+.wpek-hp-tilt:is(:hover, :focus-within) { transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { [class*="wpek-hp-"], .wpek-tr, .wpek-tf { transition: none !important; } [class*="wpek-hp-"]:hover { transform: none !important; } }
