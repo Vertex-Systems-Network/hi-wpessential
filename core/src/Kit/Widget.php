@@ -93,6 +93,8 @@ abstract class Widget extends \Elementor\Widget_Base {
 			'text'     => \Elementor\Controls_Manager::TEXT,
 			'textarea' => \Elementor\Controls_Manager::TEXTAREA,
 			'url'      => \Elementor\Controls_Manager::TEXT,
+			'image'    => \Elementor\Controls_Manager::MEDIA,
+			'html'     => \Elementor\Controls_Manager::WYSIWYG,
 			'select'   => \Elementor\Controls_Manager::SELECT,
 			'color'    => \Elementor\Controls_Manager::SELECT,
 			'toggle'   => \Elementor\Controls_Manager::SWITCHER,

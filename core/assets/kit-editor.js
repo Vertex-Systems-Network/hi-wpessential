@@ -27,6 +27,26 @@
 	function control( key, opt, value, onChange ) {
 		var label = opt.label || key;
 		switch ( opt.type ) {
+			case 'image':
+				var img = value && 'object' === typeof value ? value : {};
+				return el( 'div', null,
+					el( 'p', { style: { margin: '0 0 8px', fontWeight: 600, fontSize: 11, textTransform: 'uppercase' } }, label ),
+					img.url ? el( 'img', { src: img.url, alt: '', style: { display: 'block', maxWidth: '100%', marginBottom: 8, borderRadius: 4 } } ) : null,
+					el( be.MediaUploadCheck, null, el( be.MediaUpload, {
+						allowedTypes: [ 'image' ],
+						value: img.id,
+						onSelect: function ( m ) {
+							onChange( { id: m.id, url: m.url } );
+						},
+						render: function ( o ) {
+							return el( c.Button, { variant: 'secondary', onClick: o.open }, img.url ? __( 'Replace image', 'hi-wpessential' ) : __( 'Select image', 'hi-wpessential' ) );
+						},
+					} ) ),
+					img.url ? el( c.Button, { variant: 'link', isDestructive: true, onClick: function () {
+						onChange( {} );
+					}, style: { marginLeft: 8 } }, __( 'Remove', 'hi-wpessential' ) ) : null
+				);
+			case 'html':
 			case 'textarea':
 				return el( c.TextareaControl, { label: label, value: value || '', onChange: onChange, rows: 2, __nextHasNoMarginBottom: true } );
 			case 'select':

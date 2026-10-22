@@ -27,11 +27,11 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 2 | Container queries (respond to the parent's width) | ⏳ |
 | 3 | Fluid typography (size at 360 and at 1440, scales between) | ✅ Gutenberg (Elementor: type `clamp()` in the size field) |
 | 4 | Fluid spacing | ⏳ |
-| 5 | Aspect ratio, object-fit, object-position per breakpoint | ⏳ with Image |
+| 5 | Aspect ratio, object-fit, object-position per breakpoint | ✅ Image |
 | 6 | Logical spacing and mirrored icons for RTL | ⏳ |
 | 7 | Spacing and radius from theme tokens (sm/md/lg) | ⏳ |
 | 8 | Dark-mode value for colours, background, border and shadow | ✅ |
-| 9 | Dark-mode image | ✅ background image · ⏳ Image element |
+| 9 | Dark-mode image | ✅ background image and Image element |
 | 10 | Contrast warning in the editor (WCAG AA) | ⬜ |
 | 11 | Focus and pressed (active) states besides hover | ✅ colours |
 | 12 | Transition duration, easing and delay | ✅ |
@@ -44,7 +44,7 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 19 | Sticky with offset and "stop at" per breakpoint | ⏳ |
 | 20 | Reduced-motion alternative (not only off) | ⬜ |
 | 21 | Animation trigger: scroll, hover, click, load | ⬜ |
-| 22 | Gradient text and text clip | ✅ Heading accent · ⏳ all text |
+| 22 | Gradient text and text clip | ✅ Heading accent and Text |
 | 23 | Gradient border, animated gradient border | ⏳ |
 | 24 | Glass (backdrop blur) | ⏳ |
 | 25 | Blend modes | ⏳ |
@@ -52,12 +52,12 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 27 | Clip-path shapes (wave, slant, blob) | ⬜ |
 | 28 | Noise / grain texture | ⬜ |
 | 29 | Elevation tokens that follow the state | ⏳ |
-| 30 | Text balance/pretty wrap and line clamp | ✅ balance on headings · ⏳ line clamp |
-| 31 | Semantic HTML tag on every element | ✅ Heading · ⏳ others |
+| 30 | Text balance/pretty wrap and line clamp | ✅ headings and Text (balance/pretty, line clamp with read more) |
+| 31 | Semantic HTML tag on every element | ✅ Heading, Text, Image (figure when captioned) · ⏳ others |
 | 32 | Schema output (FAQPage, Product, Review, Event, HowTo, Breadcrumb) | ⏳ with those elements |
 | 33 | ARIA label, role, aria-hidden, aria-live | ✅ |
-| 34 | LCP control for images (priority, lazy/eager) | ⏳ with Image |
-| 35 | Decorative image (empty alt, hidden from screen readers) | ⏳ with Image |
+| 34 | LCP control for images (priority, lazy/eager) | ✅ Image |
+| 35 | Decorative image (empty alt, hidden from screen readers) | ✅ Image |
 | 36 | Show by login, role, WooCommerce cart/purchase (free; Elementor has this only in Pro) | ⬜ |
 | 37 | Show by date and time | ⬜ |
 | 38 | Show by device, URL parameter, referrer | ⬜ |
@@ -67,5 +67,13 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 42 | Analytics data attributes for click events | ⏳ |
 | 43 | content-visibility: auto; CSS/JS only where used | ✅ CSS per element · ⏳ content-visibility |
 | 44 | Every text field translatable (WPML/Polylang) | ⏳ wpml-config for kit blocks |
+
+## 3. Parity rule
+
+Before an element is built, its Elementor widget in `banks/elements/elementor/` is checked option by
+option: every Elementor option is in the kit element, then our extras on top. Shared groups for this:
+typography, spacing, border, shadow, background, colours, text effects (text shadow normal/hover,
+text stroke, blend mode) and CSS filters (blur, brightness, contrast, saturation, hue, greyscale and
+opacity, normal and hover).
 
 Order: daily-use first (1–4, 8–9, 11–13, 31–34), then motion and effects, then display rules and workflow.
