@@ -635,6 +635,12 @@ class Groups {
 			'common'     => true,
 		);
 		$attr   = array(
+			'customCss'       => array(
+				'type'  => 'textarea',
+				'panel' => 'advanced',
+				'label' => __( 'Custom CSS (write "selector" for this element)', 'hi-wpessential' ),
+				'code'  => true,
+			),
 			'cssClass'        => array(
 				'type'   => 'text',
 				'label'  => __( 'CSS classes', 'hi-wpessential' ),
