@@ -1,0 +1,149 @@
+{
+	"name": "button",
+	"title": "Button (WPEssential)",
+	"icon": "button",
+	"elementor_icon": "eicon-button",
+	"keywords": [
+		"button",
+		"cta",
+		"link"
+	],
+	"panels": {
+		"content": "Content",
+		"style": "Style",
+		"motion": "Hover & motion"
+	},
+	"attributes": {
+		"text": {
+			"type": "text",
+			"label": "Text",
+			"default": "Get started"
+		},
+		"url": {
+			"type": "url",
+			"label": "Link",
+			"default": "#"
+		},
+		"newTab": {
+			"type": "toggle",
+			"label": "Open in a new tab",
+			"default": false
+		},
+		"nofollow": {
+			"type": "toggle",
+			"label": "Nofollow",
+			"default": false
+		},
+		"ariaLabel": {
+			"type": "text",
+			"label": "Screen-reader label (optional)",
+			"default": ""
+		},
+		"icon": {
+			"type": "select",
+			"label": "Icon",
+			"default": "arrow",
+			"options": {
+				"none": "None",
+				"arrow": "Arrow \u2197",
+				"right": "Arrow \u2192",
+				"download": "Download",
+				"play": "Play"
+			}
+		},
+		"iconFirst": {
+			"type": "toggle",
+			"label": "Icon before text",
+			"default": false
+		},
+		"variant": {
+			"type": "select",
+			"panel": "style",
+			"label": "Style",
+			"default": "gradient",
+			"options": {
+				"gradient": "Brand gradient",
+				"primary": "Primary",
+				"dark": "Dark",
+				"outline": "Outline",
+				"ghost": "Ghost (on dark)",
+				"link": "Text link"
+			}
+		},
+		"size": {
+			"type": "select",
+			"panel": "style",
+			"label": "Size",
+			"default": "md",
+			"options": {
+				"sm": "Small",
+				"md": "Medium",
+				"lg": "Large"
+			}
+		},
+		"align": {
+			"type": "select",
+			"panel": "style",
+			"label": "Alignment",
+			"responsive": true,
+			"css": "--wpek-justify",
+			"default": "",
+			"options": {
+				"": "Default",
+				"start": "Left",
+				"center": "Center",
+				"end": "Right",
+				"stretch": "Full width"
+			}
+		},
+		"radius": {
+			"type": "range",
+			"panel": "style",
+			"label": "Corner radius",
+			"responsive": true,
+			"css": "--wpek-radius",
+			"unit": "px",
+			"min": 0,
+			"max": 999,
+			"default": ""
+		},
+		"paddingX": {
+			"type": "range",
+			"panel": "style",
+			"label": "Side padding",
+			"responsive": true,
+			"css": "--wpek-px",
+			"unit": "px",
+			"min": 0,
+			"max": 80,
+			"default": ""
+		},
+		"background": {
+			"type": "color",
+			"panel": "style",
+			"label": "Background (overrides style)",
+			"css": "--wpek-bg",
+			"default": ""
+		},
+		"textColor": {
+			"type": "color",
+			"panel": "style",
+			"label": "Text colour",
+			"css": "--wpek-fg",
+			"default": ""
+		},
+		"hover": {
+			"type": "select",
+			"panel": "motion",
+			"label": "Hover",
+			"default": "lift",
+			"options": {
+				"none": "None",
+				"lift": "Lift",
+				"glow": "Glow",
+				"fill": "Fill",
+				"invert": "Invert to outline"
+			}
+		}
+	}
+}
