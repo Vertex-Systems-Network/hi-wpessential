@@ -57,6 +57,11 @@ function wpessential_site_fields() {
 		'success'       => __( 'Success', 'hi-wpessential' ),
 		'warning'       => __( 'Warning', 'hi-wpessential' ),
 		'danger'        => __( 'Error', 'hi-wpessential' ),
+		'primary-soft'  => __( 'Primary tint (soft backgrounds)', 'hi-wpessential' ),
+		'on-ink'        => __( 'Text on ink', 'hi-wpessential' ),
+		'on-ink-muted'  => __( 'Muted text on ink', 'hi-wpessential' ),
+		'pro'           => __( 'Pro badge', 'hi-wpessential' ),
+		'star'          => __( 'Rating stars', 'hi-wpessential' ),
 	);
 	$light   = array();
 	$dark    = array();
@@ -124,19 +129,47 @@ function wpessential_site_fields() {
 		'h2'      => array( 'H2', 28, 38 ),
 		'h3'      => array( 'H3', 22, 28 ),
 		'h4'      => array( 'H4', 18, 20 ),
+		'body-l'  => array( __( 'Large body text', 'hi-wpessential' ), 16, 18 ),
 	) as $slug => $d ) {
 		/* translators: %s: heading level. */
 		$typography[ 'size_' . $slug . '_min' ] = $px( sprintf( __( '%s size on phones', 'hi-wpessential' ), $d[0] ), 12, 120 );
 		/* translators: %s: heading level. */
 		$typography[ 'size_' . $slug . '_max' ] = $px( sprintf( __( '%s size on desktop', 'hi-wpessential' ), $d[0] ), 12, 160 );
 	}
+	$colour                        = static fn( $label ) => array(
+		'type'  => 'color',
+		'label' => $label,
+	);
+	$typography['size_h5']         = $px( __( 'H5 size', 'hi-wpessential' ), 12, 40 );
+	$typography['size_h6']         = $px( __( 'H6 size', 'hi-wpessential' ), 10, 32 );
+	$typography['size_small']      = $px( __( 'Small text size', 'hi-wpessential' ), 10, 18 );
+	$typography['body_weight']     = array(
+		'type'    => 'select',
+		'label'   => __( 'Body text weight', 'hi-wpessential' ),
+		'choices' => array(
+			''    => __( 'Theme default', 'hi-wpessential' ),
+			'300' => '300 · Light',
+		) + array_slice( $weights, 1, 3, true ),
+	);
+	$typography['paragraph_space'] = $px( __( 'Space between paragraphs (em)', 'hi-wpessential' ), 0, 3, 0.05, 'em' );
+	$typography['heading_color']   = $colour( __( 'Heading colour', 'hi-wpessential' ) );
+	$typography['selection_bg']    = $colour( __( 'Selected text background', 'hi-wpessential' ) );
+	$typography['selection_text']  = $colour( __( 'Selected text colour', 'hi-wpessential' ) );
+	$gradient_type                 = array(
+		'type'    => 'select',
+		'label'   => __( 'Type', 'hi-wpessential' ),
+		'choices' => array(
+			''       => __( 'Linear (theme default)', 'hi-wpessential' ),
+			'radial' => __( 'Radial', 'hi-wpessential' ),
+		),
+	);
 	return array(
-		'wpessential_site_colors' => array(
+		'wpessential_site_colors'    => array(
 			'title'       => __( 'Global colours', 'hi-wpessential' ),
 			'description' => __( 'The site palette. Every block, kit element and Elementor widget uses these. Leave empty to keep the demo’s colour.', 'hi-wpessential' ),
 			'fields'      => $light,
 		),
-		'wpessential_site_dark'   => array(
+		'wpessential_site_dark'      => array(
 			'title'       => __( 'Dark mode', 'hi-wpessential' ),
 			'description' => __( 'The colours visitors see in dark mode, and how dark mode works.', 'hi-wpessential' ),
 			'fields'      => array(
@@ -158,24 +191,24 @@ function wpessential_site_fields() {
 				),
 			) + $dark,
 		),
-		'wpessential_site_type'   => array(
+		'wpessential_site_type'      => array(
 			'title'       => __( 'Typography', 'hi-wpessential' ),
 			'description' => __( 'Fonts are bundled with the theme (no Google request). Heading sizes scale smoothly between the phone and the desktop value.', 'hi-wpessential' ),
 			'fields'      => $typography,
 		),
-		'wpessential_site_button' => array(
+		'wpessential_site_button'    => array(
 			'title'  => __( 'Buttons', 'hi-wpessential' ),
 			'fields' => array(
-				'btn_radius'  => $px( __( 'Corner radius', 'hi-wpessential' ), 0, 60 ),
-				'btn_pad_y'   => $px( __( 'Padding top / bottom', 'hi-wpessential' ), 4, 32 ),
-				'btn_pad_x'   => $px( __( 'Padding left / right', 'hi-wpessential' ), 8, 64 ),
-				'btn_size'    => $px( __( 'Text size', 'hi-wpessential' ), 11, 22 ),
-				'btn_weight'  => array(
+				'btn_radius'     => $px( __( 'Corner radius', 'hi-wpessential' ), 0, 60 ),
+				'btn_pad_y'      => $px( __( 'Padding top / bottom', 'hi-wpessential' ), 4, 32 ),
+				'btn_pad_x'      => $px( __( 'Padding left / right', 'hi-wpessential' ), 8, 64 ),
+				'btn_size'       => $px( __( 'Text size', 'hi-wpessential' ), 11, 22 ),
+				'btn_weight'     => array(
 					'type'    => 'select',
 					'label'   => __( 'Text weight', 'hi-wpessential' ),
 					'choices' => $weights,
 				),
-				'btn_case'    => array(
+				'btn_case'       => array(
 					'type'    => 'select',
 					'label'   => __( 'Letter case', 'hi-wpessential' ),
 					'choices' => array(
@@ -184,11 +217,28 @@ function wpessential_site_fields() {
 						'uppercase' => __( 'UPPERCASE', 'hi-wpessential' ),
 					),
 				),
-				'btn_lift'    => $px( __( 'Lift on hover', 'hi-wpessential' ), 0, 8 ),
-				'btn_spacing' => $px( __( 'Letter spacing (em)', 'hi-wpessential' ), 0, 0.2, 0.01, 'em' ),
+				'btn_lift'       => $px( __( 'Lift on hover', 'hi-wpessential' ), 0, 8 ),
+				'btn_spacing'    => $px( __( 'Letter spacing (em)', 'hi-wpessential' ), 0, 0.2, 0.01, 'em' ),
+				'btn_bg'         => $colour( __( 'Background', 'hi-wpessential' ) ),
+				'btn_text'       => $colour( __( 'Text colour', 'hi-wpessential' ) ),
+				'btn_hover_bg'   => $colour( __( 'Background on hover', 'hi-wpessential' ) ),
+				'btn_hover_text' => $colour( __( 'Text colour on hover', 'hi-wpessential' ) ),
+				'btn_border_w'   => $px( __( 'Border width', 'hi-wpessential' ), 0, 6 ),
+				'btn_border'     => $colour( __( 'Border colour', 'hi-wpessential' ) ),
+				'btn_shadow'     => array(
+					'type'    => 'select',
+					'label'   => __( 'Shadow', 'hi-wpessential' ),
+					'choices' => array(
+						''     => __( 'Theme default', 'hi-wpessential' ),
+						'none' => __( 'None', 'hi-wpessential' ),
+						'sm'   => __( 'Small', 'hi-wpessential' ),
+						'md'   => __( 'Medium', 'hi-wpessential' ),
+						'lg'   => __( 'Large', 'hi-wpessential' ),
+					),
+				),
 			),
 		),
-		'wpessential_site_forms'  => array(
+		'wpessential_site_forms'     => array(
 			'title'  => __( 'Form fields', 'hi-wpessential' ),
 			'fields' => array(
 				'field_radius' => $px( __( 'Corner radius', 'hi-wpessential' ), 0, 30 ),
@@ -207,7 +257,7 @@ function wpessential_site_fields() {
 				),
 			),
 		),
-		'wpessential_site_shape'  => array(
+		'wpessential_site_shape'     => array(
 			'title'       => __( 'Corners & images', 'hi-wpessential' ),
 			'description' => __( 'The radius scale every card, image and element uses.', 'hi-wpessential' ),
 			'fields'      => array(
@@ -222,13 +272,16 @@ function wpessential_site_fields() {
 				),
 			),
 		),
-		'wpessential_site_layout' => array(
+		'wpessential_site_layout'    => array(
 			'title'       => __( 'Layout', 'hi-wpessential' ),
 			'description' => __( 'Breakpoints are fixed in the theme (1920, 1440, 1280, 1024, 768, 560, 480, 360, 320) so every demo and element lines up.', 'hi-wpessential' ),
 			'fields'      => array(
 				'content_width' => $px( __( 'Content width', 'hi-wpessential' ), 480, 1200 ),
 				'wide_width'    => $px( __( 'Wide width', 'hi-wpessential' ), 900, 1920 ),
 				'section_space' => $px( __( 'Space between sections (desktop)', 'hi-wpessential' ), 24, 200 ),
+				'gutter'        => $px( __( 'Side space on desktop', 'hi-wpessential' ), 0, 120 ),
+				'gutter_mobile' => $px( __( 'Side space on phones', 'hi-wpessential' ), 0, 48 ),
+				'block_gap'     => $px( __( 'Space between blocks', 'hi-wpessential' ), 0, 80 ),
 				'header_height' => $px( __( 'Header height', 'hi-wpessential' ), 48, 120 ),
 				'sticky_header' => array(
 					'type'    => 'select',
@@ -248,7 +301,119 @@ function wpessential_site_fields() {
 				),
 			),
 		),
-		'wpessential_site_motion' => array(
+		'wpessential_site_gradients' => array(
+			'title'       => __( 'Gradients', 'hi-wpessential' ),
+			'description' => __( 'Brand gradient (gradient buttons, accent words, highlights), Night (dark sections) and the image fade.', 'hi-wpessential' ),
+			'fields'      => array(
+				'grad_brand_auto'  => array(
+					'type'  => 'toggle',
+					'label' => __( 'Brand gradient follows Primary → Secondary', 'hi-wpessential' ),
+				),
+				'grad_brand_from'  => $colour( __( 'Brand gradient: start', 'hi-wpessential' ) ),
+				'grad_brand_to'    => $colour( __( 'Brand gradient: end', 'hi-wpessential' ) ),
+				'grad_brand_angle' => $px( __( 'Brand gradient: angle', 'hi-wpessential' ), 0, 360, 5, 'deg' ),
+				'grad_brand_type'  => $gradient_type,
+				'grad_night_from'  => $colour( __( 'Night gradient: start', 'hi-wpessential' ) ),
+				'grad_night_to'    => $colour( __( 'Night gradient: end', 'hi-wpessential' ) ),
+				'grad_night_angle' => $px( __( 'Night gradient: angle', 'hi-wpessential' ), 0, 360, 5, 'deg' ),
+				'grad_fade'        => $colour( __( 'Image fade colour', 'hi-wpessential' ) ),
+				'grad_fade_amount' => $px( __( 'Image fade strength (%)', 'hi-wpessential' ), 0, 100, 5, '%' ),
+			),
+		),
+		'wpessential_site_links'     => array(
+			'title'  => __( 'Links', 'hi-wpessential' ),
+			'fields' => array(
+				'link_color'     => $colour( __( 'Link colour', 'hi-wpessential' ) ),
+				'link_hover'     => $colour( __( 'Link hover colour', 'hi-wpessential' ) ),
+				'link_underline' => array(
+					'type'    => 'select',
+					'label'   => __( 'Underline', 'hi-wpessential' ),
+					'choices' => array(
+						''       => __( 'On hover (theme default)', 'hi-wpessential' ),
+						'always' => __( 'Always', 'hi-wpessential' ),
+						'never'  => __( 'Never', 'hi-wpessential' ),
+						'text'   => __( 'Always inside text, on hover elsewhere', 'hi-wpessential' ),
+					),
+				),
+				'link_thickness' => $px( __( 'Underline thickness', 'hi-wpessential' ), 1, 4 ),
+				'link_offset'    => $px( __( 'Underline distance', 'hi-wpessential' ), 0, 10 ),
+				'link_weight'    => array(
+					'type'    => 'select',
+					'label'   => __( 'Link weight', 'hi-wpessential' ),
+					'choices' => $weights,
+				),
+			),
+		),
+		'wpessential_site_shadows'   => array(
+			'title'       => __( 'Shadows', 'hi-wpessential' ),
+			'description' => __( 'The small, medium and large shadows every card and element uses.', 'hi-wpessential' ),
+			'fields'      => array(
+				'shadow_color'    => $colour( __( 'Shadow colour', 'hi-wpessential' ) ),
+				'shadow_strength' => $px( __( 'Shadow strength (%)', 'hi-wpessential' ), 0, 300, 10, '%' ),
+				'shadow_sm'       => array(
+					'type'  => 'text',
+					'label' => __( 'Small shadow (CSS, optional)', 'hi-wpessential' ),
+				),
+				'shadow_md'       => array(
+					'type'  => 'text',
+					'label' => __( 'Medium shadow (CSS, optional)', 'hi-wpessential' ),
+				),
+				'shadow_lg'       => array(
+					'type'  => 'text',
+					'label' => __( 'Large shadow (CSS, optional)', 'hi-wpessential' ),
+				),
+			),
+		),
+		'wpessential_site_header'    => array(
+			'title'  => __( 'Header & footer', 'hi-wpessential' ),
+			'fields' => array(
+				'header_bg'         => $colour( __( 'Header background', 'hi-wpessential' ) ),
+				'header_text'       => $colour( __( 'Header text and menu', 'hi-wpessential' ) ),
+				'header_border'     => $colour( __( 'Header bottom line', 'hi-wpessential' ) ),
+				'header_glass'      => array(
+					'type'  => 'toggle',
+					'label' => __( 'Glass header (see-through with blur)', 'hi-wpessential' ),
+				),
+				'header_shadow'     => array(
+					'type'    => 'select',
+					'label'   => __( 'Shadow when scrolling', 'hi-wpessential' ),
+					'choices' => array(
+						''    => __( 'On (theme default)', 'hi-wpessential' ),
+						'off' => __( 'Off', 'hi-wpessential' ),
+					),
+				),
+				'menu_size'         => $px( __( 'Menu text size', 'hi-wpessential' ), 11, 22 ),
+				'menu_weight'       => array(
+					'type'    => 'select',
+					'label'   => __( 'Menu text weight', 'hi-wpessential' ),
+					'choices' => $weights,
+				),
+				'menu_gap'          => $px( __( 'Space between menu items', 'hi-wpessential' ), 0, 64 ),
+				'footer_bg'         => $colour( __( 'Footer background', 'hi-wpessential' ) ),
+				'footer_text'       => $colour( __( 'Footer text', 'hi-wpessential' ) ),
+				'footer_heading'    => $colour( __( 'Footer headings', 'hi-wpessential' ) ),
+				'footer_link'       => $colour( __( 'Footer links', 'hi-wpessential' ) ),
+				'footer_link_hover' => $colour( __( 'Footer links on hover', 'hi-wpessential' ) ),
+			),
+		),
+		'wpessential_site_a11y'      => array(
+			'title'       => __( 'Accessibility', 'hi-wpessential' ),
+			'description' => __( 'Keyboard focus and readability for every visitor.', 'hi-wpessential' ),
+			'fields'      => array(
+				'focus_color' => $colour( __( 'Keyboard focus ring colour', 'hi-wpessential' ) ),
+				'focus_width' => $px( __( 'Focus ring width', 'hi-wpessential' ), 1, 6 ),
+				'skip_link'   => array(
+					'type'    => 'select',
+					'label'   => __( '"Skip to content" link', 'hi-wpessential' ),
+					'choices' => array(
+						''     => __( 'Show on keyboard focus (recommended)', 'hi-wpessential' ),
+						'show' => __( 'Always visible', 'hi-wpessential' ),
+					),
+				),
+				'min_text'    => $px( __( 'Smallest text size allowed', 'hi-wpessential' ), 10, 16 ),
+			),
+		),
+		'wpessential_site_motion'    => array(
 			'title'       => __( 'Hover & motion', 'hi-wpessential' ),
 			'description' => __( 'Visitors who ask their device for less motion always get less motion.', 'hi-wpessential' ),
 			'fields'      => array(
@@ -404,6 +569,68 @@ function wpessential_site_preset( array $settings, array $path ) {
 	return array_values( (array) $list );
 }
 
+/**
+ * A gradient preset rebuilt from the settings, or '' to keep it.
+ *
+ * @param string $slug Gradient slug.
+ * @param array  $v    Values.
+ * @return string
+ */
+function wpessential_site_gradient( $slug, array $v ) {
+	if ( 'fade-bottom' === $slug && ! empty( $v['grad_fade'] ) ) {
+		$amount = isset( $v['grad_fade_amount'] ) && is_numeric( $v['grad_fade_amount'] ) ? (int) $v['grad_fade_amount'] : 85;
+		return 'linear-gradient(180deg, color-mix(in srgb, ' . $v['grad_fade'] . ' 0%, transparent) 0%, color-mix(in srgb, ' . $v['grad_fade'] . ' ' . $amount . '%, transparent) 100%)';
+	}
+	if ( ! in_array( $slug, array( 'brand', 'night' ), true ) ) {
+		return '';
+	}
+	$from = $v[ 'grad_' . $slug . '_from' ] ?? '';
+	$to   = $v[ 'grad_' . $slug . '_to' ] ?? '';
+	if ( 'brand' === $slug && ! empty( $v['grad_brand_auto'] ) ) {
+		$from = $from ? $from : 'var(--wp--preset--color--primary)';
+		$to   = $to ? $to : 'var(--wp--preset--color--secondary)';
+	}
+	if ( ! $from && ! $to ) {
+		return '';
+	}
+	$from  = $from ? $from : $to;
+	$to    = $to ? $to : $from;
+	$angle = isset( $v[ 'grad_' . $slug . '_angle' ] ) && is_numeric( $v[ 'grad_' . $slug . '_angle' ] ) ? (int) $v[ 'grad_' . $slug . '_angle' ] : ( 'brand' === $slug ? 120 : 180 );
+	if ( 'radial' === ( $v[ 'grad_' . $slug . '_type' ] ?? '' ) ) {
+		return 'radial-gradient(circle at 30% 20%, ' . $from . ' 0%, ' . $to . ' 100%)';
+	}
+	return 'linear-gradient(' . $angle . 'deg, ' . $from . ' 0%, ' . $to . ' 100%)';
+}
+
+/**
+ * A shadow preset rebuilt from the settings, or '' to keep it.
+ *
+ * @param array $preset Preset (slug, shadow).
+ * @param array $v      Values.
+ * @return string
+ */
+function wpessential_site_shadow( array $preset, array $v ) {
+	$own = trim( (string) ( $v[ 'shadow_' . $preset['slug'] ] ?? '' ) );
+	if ( '' !== $own ) {
+		return preg_replace( '/[^a-z0-9#%.,() \-]/i', '', $own );
+	}
+	if ( empty( $v['shadow_color'] ) && ! isset( $v['shadow_strength'] ) ) {
+		return '';
+	}
+	$hex      = ltrim( (string) ( $v['shadow_color'] ?? '#0a0f21' ), '#' );
+	$strength = isset( $v['shadow_strength'] ) && is_numeric( $v['shadow_strength'] ) ? $v['shadow_strength'] / 100 : 1;
+	if ( 6 !== strlen( $hex ) ) {
+		return '';
+	}
+	$rgb = implode( ',', array_map( 'hexdec', str_split( $hex, 2 ) ) );
+	// Same offsets as the theme, new colour and opacity.
+	return preg_replace_callback(
+		'/rgba?\(\s*[\d.]+\s*,\s*[\d.]+\s*,\s*[\d.]+\s*,\s*([\d.]+)\s*\)/',
+		static fn( $m ) => 'rgba(' . $rgb . ',' . round( min( 1, (float) $m[1] * $strength ), 3 ) . ')',
+		(string) $preset['shadow']
+	);
+}
+
 // The values go into the user layer of theme.json (above the demo's style variation), so the
 // front end, the editor and Elementor share them.
 add_filter(
@@ -465,7 +692,10 @@ add_filter(
 		foreach ( wpessential_site_preset( $settings, array( 'typography', 'fontSizes' ) ) as $i => $s ) {
 			$min = wpessential_site_len( $v, 'size_' . $s['slug'] . '_min' );
 			$max = wpessential_site_len( $v, 'size_' . $s['slug'] . '_max' );
-			if ( 'body' === $s['slug'] && wpessential_site_len( $v, 'size_body' ) ) {
+			if ( 'small' === $s['slug'] && wpessential_site_len( $v, 'size_small' ) ) {
+				$s['size']  = wpessential_site_len( $v, 'size_small' );
+				$s['fluid'] = false;
+			} elseif ( 'body' === $s['slug'] && wpessential_site_len( $v, 'size_body' ) ) {
 				$s['size']  = wpessential_site_len( $v, 'size_body' );
 				$s['fluid'] = false;
 			} elseif ( $min || $max ) {
@@ -542,7 +772,7 @@ add_filter(
 				}
 			}
 		}
-		$button['typography']         = array_merge(
+		$button['typography'] = array_merge(
 			(array) ( $button['typography'] ?? array() ),
 			array_filter(
 				array(
@@ -553,7 +783,103 @@ add_filter(
 				)
 			)
 		);
+		foreach ( array(
+			'btn_bg'   => array( 'color', 'background' ),
+			'btn_text' => array( 'color', 'text' ),
+		) as $key => $path ) {
+			if ( ! empty( $v[ $key ] ) ) {
+				$button[ $path[0] ][ $path[1] ] = $v[ $key ];
+			}
+		}
+		foreach ( array(
+			'btn_hover_bg'   => 'background',
+			'btn_hover_text' => 'text',
+		) as $key => $prop ) {
+			if ( ! empty( $v[ $key ] ) ) {
+				$button[':hover']['color'][ $prop ] = $v[ $key ];
+			}
+		}
+		if ( wpessential_site_len( $v, 'btn_border_w' ) ) {
+			$button['border']['width'] = wpessential_site_len( $v, 'btn_border_w' );
+			$button['border']['style'] = 'solid';
+		}
+		if ( ! empty( $v['btn_border'] ) ) {
+			$button['border']['color'] = $v['btn_border'];
+		}
+		if ( ! empty( $v['btn_shadow'] ) ) {
+			$button['shadow'] = 'none' === $v['btn_shadow'] ? 'none' : 'var(--wp--preset--shadow--' . $v['btn_shadow'] . ')';
+		}
 		$styles['elements']['button'] = $button;
+
+		// Gradients.
+		$grads = array();
+		foreach ( wpessential_site_preset( $settings, array( 'color', 'gradients' ) ) as $g ) {
+			$css = wpessential_site_gradient( $g['slug'], $v );
+			if ( $css ) {
+				$g['gradient'] = $css;
+			}
+			$grads[] = $g;
+		}
+		if ( $grads ) {
+			$settings['color']['gradients'] = $grads;
+		}
+
+		// Shadows.
+		$shadows = array();
+		foreach ( wpessential_site_preset( $settings, array( 'shadow', 'presets' ) ) as $sh ) {
+			$css = wpessential_site_shadow( $sh, $v );
+			if ( $css ) {
+				$sh['shadow'] = $css;
+			}
+			$shadows[] = $sh;
+		}
+		if ( $shadows ) {
+			$settings['shadow']['presets'] = $shadows;
+		}
+
+		// Links.
+		$link = (array) ( $styles['elements']['link'] ?? array() );
+		if ( ! empty( $v['link_color'] ) ) {
+			$link['color']['text'] = $v['link_color'];
+		}
+		if ( ! empty( $v['link_hover'] ) ) {
+			$link[':hover']['color']['text'] = $v['link_hover'];
+		}
+		if ( ! empty( $v['link_weight'] ) ) {
+			$link['typography']['fontWeight'] = $v['link_weight'];
+		}
+		if ( 'always' === ( $v['link_underline'] ?? '' ) ) {
+			$link['typography']['textDecoration']           = 'underline';
+			$link[':hover']['typography']['textDecoration'] = 'underline';
+		} elseif ( 'never' === ( $v['link_underline'] ?? '' ) ) {
+			$link['typography']['textDecoration']           = 'none';
+			$link[':hover']['typography']['textDecoration'] = 'none';
+		}
+		$styles['elements']['link'] = $link;
+
+		// More type and spacing.
+		foreach ( array(
+			'h5' => 'size_h5',
+			'h6' => 'size_h6',
+		) as $el => $key ) {
+			if ( wpessential_site_len( $v, $key ) ) {
+				$styles['elements'][ $el ]['typography']['fontSize'] = wpessential_site_len( $v, $key );
+			}
+		}
+		if ( ! empty( $v['heading_color'] ) ) {
+			$styles['elements']['heading']['color']['text'] = $v['heading_color'];
+		}
+		if ( ! empty( $v['body_weight'] ) ) {
+			$styles['typography']['fontWeight'] = $v['body_weight'];
+		}
+		if ( wpessential_site_len( $v, 'block_gap' ) ) {
+			$styles['spacing']['blockGap'] = wpessential_site_len( $v, 'block_gap' );
+		}
+		if ( wpessential_site_len( $v, 'gutter' ) ) {
+			$side                                  = wpessential_site_len( $v, 'gutter_mobile' ) ? 'clamp(' . wpessential_site_len( $v, 'gutter_mobile' ) . ', 4vw, ' . wpessential_site_len( $v, 'gutter' ) . ')' : wpessential_site_len( $v, 'gutter' );
+			$styles['spacing']['padding']['left']  = $side;
+			$styles['spacing']['padding']['right'] = $side;
+		}
 
 		return $theme_json->update_with(
 			array(
@@ -617,6 +943,93 @@ function wpessential_site_css() {
 	}
 	if ( 'off' === ( $v['back_to_top'] ?? '' ) ) {
 		$css .= '.wpe-back-to-top{display:none!important}';
+	}
+	$rule = static function ( $sel, array $decls ) {
+		$decls = array_filter( $decls, static fn( $x ) => '' !== $x && null !== $x );
+		if ( ! $decls ) {
+			return '';
+		}
+		$out = '';
+		foreach ( $decls as $p => $x ) {
+			$out .= $p . ':' . $x . ';';
+		}
+		return $sel . '{' . $out . '}';
+	};
+	if ( wpessential_site_len( $v, 'paragraph_space', 'em' ) ) {
+		$css .= '.wp-block-post-content p,.entry-content p{margin-block:0 ' . wpessential_site_len( $v, 'paragraph_space', 'em' ) . '}';
+	}
+	$css .= $rule(
+		'::selection',
+		array(
+			'background' => $v['selection_bg'] ?? '',
+			'color'      => $v['selection_text'] ?? '',
+		)
+	);
+	$css .= $rule(
+		'a',
+		array(
+			'text-decoration-thickness' => wpessential_site_len( $v, 'link_thickness' ),
+			'text-underline-offset'     => wpessential_site_len( $v, 'link_offset' ),
+		)
+	);
+	if ( 'text' === ( $v['link_underline'] ?? '' ) ) {
+		$css .= '.wp-block-post-content p a,.entry-content p a,.wp-block-post-content li a{text-decoration:underline}';
+	}
+	$css .= $rule(
+		'.wpe-header',
+		array(
+			'background'   => $v['header_bg'] ?? '',
+			'color'        => $v['header_text'] ?? '',
+			'border-color' => $v['header_border'] ?? '',
+		)
+	);
+	if ( ! empty( $v['header_text'] ) ) {
+		$css .= '.wpe-header a,.wpe-header .wp-block-navigation-item__content,.wpe-header .wp-block-site-title a{color:' . $v['header_text'] . '}';
+	}
+	if ( ! empty( $v['header_glass'] ) ) {
+		$css .= '.wpe-header{background:color-mix(in srgb,' . ( $v['header_bg'] ?? 'var(--wp--preset--color--surface)' ) . ' 72%,transparent);-webkit-backdrop-filter:saturate(1.6) blur(14px);backdrop-filter:saturate(1.6) blur(14px)}';
+	}
+	if ( 'off' === ( $v['header_shadow'] ?? '' ) ) {
+		$css .= '.wpe-header.is-scrolled{box-shadow:none}';
+	}
+	$css .= $rule(
+		'.wpe-header .wp-block-navigation',
+		array(
+			'font-size'               => wpessential_site_len( $v, 'menu_size' ),
+			'font-weight'             => $v['menu_weight'] ?? '',
+			'gap'                     => wpessential_site_len( $v, 'menu_gap' ),
+			'--navigation-layout-gap' => wpessential_site_len( $v, 'menu_gap' ),
+		)
+	);
+	$css .= $rule(
+		'.wpe-footer',
+		array(
+			'background' => $v['footer_bg'] ?? '',
+			'color'      => $v['footer_text'] ?? '',
+		)
+	);
+	$css .= $rule( '.wpe-footer :is(h1,h2,h3,h4,h5,h6,.wp-block-heading)', array( 'color' => $v['footer_heading'] ?? '' ) );
+	$css .= $rule( '.wpe-footer a', array( 'color' => $v['footer_link'] ?? '' ) );
+	$css .= $rule( '.wpe-footer a:hover,.wpe-footer a:focus-visible', array( 'color' => $v['footer_link_hover'] ?? '' ) );
+	if ( ! empty( $v['focus_color'] ) || wpessential_site_len( $v, 'focus_width' ) ) {
+		$css .= ':root{--wpe-focus:0 0 0 ' . ( wpessential_site_len( $v, 'focus_width' ) ? wpessential_site_len( $v, 'focus_width' ) : '3px' ) . ' ' . ( $v['focus_color'] ?? 'var(--wp--preset--color--primary)' ) . '}';
+	}
+	if ( 'show' === ( $v['skip_link'] ?? '' ) ) {
+		$css .= '.skip-link.screen-reader-text{position:static!important;clip:auto!important;clip-path:none!important;width:auto!important;height:auto!important;display:block;padding:8px 16px;background:var(--wp--preset--color--ink);color:#fff}';
+	}
+	if ( wpessential_site_len( $v, 'min_text' ) ) {
+		$css .= ':root{--wp--preset--font-size--xs:max(var(--wp--preset--font-size--xs,12px),' . wpessential_site_len( $v, 'min_text' ) . ')}small,.has-xs-font-size,figcaption{font-size:max(1em,' . wpessential_site_len( $v, 'min_text' ) . ')}';
+	}
+	// Gradients in dark mode too (the dark palette brings its own otherwise).
+	$dark_grads = '';
+	foreach ( array( 'brand', 'night', 'fade-bottom' ) as $slug ) {
+		$g = wpessential_site_gradient( $slug, $v );
+		if ( $g ) {
+			$dark_grads .= '--wp--preset--gradient--' . $slug . ':' . $g . ';';
+		}
+	}
+	if ( $dark_grads ) {
+		$css .= ':root[data-wpe-scheme]{' . $dark_grads . '}';
 	}
 	if ( ! empty( $v['motion_off'] ) ) {
 		$css .= '*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}';
