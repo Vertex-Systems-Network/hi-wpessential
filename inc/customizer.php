@@ -93,15 +93,33 @@ function wpessential_site_fields() {
 		'unit'  => $unit,
 	);
 	$typography   = array(
-		'font_body'       => array(
+		'fonts_delivery'  => array(
 			'type'    => 'select',
+			'label'   => __( 'Google Fonts are served', 'hi-wpessential' ),
+			'choices' => array(
+				''       => __( 'From this site (downloaded on save, privacy-friendly)', 'hi-wpessential' ),
+				'google' => __( 'From Google servers', 'hi-wpessential' ),
+			),
+		),
+		'font_body'       => array(
+			'type'    => 'font',
 			'label'   => __( 'Body font', 'hi-wpessential' ),
 			'choices' => $font_choices,
 		),
 		'font_heading'    => array(
-			'type'    => 'select',
+			'type'    => 'font',
 			'label'   => __( 'Heading font', 'hi-wpessential' ),
 			'choices' => $font_choices,
+		),
+		'font_mono'       => array(
+			'type'    => 'font',
+			'label'   => __( 'Code font', 'hi-wpessential' ),
+			'choices' => $font_choices,
+		),
+		'fonts_extra'     => array(
+			'type'  => 'fonts',
+			'label' => __( 'More fonts for the editors', 'hi-wpessential' ),
+			'help'  => __( 'Google Fonts added here can be picked in any block, kit element and Elementor widget.', 'hi-wpessential' ),
 		),
 		'size_body'       => $px( __( 'Body text size', 'hi-wpessential' ), 12, 22 ),
 		'line_body'       => $px( __( 'Body line height', 'hi-wpessential' ), 1, 2.2, 0.05, '' ),
@@ -193,7 +211,7 @@ function wpessential_site_fields() {
 		),
 		'wpessential_site_type'      => array(
 			'title'       => __( 'Typography', 'hi-wpessential' ),
-			'description' => __( 'Fonts are bundled with the theme (no Google request). Heading sizes scale smoothly between the phone and the desktop value.', 'hi-wpessential' ),
+			'description' => __( 'Pick from the theme fonts or 1,700+ Google Fonts. Chosen Google Fonts are saved on your site, so visitors never load them from Google (unless you choose so below). Heading sizes scale smoothly between the phone and the desktop value.', 'hi-wpessential' ),
 			'fields'      => $typography,
 		),
 		'wpessential_site_button'    => array(
@@ -460,6 +478,14 @@ function wpessential_site_values() {
  */
 function wpessential_site_clean( array $field, $value ) {
 	switch ( $field['type'] ) {
+		case 'font':
+			$value = (string) $value;
+			if ( 0 === strpos( $value, 'google:' ) ) {
+				return isset( wpessential_google_fonts()[ substr( $value, 7 ) ] ) ? $value : '';
+			}
+			return isset( wpessential_site_fonts()[ $value ] ) ? $value : '';
+		case 'fonts':
+			return implode( '|', array_filter( array_map( 'trim', explode( '|', (string) $value ) ), static fn( $f ) => isset( wpessential_google_fonts()[ $f ] ) ) );
 		case 'color':
 			return (string) sanitize_hex_color( $value );
 		case 'toggle':
@@ -475,6 +501,7 @@ function wpessential_site_clean( array $field, $value ) {
 add_action(
 	'customize_register',
 	static function ( WP_Customize_Manager $wp ) {
+		require_once WPESSENTIAL_DIR . '/inc/class-wpessential-customize-control.php';
 		// Classic-theme sections a block theme does not use; ours replace them.
 		foreach ( array( 'colors', 'header_image', 'background_image' ) as $section ) {
 			$wp->remove_section( $section );
@@ -507,30 +534,17 @@ add_action(
 						'sanitize_callback' => static fn( $v ) => wpessential_site_clean( $f, $v ),
 					)
 				);
-				$args = array(
-					'label'   => $f['label'],
-					'section' => $section,
+				$wp->add_control(
+					new WPEssential_Customize_Control(
+						$wp,
+						$id,
+						array(
+							'label'   => $f['label'],
+							'section' => $section,
+							'field'   => $f,
+						)
+					)
 				);
-				if ( 'color' === $f['type'] ) {
-					$wp->add_control( new WP_Customize_Color_Control( $wp, $id, $args ) );
-					continue;
-				}
-				if ( 'range' === $f['type'] ) {
-					$args['type']        = 'number';
-					$args['input_attrs'] = array(
-						'min'         => $f['min'],
-						'max'         => $f['max'],
-						'step'        => $f['step'],
-						'placeholder' => __( 'Theme default', 'hi-wpessential' ),
-					);
-					$args['description'] = $f['unit'] ? sprintf( /* translators: %s: CSS unit. */ __( 'In %s. Empty = theme default.', 'hi-wpessential' ), $f['unit'] ) : __( 'Empty = theme default.', 'hi-wpessential' );
-				} elseif ( 'select' === $f['type'] ) {
-					$args['type']    = 'select';
-					$args['choices'] = $f['choices'];
-				} elseif ( 'toggle' === $f['type'] ) {
-					$args['type'] = 'checkbox';
-				}
-				$wp->add_control( $id, $args );
 			}
 		}
 	}
@@ -662,6 +676,10 @@ add_filter(
 		$fonts = wpessential_site_fonts();
 		foreach ( wpessential_site_preset( $settings, array( 'typography', 'fontFamilies' ) ) as $i => $f ) {
 			$pick = $v[ 'font_' . $f['slug'] ] ?? '';
+			if ( $pick && 0 === strpos( $pick, 'google:' ) ) {
+				$families[ $i ] = wpessential_google_family_entry( $f['slug'], substr( $pick, 7 ) );
+				continue;
+			}
 			if ( $pick && isset( $fonts[ $pick ] ) ) {
 				$f = array(
 					'slug'       => $f['slug'],
@@ -673,7 +691,7 @@ add_filter(
 							'fontStyle'   => false !== strpos( $file, 'italic' ) ? 'italic' : 'normal',
 							'fontWeight'  => '100 900',
 							'fontDisplay' => 'swap',
-							'src'         => array( 'file:./assets/fonts/' . $file ),
+							'src'         => array( get_theme_file_uri( 'assets/fonts/' . $file ) ),
 						),
 						$fonts[ $pick ][1]
 					),
@@ -684,8 +702,14 @@ add_filter(
 			}
 			$families[ $i ] = $f;
 		}
+		// Extra Google fonts for the editors' font pickers.
+		foreach ( array_filter( array_map( 'trim', explode( '|', (string) ( $v['fonts_extra'] ?? '' ) ) ) ) as $family ) {
+			if ( isset( wpessential_google_fonts()[ $family ] ) ) {
+				$families[] = wpessential_google_family_entry( 'g-' . sanitize_title( $family ), $family );
+			}
+		}
 		if ( ! empty( $families ) ) {
-			$settings['typography']['fontFamilies'] = $families;
+			$settings['typography']['fontFamilies'] = array_values( $families );
 		}
 
 		// Font sizes (fluid between the phone and the desktop value).
@@ -1068,6 +1092,37 @@ add_action(
 		if ( function_exists( 'wpessential_sync_elementor_kit' ) ) {
 			wpessential_sync_elementor_kit();
 		}
+	}
+);
+
+// Our controls: script and styles for the Customizer pane.
+add_action(
+	'customize_controls_enqueue_scripts',
+	static function () {
+		$ver = wp_get_theme()->get( 'Version' ) . '.' . (int) filemtime( WPESSENTIAL_DIR . '/assets/js/customizer-controls.js' );
+		wp_enqueue_style( 'wpessential-customizer', get_theme_file_uri( 'assets/css/customizer-controls.css' ), array(), $ver );
+		wp_enqueue_script( 'wpessential-customizer', get_theme_file_uri( 'assets/js/customizer-controls.js' ), array( 'customize-controls', 'wp-i18n' ), $ver, true );
+		// The site's own palette (the demo's when it has one), each colour once.
+		$origins = (array) wp_get_global_settings( array( 'color', 'palette' ) );
+		$palette = array();
+		$seen    = array();
+		foreach ( (array) ( $origins['custom'] ?? $origins['theme'] ?? array() ) as $c ) {
+			if ( isset( $c['slug'], $c['color'] ) && preg_match( '/^#[0-9a-f]{3,8}$/i', $c['color'] ) && ! isset( $seen[ strtolower( $c['color'] ) ] ) ) {
+				$seen[ strtolower( $c['color'] ) ] = true;
+				$palette[ $c['slug'] ]             = array( $c['name'] ?? $c['slug'], $c['color'] );
+			}
+		}
+		wp_localize_script(
+			'wpessential-customizer',
+			'wpessentialCustomizer',
+			array(
+				'palette'     => $palette,
+				'themeFonts'  => array_keys( wpessential_site_fonts() ),
+				'themeStacks' => array_map( static fn( $f ) => $f[0], wpessential_site_fonts() ),
+				'fontFiles'   => array_map( static fn( $f ) => $f[1] ? get_theme_file_uri( 'assets/fonts/' . $f[1][0] ) : '', wpessential_site_fonts() ),
+				'googleList'  => get_theme_file_uri( 'assets/data/google-fonts.json' ),
+			)
+		);
 	}
 );
 
