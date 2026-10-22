@@ -1,7 +1,7 @@
 /* WPEssential kit — Heading. Values arrive as custom properties per breakpoint. */
 .wpe-heading { text-align: var(--wpek-align, inherit); margin-block-end: var(--wpek-gap, 0); }
-.wpe-heading__eyebrow { margin: 0 0 .75em; font-family: var(--wp--preset--font-family--mono, ui-monospace, monospace); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--wpek-eyebrow, var(--wp--preset--color--secondary, currentColor)); }
-.wpe-heading__title { margin-block: 0; font-family: var(--wp--preset--font-family--heading, inherit); font-size: var(--wpek-size, inherit); font-weight: var(--wpek-weight, 700); line-height: var(--wpek-lh, 1.1); letter-spacing: var(--wpek-ls, -.02em); color: var(--wpek-color, inherit); max-width: var(--wpek-max, none); margin-inline: var(--wpek-mx, 0); text-wrap: balance; }
+.wpe-heading__eyebrow { margin: 0 0 .75em; font-family: var(--wp--preset--font-family--mono, ui-monospace, monospace); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--wp--preset--color--secondary, currentColor); }
+.wpe-heading__title { margin-block: 0; font-family: var(--wp--preset--font-family--heading, inherit); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; color: inherit; max-width: var(--wpek-max, none); margin-inline: var(--wpek-mx, 0); text-wrap: balance; }
 .wpe-heading__title a { color: inherit; text-decoration: none; }
 .wpe-heading__accent.is-gradient { background: linear-gradient(90deg, var(--wp--preset--color--primary, #ec7d1a), var(--wp--preset--color--secondary, #f7a23e)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .wpe-heading__accent.is-primary { color: var(--wp--preset--color--primary, currentColor); }

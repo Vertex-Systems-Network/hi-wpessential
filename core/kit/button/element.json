@@ -45,8 +45,8 @@
 			"default": "arrow",
 			"options": {
 				"none": "None",
-				"arrow": "Arrow \u2197",
-				"right": "Arrow \u2192",
+				"arrow": "Arrow ↗",
+				"right": "Arrow →",
 				"download": "Download",
 				"play": "Play"
 			}
@@ -96,42 +96,6 @@
 				"stretch": "Full width"
 			}
 		},
-		"radius": {
-			"type": "range",
-			"panel": "style",
-			"label": "Corner radius",
-			"responsive": true,
-			"css": "--wpek-radius",
-			"unit": "px",
-			"min": 0,
-			"max": 999,
-			"default": ""
-		},
-		"paddingX": {
-			"type": "range",
-			"panel": "style",
-			"label": "Side padding",
-			"responsive": true,
-			"css": "--wpek-px",
-			"unit": "px",
-			"min": 0,
-			"max": 80,
-			"default": ""
-		},
-		"background": {
-			"type": "color",
-			"panel": "style",
-			"label": "Background (overrides style)",
-			"css": "--wpek-bg",
-			"default": ""
-		},
-		"textColor": {
-			"type": "color",
-			"panel": "style",
-			"label": "Text colour",
-			"css": "--wpek-fg",
-			"default": ""
-		},
 		"hover": {
 			"type": "select",
 			"panel": "motion",
@@ -144,6 +108,56 @@
 				"fill": "Fill",
 				"invert": "Invert to outline"
 			}
+		},
+		"iconSize": {
+			"type": "range",
+			"panel": "style",
+			"label": "Icon size",
+			"css": "--wpek-icon",
+			"unit": "px",
+			"min": 8,
+			"max": 48,
+			"default": ""
+		}
+	},
+	"groups": {
+		"typography": {
+			"type": "typography",
+			"label": "Typography",
+			"selector": ".wpe-button__link",
+			"panel": "style"
+		},
+		"textColor": {
+			"type": "colors",
+			"label": "Text colour",
+			"prop": "color",
+			"selector": ".wpe-button__link",
+			"panel": "style"
+		},
+		"background": {
+			"type": "background",
+			"label": "Background",
+			"selector": ".wpe-button__link",
+			"panel": "style"
+		},
+		"padding": {
+			"type": "spacing",
+			"label": "Padding",
+			"prop": "padding",
+			"selector": ".wpe-button__link",
+			"panel": "style"
+		},
+		"border": {
+			"type": "border",
+			"label": "Border & radius",
+			"selector": ".wpe-button__link",
+			"panel": "style"
+		},
+		"shadow": {
+			"type": "shadow",
+			"label": "Shadow",
+			"selector": ".wpe-button__link",
+			"panel": "style"
 		}
 	}
 }

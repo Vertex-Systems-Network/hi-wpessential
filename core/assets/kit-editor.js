@@ -68,7 +68,38 @@
 					onChange: setDevice,
 					__nextHasNoMarginBottom: true,
 				} );
-				var sections = Object.keys( panels ).map( function ( panel, i ) {
+				var set = function ( key, v ) {
+					var change = {};
+					change[ key ] = v;
+					props.setAttributes( change );
+				};
+				// One field (plain or responsive) read from / written to `obj[ field ]`.
+				var field = function ( key, opt, value, onChange ) {
+					if ( 'breakpoints' === opt.type ) {
+						var cur = value || {};
+						return el( 'fieldset', { key: key, style: { marginBottom: 16 } },
+							el( 'legend', { style: { fontWeight: 600, marginBottom: 8 } }, opt.label || key ),
+							kit.breakpoints.map( function ( b ) {
+								return el( c.CheckboxControl, { key: b, label: BP_LABEL[ b ] || b, checked: !! cur[ b ], onChange: function ( on ) {
+									var next = Object.assign( {}, cur );
+									next[ b ] = on;
+									onChange( next );
+								}, __nextHasNoMarginBottom: true } );
+							} )
+						);
+					}
+					if ( opt.responsive ) {
+						var obj = value && 'object' === typeof value ? value : {};
+						return el( 'div', { key: key, style: { marginBottom: 16 } }, control( key, Object.assign( {}, opt, { label: ( opt.label || key ) + ' · ' + ( BP_LABEL[ device ] || device ) } ), obj[ device ], function ( v ) {
+							var next = Object.assign( {}, obj );
+							next[ device ] = v;
+							onChange( next );
+						} ) );
+					}
+					return el( 'div', { key: key, style: { marginBottom: 16 } }, control( key, opt, value, onChange ) );
+				};
+				var sections = [];
+				Object.keys( panels ).forEach( function ( panel, i ) {
 					var rows = [];
 					var hasResponsive = false;
 					Object.keys( def.attributes ).forEach( function ( key ) {
@@ -76,25 +107,36 @@
 						if ( ( opt.panel || 'content' ) !== panel ) {
 							return;
 						}
-						if ( opt.responsive ) {
-							hasResponsive = true;
-							var obj = a[ key ] || {};
-							rows.push( el( 'div', { key: key, style: { marginBottom: 16 } }, control( key, Object.assign( {}, opt, { label: ( opt.label || key ) + ' · ' + ( BP_LABEL[ device ] || device ) } ), obj[ device ], function ( v ) {
-								var next = Object.assign( {}, obj );
-								next[ device ] = v;
-								var change = {};
-								change[ key ] = next;
-								props.setAttributes( change );
-							} ) ) );
-						} else {
-							rows.push( el( 'div', { key: key, style: { marginBottom: 16 } }, control( key, opt, a[ key ], function ( v ) {
-								var change = {};
-								change[ key ] = v;
-								props.setAttributes( change );
-							} ) ) );
-						}
+						hasResponsive = hasResponsive || !! opt.responsive;
+						rows.push( field( key, opt, a[ key ], function ( v ) {
+							set( key, v );
+						} ) );
 					} );
-					return el( c.PanelBody, { key: panel, title: panels[ panel ], initialOpen: 0 === i }, hasResponsive ? el( 'div', { style: { marginBottom: 16 } }, picker ) : null, rows );
+					if ( rows.length ) {
+						sections.push( el( c.PanelBody, { key: panel, title: panels[ panel ], initialOpen: 0 === i }, hasResponsive ? el( 'div', { style: { marginBottom: 16 } }, picker ) : null, rows ) );
+					}
+					// Each group of this panel gets its own collapsible panel.
+					Object.keys( def.groups || {} ).forEach( function ( gkey ) {
+						var g = def.groups[ gkey ];
+						if ( ( g.panel || 'style' ) !== panel ) {
+							return;
+						}
+						var fields = kit.groupFields[ g.type ] || {};
+						var val = a[ gkey ] && 'object' === typeof a[ gkey ] && ! Array.isArray( a[ gkey ] ) ? a[ gkey ] : {};
+						var anyResponsive = Object.keys( fields ).some( function ( f ) {
+							return fields[ f ].responsive;
+						} );
+						sections.push( el( c.PanelBody, { key: gkey, title: g.label || gkey, initialOpen: false },
+							anyResponsive ? el( 'div', { style: { marginBottom: 16 } }, picker ) : null,
+							Object.keys( fields ).map( function ( f ) {
+								return field( gkey + '.' + f, fields[ f ], val[ f ], function ( v ) {
+									var next = Object.assign( {}, val );
+									next[ f ] = v;
+									set( gkey, next );
+								} );
+							} )
+						) );
+					} );
 				} );
 				return el( Fragment, null,
 					el( be.InspectorControls, null, sections ),

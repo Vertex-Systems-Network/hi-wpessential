@@ -9,11 +9,15 @@
  *   "responsive": true stores one value per breakpoint: { "base": …, "1920": …, "1280": …, … }.
  *   "css": "--var" turns the value into a CSS custom property on the element (with "unit");
  *   "map": { value: "--a:x;--b:y" } sets several properties for one choice.
+ * "groups" add typography, spacing, border, shadow, background and colour groups (Kit\Groups);
+ * every block also gets the common Advanced options (Elementor has its own Advanced tab).
  *
  * @package WPEssential\Core
  */
 
 namespace WPEssential\Core;
+
+use WPEssential\Core\Kit\Groups;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -93,11 +97,34 @@ class Kit {
 	 */
 	public static function defaults( array $def ) {
 		$out = array();
-		foreach ( $def['attributes'] as $key => $a ) {
+		foreach ( self::groups( $def ) as $key => $g ) {
+			$out[ $key ] = array();
+		}
+		foreach ( self::attributes( $def ) as $key => $a ) {
 			$value       = $a['default'] ?? ( 'toggle' === $a['type'] ? false : '' );
 			$out[ $key ] = ! empty( $a['responsive'] ) ? array( 'base' => $value ) : $value;
 		}
 		return $out;
+	}
+
+	/**
+	 * Element options plus the common Advanced options.
+	 *
+	 * @param array $def Definition.
+	 * @return array
+	 */
+	public static function attributes( array $def ) {
+		return $def['attributes'] + Groups::common()[0];
+	}
+
+	/**
+	 * Element groups plus the common Advanced groups.
+	 *
+	 * @param array $def Definition.
+	 * @return array
+	 */
+	public static function groups( array $def ) {
+		return ( $def['groups'] ?? array() ) + Groups::common()[1];
 	}
 
 	/**
@@ -137,13 +164,17 @@ class Kit {
 	 */
 	public static function register_blocks() {
 		wp_register_script( 'wpessential-kit-editor', wpessential_core_url( 'assets/kit-editor.js' ), array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n' ), WPESSENTIAL_CORE_ASSET_VERSION, true );
+		wp_register_style( 'wpessential-kit-common', wpessential_core_url( 'kit/common.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
 		$editor = array();
 		foreach ( self::defs() as $name => $def ) {
 			$handle = 'wpessential-kit-' . $name;
-			wp_register_style( $handle, wpessential_core_url( 'kit/' . $name . '/style.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
+			wp_register_style( $handle, wpessential_core_url( 'kit/' . $name . '/style.css' ), array( 'wpessential-kit-common' ), WPESSENTIAL_CORE_ASSET_VERSION );
 			$attrs = array();
-			foreach ( $def['attributes'] as $key => $a ) {
-				$attrs[ $key ] = ! empty( $a['responsive'] ) ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? 'number' : 'string' ) );
+			foreach ( self::attributes( $def ) as $key => $a ) {
+				$attrs[ $key ] = ! empty( $a['responsive'] ) || 'breakpoints' === $a['type'] ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? 'number' : 'string' ) );
+			}
+			foreach ( self::groups( $def ) as $key => $g ) {
+				$attrs[ $key ] = array( 'type' => 'object' );
 			}
 			register_block_type(
 				'wpessential/' . $name,
@@ -165,7 +196,14 @@ class Kit {
 					},
 				)
 			);
-			$editor[ $name ] = array_intersect_key( $def, array_flip( array( 'name', 'title', 'icon', 'attributes', 'panels' ) ) );
+			$editor[ $name ] = array_merge(
+				array_intersect_key( $def, array_flip( array( 'name', 'title', 'icon' ) ) ),
+				array(
+					'attributes' => self::attributes( $def ),
+					'groups'     => self::groups( $def ),
+					'panels'     => ( $def['panels'] ?? array( 'content' => __( 'Content', 'hi-wpessential' ) ) ) + array( 'advanced' => __( 'Layout & effects', 'hi-wpessential' ) ),
+				)
+			);
 		}
 		wp_add_inline_script(
 			'wpessential-kit-editor',
@@ -174,6 +212,7 @@ class Kit {
 					'elements'    => $editor,
 					'breakpoints' => array_merge( array( 'base' ), array_map( 'strval', array_keys( self::BREAKPOINTS ) ) ),
 					'palette'     => self::palette(),
+					'groupFields' => Groups::fields(),
 				)
 			) . ';',
 			'before'
@@ -228,9 +267,55 @@ class Kit {
 			$a[ $key ] = is_array( $default ) ? array_replace( $default, array_filter( (array) $value, static fn( $v ) => '' !== $v && null !== $v ) ) : $value;
 		}
 		wp_enqueue_style( 'wpessential-kit-' . $name );
-		$id  = 'wpe-' . $name . '-' . substr( md5( wp_json_encode( $a ) . wp_rand() ), 0, 8 );
-		$css = self::css( $def, $a, $id );
-		return ( $css ? '<style>' . $css . '</style>' : '' ) . self::template( $def['dir'] . '/render.php', $a, $id );
+		$id   = 'wpe-' . $name . '-' . substr( md5( wp_json_encode( $a ) . wp_rand() ), 0, 8 );
+		$css  = self::css( $def, $a, $id );
+		$html = self::template( $def['dir'] . '/render.php', $a, $id );
+		return ( $css ? '<style>' . $css . '</style>' : '' ) . self::root_extras( $html, $id, $a );
+	}
+
+	/**
+	 * Common options that live on the root tag: extra classes, custom attributes, transform and
+	 * entrance animation classes.
+	 *
+	 * @param string $html Markup.
+	 * @param string $id   Root id.
+	 * @param array  $a    Values.
+	 * @return string
+	 */
+	private static function root_extras( $html, $id, array $a ) {
+		$classes = array_filter( array_map( 'sanitize_html_class', preg_split( '/\s+/', (string) ( $a['cssClass'] ?? '' ) ) ) );
+		foreach ( array( 'rotate', 'scale', 'moveX', 'moveY', 'hoverRotate', 'hoverScale', 'hoverMoveY' ) as $t ) {
+			if ( isset( $a[ $t ] ) && '' !== $a[ $t ] && null !== $a[ $t ] ) {
+				$classes[] = 'wpek-tf';
+				break;
+			}
+		}
+		if ( ! empty( $a['animation'] ) && isset( Groups::animations()[ $a['animation'] ] ) ) {
+			$classes[] = 'wpek-anim';
+			$classes[] = 'wpek-anim-' . sanitize_html_class( $a['animation'] );
+		}
+		$attrs = '';
+		foreach ( preg_split( '/\r?\n/', (string) ( $a['attributes'] ?? '' ) ) as $line ) {
+			$pair = array_map( 'trim', explode( '|', $line, 2 ) );
+			$key  = strtolower( preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $pair[0] ) );
+			if ( '' === $key || 0 === strpos( $key, 'on' ) || in_array( $key, array( 'id', 'class', 'style' ), true ) ) {
+				continue; // No event handlers or overrides of what the element owns.
+			}
+			$attrs .= ' ' . $key . '="' . esc_attr( $pair[1] ?? '' ) . '"';
+		}
+		if ( ! $classes && '' === $attrs ) {
+			return $html;
+		}
+		$pos = strpos( $html, 'id="' . $id . '"' );
+		if ( false === $pos ) {
+			return $html;
+		}
+		$tag_end = strpos( $html, '>', $pos );
+		$tag     = substr( $html, $pos, $tag_end - $pos );
+		if ( $classes ) {
+			$tag = false !== strpos( $tag, 'class="' ) ? preg_replace( '/class="/', 'class="' . esc_attr( implode( ' ', $classes ) ) . ' ', $tag, 1 ) : $tag . ' class="' . esc_attr( implode( ' ', $classes ) ) . '"';
+		}
+		return substr( $html, 0, $pos ) . $tag . $attrs . substr( $html, $tag_end );
 	}
 
 	/**
@@ -256,27 +341,45 @@ class Kit {
 	 * @return string
 	 */
 	private static function css( array $def, array $a, $id ) {
+		$root  = '#' . $id;
 		$rules = array( 'base' => array() );
-		foreach ( $def['attributes'] as $key => $opt ) {
+		foreach ( self::attributes( $def ) as $key => $opt ) {
+			if ( 'breakpoints' === $opt['type'] ) {
+				foreach ( (array) ( $a[ $key ] ?? array() ) as $bp => $on ) {
+					if ( $on ) {
+						$rules[ (string) $bp ][ $root ][] = 'display:none';
+					}
+				}
+				continue;
+			}
 			if ( empty( $opt['css'] ) ) {
 				continue;
 			}
+			$sel    = empty( $opt['state'] ) ? $root : $root . ':hover,' . $root . ':focus-within';
 			$values = ! empty( $opt['responsive'] ) ? (array) $a[ $key ] : array( 'base' => $a[ $key ] );
 			foreach ( $values as $bp => $value ) {
 				if ( '' === $value || null === $value || false === $value ) {
 					continue;
 				}
 				// "map" turns one choice into several declarations, e.g. center => text-align + auto margins.
-				$rules[ $bp ][] = isset( $opt['map'][ $value ] ) ? preg_replace( '/[^a-z0-9:;%#.,() \-]/i', '', $opt['map'][ $value ] ) : $opt['css'] . ':' . self::css_value( $opt, $value );
+				$rules[ (string) $bp ][ $sel ][] = isset( $opt['map'][ $value ] ) ? preg_replace( '/[^a-z0-9:;%#.,() \-]/i', '', $opt['map'][ $value ] ) : $opt['css'] . ':' . self::css_value( $opt, $value );
+			}
+		}
+		foreach ( self::groups( $def ) as $key => $group ) {
+			if ( ! empty( $a[ $key ] ) && is_array( $a[ $key ] ) ) {
+				Groups::css( $group, $a[ $key ], $root, $rules );
 			}
 		}
 		$out = '';
 		foreach ( array( 'base' => '' ) + self::BREAKPOINTS as $bp => $query ) {
-			if ( empty( $rules[ $bp ] ) ) {
+			if ( empty( $rules[ (string) $bp ] ) ) {
 				continue;
 			}
-			$block = '#' . $id . '{' . implode( ';', $rules[ $bp ] ) . '}';
-			$out  .= 'base' === $bp ? $block : '@media ' . $query . '{' . $block . '}';
+			$block = '';
+			foreach ( $rules[ (string) $bp ] as $sel => $decls ) {
+				$block .= $sel . '{' . implode( ';', $decls ) . '}';
+			}
+			$out .= 'base' === $bp ? $block : '@media ' . $query . '{' . $block . '}';
 		}
 		return $out;
 	}
