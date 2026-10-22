@@ -171,7 +171,7 @@ class Kit {
 			wp_register_style( $handle, wpessential_core_url( 'kit/' . $name . '/style.css' ), array( 'wpessential-kit-common' ), WPESSENTIAL_CORE_ASSET_VERSION );
 			$attrs = array();
 			foreach ( self::attributes( $def ) as $key => $a ) {
-				$attrs[ $key ] = ! empty( $a['responsive'] ) || 'breakpoints' === $a['type'] ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? 'number' : 'string' ) );
+				$attrs[ $key ] = ! empty( $a['responsive'] ) || in_array( $a['type'], array( 'breakpoints', 'image' ), true ) ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? 'number' : 'string' ) );
 			}
 			foreach ( self::groups( $def ) as $key => $g ) {
 				$attrs[ $key ] = array( 'type' => 'object' );
@@ -417,7 +417,7 @@ class Kit {
 		if ( is_numeric( $value ) ) {
 			return ( 0 + $value ) . ( $opt['unit'] ?? '' );
 		}
-		return preg_replace( '/[^a-z0-9#%.,() \-]/i', '', (string) $value );
+		return preg_replace( '/[^a-z0-9#%.,()\/ \-]/i', '', (string) $value );
 	}
 
 	/**
@@ -432,6 +432,12 @@ class Kit {
 		foreach ( $def['attributes'] as $key => $opt ) {
 			$get = static function ( $k ) use ( $settings, $opt ) {
 				$v = $settings[ $k ] ?? '';
+				if ( 'image' === $opt['type'] ) {
+					return is_array( $v ) ? array(
+						'id'  => (int) ( $v['id'] ?? 0 ),
+						'url' => (string) ( $v['url'] ?? '' ),
+					) : array();
+				}
 				if ( is_array( $v ) && array_key_exists( 'size', $v ) ) {
 					$v = $v['size'];
 				}
