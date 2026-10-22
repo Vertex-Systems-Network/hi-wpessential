@@ -207,7 +207,8 @@ def main():
     for folder, (source, label) in ELEMENTOR.items():
         base = os.path.join(a.src, folder)
         files = [f for f in glob.glob(base + '/**/*.php', recursive=True)
-                 if '/vendor/' not in f and '/node_modules/' not in f and '/base/' not in f and 'widget-base' not in f]
+                 if '/vendor/' not in f and '/node_modules/' not in f and '/base/' not in f and 'widget-base' not in f
+                 and '/widget-builder/' not in f]
         names = set()
         for f in sorted(files):
             w = parse_widget(f)

@@ -1,0 +1,180 @@
+{
+ "element": "SVG / icon animation",
+ "slug": "wpe-svg",
+ "priority": 5,
+ "offered_by": [
+  "Essential Addons Lite",
+  "GenerateBlocks",
+  "Happy Addons",
+  "Kadence Blocks",
+  "Premium Addons"
+ ],
+ "benchmarks": [
+  {
+   "ref": "premium-addons/premium-svg-drawer",
+   "title": "SVG Draw",
+   "source": "Premium Addons",
+   "builder": "Elementor",
+   "options": 40
+  },
+  {
+   "ref": "happy-addons/svg-draw",
+   "title": "SVG Line Draw",
+   "source": "Happy Addons",
+   "builder": "Elementor",
+   "options": 34
+  },
+  {
+   "ref": "kadence/kadence-vector",
+   "title": "Vector SVG",
+   "source": "Kadence Blocks",
+   "builder": "Gutenberg",
+   "options": 17
+  },
+  {
+   "ref": "generateblocks/generateblocks-shape",
+   "title": "Shape",
+   "source": "GenerateBlocks",
+   "builder": "Gutenberg",
+   "options": 8
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Anchor",
+   "Css",
+   "Decrease Draw Speed By",
+   "Draw All Paths Together",
+   "Draw All Strokes Together",
+   "Draw Behaviour?",
+   "Draw Speed",
+   "Draw Speed Factor",
+   "Draw SVG",
+   "Enable SVG Draw?",
+   "End Point (%)",
+   "Fill Color",
+   "Fill Color After Draw",
+   "Fill Color Speed",
+   "Global classes",
+   "ha_font_icon",
+   "How this animation should work?",
+   "Html",
+   "Html attributes",
+   "Id",
+   "Link",
+   "Loop",
+   "Offset (%)",
+   "Repeat Delay",
+   "Restart Animation",
+   "Restart Animation on Scroll Up",
+   "Reverse Animation",
+   "Reverse Animation?",
+   "Select Icon",
+   "Speed",
+   "Start Point (%)",
+   "Start Trigger?",
+   "Styles",
+   "SVG Code",
+   "SVG Type",
+   "Swing Effect",
+   "Unique i d",
+   "Unique id",
+   "Use With Magic Scroll",
+   "When the draw should start?",
+   "Yoyo Effect"
+  ],
+  "style": [
+   "Advanced Border Radius",
+   "After Draw Fill Color",
+   "After Draw Stroke Color",
+   "Align",
+   "Alignment",
+   "Blend Mode",
+   "Border Radius",
+   "Fill Color",
+   "Height",
+   "Margin",
+   "Margin unit",
+   "Max width",
+   "Max width unit",
+   "Mobile margin",
+   "Mobile padding",
+   "Padding",
+   "Padding unit",
+   "Path Thickness",
+   "Size",
+   "Space Between Dashes",
+   "Stroke Color",
+   "Stroke Thickness",
+   "Tablet margin",
+   "Tablet padding",
+   "Width"
+  ],
+  "grouped": [
+   "Background",
+   "Border",
+   "Premium_Background",
+   "Text_Shadow",
+   "supports.align",
+   "supports.anchor",
+   "supports.className",
+   "supports.html"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

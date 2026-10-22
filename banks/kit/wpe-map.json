@@ -1,0 +1,188 @@
+{
+ "element": "Map",
+ "slug": "wpe-map",
+ "priority": 4,
+ "offered_by": [
+  "Elementor",
+  "Kadence Blocks",
+  "Premium Addons",
+  "Spectra"
+ ],
+ "benchmarks": [
+  {
+   "ref": "premium-addons/premium-addon-maps",
+   "title": "Google Maps",
+   "source": "Premium Addons",
+   "builder": "Elementor",
+   "options": 77
+  },
+  {
+   "ref": "elementor/google-maps",
+   "title": "Google Maps",
+   "source": "Elementor",
+   "builder": "Elementor",
+   "options": 9
+  },
+  {
+   "ref": "kadence/kadence-googlemaps",
+   "title": "Google Maps",
+   "source": "Kadence Blocks",
+   "builder": "Gutenberg",
+   "options": 32
+  },
+  {
+   "ref": "spectra/uagb-google-map",
+   "title": "Google Map",
+   "source": "Spectra",
+   "builder": "Gutenberg",
+   "options": 4
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Advanced Info",
+   "Api type",
+   "api_key_notification",
+   "Block id",
+   "Center Latitude",
+   "Center Longitude",
+   "Close Info Container on Mouse Out",
+   "Cluster Icon",
+   "Connected Carousel Widget ID",
+   "Custom Icon",
+   "Custom ID",
+   "Custom snazzy",
+   "Description",
+   "Disable Map Drag",
+   "Fullscreen Control",
+   "Get User Location",
+   "Icon Size (PX)",
+   "Info Container Always Opened",
+   "JSON Code",
+   "Kb version",
+   "Lat",
+   "Latitude",
+   "Latitude & Longitude Finder",
+   "Lng",
+   "Load Map On Scroll",
+   "Location",
+   "Location Finder",
+   "Location Title",
+   "Longitude",
+   "Map filter",
+   "Map filter amount",
+   "Map ID",
+   "Map Pins",
+   "Map style",
+   "Map type",
+   "Map Type",
+   "Map Type Controls",
+   "Marker Clustering",
+   "Max Width",
+   "Open Info Container on Hover",
+   "Opened By Default",
+   "Scroll Wheel Zoom",
+   "Show controls",
+   "Show marker",
+   "Size",
+   "Street View Control",
+   "Unique i d",
+   "Zoom",
+   "Zoom Controls"
+  ],
+  "style": [
+   "Alignment",
+   "Background Color",
+   "Border Radius",
+   "Height",
+   "Height desktop",
+   "Height mobile",
+   "Height tablet",
+   "Icon Color",
+   "Icons Color",
+   "Margin",
+   "Margin desktop",
+   "Margin mobile",
+   "Margin tablet",
+   "Margin unit",
+   "Minimum Width",
+   "Padding",
+   "Padding desktop",
+   "Padding mobile",
+   "Padding tablet",
+   "Padding unit",
+   "Text align",
+   "Text Color",
+   "Transition Duration",
+   "Width",
+   "Width desktop",
+   "Width mobile",
+   "Width tablet",
+   "Zoom"
+  ],
+  "grouped": [
+   "Border",
+   "Box_Shadow",
+   "Css_Filter",
+   "Typography",
+   "supports.kbMetadata",
+   "supports.ktdynamic"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

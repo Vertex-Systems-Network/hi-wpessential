@@ -1,0 +1,163 @@
+{
+ "element": "Chart",
+ "slug": "wpe-chart",
+ "priority": 2,
+ "offered_by": [
+  "ElementsKit Lite",
+  "Happy Addons"
+ ],
+ "benchmarks": [
+  {
+   "ref": "happy-addons/bar-chart",
+   "title": "Bar Chart",
+   "source": "Happy Addons",
+   "builder": "Elementor",
+   "options": 81
+  },
+  {
+   "ref": "elementskit/piechart",
+   "title": "Pie Chart",
+   "source": "ElementsKit Lite",
+   "builder": "Elementor",
+   "options": 35
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Background Color",
+   "Background Hover Color",
+   "Border Color",
+   "Border Hover Color",
+   "Chart Content",
+   "chart_data",
+   "chart_position",
+   "Choose Image",
+   "Content type",
+   "Data",
+   "Description",
+   "Duration",
+   "Easing",
+   "Icon",
+   "Icon type",
+   "Label",
+   "Labels",
+   "Percentage",
+   "Pie Chart Style",
+   "Position",
+   "Reverse",
+   "Scale Axis Range",
+   "Show Legend",
+   "Show Title",
+   "Show Tooltips",
+   "Show X Axes Labels",
+   "Show Y Axes Labels",
+   "Step Size",
+   "Title",
+   "X Axes Grid Lines",
+   "Y Axes Grid Lines"
+  ],
+  "style": [
+   "Background Color",
+   "Bar Background Color",
+   "Bar Border Width",
+   "Bar Color",
+   "Bar Width",
+   "Body Typography",
+   "Border Color",
+   "Border Radius",
+   "Border Size",
+   "Border Width",
+   "Box Width",
+   "Caret Size",
+   "Category Width",
+   "Chart Height",
+   "Color",
+   "Color Type",
+   "Content Alignment",
+   "Content Color",
+   "Font Family",
+   "Font Size",
+   "Font Style",
+   "Font Weight",
+   "Gradient Color1",
+   "Gradient Color2",
+   "Grid Color",
+   "Hover Animation",
+   "Icon Color",
+   "Margin",
+   "Mode",
+   "Number Color",
+   "Padding",
+   "Piechart Size",
+   "Title Color",
+   "Title margin",
+   "Title Typography",
+   "Typography",
+   "Wrapper Padding",
+   "X Axes Typography",
+   "Y Axes Typography"
+  ],
+  "grouped": [
+   "Background",
+   "Box_Shadow",
+   "Image_Size",
+   "Typography"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

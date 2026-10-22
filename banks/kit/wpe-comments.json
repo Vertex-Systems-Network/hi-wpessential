@@ -1,0 +1,124 @@
+{
+ "element": "Comments",
+ "slug": "wpe-comments",
+ "priority": 2,
+ "offered_by": [
+  "Gutenberg core",
+  "Happy Addons"
+ ],
+ "benchmarks": [
+  {
+   "ref": "happy-addons/post-comments",
+   "title": "Post Comments",
+   "source": "Happy Addons",
+   "builder": "Elementor",
+   "options": 41
+  },
+  {
+   "ref": "gutenberg-core/comments-title",
+   "title": "Comments Title",
+   "source": "Gutenberg core",
+   "builder": "Gutenberg",
+   "options": 12
+  },
+  {
+   "ref": "gutenberg-core/latest-comments",
+   "title": "Latest Comments",
+   "source": "Gutenberg core",
+   "builder": "Gutenberg",
+   "options": 11
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Comments to show",
+   "Display avatar",
+   "Display content",
+   "Display date",
+   "Level",
+   "Level options",
+   "Search & Select",
+   "Show comments count",
+   "Show post title",
+   "Source"
+  ],
+  "style": [
+   "Border Color",
+   "Border Radius",
+   "Color",
+   "Label Color",
+   "Link Color",
+   "Margin",
+   "Padding"
+  ],
+  "grouped": [
+   "Background",
+   "Border",
+   "Typography",
+   "supports.__experimentalBorder",
+   "supports.align",
+   "supports.anchor",
+   "supports.color",
+   "supports.html",
+   "supports.interactivity",
+   "supports.spacing",
+   "supports.typography"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

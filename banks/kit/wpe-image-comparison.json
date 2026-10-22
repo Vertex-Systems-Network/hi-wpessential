@@ -1,0 +1,101 @@
+{
+ "element": "Image comparison",
+ "slug": "wpe-image-comparison",
+ "priority": 1,
+ "offered_by": [
+  "ElementsKit Lite"
+ ],
+ "benchmarks": [
+  {
+   "ref": "elementskit/image-comparison",
+   "title": "Image Comparison",
+   "source": "ElementsKit Lite",
+   "builder": "Elementor",
+   "options": 44
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Choose Image",
+   "Click to move?",
+   "Container Style",
+   "Label",
+   "Move slider on hover?",
+   "Offset",
+   "Remove overlay?"
+  ],
+  "style": [
+   "Arrow Color",
+   "Border Radius",
+   "Color",
+   "Control Width",
+   "Divider Color",
+   "Divider Thickness",
+   "Height",
+   "Margin",
+   "Padding"
+  ],
+  "grouped": [
+   "Background",
+   "Border",
+   "Box_Shadow",
+   "Typography"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

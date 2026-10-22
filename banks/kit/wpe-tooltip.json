@@ -1,0 +1,193 @@
+{
+ "element": "Interactive: tooltip / switcher / ticker / show more",
+ "slug": "wpe-tooltip",
+ "priority": 5,
+ "offered_by": [
+  "ElementsKit Lite",
+  "Essential Addons Lite",
+  "Happy Addons",
+  "Kadence Blocks",
+  "Premium Addons"
+ ],
+ "benchmarks": [
+  {
+   "ref": "essential-addons/eael-interactive-circle",
+   "title": "Interactive Circle",
+   "source": "Essential Addons Lite",
+   "builder": "Elementor",
+   "options": 80
+  },
+  {
+   "ref": "premium-addons/premium-vscroll",
+   "title": "Vertical Scroll",
+   "source": "Premium Addons",
+   "builder": "Elementor",
+   "options": 67
+  },
+  {
+   "ref": "kadence/kadence-show-more",
+   "title": "Show More",
+   "source": "Kadence Blocks",
+   "builder": "Gutenberg",
+   "options": 23
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Active as Default",
+   "Additional Fields",
+   "Animation",
+   "Animation Duration",
+   "Autoplay",
+   "Check Content Overflow",
+   "Container ID",
+   "Containers",
+   "Content Type",
+   "Default expanded desktop",
+   "Default expanded mobile",
+   "Default expanded tablet",
+   "Default Item Icon",
+   "Dots Tooltips Text",
+   "eael_interactive_circle_item",
+   "Enable fade out",
+   "Entrance Animation",
+   "Full Container Scroll",
+   "Horizontal Position",
+   "Icon",
+   "Id",
+   "In query block",
+   "Interval (Miliseconds)",
+   "Item Icon (Image)",
+   "Item Link",
+   "Link",
+   "List Item",
+   "Menu Items",
+   "Mouse Event",
+   "Navigation Dots",
+   "Navigation Menu",
+   "OR Select Existing Template",
+   "Pause on hover",
+   "Position",
+   "Preset",
+   "Repeater Field",
+   "Rotate Animation",
+   "Save to Browser History",
+   "Scroll Effect",
+   "Scroll Offset",
+   "Scroll Speed (sec)",
+   "Sections",
+   "Shape",
+   "Short Title",
+   "Show hide more",
+   "Show Icon",
+   "Show Text",
+   "Source",
+   "Tab Content",
+   "Template Title",
+   "Tooltips Text",
+   "Unique i d",
+   "Vertical Position"
+  ],
+  "style": [
+   "Active Dot Color",
+   "Align",
+   "Background Color",
+   "Border Color",
+   "Border Radius",
+   "Circle Width",
+   "Color",
+   "Desktop view for mobile",
+   "Dots Border Color",
+   "Dots Color",
+   "Fade out size",
+   "Height desktop",
+   "Height mobile",
+   "Height tablet",
+   "Height type",
+   "Icon Color",
+   "Icon Size",
+   "Margin",
+   "Margin desktop",
+   "Margin mobile",
+   "Margin tablet",
+   "Margin unit",
+   "Offset Left",
+   "Offset Right",
+   "Offset Top",
+   "Padding",
+   "Padding desktop",
+   "Padding mobile",
+   "Padding tablet",
+   "Padding unit",
+   "Rotation Speed",
+   "Text Color",
+   "Text Hover Color",
+   "Tooltips Background",
+   "Tooltips Text Color",
+   "Width"
+  ],
+  "grouped": [
+   "",
+   "Border",
+   "Box_Shadow",
+   "Typography",
+   "supports.kbMetadata"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

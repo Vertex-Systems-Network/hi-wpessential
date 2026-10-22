@@ -1,0 +1,179 @@
+{
+ "element": "Rating",
+ "slug": "wpe-rating",
+ "priority": 2,
+ "offered_by": [
+  "Elementor",
+  "Spectra"
+ ],
+ "benchmarks": [
+  {
+   "ref": "elementor/star-rating",
+   "title": "Star Rating",
+   "source": "Elementor",
+   "builder": "Elementor",
+   "options": 14
+  },
+  {
+   "ref": "elementor/rating",
+   "title": "Rating",
+   "source": "Elementor",
+   "builder": "Elementor",
+   "options": 8
+  },
+  {
+   "ref": "spectra/uagb-star-rating",
+   "title": "Star Rating",
+   "source": "Spectra",
+   "builder": "Gutenberg",
+   "options": 73
+  }
+ ],
+ "must_match": {
+  "content": [
+   "Block id",
+   "Icon",
+   "Layout",
+   "Layout mobile",
+   "Layout tablet",
+   "Range",
+   "Rating",
+   "Rating Scale",
+   "Star position",
+   "Star position mobile",
+   "Star position tablet",
+   "Title",
+   "Unmarked Style"
+  ],
+  "style": [
+   "Align",
+   "Align mobile",
+   "Align tablet",
+   "Alignment",
+   "Block bottom margin",
+   "Block bottom margin mobile",
+   "Block bottom margin tablet",
+   "Block bottom padding",
+   "Block bottom padding mobile",
+   "Block bottom padding tablet",
+   "Block left margin",
+   "Block left margin mobile",
+   "Block left margin tablet",
+   "Block left padding",
+   "Block left padding mobile",
+   "Block left padding tablet",
+   "Block margin link",
+   "Block margin unit",
+   "Block margin unit mobile",
+   "Block margin unit tablet",
+   "Block padding link",
+   "Block padding unit",
+   "Block padding unit mobile",
+   "Block padding unit tablet",
+   "Block right margin",
+   "Block right margin mobile",
+   "Block right margin tablet",
+   "Block right padding",
+   "Block right padding mobile",
+   "Block right padding tablet",
+   "Block top margin",
+   "Block top margin mobile",
+   "Block top margin tablet",
+   "Block top padding",
+   "Block top padding mobile",
+   "Block top padding tablet",
+   "Color",
+   "Font decoration",
+   "Font family",
+   "Font size",
+   "Font size mobile",
+   "Font size tablet",
+   "Font size type",
+   "Font style",
+   "Font transform",
+   "Font weight",
+   "Gap",
+   "Gap mobile",
+   "Gap tablet",
+   "Letter spacing",
+   "Letter spacing mobile",
+   "Letter spacing tablet",
+   "Letter spacing type",
+   "Line height",
+   "Line height mobile",
+   "Line height tablet",
+   "Line height type",
+   "Size",
+   "Size mobile",
+   "Size tablet",
+   "Spacing",
+   "Text Color",
+   "Title color",
+   "Title gap",
+   "Title gap mobile",
+   "Title gap tablet",
+   "Unmarked Color",
+   "Unmarked color"
+  ],
+  "grouped": [
+   "Text_Shadow",
+   "Typography"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}

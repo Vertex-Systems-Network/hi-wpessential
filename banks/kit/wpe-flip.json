@@ -1,0 +1,150 @@
+{
+ "element": "Flip / hover box",
+ "slug": "wpe-flip",
+ "priority": 2,
+ "offered_by": [
+  "Essential Addons Lite",
+  "Happy Addons"
+ ],
+ "benchmarks": [
+  {
+   "ref": "essential-addons/eael-flip-box",
+   "title": "Flip Box",
+   "source": "Essential Addons Lite",
+   "builder": "Elementor",
+   "options": 111
+  },
+  {
+   "ref": "happy-addons/flip-box",
+   "title": "Flip Box",
+   "source": "Happy Addons",
+   "builder": "Elementor",
+   "options": 74
+  }
+ ],
+ "must_match": {
+  "content": [
+   "3D Depth",
+   "Adjustment",
+   "Back Content",
+   "Back Title",
+   "Button Icon",
+   "Button Text",
+   "Choose Event",
+   "Choose Template",
+   "Content Alignment",
+   "Content Type",
+   "Description",
+   "Enable Liquid Glass Effects Back",
+   "Enable Liquid Glass Effects Front",
+   "Flip Direction",
+   "Flipbox Image",
+   "Flipbox Type",
+   "Front Content",
+   "Front Title",
+   "Height Mode",
+   "Icon",
+   "Icon Position",
+   "Icon Type",
+   "Image",
+   "Link",
+   "Link Type",
+   "Media Type",
+   "Select Back Title Tag",
+   "Select Front Title Tag",
+   "Title",
+   "Unlock more possibilities"
+  ],
+  "style": [
+   "Alignment",
+   "Background",
+   "Background Color",
+   "Background Overlay",
+   "Border Radius",
+   "Bottom Spacing",
+   "Brightness",
+   "Color",
+   "Content Alignment",
+   "Content Padding",
+   "eael_wd_liquid_glass_effect_notice",
+   "eael_wd_liquid_glass_effect_notice_rear",
+   "Flip Speed",
+   "Height",
+   "Icon Size",
+   "Image Fit",
+   "Image Resizer",
+   "Image Type",
+   "Liquid Glass Presets",
+   "Margin",
+   "Padding",
+   "Resize Image",
+   "Shadow Effects",
+   "Spacing",
+   "Vertical Position"
+  ],
+  "grouped": [
+   "Background",
+   "Border",
+   "Box_Shadow",
+   "Image_Size",
+   "Text_Shadow",
+   "Typography"
+  ]
+ },
+ "baseline": {
+  "breakpoints": [
+   "1920",
+   "1440",
+   "1024",
+   "768",
+   "560",
+   "480",
+   "360",
+   "320"
+  ],
+  "responsive": "Every size, spacing, gap, column count, alignment and visibility option has a value per breakpoint.",
+  "schemes": "Light and dark from the theme palette tokens (no hard-coded colours); follows the visitor scheme toggle.",
+  "hover": [
+   "zoom",
+   "lift",
+   "glow",
+   "underline",
+   "image swap",
+   "greyscale to colour"
+  ],
+  "hover_note": "Presets come from settings.custom.hover (zoom, lift, shadow, duration, ease…) so a demo restyles every element at once.",
+  "motion": [
+   "none",
+   "subtle",
+   "editorial",
+   "playful",
+   "dynamic"
+  ],
+  "accessibility": [
+   "WCAG 2.2 AA contrast in both schemes",
+   "keyboard operable with visible focus",
+   "ARIA roles/states for interactive parts",
+   "prefers-reduced-motion respected",
+   "nothing important only on hover"
+  ],
+  "seo": [
+   "semantic HTML tags selectable (h1–h6, p, div, section, article…)",
+   "schema where the type has one (FAQPage, Product, Event, Review…)"
+  ],
+  "performance": [
+   "no jQuery",
+   "CSS and JS load only on pages that use the element",
+   "images lazy with width/height"
+  ],
+  "builders": [
+   "Gutenberg block (block.json, server render)",
+   "Elementor widget (native controls, Kit globals)",
+   "same options and output in both"
+  ],
+  "i18n": [
+   "every string translatable (hi-wpessential)",
+   "RTL"
+  ]
+ },
+ "status": "spec"
+}
