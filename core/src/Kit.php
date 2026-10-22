@@ -290,11 +290,30 @@ class Kit {
 				break;
 			}
 		}
+		foreach ( array( 'transition', 'transitionEase', 'transitionDelay' ) as $t ) {
+			if ( ! empty( $a[ $t ] ) ) {
+				$classes[] = 'wpek-tr';
+				break;
+			}
+		}
+		if ( ! empty( $a['hoverPreset'] ) ) {
+			$classes[] = 'wpek-hp-' . sanitize_html_class( $a['hoverPreset'] );
+		}
 		if ( ! empty( $a['animation'] ) && isset( Groups::animations()[ $a['animation'] ] ) ) {
 			$classes[] = 'wpek-anim';
 			$classes[] = 'wpek-anim-' . sanitize_html_class( $a['animation'] );
 		}
 		$attrs = '';
+		$aria  = array(
+			'role'        => (string) ( $a['rootRole'] ?? '' ),
+			// A label on a plain div means nothing to screen readers, so it needs a role.
+			'aria-label'  => empty( $a['rootRole'] ) ? '' : (string) ( $a['rootAriaLabel'] ?? '' ),
+			'aria-hidden' => empty( $a['rootAriaHidden'] ) ? '' : 'true',
+			'aria-live'   => (string) ( $a['rootAriaLive'] ?? '' ),
+		);
+		foreach ( array_filter( $aria ) as $k => $v ) {
+			$attrs .= ' ' . $k . '="' . esc_attr( $v ) . '"';
+		}
 		foreach ( preg_split( '/\r?\n/', (string) ( $a['attributes'] ?? '' ) ) as $line ) {
 			$pair = array_map( 'trim', explode( '|', $line, 2 ) );
 			$key  = strtolower( preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $pair[0] ) );

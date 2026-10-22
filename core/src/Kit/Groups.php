@@ -63,6 +63,24 @@ class Groups {
 						'max'        => 200,
 					)
 				),
+				'sizeMin'       => array_merge(
+					$px,
+					array(
+						'label' => __( 'Fluid size: at 360px', 'hi-wpessential' ),
+						'prop'  => 'font-size',
+						'fluid' => 'min',
+						'max'   => 200,
+					)
+				),
+				'sizeMax'       => array_merge(
+					$px,
+					array(
+						'label' => __( 'Fluid size: at 1440px', 'hi-wpessential' ),
+						'prop'  => 'font-size',
+						'fluid' => 'max',
+						'max'   => 240,
+					)
+				),
 				'weight'        => array(
 					'type'    => 'select',
 					'label'   => __( 'Weight', 'hi-wpessential' ),
@@ -183,6 +201,12 @@ class Groups {
 					'prop'  => 'border-color',
 					'state' => 'hover',
 				),
+				'darkColor'  => array(
+					'type'   => 'color',
+					'label'  => __( 'Colour in dark mode', 'hi-wpessential' ),
+					'prop'   => 'border-color',
+					'scheme' => 'dark',
+				),
 				'radius'     => array_merge(
 					$px,
 					array(
@@ -207,6 +231,13 @@ class Groups {
 					'state'   => 'hover',
 					'options' => self::shadow_labels(),
 				),
+				'darkPreset'  => array(
+					'type'    => 'select',
+					'label'   => __( 'Shadow in dark mode', 'hi-wpessential' ),
+					'prop'    => 'box-shadow',
+					'scheme'  => 'dark',
+					'options' => self::shadow_labels(),
+				),
 				'custom'      => array(
 					'type'  => 'text',
 					'label' => __( 'Custom shadow (CSS)', 'hi-wpessential' ),
@@ -224,6 +255,19 @@ class Groups {
 					'label' => __( 'Hover colour', 'hi-wpessential' ),
 					'prop'  => 'background-color',
 					'state' => 'hover',
+				),
+				'darkColor'  => array(
+					'type'   => 'color',
+					'label'  => __( 'Colour in dark mode', 'hi-wpessential' ),
+					'prop'   => 'background-color',
+					'scheme' => 'dark',
+				),
+				'darkImage'  => array(
+					'type'   => 'url',
+					'label'  => __( 'Image URL in dark mode', 'hi-wpessential' ),
+					'prop'   => 'background-image',
+					'image'  => true,
+					'scheme' => 'dark',
 				),
 				'gradient'   => array(
 					'type'    => 'select',
@@ -285,16 +329,41 @@ class Groups {
 				),
 			),
 			'colors'     => array(
-				'normal' => array(
+				'normal'    => array(
 					'type'  => 'color',
 					'label' => __( 'Colour', 'hi-wpessential' ),
 					'prop'  => '{prop}',
 				),
-				'hover'  => array(
+				'hover'     => array(
 					'type'  => 'color',
 					'label' => __( 'Hover colour', 'hi-wpessential' ),
 					'prop'  => '{prop}',
 					'state' => 'hover',
+				),
+				'focus'     => array(
+					'type'  => 'color',
+					'label' => __( 'Keyboard focus colour', 'hi-wpessential' ),
+					'prop'  => '{prop}',
+					'state' => 'focus',
+				),
+				'active'    => array(
+					'type'  => 'color',
+					'label' => __( 'Pressed colour', 'hi-wpessential' ),
+					'prop'  => '{prop}',
+					'state' => 'active',
+				),
+				'dark'      => array(
+					'type'   => 'color',
+					'label'  => __( 'Colour in dark mode', 'hi-wpessential' ),
+					'prop'   => '{prop}',
+					'scheme' => 'dark',
+				),
+				'darkHover' => array(
+					'type'   => 'color',
+					'label'  => __( 'Hover colour in dark mode', 'hi-wpessential' ),
+					'prop'   => '{prop}',
+					'scheme' => 'dark',
+					'state'  => 'hover',
 				),
 			),
 		);
@@ -400,19 +469,19 @@ class Groups {
 			'common'     => true,
 		);
 		$attr   = array(
-			'cssClass'     => array(
+			'cssClass'        => array(
 				'type'   => 'text',
 				'label'  => __( 'CSS classes', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
-			'attributes'   => array(
+			'attributes'      => array(
 				'type'   => 'textarea',
 				'label'  => __( 'Custom attributes (key|value, one per line)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
-			'width'        => array(
+			'width'           => array(
 				'type'       => 'select',
 				'label'      => __( 'Width', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -427,7 +496,7 @@ class Groups {
 					'fit-content' => __( 'Fit content', 'hi-wpessential' ),
 				),
 			),
-			'maxWidth'     => array_merge(
+			'maxWidth'        => array_merge(
 				$px,
 				array(
 					'label' => __( 'Max width', 'hi-wpessential' ),
@@ -436,7 +505,7 @@ class Groups {
 					'min'   => 0,
 				)
 			),
-			'alignSelf'    => array(
+			'alignSelf'       => array(
 				'type'       => 'select',
 				'label'      => __( 'Align self (in flex/grid)', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -452,7 +521,7 @@ class Groups {
 					'stretch'    => __( 'Stretch', 'hi-wpessential' ),
 				),
 			),
-			'order'        => array(
+			'order'           => array(
 				'type'       => 'range',
 				'label'      => __( 'Order', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -464,7 +533,7 @@ class Groups {
 				'min'        => -10,
 				'max'        => 10,
 			),
-			'position'     => array(
+			'position'        => array(
 				'type'       => 'select',
 				'label'      => __( 'Position', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -480,7 +549,7 @@ class Groups {
 					'sticky'   => __( 'Sticky', 'hi-wpessential' ),
 				),
 			),
-			'top'          => array_merge(
+			'top'             => array_merge(
 				$px,
 				array(
 					'label' => __( 'Offset top', 'hi-wpessential' ),
@@ -488,7 +557,7 @@ class Groups {
 					'raw'   => true,
 				)
 			),
-			'right'        => array_merge(
+			'right'           => array_merge(
 				$px,
 				array(
 					'label' => __( 'Offset right', 'hi-wpessential' ),
@@ -496,7 +565,7 @@ class Groups {
 					'raw'   => true,
 				)
 			),
-			'bottom'       => array_merge(
+			'bottom'          => array_merge(
 				$px,
 				array(
 					'label' => __( 'Offset bottom', 'hi-wpessential' ),
@@ -504,7 +573,7 @@ class Groups {
 					'raw'   => true,
 				)
 			),
-			'left'         => array_merge(
+			'left'            => array_merge(
 				$px,
 				array(
 					'label' => __( 'Offset left', 'hi-wpessential' ),
@@ -512,7 +581,7 @@ class Groups {
 					'raw'   => true,
 				)
 			),
-			'zIndex'       => array(
+			'zIndex'          => array(
 				'type'   => 'range',
 				'label'  => __( 'Z-index', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -523,7 +592,7 @@ class Groups {
 				'min'    => -10,
 				'max'    => 999,
 			),
-			'opacity'      => array(
+			'opacity'         => array(
 				'type'   => 'range',
 				'label'  => __( 'Opacity', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -535,7 +604,7 @@ class Groups {
 				'max'    => 1,
 				'step'   => 0.05,
 			),
-			'hoverOpacity' => array(
+			'hoverOpacity'    => array(
 				'type'   => 'range',
 				'label'  => __( 'Hover opacity', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -548,7 +617,7 @@ class Groups {
 				'max'    => 1,
 				'step'   => 0.05,
 			),
-			'rotate'       => array(
+			'rotate'          => array(
 				'type'   => 'range',
 				'label'  => __( 'Rotate', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -558,7 +627,7 @@ class Groups {
 				'min'    => -180,
 				'max'    => 180,
 			),
-			'scale'        => array(
+			'scale'           => array(
 				'type'   => 'range',
 				'label'  => __( 'Scale', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -569,7 +638,7 @@ class Groups {
 				'max'    => 3,
 				'step'   => 0.05,
 			),
-			'moveX'        => array(
+			'moveX'           => array(
 				'type'   => 'range',
 				'label'  => __( 'Move X', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -579,7 +648,7 @@ class Groups {
 				'min'    => -300,
 				'max'    => 300,
 			),
-			'moveY'        => array(
+			'moveY'           => array(
 				'type'   => 'range',
 				'label'  => __( 'Move Y', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -589,7 +658,7 @@ class Groups {
 				'min'    => -300,
 				'max'    => 300,
 			),
-			'hoverRotate'  => array(
+			'hoverRotate'     => array(
 				'type'   => 'range',
 				'label'  => __( 'Hover rotate', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -599,7 +668,7 @@ class Groups {
 				'min'    => -180,
 				'max'    => 180,
 			),
-			'hoverScale'   => array(
+			'hoverScale'      => array(
 				'type'   => 'range',
 				'label'  => __( 'Hover scale', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -610,7 +679,7 @@ class Groups {
 				'max'    => 3,
 				'step'   => 0.05,
 			),
-			'hoverMoveY'   => array(
+			'hoverMoveY'      => array(
 				'type'   => 'range',
 				'label'  => __( 'Hover move Y', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -620,7 +689,7 @@ class Groups {
 				'min'    => -100,
 				'max'    => 100,
 			),
-			'transition'   => array(
+			'transition'      => array(
 				'type'   => 'range',
 				'label'  => __( 'Transition (ms)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -631,7 +700,87 @@ class Groups {
 				'max'    => 3000,
 				'step'   => 50,
 			),
-			'animation'    => array(
+			'transitionEase'  => array(
+				'type'    => 'select',
+				'label'   => __( 'Transition easing', 'hi-wpessential' ),
+				'panel'   => 'advanced',
+				'common'  => true,
+				'css'     => '--wpek-ease',
+				'raw'     => true,
+				'options' => array(
+					''                             => __( 'Theme default', 'hi-wpessential' ),
+					'ease'                         => 'Ease',
+					'linear'                       => __( 'Linear', 'hi-wpessential' ),
+					'cubic-bezier(.2,.8,.2,1)'     => __( 'Smooth out', 'hi-wpessential' ),
+					'cubic-bezier(.65,0,.35,1)'    => __( 'In-out', 'hi-wpessential' ),
+					'cubic-bezier(.34,1.56,.64,1)' => __( 'Spring', 'hi-wpessential' ),
+				),
+			),
+			'transitionDelay' => array(
+				'type'   => 'range',
+				'label'  => __( 'Transition delay (ms)', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
+				'css'    => '--wpek-tdelay',
+				'unit'   => 'ms',
+				'min'    => 0,
+				'max'    => 2000,
+				'step'   => 50,
+			),
+			'hoverPreset'     => array(
+				'type'    => 'select',
+				'label'   => __( 'Hover preset (from the demo)', 'hi-wpessential' ),
+				'panel'   => 'advanced',
+				'common'  => true,
+				'options' => array(
+					''       => __( 'None', 'hi-wpessential' ),
+					'lift'   => __( 'Lift', 'hi-wpessential' ),
+					'zoom'   => __( 'Zoom', 'hi-wpessential' ),
+					'glow'   => __( 'Glow', 'hi-wpessential' ),
+					'shadow' => __( 'Shadow', 'hi-wpessential' ),
+					'dim'    => __( 'Dim others', 'hi-wpessential' ),
+					'tilt'   => __( 'Tilt', 'hi-wpessential' ),
+				),
+			),
+			'rootAriaLabel'   => array(
+				'type'   => 'text',
+				'label'  => __( 'Wrapper ARIA label (needs a role)', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
+			),
+			'rootRole'        => array(
+				'type'    => 'select',
+				'label'   => __( 'Wrapper ARIA role', 'hi-wpessential' ),
+				'panel'   => 'advanced',
+				'common'  => true,
+				'options' => array(
+					''              => __( 'Default', 'hi-wpessential' ),
+					'region'        => 'region',
+					'banner'        => 'banner',
+					'complementary' => 'complementary',
+					'note'          => 'note',
+					'presentation'  => 'presentation',
+					'group'         => 'group',
+				),
+			),
+			'rootAriaHidden'  => array(
+				'type'   => 'toggle',
+				'label'  => __( 'Decorative: hide from screen readers', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
+			),
+			'rootAriaLive'    => array(
+				'type'    => 'select',
+				'label'   => __( 'Announce changes (aria-live)', 'hi-wpessential' ),
+				'panel'   => 'advanced',
+				'common'  => true,
+				'options' => array(
+					''          => __( 'Off', 'hi-wpessential' ),
+					'polite'    => __( 'Polite', 'hi-wpessential' ),
+					'assertive' => __( 'Assertive', 'hi-wpessential' ),
+				),
+			),
+			'animation'       => array(
 				'type'    => 'select',
 				'label'   => __( 'Entrance animation', 'hi-wpessential' ),
 				'panel'   => 'advanced',
@@ -639,7 +788,7 @@ class Groups {
 				'default' => '',
 				'options' => self::animations(),
 			),
-			'animDuration' => array(
+			'animDuration'    => array(
 				'type'   => 'range',
 				'label'  => __( 'Animation duration (ms)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -650,7 +799,7 @@ class Groups {
 				'max'    => 3000,
 				'step'   => 50,
 			),
-			'animDelay'    => array(
+			'animDelay'       => array(
 				'type'   => 'range',
 				'label'  => __( 'Animation delay (ms)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -661,7 +810,7 @@ class Groups {
 				'max'    => 3000,
 				'step'   => 50,
 			),
-			'hide'         => array(
+			'hide'            => array(
 				'type'   => 'breakpoints',
 				'label'  => __( 'Hide on', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -743,17 +892,40 @@ class Groups {
 	 */
 	public static function css( array $group, array $value, $root, array &$rules ) {
 		$fields = self::fields()[ $group['type'] ] ?? array();
+		$base   = trim( $root . ' ' . ( $group['selector'] ?? '' ) );
+		$parts  = array_map( 'trim', explode( ',', $base ) );
+		// Fluid font size: one clamp() between the 360px and the 1440px value.
+		if ( 'typography' === $group['type'] && is_numeric( $value['sizeMin'] ?? '' ) && is_numeric( $value['sizeMax'] ?? '' ) ) {
+			$min                      = (float) $value['sizeMin'];
+			$max                      = (float) $value['sizeMax'];
+			$slope                    = ( $max - $min ) / ( 1440 - 360 );
+			$rules['base'][ $base ][] = sprintf( 'font-size:clamp(%1$spx, calc(%2$spx + %3$svw), %4$spx)', min( $min, $max ), round( $min - $slope * 360, 3 ), round( $slope * 100, 4 ), max( $min, $max ) );
+		}
+		$states = array(
+			'hover'  => array( ':hover', ':focus-visible' ),
+			'focus'  => array( ':focus-visible' ),
+			'active' => array( ':active' ),
+		);
 		foreach ( $fields as $key => $f ) {
-			if ( ! isset( $value[ $key ] ) ) {
+			if ( ! isset( $value[ $key ] ) || ! empty( $f['fluid'] ) ) {
 				continue;
 			}
 			$values = ! empty( $f['responsive'] ) && is_array( $value[ $key ] ) ? $value[ $key ] : array( 'base' => $value[ $key ] );
 			$prop   = str_replace( '{prop}', $group['prop'] ?? 'color', $f['prop'] );
-			$sel    = trim( $root . ' ' . ( $group['selector'] ?? '' ) );
+			$sels   = $parts;
 			if ( ! empty( $f['state'] ) ) {
-				$sel = $root . ( ( $group['selector'] ?? '' ) ? ' ' . $group['selector'] : '' );
-				$sel = implode( ',', array_map( static fn( $s ) => trim( $s ) . ':hover', explode( ',', $sel ) ) ) . ',' . implode( ',', array_map( static fn( $s ) => trim( $s ) . ':focus-visible', explode( ',', $sel ) ) );
+				$sels = array();
+				foreach ( $parts as $part ) {
+					foreach ( $states[ $f['state'] ] as $pseudo ) {
+						$sels[] = $part . $pseudo;
+					}
+				}
 			}
+			if ( ! empty( $f['scheme'] ) ) {
+				// The theme's visitor toggle sets data-wpe-scheme on <html>.
+				$sels = array_map( static fn( $x ) => ':root[data-wpe-scheme="dark"] ' . $x, $sels );
+			}
+			$sel = implode( ',', $sels );
 			foreach ( $values as $bp => $v ) {
 				if ( '' === $v || null === $v ) {
 					continue;
@@ -908,6 +1080,24 @@ class Groups {
 						'selectors' => array( $hover => ( $group['prop'] ?? 'color' ) . ': {{VALUE}};' ),
 					)
 				);
+				$each  = static fn( $suffix ) => implode( ',', array_map( static fn( $x ) => '{{WRAPPER}} ' . trim( $x ) . $suffix, explode( ',', $group['selector'] ?? '' ) ) );
+				$dark  = ':root[data-wpe-scheme="dark"] ';
+				$extra = array(
+					'_focus'      => array( /* translators: %s: option label. */ __( '%s (keyboard focus)', 'hi-wpessential' ), $each( ':focus-visible' ) ),
+					'_active'     => array( /* translators: %s: option label. */ __( '%s (pressed)', 'hi-wpessential' ), $each( ':active' ) ),
+					'_dark'       => array( /* translators: %s: option label. */ __( '%s (dark mode)', 'hi-wpessential' ), implode( ',', array_map( static fn( $x ) => $dark . $x, explode( ',', $each( '' ) ) ) ) ),
+					'_dark_hover' => array( /* translators: %s: option label. */ __( '%s (dark mode, hover)', 'hi-wpessential' ), implode( ',', array_map( static fn( $x ) => $dark . $x, explode( ',', $each( ':hover' ) ) ) ) ),
+				);
+				foreach ( $extra as $suffix => $def ) {
+					$w->add_control(
+						$key . $suffix,
+						array(
+							'label'     => sprintf( $def[0], $label ),
+							'type'      => \Elementor\Controls_Manager::COLOR,
+							'selectors' => array( $def[1] => ( $group['prop'] ?? 'color' ) . ': {{VALUE}};' ),
+						)
+					);
+				}
 				break;
 		}
 	}
