@@ -45,6 +45,10 @@ class Admin {
 		foreach ( $tabs as $tab => $label ) {
 			add_submenu_page( self::SLUG, $label, $label, 'manage_options', 'welcome' === $tab ? self::SLUG : self::SLUG . '#' . $tab, 'welcome' === $tab ? array( $this, 'render' ) : '__return_null' );
 		}
+		// The theme's Site Settings (Customizer panel) belong in the main menu too.
+		if ( current_theme_supports( 'block-templates' ) || function_exists( 'wpessential_site_fields' ) ) {
+			add_submenu_page( self::SLUG, __( 'Site Settings', 'hi-wpessential' ), __( 'Site Settings', 'hi-wpessential' ), 'edit_theme_options', 'customize.php?autofocus[panel]=wpessential_site' );
+		}
 	}
 
 	/**

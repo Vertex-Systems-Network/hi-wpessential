@@ -14,7 +14,24 @@
 		return s;
 	};
 	var cfg = window.wpessentialControls || window.wpessentialCustomizer || {};
-	var DEVICES = [ [ 'desktop', __( 'Desktop', 'hi-wpessential' ), '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>' ], [ 'tablet', __( 'Tablet (1023px and below)', 'hi-wpessential' ), '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/>' ], [ 'mobile', __( 'Mobile (767px and below)', 'hi-wpessential' ), '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>' ] ];
+	// One icon per theme breakpoint (widest to narrowest).
+	var ICONS = {
+		1920: '<rect x="1" y="4" width="22" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/>',
+		desktop: '<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/>',
+		1280: '<rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/>',
+		1024: '<rect x="2" y="6" width="20" height="13" rx="2"/><path d="M18 12.5h.01"/>',
+		768: '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/>',
+		560: '<rect x="2" y="7" width="20" height="10" rx="2"/><path d="M18 12h.01"/>',
+		480: '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
+		360: '<rect x="8" y="4" width="8" height="16" rx="1.5"/><path d="M11.5 17h1"/>',
+		320: '<rect x="9" y="6" width="6" height="12" rx="1.2"/><path d="M11.5 15.5h1"/>',
+	};
+	var BP = cfg.breakpoints || { desktop: { label: 'Desktop', width: 0 }, 768: { label: 'Tablet', width: 768 }, 560: { label: 'Mobile', width: 560 } };
+	var BP_ORDER = [ '1920', 'desktop', '1280', '1024', '768', '560', '480', '360', '320' ].filter( function ( k ) {
+		return BP[ k ];
+	} );
+	var LEGACY = { 768: 'tablet', 560: 'mobile' };
+	var switchers = [];
 	var googleList = null;
 	var googleWaiters = [];
 	var previewed = {};
@@ -254,21 +271,21 @@
 
 	/* ---------------------------------------------------------------- devices */
 
-	// Device switcher shown next to a responsive control's label (like Elementor).
+	// Breakpoint switcher next to a responsive control's label (like Elementor's devices, for every
+	// breakpoint switched on in Layout).
 	function deviceSwitch( ctx ) {
-		var box = h( 'span', { class: 'wpec-devices', role: 'group', 'aria-label': __( 'Device', 'hi-wpessential' ) } );
-		DEVICES.forEach( function ( d ) {
-			box.appendChild( h( 'button', { type: 'button', class: 'wpec-devices__btn', 'data-device': d[ 0 ], title: d[ 1 ], 'aria-label': d[ 1 ], html: svg( d[ 2 ], 13 ), onclick: function () {
-				api.setDevice( d[ 0 ] );
-			} } ) );
-		} );
-		var sync = function () {
-			box.querySelectorAll( '.wpec-devices__btn' ).forEach( function ( b ) {
-				b.classList.toggle( 'is-active', b.getAttribute( 'data-device' ) === ctx.device() );
+		var box = h( 'span', { class: 'wpec-devices', role: 'group', 'aria-label': __( 'Breakpoint', 'hi-wpessential' ) } );
+		var draw = function () {
+			box.innerHTML = '';
+			api.enabled().forEach( function ( k ) {
+				box.appendChild( h( 'button', { type: 'button', class: 'wpec-devices__btn' + ( k === ctx.device() ? ' is-active' : '' ), 'data-device': k, title: BP[ k ].label, 'aria-label': BP[ k ].label, 'aria-pressed': k === ctx.device() ? 'true' : 'false', html: svg( ICONS[ k ] || ICONS.desktop, 13 ), onclick: function () {
+					api.setDevice( k );
+				} } ) );
 			} );
 		};
-		listeners.push( sync );
-		sync();
+		switchers.push( draw );
+		listeners.push( draw );
+		draw();
 		return box;
 	}
 
@@ -281,6 +298,9 @@
 			get: function () {
 				var all = parse( ctx.get() );
 				var v = all[ ctx.device() ];
+				if ( undefined === v && LEGACY[ ctx.device() ] ) {
+					v = all[ LEGACY[ ctx.device() ] ];
+				}
 				// A plain old value counts as the desktop value.
 				if ( undefined === v && 'desktop' === ctx.device() && '' !== ctx.get() && '{' !== String( ctx.get() ).charAt( 0 ) ) {
 					v = ctx.get();
@@ -291,6 +311,9 @@
 				var all = parse( ctx.get() );
 				if ( '' !== ctx.get() && '{' !== String( ctx.get() ).charAt( 0 ) ) {
 					all = { desktop: ctx.get() };
+				}
+				if ( LEGACY[ ctx.device() ] ) {
+					delete all[ LEGACY[ ctx.device() ] ];
 				}
 				all[ ctx.device() ] = 'string' === typeof v && '{' === v.charAt( 0 ) ? parse( v ) : v;
 				ctx.set( stringify( all ) );
@@ -314,70 +337,70 @@
 		} };
 	};
 
+	// Colour: Pickr (bundled, MIT) with opacity, the site palette as swatches, and a text field.
 	types.color = function ( ctx ) {
 		var wrap = h( 'div', { class: 'wpec-color' } );
-		var chip = h( 'button', { type: 'button', class: 'wpec-color__chip', 'aria-haspopup': 'true', 'aria-label': ( ctx.label || '' ) + ': ' + __( 'choose colour', 'hi-wpessential' ) } );
+		var chip = h( 'button', { type: 'button', class: 'wpec-color__chip', 'aria-label': ( ctx.label || '' ) + ': ' + __( 'choose colour', 'hi-wpessential' ) }, [ h( 'span', { class: 'wpec-color__fill' } ) ] );
+		var fill = chip.firstChild;
 		var hex = h( 'input', { type: 'text', class: 'wpec-input wpec-color__hex', placeholder: __( 'Theme default', 'hi-wpessential' ), spellcheck: 'false', 'aria-label': ctx.label, onchange: function ( e ) {
 			var v = e.target.value.trim();
 			if ( ! v || /^#?[0-9a-f]{3,8}$/i.test( v ) || /^(rgb|hsl)a?\(/i.test( v ) || /^var\(/.test( v ) ) {
 				ctx.set( v && /^[0-9a-f]{3,8}$/i.test( v ) ? '#' + v : v );
 			}
 		} } );
-		// Popover like Elementor's: Global colours and a custom picker with opacity.
-		var pop = h( 'div', { class: 'wpec-pop', hidden: true } );
-		var tabs = h( 'div', { class: 'wpec-tabs' } );
-		var globals = h( 'div', { class: 'wpec-color__globals' } );
-		var picker = h( 'input', { type: 'color', class: 'wpec-color__native', 'aria-label': __( 'Custom colour', 'hi-wpessential' ) } );
-		var alpha = h( 'input', { type: 'range', min: 0, max: 100, step: 1, class: 'wpec-color__alpha', 'aria-label': __( 'Opacity', 'hi-wpessential' ) } );
-		var custom = h( 'div', { class: 'wpec-color__custom', hidden: true }, [ picker, h( 'label', { class: 'wpec-color__alpha-row' }, [ h( 'span', { text: __( 'Opacity', 'hi-wpessential' ) } ), alpha ] ) ] );
-		var setCustom = function () {
-			var a = Math.round( Number( alpha.value ) * 2.55 );
-			ctx.set( 255 === a ? picker.value : picker.value + ( a < 16 ? '0' : '' ) + a.toString( 16 ) );
-		};
-		picker.addEventListener( 'input', setCustom );
-		alpha.addEventListener( 'input', setCustom );
-		[ [ 'globals', __( 'Global', 'hi-wpessential' ) ], [ 'custom', __( 'Custom', 'hi-wpessential' ) ] ].forEach( function ( t, i ) {
-			tabs.appendChild( h( 'button', { type: 'button', class: 'wpec-tabs__btn' + ( 0 === i ? ' is-active' : '' ), text: t[ 1 ], onclick: function ( e ) {
-				tabs.querySelectorAll( '.wpec-tabs__btn' ).forEach( function ( b ) {
-					b.classList.toggle( 'is-active', b === e.currentTarget );
-				} );
-				globals.hidden = 'globals' !== t[ 0 ];
-				custom.hidden = 'custom' !== t[ 0 ];
-			} } ) );
+		var palette = Object.keys( cfg.palette || {} ).map( function ( slug ) {
+			return cfg.palette[ slug ][ 1 ];
 		} );
-		Object.keys( cfg.palette || {} ).forEach( function ( slug ) {
-			var c = cfg.palette[ slug ];
-			globals.appendChild( h( 'button', { type: 'button', class: 'wpec-color__global', 'data-color': c[ 1 ].toLowerCase(), onclick: function () {
-				ctx.set( c[ 1 ] );
-				pop.hidden = true;
-			} }, [ h( 'span', { class: 'wpec-color__dot', style: 'background:' + c[ 1 ] } ), h( 'span', { text: c[ 0 ] } ), h( 'code', { text: c[ 1 ] } ) ] ) );
-		} );
-		pop.appendChild( tabs );
-		pop.appendChild( globals );
-		pop.appendChild( custom );
-		chip.addEventListener( 'click', function () {
-			pop.hidden = ! pop.hidden;
-		} );
-		document.addEventListener( 'click', function ( e ) {
-			if ( ! wrap.contains( e.target ) ) {
-				pop.hidden = true;
+		var pickr = null;
+		var syncing = false;
+		var open = function () {
+			if ( ! window.Pickr ) {
+				return;
 			}
-		} );
+			if ( ! pickr ) {
+				pickr = window.Pickr.create( {
+					el: chip,
+					useAsButton: true,
+					theme: 'nano',
+					container: 'body',
+					default: ctx.get() || '#ffffff',
+					defaultRepresentation: 'HEXA',
+					comparison: false,
+					swatches: palette,
+					components: { preview: true, opacity: true, hue: true, interaction: { hex: true, rgba: true, hsla: false, input: true, clear: true, save: false } },
+					i18n: { 'btn:clear': __( 'Clear', 'hi-wpessential' ), 'aria:input': __( 'Colour value', 'hi-wpessential' ) },
+				} );
+				pickr.on( 'change', function ( color ) {
+					if ( syncing || ! color ) {
+						return;
+					}
+					var a = color.toHEXA();
+					var str = a.toString();
+					// Drop "FF" alpha: keep plain #RRGGBB when the colour is opaque.
+					ctx.set( 8 === str.replace( '#', '' ).length && /ff$/i.test( str ) ? str.slice( 0, 7 ) : str );
+				} );
+				pickr.on( 'swatchselect', function ( color ) {
+					pickr.applyColor( true );
+					ctx.set( color.toHEXA().toString() );
+				} );
+				pickr.on( 'clear', function () {
+					ctx.set( '' );
+				} );
+				pickr.show();
+			}
+		};
+		chip.addEventListener( 'click', open );
 		wrap.appendChild( h( 'div', { class: 'wpec-color__row' }, [ chip, hex ] ) );
-		wrap.appendChild( pop );
 		return { el: wrap, refresh: function () {
 			var v = ctx.get();
-			chip.style.background = v ? v + ' padding-box' : '';
+			fill.style.background = v || '';
 			chip.classList.toggle( 'is-empty', ! v );
 			hex.value = v;
-			var m = /^#([0-9a-f]{6})([0-9a-f]{2})?$/i.exec( v );
-			if ( m ) {
-				picker.value = '#' + m[ 1 ];
-				alpha.value = m[ 2 ] ? Math.round( parseInt( m[ 2 ], 16 ) / 2.55 ) : 100;
+			if ( pickr && v && /^#/.test( v ) ) {
+				syncing = true;
+				pickr.setColor( v, true );
+				syncing = false;
 			}
-			globals.querySelectorAll( '.wpec-color__global' ).forEach( function ( g ) {
-				g.classList.toggle( 'is-active', g.getAttribute( 'data-color' ) === v.toLowerCase() );
-			} );
 		} };
 	};
 
@@ -766,6 +789,30 @@
 		} };
 	};
 
+	// Breakpoints: pick the screen sizes responsive options show (desktop always on).
+	types.breakpoints = function ( ctx ) {
+		var list = h( 'div', { class: 'wpec-bps' } );
+		BP_ORDER.forEach( function ( k ) {
+			var input = h( 'input', { type: 'checkbox', value: k, disabled: 'desktop' === k, onchange: function () {
+				var on = [];
+				list.querySelectorAll( 'input' ).forEach( function ( i ) {
+					if ( i.checked && 'desktop' !== i.value ) {
+						on.push( i.value );
+					}
+				} );
+				ctx.set( on.length ? on.join( '|' ) : '-' );
+			} } );
+			list.appendChild( h( 'label', { class: 'wpec-bps__item' + ( 'desktop' === k ? ' is-fixed' : '' ) }, [ input, h( 'span', { class: 'wpec-bps__icon', html: svg( ICONS[ k ] || ICONS.desktop, 18 ) } ), h( 'span', { class: 'wpec-bps__label', text: BP[ k ].label } ) ] ) );
+		} );
+		return { el: list, refresh: function () {
+			var on = api.parseOn( ctx.get() );
+			list.querySelectorAll( 'input' ).forEach( function ( i ) {
+				i.checked = 'desktop' === i.value || on.indexOf( i.value ) >= 0;
+			} );
+			api.setBreakpoints( on );
+		} };
+	};
+
 	/* ---------------------------------------------------------------- api */
 
 	var api = {
@@ -774,6 +821,31 @@
 		parse: parse,
 		stringify: stringify,
 		currentDevice: 'desktop',
+		on: ( cfg.breakpointsOn || [ 'desktop', '768', '560' ] ).map( String ),
+		// "" = theme default (768 and 560), "-" = desktop only, else "1920|768|…".
+		parseOn: function ( raw ) {
+			if ( '' === raw || undefined === raw || null === raw ) {
+				return [ '768', '560' ];
+			}
+			return String( raw ).split( '|' ).filter( function ( k ) {
+				return BP[ k ];
+			} );
+		},
+		enabled: function () {
+			return BP_ORDER.filter( function ( k ) {
+				return 'desktop' === k || api.on.indexOf( k ) >= 0;
+			} );
+		},
+		setBreakpoints: function ( list ) {
+			api.on = list.map( String );
+			if ( api.enabled().indexOf( api.currentDevice ) < 0 ) {
+				api.setDevice( 'desktop' );
+			}
+			switchers.forEach( function ( fn ) {
+				fn();
+			} );
+		},
+		breakpoints: BP,
 		setDevice: function ( d ) {
 			api.currentDevice = d;
 			if ( api.onDevice ) {

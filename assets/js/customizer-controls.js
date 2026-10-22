@@ -94,18 +94,47 @@
 		if ( api.notifications ) {
 			api.notifications.remove( 'site_editor_block_theme_notice' );
 		}
-		controls.onDevice = function ( d ) {
-			if ( api.previewedDevice && api.previewedDevice.get() !== d ) {
-				api.previewedDevice.set( d );
+		// A breakpoint button resizes the preview to that screen width (like Elementor's responsive mode).
+		var WP_TO_BP = { desktop: 'desktop', tablet: '768', mobile: '560' };
+		var preview = document.getElementById( 'customize-preview' );
+		var resize = function ( d ) {
+			var w = ( controls.breakpoints[ d ] || {} ).width;
+			if ( ! preview ) {
+				return;
 			}
+			if ( w && w < 1920 ) {
+				preview.style.width = w + 'px';
+				preview.style.left = '50%';
+				preview.style.marginLeft = ( -w / 2 ) + 'px';
+				preview.classList.add( 'wpec-preview-sized' );
+			} else {
+				preview.style.width = preview.style.left = preview.style.marginLeft = '';
+				preview.classList.remove( 'wpec-preview-sized' );
+			}
+		};
+		controls.onDevice = function ( d ) {
+			if ( api.previewedDevice && 'desktop' !== api.previewedDevice.get() ) {
+				api.previewedDevice.set( 'desktop' );
+			}
+			resize( d );
 		};
 		if ( api.previewedDevice ) {
 			api.previewedDevice.bind( function ( d ) {
-				if ( controls.currentDevice !== d ) {
-					controls.setDevice( d );
+				var bp = WP_TO_BP[ d ] || 'desktop';
+				if ( 'desktop' !== d && controls.currentDevice !== bp ) {
+					// WordPress' own device buttons: show the matching breakpoint.
+					resize( 'desktop' );
+					controls.currentDevice = bp;
+					controls.setDevice( bp );
 				}
 			} );
 		}
+		// The Breakpoints setting decides which breakpoints every responsive control shows.
+		api( 'wpessential_site[breakpoints]', function ( setting ) {
+			setting.bind( function ( v ) {
+				controls.setBreakpoints( controls.parseOn( v ) );
+			} );
+		} );
 		var init = function ( control ) {
 			if ( 'wpessential' === control.params.type ) {
 				control.deferred.embedded.done( function () {

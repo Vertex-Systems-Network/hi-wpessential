@@ -1,6 +1,6 @@
 # Site Settings
 
-**Appearance → Site Settings** opens the Customizer at the WPEssential Site Settings panel. It is like Elementor's Site Settings, with more options.
+**WPEssential → Site Settings** (in the main admin menu) opens the Customizer at the WPEssential Site Settings panel. Without the Core plugin the link is under Appearance. It is like Elementor's Site Settings, with more options.
 
 ## How the values are used
 
@@ -25,7 +25,7 @@
 | Buttons | Radius, padding (responsive dimensions), size (responsive), weight, case, letter spacing, hover lift; Normal / Hover colours, border and shadow |
 | Form fields | Radius, height (responsive), padding (responsive), border, background, focus ring |
 | Corners & images | Radius scale sm–xl, image hover zoom, rounded content images |
-| Layout | Content and wide width, section spacing (responsive), side space (responsive), space between blocks, header height (responsive), sticky header, back-to-top |
+| Layout | Breakpoints you edit (any of the 9 theme breakpoints), content and wide width, section spacing (responsive), side space (responsive), space between blocks, header height (responsive), sticky header, back-to-top |
 | Gradients | Brand gradient (or follow Primary → Secondary), night gradient, image fade |
 | Links | Colour, hover colour, underline, thickness, distance, weight |
 | Shadows | Colour and strength for every shadow, or a box shadow per size |

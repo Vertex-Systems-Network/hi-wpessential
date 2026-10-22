@@ -160,3 +160,25 @@
 #customize-controls .wpec .wpec-range__num { padding-inline-end: 38px; }
 .wpec-dims__head { margin: 0 0 6px; }
 .wpec--dimensions .wpec__head { margin-bottom: 4px; }
+
+/* Pickr colour chip (alpha shows over a checkerboard) */
+.wpec-color__chip { position: relative; background: repeating-conic-gradient(#ddd 0 25%, #fff 0 50%) 0 0 / 10px 10px !important; }
+.wpec-color__fill { position: absolute; inset: 0; border-radius: inherit; }
+.pcr-app { z-index: 500100 !important; border-radius: 10px !important; box-shadow: 0 12px 32px rgb(0 0 0 / 18%) !important; }
+.pcr-app .pcr-swatches > button { border-radius: 50%; }
+
+/* Breakpoints control */
+.wpec-bps { display: grid; gap: 4px; }
+.wpec-bps__item { display: flex; align-items: center; gap: 10px; padding: 7px 10px; border: 1px solid var(--wpec-line, #dcdcde); border-radius: 8px; background: #fff; cursor: pointer; }
+.wpec-bps__item:has(input:checked) { border-color: var(--wpec-accent, #2271b1); background: color-mix(in srgb, var(--wpec-accent, #2271b1) 6%, #fff); }
+.wpec-bps__item.is-fixed { cursor: default; opacity: .8; }
+.wpec-bps__item input { margin: 0; }
+.wpec-bps__icon { display: inline-grid; place-items: center; color: #50575e; }
+.wpec-bps__item:has(input:checked) .wpec-bps__icon { color: var(--wpec-accent, #2271b1); }
+.wpec-bps__label { font-size: 12px; }
+.wpec-devices { flex-wrap: wrap; }
+#customize-preview.wpec-preview-sized { box-shadow: 0 0 0 1px #c3c4c7, 0 10px 40px rgb(0 0 0 / 12%); transition: width .25s, margin .25s; }
+/* Many breakpoints: the switcher gets its own line under the label. */
+.wpec__head { flex-wrap: wrap; }
+.wpec__head .wpec-devices { order: 3; flex-basis: 100%; margin: 4px 0 0; }
+.wpec-field__head { flex-wrap: wrap; }

@@ -11,6 +11,57 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * The theme breakpoints, in order from widest to narrowest: key => [ label, media query, preview width ].
+ * "desktop" is the 1440 base. Old values saved as "tablet" / "mobile" read as 768 / 560.
+ *
+ * @return array
+ */
+function wpessential_site_breakpoints() {
+	return array(
+		'1920'    => array( __( 'Wide screen (1920 and up)', 'hi-wpessential' ), '@media (min-width: 1920px)', 1920 ),
+		'desktop' => array( __( 'Desktop (1440, base)', 'hi-wpessential' ), '', 0 ),
+		'1280'    => array( __( 'Laptop (1280 to 1439)', 'hi-wpessential' ), '@media (max-width: 1439px)', 1280 ),
+		'1024'    => array( __( 'Tablet landscape (1024 to 1279)', 'hi-wpessential' ), '@media (max-width: 1279px)', 1024 ),
+		'768'     => array( __( 'Tablet (768 to 1023)', 'hi-wpessential' ), '@media (max-width: 1023px)', 768 ),
+		'560'     => array( __( 'Mobile landscape (560 to 767)', 'hi-wpessential' ), '@media (max-width: 767px)', 560 ),
+		'480'     => array( __( 'Mobile (480 to 559)', 'hi-wpessential' ), '@media (max-width: 559px)', 480 ),
+		'360'     => array( __( 'Small mobile (360 to 479)', 'hi-wpessential' ), '@media (max-width: 479px)', 360 ),
+		'320'     => array( __( 'Smallest (320 to 359)', 'hi-wpessential' ), '@media (max-width: 359px)', 320 ),
+	);
+}
+
+/**
+ * Breakpoints switched on in Site Settings → Layout (desktop is always on).
+ *
+ * @return string[]
+ */
+function wpessential_site_breakpoints_on() {
+	$v   = function_exists( 'wpessential_site_values' ) ? (array) get_theme_mod( 'wpessential_site', array() ) : array();
+	$raw = (string) ( $v['breakpoints'] ?? '' );
+	$on  = '' === $raw ? array( '768', '560' ) : array_filter( explode( '|', $raw ) );
+	return array_values( array_intersect( array_keys( wpessential_site_breakpoints() ), array_merge( array( 'desktop' ), $on ) ) );
+}
+
+/**
+ * Per-breakpoint values with the old device names mapped.
+ *
+ * @param array $val Value { desktop, 768, … }.
+ * @return array
+ */
+function wpessential_site_by_bp( array $val ) {
+	foreach ( array(
+		'tablet' => '768',
+		'mobile' => '560',
+	) as $old => $new ) {
+		if ( isset( $val[ $old ] ) && ! isset( $val[ $new ] ) ) {
+			$val[ $new ] = $val[ $old ];
+		}
+		unset( $val[ $old ] );
+	}
+	return $val;
+}
+
+/**
  * Selectors the responsive and composite settings write to.
  *
  * @return array key => [ selector, property ]
@@ -66,6 +117,14 @@ function wpessential_site_fields_upgrade( array $sections ) {
 		}
 	}
 	unset( $sections['wpessential_site_layout']['fields']['gutter_mobile'] );
+	$sections['wpessential_site_layout']['fields'] = array(
+		'breakpoints' => array(
+			'type'    => 'breakpoints',
+			'label'   => __( 'Breakpoints you edit', 'hi-wpessential' ),
+			'help'    => __( 'Switch on the screen sizes you want to set. Every responsive option shows these, each with its own icon. Desktop (1440) is always on.', 'hi-wpessential' ),
+			'choices' => array_map( static fn( $b ) => $b[0], wpessential_site_breakpoints() ),
+		),
+	) + $sections['wpessential_site_layout']['fields'];
 
 	// Letter case as icon buttons.
 	foreach ( array( array( 'wpessential_site_type', 'heading_case' ), array( 'wpessential_site_button', 'btn_case' ) ) as $p ) {
@@ -304,11 +363,7 @@ function wpessential_site_dims( array $d ) {
  * @return array device => declarations
  */
 function wpessential_site_typo( array $t ) {
-	$out    = array(
-		'desktop' => array(),
-		'tablet'  => array(),
-		'mobile'  => array(),
-	);
+	$out    = array_fill_keys( array_keys( wpessential_site_breakpoints() ), array() );
 	$family = (string) ( $t['family'] ?? '' );
 	if ( '' !== $family ) {
 		$out['desktop']['font-family'] = 0 === strpos( $family, 'google:' ) ? wpessential_google_stack( substr( $family, 7 ) ) : ( wpessential_site_fonts()[ $family ][0] ?? '' );
@@ -318,8 +373,8 @@ function wpessential_site_typo( array $t ) {
 		'lineHeight'    => 'line-height',
 		'letterSpacing' => 'letter-spacing',
 	) as $key => $prop ) {
-		$val = wpessential_site_json( $t[ $key ] ?? array() );
-		foreach ( array( 'desktop', 'tablet', 'mobile' ) as $device ) {
+		$val = wpessential_site_by_bp( wpessential_site_json( $t[ $key ] ?? array() ) );
+		foreach ( array_keys( wpessential_site_breakpoints() ) as $device ) {
 			$css = wpessential_site_size( $val[ $device ] ?? '', 'lineHeight' === $key ? '' : 'px' );
 			if ( '' !== $css ) {
 				$out[ $device ][ $prop ] = $css;
@@ -410,16 +465,10 @@ function wpessential_site_background( array $b ) {
  * @return string
  */
 function wpessential_site_controls_css( array $v ) {
-	$media = array(
-		'desktop' => '',
-		'tablet'  => '@media (max-width: 1023px)',
-		'mobile'  => '@media (max-width: 767px)',
-	);
-	$rules = array(
-		'desktop' => array(),
-		'tablet'  => array(),
-		'mobile'  => array(),
-	);
+	// Base first, so every media query after it can override it.
+	$media = array( 'desktop' => '' ) + array_map( static fn( $b ) => $b[1], wpessential_site_breakpoints() );
+	$rules = array_fill_keys( array_keys( $media ), array() );
+	$on    = array_flip( wpessential_site_breakpoints_on() );
 	$add   = static function ( $device, $sel, $prop, $val ) use ( &$rules ) {
 		foreach ( explode( '|', $prop ) as $p ) {
 			$rules[ $device ][ $sel ][ $p ] = $val;
@@ -447,7 +496,8 @@ function wpessential_site_controls_css( array $v ) {
 		if ( ! $val ) {
 			continue; // A plain (old) number: written through theme.json already.
 		}
-		foreach ( array( 'tablet', 'mobile', 'desktop' ) as $device ) {
+		$val = wpessential_site_by_bp( $val );
+		foreach ( array_keys( $media ) as $device ) {
 			if ( ! isset( $val[ $device ] ) ) {
 				continue;
 			}
@@ -463,6 +513,10 @@ function wpessential_site_controls_css( array $v ) {
 	}
 	$css = '';
 	foreach ( $rules as $device => $sels ) {
+		// Only the breakpoints switched on in Layout are written.
+		if ( ! isset( $on[ $device ] ) ) {
+			continue;
+		}
 		$block = '';
 		foreach ( $sels as $sel => $decls ) {
 			$block .= $sel . '{';
