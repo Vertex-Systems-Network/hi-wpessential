@@ -23,6 +23,7 @@ require WPESSENTIAL_DIR . '/inc/core-bridge.php';
 require WPESSENTIAL_DIR . '/inc/scheme.php';
 require WPESSENTIAL_DIR . '/inc/motion.php';
 require WPESSENTIAL_DIR . '/inc/options.php';
+require WPESSENTIAL_DIR . '/inc/fonts.php';
 require WPESSENTIAL_DIR . '/inc/customizer.php';
 require WPESSENTIAL_DIR . '/inc/seo.php';
 require WPESSENTIAL_DIR . '/inc/multilingual.php';
