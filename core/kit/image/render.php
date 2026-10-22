@@ -50,19 +50,35 @@ if ( '' === $wpe_main ) {
 	$wpe_main = '<span class="wpe-image__empty">' . esc_html__( 'Choose an image', 'hi-wpessential' ) . '</span>';
 }
 $wpe_media = $wpe_main . $wpe_dark;
+$wpe_full  = '';
 if ( $a['link'] ) {
 	$wpe_media = '<a class="wpe-image__link" href="' . esc_url( $a['link'] ) . '"' . ( $a['newTab'] ? ' target="_blank" rel="noopener"' : '' ) . '>' . $wpe_media . '</a>';
+} elseif ( $a['lightbox'] && is_array( $a['image'] ) && ( ! empty( $a['image']['id'] ) || ! empty( $a['image']['url'] ) ) ) {
+	// Lightbox: a native <dialog> with the full-size image; Esc, the close button or a click closes it.
+	$wpe_full  = ! empty( $a['image']['id'] ) ? (string) wp_get_attachment_image_url( (int) $a['image']['id'], 'full' ) : $a['image']['url'];
+	$wpe_media = '<a class="wpe-image__link" href="' . esc_url( $wpe_full ) . '" aria-haspopup="dialog" onclick="event.preventDefault();this.closest(\'.wpe-image\').querySelector(\'dialog\').showModal()">' . $wpe_media . '</a>';
 }
 $wpe_class = array( 'wpe-image', 'wpe-image--' . sanitize_key( $a['hover'] ) );
 if ( $wpe_dark ) {
 	$wpe_class[] = 'has-dark';
 }
-$wpe_caption = trim( (string) $a['caption'] );
-$wpe_tag     = '' !== $wpe_caption ? 'figure' : 'div';
+$wpe_caption = '';
+if ( 'attachment' === $a['captionSource'] && ! empty( $a['image']['id'] ) ) {
+	$wpe_caption = trim( (string) wp_get_attachment_caption( (int) $a['image']['id'] ) );
+} elseif ( 'none' !== $a['captionSource'] ) {
+	$wpe_caption = trim( (string) $a['caption'] );
+}
+$wpe_tag = '' !== $wpe_caption ? 'figure' : 'div';
 ?>
 <<?php echo esc_html( $wpe_tag ); ?> id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( implode( ' ', $wpe_class ) ); ?>"<?php echo $a['decorative'] ? ' aria-hidden="true"' : ''; ?>>
 	<div class="wpe-image__media"><?php echo $wpe_media; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image / escaped above. ?></div>
 	<?php if ( '' !== $wpe_caption ) : ?>
 		<figcaption class="wpe-image__caption"><?php echo wp_kses_post( $wpe_caption ); ?></figcaption>
+	<?php endif; ?>
+	<?php if ( '' !== $wpe_full ) : ?>
+		<dialog class="wpe-image__lightbox" aria-label="<?php esc_attr_e( 'Image', 'hi-wpessential' ); ?>" onclick="if(event.target===this)this.close()">
+			<img src="<?php echo esc_url( $wpe_full ); ?>" alt="" loading="lazy">
+			<button type="button" class="wpe-image__close" onclick="this.closest('dialog').close()"><span class="screen-reader-text"><?php esc_html_e( 'Close', 'hi-wpessential' ); ?></span><span aria-hidden="true">&times;</span></button>
+		</dialog>
 	<?php endif; ?>
 </<?php echo esc_html( $wpe_tag ); ?>>

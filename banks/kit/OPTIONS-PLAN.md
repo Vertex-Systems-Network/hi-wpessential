@@ -68,4 +68,12 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 43 | content-visibility: auto; CSS/JS only where used | ✅ CSS per element · ⏳ content-visibility |
 | 44 | Every text field translatable (WPML/Polylang) | ⏳ wpml-config for kit blocks |
 
+## 3. Parity rule
+
+Before an element is built, its Elementor widget in `banks/elements/elementor/` is checked option by
+option: every Elementor option is in the kit element, then our extras on top. Shared groups for this:
+typography, spacing, border, shadow, background, colours, text effects (text shadow normal/hover,
+text stroke, blend mode) and CSS filters (blur, brightness, contrast, saturation, hue, greyscale and
+opacity, normal and hover).
+
 Order: daily-use first (1–4, 8–9, 11–13, 31–34), then motion and effects, then display rules and workflow.

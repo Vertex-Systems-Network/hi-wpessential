@@ -14,6 +14,7 @@ $wpe_clamp = array_filter( (array) $a['clamp'] );
 $wpe_class = array( 'wpe-text', 'is-wrap-' . sanitize_key( $a['wrap'] ) );
 if ( $a['dropCap'] ) {
 	$wpe_class[] = 'has-drop-cap';
+	$wpe_class[] = 'is-drop-cap-' . sanitize_key( $a['dropCapView'] );
 }
 if ( $a['gradientText'] ) {
 	$wpe_class[] = 'is-gradient';

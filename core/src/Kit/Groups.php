@@ -46,7 +46,7 @@ class Groups {
 			)
 		);
 		return array(
-			'typography' => array(
+			'typography'  => array(
 				'family'        => array(
 					'type'    => 'select',
 					'label'   => __( 'Font', 'hi-wpessential' ),
@@ -161,13 +161,13 @@ class Groups {
 					'responsive' => true,
 				),
 			),
-			'spacing'    => array(
+			'spacing'     => array(
 				'top'    => $side( '{prop}-top', __( 'Top', 'hi-wpessential' ) ),
 				'right'  => $side( '{prop}-right', __( 'Right', 'hi-wpessential' ) ),
 				'bottom' => $side( '{prop}-bottom', __( 'Bottom', 'hi-wpessential' ) ),
 				'left'   => $side( '{prop}-left', __( 'Left', 'hi-wpessential' ) ),
 			),
-			'border'     => array(
+			'border'      => array(
 				'style'      => array(
 					'type'    => 'select',
 					'label'   => __( 'Border', 'hi-wpessential' ),
@@ -217,7 +217,7 @@ class Groups {
 					)
 				),
 			),
-			'shadow'     => array(
+			'shadow'      => array(
 				'preset'      => array(
 					'type'    => 'select',
 					'label'   => __( 'Shadow', 'hi-wpessential' ),
@@ -244,7 +244,7 @@ class Groups {
 					'prop'  => 'box-shadow',
 				),
 			),
-			'background' => array(
+			'background'  => array(
 				'color'      => array(
 					'type'  => 'color',
 					'label' => __( 'Colour', 'hi-wpessential' ),
@@ -328,7 +328,7 @@ class Groups {
 					),
 				),
 			),
-			'colors'     => array(
+			'colors'      => array(
 				'normal'    => array(
 					'type'  => 'color',
 					'label' => __( 'Colour', 'hi-wpessential' ),
@@ -364,6 +364,172 @@ class Groups {
 					'prop'   => '{prop}',
 					'scheme' => 'dark',
 					'state'  => 'hover',
+				),
+			),
+			'textEffects' => array(
+				'shadow'      => array(
+					'type'  => 'text',
+					'label' => __( 'Text shadow (e.g. 0 2px 8px rgb(0 0 0 / .3))', 'hi-wpessential' ),
+					'prop'  => 'text-shadow',
+				),
+				'hoverShadow' => array(
+					'type'  => 'text',
+					'label' => __( 'Text shadow on hover', 'hi-wpessential' ),
+					'prop'  => 'text-shadow',
+					'state' => 'hover',
+				),
+				'strokeWidth' => array(
+					'type'  => 'range',
+					'label' => __( 'Text stroke width', 'hi-wpessential' ),
+					'prop'  => '-webkit-text-stroke-width',
+					'unit'  => 'px',
+					'min'   => 0,
+					'max'   => 10,
+					'step'  => 0.5,
+				),
+				'strokeColor' => array(
+					'type'  => 'color',
+					'label' => __( 'Text stroke colour', 'hi-wpessential' ),
+					'prop'  => '-webkit-text-stroke-color',
+				),
+				'blend'       => array(
+					'type'    => 'select',
+					'label'   => __( 'Blend mode', 'hi-wpessential' ),
+					'prop'    => 'mix-blend-mode',
+					'options' => array(
+						''            => __( 'Normal', 'hi-wpessential' ),
+						'multiply'    => 'Multiply',
+						'screen'      => 'Screen',
+						'overlay'     => 'Overlay',
+						'darken'      => 'Darken',
+						'lighten'     => 'Lighten',
+						'color-dodge' => 'Color dodge',
+						'difference'  => 'Difference',
+						'exclusion'   => 'Exclusion',
+						'hue'         => 'Hue',
+						'luminosity'  => 'Luminosity',
+					),
+				),
+			),
+			'filters'     => array(
+				'blur'            => array(
+					'type'  => 'range',
+					'label' => __( 'Blur', 'hi-wpessential' ),
+					'fn'    => 'blur',
+					'unit'  => 'px',
+					'min'   => 0,
+					'max'   => 20,
+				),
+				'brightness'      => array(
+					'type'  => 'range',
+					'label' => __( 'Brightness', 'hi-wpessential' ),
+					'fn'    => 'brightness',
+					'unit'  => '%',
+					'min'   => 0,
+					'max'   => 200,
+				),
+				'contrast'        => array(
+					'type'  => 'range',
+					'label' => __( 'Contrast', 'hi-wpessential' ),
+					'fn'    => 'contrast',
+					'unit'  => '%',
+					'min'   => 0,
+					'max'   => 200,
+				),
+				'saturate'        => array(
+					'type'  => 'range',
+					'label' => __( 'Saturation', 'hi-wpessential' ),
+					'fn'    => 'saturate',
+					'unit'  => '%',
+					'min'   => 0,
+					'max'   => 200,
+				),
+				'hue'             => array(
+					'type'  => 'range',
+					'label' => __( 'Hue rotate', 'hi-wpessential' ),
+					'fn'    => 'hue-rotate',
+					'unit'  => 'deg',
+					'min'   => 0,
+					'max'   => 360,
+				),
+				'grey'            => array(
+					'type'  => 'range',
+					'label' => __( 'Greyscale', 'hi-wpessential' ),
+					'fn'    => 'grayscale',
+					'unit'  => '%',
+					'min'   => 0,
+					'max'   => 100,
+				),
+				'hoverBlur'       => array(
+					'type'  => 'range',
+					'label' => __( 'Blur on hover', 'hi-wpessential' ),
+					'fn'    => 'blur',
+					'unit'  => 'px',
+					'min'   => 0,
+					'max'   => 20,
+					'state' => 'hover',
+				),
+				'hoverBrightness' => array(
+					'type'  => 'range',
+					'label' => __( 'Brightness on hover', 'hi-wpessential' ),
+					'fn'    => 'brightness',
+					'unit'  => '%',
+					'min'   => 0,
+					'max'   => 200,
+					'state' => 'hover',
+				),
+				'hoverContrast'   => array(
+					'type'  => 'range',
+					'label' => __( 'Contrast on hover', 'hi-wpessential' ),
+					'fn'    => 'contrast',
+					'unit'  => '%',
+					'min'   => 0,
+					'max'   => 200,
+					'state' => 'hover',
+				),
+				'hoverSaturate'   => array(
+					'type'  => 'range',
+					'label' => __( 'Saturation on hover', 'hi-wpessential' ),
+					'fn'    => 'saturate',
+					'unit'  => '%',
+					'min'   => 0,
+					'max'   => 200,
+					'state' => 'hover',
+				),
+				'hoverHue'        => array(
+					'type'  => 'range',
+					'label' => __( 'Hue rotate on hover', 'hi-wpessential' ),
+					'fn'    => 'hue-rotate',
+					'unit'  => 'deg',
+					'min'   => 0,
+					'max'   => 360,
+					'state' => 'hover',
+				),
+				'hoverGrey'       => array(
+					'type'  => 'range',
+					'label' => __( 'Greyscale on hover', 'hi-wpessential' ),
+					'fn'    => 'grayscale',
+					'unit'  => '%',
+					'min'   => 0,
+					'max'   => 100,
+					'state' => 'hover',
+				),
+				'opacity'         => array(
+					'type'  => 'range',
+					'label' => __( 'Opacity (%)', 'hi-wpessential' ),
+					'prop'  => 'opacity',
+					'pct'   => true,
+					'min'   => 0,
+					'max'   => 100,
+				),
+				'hoverOpacity'    => array(
+					'type'  => 'range',
+					'label' => __( 'Opacity on hover (%)', 'hi-wpessential' ),
+					'prop'  => 'opacity',
+					'pct'   => true,
+					'min'   => 0,
+					'max'   => 100,
+					'state' => 'hover',
 				),
 			),
 		);
@@ -906,8 +1072,24 @@ class Groups {
 			'focus'  => array( ':focus-visible' ),
 			'active' => array( ':active' ),
 		);
+		// CSS filters: the functions of one state become one filter declaration.
+		foreach ( array(
+			''      => $parts,
+			'hover' => null,
+		) as $state => $sels ) {
+			$fns = array();
+			foreach ( $fields as $key => $f ) {
+				if ( ! empty( $f['fn'] ) && ( $f['state'] ?? '' ) === $state && is_numeric( $value[ $key ] ?? '' ) ) {
+					$fns[] = $f['fn'] . '(' . ( 0 + $value[ $key ] ) . $f['unit'] . ')';
+				}
+			}
+			if ( $fns ) {
+				$sels                                     = $sels ?? array_merge( ...array_map( static fn( $x ) => array( $x . ':hover', $x . ':focus-visible' ), $parts ) );
+				$rules['base'][ implode( ',', $sels ) ][] = 'filter:' . implode( ' ', $fns );
+			}
+		}
 		foreach ( $fields as $key => $f ) {
-			if ( ! isset( $value[ $key ] ) || ! empty( $f['fluid'] ) ) {
+			if ( ! isset( $value[ $key ] ) || ! empty( $f['fluid'] ) || ! empty( $f['fn'] ) ) {
 				continue;
 			}
 			$values = ! empty( $f['responsive'] ) && is_array( $value[ $key ] ) ? $value[ $key ] : array( 'base' => $value[ $key ] );
@@ -958,10 +1140,13 @@ class Groups {
 		if ( 'background-image' === $f['prop'] ) {
 			return ! empty( $f['image'] ) ? 'url("' . esc_url_raw( $v ) . '")' : ( self::gradients()[ $v ] ?? '' );
 		}
+		if ( ! empty( $f['pct'] ) && is_numeric( $v ) ) {
+			return (string) ( ( 0 + $v ) / 100 );
+		}
 		if ( 'range' === $f['type'] && is_numeric( $v ) ) {
 			return ( 0 + $v ) . ( $f['unit'] ?? '' );
 		}
-		return preg_replace( '/[^a-z0-9#%.,() \-]/i', '', (string) $v );
+		return preg_replace( '/[^a-z0-9#%.,()\/ \-]/i', '', (string) $v );
 	}
 
 	/**
@@ -1061,6 +1246,78 @@ class Groups {
 						'selector' => $hover,
 					)
 				);
+				break;
+			case 'textEffects':
+				$w->add_group_control(
+					\Elementor\Group_Control_Text_Shadow::get_type(),
+					array(
+						'name'     => $key,
+						'label'    => $label,
+						'selector' => $sel,
+					)
+				);
+				$w->add_group_control(
+					\Elementor\Group_Control_Text_Shadow::get_type(),
+					array(
+						'name'     => $key . '_hover',
+						'label'    => __( 'Text shadow on hover', 'hi-wpessential' ),
+						'selector' => $hover,
+					)
+				);
+				$w->add_group_control(
+					\Elementor\Group_Control_Text_Stroke::get_type(),
+					array(
+						'name'     => $key . '_stroke',
+						'selector' => $sel,
+					)
+				);
+				$w->add_control(
+					$key . '_blend',
+					array(
+						'label'     => __( 'Blend mode', 'hi-wpessential' ),
+						'type'      => \Elementor\Controls_Manager::SELECT,
+						'options'   => self::fields()['textEffects']['blend']['options'],
+						'selectors' => array( $sel => 'mix-blend-mode: {{VALUE}};' ),
+					)
+				);
+				break;
+			case 'filters':
+				$w->add_group_control(
+					\Elementor\Group_Control_Css_Filter::get_type(),
+					array(
+						'name'     => $key,
+						'label'    => $label,
+						'selector' => $sel,
+					)
+				);
+				$w->add_group_control(
+					\Elementor\Group_Control_Css_Filter::get_type(),
+					array(
+						'name'     => $key . '_hover',
+						'label'    => __( 'CSS filters on hover', 'hi-wpessential' ),
+						'selector' => $hover,
+					)
+				);
+				foreach ( array(
+					''       => array( __( 'Opacity', 'hi-wpessential' ), $sel ),
+					'_hover' => array( __( 'Opacity on hover', 'hi-wpessential' ), $hover ),
+				) as $suffix => $o ) {
+					$w->add_control(
+						$key . '_opacity' . $suffix,
+						array(
+							'label'     => $o[0],
+							'type'      => \Elementor\Controls_Manager::SLIDER,
+							'range'     => array(
+								'px' => array(
+									'min'  => 0,
+									'max'  => 1,
+									'step' => 0.01,
+								),
+							),
+							'selectors' => array( $o[1] => 'opacity: {{SIZE}};' ),
+						)
+					);
+				}
 				break;
 			case 'colors':
 				$w->add_control(
