@@ -46,5 +46,6 @@ final class Plugin {
 		Forms::hooks();
 		Mcp::hooks();
 		McpBuilder::hooks();
+		Kit::hooks();
 	}
 }
