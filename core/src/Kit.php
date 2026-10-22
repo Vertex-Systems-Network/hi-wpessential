@@ -61,6 +61,18 @@ class Kit {
 	private static $defs = null;
 
 	/**
+	 * Units offered for every length option (px options get all of them).
+	 */
+	const LENGTH_UNITS = array( 'px', 'em', 'rem', '%', 'vw', 'vh' );
+
+	/**
+	 * Icon set (core/kit/icons.json): name => SVG body.
+	 *
+	 * @var array|null
+	 */
+	private static $icons = null;
+
+	/**
 	 * Option holding the elements switched off on the Elements screen. Every element is on by default.
 	 */
 	const OFF_OPTION = 'wpessential_kit_disabled';
@@ -70,6 +82,13 @@ class Kit {
 	 */
 	public static function hooks() {
 		add_action( 'init', array( __CLASS__, 'register_blocks' ) );
+		add_filter( 'elementor/icons_manager/additional_tabs', array( __CLASS__, 'elementor_icons' ) );
+		add_action(
+			'enqueue_block_editor_assets',
+			static function () {
+				wp_enqueue_style( 'wpessential-kit-editor', wpessential_core_url( 'assets/kit-editor.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
+			}
+		);
 		add_action( 'elementor/widgets/register', array( __CLASS__, 'register_widgets' ) );
 		add_action( 'elementor/elements/categories_registered', array( __CLASS__, 'elementor_category' ) );
 		add_filter( 'block_categories_all', array( __CLASS__, 'block_category' ) );
@@ -134,6 +153,104 @@ class Kit {
 			);
 		}
 		return $out;
+	}
+
+	/**
+	 * The WPEssential icon set.
+	 *
+	 * @return array
+	 */
+	public static function icons() {
+		if ( null === self::$icons ) {
+			self::$icons = (array) json_decode( (string) file_get_contents( WPESSENTIAL_CORE_DIR . '/kit/icons.json' ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local file.
+		}
+		return self::$icons;
+	}
+
+	/**
+	 * Units a range option offers: all length units when its unit is a length, else its own unit.
+	 *
+	 * @param array $opt Option.
+	 * @return string[]
+	 */
+	public static function units( array $opt ) {
+		$unit = $opt['unit'] ?? 'px';
+		if ( isset( $opt['units'] ) ) {
+			return (array) $opt['units'];
+		}
+		if ( ! empty( $opt['fluid'] ) || ! in_array( $unit, array_merge( self::LENGTH_UNITS, array( 'ch' ) ), true ) ) {
+			return array( $unit );
+		}
+		return array_values( array_unique( array_merge( array( $unit ), self::LENGTH_UNITS ) ) );
+	}
+
+	/**
+	 * Our icon set as a tab in Elementor's icon library.
+	 *
+	 * @param array $tabs Tabs.
+	 * @return array
+	 */
+	public static function elementor_icons( $tabs ) {
+		$tabs['wpessential'] = array(
+			'name'          => 'wpessential',
+			'label'         => __( 'WPEssential', 'hi-wpessential' ),
+			'url'           => wpessential_core_url( 'kit/icons.css' ),
+			'enqueue'       => array(),
+			'prefix'        => 'wpei-',
+			'displayPrefix' => 'wpei',
+			'labelIcon'     => 'wpei wpei-spark',
+			'ver'           => WPESSENTIAL_CORE_ASSET_VERSION,
+			'fetchJson'     => wpessential_core_url( 'kit/icons-elementor.json' ),
+			'native'        => false,
+		);
+		return $tabs;
+	}
+
+	/**
+	 * Icon markup for an icon value: { library, value } from either builder.
+	 * Our set and Elementor's "wpei" tab print inline SVG; uploaded SVG/images print <img>;
+	 * other Elementor libraries (Font Awesome…) go through Elementor.
+	 *
+	 * @param mixed  $icon      Value.
+	 * @param string $css_class CSS class.
+	 * @return string
+	 */
+	public static function icon_html( $icon, $css_class = 'wpe-icon' ) {
+		if ( is_string( $icon ) ) {
+			$legacy = array(
+				'arrow' => 'arrow-up-right',
+				'right' => 'arrow-right',
+			);
+			$icon   = array(
+				'library' => 'wpessential',
+				'value'   => $legacy[ $icon ] ?? $icon,
+			);
+		}
+		if ( ! is_array( $icon ) || empty( $icon['value'] ) ) {
+			return '';
+		}
+		$lib   = (string) ( $icon['library'] ?? 'wpessential' );
+		$value = $icon['value'];
+		if ( 'svg' === $lib || 'upload' === $lib ) {
+			$url = is_array( $value ) ? ( $value['url'] ?? '' ) : (string) $value;
+			return $url ? '<img class="' . esc_attr( $css_class ) . ' is-upload" src="' . esc_url( $url ) . '" alt="" aria-hidden="true" width="24" height="24">' : '';
+		}
+		$name = is_string( $value ) ? preg_replace( '/^wpei\s+wpei-/', '', $value ) : '';
+		if ( 'wpessential' === $lib && isset( self::icons()[ $name ] ) ) {
+			return '<svg class="' . esc_attr( $css_class ) . '" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' . self::icons()[ $name ] . '</svg>';
+		}
+		if ( class_exists( '\Elementor\Icons_Manager' ) ) {
+			ob_start();
+			\Elementor\Icons_Manager::render_icon(
+				$icon,
+				array(
+					'aria-hidden' => 'true',
+					'class'       => $css_class,
+				)
+			);
+			return (string) ob_get_clean();
+		}
+		return '';
 	}
 
 	/**
@@ -229,7 +346,7 @@ class Kit {
 	 * Register every element as a block, plus the shared editor script and styles.
 	 */
 	public static function register_blocks() {
-		wp_register_script( 'wpessential-kit-editor', wpessential_core_url( 'assets/kit-editor.js' ), array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n' ), WPESSENTIAL_CORE_ASSET_VERSION, true );
+		wp_register_script( 'wpessential-kit-editor', wpessential_core_url( 'assets/kit-editor.js' ), array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n', 'wp-data' ), WPESSENTIAL_CORE_ASSET_VERSION, true );
 		wp_register_style( 'wpessential-kit-common', wpessential_core_url( 'kit/common.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
 		$editor = array();
 		foreach ( self::enabled_defs() as $name => $def ) {
@@ -237,7 +354,13 @@ class Kit {
 			wp_register_style( $handle, wpessential_core_url( 'kit/' . $name . '/style.css' ), array( 'wpessential-kit-common' ), WPESSENTIAL_CORE_ASSET_VERSION );
 			$attrs = array();
 			foreach ( self::attributes( $def ) as $key => $a ) {
-				$attrs[ $key ] = ! empty( $a['responsive'] ) || in_array( $a['type'], array( 'breakpoints', 'image' ), true ) ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? 'number' : 'string' ) );
+				$attrs[ $key ] = ! empty( $a['responsive'] ) || in_array( $a['type'], array( 'breakpoints', 'image', 'icon' ), true ) ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? array( 'number', 'string' ) : 'string' ) );
+			}
+			foreach ( self::attributes( $def ) as $key => $a ) {
+				// Defaults in the block too, so the sidebar shows the value the page really uses.
+				if ( isset( $a['default'] ) && '' !== $a['default'] && array() !== $a['default'] && empty( $a['responsive'] ) ) {
+					$attrs[ $key ]['default'] = $a['default'];
+				}
 			}
 			foreach ( self::groups( $def ) as $key => $g ) {
 				$attrs[ $key ] = array( 'type' => 'object' );
@@ -279,6 +402,8 @@ class Kit {
 					'breakpoints' => array_merge( array( 'base' ), array_map( 'strval', array_keys( self::BREAKPOINTS ) ) ),
 					'palette'     => self::palette(),
 					'groupFields' => Groups::fields(),
+					'icons'       => self::icons(),
+					'lengthUnits' => self::LENGTH_UNITS,
 				)
 			) . ';',
 			'before'
@@ -456,6 +581,12 @@ class Kit {
 			}
 		}
 		$out = '';
+		// Custom CSS: "selector" means this element, like Elementor Pro.
+		$custom = trim( (string) ( $a['customCss'] ?? '' ) );
+		if ( '' !== $custom ) {
+			$custom = str_ireplace( array( '</', '<', '@import', 'expression(', 'javascript:' ), '', wp_strip_all_tags( $custom ) );
+			$custom = preg_replace( '/\bselector\b/', $root, $custom );
+		}
 		foreach ( array( 'base' => '' ) + self::BREAKPOINTS as $bp => $query ) {
 			if ( empty( $rules[ (string) $bp ] ) ) {
 				continue;
@@ -466,7 +597,7 @@ class Kit {
 			}
 			$out .= 'base' === $bp ? $block : '@media ' . $query . '{' . $block . '}';
 		}
-		return $out;
+		return $out . ( '' !== $custom && false === strpos( $custom, '{' ) ? $root . '{' . $custom . '}' : $custom );
 	}
 
 	/**
@@ -498,6 +629,16 @@ class Kit {
 		foreach ( $def['attributes'] as $key => $opt ) {
 			$get = static function ( $k ) use ( $settings, $opt ) {
 				$v = $settings[ $k ] ?? '';
+				if ( 'icon' === $opt['type'] ) {
+					return is_array( $v ) && ! empty( $v['value'] ) ? $v : array();
+				}
+				if ( 'range' === $opt['type'] && is_array( $v ) ) {
+					if ( ! isset( $v['size'] ) || '' === $v['size'] || null === $v['size'] ) {
+						return '';
+					}
+					$unit = (string) ( $v['unit'] ?? '' );
+					return '' === $unit || ( $opt['unit'] ?? 'px' ) === $unit ? $v['size'] : $v['size'] . $unit;
+				}
 				if ( 'image' === $opt['type'] ) {
 					return is_array( $v ) ? array(
 						'id'  => (int) ( $v['id'] ?? 0 ),
@@ -520,6 +661,9 @@ class Kit {
 			} else {
 				$out[ $key ] = $get( $key );
 			}
+		}
+		if ( ! empty( $settings['wpe_custom_css'] ) ) {
+			$out['customCss'] = (string) $settings['wpe_custom_css'];
 		}
 		return $out;
 	}

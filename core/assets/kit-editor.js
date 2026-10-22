@@ -24,31 +24,191 @@
 		} );
 	}
 
+	var LENGTH = kit.lengthUnits || [ 'px', 'em', 'rem', '%', 'vw', 'vh' ];
+
+	// Units an option offers; mirrors Kit::units() in PHP.
+	function unitsOf( opt ) {
+		var u = undefined === opt.unit ? 'px' : opt.unit;
+		if ( opt.units ) {
+			return opt.units;
+		}
+		if ( opt.fluid || ( LENGTH.indexOf( u ) < 0 && 'ch' !== u ) ) {
+			return [ u ];
+		}
+		return [ u ].concat( LENGTH.filter( function ( x ) {
+			return x !== u;
+		} ) );
+	}
+
+	// "24px" -> { n: 24, u: 'px' }; plain numbers use the option's own unit.
+	function parseLen( value, own ) {
+		if ( '' === value || undefined === value || null === value ) {
+			return { n: undefined, u: own };
+		}
+		var m = String( value ).match( /^(-?[\d.]+)\s*([a-z%]*)$/i );
+		return m ? { n: Number( m[ 1 ] ), u: m[ 2 ] || own } : { n: undefined, u: own };
+	}
+
+	function RangeField( p ) {
+		var opt = p.opt;
+		var own = undefined === opt.unit ? 'px' : opt.unit;
+		var units = unitsOf( opt );
+		var cur = parseLen( p.value, own );
+		var unitState = useState( cur.u );
+		var unit = units.indexOf( cur.u ) >= 0 && undefined !== cur.n ? cur.u : unitState[ 0 ];
+		var max = opt.max;
+		var step = opt.step || 1;
+		var min = opt.min;
+		if ( unit !== own ) {
+			if ( 'em' === unit || 'rem' === unit ) {
+				max = Math.max( 1, Math.round( ( opt.max || 200 ) / 1.6 ) / 10 );
+				step = 0.1;
+				min = 0;
+			} else {
+				max = 100;
+				step = 1;
+				min = 0;
+			}
+		}
+		var emit = function ( n, u ) {
+			if ( undefined === n || '' === n || null === n ) {
+				p.onChange( '' );
+				return;
+			}
+			p.onChange( u === own ? n : n + u );
+		};
+		return el( 'div', { className: 'wpek-range' },
+			el( 'div', { className: 'wpek-range__head' },
+				el( 'span', { className: 'wpek-label' }, p.label ),
+				units.length > 1 ? el( 'div', { className: 'wpek-units', role: 'group', 'aria-label': __( 'Unit', 'hi-wpessential' ) }, units.map( function ( u ) {
+					return el( 'button', { key: u, type: 'button', className: 'wpek-unit' + ( u === unit ? ' is-active' : '' ), 'aria-pressed': u === unit, onClick: function () {
+						unitState[ 1 ]( u );
+						if ( undefined !== cur.n ) {
+							emit( cur.n, u );
+						}
+					} }, u || '–' );
+				} ) ) : ( own ? el( 'span', { className: 'wpek-unit is-active' }, own ) : null )
+			),
+			el( c.RangeControl, { value: cur.n, min: min, max: max, step: step, allowReset: true, withInputField: true, onChange: function ( v ) {
+				emit( v, unit );
+			}, __nextHasNoMarginBottom: true } ),
+			el( c.TextControl, { className: 'wpek-range__custom', value: undefined === cur.n && p.value ? String( p.value ) : '', placeholder: __( 'Or type any value: 2.5rem, clamp(…), calc(…)', 'hi-wpessential' ), onChange: function ( v ) {
+				p.onChange( v );
+			}, __nextHasNoMarginBottom: true } )
+		);
+	}
+
+	function svgIcon( name, size ) {
+		var body = ( kit.icons || {} )[ name ];
+		return body ? el( 'svg', { width: size || 20, height: size || 20, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true, dangerouslySetInnerHTML: { __html: body } } ) : null;
+	}
+
+	function IconField( p ) {
+		var open = useState( false );
+		var q = useState( '' );
+		var legacy = { arrow: 'arrow-up-right', right: 'arrow-right' };
+		var v = p.value && 'object' === typeof p.value ? p.value : {};
+		if ( 'string' === typeof p.value && p.value && 'none' !== p.value ) {
+			v = { library: 'wpessential', value: legacy[ p.value ] || p.value };
+		}
+		var preview = null;
+		if ( 'svg' === v.library && v.value && v.value.url ) {
+			preview = el( 'img', { src: v.value.url, alt: '', width: 24, height: 24 } );
+		} else if ( v.value && 'string' === typeof v.value ) {
+			preview = svgIcon( v.value.replace( /^wpei\s+wpei-/, '' ), 24 ) || el( 'span', { className: 'wpek-icon-lib' }, v.value );
+		}
+		var names = Object.keys( kit.icons || {} ).filter( function ( n ) {
+			return ! q[ 0 ] || n.indexOf( q[ 0 ].toLowerCase().trim() ) >= 0;
+		} );
+		return el( 'div', { className: 'wpek-icon-field' },
+			el( 'span', { className: 'wpek-label' }, p.label ),
+			el( 'div', { className: 'wpek-icon-field__row' },
+				el( 'button', { type: 'button', className: 'wpek-icon-field__preview', onClick: function () {
+					open[ 1 ]( true );
+				}, 'aria-label': __( 'Choose icon', 'hi-wpessential' ) }, preview || el( 'span', { className: 'wpek-muted' }, __( 'None', 'hi-wpessential' ) ) ),
+				el( 'div', { className: 'wpek-icon-field__actions' },
+					el( c.Button, { variant: 'secondary', onClick: function () {
+						open[ 1 ]( true );
+					} }, __( 'Choose from library', 'hi-wpessential' ) ),
+					el( be.MediaUploadCheck, null, el( be.MediaUpload, {
+						allowedTypes: [ 'image' ],
+						onSelect: function ( m ) {
+							p.onChange( { library: 'svg', value: { id: m.id, url: m.url } } );
+						},
+						render: function ( o ) {
+							return el( c.Button, { variant: 'tertiary', onClick: o.open }, __( 'Upload SVG / image', 'hi-wpessential' ) );
+						},
+					} ) ),
+					v.value ? el( c.Button, { variant: 'link', isDestructive: true, onClick: function () {
+						p.onChange( {} );
+					} }, __( 'Remove icon', 'hi-wpessential' ) ) : null
+				)
+			),
+			open[ 0 ] ? el( c.Modal, { title: __( 'Choose an icon', 'hi-wpessential' ), onRequestClose: function () {
+				open[ 1 ]( false );
+			}, className: 'wpek-icon-modal', size: 'medium' },
+				el( c.SearchControl, { value: q[ 0 ], onChange: q[ 1 ], placeholder: __( 'Search icons…', 'hi-wpessential' ), __nextHasNoMarginBottom: true } ),
+				el( 'div', { className: 'wpek-icon-grid' }, names.map( function ( n ) {
+					var on = v.library === 'wpessential' && v.value === n;
+					return el( 'button', { key: n, type: 'button', className: 'wpek-icon-grid__item' + ( on ? ' is-active' : '' ), title: n, onClick: function () {
+						p.onChange( { library: 'wpessential', value: n } );
+						open[ 1 ]( false );
+					} }, svgIcon( n, 22 ), el( 'span', null, n.replace( /-/g, ' ' ) ) );
+				} ) ),
+				names.length ? null : el( 'p', null, __( 'No icon found.', 'hi-wpessential' ) )
+			) : null
+		);
+	}
+
+	function ImageField( p ) {
+		var img = p.value && 'object' === typeof p.value ? p.value : {};
+		// Saved with only an id (e.g. imported content): read the URL from the media library.
+		var media = wp.data.useSelect( function ( select ) {
+			return img.id && ! img.url ? select( 'core' ).getMedia( img.id ) : null;
+		}, [ img.id, img.url ] );
+		if ( media && media.source_url ) {
+			img = { id: img.id, url: media.source_url };
+		}
+		return el( 'div', { className: 'wpek-image-field' },
+			el( 'span', { className: 'wpek-label' }, p.label ),
+			el( be.MediaUploadCheck, { fallback: el( 'p', null, __( 'You need permission to upload images.', 'hi-wpessential' ) ) }, el( be.MediaUpload, {
+				allowedTypes: [ 'image' ],
+				value: img.id,
+				onSelect: function ( m ) {
+					p.onChange( { id: m.id, url: m.url } );
+				},
+				render: function ( o ) {
+					return img.url ? el( 'div', { className: 'wpek-image-field__has' },
+						el( 'button', { type: 'button', className: 'wpek-image-field__thumb', onClick: o.open, 'aria-label': __( 'Replace image', 'hi-wpessential' ) }, el( 'img', { src: img.url, alt: '' } ) ),
+						el( 'div', { className: 'wpek-image-field__actions' },
+							el( c.Button, { variant: 'secondary', onClick: o.open }, __( 'Replace', 'hi-wpessential' ) ),
+							el( c.Button, { variant: 'link', isDestructive: true, onClick: function () {
+								p.onChange( {} );
+							} }, __( 'Remove', 'hi-wpessential' ) )
+						)
+					) : el( 'button', { type: 'button', className: 'wpek-image-field__drop', onClick: o.open },
+						svgIcon( 'upload', 26 ),
+						el( 'strong', null, __( 'Upload or choose an image', 'hi-wpessential' ) ),
+						el( 'span', null, __( 'Opens the Media Library: drag a file in, or pick one you uploaded before.', 'hi-wpessential' ) )
+					);
+				},
+			} ) ),
+			el( c.TextControl, { className: 'wpek-image-field__url', label: __( 'Or paste an image URL', 'hi-wpessential' ), value: img.id ? '' : img.url || '', type: 'url', onChange: function ( u ) {
+				p.onChange( u ? { id: 0, url: u } : {} );
+			}, __nextHasNoMarginBottom: true } )
+		);
+	}
+
 	function control( key, opt, value, onChange ) {
 		var label = opt.label || key;
 		switch ( opt.type ) {
 			case 'image':
-				var img = value && 'object' === typeof value ? value : {};
-				return el( 'div', null,
-					el( 'p', { style: { margin: '0 0 8px', fontWeight: 600, fontSize: 11, textTransform: 'uppercase' } }, label ),
-					img.url ? el( 'img', { src: img.url, alt: '', style: { display: 'block', maxWidth: '100%', marginBottom: 8, borderRadius: 4 } } ) : null,
-					el( be.MediaUploadCheck, null, el( be.MediaUpload, {
-						allowedTypes: [ 'image' ],
-						value: img.id,
-						onSelect: function ( m ) {
-							onChange( { id: m.id, url: m.url } );
-						},
-						render: function ( o ) {
-							return el( c.Button, { variant: 'secondary', onClick: o.open }, img.url ? __( 'Replace image', 'hi-wpessential' ) : __( 'Select image', 'hi-wpessential' ) );
-						},
-					} ) ),
-					img.url ? el( c.Button, { variant: 'link', isDestructive: true, onClick: function () {
-						onChange( {} );
-					}, style: { marginLeft: 8 } }, __( 'Remove', 'hi-wpessential' ) ) : null
-				);
+				return el( ImageField, { label: label, value: value, onChange: onChange } );
+			case 'icon':
+				return el( IconField, { label: label, value: value, onChange: onChange } );
 			case 'html':
 			case 'textarea':
-				return el( c.TextareaControl, { label: label, value: value || '', onChange: onChange, rows: 2, __nextHasNoMarginBottom: true } );
+				return el( c.TextareaControl, { label: label, value: value || '', onChange: onChange, rows: opt.code ? 6 : 3, className: opt.code ? 'wpek-code' : undefined, help: opt.code ? __( 'Example: selector { border-radius: 20px; } selector:hover { opacity: .8; }', 'hi-wpessential' ) : undefined, __nextHasNoMarginBottom: true } );
 			case 'select':
 				return el( c.SelectControl, { label: label, value: value, options: options( opt.options ), onChange: onChange, __nextHasNoMarginBottom: true } );
 			case 'color':
@@ -56,9 +216,7 @@
 			case 'toggle':
 				return el( c.ToggleControl, { label: label, checked: !! value, onChange: onChange, __nextHasNoMarginBottom: true } );
 			case 'range':
-				return el( c.RangeControl, { label: label + ( opt.unit ? ' (' + opt.unit + ')' : '' ), value: '' === value || undefined === value ? undefined : Number( value ), min: opt.min, max: opt.max, step: opt.step || 1, allowReset: true, onChange: function ( v ) {
-					onChange( undefined === v ? '' : v );
-				}, __nextHasNoMarginBottom: true } );
+				return el( RangeField, { label: label, opt: opt, value: value, onChange: onChange } );
 			default:
 				return el( c.TextControl, { label: label, value: value || '', type: 'url' === opt.type ? 'url' : 'text', onChange: onChange, __nextHasNoMarginBottom: true } );
 		}

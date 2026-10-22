@@ -42,15 +42,11 @@
 			"default": ""
 		},
 		"icon": {
-			"type": "select",
+			"type": "icon",
 			"label": "Icon",
-			"default": "arrow",
-			"options": {
-				"none": "None",
-				"arrow": "Arrow ↗",
-				"right": "Arrow →",
-				"download": "Download",
-				"play": "Play"
+			"default": {
+				"library": "wpessential",
+				"value": "arrow-up-right"
 			}
 		},
 		"iconFirst": {
@@ -120,6 +116,16 @@
 			"min": 8,
 			"max": 48,
 			"default": ""
+		},
+		"iconSpacing": {
+			"type": "range",
+			"panel": "style",
+			"label": "Icon spacing",
+			"css": "--wpek-icon-gap",
+			"unit": "px",
+			"min": 0,
+			"max": 40,
+			"default": ""
 		}
 	},
 	"groups": {
@@ -158,6 +164,19 @@
 		"shadow": {
 			"type": "shadow",
 			"label": "Shadow",
+			"selector": ".wpe-button__link",
+			"panel": "style"
+		},
+		"iconColor": {
+			"type": "colors",
+			"label": "Icon colour",
+			"prop": "color",
+			"selector": ".wpe-button__icon",
+			"panel": "style"
+		},
+		"textEffects": {
+			"type": "textEffects",
+			"label": "Text shadow, stroke and blend",
 			"selector": ".wpe-button__link",
 			"panel": "style"
 		}

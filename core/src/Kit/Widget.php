@@ -99,6 +99,7 @@ abstract class Widget extends \Elementor\Widget_Base {
 			'color'    => \Elementor\Controls_Manager::SELECT,
 			'toggle'   => \Elementor\Controls_Manager::SWITCHER,
 			'range'    => \Elementor\Controls_Manager::SLIDER,
+			'icon'     => \Elementor\Controls_Manager::ICONS,
 		);
 		foreach ( $panels as $panel => $label ) {
 			$this->start_controls_section(
@@ -121,18 +122,24 @@ abstract class Widget extends \Elementor\Widget_Base {
 				} elseif ( 'color' === $a['type'] ) {
 					$args['options'] = array( '' => __( 'Default', 'hi-wpessential' ) ) + Kit::palette();
 				} elseif ( 'range' === $a['type'] ) {
-					$args['size_units'] = array( $a['unit'] ?? 'px' );
-					$args['range']      = array(
-						$a['unit'] ?? 'px' => array(
-							'min'  => $a['min'] ?? 0,
-							'max'  => $a['max'] ?? 200,
-							'step' => $a['step'] ?? 1,
-						),
-					);
+					$args['size_units'] = Kit::units( $a );
+					$args['range']      = array();
+					foreach ( $args['size_units'] as $unit ) {
+						$args['range'][ $unit ] = self::unit_range( $a, $unit );
+					}
+				} elseif ( 'icon' === $a['type'] ) {
+					$args['skin']        = 'inline';
+					$args['label_block'] = false;
+					if ( ! empty( $a['default']['value'] ) ) {
+						$args['default'] = array(
+							'value'   => 'wpei wpei-' . $a['default']['value'],
+							'library' => 'wpessential',
+						);
+					}
 				} elseif ( 'textarea' === $a['type'] ) {
 					$args['rows'] = 3;
 				}
-				if ( isset( $a['default'] ) && '' !== $a['default'] ) {
+				if ( isset( $a['default'] ) && '' !== $a['default'] && 'icon' !== $a['type'] ) {
 					$args['default'] = 'toggle' === $a['type'] ? ( $a['default'] ? 'yes' : '' ) : ( 'range' === $a['type'] ? array(
 						'size' => $a['default'],
 						'unit' => $a['unit'] ?? 'px',
@@ -151,6 +158,55 @@ abstract class Widget extends \Elementor\Widget_Base {
 			}
 			$this->end_controls_section();
 		}
+		// Custom CSS for every widget (Elementor has this only in Pro).
+		$this->start_controls_section(
+			'section_wpe_custom_css',
+			array(
+				'label' => __( 'Custom CSS (WPEssential)', 'hi-wpessential' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_ADVANCED,
+			)
+		);
+		$this->add_control(
+			'wpe_custom_css',
+			array(
+				'label'       => __( 'Custom CSS', 'hi-wpessential' ),
+				'type'        => \Elementor\Controls_Manager::CODE,
+				'language'    => 'css',
+				'render_type' => 'template',
+				'description' => __( 'Use "selector" for this element, e.g. selector { border-radius: 20px; } or selector .wpe-button__link:hover { … }', 'hi-wpessential' ),
+			)
+		);
+		$this->end_controls_section();
+	}
+
+	/**
+	 * Slider range for one unit, scaled from the option's own range.
+	 *
+	 * @param array  $a    Option.
+	 * @param string $unit Unit.
+	 * @return array
+	 */
+	private static function unit_range( array $a, $unit ) {
+		$own = $a['unit'] ?? 'px';
+		if ( $unit === $own ) {
+			return array(
+				'min'  => $a['min'] ?? 0,
+				'max'  => $a['max'] ?? 200,
+				'step' => $a['step'] ?? 1,
+			);
+		}
+		if ( in_array( $unit, array( 'em', 'rem' ), true ) ) {
+			return array(
+				'min'  => 0,
+				'max'  => max( 1, round( ( $a['max'] ?? 200 ) / 16, 1 ) ),
+				'step' => 0.1,
+			);
+		}
+		return array(
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		);
 	}
 
 	/**
