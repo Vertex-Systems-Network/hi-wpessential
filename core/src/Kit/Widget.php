@@ -106,7 +106,7 @@ abstract class Widget extends \Elementor\Widget_Base {
 				'section_' . $panel,
 				array(
 					'label' => $label,
-					'tab'   => 'style' === $panel ? \Elementor\Controls_Manager::TAB_STYLE : \Elementor\Controls_Manager::TAB_CONTENT,
+					'tab'   => 'content' === $panel ? \Elementor\Controls_Manager::TAB_CONTENT : \Elementor\Controls_Manager::TAB_STYLE,
 				)
 			);
 			foreach ( $def['attributes'] as $key => $a ) {
