@@ -1160,6 +1160,46 @@ add_action(
 	}
 );
 
+// One place for the site: the WordPress sections this theme uses go into the Site Settings panel;
+// the ones a block theme does not use are removed. Menus stays its own panel (WordPress needs that).
+add_action(
+	'customize_register',
+	static function ( WP_Customize_Manager $wp ) {
+		$move = array(
+			'title_tagline'               => 1,
+			'static_front_page'           => 2,
+			'woocommerce_store_notice'    => 900,
+			'woocommerce_product_catalog' => 901,
+			'woocommerce_product_images'  => 902,
+			'woocommerce_checkout'        => 903,
+			'custom_css'                  => 999,
+		);
+		foreach ( $move as $id => $priority ) {
+			$section = $wp->get_section( $id );
+			if ( $section ) {
+				$section->panel    = 'wpessential_site';
+				$section->priority = $priority;
+			}
+		}
+		// The WooCommerce panel is empty now; widgets and the classic options are not used by a block theme.
+		$wp->remove_panel( 'woocommerce' );
+		$wp->remove_panel( 'widgets' );
+		foreach ( array( 'colors', 'header_image', 'background_image' ) as $id ) {
+			$wp->remove_section( $id );
+		}
+		// Keep our panel at the top, Menus right after it.
+		$panel = $wp->get_panel( 'wpessential_site' );
+		if ( $panel ) {
+			$panel->priority = 1;
+		}
+		$menus = $wp->get_panel( 'nav_menus' );
+		if ( $menus ) {
+			$menus->priority = 2;
+		}
+	},
+	1000
+);
+
 // Our controls: script and styles for the Customizer pane.
 add_action(
 	'customize_controls_enqueue_scripts',

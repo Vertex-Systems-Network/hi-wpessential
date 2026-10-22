@@ -9,6 +9,9 @@
 - Each value can be reset with one click.
 - WordPress sections that never change stay as they are: Site Identity, Homepage Settings, Menus, Widgets and Additional CSS.
 - The classic Colors, Header Image and Background Image sections are replaced by ours.
+- Everything is in one panel: Site Identity and Homepage Settings come first, the WooCommerce sections (Store Notice, Product Catalog, Product Images, Checkout) and Additional CSS come last.
+- Menus stays its own panel next to ours, because WordPress needs that for its menu screens.
+- The widgets panel and the empty WooCommerce panel are removed, and the block-theme notice is hidden.
 
 ## Sections
 

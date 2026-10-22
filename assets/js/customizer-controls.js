@@ -90,6 +90,10 @@
 	}
 
 	api.bind( 'ready', function () {
+		// WordPress' "your theme supports site editing" notice: our panel is the entry point here.
+		if ( api.notifications ) {
+			api.notifications.remove( 'site_editor_block_theme_notice' );
+		}
 		controls.onDevice = function ( d ) {
 			if ( api.previewedDevice && api.previewedDevice.get() !== d ) {
 				api.previewedDevice.set( d );
