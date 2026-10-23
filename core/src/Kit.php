@@ -352,6 +352,10 @@ class Kit {
 		foreach ( self::enabled_defs() as $name => $def ) {
 			$handle = 'wpessential-kit-' . $name;
 			wp_register_style( $handle, wpessential_core_url( 'kit/' . $name . '/style.css' ), array( 'wpessential-kit-common' ), WPESSENTIAL_CORE_ASSET_VERSION );
+			// Optional behaviour: kit/<name>/script.js, loaded only on pages that use the element.
+			if ( file_exists( $def['dir'] . '/script.js' ) ) {
+				wp_register_script( $handle, wpessential_core_url( 'kit/' . $name . '/script.js' ), array(), WPESSENTIAL_CORE_ASSET_VERSION, true );
+			}
 			$attrs = array();
 			foreach ( self::attributes( $def ) as $key => $a ) {
 				$attrs[ $key ] = ! empty( $a['responsive'] ) || 'repeater' === $a['type'] ? array( 'type' => 'array' ) : ( in_array( $a['type'], array( 'breakpoints', 'image', 'icon' ), true ) ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? array( 'number', 'string' ) : 'string' ) ) );
@@ -464,6 +468,9 @@ class Kit {
 			$a[ $key ] = is_array( $default ) ? array_replace( $default, array_filter( (array) $value, static fn( $v ) => '' !== $v && null !== $v ) ) : $value;
 		}
 		wp_enqueue_style( 'wpessential-kit-' . $name );
+		if ( wp_script_is( 'wpessential-kit-' . $name, 'registered' ) ) {
+			wp_enqueue_script( 'wpessential-kit-' . $name );
+		}
 		$id   = 'wpe-' . $name . '-' . substr( md5( wp_json_encode( $a ) . wp_rand() ), 0, 8 );
 		$css  = self::css( $def, $a, $id );
 		$html = self::template( $def['dir'] . '/render.php', $a, $id );

@@ -84,6 +84,15 @@ abstract class Widget extends \Elementor\Widget_Base {
 	}
 
 	/**
+	 * The element's script, when it has one.
+	 *
+	 * @return array
+	 */
+	public function get_script_depends() {
+		return file_exists( WPESSENTIAL_CORE_DIR . '/kit/' . static::KIT . '/script.js' ) ? array( 'wpessential-kit-' . static::KIT ) : array();
+	}
+
+	/**
 	 * Controls from the definition, one section per panel.
 	 */
 	protected function register_controls() {
