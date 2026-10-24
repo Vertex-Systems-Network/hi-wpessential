@@ -32,6 +32,8 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 
 | Progress bar | Multiple progress values with individual max goals, horizontal bars or circular rings, percentages/values/fractions, optional descriptions, screen-reader progress semantics, viewport animation and reduced-motion fallback |
 
+| Code / HTML / Embed | Safe rich HTML (scripts stripped), escaped source-code samples with accessible Copy action, trusted WordPress provider oEmbed and fallback external link; shared Gutenberg and Elementor implementation |
+
 ## What every element offers
 
 - 9 breakpoints
