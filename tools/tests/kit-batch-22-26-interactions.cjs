@@ -46,7 +46,7 @@ assert.equal( counter.root.dataset.ready, '1', 'Countdown enhanced only once' );
 counter.advance( 5000 );
 assert.equal( counter.nodes.seconds.number.textContent, '00', 'Countdown decrements without accumulating tick drift' );
 assert.equal( counter.cleared, false );
-counter.advance( 86520000 );
+counter.advance( 90120000 );
 assert.equal( counter.root.dataset.expired, '1', 'Countdown marks expiry' );
 assert.equal( counter.completed.hidden, false, 'Accessible completion message revealed' );
 assert.equal( counter.cleared, true, 'Countdown interval cleared on completion' );
