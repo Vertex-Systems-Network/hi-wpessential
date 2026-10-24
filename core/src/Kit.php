@@ -384,8 +384,8 @@ class Kit {
 					),
 					'style_handles'   => array( $handle ),
 					'editor_script'   => 'wpessential-kit-editor',
-					'render_callback' => static function ( $attributes ) use ( $name ) {
-						return self::render( $name, (array) $attributes );
+					'render_callback' => static function ( $attributes, $content = '' ) use ( $name ) {
+						return self::render( $name, (array) $attributes, (string) $content );
 					},
 				)
 			);
@@ -448,9 +448,10 @@ class Kit {
 	 *
 	 * @param string $name       Element.
 	 * @param array  $attributes Values.
+	 * @param string $content    Already-rendered inner blocks (for nested container).
 	 * @return string
 	 */
-	public static function render( $name, array $attributes ) {
+	public static function render( $name, array $attributes, $content = '' ) {
 		$defs = self::defs();
 		if ( empty( $defs[ $name ] ) ) {
 			return '';
@@ -473,7 +474,7 @@ class Kit {
 		}
 		$id   = 'wpe-' . $name . '-' . substr( md5( wp_json_encode( $a ) . wp_rand() ), 0, 8 );
 		$css  = self::css( $def, $a, $id );
-		$html = self::template( $def['dir'] . '/render.php', $a, $id );
+		$html = self::template( $def['dir'] . '/render.php', $a, $id, $content );
 		return ( $css ? '<style>' . $css . '</style>' : '' ) . self::root_extras( $html, $id, $a );
 	}
 
@@ -546,10 +547,11 @@ class Kit {
 	 *
 	 * @param string $file Template.
 	 * @param array  $a    Values.
-	 * @param string $id   Element id.
+	 * @param string $id      Element id.
+	 * @param string $content Rendered inner-block content when supplied.
 	 * @return string
 	 */
-	private static function template( $file, array $a, $id ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed -- Used by the included template.
+	private static function template( $file, array $a, $id, $content = '' ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed -- Used by the included template.
 		ob_start();
 		include $file;
 		return (string) ob_get_clean();
