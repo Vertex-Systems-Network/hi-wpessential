@@ -14,7 +14,7 @@ if ( ! $wpe_object || ! $wpe_object->public ) {
 $wpe_per_page = min( 24, max( 1, (int) $a['postsPerPage'] ) );
 $wpe_tax = sanitize_key( (string) $a['taxonomy'] );
 $wpe_tax_object = $wpe_tax ? get_taxonomy( $wpe_tax ) : false;
-$wpe_paged_key = 'wpe_pg_' . substr( md5( $id ), 0, 8 );
+$wpe_paged_key = 'wpe_pg_' . substr( md5( wp_json_encode( array( $a['postType'], $a['taxonomy'], $a['terms'], $a['orderBy'], $a['order'], $a['postsPerPage'], $a['offset'], $a['cssClass'] ?? '' ) ) ), 0, 8 );
 $wpe_page = ! empty( $_GET[ $wpe_paged_key ] ) ? max( 1, absint( wp_unslash( $_GET[ $wpe_paged_key ] ) ) ) : 1; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only pagination.
 $wpe_query_args = array(
 	'post_type'           => $wpe_type,
