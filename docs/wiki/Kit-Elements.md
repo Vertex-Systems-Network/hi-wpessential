@@ -52,6 +52,11 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | WooCommerce Products | Published product cards from real WooCommerce queries with category/featured/stock filters, prices, sale badges, responsive grid, safe product links, missing-plugin fallback |
 | Social Icons | Repeatable platform links with hardcoded SVG presets, HTTPS-only profile URLs, accessible labels, optional text and responsive shapes |
 
+| Social Feed | Curated social posts or dynamically queried published WordPress posts, media-library images, safe links, responsive columns and no-JS visible cards with optional progressive load more. No third-party API sync. |
+| Call to Action | Responsive banner, optional attachment image, safe rich message, semantic heading, validated primary/secondary button links and Elementor/Gutenberg style controls |
+| Calendar / Events | Strict timezone-aware manual events, sorted upcoming list or accessible month calendar, all-day/timed entries, location and safe detail links |
+| Search | Native GET search for published site content, optional post/page/WooCommerce product scope, inline or no-JS expandable form with accessible controls |
+
 ## What every element offers
 
 - 9 breakpoints
