@@ -9,17 +9,17 @@ defined( 'ABSPATH' ) || exit;
 
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Local template scope.
 
-$wpe_mode = in_array( $a['mode'], array( 'html', 'code', 'embed' ), true ) ? $a['mode'] : 'html';
+$wpe_mode     = in_array( $a['mode'], array( 'html', 'code', 'embed' ), true ) ? $a['mode'] : 'html';
 $wpe_language = in_array( $a['language'], array( 'text', 'html', 'css', 'javascript', 'php', 'json', 'bash', 'python' ), true ) ? $a['language'] : 'text';
-$wpe_markup = '';
-$wpe_url = '';
+$wpe_markup   = '';
+$wpe_url      = '';
 
 if ( 'html' === $wpe_mode ) {
 	$wpe_markup = wp_kses_post( (string) $a['html'] );
 } elseif ( 'embed' === $wpe_mode ) {
-	$wpe_url  = esc_url( trim( (string) $a['embedUrl'] ), array( 'https', 'http' ) );
-	$wpe_host = '' !== $wpe_url ? strtolower( (string) wp_parse_url( $wpe_url, PHP_URL_HOST ) ) : '';
-	$wpe_host = preg_replace( '/^www\./', '', $wpe_host );
+	$wpe_url     = esc_url( trim( (string) $a['embedUrl'] ), array( 'https', 'http' ) );
+	$wpe_host    = '' !== $wpe_url ? strtolower( (string) wp_parse_url( $wpe_url, PHP_URL_HOST ) ) : '';
+	$wpe_host    = preg_replace( '/^www\./', '', $wpe_host );
 	$wpe_allowed = array( 'youtube.com', 'm.youtube.com', 'youtu.be', 'vimeo.com', 'player.vimeo.com', 'soundcloud.com', 'spotify.com', 'open.spotify.com', 'mixcloud.com', 'www.mixcloud.com' );
 	if ( '' !== $wpe_url && in_array( $wpe_host, $wpe_allowed, true ) ) {
 		$wpe_raw = wp_oembed_get( $wpe_url, array( 'discover' => false ) );
@@ -27,22 +27,32 @@ if ( 'html' === $wpe_mode ) {
 			$wpe_markup = wp_kses(
 				$wpe_raw,
 				array(
-					'iframe' => array(
-						'src' => true,
-						'width' => true,
-						'height' => true,
-						'title' => true,
-						'frameborder' => true,
-						'allow' => true,
+					'iframe'     => array(
+						'src'            => true,
+						'width'          => true,
+						'height'         => true,
+						'title'          => true,
+						'frameborder'    => true,
+						'allow'          => true,
 						'allowfullscreen' => true,
-						'loading' => true,
+						'loading'        => true,
 						'referrerpolicy' => true,
 					),
-					'div' => array( 'class' => true, 'style' => true ),
-					'p' => array(),
-					'a' => array( 'href' => true, 'target' => true, 'rel' => true ),
-					'blockquote' => array( 'class' => true, 'cite' => true ),
-					'br' => array(),
+					'div'        => array(
+						'class' => true,
+						'style' => true,
+					),
+					'p'          => array(),
+					'a'          => array(
+						'href'   => true,
+						'target' => true,
+						'rel'    => true,
+					),
+					'blockquote' => array(
+						'class' => true,
+						'cite'  => true,
+					),
+					'br'         => array(),
 				)
 			);
 		}
