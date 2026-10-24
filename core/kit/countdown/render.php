@@ -40,7 +40,7 @@ $wpe_shown = array(
 		<?php foreach ( $wpe_units as $wpe_key => $wpe_label ) : ?>
 			<?php if ( $wpe_shown[ $wpe_key ] ) : ?>
 				<div class="wpe-countdown__unit" data-unit="<?php echo esc_attr( $wpe_key ); ?>">
-					<span class="wpe-countdown__number" aria-hidden="true">--</span>
+					<span class="wpe-countdown__number">--</span>
 					<span class="wpe-countdown__label"><?php echo esc_html( $wpe_label ); ?></span>
 				</div>
 			<?php endif; ?>
