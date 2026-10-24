@@ -52,7 +52,8 @@ try {
 	$wpe_check( false === $wpe_mapped['showSeconds'], 'Countdown: Elementor seconds switcher maps correctly' );
 	$wpe_check( 26 === $wpe_mapped['gap']['base'], 'Countdown: Elementor responsive gap maps correctly' );
 	$wpe_html = Kit::render( 'countdown', $wpe_mapped );
-	$wpe_check( 3 === preg_match_all( '/data-unit=/', $wpe_html ), 'Countdown: disabled seconds absent from Elementor render' );
+	echo 'DEBUG countdown rendered unit count: ' . preg_match_all( '/data-unit=/', $wpe_html ) . '; has-seconds=' . ( false !== strpos( $wpe_html, 'data-unit="seconds"' ) ? 'yes' : 'no' ) . '; markup=' . substr( $wpe_html, 0, 1800 ) . "\n";
+$wpe_check( 3 === preg_match_all( '/data-unit=/', $wpe_html ), 'Countdown: disabled seconds absent from Elementor render' );
 } finally {
 	update_option( 'timezone_string', $wpe_old_timezone );
 }
