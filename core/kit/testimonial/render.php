@@ -29,7 +29,7 @@ if ( ! empty( $wpe_image['id'] ) && wp_attachment_is_image( (int) $wpe_image['id
 			'loading' => 'lazy',
 		)
 	);
-} elseif ( ! empty( $wpe_image['url'] ) ) {
+} elseif ( ! empty( $wpe_image['url'] ) && esc_url( $wpe_image['url'] ) ) {
 	$wpe_photo = '<img class="wpe-testimonial__photo" src="' . esc_url( $wpe_image['url'] ) . '" alt="" loading="lazy">';
 }
 $wpe_class = array(
