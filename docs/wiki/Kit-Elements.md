@@ -48,6 +48,10 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | Modal / Popup | Native dialog for explicit click-to-open overlays, Escape/backdrop/close behavior, focus restoration, sanitized rich text and no-JS native disclosure fallback |
 | Pricing Table | Responsive single-plan card with features, included/excluded states, featured badge, price labels and safe call-to-action URLs |
 
+| Map | Validated map coordinates, server-rendered OpenStreetMap location link, optional consent-first iframe, responsive map frame, no third-party requests before click |
+| WooCommerce Products | Published product cards from real WooCommerce queries with category/featured/stock filters, prices, sale badges, responsive grid, safe product links, missing-plugin fallback |
+| Social Icons | Repeatable platform links with hardcoded SVG presets, HTTPS-only profile URLs, accessible labels, optional text and responsive shapes |
+
 ## What every element offers
 
 - 9 breakpoints
