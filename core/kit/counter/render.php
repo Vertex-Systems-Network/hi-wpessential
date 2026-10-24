@@ -12,17 +12,17 @@ defined( 'ABSPATH' ) || exit;
 $wpe_start = is_numeric( $a['start'] ) ? (float) $a['start'] : 0.0;
 $wpe_end   = is_numeric( $a['end'] ) ? (float) $a['end'] : 0.0;
 // Clamp user input to finite, predictable values for PHP formatting and animation.
-$wpe_start = is_finite( $wpe_start ) ? min( 1000000000, max( -1000000000, $wpe_start ) ) : 0.0;
-$wpe_end   = is_finite( $wpe_end ) ? min( 1000000000, max( -1000000000, $wpe_end ) ) : 0.0;
-$wpe_digits = min( 4, max( 0, (int) $a['decimals'] ) );
+$wpe_start     = is_finite( $wpe_start ) ? min( 1000000000, max( -1000000000, $wpe_start ) ) : 0.0;
+$wpe_end       = is_finite( $wpe_end ) ? min( 1000000000, max( -1000000000, $wpe_end ) ) : 0.0;
+$wpe_digits    = min( 4, max( 0, (int) $a['decimals'] ) );
 $wpe_thousands = array(
 	'comma' => ',',
 	'dot'   => '.',
 	'space' => ' ',
 	'none'  => '',
 );
-$wpe_sep   = $wpe_thousands[ $a['thousands'] ] ?? ',';
-$wpe_point = 'comma' === $a['decimalMark'] ? ',' : '.';
+$wpe_sep       = $wpe_thousands[ $a['thousands'] ] ?? ',';
+$wpe_point     = 'comma' === $a['decimalMark'] ? ',' : '.';
 // The decimal and thousands separators must never be the same.
 if ( $wpe_sep === $wpe_point ) {
 	$wpe_sep = '';
