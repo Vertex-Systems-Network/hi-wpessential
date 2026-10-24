@@ -4,6 +4,7 @@
  *
  * @package WPEssential\Core
  */
+
 namespace WPEssential\Core\Kit\Elements;
 
 defined( 'ABSPATH' ) || exit;
