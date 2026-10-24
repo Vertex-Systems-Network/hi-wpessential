@@ -14,9 +14,9 @@ $wpe_valid = array();
 $wpe_size  = in_array( $a['imageSize'], array( 'thumbnail', 'medium', 'medium_large', 'large', 'full' ), true ) ? $a['imageSize'] : 'medium_large';
 
 foreach ( $wpe_items as $wpe_item ) {
-	$wpe_image = isset( $wpe_item['image'] ) && is_array( $wpe_item['image'] ) ? $wpe_item['image'] : array();
+	$wpe_image      = isset( $wpe_item['image'] ) && is_array( $wpe_item['image'] ) ? $wpe_item['image'] : array();
 	$wpe_attachment = ! empty( $wpe_image['id'] ) && wp_attachment_is_image( (int) $wpe_image['id'] ) ? (int) $wpe_image['id'] : 0;
-	$wpe_url = $wpe_attachment ? (string) wp_get_attachment_image_url( $wpe_attachment, 'full' ) : esc_url( (string) ( $wpe_image['url'] ?? '' ) );
+	$wpe_url        = $wpe_attachment ? (string) wp_get_attachment_image_url( $wpe_attachment, 'full' ) : esc_url( (string) ( $wpe_image['url'] ?? '' ) );
 	if ( '' === $wpe_url ) {
 		continue;
 	}
@@ -25,7 +25,7 @@ foreach ( $wpe_items as $wpe_item ) {
 		$wpe_alt = (string) get_post_meta( $wpe_attachment, '_wp_attachment_image_alt', true );
 	}
 	$wpe_caption = trim( (string) ( $wpe_item['caption'] ?? '' ) );
-	$wpe_img = $wpe_attachment ? wp_get_attachment_image(
+	$wpe_img     = $wpe_attachment ? wp_get_attachment_image(
 		$wpe_attachment,
 		$wpe_size,
 		false,
@@ -38,7 +38,7 @@ foreach ( $wpe_items as $wpe_item ) {
 	if ( ! $wpe_img ) {
 		continue;
 	}
-	$wpe_link = esc_url( trim( (string) ( $wpe_item['link'] ?? '' ) ) );
+	$wpe_link    = esc_url( trim( (string) ( $wpe_item['link'] ?? '' ) ) );
 	$wpe_valid[] = array(
 		'img'     => $wpe_img,
 		'url'     => $wpe_url,
@@ -55,14 +55,14 @@ if ( ! $wpe_valid ) {
 	return;
 }
 
-$wpe_class = array(
+$wpe_class        = array(
 	'wpe-gallery',
 	'is-' . ( 'masonry' === $a['layout'] ? 'masonry' : 'grid' ),
 	'is-caption-' . ( 'overlay' === $a['captionPosition'] ? 'overlay' : 'below' ),
 	'is-hover-' . sanitize_key( $a['hover'] ),
 );
 $wpe_has_lightbox = ! empty( $a['lightbox'] );
-$wpe_has_opener = $wpe_has_lightbox && (bool) array_filter(
+$wpe_has_opener   = $wpe_has_lightbox && (bool) array_filter(
 	$wpe_valid,
 	static function ( $wpe_item ) {
 		return '' === $wpe_item['link'];
