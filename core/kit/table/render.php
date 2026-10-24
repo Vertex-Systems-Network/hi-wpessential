@@ -21,9 +21,10 @@ $wpe_rows       = array();
 $wpe_input      = new \SplTempFileObject();
 $wpe_input->fwrite( $wpe_source );
 $wpe_input->rewind();
+$wpe_row_count = 0;
 
 // CSV quoted delimiters and embedded line breaks are parsed by PHP, not a simple split.
-while ( ! $wpe_input->eof() && count( $wpe_rows ) < 201 ) {
+while ( ! $wpe_input->eof() && $wpe_row_count < 201 ) {
 	$wpe_row = $wpe_input->fgetcsv( $wpe_delimiter );
 	if ( ! is_array( $wpe_row ) || array( null ) === $wpe_row ) {
 		continue;
@@ -36,6 +37,7 @@ while ( ! $wpe_input->eof() && count( $wpe_rows ) < 201 ) {
 	);
 	if ( array_filter( $wpe_cells, static fn( $cell ) => '' !== $cell ) ) {
 		$wpe_rows[] = $wpe_cells;
+		++$wpe_row_count;
 	}
 }
 if ( ! $wpe_rows ) {
@@ -52,11 +54,11 @@ for ( $wpe_i = 0; $wpe_i < $wpe_width; $wpe_i++ ) {
 		$wpe_headers[ $wpe_i ] = sprintf( /* translators: %d: Table column number. */ __( 'Column %d', 'hi-wpessential' ), $wpe_i + 1 );
 	}
 }
-$wpe_headers  = array_slice( $wpe_headers, 0, $wpe_width );
-$wpe_caption  = trim( (string) $a['caption'] );
-$wpe_sortable = ! empty( $a['sortable'] ) && $wpe_has_header;
-$wpe_search   = ! empty( $a['searchable'] );
-$wpe_classes  = array(
+$wpe_headers   = array_slice( $wpe_headers, 0, $wpe_width );
+$wpe_caption   = trim( (string) $a['caption'] );
+$wpe_sortable  = ! empty( $a['sortable'] ) && $wpe_has_header;
+$wpe_search    = ! empty( $a['searchable'] );
+$wpe_classes   = array(
 	'wpe-table',
 	'is-' . ( 'stack' === $a['layout'] ? 'stack' : 'scroll' ),
 	$a['striped'] ? 'is-striped' : '',
@@ -64,8 +66,12 @@ $wpe_classes  = array(
 	$a['stickyHeader'] ? 'is-sticky' : '',
 );
 $wpe_search_id = $id . '-search';
+// translators: %d: Number of visible table rows after filtering.
+$wpe_row_singular = esc_attr__( '%d row shown', 'hi-wpessential' );
+// translators: %d: Number of visible table rows after filtering.
+$wpe_row_plural = esc_attr__( '%d rows shown', 'hi-wpessential' );
 ?>
-<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( implode( ' ', array_filter( $wpe_classes ) ) ); ?>" data-wpe-table="1" data-row-singular="<?php echo esc_attr__( '%d row shown', 'hi-wpessential' ); ?>" data-row-plural="<?php echo esc_attr__( '%d rows shown', 'hi-wpessential' ); ?>">
+<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( implode( ' ', array_filter( $wpe_classes ) ) ); ?>" data-wpe-table="1" data-row-singular="<?php echo esc_attr( $wpe_row_singular ); ?>" data-row-plural="<?php echo esc_attr( $wpe_row_plural ); ?>">
 	<?php if ( $wpe_search ) : ?>
 		<div class="wpe-table__tools">
 			<label class="screen-reader-text" for="<?php echo esc_attr( $wpe_search_id ); ?>"><?php esc_html_e( 'Search table rows', 'hi-wpessential' ); ?></label>
