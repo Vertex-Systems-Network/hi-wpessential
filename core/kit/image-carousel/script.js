@@ -20,6 +20,9 @@
 			if ( viewport.scrollTo ) {
 				viewport.scrollTo( { left: slides[ index ].offsetLeft - slides[ 0 ].offsetLeft, behavior: reduced ? 'auto' : 'smooth' } );
 			}
+			updateControls();
+		}
+		function updateControls() {
 			dots.forEach( function ( dot, i ) {
 				if ( i === index ) { dot.setAttribute( 'aria-current', 'true' ); } else { dot.removeAttribute( 'aria-current' ); }
 			} );
@@ -38,6 +41,17 @@
 				show( index + 1 );
 			}, Math.max( 2000, Math.min( 15000, Number( root.dataset.interval ) || 5000 ) ) );
 		}
+		// Native wheel/touch/keyboard scrolling also updates the active indicator.
+		viewport.addEventListener( 'scroll', function () {
+			var position = viewport.scrollLeft;
+			var nearest = 0;
+			var distance = Infinity;
+			slides.forEach( function ( slide, i ) {
+				var delta = Math.abs( position - ( slide.offsetLeft - slides[ 0 ].offsetLeft ) );
+				if ( delta < distance ) { distance = delta; nearest = i; }
+			} );
+			if ( nearest !== index ) { index = nearest; updateControls(); }
+		} );
 		if ( previous ) { previous.addEventListener( 'click', function () { show( index - 1 ); } ); }
 		if ( next ) { next.addEventListener( 'click', function () { show( index + 1 ); } ); }
 		dots.forEach( function ( dot, i ) { dot.addEventListener( 'click', function () { show( i ); } ); } );
