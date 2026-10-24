@@ -48,6 +48,7 @@ $wpe_social = $wpe_block( 'social', array(
 		array( 'platform' => 'github', 'label' => '', 'url' => 'https://github.com/example' ),
 		array( 'platform' => 'facebook', 'url' => 'javascript:alert(1)' ),
 		array( 'platform' => 'linkedin', 'url' => 'http://example.com/insecure' ),
+		array( 'platform' => 'telegram', 'url' => '/relative/path' ),
 		array( 'platform' => '<svg onload=alert(2)>', 'url' => 'https://example.com' ),
 	),
 	'newTab' => true,
@@ -58,7 +59,7 @@ $wpe_check( 2 === preg_match_all( '/class="wpe-social__link"/', $wpe_social ), '
 $wpe_check( false !== strpos( $wpe_social, 'aria-label="Photos"' ), 'Custom accessible social name preserved' );
 $wpe_check( false !== strpos( $wpe_social, 'aria-label="GitHub"' ), 'Missing social name defaults to official platform' );
 $wpe_check( false !== strpos( $wpe_social, 'noopener noreferrer' ), 'Social new-tab links guarded' );
-$wpe_check( false === strpos( $wpe_social, 'javascript:' ) && false === strpos( $wpe_social, 'http://example.com' ) && false === strpos( $wpe_social, ' onclick="' ), 'Social URL injection and attribute injection rejected' );
+$wpe_check( false === strpos( $wpe_social, 'javascript:' ) && false === strpos( $wpe_social, 'http://example.com' ) && false === strpos( $wpe_social, '/relative/path' ) && false === strpos( $wpe_social, ' onclick="' ), 'Social URL injection and attribute injection rejected' );
 $wpe_check( 2 === preg_match_all( '/<svg viewBox=/', $wpe_social ), 'Controlled local SVG icons rendered' );
 $wpe_empty = $wpe_block( 'social', array( 'items' => array( array( 'url' => 'javascript:alert(1)' ) ) ) );
 $wpe_check( false === strpos( $wpe_empty, '<nav' ), 'No social navigation emitted when no valid URLs' );
