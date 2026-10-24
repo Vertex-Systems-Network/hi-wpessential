@@ -32,7 +32,7 @@ if ( ! empty( $wpe_image['id'] ) && wp_attachment_is_image( (int) $wpe_image['id
 } elseif ( ! empty( $wpe_image['url'] ) && esc_url( $wpe_image['url'] ) ) {
 	$wpe_photo = '<img class="wpe-testimonial__photo" src="' . esc_url( $wpe_image['url'] ) . '" alt="" loading="lazy">';
 }
-$wpe_class = array(
+$wpe_class      = array(
 	'wpe-testimonial',
 	'is-' . sanitize_key( $a['appearance'] ),
 	'is-avatar-' . sanitize_key( $a['avatarShape'] ),
