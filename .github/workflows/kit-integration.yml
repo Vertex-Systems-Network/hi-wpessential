@@ -45,7 +45,7 @@ jobs:
           set -euo pipefail
           node --check core/assets/kit-editor.js
           for f in core/kit/*/script.js; do node --check "$f"; done
-          for f in             tools/tests/counter-animation.cjs             tools/tests/gallery-lightbox.cjs             tools/tests/container-editor.cjs             tools/tests/video-embed.cjs             tools/tests/progress-bar-animation.cjs             tools/tests/code-copy.cjs             tools/tests/table-interactions.cjs             tools/tests/tooltip-interactions.cjs             tools/tests/kit-batch-22-26-interactions.cjs             tools/tests/kit-batch-27-28-30-interactions.cjs; do
+          for f in             tools/tests/counter-animation.cjs             tools/tests/gallery-lightbox.cjs             tools/tests/container-editor.cjs             tools/tests/video-embed.cjs             tools/tests/progress-bar-animation.cjs             tools/tests/code-copy.cjs             tools/tests/table-interactions.cjs             tools/tests/tooltip-interactions.cjs             tools/tests/kit-batch-22-26-interactions.cjs             tools/tests/kit-batch-27-28-30-interactions.cjs             tools/tests/kit-map-interactions.cjs; do
             node "$f"
           done
       - name: Install WP-CLI
@@ -76,3 +76,12 @@ jobs:
           done
           wp eval-file "$GITHUB_WORKSPACE/tools/tests/kit-batch-22-26-smoke.php" --path="$WP_DIR"
           wp eval-file "$GITHUB_WORKSPACE/tools/tests/kit-batch-27-28-30-smoke.php" --path="$WP_DIR"
+          wp eval-file "$GITHUB_WORKSPACE/tools/tests/kit-batch-map-social-smoke.php" --path="$WP_DIR"
+      - name: Install WooCommerce and exercise real product CRUD
+        env:
+          WP_DIR: ${{ runner.temp }}/wpe-wordpress
+        run: |
+          set -euo pipefail
+          wp plugin install woocommerce --activate --path="$WP_DIR" --quiet
+          wp plugin is-active woocommerce --path="$WP_DIR"
+          wp eval-file "$GITHUB_WORKSPACE/tools/tests/kit-products-woocommerce-smoke.php" --path="$WP_DIR"
