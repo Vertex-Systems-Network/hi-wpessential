@@ -20,6 +20,8 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | Tabs | ARIA tabs with arrow keys / Home / End, top / bottom / left / right per breakpoint, icons and badges, underline / pill / box indicators, deep links (#name), autoplay that pauses on hover, scroll / stack / accordion on small screens, all panels shown without JavaScript |
 | Posts grid | Published posts and public custom post types; taxonomy term filtering, configurable cards, responsive columns, featured images, pagination and empty state. Shared Gutenberg/Elementor renderer with automated WordPress smoke tests. |
 
+| Testimonial | Accessible quote and rating, avatar, linked author name, role / company, responsive alignment, styles and optional hover effects. Gutenberg + Elementor share the same renderer. |
+
 ## What every element offers
 
 - 9 breakpoints
