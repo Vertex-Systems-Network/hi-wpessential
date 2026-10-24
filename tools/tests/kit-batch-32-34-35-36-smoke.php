@@ -74,7 +74,7 @@ $wpe_check( false !== strpos( $wpe_search, 'role="search"' ) && false !== strpos
 $wpe_check( false !== strpos( $wpe_search, 'name="post_type" value="post"' ), 'Search post-only scope submits trusted post_type' );
 $wpe_check( false !== strpos( $wpe_search, '<details class="wpe-search__details">' ), 'Search expand mode works without JavaScript' );
 $wpe_check( false !== strpos( $wpe_search, 'screen-reader-text' ), 'Search icon-only submit has accessible text' );
-$wpe_check( false === strpos( $wpe_search, ' autofocus ' ) && false === strpos( $wpe_search, '<img src=x' ), 'Search text attributes escaped' );
+$wpe_check( false !== strpos( $wpe_search, 'placeholder="&quot; autofocus onfocus=&quot;' ) && false === strpos( $wpe_search, '<img src=x' ), 'Search text attributes escaped' );
 $wpe_check( false === strpos( $wpe_block( 'search', array( 'scope' => 'all' ) ), 'name="post_type"' ), 'Search all-content mode omits post_type restriction' );
 $wpe_check( false === strpos( $wpe_block( 'search', array( 'scope' => 'product' ) ), 'value="product"' ), 'Search product scope falls back if WooCommerce unavailable' );
 $wpe_mapped = Kit::from_elementor( Kit::defs()['search'], array( 'showLabel' => 'yes', 'scope' => 'page', 'maxWidth' => array( 'size' => 540, 'unit' => 'px' ) ) );
