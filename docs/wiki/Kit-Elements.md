@@ -24,6 +24,14 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 
 | Counter | Numeric milestones and statistics; custom start/end values, decimals, separators, prefix/suffix, optional icon, responsive styling, viewport count-up animation with reduced-motion fallback and accessible static final value |
 
+| Gallery | Reorderable images, media-library responsive image output, alt and caption per image, grid or masonry columns, responsive layout, custom links and keyboard-enabled native lightbox with non-JavaScript fallback |
+
+| Container | Responsive flex or CSS grid with gap, wrapping, width, alignment and style controls. Gutenberg: real draggable/reorderable InnerBlocks, including nested containers. Elementor: WYSIWYG content wrapper; for draggable nested Elementor widgets use Elementor's native Container. |
+
+| Video & Audio | HTML5 video/audio files with native controls, loop/mute/preload, optional poster and WebVTT captions; YouTube/Vimeo validated embeds only load after explicit Play; non-JS source links remain available; responsive player sizing and shared Gutenberg/Elementor renderer |
+
+| Progress bar | Multiple progress values with individual max goals, horizontal bars or circular rings, percentages/values/fractions, optional descriptions, screen-reader progress semantics, viewport animation and reduced-motion fallback |
+
 | Code / HTML / Embed | Safe rich HTML (scripts stripped), escaped source-code samples with accessible Copy action, trusted WordPress provider oEmbed and fallback external link; shared Gutenberg and Elementor implementation |
 
 ## What every element offers
