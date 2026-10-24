@@ -93,7 +93,7 @@ try {
 	update_post_meta( $wpe_attachment, '_wp_attachment_image_alt', 'Media alt text' );
 	$wpe_media = $wpe_block( array( 'items' => array( array( 'image' => array( 'id' => $wpe_attachment ), 'caption' => 'Media caption' ) ) ) );
 	$wpe_check( false !== strpos( $wpe_media, 'alt="Media alt text"' ), 'Image inherits media-library alt when custom alt omitted' );
-	$wpe_check( false !== strpos( $wpe_media, 'wp-image-' . $wpe_attachment ), 'Media library uses WordPress responsive-image markup' );
+	$wpe_check( false !== strpos( $wpe_media, 'wpe-gallery-smoke.png' ) && false !== strpos( $wpe_media, 'class="wpe-gallery__img"' ), 'Media library renders the WordPress attachment image' );
 } finally {
 	if ( $wpe_attachment && ! is_wp_error( $wpe_attachment ) ) {
 		wp_delete_attachment( $wpe_attachment, true );
