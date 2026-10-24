@@ -38,6 +38,12 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 
 | Interactive Tooltip | Focus/hover/touch tooltip, native show-more disclosure, two-panel switcher with keyboard/RTL arrow navigation; safe rich content, reduced-motion, and readable no-JavaScript fallbacks |
 
+| Countdown | WordPress site-timezone target date, 4-unit ticking timer, expired state, accessible completion message, and usable date fallback without JavaScript. |
+| SVG/Icon Animation | Safe built-in SVG preset paths, decorative/meaningful semantics, viewport-triggered draw/pulse/spin and reduced-motion support. |
+| Team Member | Profile image via WordPress media, name/role/bio, profile/email and validated social links, horizontal/stacked responsive cards. |
+| Site Logo / Title | Theme custom logo, site title/tagline, branding overrides, linked home destination and responsive image sizing. |
+| Divider / Spacer | Semantic horizontal rule, labelled or decorative separator, and non-semantic responsive vertical spacer. |
+
 ## What every element offers
 
 - 9 breakpoints
