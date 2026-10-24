@@ -7,9 +7,10 @@ const vm = require( 'node:vm' );
 const countdown = fs.readFileSync( path.join( __dirname, '../../core/kit/countdown/script.js' ), 'utf8' );
 const svg = fs.readFileSync( path.join( __dirname, '../../core/kit/svg/script.js' ), 'utf8' );
 
-function countdownTest( end, start ) {
+function countdownTest( end, start, hidden = [] ) {
 	const nodes = {};
 	for ( const name of [ 'days', 'hours', 'minutes', 'seconds' ] ) {
+		if ( hidden.includes( name ) ) { continue; }
 		const number = { textContent: '--' };
 		nodes[ name ] = { dataset: { unit: name }, querySelector: () => number, number };
 	}
@@ -50,6 +51,11 @@ counter.advance( 90120000 );
 assert.equal( counter.root.dataset.expired, '1', 'Countdown marks expiry' );
 assert.equal( counter.completed.hidden, false, 'Accessible completion message revealed' );
 assert.equal( counter.cleared, true, 'Countdown interval cleared on completion' );
+
+const withoutDays = countdownTest( now + 2 * 86400 * 1000, now, [ 'days' ] );
+assert.equal( withoutDays.nodes.hours.number.textContent, '48', 'Hidden days roll into visible hours' );
+const withoutDaysOrHours = countdownTest( now + 2 * 86400 * 1000, now, [ 'days', 'hours' ] );
+assert.equal( withoutDaysOrHours.nodes.minutes.number.textContent, '2880', 'Hidden days and hours roll into visible minutes' );
 
 const expired = countdownTest( now - 1000, now );
 assert.equal( expired.intervalCreated, false, 'Expired countdown creates no interval' );
