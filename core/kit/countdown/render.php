@@ -8,28 +8,28 @@
 defined( 'ABSPATH' ) || exit;
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Included in Kit template scope.
 
-$wpe_raw   =  trim( (string) $a['target'] );
-$wpe_date  =  DateTimeImmutable::createFromFormat( '!Y-m-d H:i:s', $wpe_raw, wp_timezone() );
-$wpe_valid =  $wpe_date && $wpe_date->format( 'Y-m-d H:i:s' ) === $wpe_raw;
+$wpe_raw   = trim( (string) $a['target'] );
+$wpe_date  = DateTimeImmutable::createFromFormat( '!Y-m-d H:i:s', $wpe_raw, wp_timezone() );
+$wpe_valid = $wpe_date && $wpe_date->format( 'Y-m-d H:i:s' ) === $wpe_raw;
 if ( ! $wpe_valid ) {
 	if ( is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
 		echo '<p class="wpe-countdown__empty">' . esc_html__( 'Enter a valid date in YYYY-MM-DD HH:MM:SS format.', 'hi-wpessential' ) . '</p>';
 	}
 	return;
 }
-$wpe_time  =  $wpe_date->getTimestamp();
-$wpe_style =  in_array( $a['style'], array( 'cards', 'minimal', 'inline' ), true ) ? $a['style'] : 'cards';
-$wpe_units =  array(
-	'days'    =>  __( 'Days', 'hi-wpessential' ),
-	'hours'   =>  __( 'Hours', 'hi-wpessential' ),
-	'minutes' =>  __( 'Minutes', 'hi-wpessential' ),
-	'seconds' =>  __( 'Seconds', 'hi-wpessential' ),
+$wpe_time  = $wpe_date->getTimestamp();
+$wpe_style = in_array( $a['style'], array( 'cards', 'minimal', 'inline' ), true ) ? $a['style'] : 'cards';
+$wpe_units = array(
+	'days'    => __( 'Days', 'hi-wpessential' ),
+	'hours'   => __( 'Hours', 'hi-wpessential' ),
+	'minutes' => __( 'Minutes', 'hi-wpessential' ),
+	'seconds' => __( 'Seconds', 'hi-wpessential' ),
 );
 $wpe_shown = array(
-	'days'    =>  ! empty( $a['showDays'] ),
-	'hours'   =>  ! empty( $a['showHours'] ),
-	'minutes' =>  ! empty( $a['showMinutes'] ),
-	'seconds' =>  ! empty( $a['showSeconds'] ),
+	'days'    => ! empty( $a['showDays'] ),
+	'hours'   => ! empty( $a['showHours'] ),
+	'minutes' => ! empty( $a['showMinutes'] ),
+	'seconds' => ! empty( $a['showSeconds'] ),
 );
 ?>
 <section id="<?php echo esc_attr( $id ); ?>" class="wpe-countdown is-<?php echo esc_attr( $wpe_style ); ?>" data-wpe-countdown="1" data-end="<?php echo esc_attr( (string) ( $wpe_time * 1000 ) ); ?>" aria-label="<?php esc_attr_e( 'Countdown timer', 'hi-wpessential' ); ?>">
