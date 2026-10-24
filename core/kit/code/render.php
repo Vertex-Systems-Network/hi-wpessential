@@ -28,15 +28,15 @@ if ( 'html' === $wpe_mode ) {
 				$wpe_raw,
 				array(
 					'iframe'     => array(
-						'src'            => true,
-						'width'          => true,
-						'height'         => true,
-						'title'          => true,
-						'frameborder'    => true,
-						'allow'          => true,
+						'src'             => true,
+						'width'           => true,
+						'height'          => true,
+						'title'           => true,
+						'frameborder'     => true,
+						'allow'           => true,
 						'allowfullscreen' => true,
-						'loading'        => true,
-						'referrerpolicy' => true,
+						'loading'         => true,
+						'referrerpolicy'  => true,
 					),
 					'div'        => array(
 						'class' => true,
