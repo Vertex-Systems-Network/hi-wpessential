@@ -9,13 +9,13 @@ defined( 'ABSPATH' ) || exit;
 
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Scoped render template.
 
-$wpe_title = trim( (string) $a['title'] );
-$wpe_title = '' !== $wpe_title ? $wpe_title : __( 'Information', 'hi-wpessential' );
-$wpe_trigger = trim( (string) $a['trigger'] );
-$wpe_trigger = '' !== $wpe_trigger ? $wpe_trigger : __( 'Open details', 'hi-wpessential' );
-$wpe_close = trim( (string) $a['closeLabel'] );
-$wpe_close = '' !== $wpe_close ? $wpe_close : __( 'Close', 'hi-wpessential' );
-$wpe_html = wp_kses_post( (string) $a['content'] );
+$wpe_title      = trim( (string) $a['title'] );
+$wpe_title      = '' !== $wpe_title ? $wpe_title : __( 'Information', 'hi-wpessential' );
+$wpe_trigger    = trim( (string) $a['trigger'] );
+$wpe_trigger    = '' !== $wpe_trigger ? $wpe_trigger : __( 'Open details', 'hi-wpessential' );
+$wpe_close      = trim( (string) $a['closeLabel'] );
+$wpe_close      = '' !== $wpe_close ? $wpe_close : __( 'Close', 'hi-wpessential' );
+$wpe_html       = wp_kses_post( (string) $a['content'] );
 $wpe_appearance = 'minimal' === $a['appearance'] ? 'minimal' : 'boxed';
 ?>
 <div id="<?php echo esc_attr( $id ); ?>" class="wpe-modal is-<?php echo esc_attr( $wpe_appearance ); ?>" data-wpe-modal="1" data-close-backdrop="<?php echo $a['closeBackdrop'] ? '1' : '0'; ?>">
@@ -24,7 +24,9 @@ $wpe_appearance = 'minimal' === $a['appearance'] ? 'minimal' : 'boxed';
 		<div class="wpe-modal__fallback-content">
 			<h3><?php echo esc_html( $wpe_title ); ?></h3>
 			<div><?php echo $wpe_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitized through wp_kses_post. ?></div>
-			<?php if ( '' !== trim( (string) $a['footerText'] ) ) : ?><p><?php echo esc_html( (string) $a['footerText'] ); ?></p><?php endif; ?>
+			<?php if ( '' !== trim( (string) $a['footerText'] ) ) : ?>
+				<p><?php echo esc_html( (string) $a['footerText'] ); ?></p>
+			<?php endif; ?>
 		</div>
 	</details>
 	<button class="wpe-modal__open" type="button" hidden><?php echo esc_html( $wpe_trigger ); ?></button>
