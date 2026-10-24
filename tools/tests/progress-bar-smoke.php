@@ -93,7 +93,7 @@ $wpe_unsafe = $wpe_block(
 );
 $wpe_check( false === strpos( $wpe_unsafe, '<img src=x' ), 'Unsafe label HTML is escaped' );
 $wpe_check( false === strpos( $wpe_unsafe, '<script>' ), 'Unsafe descriptions are escaped' );
-$wpe_check( false === strpos( $wpe_unsafe, ' onerror=' ), 'Injection cannot become an event-handler attribute' );
+$wpe_check( ! preg_match( '/<[^>]+\\sonerror\\s*=/i', $wpe_unsafe ), 'Injection cannot become an event-handler attribute' );
 
 $wpe_empty = $wpe_block( array( 'items' => array() ) );
 $wpe_check( false === strpos( $wpe_empty, 'role="progressbar"' ), 'Empty repeater has no indicators' );
