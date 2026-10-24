@@ -65,7 +65,7 @@ $wpe_classes  = array(
 );
 $wpe_search_id = $id . '-search';
 ?>
-<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( implode( ' ', array_filter( $wpe_classes ) ) ); ?>" data-wpe-table="1">
+<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( implode( ' ', array_filter( $wpe_classes ) ) ); ?>" data-wpe-table="1" data-row-singular="<?php echo esc_attr__( '%d row shown', 'hi-wpessential' ); ?>" data-row-plural="<?php echo esc_attr__( '%d rows shown', 'hi-wpessential' ); ?>">
 	<?php if ( $wpe_search ) : ?>
 		<div class="wpe-table__tools">
 			<label class="screen-reader-text" for="<?php echo esc_attr( $wpe_search_id ); ?>"><?php esc_html_e( 'Search table rows', 'hi-wpessential' ); ?></label>
