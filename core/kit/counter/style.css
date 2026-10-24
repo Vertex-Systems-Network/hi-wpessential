@@ -17,12 +17,12 @@
 	transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 .wpe-counter__content { display: flex; flex-direction: var(--wpek-direction); align-items: var(--wpek-items); justify-content: inherit; gap: var(--wpek-gap); min-width: 0; }
-.wpe-counter__value { display: inline-flex; align-items: baseline; justify-content: inherit; flex-wrap: wrap; gap: 0; max-width: 100%; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.wpe-counter__value { display: inline-flex; align-items: baseline; justify-content: var(--wpek-justify, flex-start); flex-wrap: wrap; gap: 0; max-width: 100%; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .wpe-counter__digits { font-weight: 750; font-size: var(--wpek-number-size); line-height: 1.1; color: var(--wp--preset--color--primary, currentColor); }
 .wpe-counter__prefix, .wpe-counter__suffix { font-size: var(--wpek-number-size); font-weight: 700; line-height: 1.1; color: var(--wp--preset--color--primary, currentColor); }
 .wpe-counter__title { margin: 0; font-size: 1.1rem; line-height: 1.4; font-weight: 650; }
 .wpe-counter__description { margin: 0; color: var(--wp--preset--color--text-muted, inherit); font-size: .95rem; line-height: 1.6; }
-.wpe-counter__icon { display: inline-flex; align-items: center; justify-content: inherit; flex: none; color: var(--wp--preset--color--primary, currentColor); font-size: var(--wpek-icon-size); }
+.wpe-counter__icon { display: inline-flex; align-items: center; justify-content: var(--wpek-justify, flex-start); flex: none; color: var(--wp--preset--color--primary, currentColor); font-size: var(--wpek-icon-size); }
 .wpe-counter__svg { width: 1em; height: 1em; }
 .wpe-counter.is-icon-start { flex-direction: row; align-items: flex-start; }
 .wpe-counter.is-icon-start .wpe-counter__content { flex: 1; }
