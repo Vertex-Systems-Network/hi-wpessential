@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Included in Kit template scope.
 
-$wpe_paths = array(
+$wpe_paths    = array(
 	'check'   => 'M5 12l5 5L20 7',
 	'arrow'   => 'M4 12h16M13 5l7 7-7 7',
 	'heart'   => 'M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 22l9.8-9.6a5.5 5.5 0 0 0-1-7.8z',
