@@ -45,7 +45,7 @@ if ( ! $wpe_rows ) {
 	return;
 }
 $wpe_has_header = ! empty( $a['headerRow'] );
-$wpe_width      = min( 20, max( array_map( 'count', $wpe_rows ) ) );
+$wpe_width      = $wpe_has_header ? min( 20, count( $wpe_rows[0] ) ) : min( 20, max( array_map( 'count', $wpe_rows ) ) );
 $wpe_headers    = $wpe_has_header ? array_shift( $wpe_rows ) : array();
 for ( $wpe_i = 0; $wpe_i < $wpe_width; $wpe_i++ ) {
 	if ( empty( $wpe_headers[ $wpe_i ] ) ) {
