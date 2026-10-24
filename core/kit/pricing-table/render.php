@@ -41,7 +41,7 @@ $wpe_plan     = trim( (string) $a['plan'] );
 		<ul class="wpe-pricing-table__features">
 			<?php foreach ( $wpe_features as $wpe_feature ) : ?>
 				<?php
-				$wpe_label = is_array( $wpe_feature ) ? trim( (string) ( $wpe_feature['text'] ?? '' ) ) : '';
+				$wpe_label    = is_array( $wpe_feature ) ? trim( (string) ( $wpe_feature['text'] ?? '' ) ) : '';
 				$wpe_included = is_array( $wpe_feature ) && ! empty( $wpe_feature['included'] );
 				if ( '' === $wpe_label ) {
 					continue;
@@ -49,7 +49,10 @@ $wpe_plan     = trim( (string) $a['plan'] );
 				?>
 				<li class="<?php echo $wpe_included ? 'is-included' : 'is-excluded'; ?>">
 					<span aria-hidden="true" class="wpe-pricing-table__marker"><?php echo $wpe_included ? '&#10003;' : '&#8211;'; ?></span>
-					<span><?php echo esc_html( $wpe_label ); ?><?php if ( ! $wpe_included ) : ?> <span class="screen-reader-text"><?php esc_html_e( '(not included)', 'hi-wpessential' ); ?></span><?php endif; ?></span>
+					<span><?php echo esc_html( $wpe_label ); ?>
+						<?php if ( ! $wpe_included ) : ?>
+							<span class="screen-reader-text"><?php esc_html_e( '(not included)', 'hi-wpessential' ); ?></span>
+						<?php endif; ?></span>
 				</li>
 			<?php endforeach; ?>
 		</ul>
