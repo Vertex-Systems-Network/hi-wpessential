@@ -37,7 +37,14 @@ if ( 'wp-posts' === $wpe_source ) {
 			'username' => get_the_author(),
 			'date'     => get_the_date( 'Y-m-d' ),
 			'url'      => get_permalink(),
-			'image'    => get_the_post_thumbnail( get_the_ID(), 'medium_large', array( 'class' => 'wpe-social-feed__image', 'loading' => 'lazy' ) ),
+			'image'    => get_the_post_thumbnail(
+				get_the_ID(),
+				'medium_large',
+				array(
+					'class'   => 'wpe-social-feed__image',
+					'loading' => 'lazy',
+				)
+			),
 			'title'    => get_the_title(),
 		);
 	}
