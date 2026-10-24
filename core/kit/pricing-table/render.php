@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Render template local scope.
 
-$wpe_classes = array(
+$wpe_classes  = array(
 	'wpe-pricing-table',
 	'is-' . ( in_array( $a['appearance'], array( 'boxed', 'minimal', 'accent' ), true ) ? $a['appearance'] : 'boxed' ),
 	! empty( $a['featured'] ) ? 'is-featured' : '',
