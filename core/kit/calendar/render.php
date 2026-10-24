@@ -70,7 +70,7 @@ $wpe_start_weekday = min( 6, max( 0, (int) get_option( 'start_of_week', 0 ) ) );
 				<thead><tr>
 					<?php for ( $wpe_day_offset = 0; $wpe_day_offset < 7; $wpe_day_offset++ ) : ?>
 						<?php $wpe_day_index = ( $wpe_start_weekday + $wpe_day_offset ) % 7; ?>
-						<th scope="col"><?php echo esc_html( wp_date( 'D', $wpe_month->modify( 'sunday this week' )->modify( '+' . $wpe_day_index . ' days' )->getTimestamp(), $wpe_timezone ) ); ?></th>
+						<th scope="col"><?php echo esc_html( wp_date( 'D', ( new DateTimeImmutable( '2023-01-01', $wpe_timezone ) )->modify( '+' . $wpe_day_index . ' days' )->getTimestamp(), $wpe_timezone ) ); ?></th>
 					<?php endfor; ?>
 				</tr></thead>
 				<tbody>
