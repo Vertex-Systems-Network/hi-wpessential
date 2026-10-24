@@ -44,6 +44,10 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | Site Logo / Title | Theme custom logo, site title/tagline, branding overrides, linked home destination and responsive image sizing. |
 | Divider / Spacer | Semantic horizontal rule, labelled or decorative separator, and non-semantic responsive vertical spacer. |
 
+| Image Carousel | Media-library image slides, keyboard-accessible horizontal scroll, arrows and dots, optional autoplay with pause on hover/focus and reduced-motion respect |
+| Modal / Popup | Native dialog for explicit click-to-open overlays, Escape/backdrop/close behavior, focus restoration, sanitized rich text and no-JS native disclosure fallback |
+| Pricing Table | Responsive single-plan card with features, included/excluded states, featured badge, price labels and safe call-to-action URLs |
+
 ## What every element offers
 
 - 9 breakpoints
