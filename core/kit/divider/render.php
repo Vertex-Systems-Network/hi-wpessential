@@ -16,7 +16,7 @@ $wpe_symbols = array(
 	'diamond' => '◆',
 	'dot'     => '●',
 );
-$wpe_symbol = $wpe_symbols[ $a['symbol'] ] ?? '★';
+$wpe_symbol  = $wpe_symbols[ $a['symbol'] ] ?? '★';
 ?>
 <?php if ( 'space' === $wpe_mode ) : ?>
 	<div id="<?php echo esc_attr( $id ); ?>" class="wpe-divider is-space" aria-hidden="true"></div>
