@@ -27,3 +27,6 @@
 @media(hover:hover){.wpe-tooltip.is-hover-lift .wpe-tooltip__trigger:hover,.wpe-tooltip.is-hover-lift .wpe-tooltip__switch-button:hover{transform:translateY(-2px)}.wpe-tooltip.is-hover-highlight .wpe-tooltip__trigger:hover,.wpe-tooltip.is-hover-highlight .wpe-tooltip__switch-button:hover{background:var(--wp--preset--color--surface-alt,rgba(127,127,127,.12))}}
 @media(max-width:580px){.wpe-tooltip__bubble{max-width:min(var(--wpek-tip-width),75vw)}.wpe-tooltip__tip-wrap:is(.is-position-start,.is-position-end) .wpe-tooltip__bubble{inset-inline-start:0;inset-inline-end:auto;top:calc(100% + 9px);bottom:auto;transform:none}}
 @media(prefers-reduced-motion:reduce){.wpe-tooltip__bubble,.wpe-tooltip__trigger,.wpe-tooltip__switch-button{transition:none!important;transform:none!important}}
+
+/* Escape dismisses even while the tooltip trigger remains keyboard-focused. */
+.wpe-tooltip__tip-wrap.is-dismissed .wpe-tooltip__bubble{visibility:hidden;opacity:0}
