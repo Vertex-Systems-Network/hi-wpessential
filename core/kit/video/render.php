@@ -66,7 +66,10 @@ if ( ! $wpe_valid ) {
 	<div class="wpe-video__frame">
 		<?php if ( 'embed' === $wpe_kind ) : ?>
 			<div class="wpe-video__embed" data-wpe-embed="<?php echo esc_attr( $wpe_embed ); ?>" data-title="<?php echo esc_attr( $wpe_title ); ?>">
-				<button class="wpe-video__play" type="button" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: video title. */ __( 'Play %s', 'hi-wpessential' ), $wpe_title ) ); ?>"<?php echo $wpe_poster ? ' style="background-image:url(\'' . esc_url( $wpe_poster ) . '\')"' : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Poster URL escaped. ?>>
+				<button class="wpe-video__play" type="button" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: video title. */ __( 'Play %s', 'hi-wpessential' ), $wpe_title ) ); ?>">
+					<?php if ( $wpe_poster ) : ?>
+						<img class="wpe-video__poster" src="<?php echo esc_url( $wpe_poster ); ?>" alt="" loading="lazy">
+					<?php endif; ?>
 					<span class="wpe-video__play-icon" aria-hidden="true">&#9654;</span>
 					<span><?php esc_html_e( 'Play video', 'hi-wpessential' ); ?></span>
 				</button>
