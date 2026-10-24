@@ -38,7 +38,7 @@ jobs:
       - name: Gallery JavaScript syntax
         run: node --check core/kit/gallery/script.js
       - name: Gallery lightbox interaction tests
-        run: node tools/tests/gallery-animation.cjs
+        run: node tools/tests/gallery-lightbox.cjs
       - name: Install WP-CLI
         run: |
           curl -fsSL -o /tmp/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
