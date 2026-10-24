@@ -15,11 +15,11 @@ if ( ! function_exists( 'wc_get_products' ) || ! class_exists( 'WooCommerce' ) )
 	}
 	return;
 }
-$wpe_limit = min( 24, max( 1, (int) $a['count'] ) );
-$wpe_orderby = in_array( $a['sort'], array( 'date', 'title', 'price', 'popularity', 'rating' ), true ) ? $a['sort'] : 'date';
+$wpe_limit    = min( 24, max( 1, (int) $a['count'] ) );
+$wpe_orderby  = in_array( $a['sort'], array( 'date', 'title', 'price', 'popularity', 'rating' ), true ) ? $a['sort'] : 'date';
 $wpe_category = sanitize_title( trim( (string) $a['category'] ) );
-$wpe_ids = array_values( array_filter( array_unique( array_map( 'absint', array_map( 'trim', explode( ',', (string) $a['ids'] ) ) ) ) ) );
-$wpe_args = array(
+$wpe_ids      = array_values( array_filter( array_unique( array_map( 'absint', array_map( 'trim', explode( ',', (string) $a['ids'] ) ) ) ) ) );
+$wpe_args     = array(
 	'status'  => 'publish',
 	'limit'   => $wpe_limit,
 	'orderby' => $wpe_orderby,
@@ -37,7 +37,7 @@ if ( ! empty( $a['featuredOnly'] ) ) {
 if ( ! empty( $a['inStockOnly'] ) ) {
 	$wpe_args['stock_status'] = 'instock';
 }
-$wpe_items = wc_get_products( $wpe_args );
+$wpe_items   = wc_get_products( $wpe_args );
 $wpe_classes = array( 'wpe-products', 'is-' . ( 'minimal' === $a['cardStyle'] ? 'minimal' : 'boxed' ) );
 ?>
 <section id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( implode( ' ', $wpe_classes ) ); ?>">
@@ -52,7 +52,7 @@ $wpe_classes = array( 'wpe-products', 'is-' . ( 'minimal' === $a['cardStyle'] ? 
 					continue;
 				}
 				$wpe_product_url = get_permalink( $wpe_product->get_id() );
-				$wpe_name = $wpe_product->get_name();
+				$wpe_name        = $wpe_product->get_name();
 				?>
 				<article class="wpe-products__item">
 					<?php if ( $a['showImage'] ) : ?>
