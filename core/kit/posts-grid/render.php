@@ -12,7 +12,7 @@ $wpe_object = get_post_type_object( $wpe_type );
 if ( ! $wpe_object || ! $wpe_object->public ) {
 	$wpe_type = 'post';
 }
-$wpe_per_page = min( 24, max( 1, (int) $a['postsPerPage'] ) );
+$wpe_per_page   = min( 24, max( 1, (int) $a['postsPerPage'] ) );
 $wpe_tax        = sanitize_key( (string) $a['taxonomy'] );
 $wpe_tax_object = $wpe_tax ? get_taxonomy( $wpe_tax ) : false;
 $wpe_paged_key  = 'wpe_pg_' . substr( md5( wp_json_encode( array( $a['postType'], $a['taxonomy'], $a['terms'], $a['orderBy'], $a['order'], $a['postsPerPage'], $a['offset'], $a['cssClass'] ?? '' ) ) ), 0, 8 );
@@ -51,7 +51,7 @@ $wpe_size  = in_array( $a['imageSize'], array( 'medium', 'medium_large', 'large'
 	<?php if ( $wpe_posts->have_posts() ) : ?>
 		<div class="wpe-posts-grid__items">
 			<?php while ( $wpe_posts->have_posts() ) : ?>
-			<?php $wpe_posts->the_post(); ?>
+				<?php $wpe_posts->the_post(); ?>
 				<article <?php post_class( 'wpe-posts-grid__card' ); ?>>
 					<?php if ( $a['showImage'] && has_post_thumbnail() ) : ?>
 						<a class="wpe-posts-grid__image" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: Post title. */ __( 'Read %s', 'hi-wpessential' ), get_the_title() ) ); ?>">
