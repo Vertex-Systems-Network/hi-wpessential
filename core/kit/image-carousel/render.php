@@ -30,7 +30,7 @@ foreach ( $wpe_items as $wpe_item ) {
 		false,
 		array(
 			'class'   => 'wpe-image-carousel__img',
-			'alt'     => $wpe_alt ?: (string) get_post_meta( $wpe_id, '_wp_attachment_image_alt', true ),
+			'alt'     => ( '' !== $wpe_alt ? $wpe_alt : (string) get_post_meta( $wpe_id, '_wp_attachment_image_alt', true ) ),
 			'loading' => 'lazy',
 		)
 	) : '<img class="wpe-image-carousel__img" src="' . esc_url( $wpe_url ) . '" alt="' . esc_attr( $wpe_alt ) . '" loading="lazy" decoding="async">';
@@ -49,7 +49,7 @@ if ( ! $wpe_valid ) {
 	}
 	return;
 }
-$wpe_total = count( $wpe_valid );
+$wpe_total    = count( $wpe_valid );
 $wpe_interval = min( 15000, max( 2000, (int) $a['interval'] ) );
 ?>
 <section id="<?php echo esc_attr( $id ); ?>" class="wpe-image-carousel" data-wpe-carousel="1" data-loop="<?php echo $a['loop'] ? '1' : '0'; ?>" data-autoplay="<?php echo $a['autoplay'] ? '1' : '0'; ?>" data-pause-hover="<?php echo $a['pauseOnHover'] ? '1' : '0'; ?>" data-interval="<?php echo esc_attr( (string) $wpe_interval ); ?>" aria-roledescription="<?php esc_attr_e( 'carousel', 'hi-wpessential' ); ?>" aria-label="<?php esc_attr_e( 'Image carousel', 'hi-wpessential' ); ?>">
