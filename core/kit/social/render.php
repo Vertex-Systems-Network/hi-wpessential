@@ -43,7 +43,7 @@ foreach ( $wpe_items as $wpe_item ) {
 	}
 	$wpe_platform = sanitize_key( (string) ( $wpe_item['platform'] ?? '' ) );
 	$wpe_url      = esc_url( trim( (string) ( $wpe_item['url'] ?? '' ) ), array( 'https' ) );
-	if ( ! isset( $wpe_paths[ $wpe_platform ] ) || '' === $wpe_url ) {
+	if ( ! isset( $wpe_paths[ $wpe_platform ] ) || 'https' !== wp_parse_url( $wpe_url, PHP_URL_SCHEME ) || ! wp_parse_url( $wpe_url, PHP_URL_HOST ) ) {
 		continue;
 	}
 	$wpe_label   = trim( (string) ( $wpe_item['label'] ?? '' ) );
