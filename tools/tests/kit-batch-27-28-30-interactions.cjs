@@ -73,7 +73,7 @@ assert.equal( noDialog.trigger.hidden, true, 'Unsupported dialog does not reveal
 function carousel( options = {} ) {
 	const slides = [ 0, 300, 600 ].map( offset => ( { offsetLeft: offset } ) );
 	const scrolls = [];
-	const viewport = { scrollTo: ( opts ) => scrolls.push( opts ) };
+	const viewport = element( { scrollLeft: 0, scrollTo( opts ) { scrolls.push( opts ); this.scrollLeft = opts.left; } } );
 	const previous = element( { disabled: false } ), next = element( { disabled: false } );
 	const dots = slides.map( () => element( { attrs: {} } ) );
 	const controls = { hidden: true };
@@ -112,6 +112,10 @@ c.previous.fire( 'click' );
 assert.equal( c.scrolls.at( -1 ).left, 300, 'Previous navigates backward' );
 c.dots[ 0 ].fire( 'click' );
 assert.equal( c.scrolls.at( -1 ).left, 0, 'Dot navigation selects requested slide' );
+c.viewport.scrollLeft = 600;
+c.viewport.fire( 'scroll' );
+assert.equal( c.dots[ 2 ].attrs[ 'aria-current' ], 'true', 'Manual touch/keyboard scrolling keeps active dots synchronized' );
+assert.equal( c.next.disabled, true, 'Manual scrolling updates boundary controls' );
 const looping = carousel( { loop: true } );
 looping.previous.fire( 'click' );
 assert.equal( looping.scrolls.at( -1 ).left, 600, 'Loop mode wraps previous from first to last' );
