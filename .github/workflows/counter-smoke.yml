@@ -6,6 +6,7 @@ on:
       - 'core/kit/counter/**'
       - 'core/src/Kit/Elements/Counter.php'
       - 'tools/tests/counter-smoke.php'
+      - 'tools/tests/counter-animation.cjs'
       - '.github/workflows/counter-smoke.yml'
 
 jobs:
@@ -36,6 +37,8 @@ jobs:
           extensions: mysqli, mbstring, gd, zip
       - name: Counter JavaScript syntax
         run: node --check core/kit/counter/script.js
+      - name: Counter animation unit tests
+        run: node tools/tests/counter-animation.cjs
       - name: Install WP-CLI
         run: |
           curl -fsSL -o /tmp/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
