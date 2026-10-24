@@ -10,12 +10,12 @@ defined( 'ABSPATH' ) || exit;
 
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Kit renderer scope.
 
-$wpe_rows = array();
-$wpe_source = 'wordpress' === $a['source'] ? 'wordpress' : 'curated';
-$wpe_platforms = array( 'instagram', 'facebook', 'linkedin', 'tiktok', 'youtube', 'pinterest', 'x', 'other' );
+$wpe_rows         = array();
+$wpe_source       = 'wp-posts' === $a['source'] ? 'wp-posts' : 'curated';
+$wpe_platforms    = array( 'instagram', 'facebook', 'linkedin', 'tiktok', 'youtube', 'pinterest', 'x', 'other' );
 $wpe_date_pattern = '/^\d{4}-\d{2}-\d{2}$/';
-if ( 'wordpress' === $wpe_source ) {
-	$wpe_type = sanitize_key( (string) $a['postType'] );
+if ( 'wp-posts' === $wpe_source ) {
+	$wpe_type        = sanitize_key( (string) $a['postType'] );
 	$wpe_type_object = get_post_type_object( $wpe_type );
 	if ( ! $wpe_type_object || ! $wpe_type_object->public ) {
 		$wpe_type = 'post';
@@ -32,7 +32,7 @@ if ( 'wordpress' === $wpe_source ) {
 	while ( $wpe_query->have_posts() ) {
 		$wpe_query->the_post();
 		$wpe_rows[] = array(
-			'platform' => 'wordpress',
+			'platform' => 'WordPress',
 			'caption'  => get_the_excerpt(),
 			'username' => get_the_author(),
 			'date'     => get_the_date( 'Y-m-d' ),
@@ -49,16 +49,16 @@ if ( 'wordpress' === $wpe_source ) {
 			continue;
 		}
 		$wpe_platform = in_array( (string) ( $wpe_item['platform'] ?? '' ), $wpe_platforms, true ) ? $wpe_item['platform'] : 'other';
-		$wpe_href = esc_url( trim( (string) ( $wpe_item['url'] ?? '' ) ), array( 'https' ) );
+		$wpe_href     = esc_url( trim( (string) ( $wpe_item['url'] ?? '' ) ), array( 'https' ) );
 		if ( '' !== $wpe_href && ( 'https' !== wp_parse_url( $wpe_href, PHP_URL_SCHEME ) || ! wp_parse_url( $wpe_href, PHP_URL_HOST ) ) ) {
 			$wpe_href = '';
 		}
-		$wpe_date = trim( (string) ( $wpe_item['date'] ?? '' ) );
+		$wpe_date     = trim( (string) ( $wpe_item['date'] ?? '' ) );
 		$wpe_date_obj = preg_match( $wpe_date_pattern, $wpe_date ) ? DateTimeImmutable::createFromFormat( '!Y-m-d', $wpe_date, wp_timezone() ) : false;
-		$wpe_date = $wpe_date_obj && $wpe_date_obj->format( 'Y-m-d' ) === $wpe_date ? $wpe_date : '';
-		$wpe_image = is_array( $wpe_item['image'] ?? null ) ? $wpe_item['image'] : array();
-		$wpe_alt = trim( (string) ( $wpe_item['caption'] ?? '' ) );
-		$wpe_img = '';
+		$wpe_date     = $wpe_date_obj && $wpe_date_obj->format( 'Y-m-d' ) === $wpe_date ? $wpe_date : '';
+		$wpe_image    = is_array( $wpe_item['image'] ?? null ) ? $wpe_item['image'] : array();
+		$wpe_alt      = trim( (string) ( $wpe_item['caption'] ?? '' ) );
+		$wpe_img      = '';
 		if ( ! empty( $wpe_image['id'] ) && wp_attachment_is_image( (int) $wpe_image['id'] ) ) {
 			$wpe_img = wp_get_attachment_image(
 				(int) $wpe_image['id'],
@@ -90,7 +90,7 @@ if ( 'wordpress' === $wpe_source ) {
 		);
 	}
 }
-$wpe_style = 'minimal' === $a['style'] ? 'minimal' : 'boxed';
+$wpe_style   = 'minimal' === $a['style'] ? 'minimal' : 'boxed';
 $wpe_visible = min( 18, max( 1, (int) $a['initialVisible'] ) );
 ?>
 <section id="<?php echo esc_attr( $id ); ?>" class="wpe-social-feed is-<?php echo esc_attr( $wpe_style ); ?>" data-wpe-feed="1" data-initial="<?php echo esc_attr( (string) $wpe_visible ); ?>">
