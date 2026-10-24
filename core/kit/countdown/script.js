@@ -19,10 +19,13 @@
 		}
 		function tick() {
 			var remaining = Math.max( 0, Math.ceil( ( end - Date.now() ) / 1000 ) );
-			display( Math.floor( remaining / 86400 ), 'days' );
-			display( Math.floor( remaining % 86400 / 3600 ), 'hours' );
-			display( Math.floor( remaining % 3600 / 60 ), 'minutes' );
-			display( remaining % 60, 'seconds' );
+			var rest = remaining;
+			[ [ 'days', 86400 ], [ 'hours', 3600 ], [ 'minutes', 60 ], [ 'seconds', 1 ] ].forEach( function ( entry ) {
+				if ( nodes[ entry[ 0 ] ] ) {
+					display( Math.floor( rest / entry[ 1 ] ), entry[ 0 ] );
+					rest = rest % entry[ 1 ];
+				}
+			} );
 			if ( ! root.isConnected || 0 === remaining ) {
 				if ( handle !== null ) { window.clearInterval( handle ); }
 				if ( 0 === remaining ) {
