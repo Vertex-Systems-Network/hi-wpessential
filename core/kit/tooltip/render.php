@@ -38,7 +38,7 @@ $wpe_second = '' !== $wpe_second ? $wpe_second : __( 'Second option', 'hi-wpesse
 			<div class="wpe-tooltip__body wpe-tooltip__expanded"><?php echo wp_kses_post( (string) $a['expandedContent'] ); ?></div>
 		</details>
 	<?php else : ?>
-		<div class="wpe-tooltip__switch" data-switch-buttons="1">
+		<div class="wpe-tooltip__switch" data-switch-buttons="1" data-switch-label="<?php esc_attr_e( 'Content options', 'hi-wpessential' ); ?>">
 			<button id="<?php echo esc_attr( $id ); ?>-first-tab" class="wpe-tooltip__switch-button" type="button" data-switch-to="first" aria-controls="<?php echo esc_attr( $id ); ?>-first-panel"><?php echo esc_html( $wpe_first ); ?></button>
 			<button id="<?php echo esc_attr( $id ); ?>-second-tab" class="wpe-tooltip__switch-button" type="button" data-switch-to="second" aria-controls="<?php echo esc_attr( $id ); ?>-second-panel"><?php echo esc_html( $wpe_second ); ?></button>
 		</div>
