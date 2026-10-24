@@ -36,6 +36,8 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 
 | Data Table | Safe CSV/TSV data import, proper quoted-field parsing, accessible table headings and captions, client-side search and numeric-aware sorting, horizontal scroll or stacked mobile rows and responsive styling |
 
+| Interactive Tooltip | Focus/hover/touch tooltip, native show-more disclosure, two-panel switcher with keyboard/RTL arrow navigation; safe rich content, reduced-motion, and readable no-JavaScript fallbacks |
+
 ## What every element offers
 
 - 9 breakpoints
