@@ -19,6 +19,10 @@ $wpe_check( class_exists( Kit::class ), 'Kit class loads' );
 $wpe_check( isset( Kit::defs()['container'] ), 'Container definition loads' );
 $wpe_check( WP_Block_Type_Registry::get_instance()->is_registered( 'wpessential/container' ), 'Gutenberg Container registered' );
 $wpe_check( wp_style_is( 'wpessential-kit-container', 'registered' ), 'Container CSS registered' );
+$wpe_schema = WP_Block_Type_Registry::get_instance()->get_registered( 'wpessential/container' )->attributes;
+$wpe_check( 'object' === $wpe_schema['columns']['type'], 'Responsive columns store breakpoint object rather than array' );
+$wpe_check( 'object' === $wpe_schema['direction']['type'], 'Responsive flex direction uses object schema' );
+$wpe_check( 'object' === WP_Block_Type_Registry::get_instance()->get_registered( 'wpessential/heading' )->attributes['maxWidth']['type'], 'Shared schema fix applies to existing Kit elements' );
 
 $wpe_block = static function ( $attributes, $inner = '' ) {
 	return do_blocks( '<!-- wp:wpessential/container ' . wp_json_encode( (object) $attributes ) . ' -->' . $inner . '<!-- /wp:wpessential/container -->' );
@@ -64,7 +68,7 @@ $wpe_check( false !== strpos( $wpe_safe, '<div id="wpe-container-' ), 'Invalid s
 $wpe_check( false !== strpos( $wpe_safe, 'role="group"' ), 'Named div receives meaningful group role' );
 $wpe_check( false === strpos( $wpe_safe, '<script>' ), 'Rich content removes script tags' );
 $wpe_check( false === strpos( $wpe_safe, 'onerror=' ), 'Rich content removes event handlers' );
-$wpe_check( false === strpos( $wpe_safe, 'onmouseover=' ), 'Accessible label escapes injected attributes' );
+$wpe_check( false === strpos( $wpe_safe, ' onmouseover="' ) && false !== strpos( $wpe_safe, '&quot;' ), 'Accessible label escapes injected attributes' );
 $wpe_check( false !== strpos( $wpe_safe, 'is-overflow-visible' ), 'Overflow falls back to allowed style' );
 
 $wpe_widget = class_exists( '\\Elementor\\Plugin' ) ? \Elementor\Plugin::$instance->widgets_manager->get_widget_types( 'wpe-container' ) : null;
