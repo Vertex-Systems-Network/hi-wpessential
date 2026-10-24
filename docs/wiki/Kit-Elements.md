@@ -30,6 +30,8 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 
 | Video & Audio | HTML5 video/audio files with native controls, loop/mute/preload, optional poster and WebVTT captions; YouTube/Vimeo validated embeds only load after explicit Play; non-JS source links remain available; responsive player sizing and shared Gutenberg/Elementor renderer |
 
+| Progress bar | Multiple progress values with individual max goals, horizontal bars or circular rings, percentages/values/fractions, optional descriptions, screen-reader progress semantics, viewport animation and reduced-motion fallback |
+
 ## What every element offers
 
 - 9 breakpoints
