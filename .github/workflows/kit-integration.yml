@@ -45,7 +45,7 @@ jobs:
           set -euo pipefail
           node --check core/assets/kit-editor.js
           for f in core/kit/*/script.js; do node --check "$f"; done
-          for f in             tools/tests/counter-animation.cjs             tools/tests/gallery-lightbox.cjs             tools/tests/container-editor.cjs             tools/tests/video-embed.cjs             tools/tests/progress-bar-animation.cjs             tools/tests/code-copy.cjs             tools/tests/table-interactions.cjs; do
+          for f in             tools/tests/counter-animation.cjs             tools/tests/gallery-lightbox.cjs             tools/tests/container-editor.cjs             tools/tests/video-embed.cjs             tools/tests/progress-bar-animation.cjs             tools/tests/code-copy.cjs             tools/tests/table-interactions.cjs             tools/tests/tooltip-interactions.cjs; do
             node "$f"
           done
       - name: Install WP-CLI
@@ -70,7 +70,7 @@ jobs:
           WP_DIR: ${{ runner.temp }}/wpe-wordpress
         run: |
           set -euo pipefail
-          for test in posts-grid testimonial counter gallery container video progress-bar code table; do
+          for test in posts-grid testimonial counter gallery container video progress-bar code table tooltip; do
             echo "=== Smoke: $test ==="
             wp eval-file "$GITHUB_WORKSPACE/tools/tests/$test-smoke.php" --path="$WP_DIR"
           done
