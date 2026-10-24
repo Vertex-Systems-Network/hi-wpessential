@@ -40,7 +40,7 @@ $wpe_dur    = min( 5000, max( 200, (int) $a['duration'] ) );
 			$wpe_label_id  = $id . '-label-' . $wpe_i;
 			$wpe_display   = 'value' === $wpe_format ? $wpe_value_s : ( 'fraction' === $wpe_format ? $wpe_value_s . ' / ' . $wpe_max_s : $wpe_percent_s . '%' );
 			?>
-			<div class="wpe-progress__item" role="listitem" style="--wpek-target-progress:<?php echo esc_attr( $wpe_percent_s ); ?>%">
+			<div class="wpe-progress__item" role="listitem" data-target="<?php echo esc_attr( $wpe_percent_s ); ?>" style="--wpek-target-progress:<?php echo esc_attr( $wpe_percent_s ); ?>%">
 				<?php if ( $a['showLabel'] && '' !== $wpe_label ) : ?>
 					<div class="wpe-progress__header">
 						<span class="wpe-progress__label" id="<?php echo esc_attr( $wpe_label_id ); ?>"><?php echo esc_html( $wpe_label ); ?></span>
