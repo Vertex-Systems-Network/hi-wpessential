@@ -129,7 +129,7 @@ $wpe_pub = wp_insert_post( array( 'post_title' => 'WPE Social Published', 'post_
 $wpe_draft = wp_insert_post( array( 'post_title' => 'WPE Social Draft', 'post_content' => 'Not public', 'post_status' => 'draft', 'post_type' => 'post' ), true );
 $wpe_check( ! is_wp_error( $wpe_pub ) && ! is_wp_error( $wpe_draft ), 'Fixture posts created' );
 try {
-	$wpe_wp_feed = $wpe_block( 'social-feed', array( 'source' => 'wordpress', 'postType' => 'post', 'postCount' => 12 ) );
+	$wpe_wp_feed = $wpe_block( 'social-feed', array( 'source' => 'wp-posts', 'postType' => 'post', 'postCount' => 12 ) );
 	$wpe_check( false !== strpos( $wpe_wp_feed, 'WPE Social Published' ), 'Social Feed queries published WP posts' );
 	$wpe_check( false === strpos( $wpe_wp_feed, 'WPE Social Draft' ), 'Social Feed never exposes draft posts' );
 	$wpe_check( false !== strpos( $wpe_wp_feed, get_permalink( $wpe_pub ) ), 'Social WordPress links point to local posts' );
