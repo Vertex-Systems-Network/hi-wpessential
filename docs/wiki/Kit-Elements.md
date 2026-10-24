@@ -26,6 +26,8 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 
 | Gallery | Reorderable images, media-library responsive image output, alt and caption per image, grid or masonry columns, responsive layout, custom links and keyboard-enabled native lightbox with non-JavaScript fallback |
 
+| Container | Responsive flex or CSS grid with gap, wrapping, width, alignment and style controls. Gutenberg: real draggable/reorderable InnerBlocks, including nested containers. Elementor: WYSIWYG content wrapper; for draggable nested Elementor widgets use Elementor's native Container. |
+
 ## What every element offers
 
 - 9 breakpoints

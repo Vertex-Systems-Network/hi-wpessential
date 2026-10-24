@@ -296,6 +296,7 @@
 	Object.keys( kit.elements ).forEach( function ( name ) {
 		var def = kit.elements[ name ];
 		var panels = def.panels || { content: __( 'Content', 'hi-wpessential' ) };
+		var isContainer = 'container' === name;
 		wp.blocks.registerBlockType( 'wpessential/' + name, {
 			apiVersion: 3,
 			title: def.title,
@@ -305,8 +306,10 @@
 				var bp = useState( 'base' );
 				var device = bp[ 0 ];
 				var setDevice = bp[ 1 ];
-				var blockProps = be.useBlockProps();
 				var a = props.attributes;
+				var blockProps = be.useBlockProps( isContainer ? {
+					className: 'wpe-container is-' + ( a.layout === 'grid' ? 'grid' : 'flex' ) + ( a.equalChildren ? ' is-equal' : '' ) + ( a.contentWidth === 'full' ? ' is-content-full' : '' )
+				} : {} );
 				var picker = el( c.SelectControl, {
 					label: __( 'Editing breakpoint', 'hi-wpessential' ),
 					help: __( 'Responsive options below save a value for this screen width.', 'hi-wpessential' ),
@@ -353,7 +356,7 @@
 					var hasResponsive = false;
 					Object.keys( def.attributes ).forEach( function ( key ) {
 						var opt = def.attributes[ key ];
-						if ( ( opt.panel || 'content' ) !== panel ) {
+						if ( ( opt.panel || 'content' ) !== panel || ( isContainer && 'content' === key ) ) {
 							return;
 						}
 						hasResponsive = hasResponsive || !! opt.responsive;
@@ -387,13 +390,33 @@
 						) );
 					} );
 				} );
+				var getLayoutValue = function ( key, fallback ) {
+					var value = a[ key ];
+					if ( value && 'object' === typeof value && ! Array.isArray( value ) ) {
+						return value[ device ] || value.base || fallback;
+					}
+					return value || fallback;
+				};
+				var containerPreview = {
+					'--wpek-direction': getLayoutValue( 'direction', 'row' ),
+					'--wpek-wrap': getLayoutValue( 'wrap', 'wrap' ),
+					'--wpek-cols': getLayoutValue( 'columns', 3 ),
+					'--wpek-gap': getLayoutValue( 'gap', 24 ) + ( 'number' === typeof getLayoutValue( 'gap', 24 ) ? 'px' : '' ),
+					'--wpek-row-gap': getLayoutValue( 'rowGap', 24 ) + ( 'number' === typeof getLayoutValue( 'rowGap', 24 ) ? 'px' : '' )
+				};
 				return el( Fragment, null,
 					el( be.InspectorControls, null, sections ),
-					el( 'div', blockProps, el( ServerSideRender, { block: 'wpessential/' + name, attributes: a, skipBlockSupportAttributes: true } ) )
+					isContainer ?
+						el( 'div', blockProps,
+							el( 'div', { className: 'wpe-container__inner', style: containerPreview },
+								el( be.InnerBlocks, { renderAppender: be.InnerBlocks.ButtonBlockAppender } )
+							)
+						) :
+						el( 'div', blockProps, el( ServerSideRender, { block: 'wpessential/' + name, attributes: a, skipBlockSupportAttributes: true } ) )
 				);
 			},
 			save: function () {
-				return null;
+				return isContainer ? el( be.InnerBlocks.Content ) : null;
 			},
 		} );
 	} );
