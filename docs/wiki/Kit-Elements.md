@@ -22,6 +22,8 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 
 | Testimonial | Accessible quote and rating, avatar, linked author name, role / company, responsive alignment, styles and optional hover effects. Gutenberg + Elementor share the same renderer. |
 
+| Counter | Numeric milestones and statistics; custom start/end values, decimals, separators, prefix/suffix, optional icon, responsive styling, viewport count-up animation with reduced-motion fallback and accessible static final value |
+
 ## What every element offers
 
 - 9 breakpoints
