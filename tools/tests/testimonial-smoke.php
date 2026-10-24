@@ -21,7 +21,7 @@ $check( WP_Block_Type_Registry::get_instance()->is_registered( 'wpessential/test
 $check( wp_style_is( 'wpessential-kit-testimonial', 'registered' ), 'Testimonial CSS registered' );
 
 $block = static function ( $attrs ) {
-	return do_blocks( '<!-- wp:wpessential/testimonial ' . wp_json_encode( $attrs ) . ' /-->' );
+	return do_blocks( '<!-- wp:wpessential/testimonial ' . wp_json_encode( (object) $attrs ) . ' /-->' );
 };
 $default = $block( array() );
 $check( strpos( $default, '<figure' ) !== false, 'Default renders a figure' );
