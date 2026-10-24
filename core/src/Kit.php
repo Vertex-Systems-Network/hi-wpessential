@@ -358,7 +358,8 @@ class Kit {
 			}
 			$attrs = array();
 			foreach ( self::attributes( $def ) as $key => $a ) {
-				$attrs[ $key ] = ! empty( $a['responsive'] ) || 'repeater' === $a['type'] ? array( 'type' => 'array' ) : ( in_array( $a['type'], array( 'breakpoints', 'image', 'icon' ), true ) ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? array( 'number', 'string' ) : 'string' ) ) );
+				// Responsive controls save an object keyed by breakpoint; repeaters save a list.
+				$attrs[ $key ] = ! empty( $a['responsive'] ) ? array( 'type' => 'object' ) : ( 'repeater' === $a['type'] ? array( 'type' => 'array' ) : ( in_array( $a['type'], array( 'breakpoints', 'image', 'icon' ), true ) ? array( 'type' => 'object' ) : array( 'type' => 'toggle' === $a['type'] ? 'boolean' : ( 'range' === $a['type'] ? array( 'number', 'string' ) : 'string' ) ) ) );
 			}
 			foreach ( self::attributes( $def ) as $key => $a ) {
 				// Defaults in the block too, so the sidebar shows the value the page really uses.
