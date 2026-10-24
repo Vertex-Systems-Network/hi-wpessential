@@ -24,6 +24,8 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 
 | Counter | Numeric milestones and statistics; custom start/end values, decimals, separators, prefix/suffix, optional icon, responsive styling, viewport count-up animation with reduced-motion fallback and accessible static final value |
 
+| Code / HTML / Embed | Safe rich HTML (scripts stripped), escaped source-code samples with accessible Copy action, trusted WordPress provider oEmbed and fallback external link; shared Gutenberg and Elementor implementation |
+
 ## What every element offers
 
 - 9 breakpoints
