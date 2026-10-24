@@ -17,16 +17,19 @@ if ( false === $wpe_lat || false === $wpe_lng || $wpe_lat < -90 || $wpe_lat > 90
 	}
 	return;
 }
-$wpe_lat   = (float) $wpe_lat;
-$wpe_lng   = (float) $wpe_lng;
-$wpe_zoom  = min( 18, max( 2, (int) $a['zoom'] ) );
-$wpe_delta = 0.03 * pow( 2, 12 - $wpe_zoom );
-$wpe_bbox  = implode( ',', array(
-	(float) max( -180, $wpe_lng - $wpe_delta ),
-	(float) max( -90, $wpe_lat - $wpe_delta ),
-	(float) min( 180, $wpe_lng + $wpe_delta ),
-	(float) min( 90, $wpe_lat + $wpe_delta ),
-) );
+$wpe_lat    = (float) $wpe_lat;
+$wpe_lng    = (float) $wpe_lng;
+$wpe_zoom   = min( 18, max( 2, (int) $a['zoom'] ) );
+$wpe_delta  = 0.03 * pow( 2, 12 - $wpe_zoom );
+$wpe_bbox   = implode(
+	',',
+	array(
+		(float) max( -180, $wpe_lng - $wpe_delta ),
+		(float) max( -90, $wpe_lat - $wpe_delta ),
+		(float) min( 180, $wpe_lng + $wpe_delta ),
+		(float) min( 90, $wpe_lat + $wpe_delta ),
+	)
+);
 $wpe_coords = number_format( $wpe_lat, 6, '.', '' ) . ',' . number_format( $wpe_lng, 6, '.', '' );
 $wpe_href   = 'https://www.openstreetmap.org/?mlat=' . rawurlencode( (string) $wpe_lat ) . '&mlon=' . rawurlencode( (string) $wpe_lng ) . '#map=' . $wpe_zoom . '/' . $wpe_lat . '/' . $wpe_lng;
 $wpe_embed  = 'https://www.openstreetmap.org/export/embed.html?bbox=' . rawurlencode( $wpe_bbox ) . '&layer=mapnik&marker=' . rawurlencode( $wpe_coords );
