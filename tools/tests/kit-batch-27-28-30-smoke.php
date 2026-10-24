@@ -100,6 +100,7 @@ $wpe_check( false === strpos( $wpe_hide, 'wpe-image-carousel__controls' ), 'Caro
 $wpe_check( false === strpos( $wpe_hide, 'wpe-image-carousel__caption' ), 'Carousel: captions toggle hides captions' );
 $wpe_mapped = Kit::from_elementor( Kit::defs()['image-carousel'], array(
 	'items' => array( array( 'image' => array( 'url' => 'https://example.org/c.jpg' ), 'caption' => 'Elementor slide' ) ),
+	'showCaptions' => 'yes',
 	'slidesDesktop' => array( 'size' => 2, 'unit' => '' ),
 	'gap' => array( 'size' => 18, 'unit' => 'px' ),
 ) );
