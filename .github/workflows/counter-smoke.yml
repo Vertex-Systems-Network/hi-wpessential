@@ -1,0 +1,59 @@
+name: Counter WordPress smoke
+
+on:
+  pull_request:
+    paths:
+      - 'core/kit/counter/**'
+      - 'core/src/Kit/Elements/Counter.php'
+      - 'tools/tests/counter-smoke.php'
+      - '.github/workflows/counter-smoke.yml'
+
+jobs:
+  wordpress:
+    name: WordPress + Gutenberg + Elementor
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: wpe_smoke
+          MYSQL_USER: wpe
+          MYSQL_PASSWORD: wpe
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mysqli, mbstring, gd, zip
+      - name: Counter JavaScript syntax
+        run: node --check core/kit/counter/script.js
+      - name: Install WP-CLI
+        run: |
+          curl -fsSL -o /tmp/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          sudo install -m 0755 /tmp/wp-cli.phar /usr/local/bin/wp
+          wp --info
+      - name: Install WordPress and Elementor on temporary test site
+        env:
+          WP_DIR: ${{ runner.temp }}/wpe-wordpress
+        run: |
+          mkdir -p "$WP_DIR"
+          wp core download --path="$WP_DIR" --quiet
+          wp config create --path="$WP_DIR" --dbname=wpe_smoke --dbuser=wpe --dbpass=wpe --dbhost=127.0.0.1:3306 --quiet
+          wp core install --path="$WP_DIR" --url=http://localhost:8090 --title="WPE Smoke" --admin_user=testadmin --admin_password=testpassword --admin_email=test@example.test --skip-email --quiet
+          ln -s "$GITHUB_WORKSPACE" "$WP_DIR/wp-content/themes/hi-wpessential"
+          wp theme activate hi-wpessential --path="$WP_DIR"
+          wp plugin install elementor --activate --path="$WP_DIR" --quiet
+          wp plugin is-active elementor --path="$WP_DIR"
+      - name: Check number formatting, accessibility and Elementor widget
+        env:
+          WP_DIR: ${{ runner.temp }}/wpe-wordpress
+        run: wp eval-file "$GITHUB_WORKSPACE/tools/tests/counter-smoke.php" --path="$WP_DIR"
