@@ -32,7 +32,7 @@ foreach ( $wpe_items as $wpe_event ) {
 	} else {
 		$wpe_datetime = $wpe_date;
 	}
-	$wpe_url = esc_url( trim( (string) ( $wpe_event['url'] ?? '' ) ), array( 'http', 'https' ) );
+	$wpe_url      = esc_url( trim( (string) ( $wpe_event['url'] ?? '' ) ), array( 'http', 'https' ) );
 	$wpe_events[] = array(
 		'title'       => trim( (string) ( $wpe_event['title'] ?? '' ) ),
 		'date'        => $wpe_date_raw,
