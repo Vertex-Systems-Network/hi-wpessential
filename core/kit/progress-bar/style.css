@@ -23,3 +23,6 @@
 @media(max-width:1023px){.wpe-progress.is-circle .wpe-progress__items{grid-template-columns:repeat(min(2,var(--wpek-columns)),minmax(0,1fr))}}
 @media(max-width:559px){.wpe-progress.is-circle .wpe-progress__items{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){.wpe-progress__fill{transition:none!important}}
+
+/* A JavaScript-controlled percentage is driven frame-by-frame, without lagging CSS transitions. */
+.wpe-progress__item--ready .wpe-progress__fill{transition:none}
