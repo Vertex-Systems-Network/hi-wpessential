@@ -8,13 +8,13 @@
 defined( 'ABSPATH' ) || exit;
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Included in Kit template scope.
 
-$wpe_mode    =  in_array( $a['mode'], array( 'line', 'text', 'symbol', 'space' ), true ) ? $a['mode'] : 'line';
-$wpe_pattern =  in_array( $a['lineStyle'], array( 'solid', 'dashed', 'dotted', 'double' ), true ) ? $a['lineStyle'] : 'solid';
-$wpe_text    =  trim( (string) $a['text'] );
-$wpe_symbols =  array(
-	'star'    =>  '★',
-	'diamond' =>  '◆',
-	'dot'     =>  '●',
+$wpe_mode    = in_array( $a['mode'], array( 'line', 'text', 'symbol', 'space' ), true ) ? $a['mode'] : 'line';
+$wpe_pattern = in_array( $a['lineStyle'], array( 'solid', 'dashed', 'dotted', 'double' ), true ) ? $a['lineStyle'] : 'solid';
+$wpe_text    = trim( (string) $a['text'] );
+$wpe_symbols = array(
+	'star'    => '★',
+	'diamond' => '◆',
+	'dot'     => '●',
 );
 $wpe_symbol = $wpe_symbols[ $a['symbol'] ] ?? '★';
 ?>
