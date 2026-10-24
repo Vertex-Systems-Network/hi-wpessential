@@ -34,6 +34,8 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 
 | Code / HTML / Embed | Safe rich HTML (scripts stripped), escaped source-code samples with accessible Copy action, trusted WordPress provider oEmbed and fallback external link; shared Gutenberg and Elementor implementation |
 
+| Data Table | Safe CSV/TSV data import, proper quoted-field parsing, accessible table headings and captions, client-side search and numeric-aware sorting, horizontal scroll or stacked mobile rows and responsive styling |
+
 ## What every element offers
 
 - 9 breakpoints
