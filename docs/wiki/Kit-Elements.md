@@ -24,6 +24,8 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 
 | Counter | Numeric milestones and statistics; custom start/end values, decimals, separators, prefix/suffix, optional icon, responsive styling, viewport count-up animation with reduced-motion fallback and accessible static final value |
 
+| Gallery | Reorderable images, media-library responsive image output, alt and caption per image, grid or masonry columns, responsive layout, custom links and keyboard-enabled native lightbox with non-JavaScript fallback |
+
 ## What every element offers
 
 - 9 breakpoints
