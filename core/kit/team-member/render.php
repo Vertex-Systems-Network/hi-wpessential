@@ -13,11 +13,16 @@ $wpe_alt   = trim( (string) $a['name'] );
 $wpe_size  = in_array( $a['imageSize'], array( 'medium', 'medium_large', 'large', 'full' ), true ) ? $a['imageSize'] : 'medium_large';
 $wpe_photo = '';
 if ( ! empty( $wpe_image['id'] ) && wp_attachment_is_image( (int) $wpe_image['id'] ) ) {
-	$wpe_photo = wp_get_attachment_image( (int) $wpe_image['id'], $wpe_size, false, array(
+	$wpe_photo = wp_get_attachment_image(
+		(int) $wpe_image['id'],
+		$wpe_size,
+		false,
+		array(
 			'class'   => 'wpe-team-member__photo',
 			'alt'     => $wpe_alt,
 			'loading' => 'lazy',
-		) );
+		)
+	);
 } elseif ( ! empty( $wpe_image['url'] ) ) {
 	$wpe_url = esc_url( (string) $wpe_image['url'], array( 'http', 'https' ) );
 	if ( '' !== $wpe_url ) {
