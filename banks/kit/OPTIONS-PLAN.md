@@ -40,8 +40,8 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 15 | Separate focus-ring style | ✅ |
 | 16 | Scroll-driven entrance animations without JavaScript | ✅ (12 presets) |
 | 17 | Staggered animation of children | ✅ Staggered first 12 direct children, configurable delay |
-| 18 | Parallax per layer, on/off per breakpoint | ⬜ |
-| 19 | Sticky with offset and "stop at" per breakpoint | ✅ CSS sticky with responsive top offset and parent stop · ⏳ named stop-target control |
+| 18 | Parallax per layer, on/off per breakpoint | ✅ Four responsive direct-child layers with 0-per-breakpoint disable, X/Y axes, reduced-motion safe |
+| 19 | Sticky with offset and "stop at" per breakpoint | ✅ Sticky with responsive offset, parent boundary and named same-page stop element |
 | 20 | Reduced-motion alternative (not only off) | ✅ Choose no movement or gentle fade for reduced motion |
 | 21 | Animation trigger: scroll, hover, click, load | ✅ Scroll, hover/focus, click and load triggers with progressive JS |
 | 22 | Gradient text and text clip | ✅ Heading accent and Text |

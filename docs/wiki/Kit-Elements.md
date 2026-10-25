@@ -1,3 +1,11 @@
+## Motion Layout — Parallax Layers and Sticky Stop Target (Batch #77)
+
+In Gutenberg and Elementor, shared Kit Advanced controls provide independent **responsive parallax travel for the first four direct-child layers**, signed -240px to +240px, using X/Y direction. Set a given layer's responsive value to 0 to disable it on that screen width. Kit Container applies layers to its inner wrapper's direct children. The CSS individual `translate` property preserves existing element transforms. During reduced motion, parallax is switched off. Arbitrary deeply nested selectors and more than four layers are not supported yet.
+
+Sticky **Stop at element ID** accepts a same-page target ID (no hash prefix). The ID must start with a letter, contain only letters, numbers, hyphens or underscores, and be at most 64 characters. The target must come **after** the sticky element in the document. Native sticky still stops at its containing block, while the optional JavaScript offset additionally prevents overlap with the target. Tablet/desktop sticky enable controls continue to work. Overflow ancestors may affect sticky positioning.
+
+The `core/kit/motion-layout.js` script loads only for opted-in parallax or named stop targets, updates on scroll/resize with requestAnimationFrame, and recognizes dynamically added preview widgets. The feature is not a security or access-control boundary. Browser and WordPress regressions are exercised by `tools/tests/kit-motion-layout-smoke.php` and Chromium.
+
 ## Advanced Motion (Kit shared controls)
 
 Every Kit Gutenberg block and Elementor widget can opt into **Scroll / Hover+focus / Click / Page load** entrance triggers while retaining the existing CSS scroll default. A small shared `kit/motion.js` is enqueued only if a trigger is configured and an entrance animation is selected. It is progressive: when JavaScript is blocked, the original CSS animation still applies and page content remains readable. Hover includes keyboard focus; click handlers do not override link navigation. IntersectionObserver handles scroll once and honors reduced-motion preference.

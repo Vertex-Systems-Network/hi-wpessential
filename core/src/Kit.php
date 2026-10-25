@@ -348,6 +348,7 @@ class Kit {
 	public static function register_blocks() {
 		wp_register_script( 'wpessential-kit-editor', wpessential_core_url( 'assets/kit-editor.js' ), array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n', 'wp-data' ), WPESSENTIAL_CORE_ASSET_VERSION, true );
 		wp_register_script( 'wpessential-kit-motion', wpessential_core_url( 'kit/motion.js' ), array(), WPESSENTIAL_CORE_ASSET_VERSION, true );
+		wp_register_script( 'wpessential-kit-motion-layout', wpessential_core_url( 'kit/motion-layout.js' ), array(), WPESSENTIAL_CORE_ASSET_VERSION, true );
 		wp_register_style( 'wpessential-kit-common', wpessential_core_url( 'kit/common.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
 		$editor = array();
 		foreach ( self::enabled_defs() as $name => $def ) {
@@ -481,6 +482,9 @@ class Kit {
 		}
 		if ( ! empty( $a['animation'] ) && in_array( (string) ( $a['animTrigger'] ?? '' ), array( 'scroll', 'hover', 'click', 'load' ), true ) ) {
 			wp_enqueue_script( 'wpessential-kit-motion' );
+		}
+		if ( ! empty( $a['parallaxEnabled'] ) || ( ! empty( $a['stickyEnabled'] ) && ! empty( $a['stickyStopId'] ) ) ) {
+			wp_enqueue_script( 'wpessential-kit-motion-layout' );
 		}
 		$id   = 'wpe-' . $name . '-' . substr( md5( wp_json_encode( $a ) . wp_rand() ), 0, 8 );
 		$css  = self::css( $def, $a, $id );
@@ -643,6 +647,12 @@ class Kit {
 				$classes[] = 'wpek-stagger';
 			}
 		}
+		if ( ! empty( $a['parallaxEnabled'] ) ) {
+			$classes[] = 'wpek-parallax';
+			if ( 'x' === (string) ( $a['parallaxAxis'] ?? '' ) ) {
+				$classes[] = 'wpek-parallax-x';
+			}
+		}
 		if ( ! empty( $a['stickyEnabled'] ) ) {
 			$classes[]       = 'wpek-sticky';
 			$wpe_sticky_from = (string) ( $a['stickyFrom'] ?? '' );
@@ -680,6 +690,14 @@ class Kit {
 			'aria-hidden' => empty( $a['rootAriaHidden'] ) ? '' : 'true',
 			'aria-live'   => (string) ( $a['rootAriaLive'] ?? '' ),
 		);
+		// Only strict same-page element IDs are accepted; no CSS selectors or HTML.
+		if ( ! empty( $a['stickyEnabled'] ) && ! empty( $a['stickyStopId'] ) ) {
+			$wpe_stop_id = trim( (string) $a['stickyStopId'] );
+			if ( preg_match( '/^[A-Za-z][A-Za-z0-9_-]{0,63}$/D', $wpe_stop_id ) ) {
+				$classes[] = 'wpek-sticky-stop';
+				$attrs    .= ' data-wpek-sticky-stop="' . esc_attr( $wpe_stop_id ) . '"';
+			}
+		}
 		foreach ( array_filter( $aria ) as $k => $v ) {
 			$attrs .= ' ' . $k . '="' . esc_attr( $v ) . '"';
 		}
@@ -748,6 +766,10 @@ class Kit {
 			$values = ! empty( $opt['responsive'] ) ? (array) $a[ $key ] : array( 'base' => $a[ $key ] );
 			foreach ( $values as $bp => $value ) {
 				if ( '' === $value || null === $value || false === $value ) {
+					continue;
+				}
+				// Never emit arbitrary or unbounded parallax travel values.
+				if ( 0 === strpos( $key, 'parallaxLayer' ) && ( ! is_numeric( $value ) || abs( (float) $value ) > 240 ) ) {
 					continue;
 				}
 				// "map" turns one choice into several declarations, e.g. center => text-align + auto margins.
