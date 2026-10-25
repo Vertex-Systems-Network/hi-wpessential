@@ -12,6 +12,14 @@
 	function controlValue( panel, key ) {
 		var wrapper = settingNode( panel, key );
 		if ( ! wrapper ) return undefined;
+		var root = settingRoot( wrapper );
+		var inputs = root.querySelectorAll( 'input' );
+		if ( inputs.length >= 4 && /dimensions/i.test( root.className || '' ) ) {
+			var sides = { top: inputs[ 0 ].value, right: inputs[ 1 ].value, bottom: inputs[ 2 ].value, left: inputs[ 3 ].value };
+			var unit = root.querySelector( '.elementor-control-units select, select' );
+			if ( unit && unit.value ) sides.unit = unit.value;
+			return sides;
+		}
 		var field = wrapper.matches( 'input,select,textarea' ) ? wrapper : wrapper.querySelector( 'input,select,textarea' );
 		if ( ! field ) return undefined;
 		if ( field.type === 'checkbox' ) return field.checked ? 'yes' : '';
@@ -20,17 +28,38 @@
 		if ( unit && value !== '' && ! isNaN( Number( value ) ) ) value += unit.getAttribute( 'data-unit' );
 		return value;
 	}
+	function settingRoot( node ) { return node.closest( '.elementor-control' ) || node; }
+	function dimensionScalar( value ) {
+		if ( ! value || typeof value !== 'object' ) return scalar( value );
+		var sides = [ 'top', 'right', 'bottom', 'left' ].map( function ( side ) { return scalar( value[ side ] ); } );
+		if ( sides.some( function ( side ) { return side === undefined; } ) || sides.some( function ( side ) { return side !== sides[ 0 ]; } ) ) return undefined;
+		return sides[ 0 ] + ( value.unit && ! String( sides[ 0 ] ).match( /[a-z%]+$/i ) ? value.unit : '' );
+	}
+	function dimensionsFromScalar( value ) {
+		var match = String( value ).match( /^(-?[\d.]+)\s*([a-z%]*)$/i );
+		if ( ! match ) return null;
+		return { top: match[ 1 ], right: match[ 1 ], bottom: match[ 1 ], left: match[ 1 ], unit: match[ 2 ] || 'px' };
+	}
 	function setControl( panel, key, value ) {
 		var wrapper = settingNode( panel, key );
 		if ( ! wrapper ) return false;
-		var field = wrapper.matches( 'input,select,textarea' ) ? wrapper : wrapper.querySelector( 'input,select,textarea' );
+		var root = settingRoot( wrapper );
+		var field = root.matches( 'input,select,textarea' ) ? root : root.querySelector( 'input,select,textarea' );
 		if ( ! field || value === undefined || value === null ) return false;
 		if ( typeof value === 'object' ) {
 			var names = [ 'top', 'right', 'bottom', 'left' ];
 			if ( names.every( function ( side ) { return value[ side ] !== undefined; } ) ) {
-				var inputs = wrapper.querySelectorAll( 'input' );
+				var inputs = root.querySelectorAll( 'input' );
 				if ( inputs.length < 4 ) return false;
-				names.forEach( function ( side, index ) { inputs[ index ].value = value[ side ]; inputs[ index ].dispatchEvent( new Event( 'input', { bubbles: true } ) ); inputs[ index ].dispatchEvent( new Event( 'change', { bubbles: true } ) ); } );
+				var units = root.querySelector( '.elementor-control-units select, select' );
+				if ( units && value.unit ) { units.value = value.unit; units.dispatchEvent( new Event( 'change', { bubbles: true } ) ); }
+				names.forEach( function ( side, index ) {
+					var raw = String( value[ side ] );
+					var match = raw.match( /^(-?[\d.]+)\s*([a-z%]*)$/i );
+					inputs[ index ].value = match ? match[ 1 ] : raw;
+					if ( units && match && match[ 2 ] ) units.value = match[ 2 ];
+					inputs[ index ].dispatchEvent( new Event( 'input', { bubbles: true } ) ); inputs[ index ].dispatchEvent( new Event( 'change', { bubbles: true } ) );
+				} );
 				return true;
 			}
 			if ( value.size !== undefined ) value = value.size + ( value.unit || '' );
@@ -41,6 +70,11 @@
 		field.dispatchEvent( new Event( 'input', { bubbles: true } ) );
 		field.dispatchEvent( new Event( 'change', { bubbles: true } ) );
 		return true;
+	}
+	function numberValue( value ) {
+		if ( value && typeof value === 'object' && value.size !== undefined ) return value.size;
+		if ( typeof value === 'string' ) { var match = value.match( /^(-?[\d.]+)/ ); return match ? match[ 1 ] : undefined; }
+		return value;
 	}
 	function scalar( value ) {
 		if ( value === undefined || value === null || value === '' ) return undefined;
@@ -53,24 +87,28 @@
 	function normalizeGroup( type, prefix, raw ) {
 		var out = {};
 		var aliases = {
-			typography: { family: [ '_typography_font_family', '_font_family' ], size: [ '_typography_font_size', '_font_size' ], weight: [ '_typography_font_weight', '_font_weight' ], transform: [ '_typography_text_transform', '_text_transform' ], style: [ '_typography_font_style', '_font_style' ], decoration: [ '_typography_text_decoration', '_text_decoration' ], lineHeight: [ '_typography_line_height', '_line_height' ], letterSpacing: [ '_typography_letter_spacing', '_letter_spacing' ], wordSpacing: [ '_typography_word_spacing', '_word_spacing' ] },
+			typography: { family: [ '_font_family' ], size: [ '_font_size' ], weight: [ '_font_weight' ], transform: [ '_text_transform' ], style: [ '_font_style' ], decoration: [ '_text_decoration' ], lineHeight: [ '_line_height' ], letterSpacing: [ '_letter_spacing' ], wordSpacing: [ '_word_spacing' ] },
 			spacing: { top: [ '_top' ], right: [ '_right' ], bottom: [ '_bottom' ], left: [ '_left' ] },
-			border: { style: [ '_border', '_border_border' ], width: [ '_width', '_border_width' ], color: [ '_color', '_border_color' ], hoverColor: [ '_hover_color', '_hover_border_color' ], radius: [ '_radius' ] },
-			shadow: { custom: [ '_box_shadow', '_hover_box_shadow' ] },
-			background: { color: [ '_background_color', '_color' ], image: [ '_background_image' ], position: [ '_background_position' ], size: [ '_background_size' ], repeat: [ '_background_repeat' ], attachment: [ '_background_attachment' ] },
+			border: { style: [ '_border' ], width: [ '_width' ], color: [ '_color' ], hoverColor: [ '_hover_color' ], radius: [ '_radius' ] },
+			shadow: { custom: [ '_box_shadow' ], hoverPreset: [ '_hover_box_shadow' ] },
+			background: { color: [ '_color' ], image: [ '_image' ], position: [ '_position' ], size: [ '_size' ], repeat: [ '_repeat' ], attachment: [ '_attachment' ] },
 			colors: { normal: [ '' ], hover: [ '_hover' ], focus: [ '_focus' ], active: [ '_active' ], dark: [ '_dark' ], darkHover: [ '_dark_hover' ] },
-			textEffects: { shadow: [ '' ], hoverShadow: [ '_hover' ], strokeWidth: [ '_stroke_width' ], strokeColor: [ '_stroke_color' ], blend: [ '_blend' ] },
-			filters: { blur: [ '' ], brightness: [ '' ], contrast: [ '' ], saturate: [ '' ], hue: [ '' ], grey: [ '' ], opacity: [ '_opacity' ] }
+			textEffects: { shadow: [ '_text_shadow' ], hoverShadow: [ '_hover_text_shadow' ], strokeWidth: [ '_stroke_text_stroke' ], strokeColor: [ '_stroke_stroke_color' ], blend: [ '_blend' ] },
+			filters: { blur: [ '_blur' ], brightness: [ '_brightness' ], contrast: [ '_contrast' ], saturate: [ '_saturate' ], hue: [ '_hue' ], grey: [ '_grayscale' ], opacity: [ '_opacity' ] }
 		};
 		var map = aliases[ type ] || {};
 		Object.keys( map ).forEach( function ( field ) {
 			for ( var i = 0; i < map[ field ].length; i++ ) {
-				var value = scalar( raw[ prefix + map[ field ][ i ] ] );
+				var rawValue = raw[ prefix + map[ field ][ i ] ];
+				var value = type === 'filters' ? numberValue( rawValue ) : ( ( type === 'spacing' || ( type === 'border' && ( field === 'width' || field === 'radius' ) ) ) ? dimensionScalar( rawValue ) : scalar( rawValue ) );
 				if ( value !== undefined ) { out[ field ] = value; break; }
 			}
 		} );
 		if ( type === 'spacing' && raw[ prefix ] && typeof raw[ prefix ] === 'object' ) {
-			[ 'top', 'right', 'bottom', 'left' ].forEach( function ( side ) { var v = scalar( raw[ prefix ][ side ] ); if ( v !== undefined ) out[ side ] = v; } );
+			[ 'top', 'right', 'bottom', 'left' ].forEach( function ( side ) { var v = scalar( raw[ prefix ][ side ] ); if ( v !== undefined ) out[ side ] = v + ( raw[ prefix ].unit || '' ); } );
+		}
+		if ( type === 'border' ) {
+			[ 'width', 'radius' ].forEach( function ( field ) { var value = dimensionScalar( raw[ prefix + ( field === 'width' ? '_width' : '_radius' ) ] ); if ( value !== undefined ) out[ field ] = value; } );
 		}
 		if ( type === 'border' && out.style && typeof out.style === 'object' ) out.style = out.style.style || '';
 		if ( type === 'shadow' ) {
@@ -108,14 +146,28 @@
 			var group = groups[ prefix ] || {};
 			var type = ( groupTypes || {} )[ prefix ] || '';
 			var names = {
-				typography: { family: '_typography_font_family', size: '_typography_font_size', weight: '_typography_font_weight', transform: '_typography_text_transform', style: '_typography_font_style', decoration: '_typography_text_decoration', lineHeight: '_typography_line_height', letterSpacing: '_typography_letter_spacing', wordSpacing: '_typography_word_spacing' },
+				typography: { family: '_font_family', size: '_font_size', weight: '_font_weight', transform: '_text_transform', style: '_font_style', decoration: '_text_decoration', lineHeight: '_line_height', letterSpacing: '_letter_spacing', wordSpacing: '_word_spacing' },
 				spacing: { top: '_top', right: '_right', bottom: '_bottom', left: '_left' },
 				border: { style: '_border', width: '_width', color: '_color', hoverColor: '_hover_color', radius: '_radius' },
-				background: { color: '_background_color', position: '_background_position', size: '_background_size', repeat: '_background_repeat', attachment: '_background_attachment' },
+				background: { color: '_color', image: '_image', position: '_position', size: '_size', repeat: '_repeat', attachment: '_attachment' },
 				colors: { normal: '', hover: '_hover', focus: '_focus', active: '_active', dark: '_dark', darkHover: '_dark_hover' },
-				textEffects: { shadow: '', hoverShadow: '_hover', strokeWidth: '_stroke_width', strokeColor: '_stroke_color', blend: '_blend' }
+				textEffects: { shadow: '_text_shadow', hoverShadow: '_hover_text_shadow', strokeWidth: '_stroke_text_stroke', strokeColor: '_stroke_stroke_color', blend: '_blend' },
+				filters: { blur: '_blur', brightness: '_brightness', contrast: '_contrast', saturate: '_saturate', hue: '_hue', grey: '_grayscale', hoverBlur: '_hover_blur', hoverBrightness: '_hover_brightness', hoverContrast: '_hover_contrast', hoverSaturate: '_hover_saturate', hoverHue: '_hover_hue', hoverGrey: '_hover_grayscale', opacity: '_opacity', hoverOpacity: '_opacity_hover' }
 			};
 			var map = names[ type ] || {};
+			if ( type === 'spacing' ) {
+				var spacing = {};
+				[ 'top', 'right', 'bottom', 'left' ].forEach( function ( side ) { if ( group[ side ] !== undefined ) spacing[ side ] = group[ side ]; } );
+				if ( Object.keys( spacing ).length ) {
+					var parsed = dimensionsFromScalar( spacing.top || spacing.right || spacing.bottom || spacing.left );
+					if ( parsed ) [ 'top', 'right', 'bottom', 'left' ].forEach( function ( side ) { if ( spacing[ side ] !== undefined ) parsed[ side ] = spacing[ side ]; } );
+					else Object.assign( parsed || ( parsed = {} ), spacing );
+					if ( setControl( panel, prefix, parsed ) ) applied++;
+				}
+			}
+			if ( type === 'border' ) {
+				[ 'width', 'radius' ].forEach( function ( field ) { var parsed = dimensionsFromScalar( group[ field ] ); if ( parsed && setControl( panel, prefix + ( field === 'width' ? '_width' : '_radius' ), parsed ) ) applied++; } );
+			}
 			Object.keys( map ).forEach( function ( field ) {
 				if ( group[ field ] !== undefined ) {
 					var value = group[ field ];
