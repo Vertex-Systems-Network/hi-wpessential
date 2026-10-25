@@ -13,7 +13,7 @@ $wpe_post_id = absint( $a['postId'] );
 if ( ! $wpe_post_id ) {
 	$wpe_post_id = (int) get_queried_object_id();
 }
-$wpe_post = $wpe_post_id ? get_post( $wpe_post_id ) : null;
+$wpe_post   = $wpe_post_id ? get_post( $wpe_post_id ) : null;
 $wpe_object = $wpe_post ? get_post_type_object( $wpe_post->post_type ) : null;
 if ( ! $wpe_post || 'publish' !== $wpe_post->post_status || ! $wpe_object || ! $wpe_object->public ) {
 	if ( is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
@@ -31,7 +31,7 @@ $wpe_comments = get_comments(
 		'orderby' => 'comment_date_gmt',
 	)
 );
-$wpe_title = trim( (string) $a['title'] );
+$wpe_title    = trim( (string) $a['title'] );
 ?>
 <section id="<?php echo esc_attr( $id ); ?>" class="wpe-comments">
 	<?php if ( $wpe_title ) : ?>
@@ -69,8 +69,8 @@ $wpe_title = trim( (string) $a['title'] );
 			<?php
 			comment_form(
 				array(
-					'id_form'   => $id . '-reply-form',
-					'id_submit' => $id . '-reply-submit',
+					'id_form'     => $id . '-reply-form',
+					'id_submit'   => $id . '-reply-submit',
 					'title_reply' => __( 'Leave a reply', 'hi-wpessential' ),
 				),
 				$wpe_post_id
