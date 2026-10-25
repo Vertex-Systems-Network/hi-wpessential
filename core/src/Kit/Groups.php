@@ -1254,27 +1254,27 @@ class Groups {
 		// Opt-in shared visual effects; classes use only allowlisted values.
 		$attr += array(
 			'effectGradientBorder' => array(
-				'type'   => toggle,
+				'type'   => 'toggle',
 				'label'  => __( 'Enable gradient border', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
 			'effectBorderFrom'     => array(
-				'type'   => color,
+				'type'   => 'color',
 				'label'  => __( 'Gradient border start colour', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 				'css'    => '--wpek-gradient-a',
 			),
 			'effectBorderTo'       => array(
-				'type'   => color,
+				'type'   => 'color',
 				'label'  => __( 'Gradient border end colour', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 				'css'    => '--wpek-gradient-b',
 			),
 			'effectBorderWidth'    => array(
-				'type'       => range,
+				'type'       => 'range',
 				'label'      => __( 'Gradient border width', 'hi-wpessential' ),
 				'panel'      => 'advanced',
 				'common'     => true,
@@ -1285,7 +1285,7 @@ class Groups {
 				'responsive' => true,
 			),
 			'effectBorderAngle'    => array(
-				'type'   => range,
+				'type'   => 'range',
 				'label'  => __( 'Gradient border angle', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
@@ -1295,13 +1295,13 @@ class Groups {
 				'max'    => 360,
 			),
 			'effectBorderSpin'     => array(
-				'type'   => toggle,
+				'type'   => 'toggle',
 				'label'  => __( 'Animate gradient border', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
 			'effectBorderSpeed'    => array(
-				'type'   => range,
+				'type'   => 'range',
 				'label'  => __( 'Animated border cycle (ms)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
@@ -1312,7 +1312,7 @@ class Groups {
 				'step'   => 500,
 			),
 			'effectBlend'          => array(
-				'type'    => select,
+				'type'    => 'select',
 				'label'   => __( 'Mix blend mode', 'hi-wpessential' ),
 				'panel'   => 'advanced',
 				'common'  => true,
@@ -1328,7 +1328,7 @@ class Groups {
 				),
 			),
 			'effectMask'           => array(
-				'type'    => select,
+				'type'    => 'select',
 				'label'   => __( 'Fade-edge gradient mask', 'hi-wpessential' ),
 				'panel'   => 'advanced',
 				'common'  => true,

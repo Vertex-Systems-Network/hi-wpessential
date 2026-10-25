@@ -783,14 +783,14 @@ class Kit {
 					continue;
 				}
 				// Directly loaded saved attributes cannot bypass the visual-effect ranges.
-			$wpe_effect_ranges = array(
-				'effectBorderWidth' => array( 1, 16 ),
-				'effectBorderAngle' => array( 0, 360 ),
-				'effectBorderSpeed' => array( 1500, 12000 ),
-			);
-			if ( isset( $wpe_effect_ranges[ $key ] ) && ( ! is_numeric( $value ) || (float) $value < $wpe_effect_ranges[ $key ][0] || (float) $value > $wpe_effect_ranges[ $key ][1] ) ) {
-				continue;
-			}
+				$wpe_effect_ranges = array(
+					'effectBorderWidth' => array( 1, 16 ),
+					'effectBorderAngle' => array( 0, 360 ),
+					'effectBorderSpeed' => array( 1500, 12000 ),
+				);
+				if ( isset( $wpe_effect_ranges[ $key ] ) && ( ! is_numeric( $value ) || (float) $value < $wpe_effect_ranges[ $key ][0] || (float) $value > $wpe_effect_ranges[ $key ][1] ) ) {
+					continue;
+				}
 			// Never emit arbitrary or unbounded parallax travel values.
 				if ( 0 === strpos( $key, 'parallaxLayer' ) && ( ! is_numeric( $value ) || abs( (float) $value ) > 240 ) ) {
 					continue;
