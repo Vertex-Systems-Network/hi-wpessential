@@ -79,6 +79,20 @@ async function verifyPage( page, id, label ) {
 	assert.equal( await mobileToggle.getAttribute( 'aria-expanded' ), 'false', label + ': mobile submenu did not close' );
 	await mobileMenu.locator( ':scope > summary' ).click();
 	await page.setViewportSize( { width: 1440, height: 900 } );
+	// Shared advanced controls are active in both editors and respect print media.
+	const glass = page.locator( '.wpe-chart.wpek-glass' ).first();
+	assert.ok( await glass.count() === 1, label + ': shared glass class missing' );
+	const glassBlur = await glass.evaluate( node => getComputedStyle( node ).backdropFilter );
+	assert.ok( glassBlur.includes( 'blur(14px)' ), label + ': glass backdrop blur not applied: ' + glassBlur );
+	const iconLink = page.locator( '.wpe-icon-single.wpek-focus-ring a' ).first();
+	assert.ok( await iconLink.count() === 1, label + ': shared focus ring class missing' );
+	await iconLink.focus();
+	const ringWidth = await iconLink.evaluate( node => getComputedStyle( node ).outlineWidth );
+	assert.equal( ringWidth, '3px', label + ': custom focus ring width not applied' );
+	await page.emulateMedia( { media: 'print' } );
+	const printVisibility = await glass.evaluate( node => getComputedStyle( node ).display );
+	assert.equal( printVisibility, 'none', label + ': hide-on-print not applied' );
+	await page.emulateMedia( { media: 'screen' } );
 	const flip = page.locator( '.wpe-flip__details' ).first();
 	await flip.locator( 'summary' ).click();
 	assert.equal( await flip.evaluate( node => node.open ), true, label + ': native flip disclosure failed' );

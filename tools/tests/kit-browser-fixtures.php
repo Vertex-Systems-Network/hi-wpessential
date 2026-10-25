@@ -70,8 +70,8 @@ $wpe_defs = array(
 		),
 	),
 	'forms' => array( 'formId' => (string) $wpe_form_id, 'heading' => 'Kit QA Real Form', 'showTitle' => false ),
-	'icon' => array( 'icon' => array( 'library' => 'wpessential', 'value' => 'bolt' ), 'label' => 'QA Icon', 'url' => 'https://example.org' ),
-	'chart' => array( 'title' => 'Kit QA Chart', 'type' => 'donut', 'items' => array( array( 'label' => 'A', 'value' => '60', 'color' => 'primary' ), array( 'label' => 'B', 'value' => '40', 'color' => 'secondary' ) ) ),
+	'icon' => array( 'icon' => array( 'library' => 'wpessential', 'value' => 'bolt' ), 'label' => 'QA Icon', 'url' => 'https://example.org', 'focusRingStyle' => 'solid', 'focusRingColor' => 'primary', 'focusRingWidth' => array( 'base' => 3 ), 'focusRingOffset' => array( 'base' => 2 ) ),
+	'chart' => array( 'title' => 'Kit QA Chart', 'type' => 'donut', 'glass' => true, 'glassBlur' => array( 'base' => 14 ), 'glassOpacity' => array( 'base' => 75 ), 'hidePrint' => true, 'items' => array( array( 'label' => 'A', 'value' => '60', 'color' => 'primary' ), array( 'label' => 'B', 'value' => '40', 'color' => 'secondary' ) ) ),
 	'flip' => array( 'frontTitle' => 'Kit QA Flip Front', 'backTitle' => 'Kit QA Flip Back', 'frontContent' => '<p>Open this card</p>' ),
 	'site-archive-widgets' => array( 'mode' => 'title', 'fallback' => 'Kit QA Archive' ),
 );
