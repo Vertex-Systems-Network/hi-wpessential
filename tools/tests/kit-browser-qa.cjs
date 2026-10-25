@@ -23,6 +23,30 @@ const targets = {
 };
 fs.mkdirSync( dir, { recursive: true } );
 
+// WCAG 2.x relative luminance check for theme-aware form labels.
+function rgb( value ) {
+	const hex = value.trim().match( /^#([a-f0-9]{6})$/i );
+	if ( hex ) {
+		return [ 0, 2, 4 ].map( i => parseInt( hex[1].slice( i, i + 2 ), 16 ) );
+	}
+	const triplet = value.match( /rgba?\((\d+)[, ]+(\d+)[, ]+(\d+)/ );
+	assert.ok( triplet, 'Unknown CSS color: ' + value );
+	return [ Number( triplet[1] ), Number( triplet[2] ), Number( triplet[3] ) ];
+}
+function luminance( value ) {
+	const a = rgb( value ).map( part => {
+		const n = part / 255;
+		return n <= 0.04045 ? n / 12.92 : ( ( n + 0.055 ) / 1.055 ) ** 2.4;
+	} );
+	return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+}
+function contrast( foreground, background ) {
+	const a = luminance( foreground );
+	const b = luminance( background );
+	return ( Math.max( a, b ) + 0.05 ) / ( Math.min( a, b ) + 0.05 );
+}
+
+
 async function verifyPage( page, id, label ) {
 	const result = await page.goto( base + '/?page_id=' + id, { waitUntil: 'domcontentloaded', timeout: 60000 } );
 	assert.equal( result.status(), 200, label + ': HTTP 200' );
@@ -43,6 +67,16 @@ async function verifyPage( page, id, label ) {
 		await page.setViewportSize( { width: vp.width, height: vp.height } );
 		for ( const scheme of [ 'light', 'dark' ] ) {
 			await page.evaluate( mode => document.documentElement.setAttribute( 'data-wpe-scheme', mode ), scheme );
+			const palette = await page.evaluate( () => {
+				const label = document.querySelector( '.wpe-forms .wpforms-field-label' );
+				return {
+					foreground: label ? getComputedStyle( label ).color : '',
+					background: getComputedStyle( document.documentElement ).getPropertyValue( '--wp--preset--color--surface' ).trim()
+				};
+			} );
+			assert.ok( palette.foreground && palette.background, label + ': missing WPForms colors' );
+			const contrastRatio = contrast( palette.foreground, palette.background );
+			assert.ok( contrastRatio >= 4.5, label + ' ' + scheme + ': WPForms label WCAG AA contrast failure (' + contrastRatio.toFixed( 2 ) + ':1)' );
 			await page.screenshot( { path: path.join( dir, label + '-' + vp.type + '-' + scheme + '.png' ), fullPage: true } );
 			const overflow = await page.evaluate( () => Math.max( 0, document.documentElement.scrollWidth - document.documentElement.clientWidth ) );
 			assert.ok( overflow < 125, label + ': severe horizontal overflow: ' + overflow );
