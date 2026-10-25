@@ -28,3 +28,12 @@
 .wpe-forms.is-cols-2 .wpforms-field-container{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--wpek-form-gap)}
 .wpe-forms.is-cols-2 .wpforms-field-container>.wpforms-field-textarea,.wpe-forms.is-cols-2 .wpforms-field-container>.wpforms-field-html,.wpe-forms.is-cols-2 .wpforms-field-container>.wpforms-field-checkbox{grid-column:1/-1}
 @media(max-width:767px){.wpe-forms.is-cols-2 .wpforms-field-container{grid-template-columns:1fr}}
+
+/* WPForms injects its own label colors; its local variables can override the theme.
+   Force readable scheme colors on visible label and description text. */
+:root[data-wpe-scheme="dark"] body .wpe-forms .wpforms-container :is(label,.wpforms-field-label,.wpforms-field-label-inline,.wpforms-field-sublabel,.wpforms-field-description,.wpforms-description){
+	color:var(--wp--preset--color--text,#E7EAF3)!important;
+}
+:root[data-wpe-scheme="dark"] body .wpe-forms .wpforms-container :is(input,textarea,select){
+	color:var(--wp--preset--color--text,#E7EAF3)!important;
+}
