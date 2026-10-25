@@ -789,15 +789,16 @@ class Kit {
 					$wpe_depth = 1;
 					foreach ( $wpe_tags[0] as $wpe_token ) {
 						$wpe_is_close = 0 === strpos( $wpe_token[0], '</' );
-						$wpe_is_void = ! $wpe_is_close && (bool) preg_match( '/^<' . preg_quote( $wpe_old_tag, '/' ) . '\\b[^>]*\\/>$/i', $wpe_token[0] );
-						if ( ! $wpe_is_void ) {
+						if ( $wpe_is_close ) {
+							if ( 0 === --$wpe_depth ) {
+								$html = substr_replace( $html, '</' . $wpe_html_tag . '>', $wpe_token[1] + $wpe_delta, strlen( $wpe_old_tag ) + 3 );
+								break;
+							}
+							continue;
+						}
+						if ( ! preg_match( '/^<' . preg_quote( $wpe_old_tag, '/' ) . '\\b[^>]*\\/>$/i', $wpe_token[0] ) ) {
 							++$wpe_depth;
-						continue;
-						}
-					if ( $wpe_is_close && 0 === --$wpe_depth ) {
-						$html = substr_replace( $html, '</' . $wpe_html_tag . '>', $wpe_token[1] + $wpe_delta, strlen( $wpe_old_tag ) + 3 );
-						break;
-						}
+					}
 					}
 				}
 			}
