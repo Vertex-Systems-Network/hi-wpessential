@@ -510,7 +510,7 @@ class Kit {
 		// across different visitors by caches honouring DONOTCACHEPAGE.
 		if ( '' !== $wpe_login || '' !== $wpe_role || '' !== $wpe_cart || '' !== $wpe_buy || '' !== $wpe_start || '' !== $wpe_end || '' !== $wpe_path || '' !== $wpe_key || '' !== $wpe_host ) {
 			if ( ! defined( 'DONOTCACHEPAGE' ) ) {
-				define( 'DONOTCACHEPAGE', true );
+				define( 'DONOTCACHEPAGE', true ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound -- Standard WordPress cache bypass constant.
 			}
 		}
 
@@ -520,7 +520,7 @@ class Kit {
 			}
 		}
 		if ( '' !== $wpe_role ) {
-			if ( $wpe_role !== sanitize_key( $wpe_role ) || ! is_user_logged_in() ) {
+			if ( ! preg_match( '/^[a-z0-9_-]+$/', $wpe_role ) || ! is_user_logged_in() ) {
 				return false;
 			}
 			$wpe_user = wp_get_current_user();
@@ -565,18 +565,21 @@ class Kit {
 			if ( 0 !== strpos( $wpe_path, '/' ) || preg_match( '/[\s<>\\\\]/', $wpe_path ) ) {
 				return false;
 			}
-			$wpe_actual = wp_parse_url( (string) ( $_SERVER['REQUEST_URI'] ?? '/' ), PHP_URL_PATH );
+			$wpe_actual = wp_parse_url( sanitize_text_field( wp_unslash( (string) ( $_SERVER['REQUEST_URI'] ?? '/' ) ) ), PHP_URL_PATH );
 			if ( ! is_string( $wpe_actual ) || $wpe_path !== $wpe_actual ) {
 				return false;
 			}
 		}
 		if ( '' !== $wpe_key ) {
+			// Read-only GET checks control presentation; no state mutation requires a nonce.
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended
 			if ( sanitize_key( $wpe_key ) !== $wpe_key || ! array_key_exists( $wpe_key, $_GET ) || ! is_scalar( $_GET[ $wpe_key ] ) ) {
 				return false;
 			}
 			if ( '' !== $wpe_value && sanitize_text_field( wp_unslash( (string) $_GET[ $wpe_key ] ) ) !== $wpe_value ) {
 				return false;
 			}
+			// phpcs:enable WordPress.Security.NonceVerification.Recommended
 		} elseif ( '' !== $wpe_value ) {
 			return false;
 		}
@@ -584,7 +587,7 @@ class Kit {
 			if ( ! preg_match( '/^[a-z0-9.-]+$/i', $wpe_host ) ) {
 				return false;
 			}
-			$wpe_ref = (string) ( $_SERVER['HTTP_REFERER'] ?? '' );
+			$wpe_ref      = sanitize_url( wp_unslash( (string) ( $_SERVER['HTTP_REFERER'] ?? '' ) ) );
 			$wpe_ref_host = wp_parse_url( $wpe_ref, PHP_URL_HOST );
 			if ( ! is_string( $wpe_ref_host ) || strtolower( $wpe_ref_host ) !== strtolower( $wpe_host ) ) {
 				return false;

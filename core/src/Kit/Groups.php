@@ -1110,7 +1110,7 @@ class Groups {
 		);
 
 		// Advanced responsive foundations shared by Gutenberg and Elementor.
-		$attr  += array(
+		$attr += array(
 			'containerQuerySource'    => array(
 				'type'   => 'toggle',
 				'label'  => __( 'Act as a CSS size query container', 'hi-wpessential' ),
@@ -1223,24 +1223,24 @@ class Groups {
 
 		// Conditional display rules are evaluated before rendering content.
 		$attr += array(
-			'conditionLogin'           => array(
+			'conditionLogin'            => array(
 				'type'    => 'select',
 				'label'   => __( 'Visibility: visitor login state', 'hi-wpessential' ),
 				'panel'   => 'advanced',
 				'common'  => true,
 				'options' => array(
-					''         => __( 'Everyone', 'hi-wpessential' ),
-					'in'       => __( 'Logged-in visitors only', 'hi-wpessential' ),
-					'out'      => __( 'Logged-out visitors only', 'hi-wpessential' ),
+					''    => __( 'Everyone', 'hi-wpessential' ),
+					'in'  => __( 'Logged-in visitors only', 'hi-wpessential' ),
+					'out' => __( 'Logged-out visitors only', 'hi-wpessential' ),
 				),
 			),
-			'conditionRole'            => array(
-				'type'    => 'text',
-				'label'   => __( 'Visibility: required user role slug (single role)', 'hi-wpessential' ),
-				'panel'   => 'advanced',
-				'common'  => true,
+			'conditionRole'             => array(
+				'type'   => 'text',
+				'label'  => __( 'Visibility: required user role slug (single role)', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
 			),
-			'conditionCart'            => array(
+			'conditionCart'             => array(
 				'type'    => 'select',
 				'label'   => __( 'Visibility: WooCommerce cart', 'hi-wpessential' ),
 				'panel'   => 'advanced',
@@ -1252,57 +1252,57 @@ class Groups {
 				),
 			),
 			'conditionPurchasedProduct' => array(
-				'type'    => 'text',
-				'label'   => __( 'Visibility: purchased WooCommerce product ID', 'hi-wpessential' ),
-				'panel'   => 'advanced',
-				'common'  => true,
+				'type'   => 'text',
+				'label'  => __( 'Visibility: purchased WooCommerce product ID', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
 			),
-			'conditionStart'           => array(
-				'type'    => 'text',
-				'label'   => __( 'Visibility: start date (YYYY-MM-DD HH:mm, site time)', 'hi-wpessential' ),
-				'panel'   => 'advanced',
-				'common'  => true,
+			'conditionStart'            => array(
+				'type'   => 'text',
+				'label'  => __( 'Visibility: start date (YYYY-MM-DD HH:mm, site time)', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
 			),
-			'conditionEnd'             => array(
-				'type'    => 'text',
-				'label'   => __( 'Visibility: end date (YYYY-MM-DD HH:mm, site time)', 'hi-wpessential' ),
-				'panel'   => 'advanced',
-				'common'  => true,
+			'conditionEnd'              => array(
+				'type'   => 'text',
+				'label'  => __( 'Visibility: end date (YYYY-MM-DD HH:mm, site time)', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
 			),
-			'conditionPath'            => array(
-				'type'    => 'text',
-				'label'   => __( 'Visibility: exact URL path (e.g. /offers/)', 'hi-wpessential' ),
-				'panel'   => 'advanced',
-				'common'  => true,
+			'conditionPath'             => array(
+				'type'   => 'text',
+				'label'  => __( 'Visibility: exact URL path (e.g. /offers/)', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
 			),
-			'conditionQueryKey'        => array(
-				'type'    => 'text',
-				'label'   => __( 'Visibility: URL query parameter name', 'hi-wpessential' ),
-				'panel'   => 'advanced',
-				'common'  => true,
+			'conditionQueryKey'         => array(
+				'type'   => 'text',
+				'label'  => __( 'Visibility: URL query parameter name', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
 			),
-			'conditionQueryValue'      => array(
-				'type'    => 'text',
-				'label'   => __( 'Visibility: required URL query value (optional)', 'hi-wpessential' ),
-				'panel'   => 'advanced',
-				'common'  => true,
+			'conditionQueryValue'       => array(
+				'type'   => 'text',
+				'label'  => __( 'Visibility: required URL query value (optional)', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
 			),
-			'conditionReferrer'        => array(
-				'type'    => 'text',
-				'label'   => __( 'Visibility: exact referrer domain (not secure)', 'hi-wpessential' ),
-				'panel'   => 'advanced',
-				'common'  => true,
+			'conditionReferrer'         => array(
+				'type'   => 'text',
+				'label'  => __( 'Visibility: exact referrer domain (not secure)', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
 			),
-			'conditionDevice'          => array(
+			'conditionDevice'           => array(
 				'type'    => 'select',
 				'label'   => __( 'Visibility: device viewport (CSS only)', 'hi-wpessential' ),
 				'panel'   => 'advanced',
 				'common'  => true,
 				'options' => array(
-					''         => __( 'Any screen', 'hi-wpessential' ),
-					'mobile'   => __( 'Mobile under 768px', 'hi-wpessential' ),
-					'tablet'   => __( 'Tablet 768–1023px', 'hi-wpessential' ),
-					'desktop'  => __( 'Desktop 1024px and wider', 'hi-wpessential' ),
+					''        => __( 'Any screen', 'hi-wpessential' ),
+					'mobile'  => __( 'Mobile under 768px', 'hi-wpessential' ),
+					'tablet'  => __( 'Tablet 768–1023px', 'hi-wpessential' ),
+					'desktop' => __( 'Desktop 1024px and wider', 'hi-wpessential' ),
 				),
 			),
 		);
