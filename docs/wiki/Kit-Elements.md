@@ -163,7 +163,7 @@ The shared Advanced section now exposes Kit-only controls in Elementor as well a
 
 ### Translation and semantic output
 
-`wpml-config.xml` maps text, rich text, textarea, and URL attributes for every `wpessential/*` block, including translatable fields inside repeaters. Style controls stay copied as design settings. Container-based elements expose an optional semantic root tag in the shared Advanced panel; the default preserves the element's original markup.
+`wpml-config.xml` maps text, rich text, textarea, and URL attributes for every `wpessential/*` block, including translatable fields inside repeaters. Style controls stay copied as design settings. Every element exposes an optional structural tag in the shared Advanced panel. Structural roots are retagged, while interactive and media roots keep their native element inside the selected semantic wrapper. The default preserves the original markup.
 
 ### Structured data
 

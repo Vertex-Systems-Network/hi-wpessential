@@ -804,6 +804,15 @@ class Kit {
 							++$wpe_depth;
 					}
 					}
+				} else {
+					// Interactive and media roots keep their native tag; place the chosen
+					// structural tag around them so semantics never replace a button/form.
+					$wpe_wrapper_attrs = '';
+					$wpe_wrapper_label = sanitize_text_field( (string) ( $a['rootAriaLabel'] ?? '' ) );
+					if ( '' !== $wpe_wrapper_label ) {
+						$wpe_wrapper_attrs .= ' aria-label="' . esc_attr( $wpe_wrapper_label ) . '"';
+					}
+					$html = '<' . $wpe_html_tag . ' class="wpek-semantic-wrapper"' . $wpe_wrapper_attrs . '>' . $html . '</' . $wpe_html_tag . '>';
 				}
 			}
 		}
