@@ -176,3 +176,7 @@ The shared Advanced panel offers magnetic pull, pointer-follow tilt, ripple, cur
 ### Presets and style transfer
 
 The editor panels provide browser-local named presets and a JSON clipboard for Kit style settings. Shared direct CSS attributes transfer between Gutenberg and Elementor. Gutenberg presets retain Kit style-group objects; Elementor's native group controls still need a dedicated shape mapping before those values can transfer across builders.
+
+### Contrast warning
+
+The editors inspect the selected Kit preview's computed text and background colours and show an advisory when the estimated contrast falls below 4.5:1. This is a visual check; gradients, images, overlays, and large-text exceptions still need review on the published page.

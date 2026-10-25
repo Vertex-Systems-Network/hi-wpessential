@@ -32,7 +32,7 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 7 | Spacing and radius from theme tokens (sm/md/lg) | ✅ Padding and border-radius token presets |
 | 8 | Dark-mode value for colours, background, border and shadow | ✅ |
 | 9 | Dark-mode image | ✅ background image and Image element |
-| 10 | Contrast warning in the editor (WCAG AA) | ⬜ |
+| 10 | Contrast warning in the editor (WCAG AA) | ✅ Advisory warning from rendered preview colours in Gutenberg and Elementor editors |
 | 11 | Focus and pressed (active) states besides hover | ✅ colours |
 | 12 | Transition duration, easing and delay | ✅ |
 | 13 | Hover presets from the demo's hover tokens (lift, zoom, glow, shadow, dim others, tilt) | ✅ |

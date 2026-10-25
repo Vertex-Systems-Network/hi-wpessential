@@ -87,6 +87,7 @@ class Kit {
 			'enqueue_block_editor_assets',
 			static function () {
 				wp_enqueue_style( 'wpessential-kit-editor', wpessential_core_url( 'assets/kit-editor.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
+				wp_enqueue_script( 'wpessential-kit-contrast-check', wpessential_core_url( 'assets/kit-contrast-check.js' ), array( 'wp-data' ), WPESSENTIAL_CORE_ASSET_VERSION, true );
 			}
 		);
 		add_action( 'elementor/widgets/register', array( __CLASS__, 'register_widgets' ) );
@@ -445,6 +446,7 @@ class Kit {
 	 */
 	public static function enqueue_style_bridge() {
 		wp_enqueue_script( 'wpessential-kit-style-bridge', wpessential_core_url( 'assets/kit-style-bridge.js' ), array(), WPESSENTIAL_CORE_ASSET_VERSION, true );
+		wp_enqueue_script( 'wpessential-kit-contrast-check', wpessential_core_url( 'assets/kit-contrast-check.js' ), array( 'wp-data' ), WPESSENTIAL_CORE_ASSET_VERSION, true );
 	}
 
 	public static function register_widgets( $manager ) {
