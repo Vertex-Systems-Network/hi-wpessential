@@ -96,7 +96,9 @@ async function verifyPage( page, id, label ) {
 				paddingLeft: i.paddingLeft,
 				paddingRight: i.paddingRight,
 				marginStart: p.marginInlineStart,
-				paddingEnd: i.paddingInlineEnd
+				paddingEnd: i.paddingInlineEnd,
+				priceDirection: p.direction,
+				iconDirection: i.direction
 			};
 		}
 		try {
