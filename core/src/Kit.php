@@ -644,7 +644,7 @@ class Kit {
 			}
 		}
 		if ( ! empty( $a['stickyEnabled'] ) ) {
-			$classes[] = 'wpek-sticky';
+			$classes[]       = 'wpek-sticky';
 			$wpe_sticky_from = (string) ( $a['stickyFrom'] ?? '' );
 			if ( in_array( $wpe_sticky_from, array( 'tablet', 'desktop' ), true ) ) {
 				$classes[] = 'wpek-sticky-from-' . $wpe_sticky_from;
