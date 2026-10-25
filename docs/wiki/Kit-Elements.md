@@ -1,3 +1,11 @@
+## Conditional display (Kit Advanced settings)
+
+Shared conditional controls are available on all Kit elements in Gutenberg and Elementor. All configured **server-side** gates are ANDed: login state, required user-role slug, WooCommerce cart empty/nonempty, a purchased WooCommerce product ID, start/end date and time in the WordPress site's configured timezone (`YYYY-MM-DD HH:mm`), exact URL path, URL query key/value, and exact referrer hostname. Invalid values, absent WooCommerce state, or invalid dates fail closed. A failed condition suppresses HTML and its inline styles, not merely hides it. Cart and purchase checks require WooCommerce; purchase checks require a signed-in customer.
+
+The **device** condition is implemented separately using CSS viewport media queries: mobile under 768px, tablet 768–1023px, desktop at least 1024px. Device hiding leaves markup in the DOM, so it is not suitable for secret information.
+
+**Important:** These are display/personalization rules, **not an authorization system**. URL query strings and referrer headers are user-controlled, and CDN/full-page caches may ignore `DONOTCACHEPAGE`. Never place confidential or payment-sensitive content solely behind display rules; protect it with capability checks in its actual data source. Disable public caching for pages using login/cart/customer conditions. Editors can still edit the saved element, but the preview is suppressed if the active visitor does not meet the rules.
+
 # Kit elements
 
 WPEssential elements are defined once and work as both a Gutenberg block and an Elementor widget, with the same options. Each element is a folder `core/kit/<name>/` with three files:

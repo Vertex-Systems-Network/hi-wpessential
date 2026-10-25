@@ -469,6 +469,11 @@ class Kit {
 			}
 			$a[ $key ] = is_array( $default ) ? array_replace( $default, array_filter( (array) $value, static fn( $v ) => '' !== $v && null !== $v ) ) : $value;
 		}
+		// Server-side conditions must suppress the full HTML (and its dynamic CSS).
+		// Device breakpoints are presentation-only CSS and are not an access control.
+		if ( ! self::display_allowed( $a ) ) {
+			return '';
+		}
 		wp_enqueue_style( 'wpessential-kit-' . $name );
 		if ( wp_script_is( 'wpessential-kit-' . $name, 'registered' ) ) {
 			wp_enqueue_script( 'wpessential-kit-' . $name );
@@ -477,6 +482,118 @@ class Kit {
 		$css  = self::css( $def, $a, $id );
 		$html = self::template( $def['dir'] . '/render.php', $a, $id, $content );
 		return ( $css ? '<style>' . $css . '</style>' : '' ) . self::root_extras( $html, $id, $a );
+	}
+
+
+	/**
+	 * Evaluate visibility gates before rendering any widget markup.
+	 *
+	 * Rules are ANDed. Invalid configured values fail closed rather than leaking
+	 * content. Rules are for presentation, NOT authorization or private data.
+	 *
+	 * @param array $a Saved attributes.
+	 * @return bool
+	 */
+	private static function display_allowed( array $a ) {
+		$wpe_login = (string) ( $a['conditionLogin'] ?? '' );
+		$wpe_role  = trim( (string) ( $a['conditionRole'] ?? '' ) );
+		$wpe_cart  = (string) ( $a['conditionCart'] ?? '' );
+		$wpe_buy   = trim( (string) ( $a['conditionPurchasedProduct'] ?? '' ) );
+		$wpe_start = trim( (string) ( $a['conditionStart'] ?? '' ) );
+		$wpe_end   = trim( (string) ( $a['conditionEnd'] ?? '' ) );
+		$wpe_path  = trim( (string) ( $a['conditionPath'] ?? '' ) );
+		$wpe_key   = trim( (string) ( $a['conditionQueryKey'] ?? '' ) );
+		$wpe_value = (string) ( $a['conditionQueryValue'] ?? '' );
+		$wpe_host  = trim( (string) ( $a['conditionReferrer'] ?? '' ) );
+
+		// Pages containing visitor-specific server rendering must not be cached
+		// across different visitors by caches honouring DONOTCACHEPAGE.
+		if ( '' !== $wpe_login || '' !== $wpe_role || '' !== $wpe_cart || '' !== $wpe_buy || '' !== $wpe_start || '' !== $wpe_end || '' !== $wpe_path || '' !== $wpe_key || '' !== $wpe_host ) {
+			if ( ! defined( 'DONOTCACHEPAGE' ) ) {
+				define( 'DONOTCACHEPAGE', true ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound -- Standard WordPress cache bypass constant.
+			}
+		}
+
+		if ( '' !== $wpe_login ) {
+			if ( ! in_array( $wpe_login, array( 'in', 'out' ), true ) || ( 'in' === $wpe_login ) !== is_user_logged_in() ) {
+				return false;
+			}
+		}
+		if ( '' !== $wpe_role ) {
+			if ( ! preg_match( '/^[a-z0-9_-]+$/', $wpe_role ) || ! is_user_logged_in() ) {
+				return false;
+			}
+			$wpe_user = wp_get_current_user();
+			if ( ! $wpe_user || ! in_array( $wpe_role, (array) $wpe_user->roles, true ) ) {
+				return false;
+			}
+		}
+		if ( '' !== $wpe_cart ) {
+			if ( ! in_array( $wpe_cart, array( 'empty', 'nonempty' ), true ) || ! function_exists( 'WC' ) || ! WC()->cart ) {
+				return false;
+			}
+			$wpe_has_items = (int) WC()->cart->get_cart_contents_count() > 0;
+			if ( ( 'nonempty' === $wpe_cart ) !== $wpe_has_items ) {
+				return false;
+			}
+		}
+		if ( '' !== $wpe_buy ) {
+			if ( ! ctype_digit( $wpe_buy ) || ! absint( $wpe_buy ) || ! is_user_logged_in() || ! function_exists( 'wc_customer_bought_product' ) ) {
+				return false;
+			}
+			$wpe_user = wp_get_current_user();
+			if ( ! wc_customer_bought_product( (string) $wpe_user->user_email, (int) $wpe_user->ID, absint( $wpe_buy ) ) ) {
+				return false;
+			}
+		}
+		if ( '' !== $wpe_start || '' !== $wpe_end ) {
+			$wpe_now = current_datetime();
+			foreach ( array( $wpe_start, $wpe_end ) as $wpe_date ) {
+				if ( '' === $wpe_date ) {
+					continue;
+				}
+				$wpe_parsed = \DateTimeImmutable::createFromFormat( '!Y-m-d H:i', $wpe_date, wp_timezone() );
+				if ( ! $wpe_parsed || $wpe_parsed->format( 'Y-m-d H:i' ) !== $wpe_date ) {
+					return false;
+				}
+				if ( ( $wpe_date === $wpe_start && $wpe_now < $wpe_parsed ) || ( $wpe_date === $wpe_end && $wpe_now > $wpe_parsed ) ) {
+					return false;
+				}
+			}
+		}
+		if ( '' !== $wpe_path ) {
+			if ( 0 !== strpos( $wpe_path, '/' ) || preg_match( '/[\s<>\\\\]/', $wpe_path ) ) {
+				return false;
+			}
+			$wpe_actual = wp_parse_url( sanitize_text_field( wp_unslash( (string) ( $_SERVER['REQUEST_URI'] ?? '/' ) ) ), PHP_URL_PATH );
+			if ( ! is_string( $wpe_actual ) || $wpe_path !== $wpe_actual ) {
+				return false;
+			}
+		}
+		if ( '' !== $wpe_key ) {
+			// Read-only GET checks control presentation; no state mutation requires a nonce.
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended
+			if ( sanitize_key( $wpe_key ) !== $wpe_key || ! array_key_exists( $wpe_key, $_GET ) || ! is_scalar( $_GET[ $wpe_key ] ) ) {
+				return false;
+			}
+			if ( '' !== $wpe_value && sanitize_text_field( wp_unslash( (string) $_GET[ $wpe_key ] ) ) !== $wpe_value ) {
+				return false;
+			}
+			// phpcs:enable WordPress.Security.NonceVerification.Recommended
+		} elseif ( '' !== $wpe_value ) {
+			return false;
+		}
+		if ( '' !== $wpe_host ) {
+			if ( ! preg_match( '/^[a-z0-9.-]+$/i', $wpe_host ) ) {
+				return false;
+			}
+			$wpe_ref      = sanitize_url( wp_unslash( (string) ( $_SERVER['HTTP_REFERER'] ?? '' ) ) );
+			$wpe_ref_host = wp_parse_url( $wpe_ref, PHP_URL_HOST );
+			if ( ! is_string( $wpe_ref_host ) || strtolower( $wpe_ref_host ) !== strtolower( $wpe_host ) ) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/**
@@ -508,6 +625,10 @@ class Kit {
 		if ( ! empty( $a['animation'] ) && isset( Groups::animations()[ $a['animation'] ] ) ) {
 			$classes[] = 'wpek-anim';
 			$classes[] = 'wpek-anim-' . sanitize_html_class( $a['animation'] );
+		}
+		$wpe_device = (string) ( $a['conditionDevice'] ?? '' );
+		if ( in_array( $wpe_device, array( 'mobile', 'tablet', 'desktop' ), true ) ) {
+			$classes[] = 'wpek-device-' . $wpe_device;
 		}
 		if ( ! empty( $a['containerQuerySource'] ) ) {
 			$classes[] = 'wpek-query-container';

@@ -58,9 +58,9 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 33 | ARIA label, role, aria-hidden, aria-live | ✅ |
 | 34 | LCP control for images (priority, lazy/eager) | ✅ Image |
 | 35 | Decorative image (empty alt, hidden from screen readers) | ✅ Image |
-| 36 | Show by login, role, WooCommerce cart/purchase (free; Elementor has this only in Pro) | ⬜ |
-| 37 | Show by date and time | ⬜ |
-| 38 | Show by device, URL parameter, referrer | ⬜ |
+| 36 | Show by login, role, WooCommerce cart/purchase (free; Elementor has this only in Pro) | ✅ Login and role rules; WooCommerce cart and purchased-product conditions (Woo installed) |
+| 37 | Show by date and time | ✅ Timezone-aware scheduled start and end windows |
+| 38 | Show by device, URL parameter, referrer | ✅ CSS viewport devices, server URL-path/query and referrer-host conditions |
 | 39 | Hide when printing | ✅ |
 | 40 | Style presets (save and apply an element style) | ⬜ |
 | 41 | Copy/paste a style between Gutenberg and Elementor | ⬜ |
