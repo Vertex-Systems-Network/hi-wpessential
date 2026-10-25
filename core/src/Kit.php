@@ -347,6 +347,7 @@ class Kit {
 	 */
 	public static function register_blocks() {
 		wp_register_script( 'wpessential-kit-editor', wpessential_core_url( 'assets/kit-editor.js' ), array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n', 'wp-data' ), WPESSENTIAL_CORE_ASSET_VERSION, true );
+		wp_register_script( 'wpessential-kit-motion', wpessential_core_url( 'kit/motion.js' ), array(), WPESSENTIAL_CORE_ASSET_VERSION, true );
 		wp_register_style( 'wpessential-kit-common', wpessential_core_url( 'kit/common.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
 		$editor = array();
 		foreach ( self::enabled_defs() as $name => $def ) {
@@ -477,6 +478,9 @@ class Kit {
 		wp_enqueue_style( 'wpessential-kit-' . $name );
 		if ( wp_script_is( 'wpessential-kit-' . $name, 'registered' ) ) {
 			wp_enqueue_script( 'wpessential-kit-' . $name );
+		}
+		if ( ! empty( $a['animation'] ) && in_array( (string) ( $a['animTrigger'] ?? '' ), array( 'scroll', 'hover', 'click', 'load' ), true ) ) {
+			wp_enqueue_script( 'wpessential-kit-motion' );
 		}
 		$id   = 'wpe-' . $name . '-' . substr( md5( wp_json_encode( $a ) . wp_rand() ), 0, 8 );
 		$css  = self::css( $def, $a, $id );
@@ -625,6 +629,26 @@ class Kit {
 		if ( ! empty( $a['animation'] ) && isset( Groups::animations()[ $a['animation'] ] ) ) {
 			$classes[] = 'wpek-anim';
 			$classes[] = 'wpek-anim-' . sanitize_html_class( $a['animation'] );
+		}
+		$wpe_anim = (string) ( $a['animation'] ?? '' );
+		if ( '' !== $wpe_anim && isset( Groups::animations()[ $wpe_anim ] ) ) {
+			$wpe_trigger = (string) ( $a['animTrigger'] ?? '' );
+			if ( in_array( $wpe_trigger, array( 'scroll', 'hover', 'click', 'load' ), true ) ) {
+				$classes[] = 'wpek-motion-trigger-' . $wpe_trigger;
+			}
+			if ( 'fade' === (string) ( $a['animReduced'] ?? '' ) ) {
+				$classes[] = 'wpek-motion-reduced-fade';
+			}
+			if ( ! empty( $a['staggerChildren'] ) ) {
+				$classes[] = 'wpek-stagger';
+			}
+		}
+		if ( ! empty( $a['stickyEnabled'] ) ) {
+			$classes[]       = 'wpek-sticky';
+			$wpe_sticky_from = (string) ( $a['stickyFrom'] ?? '' );
+			if ( in_array( $wpe_sticky_from, array( 'tablet', 'desktop' ), true ) ) {
+				$classes[] = 'wpek-sticky-from-' . $wpe_sticky_from;
+			}
 		}
 		$wpe_device = (string) ( $a['conditionDevice'] ?? '' );
 		if ( in_array( $wpe_device, array( 'mobile', 'tablet', 'desktop' ), true ) ) {
