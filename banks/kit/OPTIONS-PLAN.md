@@ -24,12 +24,12 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | # | Option | Status |
 | --- | --- | --- |
 | 1 | 9 steps of breakpoints (1920+ … 320); Elementor has at most 7 devices | ✅ |
-| 2 | Container queries (respond to the parent's width) | ⏳ |
+| 2 | Container queries (respond to the parent's width) | ✅ Parent inline-size container + child show/hide thresholds · ⏳ layout/style rules by parent size |
 | 3 | Fluid typography (size at 360 and at 1440, scales between) | ✅ Gutenberg (Elementor: type `clamp()` in the size field) |
-| 4 | Fluid spacing | ⏳ |
+| 4 | Fluid spacing | ✅ Interpolated padding and gap (360–1440px viewport) |
 | 5 | Aspect ratio, object-fit, object-position per breakpoint | ✅ Image |
 | 6 | Logical spacing and mirrored icons for RTL | ✅ Responsive inline start/end margin + padding · ⏳ directional icon mirroring |
-| 7 | Spacing and radius from theme tokens (sm/md/lg) | ⏳ |
+| 7 | Spacing and radius from theme tokens (sm/md/lg) | ✅ Padding and border-radius token presets |
 | 8 | Dark-mode value for colours, background, border and shadow | ✅ |
 | 9 | Dark-mode image | ✅ background image and Image element |
 | 10 | Contrast warning in the editor (WCAG AA) | ⬜ |
