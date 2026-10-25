@@ -49,9 +49,9 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 24 | Glass (backdrop blur) | ✅ |
 | 25 | Blend modes | ✅ Allowlisted CSS blend modes with opt-in classes |
 | 26 | Gradient mask (fade edges) | ✅ Opt-in horizontal/vertical and individual edge gradient masks |
-| 27 | Clip-path shapes (wave, slant, blob) | ⬜ |
-| 28 | Noise / grain texture | ⬜ |
-| 29 | Elevation tokens that follow the state | ⏳ |
+| 27 | Clip-path shapes (wave, slant, blob) | ✅ Allowlisted slant, wave and blob polygon clip shapes |
+| 28 | Noise / grain texture | ✅ Embedded SVG turbulence noise, responsive opacity and print-safe overlay |
+| 29 | Elevation tokens that follow the state | ✅ Theme-based rest, hover and focus state shadow tokens |
 | 30 | Text balance/pretty wrap and line clamp | ✅ headings and Text (balance/pretty, line clamp with read more) |
 | 31 | Semantic HTML tag on every element | ✅ Heading, Text, Image (figure when captioned) · ⏳ others |
 | 32 | Schema output (FAQPage, Product, Review, Event, HowTo, Breadcrumb) | ⏳ with those elements |

@@ -57,6 +57,38 @@ async function verifyPage( page, id, label ) {
 	assert.ok( await page.locator( '.wpe-forms input[type="email"]' ).count(), label + ': WPForms email field missing' );
 	assert.equal( await page.locator( '.wpe-chart.is-donut svg circle' ).count(), 2, label + ': incorrect chart output' );
 
+	// Theme elevation, allowlisted clip shape and embedded no-network noise.
+	const visualLayer = await page.evaluate( () => {
+		const chart = document.querySelector( '.wpe-chart.wpek-clip-slant.wpek-grain' );
+		const price = document.querySelector( '.wpe-price-list.wpek-elevation.wpek-elev-rest-sm.wpek-elev-hover-lg' );
+		const icon = document.querySelector( '.wpe-icon-single.wpek-elev-focus-md' );
+		if ( ! chart || ! price || ! icon ) {
+			return { error: 'Missing Kit shape/grain/elevation controls' };
+		}
+		const grain = getComputedStyle( chart, '::before' );
+		return {
+			clip: getComputedStyle( chart ).clipPath,
+			grainImage: grain.backgroundImage,
+			grainOpacity: parseFloat( grain.opacity ),
+			grainPointer: grain.pointerEvents,
+			grainPosition: grain.position,
+			shadowRest: getComputedStyle( price ).boxShadow,
+			iconFocusTier: getComputedStyle( icon ).getPropertyValue( '--wpek-elev-focus' ).trim()
+		};
+	} );
+	assert.ok( visualLayer.clip.includes( 'polygon(' ), label + ': slant clip-path missing: ' + JSON.stringify( visualLayer ) );
+	assert.ok( visualLayer.grainImage.includes( 'data:image/svg+xml' ), label + ': SVG noise not embedded' );
+	assert.ok( Math.abs( visualLayer.grainOpacity - 0.09 ) < 0.001, label + ': noise intensity failed' );
+	assert.equal( visualLayer.grainPointer, 'none', label + ': texture intercepts pointer input' );
+	assert.equal( visualLayer.grainPosition, 'absolute', label + ': grain overlay positioned wrong' );
+	assert.notEqual( visualLayer.shadowRest, 'none', label + ': theme shadow absent at rest' );
+	assert.ok( visualLayer.iconFocusTier.length > 0, label + ': keyboard focus shadow token absent' );
+	await page.emulateMedia( { reducedMotion: 'reduce' } );
+	await page.locator( '.wpe-price-list.wpek-elevation' ).first().hover();
+	const hoverShadow = await page.locator( '.wpe-price-list.wpek-elevation' ).first().evaluate( el => getComputedStyle( el ).boxShadow );
+	assert.notEqual( hoverShadow, visualLayer.shadowRest, label + ': hover elevation did not change' );
+	await page.mouse.move( 0, 0 );
+	console.log( 'PASS: ' + label + ': clip shape, SVG grain and theme state elevation' );
 	// The browser context defaults to reduced motion. Turn it off for normal-animation checks.
 	// The QA browser defaults to reduced motion; verify animation only in normal mode.
 	await page.emulateMedia( { reducedMotion: 'no-preference' } );
@@ -308,6 +340,8 @@ async function verifyPage( page, id, label ) {
 	] ) {
 		await page.setViewportSize( { width: vp.width, height: vp.height } );
 
+		const noisePct = await page.locator( '.wpe-chart.wpek-grain' ).first().evaluate( el => parseFloat( getComputedStyle( el, '::before' ).opacity ) );
+		assert.ok( Math.abs( noisePct - ( vp.width < 768 ? 0.04 : 0.09 ) ) < 0.002, label + ': responsive grain intensity incorrect' );
 		const layer2 = await page.locator( '.wpe-price-list.wpek-parallax' ).first().evaluate( node => {
 			return getComputedStyle( node ).getPropertyValue( '--wpek-parallax-layer-2' ).trim();
 		} );
