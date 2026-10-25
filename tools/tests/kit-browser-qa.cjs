@@ -57,6 +57,8 @@ async function verifyPage( page, id, label ) {
 	assert.ok( await page.locator( '.wpe-forms input[type="email"]' ).count(), label + ': WPForms email field missing' );
 	assert.equal( await page.locator( '.wpe-chart.is-donut svg circle' ).count(), 2, label + ': incorrect chart output' );
 
+	// The browser context defaults to reduced motion. Turn it off for normal-animation checks.
+	await page.emulateMedia( { reducedMotion: 'no-preference' } );
 	// Shared motion is progressively enhanced and bound after scripts load.
 	const priceMotion = page.locator( '.wpe-price-list.wpek-motion-trigger-click.wpek-stagger' ).first();
 	const chartMotion = page.locator( '.wpe-chart.wpek-motion-trigger-load' ).first();
@@ -86,7 +88,7 @@ async function verifyPage( page, id, label ) {
 		transform: getComputedStyle( node ).transform
 	} ) );
 	assert.equal( reduced.name, 'wpek-reduced-fade', label + ': reduced-motion fade alternative unavailable' );
-	await page.emulateMedia( { reducedMotion: 'no-preference' } );
+	await page.emulateMedia( { reducedMotion: 'reduce' } );
 	console.log( 'PASS: ' + label + ': click/hover/load, stagger and reduced motion' );
 
 	// Verify the actual published Gutenberg pattern renders in both menu variants.
