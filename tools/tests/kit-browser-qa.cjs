@@ -59,6 +59,27 @@ async function verifyPage( page, id, label ) {
 
 	// The browser context defaults to reduced motion. Turn it off for normal-animation checks.
 	await page.emulateMedia( { reducedMotion: 'no-preference' } );
+	// Per-layer settings must create different travel vectors in both editors.
+	await page.waitForFunction( () => {
+		const root = document.querySelector( '.wpe-price-list.wpek-parallax' );
+		return root && root.children[ 0 ]?.classList.contains( 'wpek-parallax-layer' );
+	}, null, { timeout: 15000 } );
+	const layerInfo = await page.locator( '.wpe-price-list.wpek-parallax' ).first().evaluate( node => {
+		const styles = getComputedStyle( node );
+		return {
+			travel1: styles.getPropertyValue( '--wpek-parallax-layer-1' ).trim(),
+			travel2: styles.getPropertyValue( '--wpek-parallax-layer-2' ).trim(),
+			active1: node.children[ 0 ].classList.contains( 'wpek-parallax-layer' ),
+			active2: node.children[ 1 ].classList.contains( 'wpek-parallax-layer' ),
+			offset1: node.children[ 0 ].style.getPropertyValue( '--wpek-parallax-y' ),
+			offset2: node.children[ 1 ].style.getPropertyValue( '--wpek-parallax-y' )
+		};
+	} );
+	assert.equal( layerInfo.travel1, '80px', label + ': first parallax travel' );
+	assert.equal( layerInfo.travel2, '-45px', label + ': second parallax travel' );
+	assert.ok( layerInfo.active1 && layerInfo.active2, label + ': two independent layers not activated' );
+	assert.ok( layerInfo.offset1.endsWith( 'px' ) && layerInfo.offset2.endsWith( 'px' ), label + ': runtime offsets missing' );
+	console.log( 'PASS: ' + label + ': two responsive parallax layers activated' );
 	// Shared motion is progressively enhanced and bound after scripts load.
 	const priceMotion = page.locator( '.wpe-price-list.wpek-motion-trigger-click.wpek-stagger' ).first();
 	const chartMotion = page.locator( '.wpe-chart.wpek-motion-trigger-load' ).first();
@@ -83,6 +104,10 @@ async function verifyPage( page, id, label ) {
 	const delay = await priceMotion.locator( ':scope > :nth-child(2)' ).evaluate( node => getComputedStyle( node ).animationDelay );
 	assert.equal( delay, '0.125s', label + ': stagger 125ms direct-child delay missing' );
 	await page.emulateMedia( { reducedMotion: 'reduce' } );
+	await page.waitForFunction( () => {
+		const root = document.querySelector( '.wpe-price-list.wpek-parallax' );
+		return root && ! root.children[ 0 ].classList.contains( 'wpek-parallax-layer' );
+	}, null, { timeout: 15000 } );
 	const reduced = await priceMotion.evaluate( node => ( {
 		name: getComputedStyle( node ).animationName,
 		transform: getComputedStyle( node ).transform
@@ -243,6 +268,11 @@ async function verifyPage( page, id, label ) {
 	] ) {
 		await page.setViewportSize( { width: vp.width, height: vp.height } );
 
+		const layer2 = await page.locator( '.wpe-price-list.wpek-parallax' ).first().evaluate( node => {
+			return getComputedStyle( node ).getPropertyValue( '--wpek-parallax-layer-2' ).trim();
+		} );
+		assert.equal( layer2, vp.width < 768 ? '0px' : '-45px', label + ': per-layer responsive off switch' );
+
 		const stickyPosition = await page.locator( '.wpe-site-archive-widgets.wpek-sticky' ).first()
 			.evaluate( node => ( { position: getComputedStyle( node ).position, top: getComputedStyle( node ).top } ) );
 		assert.equal( stickyPosition.position, vp.width < 768 ? 'static' : 'sticky', label + ': responsive sticky setting' );
@@ -305,6 +335,49 @@ async function verifyPage( page, id, label ) {
 			console.log( 'PASS: ' + label + ' ' + vp.type + ' ' + scheme + ' (overflow: ' + overflow + 'px)' );
 		}
 	}
+	// A deterministic long page lets us verify that the named marker ends sticky
+	// before its parent ends. This uses a clone of the actual rendered Kit element.
+	await page.setViewportSize( { width: 1440, height: 900 } );
+	const stopped = await page.evaluate( async () => {
+		const original = document.querySelector( '.wpe-site-archive-widgets.wpek-sticky-stop' );
+		if ( ! original ) {
+			return { error: 'Sticky root with named stop is missing' };
+		}
+		const previous = window.scrollY;
+		const stage = document.createElement( 'div' );
+		stage.style.cssText = 'position:relative;height:1200px;min-height:1200px';
+		const sticky = original.cloneNode( true );
+		sticky.removeAttribute( 'id' );
+		sticky.style.setProperty( '--wpek-sticky-offset', '24px' );
+		const marker = document.createElement( 'div' );
+		marker.id = 'kit-motion-stop';
+		marker.style.cssText = 'position:absolute;top:430px;height:1px';
+		const tail = document.createElement( 'div' );
+		tail.style.height = '950px';
+		stage.append( sticky, marker );
+		document.body.append( stage, tail );
+		const frames = () => new Promise( resolve => requestAnimationFrame( () => requestAnimationFrame( resolve ) ) );
+		try {
+			await frames();
+			window.scrollTo( 0, window.scrollY + stage.getBoundingClientRect().top + 470 );
+			await frames();
+			await frames();
+			const computed = getComputedStyle( sticky );
+			return {
+				push: parseFloat( computed.getPropertyValue( '--wpek-sticky-stop-push' ) ),
+				position: computed.position,
+				targetTop: marker.getBoundingClientRect().top,
+				stickyBottom: sticky.getBoundingClientRect().bottom
+			};
+		} finally {
+			stage.remove();
+			tail.remove();
+			window.scrollTo( 0, previous );
+		}
+	} );
+	assert.equal( stopped.position, 'sticky', label + ': sticky disabled in desktop test' );
+	assert.ok( Number.isFinite( stopped.push ) && stopped.push < -20, label + ': stop marker did not halt sticky: ' + JSON.stringify( stopped ) );
+	console.log( 'PASS: ' + label + ': named sticky stop applies actual negative offset' );
 }
 async function verifyGutenberg( page ) {
 	await page.setViewportSize( { width: 1440, height: 900 } );
