@@ -172,3 +172,7 @@ FAQ accordions emit FAQPage data. The Calendar, Products, Testimonial, and Timel
 ### Pointer hover presets
 
 The shared Advanced panel offers magnetic pull, pointer-follow tilt, ripple, cursor glow, and spotlight effects. Their script loads only when a rendered element selects one of these presets, and the effects stop under `prefers-reduced-motion`.
+
+### Presets and style transfer
+
+The editor panels provide browser-local named presets and a JSON clipboard for Kit style settings. Shared direct CSS attributes transfer between Gutenberg and Elementor. Gutenberg presets retain Kit style-group objects; Elementor's native group controls still need a dedicated shape mapping before those values can transfer across builders.

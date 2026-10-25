@@ -90,6 +90,7 @@ class Kit {
 			}
 		);
 		add_action( 'elementor/widgets/register', array( __CLASS__, 'register_widgets' ) );
+		add_action( 'elementor/editor/after_enqueue_scripts', array( __CLASS__, 'enqueue_style_bridge' ) );
 		add_action( 'elementor/elements/categories_registered', array( __CLASS__, 'elementor_category' ) );
 		add_filter( 'block_categories_all', array( __CLASS__, 'block_category' ) );
 	}
@@ -442,6 +443,10 @@ class Kit {
 	 *
 	 * @param \Elementor\Widgets_Manager $manager Manager.
 	 */
+	public static function enqueue_style_bridge() {
+		wp_enqueue_script( 'wpessential-kit-style-bridge', wpessential_core_url( 'assets/kit-style-bridge.js' ), array(), WPESSENTIAL_CORE_ASSET_VERSION, true );
+	}
+
 	public static function register_widgets( $manager ) {
 		foreach ( array_keys( self::enabled_defs() ) as $name ) {
 			$class = __NAMESPACE__ . '\\Kit\\Elements\\' . str_replace( ' ', '', ucwords( str_replace( '-', ' ', $name ) ) );

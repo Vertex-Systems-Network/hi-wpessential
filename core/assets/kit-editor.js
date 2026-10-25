@@ -350,7 +350,49 @@
 					}
 					return el( 'div', { key: key, style: { marginBottom: 16 } }, control( key, opt, value, onChange ) );
 				};
-				var sections = [];
+				var presetNameState = useState( '' );
+				var presetName = presetNameState[ 0 ];
+				var setPresetName = presetNameState[ 1 ];
+				var presetChoiceState = useState( '' );
+				var presetChoice = presetChoiceState[ 0 ];
+				var setPresetChoice = presetChoiceState[ 1 ];
+				var styleKeys = function () {
+					return Object.keys( def.attributes || {} ).filter( function ( key ) {
+						var opt = def.attributes[ key ];
+						return !! opt && ( !! opt.css || 'style' === opt.panel || 'customCss' === key );
+					} );
+				};
+				var stylePayload = function () {
+					var attributes = {};
+					styleKeys().forEach( function ( key ) {
+						if ( undefined !== a[ key ] ) attributes[ key ] = a[ key ];
+					} );
+					var groups = {};
+					Object.keys( def.groups || {} ).forEach( function ( key ) {
+						if ( undefined !== a[ key ] ) groups[ key ] = a[ key ];
+					} );
+					return { format: 'wpessential-kit-style-v1', attributes: attributes, groups: groups };
+				};
+				var applyStylePayload = function ( payload ) {
+					if ( ! payload || 'wpessential-kit-style-v1' !== payload.format ) return false;
+					var change = {};
+					styleKeys().forEach( function ( key ) {
+						if ( Object.prototype.hasOwnProperty.call( payload.attributes || {}, key ) ) change[ key ] = payload.attributes[ key ];
+					} );
+					Object.keys( def.groups || {} ).forEach( function ( key ) {
+						if ( Object.prototype.hasOwnProperty.call( payload.groups || {}, key ) ) change[ key ] = payload.groups[ key ];
+					} );
+					if ( ! Object.keys( change ).length ) return false;
+					props.setAttributes( change );
+					return true;
+				};
+				var readPresets = function () {
+					try { return JSON.parse( window.localStorage.getItem( 'wpessential.kit.style-presets.v1' ) || '{}' ); } catch ( e ) { return {}; }
+				};
+				var notifyStyle = function ( message, status ) {
+					if ( wp.data && wp.data.dispatch( 'core/notices' ) ) wp.data.dispatch( 'core/notices' ).createNotice( status || 'success', message, { type: 'snackbar', isDismissible: true } );
+				};
+			var sections = [];
 				Object.keys( panels ).forEach( function ( panel, i ) {
 					var rows = [];
 					var hasResponsive = false;
@@ -404,6 +446,27 @@
 					'--wpek-gap': getLayoutValue( 'gap', 24 ) + ( 'number' === typeof getLayoutValue( 'gap', 24 ) ? 'px' : '' ),
 					'--wpek-row-gap': getLayoutValue( 'rowGap', 24 ) + ( 'number' === typeof getLayoutValue( 'rowGap', 24 ) ? 'px' : '' )
 				};
+				var presets = readPresets();
+				sections.push( el( c.PanelBody, { key: 'wpek-style-transfer', title: __( 'Style presets & transfer', 'hi-wpessential' ), initialOpen: false },
+					el( c.TextControl, { label: __( 'Preset name', 'hi-wpessential' ), value: presetName, onChange: setPresetName, __nextHasNoMarginBottom: true } ),
+					el( c.Button, { variant: 'secondary', onClick: function () {
+						var payload = JSON.stringify( stylePayload() );
+						if ( navigator.clipboard && navigator.clipboard.writeText ) navigator.clipboard.writeText( payload ).then( function () { notifyStyle( __( 'Kit styles copied. Paste in another Kit element.', 'hi-wpessential' ) ); } ).catch( function () { notifyStyle( __( 'Clipboard access was blocked by the browser.', 'hi-wpessential' ), 'error' ); } );
+						else notifyStyle( __( 'This browser does not allow clipboard access here.', 'hi-wpessential' ), 'error' );
+					} }, __( 'Copy style', 'hi-wpessential' ) ),
+					el( c.Button, { variant: 'secondary', onClick: function () {
+						if ( ! navigator.clipboard || ! navigator.clipboard.readText ) { notifyStyle( __( 'This browser does not allow clipboard access here.', 'hi-wpessential' ), 'error' ); return; }
+						navigator.clipboard.readText().then( function ( value ) {
+							try { if ( ! applyStylePayload( JSON.parse( value ) ) ) notifyStyle( __( 'Clipboard does not contain compatible Kit styles.', 'hi-wpessential' ), 'error' ); else notifyStyle( __( 'Kit styles applied.', 'hi-wpessential' ) ); } catch ( e ) { notifyStyle( __( 'Clipboard content is not valid Kit style data.', 'hi-wpessential' ), 'error' ); }
+						} ).catch( function () { notifyStyle( __( 'Clipboard access was blocked by the browser.', 'hi-wpessential' ), 'error' ); } );
+					} }, __( 'Paste style', 'hi-wpessential' ) ),
+					el( c.Button, { variant: 'primary', onClick: function () {
+						if ( ! presetName.trim() ) { notifyStyle( __( 'Enter a preset name first.', 'hi-wpessential' ), 'error' ); return; }
+						var all = readPresets(); all[ presetName.trim() ] = stylePayload(); window.localStorage.setItem( 'wpessential.kit.style-presets.v1', JSON.stringify( all ) ); setPresetChoice( presetName.trim() ); notifyStyle( __( 'Style preset saved in this browser.', 'hi-wpessential' ) );
+					} }, __( 'Save preset', 'hi-wpessential' ) ),
+					el( c.SelectControl, { label: __( 'Saved presets', 'hi-wpessential' ), value: presetChoice, options: [ { value: '', label: __( 'Choose a preset', 'hi-wpessential' ) } ].concat( Object.keys( presets ).sort().map( function ( name ) { return { value: name, label: name }; } ) ), onChange: setPresetChoice, __nextHasNoMarginBottom: true } ),
+					el( c.Button, { variant: 'secondary', disabled: ! presetChoice, onClick: function () { if ( applyStylePayload( presets[ presetChoice ] ) ) notifyStyle( __( 'Style preset applied.', 'hi-wpessential' ) ); else notifyStyle( __( 'Preset has no compatible styles for this element.', 'hi-wpessential' ), 'error' ); } }, __( 'Apply preset', 'hi-wpessential' ) )
+				) );
 				return el( Fragment, null,
 					el( be.InspectorControls, null, sections ),
 					isContainer ?
