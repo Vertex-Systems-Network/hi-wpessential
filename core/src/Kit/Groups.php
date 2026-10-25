@@ -1251,6 +1251,108 @@ class Groups {
 			),
 		);
 
+		// Builder-neutral analytics hooks and safe content-visibility controls.
+		$attr += array(
+			'analyticsEvent' => array(
+				'type' => 'text',
+				'label' => __( 'Analytics event name (click tracking)', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+			),
+			'analyticsLabel' => array(
+				'type' => 'text',
+				'label' => __( 'Analytics label', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+			),
+			'contentVisibility' => array(
+				'type' => 'select',
+				'label' => __( 'Off-screen rendering', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+				'css' => 'content-visibility',
+				'raw' => true,
+				'options' => array(
+					'' => __( 'Default', 'hi-wpessential' ),
+					'auto' => __( 'Skip layout and paint until near viewport', 'hi-wpessential' ),
+				),
+			),
+			'contentVisibilitySize' => array(
+				'type' => 'range',
+				'label' => __( 'Estimated off-screen block size', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+				'css' => 'contain-intrinsic-size',
+				'unit' => 'px',
+				'min' => 0,
+				'max' => 5000,
+				'step' => 50,
+			),
+			'containerQueryStyleBelow' => array(
+				'type' => 'range',
+				'label' => __( 'Apply parent-width styles below (px)', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+				'unit' => 'px',
+				'min' => 160,
+				'max' => 1920,
+			),
+			'containerQueryStyleAbove' => array(
+				'type' => 'range',
+				'label' => __( 'Apply parent-width styles above (px)', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+				'unit' => 'px',
+				'min' => 160,
+				'max' => 1920,
+			),
+			'containerQueryLayout' => array(
+				'type' => 'select',
+				'label' => __( 'Parent-width layout', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+				'options' => array(
+					'' => __( 'Keep current layout', 'hi-wpessential' ),
+					'stack' => __( 'Stack vertically', 'hi-wpessential' ),
+					'grid' => __( 'Use grid', 'hi-wpessential' ),
+				),
+			),
+			'containerQueryColumns' => array(
+				'type' => 'range',
+				'label' => __( 'Parent-width grid columns', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+				'unit' => '',
+				'min' => 1,
+				'max' => 12,
+				'step' => 1,
+			),
+			'containerQueryGap' => array(
+				'type' => 'range',
+				'label' => __( 'Parent-width gap', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+				'unit' => 'px',
+				'min' => 0,
+				'max' => 200,
+			),
+			'containerQueryPadding' => array(
+				'type' => 'range',
+				'label' => __( 'Parent-width padding', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+				'unit' => 'px',
+				'min' => 0,
+				'max' => 300,
+			),
+			'containerQueryBackground' => array(
+				'type' => 'color',
+				'label' => __( 'Parent-width background colour', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+			),
+		);
+
 		// Opt-in shared visual effects; classes use only allowlisted values.
 		$attr += array(
 			'effectGradientBorder' => array(

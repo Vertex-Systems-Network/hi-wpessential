@@ -235,6 +235,10 @@ class Kit {
 			$url = is_array( $value ) ? ( $value['url'] ?? '' ) : (string) $value;
 			return $url ? '<img class="' . esc_attr( $css_class ) . ' is-upload" src="' . esc_url( $url ) . '" alt="" aria-hidden="true" width="24" height="24">' : '';
 		}
+		$wpe_icon_name = is_string( $value ) ? $value : '';
+		if ( preg_match( '/(?:arrow|chevron|caret|angle)[\s_-]?(?:left|right)|(?:left|right)[\s_-]?(?:arrow|chevron|caret|angle)|arrow-(?:up|down)-(?:left|right)/i', $wpe_icon_name ) ) {
+			$css_class .= ' wpek-icon--directional';
+		}
 		$name = is_string( $value ) ? preg_replace( '/^wpei\s+wpei-/', '', $value ) : '';
 		if ( 'wpessential' === $lib && isset( self::icons()[ $name ] ) ) {
 			return '<svg class="' . esc_attr( $css_class ) . '" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' . self::icons()[ $name ] . '</svg>';
@@ -739,6 +743,14 @@ class Kit {
 		foreach ( array_filter( $aria ) as $k => $v ) {
 			$attrs .= ' ' . $k . '="' . esc_attr( $v ) . '"';
 		}
+		$wpe_event = sanitize_key( (string) ( $a['analyticsEvent'] ?? '' ) );
+		if ( '' !== $wpe_event ) {
+			$attrs .= ' data-wpek-event="' . esc_attr( $wpe_event ) . '"';
+			$wpe_label = sanitize_text_field( (string) ( $a['analyticsLabel'] ?? '' ) );
+			if ( '' !== $wpe_label ) {
+				$attrs .= ' data-wpek-label="' . esc_attr( $wpe_label ) . '"';
+			}
+		}
 		foreach ( preg_split( '/\r?\n/', (string) ( $a['attributes'] ?? '' ) ) as $line ) {
 			$pair = array_map( 'trim', explode( '|', $line, 2 ) );
 			$key  = strtolower( preg_replace( '/[^a-zA-Z0-9_\-:]/', '', $pair[0] ) );
@@ -806,6 +818,9 @@ class Kit {
 				if ( '' === $value || null === $value || false === $value ) {
 					continue;
 				}
+				if ( 'contentVisibility' === $key && 'auto' !== (string) $value ) {
+					continue;
+				}
 				// Directly loaded saved attributes cannot bypass the visual-effect ranges.
 				$wpe_effect_ranges = array(
 					'effectBorderWidth' => array( 1, 16 ),
@@ -824,7 +839,14 @@ class Kit {
 					continue;
 				}
 				// "map" turns one choice into several declarations, e.g. center => text-align + auto margins.
-				$wpe_decl = isset( $opt['map'][ $value ] ) ? preg_replace( '/[^a-z0-9:;%#.,() \\-]/i', '', $opt['map'][ $value ] ) : $opt['css'] . ':' . self::css_value( $opt, $value );
+				if ( 'contentVisibilitySize' === $key ) {
+					if ( 'auto' !== (string) ( $a['contentVisibility'] ?? '' ) || ! is_numeric( $value ) || (float) $value < 0 || (float) $value > 5000 ) {
+						continue;
+					}
+					$wpe_decl = 'contain-intrinsic-size:auto ' . (float) $value . 'px';
+				} else {
+					$wpe_decl = isset( $opt['map'][ $value ] ) ? preg_replace( '/[^a-z0-9:;%#.,() \\-]/i', '', $opt['map'][ $value ] ) : $opt['css'] . ':' . self::css_value( $opt, $value );
+				}
 
 				$rules[ (string) $bp ][ $sel ][] = $wpe_decl . ( ! empty( $opt['important'] ) ? '!important' : '' );
 			}
@@ -888,6 +910,38 @@ class Kit {
 				continue;
 			}
 			$out .= '@container (' . $wpe_feature . ':' . (float) $wpe_value . 'px){' . $root . '{display:none!important}}';
+		}
+		$wpe_cq_styles = array();
+		$wpe_layout   = (string) ( $a['containerQueryLayout'] ?? '' );
+		if ( 'stack' === $wpe_layout ) {
+			$wpe_cq_styles[] = 'display:flex!important';
+			$wpe_cq_styles[] = 'flex-direction:column!important';
+			$wpe_cq_styles[] = 'flex-wrap:nowrap!important';
+		} elseif ( 'grid' === $wpe_layout ) {
+			$wpe_columns = $a['containerQueryColumns'] ?? '';
+			$wpe_columns = is_numeric( $wpe_columns ) ? max( 1, min( 12, (int) $wpe_columns ) ) : 2;
+			$wpe_cq_styles[] = 'display:grid!important';
+			$wpe_cq_styles[] = 'grid-template-columns:repeat(' . $wpe_columns . ',minmax(0,1fr))!important';
+		}
+		foreach ( array( 'containerQueryGap' => array( 0, 200, 'gap' ), 'containerQueryPadding' => array( 0, 300, 'padding' ) ) as $wpe_key => $wpe_rule ) {
+			$wpe_v = $a[ $wpe_key ] ?? '';
+			if ( is_numeric( $wpe_v ) && (float) $wpe_v >= $wpe_rule[0] && (float) $wpe_v <= $wpe_rule[1] ) {
+				$wpe_cq_styles[] = $wpe_rule[2] . ':' . (float) $wpe_v . 'px!important';
+			}
+		}
+		$wpe_cq_color = sanitize_key( (string) ( $a['containerQueryBackground'] ?? '' ) );
+		if ( '' !== $wpe_cq_color && isset( self::palette()[ $wpe_cq_color ] ) ) {
+			$wpe_cq_styles[] = 'background-color:var(--wp--preset--color--' . $wpe_cq_color . ')!important';
+		}
+		if ( $wpe_cq_styles ) {
+			foreach ( array( 'containerQueryStyleBelow' => 'max-width', 'containerQueryStyleAbove' => 'min-width' ) as $wpe_key => $wpe_feature ) {
+				$wpe_threshold = $a[ $wpe_key ] ?? '';
+				if ( is_numeric( $wpe_threshold ) && (float) $wpe_threshold >= 160 && (float) $wpe_threshold <= 1920 ) {
+					$wpe_rule = $root . '{' . implode( ';', $wpe_cq_styles ) . '}';
+					$wpe_rule .= $root . ' .wpe-container__inner{' . implode( ';', $wpe_cq_styles ) . '}';
+					$out .= '@container (' . $wpe_feature . ':' . (float) $wpe_threshold . 'px){' . $wpe_rule . '}';
+				}
+			}
 		}
 		return $out . ( '' !== $custom && false === strpos( $custom, '{' ) ? $root . '{' . $custom . '}' : $custom );
 	}

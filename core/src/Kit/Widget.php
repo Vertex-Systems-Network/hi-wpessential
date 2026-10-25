@@ -192,6 +192,58 @@ abstract class Widget extends \Elementor\Widget_Base {
 			)
 		);
 		$this->end_controls_section();
+
+		// Kit-only controls that are not part of Elementor's native Advanced tab.
+		$this->start_controls_section(
+			'section_wpe_kit_advanced',
+			array(
+				'label' => __( 'WPEssential Advanced', 'hi-wpessential' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_ADVANCED,
+			)
+		);
+		$native_controls = array( 'customCss', 'cssClass', 'attributes', 'width', 'maxWidth', 'alignSelf', 'order', 'position', 'top', 'right', 'bottom', 'left', 'zIndex', 'opacity', 'hoverOpacity' );
+		foreach ( Groups::common()[0] as $key => $a ) {
+			if ( in_array( $key, $native_controls, true ) || 'breakpoints' === ( $a['type'] ?? '' ) ) {
+				continue;
+			}
+			$type = array(
+				'text' => \Elementor\Controls_Manager::TEXT,
+				'textarea' => \Elementor\Controls_Manager::TEXTAREA,
+				'select' => \Elementor\Controls_Manager::SELECT,
+				'color' => \Elementor\Controls_Manager::SELECT,
+				'toggle' => \Elementor\Controls_Manager::SWITCHER,
+				'range' => \Elementor\Controls_Manager::SLIDER,
+			)[ $a['type'] ?? '' ] ?? \Elementor\Controls_Manager::TEXT;
+			$args = array(
+				'label' => $a['label'] ?? $key,
+				'type' => $type,
+			);
+			if ( 'select' === ( $a['type'] ?? '' ) ) {
+				$args['options'] = $a['options'] ?? array();
+			} elseif ( 'color' === ( $a['type'] ?? '' ) ) {
+				$args['options'] = array( '' => __( 'Default', 'hi-wpessential' ) ) + Kit::palette();
+			} elseif ( 'range' === ( $a['type'] ?? '' ) ) {
+				$args['size_units'] = Kit::units( $a );
+				$args['range'] = array();
+				foreach ( $args['size_units'] as $unit ) {
+					$args['range'][ $unit ] = self::unit_range( $a, $unit );
+				}
+			} elseif ( 'textarea' === ( $a['type'] ?? '' ) ) {
+				$args['rows'] = 3;
+			}
+			if ( isset( $a['default'] ) ) {
+				$args['default'] = 'toggle' === ( $a['type'] ?? '' ) ? ( $a['default'] ? 'yes' : '' ) : ( 'range' === ( $a['type'] ?? '' ) ? array(
+					'size' => $a['default'],
+					'unit' => $a['unit'] ?? 'px',
+				) : $a['default'] );
+			}
+			if ( ! empty( $a['responsive'] ) ) {
+				$this->add_responsive_control( $key, $args );
+			} else {
+				$this->add_control( $key, $args );
+			}
+		}
+		$this->end_controls_section();
 	}
 
 	/**

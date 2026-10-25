@@ -49,6 +49,9 @@
 .wpek-hp-tilt:is(:hover, :focus-within) { transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { [class*="wpek-hp-"], .wpek-tr, .wpek-tf { transition: none !important; } [class*="wpek-hp-"]:hover { transform: none !important; } }
 
+/* Logical direction-aware icons mirror only when the chosen icon conveys a direction. */
+[dir="rtl"] .wpek-icon--directional { transform:scaleX(-1); }
+
 /* The opt-in ring controls style keyboard focus on both root links and descendants. */
 .wpek-focus-ring:is(a,button,input,select,textarea,[tabindex]):focus-visible,
 .wpek-focus-ring :is(a,button,input,select,textarea,[tabindex]):focus-visible{

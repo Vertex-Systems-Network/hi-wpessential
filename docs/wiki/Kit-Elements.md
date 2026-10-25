@@ -129,7 +129,7 @@ The shared controls work in both Gutenberg and Elementor; see `tools/tests/kit-c
 
 ## RTL-aware logical inline spacing
 
-Every Kit widget/block now offers responsive **Margin inline start/end** and **Padding inline start/end** in its Advanced panel. Unlike physical left/right spacing, inline start/end automatically swap with the inherited document direction; no separate Arabic/Urdu configuration is necessary. Negative values are supported for margins, while padding controls start at 0. The fields are opt-in and preserve existing saved layouts. Mirroring decorative directional icons remains a separate roadmap task.
+Every Kit widget/block now offers responsive **Margin inline start/end** and **Padding inline start/end** in its Advanced panel. Unlike physical left/right spacing, inline start/end automatically swap with the inherited document direction; no separate Arabic/Urdu configuration is necessary. Negative values are supported for margins, while padding controls start at 0. The fields are opt-in and preserve existing saved layouts. Directional icons mirror in RTL only when their selected glyph conveys a left/right direction.
 
 ## New shared advanced presentation controls
 
@@ -152,3 +152,10 @@ All Kit widgets and blocks now support opt-in **keyboard focus outline** (style,
 In Appearance → Menus, find the WordPress menu item's ID. Add a row in the Navigation widget's **Saved mega panels by menu item ID** repeater, set the menu item ID, choose **Gutenberg synced pattern (wp_block)** or **Elementor saved template**, then enter the published template post ID. Parent links still work, ordinary child menu links stay available, and the template appears alongside them. Only published template posts are rendered. Use the desktop trigger and mega width controls to customize interaction and layout; a separate toggle controls each mobile submenu. JavaScript progressively enhances the links (keyboard Escape closes, aria-expanded updates), with the original submenus readable without JavaScript. Nested templates that recursively embed the current mega menu are suppressed.
 
 Full drag-and-drop menu builder, dynamic per-item badges/media, and complete benchmark parity remain separate phases.
+
+
+## Shared advanced completion controls
+
+The shared Advanced section now exposes Kit-only controls in Elementor as well as Gutenberg, including parent-width styling, click analytics labels, and opt-in off-screen rendering. Parent-width rules accept allowlisted layout choices, bounded values, and theme palette colours. Click tracking writes `data-wpek-event` and optional `data-wpek-label` attributes on the element root for tag managers and analytics integrations.
+
+`content-visibility: auto` is opt-in and can take an estimated intrinsic block size to reduce layout shifts. It keeps off-screen content in the accessibility tree. Directional icon glyphs mirror automatically in RTL; non-directional icons keep their orientation.
