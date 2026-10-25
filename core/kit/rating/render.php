@@ -17,7 +17,7 @@ $wpe_paths  = array(
 	'heart'  => 'M20.8 5.2a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 22l9.8-9a5.5 5.5 0 0 0-1-7.8z',
 	'circle' => 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z',
 );
-$wpe_score  = number_format( $wpe_value, (int) ( floor( $wpe_value ) !== $wpe_value ), '.', '' );
+$wpe_score  = number_format( $wpe_value, (int) ( 0.0 !== fmod( (float) $wpe_value, 1.0 ) ), '.', '' );
 $wpe_label  = sprintf(
 	/* translators: 1: Score; 2: total possible score. */
 	__( 'Rated %1$s out of %2$d', 'hi-wpessential' ),
