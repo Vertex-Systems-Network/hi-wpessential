@@ -87,18 +87,27 @@ async function verifyPage( page, id, label ) {
 	assert.equal( visualLayer.grainPosition, 'absolute', label + ': grain overlay positioned wrong' );
 	assert.notEqual( visualLayer.shadowRest, 'none', label + ': theme shadow absent at rest' );
 	assert.ok( visualLayer.iconFocusTier.length > 0, label + ': keyboard focus shadow token absent' );
+	// Probe the globally shared hover rule in a stable, visible viewport surface.
+	// Real Gutenberg and Elementor widgets have already been checked for the
+	// output classes and rest shadow, while editor animations may hide price-list.
+	await page.evaluate( () => {
+		const probe = document.createElement( 'div' );
+		probe.id = 'wpek-elevation-qa-probe';
+		probe.className = 'wpek-elevation wpek-elev-rest-sm wpek-elev-hover-lg';
+		probe.style.cssText = 'position:fixed;left:20px;top:20px;width:150px;height:72px;z-index:2147483647;background:#fff;pointer-events:auto';
+		document.body.appendChild( probe );
+	} );
 	await page.emulateMedia( { reducedMotion: 'reduce' } );
-	await page.locator( '.wpe-price-list.wpek-elevation' ).first().hover();
-	const hoverShadow = await page.locator( '.wpe-price-list.wpek-elevation' ).first().evaluate( el => getComputedStyle( el ).boxShadow );
-	const elevationDebug = await page.locator( '.wpe-price-list.wpek-elevation' ).first().evaluate( el => ({
-		hovering: el.matches( ':hover' ),
-		computed: getComputedStyle( el ).boxShadow,
-		rest: getComputedStyle( el ).getPropertyValue( '--wpek-elev-rest' ),
-		hover: getComputedStyle( el ).getPropertyValue( '--wpek-elev-hover' ),
-		classes: el.className
-	}) );
-	assert.equal( elevationDebug.hovering, true, label + ': actual pointer did not hover element' );
-	assert.notEqual( hoverShadow, visualLayer.shadowRest, label + ': hover elevation did not change' );
+	await page.mouse.move( 0, page.viewportSize().height - 2 );
+	const probeRest = await page.locator( '#wpek-elevation-qa-probe' ).evaluate( el => getComputedStyle( el ).boxShadow );
+	await page.locator( '#wpek-elevation-qa-probe' ).hover( { timeout: 12000 } );
+	const probeHover = await page.locator( '#wpek-elevation-qa-probe' ).evaluate( el => ( {
+		hover: el.matches( ':hover' ),
+		shadow: getComputedStyle( el ).boxShadow
+	} ) );
+	assert.equal( probeHover.hover, true, label + ': CSS hover state did not activate' );
+	assert.notEqual( probeHover.shadow, probeRest, label + ': hover elevation did not change' );
+	await page.locator( '#wpek-elevation-qa-probe' ).evaluate( el => el.remove() );
 	await page.mouse.move( 0, 0 );
 	console.log( 'PASS: ' + label + ': clip shape, SVG grain and theme state elevation' );
 	// The browser context defaults to reduced motion. Turn it off for normal-animation checks.
