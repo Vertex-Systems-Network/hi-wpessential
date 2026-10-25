@@ -88,43 +88,19 @@ async function verifyPage( page, id, label ) {
 	assert.ok( await iconLink.count() === 1, label + ': shared focus ring class missing' );
 	await page.keyboard.press( 'Tab' );
 	await iconLink.focus();
-	const ringDetails = await iconLink.evaluate( node => {
-		const root = node.closest( '.wpek-focus-ring' );
-		const style = getComputedStyle( node );
-		return {
-			outline: style.outline,
-			outlineWidth: style.outlineWidth,
-			focusVisible: node.matches( ':focus-visible' ),
-			expectedSelectorMatches: node.matches( '.wpek-focus-ring :is(a,button,input,select,textarea,[tabindex]):focus-visible' ),
-			matchingOutlineRules: Array.from( document.styleSheets ).flatMap( sheet => {
-				try {
-					return Array.from( sheet.cssRules || [] ).filter( rule => {
-						return rule.selectorText && rule.selectorText.includes( 'focus' ) && rule.selectorText.split( ',' ).some( selector => {
-							try {
-								return node.matches( selector.trim() );
-							} catch ( error ) {
-								return false;
-							}
-						} ) && rule.cssText && rule.cssText.includes( 'outline' );
-					} ).map( rule => rule.cssText.slice( 0, 260 ) );
-				} catch ( error ) {
-					return [];
-				}
-			} ).slice( -10 ),
-			rootId: root ? root.id : null,
-			widthVariable: root ? getComputedStyle( root ).getPropertyValue( '--wpek-focus-width' ).trim() : '',
-			loadedKitStyles: Array.from( document.styleSheets ).map( sheet => sheet.href || '' ).filter( url => url.includes( 'kit' ) ).slice( 0, 15 ),
-			commonCSSRuleFound: Array.from( document.styleSheets ).some( sheet => {
-				try {
-					return Array.from( sheet.cssRules || [] ).some( rule => rule.cssText && rule.cssText.includes( '.wpek-focus-ring' ) );
-				} catch ( error ) {
-					return false;
-				}
-			} )
-		};
-	} );
-	console.log( 'FOCUS DEBUG:', label, JSON.stringify( ringDetails ) );
-	assert.equal( ringDetails.outlineWidth, '3px', label + ': custom focus ring width not applied' );
+	// Focus styling is intentionally keyboard-only: mouse/programmatic focus alone
+	// should not trigger :focus-visible. Verify the actual browser-computed result.
+	const ring = await iconLink.evaluate( node => ( {
+		focusVisible: node.matches( ':focus-visible' ),
+		width: getComputedStyle( node ).outlineWidth,
+		style: getComputedStyle( node ).outlineStyle,
+		offset: getComputedStyle( node ).outlineOffset
+	} ) );
+	assert.ok( ring.focusVisible, label + ': keyboard focus-visible state was not activated' );
+	assert.equal( ring.width, '3px', label + ': custom focus ring width not applied' );
+	assert.equal( ring.style, 'solid', label + ': custom focus ring style not applied' );
+	assert.equal( ring.offset, '2px', label + ': custom focus offset not applied' );
+	console.log( 'PASS: ' + label + ': keyboard focus ring 3px solid, 2px offset' );
 	await page.emulateMedia( { media: 'print' } );
 	const printVisibility = await glass.evaluate( node => getComputedStyle( node ).display );
 	assert.equal( printVisibility, 'none', label + ': hide-on-print not applied' );
