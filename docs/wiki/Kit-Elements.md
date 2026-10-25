@@ -72,6 +72,10 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | Chart | Accessible numeric bar, column and donut visualizations with screen-reader table and no dependency. |
 | Flip / Hover Box | Native keyboard/touch disclosure with front/back copy and CSS reduced-motion flip. |
 
+## New shared advanced presentation controls
+
+All Kit widgets and blocks now support opt-in **keyboard focus outline** (style, theme-palette colour, responsive width and offset), **glass surfaces** (light/dark palette-aware translucency with backdrop blur and opacity), and **Hide when printing**. Existing widgets do not change unless a control is enabled. Glass uses a solid surface fallback where colour mixing is unsupported. Focus outline choices apply to the element root and its interactive children and take priority over ordinary widget link/field outlines.
+
 ## What every element offers
 
 - 9 breakpoints

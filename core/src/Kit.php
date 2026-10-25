@@ -509,6 +509,21 @@ class Kit {
 			$classes[] = 'wpek-anim';
 			$classes[] = 'wpek-anim-' . sanitize_html_class( $a['animation'] );
 		}
+		if ( ! empty( $a['glass'] ) ) {
+			$classes[] = 'wpek-glass';
+		}
+		if ( ! empty( $a['hidePrint'] ) ) {
+			$classes[] = 'wpek-hide-print';
+		}
+		$wpe_focus = ! empty( $a['focusRingStyle'] ) || ! empty( $a['focusRingColor'] );
+		foreach ( array( 'focusRingWidth', 'focusRingOffset' ) as $wpe_key ) {
+			if ( ! empty( array_filter( (array) ( $a[ $wpe_key ] ?? array() ), static fn( $v ) => '' !== $v && null !== $v ) ) ) {
+				$wpe_focus = true;
+			}
+		}
+		if ( $wpe_focus ) {
+			$classes[] = 'wpek-focus-ring';
+		}
 		$attrs = '';
 		$aria  = array(
 			'role'        => (string) ( $a['rootRole'] ?? '' ),
@@ -642,7 +657,9 @@ class Kit {
 	 */
 	public static function from_elementor( array $def, array $settings ) {
 		$out = array();
-		foreach ( $def['attributes'] as $key => $opt ) {
+		// Full elements inherit common Advanced controls; nested repeater fields do not.
+		$fields = isset( $def['name'] ) ? self::attributes( $def ) : $def['attributes'];
+		foreach ( $fields as $key => $opt ) {
 			$get = static function ( $k ) use ( $settings, $opt ) {
 				$v = $settings[ $k ] ?? '';
 				if ( 'icon' === $opt['type'] ) {

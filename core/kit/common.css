@@ -48,3 +48,25 @@
 :has(> .wpek-hp-dim:hover) > .wpek-hp-dim:not(:hover) { opacity: .55; filter: saturate(.6); }
 .wpek-hp-tilt:is(:hover, :focus-within) { transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { [class*="wpek-hp-"], .wpek-tr, .wpek-tf { transition: none !important; } [class*="wpek-hp-"]:hover { transform: none !important; } }
+
+/* The opt-in ring controls style keyboard focus on both root links and descendants. */
+.wpek-focus-ring:is(a,button,input,select,textarea,[tabindex]):focus-visible,
+.wpek-focus-ring :is(a,button,input,select,textarea,[tabindex]):focus-visible{
+	outline-width:var(--wpek-focus-width,2px)!important;
+	outline-style:var(--wpek-focus-style,solid)!important;
+	outline-color:var(--wpek-focus-color,var(--wp--preset--color--primary,currentColor))!important;
+	outline-offset:var(--wpek-focus-offset,3px)!important;
+}
+
+/* Prefer theme-aware tinted glass; use an opaque scheme-safe fallback. */
+.wpek-glass{
+	background-color:var(--wp--preset--color--surface,#fff);
+	-webkit-backdrop-filter:blur(var(--wpek-glass-blur,12px));
+	backdrop-filter:blur(var(--wpek-glass-blur,12px));
+}
+@supports (background-color:color-mix(in srgb,white 70%,transparent)){
+	.wpek-glass{background-color:color-mix(in srgb,var(--wp--preset--color--surface,#fff) var(--wpek-glass-opacity,78%),transparent)}
+}
+@media print{
+	.wpek-hide-print{display:none!important}
+}

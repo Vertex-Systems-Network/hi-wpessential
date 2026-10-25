@@ -37,7 +37,7 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 12 | Transition duration, easing and delay | ✅ |
 | 13 | Hover presets from the demo's hover tokens (lift, zoom, glow, shadow, dim others, tilt) | ✅ |
 | 14 | Magnetic, tilt-follow, ripple, cursor and spotlight hovers | ⬜ |
-| 15 | Separate focus-ring style | ⏳ |
+| 15 | Separate focus-ring style | ✅ |
 | 16 | Scroll-driven entrance animations without JavaScript | ✅ (12 presets) |
 | 17 | Staggered animation of children | ⏳ |
 | 18 | Parallax per layer, on/off per breakpoint | ⬜ |
@@ -46,7 +46,7 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 21 | Animation trigger: scroll, hover, click, load | ⬜ |
 | 22 | Gradient text and text clip | ✅ Heading accent and Text |
 | 23 | Gradient border, animated gradient border | ⏳ |
-| 24 | Glass (backdrop blur) | ⏳ |
+| 24 | Glass (backdrop blur) | ✅ |
 | 25 | Blend modes | ⏳ |
 | 26 | Gradient mask (fade edges) | ⏳ |
 | 27 | Clip-path shapes (wave, slant, blob) | ⬜ |
@@ -61,7 +61,7 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 36 | Show by login, role, WooCommerce cart/purchase (free; Elementor has this only in Pro) | ⬜ |
 | 37 | Show by date and time | ⬜ |
 | 38 | Show by device, URL parameter, referrer | ⬜ |
-| 39 | Hide when printing | ⏳ |
+| 39 | Hide when printing | ✅ |
 | 40 | Style presets (save and apply an element style) | ⬜ |
 | 41 | Copy/paste a style between Gutenberg and Elementor | ⬜ |
 | 42 | Analytics data attributes for click events | ⏳ |
