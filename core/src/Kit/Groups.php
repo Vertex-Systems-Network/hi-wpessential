@@ -757,8 +757,8 @@ class Groups {
 			'logicalMarginStart'  => array_merge(
 				$px,
 				array(
-					'label' => __( 'Margin inline start (RTL-aware)', 'hi-wpessential' ),
-					'css'   => 'margin-inline-start',
+					'label'     => __( 'Margin inline start (RTL-aware)', 'hi-wpessential' ),
+					'css'       => 'margin-inline-start',
 					'raw'       => true,
 					'important' => true,
 				)
@@ -766,8 +766,8 @@ class Groups {
 			'logicalMarginEnd'    => array_merge(
 				$px,
 				array(
-					'label' => __( 'Margin inline end (RTL-aware)', 'hi-wpessential' ),
-					'css'   => 'margin-inline-end',
+					'label'     => __( 'Margin inline end (RTL-aware)', 'hi-wpessential' ),
+					'css'       => 'margin-inline-end',
 					'raw'       => true,
 					'important' => true,
 				)
@@ -775,21 +775,21 @@ class Groups {
 			'logicalPaddingStart' => array_merge(
 				$px,
 				array(
-					'label' => __( 'Padding inline start (RTL-aware)', 'hi-wpessential' ),
-					'css'   => 'padding-inline-start',
+					'label'     => __( 'Padding inline start (RTL-aware)', 'hi-wpessential' ),
+					'css'       => 'padding-inline-start',
 					'raw'       => true,
 					'important' => true,
-					'min'   => 0,
+					'min'       => 0,
 				)
 			),
 			'logicalPaddingEnd'   => array_merge(
 				$px,
 				array(
-					'label' => __( 'Padding inline end (RTL-aware)', 'hi-wpessential' ),
-					'css'   => 'padding-inline-end',
+					'label'     => __( 'Padding inline end (RTL-aware)', 'hi-wpessential' ),
+					'css'       => 'padding-inline-end',
 					'raw'       => true,
 					'important' => true,
-					'min'   => 0,
+					'min'       => 0,
 				)
 			),
 			'zIndex'              => array(
