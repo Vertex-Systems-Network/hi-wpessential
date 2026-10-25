@@ -689,10 +689,16 @@ class Kit {
 			$classes[] = 'wpek-grain';
 		}
 		$wpe_has_elevation = false;
-		foreach ( array( 'elevationRest' => 'rest', 'elevationHover' => 'hover', 'elevationFocus' => 'focus' ) as $wpe_key => $wpe_state ) {
+		foreach (
+			array(
+				'elevationRest'  => 'rest',
+				'elevationHover' => 'hover',
+				'elevationFocus' => 'focus',
+			) as $wpe_key => $wpe_state
+		) {
 			$wpe_tier = (string) ( $a[ $wpe_key ] ?? '' );
 			if ( in_array( $wpe_tier, array( 'sm', 'md', 'lg' ), true ) ) {
-				$classes[] = 'wpek-elev-' . $wpe_state . '-' . $wpe_tier;
+				$classes[]         = 'wpek-elev-' . $wpe_state . '-' . $wpe_tier;
 				$wpe_has_elevation = true;
 			}
 		}
