@@ -1,0 +1,94 @@
+name: Kit Real Browser QA
+
+on:
+  pull_request:
+    paths:
+      - 'core/kit/**'
+      - 'core/src/Kit/**'
+      - 'tools/tests/kit-browser-*'
+      - '.github/workflows/kit-browser-qa.yml'
+
+jobs:
+  browser:
+    name: Gutenberg + Elementor + WPForms real browser
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: kit_browser_qa
+          MYSQL_USER: wpe
+          MYSQL_PASSWORD: wpe
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mysqli, mbstring, gd, zip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify test syntax
+        run: |
+          php -l tools/tests/kit-browser-fixtures.php
+          node --check tools/tests/kit-browser-qa.cjs
+      - name: Install WP CLI
+        run: |
+          curl -fsSL -o /tmp/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          sudo install -m 0755 /tmp/wp-cli.phar /usr/local/bin/wp
+      - name: Disposable WordPress, Elementor and WPForms Lite
+        env:
+          WP_DIR: ${{ runner.temp }}/kit-browser-wordpress
+        run: |
+          set -euo pipefail
+          mkdir -p "$WP_DIR"
+          wp core download --path="$WP_DIR" --quiet
+          wp config create --path="$WP_DIR" --dbname=kit_browser_qa --dbuser=wpe --dbpass=wpe --dbhost=127.0.0.1:3306 --quiet
+          wp core install --path="$WP_DIR" --url=http://127.0.0.1:8090 --title="Kit Browser QA" --admin_user=testadmin --admin_password=testpassword --admin_email=test@example.test --skip-email --quiet
+          ln -s "$GITHUB_WORKSPACE" "$WP_DIR/wp-content/themes/hi-wpessential"
+          wp theme activate hi-wpessential --path="$WP_DIR"
+          wp plugin install elementor --activate --path="$WP_DIR" --quiet
+          wp plugin install wpforms-lite --activate --path="$WP_DIR" --quiet
+          wp plugin is-active elementor --path="$WP_DIR"
+          wp plugin is-active wpforms-lite --path="$WP_DIR"
+          wp eval-file "$GITHUB_WORKSPACE/tools/tests/kit-browser-fixtures.php" --path="$WP_DIR" --quiet > "$RUNNER_TEMP/kit-browser-fixtures.json"
+          python3 -m json.tool "$RUNNER_TEMP/kit-browser-fixtures.json"
+      - name: Install Playwright Chromium
+        run: |
+          mkdir -p "$RUNNER_TEMP/kit-playwright"
+          npm install --prefix "$RUNNER_TEMP/kit-playwright" --no-save playwright@1.56.1
+          "$RUNNER_TEMP/kit-playwright/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Run browser tests and collect screenshots
+        env:
+          WP_DIR: ${{ runner.temp }}/kit-browser-wordpress
+          QA_BASE_URL: http://127.0.0.1:8090
+          QA_FIXTURE_JSON: ${{ runner.temp }}/kit-browser-fixtures.json
+          QA_ARTIFACT_DIR: ${{ runner.temp }}/kit-browser-artifacts
+          NODE_PATH: ${{ runner.temp }}/kit-playwright/node_modules
+        run: |
+          set -euo pipefail
+          php -S 127.0.0.1:8090 -t "$WP_DIR" > "$RUNNER_TEMP/kit-browser-server.log" 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS -o /dev/null http://127.0.0.1:8090/wp-login.php; then break; fi
+            sleep 1
+          done
+          node tools/tests/kit-browser-qa.cjs
+      - name: Upload QA screenshots and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kit-browser-qa-${{ github.run_id }}
+          if-no-files-found: ignore
+          path: |
+            ${{ runner.temp }}/kit-browser-artifacts/
+            ${{ runner.temp }}/kit-browser-server.log
+            ${{ runner.temp }}/kit-browser-fixtures.json
