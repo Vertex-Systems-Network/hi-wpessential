@@ -604,6 +604,7 @@ class Kit {
 				}
 				// "map" turns one choice into several declarations, e.g. center => text-align + auto margins.
 				$wpe_decl = isset( $opt['map'][ $value ] ) ? preg_replace( '/[^a-z0-9:;%#.,() \\-]/i', '', $opt['map'][ $value ] ) : $opt['css'] . ':' . self::css_value( $opt, $value );
+
 				$rules[ (string) $bp ][ $sel ][] = $wpe_decl . ( ! empty( $opt['important'] ) ? '!important' : '' );
 			}
 		}
