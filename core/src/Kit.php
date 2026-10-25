@@ -759,7 +759,9 @@ class Kit {
 			}
 			$attrs .= ' ' . $key . '="' . esc_attr( $pair[1] ?? '' ) . '"';
 		}
-		if ( ! $classes && '' === $attrs ) {
+		$wpe_html_tag = (string) ( $a['htmlTag'] ?? '' );
+		$wpe_html_tag = in_array( $wpe_html_tag, array( 'div', 'section', 'article', 'aside', 'nav', 'header', 'footer' ), true ) ? $wpe_html_tag : '';
+		if ( ! $classes && '' === $attrs && '' === $wpe_html_tag ) {
 			return $html;
 		}
 		$pos = strpos( $html, 'id="' . $id . '"' );
@@ -771,7 +773,36 @@ class Kit {
 		if ( $classes ) {
 			$tag = false !== strpos( $tag, 'class="' ) ? preg_replace( '/class="/', 'class="' . esc_attr( implode( ' ', $classes ) ) . ' ', $tag, 1 ) : $tag . ' class="' . esc_attr( implode( ' ', $classes ) ) . '"';
 		}
-		return substr( $html, 0, $pos ) . $tag . $attrs . substr( $html, $tag_end );
+		$html = substr( $html, 0, $pos ) . $tag . $attrs . substr( $html, $tag_end );
+		if ( '' !== $wpe_html_tag ) {
+			$wpe_id_pos = strpos( $html, 'id="' . $id . '"' );
+			$wpe_open_start = false === $wpe_id_pos ? false : strrpos( substr( $html, 0, $wpe_id_pos ), '<' );
+			$wpe_open_end = false === $wpe_open_start ? false : strpos( $html, '>', $wpe_open_start );
+			if ( false !== $wpe_open_start && false !== $wpe_open_end && preg_match( '/^<([a-z][a-z0-9]*)\\b/i', substr( $html, $wpe_open_start, $wpe_open_end - $wpe_open_start + 1 ), $wpe_match ) ) {
+				$wpe_old_tag = strtolower( $wpe_match[1] );
+				if ( in_array( $wpe_old_tag, array( 'div', 'section', 'article', 'aside', 'nav', 'header', 'footer' ), true ) ) {
+					$html = substr_replace( $html, '<' . $wpe_html_tag, $wpe_open_start, strlen( $wpe_old_tag ) + 1 );
+					$wpe_delta = strlen( $wpe_html_tag ) - strlen( $wpe_old_tag );
+					$wpe_open_end += $wpe_delta;
+					$wpe_tags = array();
+					preg_match_all( '/<\\/?' . preg_quote( $wpe_old_tag, '/' ) . '\\b[^>]*>/i', $html, $wpe_tags, PREG_OFFSET_CAPTURE, $wpe_open_end + 1 );
+					$wpe_depth = 1;
+					foreach ( $wpe_tags[0] as $wpe_token ) {
+						$wpe_is_close = 0 === strpos( $wpe_token[0], '</' );
+						$wpe_is_void = ! $wpe_is_close && (bool) preg_match( '/^<' . preg_quote( $wpe_old_tag, '/' ) . '\\b[^>]*\\/>$/i', $wpe_token[0] );
+						if ( ! $wpe_is_void ) {
+							++$wpe_depth;
+						continue;
+						}
+					if ( $wpe_is_close && 0 === --$wpe_depth ) {
+						$html = substr_replace( $html, '</' . $wpe_html_tag . '>', $wpe_token[1] + $wpe_delta, strlen( $wpe_old_tag ) + 3 );
+						break;
+						}
+					}
+				}
+			}
+		}
+		return $html;
 	}
 
 	/**

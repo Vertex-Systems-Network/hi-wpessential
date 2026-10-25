@@ -1251,6 +1251,20 @@ class Groups {
 			),
 		);
 
+		$attr += array(
+			'htmlTag' => array(
+				'type' => 'select',
+				'label' => __( 'Semantic HTML tag', 'hi-wpessential' ),
+				'panel' => 'advanced',
+				'common' => true,
+				'options' => array(
+					'' => __( 'Keep element default', 'hi-wpessential' ),
+					'div' => 'div', 'section' => 'section', 'article' => 'article',
+					'aside' => 'aside', 'nav' => 'nav', 'header' => 'header', 'footer' => 'footer',
+				),
+			),
+		);
+
 		// Builder-neutral analytics hooks and safe content-visibility controls.
 		$attr += array(
 			'analyticsEvent' => array(
