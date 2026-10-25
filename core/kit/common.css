@@ -123,3 +123,18 @@
 @media(min-width:768px) and (max-width:1023px) {
 	.wpek-sticky-from-desktop{position:static!important;top:auto!important}
 }
+
+/* Parallax uses the CSS individual translate property, preserving existing transforms. */
+@media (prefers-reduced-motion: no-preference) {
+	.wpek-parallax .wpek-parallax-layer {
+		translate: var(--wpek-parallax-x, 0px) var(--wpek-parallax-y, 0px);
+	}
+}
+/* Explicit stop targets can constrain sticky before the parent container ends. */
+.wpek-sticky.wpek-sticky-stop {
+	translate: 0 var(--wpek-sticky-stop-push, 0px);
+}
+@media (prefers-reduced-motion: reduce) {
+	.wpek-parallax .wpek-parallax-layer { translate: none !important; }
+}
+
