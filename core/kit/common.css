@@ -190,3 +190,48 @@
 	.wpek-gradient-border-animated::after { animation: none !important; }
 }
 
+
+/* Visual shapes use fixed, allowlisted polygons, never user-provided raw CSS. */
+.wpek-clip-slant { clip-path: polygon(0 0,100% 0,100% 100%,0 92%); }
+.wpek-clip-wave { clip-path: polygon(0 0,100% 0,100% 93%,92% 96%,84% 99%,76% 100%,68% 99%,60% 96%,52% 93%,44% 91%,36% 92%,28% 95%,20% 98%,12% 100%,4% 98%,0 96%); }
+.wpek-clip-blob { clip-path: polygon(50% 2%,68% 5%,84% 12%,95% 29%,98% 48%,94% 69%,80% 89%,63% 97%,43% 94%,25% 99%,9% 83%,3% 63%,6% 42%,2% 24%,17% 9%,33% 4%); }
+/* Noise is a tiny embedded turbulence SVG, no network request or script.
+   Pseudo overlay never takes pointer input. Opt in only on suitable widgets. */
+.wpek-grain { position: relative; }
+.wpek-grain::before {
+	content:"";
+	position:absolute;
+	inset:0;
+	pointer-events:none;
+	z-index:1;
+	border-radius:inherit;
+	background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='144' height='144' viewBox='0 0 144 144'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
+	background-repeat:repeat;
+	background-size:144px 144px;
+	opacity:var(--wpek-grain-opacity,8%);
+	mix-blend-mode:soft-light;
+}
+@media print { .wpek-grain::before { display:none!important; } }
+
+/* WordPress theme.json shadow presets remain the source of elevation tokens. */
+.wpek-elev-rest-sm { --wpek-elev-rest:var(--wp--preset--shadow--sm,0 1px 2px rgba(10,15,33,.06)); }
+.wpek-elev-rest-md { --wpek-elev-rest:var(--wp--preset--shadow--md,0 4px 12px rgba(10,15,33,.06)); }
+.wpek-elev-rest-lg { --wpek-elev-rest:var(--wp--preset--shadow--lg,0 24px 64px rgba(10,15,33,.14)); }
+.wpek-elev-hover-sm { --wpek-elev-hover:var(--wp--preset--shadow--sm,0 1px 2px rgba(10,15,33,.06)); }
+.wpek-elev-hover-md { --wpek-elev-hover:var(--wp--preset--shadow--md,0 4px 12px rgba(10,15,33,.06)); }
+.wpek-elev-hover-lg { --wpek-elev-hover:var(--wp--preset--shadow--lg,0 24px 64px rgba(10,15,33,.14)); }
+.wpek-elev-focus-sm { --wpek-elev-focus:var(--wp--preset--shadow--sm,0 1px 2px rgba(10,15,33,.06)); }
+.wpek-elev-focus-md { --wpek-elev-focus:var(--wp--preset--shadow--md,0 4px 12px rgba(10,15,33,.06)); }
+.wpek-elev-focus-lg { --wpek-elev-focus:var(--wp--preset--shadow--lg,0 24px 64px rgba(10,15,33,.14)); }
+.wpek-elevation {
+	box-shadow:var(--wpek-elev-rest,none);
+	transition:box-shadow var(--wp--custom--hover--duration,.3s) ease;
+}
+.wpek-elevation:is(:hover,:focus-within) {
+	box-shadow:var(--wpek-elev-hover,var(--wpek-elev-rest,none));
+}
+.wpek-elevation:focus-visible,
+.wpek-elevation:has(:focus-visible) {
+	box-shadow:var(--wpek-elev-focus,var(--wpek-elev-hover,var(--wpek-elev-rest,none)));
+}
+@media (prefers-reduced-motion:reduce) { .wpek-elevation { transition:none!important; } }
