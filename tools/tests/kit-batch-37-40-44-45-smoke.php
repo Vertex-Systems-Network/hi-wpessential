@@ -32,6 +32,7 @@ $wpe_check( 5 === preg_match_all( '/class="wpe-rating__symbol"/', $wpe_rating ),
 $wpe_check( false !== strpos( $wpe_rating, '--wpek-rating-fill:50%' ), 'Rating: partial symbol fill computed' );
 $wpe_check( false === strpos( $wpe_rating, '<script>' ), 'Rating: user title escaped' );
 $wpe_overshoot = $wpe_block( 'rating', array( 'rating' => 999, 'scale' => '10', 'showNumber' => false ) );
+echo 'DEBUG rating over max: ' . substr( $wpe_overshoot, 0, 1650 ) . "\n";
 $wpe_check( false !== strpos( $wpe_overshoot, 'Rated 10 out of 10' ), 'Rating: out-of-range values capped at max' );
 $wpe_check( 10 === preg_match_all( '/class="wpe-rating__symbol"/', $wpe_overshoot ), 'Rating: ten symbols for ten-point scale' );
 $wpe_check( false === strpos( $wpe_overshoot, 'class="wpe-rating__score"' ), 'Rating: numeric score can be hidden without losing accessible label' );
