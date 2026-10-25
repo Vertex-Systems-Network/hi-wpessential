@@ -72,8 +72,19 @@ async function verifyGutenberg( page ) {
 		return wp.data.select( 'core/block-editor' ).getBlockAttributes( chart.clientId ).title;
 	} );
 	assert.equal( title, 'QA Chart Edited' );
+	// Dismiss the first-run editor welcome guide so the actual inspector is visible.
+	const welcome = page.locator( '.components-modal__frame' );
+	if ( await welcome.count() > 0 ) {
+		const close = welcome.locator( '.components-modal__header button' ).first();
+		if ( await close.count() > 0 ) {
+			await close.click();
+		} else {
+			await page.keyboard.press( 'Escape' );
+		}
+	}
+	await page.getByText( 'Chart heading', { exact: true } ).first().waitFor( { state: 'visible', timeout: 20000 } );
 	await page.screenshot( { path: path.join( dir, 'gutenberg-editor.png' ), fullPage: true } );
-	console.log( 'PASS: Gutenberg actual editor, registration, 7 blocks and edit operation' );
+	console.log( 'PASS: Gutenberg real editor, sidebar control and block-attribute update' );
 }
 async function verifyElementor( page ) {
 	const response = await page.goto( base + '/wp-admin/post.php?post=' + fixture.elementor + '&action=elementor', { waitUntil: 'domcontentloaded', timeout: 90000 } );
@@ -82,10 +93,32 @@ async function verifyElementor( page ) {
 	const preview = page.frameLocator( '#elementor-preview-iframe' );
 	await preview.locator( '.wpe-price-list' ).first().waitFor( { state: 'attached', timeout: 90000 } );
 	for ( const [ name, selector ] of Object.entries( targets ) ) {
-		assert.ok( await preview.locator( selector ).count(), 'Elementor editor preview missing ' + name );
+		assert.ok( await preview.locator( selector ).count(), 'Elementor preview missing ' + name );
+	}
+	// Do not count an Elementor iframe as a working editor when the outer UI is still loading.
+	try {
+		await page.locator( '#elementor-panel' ).waitFor( { state: 'visible', timeout: 90000 } );
+		const loading = page.locator( '#elementor-loading' );
+		if ( await loading.count() > 0 ) {
+			await loading.waitFor( { state: 'hidden', timeout: 30000 } );
+		}
+		await page.waitForTimeout( 1500 );
+	} catch ( error ) {
+		const diagnostic = await page.evaluate( () => ({
+			title: document.title,
+			panel: Boolean( document.querySelector( '#elementor-panel' ) ),
+			panelVisible: Boolean( document.querySelector( '#elementor-panel' ) && document.querySelector( '#elementor-panel' ).getClientRects().length ),
+			loading: Boolean( document.querySelector( '#elementor-loading' ) && document.querySelector( '#elementor-loading' ).getClientRects().length ),
+			elementor: Boolean( window.elementor ),
+			body: document.body.innerText.slice( 0, 2500 ),
+			iframes: Array.from( document.querySelectorAll( 'iframe' ) ).map( e => e.id )
+		}) );
+		fs.writeFileSync( path.join( dir, 'elementor-editor-diagnostics.json' ), JSON.stringify( diagnostic, null, 2 ) );
+		await page.screenshot( { path: path.join( dir, 'elementor-editor-not-ready.png' ), fullPage: true } );
+		throw new Error( 'Elementor outer editor not interactive: ' + JSON.stringify( diagnostic ) + '; original: ' + error.message );
 	}
 	await page.screenshot( { path: path.join( dir, 'elementor-editor.png' ), fullPage: true } );
-	console.log( 'PASS: Elementor actual editor and seven widget previews' );
+	console.log( 'PASS: Elementor outer editor panel is interactive, with all seven widget previews' );
 }
 (async () => {
 	const browser = await chromium.launch( { headless: true, args: [ '--no-sandbox' ] } );
