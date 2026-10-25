@@ -238,3 +238,16 @@
 	box-shadow:var(--wpek-elev-focus,var(--wpek-elev-hover,var(--wpek-elev-rest,none)));
 }
 @media (prefers-reduced-motion:reduce) { .wpek-elevation { transition:none!important; } }
+
+/* Pointer-follow presets are progressively enhanced by motion-hover.js. */
+.wpek-hp-magnetic:is(:hover,:focus-within){translate:var(--wpek-magnetic-x,0) var(--wpek-magnetic-y,0);transition:translate .18s ease-out}
+.wpek-hp-tilt-follow{transform-style:preserve-3d;transition:transform .18s ease-out}
+.wpek-hp-tilt-follow:is(:hover,:focus-within){transform:translate(var(--wpek-tx,0),var(--wpek-h-ty,var(--wpek-ty,0))) rotate(var(--wpek-h-rot,var(--wpek-rot,0deg))) scale(var(--wpek-h-sc,var(--wpek-sc,1))) perspective(900px) rotateX(var(--wpek-tilt-x,0deg)) rotateY(var(--wpek-tilt-y,0deg))}
+.wpek-hp-ripple,.wpek-hp-cursor,.wpek-hp-spotlight{position:relative;isolation:isolate}
+.wpek-hp-ripple::after{content:"";position:absolute;z-index:0;pointer-events:none;left:var(--wpek-pointer-x,50%);top:var(--wpek-pointer-y,50%);width:12px;height:12px;border-radius:50%;background:currentColor;opacity:0;transform:translate(-50%,-50%) scale(1);box-shadow:0 0 0 0 currentColor}
+.wpek-hp-ripple.is-wpek-ripple-active::after{animation:wpek-pointer-ripple .55s ease-out}
+@keyframes wpek-pointer-ripple{0%{opacity:.2;box-shadow:0 0 0 0 currentColor}100%{opacity:0;box-shadow:0 0 0 90px transparent}}
+.wpek-hp-cursor::after{content:"";position:absolute;z-index:0;pointer-events:none;left:var(--wpek-pointer-x,50%);top:var(--wpek-pointer-y,50%);width:36px;height:36px;border:1px solid currentColor;border-radius:50%;background:currentColor;opacity:.12;transform:translate(-50%,-50%);transition:opacity .15s}
+.wpek-hp-spotlight::after{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background:radial-gradient(circle 180px at var(--wpek-pointer-x,50%) var(--wpek-pointer-y,50%),rgba(255,255,255,.2),transparent 100%);mix-blend-mode:screen}
+.wpek-hp-ripple>:is(*),.wpek-hp-cursor>:is(*),.wpek-hp-spotlight>:is(*){position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){.wpek-hp-magnetic,.wpek-hp-tilt-follow{translate:none!important;transform:none!important;transition:none!important}.wpek-hp-ripple.is-wpek-ripple-active::after{animation:none}}

@@ -168,3 +168,7 @@ The shared Advanced section now exposes Kit-only controls in Elementor as well a
 ### Structured data
 
 FAQ accordions emit FAQPage data. The Calendar, Products, Testimonial, and Timeline elements offer opt-in Event, Product, Review, and HowTo JSON-LD. Breadcrumbs emits BreadcrumbList data. Schema output is based on valid rendered content and stays off unless the matching toggle is enabled, except BreadcrumbList which follows the visible navigation.
+
+### Pointer hover presets
+
+The shared Advanced panel offers magnetic pull, pointer-follow tilt, ripple, cursor glow, and spotlight effects. Their script loads only when a rendered element selects one of these presets, and the effects stop under `prefers-reduced-motion`.

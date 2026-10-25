@@ -951,6 +951,11 @@ class Groups {
 					'shadow' => __( 'Shadow', 'hi-wpessential' ),
 					'dim'    => __( 'Dim others', 'hi-wpessential' ),
 					'tilt'   => __( 'Tilt', 'hi-wpessential' ),
+					'magnetic' => __( 'Magnetic pull', 'hi-wpessential' ),
+					'tilt-follow' => __( 'Pointer-follow tilt', 'hi-wpessential' ),
+					'ripple' => __( 'Pointer ripple', 'hi-wpessential' ),
+					'cursor' => __( 'Cursor glow', 'hi-wpessential' ),
+					'spotlight' => __( 'Pointer spotlight', 'hi-wpessential' ),
 				),
 			),
 			'rootAriaLabel'       => array(

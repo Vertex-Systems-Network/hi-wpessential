@@ -353,6 +353,7 @@ class Kit {
 		wp_register_script( 'wpessential-kit-editor', wpessential_core_url( 'assets/kit-editor.js' ), array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n', 'wp-data' ), WPESSENTIAL_CORE_ASSET_VERSION, true );
 		wp_register_script( 'wpessential-kit-motion', wpessential_core_url( 'kit/motion.js' ), array(), WPESSENTIAL_CORE_ASSET_VERSION, true );
 		wp_register_script( 'wpessential-kit-motion-layout', wpessential_core_url( 'kit/motion-layout.js' ), array(), WPESSENTIAL_CORE_ASSET_VERSION, true );
+		wp_register_script( 'wpessential-kit-motion-hover', wpessential_core_url( 'kit/motion-hover.js' ), array(), WPESSENTIAL_CORE_ASSET_VERSION, true );
 		wp_register_style( 'wpessential-kit-common', wpessential_core_url( 'kit/common.css' ), array(), WPESSENTIAL_CORE_ASSET_VERSION );
 		$editor = array();
 		foreach ( self::enabled_defs() as $name => $def ) {
@@ -489,6 +490,9 @@ class Kit {
 		}
 		if ( ! empty( $a['parallaxEnabled'] ) || ( ! empty( $a['stickyEnabled'] ) && ! empty( $a['stickyStopId'] ) ) ) {
 			wp_enqueue_script( 'wpessential-kit-motion-layout' );
+		}
+		if ( in_array( (string) ( $a['hoverPreset'] ?? '' ), array( 'magnetic', 'tilt-follow', 'ripple', 'cursor', 'spotlight' ), true ) ) {
+			wp_enqueue_script( 'wpessential-kit-motion-hover' );
 		}
 		$id   = 'wpe-' . $name . '-' . substr( md5( wp_json_encode( $a ) . wp_rand() ), 0, 8 );
 		$css  = self::css( $def, $a, $id );

@@ -36,7 +36,7 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 11 | Focus and pressed (active) states besides hover | ✅ colours |
 | 12 | Transition duration, easing and delay | ✅ |
 | 13 | Hover presets from the demo's hover tokens (lift, zoom, glow, shadow, dim others, tilt) | ✅ |
-| 14 | Magnetic, tilt-follow, ripple, cursor and spotlight hovers | ⬜ |
+| 14 | Magnetic, tilt-follow, ripple, cursor and spotlight hovers | ✅ Five opt-in pointer effects; reduced-motion aware; script only when selected |
 | 15 | Separate focus-ring style | ✅ |
 | 16 | Scroll-driven entrance animations without JavaScript | ✅ (12 presets) |
 | 17 | Staggered animation of children | ✅ Staggered first 12 direct children, configurable delay |
