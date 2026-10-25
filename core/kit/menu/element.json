@@ -1,0 +1,149 @@
+{
+	"name": "menu",
+	"title": "Navigation / Mega Menu (WPEssential)",
+	"category": "site",
+	"icon": "menu",
+	"elementor_icon": "eicon-nav-menu",
+	"keywords": [
+		"menu",
+		"navigation",
+		"mega",
+		"dropdown"
+	],
+	"description": "Native WordPress menus, keyboard dropdowns, two-column mega navigation and no-JS mobile disclosure.",
+	"panels": {
+		"content": "Menu",
+		"style": "Layout and style"
+	},
+	"attributes": {
+		"menu": {
+			"type": "text",
+			"label": "Menu slug or ID (empty: primary location)",
+			"default": "",
+			"panel": "content"
+		},
+		"label": {
+			"type": "text",
+			"label": "Accessible navigation label",
+			"default": "Main navigation",
+			"panel": "content"
+		},
+		"mobileLabel": {
+			"type": "text",
+			"label": "Mobile menu toggle label",
+			"default": "Menu",
+			"panel": "content"
+		},
+		"depth": {
+			"type": "select",
+			"label": "Menu nesting depth",
+			"default": "3",
+			"panel": "content",
+			"options": {
+				"1": "One",
+				"2": "Two",
+				"3": "Three"
+			}
+		},
+		"mega": {
+			"type": "toggle",
+			"label": "Two-column dropdown (simple mega)",
+			"default": false,
+			"panel": "content"
+		},
+		"breakpoint": {
+			"type": "select",
+			"label": "Mobile breakpoint",
+			"default": "768",
+			"panel": "style",
+			"options": {
+				"560": "560px",
+				"768": "768px",
+				"1024": "1024px"
+			}
+		},
+		"alignment": {
+			"type": "select",
+			"label": "Desktop item alignment",
+			"default": "start",
+			"panel": "style",
+			"options": {
+				"start": "Start",
+				"center": "Center",
+				"end": "End",
+				"between": "Space between"
+			},
+			"responsive": true,
+			"css": "--wpek-menu-align",
+			"map": {
+				"start": "--wpek-menu-align:flex-start",
+				"center": "--wpek-menu-align:center",
+				"end": "--wpek-menu-align:flex-end",
+				"between": "--wpek-menu-align:space-between"
+			}
+		},
+		"gap": {
+			"type": "range",
+			"label": "Item gap",
+			"default": "",
+			"panel": "style",
+			"min": 0,
+			"max": 70,
+			"step": 1,
+			"unit": "px",
+			"responsive": true,
+			"css": "--wpek-menu-gap"
+		},
+		"dropWidth": {
+			"type": "range",
+			"label": "Dropdown width",
+			"default": "",
+			"panel": "style",
+			"min": 160,
+			"max": 600,
+			"step": 1,
+			"unit": "px",
+			"responsive": true,
+			"css": "--wpek-menu-width"
+		}
+	},
+	"groups": {
+		"typography": {
+			"type": "typography",
+			"label": "Menu link typography",
+			"selector": ".wpe-menu a",
+			"panel": "style"
+		},
+		"linkColor": {
+			"type": "colors",
+			"label": "Menu link color",
+			"selector": ".wpe-menu a",
+			"panel": "style",
+			"prop": "color"
+		},
+		"navBackground": {
+			"type": "background",
+			"label": "Menu background",
+			"selector": ".wpe-menu__desktop",
+			"panel": "style"
+		},
+		"dropBackground": {
+			"type": "background",
+			"label": "Dropdown background",
+			"selector": ".wpe-menu .sub-menu",
+			"panel": "style"
+		},
+		"dropBorder": {
+			"type": "border",
+			"label": "Dropdown border",
+			"selector": ".wpe-menu .sub-menu",
+			"panel": "style"
+		},
+		"dropShadow": {
+			"type": "shadow",
+			"label": "Dropdown shadow",
+			"selector": ".wpe-menu .sub-menu",
+			"panel": "style"
+		}
+	}
+}
