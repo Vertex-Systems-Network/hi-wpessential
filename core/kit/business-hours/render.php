@@ -76,7 +76,11 @@ $wpe_title = trim( (string) $a['title'] );
 				</tr>
 			<?php else : ?>
 				<div class="wpe-business-hours__row<?php echo $wpe_current ? ' is-today' : ''; ?>">
-					<dt class="wpe-business-hours__day"><?php echo esc_html( $wpe_label ); ?><?php if ( $wpe_current ) : ?> <span class="screen-reader-text"><?php esc_html_e( '(today)', 'hi-wpessential' ); ?></span><?php endif; ?></dt>
+					<dt class="wpe-business-hours__day"><?php echo esc_html( $wpe_label ); ?>
+						<?php if ( $wpe_current ) : ?>
+							<span class="screen-reader-text"><?php esc_html_e( '(today)', 'hi-wpessential' ); ?></span>
+						<?php endif; ?>
+					</dt>
 					<dd class="wpe-business-hours__time"><?php echo esc_html( $wpe_hours ); ?></dd>
 				</div>
 			<?php endif; ?>
