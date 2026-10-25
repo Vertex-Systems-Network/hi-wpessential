@@ -625,7 +625,7 @@ class Groups {
 	 * @return array array( attributes, groups )
 	 */
 	public static function common() {
-		$px     = array(
+		$px   = array(
 			'type'       => 'range',
 			'unit'       => 'px',
 			'min'        => -500,
@@ -634,26 +634,26 @@ class Groups {
 			'panel'      => 'advanced',
 			'common'     => true,
 		);
-		$attr   = array(
-			'customCss'       => array(
+		$attr = array(
+			'customCss'           => array(
 				'type'  => 'textarea',
 				'panel' => 'advanced',
 				'label' => __( 'Custom CSS (write "selector" for this element)', 'hi-wpessential' ),
 				'code'  => true,
 			),
-			'cssClass'        => array(
+			'cssClass'            => array(
 				'type'   => 'text',
 				'label'  => __( 'CSS classes', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
-			'attributes'      => array(
+			'attributes'          => array(
 				'type'   => 'textarea',
 				'label'  => __( 'Custom attributes (key|value, one per line)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
-			'width'           => array(
+			'width'               => array(
 				'type'       => 'select',
 				'label'      => __( 'Width', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -668,7 +668,7 @@ class Groups {
 					'fit-content' => __( 'Fit content', 'hi-wpessential' ),
 				),
 			),
-			'maxWidth'        => array_merge(
+			'maxWidth'            => array_merge(
 				$px,
 				array(
 					'label' => __( 'Max width', 'hi-wpessential' ),
@@ -677,7 +677,7 @@ class Groups {
 					'min'   => 0,
 				)
 			),
-			'alignSelf'       => array(
+			'alignSelf'           => array(
 				'type'       => 'select',
 				'label'      => __( 'Align self (in flex/grid)', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -693,7 +693,7 @@ class Groups {
 					'stretch'    => __( 'Stretch', 'hi-wpessential' ),
 				),
 			),
-			'order'           => array(
+			'order'               => array(
 				'type'       => 'range',
 				'label'      => __( 'Order', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -705,7 +705,7 @@ class Groups {
 				'min'        => -10,
 				'max'        => 10,
 			),
-			'position'        => array(
+			'position'            => array(
 				'type'       => 'select',
 				'label'      => __( 'Position', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -721,7 +721,7 @@ class Groups {
 					'sticky'   => __( 'Sticky', 'hi-wpessential' ),
 				),
 			),
-			'top'             => array_merge(
+			'top'                 => array_merge(
 				$px,
 				array(
 					'label' => __( 'Offset top', 'hi-wpessential' ),
@@ -729,7 +729,7 @@ class Groups {
 					'raw'   => true,
 				)
 			),
-			'right'           => array_merge(
+			'right'               => array_merge(
 				$px,
 				array(
 					'label' => __( 'Offset right', 'hi-wpessential' ),
@@ -737,7 +737,7 @@ class Groups {
 					'raw'   => true,
 				)
 			),
-			'bottom'          => array_merge(
+			'bottom'              => array_merge(
 				$px,
 				array(
 					'label' => __( 'Offset bottom', 'hi-wpessential' ),
@@ -745,7 +745,7 @@ class Groups {
 					'raw'   => true,
 				)
 			),
-			'left'            => array_merge(
+			'left'                => array_merge(
 				$px,
 				array(
 					'label' => __( 'Offset left', 'hi-wpessential' ),
@@ -754,7 +754,7 @@ class Groups {
 				)
 			),
 			// Logical inline spacing respects direction: start is left in LTR, right in RTL.
-			'logicalMarginStart' => array_merge(
+			'logicalMarginStart'  => array_merge(
 				$px,
 				array(
 					'label' => __( 'Margin inline start (RTL-aware)', 'hi-wpessential' ),
@@ -762,7 +762,7 @@ class Groups {
 					'raw'   => true,
 				)
 			),
-			'logicalMarginEnd'   => array_merge(
+			'logicalMarginEnd'    => array_merge(
 				$px,
 				array(
 					'label' => __( 'Margin inline end (RTL-aware)', 'hi-wpessential' ),
@@ -788,7 +788,7 @@ class Groups {
 					'min'   => 0,
 				)
 			),
-			'zIndex'          => array(
+			'zIndex'              => array(
 				'type'   => 'range',
 				'label'  => __( 'Z-index', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -799,7 +799,7 @@ class Groups {
 				'min'    => -10,
 				'max'    => 999,
 			),
-			'opacity'         => array(
+			'opacity'             => array(
 				'type'   => 'range',
 				'label'  => __( 'Opacity', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -811,7 +811,7 @@ class Groups {
 				'max'    => 1,
 				'step'   => 0.05,
 			),
-			'hoverOpacity'    => array(
+			'hoverOpacity'        => array(
 				'type'   => 'range',
 				'label'  => __( 'Hover opacity', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -824,7 +824,7 @@ class Groups {
 				'max'    => 1,
 				'step'   => 0.05,
 			),
-			'rotate'          => array(
+			'rotate'              => array(
 				'type'   => 'range',
 				'label'  => __( 'Rotate', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -834,7 +834,7 @@ class Groups {
 				'min'    => -180,
 				'max'    => 180,
 			),
-			'scale'           => array(
+			'scale'               => array(
 				'type'   => 'range',
 				'label'  => __( 'Scale', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -845,7 +845,7 @@ class Groups {
 				'max'    => 3,
 				'step'   => 0.05,
 			),
-			'moveX'           => array(
+			'moveX'               => array(
 				'type'   => 'range',
 				'label'  => __( 'Move X', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -855,7 +855,7 @@ class Groups {
 				'min'    => -300,
 				'max'    => 300,
 			),
-			'moveY'           => array(
+			'moveY'               => array(
 				'type'   => 'range',
 				'label'  => __( 'Move Y', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -865,7 +865,7 @@ class Groups {
 				'min'    => -300,
 				'max'    => 300,
 			),
-			'hoverRotate'     => array(
+			'hoverRotate'         => array(
 				'type'   => 'range',
 				'label'  => __( 'Hover rotate', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -875,7 +875,7 @@ class Groups {
 				'min'    => -180,
 				'max'    => 180,
 			),
-			'hoverScale'      => array(
+			'hoverScale'          => array(
 				'type'   => 'range',
 				'label'  => __( 'Hover scale', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -886,7 +886,7 @@ class Groups {
 				'max'    => 3,
 				'step'   => 0.05,
 			),
-			'hoverMoveY'      => array(
+			'hoverMoveY'          => array(
 				'type'   => 'range',
 				'label'  => __( 'Hover move Y', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -896,7 +896,7 @@ class Groups {
 				'min'    => -100,
 				'max'    => 100,
 			),
-			'transition'      => array(
+			'transition'          => array(
 				'type'   => 'range',
 				'label'  => __( 'Transition (ms)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -907,7 +907,7 @@ class Groups {
 				'max'    => 3000,
 				'step'   => 50,
 			),
-			'transitionEase'  => array(
+			'transitionEase'      => array(
 				'type'    => 'select',
 				'label'   => __( 'Transition easing', 'hi-wpessential' ),
 				'panel'   => 'advanced',
@@ -923,7 +923,7 @@ class Groups {
 					'cubic-bezier(.34,1.56,.64,1)' => __( 'Spring', 'hi-wpessential' ),
 				),
 			),
-			'transitionDelay' => array(
+			'transitionDelay'     => array(
 				'type'   => 'range',
 				'label'  => __( 'Transition delay (ms)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -934,7 +934,7 @@ class Groups {
 				'max'    => 2000,
 				'step'   => 50,
 			),
-			'hoverPreset'     => array(
+			'hoverPreset'         => array(
 				'type'    => 'select',
 				'label'   => __( 'Hover preset (from the demo)', 'hi-wpessential' ),
 				'panel'   => 'advanced',
@@ -949,13 +949,13 @@ class Groups {
 					'tilt'   => __( 'Tilt', 'hi-wpessential' ),
 				),
 			),
-			'rootAriaLabel'   => array(
+			'rootAriaLabel'       => array(
 				'type'   => 'text',
 				'label'  => __( 'Wrapper ARIA label (needs a role)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
-			'rootRole'        => array(
+			'rootRole'            => array(
 				'type'    => 'select',
 				'label'   => __( 'Wrapper ARIA role', 'hi-wpessential' ),
 				'panel'   => 'advanced',
@@ -970,13 +970,13 @@ class Groups {
 					'group'         => 'group',
 				),
 			),
-			'rootAriaHidden'  => array(
+			'rootAriaHidden'      => array(
 				'type'   => 'toggle',
 				'label'  => __( 'Decorative: hide from screen readers', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
-			'rootAriaLive'    => array(
+			'rootAriaLive'        => array(
 				'type'    => 'select',
 				'label'   => __( 'Announce changes (aria-live)', 'hi-wpessential' ),
 				'panel'   => 'advanced',
@@ -987,7 +987,7 @@ class Groups {
 					'assertive' => __( 'Assertive', 'hi-wpessential' ),
 				),
 			),
-			'animation'       => array(
+			'animation'           => array(
 				'type'    => 'select',
 				'label'   => __( 'Entrance animation', 'hi-wpessential' ),
 				'panel'   => 'advanced',
@@ -995,7 +995,7 @@ class Groups {
 				'default' => '',
 				'options' => self::animations(),
 			),
-			'animDuration'    => array(
+			'animDuration'        => array(
 				'type'   => 'range',
 				'label'  => __( 'Animation duration (ms)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -1006,7 +1006,7 @@ class Groups {
 				'max'    => 3000,
 				'step'   => 50,
 			),
-			'animDelay'       => array(
+			'animDelay'           => array(
 				'type'   => 'range',
 				'label'  => __( 'Animation delay (ms)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
@@ -1017,7 +1017,7 @@ class Groups {
 				'max'    => 3000,
 				'step'   => 50,
 			),
-			'focusRingStyle'  => array(
+			'focusRingStyle'      => array(
 				'type'    => 'select',
 				'label'   => __( 'Keyboard focus outline style', 'hi-wpessential' ),
 				'panel'   => 'advanced',
@@ -1030,14 +1030,14 @@ class Groups {
 					'double' => __( 'Double', 'hi-wpessential' ),
 				),
 			),
-			'focusRingColor'  => array(
+			'focusRingColor'      => array(
 				'type'   => 'color',
 				'label'  => __( 'Keyboard focus outline colour', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 				'css'    => '--wpek-focus-color',
 			),
-			'focusRingWidth'  => array(
+			'focusRingWidth'      => array(
 				'type'       => 'range',
 				'label'      => __( 'Keyboard focus outline width', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -1049,7 +1049,7 @@ class Groups {
 				'step'       => 1,
 				'responsive' => true,
 			),
-			'focusRingOffset' => array(
+			'focusRingOffset'     => array(
 				'type'       => 'range',
 				'label'      => __( 'Keyboard focus outline offset', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -1061,13 +1061,13 @@ class Groups {
 				'step'       => 1,
 				'responsive' => true,
 			),
-			'glass'           => array(
+			'glass'               => array(
 				'type'   => 'toggle',
 				'label'  => __( 'Glass / translucent surface', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
-			'glassBlur'       => array(
+			'glassBlur'           => array(
 				'type'       => 'range',
 				'label'      => __( 'Glass backdrop blur', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -1079,7 +1079,7 @@ class Groups {
 				'step'       => 1,
 				'responsive' => true,
 			),
-			'glassOpacity'    => array(
+			'glassOpacity'        => array(
 				'type'       => 'range',
 				'label'      => __( 'Glass surface opacity', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -1091,13 +1091,13 @@ class Groups {
 				'step'       => 1,
 				'responsive' => true,
 			),
-			'hidePrint'       => array(
+			'hidePrint'           => array(
 				'type'   => 'toggle',
 				'label'  => __( 'Hide this element when printing', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
-			'hide'            => array(
+			'hide'                => array(
 				'type'   => 'breakpoints',
 				'label'  => __( 'Hide on', 'hi-wpessential' ),
 				'panel'  => 'advanced',
