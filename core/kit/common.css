@@ -52,7 +52,9 @@
 /* The opt-in ring controls style keyboard focus on both root links and descendants. */
 .wpek-focus-ring:is(a,button,input,select,textarea,[tabindex]):focus-visible,
 .wpek-focus-ring :is(a,button,input,select,textarea,[tabindex]):focus-visible{
-	outline:var(--wpek-focus-width,2px) var(--wpek-focus-style,solid) var(--wpek-focus-color,var(--wp--preset--color--primary,currentColor))!important;
+	outline-width:var(--wpek-focus-width,2px)!important;
+	outline-style:var(--wpek-focus-style,solid)!important;
+	outline-color:var(--wpek-focus-color,var(--wp--preset--color--primary,currentColor))!important;
 	outline-offset:var(--wpek-focus-offset,3px)!important;
 }
 
