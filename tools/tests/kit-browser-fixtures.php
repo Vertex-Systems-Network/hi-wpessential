@@ -26,6 +26,15 @@ wp_update_nav_menu_item( $wpe_menu, 0, array(
 	'menu-item-parent-id' => $wpe_parent,
 	'menu-item-status' => 'publish',
 ) );
+// Published synced pattern provides a realistic, block-authored mega-menu panel.
+$wpe_mega_pattern = wp_insert_post(
+	array(
+		'post_type' => 'wp_block',
+		'post_status' => 'publish',
+		'post_title' => 'Kit QA Mega Content',
+		'post_content' => '<!-- wp:paragraph --><p>Kit QA Saved Mega Content</p><!-- /wp:paragraph -->',
+	)
+);
 $wpe_form_id = wp_insert_post( array( 'post_type' => 'wpforms', 'post_status' => 'publish', 'post_title' => 'Kit QA Contact' ), true );
 if ( is_wp_error( $wpe_form_id ) ) {
 	throw new RuntimeException( 'Unable to insert WPForms fixture.' );
@@ -51,7 +60,15 @@ $wpe_form = array(
 wp_update_post( array( 'ID' => $wpe_form_id, 'post_content' => wp_slash( wp_json_encode( $wpe_form ) ) ) );
 $wpe_defs = array(
 	'price-list' => array( 'title' => 'Kit QA Prices', 'items' => array( array( 'title' => 'Spring menu', 'price' => '19', 'badge' => 'Popular' ), array( 'title' => 'Summer menu', 'price' => '24' ) ) ),
-	'menu' => array( 'menu' => (string) $wpe_menu, 'mega' => true, 'label' => 'QA Navigation' ),
+	'menu' => array(
+		'menu' => (string) $wpe_menu,
+		'mega' => true,
+		'label' => 'QA Navigation',
+		'desktopTrigger' => 'click',
+		'templateItems' => array(
+			array( 'menuItemId' => (string) $wpe_parent, 'templateId' => (string) $wpe_mega_pattern, 'source' => 'wp_block' ),
+		),
+	),
 	'forms' => array( 'formId' => (string) $wpe_form_id, 'heading' => 'Kit QA Real Form', 'showTitle' => false ),
 	'icon' => array( 'icon' => array( 'library' => 'wpessential', 'value' => 'bolt' ), 'label' => 'QA Icon', 'url' => 'https://example.org' ),
 	'chart' => array( 'title' => 'Kit QA Chart', 'type' => 'donut', 'items' => array( array( 'label' => 'A', 'value' => '60', 'color' => 'primary' ), array( 'label' => 'B', 'value' => '40', 'color' => 'secondary' ) ) ),
