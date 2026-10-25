@@ -1196,7 +1196,7 @@ class Groups {
 					'md' => 'Medium (16px)',
 					'lg' => 'Large (24px)',
 					'xl' => 'Extra large (48px)',
-				)
+				),
 			),
 			'radiusToken'             => array(
 				'type'      => 'select',
@@ -1217,7 +1217,7 @@ class Groups {
 					'md' => 'Medium',
 					'lg' => 'Large',
 					'xl' => 'Extra large',
-				)
+				),
 			),
 		);
 		$groups = array(
