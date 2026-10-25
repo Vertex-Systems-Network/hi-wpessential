@@ -66,7 +66,7 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 41 | Copy/paste a style between Gutenberg and Elementor | ⬜ |
 | 42 | Analytics data attributes for click events | ✅ Optional event and label data attributes on every element root |
 | 43 | content-visibility: auto; CSS/JS only where used | ✅ Opt-in content-visibility with configurable intrinsic size |
-| 44 | Every text field translatable (WPML/Polylang) | ⏳ wpml-config for kit blocks |
+| 44 | Every text field translatable (WPML/Polylang) | ✅ Field-specific mappings for all Kit blocks and translatable repeater content |
 
 ## 3. Parity rule
 

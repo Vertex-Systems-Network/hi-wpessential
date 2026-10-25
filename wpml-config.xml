@@ -16,4 +16,443 @@
 			<tag>wpe_language_switcher</tag>
 		</shortcode>
 	</shortcodes>
+	<gutenberg-blocks>
+		<gutenberg-block type="wpessential/accordion" translate="1">
+			<key name="items">
+				<key name="title" />
+				<key name="content" />
+			</key>
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/alert" translate="1">
+			<key name="title" />
+			<key name="content" />
+			<key name="dismissLabel" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/business-hours" translate="1">
+			<key name="title" />
+			<key name="rows">
+				<key name="open" />
+				<key name="close" />
+			</key>
+			<key name="closedText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/button" translate="1">
+			<key name="text" />
+			<key name="url" />
+			<key name="ariaLabel" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/calendar" translate="1">
+			<key name="heading" />
+			<key name="events">
+				<key name="title" />
+				<key name="date" />
+				<key name="time" />
+				<key name="location" />
+				<key name="description" />
+				<key name="url" />
+			</key>
+			<key name="month" />
+			<key name="linkLabel" />
+			<key name="emptyMessage" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/call-to-action" translate="1">
+			<key name="eyebrow" />
+			<key name="title" />
+			<key name="description" />
+			<key name="imageAlt" />
+			<key name="primaryText" />
+			<key name="primaryUrl" />
+			<key name="secondaryText" />
+			<key name="secondaryUrl" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/chart" translate="1">
+			<key name="title" />
+			<key name="items">
+				<key name="label" />
+				<key name="value" />
+			</key>
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/code" translate="1">
+			<key name="html" />
+			<key name="code" />
+			<key name="embedUrl" />
+			<key name="embedTitle" />
+			<key name="copyLabel" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/comments" translate="1">
+			<key name="title" />
+			<key name="postId" />
+			<key name="emptyMessage" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/container" translate="1">
+			<key name="content" />
+			<key name="ariaLabel" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/countdown" translate="1">
+			<key name="target" />
+			<key name="heading" />
+			<key name="expiredText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/counter" translate="1">
+			<key name="start" />
+			<key name="end" />
+			<key name="prefix" />
+			<key name="suffix" />
+			<key name="label" />
+			<key name="description" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/divider" translate="1">
+			<key name="text" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/flip" translate="1">
+			<key name="frontTitle" />
+			<key name="frontContent" />
+			<key name="backTitle" />
+			<key name="backContent" />
+			<key name="url" />
+			<key name="button" />
+			<key name="toggleLabel" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/forms" translate="1">
+			<key name="formId" />
+			<key name="heading" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/gallery" translate="1">
+			<key name="items">
+				<key name="alt" />
+				<key name="caption" />
+				<key name="link" />
+			</key>
+			<key name="emptyText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/heading" translate="1">
+			<key name="eyebrow" />
+			<key name="text" />
+			<key name="accent" />
+			<key name="link" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/icon-list" translate="1">
+			<key name="items">
+				<key name="text" />
+				<key name="description" />
+				<key name="link" />
+			</key>
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/icon" translate="1">
+			<key name="url" />
+			<key name="label" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/image-carousel" translate="1">
+			<key name="items">
+				<key name="alt" />
+				<key name="caption" />
+				<key name="link" />
+			</key>
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/image-comparison" translate="1">
+			<key name="beforeLabel" />
+			<key name="afterLabel" />
+			<key name="beforeAlt" />
+			<key name="afterAlt" />
+			<key name="caption" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/image" translate="1">
+			<key name="alt" />
+			<key name="caption" />
+			<key name="link" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/info-box" translate="1">
+			<key name="number" />
+			<key name="badge" />
+			<key name="title" />
+			<key name="description" />
+			<key name="buttonText" />
+			<key name="link" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/map" translate="1">
+			<key name="title" />
+			<key name="address" />
+			<key name="latitude" />
+			<key name="longitude" />
+			<key name="consent" />
+			<key name="privacyNote" />
+			<key name="linkLabel" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/menu" translate="1">
+			<key name="menu" />
+			<key name="label" />
+			<key name="mobileLabel" />
+			<key name="templateItems">
+				<key name="menuItemId" />
+				<key name="templateId" />
+			</key>
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/modal" translate="1">
+			<key name="trigger" />
+			<key name="title" />
+			<key name="content" />
+			<key name="closeLabel" />
+			<key name="footerText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/posts-grid" translate="1">
+			<key name="postType" />
+			<key name="taxonomy" />
+			<key name="terms" />
+			<key name="readMoreText" />
+			<key name="emptyText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/price-list" translate="1">
+			<key name="title" />
+			<key name="items">
+				<key name="title" />
+				<key name="description" />
+				<key name="price" />
+				<key name="oldPrice" />
+				<key name="badge" />
+				<key name="imageAlt" />
+				<key name="link" />
+			</key>
+			<key name="currency" />
+			<key name="priceSuffix" />
+			<key name="emptyText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/pricing-table" translate="1">
+			<key name="plan" />
+			<key name="subtitle" />
+			<key name="currency" />
+			<key name="price" />
+			<key name="period" />
+			<key name="oldPrice" />
+			<key name="ribbon" />
+			<key name="features">
+				<key name="text" />
+			</key>
+			<key name="buttonText" />
+			<key name="buttonUrl" />
+			<key name="footer" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/products" translate="1">
+			<key name="heading" />
+			<key name="category" />
+			<key name="ids" />
+			<key name="buttonLabel" />
+			<key name="emptyMessage" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/progress-bar" translate="1">
+			<key name="items">
+				<key name="label" />
+				<key name="description" />
+			</key>
+			<key name="emptyText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/rating" translate="1">
+			<key name="title" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/search" translate="1">
+			<key name="label" />
+			<key name="placeholder" />
+			<key name="buttonText" />
+			<key name="expandText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/site-archive-widgets" translate="1">
+			<key name="prefix" />
+			<key name="fallback" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/site-logo" translate="1">
+			<key name="siteTitle" />
+			<key name="tagline" />
+			<key name="url" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/social-feed" translate="1">
+			<key name="title" />
+			<key name="items">
+				<key name="caption" />
+				<key name="username" />
+				<key name="date" />
+				<key name="url" />
+			</key>
+			<key name="postType" />
+			<key name="buttonText" />
+			<key name="loadMoreText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/social" translate="1">
+			<key name="heading" />
+			<key name="items">
+				<key name="label" />
+				<key name="url" />
+			</key>
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/svg" translate="1">
+			<key name="title" />
+			<key name="caption" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/table" translate="1">
+			<key name="data" />
+			<key name="caption" />
+			<key name="searchPlaceholder" />
+			<key name="emptyMessage" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/tabs" translate="1">
+			<key name="items">
+				<key name="title" />
+				<key name="badge" />
+				<key name="content" />
+				<key name="anchor" />
+			</key>
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/team-member" translate="1">
+			<key name="name" />
+			<key name="role" />
+			<key name="bio" />
+			<key name="email" />
+			<key name="profileUrl" />
+			<key name="profileLabel" />
+			<key name="socials">
+				<key name="label" />
+				<key name="url" />
+			</key>
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/testimonial" translate="1">
+			<key name="quote" />
+			<key name="name" />
+			<key name="role" />
+			<key name="company" />
+			<key name="profileUrl" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/text" translate="1">
+			<key name="content" />
+			<key name="moreText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/timeline" translate="1">
+			<key name="title" />
+			<key name="items">
+				<key name="title" />
+				<key name="date" />
+				<key name="content" />
+				<key name="link" />
+				<key name="linkLabel" />
+			</key>
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/tooltip" translate="1">
+			<key name="trigger" />
+			<key name="tipText" />
+			<key name="summary" />
+			<key name="expandedContent" />
+			<key name="moreLabel" />
+			<key name="lessLabel" />
+			<key name="firstTitle" />
+			<key name="firstContent" />
+			<key name="secondTitle" />
+			<key name="secondContent" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/video" translate="1">
+			<key name="mediaUrl" />
+			<key name="title" />
+			<key name="description" />
+			<key name="captionsUrl" />
+			<key name="captionsLanguage" />
+			<key name="captionsLabel" />
+			<key name="emptyText" />
+			<key name="rootAriaLabel" />
+			<key name="analyticsLabel" />
+		</gutenberg-block>
+		<gutenberg-block type="wpessential/breadcrumbs" translate="1">
+			<key name="label" />
+			<key name="homeLabel" />
+			<key name="currentLabel" />
+			<key name="items">
+				<key name="label" />
+			</key>
+		</gutenberg-block>
+	</gutenberg-blocks>
 </wpml-config>

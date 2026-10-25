@@ -159,3 +159,8 @@ Full drag-and-drop menu builder, dynamic per-item badges/media, and complete ben
 The shared Advanced section now exposes Kit-only controls in Elementor as well as Gutenberg, including parent-width styling, click analytics labels, and opt-in off-screen rendering. Parent-width rules accept allowlisted layout choices, bounded values, and theme palette colours. Click tracking writes `data-wpek-event` and optional `data-wpek-label` attributes on the element root for tag managers and analytics integrations.
 
 `content-visibility: auto` is opt-in and can take an estimated intrinsic block size to reduce layout shifts. It keeps off-screen content in the accessibility tree. Directional icon glyphs mirror automatically in RTL; non-directional icons keep their orientation.
+
+
+### Translation and semantic output
+
+`wpml-config.xml` maps text, rich text, textarea, and URL attributes for every `wpessential/*` block, including translatable fields inside repeaters. Style controls stay copied as design settings. Container-based elements expose an optional semantic root tag in the shared Advanced panel; the default preserves the element's original markup.

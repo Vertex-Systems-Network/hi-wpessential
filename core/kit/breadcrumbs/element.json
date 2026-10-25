@@ -1,0 +1,29 @@
+{
+  "name": "breadcrumbs",
+  "title": "Breadcrumbs (WPEssential)",
+  "category": "content",
+  "description": "Accessible breadcrumb navigation with BreadcrumbList structured data.",
+  "icon": "arrow-right-alt",
+  "elementor_icon": "eicon-navigation-horizontal",
+  "keywords": ["breadcrumbs", "navigation", "schema", "breadcrumb"],
+  "panels": {"content": "Breadcrumbs", "style": "Appearance"},
+  "attributes": {
+    "label": {"type": "text", "label": "Navigation label", "default": "Breadcrumb"},
+    "homeLabel": {"type": "text", "label": "Home label", "default": "Home"},
+    "homeUrl": {"type": "url", "label": "Home URL (blank uses site home)", "default": ""},
+    "showCurrent": {"type": "toggle", "label": "Show current page", "default": true},
+    "currentLabel": {"type": "text", "label": "Current page label (blank uses page title)", "default": ""},
+    "separator": {"type": "text", "label": "Separator", "default": "/", "panel": "style"},
+    "items": {
+      "type": "repeater",
+      "label": "Breadcrumb links",
+      "title_field": "label",
+      "panel": "content",
+      "default": [],
+      "fields": {
+        "label": {"type": "text", "label": "Label", "default": "Page"},
+        "url": {"type": "url", "label": "URL", "default": ""}
+      }
+    }
+  }
+}

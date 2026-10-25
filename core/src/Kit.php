@@ -791,7 +791,7 @@ class Kit {
 						$wpe_is_close = 0 === strpos( $wpe_token[0], '</' );
 						if ( $wpe_is_close ) {
 							if ( 0 === --$wpe_depth ) {
-								$html = substr_replace( $html, '</' . $wpe_html_tag . '>', $wpe_token[1] + $wpe_delta, strlen( $wpe_old_tag ) + 3 );
+								$html = substr_replace( $html, '</' . $wpe_html_tag . '>', $wpe_token[1], strlen( $wpe_old_tag ) + 3 );
 								break;
 							}
 							continue;
