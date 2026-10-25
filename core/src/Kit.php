@@ -791,7 +791,7 @@ class Kit {
 				if ( isset( $wpe_effect_ranges[ $key ] ) && ( ! is_numeric( $value ) || (float) $value < $wpe_effect_ranges[ $key ][0] || (float) $value > $wpe_effect_ranges[ $key ][1] ) ) {
 					continue;
 				}
-			// Never emit arbitrary or unbounded parallax travel values.
+				// Never emit arbitrary or unbounded parallax travel values.
 				if ( 0 === strpos( $key, 'parallaxLayer' ) && ( ! is_numeric( $value ) || abs( (float) $value ) > 240 ) ) {
 					continue;
 				}
