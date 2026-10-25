@@ -80,65 +80,48 @@ async function verifyPage( page, id, label ) {
 	await mobileMenu.locator( ':scope > summary' ).click();
 	await page.setViewportSize( { width: 1440, height: 900 } );
 	// CSS logical spacing must flip physical edges with document direction.
-	const directional = await page.evaluate( () => {
-		const price = document.querySelector( '.wpe-price-list' );
-		const icon = document.querySelector( '.wpe-icon-single' );
-		const beforePrice = price.getAttribute( 'dir' );
-		const beforeIcon = icon.getAttribute( 'dir' );
-		function snapshot( direction ) {
-			price.setAttribute( 'dir', direction );
-			icon.setAttribute( 'dir', direction );
-			const p = getComputedStyle( price );
-			const i = getComputedStyle( icon );
-			return {
-				marginLeft: p.marginLeft,
-				marginRight: p.marginRight,
-				paddingLeft: i.paddingLeft,
-				paddingRight: i.paddingRight,
-				marginStart: p.marginInlineStart,
-				paddingEnd: i.paddingInlineEnd,
-				priceDirection: p.direction,
-				iconDirection: i.direction
-			};
+	// Direction is a layout-level property. Change it and give Chromium a frame
+	// to resolve logical-property mappings instead of toggling twice in one tick.
+	const directionOriginal = await page.evaluate( () => ( {
+		price: document.querySelector( '.wpe-price-list' ).getAttribute( 'dir' ),
+		icon: document.querySelector( '.wpe-icon-single' ).getAttribute( 'dir' )
+	} ) );
+	const directional = {};
+	try {
+		for ( const dir of [ 'ltr', 'rtl' ] ) {
+			await page.evaluate( value => {
+				document.querySelector( '.wpe-price-list' ).setAttribute( 'dir', value );
+				document.querySelector( '.wpe-icon-single' ).setAttribute( 'dir', value );
+			}, dir );
+			await page.waitForTimeout( 50 );
+			directional[ dir ] = await page.evaluate( () => {
+				const price = getComputedStyle( document.querySelector( '.wpe-price-list' ) );
+				const icon = getComputedStyle( document.querySelector( '.wpe-icon-single' ) );
+				return {
+					marginLeft: price.marginLeft,
+					marginRight: price.marginRight,
+					paddingLeft: icon.paddingLeft,
+					paddingRight: icon.paddingRight,
+					marginStart: price.marginInlineStart,
+					paddingEnd: icon.paddingInlineEnd,
+					priceDirection: price.direction,
+					iconDirection: icon.direction
+				};
+			} );
 		}
-		try {
-			const ltr = snapshot( 'ltr' );
-			const rtl = snapshot( 'rtl' );
-			return {
-				ltr,
-				rtl,
-				priceId: price.id,
-				iconId: icon.id,
-				priceMarkup: price.outerHTML.slice( 0, 420 ),
-				iconCSS: Array.from( document.querySelectorAll( 'style' ) )
-					.map( tag => tag.textContent || '' )
-					.filter( text => text.includes( '#' + icon.id ) )
-					.map( text => text.slice( text.indexOf( '#' + icon.id ), text.indexOf( '#' + icon.id ) + 320 ) ),
-				iconPaddingRules: Array.from( document.styleSheets ).flatMap( sheet => {
-					try {
-						return Array.from( sheet.cssRules || [] ).filter( rule => {
-							return rule.selectorText && rule.style && rule.style.cssText.includes( 'padding' ) && rule.selectorText.split( ',' ).some( selector => {
-								try { return icon.matches( selector.trim() ); } catch ( error ) { return false; }
-							} );
-						} ).map( rule => rule.cssText.slice( 0, 340 ) );
-					} catch ( error ) { return []; }
-				} ).slice( -16 ),
-				styleRules: Array.from( document.querySelectorAll( 'style' ) ).map( item => item.textContent ).filter( text => text && text.includes( 'margin-inline-start' ) ).slice( 0, 5 )
-			};
-		} finally {
-			if ( beforePrice === null ) {
-				price.removeAttribute( 'dir' );
-			} else {
-				price.setAttribute( 'dir', beforePrice );
+	} finally {
+		await page.evaluate( saved => {
+			for ( const [ selector, attr ] of [ [ '.wpe-price-list', saved.price ], [ '.wpe-icon-single', saved.icon ] ] ) {
+				const element = document.querySelector( selector );
+				if ( attr === null ) {
+					element.removeAttribute( 'dir' );
+				} else {
+					element.setAttribute( 'dir', attr );
+				}
 			}
-			if ( beforeIcon === null ) {
-				icon.removeAttribute( 'dir' );
-			} else {
-				icon.setAttribute( 'dir', beforeIcon );
-			}
-		}
-	} );
-	console.log( 'RTL CSS DEBUG:', label, JSON.stringify( directional ) );
+		}, directionOriginal );
+	}
+	console.log( 'RTL COMPUTED:', label, JSON.stringify( directional ) );
 	assert.equal( directional.ltr.marginStart, '14px', label + ': LTR logical margin value' );
 	assert.equal( directional.rtl.marginStart, '14px', label + ': RTL logical margin value' );
 	assert.equal( directional.ltr.marginLeft, '14px', label + ': LTR inline-start margin is left' );
