@@ -21,3 +21,26 @@
 @media(max-width:1023px){.wpe-posts-grid{--wpek-cols:2}}
 @media(max-width:559px){.wpe-posts-grid{--wpek-cols:1}}
 @media(prefers-reduced-motion:reduce){.wpe-posts-grid *{transition:none!important;transform:none!important}}
+
+/* Responsive post layouts and optional metadata. */
+.wpe-posts-grid__filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.wpe-posts-grid__filters a,.wpe-posts-grid__tags span{display:inline-flex;align-items:center;padding:5px 10px;border:1px solid currentColor;border-radius:999px;color:inherit;text-decoration:none}
+.wpe-posts-grid__filters a[aria-current=true]{background:var(--wp--preset--color--primary,#ec7d1a);color:var(--wp--preset--color--on-primary,#fff)}
+.wpe-posts-grid__tags{display:flex;flex-wrap:wrap;gap:6px}
+.wpe-posts-grid__tags span{font-size:.75rem}
+.wpe-posts-grid__author{display:inline-flex;align-items:center;gap:6px}
+.wpe-posts-grid__avatar{width:28px;height:28px;border-radius:50%}
+.wpe-posts-grid.has-equal-height .wpe-posts-grid__items{align-items:stretch}
+.wpe-posts-grid.is-layout-list .wpe-posts-grid__items{grid-template-columns:minmax(0,1fr)}
+.wpe-posts-grid.is-layout-list .wpe-posts-grid__card{flex-direction:row}
+.wpe-posts-grid.is-layout-list .wpe-posts-grid__image{flex:0 0 min(35%,320px)}
+.wpe-posts-grid.is-layout-masonry .wpe-posts-grid__items{display:block;columns:var(--wpek-cols);column-gap:var(--wpek-col-gap)}
+.wpe-posts-grid.is-layout-masonry .wpe-posts-grid__card{display:inline-flex;width:100%;margin:0 0 var(--wpek-row-gap);break-inside:avoid}
+.wpe-posts-grid.is-layout-carousel .wpe-posts-grid__items{display:flex;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;padding:3px 2px 12px}
+.wpe-posts-grid.is-layout-carousel .wpe-posts-grid__card{flex:0 0 min(82%,360px);scroll-snap-align:start}
+.wpe-posts-grid__pagination .wpe-posts-grid__page-prev{margin-right:auto}
+.wpe-posts-grid__pagination .wpe-posts-grid__page-next{margin-left:auto}
+@media(min-width:700px){.wpe-posts-grid.is-layout-carousel .wpe-posts-grid__card{flex-basis:46%}}
+@media(min-width:1100px){.wpe-posts-grid.is-layout-carousel .wpe-posts-grid__card{flex-basis:31%}}
+@media(max-width:559px){.wpe-posts-grid.is-layout-list .wpe-posts-grid__card{flex-direction:column}.wpe-posts-grid.is-layout-list .wpe-posts-grid__image{flex-basis:auto}}
+@media(prefers-reduced-motion:reduce){.wpe-posts-grid.is-layout-carousel .wpe-posts-grid__items{scroll-behavior:auto}}

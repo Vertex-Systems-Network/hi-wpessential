@@ -284,6 +284,105 @@
 			"panel": "query",
 			"label": "No results message",
 			"default": "No posts found."
+		},
+		"layout": {
+			"type": "select",
+			"panel": "layout",
+			"label": "Post layout",
+			"default": "grid",
+			"options": {
+				"grid": "Grid",
+				"list": "List",
+				"masonry": "Masonry",
+				"carousel": "Horizontal carousel"
+			}
+		},
+		"equalHeight": {
+			"type": "toggle",
+			"panel": "layout",
+			"label": "Equal-height cards",
+			"default": false
+		},
+		"authorIds": {
+			"type": "text",
+			"panel": "query",
+			"label": "Filter by author IDs (comma separated)",
+			"default": ""
+		},
+		"includePosts": {
+			"type": "text",
+			"panel": "query",
+			"label": "Include post IDs (comma separated)",
+			"default": ""
+		},
+		"excludePosts": {
+			"type": "text",
+			"panel": "query",
+			"label": "Exclude post IDs (comma separated)",
+			"default": ""
+		},
+		"ignoreSticky": {
+			"type": "toggle",
+			"panel": "query",
+			"label": "Ignore sticky posts",
+			"default": true
+		},
+		"showFilterTabs": {
+			"type": "toggle",
+			"panel": "query",
+			"label": "Show taxonomy filter tabs",
+			"default": false
+		},
+		"showComments": {
+			"type": "toggle",
+			"panel": "display",
+			"label": "Show comment count",
+			"default": false
+		},
+		"showTags": {
+			"type": "toggle",
+			"panel": "display",
+			"label": "Show tags",
+			"default": false
+		},
+		"showAuthorImage": {
+			"type": "toggle",
+			"panel": "display",
+			"label": "Show author avatar",
+			"default": false
+		},
+		"metaPosition": {
+			"type": "select",
+			"panel": "display",
+			"label": "Metadata position",
+			"default": "above",
+			"options": {
+				"above": "Before title",
+				"below": "After title"
+			}
+		},
+		"paginationType": {
+			"type": "select",
+			"panel": "query",
+			"label": "Pagination style",
+			"default": "numbers",
+			"options": {
+				"numbers": "Page numbers",
+				"prev_next": "Previous / next",
+				"both": "Numbers and previous / next"
+			}
+		},
+		"previousPageText": {
+			"type": "text",
+			"panel": "query",
+			"label": "Previous page label",
+			"default": "Previous"
+		},
+		"nextPageText": {
+			"type": "text",
+			"panel": "query",
+			"label": "Next page label",
+			"default": "Next"
 		}
 	},
 	"groups": {

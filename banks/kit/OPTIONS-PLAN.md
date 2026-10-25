@@ -2,7 +2,7 @@
 
 What every WPEssential kit element offers on top of the element's own options. Built once in the
 framework (`core/src/Kit.php`, `core/src/Kit/Groups.php`, `core/kit/common.css`), so every element
-gets it. Status: ✅ built · ⏳ next · ⬜ later.
+gets it. Status: ✅ built · ⏳ next · ⬜ later. This tracks shared Kit-wide options; per-element benchmark parity is listed separately in [banks/kit/README.md](README.md) and is still being completed.
 
 ## 1. What Elementor gives every widget (our bar)
 
