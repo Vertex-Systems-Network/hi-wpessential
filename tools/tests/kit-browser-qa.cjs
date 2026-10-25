@@ -79,6 +79,47 @@ async function verifyPage( page, id, label ) {
 	assert.equal( await mobileToggle.getAttribute( 'aria-expanded' ), 'false', label + ': mobile submenu did not close' );
 	await mobileMenu.locator( ':scope > summary' ).click();
 	await page.setViewportSize( { width: 1440, height: 900 } );
+	// Shared container query visibility reacts to parent size, not viewport width.
+	const containerStatus = await page.evaluate( async () => {
+		const form = document.querySelector( '.wpe-forms.wpek-query-container' );
+		const icon = document.querySelector( '.wpe-icon-single' );
+		if ( ! form || ! icon ) {
+			return { error: 'missing container source or icon', narrow: null, wide: null };
+		}
+		const parent = icon.parentNode;
+		const next = icon.nextSibling;
+		const previousWidth = form.style.width;
+		const nextFrame = () => new Promise( resolve => requestAnimationFrame( () => requestAnimationFrame( resolve ) ) );
+		try {
+			form.appendChild( icon );
+			form.style.width = '280px';
+			await nextFrame();
+			const narrow = getComputedStyle( icon ).display;
+			form.style.width = '560px';
+			await nextFrame();
+			const wide = getComputedStyle( icon ).display;
+			return { source: getComputedStyle( form ).containerType, narrow, wide };
+		} finally {
+			if ( next ) {
+				parent.insertBefore( icon, next );
+			} else {
+				parent.appendChild( icon );
+			}
+			form.style.width = previousWidth;
+		}
+	} );
+	assert.equal( containerStatus.source, 'inline-size', label + ': source is not a query container' );
+	assert.equal( containerStatus.narrow, 'none', label + ': 280px container should hide child' );
+	assert.notEqual( containerStatus.wide, 'none', label + ': 560px container should show child' );
+
+	// Theme tokens resolve against the real theme.json palette.
+	const themeTokens = await page.evaluate( () => {
+		const price = getComputedStyle( document.querySelector( '.wpe-price-list' ) );
+		return { paddingTop: price.paddingTop, radius: price.borderTopLeftRadius };
+	} );
+	assert.equal( themeTokens.paddingTop, '8px', label + ': theme small spacing token' );
+	assert.equal( themeTokens.radius, '10px', label + ': theme medium radius token' );
+	console.log( 'PASS: ' + label + ': parent-width query and theme spacing/radius tokens' );
 	// CSS logical spacing must flip physical edges with document direction.
 	// Direction is a layout-level property. Change it and give Chromium a frame
 	// to resolve logical-property mappings instead of toggling twice in one tick.
@@ -166,6 +207,21 @@ async function verifyPage( page, id, label ) {
 		{ width: 390, height: 844, type: 'mobile' }
 	] ) {
 		await page.setViewportSize( { width: vp.width, height: vp.height } );
+		await page.evaluate( () => new Promise( resolve => requestAnimationFrame( () => requestAnimationFrame( resolve ) ) ) );
+		const fluidSpacing = await page.evaluate( () => {
+			const style = getComputedStyle( document.querySelector( '.wpe-chart' ) );
+			return {
+				padding: parseFloat( style.paddingTop ),
+				gap: parseFloat( style.gap ),
+				cssWidth: window.innerWidth
+			};
+		} );
+		const expectedPadding = vp.width === 1440 ? 32 : 8 + ( 32 - 8 ) * ( ( vp.width - 360 ) / 1080 );
+		assert.equal( fluidSpacing.cssWidth, vp.width, label + ': CSS viewport width mismatch' );
+		const expectedGap = vp.width === 1440 ? 16 : 4 + ( 16 - 4 ) * ( ( vp.width - 360 ) / 1080 );
+		assert.ok( Math.abs( fluidSpacing.padding - expectedPadding ) < 0.2, label + ': fluid padding differs: ' + JSON.stringify( fluidSpacing ) );
+		assert.ok( Math.abs( fluidSpacing.gap - expectedGap ) < 0.2, label + ': fluid gap differs: ' + JSON.stringify( fluidSpacing ) );
+
 		for ( const scheme of [ 'light', 'dark' ] ) {
 			await page.evaluate( mode => document.documentElement.setAttribute( 'data-wpe-scheme', mode ), scheme );
 			const palette = await page.evaluate( () => {

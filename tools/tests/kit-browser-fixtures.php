@@ -59,7 +59,7 @@ $wpe_form = array(
 );
 wp_update_post( array( 'ID' => $wpe_form_id, 'post_content' => wp_slash( wp_json_encode( $wpe_form ) ) ) );
 $wpe_defs = array(
-	'price-list' => array( 'title' => 'Kit QA Prices', 'logicalMarginStart' => array( 'base' => 14 ), 'items' => array( array( 'title' => 'Spring menu', 'price' => '19', 'badge' => 'Popular' ), array( 'title' => 'Summer menu', 'price' => '24' ) ) ),
+	'price-list' => array( 'title' => 'Kit QA Prices', 'logicalMarginStart' => array( 'base' => 14 ), 'paddingToken' => 'sm', 'radiusToken' => 'md', 'items' => array( array( 'title' => 'Spring menu', 'price' => '19', 'badge' => 'Popular' ), array( 'title' => 'Summer menu', 'price' => '24' ) ) ),
 	'menu' => array(
 		'menu' => (string) $wpe_menu,
 		'mega' => true,
@@ -69,9 +69,9 @@ $wpe_defs = array(
 			array( 'menuItemId' => (string) $wpe_parent, 'templateId' => (string) $wpe_mega_pattern, 'source' => 'wp_block' ),
 		),
 	),
-	'forms' => array( 'formId' => (string) $wpe_form_id, 'heading' => 'Kit QA Real Form', 'showTitle' => false ),
-	'icon' => array( 'icon' => array( 'library' => 'wpessential', 'value' => 'bolt' ), 'label' => 'QA Icon', 'url' => 'https://example.org', 'focusRingStyle' => 'solid', 'focusRingColor' => 'primary', 'focusRingWidth' => array( 'base' => 3 ), 'focusRingOffset' => array( 'base' => 2 ), 'logicalPaddingEnd' => array( 'base' => 9 ) ),
-	'chart' => array( 'title' => 'Kit QA Chart', 'type' => 'donut', 'glass' => true, 'glassBlur' => array( 'base' => 14 ), 'glassOpacity' => array( 'base' => 75 ), 'hidePrint' => true, 'items' => array( array( 'label' => 'A', 'value' => '60', 'color' => 'primary' ), array( 'label' => 'B', 'value' => '40', 'color' => 'secondary' ) ) ),
+	'forms' => array( 'formId' => (string) $wpe_form_id, 'heading' => 'Kit QA Real Form', 'showTitle' => false, 'containerQuerySource' => true ),
+	'icon' => array( 'icon' => array( 'library' => 'wpessential', 'value' => 'bolt' ), 'label' => 'QA Icon', 'url' => 'https://example.org', 'focusRingStyle' => 'solid', 'focusRingColor' => 'primary', 'focusRingWidth' => array( 'base' => 3 ), 'focusRingOffset' => array( 'base' => 2 ), 'logicalPaddingEnd' => array( 'base' => 9 ), 'containerQueryHideBelow' => 320 ),
+	'chart' => array( 'title' => 'Kit QA Chart', 'fluidPaddingMin' => 8, 'fluidPaddingMax' => 32, 'fluidGapMin' => 4, 'fluidGapMax' => 16, 'type' => 'donut', 'glass' => true, 'glassBlur' => array( 'base' => 14 ), 'glassOpacity' => array( 'base' => 75 ), 'hidePrint' => true, 'items' => array( array( 'label' => 'A', 'value' => '60', 'color' => 'primary' ), array( 'label' => 'B', 'value' => '40', 'color' => 'secondary' ) ) ),
 	'flip' => array( 'frontTitle' => 'Kit QA Flip Front', 'backTitle' => 'Kit QA Flip Back', 'frontContent' => '<p>Open this card</p>' ),
 	'site-archive-widgets' => array( 'mode' => 'title', 'fallback' => 'Kit QA Archive' ),
 );
@@ -88,7 +88,7 @@ foreach ( $wpe_defs as $wpe_name => $wpe_atts ) {
 		}
 		if ( 'toggle' === $wpe_opt['type'] ) {
 			$wpe_elementor_atts[ $wpe_key ] = $wpe_elementor_atts[ $wpe_key ] ? 'yes' : '';
-		} elseif ( 'range' === $wpe_opt['type'] && ! empty( $wpe_opt['responsive'] ) && is_array( $wpe_elementor_atts[ $wpe_key ] ) ) {
+		} elseif ( 'range' === $wpe_opt['type'] && is_array( $wpe_elementor_atts[ $wpe_key ] ) ) {
 			$wpe_elementor_atts[ $wpe_key ] = array(
 				'size' => $wpe_elementor_atts[ $wpe_key ]['base'] ?? '',
 				'unit' => $wpe_opt['unit'] ?? 'px',

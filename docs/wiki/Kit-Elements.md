@@ -72,6 +72,17 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | Chart | Accessible numeric bar, column and donut visualizations with screen-reader table and no dependency. |
 | Flip / Hover Box | Native keyboard/touch disclosure with front/back copy and CSS reduced-motion flip. |
 
+## Container queries, fluid spacing and theme tokens
+
+Every Kit element now exposes advanced opt-in layout controls:
+
+- **Act as a CSS size query container:** establishes `container-type: inline-size` on the element.
+- **Hide below/above nearest container width:** generates CSS `@container` visibility rules using a validated 160–1920px threshold. Conditions depend on an **ancestor** query container, not the viewport or the element itself. Use the source toggle on the parent Kit element. More elaborate child-column/style changes based on container size remain future work.
+- **Fluid padding/gap:** independent small (360px viewport) and large (1440px viewport) values interpolate using CSS `clamp()`. Set *both* values in valid ascending order to activate fluid spacing. Opted-in fluid padding has priority over padding tokens.
+- **Padding and corner-radius theme tokens:** Small/Medium/Large/XL presets use the real spacing tokens `--wp--preset--spacing--20/40/50/70` and radius tokens `--wp--custom--radius--sm/md/lg/xl`. User styles follow theme customizations. Controls do not change existing content unless set.
+
+The shared controls work in both Gutenberg and Elementor; see `tools/tests/kit-container-fluid-tokens-smoke.php` and the browser workflow for integration coverage.
+
 ## RTL-aware logical inline spacing
 
 Every Kit widget/block now offers responsive **Margin inline start/end** and **Padding inline start/end** in its Advanced panel. Unlike physical left/right spacing, inline start/end automatically swap with the inherited document direction; no separate Arabic/Urdu configuration is necessary. Negative values are supported for margins, while padding controls start at 0. The fields are opt-in and preserve existing saved layouts. Mirroring decorative directional icons remains a separate roadmap task.

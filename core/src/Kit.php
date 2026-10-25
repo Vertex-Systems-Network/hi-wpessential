@@ -509,6 +509,9 @@ class Kit {
 			$classes[] = 'wpek-anim';
 			$classes[] = 'wpek-anim-' . sanitize_html_class( $a['animation'] );
 		}
+		if ( ! empty( $a['containerQuerySource'] ) ) {
+			$classes[] = 'wpek-query-container';
+		}
 		if ( ! empty( $a['glass'] ) ) {
 			$classes[] = 'wpek-glass';
 		}
@@ -613,6 +616,30 @@ class Kit {
 				Groups::css( $group, $a[ $key ], $root, $rules );
 			}
 		}
+		// Fluid padding/gap interpolates from viewport 360px to 1440px.
+		// Only paired, finite and bounded numbers are accepted; never emit user CSS.
+		foreach (
+			array(
+				'Padding' => 'padding',
+				'Gap'     => 'gap',
+			) as $wpe_suffix => $wpe_property
+		) {
+			$wpe_small = $a[ 'fluid' . $wpe_suffix . 'Min' ] ?? '';
+			$wpe_large = $a[ 'fluid' . $wpe_suffix . 'Max' ] ?? '';
+			if ( ! is_numeric( $wpe_small ) || ! is_numeric( $wpe_large ) ) {
+				continue;
+			}
+			$wpe_min = (float) $wpe_small;
+			$wpe_max = (float) $wpe_large;
+			if ( ! is_finite( $wpe_min ) || ! is_finite( $wpe_max ) || $wpe_min < 0 || $wpe_max > 260 || $wpe_max < $wpe_min ) {
+				continue;
+			}
+			$wpe_slope     = ( $wpe_max - $wpe_min ) * 100 / 1080;
+			$wpe_intercept = $wpe_min - 3.6 * $wpe_slope;
+			$wpe_mid       = 'calc(' . round( $wpe_intercept, 6 ) . 'px + ' . round( $wpe_slope, 6 ) . 'vw)';
+
+			$rules['base'][ $root ][] = $wpe_property . ':clamp(' . $wpe_min . 'px,' . $wpe_mid . ',' . $wpe_max . 'px)!important';
+		}
 		$out = '';
 		// Custom CSS: "selector" means this element, like Elementor Pro.
 		$custom = trim( (string) ( $a['customCss'] ?? '' ) );
@@ -629,6 +656,20 @@ class Kit {
 				$block .= $sel . '{' . implode( ';', $decls ) . '}';
 			}
 			$out .= 'base' === $bp ? $block : '@media ' . $query . '{' . $block . '}';
+		}
+		// Container queries run against the nearest ancestor with container-type,
+		// not the viewport. Each optional threshold only hides this element.
+		foreach (
+			array(
+				'containerQueryHideBelow' => 'max-width',
+				'containerQueryHideAbove' => 'min-width',
+			) as $wpe_key => $wpe_feature
+		) {
+			$wpe_value = $a[ $wpe_key ] ?? '';
+			if ( ! is_numeric( $wpe_value ) || (float) $wpe_value < 160 || (float) $wpe_value > 1920 ) {
+				continue;
+			}
+			$out .= '@container (' . $wpe_feature . ':' . (float) $wpe_value . 'px){' . $root . '{display:none!important}}';
 		}
 		return $out . ( '' !== $custom && false === strpos( $custom, '{' ) ? $root . '{' . $custom . '}' : $custom );
 	}
