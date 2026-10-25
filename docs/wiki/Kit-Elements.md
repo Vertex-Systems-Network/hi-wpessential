@@ -57,6 +57,13 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | Calendar / Events | Strict timezone-aware manual events, sorted upcoming list or accessible month calendar, all-day/timed entries, location and safe detail links |
 | Search | Native GET search for published site content, optional post/page/WooCommerce product scope, inline or no-JS expandable form with accessible controls |
 
+| Comments | Approved public WordPress comments, author avatar/date/count, safe comment links and optional native WordPress comment submission form, no custom comment endpoint |
+| Timeline / Steps | Semantic milestones with images, dates, safe rich descriptions/links, vertical or horizontally scrollable layouts |
+| Rating | Accessible display-only rating, 5/10-point scales, fractional rating symbols and numeric score with screen-reader value |
+| Alert / Notice | Accessible success/info/warning/error notices with sanitized rich HTML, progressive dismissal and optional session-only persistence |
+| Business Hours | Seven-day schedule, validated HH:MM clock format, closed days, optional highlight of current weekday in site's timezone |
+| Image Comparison | Before/after images with alt text, native keyboard-accessible range control and visible static split without JS |
+
 ## What every element offers
 
 - 9 breakpoints
