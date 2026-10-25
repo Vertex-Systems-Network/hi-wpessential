@@ -207,11 +207,17 @@ async function verifyPage( page, id, label ) {
 		{ width: 390, height: 844, type: 'mobile' }
 	] ) {
 		await page.setViewportSize( { width: vp.width, height: vp.height } );
+		await page.evaluate( () => new Promise( resolve => requestAnimationFrame( () => requestAnimationFrame( resolve ) ) ) );
 		const fluidSpacing = await page.evaluate( () => {
 			const style = getComputedStyle( document.querySelector( '.wpe-chart' ) );
-			return { padding: parseFloat( style.paddingTop ), gap: parseFloat( style.gap ) };
+			return {
+				padding: parseFloat( style.paddingTop ),
+				gap: parseFloat( style.gap ),
+				cssWidth: window.innerWidth
+			};
 		} );
 		const expectedPadding = vp.width === 1440 ? 32 : 8 + ( 32 - 8 ) * ( ( vp.width - 360 ) / 1080 );
+		assert.equal( fluidSpacing.cssWidth, vp.width, label + ': CSS viewport width mismatch' );
 		const expectedGap = vp.width === 1440 ? 16 : 4 + ( 16 - 4 ) * ( ( vp.width - 360 ) / 1080 );
 		assert.ok( Math.abs( fluidSpacing.padding - expectedPadding ) < 0.2, label + ': fluid padding differs: ' + JSON.stringify( fluidSpacing ) );
 		assert.ok( Math.abs( fluidSpacing.gap - expectedGap ) < 0.2, label + ': fluid gap differs: ' + JSON.stringify( fluidSpacing ) );
