@@ -152,3 +152,30 @@ $wpe_start_weekday = min( 6, max( 0, (int) get_option( 'start_of_week', 0 ) ) );
 		<?php endif; ?>
 	<?php endif; ?>
 </section>
+<?php if ( ! empty( $a['schemaEvent'] ) && $wpe_events ) : ?>
+<?php
+$wpe_schema = array();
+foreach ( $wpe_events as $wpe_event ) {
+	if ( '' === trim( $wpe_event['title'] ) ) {
+		continue;
+	}
+	$wpe_item = array(
+		'@type' => 'Event',
+		'name' => sanitize_text_field( $wpe_event['title'] ),
+		'startDate' => $wpe_event['datetime']->format( 'c' ),
+		'eventStatus' => 'https://schema.org/EventScheduled',
+	);
+	if ( '' !== $wpe_event['description'] ) {
+		$wpe_item['description'] = sanitize_textarea_field( wp_strip_all_tags( $wpe_event['description'] ) );
+	}
+	if ( '' !== $wpe_event['location'] ) {
+		$wpe_item['location'] = array( '@type' => 'Place', 'name' => sanitize_text_field( $wpe_event['location'] ) );
+	}
+	if ( $wpe_event['url'] ) {
+		$wpe_item['url'] = $wpe_event['url'];
+	}
+	$wpe_schema[] = $wpe_item;
+}
+?>
+<?php if ( $wpe_schema ) : ?><script type="application/ld+json"><?php echo wp_json_encode( array( '@context' => 'https://schema.org', '@graph' => $wpe_schema ), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- JSON_HEX_* prevents script termination. ?></script><?php endif; ?>
+<?php endif; ?>

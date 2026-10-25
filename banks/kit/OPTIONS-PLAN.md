@@ -54,7 +54,7 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 29 | Elevation tokens that follow the state | ✅ Theme-based rest, hover and focus state shadow tokens |
 | 30 | Text balance/pretty wrap and line clamp | ✅ headings and Text (balance/pretty, line clamp with read more) |
 | 31 | Semantic HTML tag on every element | ✅ Heading, Text, Image (figure when captioned) · ⏳ others |
-| 32 | Schema output (FAQPage, Product, Review, Event, HowTo, Breadcrumb) | ⏳ with those elements |
+| 32 | Schema output (FAQPage, Product, Review, Event, HowTo, Breadcrumb) | ✅ Opt-in JSON-LD: FAQPage, Product, Review, Event, HowTo and BreadcrumbList |
 | 33 | ARIA label, role, aria-hidden, aria-live | ✅ |
 | 34 | LCP control for images (priority, lazy/eager) | ✅ Image |
 | 35 | Decorative image (empty alt, hidden from screen readers) | ✅ Image |

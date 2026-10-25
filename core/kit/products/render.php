@@ -38,6 +38,7 @@ if ( ! empty( $a['inStockOnly'] ) ) {
 	$wpe_args['stock_status'] = 'instock';
 }
 $wpe_items   = wc_get_products( $wpe_args );
+$wpe_schema_products = array();
 $wpe_classes = array( 'wpe-products', 'is-' . ( 'minimal' === $a['cardStyle'] ? 'minimal' : 'boxed' ) );
 ?>
 <section id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( implode( ' ', $wpe_classes ) ); ?>">
@@ -53,6 +54,19 @@ $wpe_classes = array( 'wpe-products', 'is-' . ( 'minimal' === $a['cardStyle'] ? 
 				}
 				$wpe_product_url = get_permalink( $wpe_product->get_id() );
 				$wpe_name        = $wpe_product->get_name();
+				if ( ! empty( $a['schemaProducts'] ) ) {
+					$wpe_price = $wpe_product->get_price();
+					$wpe_offer = array( '@type' => 'Offer', 'url' => esc_url_raw( $wpe_product_url, array( 'http', 'https' ) ), 'priceCurrency' => get_woocommerce_currency(), 'availability' => $wpe_product->is_in_stock() ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock' );
+					if ( '' !== (string) $wpe_price && is_numeric( $wpe_price ) ) {
+						$wpe_offer['price'] = wc_format_decimal( $wpe_price );
+					}
+					$wpe_schema_product = array( '@type' => 'Product', 'name' => sanitize_text_field( $wpe_name ), 'offers' => $wpe_offer );
+					$wpe_image_url = wp_get_attachment_image_url( $wpe_product->get_image_id(), 'full' );
+					if ( $wpe_image_url ) { $wpe_schema_product['image'] = esc_url_raw( $wpe_image_url ); }
+					$wpe_sku = $wpe_product->get_sku();
+					if ( $wpe_sku ) { $wpe_schema_product['sku'] = sanitize_text_field( $wpe_sku ); }
+					$wpe_schema_products[] = $wpe_schema_product;
+				}
 				?>
 				<article class="wpe-products__item">
 					<?php if ( $a['showImage'] ) : ?>
@@ -82,3 +96,4 @@ $wpe_classes = array( 'wpe-products', 'is-' . ( 'minimal' === $a['cardStyle'] ? 
 		<p class="wpe-products__empty"><?php echo esc_html( (string) $a['emptyMessage'] ); ?></p>
 	<?php endif; ?>
 </section>
+<?php if ( $wpe_schema_products ) : ?><script type="application/ld+json"><?php echo wp_json_encode( array( '@context' => 'https://schema.org', '@graph' => $wpe_schema_products ), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- JSON_HEX_* prevents script termination. ?></script><?php endif; ?>

@@ -79,3 +79,7 @@ $wpe_has_author = '' !== $wpe_name || '' !== $wpe_role || '' !== $wpe_company ||
 		</figcaption>
 	<?php endif; ?>
 </figure>
+<?php if ( ! empty( $a['schemaReview'] ) && '' !== trim( (string) ( $a['reviewItemName'] ?? '' ) ) && '' !== $wpe_name && '' !== wp_strip_all_tags( $wpe_quote ) ) : ?>
+<?php $wpe_schema = array( '@context' => 'https://schema.org', '@type' => 'Review', 'itemReviewed' => array( '@type' => in_array( (string) ( $a['reviewItemType'] ?? '' ), array( 'Product', 'LocalBusiness', 'Organization', 'Service', 'Book', 'Course' ), true ) ? (string) $a['reviewItemType'] : 'Product', 'name' => sanitize_text_field( (string) $a['reviewItemName'] ) ), 'reviewBody' => sanitize_textarea_field( wp_strip_all_tags( $wpe_quote ) ), 'author' => array( '@type' => 'Person', 'name' => sanitize_text_field( $wpe_name ) ) ); if ( ! empty( $a['showRating'] ) ) { $wpe_schema['reviewRating'] = array( '@type' => 'Rating', 'ratingValue' => $wpe_rating, 'bestRating' => 5, 'worstRating' => 1 ); } ?>
+<script type="application/ld+json"><?php echo wp_json_encode( $wpe_schema, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- JSON_HEX_* prevents script termination. ?></script>
+<?php endif; ?>
