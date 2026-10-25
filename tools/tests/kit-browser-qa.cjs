@@ -58,6 +58,8 @@ async function verifyPage( page, id, label ) {
 	assert.equal( await page.locator( '.wpe-chart.is-donut svg circle' ).count(), 2, label + ': incorrect chart output' );
 
 	// The browser context defaults to reduced motion. Turn it off for normal-animation checks.
+	// The QA browser defaults to reduced motion; verify animation only in normal mode.
+	await page.emulateMedia( { reducedMotion: 'no-preference' } );
 	// Opt-in shared visual effects: rounded gradient border, animated angle,
 	// allowlisted blend mode and fade-edge mask work in both editor frontends.
 	const gradientBox = page.locator( '.wpe-price-list.wpek-gradient-border.wpek-gradient-border-animated' ).first();
