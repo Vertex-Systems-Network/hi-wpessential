@@ -371,7 +371,9 @@
 					Object.keys( def.groups || {} ).forEach( function ( key ) {
 						if ( undefined !== a[ key ] ) groups[ key ] = a[ key ];
 					} );
-					return { format: 'wpessential-kit-style-v1', attributes: attributes, groups: groups };
+					var groupTypes = {};
+					Object.keys( def.groups || {} ).forEach( function ( key ) { groupTypes[ key ] = def.groups[ key ].type || ''; } );
+					return { format: 'wpessential-kit-style-v1', attributes: attributes, groups: groups, groupTypes: groupTypes };
 				};
 				var applyStylePayload = function ( payload ) {
 					if ( ! payload || 'wpessential-kit-style-v1' !== payload.format ) return false;

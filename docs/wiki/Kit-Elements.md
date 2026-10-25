@@ -180,3 +180,8 @@ The editor panels provide browser-local named presets and a JSON clipboard for K
 ### Contrast warning
 
 The editors inspect the selected Kit preview's computed text and background colours and show an advisory when the estimated contrast falls below 4.5:1. This is a visual check; gradients, images, overlays, and large-text exceptions still need review on the published page.
+
+
+### Style copy between builders
+
+Kit style copy/paste uses the shared style payload for matching group names in Gutenberg and Elementor. It maps common typography, spacing, border, background, colour, shadow, text-effect and filter values where both sides expose compatible controls. Elementor's original control values are also kept in the payload, so paste and browser-local presets can restore matching Elementor settings. Complex Elementor-specific gradient/image controls and breakpoint-specific group data depend on Elementor's own editor controls and may not have an equivalent Kit field.

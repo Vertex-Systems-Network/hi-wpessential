@@ -63,7 +63,7 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 38 | Show by device, URL parameter, referrer | ✅ CSS viewport devices, server URL-path/query and referrer-host conditions |
 | 39 | Hide when printing | ✅ |
 | 40 | Style presets (save and apply an element style) | ✅ Browser-local named presets save Kit attributes and each editor's native style controls |
-| 41 | Copy/paste a style between Gutenberg and Elementor | ⏳ Shared-attribute clipboard is wired; native Elementor group controls still need cross-builder mapping |
+| 41 | Copy/paste a style between Gutenberg and Elementor | ✅ Shared clipboard maps matching typography, spacing, border, background, colour, shadow and text-effect groups; native Elementor control values remain available for same-builder fidelity |
 | 42 | Analytics data attributes for click events | ✅ Optional event and label data attributes on every element root |
 | 43 | content-visibility: auto; CSS/JS only where used | ✅ Opt-in content-visibility with configurable intrinsic size |
 | 44 | Every text field translatable (WPML/Polylang) | ✅ Field-specific mappings for all Kit blocks and translatable repeater content |
