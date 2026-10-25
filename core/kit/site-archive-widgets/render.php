@@ -54,11 +54,13 @@ if ( 'title' === $wpe_mode && '' !== trim( $wpe_title ) ) {
 	global $wp_query;
 	$wpe_pages = isset( $wp_query->max_num_pages ) ? absint( $wp_query->max_num_pages ) : 0;
 	if ( $wpe_pages > 1 ) {
-		$wpe_links  = paginate_links( array(
-			'total'   => $wpe_pages,
-			'current' => max( 1, absint( get_query_var( 'paged' ) ) ),
-			'type'    => 'list',
-		) );
+		$wpe_links  = paginate_links(
+			array(
+				'total'   => $wpe_pages,
+				'current' => max( 1, absint( get_query_var( 'paged' ) ) ),
+				'type'    => 'list',
+			)
+		);
 		$wpe_output = '<nav aria-label="' . esc_attr__( 'Archive pages', 'hi-wpessential' ) . '" class="wpe-site-archive-widgets__pagination">' . wp_kses_post( $wpe_links ) . '</nav>';
 	}
 } elseif ( 'breadcrumbs' === $wpe_mode ) {

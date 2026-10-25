@@ -28,10 +28,10 @@ foreach ( array_slice( (array) $a['items'], 0, $wpe_limit ) as $wpe_item ) {
 	$wpe_color  = (string) ( $wpe_item['color'] ?? 'primary' );
 	$wpe_color  = in_array( $wpe_color, array( 'primary', 'secondary', 'accent', 'tertiary', 'contrast' ), true ) ? $wpe_color : 'primary';
 	$wpe_rows[] = array(
-			'label' => $wpe_label,
-			'value' => $wpe_value,
-			'color' => $wpe_color,
-		);
+		'label' => $wpe_label,
+		'value' => $wpe_value,
+		'color' => $wpe_color,
+	);
 	$wpe_sum   += $wpe_value;
 	$wpe_max    = max( $wpe_max, $wpe_value );
 }
