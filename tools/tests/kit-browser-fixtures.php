@@ -79,7 +79,23 @@ $wpe_blocks = '';
 $wpe_widgets = array();
 foreach ( $wpe_defs as $wpe_name => $wpe_atts ) {
 	$wpe_blocks .= '<!-- wp:wpessential/' . $wpe_name . ' ' . wp_json_encode( $wpe_atts ) . " /-->\n";
-	$wpe_widgets[] = array( 'id' => substr( md5( $wpe_name ), 0, 7 ), 'elType' => 'widget', 'widgetType' => 'wpe-' . $wpe_name, 'settings' => $wpe_atts, 'elements' => array() );
+	// Elementor stores switchers as "yes" and responsive sliders as { size, unit }.
+	// Gutenberg instead stores booleans and breakpoint-keyed values.
+	$wpe_elementor_atts = $wpe_atts;
+	foreach ( \WPEssential\Core\Kit::attributes( \WPEssential\Core\Kit::defs()[ $wpe_name ] ) as $wpe_key => $wpe_opt ) {
+		if ( ! array_key_exists( $wpe_key, $wpe_elementor_atts ) ) {
+			continue;
+		}
+		if ( 'toggle' === $wpe_opt['type'] ) {
+			$wpe_elementor_atts[ $wpe_key ] = $wpe_elementor_atts[ $wpe_key ] ? 'yes' : '';
+		} elseif ( 'range' === $wpe_opt['type'] && ! empty( $wpe_opt['responsive'] ) && is_array( $wpe_elementor_atts[ $wpe_key ] ) ) {
+			$wpe_elementor_atts[ $wpe_key ] = array(
+				'size' => $wpe_elementor_atts[ $wpe_key ]['base'] ?? '',
+				'unit' => $wpe_opt['unit'] ?? 'px',
+			);
+		}
+	}
+	$wpe_widgets[] = array( 'id' => substr( md5( $wpe_name ), 0, 7 ), 'elType' => 'widget', 'widgetType' => 'wpe-' . $wpe_name, 'settings' => $wpe_elementor_atts, 'elements' => array() );
 }
 $wpe_gutenberg = wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => 'Kit Gutenberg QA', 'post_content' => $wpe_blocks ), true );
 $wpe_elementor = wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => 'Kit Elementor QA' ), true );
