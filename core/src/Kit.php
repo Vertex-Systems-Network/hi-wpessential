@@ -657,7 +657,9 @@ class Kit {
 	 */
 	public static function from_elementor( array $def, array $settings ) {
 		$out = array();
-		foreach ( $def['attributes'] as $key => $opt ) {
+		// Full elements inherit common Advanced controls; nested repeater fields do not.
+		$fields = isset( $def['name'] ) ? self::attributes( $def ) : $def['attributes'];
+		foreach ( $fields as $key => $opt ) {
 			$get = static function ( $k ) use ( $settings, $opt ) {
 				$v = $settings[ $k ] ?? '';
 				if ( 'icon' === $opt['type'] ) {
