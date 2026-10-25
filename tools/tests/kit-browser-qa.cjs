@@ -214,8 +214,11 @@ async function verifyPage( page, id, label ) {
 	assert.ok( glassBlur.includes( 'blur(14px)' ), label + ': glass backdrop blur not applied: ' + glassBlur );
 	const iconLink = page.locator( '.wpe-icon-single.wpek-focus-ring a' ).first();
 	assert.ok( await iconLink.count() === 1, label + ': shared focus ring class missing' );
-	await page.keyboard.press( 'Tab' );
 	await iconLink.focus();
+	// Traverse away and return through genuine keyboard navigation so the
+	// browser, rather than programmatic focus(), sets :focus-visible.
+	await page.keyboard.press( 'Shift+Tab' );
+	await page.keyboard.press( 'Tab' );
 	// Focus styling is intentionally keyboard-only: mouse/programmatic focus alone
 	// should not trigger :focus-visible. Verify the actual browser-computed result.
 	const ring = await iconLink.evaluate( node => ( {
