@@ -73,3 +73,8 @@
 
 /* Enable parent-width queries only on explicitly selected Kit containers. */
 .wpek-query-container{container-type:inline-size}
+
+/* Device visibility is viewport CSS, never a security/authorization boundary. */
+@media(max-width:767px){.wpek-device-desktop,.wpek-device-tablet{display:none!important}}
+@media(min-width:768px) and (max-width:1023px){.wpek-device-mobile,.wpek-device-desktop{display:none!important}}
+@media(min-width:1024px){.wpek-device-mobile,.wpek-device-tablet{display:none!important}}

@@ -222,6 +222,14 @@ async function verifyPage( page, id, label ) {
 		assert.ok( Math.abs( fluidSpacing.padding - expectedPadding ) < 0.2, label + ': fluid padding differs: ' + JSON.stringify( fluidSpacing ) );
 		assert.ok( Math.abs( fluidSpacing.gap - expectedGap ) < 0.2, label + ': fluid gap differs: ' + JSON.stringify( fluidSpacing ) );
 
+		const archive = page.locator( '.wpe-site-archive-widgets.wpek-device-desktop' ).first();
+		assert.ok( await archive.count(), label + ': CSS device rule missing' );
+		const displayed = await archive.evaluate( node => getComputedStyle( node ).display );
+		if ( vp.width < 768 ) {
+			assert.equal( displayed, 'none', label + ': desktop-only element visible on mobile' );
+		} else {
+			assert.notEqual( displayed, 'none', label + ': desktop-only element absent on desktop' );
+		}
 		for ( const scheme of [ 'light', 'dark' ] ) {
 			await page.evaluate( mode => document.documentElement.setAttribute( 'data-wpe-scheme', mode ), scheme );
 			const palette = await page.evaluate( () => {
