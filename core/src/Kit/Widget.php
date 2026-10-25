@@ -244,6 +244,7 @@ abstract class Widget extends \Elementor\Widget_Base {
 			}
 		}
 		$wpek_style_keys = array();
+		$wpek_style_groups = array_keys( $def['groups'] ?? array() );
 		foreach ( Kit::attributes( $def ) as $wpek_key => $wpek_opt ) {
 			if ( ! empty( $wpek_opt['css'] ) || 'style' === ( $wpek_opt['panel'] ?? '' ) ) {
 				$wpek_style_keys[] = $wpek_key;
@@ -258,7 +259,7 @@ abstract class Widget extends \Elementor\Widget_Base {
 			'wpek_style_transfer',
 			array(
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw'  => '<div class="wpek-style-bridge" data-wpek-style-keys="' . esc_attr( wp_json_encode( array_values( array_unique( $wpek_style_keys ) ) ) ) . '"><p>' . esc_html__( 'Save visual settings in this browser or copy them between Kit elements and builders.', 'hi-wpessential' ) . '</p><p><button type="button" class="button wpek-style-copy">' . esc_html__( 'Copy style', 'hi-wpessential' ) . '</button> <button type="button" class="button wpek-style-paste">' . esc_html__( 'Paste style', 'hi-wpessential' ) . '</button></p><p><input type="text" class="wpek-style-name" placeholder="' . esc_attr__( 'Preset name', 'hi-wpessential' ) . '"> <button type="button" class="button wpek-style-save">' . esc_html__( 'Save preset', 'hi-wpessential' ) . '</button></p><p><select class="wpek-style-select"><option value="">' . esc_html__( 'Choose a saved preset', 'hi-wpessential' ) . '</option></select> <button type="button" class="button wpek-style-apply">' . esc_html__( 'Apply preset', 'hi-wpessential' ) . '</button></p><p class="wpek-style-status" aria-live="polite"></p></div>',
+				'raw'  => '<div class="wpek-style-bridge" data-wpek-style-keys="' . esc_attr( wp_json_encode( array_values( array_unique( $wpek_style_keys ) ) ) ) . '" data-wpek-group-prefixes="' . esc_attr( wp_json_encode( $wpek_style_groups ) ) . '"><p>' . esc_html__( 'Save visual settings in this browser or copy them between Kit elements and builders.', 'hi-wpessential' ) . '</p><p><button type="button" class="button wpek-style-copy">' . esc_html__( 'Copy style', 'hi-wpessential' ) . '</button> <button type="button" class="button wpek-style-paste">' . esc_html__( 'Paste style', 'hi-wpessential' ) . '</button></p><p><input type="text" class="wpek-style-name" placeholder="' . esc_attr__( 'Preset name', 'hi-wpessential' ) . '"> <button type="button" class="button wpek-style-save">' . esc_html__( 'Save preset', 'hi-wpessential' ) . '</button></p><p><select class="wpek-style-select"><option value="">' . esc_html__( 'Choose a saved preset', 'hi-wpessential' ) . '</option></select> <button type="button" class="button wpek-style-apply">' . esc_html__( 'Apply preset', 'hi-wpessential' ) . '</button></p><p class="wpek-style-status" aria-live="polite"></p></div>',
 			)
 		);
 		$this->end_controls_section();

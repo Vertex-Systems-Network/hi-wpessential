@@ -27,7 +27,10 @@
 		var keys = []; try { keys = JSON.parse( root.getAttribute( 'data-wpek-style-keys' ) || '[]' ); } catch ( e ) {}
 		var attrs = {};
 		keys.forEach( function ( key ) { var value = controlValue( panel, key ); if ( undefined !== value ) attrs[ key ] = value; } );
-		return { format: format, attributes: attrs, groups: {} };
+		var nativeGroups = {};
+		var prefixes = []; try { prefixes = JSON.parse( root.getAttribute( 'data-wpek-group-prefixes' ) || '[]' ); } catch ( e ) {}
+		Array.prototype.forEach.call( panel.querySelectorAll( '[data-setting]' ), function ( node ) { var key = node.getAttribute( 'data-setting' ); if ( ! prefixes.some( function ( prefix ) { return key === prefix || key.indexOf( prefix + '_' ) === 0; } ) ) return; var field = node.matches( 'input,select,textarea' ) ? node : node.querySelector( 'input,select,textarea' ); if ( field ) nativeGroups[ key ] = field.type === 'checkbox' ? ( field.checked ? 'yes' : '' ) : field.value; } );
+		return { format: format, attributes: attrs, groups: {}, elementorControls: nativeGroups };
 	}
 	function status( root, text ) { var node = root.querySelector( '.wpek-style-status' ); if ( node ) node.textContent = text; }
 	function transfer( root, action ) {
@@ -42,6 +45,7 @@
 				try {
 					var payload = JSON.parse( raw ); if ( payload.format !== format ) { status( root, 'Clipboard does not contain Kit styles.' ); return; }
 					var applied = 0; Object.keys( payload.attributes || {} ).forEach( function ( key ) { if ( setControl( panel, key, payload.attributes[ key ] ) ) applied++; } );
+					Object.keys( payload.elementorControls || {} ).forEach( function ( key ) { if ( setControl( panel, key, payload.elementorControls[ key ] ) ) applied++; } );
 					status( root, applied ? 'Style applied to ' + applied + ' settings.' : 'No matching style settings found.' );
 				} catch ( e ) { status( root, 'Clipboard data is invalid.' ); }
 			} ).catch( function () { status( root, 'Clipboard permission was denied.' ); } );
@@ -53,6 +57,7 @@
 			var preset = allPresets()[ root.querySelector( '.wpek-style-select' ).value ];
 			if ( ! preset || preset.format !== format ) { status( root, 'Choose a valid preset.' ); return; }
 			var count = 0; Object.keys( preset.attributes || {} ).forEach( function ( key ) { if ( setControl( panel, key, preset.attributes[ key ] ) ) count++; } );
+			Object.keys( preset.elementorControls || {} ).forEach( function ( key ) { if ( setControl( panel, key, preset.elementorControls[ key ] ) ) count++; } );
 			status( root, count ? 'Preset applied to ' + count + ' settings.' : 'No matching preset settings found.' );
 		}
 	}
