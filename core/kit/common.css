@@ -78,3 +78,48 @@
 @media(max-width:767px){.wpek-device-desktop,.wpek-device-tablet{display:none!important}}
 @media(min-width:768px) and (max-width:1023px){.wpek-device-mobile,.wpek-device-desktop{display:none!important}}
 @media(min-width:1024px){.wpek-device-mobile,.wpek-device-tablet{display:none!important}}
+
+
+/* Motion triggers are opt-in; without JS existing CSS scroll animations still work. */
+@media (prefers-reduced-motion: no-preference) {
+	.wpek-anim.wpek-motion-ready:is(.wpek-motion-trigger-click,.wpek-motion-trigger-hover,.wpek-motion-trigger-load,.wpek-motion-trigger-scroll) {
+		animation-timeline: auto !important;
+		animation-range: normal !important;
+	}
+	.wpek-anim.wpek-motion-ready:not(.is-motion-active):is(.wpek-motion-trigger-click,.wpek-motion-trigger-hover,.wpek-motion-trigger-load,.wpek-motion-trigger-scroll) {
+		animation-name: none !important;
+	}
+	/* Scroll-triggered elements are only hidden when an observer has been attached. */
+	.wpek-anim.wpek-motion-ready.wpek-motion-trigger-scroll:not(.is-motion-active) { opacity: 0; }
+	.wpek-anim.wpek-motion-ready.wpek-motion-trigger-scroll.is-motion-active { opacity: 1; }
+	/* Child stagger uses a safe, bounded set of direct children (up to 12). */
+	.wpek-stagger > * { animation-name: wpek-fade-up; animation-duration: var(--wpek-adur,800ms); animation-fill-mode: both; animation-timing-function: ease-out; }
+	.wpek-stagger > :nth-child(1) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 0); }
+	.wpek-stagger > :nth-child(2) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 1); }
+	.wpek-stagger > :nth-child(3) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 2); }
+	.wpek-stagger > :nth-child(4) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 3); }
+	.wpek-stagger > :nth-child(5) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 4); }
+	.wpek-stagger > :nth-child(6) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 5); }
+	.wpek-stagger > :nth-child(7) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 6); }
+	.wpek-stagger > :nth-child(8) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 7); }
+	.wpek-stagger > :nth-child(9) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 8); }
+	.wpek-stagger > :nth-child(10) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 9); }
+	.wpek-stagger > :nth-child(11) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 10); }
+	.wpek-stagger > :nth-child(12) { animation-delay: calc(var(--wpek-adelay,0ms) + var(--wpek-stagger-step,100ms) * 11); }
+	.wpek-motion-ready.wpek-stagger:not(.is-motion-active) > * { animation-play-state: paused; }
+}
+/* No transform or parallax when reduced motion is requested. */
+@media (prefers-reduced-motion: reduce) {
+	.wpek-anim, .wpek-stagger > * { animation:none!important; transform:none!important; opacity:1!important; }
+	.wpek-anim.wpek-motion-reduced-fade.is-motion-active { animation:wpek-reduced-fade 180ms ease-out both!important; }
+	.wpek-anim.wpek-motion-reduced-fade.is-motion-active > * { animation:none!important; }
+}
+@keyframes wpek-reduced-fade { from { opacity:.85 } to { opacity:1 } }
+/* Sticky ends at the containing block boundary (never overlaps beyond parent). */
+.wpek-sticky { position:sticky!important; top:var(--wpek-sticky-offset,0px)!important; align-self:start; }
+@media(max-width:767px) {
+	.wpek-sticky-from-tablet,.wpek-sticky-from-desktop{position:static!important;top:auto!important}
+}
+@media(min-width:768px) and (max-width:1023px) {
+	.wpek-sticky-from-desktop{position:static!important;top:auto!important}
+}

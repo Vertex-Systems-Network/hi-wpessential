@@ -56,6 +56,39 @@ async function verifyPage( page, id, label ) {
 	assert.ok( await page.locator( '.wpe-forms .wpforms-form' ).count(), label + ': real WPForms form not found' );
 	assert.ok( await page.locator( '.wpe-forms input[type="email"]' ).count(), label + ': WPForms email field missing' );
 	assert.equal( await page.locator( '.wpe-chart.is-donut svg circle' ).count(), 2, label + ': incorrect chart output' );
+
+	// Shared motion is progressively enhanced and bound after scripts load.
+	const priceMotion = page.locator( '.wpe-price-list.wpek-motion-trigger-click.wpek-stagger' ).first();
+	const chartMotion = page.locator( '.wpe-chart.wpek-motion-trigger-load' ).first();
+	const flipMotion = page.locator( '.wpe-flip.wpek-motion-trigger-hover' ).first();
+	const formMotion = page.locator( '.wpe-forms.wpek-motion-trigger-scroll' ).first();
+	await priceMotion.locator( ':scope' ).waitFor( { state: 'attached', timeout: 20000 } );
+	assert.ok( await chartMotion.count(), label + ': load trigger missing' );
+	assert.ok( await flipMotion.count(), label + ': hover trigger missing' );
+	assert.ok( await formMotion.count(), label + ': scroll trigger missing' );
+	await page.waitForFunction( () => {
+		const node = document.querySelector( '.wpe-price-list.wpek-motion-trigger-click' );
+		return Boolean( node && node.classList.contains( 'wpek-motion-ready' ) );
+	}, null, { timeout: 20000 } );
+	assert.equal( await priceMotion.evaluate( node => node.classList.contains( 'is-motion-active' ) ), false, label + ': click animation started without click' );
+	await priceMotion.evaluate( node => node.click() );
+	assert.equal( await priceMotion.evaluate( node => node.classList.contains( 'is-motion-active' ) ), true, label + ': click trigger did not activate' );
+	await page.waitForFunction( () => document.querySelector( '.wpe-chart.wpek-motion-trigger-load' )?.classList.contains( 'is-motion-active' ), null, { timeout: 10000 } );
+	await flipMotion.dispatchEvent( 'pointerenter' );
+	assert.equal( await flipMotion.evaluate( node => node.classList.contains( 'is-motion-active' ) ), true, label + ': hover did not activate' );
+	await flipMotion.dispatchEvent( 'pointerleave' );
+	assert.equal( await flipMotion.evaluate( node => node.classList.contains( 'is-motion-active' ) ), false, label + ': pointer leave did not reset' );
+	const delay = await priceMotion.locator( ':scope > :nth-child(2)' ).evaluate( node => getComputedStyle( node ).animationDelay );
+	assert.equal( delay, '0.125s', label + ': stagger 125ms direct-child delay missing' );
+	await page.emulateMedia( { reducedMotion: 'reduce' } );
+	const reduced = await priceMotion.evaluate( node => ( {
+		name: getComputedStyle( node ).animationName,
+		transform: getComputedStyle( node ).transform
+	} ) );
+	assert.equal( reduced.name, 'wpek-reduced-fade', label + ': reduced-motion fade alternative unavailable' );
+	await page.emulateMedia( { reducedMotion: 'no-preference' } );
+	console.log( 'PASS: ' + label + ': click/hover/load, stagger and reduced motion' );
+
 	// Verify the actual published Gutenberg pattern renders in both menu variants.
 	assert.ok( await page.getByText( 'Kit QA Saved Mega Content' ).count() >= 2, label + ': saved mega panel missing' );
 	await page.setViewportSize( { width: 1440, height: 900 } );
@@ -207,6 +240,14 @@ async function verifyPage( page, id, label ) {
 		{ width: 390, height: 844, type: 'mobile' }
 	] ) {
 		await page.setViewportSize( { width: vp.width, height: vp.height } );
+
+		const stickyPosition = await page.locator( '.wpe-site-archive-widgets.wpek-sticky' ).first()
+			.evaluate( node => ( { position: getComputedStyle( node ).position, top: getComputedStyle( node ).top } ) );
+		assert.equal( stickyPosition.position, vp.width < 768 ? 'static' : 'sticky', label + ': responsive sticky setting' );
+		if ( vp.width >= 768 ) {
+			assert.equal( stickyPosition.top, '24px', label + ': sticky top offset' );
+		}
+
 		await page.evaluate( () => new Promise( resolve => requestAnimationFrame( () => requestAnimationFrame( resolve ) ) ) );
 		const fluidSpacing = await page.evaluate( () => {
 			const style = getComputedStyle( document.querySelector( '.wpe-chart' ) );

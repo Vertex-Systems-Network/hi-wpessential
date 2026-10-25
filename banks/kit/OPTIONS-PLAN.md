@@ -39,11 +39,11 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 14 | Magnetic, tilt-follow, ripple, cursor and spotlight hovers | ⬜ |
 | 15 | Separate focus-ring style | ✅ |
 | 16 | Scroll-driven entrance animations without JavaScript | ✅ (12 presets) |
-| 17 | Staggered animation of children | ⏳ |
+| 17 | Staggered animation of children | ✅ Staggered first 12 direct children, configurable delay |
 | 18 | Parallax per layer, on/off per breakpoint | ⬜ |
-| 19 | Sticky with offset and "stop at" per breakpoint | ⏳ |
-| 20 | Reduced-motion alternative (not only off) | ⬜ |
-| 21 | Animation trigger: scroll, hover, click, load | ⬜ |
+| 19 | Sticky with offset and "stop at" per breakpoint | ✅ CSS sticky with responsive top offset and parent stop · ⏳ named stop-target control |
+| 20 | Reduced-motion alternative (not only off) | ✅ Choose no movement or gentle fade for reduced motion |
+| 21 | Animation trigger: scroll, hover, click, load | ✅ Scroll, hover/focus, click and load triggers with progressive JS |
 | 22 | Gradient text and text clip | ✅ Heading accent and Text |
 | 23 | Gradient border, animated gradient border | ⏳ |
 | 24 | Glass (backdrop blur) | ✅ |

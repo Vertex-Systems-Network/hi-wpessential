@@ -1,3 +1,9 @@
+## Advanced Motion (Kit shared controls)
+
+Every Kit Gutenberg block and Elementor widget can opt into **Scroll / Hover+focus / Click / Page load** entrance triggers while retaining the existing CSS scroll default. A small shared `kit/motion.js` is enqueued only if a trigger is configured and an entrance animation is selected. It is progressive: when JavaScript is blocked, the original CSS animation still applies and page content remains readable. Hover includes keyboard focus; click handlers do not override link navigation. IntersectionObserver handles scroll once and honors reduced-motion preference.
+
+**Child staggering** animates the first 12 direct children using the selected animation duration and configurable stagger step. **Reduced motion** offers no entrance effect or a gentle 180ms fade with no transforms. **Sticky within parent** uses CSS positioning with responsive top offset; the browser naturally stops it at its containing block. Tablet-only and desktop-only options work at 768px and 1024px. Sticky positioning can be affected by overflow/scrolling ancestors. Named stop-target selectors and per-layer parallax remain roadmap items.
+
 ## Conditional display (Kit Advanced settings)
 
 Shared conditional controls are available on all Kit elements in Gutenberg and Elementor. All configured **server-side** gates are ANDed: login state, required user-role slug, WooCommerce cart empty/nonempty, a purchased WooCommerce product ID, start/end date and time in the WordPress site's configured timezone (`YYYY-MM-DD HH:mm`), exact URL path, URL query key/value, and exact referrer hostname. Invalid values, absent WooCommerce state, or invalid dates fail closed. A failed condition suppresses HTML and its inline styles, not merely hides it. Cart and purchase checks require WooCommerce; purchase checks require a signed-in customer.

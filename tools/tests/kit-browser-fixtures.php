@@ -59,7 +59,7 @@ $wpe_form = array(
 );
 wp_update_post( array( 'ID' => $wpe_form_id, 'post_content' => wp_slash( wp_json_encode( $wpe_form ) ) ) );
 $wpe_defs = array(
-	'price-list' => array( 'title' => 'Kit QA Prices', 'logicalMarginStart' => array( 'base' => 14 ), 'paddingToken' => 'sm', 'radiusToken' => 'md', 'items' => array( array( 'title' => 'Spring menu', 'price' => '19', 'badge' => 'Popular' ), array( 'title' => 'Summer menu', 'price' => '24' ) ) ),
+	'price-list' => array( 'title' => 'Kit QA Prices', 'animation' => 'fade-up', 'animTrigger' => 'click', 'staggerChildren' => true, 'staggerStep' => 125, 'animReduced' => 'fade', 'logicalMarginStart' => array( 'base' => 14 ), 'paddingToken' => 'sm', 'radiusToken' => 'md', 'items' => array( array( 'title' => 'Spring menu', 'price' => '19', 'badge' => 'Popular' ), array( 'title' => 'Summer menu', 'price' => '24' ) ) ),
 	'menu' => array(
 		'menu' => (string) $wpe_menu,
 		'mega' => true,
@@ -69,11 +69,11 @@ $wpe_defs = array(
 			array( 'menuItemId' => (string) $wpe_parent, 'templateId' => (string) $wpe_mega_pattern, 'source' => 'wp_block' ),
 		),
 	),
-	'forms' => array( 'formId' => (string) $wpe_form_id, 'heading' => 'Kit QA Real Form', 'showTitle' => false, 'containerQuerySource' => true ),
+	'forms' => array( 'animation' => 'fade', 'animTrigger' => 'scroll', 'formId' => (string) $wpe_form_id, 'heading' => 'Kit QA Real Form', 'showTitle' => false, 'containerQuerySource' => true ),
 	'icon' => array( 'icon' => array( 'library' => 'wpessential', 'value' => 'bolt' ), 'label' => 'QA Icon', 'url' => 'https://example.org', 'focusRingStyle' => 'solid', 'focusRingColor' => 'primary', 'focusRingWidth' => array( 'base' => 3 ), 'focusRingOffset' => array( 'base' => 2 ), 'logicalPaddingEnd' => array( 'base' => 9 ), 'containerQueryHideBelow' => 320 ),
-	'chart' => array( 'title' => 'Kit QA Chart', 'fluidPaddingMin' => 8, 'fluidPaddingMax' => 32, 'fluidGapMin' => 4, 'fluidGapMax' => 16, 'type' => 'donut', 'glass' => true, 'glassBlur' => array( 'base' => 14 ), 'glassOpacity' => array( 'base' => 75 ), 'hidePrint' => true, 'items' => array( array( 'label' => 'A', 'value' => '60', 'color' => 'primary' ), array( 'label' => 'B', 'value' => '40', 'color' => 'secondary' ) ) ),
-	'flip' => array( 'frontTitle' => 'Kit QA Flip Front', 'backTitle' => 'Kit QA Flip Back', 'frontContent' => '<p>Open this card</p>' ),
-	'site-archive-widgets' => array( 'mode' => 'title', 'fallback' => 'Kit QA Archive', 'conditionDevice' => 'desktop' ),
+	'chart' => array( 'title' => 'Kit QA Chart', 'animation' => 'zoom-in', 'animTrigger' => 'load', 'fluidPaddingMin' => 8, 'fluidPaddingMax' => 32, 'fluidGapMin' => 4, 'fluidGapMax' => 16, 'type' => 'donut', 'glass' => true, 'glassBlur' => array( 'base' => 14 ), 'glassOpacity' => array( 'base' => 75 ), 'hidePrint' => true, 'items' => array( array( 'label' => 'A', 'value' => '60', 'color' => 'primary' ), array( 'label' => 'B', 'value' => '40', 'color' => 'secondary' ) ) ),
+	'flip' => array( 'animation' => 'fade-up', 'animTrigger' => 'hover', 'frontTitle' => 'Kit QA Flip Front', 'backTitle' => 'Kit QA Flip Back', 'frontContent' => '<p>Open this card</p>' ),
+	'site-archive-widgets' => array( 'stickyEnabled' => true, 'stickyOffset' => array( 'base' => 24 ), 'stickyFrom' => 'tablet', 'mode' => 'title', 'fallback' => 'Kit QA Archive', 'conditionDevice' => 'desktop' ),
 );
 $wpe_blocks = '';
 $wpe_widgets = array();
