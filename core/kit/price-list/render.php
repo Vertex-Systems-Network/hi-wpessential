@@ -12,18 +12,18 @@ defined( 'ABSPATH' ) || exit;
 $wpe_items   = is_array( $a['items'] ) ? array_slice( $a['items'], 0, 50 ) : array();
 $wpe_layout  = in_array( $a['layout'], array( 'rows', 'cards', 'minimal' ), true ) ? $a['layout'] : 'rows';
 $wpe_tag     = in_array( $a['titleTag'], array( 'h2', 'h3', 'h4', 'h5', 'h6', 'p' ), true ) ? $a['titleTag'] : 'h2';
-$wpe_heading = trim( (string) $a['title'] );
-$wpe_cur     = (string) $a['currency'];
-$wpe_suffix  = (string) $a['priceSuffix'];
+$wpe_heading = trim( wp_strip_all_tags( (string) $a['title'], true ) );
+$wpe_cur     = wp_strip_all_tags( (string) $a['currency'], true );
+$wpe_suffix  = wp_strip_all_tags( (string) $a['priceSuffix'], true );
 $wpe_placed  = array();
 
 foreach ( $wpe_items as $wpe_item ) {
 	if ( ! is_array( $wpe_item ) ) {
 		continue;
 	}
-	$wpe_name = trim( (string) ( $wpe_item['title'] ?? '' ) );
-	$wpe_desc = trim( (string) ( $wpe_item['description'] ?? '' ) );
-	$wpe_cost = trim( (string) ( $wpe_item['price'] ?? '' ) );
+	$wpe_name = trim( wp_strip_all_tags( (string) ( $wpe_item['title'] ?? '' ), true ) );
+	$wpe_desc = trim( wp_strip_all_tags( (string) ( $wpe_item['description'] ?? '' ), true ) );
+	$wpe_cost = trim( wp_strip_all_tags( (string) ( $wpe_item['price'] ?? '' ), true ) );
 	if ( '' === $wpe_name && '' === $wpe_desc && '' === $wpe_cost ) {
 		continue;
 	}
@@ -39,14 +39,14 @@ foreach ( $wpe_items as $wpe_item ) {
 		<ul class="wpe-price-list__items">
 			<?php foreach ( $wpe_placed as $wpe_item ) : ?>
 				<?php
-				$wpe_name  = trim( (string) ( $wpe_item['title'] ?? '' ) );
-				$wpe_desc  = trim( (string) ( $wpe_item['description'] ?? '' ) );
-				$wpe_cost  = trim( (string) ( $wpe_item['price'] ?? '' ) );
-				$wpe_old   = trim( (string) ( $wpe_item['oldPrice'] ?? '' ) );
-				$wpe_badge = trim( (string) ( $wpe_item['badge'] ?? '' ) );
+				$wpe_name  = trim( wp_strip_all_tags( (string) ( $wpe_item['title'] ?? '' ), true ) );
+				$wpe_desc  = trim( wp_strip_all_tags( (string) ( $wpe_item['description'] ?? '' ), true ) );
+				$wpe_cost  = trim( wp_strip_all_tags( (string) ( $wpe_item['price'] ?? '' ), true ) );
+				$wpe_old   = trim( wp_strip_all_tags( (string) ( $wpe_item['oldPrice'] ?? '' ), true ) );
+				$wpe_badge = trim( wp_strip_all_tags( (string) ( $wpe_item['badge'] ?? '' ), true ) );
 				$wpe_link  = esc_url( trim( (string) ( $wpe_item['link'] ?? '' ) ), array( 'http', 'https' ) );
 				$wpe_image = is_array( $wpe_item['image'] ?? null ) ? $wpe_item['image'] : array();
-				$wpe_alt   = trim( (string) ( $wpe_item['imageAlt'] ?? '' ) );
+				$wpe_alt   = trim( wp_strip_all_tags( (string) ( $wpe_item['imageAlt'] ?? '' ), true ) );
 				$wpe_img   = '';
 
 				if ( ! empty( $a['showImages'] ) ) {
