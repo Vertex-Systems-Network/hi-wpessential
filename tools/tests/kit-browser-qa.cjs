@@ -448,6 +448,8 @@ async function verifyPage( page, id, label ) {
 			return { error: 'Sticky root with named stop is missing' };
 		}
 		const previous = window.scrollY;
+		const oldScrollBehavior = document.documentElement.style.scrollBehavior;
+		document.documentElement.style.scrollBehavior = 'auto';
 		const stage = document.createElement( 'div' );
 		stage.style.cssText = 'position:relative;height:1200px;min-height:1200px';
 		const sticky = original.cloneNode( true );
@@ -463,7 +465,7 @@ async function verifyPage( page, id, label ) {
 		const frames = () => new Promise( resolve => requestAnimationFrame( () => requestAnimationFrame( resolve ) ) );
 		try {
 			await frames();
-			window.scrollTo( 0, window.scrollY + stage.getBoundingClientRect().top + 470 );
+			window.scrollTo( { top: window.scrollY + stage.getBoundingClientRect().top + 470, behavior: 'instant' } );
 			await frames();
 			await frames();
 			const computed = getComputedStyle( sticky );
@@ -476,7 +478,8 @@ async function verifyPage( page, id, label ) {
 		} finally {
 			stage.remove();
 			tail.remove();
-			window.scrollTo( 0, previous );
+			window.scrollTo( { top: previous, behavior: 'instant' } );
+			document.documentElement.style.scrollBehavior = oldScrollBehavior;
 		}
 	} );
 	assert.equal( stopped.position, 'sticky', label + ': sticky disabled in desktop test' );
