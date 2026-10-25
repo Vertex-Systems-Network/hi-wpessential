@@ -86,6 +86,7 @@ async function verifyPage( page, id, label ) {
 	assert.ok( glassBlur.includes( 'blur(14px)' ), label + ': glass backdrop blur not applied: ' + glassBlur );
 	const iconLink = page.locator( '.wpe-icon-single.wpek-focus-ring a' ).first();
 	assert.ok( await iconLink.count() === 1, label + ': shared focus ring class missing' );
+	await page.keyboard.press( 'Tab' );
 	await iconLink.focus();
 	const ringDetails = await iconLink.evaluate( node => {
 		const root = node.closest( '.wpek-focus-ring' );
@@ -93,6 +94,23 @@ async function verifyPage( page, id, label ) {
 		return {
 			outline: style.outline,
 			outlineWidth: style.outlineWidth,
+			focusVisible: node.matches( ':focus-visible' ),
+			expectedSelectorMatches: node.matches( '.wpek-focus-ring :is(a,button,input,select,textarea,[tabindex]):focus-visible' ),
+			matchingOutlineRules: Array.from( document.styleSheets ).flatMap( sheet => {
+				try {
+					return Array.from( sheet.cssRules || [] ).filter( rule => {
+						return rule.selectorText && rule.selectorText.includes( 'focus' ) && rule.selectorText.split( ',' ).some( selector => {
+							try {
+								return node.matches( selector.trim() );
+							} catch ( error ) {
+								return false;
+							}
+						} ) && rule.cssText && rule.cssText.includes( 'outline' );
+					} ).map( rule => rule.cssText.slice( 0, 260 ) );
+				} catch ( error ) {
+					return [];
+				}
+			} ).slice( -10 ),
 			rootId: root ? root.id : null,
 			widthVariable: root ? getComputedStyle( root ).getPropertyValue( '--wpek-focus-width' ).trim() : '',
 			loadedKitStyles: Array.from( document.styleSheets ).map( sheet => sheet.href || '' ).filter( url => url.includes( 'kit' ) ).slice( 0, 15 ),
