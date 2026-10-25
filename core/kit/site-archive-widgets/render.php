@@ -9,11 +9,11 @@ defined( 'ABSPATH' ) || exit;
 
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Scoped render template.
 
-$wpe_mode = in_array( $a['mode'], array( 'title', 'description', 'breadcrumbs', 'meta', 'author', 'pagination' ), true ) ? $a['mode'] : 'title';
-$wpe_obj  = get_queried_object();
-$wpe_post = $wpe_obj instanceof \WP_Post && 'publish' === $wpe_obj->post_status ? $wpe_obj : null;
-$wpe_tag  = in_array( $a['tag'], array( 'h1', 'h2', 'h3', 'p', 'div' ), true ) ? $a['tag'] : 'h1';
-$wpe_title = '';
+$wpe_mode        = in_array( $a['mode'], array( 'title', 'description', 'breadcrumbs', 'meta', 'author', 'pagination' ), true ) ? $a['mode'] : 'title';
+$wpe_obj         = get_queried_object();
+$wpe_post        = $wpe_obj instanceof \WP_Post && 'publish' === $wpe_obj->post_status ? $wpe_obj : null;
+$wpe_tag         = in_array( $a['tag'], array( 'h1', 'h2', 'h3', 'p', 'div' ), true ) ? $a['tag'] : 'h1';
+$wpe_title       = '';
 $wpe_description = '';
 if ( is_search() ) {
 	$wpe_title = sprintf( /* translators: %s: site search query. */ __( 'Search results for: %s', 'hi-wpessential' ), get_search_query( false ) );
@@ -54,29 +54,45 @@ if ( 'title' === $wpe_mode && '' !== trim( $wpe_title ) ) {
 	global $wp_query;
 	$wpe_pages = isset( $wp_query->max_num_pages ) ? absint( $wp_query->max_num_pages ) : 0;
 	if ( $wpe_pages > 1 ) {
-		$wpe_links  = paginate_links( array( 'total' => $wpe_pages, 'current' => max( 1, absint( get_query_var( 'paged' ) ) ), 'type' => 'list' ) );
+		$wpe_links  = paginate_links( array(
+			'total'   => $wpe_pages,
+			'current' => max( 1, absint( get_query_var( 'paged' ) ) ),
+			'type'    => 'list',
+		) );
 		$wpe_output = '<nav aria-label="' . esc_attr__( 'Archive pages', 'hi-wpessential' ) . '" class="wpe-site-archive-widgets__pagination">' . wp_kses_post( $wpe_links ) . '</nav>';
 	}
 } elseif ( 'breadcrumbs' === $wpe_mode ) {
 	$wpe_crumbs = array();
 	if ( ! empty( $a['showHome'] ) ) {
-		$wpe_crumbs[] = array( 'title' => __( 'Home', 'hi-wpessential' ), 'url' => home_url( '/' ) );
+		$wpe_crumbs[] = array(
+			'title' => __( 'Home', 'hi-wpessential' ),
+			'url'   => home_url( '/' ),
+		);
 	}
 	if ( $wpe_post ) {
 		foreach ( array_slice( array_reverse( get_post_ancestors( $wpe_post->ID ) ), 0, 10 ) as $wpe_parent ) {
 			if ( 'publish' === get_post_status( $wpe_parent ) ) {
-				$wpe_crumbs[] = array( 'title' => get_the_title( $wpe_parent ), 'url' => get_permalink( $wpe_parent ) );
+				$wpe_crumbs[] = array(
+					'title' => get_the_title( $wpe_parent ),
+					'url'   => get_permalink( $wpe_parent ),
+				);
 			}
 		}
-		$wpe_crumbs[] = array( 'title' => get_the_title( $wpe_post->ID ), 'url' => '' );
+		$wpe_crumbs[] = array(
+			'title' => get_the_title( $wpe_post->ID ),
+			'url'   => '',
+		);
 	} elseif ( '' !== trim( $wpe_title ) ) {
-		$wpe_crumbs[] = array( 'title' => $wpe_title, 'url' => '' );
+		$wpe_crumbs[] = array(
+			'title' => $wpe_title,
+			'url'   => '',
+		);
 	}
 	if ( $wpe_crumbs ) {
 		$wpe_output = '<nav class="wpe-site-archive-widgets__breadcrumbs" aria-label="' . esc_attr__( 'Breadcrumbs', 'hi-wpessential' ) . '"><ol>';
 		foreach ( $wpe_crumbs as $wpe_index => $wpe_crumb ) {
-			$wpe_end    = $wpe_index === count( $wpe_crumbs ) - 1;
-			$wpe_label  = esc_html( wp_strip_all_tags( (string) $wpe_crumb['title'], true ) );
+			$wpe_end     = count( $wpe_crumbs ) - 1 === $wpe_index;
+			$wpe_label   = esc_html( wp_strip_all_tags( (string) $wpe_crumb['title'], true ) );
 			$wpe_output .= '<li>';
 			$wpe_output .= ! $wpe_end && $wpe_crumb['url'] ? '<a href="' . esc_url( $wpe_crumb['url'] ) . '">' . $wpe_label . '</a>' : '<span aria-current="page">' . $wpe_label . '</span>';
 			$wpe_output .= '</li>';

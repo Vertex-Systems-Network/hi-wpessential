@@ -21,11 +21,11 @@ if ( ! $wpe_menu ) {
 	}
 	return;
 }
-$wpe_label = trim( (string) $a['label'] );
-$wpe_label = '' !== $wpe_label ? $wpe_label : __( 'Main navigation', 'hi-wpessential' );
-$wpe_depth = min( 3, max( 1, absint( $a['depth'] ) ) );
-$wpe_break = in_array( (string) $a['breakpoint'], array( '1024', '768', '560' ), true ) ? (string) $a['breakpoint'] : '768';
-$wpe_args  = array(
+$wpe_label   = trim( (string) $a['label'] );
+$wpe_label   = '' !== $wpe_label ? $wpe_label : __( 'Main navigation', 'hi-wpessential' );
+$wpe_depth   = min( 3, max( 1, absint( $a['depth'] ) ) );
+$wpe_break   = in_array( (string) $a['breakpoint'], array( '1024', '768', '560' ), true ) ? (string) $a['breakpoint'] : '768';
+$wpe_args    = array(
 	'menu'        => (int) $wpe_menu->term_id,
 	'echo'        => false,
 	'fallback_cb' => false,

@@ -25,16 +25,22 @@ foreach ( array_slice( (array) $a['items'], 0, $wpe_limit ) as $wpe_item ) {
 	if ( ! $wpe_label ) {
 		continue;
 	}
-	$wpe_color = (string) ( $wpe_item['color'] ?? 'primary' );
-	$wpe_color = in_array( $wpe_color, array( 'primary', 'secondary', 'accent', 'tertiary', 'contrast' ), true ) ? $wpe_color : 'primary';
-	$wpe_rows[] = array( 'label' => $wpe_label, 'value' => $wpe_value, 'color' => $wpe_color );
+	$wpe_color  = (string) ( $wpe_item['color'] ?? 'primary' );
+	$wpe_color  = in_array( $wpe_color, array( 'primary', 'secondary', 'accent', 'tertiary', 'contrast' ), true ) ? $wpe_color : 'primary';
+	$wpe_rows[] = array(
+			'label' => $wpe_label,
+			'value' => $wpe_value,
+			'color' => $wpe_color,
+		);
 	$wpe_sum   += $wpe_value;
 	$wpe_max    = max( $wpe_max, $wpe_value );
 }
 $wpe_title = trim( (string) $a['title'] );
 ?>
 <figure id="<?php echo esc_attr( $id ); ?>" class="wpe-chart is-<?php echo esc_attr( $wpe_type ); ?>">
-	<?php if ( $wpe_title ) : ?><figcaption class="wpe-chart__title"><?php echo esc_html( $wpe_title ); ?></figcaption><?php endif; ?>
+	<?php if ( $wpe_title ) : ?>
+			<figcaption class="wpe-chart__title"><?php echo esc_html( $wpe_title ); ?></figcaption>
+			<?php endif; ?>
 	<?php if ( $wpe_rows ) : ?>
 		<?php if ( 'donut' === $wpe_type ) : ?>
 			<div class="wpe-chart__donut">
@@ -46,15 +52,21 @@ $wpe_title = trim( (string) $a['title'] );
 						<?php $wpe_offset += $wpe_share; ?>
 					<?php endforeach; ?>
 				</svg>
-				<?php if ( ! empty( $a['showValues'] ) ) : ?><strong class="wpe-chart__total"><?php echo esc_html( number_format_i18n( $wpe_sum, 0 ) ); ?></strong><?php endif; ?>
+				<?php if ( ! empty( $a['showValues'] ) ) : ?>
+			<strong class="wpe-chart__total"><?php echo esc_html( number_format_i18n( $wpe_sum, 0 ) ); ?></strong>
+			<?php endif; ?>
 			</div>
 		<?php endif; ?>
 		<ul class="wpe-chart__series">
 			<?php foreach ( $wpe_rows as $wpe_row ) : ?>
 				<?php $wpe_percent = $wpe_max > 0 ? round( 100 * $wpe_row['value'] / $wpe_max, 5 ) : 0; ?>
 				<li class="wpe-chart__item" style="--wpek-chart-pct:<?php echo esc_attr( $wpe_percent ); ?>%;--wpek-chart-color:var(--wp--preset--color--<?php echo esc_attr( $wpe_row['color'] ); ?>,currentColor)">
-					<div class="wpe-chart__meta"><span class="wpe-chart__label"><?php echo esc_html( $wpe_row['label'] ); ?></span><?php if ( ! empty( $a['showValues'] ) ) : ?><span class="wpe-chart__value"><?php echo esc_html( number_format_i18n( $wpe_row['value'], 2 ) ); ?></span><?php endif; ?></div>
-					<?php if ( 'donut' !== $wpe_type ) : ?><div class="wpe-chart__track" aria-hidden="true"><span class="wpe-chart__bar"></span></div><?php endif; ?>
+					<div class="wpe-chart__meta"><span class="wpe-chart__label"><?php echo esc_html( $wpe_row['label'] ); ?></span><?php if ( ! empty( $a['showValues'] ) ) : ?>
+						<span class="wpe-chart__value"><?php echo esc_html( number_format_i18n( $wpe_row['value'], 2 ) ); ?></span>
+						<?php endif; ?></div>
+					<?php if ( 'donut' !== $wpe_type ) : ?>
+			<div class="wpe-chart__track" aria-hidden="true"><span class="wpe-chart__bar"></span></div>
+			<?php endif; ?>
 				</li>
 			<?php endforeach; ?>
 		</ul>

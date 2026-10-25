@@ -25,7 +25,7 @@ $wpe_shortcode = sprintf(
 	! empty( $a['showTitle'] ) ? 'true' : 'false',
 	! empty( $a['showDescription'] ) ? 'true' : 'false'
 );
-$wpe_form = do_shortcode( $wpe_shortcode );
+$wpe_form      = do_shortcode( $wpe_shortcode );
 ?>
 <section id="<?php echo esc_attr( $id ); ?>" class="wpe-forms is-cols-<?php echo '2' === $a['columns'] ? '2' : '1'; ?>">
 	<?php if ( '' !== trim( (string) $a['heading'] ) ) : ?>
