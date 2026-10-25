@@ -62,6 +62,7 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | Rating | Accessible display-only rating, 5/10-point scales, fractional rating symbols and numeric score with screen-reader value |
 | Alert / Notice | Accessible success/info/warning/error notices with sanitized rich HTML, progressive dismissal and optional session-only persistence |
 | Business Hours | Seven-day schedule, validated HH:MM clock format, closed days, optional highlight of current weekday in site's timezone |
+| Price List / Restaurant Menu | Repeatable menu and service prices, old prices, badges and images; responsive list/cards, safe optional links, semantic list, no JS required. |
 | Image Comparison | Before/after images with alt text, native keyboard-accessible range control and visible static split without JS |
 
 ## What every element offers
