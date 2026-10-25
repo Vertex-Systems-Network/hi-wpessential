@@ -88,6 +88,7 @@ jobs:
           wp eval-file "$GITHUB_WORKSPACE/tools/tests/kit-display-conditions-smoke.php" --path="$WP_DIR"
           wp eval-file "$GITHUB_WORKSPACE/tools/tests/kit-motion-smoke.php" --path="$WP_DIR"
           wp eval-file "$GITHUB_WORKSPACE/tools/tests/kit-motion-layout-smoke.php" --path="$WP_DIR"
+          wp eval-file "$GITHUB_WORKSPACE/tools/tests/kit-visual-effects-smoke.php" --path="$WP_DIR"
       - name: Install WooCommerce and exercise real product CRUD
         env:
           WP_DIR: ${{ runner.temp }}/wpe-wordpress

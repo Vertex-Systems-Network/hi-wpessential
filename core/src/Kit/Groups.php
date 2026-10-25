@@ -1251,6 +1251,99 @@ class Groups {
 			),
 		);
 
+		// Opt-in shared visual effects; classes use only allowlisted values.
+		$attr += array(
+			'effectGradientBorder' => array(
+				'type'   => 'toggle',
+				'label'  => __( 'Enable gradient border', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
+			),
+			'effectBorderFrom'     => array(
+				'type'   => 'color',
+				'label'  => __( 'Gradient border start colour', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
+				'css'    => '--wpek-gradient-a',
+			),
+			'effectBorderTo'       => array(
+				'type'   => 'color',
+				'label'  => __( 'Gradient border end colour', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
+				'css'    => '--wpek-gradient-b',
+			),
+			'effectBorderWidth'    => array(
+				'type'       => 'range',
+				'label'      => __( 'Gradient border width', 'hi-wpessential' ),
+				'panel'      => 'advanced',
+				'common'     => true,
+				'css'        => '--wpek-gradient-width',
+				'unit'       => 'px',
+				'min'        => 1,
+				'max'        => 16,
+				'responsive' => true,
+			),
+			'effectBorderAngle'    => array(
+				'type'   => 'range',
+				'label'  => __( 'Gradient border angle', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
+				'css'    => '--wpek-gradient-angle',
+				'unit'   => 'deg',
+				'min'    => 0,
+				'max'    => 360,
+			),
+			'effectBorderSpin'     => array(
+				'type'   => 'toggle',
+				'label'  => __( 'Animate gradient border', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
+			),
+			'effectBorderSpeed'    => array(
+				'type'   => 'range',
+				'label'  => __( 'Animated border cycle (ms)', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
+				'css'    => '--wpek-gradient-speed',
+				'unit'   => 'ms',
+				'min'    => 1500,
+				'max'    => 12000,
+				'step'   => 500,
+			),
+			'effectBlend'          => array(
+				'type'    => 'select',
+				'label'   => __( 'Mix blend mode', 'hi-wpessential' ),
+				'panel'   => 'advanced',
+				'common'  => true,
+				'options' => array(
+					''           => __( 'Default', 'hi-wpessential' ),
+					'multiply'   => __( 'Multiply', 'hi-wpessential' ),
+					'screen'     => __( 'Screen', 'hi-wpessential' ),
+					'overlay'    => __( 'Overlay', 'hi-wpessential' ),
+					'darken'     => __( 'Darken', 'hi-wpessential' ),
+					'lighten'    => __( 'Lighten', 'hi-wpessential' ),
+					'difference' => __( 'Difference', 'hi-wpessential' ),
+					'exclusion'  => __( 'Exclusion', 'hi-wpessential' ),
+				),
+			),
+			'effectMask'           => array(
+				'type'    => 'select',
+				'label'   => __( 'Fade-edge gradient mask', 'hi-wpessential' ),
+				'panel'   => 'advanced',
+				'common'  => true,
+				'options' => array(
+					''           => __( 'No mask', 'hi-wpessential' ),
+					'top'        => __( 'Fade top edge', 'hi-wpessential' ),
+					'bottom'     => __( 'Fade bottom edge', 'hi-wpessential' ),
+					'left'       => __( 'Fade left edge', 'hi-wpessential' ),
+					'right'      => __( 'Fade right edge', 'hi-wpessential' ),
+					'vertical'   => __( 'Fade both top/bottom', 'hi-wpessential' ),
+					'horizontal' => __( 'Fade both left/right', 'hi-wpessential' ),
+				),
+			),
+		);
+
 		// Advanced responsive foundations shared by Gutenberg and Elementor.
 		$attr += array(
 			'containerQuerySource'    => array(

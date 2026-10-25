@@ -1,3 +1,15 @@
+## Visual Effects — Gradient Borders, Blend Modes and Gradient Masks (Batch #78)
+
+All Gutenberg Kit blocks and Elementor Kit widgets now support these opt-in controls in Advanced:
+
+- **Gradient border:** rounded, non-interactive outer border overlay using theme-aware start/end colour presets; adjustable responsive thickness (1–16px) and angle (0–360°). Uses a mask-based `::after` ring instead of `border-image`, so it follows the element radius without changing its box size. Animation is optional (cycle 1500–12000ms), disabled automatically for reduced-motion users and printing. Controls only activate when **Enable gradient border** is on.
+- **Blend mode:** multiply, screen, overlay, darken, lighten, difference or exclusion, implemented using allowlisted CSS classes; blend results vary with the background behind the widget.
+- **Gradient mask:** top, bottom, left, right, both vertical or both horizontal edges; applies real `mask-image`/`-webkit-mask-image` to the widget. The fade can visually conceal children or content near edges, so avoid applying it to buttons, forms or critical messages.
+
+All three features are off by default. The gradient overlay has `pointer-events:none` to preserve normal links/controls, but elements with custom pseudo-elements or specially positioned roots may need manual visual QA. The CSS animation does not run under `prefers-reduced-motion: reduce`. This batch covers these effects only; noise textures, clip-path shapes and state-aware elevation remain pending.
+
+Tests: `tools/tests/kit-visual-effects-smoke.php` (Gutenberg/PHP and Elementor mapping), with rendered computed-style checks in the real Chromium browser workflow.
+
 ## Motion Layout — Parallax Layers and Sticky Stop Target (Batch #77)
 
 In Gutenberg and Elementor, shared Kit Advanced controls provide independent **responsive parallax travel for the first four direct-child layers**, signed -240px to +240px, using X/Y direction. Set a given layer's responsive value to 0 to disable it on that screen width. Kit Container applies layers to its inner wrapper's direct children. The CSS individual `translate` property preserves existing element transforms. During reduced motion, parallax is switched off. Arbitrary deeply nested selectors and more than four layers are not supported yet.

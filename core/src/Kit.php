@@ -667,6 +667,20 @@ class Kit {
 		if ( ! empty( $a['containerQuerySource'] ) ) {
 			$classes[] = 'wpek-query-container';
 		}
+		if ( ! empty( $a['effectGradientBorder'] ) ) {
+			$classes[] = 'wpek-gradient-border';
+			if ( ! empty( $a['effectBorderSpin'] ) ) {
+				$classes[] = 'wpek-gradient-border-animated';
+			}
+		}
+		$wpe_blend = (string) ( $a['effectBlend'] ?? '' );
+		if ( in_array( $wpe_blend, array( 'multiply', 'screen', 'overlay', 'darken', 'lighten', 'difference', 'exclusion' ), true ) ) {
+			$classes[] = 'wpek-blend-' . $wpe_blend;
+		}
+		$wpe_mask = (string) ( $a['effectMask'] ?? '' );
+		if ( in_array( $wpe_mask, array( 'top', 'bottom', 'left', 'right', 'vertical', 'horizontal' ), true ) ) {
+			$classes[] = 'wpek-mask-' . $wpe_mask;
+		}
 		if ( ! empty( $a['glass'] ) ) {
 			$classes[] = 'wpek-glass';
 		}
@@ -766,6 +780,15 @@ class Kit {
 			$values = ! empty( $opt['responsive'] ) ? (array) $a[ $key ] : array( 'base' => $a[ $key ] );
 			foreach ( $values as $bp => $value ) {
 				if ( '' === $value || null === $value || false === $value ) {
+					continue;
+				}
+				// Directly loaded saved attributes cannot bypass the visual-effect ranges.
+				$wpe_effect_ranges = array(
+					'effectBorderWidth' => array( 1, 16 ),
+					'effectBorderAngle' => array( 0, 360 ),
+					'effectBorderSpeed' => array( 1500, 12000 ),
+				);
+				if ( isset( $wpe_effect_ranges[ $key ] ) && ( ! is_numeric( $value ) || (float) $value < $wpe_effect_ranges[ $key ][0] || (float) $value > $wpe_effect_ranges[ $key ][1] ) ) {
 					continue;
 				}
 				// Never emit arbitrary or unbounded parallax travel values.

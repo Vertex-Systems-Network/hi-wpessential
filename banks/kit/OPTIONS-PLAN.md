@@ -45,10 +45,10 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 20 | Reduced-motion alternative (not only off) | ✅ Choose no movement or gentle fade for reduced motion |
 | 21 | Animation trigger: scroll, hover, click, load | ✅ Scroll, hover/focus, click and load triggers with progressive JS |
 | 22 | Gradient text and text clip | ✅ Heading accent and Text |
-| 23 | Gradient border, animated gradient border | ⏳ |
+| 23 | Gradient border, animated gradient border | ✅ Theme-aware static and motion-safe animated conic gradient border |
 | 24 | Glass (backdrop blur) | ✅ |
-| 25 | Blend modes | ⏳ |
-| 26 | Gradient mask (fade edges) | ⏳ |
+| 25 | Blend modes | ✅ Allowlisted CSS blend modes with opt-in classes |
+| 26 | Gradient mask (fade edges) | ✅ Opt-in horizontal/vertical and individual edge gradient masks |
 | 27 | Clip-path shapes (wave, slant, blob) | ⬜ |
 | 28 | Noise / grain texture | ⬜ |
 | 29 | Elevation tokens that follow the state | ⏳ |

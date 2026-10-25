@@ -58,6 +58,46 @@ async function verifyPage( page, id, label ) {
 	assert.equal( await page.locator( '.wpe-chart.is-donut svg circle' ).count(), 2, label + ': incorrect chart output' );
 
 	// The browser context defaults to reduced motion. Turn it off for normal-animation checks.
+	// The QA browser defaults to reduced motion; verify animation only in normal mode.
+	await page.emulateMedia( { reducedMotion: 'no-preference' } );
+	// Opt-in shared visual effects: rounded gradient border, animated angle,
+	// allowlisted blend mode and fade-edge mask work in both editor frontends.
+	const gradientBox = page.locator( '.wpe-price-list.wpek-gradient-border.wpek-gradient-border-animated' ).first();
+	const maskedChart = page.locator( '.wpe-chart.wpek-mask-bottom' ).first();
+	const blendedFlip = page.locator( '.wpe-flip.wpek-blend-multiply' ).first();
+	assert.equal( await gradientBox.count(), 1, label + ': gradient border class missing' );
+	assert.equal( await maskedChart.count(), 1, label + ': gradient mask class missing' );
+	assert.equal( await blendedFlip.count(), 1, label + ': blend mode class missing' );
+	const fx = await page.evaluate( () => {
+		const price = document.querySelector( '.wpe-price-list.wpek-gradient-border' );
+		const chart = document.querySelector( '.wpe-chart.wpek-mask-bottom' );
+		const flip = document.querySelector( '.wpe-flip.wpek-blend-multiply' );
+		const border = getComputedStyle( price, '::after' );
+		return {
+			angle: getComputedStyle( price ).getPropertyValue( '--wpek-gradient-angle' ).trim(),
+			width: getComputedStyle( price ).getPropertyValue( '--wpek-gradient-width' ).trim(),
+			borderBackground: border.backgroundImage,
+			borderMask: border.webkitMaskImage || border.maskImage,
+			borderPointerEvents: border.pointerEvents,
+			borderAnimation: border.animationName,
+			fade: getComputedStyle( chart ).maskImage,
+			blend: getComputedStyle( flip ).mixBlendMode
+		};
+	} );
+	assert.equal( fx.angle, '45deg', label + ': configured border angle missing' );
+	assert.equal( fx.width, '3px', label + ': responsive gradient border width missing' );
+	assert.ok( fx.borderBackground.includes( 'conic-gradient' ), label + ': rounded gradient overlay absent' );
+	assert.ok( fx.borderMask.includes( 'linear-gradient' ), label + ': border cut-out mask absent' );
+	assert.equal( fx.borderPointerEvents, 'none', label + ': gradient overlay blocks pointer interactions' );
+	assert.equal( fx.borderAnimation, 'wpek-gradient-spin', label + ': animated border animation missing' );
+	assert.ok( fx.fade.includes( 'linear-gradient' ), label + ': fade-edge mask did not compute' );
+	assert.equal( fx.blend, 'multiply', label + ': CSS blend mode did not compute' );
+	await page.emulateMedia( { reducedMotion: 'reduce' } );
+	const reducedGradient = await gradientBox.evaluate( node => getComputedStyle( node, '::after' ).animationName );
+	assert.equal( reducedGradient, 'none', label + ': border animation ignores reduced motion' );
+	await page.emulateMedia( { reducedMotion: 'no-preference' } );
+	console.log( 'PASS: ' + label + ': gradient border, mask, blend and reduced-motion guard' );
+
 	await page.emulateMedia( { reducedMotion: 'no-preference' } );
 	// Per-layer settings must create different travel vectors in both editors.
 	await page.waitForFunction( () => {
