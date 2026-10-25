@@ -87,8 +87,26 @@ async function verifyPage( page, id, label ) {
 	const iconLink = page.locator( '.wpe-icon-single.wpek-focus-ring a' ).first();
 	assert.ok( await iconLink.count() === 1, label + ': shared focus ring class missing' );
 	await iconLink.focus();
-	const ringWidth = await iconLink.evaluate( node => getComputedStyle( node ).outlineWidth );
-	assert.equal( ringWidth, '3px', label + ': custom focus ring width not applied' );
+	const ringDetails = await iconLink.evaluate( node => {
+		const root = node.closest( '.wpek-focus-ring' );
+		const style = getComputedStyle( node );
+		return {
+			outline: style.outline,
+			outlineWidth: style.outlineWidth,
+			rootId: root ? root.id : null,
+			widthVariable: root ? getComputedStyle( root ).getPropertyValue( '--wpek-focus-width' ).trim() : '',
+			loadedKitStyles: Array.from( document.styleSheets ).map( sheet => sheet.href || '' ).filter( url => url.includes( 'kit' ) ).slice( 0, 15 ),
+			commonCSSRuleFound: Array.from( document.styleSheets ).some( sheet => {
+				try {
+					return Array.from( sheet.cssRules || [] ).some( rule => rule.cssText && rule.cssText.includes( '.wpek-focus-ring' ) );
+				} catch ( error ) {
+					return false;
+				}
+			} )
+		};
+	} );
+	console.log( 'FOCUS DEBUG:', label, JSON.stringify( ringDetails ) );
+	assert.equal( ringDetails.outlineWidth, '3px', label + ': custom focus ring width not applied' );
 	await page.emulateMedia( { media: 'print' } );
 	const printVisibility = await glass.evaluate( node => getComputedStyle( node ).display );
 	assert.equal( printVisibility, 'none', label + ': hide-on-print not applied' );
