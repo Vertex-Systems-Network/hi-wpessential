@@ -99,7 +99,16 @@ async function verifyPage( page, id, label ) {
 			};
 		}
 		try {
-			return { ltr: snapshot( 'ltr' ), rtl: snapshot( 'rtl' ) };
+			const ltr = snapshot( 'ltr' );
+			const rtl = snapshot( 'rtl' );
+			return {
+				ltr,
+				rtl,
+				priceId: price.id,
+				iconId: icon.id,
+				priceMarkup: price.outerHTML.slice( 0, 420 ),
+				styleRules: Array.from( document.querySelectorAll( 'style' ) ).map( item => item.textContent ).filter( text => text && text.includes( 'margin-inline-start' ) ).slice( 0, 5 )
+			};
 		} finally {
 			if ( beforeDir === null ) {
 				html.removeAttribute( 'dir' );
@@ -108,6 +117,7 @@ async function verifyPage( page, id, label ) {
 			}
 		}
 	} );
+	console.log( 'RTL CSS DEBUG:', label, JSON.stringify( directional ) );
 	assert.equal( directional.ltr.marginStart, '14px', label + ': LTR logical margin value' );
 	assert.equal( directional.rtl.marginStart, '14px', label + ': RTL logical margin value' );
 	assert.equal( directional.ltr.marginLeft, '14px', label + ': LTR inline-start margin is left' );
