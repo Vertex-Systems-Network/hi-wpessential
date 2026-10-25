@@ -753,6 +753,41 @@ class Groups {
 					'raw'   => true,
 				)
 			),
+			// Logical inline spacing respects direction: start is left in LTR, right in RTL.
+			'logicalMarginStart' => array_merge(
+				$px,
+				array(
+					'label' => __( 'Margin inline start (RTL-aware)', 'hi-wpessential' ),
+					'css'   => 'margin-inline-start',
+					'raw'   => true,
+				)
+			),
+			'logicalMarginEnd'   => array_merge(
+				$px,
+				array(
+					'label' => __( 'Margin inline end (RTL-aware)', 'hi-wpessential' ),
+					'css'   => 'margin-inline-end',
+					'raw'   => true,
+				)
+			),
+			'logicalPaddingStart' => array_merge(
+				$px,
+				array(
+					'label' => __( 'Padding inline start (RTL-aware)', 'hi-wpessential' ),
+					'css'   => 'padding-inline-start',
+					'raw'   => true,
+					'min'   => 0,
+				)
+			),
+			'logicalPaddingEnd'   => array_merge(
+				$px,
+				array(
+					'label' => __( 'Padding inline end (RTL-aware)', 'hi-wpessential' ),
+					'css'   => 'padding-inline-end',
+					'raw'   => true,
+					'min'   => 0,
+				)
+			),
 			'zIndex'          => array(
 				'type'   => 'range',
 				'label'  => __( 'Z-index', 'hi-wpessential' ),

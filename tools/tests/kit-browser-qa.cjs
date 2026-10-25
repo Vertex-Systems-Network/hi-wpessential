@@ -79,6 +79,44 @@ async function verifyPage( page, id, label ) {
 	assert.equal( await mobileToggle.getAttribute( 'aria-expanded' ), 'false', label + ': mobile submenu did not close' );
 	await mobileMenu.locator( ':scope > summary' ).click();
 	await page.setViewportSize( { width: 1440, height: 900 } );
+	// CSS logical spacing must flip physical edges with document direction.
+	const directional = await page.evaluate( () => {
+		const price = document.querySelector( '.wpe-price-list' );
+		const icon = document.querySelector( '.wpe-icon-single' );
+		const html = document.documentElement;
+		const beforeDir = html.getAttribute( 'dir' );
+		function snapshot( direction ) {
+			html.setAttribute( 'dir', direction );
+			const p = getComputedStyle( price );
+			const i = getComputedStyle( icon );
+			return {
+				marginLeft: p.marginLeft,
+				marginRight: p.marginRight,
+				paddingLeft: i.paddingLeft,
+				paddingRight: i.paddingRight,
+				marginStart: p.marginInlineStart,
+				paddingEnd: i.paddingInlineEnd
+			};
+		}
+		try {
+			return { ltr: snapshot( 'ltr' ), rtl: snapshot( 'rtl' ) };
+		} finally {
+			if ( beforeDir === null ) {
+				html.removeAttribute( 'dir' );
+			} else {
+				html.setAttribute( 'dir', beforeDir );
+			}
+		}
+	} );
+	assert.equal( directional.ltr.marginStart, '14px', label + ': LTR logical margin value' );
+	assert.equal( directional.rtl.marginStart, '14px', label + ': RTL logical margin value' );
+	assert.equal( directional.ltr.marginLeft, '14px', label + ': LTR inline-start margin is left' );
+	assert.equal( directional.rtl.marginRight, '14px', label + ': RTL inline-start margin is right' );
+	assert.equal( directional.ltr.paddingEnd, '9px', label + ': LTR logical padding value' );
+	assert.equal( directional.rtl.paddingEnd, '9px', label + ': RTL logical padding value' );
+	assert.equal( directional.ltr.paddingRight, '9px', label + ': LTR inline-end padding is right' );
+	assert.equal( directional.rtl.paddingLeft, '9px', label + ': RTL inline-end padding is left' );
+	console.log( 'PASS: ' + label + ': LTR and RTL logical spacing edges mirror correctly' );
 	// Shared advanced controls are active in both editors and respect print media.
 	const glass = page.locator( '.wpe-chart.wpek-glass' ).first();
 	assert.ok( await glass.count() === 1, label + ': shared glass class missing' );
