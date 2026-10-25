@@ -86,6 +86,14 @@ async function verifyPage( page, id, label ) {
 	await page.emulateMedia( { reducedMotion: 'reduce' } );
 	await page.locator( '.wpe-price-list.wpek-elevation' ).first().hover();
 	const hoverShadow = await page.locator( '.wpe-price-list.wpek-elevation' ).first().evaluate( el => getComputedStyle( el ).boxShadow );
+	const elevationDebug = await page.locator( '.wpe-price-list.wpek-elevation' ).first().evaluate( el => ({
+		hovering: el.matches( ':hover' ),
+		computed: getComputedStyle( el ).boxShadow,
+		rest: getComputedStyle( el ).getPropertyValue( '--wpek-elev-rest' ),
+		hover: getComputedStyle( el ).getPropertyValue( '--wpek-elev-hover' ),
+		classes: el.className
+	}) );
+	console.log( 'ELEVATION DEBUG ' + label + ': ' + JSON.stringify( { before: visualLayer.shadowRest, after: hoverShadow, ...elevationDebug } ) );
 	assert.notEqual( hoverShadow, visualLayer.shadowRest, label + ': hover elevation did not change' );
 	await page.mouse.move( 0, 0 );
 	console.log( 'PASS: ' + label + ': clip shape, SVG grain and theme state elevation' );
