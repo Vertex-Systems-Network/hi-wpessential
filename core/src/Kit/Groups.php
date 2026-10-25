@@ -1089,13 +1089,13 @@ class Groups {
 					'desktop' => __( 'Desktop only (1024px+)', 'hi-wpessential' ),
 				),
 			),
-			'parallaxEnabled'      => array(
+			'parallaxEnabled'     => array(
 				'type'   => 'toggle',
 				'label'  => __( 'Parallax: enable direct-child layers', 'hi-wpessential' ),
 				'panel'  => 'advanced',
 				'common' => true,
 			),
-			'parallaxAxis'         => array(
+			'parallaxAxis'        => array(
 				'type'    => 'select',
 				'label'   => __( 'Parallax axis', 'hi-wpessential' ),
 				'panel'   => 'advanced',
@@ -1105,7 +1105,7 @@ class Groups {
 					'x' => __( 'Horizontal', 'hi-wpessential' ),
 				),
 			),
-			'parallaxLayer1'       => array(
+			'parallaxLayer1'      => array(
 				'type'       => 'range',
 				'label'      => __( 'Parallax layer 1 travel (px, 0 disables)', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -1118,7 +1118,7 @@ class Groups {
 				'step'       => 5,
 				'responsive' => true,
 			),
-			'parallaxLayer2'       => array(
+			'parallaxLayer2'      => array(
 				'type'       => 'range',
 				'label'      => __( 'Parallax layer 2 travel (px, 0 disables)', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -1131,7 +1131,7 @@ class Groups {
 				'step'       => 5,
 				'responsive' => true,
 			),
-			'parallaxLayer3'       => array(
+			'parallaxLayer3'      => array(
 				'type'       => 'range',
 				'label'      => __( 'Parallax layer 3 travel (px, 0 disables)', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -1144,7 +1144,7 @@ class Groups {
 				'step'       => 5,
 				'responsive' => true,
 			),
-			'parallaxLayer4'       => array(
+			'parallaxLayer4'      => array(
 				'type'       => 'range',
 				'label'      => __( 'Parallax layer 4 travel (px, 0 disables)', 'hi-wpessential' ),
 				'panel'      => 'advanced',
@@ -1157,7 +1157,7 @@ class Groups {
 				'step'       => 5,
 				'responsive' => true,
 			),
-			'stickyStopId'         => array(
+			'stickyStopId'        => array(
 				'type'   => 'text',
 				'label'  => __( 'Sticky stop at element ID (same page)', 'hi-wpessential' ),
 				'panel'  => 'advanced',
