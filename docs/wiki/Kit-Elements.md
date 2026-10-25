@@ -64,6 +64,7 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | Business Hours | Seven-day schedule, validated HH:MM clock format, closed days, optional highlight of current weekday in site's timezone |
 | Image Comparison | Before/after images with alt text, native keyboard-accessible range control and visible static split without JS |
 
+| Price List / Restaurant Menu | Repeatable menu and service prices, old prices, badges and images; responsive list/cards, safe optional links, semantic list, no JS required. |
 | Navigation / Mega Menu | Native WordPress menus, desktop keyboard/focus dropdowns, two-column submenu layout and accessible mobile disclosure; not a custom templated mega builder. |
 | Site / Archive Widgets | Context-aware archive title/description, public post meta, breadcrumbs, author and pagination. |
 | WPForms Lite Form | Embed existing published WPForms forms with their validation and antispam; no duplicate form handler. |
