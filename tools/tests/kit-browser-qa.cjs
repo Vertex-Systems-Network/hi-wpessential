@@ -68,15 +68,29 @@ async function verifyPage( page, id, label ) {
 		for ( const scheme of [ 'light', 'dark' ] ) {
 			await page.evaluate( mode => document.documentElement.setAttribute( 'data-wpe-scheme', mode ), scheme );
 			const palette = await page.evaluate( () => {
-				const label = document.querySelector( '.wpe-forms .wpforms-field-label' );
+				const target = document.querySelector( '.wpe-forms .wpforms-field-label' );
+				if ( ! target ) {
+					return { foreground: '', background: '' };
+				}
+				// Compare with the actually painted ancestor, not the palette variable.
+				// Theme transitions may leave a stale computed preset during mobile viewport changes.
+				let background = '';
+				for ( let element = target; element; element = element.parentElement ) {
+					const value = getComputedStyle( element ).backgroundColor;
+					if ( value && value !== 'transparent' && ! /rgba\(0, 0, 0, 0\)/.test( value ) ) {
+						background = value;
+						break;
+					}
+				}
 				return {
-					foreground: label ? getComputedStyle( label ).color : '',
-					background: getComputedStyle( document.documentElement ).getPropertyValue( '--wp--preset--color--surface' ).trim()
+					foreground: getComputedStyle( target ).color,
+					background: background || ( document.documentElement.getAttribute( 'data-wpe-scheme' ) === 'dark' ? 'rgb(13, 18, 34)' : 'rgb(255, 255, 255)' )
 				};
 			} );
 			assert.ok( palette.foreground && palette.background, label + ': missing WPForms colors' );
 			const contrastRatio = contrast( palette.foreground, palette.background );
-			assert.ok( contrastRatio >= 4.5, label + ' ' + scheme + ': WPForms label WCAG AA contrast failure (' + contrastRatio.toFixed( 2 ) + ':1)' );
+			console.log( 'CONTRAST:', label, vp.type, scheme, palette, contrastRatio.toFixed( 2 ) + ':1' );
+			assert.ok( contrastRatio >= 4.5, label + ' ' + vp.type + ' ' + scheme + ': WPForms label WCAG AA contrast failure (' + contrastRatio.toFixed( 2 ) + ':1)' );
 			await page.screenshot( { path: path.join( dir, label + '-' + vp.type + '-' + scheme + '.png' ), fullPage: true } );
 			const overflow = await page.evaluate( () => Math.max( 0, document.documentElement.scrollWidth - document.documentElement.clientWidth ) );
 			assert.ok( overflow < 125, label + ': severe horizontal overflow: ' + overflow );
