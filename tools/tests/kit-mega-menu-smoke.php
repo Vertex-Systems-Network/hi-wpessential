@@ -132,6 +132,47 @@ try {
 		wp_delete_post( $wpe_page, true );
 	}
 
+	// Exercise Elementor's real published saved-template renderer, not just the source-type check.
+	$wpe_elementor_id = wp_insert_post(
+		array(
+			'post_type' => 'elementor_library',
+			'post_status' => 'publish',
+			'post_title' => 'QA Elementor Mega',
+		),
+		true
+	);
+	$wpe_assert( ! is_wp_error( $wpe_elementor_id ), 'Elementor saved template fixture created' );
+	try {
+		$wpe_elementor_data = array(
+			array(
+				'id' => 'a0b4cf2',
+				'elType' => 'widget',
+				'widgetType' => 'heading',
+				'settings' => array( 'title' => 'QA Elementor Saved Mega Content' ),
+				'elements' => array(),
+			),
+		);
+		update_post_meta( $wpe_elementor_id, '_elementor_edit_mode', 'builder' );
+		update_post_meta( $wpe_elementor_id, '_elementor_template_type', 'section' );
+		update_post_meta( $wpe_elementor_id, '_elementor_version', defined( 'ELEMENTOR_VERSION' ) ? ELEMENTOR_VERSION : '' );
+		update_post_meta( $wpe_elementor_id, '_elementor_data', wp_slash( wp_json_encode( $wpe_elementor_data ) ) );
+		$wpe_elementor_output = $wpe_render(
+			array(
+				'menu' => (string) $wpe_menu_id,
+				'templateItems' => array(
+					array(
+						'menuItemId' => (string) $wpe_parent,
+						'templateId' => (string) $wpe_elementor_id,
+						'source' => 'elementor_library',
+					),
+				),
+			)
+		);
+		$wpe_assert( false !== strpos( $wpe_elementor_output, 'QA Elementor Saved Mega Content' ), 'Published Elementor saved template renders in mega panel' );
+	} finally {
+		wp_delete_post( $wpe_elementor_id, true );
+	}
+
 	$wpe_elementor_settings = Kit::from_elementor(
 		Kit::defs()['menu'],
 		array(
