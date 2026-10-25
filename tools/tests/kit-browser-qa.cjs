@@ -62,7 +62,7 @@ async function verifyPage( page, id, label ) {
 	// Shared motion is progressively enhanced and bound after scripts load.
 	const priceMotion = page.locator( '.wpe-price-list.wpek-motion-trigger-click.wpek-stagger' ).first();
 	const chartMotion = page.locator( '.wpe-chart.wpek-motion-trigger-load' ).first();
-	const flipMotion = page.locator( '.wpe-flip.wpek-motion-trigger-hover' ).first();
+	const flipMotion = page.locator( '.wpe-icon-single.wpek-motion-trigger-hover' ).first();
 	const formMotion = page.locator( '.wpe-forms.wpek-motion-trigger-scroll' ).first();
 	await priceMotion.locator( ':scope' ).waitFor( { state: 'attached', timeout: 20000 } );
 	assert.ok( await chartMotion.count(), label + ': load trigger missing' );

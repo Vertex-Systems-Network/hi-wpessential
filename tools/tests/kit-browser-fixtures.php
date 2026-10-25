@@ -70,9 +70,9 @@ $wpe_defs = array(
 		),
 	),
 	'forms' => array( 'animation' => 'fade', 'animTrigger' => 'scroll', 'formId' => (string) $wpe_form_id, 'heading' => 'Kit QA Real Form', 'showTitle' => false, 'containerQuerySource' => true ),
-	'icon' => array( 'icon' => array( 'library' => 'wpessential', 'value' => 'bolt' ), 'label' => 'QA Icon', 'url' => 'https://example.org', 'focusRingStyle' => 'solid', 'focusRingColor' => 'primary', 'focusRingWidth' => array( 'base' => 3 ), 'focusRingOffset' => array( 'base' => 2 ), 'logicalPaddingEnd' => array( 'base' => 9 ), 'containerQueryHideBelow' => 320 ),
+	'icon' => array( 'animation' => 'fade-up', 'animTrigger' => 'hover', 'icon' => array( 'library' => 'wpessential', 'value' => 'bolt' ), 'label' => 'QA Icon', 'url' => 'https://example.org', 'focusRingStyle' => 'solid', 'focusRingColor' => 'primary', 'focusRingWidth' => array( 'base' => 3 ), 'focusRingOffset' => array( 'base' => 2 ), 'logicalPaddingEnd' => array( 'base' => 9 ), 'containerQueryHideBelow' => 320 ),
 	'chart' => array( 'title' => 'Kit QA Chart', 'animation' => 'zoom-in', 'animTrigger' => 'load', 'fluidPaddingMin' => 8, 'fluidPaddingMax' => 32, 'fluidGapMin' => 4, 'fluidGapMax' => 16, 'type' => 'donut', 'glass' => true, 'glassBlur' => array( 'base' => 14 ), 'glassOpacity' => array( 'base' => 75 ), 'hidePrint' => true, 'items' => array( array( 'label' => 'A', 'value' => '60', 'color' => 'primary' ), array( 'label' => 'B', 'value' => '40', 'color' => 'secondary' ) ) ),
-	'flip' => array( 'animation' => 'fade-up', 'animTrigger' => 'hover', 'frontTitle' => 'Kit QA Flip Front', 'backTitle' => 'Kit QA Flip Back', 'frontContent' => '<p>Open this card</p>' ),
+	'flip' => array( 'frontTitle' => 'Kit QA Flip Front', 'backTitle' => 'Kit QA Flip Back', 'frontContent' => '<p>Open this card</p>' ),
 	'site-archive-widgets' => array( 'stickyEnabled' => true, 'stickyOffset' => array( 'base' => 24 ), 'stickyFrom' => 'tablet', 'mode' => 'title', 'fallback' => 'Kit QA Archive', 'conditionDevice' => 'desktop' ),
 );
 $wpe_blocks = '';
