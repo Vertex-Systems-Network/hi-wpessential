@@ -1,3 +1,13 @@
+## Shapes, Grain and Elevation (Batch #79)
+
+Shared Advanced options are available on every Kit Gutenberg block and Elementor widget. All are **opt-in**.
+
+- **Clip shapes:** Slant, Wave and Blob use fixed allowlisted `clip-path: polygon(...)` outlines. These clip the entire element, including borders, text and keyboard-focus indicators close to the edges. Use them primarily for decorative images/sections, not important text, forms or controls.
+- **Noise/grain:** An embedded static SVG `feTurbulence` texture (no network request or JavaScript) sits in a non-clickable `::before` layer. Responsive intensity is limited to 1–20%, with a default of 8% when enabled; the overlay is hidden in print. Components using `::before` for their own UI may conflict and require visual review. Contrast and readability should be checked after enabling noise.
+- **State-aware elevation:** Separate Small/Medium/Large theme-shadow presets for **rest**, **hover/focus-within**, and **keyboard-focus-visible**. Values resolve against WordPress theme.json `--wp--preset--shadow--sm/md/lg` variables, so themes can update them. An enabled state adds only its own allowlisted CSS classes. CSS transitions are disabled under reduced motion.
+
+No settings are applied to existing saved content unless activated. Tests include `tools/tests/kit-shapes-grain-elevation-smoke.php` and real Chromium computed-style checks in the Gutenberg/Elementor fixture. Advanced custom SVG clipping, animated grain, drag-editable masks and per-element compatibility audits remain future work.
+
 ## Visual Effects — Gradient Borders, Blend Modes and Gradient Masks (Batch #78)
 
 All Gutenberg Kit blocks and Elementor Kit widgets now support these opt-in controls in Advanced:

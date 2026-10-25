@@ -681,6 +681,30 @@ class Kit {
 		if ( in_array( $wpe_mask, array( 'top', 'bottom', 'left', 'right', 'vertical', 'horizontal' ), true ) ) {
 			$classes[] = 'wpek-mask-' . $wpe_mask;
 		}
+		$wpe_clip = (string) ( $a['clipShape'] ?? '' );
+		if ( in_array( $wpe_clip, array( 'slant', 'wave', 'blob' ), true ) ) {
+			$classes[] = 'wpek-clip-' . $wpe_clip;
+		}
+		if ( ! empty( $a['grainEnabled'] ) ) {
+			$classes[] = 'wpek-grain';
+		}
+		$wpe_has_elevation = false;
+		foreach (
+			array(
+				'elevationRest'  => 'rest',
+				'elevationHover' => 'hover',
+				'elevationFocus' => 'focus',
+			) as $wpe_key => $wpe_state
+		) {
+			$wpe_tier = (string) ( $a[ $wpe_key ] ?? '' );
+			if ( in_array( $wpe_tier, array( 'sm', 'md', 'lg' ), true ) ) {
+				$classes[]         = 'wpek-elev-' . $wpe_state . '-' . $wpe_tier;
+				$wpe_has_elevation = true;
+			}
+		}
+		if ( $wpe_has_elevation ) {
+			$classes[] = 'wpek-elevation';
+		}
 		if ( ! empty( $a['glass'] ) ) {
 			$classes[] = 'wpek-glass';
 		}
@@ -789,6 +813,10 @@ class Kit {
 					'effectBorderSpeed' => array( 1500, 12000 ),
 				);
 				if ( isset( $wpe_effect_ranges[ $key ] ) && ( ! is_numeric( $value ) || (float) $value < $wpe_effect_ranges[ $key ][0] || (float) $value > $wpe_effect_ranges[ $key ][1] ) ) {
+					continue;
+				}
+				// Saved range attributes are untrusted; clip visual intensity to 1–20%.
+				if ( 'grainOpacity' === $key && ( ! is_numeric( $value ) || (float) $value < 1 || (float) $value > 20 ) ) {
 					continue;
 				}
 				// Never emit arbitrary or unbounded parallax travel values.

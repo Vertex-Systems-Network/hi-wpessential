@@ -1344,6 +1344,76 @@ class Groups {
 			),
 		);
 
+		// Opt-in shape, texture and state-aware elevation settings.
+		$attr += array(
+			'clipShape'      => array(
+				'type'    => 'select',
+				'label'   => __( 'Clip-path shape', 'hi-wpessential' ),
+				'panel'   => 'advanced',
+				'common'  => true,
+				'options' => array(
+					''      => __( 'None', 'hi-wpessential' ),
+					'slant' => __( 'Slant', 'hi-wpessential' ),
+					'wave'  => __( 'Wave', 'hi-wpessential' ),
+					'blob'  => __( 'Blob', 'hi-wpessential' ),
+				),
+			),
+			'grainEnabled'   => array(
+				'type'   => 'toggle',
+				'label'  => __( 'Enable noise / grain texture', 'hi-wpessential' ),
+				'panel'  => 'advanced',
+				'common' => true,
+			),
+			'grainOpacity'   => array(
+				'type'       => 'range',
+				'label'      => __( 'Grain intensity (percentage)', 'hi-wpessential' ),
+				'panel'      => 'advanced',
+				'common'     => true,
+				'css'        => '--wpek-grain-opacity',
+				'unit'       => '%',
+				'min'        => 1,
+				'max'        => 20,
+				'step'       => 1,
+				'responsive' => true,
+			),
+			'elevationRest'  => array(
+				'type'    => 'select',
+				'label'   => __( 'Elevation at rest', 'hi-wpessential' ),
+				'panel'   => 'advanced',
+				'common'  => true,
+				'options' => array(
+					''   => __( 'Default', 'hi-wpessential' ),
+					'sm' => __( 'Small', 'hi-wpessential' ),
+					'md' => __( 'Medium', 'hi-wpessential' ),
+					'lg' => __( 'Large', 'hi-wpessential' ),
+				),
+			),
+			'elevationHover' => array(
+				'type'    => 'select',
+				'label'   => __( 'Elevation on hover or focus-within', 'hi-wpessential' ),
+				'panel'   => 'advanced',
+				'common'  => true,
+				'options' => array(
+					''   => __( 'Default', 'hi-wpessential' ),
+					'sm' => __( 'Small', 'hi-wpessential' ),
+					'md' => __( 'Medium', 'hi-wpessential' ),
+					'lg' => __( 'Large', 'hi-wpessential' ),
+				),
+			),
+			'elevationFocus' => array(
+				'type'    => 'select',
+				'label'   => __( 'Elevation on keyboard focus', 'hi-wpessential' ),
+				'panel'   => 'advanced',
+				'common'  => true,
+				'options' => array(
+					''   => __( 'Default', 'hi-wpessential' ),
+					'sm' => __( 'Small', 'hi-wpessential' ),
+					'md' => __( 'Medium', 'hi-wpessential' ),
+					'lg' => __( 'Large', 'hi-wpessential' ),
+				),
+			),
+		);
+
 		// Advanced responsive foundations shared by Gutenberg and Elementor.
 		$attr += array(
 			'containerQuerySource'    => array(

@@ -57,6 +57,59 @@ async function verifyPage( page, id, label ) {
 	assert.ok( await page.locator( '.wpe-forms input[type="email"]' ).count(), label + ': WPForms email field missing' );
 	assert.equal( await page.locator( '.wpe-chart.is-donut svg circle' ).count(), 2, label + ': incorrect chart output' );
 
+	// The default mouse position may already hover this widget. Measure the
+	// rest state with the pointer explicitly outside before entering.
+	await page.mouse.move( 0, page.viewportSize().height - 2 );
+	assert.equal( await page.locator( '.wpe-price-list.wpek-elevation' ).first().evaluate( node => node.matches( ':hover' ) ), false, label + ': baseline must not already hover' );
+	// Theme elevation, allowlisted clip shape and embedded no-network noise.
+	const visualLayer = await page.evaluate( () => {
+		const chart = document.querySelector( '.wpe-chart.wpek-clip-slant.wpek-grain' );
+		const price = document.querySelector( '.wpe-price-list.wpek-elevation.wpek-elev-rest-sm.wpek-elev-hover-lg' );
+		const icon = document.querySelector( '.wpe-icon-single.wpek-elev-focus-md' );
+		if ( ! chart || ! price || ! icon ) {
+			return { error: 'Missing Kit shape/grain/elevation controls' };
+		}
+		const grain = getComputedStyle( chart, '::before' );
+		return {
+			clip: getComputedStyle( chart ).clipPath,
+			grainImage: grain.backgroundImage,
+			grainOpacity: parseFloat( grain.opacity ),
+			grainPointer: grain.pointerEvents,
+			grainPosition: grain.position,
+			shadowRest: getComputedStyle( price ).boxShadow,
+			iconFocusTier: getComputedStyle( icon ).getPropertyValue( '--wpek-elev-focus' ).trim()
+		};
+	} );
+	assert.ok( visualLayer.clip.includes( 'polygon(' ), label + ': slant clip-path missing: ' + JSON.stringify( visualLayer ) );
+	assert.ok( visualLayer.grainImage.includes( 'data:image/svg+xml' ), label + ': SVG noise not embedded' );
+	assert.ok( Math.abs( visualLayer.grainOpacity - 0.09 ) < 0.001, label + ': noise intensity failed' );
+	assert.equal( visualLayer.grainPointer, 'none', label + ': texture intercepts pointer input' );
+	assert.equal( visualLayer.grainPosition, 'absolute', label + ': grain overlay positioned wrong' );
+	assert.notEqual( visualLayer.shadowRest, 'none', label + ': theme shadow absent at rest' );
+	assert.ok( visualLayer.iconFocusTier.length > 0, label + ': keyboard focus shadow token absent' );
+	// Probe the globally shared hover rule in a stable, visible viewport surface.
+	// Real Gutenberg and Elementor widgets have already been checked for the
+	// output classes and rest shadow, while editor animations may hide price-list.
+	await page.evaluate( () => {
+		const probe = document.createElement( 'div' );
+		probe.id = 'wpek-elevation-qa-probe';
+		probe.className = 'wpek-elevation wpek-elev-rest-sm wpek-elev-hover-lg';
+		probe.style.cssText = 'position:fixed;left:20px;top:20px;width:150px;height:72px;z-index:2147483647;background:#fff;pointer-events:auto';
+		document.body.appendChild( probe );
+	} );
+	await page.emulateMedia( { reducedMotion: 'reduce' } );
+	await page.mouse.move( 0, page.viewportSize().height - 2 );
+	const probeRest = await page.locator( '#wpek-elevation-qa-probe' ).evaluate( el => getComputedStyle( el ).boxShadow );
+	await page.locator( '#wpek-elevation-qa-probe' ).hover( { timeout: 12000 } );
+	const probeHover = await page.locator( '#wpek-elevation-qa-probe' ).evaluate( el => ( {
+		hover: el.matches( ':hover' ),
+		shadow: getComputedStyle( el ).boxShadow
+	} ) );
+	assert.equal( probeHover.hover, true, label + ': CSS hover state did not activate' );
+	assert.notEqual( probeHover.shadow, probeRest, label + ': hover elevation did not change' );
+	await page.locator( '#wpek-elevation-qa-probe' ).evaluate( el => el.remove() );
+	await page.mouse.move( 0, 0 );
+	console.log( 'PASS: ' + label + ': clip shape, SVG grain and theme state elevation' );
 	// The browser context defaults to reduced motion. Turn it off for normal-animation checks.
 	// The QA browser defaults to reduced motion; verify animation only in normal mode.
 	await page.emulateMedia( { reducedMotion: 'no-preference' } );
@@ -307,7 +360,18 @@ async function verifyPage( page, id, label ) {
 		{ width: 390, height: 844, type: 'mobile' }
 	] ) {
 		await page.setViewportSize( { width: vp.width, height: vp.height } );
+		await page.evaluate( () => new Promise( resolve => requestAnimationFrame( () => requestAnimationFrame( resolve ) ) ) );
 
+		const noisePct = await page.locator( '.wpe-chart.wpek-grain' ).first().evaluate( el => parseFloat( getComputedStyle( el, '::before' ).opacity ) );
+		const grainDebug = await page.locator( '.wpe-chart.wpek-grain' ).first().evaluate( el => ({
+			rootValue: getComputedStyle( el ).getPropertyValue( '--wpek-grain-opacity' ).trim(),
+			pseudoValue: getComputedStyle( el, '::before' ).getPropertyValue( '--wpek-grain-opacity' ).trim(),
+			pseudoOpacity: getComputedStyle( el, '::before' ).opacity,
+			width: window.innerWidth,
+			media560: matchMedia( '(max-width: 767px)' ).matches
+		}) );
+		console.log( 'GRAIN BREAKPOINT DEBUG:', label, vp.width, JSON.stringify( grainDebug ) );
+		assert.ok( Math.abs( noisePct - ( vp.width < 768 ? 0.04 : 0.09 ) ) < 0.002, label + ': responsive grain intensity incorrect' );
 		const layer2 = await page.locator( '.wpe-price-list.wpek-parallax' ).first().evaluate( node => {
 			return getComputedStyle( node ).getPropertyValue( '--wpek-parallax-layer-2' ).trim();
 		} );
@@ -384,6 +448,8 @@ async function verifyPage( page, id, label ) {
 			return { error: 'Sticky root with named stop is missing' };
 		}
 		const previous = window.scrollY;
+		const oldScrollBehavior = document.documentElement.style.scrollBehavior;
+		document.documentElement.style.scrollBehavior = 'auto';
 		const stage = document.createElement( 'div' );
 		stage.style.cssText = 'position:relative;height:1200px;min-height:1200px';
 		const sticky = original.cloneNode( true );
@@ -399,7 +465,7 @@ async function verifyPage( page, id, label ) {
 		const frames = () => new Promise( resolve => requestAnimationFrame( () => requestAnimationFrame( resolve ) ) );
 		try {
 			await frames();
-			window.scrollTo( 0, window.scrollY + stage.getBoundingClientRect().top + 470 );
+			window.scrollTo( { top: window.scrollY + stage.getBoundingClientRect().top + 470, behavior: 'instant' } );
 			await frames();
 			await frames();
 			const computed = getComputedStyle( sticky );
@@ -412,7 +478,8 @@ async function verifyPage( page, id, label ) {
 		} finally {
 			stage.remove();
 			tail.remove();
-			window.scrollTo( 0, previous );
+			window.scrollTo( { top: previous, behavior: 'instant' } );
+			document.documentElement.style.scrollBehavior = oldScrollBehavior;
 		}
 	} );
 	assert.equal( stopped.position, 'sticky', label + ': sticky disabled in desktop test' );
