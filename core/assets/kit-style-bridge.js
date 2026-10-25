@@ -53,7 +53,7 @@
 	function normalizeGroup( type, prefix, raw ) {
 		var out = {};
 		var aliases = {
-			typography: { family: [ '_font_family' ], size: [ '_font_size' ], weight: [ '_font_weight' ], transform: [ '_text_transform' ], style: [ '_font_style' ], decoration: [ '_text_decoration' ], lineHeight: [ '_line_height' ], letterSpacing: [ '_letter_spacing' ], wordSpacing: [ '_word_spacing' ] },
+			typography: { family: [ '_typography_font_family', '_font_family' ], size: [ '_typography_font_size', '_font_size' ], weight: [ '_typography_font_weight', '_font_weight' ], transform: [ '_typography_text_transform', '_text_transform' ], style: [ '_typography_font_style', '_font_style' ], decoration: [ '_typography_text_decoration', '_text_decoration' ], lineHeight: [ '_typography_line_height', '_line_height' ], letterSpacing: [ '_typography_letter_spacing', '_letter_spacing' ], wordSpacing: [ '_typography_word_spacing', '_word_spacing' ] },
 			spacing: { top: [ '_top' ], right: [ '_right' ], bottom: [ '_bottom' ], left: [ '_left' ] },
 			border: { style: [ '_border', '_border_border' ], width: [ '_width', '_border_width' ], color: [ '_color', '_border_color' ], hoverColor: [ '_hover_color', '_hover_border_color' ], radius: [ '_radius' ] },
 			shadow: { custom: [ '_box_shadow', '_hover_box_shadow' ] },
@@ -108,7 +108,7 @@
 			var group = groups[ prefix ] || {};
 			var type = ( groupTypes || {} )[ prefix ] || '';
 			var names = {
-				typography: { family: '_font_family', size: '_font_size', weight: '_font_weight', transform: '_text_transform', style: '_font_style', decoration: '_text_decoration', lineHeight: '_line_height', letterSpacing: '_letter_spacing', wordSpacing: '_word_spacing' },
+				typography: { family: '_typography_font_family', size: '_typography_font_size', weight: '_typography_font_weight', transform: '_typography_text_transform', style: '_typography_font_style', decoration: '_typography_text_decoration', lineHeight: '_typography_line_height', letterSpacing: '_typography_letter_spacing', wordSpacing: '_typography_word_spacing' },
 				spacing: { top: '_top', right: '_right', bottom: '_bottom', left: '_left' },
 				border: { style: '_border', width: '_width', color: '_color', hoverColor: '_hover_color', radius: '_radius' },
 				background: { color: '_background_color', position: '_background_position', size: '_background_size', repeat: '_background_repeat', attachment: '_background_attachment' },
