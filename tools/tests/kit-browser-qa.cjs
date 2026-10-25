@@ -354,6 +354,14 @@ async function verifyPage( page, id, label ) {
 		await page.evaluate( () => new Promise( resolve => requestAnimationFrame( () => requestAnimationFrame( resolve ) ) ) );
 
 		const noisePct = await page.locator( '.wpe-chart.wpek-grain' ).first().evaluate( el => parseFloat( getComputedStyle( el, '::before' ).opacity ) );
+		const grainDebug = await page.locator( '.wpe-chart.wpek-grain' ).first().evaluate( el => ({
+			rootValue: getComputedStyle( el ).getPropertyValue( '--wpek-grain-opacity' ).trim(),
+			pseudoValue: getComputedStyle( el, '::before' ).getPropertyValue( '--wpek-grain-opacity' ).trim(),
+			pseudoOpacity: getComputedStyle( el, '::before' ).opacity,
+			width: window.innerWidth,
+			media560: matchMedia( '(max-width: 767px)' ).matches
+		}) );
+		console.log( 'GRAIN BREAKPOINT DEBUG:', label, vp.width, JSON.stringify( grainDebug ) );
 		assert.ok( Math.abs( noisePct - ( vp.width < 768 ? 0.04 : 0.09 ) ) < 0.002, label + ': responsive grain intensity incorrect' );
 		const layer2 = await page.locator( '.wpe-price-list.wpek-parallax' ).first().evaluate( node => {
 			return getComputedStyle( node ).getPropertyValue( '--wpek-parallax-layer-2' ).trim();
