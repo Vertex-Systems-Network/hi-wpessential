@@ -9,10 +9,10 @@ defined( 'ABSPATH' ) || exit;
 
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Template scope.
 
-$wpe_type = in_array( $a['type'], array( 'info', 'success', 'warning', 'error' ), true ) ? $a['type'] : 'info';
+$wpe_type  = in_array( $a['type'], array( 'info', 'success', 'warning', 'error' ), true ) ? $a['type'] : 'info';
 $wpe_style = in_array( $a['style'], array( 'boxed', 'accent', 'minimal' ), true ) ? $a['style'] : 'boxed';
-$wpe_role = 'error' === $wpe_type || 'warning' === $wpe_type ? 'alert' : 'status';
-$wpe_key = md5( (string) $a['title'] . '|' . (string) $a['content'] . '|' . $wpe_type );
+$wpe_role  = 'error' === $wpe_type || 'warning' === $wpe_type ? 'alert' : 'status';
+$wpe_key   = md5( (string) $a['title'] . '|' . (string) $a['content'] . '|' . $wpe_type );
 $wpe_icons = array(
 	'info'    => 'i',
 	'success' => '✓',
