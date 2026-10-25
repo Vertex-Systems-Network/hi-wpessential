@@ -62,13 +62,13 @@ foreach ( array_slice( (array) $a['templateItems'], 0, 30 ) as $wpe_mapping ) {
 }
 
 // Filters are scoped to these two wp_nav_menu() calls and always removed.
-$wpe_css_filter = static function ( $classes, $item, $args, $depth ) use ( $wpe_templates ) {
+$wpe_css_filter  = static function ( $classes, $item, $args, $depth ) use ( $wpe_templates ) {
 	if ( 0 === $depth && isset( $wpe_templates[ (int) $item->ID ] ) ) {
 		$classes[] = 'wpe-menu__has-template';
 	}
 	return $classes;
 };
-$wpe_item_filter = static function ( $output, $item, $depth, $args ) use ( $wpe_templates ) {
+$wpe_item_filter = static function ( $output, $item, $depth ) use ( $wpe_templates ) {
 	$wpe_item_id = (int) $item->ID;
 	if ( 0 !== $depth || ! isset( $wpe_templates[ $wpe_item_id ] ) ) {
 		return $output;
@@ -80,6 +80,7 @@ $wpe_item_filter = static function ( $output, $item, $depth, $args ) use ( $wpe_
 	$wpe_data = $wpe_templates[ $wpe_item_id ];
 	$wpe_post = $wpe_data['post'];
 	$wpe_html = '';
+
 	$GLOBALS['wpessential_kit_megamenu_rendering'] = true;
 	try {
 		if ( 'wp_block' === $wpe_data['source'] ) {
@@ -97,6 +98,7 @@ $wpe_item_filter = static function ( $output, $item, $depth, $args ) use ( $wpe_
 	$wpe_title = $wpe_title ? $wpe_title : __( 'More options', 'hi-wpessential' );
 	return $output . '<div class="wpe-menu__mega-content" role="group" aria-label="' . esc_attr( $wpe_title ) . '">' . $wpe_html . '</div>';
 };
+
 $wpe_args = array(
 	'menu'        => (int) $wpe_menu->term_id,
 	'echo'        => false,
@@ -106,7 +108,7 @@ $wpe_args = array(
 );
 if ( $wpe_templates ) {
 	add_filter( 'nav_menu_css_class', $wpe_css_filter, 10, 4 );
-	add_filter( 'walker_nav_menu_start_el', $wpe_item_filter, 10, 4 );
+	add_filter( 'walker_nav_menu_start_el', $wpe_item_filter, 10, 3 );
 }
 try {
 	$wpe_desktop = wp_nav_menu( $wpe_args + array( 'menu_class' => 'wpe-menu__items' ) );

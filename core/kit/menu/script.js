@@ -92,9 +92,16 @@
 						}
 					} );
 					item.addEventListener( 'focusin', function () {
-						item.classList.remove( 'is-collapsed' );
+						if ( item.classList.contains( 'is-collapsed' ) ) {
+							return;
+						}
 						if ( ! clickOnly ) {
 							button.setAttribute( 'aria-expanded', 'true' );
+						}
+					} );
+					item.addEventListener( 'focusout', function ( event ) {
+						if ( ! item.contains( event.relatedTarget ) ) {
+							item.classList.remove( 'is-collapsed' );
 						}
 					} );
 				}
@@ -106,11 +113,11 @@
 		attach( mobile, true );
 		root.classList.add( 'is-js' );
 
-		root.addEventListener( 'click', function ( event ) {
+		document.addEventListener( 'click', function ( event ) {
 			if ( root.contains( event.target ) && ! event.target.closest( '.wpe-menu__desktop' ) ) {
 				return;
 			}
-			if ( event.target.closest( '.wpe-menu__submenu-button' ) ) {
+			if ( root.contains( event.target ) && event.target.closest( '.wpe-menu__submenu-button' ) ) {
 				return;
 			}
 			var item = event.target.closest( '.wpe-menu__desktop li' );
