@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Template-local scope.
 
-$wpe_days = array(
+$wpe_days     = array(
 	'monday'    => __( 'Monday', 'hi-wpessential' ),
 	'tuesday'   => __( 'Tuesday', 'hi-wpessential' ),
 	'wednesday' => __( 'Wednesday', 'hi-wpessential' ),
@@ -52,7 +52,7 @@ $wpe_title = trim( (string) $a['title'] );
 	<?php endif; ?>
 	<?php if ( 'table' === $wpe_mode ) : ?>
 		<table class="wpe-business-hours__table">
-			<caption class="screen-reader-text"><?php echo esc_html( $wpe_title ?: __( 'Business hours', 'hi-wpessential' ) ); ?></caption>
+			<caption class="screen-reader-text"><?php echo esc_html( '' !== $wpe_title ? $wpe_title : __( 'Business hours', 'hi-wpessential' ) ); ?></caption>
 			<tbody>
 	<?php else : ?>
 		<dl class="wpe-business-hours__list">
@@ -68,7 +68,10 @@ $wpe_title = trim( (string) $a['title'] );
 			?>
 			<?php if ( 'table' === $wpe_mode ) : ?>
 				<tr<?php echo $wpe_current ? ' class="is-today"' : ''; ?>>
-					<th scope="row" class="wpe-business-hours__day"><?php echo esc_html( $wpe_label ); ?><?php if ( $wpe_current ) : ?> <span class="screen-reader-text"><?php esc_html_e( '(today)', 'hi-wpessential' ); ?></span><?php endif; ?></th>
+					<th scope="row" class="wpe-business-hours__day"><?php echo esc_html( $wpe_label ); ?>
+					<?php if ( $wpe_current ) : ?>
+						<span class="screen-reader-text"><?php esc_html_e( '(today)', 'hi-wpessential' ); ?></span>
+					<?php endif; ?></th>
 					<td class="wpe-business-hours__time"><?php echo esc_html( $wpe_hours ); ?></td>
 				</tr>
 			<?php else : ?>
