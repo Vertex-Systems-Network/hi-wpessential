@@ -83,10 +83,11 @@ async function verifyPage( page, id, label ) {
 	const directional = await page.evaluate( () => {
 		const price = document.querySelector( '.wpe-price-list' );
 		const icon = document.querySelector( '.wpe-icon-single' );
-		const html = document.documentElement;
-		const beforeDir = html.getAttribute( 'dir' );
+		const beforePrice = price.getAttribute( 'dir' );
+		const beforeIcon = icon.getAttribute( 'dir' );
 		function snapshot( direction ) {
-			html.setAttribute( 'dir', direction );
+			price.setAttribute( 'dir', direction );
+			icon.setAttribute( 'dir', direction );
 			const p = getComputedStyle( price );
 			const i = getComputedStyle( icon );
 			return {
@@ -110,10 +111,15 @@ async function verifyPage( page, id, label ) {
 				styleRules: Array.from( document.querySelectorAll( 'style' ) ).map( item => item.textContent ).filter( text => text && text.includes( 'margin-inline-start' ) ).slice( 0, 5 )
 			};
 		} finally {
-			if ( beforeDir === null ) {
-				html.removeAttribute( 'dir' );
+			if ( beforePrice === null ) {
+				price.removeAttribute( 'dir' );
 			} else {
-				html.setAttribute( 'dir', beforeDir );
+				price.setAttribute( 'dir', beforePrice );
+			}
+			if ( beforeIcon === null ) {
+				icon.removeAttribute( 'dir' );
+			} else {
+				icon.setAttribute( 'dir', beforeIcon );
 			}
 		}
 	} );

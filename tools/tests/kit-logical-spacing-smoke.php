@@ -35,6 +35,8 @@ $wpe_html = Kit::render(
 foreach ( array( 'margin-inline-start:14px', 'margin-inline-end:-5px', 'padding-inline-start:7px', 'padding-inline-end:9px' ) as $wpe_part ) {
 	$wpe_assert( false !== strpos( $wpe_html, $wpe_part ), 'Logical CSS rendered: ' . $wpe_part );
 }
+$wpe_assert( false !== strpos( $wpe_html, 'margin-inline-start:14px!important' ), 'Logical margin overrides constrained theme centering' );
+$wpe_assert( false !== strpos( $wpe_html, 'padding-inline-end:9px!important' ), 'Logical padding overrides theme defaults' );
 $wpe_assert( false !== strpos( $wpe_html, 'margin-inline-start:23px' ) && false !== strpos( $wpe_html, '@media (max-width: 1023px)' ), 'Responsive margin is constrained to tablet width' );
 $wpe_default = Kit::render( 'icon', array() );
 $wpe_assert( false === strpos( $wpe_default, 'margin-inline-start:' ), 'Default styling unchanged when logical spacing is unset' );
