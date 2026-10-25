@@ -1222,7 +1222,7 @@ class Groups {
 		);
 
 		// Conditional display rules are evaluated before rendering content.
-		$attr += array(
+		$attr  += array(
 			'conditionLogin'            => array(
 				'type'    => 'select',
 				'label'   => __( 'Visibility: visitor login state', 'hi-wpessential' ),
