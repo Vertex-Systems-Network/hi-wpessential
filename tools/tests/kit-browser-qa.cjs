@@ -351,6 +351,7 @@ async function verifyPage( page, id, label ) {
 		{ width: 390, height: 844, type: 'mobile' }
 	] ) {
 		await page.setViewportSize( { width: vp.width, height: vp.height } );
+		await page.evaluate( () => new Promise( resolve => requestAnimationFrame( () => requestAnimationFrame( resolve ) ) ) );
 
 		const noisePct = await page.locator( '.wpe-chart.wpek-grain' ).first().evaluate( el => parseFloat( getComputedStyle( el, '::before' ).opacity ) );
 		assert.ok( Math.abs( noisePct - ( vp.width < 768 ? 0.04 : 0.09 ) ) < 0.002, label + ': responsive grain intensity incorrect' );
