@@ -110,6 +110,19 @@ async function verifyPage( page, id, label ) {
 				priceId: price.id,
 				iconId: icon.id,
 				priceMarkup: price.outerHTML.slice( 0, 420 ),
+				iconCSS: Array.from( document.querySelectorAll( 'style' ) )
+					.map( tag => tag.textContent || '' )
+					.filter( text => text.includes( '#' + icon.id ) )
+					.map( text => text.slice( text.indexOf( '#' + icon.id ), text.indexOf( '#' + icon.id ) + 320 ) ),
+				iconPaddingRules: Array.from( document.styleSheets ).flatMap( sheet => {
+					try {
+						return Array.from( sheet.cssRules || [] ).filter( rule => {
+							return rule.selectorText && rule.style && rule.style.cssText.includes( 'padding' ) && rule.selectorText.split( ',' ).some( selector => {
+								try { return icon.matches( selector.trim() ); } catch ( error ) { return false; }
+							} );
+						} ).map( rule => rule.cssText.slice( 0, 340 ) );
+					} catch ( error ) { return []; }
+				} ).slice( -16 ),
 				styleRules: Array.from( document.querySelectorAll( 'style' ) ).map( item => item.textContent ).filter( text => text && text.includes( 'margin-inline-start' ) ).slice( 0, 5 )
 			};
 		} finally {
