@@ -57,6 +57,10 @@ async function verifyPage( page, id, label ) {
 	assert.ok( await page.locator( '.wpe-forms input[type="email"]' ).count(), label + ': WPForms email field missing' );
 	assert.equal( await page.locator( '.wpe-chart.is-donut svg circle' ).count(), 2, label + ': incorrect chart output' );
 
+	// The default mouse position may already hover this widget. Measure the
+	// rest state with the pointer explicitly outside before entering.
+	await page.mouse.move( 0, page.viewportSize().height - 2 );
+	assert.equal( await page.locator( '.wpe-price-list.wpek-elevation' ).first().evaluate( node => node.matches( ':hover' ) ), false, label + ': baseline must not already hover' );
 	// Theme elevation, allowlisted clip shape and embedded no-network noise.
 	const visualLayer = await page.evaluate( () => {
 		const chart = document.querySelector( '.wpe-chart.wpek-clip-slant.wpek-grain' );
@@ -93,7 +97,7 @@ async function verifyPage( page, id, label ) {
 		hover: getComputedStyle( el ).getPropertyValue( '--wpek-elev-hover' ),
 		classes: el.className
 	}) );
-	console.log( 'ELEVATION DEBUG ' + label + ': ' + JSON.stringify( { before: visualLayer.shadowRest, after: hoverShadow, ...elevationDebug } ) );
+	assert.equal( elevationDebug.hovering, true, label + ': actual pointer did not hover element' );
 	assert.notEqual( hoverShadow, visualLayer.shadowRest, label + ': hover elevation did not change' );
 	await page.mouse.move( 0, 0 );
 	console.log( 'PASS: ' + label + ': clip shape, SVG grain and theme state elevation' );
