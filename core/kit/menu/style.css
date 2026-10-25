@@ -1,0 +1,22 @@
+/* WPEssential native navigation. */
+.wpe-menu{--wpek-menu-gap:24px;--wpek-menu-width:230px;--wpek-menu-align:flex-start;position:relative;z-index:10}
+.wpe-menu ul{padding:0;margin:0;list-style:none}
+.wpe-menu__items{display:flex;flex-wrap:wrap;gap:var(--wpek-menu-gap);align-items:center;justify-content:var(--wpek-menu-align)}
+.wpe-menu li{position:relative;min-width:0}
+.wpe-menu a{display:block;padding:10px 12px;color:inherit;text-decoration:none}
+.wpe-menu a:is(:focus-visible,:hover),.wpe-menu .current-menu-item>a{color:var(--wp--preset--color--primary,currentColor)}
+.wpe-menu a:focus-visible,.wpe-menu__toggle:focus-visible{outline:2px solid var(--wp--preset--color--primary,currentColor);outline-offset:2px}
+.wpe-menu__desktop .sub-menu{display:none;position:absolute;inset-block-start:100%;inset-inline-start:0;min-width:var(--wpek-menu-width);max-width:min(85vw,700px);padding:8px;border-radius:9px;border:1px solid var(--wp--preset--color--border,#ddd);background:var(--wp--preset--color--surface,#fff);color:var(--wp--preset--color--text,#222);box-shadow:0 12px 32px rgb(0 0 0 / 13%);z-index:20}
+.wpe-menu__desktop .sub-menu .sub-menu{inset-block-start:0;inset-inline-start:100%}
+.wpe-menu__desktop li:is(:hover,:focus-within)>.sub-menu{display:block}
+.wpe-menu__desktop .menu-item-has-children>a:after{content:"⌄";margin-inline-start:.4em}
+.wpe-menu.is-mega .wpe-menu__desktop>.wpe-menu__items>li:is(:hover,:focus-within)>.sub-menu{display:grid;grid-template-columns:repeat(2,minmax(140px,1fr));min-width:min(540px,85vw)}
+.wpe-menu__mobile{display:none}
+.wpe-menu__toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:1px solid var(--wp--preset--color--border,#ddd);border-radius:8px;cursor:pointer;list-style:none;font-weight:650}
+.wpe-menu__toggle::-webkit-details-marker{display:none}
+.wpe-menu__mobile nav{padding:12px;border:1px solid var(--wp--preset--color--border,#ddd);background:var(--wp--preset--color--surface,#fff);color:var(--wp--preset--color--text,#222)}
+.wpe-menu__mobile li{border-block-end:1px solid var(--wp--preset--color--border,#eee)}
+.wpe-menu__mobile .sub-menu{border-inline-start:2px solid var(--wp--preset--color--primary,currentColor);margin-inline-start:14px}
+@media(max-width:1024px){.wpe-menu.is-break-1024 .wpe-menu__desktop{display:none}.wpe-menu.is-break-1024 .wpe-menu__mobile{display:block}}
+@media(max-width:768px){.wpe-menu.is-break-768 .wpe-menu__desktop{display:none}.wpe-menu.is-break-768 .wpe-menu__mobile{display:block}}
+@media(max-width:560px){.wpe-menu.is-break-560 .wpe-menu__desktop{display:none}.wpe-menu.is-break-560 .wpe-menu__mobile{display:block}}
