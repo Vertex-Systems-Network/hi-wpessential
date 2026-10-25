@@ -20,3 +20,25 @@
 @media(max-width:1024px){.wpe-menu.is-break-1024 .wpe-menu__desktop{display:none}.wpe-menu.is-break-1024 .wpe-menu__mobile{display:block}}
 @media(max-width:768px){.wpe-menu.is-break-768 .wpe-menu__desktop{display:none}.wpe-menu.is-break-768 .wpe-menu__mobile{display:block}}
 @media(max-width:560px){.wpe-menu.is-break-560 .wpe-menu__desktop{display:none}.wpe-menu.is-break-560 .wpe-menu__mobile{display:block}}
+
+/* Saved WordPress / Elementor mega panels. */
+.wpe-menu{--wpek-menu-mega-width:520px}
+.wpe-menu__desktop .wpe-menu__mega-content{position:absolute;inset-block-start:100%;inset-inline-start:0;display:none;z-index:20;box-sizing:border-box;min-width:min(calc(100vw - 32px),var(--wpek-menu-mega-width));max-width:min(95vw,1200px);padding:20px;background:var(--wp--preset--color--surface,#fff);color:var(--wp--preset--color--text,#222);border:1px solid var(--wp--preset--color--border,#ddd);border-radius:10px;box-shadow:0 18px 40px rgb(0 0 0 / 14%)}
+.wpe-menu__desktop .wpe-menu__has-template:has(> .sub-menu) > .wpe-menu__mega-content{inset-inline-start:var(--wpek-menu-width)}
+.wpe-menu__desktop li:is(:hover,:focus-within,.is-open) > .wpe-menu__mega-content{display:block}
+.wpe-menu.is-js.is-trigger-click .wpe-menu__desktop li:not(.is-open) > :is(.sub-menu,.wpe-menu__mega-content){display:none}
+.wpe-menu__desktop li.is-collapsed > :is(.sub-menu,.wpe-menu__mega-content){display:none!important}
+.wpe-menu__submenu-button{font:inherit;font-size:.8em;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;border:0;background:transparent;color:inherit;min-width:28px;min-height:28px;padding:4px}
+.wpe-menu__submenu-button:focus-visible{outline:2px solid var(--wp--preset--color--primary,currentColor);outline-offset:3px;border-radius:4px}
+.wpe-menu__submenu-button[aria-expanded=true]{transform:rotate(180deg)}
+.wpe-menu.is-no-indicator .wpe-menu__submenu-button{font-size:0;min-width:10px;width:10px}
+.wpe-menu.is-no-indicator .wpe-menu__submenu-button:after{content:"";width:7px;height:7px;border:solid currentColor;border-width:0 1px 1px 0;transform:rotate(45deg)}
+.wpe-menu__mobile .wpe-menu__mega-content{padding:14px;max-width:100%;min-width:0;background:var(--wp--preset--color--surface,#fff);color:var(--wp--preset--color--text,#222)}
+.wpe-menu__mobile .wpe-menu__submenu-button{float:inline-end}
+.wpe-menu__mobile.is-js li > :is(.sub-menu,.wpe-menu__mega-content){display:none}
+.wpe-menu__mobile.is-js li.is-open > :is(.sub-menu,.wpe-menu__mega-content){display:block}
+.wpe-menu__desktop .sub-menu li > .wpe-menu__submenu-button{position:absolute;inset-inline-end:3px;inset-block-start:7px}
+@media(max-width:1024px){.wpe-menu.is-break-1024 .wpe-menu__mega-content{width:100%}}
+@media(max-width:768px){.wpe-menu.is-break-768 .wpe-menu__mega-content{width:100%}}
+@media(max-width:560px){.wpe-menu.is-break-560 .wpe-menu__mega-content{width:100%}}
+@media(prefers-reduced-motion:reduce){.wpe-menu__submenu-button{transition:none}}

@@ -65,7 +65,7 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | Image Comparison | Before/after images with alt text, native keyboard-accessible range control and visible static split without JS |
 
 | Price List / Restaurant Menu | Repeatable menu and service prices, old prices, badges and images; responsive list/cards, safe optional links, semantic list, no JS required. |
-| Navigation / Mega Menu | Native WordPress menus, desktop keyboard/focus dropdowns, two-column submenu layout and accessible mobile disclosure; not a custom templated mega builder. |
+| Navigation / Mega Menu | Native WordPress menus, focus/click/keyboard submenu toggles, two-column dropdowns and **published Gutenberg synced-pattern or Elementor saved-template mega panels** mapped by menu item ID. Mobile submenus open independently and retain no-JS fallback; unpublished/non-template content is rejected. |
 | Site / Archive Widgets | Context-aware archive title/description, public post meta, breadcrumbs, author and pagination. |
 | WPForms Lite Form | Embed existing published WPForms forms with their validation and antispam; no duplicate form handler. |
 | Standalone Icon | Accessible icons or optional links, styles, shape and responsive controls. |
@@ -83,3 +83,9 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 - hiding per breakpoint
 
 **Turning elements off:** WPEssential → Elements switches each element on or off; all are on by default. An element that is off is not loaded in either builder.
+
+### Advanced Navigation / Mega panels
+
+In Appearance → Menus, find the WordPress menu item's ID. Add a row in the Navigation widget's **Saved mega panels by menu item ID** repeater, set the menu item ID, choose **Gutenberg synced pattern (wp_block)** or **Elementor saved template**, then enter the published template post ID. Parent links still work, ordinary child menu links stay available, and the template appears alongside them. Only published template posts are rendered. Use the desktop trigger and mega width controls to customize interaction and layout; a separate toggle controls each mobile submenu. JavaScript progressively enhances the links (keyboard Escape closes, aria-expanded updates), with the original submenus readable without JavaScript. Nested templates that recursively embed the current mega menu are suppressed.
+
+Full drag-and-drop menu builder, dynamic per-item badges/media, and complete benchmark parity remain separate phases.
