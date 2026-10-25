@@ -28,7 +28,7 @@ Gutenberg the same options come from our "Layout & effects" panel and group pane
 | 3 | Fluid typography (size at 360 and at 1440, scales between) | ✅ Gutenberg (Elementor: type `clamp()` in the size field) |
 | 4 | Fluid spacing | ⏳ |
 | 5 | Aspect ratio, object-fit, object-position per breakpoint | ✅ Image |
-| 6 | Logical spacing and mirrored icons for RTL | ⏳ |
+| 6 | Logical spacing and mirrored icons for RTL | ✅ Responsive inline start/end margin + padding · ⏳ directional icon mirroring |
 | 7 | Spacing and radius from theme tokens (sm/md/lg) | ⏳ |
 | 8 | Dark-mode value for colours, background, border and shadow | ✅ |
 | 9 | Dark-mode image | ✅ background image and Image element |

@@ -79,6 +79,58 @@ async function verifyPage( page, id, label ) {
 	assert.equal( await mobileToggle.getAttribute( 'aria-expanded' ), 'false', label + ': mobile submenu did not close' );
 	await mobileMenu.locator( ':scope > summary' ).click();
 	await page.setViewportSize( { width: 1440, height: 900 } );
+	// CSS logical spacing must flip physical edges with document direction.
+	// Direction is a layout-level property. Change it and give Chromium a frame
+	// to resolve logical-property mappings instead of toggling twice in one tick.
+	const directionOriginal = await page.evaluate( () => ( {
+		price: document.querySelector( '.wpe-price-list' ).getAttribute( 'dir' ),
+		icon: document.querySelector( '.wpe-icon-single' ).getAttribute( 'dir' )
+	} ) );
+	const directional = {};
+	try {
+		for ( const dir of [ 'ltr', 'rtl' ] ) {
+			await page.evaluate( value => {
+				document.querySelector( '.wpe-price-list' ).setAttribute( 'dir', value );
+				document.querySelector( '.wpe-icon-single' ).setAttribute( 'dir', value );
+			}, dir );
+			await page.waitForTimeout( 50 );
+			directional[ dir ] = await page.evaluate( () => {
+				const price = getComputedStyle( document.querySelector( '.wpe-price-list' ) );
+				const icon = getComputedStyle( document.querySelector( '.wpe-icon-single' ) );
+				return {
+					marginLeft: price.marginLeft,
+					marginRight: price.marginRight,
+					paddingLeft: icon.paddingLeft,
+					paddingRight: icon.paddingRight,
+					marginStart: price.marginInlineStart,
+					paddingEnd: icon.paddingInlineEnd,
+					priceDirection: price.direction,
+					iconDirection: icon.direction
+				};
+			} );
+		}
+	} finally {
+		await page.evaluate( saved => {
+			for ( const [ selector, attr ] of [ [ '.wpe-price-list', saved.price ], [ '.wpe-icon-single', saved.icon ] ] ) {
+				const element = document.querySelector( selector );
+				if ( attr === null ) {
+					element.removeAttribute( 'dir' );
+				} else {
+					element.setAttribute( 'dir', attr );
+				}
+			}
+		}, directionOriginal );
+	}
+	console.log( 'RTL COMPUTED:', label, JSON.stringify( directional ) );
+	assert.equal( directional.ltr.marginStart, '14px', label + ': LTR logical margin value' );
+	assert.equal( directional.rtl.marginStart, '14px', label + ': RTL logical margin value' );
+	assert.equal( directional.ltr.marginLeft, '14px', label + ': LTR inline-start margin is left' );
+	assert.equal( directional.rtl.marginRight, '14px', label + ': RTL inline-start margin is right' );
+	assert.equal( directional.ltr.paddingEnd, '9px', label + ': LTR logical padding value' );
+	assert.equal( directional.rtl.paddingEnd, '9px', label + ': RTL logical padding value' );
+	assert.equal( directional.ltr.paddingRight, '9px', label + ': LTR inline-end padding is right' );
+	assert.equal( directional.rtl.paddingLeft, '9px', label + ': RTL inline-end padding is left' );
+	console.log( 'PASS: ' + label + ': LTR and RTL logical spacing edges mirror correctly' );
 	// Shared advanced controls are active in both editors and respect print media.
 	const glass = page.locator( '.wpe-chart.wpek-glass' ).first();
 	assert.ok( await glass.count() === 1, label + ': shared glass class missing' );

@@ -72,6 +72,10 @@ An optional `script.js` is loaded only on pages that use the element, in both bu
 | Chart | Accessible numeric bar, column and donut visualizations with screen-reader table and no dependency. |
 | Flip / Hover Box | Native keyboard/touch disclosure with front/back copy and CSS reduced-motion flip. |
 
+## RTL-aware logical inline spacing
+
+Every Kit widget/block now offers responsive **Margin inline start/end** and **Padding inline start/end** in its Advanced panel. Unlike physical left/right spacing, inline start/end automatically swap with the inherited document direction; no separate Arabic/Urdu configuration is necessary. Negative values are supported for margins, while padding controls start at 0. The fields are opt-in and preserve existing saved layouts. Mirroring decorative directional icons remains a separate roadmap task.
+
 ## New shared advanced presentation controls
 
 All Kit widgets and blocks now support opt-in **keyboard focus outline** (style, theme-palette colour, responsive width and offset), **glass surfaces** (light/dark palette-aware translucency with backdrop blur and opacity), and **Hide when printing**. Existing widgets do not change unless a control is enabled. Glass uses a solid surface fallback where colour mixing is unsupported. Focus outline choices apply to the element root and its interactive children and take priority over ordinary widget link/field outlines.
