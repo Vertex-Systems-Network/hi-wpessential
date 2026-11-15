@@ -1,9 +1,9 @@
 <?php
 /**
- * Contract between the theme and the WPEssential Core plugin.
+ * Contract between the theme and the WPEssential plugin.
  *
- * Demo import, plugins and licensing live in core/ (loaded by functions.php) or in the
- * standalone WPEssential Core plugin. This file only exposes theme data Core reads.
+ * Elements, demo import, plugins and licensing live in the WPEssential plugin. This file
+ * exposes the theme data the plugin reads and recommends the plugin when it is missing.
  *
  * @package WPEssential
  */
@@ -41,7 +41,7 @@ function wpessential_demo_manifest_url() {
 add_action(
 	'admin_notices',
 	static function () {
-		if ( defined( 'WPESSENTIAL_CORE_VERSION' ) || ! current_user_can( 'install_plugins' ) ) {
+		if ( defined( 'WPE_VERSION' ) || ! current_user_can( 'install_plugins' ) ) {
 			return;
 		}
 		if ( get_user_meta( get_current_user_id(), 'wpessential_dismiss_core_notice', true ) ) {
@@ -50,9 +50,9 @@ add_action(
 		$url = wp_nonce_url( add_query_arg( 'wpessential-dismiss', '1' ), 'wpessential-dismiss' );
 		printf(
 			'<div class="notice notice-info"><p>%1$s <a href="%2$s">%3$s</a> | <a href="%4$s">%5$s</a></p></div>',
-			esc_html__( 'Install the WPEssential Core plugin to import one-click demos for Gutenberg or Elementor.', 'hi-wpessential' ),
-			esc_url( 'https://wpessential.org/core/' ),
-			esc_html__( 'Get WPEssential Core', 'hi-wpessential' ),
+			esc_html__( 'Hi WPEssential works with the free WPEssential plugin: its elements for Gutenberg and Elementor, one-click demos and site tools.', 'hi-wpessential' ),
+			esc_url( 'https://wpessential.org/' ),
+			esc_html__( 'Install WPEssential', 'hi-wpessential' ),
 			esc_url( $url ),
 			esc_html__( 'Dismiss', 'hi-wpessential' )
 		);
