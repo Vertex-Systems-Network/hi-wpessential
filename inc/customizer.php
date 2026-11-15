@@ -461,6 +461,14 @@ function wpessential_site_fields_base() {
 					),
 				),
 				'hover_lift'     => $px( __( 'Card lift on hover', 'hi-wpessential' ), 0, 16 ),
+				'motion_preset'  => array(
+					'type'    => 'select',
+					'label'   => __( 'Scroll animations', 'hi-wpessential' ),
+					'choices' => array( '' => __( 'Theme default (Subtle)', 'hi-wpessential' ) ) + array_map(
+						static fn( $preset ) => $preset['label'] . ' · ' . $preset['help'],
+						wpessential_motion_presets()
+					),
+				),
 				'motion_off'     => array(
 					'type'  => 'toggle',
 					'label' => __( 'Turn off all animations', 'hi-wpessential' ),
