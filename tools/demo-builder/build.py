@@ -6,7 +6,7 @@
 Every demo is served by the WPEssential Server: upload dist/<id>-<builder>.zip to the demo
 (WPEssential → Demos) and the server hands it out by plan (free demos to everyone, Pro demos
 through a signed link after the license and plan are checked). Base also stays bundled in
-core/demos/base as an offline fallback; Pro demo sources live in demos/<id>.
+bundled-demos/base as an offline fallback; Pro demo sources live in demos/<id>.
 """
 import json
 import os
@@ -85,7 +85,7 @@ def main():
         print('built', mod.ID)
 
     # Base demo: Elementor package next to the existing Gutenberg one.
-    base = os.path.join(ROOT, 'core', 'demos', 'base')
+    base = os.path.join(ROOT, 'bundled-demos', 'base')
     # Northwind Advisory pages (northwind.py) on top of the Base posts, products and media.
     gpath = os.path.join(base, 'gutenberg', 'content.json')
     source = json.load(open(gpath, encoding='utf-8'))

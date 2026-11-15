@@ -1,0 +1,81 @@
+{
+	"id": "base",
+	"title": "Base — Northwind Advisory",
+	"tagline": "A consulting firm site with services, case studies, team, careers, a blog and a shop.",
+	"niche": [
+		"business",
+		"consulting",
+		"agency",
+		"shop",
+		"blog"
+	],
+	"type": "free",
+	"thumbnail": "theme:bundled-demos/base/thumbnail.webp",
+	"preview": {
+		"desktop": "theme:bundled-demos/base/preview/desktop.webp",
+		"tablet": "theme:bundled-demos/base/preview/tablet.webp",
+		"mobile": "theme:bundled-demos/base/preview/mobile.webp"
+	},
+	"pages": [
+		"Home",
+		"About",
+		"Services",
+		"Service details",
+		"Case studies",
+		"Case study",
+		"Team",
+		"Pricing",
+		"Careers",
+		"Contact",
+		"Blog",
+		"Shop"
+	],
+	"highlights": [
+		"16 pages",
+		"6 service pages",
+		"Case studies + careers",
+		"Contact & careers forms (WPForms)"
+	],
+	"builders": {
+		"gutenberg": {
+			"package": "gutenberg",
+			"plugins": [
+				{
+					"slug": "woocommerce",
+					"name": "WooCommerce",
+					"source": "wporg",
+					"state": "recommended"
+				},
+				{
+					"slug": "wpforms-lite",
+					"name": "WPForms Lite",
+					"source": "wporg",
+					"state": "required"
+				}
+			]
+		},
+		"elementor": {
+			"package": "elementor",
+			"plugins": [
+				{
+					"slug": "elementor",
+					"name": "Elementor",
+					"source": "wporg",
+					"state": "required"
+				},
+				{
+					"slug": "woocommerce",
+					"name": "WooCommerce",
+					"source": "wporg",
+					"state": "recommended"
+				},
+				{
+					"slug": "wpforms-lite",
+					"name": "WPForms Lite",
+					"source": "wporg",
+					"state": "required"
+				}
+			]
+		}
+	}
+}

@@ -1268,10 +1268,6 @@ add_action(
 add_action(
 	'admin_menu',
 	static function () {
-		// With the Core plugin, Site Settings sits in the WPEssential menu; otherwise under Appearance.
-		if ( class_exists( '\\WPEssential\\Core\\Admin' ) ) {
-			return;
-		}
 		add_theme_page(
 			__( 'Site Settings', 'hi-wpessential' ),
 			__( 'Site Settings', 'hi-wpessential' ),

@@ -1,11 +1,11 @@
-"""Base demo — Elementor package. Same content and media keys as core/demos/base/gutenberg."""
+"""Base demo — Elementor package. Same content and media keys as bundled-demos/base/gutenberg."""
 import json
 import os
 
 import elementor as e
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-GUTENBERG = os.path.join(os.path.dirname(os.path.dirname(HERE)), 'core', 'demos', 'base', 'gutenberg', 'content.json')
+GUTENBERG = os.path.join(os.path.dirname(os.path.dirname(HERE)), 'bundled-demos', 'base', 'gutenberg', 'content.json')
 
 SERVICES = [('fas fa-pen-ruler', 'Brand & web design', 'Identity, design systems and websites that look premium on every screen.'),
             ('fas fa-code', 'WordPress development', 'Fast block themes and Elementor builds, tested and documented.'),

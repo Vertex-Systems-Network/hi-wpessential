@@ -29,11 +29,18 @@ require WPESSENTIAL_DIR . '/inc/customizer.php';
 require WPESSENTIAL_DIR . '/inc/seo.php';
 require WPESSENTIAL_DIR . '/inc/multilingual.php';
 
-// Demo import, plugin manager and license. Self-contained in core/ so it can ship as a
-// separate plugin later; the standalone plugin wins when both are present.
-if ( ! defined( 'WPESSENTIAL_CORE_VERSION' ) && apply_filters( 'wpessential_load_bundled_core', true ) ) {
-	require WPESSENTIAL_DIR . '/core/wpessential-core.php';
-}
+require WPESSENTIAL_DIR . '/inc/class-pagesettings.php';
+\WPEssential\Theme\PageSettings::hooks();
+
+// Elements, the one-click demo importer and the licence come from the WPEssential plugin
+// (inc/core-bridge.php recommends it). The theme ships the offline Base demo for its importer.
+add_filter(
+	'wpessential_core_demo_dirs',
+	static function ( $dirs ) {
+		$dirs[] = WPESSENTIAL_DIR . '/bundled-demos';
+		return $dirs;
+	}
+);
 
 // Elementor may load before or after the theme.
 if ( did_action( 'elementor/loaded' ) ) {

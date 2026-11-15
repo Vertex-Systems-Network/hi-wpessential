@@ -16,7 +16,7 @@ Hi WPEssential is a fast, multi-niche block theme that is native for both Gutenb
 Every demo ships in a Gutenberg version (core blocks only) and an Elementor version (native widgets and Kit globals, with no HTML widgets or custom CSS). Choose your builder; the look stays the same.
 
 = Features =
-* One-click demo import with the bundled WPEssential Core plugin: required plugins, pages, posts, products, menus, images, header, footer and style. Remove a demo again with one click.
+* One-click demo import with the free WPEssential plugin: required plugins, pages, posts, products, menus, images, header, footer and style. Remove a demo again with one click.
 * Live demos in the browser (WordPress Playground): click, hover and browse every page before you import.
 * theme.json v2 design system with a style variation per demo and local fonts.
 * Light / dark toggle for visitors that follows the device setting and remembers the choice.
@@ -55,8 +55,8 @@ No. The importer only adds content and keeps a record, so Remove demo deletes wh
 = Which screen sizes are supported? =
 The layout steps at 1920, 1440, 1280, 1024, 768, 560, 480, 360 and 320 pixels. Each step sets the page gutter, section spacing, container width and heading sizes. From 1024 down the header switches to a compact bar with an off-canvas menu.
 
-= Do I need the WPEssential Core plugin? =
-No. The theme works on its own. Core adds demo import, the header/footer builder, mega menus and Pro license activation.
+= Do I need the WPEssential plugin? =
+No. The theme works on its own. The free WPEssential plugin adds its elements, one-click demo import and Pro licence activation.
 
 = How do I build an About, Services, Pricing, Contact or FAQ page? =
 Create a page, choose the "Full width" template, then pick the matching layout from the "Hi WPEssential — Full pages" patterns. With WooCommerce active, the "Hi WPEssential — Shop" patterns add category and product rows.
