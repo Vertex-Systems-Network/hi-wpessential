@@ -18,6 +18,26 @@ defined( 'ABSPATH' ) || exit;
  */
 class PageSettings {
 
+	/** Units offered for lengths (the kit's list, kept here since core/ moved out). */
+	const LENGTH_UNITS = array( 'px', 'em', 'rem', '%', 'vw', 'vh' );
+
+	/**
+	 * Background gradients (the kit's presets, kept here since core/ moved out).
+	 *
+	 * @return array
+	 */
+	public static function gradients() {
+		$c = static fn( $s ) => 'var(--wp--preset--color--' . $s . ')';
+		return array(
+			'brand'   => 'linear-gradient(110deg, #e8701a, #f7a23e)',
+			'primary' => 'linear-gradient(135deg, ' . $c( 'primary' ) . ', ' . $c( 'secondary' ) . ')',
+			'ink'     => 'linear-gradient(160deg, ' . $c( 'ink' ) . ', color-mix(in srgb, ' . $c( 'ink' ) . ' 70%, ' . $c( 'secondary' ) . '))',
+			'soft'    => 'linear-gradient(180deg, ' . $c( 'surface' ) . ', ' . $c( 'surface-alt' ) . ')',
+			'fade'    => 'linear-gradient(180deg, transparent, rgba(0,0,0,.6))',
+		);
+	}
+
+
 	/**
 	 * Post meta key (one object).
 	 */
@@ -144,7 +164,7 @@ class PageSettings {
 				'type'    => 'select',
 				'group'   => 'colours',
 				'label'   => __( 'Background gradient', 'hi-wpessential' ),
-				'options' => array( '' => __( 'None', 'hi-wpessential' ) ) + array_combine( array_keys( Kit\Groups::gradients() ), array_map( 'ucfirst', array_keys( Kit\Groups::gradients() ) ) ),
+				'options' => array( '' => __( 'None', 'hi-wpessential' ) ) + array_combine( array_keys( self::gradients() ), array_map( 'ucfirst', array_keys( self::gradients() ) ) ),
 			),
 			'bgImage'       => array(
 				'type'  => 'image',
@@ -298,7 +318,7 @@ class PageSettings {
 					'meta'   => self::META,
 					'fields' => self::fields(),
 					'groups' => self::groups(),
-					'units'  => Kit::LENGTH_UNITS,
+					'units'  => self::LENGTH_UNITS,
 				)
 			) . ';',
 			'before'
@@ -519,8 +539,8 @@ class PageSettings {
 			$bg[] = 'background-color:' . $color( $s['bgColor'] );
 		}
 		$layers = array();
-		if ( ! empty( $s['bgGradient'] ) && isset( Kit\Groups::gradients()[ $s['bgGradient'] ] ) ) {
-			$layers[] = Kit\Groups::gradients()[ $s['bgGradient'] ];
+		if ( ! empty( $s['bgGradient'] ) && isset( self::gradients()[ $s['bgGradient'] ] ) ) {
+			$layers[] = self::gradients()[ $s['bgGradient'] ];
 		}
 		if ( ! empty( $s['bgImage']['url'] ) ) {
 			$layers[] = 'url("' . esc_url_raw( $s['bgImage']['url'] ) . '")';
