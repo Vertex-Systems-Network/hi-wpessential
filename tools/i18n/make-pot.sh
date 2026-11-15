@@ -21,4 +21,5 @@ if [ "${1:-}" = "--compile" ]; then
 	rm -f languages/*.json languages/*.l10n.php
 	$WP i18n make-json languages --no-purge
 	$WP i18n make-php languages
+	python3 "$(dirname "$0")/escape-l10n.py"
 fi

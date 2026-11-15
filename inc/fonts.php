@@ -142,6 +142,15 @@ function wpessential_font_download( $family ) {
 	$slug    = sanitize_title( $family );
 	$dir     = trailingslashit( $uploads['basedir'] ) . 'wpessential-fonts/' . $slug;
 	$base    = trailingslashit( $uploads['baseurl'] ) . 'wpessential-fonts/' . $slug;
+	// Font files are written with the WordPress filesystem API (no direct file writes).
+	global $wp_filesystem;
+	if ( ! function_exists( 'WP_Filesystem' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+	}
+	if ( ! WP_Filesystem() || ! $wp_filesystem ) {
+		return array();
+	}
+	$fs = $wp_filesystem;
 	if ( ! wp_mkdir_p( $dir ) ) {
 		return array();
 	}
@@ -164,7 +173,7 @@ function wpessential_font_download( $family ) {
 				if ( is_wp_error( $font ) || 200 !== wp_remote_retrieve_response_code( $font ) ) {
 					continue;
 				}
-				file_put_contents( $dir . '/' . $file, wp_remote_retrieve_body( $font ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents -- Font file in uploads.
+				$fs->put_contents( $dir . '/' . $file, wp_remote_retrieve_body( $font ), FS_CHMOD_FILE );
 			}
 			$faces[] = array(
 				'fontFamily'   => $family,
