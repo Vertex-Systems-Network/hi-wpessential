@@ -22,25 +22,25 @@ require WPESSENTIAL_DIR . '/inc/layouts.php';
 require WPESSENTIAL_DIR . '/inc/core-bridge.php';
 require WPESSENTIAL_DIR . '/inc/scheme.php';
 require WPESSENTIAL_DIR . '/inc/motion.php';
-require WPESSENTIAL_DIR . '/inc/options.php';
 require WPESSENTIAL_DIR . '/inc/fonts.php';
 require WPESSENTIAL_DIR . '/inc/customizer-fields.php';
 require WPESSENTIAL_DIR . '/inc/customizer.php';
-require WPESSENTIAL_DIR . '/inc/seo.php';
-require WPESSENTIAL_DIR . '/inc/multilingual.php';
 
 require WPESSENTIAL_DIR . '/inc/class-pagesettings.php';
 \WPEssential\Theme\PageSettings::hooks();
 
 // Elements, the one-click demo importer and the licence come from the WPEssential plugin
 // (inc/core-bridge.php recommends it). The theme ships the offline Base demo for its importer.
-add_filter(
-	'wpessential_core_demo_dirs',
-	static function ( $dirs ) {
-		$dirs[] = WPESSENTIAL_DIR . '/bundled-demos';
-		return $dirs;
-	}
-);
+// Development copies only: the WordPress.org package leaves bundled-demos/ out (.distignore).
+if ( is_dir( WPESSENTIAL_DIR . '/bundled-demos' ) ) {
+	add_filter(
+		'wpessential_core_demo_dirs',
+		static function ( $dirs ) {
+			$dirs[] = WPESSENTIAL_DIR . '/bundled-demos';
+			return $dirs;
+		}
+	);
+}
 
 // Elementor may load before or after the theme.
 if ( did_action( 'elementor/loaded' ) ) {

@@ -23,10 +23,10 @@
 
 
 <!-- wp:social-links {"className":"is-style-wpe-soft","layout":{"type":"flex","justifyContent":"center"}} -->
-<ul class="wp-block-social-links is-style-wpe-soft"><!-- wp:social-link {"url":"https://x.com/wpessential","service":"x"} /-->
+<ul class="wp-block-social-links is-style-wpe-soft"><!-- wp:social-link {"url":"#","service":"x"} /-->
 
-<!-- wp:social-link {"url":"https://www.facebook.com/wpessential","service":"facebook"} /-->
+<!-- wp:social-link {"url":"#","service":"facebook"} /-->
 
-<!-- wp:social-link {"url":"https://www.youtube.com/@wpessential","service":"youtube"} /--></ul>
+<!-- wp:social-link {"url":"#","service":"youtube"} /--></ul>
 <!-- /wp:social-links --></section>
 <!-- /wp:group -->

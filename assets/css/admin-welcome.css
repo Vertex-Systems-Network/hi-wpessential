@@ -1,0 +1,143 @@
+/* Welcome banner (Dashboard, Themes, Plugins). Loaded only where the banner shows. */
+.notice.wpe-welcome {
+	--wpe-w-ink: #1d2327;
+	--wpe-w-muted: #50575e;
+	--wpe-w-accent: #4f46e5;
+	display: flex;
+	gap: 24px;
+	align-items: center;
+	margin: 20px 0 16px;
+	padding: 24px 48px 24px 24px;
+	border: 1px solid #dcdcde;
+	border-left: 4px solid var(--wpe-w-accent);
+	border-radius: 8px;
+	background:
+		radial-gradient(120% 140% at 100% 0%, rgba(232, 112, 26, .09), transparent 55%),
+		radial-gradient(90% 120% at 0% 100%, rgba(79, 70, 229, .08), transparent 60%),
+		#fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 8px 24px -12px rgba(29, 35, 39, .18);
+}
+
+.wpe-welcome__art {
+	flex: none;
+	filter: drop-shadow(0 8px 16px rgba(79, 70, 229, .3));
+}
+
+.wpe-welcome__art svg {
+	display: block;
+	width: 72px;
+	height: 72px;
+}
+
+.wpe-welcome__body {
+	min-width: 0;
+}
+
+.wpe-welcome .wpe-welcome__eyebrow {
+	margin: 0 0 4px;
+	padding: 0;
+	color: var(--wpe-w-accent);
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+}
+
+.wpe-welcome .wpe-welcome__title {
+	margin: 0 0 12px;
+	color: var(--wpe-w-ink);
+	font-size: 20px;
+	line-height: 1.3;
+}
+
+.wpe-welcome__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 20px;
+	margin: 0 0 18px;
+	padding: 0;
+	list-style: none;
+}
+
+.wpe-welcome__list li {
+	position: relative;
+	margin: 0;
+	padding-left: 22px;
+	color: var(--wpe-w-muted);
+}
+
+.wpe-welcome__list li::before {
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 0;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: #00a32a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3.5 7.2l2.3 2.2 4.7-4.8' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+
+.wpe-welcome__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 20px;
+	align-items: center;
+}
+
+.wpe-welcome .button.wpe-welcome__cta {
+	min-height: 44px;
+	padding: 0 22px;
+	border-color: var(--wpe-w-accent);
+	background: var(--wpe-w-accent);
+	font-size: 14px;
+	line-height: 42px;
+}
+
+.wpe-welcome .button.wpe-welcome__cta:hover,
+.wpe-welcome .button.wpe-welcome__cta:focus {
+	border-color: #4338ca;
+	background: #4338ca;
+}
+
+.wpe-welcome .button.wpe-welcome__cta:focus {
+	box-shadow: 0 0 0 1px #fff, 0 0 0 3px var(--wpe-w-accent);
+}
+
+.wpe-welcome .button.wpe-welcome__cta.is-busy {
+	cursor: progress;
+	opacity: .8;
+}
+
+.wpe-welcome__more {
+	font-weight: 500;
+}
+
+.wpe-welcome__status {
+	color: var(--wpe-w-muted);
+}
+
+.wpe-welcome .wpe-welcome__note {
+	margin: 14px 0 0;
+	padding: 0;
+	color: var(--wpe-w-muted);
+	font-size: 12px;
+}
+
+@media (max-width: 782px) {
+	.notice.wpe-welcome {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 20px 40px 20px 20px;
+	}
+
+	.wpe-welcome__art svg {
+		width: 56px;
+		height: 56px;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.wpe-welcome .button.wpe-welcome__cta {
+		transition: background-color .15s ease, border-color .15s ease;
+	}
+}

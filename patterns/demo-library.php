@@ -28,7 +28,7 @@ $wpessential_demos = array(
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-wpe-outline"} -->
-<div class="wp-block-button is-style-wpe-outline"><a class="wp-block-button__link wp-element-button" href="https://wpessential.org/demos/"><?php esc_html_e( 'View all demos →', 'hi-wpessential' ); ?></a></div>
+<div class="wp-block-button is-style-wpe-outline"><a class="wp-block-button__link wp-element-button" href="#"><?php esc_html_e( 'View all demos →', 'hi-wpessential' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->

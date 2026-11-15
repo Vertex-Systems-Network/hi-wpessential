@@ -1,7 +1,7 @@
 <?php
 /**
  * Scroll animations with niche presets. CSS + IntersectionObserver by default,
- * GSAP + ScrollTrigger for the "dynamic" preset (parallax, counters, pinning).
+ * The "dynamic" preset adds parallax, a marquee and counters in plain JavaScript.
  *
  * @package WPEssential
  */
@@ -34,8 +34,8 @@ function wpessential_motion_presets() {
 				'help'  => __( 'Springy scale and stagger. Food, kids, events, creative.', 'hi-wpessential' ),
 			),
 			'dynamic'   => array(
-				'label' => __( 'Dynamic (GSAP)', 'hi-wpessential' ),
-				'help'  => __( 'Parallax, counters and staggered grids with GSAP ScrollTrigger. Events, sport, launches.', 'hi-wpessential' ),
+				'label' => __( 'Dynamic', 'hi-wpessential' ),
+				'help'  => __( 'Parallax, counters and staggered grids. Events, sport, launches.', 'hi-wpessential' ),
 			),
 		)
 	);
@@ -44,20 +44,20 @@ function wpessential_motion_presets() {
 /**
  * Current motion settings.
  *
- * @return array{preset: string, gsap: bool}
+ * @return array{preset: string, dynamic: bool}
  */
 function wpessential_motion() {
-	$saved  = wp_parse_args(
-		(array) get_option( 'wpessential_motion', array() ),
-		array(
-			'preset' => 'subtle',
-			'gsap'   => false,
-		)
-	);
-	$preset = array_key_exists( $saved['preset'], wpessential_motion_presets() ) ? $saved['preset'] : 'subtle';
+	// Site Settings > Hover & motion; the old Theme Options value is still read until it is saved there.
+	$site   = wpessential_site_values();
+	$legacy = (array) get_option( 'wpessential_motion', array() );
+	$preset = (string) ( $site['motion_preset'] ?? ( $legacy['preset'] ?? 'subtle' ) );
+	if ( ! empty( $site['motion_off'] ) ) {
+		$preset = 'none';
+	}
+	$preset = array_key_exists( $preset, wpessential_motion_presets() ) ? $preset : 'subtle';
 	return array(
-		'preset' => $preset,
-		'gsap'   => 'dynamic' === $preset || ! empty( $saved['gsap'] ),
+		'preset'  => $preset,
+		'dynamic' => 'dynamic' === $preset,
 	);
 }
 
@@ -69,20 +69,14 @@ add_action(
 			return;
 		}
 		wp_enqueue_style( 'wpessential-motion', WPESSENTIAL_URI . '/assets/css/motion.css', array( 'wpessential' ), WPESSENTIAL_ASSET_VERSION );
-		$deps = array();
-		if ( $motion['gsap'] ) {
-			wp_register_script( 'gsap', WPESSENTIAL_URI . '/assets/vendor/gsap/gsap.min.js', array(), '3.12.5', array( 'strategy' => 'defer' ) );
-			wp_register_script( 'gsap-scrolltrigger', WPESSENTIAL_URI . '/assets/vendor/gsap/ScrollTrigger.min.js', array( 'gsap' ), '3.12.5', array( 'strategy' => 'defer' ) );
-			$deps = array( 'gsap-scrolltrigger' );
-		}
-		wp_enqueue_script( 'wpessential-motion', WPESSENTIAL_URI . '/assets/js/motion.js', $deps, WPESSENTIAL_ASSET_VERSION, array( 'strategy' => 'defer' ) );
+		wp_enqueue_script( 'wpessential-motion', WPESSENTIAL_URI . '/assets/js/motion.js', array(), WPESSENTIAL_ASSET_VERSION, array( 'strategy' => 'defer' ) );
 		wp_localize_script(
 			'wpessential-motion',
 			'wpessentialMotion',
 			array(
-				'preset' => $motion['preset'],
-				'gsap'   => $motion['gsap'],
-				'auto'   => (string) apply_filters( 'wpessential_motion_auto_selector', '.wpe-section .wp-block-heading, .wpe-section > .wp-block-group > p, .wpe-section .wp-block-buttons, .wpe-card, .wpe-section .wp-block-image, .wp-block-post-template > li, ul.products > li, .wc-block-grid__product, .wpe-stat' ),
+				'preset'  => $motion['preset'],
+				'dynamic' => $motion['dynamic'],
+				'auto'    => (string) apply_filters( 'wpessential_motion_auto_selector', '.wpe-section .wp-block-heading, .wpe-section > .wp-block-group > p, .wpe-section .wp-block-buttons, .wpe-card, .wpe-section .wp-block-image, .wp-block-post-template > li, ul.products > li, .wc-block-grid__product, .wpe-stat' ),
 			)
 		);
 	}

@@ -48,3 +48,8 @@
 @media (prefers-reduced-motion: reduce) {
 	.wpe-motion .wpe-anim { opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important; }
 }
+
+/* Dynamic preset: endless marquee (was GSAP). */
+@keyframes wpe-marquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+.wpe-anim--marquee-run { animation: wpe-marquee 30s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .wpe-anim--marquee-run { animation: none; } }

@@ -20,7 +20,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted","fontSize":"body-l"} -->
-<p class="has-text-muted-color has-text-color has-body-l-font-size"><?php esc_html_e( 'Start free and upgrade when you need Pro demos, premium blocks and priority support.', 'hi-wpessential' ); ?></p>
+<p class="has-text-muted-color has-text-color has-body-l-font-size"><?php esc_html_e( 'Start free and upgrade when you need more features and priority support.', 'hi-wpessential' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

@@ -23,7 +23,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"text-muted"} -->
-<p class="has-text-muted-color has-text-color">support@wpessential.org</p>
+<p class="has-text-muted-color has-text-color">hello@example.com</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --><!-- wp:group {"className":"is-style-wpe-card wpe-feature-card","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->

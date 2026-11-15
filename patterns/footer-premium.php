@@ -88,8 +88,8 @@
 <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"fontSize":"small"} -->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Blog', 'hi-wpessential' ); ?>","url":"/blog/"} /-->
 <!-- wp:navigation-link {"label":"<?php esc_attr_e( 'FAQ', 'hi-wpessential' ); ?>","url":"/faq/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Documentation', 'hi-wpessential' ); ?>","url":"https://wpessential.org/docs/"} /-->
-<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Support', 'hi-wpessential' ); ?>","url":"https://wpessential.org/support/"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Documentation', 'hi-wpessential' ); ?>","url":"#"} /-->
+<!-- wp:navigation-link {"label":"<?php esc_attr_e( 'Support', 'hi-wpessential' ); ?>","url":"#"} /-->
 <!-- /wp:navigation --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
