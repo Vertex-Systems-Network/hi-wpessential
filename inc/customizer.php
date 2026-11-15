@@ -58,20 +58,20 @@ function wpessential_site_fields() {
 function wpessential_site_group_fields( array $sections ) {
 	$groups = array(
 		'wpessential_site_colors' => array(
-			'color_primary'    => __( 'Brand', 'hi-wpessential' ),
-			'color_ink'        => __( 'Text', 'hi-wpessential' ),
-			'color_surface'    => __( 'Backgrounds & borders', 'hi-wpessential' ),
-			'color_on-primary' => __( 'On colour', 'hi-wpessential' ),
-			'color_success'    => __( 'Status', 'hi-wpessential' ),
+			'color_primary'      => __( 'Brand', 'hi-wpessential' ),
+			'color_ink'          => __( 'Text', 'hi-wpessential' ),
+			'color_surface'      => __( 'Backgrounds & borders', 'hi-wpessential' ),
+			'color_on-primary'   => __( 'On colour', 'hi-wpessential' ),
+			'color_success'      => __( 'Status', 'hi-wpessential' ),
 			'color_primary-soft' => __( 'Tints & accents', 'hi-wpessential' ),
 		),
 		'wpessential_site_dark'   => array(
-			'scheme_toggle' => __( 'Visitor switch', 'hi-wpessential' ),
-			'dark_primary'  => __( 'Brand', 'hi-wpessential' ),
-			'dark_ink'      => __( 'Text', 'hi-wpessential' ),
-			'dark_surface'  => __( 'Backgrounds & borders', 'hi-wpessential' ),
-			'dark_on-primary' => __( 'On colour', 'hi-wpessential' ),
-			'dark_success'  => __( 'Status', 'hi-wpessential' ),
+			'scheme_toggle'     => __( 'Visitor switch', 'hi-wpessential' ),
+			'dark_primary'      => __( 'Brand', 'hi-wpessential' ),
+			'dark_ink'          => __( 'Text', 'hi-wpessential' ),
+			'dark_surface'      => __( 'Backgrounds & borders', 'hi-wpessential' ),
+			'dark_on-primary'   => __( 'On colour', 'hi-wpessential' ),
+			'dark_success'      => __( 'Status', 'hi-wpessential' ),
 			'dark_primary-soft' => __( 'Tints & accents', 'hi-wpessential' ),
 		),
 		'wpessential_site_type'   => array(
