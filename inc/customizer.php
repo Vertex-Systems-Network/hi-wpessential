@@ -44,9 +44,97 @@ function wpessential_site_fonts() {
 function wpessential_site_fields() {
 	static $fields = null;
 	if ( null === $fields ) {
-		$fields = wpessential_site_fields_upgrade( wpessential_site_fields_base() );
+		$fields = wpessential_site_group_fields( wpessential_site_fields_upgrade( wpessential_site_fields_base() ) );
 	}
 	return $fields;
+}
+
+/**
+ * Headings inside the larger sections: each group of options gets a title.
+ *
+ * @param array $sections Sections.
+ * @return array
+ */
+function wpessential_site_group_fields( array $sections ) {
+	$groups = array(
+		'wpessential_site_colors' => array(
+			'color_primary'    => __( 'Brand', 'hi-wpessential' ),
+			'color_ink'        => __( 'Text', 'hi-wpessential' ),
+			'color_surface'    => __( 'Backgrounds & borders', 'hi-wpessential' ),
+			'color_on-primary' => __( 'On colour', 'hi-wpessential' ),
+			'color_success'    => __( 'Status', 'hi-wpessential' ),
+			'color_primary-soft' => __( 'Tints & accents', 'hi-wpessential' ),
+		),
+		'wpessential_site_dark'   => array(
+			'scheme_toggle' => __( 'Visitor switch', 'hi-wpessential' ),
+			'dark_primary'  => __( 'Brand', 'hi-wpessential' ),
+			'dark_ink'      => __( 'Text', 'hi-wpessential' ),
+			'dark_surface'  => __( 'Backgrounds & borders', 'hi-wpessential' ),
+			'dark_on-primary' => __( 'On colour', 'hi-wpessential' ),
+			'dark_success'  => __( 'Status', 'hi-wpessential' ),
+			'dark_primary-soft' => __( 'Tints & accents', 'hi-wpessential' ),
+		),
+		'wpessential_site_type'   => array(
+			'fonts_delivery'   => __( 'Fonts', 'hi-wpessential' ),
+			'size_body'        => __( 'Body text', 'hi-wpessential' ),
+			'heading_weight'   => __( 'Headings', 'hi-wpessential' ),
+			'size_display_min' => __( 'Heading sizes (small to large screens)', 'hi-wpessential' ),
+			'size_body-l_min'  => __( 'Other sizes', 'hi-wpessential' ),
+			'heading_color'    => __( 'Colour & selection', 'hi-wpessential' ),
+		),
+		'wpessential_site_gtype'  => array(
+			'typo_body'   => __( 'Body', 'hi-wpessential' ),
+			'typo_h1'     => __( 'Headings', 'hi-wpessential' ),
+			'typo_button' => __( 'Interface', 'hi-wpessential' ),
+		),
+		'wpessential_site_button' => array(
+			'btn_radius'   => __( 'Shape & size', 'hi-wpessential' ),
+			'btn_weight'   => __( 'Text', 'hi-wpessential' ),
+			'btn_bg'       => __( 'Colours', 'hi-wpessential' ),
+			'btn_border_w' => __( 'Border & shadow', 'hi-wpessential' ),
+		),
+		'wpessential_site_layout' => array(
+			'breakpoints'   => __( 'Breakpoints', 'hi-wpessential' ),
+			'content_width' => __( 'Widths & spacing', 'hi-wpessential' ),
+			'header_height' => __( 'Header behaviour', 'hi-wpessential' ),
+		),
+	);
+	foreach ( $groups as $section => $headings ) {
+		if ( empty( $sections[ $section ]['fields'] ) ) {
+			continue;
+		}
+		$out = array();
+		foreach ( $sections[ $section ]['fields'] as $key => $field ) {
+			if ( isset( $headings[ $key ] ) ) {
+				$out[ 'h_' . $key ] = array(
+					'type'  => 'heading',
+					'label' => $headings[ $key ],
+				);
+			}
+			$out[ $key ] = $field;
+		}
+		$sections[ $section ]['fields'] = $out;
+	}
+	return $sections;
+}
+
+/**
+ * Customizer groups at the top level: a heading row, then its sections, in this order.
+ * Core and WooCommerce sections are placed into the groups too.
+ *
+ * @return array group id => [ title, sections ].
+ */
+function wpessential_site_groups() {
+	return array(
+		'site'       => array( __( 'Site', 'hi-wpessential' ), array( 'title_tagline', 'static_front_page', 'wpessential_site_bg' ) ),
+		'colours'    => array( __( 'Colours', 'hi-wpessential' ), array( 'wpessential_site_colors', 'wpessential_site_dark', 'wpessential_site_gradients' ) ),
+		'typography' => array( __( 'Typography', 'hi-wpessential' ), array( 'wpessential_site_type', 'wpessential_site_gtype', 'wpessential_site_links' ) ),
+		'elements'   => array( __( 'Elements', 'hi-wpessential' ), array( 'wpessential_site_button', 'wpessential_site_forms', 'wpessential_site_shape', 'wpessential_site_shadows' ) ),
+		'layout'     => array( __( 'Layout', 'hi-wpessential' ), array( 'wpessential_site_layout', 'wpessential_site_header', 'nav_menus' ) ),
+		'motion'     => array( __( 'Motion & accessibility', 'hi-wpessential' ), array( 'wpessential_site_motion', 'wpessential_site_a11y' ) ),
+		'shop'       => array( __( 'Shop', 'hi-wpessential' ), array( 'woocommerce_store_notice', 'woocommerce_product_catalog', 'woocommerce_product_images', 'woocommerce_checkout' ) ),
+		'advanced'   => array( __( 'Advanced', 'hi-wpessential' ), array( 'custom_css' ) ),
+	);
 }
 
 /**
@@ -564,21 +652,14 @@ add_action(
 		foreach ( array( 'colors', 'header_image', 'background_image' ) as $section ) {
 			$wp->remove_section( $section );
 		}
-		$wp->add_panel(
-			'wpessential_site',
-			array(
-				'title'       => __( 'WPEssential Site Settings', 'hi-wpessential' ),
-				'description' => __( 'Global colours, fonts, buttons, forms, layout and motion for the whole site, in Gutenberg and Elementor.', 'hi-wpessential' ),
-				'priority'    => 25,
-			)
-		);
+		require_once WPESSENTIAL_DIR . '/inc/class-wpessential-customize-group.php';
+		$wp->register_section_type( 'WPEssential_Customize_Group' );
 		foreach ( wpessential_site_fields() as $section => $s ) {
 			$wp->add_section(
 				$section,
 				array(
 					'title'       => $s['title'],
 					'description' => $s['description'] ?? '',
-					'panel'       => 'wpessential_site',
 				)
 			);
 			foreach ( $s['fields'] as $key => $f ) {
@@ -1189,41 +1270,44 @@ add_action(
 	}
 );
 
-// One place for the site: the WordPress sections this theme uses go into the Site Settings panel;
-// the ones a block theme does not use are removed. Menus stays its own panel (WordPress needs that).
+// Top-level order: a heading row per group (WPEssential_Customize_Group), then its sections.
+// Menus stays a panel; it sits in the Layout group. Classic sections a block theme does not use go.
 add_action(
 	'customize_register',
 	static function ( WP_Customize_Manager $wp ) {
-		$move = array(
-			'title_tagline'               => 1,
-			'static_front_page'           => 2,
-			'woocommerce_store_notice'    => 900,
-			'woocommerce_product_catalog' => 901,
-			'woocommerce_product_images'  => 902,
-			'woocommerce_checkout'        => 903,
-			'custom_css'                  => 999,
-		);
-		foreach ( $move as $id => $priority ) {
-			$section = $wp->get_section( $id );
-			if ( $section ) {
-				$section->panel    = 'wpessential_site';
-				$section->priority = $priority;
-			}
-		}
-		// The WooCommerce panel is empty now; widgets and the classic options are not used by a block theme.
 		$wp->remove_panel( 'woocommerce' );
 		$wp->remove_panel( 'widgets' );
 		foreach ( array( 'colors', 'header_image', 'background_image' ) as $id ) {
 			$wp->remove_section( $id );
 		}
-		// Keep our panel at the top, Menus right after it.
-		$panel = $wp->get_panel( 'wpessential_site' );
-		if ( $panel ) {
-			$panel->priority = 1;
-		}
-		$menus = $wp->get_panel( 'nav_menus' );
-		if ( $menus ) {
-			$menus->priority = 2;
+		$priority = 0;
+		foreach ( wpessential_site_groups() as $group => $def ) {
+			$members = array_filter(
+				$def[1],
+				static fn( $id ) => $wp->get_section( $id ) || $wp->get_panel( $id )
+			);
+			if ( ! $members ) {
+				continue;
+			}
+			$priority += 10;
+			$wp->add_section(
+				new WPEssential_Customize_Group(
+					$wp,
+					'wpessential_group_' . $group,
+					array(
+						'title'    => $def[0],
+						'priority' => $priority,
+					)
+				)
+			);
+			foreach ( $members as $id ) {
+				$item = $wp->get_section( $id ) ? $wp->get_section( $id ) : $wp->get_panel( $id );
+				++$priority;
+				if ( $item instanceof WP_Customize_Section ) {
+					$item->panel = '';
+				}
+				$item->priority = $priority;
+			}
 		}
 	},
 	1000
@@ -1280,7 +1364,7 @@ add_action(
 			__( 'Site Settings', 'hi-wpessential' ),
 			__( 'Site Settings', 'hi-wpessential' ),
 			'edit_theme_options',
-			'customize.php?autofocus[panel]=wpessential_site'
+			'customize.php?autofocus[section]=wpessential_site_colors'
 		);
 	}
 );

@@ -751,3 +751,6 @@ body:has(.wp-block-navigation__responsive-container.is-menu-open) { overflow: hi
 .wpforms-container button[type=submit] { background: var(--wp--preset--color--primary, #ec7d1a) !important; color: var(--wp--preset--color--on-primary, #fff) !important; border: 0 !important; border-radius: 999px !important; padding: 14px 28px !important; font-weight: 600; cursor: pointer; }
 .wpforms-field-divider h3 { font-size: 15px !important; margin: 20px 0 2px !important; padding-top: 16px; border-top: 1px solid var(--wp--preset--color--border, #e3e8f2); }
 .wpforms-field-divider:first-child h3 { border-top: 0; padding-top: 0; margin-top: 0 !important; }
+
+/* No outline or ring after a mouse or touch click; keyboard focus (focus-visible) keeps its outline. */
+:where(a, button, summary, [role="button"], .wp-element-button, .wp-block-button__link, .wpe-btn, input[type="submit"], input[type="button"]):focus:not(:focus-visible) { outline: none; box-shadow: none; }

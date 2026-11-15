@@ -6,6 +6,14 @@
 ( function ( api, controls ) {
 	'use strict';
 
+	// Group headings in the top-level list: never open, and stay visible without controls.
+	api.sectionConstructor.wpessential_group = api.Section.extend( {
+		attachEvents: function () {},
+		isContextuallyActive: function () {
+			return true;
+		},
+	} );
+
 	function build( control ) {
 		var root = control.container[ 0 ].querySelector( '.wpec' );
 		if ( ! root || root.dataset.ready || ! control.setting ) {
