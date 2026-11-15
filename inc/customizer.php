@@ -1295,8 +1295,10 @@ add_action(
 					$wp,
 					'wpessential_group_' . $group,
 					array(
-						'title'    => $def[0],
-						'priority' => $priority,
+						'title'           => $def[0],
+						'priority'        => $priority,
+						// No controls of its own; WP_Customize_Section::active() is final, so this keeps it shown.
+						'active_callback' => '__return_true',
 					)
 				)
 			);

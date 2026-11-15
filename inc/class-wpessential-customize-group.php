@@ -21,15 +21,6 @@ class WPEssential_Customize_Group extends WP_Customize_Section {
 	public $type = 'wpessential_group';
 
 	/**
-	 * Always shown, although it has no controls.
-	 *
-	 * @return bool
-	 */
-	public function active() {
-		return true;
-	}
-
-	/**
 	 * A plain heading instead of a section that opens.
 	 */
 	protected function render_template() {
