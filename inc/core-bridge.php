@@ -74,11 +74,11 @@ add_action(
 		if ( ! wpessential_plugin_banner_visible() ) {
 			return;
 		}
-		$state     = wpessential_plugin_state();
-		$install   = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=wpessential' ), 'install-plugin_wpessential' );
-		$activate  = wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=wpessential/wpessential.php' ), 'activate-plugin_wpessential/wpessential.php' );
-		$dismiss   = wp_nonce_url( add_query_arg( 'wpessential-dismiss', '1' ), 'wpessential-dismiss' );
-		$features  = array(
+		$state    = wpessential_plugin_state();
+		$install  = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=wpessential' ), 'install-plugin_wpessential' );
+		$activate = wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=wpessential/wpessential.php' ), 'activate-plugin_wpessential/wpessential.php' );
+		$dismiss  = wp_nonce_url( add_query_arg( 'wpessential-dismiss', '1' ), 'wpessential-dismiss' );
+		$features = array(
 			__( 'Elements for Gutenberg and Elementor', 'hi-wpessential' ),
 			__( 'One-click demo sites', 'hi-wpessential' ),
 			__( 'SEO, language switcher and custom code', 'hi-wpessential' ),

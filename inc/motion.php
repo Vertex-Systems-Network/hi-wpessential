@@ -74,9 +74,9 @@ add_action(
 			'wpessential-motion',
 			'wpessentialMotion',
 			array(
-				'preset' => $motion['preset'],
+				'preset'  => $motion['preset'],
 				'dynamic' => $motion['dynamic'],
-				'auto'   => (string) apply_filters( 'wpessential_motion_auto_selector', '.wpe-section .wp-block-heading, .wpe-section > .wp-block-group > p, .wpe-section .wp-block-buttons, .wpe-card, .wpe-section .wp-block-image, .wp-block-post-template > li, ul.products > li, .wc-block-grid__product, .wpe-stat' ),
+				'auto'    => (string) apply_filters( 'wpessential_motion_auto_selector', '.wpe-section .wp-block-heading, .wpe-section > .wp-block-group > p, .wpe-section .wp-block-buttons, .wpe-card, .wpe-section .wp-block-image, .wp-block-post-template > li, ul.products > li, .wc-block-grid__product, .wpe-stat' ),
 			)
 		);
 	}
