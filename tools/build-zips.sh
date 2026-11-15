@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Build the release zips into build/:
 #   hi-wpessential.zip        theme (+ bundled Core), only the files WordPress needs (.distignore)
-#   wpessential-server.zip    server plugin for wpessential.org
 #   demos/<id>-<builder>.zip  demo packages for the server (from dist/)
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -19,11 +18,8 @@ done < "$ROOT/.distignore"
 mkdir -p "$STAGE/hi-wpessential"
 tar -C "$ROOT" "${EXCLUDES[@]}" --exclude='.DS_Store' --exclude='__pycache__' -cf - . | tar -C "$STAGE/hi-wpessential" -xf -
 (cd "$STAGE" && zip -qr9 "$OUT/hi-wpessential.zip" hi-wpessential)
-
-# Server plugin.
-mkdir -p "$STAGE/srv"
-tar -C "$ROOT/server" --exclude='phpcs.xml.dist' --exclude='vendor' -cf - wpessential-server | tar -C "$STAGE/srv" -xf -
-(cd "$STAGE/srv" && zip -qr9 "$OUT/wpessential-server.zip" wpessential-server)
+# The unzipped theme folder too, for the CI artifact (no zip inside a zip).
+mkdir -p "$OUT/theme" && cp -a "$STAGE/hi-wpessential" "$OUT/theme/"
 
 # Demo packages.
 python3 "$ROOT/tools/demo-builder/build.py" --zip >/dev/null
