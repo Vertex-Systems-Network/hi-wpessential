@@ -28,19 +28,15 @@ jobs:
           sed -i "s/^Version: .*/Version: $V/" style.css
           sed -i "s/^Stable tag: .*/Stable tag: $V/" readme.txt
           grep -n "^Version" style.css
-      - name: Build theme, server plugin and demo packages
+      - name: Build theme and demo packages
         run: ./tools/build-zips.sh
-      # The theme and server zips upload as-is (archive: false), so they download as
-      # hi-wpessential.zip and wpessential-server.zip, ready to install. Demo packages are many
-      # files, so they come as one archive named hi-wpessential-demos.
+      # The theme artifact holds the hi-wpessential/ folder itself (no zip inside a zip). The
+      # server plugin now lives in Vertex-Systems-Network/wpessential-server.
       - uses: actions/upload-artifact@v7
         with:
-          path: build/hi-wpessential.zip
-          archive: false
-      - uses: actions/upload-artifact@v7
-        with:
-          path: build/wpessential-server.zip
-          archive: false
+          name: hi-wpessential
+          path: build/theme/
+          if-no-files-found: error
       - uses: actions/upload-artifact@v7
         with:
           name: hi-wpessential-demos
@@ -50,7 +46,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" build/hi-wpessential.zip build/wpessential-server.zip build/demos/*.zip --title "WPEssential $GITHUB_REF_NAME" --generate-notes
+        run: gh release create "$GITHUB_REF_NAME" build/hi-wpessential.zip build/demos/*.zip --title "WPEssential $GITHUB_REF_NAME" --generate-notes
       # Needs repository secrets WPES_SERVER_URL (e.g. https://wpessential.org) and
       # WPES_SERVER_AUTH ("user:application-password" of an administrator). Skipped when unset.
       # Also runs from "Run workflow" (manual), so updates reach the server while the version
