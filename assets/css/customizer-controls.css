@@ -182,3 +182,11 @@
 .wpec__head { flex-wrap: wrap; }
 .wpec__head .wpec-devices { order: 3; flex-basis: 100%; margin: 4px 0 0; }
 .wpec-field__head { flex-wrap: wrap; }
+
+/* No ring after a mouse click on controls; keyboard focus stays visible. */
+#customize-controls :is(a, button, .button, summary, [role="button"], .accordion-section-title):focus:not(:focus-visible) { outline: none; box-shadow: none; }
+
+/* Top-level group headings (Site, Colours, Typography …). */
+#customize-theme-controls .wpessential-group { margin: 0; border: 0; background: transparent; cursor: default; }
+#customize-theme-controls .wpessential-group .wpessential-group__title { margin: 0; padding: 18px 14px 6px; border: 0; background: transparent; color: #646970; font-size: 11px; font-weight: 600; letter-spacing: .08em; line-height: 1.4; text-transform: uppercase; }
+#customize-theme-controls .wpessential-group:first-child .wpessential-group__title { padding-top: 8px; }
