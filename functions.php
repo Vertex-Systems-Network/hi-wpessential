@@ -29,7 +29,7 @@ require WPESSENTIAL_DIR . '/inc/customizer.php';
 require WPESSENTIAL_DIR . '/inc/seo.php';
 require WPESSENTIAL_DIR . '/inc/multilingual.php';
 
-require WPESSENTIAL_DIR . '/inc/page-settings.php';
+require WPESSENTIAL_DIR . '/inc/class-pagesettings.php';
 \WPEssential\Theme\PageSettings::hooks();
 
 // Elements, the one-click demo importer and the licence come from the WPEssential plugin
