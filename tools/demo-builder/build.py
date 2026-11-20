@@ -78,7 +78,7 @@ def main():
         base = os.path.join(ROOT, 'demos', mod.ID)
         write(os.path.join(base, 'demo.json'), demo_json(mod))
         for builder in ('gutenberg', 'elementor'):
-            pkg = legal.add(mod.package(builder), builder, *mod.LEGAL)  # Privacy, Terms, Refund and Cookie pages on every demo.
+            pkg = legal.add(mod.package(builder), builder, *mod.LEGAL, kit=getattr(mod, 'KIT', False))  # Privacy, Terms, Refund and Cookie pages on every demo.
             write(os.path.join(base, builder, 'content.json'), with_seo(pkg, getattr(mod, 'SEO', {})))
             if '--zip' in sys.argv:
                 zip_package(base, builder, os.path.join(ROOT, 'dist', '%s-%s.zip' % (mod.ID, builder)))

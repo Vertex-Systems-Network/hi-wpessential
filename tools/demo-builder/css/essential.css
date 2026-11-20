@@ -434,3 +434,14 @@ ul.ess-facts { list-style: none; padding: 0; margin: 8px 0 0; max-width: 560px; 
 	.ess-header .wpe-header__inner > .wp-block-navigation { flex: 0 0 auto; }
 	.ess-header .wpe-header__inner > .ess-logo { margin-inline-end: auto; }
 }
+
+/* ── Kit bridge: the .ess-* rules above style WPEssential kit elements exactly like the core blocks they replace. */
+.wpe-heading[class*="ess-"] .wpe-heading__title,.wpe-heading[class*="has-"] .wpe-heading__title{font:inherit;color:inherit;letter-spacing:inherit;line-height:inherit;text-transform:inherit;text-align:inherit;margin:0}
+.wpe-text[class*="ess-"] .wpe-text__body>*,.wpe-text[class*="is-style-"] .wpe-text__body>*{margin:0}
+.wpe-text .wpe-text__body>*+*{margin-top:.6em}
+.wpe-container.wpe-buttons>.wpe-container__inner{gap:12px}
+.wpe-cols>.wpe-container__inner{display:flex;gap:var(--wp--style--block-gap,2rem)}
+.wpe-col{flex:1 1 0;min-width:0}
+.wpe-col--w34{flex:0 0 calc(34% - 1rem)}.wpe-col--w38{flex:0 0 calc(38% - 1rem)}.wpe-col--w40{flex:0 0 calc(40% - 1rem)}.wpe-col--w42{flex:0 0 calc(42% - 1rem)}.wpe-col--w44{flex:0 0 calc(44% - 1rem)}.wpe-col--w48{flex:0 0 calc(48% - 1rem)}.wpe-col--w50{flex:0 0 calc(50% - 1rem)}.wpe-col--w52{flex:0 0 calc(52% - 1rem)}.wpe-col--w56{flex:0 0 calc(56% - 1rem)}.wpe-col--w58{flex:0 0 calc(58% - 1rem)}.wpe-col--w62{flex:0 0 calc(62% - 1rem)}.wpe-col--w66{flex:0 0 calc(66% - 1rem)}
+@media (max-width:781px){.wpe-cols:not(.wpe-cols--keep)>.wpe-container__inner{flex-wrap:wrap}.wpe-cols:not(.wpe-cols--keep) .wpe-col{flex:1 1 100%}}
+.wpe-container.is-grid.wpe-grid-min-11rem>.wpe-container__inner{grid-template-columns:repeat(auto-fill,minmax(min(11rem,100%),1fr))}.wpe-container.is-grid.wpe-grid-min-12rem>.wpe-container__inner{grid-template-columns:repeat(auto-fill,minmax(min(12rem,100%),1fr))}.wpe-container.is-grid.wpe-grid-min-13rem>.wpe-container__inner{grid-template-columns:repeat(auto-fill,minmax(min(13rem,100%),1fr))}.wpe-container.is-grid.wpe-grid-min-14rem>.wpe-container__inner{grid-template-columns:repeat(auto-fill,minmax(min(14rem,100%),1fr))}.wpe-container.is-grid.wpe-grid-min-16rem>.wpe-container__inner{grid-template-columns:repeat(auto-fill,minmax(min(16rem,100%),1fr))}.wpe-container.is-grid.wpe-grid-min-17rem>.wpe-container__inner{grid-template-columns:repeat(auto-fill,minmax(min(17rem,100%),1fr))}.wpe-container.is-grid.wpe-grid-min-18rem>.wpe-container__inner{grid-template-columns:repeat(auto-fill,minmax(min(18rem,100%),1fr))}

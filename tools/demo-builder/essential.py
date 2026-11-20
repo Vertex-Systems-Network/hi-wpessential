@@ -11,7 +11,9 @@ import re
 
 from urllib.parse import quote
 
-import blocks as b
+import kit as b
+
+KIT = True  # Gutenberg content uses only WPEssential kit elements (wpessential/*).
 from ess_ui import arrow, chip, head, html, ico, over, plan_card
 import ess_services as svc
 import elementor as e
@@ -189,10 +191,9 @@ SOCIAL_ICONS = {'Facebook': 'f', 'Instagram': 'ig', 'X': 'x', 'YouTube': 'yt', '
 
 def g_header():
     return b.group(b.group(html(LOGO),
-                           b.block('navigation', {'overlayMenu': 'mobile', 'layout': {'type': 'flex', 'justifyContent': 'center'}}),
-                           b.group(b.block('search', {'label': 'Search', 'showLabel': False, 'buttonText': 'Search', 'buttonPosition': 'button-only',
-                                                      'buttonUseIcon': True, 'isSearchFieldHidden': True}),
-                                   b.block('woocommerce/mini-cart'),
+                           b.el('menu', {'alignment': {'base': 'center'}}),
+                           b.group(b.el('search', {'mode': 'expand', 'buttonStyle': 'icon', 'placeholder': 'Search themes, demos and docs…'}),
+                                   b.el('mini-cart', {}),
                                    b.p('<a href="{{woo:myaccount}}">Sign in</a>', className='ess-signin wpe-signin'),
                                    b.buttons(arrow('Get Pro', '{{page:pricing}}')),
                                    layout='flex', wrap='nowrap', className='wpe-header-actions ess-actions'),
@@ -207,7 +208,7 @@ def g_footer():
             ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refund policy', '{{page:refund-policy}}')])]
     band = b.group(b.group(over('Newsletter', tone='orange'), b.h('New themes and demo drops, monthly.', level=3, className='ess-band__title'),
                            b.p('One email a month. Release notes, freebies and discounts. Unsubscribe anytime.', className='ess-band__text'), layout='default'),
-                   b.shortcode('[wpforms id="{{form:newsletter}}" title="false"]'),
+                   b.el('forms', {'formId': '{{form:newsletter}}', 'showTitle': False}),
                    layout='flex', wrap='wrap', justify='space-between', valign='center', className='ess-news')
     social = '<p class="ess-social">%s</p>' % ''.join('<a href="%s" aria-label="%s" class="ess-social__%s"></a>' % (u, n, SOCIAL_ICONS[n]) for n, u in SOCIAL)
     brand = b.column(html(LOGO), b.p('Premium WordPress themes and one-click demos for Gutenberg and Elementor.', className='ess-foot__about'),
@@ -225,7 +226,7 @@ def g_title(over, title, lead):
 
 
 def g_products(cat, cols=3):
-    return b.shortcode('[products category="%s" columns="%d" limit="%d" orderby="menu_order" order="ASC"]' % (cat, cols, cols))
+    return b.el('products', {'category': cat, 'count': cols, 'columns': {'base': cols}, 'sort': 'date', 'heading': ''})
 
 
 PERIOD_SUFFIX = {'monthly': '/ month', 'yearly': '/ year', 'lifetime': 'once'}
@@ -268,10 +269,9 @@ def g_plugin_cards():
 
 
 def g_search(placeholder, className, button=True):
-    """A core Search block (front end search, styled as the Figma search bars)."""
-    attrs = {'label': 'Search', 'showLabel': False, 'placeholder': placeholder, 'buttonText': 'Search',
-             'buttonPosition': 'button-inside' if button else 'no-button', 'className': className}
-    return b.block('search', attrs)
+    """Our Search element, styled as the Figma search bars."""
+    return b.el('search', {'placeholder': placeholder, 'buttonText': 'Search', 'buttonStyle': 'text' if button else 'icon',
+                           'cssClass': className})
 
 
 DEMO_CARDS = [  # (product key, name, badge(s), price label, text, image, categories)
@@ -527,7 +527,7 @@ def g_about():
 
 
 def wpform(key):
-    return b.shortcode('[wpforms id="{{form:%s}}" title="false"]' % key)
+    return b.el('forms', {'formId': '{{form:%s}}' % key, 'showTitle': False})
 
 
 def svc_link(name):
