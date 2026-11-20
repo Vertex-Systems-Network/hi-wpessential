@@ -105,7 +105,7 @@ def image(key, alt, aspect=None, style=None, className=None, href=None, size='fu
 
 def group(*inner, tag='div', align=None, className=None, layout='constrained', content=None, bg=None, color=None,
           justify=None, valign=None, wrap=None, grid_min=None, columns=None):
-    a = {'tag': tag if tag in ('section', 'article', 'aside') else None, 'equalChildren': False,
+    a = {'tag': tag if tag in ('section', 'article', 'aside', 'header', 'footer', 'main', 'nav') else None, 'equalChildren': False,
          'cssClass': cls(_classes(None, className, None, color, None, bg), 'align' + align if align else None)}
     if layout == 'flex':
         a.update(layout='flex', direction=_r('row'), wrap=_r('nowrap' if wrap == 'nowrap' else 'wrap'),
