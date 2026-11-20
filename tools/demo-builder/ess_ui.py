@@ -3,7 +3,7 @@
 Core blocks only, styled by the .ess-* rules in assets/css/theme.css. Icons are CSS masks
 (.ess-ico--<name>), so the markup stays plain and editable.
 """
-import blocks as b
+import kit as b
 
 
 def over(text, align=None, tone=None):
@@ -19,7 +19,7 @@ def chip(text, href, cls_extra=None):
 
 
 def html(markup):
-    return b.block('html', None, markup)
+    return b.html(markup)
 
 
 def head(overline, title, lead=None, align=None, tone=None, action=None, title_color=None):
