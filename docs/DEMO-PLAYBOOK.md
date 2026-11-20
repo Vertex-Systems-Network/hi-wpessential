@@ -94,7 +94,24 @@ Images go to the shared **Image Library** page in a section named after the demo
 
 Colours are bound to the **Color** variable collection; each demo adds its own mode set (`[Name] Light`, `[Name] Dark`) rather than raw hex values.
 
-## 3. Demo brief (write before designing)
+## 3. Page plan and user flow (STRICT: before any design or build)
+
+No demo is designed or built until its page plan and flow are written in `docs/demos/<id>.md` and checked:
+
+1. **Page inventory**: every page, plugin screen, state (empty, error, success, 404, search) and modal, each with
+   a number, its job, the one action we want on it, and the general kit elements it uses.
+2. **User flow map**: for every page, each click or action → the page/state it leads to (header, footer,
+   buttons, cards, forms, cart → checkout → order received/failed, login → account tabs, etc.). No dead ends:
+   every page has a next step, every form has success and error states, every list has an empty state.
+3. **Journeys**: the 3–5 main journeys of the niche (e.g. discover → product → cart → pay → download;
+   sign up → login → account; enquiry → quote → invoice → paid) traced through the map.
+4. **Element check**: list which general kit elements cover each page; anything missing is added to the
+   element plan as a general element (multi-niche, never demo-specific) before the page is built.
+5. Figma: frame `00 · User flow map` mirrors the map; frames are numbered as in the inventory.
+
+Only then: brief (§3a), design, build, and the §6 checklist. Pages are built in flow order, journey by journey.
+
+## 3a. Demo brief (write before designing)
 
 Add `docs/demos/<id>.md` with:
 

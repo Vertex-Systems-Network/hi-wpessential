@@ -22,6 +22,13 @@ repo is not open, follow the rules summarised below.
 
 Load the `figma-use` and `figma-generate-design` skills before the first `use_figma` call.
 
+## 0. Page plan and user flow (strict, first)
+
+Before research, design or build, write `docs/demos/<id>.md` with the numbered page inventory (pages, plugin screens,
+states, modals), the user flow map (every click/action → destination, no dead ends) and the main journeys, as in
+docs/DEMO-PLAYBOOK.md §3. Draw it as Figma frame `00 · User flow map`. Every element a page needs must be a general
+kit element; missing ones go to the element plan first.
+
 ## 1. Research and R&D
 
 - WebSearch at least 8 market leaders in the niche. Record for each: sitemap, hero pattern, palette, type, hover and motion behaviour, conversion elements.
