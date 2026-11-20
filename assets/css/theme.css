@@ -344,9 +344,9 @@ progress::-moz-progress-bar { background: var(--wpe-primary); }
 .wp-block-details.is-style-wpe-flush { border: 0; border-bottom: 1px solid var(--wpe-border); border-radius: 0; padding: 0; }
 
 /* Dropdown menu & modal (used by Core plugin + patterns) */
-.wpe-menu { min-width: 220px; padding: 6px; background: var(--wpe-surface); border: 1px solid var(--wpe-border); border-radius: 12px; box-shadow: var(--wpe-shadow-lg); }
-.wpe-menu a, .wpe-menu button { display: flex; gap: 10px; align-items: center; width: 100%; padding: 9px 10px; border-radius: 8px; color: var(--wpe-text); background: none; border: 0; text-decoration: none; font-size: var(--wp--preset--font-size--small); }
-.wpe-menu a:hover, .wpe-menu button:hover { background: var(--wpe-surface-alt); text-decoration: none; }
+.wpe-menu:not([class*="is-break"]) { min-width: 220px; padding: 6px; background: var(--wpe-surface); border: 1px solid var(--wpe-border); border-radius: 12px; box-shadow: var(--wpe-shadow-lg); }
+.wpe-menu:not([class*="is-break"]) a, .wpe-menu:not([class*="is-break"]) button { display: flex; gap: 10px; align-items: center; width: 100%; padding: 9px 10px; border-radius: 8px; color: var(--wpe-text); background: none; border: 0; text-decoration: none; font-size: var(--wp--preset--font-size--small); }
+.wpe-menu:not([class*="is-break"]) a:hover, .wpe-menu:not([class*="is-break"]) button:hover { background: var(--wpe-surface-alt); text-decoration: none; }
 .wpe-modal { position: fixed; inset: 0; z-index: 10000; display: none; place-items: center; padding: 24px; background: rgba(11, 16, 32, 0.55); }
 .wpe-modal.is-open { display: grid; }
 .wpe-modal__dialog { width: min(520px, 100%); max-height: calc(100vh - 48px); overflow: auto; background: var(--wpe-surface); border-radius: 20px; box-shadow: var(--wpe-shadow-lg); padding: 28px; }
