@@ -111,7 +111,7 @@ def group(*inner, tag='div', align=None, className=None, layout='constrained', c
         a.update(layout='flex', direction=_r('row'), wrap=_r('nowrap' if wrap == 'nowrap' else 'wrap'),
                  justify=_r(JUSTIFY.get(justify, justify)), alignItems=_r(VALIGN.get(valign, valign)), contentWidth='full')
     elif layout == 'grid':
-        a.update(layout='grid', columns=_r(columns), contentWidth='full',
+        a.update(layout='grid', columns=_r(columns), contentWidth='full', swipe={'base': 'off', '560': 'carousel'},
                  cssClass=cls(a['cssClass'], 'wpe-grid-min-%s' % grid_min.replace('px', '') if grid_min else None))
     elif layout == 'stack':
         a.update(layout='flex', direction=_r('column'), alignItems=_r(VALIGN.get(justify, 'stretch')), contentWidth='full')
