@@ -39,13 +39,13 @@ $wpessential_services = array(
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"bx-services","layout":{"type":"grid","columnCount":3}} -->
-<div class="wp-block-group bx-services">
+<!-- wp:group {"className":"wpe-bx-services","layout":{"type":"grid","columnCount":3}} -->
+<div class="wp-block-group wpe-bx-services">
 <?php
 foreach ( $wpessential_services as $wpessential_service ) :
 	?>
-	<!-- wp:group {"className":"is-style-wpe-card wpe-feature-card bx-service","layout":{"type":"default"}} -->
-<div class="wp-block-group is-style-wpe-card wpe-feature-card bx-service"><!-- wp:html -->
+	<!-- wp:group {"className":"is-style-wpe-card wpe-feature-card wpe-bx-service","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-wpe-card wpe-feature-card wpe-bx-service"><!-- wp:html -->
 	<?php echo $wpessential_icons[ $wpessential_service[0] ]; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?>
 <!-- /wp:html -->
 
@@ -57,8 +57,8 @@ foreach ( $wpessential_services as $wpessential_service ) :
 <p class="has-text-muted-color has-text-color"><?php echo esc_html( $wpessential_service[2] ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"bx-service__foot"} -->
-<p class="bx-service__foot"><span><?php echo esc_html( $wpessential_service[3] ); ?></span> <a href="/contact/"><?php esc_html_e( 'Learn more →', 'hi-wpessential' ); ?></a></p>
+<!-- wp:paragraph {"className":"wpe-bx-service__foot"} -->
+<p class="wpe-bx-service__foot"><span><?php echo esc_html( $wpessential_service[3] ); ?></span> <a href="/contact/"><?php esc_html_e( 'Learn more →', 'hi-wpessential' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --><?php endforeach; ?></div>
 <!-- /wp:group --></section>

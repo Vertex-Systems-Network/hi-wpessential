@@ -126,7 +126,7 @@
 	}
 
 	function field( label, ctl, extra ) {
-		return h( 'div', { class: 'wpec-field' }, [ label ? h( 'span', { class: 'wpec-field__label', text: label } ) : null, extra || null, ctl.el ] );
+		return h( 'div', { class: 'wpe-c-field' }, [ label ? h( 'span', { class: 'wpe-c-field__label', text: label } ) : null, extra || null, ctl.el ] );
 	}
 
 	function build( type, ctx ) {
@@ -185,14 +185,14 @@
 	function fontPicker( current, onPick, multi ) {
 		var CATS = [ [ 'all', __( 'All', 'hi-wpessential' ) ], [ 'theme', __( 'In theme', 'hi-wpessential' ) ], [ 'sans', 'Sans' ], [ 'serif', 'Serif' ], [ 'display', 'Display' ], [ 'hand', __( 'Handwriting', 'hi-wpessential' ) ], [ 'mono', 'Mono' ] ];
 		var state = { q: '', cat: 'all', limit: 60 };
-		var list = h( 'div', { class: 'wpec-font__list', role: 'listbox', 'aria-label': __( 'Fonts', 'hi-wpessential' ) } );
-		var search = h( 'input', { type: 'search', class: 'wpec-font__search', placeholder: __( 'Search 1,700+ fonts…', 'hi-wpessential' ), 'aria-label': __( 'Search fonts', 'hi-wpessential' ) } );
-		var chips = h( 'div', { class: 'wpec-font__cats' } );
+		var list = h( 'div', { class: 'wpe-c-font__list', role: 'listbox', 'aria-label': __( 'Fonts', 'hi-wpessential' ) } );
+		var search = h( 'input', { type: 'search', class: 'wpe-c-font__search', placeholder: __( 'Search 1,700+ fonts…', 'hi-wpessential' ), 'aria-label': __( 'Search fonts', 'hi-wpessential' ) } );
+		var chips = h( 'div', { class: 'wpe-c-font__cats' } );
 		CATS.forEach( function ( c ) {
-			chips.appendChild( h( 'button', { type: 'button', class: 'wpec-chip' + ( 'all' === c[ 0 ] ? ' is-active' : '' ), text: c[ 1 ], onclick: function ( e ) {
+			chips.appendChild( h( 'button', { type: 'button', class: 'wpe-c-chip' + ( 'all' === c[ 0 ] ? ' is-active' : '' ), text: c[ 1 ], onclick: function ( e ) {
 				state.cat = c[ 0 ];
 				state.limit = 60;
-				chips.querySelectorAll( '.wpec-chip' ).forEach( function ( b ) {
+				chips.querySelectorAll( '.wpe-c-chip' ).forEach( function ( b ) {
 					b.classList.toggle( 'is-active', b === e.currentTarget );
 				} );
 				draw();
@@ -207,9 +207,9 @@
 			} );
 		}, { root: list } ) : null;
 		function row( value, family, meta, isGoogle ) {
-			var b = h( 'button', { type: 'button', role: 'option', class: 'wpec-font__item' + ( value === current ? ' is-active' : '' ), 'aria-selected': value === current ? 'true' : 'false', 'data-family': family, 'data-google': isGoogle ? '1' : '0', onclick: function () {
+			var b = h( 'button', { type: 'button', role: 'option', class: 'wpe-c-font__item' + ( value === current ? ' is-active' : '' ), 'aria-selected': value === current ? 'true' : 'false', 'data-family': family, 'data-google': isGoogle ? '1' : '0', onclick: function () {
 				onPick( value );
-			} }, [ h( 'span', { class: 'wpec-font__name', style: 'font-family:' + ( isGoogle ? '"' + family + '", system-ui' : fontStack( value ) ), text: family } ), h( 'span', { class: 'wpec-font__meta', text: meta } ) ] );
+			} }, [ h( 'span', { class: 'wpe-c-font__name', style: 'font-family:' + ( isGoogle ? '"' + family + '", system-ui' : fontStack( value ) ), text: family } ), h( 'span', { class: 'wpe-c-font__meta', text: meta } ) ] );
 			if ( observer ) {
 				observer.observe( b );
 			} else {
@@ -247,13 +247,13 @@
 					}
 				} );
 				if ( total > shown ) {
-					list.appendChild( h( 'button', { type: 'button', class: 'wpec-font__more', text: __( 'Show more', 'hi-wpessential' ) + ' (' + ( total - shown ) + ')', onclick: function () {
+					list.appendChild( h( 'button', { type: 'button', class: 'wpe-c-font__more', text: __( 'Show more', 'hi-wpessential' ) + ' (' + ( total - shown ) + ')', onclick: function () {
 						state.limit += 120;
 						draw();
 					} } ) );
 				}
 				if ( ! list.children.length ) {
-					list.appendChild( h( 'p', { class: 'wpec-font__empty', text: __( 'No font found.', 'hi-wpessential' ) } ) );
+					list.appendChild( h( 'p', { class: 'wpe-c-font__empty', text: __( 'No font found.', 'hi-wpessential' ) } ) );
 				}
 			} );
 		}
@@ -266,7 +266,7 @@
 		setTimeout( function () {
 			search.focus();
 		}, 0 );
-		return h( 'div', { class: 'wpec-font__panel' }, [ search, chips, list ] );
+		return h( 'div', { class: 'wpe-c-font__panel' }, [ search, chips, list ] );
 	}
 
 	/* ---------------------------------------------------------------- devices */
@@ -274,11 +274,11 @@
 	// Breakpoint switcher next to a responsive control's label (like Elementor's devices, for every
 	// breakpoint switched on in Layout).
 	function deviceSwitch( ctx ) {
-		var box = h( 'span', { class: 'wpec-devices', role: 'group', 'aria-label': __( 'Breakpoint', 'hi-wpessential' ) } );
+		var box = h( 'span', { class: 'wpe-c-devices', role: 'group', 'aria-label': __( 'Breakpoint', 'hi-wpessential' ) } );
 		var draw = function () {
 			box.innerHTML = '';
 			api.enabled().forEach( function ( k ) {
-				box.appendChild( h( 'button', { type: 'button', class: 'wpec-devices__btn' + ( k === ctx.device() ? ' is-active' : '' ), 'data-device': k, title: BP[ k ].label, 'aria-label': BP[ k ].label, 'aria-pressed': k === ctx.device() ? 'true' : 'false', html: svg( ICONS[ k ] || ICONS.desktop, 13 ), onclick: function () {
+				box.appendChild( h( 'button', { type: 'button', class: 'wpe-c-devices__btn' + ( k === ctx.device() ? ' is-active' : '' ), 'data-device': k, title: BP[ k ].label, 'aria-label': BP[ k ].label, 'aria-pressed': k === ctx.device() ? 'true' : 'false', html: svg( ICONS[ k ] || ICONS.desktop, 13 ), onclick: function () {
 					api.setDevice( k );
 				} } ) );
 			} );
@@ -329,7 +329,7 @@
 	var types = {};
 
 	types.text = function ( ctx ) {
-		var input = h( 'input', { type: 'text', class: 'wpec-input', placeholder: ctx.opt.placeholder || __( 'Theme default', 'hi-wpessential' ), 'aria-label': ctx.label, onchange: function ( e ) {
+		var input = h( 'input', { type: 'text', class: 'wpe-c-input', placeholder: ctx.opt.placeholder || __( 'Theme default', 'hi-wpessential' ), 'aria-label': ctx.label, onchange: function ( e ) {
 			ctx.set( e.target.value );
 		} } );
 		return { el: input, refresh: function () {
@@ -339,10 +339,10 @@
 
 	// Colour: Pickr (bundled, MIT) with opacity, the site palette as swatches, and a text field.
 	types.color = function ( ctx ) {
-		var wrap = h( 'div', { class: 'wpec-color' } );
-		var chip = h( 'button', { type: 'button', class: 'wpec-color__chip', 'aria-label': ( ctx.label || '' ) + ': ' + __( 'choose colour', 'hi-wpessential' ) }, [ h( 'span', { class: 'wpec-color__fill' } ) ] );
+		var wrap = h( 'div', { class: 'wpe-c-color' } );
+		var chip = h( 'button', { type: 'button', class: 'wpe-c-color__chip', 'aria-label': ( ctx.label || '' ) + ': ' + __( 'choose colour', 'hi-wpessential' ) }, [ h( 'span', { class: 'wpe-c-color__fill' } ) ] );
 		var fill = chip.firstChild;
-		var hex = h( 'input', { type: 'text', class: 'wpec-input wpec-color__hex', placeholder: __( 'Theme default', 'hi-wpessential' ), spellcheck: 'false', 'aria-label': ctx.label, onchange: function ( e ) {
+		var hex = h( 'input', { type: 'text', class: 'wpe-c-input wpe-c-color__hex', placeholder: __( 'Theme default', 'hi-wpessential' ), spellcheck: 'false', 'aria-label': ctx.label, onchange: function ( e ) {
 			var v = e.target.value.trim();
 			if ( ! v || /^#?[0-9a-f]{3,8}$/i.test( v ) || /^(rgb|hsl)a?\(/i.test( v ) || /^var\(/.test( v ) ) {
 				ctx.set( v && /^[0-9a-f]{3,8}$/i.test( v ) ? '#' + v : v );
@@ -390,7 +390,7 @@
 			}
 		};
 		chip.addEventListener( 'click', open );
-		wrap.appendChild( h( 'div', { class: 'wpec-color__row' }, [ chip, hex ] ) );
+		wrap.appendChild( h( 'div', { class: 'wpe-c-color__row' }, [ chip, hex ] ) );
 		return { el: wrap, refresh: function () {
 			var v = ctx.get();
 			fill.style.background = v || '';
@@ -408,9 +408,9 @@
 		var o = ctx.opt;
 		var units = o.units || ( o.unit ? [ o.unit ] : [] );
 		var withUnit = units.length > 1;
-		var slider = h( 'input', { type: 'range', class: 'wpec-range__slider', min: o.min, max: o.max, step: o.step || 1, 'aria-label': ctx.label } );
-		var num = h( 'input', { type: 'number', class: 'wpec-input wpec-range__num', min: o.min, max: o.max, step: o.step || 1, placeholder: '–', 'aria-label': ctx.label } );
-		var unitSel = withUnit ? h( 'select', { class: 'wpec-range__units', 'aria-label': __( 'Unit', 'hi-wpessential' ) }, units.map( function ( u ) {
+		var slider = h( 'input', { type: 'range', class: 'wpe-c-range__slider', min: o.min, max: o.max, step: o.step || 1, 'aria-label': ctx.label } );
+		var num = h( 'input', { type: 'number', class: 'wpe-c-input wpe-c-range__num', min: o.min, max: o.max, step: o.step || 1, placeholder: '–', 'aria-label': ctx.label } );
+		var unitSel = withUnit ? h( 'select', { class: 'wpe-c-range__units', 'aria-label': __( 'Unit', 'hi-wpessential' ) }, units.map( function ( u ) {
 			return h( 'option', { value: u, text: u } );
 		} ) ) : null;
 		var read = function () {
@@ -436,8 +436,8 @@
 				write( num.value );
 			} );
 		}
-		var box = h( 'span', { class: 'wpec-range__box' + ( withUnit ? ' has-units' : '' ) }, [ num, withUnit ? unitSel : ( units[ 0 ] ? h( 'span', { class: 'wpec-range__unit', text: units[ 0 ] } ) : null ) ] );
-		return { el: h( 'div', { class: 'wpec-range__row' }, [ slider, box ] ), refresh: function () {
+		var box = h( 'span', { class: 'wpe-c-range__box' + ( withUnit ? ' has-units' : '' ) }, [ num, withUnit ? unitSel : ( units[ 0 ] ? h( 'span', { class: 'wpe-c-range__unit', text: units[ 0 ] } ) : null ) ] );
+		return { el: h( 'div', { class: 'wpe-c-range__row' }, [ slider, box ] ), refresh: function () {
 			var r = read();
 			var v = undefined === r.size || null === r.size ? '' : String( r.size );
 			num.value = v;
@@ -452,28 +452,28 @@
 	};
 
 	types.toggle = function ( ctx ) {
-		var input = h( 'input', { type: 'checkbox', role: 'switch', class: 'wpec-switch__input', 'aria-label': ctx.label, onchange: function ( e ) {
+		var input = h( 'input', { type: 'checkbox', role: 'switch', class: 'wpe-c-switch__input', 'aria-label': ctx.label, onchange: function ( e ) {
 			ctx.set( e.target.checked ? '1' : '' );
 		} } );
-		return { el: h( 'label', { class: 'wpec-switch' }, [ input, h( 'span', { class: 'wpec-switch__track', 'aria-hidden': 'true' } ) ] ), refresh: function () {
+		return { el: h( 'label', { class: 'wpe-c-switch' }, [ input, h( 'span', { class: 'wpe-c-switch__track', 'aria-hidden': 'true' } ) ] ), refresh: function () {
 			var v = ctx.get();
 			input.checked = !! v && '0' !== v && 'false' !== v;
 		} };
 	};
 
 	types.buttons = function ( ctx ) {
-		var group = h( 'div', { class: 'wpec-seg', role: 'radiogroup', 'aria-label': ctx.label } );
+		var group = h( 'div', { class: 'wpe-c-seg', role: 'radiogroup', 'aria-label': ctx.label } );
 		Object.keys( ctx.opt.choices || {} ).forEach( function ( k ) {
 			var c = ctx.opt.choices[ k ];
 			var label = Array.isArray( c ) ? c[ 0 ] : c;
 			var icon = Array.isArray( c ) ? c[ 1 ] : null;
-			group.appendChild( h( 'button', { type: 'button', role: 'radio', class: 'wpec-seg__btn' + ( icon ? ' is-icon' : '' ), 'data-v': k, title: label, 'aria-label': label, text: icon || label, onclick: function () {
+			group.appendChild( h( 'button', { type: 'button', role: 'radio', class: 'wpe-c-seg__btn' + ( icon ? ' is-icon' : '' ), 'data-v': k, title: label, 'aria-label': label, text: icon || label, onclick: function () {
 				ctx.set( k );
 			} } ) );
 		} );
 		return { el: group, refresh: function () {
 			var v = ctx.get();
-			group.querySelectorAll( '.wpec-seg__btn' ).forEach( function ( b ) {
+			group.querySelectorAll( '.wpe-c-seg__btn' ).forEach( function ( b ) {
 				var on = b.getAttribute( 'data-v' ) === v;
 				b.classList.toggle( 'is-active', on );
 				b.setAttribute( 'aria-checked', on ? 'true' : 'false' );
@@ -485,7 +485,7 @@
 	types.choose = types.buttons;
 
 	types.select = function ( ctx ) {
-		var sel = h( 'select', { class: 'wpec-input wpec-select', 'aria-label': ctx.label, onchange: function ( e ) {
+		var sel = h( 'select', { class: 'wpe-c-input wpe-c-select', 'aria-label': ctx.label, onchange: function ( e ) {
 			ctx.set( e.target.value );
 		} }, Object.keys( ctx.opt.choices || {} ).map( function ( k ) {
 			var c = ctx.opt.choices[ k ];
@@ -497,8 +497,8 @@
 	};
 
 	types.font = function ( ctx ) {
-		var btn = h( 'button', { type: 'button', class: 'wpec-font__current', 'aria-expanded': 'false' } );
-		var holder = h( 'div', { class: 'wpec-font__holder' } );
+		var btn = h( 'button', { type: 'button', class: 'wpe-c-font__current', 'aria-expanded': 'false' } );
+		var holder = h( 'div', { class: 'wpe-c-font__holder' } );
 		var close = function () {
 			holder.innerHTML = '';
 			btn.setAttribute( 'aria-expanded', 'false' );
@@ -520,19 +520,19 @@
 				preview( fontLabel( v ), 0 === v.indexOf( 'google:' ) );
 			}
 			btn.innerHTML = '';
-			btn.appendChild( h( 'span', { class: 'wpec-font__sample', style: 'font-family:' + fontStack( v ), text: 'Aa' } ) );
-			btn.appendChild( h( 'span', { class: 'wpec-font__label' }, [ h( 'strong', { text: fontLabel( v ) } ), h( 'small', { text: ! v ? __( 'From the demo', 'hi-wpessential' ) : ( 0 === v.indexOf( 'google:' ) ? 'Google Fonts' : __( 'In theme', 'hi-wpessential' ) ) } ) ] ) );
-			btn.appendChild( h( 'span', { class: 'wpec-font__caret', 'aria-hidden': 'true', text: '▾' } ) );
+			btn.appendChild( h( 'span', { class: 'wpe-c-font__sample', style: 'font-family:' + fontStack( v ), text: 'Aa' } ) );
+			btn.appendChild( h( 'span', { class: 'wpe-c-font__label' }, [ h( 'strong', { text: fontLabel( v ) } ), h( 'small', { text: ! v ? __( 'From the demo', 'hi-wpessential' ) : ( 0 === v.indexOf( 'google:' ) ? 'Google Fonts' : __( 'In theme', 'hi-wpessential' ) ) } ) ] ) );
+			btn.appendChild( h( 'span', { class: 'wpe-c-font__caret', 'aria-hidden': 'true', text: '▾' } ) );
 		} };
 	};
 
 	types.fonts = function ( ctx ) {
-		var chipsBox = h( 'div', { class: 'wpec-fonts__chips' } );
-		var hold = h( 'div', { class: 'wpec-font__holder' } );
+		var chipsBox = h( 'div', { class: 'wpe-c-fonts__chips' } );
+		var hold = h( 'div', { class: 'wpe-c-font__holder' } );
 		var list = function () {
 			return ctx.get().split( '|' ).filter( Boolean );
 		};
-		var add = h( 'button', { type: 'button', class: 'wpec-btn', text: '+ ' + __( 'Add a Google font', 'hi-wpessential' ), onclick: function () {
+		var add = h( 'button', { type: 'button', class: 'wpe-c-btn', text: '+ ' + __( 'Add a Google font', 'hi-wpessential' ), onclick: function () {
 			if ( hold.firstChild ) {
 				hold.innerHTML = '';
 				return;
@@ -549,7 +549,7 @@
 			chipsBox.innerHTML = '';
 			list().forEach( function ( f ) {
 				preview( f, true );
-				chipsBox.appendChild( h( 'span', { class: 'wpec-fonts__chip', style: 'font-family:"' + f + '", system-ui' }, [ f, h( 'button', { type: 'button', 'aria-label': __( 'Remove', 'hi-wpessential' ) + ' ' + f, text: '×', onclick: function () {
+				chipsBox.appendChild( h( 'span', { class: 'wpe-c-fonts__chip', style: 'font-family:"' + f + '", system-ui' }, [ f, h( 'button', { type: 'button', 'aria-label': __( 'Remove', 'hi-wpessential' ) + ' ' + f, text: '×', onclick: function () {
 					ctx.set( list().filter( function ( x ) {
 						return x !== f;
 					} ).join( '|' ) );
@@ -563,8 +563,8 @@
 		var units = ctx.opt.units || [ 'px' ];
 		var linked = true;
 		var inputs = {};
-		var row = h( 'div', { class: 'wpec-dims' } );
-		var unitSel = h( 'select', { class: 'wpec-dims__unit', 'aria-label': __( 'Unit', 'hi-wpessential' ) }, units.map( function ( u ) {
+		var row = h( 'div', { class: 'wpe-c-dims' } );
+		var unitSel = h( 'select', { class: 'wpe-c-dims__unit', 'aria-label': __( 'Unit', 'hi-wpessential' ) }, units.map( function ( u ) {
 			return h( 'option', { value: u, text: u } );
 		} ) );
 		var write = function () {
@@ -579,7 +579,7 @@
 			ctx.set( any ? JSON.stringify( o ) : '' );
 		};
 		[ [ 'top', __( 'Top', 'hi-wpessential' ) ], [ 'right', __( 'Right', 'hi-wpessential' ) ], [ 'bottom', __( 'Bottom', 'hi-wpessential' ) ], [ 'left', __( 'Left', 'hi-wpessential' ) ] ].forEach( function ( s ) {
-			inputs[ s[ 0 ] ] = h( 'input', { type: 'number', class: 'wpec-dims__input', 'aria-label': s[ 1 ], oninput: function ( e ) {
+			inputs[ s[ 0 ] ] = h( 'input', { type: 'number', class: 'wpe-c-dims__input', 'aria-label': s[ 1 ], oninput: function ( e ) {
 				if ( linked ) {
 					Object.keys( inputs ).forEach( function ( k ) {
 						inputs[ k ].value = e.target.value;
@@ -587,16 +587,16 @@
 				}
 				write();
 			} } );
-			row.appendChild( h( 'label', { class: 'wpec-dims__side' }, [ inputs[ s[ 0 ] ], h( 'span', { text: s[ 1 ] } ) ] ) );
+			row.appendChild( h( 'label', { class: 'wpe-c-dims__side' }, [ inputs[ s[ 0 ] ], h( 'span', { text: s[ 1 ] } ) ] ) );
 		} );
-		var link = h( 'button', { type: 'button', class: 'wpec-dims__link is-linked', 'aria-pressed': 'true', title: __( 'Link values together', 'hi-wpessential' ), 'aria-label': __( 'Link values together', 'hi-wpessential' ), html: svg( '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>', 14 ), onclick: function () {
+		var link = h( 'button', { type: 'button', class: 'wpe-c-dims__link is-linked', 'aria-pressed': 'true', title: __( 'Link values together', 'hi-wpessential' ), 'aria-label': __( 'Link values together', 'hi-wpessential' ), html: svg( '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>', 14 ), onclick: function () {
 			linked = ! linked;
 			link.classList.toggle( 'is-linked', linked );
 			link.setAttribute( 'aria-pressed', linked ? 'true' : 'false' );
 		} } );
 		unitSel.addEventListener( 'change', write );
 		row.appendChild( link );
-		return { el: h( 'div', null, [ h( 'div', { class: 'wpec-dims__head' }, [ unitSel ] ), row ] ), refresh: function () {
+		return { el: h( 'div', null, [ h( 'div', { class: 'wpe-c-dims__head' }, [ unitSel ] ), row ] ), refresh: function () {
 			var v = parse( ctx.get() );
 			[ 'top', 'right', 'bottom', 'left' ].forEach( function ( s ) {
 				inputs[ s ].value = undefined === v[ s ] ? '' : v[ s ];
@@ -610,9 +610,9 @@
 	// Popover helper: a pencil button that opens a group of controls (Elementor's POPOVER_TOGGLE).
 	function popover( ctx, summary, makeBody ) {
 		var body = null;
-		var panel = h( 'div', { class: 'wpec-popover', hidden: true } );
-		var label = h( 'span', { class: 'wpec-popover__summary' } );
-		var btn = h( 'button', { type: 'button', class: 'wpec-popover__toggle', 'aria-expanded': 'false', 'aria-label': __( 'Edit', 'hi-wpessential' ) + ' ' + ( ctx.label || '' ), html: svg( '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4Z"/>', 14 ), onclick: function () {
+		var panel = h( 'div', { class: 'wpe-c-popover', hidden: true } );
+		var label = h( 'span', { class: 'wpe-c-popover__summary' } );
+		var btn = h( 'button', { type: 'button', class: 'wpe-c-popover__toggle', 'aria-expanded': 'false', 'aria-label': __( 'Edit', 'hi-wpessential' ) + ' ' + ( ctx.label || '' ), html: svg( '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4Z"/>', 14 ), onclick: function () {
 			if ( ! body ) {
 				body = makeBody();
 				panel.appendChild( body.el );
@@ -623,7 +623,7 @@
 				body.refresh();
 			}
 		} } );
-		return { el: h( 'div', { class: 'wpec-popover-wrap' }, [ h( 'div', { class: 'wpec-popover__bar' }, [ label, btn ] ), panel ] ), refresh: function () {
+		return { el: h( 'div', { class: 'wpe-c-popover-wrap' }, [ h( 'div', { class: 'wpe-c-popover__bar' }, [ label, btn ] ), panel ] ), refresh: function () {
 			label.textContent = summary();
 			if ( body && ! panel.hidden ) {
 				body.refresh();
@@ -632,7 +632,7 @@
 	}
 
 	function group( parts ) {
-		var el = h( 'div', { class: 'wpec-group' } );
+		var el = h( 'div', { class: 'wpe-c-group' } );
 		parts.forEach( function ( p ) {
 			el.appendChild( p.node );
 		} );
@@ -653,8 +653,8 @@
 		} else {
 			ctl = build( type, c );
 		}
-		var head = h( 'div', { class: 'wpec-field__head' }, [ h( 'span', { class: 'wpec-field__label', text: label } ), devices ] );
-		return { node: h( 'div', { class: 'wpec-field' }, [ head, ctl.el ] ), ctl: ctl };
+		var head = h( 'div', { class: 'wpe-c-field__head' }, [ h( 'span', { class: 'wpe-c-field__label', text: label } ), devices ] );
+		return { node: h( 'div', { class: 'wpe-c-field' }, [ head, ctl.el ] ), ctl: ctl };
 	}
 
 	var WEIGHTS = { '': __( 'Default', 'hi-wpessential' ), 100: '100', 200: '200', 300: '300 · Light', 400: '400 · Regular', 500: '500 · Medium', 600: '600 · Semibold', 700: '700 · Bold', 800: '800', 900: '900 · Black' };
@@ -718,7 +718,7 @@
 
 	// Gradient: Elementor's background gradient, with a live preview bar.
 	types.gradient = function ( ctx ) {
-		var bar = h( 'div', { class: 'wpec-gradient__bar' } );
+		var bar = h( 'div', { class: 'wpe-c-gradient__bar' } );
 		var g = group( [
 			part( ctx, 'type', 'choose', { choices: { '': [ __( 'Linear', 'hi-wpessential' ), __( 'Linear', 'hi-wpessential' ) ], radial: [ __( 'Radial', 'hi-wpessential' ), __( 'Radial', 'hi-wpessential' ) ] } }, __( 'Type', 'hi-wpessential' ) ),
 			part( ctx, 'from', 'color', {}, __( 'First colour', 'hi-wpessential' ) ),
@@ -728,7 +728,7 @@
 			part( ctx, 'angle', 'range', { min: 0, max: 360, step: 5, unit: 'deg' }, __( 'Angle (linear)', 'hi-wpessential' ) ),
 			part( ctx, 'position', 'select', { choices: { '': __( 'Center', 'hi-wpessential' ), 'top left': 'Top left', top: 'Top', 'top right': 'Top right', left: 'Left', right: 'Right', 'bottom left': 'Bottom left', bottom: 'Bottom', 'bottom right': 'Bottom right' } }, __( 'Position (radial)', 'hi-wpessential' ) ),
 		] );
-		return { el: h( 'div', { class: 'wpec-gradient' }, [ bar, g.el ] ), refresh: function () {
+		return { el: h( 'div', { class: 'wpe-c-gradient' }, [ bar, g.el ] ), refresh: function () {
 			var css = gradientCss( parse( ctx.get() ) );
 			bar.style.background = css || 'repeating-conic-gradient(#ddd 0 25%, #fff 0 50%) 0 0 / 12px 12px';
 			bar.textContent = css ? '' : __( 'Theme default', 'hi-wpessential' );
@@ -738,7 +738,7 @@
 
 	// Media: pick an image from the Media Library (Elementor's MEDIA).
 	types.media = function ( ctx ) {
-		var box = h( 'div', { class: 'wpec-media' } );
+		var box = h( 'div', { class: 'wpe-c-media' } );
 		var frame = null;
 		var open = function () {
 			if ( ! window.wp || ! window.wp.media ) {
@@ -757,12 +757,12 @@
 			var v = parse( ctx.get() );
 			box.innerHTML = '';
 			if ( v.url ) {
-				box.appendChild( h( 'button', { type: 'button', class: 'wpec-media__thumb', onclick: open, 'aria-label': __( 'Replace image', 'hi-wpessential' ) }, [ h( 'img', { src: v.url, alt: '' } ) ] ) );
-				box.appendChild( h( 'div', { class: 'wpec-media__actions' }, [ h( 'button', { type: 'button', class: 'wpec-link', text: __( 'Replace', 'hi-wpessential' ), onclick: open } ), h( 'button', { type: 'button', class: 'wpec-link is-danger', text: __( 'Remove', 'hi-wpessential' ), onclick: function () {
+				box.appendChild( h( 'button', { type: 'button', class: 'wpe-c-media__thumb', onclick: open, 'aria-label': __( 'Replace image', 'hi-wpessential' ) }, [ h( 'img', { src: v.url, alt: '' } ) ] ) );
+				box.appendChild( h( 'div', { class: 'wpe-c-media__actions' }, [ h( 'button', { type: 'button', class: 'wpe-c-link', text: __( 'Replace', 'hi-wpessential' ), onclick: open } ), h( 'button', { type: 'button', class: 'wpe-c-link is-danger', text: __( 'Remove', 'hi-wpessential' ), onclick: function () {
 					ctx.set( '' );
 				} } ) ] ) );
 			} else {
-				box.appendChild( h( 'button', { type: 'button', class: 'wpec-media__drop', onclick: open, html: svg( '<path d="M12 16V4m0 0-5 5m5-5 5 5M4 20h16"/>', 20 ) + '<span>' + __( 'Upload or choose an image', 'hi-wpessential' ) + '</span>' } ) );
+				box.appendChild( h( 'button', { type: 'button', class: 'wpe-c-media__drop', onclick: open, html: svg( '<path d="M12 16V4m0 0-5 5m5-5 5 5M4 20h16"/>', 20 ) + '<span>' + __( 'Upload or choose an image', 'hi-wpessential' ) + '</span>' } ) );
 			}
 		} };
 	};
@@ -780,7 +780,7 @@
 		] );
 		var grad = types.gradient( child( ctx, 'gradient', {}, __( 'Gradient', 'hi-wpessential' ) ) );
 		var gradBox = h( 'div', null, [ grad.el ] );
-		return { el: h( 'div', { class: 'wpec-background' }, [ typeCtl.node, classic.el, gradBox ] ), refresh: function () {
+		return { el: h( 'div', { class: 'wpe-c-background' }, [ typeCtl.node, classic.el, gradBox ] ), refresh: function () {
 			var isGrad = 'gradient' === parse( ctx.get() ).type;
 			typeCtl.ctl.refresh();
 			classic.el.hidden = isGrad;
@@ -791,7 +791,7 @@
 
 	// Breakpoints: pick the screen sizes responsive options show (desktop always on).
 	types.breakpoints = function ( ctx ) {
-		var list = h( 'div', { class: 'wpec-bps' } );
+		var list = h( 'div', { class: 'wpe-c-bps' } );
 		BP_ORDER.forEach( function ( k ) {
 			var input = h( 'input', { type: 'checkbox', value: k, disabled: 'desktop' === k, onchange: function () {
 				var on = [];
@@ -802,7 +802,7 @@
 				} );
 				ctx.set( on.length ? on.join( '|' ) : '-' );
 			} } );
-			list.appendChild( h( 'label', { class: 'wpec-bps__item' + ( 'desktop' === k ? ' is-fixed' : '' ) }, [ input, h( 'span', { class: 'wpec-bps__icon', html: svg( ICONS[ k ] || ICONS.desktop, 18 ) } ), h( 'span', { class: 'wpec-bps__label', text: BP[ k ].label } ) ] ) );
+			list.appendChild( h( 'label', { class: 'wpe-c-bps__item' + ( 'desktop' === k ? ' is-fixed' : '' ) }, [ input, h( 'span', { class: 'wpe-c-bps__icon', html: svg( ICONS[ k ] || ICONS.desktop, 18 ) } ), h( 'span', { class: 'wpe-c-bps__label', text: BP[ k ].label } ) ] ) );
 		} );
 		return { el: list, refresh: function () {
 			var on = api.parseOn( ctx.get() );

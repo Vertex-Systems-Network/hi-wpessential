@@ -33,18 +33,18 @@ $wpessential_demos = array(
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"bx-demos","layout":{"type":"grid","columnCount":3}} -->
-<div class="wp-block-group bx-demos">
+<!-- wp:group {"className":"wpe-bx-demos","layout":{"type":"grid","columnCount":3}} -->
+<div class="wp-block-group wpe-bx-demos">
 <?php
 foreach ( $wpessential_demos as $wpessential_demo ) :
 	?>
-	<!-- wp:group {"className":"bx-demo","layout":{"type":"default"}} -->
-<div class="wp-block-group bx-demo"><!-- wp:image {"sizeSlug":"full","className":"bx-demo__img"} -->
-<figure class="wp-block-image size-full bx-demo__img"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/' . $wpessential_demo[0] . '.webp' ) ); ?>" alt="<?php echo esc_attr( $wpessential_demo[1] ); ?>"/></figure>
+	<!-- wp:group {"className":"wpe-bx-demo","layout":{"type":"default"}} -->
+<div class="wp-block-group wpe-bx-demo"><!-- wp:image {"sizeSlug":"full","className":"wpe-bx-demo__img"} -->
+<figure class="wp-block-image size-full wpe-bx-demo__img"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/' . $wpessential_demo[0] . '.webp' ) ); ?>" alt="<?php echo esc_attr( $wpessential_demo[1] ); ?>"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"className":"bx-demo__meta"} -->
-<p class="bx-demo__meta"><strong><?php echo esc_html( $wpessential_demo[1] ); ?></strong> <span class="bx-badge <?php echo esc_attr( $wpessential_demo[3] ); ?>"><?php echo esc_html( $wpessential_demo[2] ); ?></span></p>
+<!-- wp:paragraph {"className":"wpe-bx-demo__meta"} -->
+<p class="wpe-bx-demo__meta"><strong><?php echo esc_html( $wpessential_demo[1] ); ?></strong> <span class="wpe-bx-badge <?php echo esc_attr( $wpessential_demo[3] ); ?>"><?php echo esc_html( $wpessential_demo[2] ); ?></span></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --><?php endforeach; ?></div>
 <!-- /wp:group --></section>

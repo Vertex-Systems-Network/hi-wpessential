@@ -184,8 +184,8 @@ def post_html(body):
 
 # Gutenberg -----------------------------------------------------------------------------
 
-LOGO = ('<a class="ess-logo" href="{{home:}}" aria-label="WPEssential home"><span class="ess-logo__mark" aria-hidden="true">W<i></i></span>'
-        '<span class="ess-logo__text"><b>wpessential</b><small>by Vertex Systems Network (Pvt.) Ltd.</small></span></a>')
+LOGO = ('<a class="wpe-ess-logo" href="{{home:}}" aria-label="WPEssential home"><span class="wpe-ess-logo__mark" aria-hidden="true">W<i></i></span>'
+        '<span class="wpe-ess-logo__text"><b>wpessential</b><small>by Vertex Systems Network (Pvt.) Ltd.</small></span></a>')
 SOCIAL_ICONS = {'Facebook': 'f', 'Instagram': 'ig', 'X': 'x', 'YouTube': 'yt', 'LinkedIn': 'in', 'GitHub': 'gh'}
 
 
@@ -194,11 +194,11 @@ def g_header():
                            b.el('menu', {'alignment': {'base': 'center'}}),
                            b.group(b.el('search', {'mode': 'expand', 'buttonStyle': 'icon', 'placeholder': 'Search themes, demos and docs…'}),
                                    b.el('mini-cart', {}),
-                                   b.p('<a href="{{woo:myaccount}}">Sign in</a>', className='ess-signin wpe-signin'),
+                                   b.p('<a href="{{woo:myaccount}}">Sign in</a>', className='wpe-ess-signin wpe-signin'),
                                    b.buttons(arrow('Get Pro', '{{page:pricing}}')),
-                                   layout='flex', wrap='nowrap', className='wpe-header-actions ess-actions'),
+                                   layout='flex', wrap='nowrap', className='wpe-header-actions wpe-ess-actions'),
                            className='wpe-header__inner', layout='flex', wrap='nowrap', justify='space-between'),
-                   tag='header', className='wpe-header ess-header', content='1200px')
+                   tag='header', className='wpe-header wpe-ess-header', content='1200px')
 
 
 def g_footer():
@@ -206,18 +206,18 @@ def g_footer():
             ('Resources', [('Documentation', '{{page:docs}}'), ('Blog', '{{page:blog}}'), ('Changelog', '{{page:changelog}}'), ('Roadmap', '{{page:roadmap}}')]),
             ('Company', [('About', '{{page:about}}'), ('Vertex Systems Network (Pvt.) Ltd.', '{{page:about}}'), ('Services', '{{page:services}}'), ('Care plans', '{{page:svc-care-plans}}'), ('Contact', '{{page:contact}}')]),
             ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refund policy', '{{page:refund-policy}}')])]
-    band = b.group(b.group(over('Newsletter', tone='orange'), b.h('New themes and demo drops, monthly.', level=3, className='ess-band__title'),
-                           b.p('One email a month. Release notes, freebies and discounts. Unsubscribe anytime.', className='ess-band__text'), layout='default'),
+    band = b.group(b.group(over('Newsletter', tone='orange'), b.h('New themes and demo drops, monthly.', level=3, className='wpe-ess-band__title'),
+                           b.p('One email a month. Release notes, freebies and discounts. Unsubscribe anytime.', className='wpe-ess-band__text'), layout='default'),
                    b.el('forms', {'formId': '{{form:newsletter}}', 'showTitle': False}),
-                   layout='flex', wrap='wrap', justify='space-between', valign='center', className='ess-news')
-    social = '<p class="ess-social">%s</p>' % ''.join('<a href="%s" aria-label="%s" class="ess-social__%s"></a>' % (u, n, SOCIAL_ICONS[n]) for n, u in SOCIAL)
-    brand = b.column(html(LOGO), b.p('Premium WordPress themes and one-click demos for Gutenberg and Elementor.', className='ess-foot__about'),
-                     html(social), b.p('@wpessential on every network', className='ess-foot__small'), width='38%')
-    links = [b.column(b.h(t, level=2, className='ess-foot__h'), b.ul(['<a href="%s">%s</a>' % (h_, l) for l, h_ in items], className='ess-foot__list')) for t, items in cols]
+                   layout='flex', wrap='wrap', justify='space-between', valign='center', className='wpe-ess-news')
+    social = '<p class="wpe-ess-social">%s</p>' % ''.join('<a href="%s" aria-label="%s" class="wpe-ess-social__%s"></a>' % (u, n, SOCIAL_ICONS[n]) for n, u in SOCIAL)
+    brand = b.column(html(LOGO), b.p('Premium WordPress themes and one-click demos for Gutenberg and Elementor.', className='wpe-ess-foot__about'),
+                     html(social), b.p('@wpessential on every network', className='wpe-ess-foot__small'), width='38%')
+    links = [b.column(b.h(t, level=2, className='wpe-ess-foot__h'), b.ul(['<a href="%s">%s</a>' % (h_, l) for l, h_ in items], className='wpe-ess-foot__list')) for t, items in cols]
     policies = ''.join('<a href="{{page:%s}}">%s</a>' % (k, t) for k, t in [('privacy-policy', 'Privacy'), ('terms', 'Terms'), ('refund-policy', 'Refunds'), ('cookie-policy', 'Cookies')])
-    bottom = b.group(b.p('© 2026 WPEssential. A <strong>Vertex Systems Network (Pvt.) Ltd.</strong> company'), html('<p class="ess-foot__legal">%s</p>' % policies),
-                     layout='flex', wrap='wrap', justify='space-between', className='ess-foot__bottom')
-    return b.group(band, b.columns(brand, *links, className='ess-foot__cols'), bottom, tag='footer', className='wpe-footer ess-footer', content='1200px')
+    bottom = b.group(b.p('© 2026 WPEssential. A <strong>Vertex Systems Network (Pvt.) Ltd.</strong> company'), html('<p class="wpe-ess-foot__legal">%s</p>' % policies),
+                     layout='flex', wrap='wrap', justify='space-between', className='wpe-ess-foot__bottom')
+    return b.group(band, b.columns(brand, *links, className='wpe-ess-foot__cols'), bottom, tag='footer', className='wpe-footer wpe-ess-footer', content='1200px')
 
 
 def g_title(over, title, lead):
@@ -238,7 +238,7 @@ def plan_buy(pl):
 
 def g_plan_cards(period):
     return b.group(*[plan_card(pl, PERIOD_SUFFIX[period], plan_buy(pl)) for pl in PLANS if pl['period'] == period],
-                   layout='grid', columns=3, grid_min='17rem', className='ess-grid ess-plans')
+                   layout='grid', columns=3, grid_min='17rem', className='wpe-ess-grid wpe-ess-plans')
 
 
 def e_plan_cards(period):
@@ -282,7 +282,7 @@ DEMO_CARDS = [  # (product key, name, badge(s), price label, text, image, catego
 DEMO_CATS = [('business', 'Business'), ('shop', 'Shop'), ('fashion', 'Fashion'), ('events', 'Events')]
 
 
-def demo_filter(cls='ess-cats'):
+def demo_filter(cls='wpe-ess-cats'):
     """Category chips that filter the demo cards on the page (assets/js/components.js); counts come from DEMO_CARDS."""
     count = lambda k: sum(1 for d in DEMO_CARDS if k in d[6])
     chips = [chip('All <i>%d</i>' % len(DEMO_CARDS), '#all', 'is-on')] + [chip('%s <i>%d</i>' % (t, count(k)), '#' + k) for k, t in DEMO_CATS if count(k)]
@@ -292,150 +292,150 @@ DOC_ICONS = ['book', 'layers', 'palette', 'key', 'globe', 'code']
 
 
 def g_demo_card(key, name, badges, price, text, image, cats=()):
-    badge = ''.join('<span class="ess-badge %s">%s</span>' % ('ess-badge--orange' if t == 'FREE' else '', t) for t in badges)
+    badge = ''.join('<span class="wpe-ess-badge %s">%s</span>' % ('wpe-ess-badge--orange' if t == 'FREE' else '', t) for t in badges)
     return b.group(
-        html('<a class="ess-demo__shot" href="{{page:%s}}"><img src="{{media:%s}}" alt="%s demo" loading="lazy"><span class="ess-demo__badges">%s</span></a>' % (key, image, name, badge)),
-        b.group(b.group(b.h('<a href="{{page:%s}}">%s</a>' % (key, name), level=3, className='ess-demo__name'), b.p(price, className='ess-demo__price'),
+        html('<a class="wpe-ess-demo__shot" href="{{page:%s}}"><img src="{{media:%s}}" alt="%s demo" loading="lazy"><span class="wpe-ess-demo__badges">%s</span></a>' % (key, image, name, badge)),
+        b.group(b.group(b.h('<a href="{{page:%s}}">%s</a>' % (key, name), level=3, className='wpe-ess-demo__name'), b.p(price, className='wpe-ess-demo__price'),
                         layout='flex', justify='space-between', valign='center'),
-                b.p(text, className='ess-demo__text'),
-                html('<div class="ess-demo__meta"><span>Gutenberg &amp; Elementor</span><span class="ess-gb" title="Gutenberg">G</span><span class="ess-gb" title="Elementor">E</span></div>'),
-                layout='default', className='ess-demo__body'),
-        layout='default', className=' '.join(['ess-demo', 'wpe-filter-item'] + ['wpe-cat-' + c for c in cats]))
+                b.p(text, className='wpe-ess-demo__text'),
+                html('<div class="wpe-ess-demo__meta"><span>Gutenberg &amp; Elementor</span><span class="wpe-ess-gb" title="Gutenberg">G</span><span class="wpe-ess-gb" title="Elementor">E</span></div>'),
+                layout='default', className='wpe-ess-demo__body'),
+        layout='default', className=' '.join(['wpe-ess-demo', 'wpe-filter-item'] + ['wpe-cat-' + c for c in cats]))
 
 
 def g_plugin_card(icon, name, text, meta, url, first=False):
     return b.group(
-        b.group(ico({'fas fa-layer-group': 'layers', 'fas fa-icons': 'sparkle', 'fas fa-code': 'code'}[icon]), b.p('Free', className='ess-badge ess-badge--soft'),
+        b.group(ico({'fas fa-layer-group': 'layers', 'fas fa-icons': 'sparkle', 'fas fa-code': 'code'}[icon]), b.p('Free', className='wpe-ess-badge wpe-ess-badge--soft'),
                 layout='flex', justify='space-between', valign='top'),
-        b.h(name, level=3, className='ess-card__title'), b.p(text, className='ess-card__text'),
-        b.p('Free · WordPress.org <code>%s</code>' % meta, className='ess-card__meta'),
+        b.h(name, level=3, className='wpe-ess-card__title'), b.p(text, className='wpe-ess-card__text'),
+        b.p('Free · WordPress.org <code>%s</code>' % meta, className='wpe-ess-card__meta'),
         b.group(b.p('<strong>Free</strong>'), b.buttons(arrow('Download', url, style=None if first else 'wpe-outline')),
-                layout='flex', justify='space-between', valign='center', className='ess-card__foot'),
-        layout='default', className=b.cls('ess-card', 'is-active' if first else None))
+                layout='flex', justify='space-between', valign='center', className='wpe-ess-card__foot'),
+        layout='default', className=b.cls('wpe-ess-card', 'is-active' if first else None))
 
 
 def g_home():
     hero = b.group(
-        html('<p class="ess-pill"><a href="{{page:p-pulse}}"><b>NEW</b> New demo: Pulse for conferences and events <span aria-hidden="true">→</span></a></p>'),
-        b.h('Launch a WordPress site <span class="ess-grad">in minutes, not weeks.</span>', level=1, align='center', className='ess-hero__title'),
-        b.p('Premium themes and one-click demos — native for Gutenberg and Elementor. Search, preview live, import and launch.', align='center', className='ess-hero__lead'),
-        g_search('Search themes, demos and docs…', 'ess-hero__search'),
-        html('<p class="ess-hero__popular"><span>Popular:</span>%s</p>' % ''.join(
+        html('<p class="wpe-ess-pill"><a href="{{page:p-pulse}}"><b>NEW</b> New demo: Pulse for conferences and events <span aria-hidden="true">→</span></a></p>'),
+        b.h('Launch a WordPress site <span class="wpe-ess-grad">in minutes, not weeks.</span>', level=1, align='center', className='wpe-ess-hero__title'),
+        b.p('Premium themes and one-click demos — native for Gutenberg and Elementor. Search, preview live, import and launch.', align='center', className='wpe-ess-hero__lead'),
+        g_search('Search themes, demos and docs…', 'wpe-ess-hero__search'),
+        html('<p class="wpe-ess-hero__popular"><span>Popular:</span>%s</p>' % ''.join(
             chip(t, '{{page:%s}}' % k) for t, k in [('Fashion store', 'p-maison'), ('Events', 'p-pulse'), ('Business', 'p-base'), ('Pricing', 'pricing'), ('Services', 'services'), ('Docs', 'docs')])),
-        html('<ul class="ess-hero__stats">%s</ul>' % ''.join('<li><b>%s</b><span>%s</span></li>' % x for x in
+        html('<ul class="wpe-ess-hero__stats">%s</ul>' % ''.join('<li><b>%s</b><span>%s</span></li>' % x for x in
                                                             [('3', 'ready demos'), ('2', 'native builders'), ('20', 'languages'), ('8', 'breakpoints')])),
-        html('<div class="ess-hero__shots"><img src="{{media:demo-pulse}}" alt="Pulse demo" class="is-left"><img src="{{media:demo-maison}}" alt="Maison demo" class="is-mid"><img src="{{media:demo-base}}" alt="Base demo" class="is-right"></div>'),
-        tag='section', align='full', className='ess-hero', layout='constrained', content='1200px')
+        html('<div class="wpe-ess-hero__shots"><img src="{{media:demo-pulse}}" alt="Pulse demo" class="is-left"><img src="{{media:demo-maison}}" alt="Maison demo" class="is-mid"><img src="{{media:demo-base}}" alt="Base demo" class="is-right"></div>'),
+        tag='section', align='full', className='wpe-ess-hero', layout='constrained', content='1200px')
     cats = b.group(demo_filter(),
-        tag='section', align='full', className='ess-section ess-section--cats', layout='constrained', content='1200px')
+        tag='section', align='full', className='wpe-ess-section wpe-ess-section--cats', layout='constrained', content='1200px')
     demos = b.group(
         head('Demo library', 'Pick a demo. Preview it live. Import it in one click.',
              'Every demo ships for Gutenberg and Elementor, with real content, images, hovers and dark mode.',
              action=arrow('Browse all demos', '{{page:demos}}', style='wpe-outline')),
-        b.group(*[g_demo_card(*d) for d in DEMO_CARDS], layout='grid', columns=3, grid_min='18rem', className='ess-grid'),
-        tag='section', align='full', className='ess-section', layout='constrained', content='1200px')
+        b.group(*[g_demo_card(*d) for d in DEMO_CARDS], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid'),
+        tag='section', align='full', className='wpe-ess-section', layout='constrained', content='1200px')
     theme = b.group(
         head('Theme & plugins', 'One theme. Every niche. Demos that do the heavy lifting.',
              'Hi WPEssential is a fast block theme with a style for every demo. Our free plugins on WordPress.org add theme building, icons and Elementor dynamic widgets.'),
         b.group(b.columns(
-            b.column(html('<p class="ess-badges"><span class="ess-badge ess-badge--orange">Popular</span><span class="ess-badge ess-badge--soft">Free</span></p>'),
-                     b.h('Hi WPEssential theme', level=3, className='ess-feature__title'),
-                     b.p('A lightweight block theme with 8 breakpoints, light &amp; dark, 20 languages and RTL, built-in SEO and a dashboard that imports any demo in one click.', className='ess-feature__text'),
-                     b.ul(['Gutenberg-native and Elementor-native demos', 'WPML &amp; Polylang ready, 20 languages', 'Lighthouse-ready performance and SEO'], className='ess-check ess-check--light'),
+            b.column(html('<p class="wpe-ess-badges"><span class="wpe-ess-badge wpe-ess-badge--orange">Popular</span><span class="wpe-ess-badge wpe-ess-badge--soft">Free</span></p>'),
+                     b.h('Hi WPEssential theme', level=3, className='wpe-ess-feature__title'),
+                     b.p('A lightweight block theme with 8 breakpoints, light &amp; dark, 20 languages and RTL, built-in SEO and a dashboard that imports any demo in one click.', className='wpe-ess-feature__text'),
+                     b.ul(['Gutenberg-native and Elementor-native demos', 'WPML &amp; Polylang ready, 20 languages', 'Lighthouse-ready performance and SEO'], className='wpe-ess-check wpe-ess-check--light'),
                      b.buttons(arrow('Get the theme', '{{page:pricing}}'), b.button('Live demo', '{{page:demos}}', style='wpe-ghost-light')),
                      width='44%', valign='center'),
-            b.column(b.image('shot-library', 'The WPEssential Demo Library', className='ess-feature__shot'), width='56%', valign='center'),
-            valign='center', className='ess-feature__cols'), className='ess-feature', layout='default'),
-        b.group(*[g_plugin_card(*pl, first=(i == 0)) for i, pl in enumerate(PLUGINS)], layout='grid', columns=3, grid_min='18rem', className='ess-grid'),
-        tag='section', align='full', className='ess-section ess-section--alt', layout='constrained', content='1200px')
+            b.column(b.image('shot-library', 'The WPEssential Demo Library', className='wpe-ess-feature__shot'), width='56%', valign='center'),
+            valign='center', className='wpe-ess-feature__cols'), className='wpe-ess-feature', layout='default'),
+        b.group(*[g_plugin_card(*pl, first=(i == 0)) for i, pl in enumerate(PLUGINS)], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid'),
+        tag='section', align='full', className='wpe-ess-section wpe-ess-section--alt', layout='constrained', content='1200px')
     steps = [('search', 'Find your demo', 'Search the library by niche, builder or style, and click through the live preview.'),
              ('layers', 'Choose your builder', 'Pick Gutenberg or Elementor. Required plugins install themselves.'),
              ('download', 'Import in one click', 'Pages, products, menus, images and styles arrive in about two minutes. Undo anytime.')]
     how = b.group(
         head('How it works', 'From zero to a launched site in three steps.', align='center'),
         b.columns(
-            b.column(*[b.group(ico(i_, 'soft'), b.group(b.h('<span>0%d</span> %s' % (n + 1, t), level=3, className='ess-step__title'), b.p(d, className='ess-step__text'), layout='default'),
-                               layout='flex', valign='top', className=b.cls('ess-step', 'is-active' if n == 2 else None)) for n, (i_, t, d) in enumerate(steps)],
+            b.column(*[b.group(ico(i_, 'soft'), b.group(b.h('<span>0%d</span> %s' % (n + 1, t), level=3, className='wpe-ess-step__title'), b.p(d, className='wpe-ess-step__text'), layout='default'),
+                               layout='flex', valign='top', className=b.cls('wpe-ess-step', 'is-active' if n == 2 else None)) for n, (i_, t, d) in enumerate(steps)],
                      width='42%', valign='center'),
-            b.column(b.group(b.image('shot-import', 'A finished import in the WPEssential wizard', className='ess-panel__shot'),
-                             b.p('Real WPEssential import · every step logged · 0 errors', className='ess-panel__note'), className='ess-panel', layout='default'),
+            b.column(b.group(b.image('shot-import', 'A finished import in the WPEssential wizard', className='wpe-ess-panel__shot'),
+                             b.p('Real WPEssential import · every step logged · 0 errors', className='wpe-ess-panel__note'), className='wpe-ess-panel', layout='default'),
                      width='58%', valign='center'),
-            valign='center', className='ess-gap'),
-        tag='section', align='full', className='ess-section', layout='constrained', content='1200px')
+            valign='center', className='wpe-ess-gap'),
+        tag='section', align='full', className='wpe-ess-section', layout='constrained', content='1200px')
     svc = [x for x in SERVICES if x[1] in ICON_FOR]
     services = b.group(
         head('Services by Vertex Systems Network (Pvt.) Ltd.', 'Need it done for you? Our team builds, moves and maintains WordPress sites.',
              tone='orange', action=arrow('Book a free call', '{{page:contact}}'), title_color='on-ink'),
-        b.group(*[b.group(ico(ICON_FOR[t]), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
-                          html('<a class="ess-card__price" href="{{page:services}}"><code>%s</code><span aria-hidden="true">↗</span></a>' % price),
-                          layout='default', className='ess-card ess-card--dark') for _, t, d, price in svc],
-                layout='grid', columns=4, grid_min='14rem', className='ess-grid'),
-        tag='section', align='full', className='ess-section ess-section--ink', layout='constrained', content='1200px')
+        b.group(*[b.group(ico(ICON_FOR[t]), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
+                          html('<a class="wpe-ess-card__price" href="{{page:services}}"><code>%s</code><span aria-hidden="true">↗</span></a>' % price),
+                          layout='default', className='wpe-ess-card wpe-ess-card--dark') for _, t, d, price in svc],
+                layout='grid', columns=4, grid_min='14rem', className='wpe-ess-grid'),
+        tag='section', align='full', className='wpe-ess-section wpe-ess-section--ink', layout='constrained', content='1200px')
     pricing = b.group(
         head('Pricing', 'Simple plans. Every update included.', 'From $10 a month. Save 20% yearly, or pay once for lifetime.', align='center'),
         g_toggle(),
         g_periods(),
-        tag='section', align='full', className='ess-section', layout='constrained', content='1200px')
+        tag='section', align='full', className='wpe-ess-section', layout='constrained', content='1200px')
     docs = b.group(
-        b.group(b.group(over('Documentation'), b.h('Answers in seconds, not tickets.', size='h1', className='ess-h2'), layout='default'),
-                g_search('Search the docs…', 'ess-docs__search', button=False),
-                layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='ess-head'),
-        b.group(*[b.group(ico(DOC_ICONS[i], 'soft'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
-                          b.p('<a href="{{page:docs}}">Read the guide <span aria-hidden="true">→</span></a>', className='ess-card__link'),
-                          layout='default', className='ess-card') for i, (_, t, d) in enumerate(DOCS)],
-                layout='grid', columns=3, grid_min='18rem', className='ess-grid'),
-        tag='section', align='full', className='ess-section ess-section--alt', layout='constrained', content='1200px')
+        b.group(b.group(over('Documentation'), b.h('Answers in seconds, not tickets.', size='h1', className='wpe-ess-h2'), layout='default'),
+                g_search('Search the docs…', 'wpe-ess-docs__search', button=False),
+                layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='wpe-ess-head'),
+        b.group(*[b.group(ico(DOC_ICONS[i], 'soft'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
+                          b.p('<a href="{{page:docs}}">Read the guide <span aria-hidden="true">→</span></a>', className='wpe-ess-card__link'),
+                          layout='default', className='wpe-ess-card') for i, (_, t, d) in enumerate(DOCS)],
+                layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid'),
+        tag='section', align='full', className='wpe-ess-section wpe-ess-section--alt', layout='constrained', content='1200px')
     news = b.group(
         head('From the blog', 'Guides and release notes.', align='center'),
         b.latest_posts(3),
         b.buttons(arrow('All posts', '{{page:blog}}', style='wpe-outline'), justify='center'),
-        tag='section', align='full', className='ess-section', layout='constrained', content='1200px')
+        tag='section', align='full', className='wpe-ess-section', layout='constrained', content='1200px')
     return b.join(hero, cats, demos, theme, how, services, pricing, docs, news)
 
 
 def g_hero_light(crumb, title, lead, *extra, over_text=None):
     """Light page hero (Figma: Demos, Plugins, About, Contact, Blog)."""
-    top = html('<p class="ess-crumb"><a href="{{home:}}">Home</a> <span>/</span> %s</p>' % crumb) if crumb else over(over_text)
-    return b.group(top, b.h(title, level=1, className='ess-page__title'), b.p(lead, className='ess-lead'), *extra,
-                   tag='section', align='full', className='ess-page-hero', layout='constrained', content='1200px')
+    top = html('<p class="wpe-ess-crumb"><a href="{{home:}}">Home</a> <span>/</span> %s</p>' % crumb) if crumb else over(over_text)
+    return b.group(top, b.h(title, level=1, className='wpe-ess-page__title'), b.p(lead, className='wpe-ess-lead'), *extra,
+                   tag='section', align='full', className='wpe-ess-page-hero', layout='constrained', content='1200px')
 
 
 def g_hero_dark(overline, title, lead, *extra):
     """Navy page hero (Figma: Pricing, Services, Docs)."""
-    return b.group(over(overline, align='center', tone='orange'), b.h(title, level=1, align='center', className='ess-page__title ess-page__title--light'),
-                   *([b.p(lead, align='center', className='ess-hero__lead')] if lead else []), *extra,
-                   tag='section', align='full', className='ess-page-hero ess-page-hero--dark', layout='constrained', content='1200px')
+    return b.group(over(overline, align='center', tone='orange'), b.h(title, level=1, align='center', className='wpe-ess-page__title wpe-ess-page__title--light'),
+                   *([b.p(lead, align='center', className='wpe-ess-hero__lead')] if lead else []), *extra,
+                   tag='section', align='full', className='wpe-ess-page-hero wpe-ess-page-hero--dark', layout='constrained', content='1200px')
 
 
 def g_band(title, text, btn, href, tone='blue'):
-    return b.group(b.group(b.h(title, level=3, className='ess-band__title'), b.p(text, className='ess-band__text'), layout='default'),
+    return b.group(b.group(b.h(title, level=3, className='wpe-ess-band__title'), b.p(text, className='wpe-ess-band__text'), layout='default'),
                    b.buttons(arrow(btn, href)), layout='flex', wrap='wrap', justify='space-between', valign='center',
-                   className='ess-band ess-band--%s' % tone)
+                   className='wpe-ess-band wpe-ess-band--%s' % tone)
 
 
 def section(*inner, alt=False, ink=False):
     return b.group(*inner, tag='section', align='full', layout='constrained', content='1200px',
-                   className=b.cls('ess-section', 'ess-section--alt' if alt else None, 'ess-section--ink' if ink else None))
+                   className=b.cls('wpe-ess-section', 'wpe-ess-section--alt' if alt else None, 'wpe-ess-section--ink' if ink else None))
 
 
 def g_demos():
     return b.join(
         g_hero_light('Demos', 'Demo library', 'Complete websites for Gutenberg and Elementor. Preview any demo live, then import it in one click.',
-                     g_search('Search demos…', 'ess-hero__search ess-hero__search--light')),
-        section(demo_filter('ess-cats ess-cats--left'),
-                b.group(*[g_demo_card(*d) for d in DEMO_CARDS], layout='grid', columns=3, grid_min='18rem', className='ess-grid'),
+                     g_search('Search demos…', 'wpe-ess-hero__search wpe-ess-hero__search--light')),
+        section(demo_filter('wpe-ess-cats wpe-ess-cats--left'),
+                b.group(*[g_demo_card(*d) for d in DEMO_CARDS], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid'),
                 g_band('Every demo, every builder.', 'Pro includes all demos, early access to new ones and 5 site licenses.', 'See plans', '{{page:pricing}}', tone='ink')))
 
 
 def g_periods():
     """All three billing periods; the toggle (assets/js/components.js) shows one at a time, monthly first."""
-    return b.group(*[b.group(g_plan_cards(period), b.p(BILLING_NOTE[period], align='center', className='ess-note'),
-                             layout='default', className='ess-period wpe-tab-panel').replace('{"className":"ess-period wpe-tab-panel"', '{"anchor":"%s","className":"ess-period wpe-tab-panel"' % period, 1).replace('class="wp-block-group ess-period wpe-tab-panel"', 'id="%s" class="wp-block-group ess-period wpe-tab-panel"' % period, 1)
-                     for period, _, _ in BILLING], layout='default', className='ess-periods')
+    return b.group(*[b.group(g_plan_cards(period), b.p(BILLING_NOTE[period], align='center', className='wpe-ess-note'),
+                             layout='default', className='wpe-ess-period wpe-tab-panel').replace('{"className":"wpe-ess-period wpe-tab-panel"', '{"anchor":"%s","className":"wpe-ess-period wpe-tab-panel"' % period, 1).replace('class="wp-block-group wpe-ess-period wpe-tab-panel"', 'id="%s" class="wp-block-group wpe-ess-period wpe-tab-panel"' % period, 1)
+                     for period, _, _ in BILLING], layout='default', className='wpe-ess-periods')
 
 
 def g_toggle(dark=False):
-    return html('<p class="ess-toggle%s" data-wpe-tabs>%s</p>' % (' ess-toggle--dark' if dark else '', ''.join(
+    return html('<p class="wpe-ess-toggle%s" data-wpe-tabs>%s</p>' % (' wpe-ess-toggle--dark' if dark else '', ''.join(
         '<a href="#%s"%s>%s</a>' % (k, ' class="is-on"' if k == 'monthly' else '', t) for k, t in [('monthly', 'Monthly'), ('yearly', 'Yearly · save 20%'), ('lifetime', 'Lifetime')])))
 
 
@@ -447,8 +447,8 @@ def g_pricing():
     return b.join(
         g_hero_dark('Pricing', 'One subscription. Every theme and demo.',
                     'From $10 a month. Save 20% yearly, or pay once for lifetime — it covers the major version you buy (1.x until 2.0 ships).', toggle),
-        b.group(periods, tag='section', align='full', layout='constrained', content='1200px', className='ess-section ess-section--pull'),
-        section(head('Pricing', 'Compare plans'), b.table(['Feature', 'Starter', 'Pro', 'Agency'], rows, className='ess-table')),
+        b.group(periods, tag='section', align='full', layout='constrained', content='1200px', className='wpe-ess-section wpe-ess-section--pull'),
+        section(head('Pricing', 'Compare plans'), b.table(['Feature', 'Starter', 'Pro', 'Agency'], rows, className='wpe-ess-table')),
         section(g_band('14-day money-back guarantee', 'Not the right fit? Email us within 14 days and get a full refund. No questions.', 'Talk to sales', '{{page:contact}}')),
         section(head('FAQ', 'Frequently asked questions'), *[b.details(q, b.p(a), style=None) for q, a in FAQ]))
 
@@ -464,12 +464,12 @@ def g_services():
                     'Design, setup, speed and care from the WPEssential team at Vertex Systems Network (Pvt.) Ltd.',
                     b.buttons(arrow('Book a free call', '{{page:contact}}'), b.button('See pricing', '{{page:pricing}}', style='wpe-ghost-light'), justify='center')),
         section(head('Services', 'What we do'),
-                b.group(*[b.group(ico(SERVICE_ICONS[i], 'soft'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
-                                  b.p('<a href="%s">%s →</a>' % (svc_link(t), price), className='ess-card__from'), layout='default', className='ess-card')
-                          for i, (_, t, d, price) in enumerate(SERVICES)], layout='grid', columns=3, grid_min='17rem', className='ess-grid')),
+                b.group(*[b.group(ico(SERVICE_ICONS[i], 'soft'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
+                                  b.p('<a href="%s">%s →</a>' % (svc_link(t), price), className='wpe-ess-card__from'), layout='default', className='wpe-ess-card')
+                          for i, (_, t, d, price) in enumerate(SERVICES)], layout='grid', columns=3, grid_min='17rem', className='wpe-ess-grid')),
         section(head('Process', 'How a project runs'),
-                b.group(*[b.group(b.p('0%d' % (i + 1), className='ess-num'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'), layout='default', className='ess-run')
-                          for i, (t, d) in enumerate(steps)], layout='grid', columns=4, grid_min='12rem', className='ess-grid'), alt=True),
+                b.group(*[b.group(b.p('0%d' % (i + 1), className='wpe-ess-num'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'), layout='default', className='wpe-ess-run')
+                          for i, (t, d) in enumerate(steps)], layout='grid', columns=4, grid_min='12rem', className='wpe-ess-grid'), alt=True),
         g_work(),
         g_team(),
         section(g_band('Tell us about your project', 'Free 30-minute call. Fixed quote within 48 hours.', 'Book a free call', '{{page:contact}}')))
@@ -477,25 +477,25 @@ def g_services():
 
 def g_docs():
     return b.join(
-        g_hero_dark('Documentation', 'How can we help?', None, g_search('Search the docs…', 'ess-hero__search'),
-                    html('<p class="ess-hero__popular"><span>Popular:</span>%s</p>' % ''.join(chip(t, '{{page:%s}}' % k) for t, k in
+        g_hero_dark('Documentation', 'How can we help?', None, g_search('Search the docs…', 'wpe-ess-hero__search'),
+                    html('<p class="wpe-ess-hero__popular"><span>Popular:</span>%s</p>' % ''.join(chip(t, '{{page:%s}}' % k) for t, k in
                          [('Import a demo', 'post-import'), ('Gutenberg or Elementor', 'post-builders'), ('Pricing', 'pricing'), ('Contact', 'contact')]))),
         section(head('Docs', 'Browse by topic'),
-                b.group(*[b.group(ico(DOC_ICONS[i], 'orange'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
-                                  b.p('<a href="{{page:blog}}">Read guides <span aria-hidden="true">→</span></a>', className='ess-card__link ess-card__link--blue'),
-                                  layout='default', className='ess-card') for i, (_, t, d) in enumerate(DOCS)],
-                        layout='grid', columns=3, grid_min='18rem', className='ess-grid')),
+                b.group(*[b.group(ico(DOC_ICONS[i], 'orange'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
+                                  b.p('<a href="{{page:blog}}">Read guides <span aria-hidden="true">→</span></a>', className='wpe-ess-card__link wpe-ess-card__link--blue'),
+                                  layout='default', className='wpe-ess-card') for i, (_, t, d) in enumerate(DOCS)],
+                        layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid')),
         section(head('Guides', 'Popular articles'), b.latest_posts(3), alt=True),
-        section(b.group(ico('chat'), b.group(b.h('Still stuck?', level=3, className='ess-band__title'),
-                                            b.p('Open a ticket and a WPEssential developer replies within one business day.', className='ess-band__text'), layout='default'),
-                        b.buttons(arrow('Open a ticket', '{{page:support}}')), layout='flex', wrap='wrap', valign='center', className='ess-band ess-band--soft')))
+        section(b.group(ico('chat'), b.group(b.h('Still stuck?', level=3, className='wpe-ess-band__title'),
+                                            b.p('Open a ticket and a WPEssential developer replies within one business day.', className='wpe-ess-band__text'), layout='default'),
+                        b.buttons(arrow('Open a ticket', '{{page:support}}')), layout='flex', wrap='wrap', valign='center', className='wpe-ess-band wpe-ess-band--soft')))
 
 
 def g_plugins():
     return b.join(
         g_hero_light('Plugins', 'Free WordPress plugins', 'Made by the WPEssential team and free on WordPress.org. Install them from Plugins → Add New in your dashboard.'),
-        section(b.p('<strong>3 plugins</strong> <span>All free · Elementor add-ons</span>', className='ess-count'),
-                b.group(*[g_plugin_card(*pl) for pl in PLUGINS], layout='grid', columns=3, grid_min='18rem', className='ess-grid'),
+        section(b.p('<strong>3 plugins</strong> <span>All free · Elementor add-ons</span>', className='wpe-ess-count'),
+                b.group(*[g_plugin_card(*pl) for pl in PLUGINS], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid'),
                 g_band('Want everything in one place?', 'Hi WPEssential and its demo library work with all three plugins out of the box.', 'Get the theme', '{{page:pricing}}', tone='ink')))
 
 
@@ -506,23 +506,23 @@ ABOUT_VALUES = [('bolt', 'Fast by default', 'Lean code, local fonts and no page-
 
 
 def g_about():
-    stat = lambda n, t: b.group(b.p(n, className='ess-stat'), b.p(t, className='ess-card__text'), layout='default', className='ess-card')
+    stat = lambda n, t: b.group(b.p(n, className='wpe-ess-stat'), b.p(t, className='wpe-ess-card__text'), layout='default', className='wpe-ess-card')
     return b.join(
         g_hero_light(None, 'We build the WordPress tools we wanted to use.',
                      'WPEssential is the WordPress product team of Vertex Systems Network (Pvt.) Ltd. We make Hi WPEssential, its demo library, free plugins and the services around them.',
                      over_text='About us'),
-        section(b.columns(b.column(b.image('shot-library', 'The WPEssential Demo Library', className='ess-shot'), width='52%', valign='center'),
-                          b.column(over('Our story'), b.h('From client work to products', size='h1', className='ess-h2'),
-                                   b.p('We spent years building WordPress sites for clients and kept solving the same problems: slow themes, demos that broke on import and builders that locked people in.', className='ess-lead'),
-                                   b.p('So we built one fast theme with a style for every niche, demos that import in one click for both Gutenberg and Elementor, and a dashboard that logs every step.', className='ess-lead'),
-                                   width='48%', valign='center'), valign='center', className='ess-gap')),
+        section(b.columns(b.column(b.image('shot-library', 'The WPEssential Demo Library', className='wpe-ess-shot'), width='52%', valign='center'),
+                          b.column(over('Our story'), b.h('From client work to products', size='h1', className='wpe-ess-h2'),
+                                   b.p('We spent years building WordPress sites for clients and kept solving the same problems: slow themes, demos that broke on import and builders that locked people in.', className='wpe-ess-lead'),
+                                   b.p('So we built one fast theme with a style for every niche, demos that import in one click for both Gutenberg and Elementor, and a dashboard that logs every step.', className='wpe-ess-lead'),
+                                   width='48%', valign='center'), valign='center', className='wpe-ess-gap')),
         section(head('What we stand for', 'Our values'),
-                b.group(*[b.group(ico(i_, 'soft'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'), layout='default', className='ess-card')
-                          for i_, t, d in ABOUT_VALUES], layout='grid', columns=4, grid_min='14rem', className='ess-grid'), alt=True),
+                b.group(*[b.group(ico(i_, 'soft'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'), layout='default', className='wpe-ess-card')
+                          for i_, t, d in ABOUT_VALUES], layout='grid', columns=4, grid_min='14rem', className='wpe-ess-grid'), alt=True),
         section(b.group(stat('3', 'free plugins on WordPress.org'), stat('20', 'languages'), stat('2', 'native builders'), stat('1', 'theme for every niche'),
-                        layout='grid', columns=4, grid_min='12rem', className='ess-grid')),
-        section(b.h('Work with us', size='h1', align='center', className='ess-h2', color='on-ink'),
-                b.p('Need a site built, moved or fixed? Our team takes on WordPress projects of every size.', align='center', className='ess-hero__lead'),
+                        layout='grid', columns=4, grid_min='12rem', className='wpe-ess-grid')),
+        section(b.h('Work with us', size='h1', align='center', className='wpe-ess-h2', color='on-ink'),
+                b.p('Need a site built, moved or fixed? Our team takes on WordPress projects of every size.', align='center', className='wpe-ess-hero__lead'),
                 b.buttons(arrow('See services', '{{page:services}}'), b.button('Contact us', '{{page:contact}}', style='wpe-light'), justify='center'), ink=True))
 
 
@@ -537,19 +537,19 @@ def svc_link(name):
 def g_work():
     # Our own demos, without invented results or reviews.
     return section(head('Built on Hi WPEssential', 'Sites you can open and try today.', 'Every project ships on Hi WPEssential, so you can keep editing it yourself after launch.'),
-            b.group(*[b.group(b.image(img, alt, aspect='16/9'), b.group(b.p(tag, className='ess-over'), b.h(t, level=3, className='ess-card__title'),
-                                                                          b.p('<a href="{{page:%s}}">See the demo <span aria-hidden="true">→</span></a>' % key, className='ess-card__link'),
-                                                                          layout='default', className='ess-work__body'),
-                              layout='default', className='ess-card ess-work') for img, alt, tag, t, key in [
+            b.group(*[b.group(b.image(img, alt, aspect='16/9'), b.group(b.p(tag, className='wpe-ess-over'), b.h(t, level=3, className='wpe-ess-card__title'),
+                                                                          b.p('<a href="{{page:%s}}">See the demo <span aria-hidden="true">→</span></a>' % key, className='wpe-ess-card__link'),
+                                                                          layout='default', className='wpe-ess-work__body'),
+                              layout='default', className='wpe-ess-card wpe-ess-work') for img, alt, tag, t, key in [
                 ('site-base', 'Base demo home page', 'Business', 'Base: services, pricing, blog and a small shop', 'p-base'),
                 ('site-maison', 'Maison demo home page', 'WooCommerce store', 'Maison: fashion store with lookbook and atelier', 'p-maison'),
                 ('site-pulse', 'Pulse demo home page', 'Events', 'Pulse: conference site with agenda, speakers and tickets', 'p-pulse')]],
-                    layout='grid', columns=3, grid_min='16rem', className='ess-grid'))
+                    layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid'))
 
 
 def g_team():
-    return section(html('<div class="ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=%s&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                        '<div class="ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>%s<br>%s</span><span><a href="tel:%s">%s</a> · PKT (UTC+5)</span>'
+    return section(html('<div class="wpe-ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=%s&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+                        '<div class="wpe-ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>%s<br>%s</span><span><a href="tel:%s">%s</a> · PKT (UTC+5)</span>'
                         '<a href="https://maps.google.com/?q=%s" target="_blank" rel="noopener">Get directions ↗</a></div></div>' % (
                             quote(OFFICE['map']), OFFICE['street'], OFFICE['city'], OFFICE['phone'].replace(' ', ''), OFFICE['phone'], quote(OFFICE['map']))))
 
@@ -565,14 +565,14 @@ def g_contact():
                                    ('<a href="mailto:support@wpessential.org">support@wpessential.org</a>', 'Customers with a licence')]),
             ('Office', [(OFFICE['street'], OFFICE['city']), ('<a href="tel:%s">%s</a>' % (OFFICE['phone'].replace(' ', ''), OFFICE['phone']), 'Monday – Friday, 9:00 – 18:00 PKT (UTC+5)'),
                         ('Vertex Systems Network (Pvt.) Ltd.', 'Registered company, Pakistan')])]
-    side_cards = [b.group(b.h(t, level=3, className='ess-side__title'),
-                          *[b.group(b.p('<strong>%s</strong>' % a_), b.p(d, className='ess-side__muted'), layout='default', className='ess-side__row') for a_, d in rows],
-                          layout='default', className='ess-card ess-side') for t, rows in side]
-    side_cards.append(b.group(b.h('Already a customer?', level=3, className='ess-side__title'),
+    side_cards = [b.group(b.h(t, level=3, className='wpe-ess-side__title'),
+                          *[b.group(b.p('<strong>%s</strong>' % a_), b.p(d, className='wpe-ess-side__muted'), layout='default', className='wpe-ess-side__row') for a_, d in rows],
+                          layout='default', className='wpe-ess-card wpe-ess-side') for t, rows in side]
+    side_cards.append(b.group(b.h('Already a customer?', level=3, className='wpe-ess-side__title'),
                               b.p('<a href="{{page:docs}}">Documentation →</a><br><a href="{{page:support}}">Open a ticket →</a><br><a href="{{woo:myaccount}}">My account &amp; licences →</a>'),
-                              layout='default', className='ess-card ess-card--ink ess-side'))
-    side_cards.append(b.group(b.h('Prefer to talk?', level=3, className='ess-side__title'), b.p('Book a free 30-minute call about your project.', className='ess-side__muted'),
-                              b.buttons(arrow('Book a call', '{{page:quote}}')), layout='default', className='ess-card ess-card--soft ess-side'))
+                              layout='default', className='wpe-ess-card wpe-ess-card--ink wpe-ess-side'))
+    side_cards.append(b.group(b.h('Prefer to talk?', level=3, className='wpe-ess-side__title'), b.p('Book a free 30-minute call about your project.', className='wpe-ess-side__muted'),
+                              b.buttons(arrow('Book a call', '{{page:quote}}')), layout='default', className='wpe-ess-card wpe-ess-card--soft wpe-ess-side'))
     steps = [('We reply', 'A real person answers within one business day.'), ('Discovery call', '30 minutes on goals, content, budget and deadlines.'),
              ('Fixed quote', 'Scope, price and timeline in writing — no surprises.'), ('Kickoff', 'We start on the agreed date and share weekly previews.')]
     faq = [('Do you offer pre-sales help?', 'Yes — email sales@wpessential.org or use the form and we will help you pick a plan or demo.'),
@@ -590,34 +590,34 @@ def g_contact():
     trust = [('3 free plugins on WordPress.org', 'WPEssential, WPEssential Icons, TCI Ultimate Element Themes'), ('14-day money-back', 'On every plan, no questions asked'),
              ('Registered company', 'Vertex Systems Network (Pvt.) Ltd.'), ('Secure checkout', 'Payments by WooCommerce and trusted gateways')]
     return b.join(
-        b.group(over('Contact'), b.h('How can we help?', level=1, className='ess-page__title'),
-                b.p('Pre-sales questions, new projects or an existing order — pick a route and the right team replies, usually within one business day.', className='ess-lead'),
-                b.group(*[b.group(ico(i_, 'soft'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
-                                  b.p('<a href="%s">%s <span aria-hidden="true">→</span></a>' % (h_, l), className='ess-card__link ess-card__link--blue'),
-                                  layout='default', className='ess-card') for i_, t, d, l, h_ in routes],
-                        layout='grid', columns=3, grid_min='16rem', className='ess-grid'),
-                tag='section', align='full', className='ess-page-hero', layout='constrained', content='1200px'),
+        b.group(over('Contact'), b.h('How can we help?', level=1, className='wpe-ess-page__title'),
+                b.p('Pre-sales questions, new projects or an existing order — pick a route and the right team replies, usually within one business day.', className='wpe-ess-lead'),
+                b.group(*[b.group(ico(i_, 'soft'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
+                                  b.p('<a href="%s">%s <span aria-hidden="true">→</span></a>' % (h_, l), className='wpe-ess-card__link wpe-ess-card__link--blue'),
+                                  layout='default', className='wpe-ess-card') for i_, t, d, l, h_ in routes],
+                        layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid'),
+                tag='section', align='full', className='wpe-ess-page-hero', layout='constrained', content='1200px'),
         section(b.columns(
-            b.column(b.group(html('<span id="contact-form"></span>'), b.h('Send us a message', level=2, className='ess-form__title'),
-                             b.p('Fields marked * are required. We use your details only to reply.', className='ess-side__muted'),
-                             wpform('contact'), layout='default', className='ess-card ess-form'), width='66%'),
-            b.column(*side_cards, width='34%'), className='ess-gap ess-contact-cols')),
+            b.column(b.group(html('<span id="contact-form"></span>'), b.h('Send us a message', level=2, className='wpe-ess-form__title'),
+                             b.p('Fields marked * are required. We use your details only to reply.', className='wpe-ess-side__muted'),
+                             wpform('contact'), layout='default', className='wpe-ess-card wpe-ess-form'), width='66%'),
+            b.column(*side_cards, width='34%'), className='wpe-ess-gap wpe-ess-contact-cols')),
         section(head('What happens next', 'From message to kickoff in four steps.'),
-                b.group(*[b.group(b.p('0%d' % (i + 1), className='ess-num'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
-                                  layout='default', className='ess-card') for i, (t, d) in enumerate(steps)],
-                        layout='grid', columns=4, grid_min='13rem', className='ess-grid'), alt=True),
+                b.group(*[b.group(b.p('0%d' % (i + 1), className='wpe-ess-num'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
+                                  layout='default', className='wpe-ess-card') for i, (t, d) in enumerate(steps)],
+                        layout='grid', columns=4, grid_min='13rem', className='wpe-ess-grid'), alt=True),
         g_work(),
-        section(b.group(b.group(over('Services'), b.h('Not sure what you need? Start here.', size='h1', className='ess-h2'), layout='default'),
+        section(b.group(b.group(over('Services'), b.h('Not sure what you need? Start here.', size='h1', className='wpe-ess-h2'), layout='default'),
                         b.buttons(arrow('All services', '{{page:services}}', style='wpe-outline')),
-                        layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='ess-head'),
-                b.group(*[b.group(ico(SERVICE_ICONS[i], 'soft'), b.group(b.p('<a href="%s"><strong>%s</strong></a>' % (svc_link(n), n)), b.p(price, className='ess-mono'), layout='default'),
-                                  layout='flex', wrap='nowrap', valign='center', className='ess-card ess-mini') for i, (_, n, _d, price) in enumerate(SERVICES[:10])],
-                        layout='grid', columns=5, grid_min='12rem', className='ess-grid')),
+                        layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='wpe-ess-head'),
+                b.group(*[b.group(ico(SERVICE_ICONS[i], 'soft'), b.group(b.p('<a href="%s"><strong>%s</strong></a>' % (svc_link(n), n)), b.p(price, className='wpe-ess-mono'), layout='default'),
+                                  layout='flex', wrap='nowrap', valign='center', className='wpe-ess-card wpe-ess-mini') for i, (_, n, _d, price) in enumerate(SERVICES[:10])],
+                        layout='grid', columns=5, grid_min='12rem', className='wpe-ess-grid')),
         g_team(),
         section(head('FAQ', 'Questions we hear before every project.'),
-                b.columns(*[b.column(*[b.details(q, b.p(a_), style=None) for q, a_ in half]) for half in (faq[:6], faq[6:])], className='ess-gap'), alt=True),
-        section(b.group(*[b.group(b.p('<strong>%s</strong>' % t), b.p(d, className='ess-side__muted'), layout='default', className='ess-card ess-trust') for t, d in trust],
-                        layout='grid', columns=4, grid_min='13rem', className='ess-grid'),
+                b.columns(*[b.column(*[b.details(q, b.p(a_), style=None) for q, a_ in half]) for half in (faq[:6], faq[6:])], className='wpe-ess-gap'), alt=True),
+        section(b.group(*[b.group(b.p('<strong>%s</strong>' % t), b.p(d, className='wpe-ess-side__muted'), layout='default', className='wpe-ess-card wpe-ess-trust') for t, d in trust],
+                        layout='grid', columns=4, grid_min='13rem', className='wpe-ess-grid'),
                 g_band('Have a project in mind?', 'Free 30-minute call and a fixed quote within two business days.', 'Request a quote', '{{page:quote}}')))
 
 
@@ -637,51 +637,51 @@ ROADMAP = [('Now', ['WPEssential.org rebuilt to its Figma design', 'Business Pro
 
 
 def g_care_plans():
-    cards = [b.group(b.h(n, level=3, className='ess-plan__name'), b.p('$%s <small>/ month</small>' % p, className='ess-plan__price'),
-                     b.ul(inc, className='ess-check'), b.buttons(arrow('Choose ' + n, '{{page:quote}}', style=None if feat else 'wpe-outline'), className='ess-plan__cta'),
-                     layout='default', className=b.cls('ess-plan', 'is-featured' if feat else None)) for n, p, inc, feat in CARE_PLANS]
-    return section(head('Plans', 'Pick a plan — cancel any month.'), b.group(*cards, layout='grid', columns=3, grid_min='16rem', className='ess-grid'))
+    cards = [b.group(b.h(n, level=3, className='wpe-ess-plan__name'), b.p('$%s <small>/ month</small>' % p, className='wpe-ess-plan__price'),
+                     b.ul(inc, className='wpe-ess-check'), b.buttons(arrow('Choose ' + n, '{{page:quote}}', style=None if feat else 'wpe-outline'), className='wpe-ess-plan__cta'),
+                     layout='default', className=b.cls('wpe-ess-plan', 'is-featured' if feat else None)) for n, p, inc, feat in CARE_PLANS]
+    return section(head('Plans', 'Pick a plan — cancel any month.'), b.group(*cards, layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid'))
 
 
 def g_support():
     side = [('Before you open a ticket', 'Search the <a href="{{page:docs}}">docs</a> — most answers are there.<br>Update the theme and the WPEssential plugin.<br>Try with other plugins switched off.', ''),
             ('Response times', 'Pro: within 1 business day<br>Agency: same day<br>Care plans: priority queue', ''),
-            ('Need it done for you?', 'Bug fixes from $79 — <a href="{{page:svc-bug-fixes}}">we fix it, you relax</a>.', 'ess-card--soft')]
+            ('Need it done for you?', 'Bug fixes from $79 — <a href="{{page:svc-bug-fixes}}">we fix it, you relax</a>.', 'wpe-ess-card--soft')]
     return b.join(g_hero_light('Support', 'How can we fix it?', 'Customers with an active licence get help from the developers who build the theme.'),
                   section(b.columns(
-                      b.column(b.group(b.h('Open a ticket', level=2, className='ess-form__title'), wpform('support'), layout='default', className='ess-card ess-form'), width='62%'),
-                      b.column(*[b.group(b.h(t, level=3, className='ess-side__title'), b.p(d, className='ess-side__muted'), layout='default', className=b.cls('ess-card ess-side', c))
-                                 for t, d, c in side], width='38%'), className='ess-gap ess-contact-cols')))
+                      b.column(b.group(b.h('Open a ticket', level=2, className='wpe-ess-form__title'), wpform('support'), layout='default', className='wpe-ess-card wpe-ess-form'), width='62%'),
+                      b.column(*[b.group(b.h(t, level=3, className='wpe-ess-side__title'), b.p(d, className='wpe-ess-side__muted'), layout='default', className=b.cls('wpe-ess-card wpe-ess-side', c))
+                                 for t, d, c in side], width='38%'), className='wpe-ess-gap wpe-ess-contact-cols')))
 
 
 def g_changelog():
     out = []
     for v, d, items in RELEASES:
-        rows = ''.join('<li><span class="ess-tag ess-tag--%s">%s</span> %s</li>' % (t.lower(), t, x) for t, x in items)
-        out.append(b.group(b.h('Version %s <small>%s</small>' % (v, d), level=2, className='ess-release__title'), html('<ul class="ess-release">%s</ul>' % rows),
-                           layout='default', className='ess-card'))
+        rows = ''.join('<li><span class="wpe-ess-tag wpe-ess-tag--%s">%s</span> %s</li>' % (t.lower(), t, x) for t, x in items)
+        out.append(b.group(b.h('Version %s <small>%s</small>' % (v, d), level=2, className='wpe-ess-release__title'), html('<ul class="wpe-ess-release">%s</ul>' % rows),
+                           layout='default', className='wpe-ess-card'))
     return b.join(g_hero_light('Changelog', 'What’s new in Hi WPEssential', 'Every release, with what changed and why.'), section(*out))
 
 
 def g_roadmap():
-    cols = [b.group(b.h(c, level=3, className='ess-card__title'), *[b.group(b.p('<strong>%s</strong>' % i), layout='default', className='ess-card')
-                                                                    for i in items], layout='default', className='ess-card ess-card--alt') for c, items in ROADMAP]
+    cols = [b.group(b.h(c, level=3, className='wpe-ess-card__title'), *[b.group(b.p('<strong>%s</strong>' % i), layout='default', className='wpe-ess-card')
+                                                                    for i in items], layout='default', className='wpe-ess-card wpe-ess-card--alt') for c, items in ROADMAP]
     return b.join(g_hero_light('Roadmap', 'What we are building next', 'What is in progress and what comes after it. Suggest a demo or feature through Support.'),
-                  section(b.group(*cols, layout='grid', columns=3, grid_min='16rem', className='ess-grid')))
+                  section(b.group(*cols, layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid')))
 
 
 def g_quote():
     return b.join(
         g_hero_light('Request a quote', 'Tell us about your project', 'A few questions, then a fixed quote, scope and timeline within two business days — free, no obligation.'),
         section(b.columns(
-            b.column(b.group(wpform('quote'), layout='default', className='ess-card ess-form'), width='66%'),
-            b.column(b.group(b.h('What happens next', level=3, className='ess-side__title'),
+            b.column(b.group(wpform('quote'), layout='default', className='wpe-ess-card wpe-ess-form'), width='66%'),
+            b.column(b.group(b.h('What happens next', level=3, className='wpe-ess-side__title'),
                              b.ul(['We read your brief the same day.', 'A short call if anything is unclear.', 'Fixed quote, scope and timeline within two business days.',
-                                   'You approve, we schedule the kickoff.'], className='ess-check'), layout='default', className='ess-card ess-side'),
-                     b.group(b.h('Prefer email?', level=3, className='ess-side__title'),
+                                   'You approve, we schedule the kickoff.'], className='wpe-ess-check'), layout='default', className='wpe-ess-card wpe-ess-side'),
+                     b.group(b.h('Prefer email?', level=3, className='wpe-ess-side__title'),
                              b.p('<a href="mailto:services@wpessential.org">services@wpessential.org</a><br>We sign NDAs on request.'),
-                             layout='default', className='ess-card ess-card--ink ess-side'), width='34%'),
-            className='ess-gap ess-contact-cols')))
+                             layout='default', className='wpe-ess-card wpe-ess-card--ink wpe-ess-side'), width='34%'),
+            className='wpe-ess-gap wpe-ess-contact-cols')))
 
 
 def g_cart():
@@ -702,38 +702,38 @@ def g_service(i):
     related = [SERVICES[(i + k) % len(SERVICES)] for k in (1, 2, 3)]
     return b.join(
         b.group(b.columns(
-            b.column(html('<p class="ess-crumb ess-crumb--light"><a href="{{page:services}}">Services</a> <span>/</span> %s</p>' % name),
-                     over('Service', tone='orange'), b.h(headline, level=1, className='ess-page__title ess-page__title--light'),
-                     b.p(desc, className='ess-hero__lead'),
-                     html('<ul class="ess-facts"><li><span>Starting at</span><b>%s</b></li><li><span>Typical turnaround</span><b>%s</b></li><li><span>After launch</span><b>Fixes included</b></li></ul>'
+            b.column(html('<p class="wpe-ess-crumb wpe-ess-crumb--light"><a href="{{page:services}}">Services</a> <span>/</span> %s</p>' % name),
+                     over('Service', tone='orange'), b.h(headline, level=1, className='wpe-ess-page__title wpe-ess-page__title--light'),
+                     b.p(desc, className='wpe-ess-hero__lead'),
+                     html('<ul class="wpe-ess-facts"><li><span>Starting at</span><b>%s</b></li><li><span>Typical turnaround</span><b>%s</b></li><li><span>After launch</span><b>Fixes included</b></li></ul>'
                           % (price.replace('from ', ''), turnaround)),
                      b.buttons(arrow('Request a quote', '#service-quote'), b.button('Book a call', '{{page:contact}}', style='wpe-ghost-light')),
                      width='56%', valign='center'),
-            b.column(b.image(SERVICE_IMAGES[i], name, className='ess-shot'), width='44%', valign='center'), valign='center', className='ess-gap'),
-            tag='section', align='full', className='ess-page-hero ess-page-hero--dark ess-page-hero--left', layout='constrained', content='1200px'),
+            b.column(b.image(SERVICE_IMAGES[i], name, className='wpe-ess-shot'), width='44%', valign='center'), valign='center', className='wpe-ess-gap'),
+            tag='section', align='full', className='wpe-ess-page-hero wpe-ess-page-hero--dark wpe-ess-page-hero--left', layout='constrained', content='1200px'),
         section(b.columns(
-            b.column(over('Who it is for'), b.h(who, size='h1', className='ess-h2'), width='50%'),
-            b.column(b.group(b.h('What is included', level=3, className='ess-side__title'), b.ul(included, className='ess-check'), layout='default', className='ess-card ess-card--alt'), width='50%'),
-            className='ess-gap')),
+            b.column(over('Who it is for'), b.h(who, size='h1', className='wpe-ess-h2'), width='50%'),
+            b.column(b.group(b.h('What is included', level=3, className='wpe-ess-side__title'), b.ul(included, className='wpe-ess-check'), layout='default', className='wpe-ess-card wpe-ess-card--alt'), width='50%'),
+            className='wpe-ess-gap')),
         *([g_care_plans()] if slug == 'care-plans' else []),
         g_work(),
         section(head('Process', 'Brief, estimate, build, review, launch.'),
-                b.group(*[b.group(b.p('0%d' % (k + 1), className='ess-num'), b.h(t, level=3, className='ess-card__title'), b.p(d, className='ess-card__text'), layout='default', className='ess-card')
+                b.group(*[b.group(b.p('0%d' % (k + 1), className='wpe-ess-num'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'), layout='default', className='wpe-ess-card')
                           for k, (t, d) in enumerate([('Brief', 'Call or form'), ('Estimate', 'Fixed quote in 2 days'), ('Build', 'Staging previews'),
                                                       ('Review & QA', 'Speed, mobile, accessibility'), ('Launch', 'Go live and hand over')])],
-                        layout='grid', columns=5, grid_min='11rem', className='ess-grid'), alt=True),
+                        layout='grid', columns=5, grid_min='11rem', className='wpe-ess-grid'), alt=True),
         section(b.columns(
-            b.column(over('Good to know'), b.h('What we need from you', level=3, className='ess-side__title'),
-                     b.ul(['Admin access to WordPress and hosting', 'Your logo, content and examples you like', 'One person who approves the work'], className='ess-check'),
-                     b.h('Not included', level=3, className='ess-side__title'),
-                     b.ul(['Paid plugins, stock photos or hosting fees', 'Work outside the agreed scope (we quote it first)'], className='ess-check'), width='50%'),
-            b.column(b.group(html('<span id="service-quote"></span>'), b.h('Get a quote for %s' % name, level=3, className='ess-side__title'), wpform('service'),
-                             layout='default', className='ess-card ess-form'), width='50%'),
-            className='ess-gap')),
+            b.column(over('Good to know'), b.h('What we need from you', level=3, className='wpe-ess-side__title'),
+                     b.ul(['Admin access to WordPress and hosting', 'Your logo, content and examples you like', 'One person who approves the work'], className='wpe-ess-check'),
+                     b.h('Not included', level=3, className='wpe-ess-side__title'),
+                     b.ul(['Paid plugins, stock photos or hosting fees', 'Work outside the agreed scope (we quote it first)'], className='wpe-ess-check'), width='50%'),
+            b.column(b.group(html('<span id="service-quote"></span>'), b.h('Get a quote for %s' % name, level=3, className='wpe-ess-side__title'), wpform('service'),
+                             layout='default', className='wpe-ess-card wpe-ess-form'), width='50%'),
+            className='wpe-ess-gap')),
         section(head('Related', 'Often booked together'),
-                b.group(*[b.group(b.h('<a href="%s">%s</a>' % (svc_link(n), n), level=3, className='ess-card__title'), b.p(d, className='ess-card__text'),
-                                  b.p(p_, className='ess-mono'), layout='default', className='ess-card') for _, n, d, p_ in related],
-                        layout='grid', columns=3, grid_min='16rem', className='ess-grid'), alt=True))
+                b.group(*[b.group(b.h('<a href="%s">%s</a>' % (svc_link(n), n), level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
+                                  b.p(p_, className='wpe-ess-mono'), layout='default', className='wpe-ess-card') for _, n, d, p_ in related],
+                        layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid'), alt=True))
 
 
 # Elementor ------------------------------------------------------------------------------

@@ -55,92 +55,92 @@ JOBS = [('Senior Consultant, Growth', 'Chicago or remote', 'Full-time'), ('Finan
 # Gutenberg ---------------------------------------------------------------------------------
 
 def sec(*inner, alt=False, dark=False, cls=None):
-    return b.section(*inner, className=b.cls('wpe-section nw-sec', 'nw-sec--alt' if alt else None, 'nw-sec--dark' if dark else None, cls),
+    return b.section(*inner, className=b.cls('wpe-section wpe-nw-sec', 'wpe-nw-sec--alt' if alt else None, 'wpe-nw-sec--dark' if dark else None, cls),
                      bg='ink' if dark else ('surface-alt' if alt else None))
 
 
 def head(over, title, lead=None, center=False, action=None):
     al = 'center' if center else None
     left = b.group(b.p(over, style='wpe-overline', align=al), b.h(title, size='h2', align=al),
-                   *([b.p(lead, color='text-muted', align=al, className='nw-lead')] if lead else []), layout='default', className='nw-head')
+                   *([b.p(lead, color='text-muted', align=al, className='wpe-nw-lead')] if lead else []), layout='default', className='wpe-nw-head')
     if not action:
         return left
-    return b.group(left, b.buttons(b.button(*action, style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='nw-head-row')
+    return b.group(left, b.buttons(b.button(*action, style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='wpe-nw-head-row')
 
 
 def page_hero(crumb, title, lead):
-    return b.section(b.p('<a href="{{home:}}">Home</a> / ' + crumb, className='nw-crumb'), b.h(title, level=1, size='h1'), b.p(lead, color='text-muted', size='body-l'),
-                     className='wpe-section wpe-section--sm nw-page-hero', bg='surface-alt')
+    return b.section(b.p('<a href="{{home:}}">Home</a> / ' + crumb, className='wpe-nw-crumb'), b.h(title, level=1, size='h1'), b.p(lead, color='text-muted', size='body-l'),
+                     className='wpe-section wpe-section--sm wpe-nw-page-hero', bg='surface-alt')
 
 
 def svc_cards(link=True):
-    return b.group(*[b.group(html('<span class="nw-ico" aria-hidden="true">%s</span>' % c), b.h(t, level=3, size='h4'), b.p(d, color='text-muted'),
-                             b.p('<span>%s</span> <a href="{{page:svc-%s}}">Learn more →</a>' % (pr, k) if link else pr, className='nw-card__foot'),
-                             layout='default', className='nw-card') for k, c, _i, t, d, pr, _inc, _o in SERVICES], layout='grid', columns=3, className='nw-grid')
+    return b.group(*[b.group(html('<span class="wpe-nw-ico" aria-hidden="true">%s</span>' % c), b.h(t, level=3, size='h4'), b.p(d, color='text-muted'),
+                             b.p('<span>%s</span> <a href="{{page:svc-%s}}">Learn more →</a>' % (pr, k) if link else pr, className='wpe-nw-card__foot'),
+                             layout='default', className='wpe-nw-card') for k, c, _i, t, d, pr, _inc, _o in SERVICES], layout='grid', columns=3, className='wpe-nw-grid')
 
 
 def case_cards(items):
     return b.group(*[b.group(b.image(img, t, aspect='16/10'), b.group(b.p(tag, style='wpe-overline'), b.h('<a href="{{page:case-fieldhouse}}">%s</a>' % t, level=3, size='h4'),
-                                                                      b.p(r, className='nw-result'), layout='default', className='nw-case__body'),
-                             layout='default', className='nw-case') for img, tag, t, r in items], layout='grid', columns=3, className='nw-grid')
+                                                                      b.p(r, className='wpe-nw-result'), layout='default', className='wpe-nw-case__body'),
+                             layout='default', className='wpe-nw-case') for img, tag, t, r in items], layout='grid', columns=3, className='wpe-nw-grid')
 
 
 def quotes():
-    return b.group(*[b.group(b.p('★★★★★', className='nw-stars'), b.p('“%s”' % q, size='body-l'),
-                             b.group(b.image(img, n, className='nw-avatar'), b.group(b.p('<strong>%s</strong>' % n), b.p(r, color='text-muted', size='small'), layout='default'),
-                                     layout='flex', wrap='nowrap', valign='center'), layout='default', className='nw-card') for img, q, n, r in QUOTES],
-                   layout='grid', columns=3, className='nw-grid')
+    return b.group(*[b.group(b.p('★★★★★', className='wpe-nw-stars'), b.p('“%s”' % q, size='body-l'),
+                             b.group(b.image(img, n, className='wpe-nw-avatar'), b.group(b.p('<strong>%s</strong>' % n), b.p(r, color='text-muted', size='small'), layout='default'),
+                                     layout='flex', wrap='nowrap', valign='center'), layout='default', className='wpe-nw-card') for img, q, n, r in QUOTES],
+                   layout='grid', columns=3, className='wpe-nw-grid')
 
 
 def people(items):
-    return b.group(*[b.group(b.image(img, n, aspect='9/10', className='nw-person__img'), b.h(n, level=3, size='h4'), b.p(r, className='nw-role'),
-                             *([b.p(bio, color='text-muted', size='small')] if bio else []), layout='default', className='nw-person')
-                     for img, n, r, bio in items], layout='grid', columns=4, className='nw-grid')
+    return b.group(*[b.group(b.image(img, n, aspect='9/10', className='wpe-nw-person__img'), b.h(n, level=3, size='h4'), b.p(r, className='wpe-nw-role'),
+                             *([b.p(bio, color='text-muted', size='small')] if bio else []), layout='default', className='wpe-nw-person')
+                     for img, n, r, bio in items], layout='grid', columns=4, className='wpe-nw-grid')
 
 
 def steps():
-    return b.group(*[b.group(b.p('0%d' % (i + 1), className='nw-num'), b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default', className='nw-card nw-card--alt')
-                     for i, (t, d) in enumerate(STEPS)], layout='grid', columns=4, className='nw-grid')
+    return b.group(*[b.group(b.p('0%d' % (i + 1), className='wpe-nw-num'), b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default', className='wpe-nw-card wpe-nw-card--alt')
+                     for i, (t, d) in enumerate(STEPS)], layout='grid', columns=4, className='wpe-nw-grid')
 
 
 def plans():
     out = []
     for n, pr, per, d, inc, feat in PLANS:
-        out.append(b.group(*([b.p('Most popular', className='nw-badge')] if feat else []), b.h(n, level=3, size='h4'),
-                           b.p('<strong>%s</strong> <small>%s</small>' % (pr, per), className='nw-price'), b.p(d, className='nw-muted'),
+        out.append(b.group(*([b.p('Most popular', className='wpe-nw-badge')] if feat else []), b.h(n, level=3, size='h4'),
+                           b.p('<strong>%s</strong> <small>%s</small>' % (pr, per), className='wpe-nw-price'), b.p(d, className='wpe-nw-muted'),
                            b.ul(inc, style='wpe-checklist'), b.buttons(b.button('Start now' if feat else 'Get in touch', '{{page:contact}}', style=None if feat else 'wpe-outline')),
-                           layout='default', className=b.cls('nw-card nw-plan', 'is-featured' if feat else None)))
-    return b.group(*out, layout='grid', columns=3, className='nw-grid')
+                           layout='default', className=b.cls('wpe-nw-card wpe-nw-plan', 'is-featured' if feat else None)))
+    return b.group(*out, layout='grid', columns=3, className='wpe-nw-grid')
 
 
 def faq(items=FAQ):
-    return b.group(*[b.details(q, b.p(a)) for q, a in items], layout='default', className='nw-faq')
+    return b.group(*[b.details(q, b.p(a)) for q, a in items], layout='default', className='wpe-nw-faq')
 
 
 def cta():
     return sec(b.group(b.group(b.h('Ready to grow with a senior team behind you?', size='h2', color='on-primary'),
                                b.p('Book a free 45-minute consultation. No obligation, no sales pitch.', color='on-primary'), layout='default'),
                        b.buttons(b.button('Book a consultation', '{{page:contact}}', style='wpe-light')),
-                       layout='flex', wrap='wrap', justify='space-between', valign='center', className='nw-cta', bg='primary'))
+                       layout='flex', wrap='wrap', justify='space-between', valign='center', className='wpe-nw-cta', bg='primary'))
 
 
 def stats(items, dark=False):
-    return b.group(*[b.group(b.p(n, className='nw-stat__n'), b.p(t, className='nw-stat__t'), layout='default', className='nw-stat') for n, t in items],
-                   layout='grid', columns=len(items), className=b.cls('nw-grid nw-stats', 'is-dark' if dark else None))
+    return b.group(*[b.group(b.p(n, className='wpe-nw-stat__n'), b.p(t, className='wpe-nw-stat__t'), layout='default', className='wpe-nw-stat') for n, t in items],
+                   layout='grid', columns=len(items), className=b.cls('wpe-nw-grid wpe-nw-stats', 'is-dark' if dark else None))
 
 
 def g_home():
     hero = sec(b.columns(
-        b.column(b.p('★ 4.9 · rated by 300+ clients', className='nw-pill'), b.h('Strategy and growth advice for ambitious businesses', level=1, size='display'),
+        b.column(b.p('★ 4.9 · rated by 300+ clients', className='wpe-nw-pill'), b.h('Strategy and growth advice for ambitious businesses', level=1, size='display'),
                  b.p('Northwind Advisory helps founders and leadership teams grow revenue, fix operations and raise capital — with a senior consultant on every project.',
                      color='text-muted', size='body-l'),
                  b.buttons(b.button('Book a free consultation', '{{page:contact}}'), b.button('See our work', '{{page:case-studies}}', style='wpe-outline')),
                  stats([('18 yrs', 'in business'), ('420+', 'projects delivered'), ('$1.2B', 'capital raised')]), width='52%', valign='center'),
-        b.column(b.image('post-2', 'Consultant working with a client', className='nw-hero__img'), width='48%', valign='center'), className='wpe-gap-lg'),
-        alt=True, cls='nw-hero')
+        b.column(b.image('post-2', 'Consultant working with a client', className='wpe-nw-hero__img'), width='48%', valign='center'), className='wpe-gap-lg'),
+        alt=True, cls='wpe-nw-hero')
     logos = b.section(b.p('Trusted by leadership teams at', color='text-muted', size='small'),
-                      b.p(''.join('<span>%s</span>' % n for n in LOGOS), className='nw-logos'), className='wpe-section wpe-section--sm')
-    about = sec(b.columns(b.column(b.image('post-1', 'Strategy session', className='nw-rounded'), width='45%', valign='center'),
+                      b.p(''.join('<span>%s</span>' % n for n in LOGOS), className='wpe-nw-logos'), className='wpe-section wpe-section--sm')
+    about = sec(b.columns(b.column(b.image('post-1', 'Strategy session', className='wpe-nw-rounded'), width='45%', valign='center'),
                           b.column(head('About Northwind', 'Senior advisors, not slide decks',
                                         'Founded in 2008, we are a team of 40 former operators, CFOs and marketers. Every engagement is led by a partner and measured against numbers we agree up front.'),
                                    stats([('98%', 'client retention'), ('3.4×', 'average ROI'), ('40', 'senior consultants'), ('12', 'countries served')]),
@@ -161,7 +161,7 @@ def g_home():
 def g_about():
     story = sec(b.columns(b.column(head('Our story', 'Built by operators who have run the businesses we advise',
                                         'Northwind started in 2008 when three former CFOs and COOs decided advice should come from people who have hit payroll and missed targets themselves. Today 40 senior consultants work with founders and boards in 12 countries.'), valign='center'),
-                          b.column(b.image('post-2', 'Our team at work', className='nw-rounded'), valign='center'), className='wpe-gap-lg'))
+                          b.column(b.image('post-2', 'Our team at work', className='wpe-nw-rounded'), valign='center'), className='wpe-gap-lg'))
     values = [('◎', 'Numbers first', 'We agree the targets before we start and report against them every week.'), ('♟', 'Senior people only', 'A partner leads every engagement.'),
               ('⚖', 'Honest advice', 'If you do not need us, we will say so on the first call.'), ('↗', 'Built to last', 'We leave your team able to run the system without us.')]
     timeline = [('2008', 'Founded in Chicago by three former operators'), ('2013', 'Opened London office; first $100M fundraise'),
@@ -170,14 +170,14 @@ def g_about():
                   story,
                   sec(stats([('18', 'years in business'), ('420+', 'projects delivered'), ('98%', 'client retention'), ('$1.2B', 'capital raised for clients')], dark=True), dark=True),
                   sec(head('What we believe', 'Our principles', center=True),
-                      b.group(*[b.group(html('<span class="nw-ico">%s</span>' % c), b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default', className='nw-card')
-                                for c, t, d in values], layout='grid', columns=4, className='nw-grid'), alt=True),
+                      b.group(*[b.group(html('<span class="wpe-nw-ico">%s</span>' % c), b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default', className='wpe-nw-card')
+                                for c, t, d in values], layout='grid', columns=4, className='wpe-nw-grid'), alt=True),
                   sec(head('Milestones', 'How we got here'),
-                      b.group(*[b.group(b.p(y, className='nw-year'), b.p(t, color='text-muted'), layout='default', className='nw-mile') for y, t in timeline],
-                              layout='grid', columns=4, className='nw-grid')),
+                      b.group(*[b.group(b.p(y, className='wpe-nw-year'), b.p(t, color='text-muted'), layout='default', className='wpe-nw-mile') for y, t in timeline],
+                              layout='grid', columns=4, className='wpe-nw-grid')),
                   sec(head('Leadership', 'The partners'), people([p[:3] + ('',) for p in PEOPLE]), alt=True),
                   b.section(b.p(''.join('<span>🏆 %s</span>' % a for a in ['Forbes Top Consulting Firms 2025', 'Financial Times — Leading Consultants', 'Clutch Top B2B Company', 'Great Place to Work']),
-                                className='nw-logos nw-awards'), className='wpe-section wpe-section--sm'),
+                                className='wpe-nw-logos wpe-nw-awards'), className='wpe-section wpe-section--sm'),
                   cta())
 
 
@@ -185,7 +185,7 @@ def g_services():
     inds = ['Retail &amp; e-commerce', 'SaaS &amp; technology', 'Manufacturing', 'Professional services', 'Healthcare', 'Financial services', 'Logistics', 'Hospitality']
     return b.join(page_hero('Services', 'Consulting services that move the numbers', 'Six practices, one senior team. Pick a single project or a monthly partnership.'),
                   sec(svc_cards()),
-                  sec(head('Industries', 'Sectors we know inside out'), b.p(''.join('<span>%s</span>' % i for i in inds), className='nw-chips'), alt=True),
+                  sec(head('Industries', 'Sectors we know inside out'), b.p(''.join('<span>%s</span>' % i for i in inds), className='wpe-nw-chips'), alt=True),
                   sec(head('How we work', 'From first call to measurable results', center=True), steps()),
                   cta())
 
@@ -193,23 +193,23 @@ def g_services():
 def g_service(i):
     key, _c, _i, name, desc, price, inc, (onum, otext) = SERVICES[i]
     hero = sec(b.columns(
-        b.column(b.p('<a href="{{home:}}">Home</a> / <a href="{{page:services}}">Services</a> / ' + name, className='nw-crumb'),
+        b.column(b.p('<a href="{{home:}}">Home</a> / <a href="{{page:services}}">Services</a> / ' + name, className='wpe-nw-crumb'),
                  b.h(name, level=1, size='h1', color='on-ink'), b.p(desc, color='on-ink-muted', size='body-l'),
                  stats([(price.replace('From ', ''), 'starting price'), ('6–12 weeks', 'to first results'), (onum, otext)], dark=True),
                  b.buttons(b.button('Book a consultation', '{{page:contact}}'), b.button('See pricing', '{{page:pricing}}', style='wpe-light')), valign='center'),
-        b.column(b.image('post-3', name, className='nw-rounded'), valign='center'), className='wpe-gap-lg'), dark=True, cls='nw-hero')
+        b.column(b.image('post-3', name, className='wpe-nw-rounded'), valign='center'), className='wpe-gap-lg'), dark=True, cls='wpe-nw-hero')
     return b.join(hero,
                   sec(b.columns(b.column(head('Who it is for', 'Companies with a product that sells — but growth has stalled',
                                               'Usually $2M–$50M revenue and a leadership team ready to act on what we find.'), valign='center'),
-                                b.column(b.group(b.h('What is included', level=3, size='h4'), b.ul(inc, style='wpe-checklist'), layout='default', className='nw-card nw-card--alt')),
+                                b.column(b.group(b.h('What is included', level=3, size='h4'), b.ul(inc, style='wpe-checklist'), layout='default', className='wpe-nw-card wpe-nw-card--alt')),
                       className='wpe-gap-lg')),
                   sec(head('Outcomes', 'What clients typically see'), stats([(onum, otext), ('3.4×', 'average ROI'), ('98%', 'would hire us again')]), alt=True),
-                  sec(b.columns(b.column(b.image('post-3', 'Fieldhouse Goods', className='nw-rounded'), valign='center'),
+                  sec(b.columns(b.column(b.image('post-3', 'Fieldhouse Goods', className='wpe-nw-rounded'), valign='center'),
                                 b.column(b.p('Case study · Retail', style='wpe-overline'), b.h('Fieldhouse Goods doubled online revenue in 9 months', size='h2'),
-                                         b.p('+118% revenue · −27% CAC · 3 new channels', className='nw-result'),
+                                         b.p('+118% revenue · −27% CAC · 3 new channels', className='wpe-nw-result'),
                                          b.buttons(b.button('Read the case study', '{{page:case-fieldhouse}}', style='wpe-outline')), valign='center'), className='wpe-gap-lg')),
                   sec(b.columns(b.column(head('FAQ', 'Questions about ' + name.lower()), faq(FAQ[:4])),
-                                b.column(b.group(b.h('Get a proposal', level=3, size='h3'), b.shortcode('[wpforms id="{{form:contact}}" title="false"]'), layout='default', className='nw-card')),
+                                b.column(b.group(b.h('Get a proposal', level=3, size='h3'), b.shortcode('[wpforms id="{{form:contact}}" title="false"]'), layout='default', className='wpe-nw-card')),
                                 className='wpe-gap-lg'), alt=True))
 
 
@@ -224,13 +224,13 @@ def g_case():
     body = [('The challenge', 'Fieldhouse had strong products and loyal customers, but online growth had stalled at 4% a year while ad costs kept rising.'),
             ('Our approach', 'We rebuilt pricing and bundles, moved 40% of spend from paid social to search and email, and set up a weekly growth meeting with clear owners.'),
             ('The result', 'Online revenue more than doubled in nine months and the team now runs the experiments without us.')]
-    return b.join(b.section(b.p('<a href="{{home:}}">Home</a> / <a href="{{page:case-studies}}">Case studies</a> / Fieldhouse Goods', className='nw-crumb'),
+    return b.join(b.section(b.p('<a href="{{home:}}">Home</a> / <a href="{{page:case-studies}}">Case studies</a> / Fieldhouse Goods', className='wpe-nw-crumb'),
                             b.p('Retail · Growth', style='wpe-overline'), b.h('How Fieldhouse Goods doubled online revenue in 9 months', level=1, size='h1'),
-                            b.p(meta, className='nw-meta'), className='wpe-section wpe-section--sm nw-page-hero', bg='surface-alt'),
-                  b.section(b.image('post-3', 'Fieldhouse Goods team', className='nw-rounded nw-wide'), className='wpe-section wpe-section--sm'),
+                            b.p(meta, className='wpe-nw-meta'), className='wpe-section wpe-section--sm wpe-nw-page-hero', bg='surface-alt'),
+                  b.section(b.image('post-3', 'Fieldhouse Goods team', className='wpe-nw-rounded wpe-nw-wide'), className='wpe-section wpe-section--sm'),
                   sec(stats([('+118%', 'online revenue'), ('−27%', 'customer acquisition cost'), ('3', 'new profitable channels')], dark=True), dark=True),
                   b.section(*[x for h, t in body for x in (b.h(h, size='h3'), b.p(t, size='body-l', color='text-muted'))],
-                            b.group(b.p('“%s”' % QUOTES[0][1], size='h3'), b.p('<strong>%s</strong> · %s' % QUOTES[0][2:]), layout='default', className='nw-card nw-card--alt nw-quote'),
+                            b.group(b.p('“%s”' % QUOTES[0][1], size='h3'), b.p('<strong>%s</strong> · %s' % QUOTES[0][2:]), layout='default', className='wpe-nw-card wpe-nw-card--alt wpe-nw-quote'),
                             className='wpe-section', content='860px'),
                   cta())
 
@@ -250,7 +250,7 @@ def g_pricing():
             ['On-site workshops', 'Optional', 'Optional', '✓'], ['Board support', '—', '✓', '✓']]
     return b.join(page_hero('Pricing', 'Fixed fees. Agreed before we start.', 'No hourly billing and no surprises. Pick a project or a monthly partnership.'),
                   sec(plans()),
-                  sec(head('Compare', 'What each engagement includes'), b.table(['', 'Sprint', 'Partner', 'Transformation'], rows, className='nw-table'), alt=True),
+                  sec(head('Compare', 'What each engagement includes'), b.table(['', 'Sprint', 'Partner', 'Transformation'], rows, className='wpe-nw-table'), alt=True),
                   sec(head('FAQ', 'Pricing questions'), faq([('Are there any extra costs?', 'Only travel for on-site work, agreed in advance.'),
                                                               ('Can we pause a retainer?', 'Yes, with 30 days notice.'),
                                                               ('Do you offer a guarantee?', 'If we miss the agreed targets, the next month is free.'),
@@ -263,14 +263,14 @@ def g_careers():
              ('Learning budget', '$3,000 a year for courses and conferences.'), ('Real impact', 'See your work move a company’s numbers.')]
     return b.join(page_hero('Careers', 'Join a team of senior operators', 'We are growing in Chicago, London and remote.'),
                   sec(head('Why Northwind', 'Do the best work of your career'),
-                      b.group(*[b.group(b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default', className='nw-card nw-card--alt') for t, d in perks],
-                              layout='grid', columns=4, className='nw-grid')),
+                      b.group(*[b.group(b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default', className='wpe-nw-card wpe-nw-card--alt') for t, d in perks],
+                              layout='grid', columns=4, className='wpe-nw-grid')),
                   sec(head('Open roles', '%d positions open' % len(JOBS)),
                       *[b.group(b.group(b.h(t, level=3, size='h4'), b.p('%s · %s' % (loc, ty), color='text-muted', size='small'), layout='default'),
-                                b.buttons(b.button('Apply', '#apply', style='wpe-outline')), layout='flex', wrap='nowrap', justify='space-between', valign='center', className='nw-card nw-job')
+                                b.buttons(b.button('Apply', '#apply', style='wpe-outline')), layout='flex', wrap='nowrap', justify='space-between', valign='center', className='wpe-nw-card wpe-nw-job')
                         for t, loc, ty in JOBS], alt=True),
                   sec(b.columns(b.column(html('<span id="apply"></span>'), head('Apply', 'Send us your application', 'Do not see your role? Send an open application.')),
-                                b.column(b.group(b.shortcode('[wpforms id="{{form:careers}}" title="false"]'), layout='default', className='nw-card')), className='wpe-gap-lg')))
+                                b.column(b.group(b.shortcode('[wpforms id="{{form:careers}}" title="false"]'), layout='default', className='wpe-nw-card')), className='wpe-gap-lg')))
 
 
 def g_contact():
@@ -279,10 +279,10 @@ def g_contact():
     return b.join(page_hero('Contact', 'Let’s talk about your business', 'A free 45-minute consultation with a partner. No obligation.'),
                   sec(b.columns(
                       b.column(b.group(b.h('Book a free consultation', level=2, size='h3'), b.p('Tell us about your business. A partner replies within one working day.', color='text-muted'),
-                                       b.shortcode('[wpforms id="{{form:contact}}" title="false"]'), layout='default', className='nw-card'), width='62%'),
-                      b.column(*[b.group(b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default', className='nw-card nw-card--alt') for t, d in offices], width='38%'),
+                                       b.shortcode('[wpforms id="{{form:contact}}" title="false"]'), layout='default', className='wpe-nw-card'), width='62%'),
+                      b.column(*[b.group(b.h(t, level=3, size='h4'), b.p(d, color='text-muted'), layout='default', className='wpe-nw-card wpe-nw-card--alt') for t, d in offices], width='38%'),
                       className='wpe-gap-lg')),
-                  html('<div class="nw-map"><iframe title="Northwind Advisory on Google Maps" loading="lazy" src="https://maps.google.com/maps?q=200%20W%20Madison%20St%20Chicago&amp;z=14&amp;output=embed"></iframe></div>'),
+                  html('<div class="wpe-nw-map"><iframe title="Northwind Advisory on Google Maps" loading="lazy" src="https://maps.google.com/maps?q=200%20W%20Madison%20St%20Chicago&amp;z=14&amp;output=embed"></iframe></div>'),
                   sec(head('FAQ', 'Before you book'), faq([FAQ[4], FAQ[0], ('Do you sign NDAs?', 'Yes, before any detailed discussion.'),
                                                           ('Do you work outside the US and UK?', 'Yes — we have clients in 12 countries.')]), alt=True))
 

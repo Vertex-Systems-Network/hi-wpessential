@@ -55,22 +55,22 @@ if ( ! class_exists( 'WPEssential_Customize_Control' ) ) {
 				'tab'        => $f['tab'] ?? null,
 			);
 			if ( 'heading' === $kind ) {
-				echo '<h3 class="wpec-heading">' . esc_html( $this->label ) . '</h3>';
+				echo '<h3 class="wpe-c-heading">' . esc_html( $this->label ) . '</h3>';
 				return;
 			}
 			?>
-			<div class="wpec wpec--<?php echo esc_attr( $kind ); ?>" data-wpec="<?php echo esc_attr( wp_json_encode( array_filter( $data, static fn( $x ) => null !== $x ) ) ); ?>">
-				<div class="wpec__head">
-					<span class="wpec__label"><?php echo esc_html( $this->label ); ?></span>
-					<button type="button" class="wpec__reset" hidden aria-label="<?php echo esc_attr( sprintf( /* translators: %s: option name. */ __( 'Reset %s to the theme default', 'hi-wpessential' ), $this->label ) ); ?>" title="<?php esc_attr_e( 'Back to the theme default', 'hi-wpessential' ); ?>">
+			<div class="wpe-c wpe-c--<?php echo esc_attr( $kind ); ?>" data-wpec="<?php echo esc_attr( wp_json_encode( array_filter( $data, static fn( $x ) => null !== $x ) ) ); ?>">
+				<div class="wpe-c__head">
+					<span class="wpe-c__label"><?php echo esc_html( $this->label ); ?></span>
+					<button type="button" class="wpe-c__reset" hidden aria-label="<?php echo esc_attr( sprintf( /* translators: %s: option name. */ __( 'Reset %s to the theme default', 'hi-wpessential' ), $this->label ) ); ?>" title="<?php esc_attr_e( 'Back to the theme default', 'hi-wpessential' ); ?>">
 						<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
 					</button>
 				</div>
 				<?php if ( ! empty( $f['help'] ) ) : ?>
-					<p class="wpec__help"><?php echo esc_html( $f['help'] ); ?></p>
+					<p class="wpe-c__help"><?php echo esc_html( $f['help'] ); ?></p>
 				<?php endif; ?>
-				<div class="wpec__ui"></div>
-				<input type="hidden" class="wpec__value" <?php $this->link(); ?> value="<?php echo esc_attr( is_scalar( $this->value() ) ? (string) $this->value() : '' ); ?>">
+				<div class="wpe-c__ui"></div>
+				<input type="hidden" class="wpe-c__value" <?php $this->link(); ?> value="<?php echo esc_attr( is_scalar( $this->value() ) ? (string) $this->value() : '' ); ?>">
 			</div>
 			<?php
 		}

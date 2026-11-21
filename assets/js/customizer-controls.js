@@ -15,7 +15,7 @@
 	} );
 
 	function build( control ) {
-		var root = control.container[ 0 ].querySelector( '.wpec' );
+		var root = control.container[ 0 ].querySelector( '.wpe-c' );
 		if ( ! root || root.dataset.ready || ! control.setting ) {
 			return;
 		}
@@ -34,17 +34,17 @@
 				setting.set( v );
 			},
 		} );
-		var head = root.querySelector( '.wpec__head' );
+		var head = root.querySelector( '.wpe-c__head' );
 		if ( ctl.devices ) {
-			head.insertBefore( ctl.devices, head.querySelector( '.wpec__reset' ) );
+			head.insertBefore( ctl.devices, head.querySelector( '.wpe-c__reset' ) );
 		}
 		if ( 'toggle' === opt.type ) {
-			head.insertBefore( ctl.el, head.querySelector( '.wpec__reset' ) );
+			head.insertBefore( ctl.el, head.querySelector( '.wpe-c__reset' ) );
 		} else {
-			root.querySelector( '.wpec__ui' ).appendChild( ctl.el );
+			root.querySelector( '.wpe-c__ui' ).appendChild( ctl.el );
 		}
 		if ( opt.tab ) {
-			root.classList.add( 'wpec--tab-' + opt.tab );
+			root.classList.add( 'wpe-c--tab-' + opt.tab );
 			control.container[ 0 ].setAttribute( 'data-wpec-tab', opt.tab );
 			api.section( control.section(), function ( section ) {
 				clearTimeout( section.wpecTabs );
@@ -53,7 +53,7 @@
 				}, 50 );
 			} );
 		}
-		var reset = root.querySelector( '.wpec__reset' );
+		var reset = root.querySelector( '.wpe-c__reset' );
 		reset.addEventListener( 'click', function () {
 			setting.set( '' );
 		} );
@@ -70,17 +70,17 @@
 	function tabs( section ) {
 		var list = section.contentContainer[ 0 ];
 		var items = list.querySelectorAll( '[data-wpec-tab]' );
-		var old = list.querySelector( '.wpec-statebar' );
+		var old = list.querySelector( '.wpe-c-statebar' );
 		if ( ! items.length ) {
 			return;
 		}
 		if ( old ) {
 			old.remove();
 		}
-		var bar = controls.h( 'li', { class: 'wpec-statebar customize-control' } );
-		var seg = controls.h( 'div', { class: 'wpec-seg', role: 'tablist' } );
+		var bar = controls.h( 'li', { class: 'wpe-c-statebar customize-control' } );
+		var seg = controls.h( 'div', { class: 'wpe-c-seg', role: 'tablist' } );
 		[ [ 'normal', 'Normal' ], [ 'hover', 'Hover' ] ].forEach( function ( t, i ) {
-			seg.appendChild( controls.h( 'button', { type: 'button', role: 'tab', class: 'wpec-seg__btn' + ( 0 === i ? ' is-active' : '' ), text: t[ 1 ], onclick: function ( e ) {
+			seg.appendChild( controls.h( 'button', { type: 'button', role: 'tab', class: 'wpe-c-seg__btn' + ( 0 === i ? ' is-active' : '' ), text: t[ 1 ], onclick: function ( e ) {
 				seg.querySelectorAll( 'button' ).forEach( function ( b ) {
 					b.classList.toggle( 'is-active', b === e.currentTarget );
 				} );
@@ -114,10 +114,10 @@
 				preview.style.width = w + 'px';
 				preview.style.left = '50%';
 				preview.style.marginLeft = ( -w / 2 ) + 'px';
-				preview.classList.add( 'wpec-preview-sized' );
+				preview.classList.add( 'wpe-c-preview-sized' );
 			} else {
 				preview.style.width = preview.style.left = preview.style.marginLeft = '';
-				preview.classList.remove( 'wpec-preview-sized' );
+				preview.classList.remove( 'wpe-c-preview-sized' );
 			}
 		};
 		controls.onDevice = function ( d ) {
