@@ -15,6 +15,7 @@ define( 'WPESSENTIAL_DIR', get_template_directory() );
 define( 'WPESSENTIAL_URI', get_template_directory_uri() );
 
 require WPESSENTIAL_DIR . '/inc/setup.php';
+require WPESSENTIAL_DIR . '/inc/class-prefix-migration.php';
 require WPESSENTIAL_DIR . '/inc/assets.php';
 require WPESSENTIAL_DIR . '/inc/block-styles.php';
 require WPESSENTIAL_DIR . '/inc/patterns.php';

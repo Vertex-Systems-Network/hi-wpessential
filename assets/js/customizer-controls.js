@@ -15,7 +15,7 @@
 	} );
 
 	function build( control ) {
-		var root = control.container[ 0 ].querySelector( '.wpec' );
+		var root = control.container[ 0 ].querySelector( '.wpe-c' );
 		if ( ! root || root.dataset.ready || ! control.setting ) {
 			return;
 		}
@@ -34,17 +34,17 @@
 				setting.set( v );
 			},
 		} );
-		var head = root.querySelector( '.wpec__head' );
+		var head = root.querySelector( '.wpe-c__head' );
 		if ( ctl.devices ) {
-			head.insertBefore( ctl.devices, head.querySelector( '.wpec__reset' ) );
+			head.insertBefore( ctl.devices, head.querySelector( '.wpe-c__reset' ) );
 		}
 		if ( 'toggle' === opt.type ) {
-			head.insertBefore( ctl.el, head.querySelector( '.wpec__reset' ) );
+			head.insertBefore( ctl.el, head.querySelector( '.wpe-c__reset' ) );
 		} else {
-			root.querySelector( '.wpec__ui' ).appendChild( ctl.el );
+			root.querySelector( '.wpe-c__ui' ).appendChild( ctl.el );
 		}
 		if ( opt.tab ) {
-			root.classList.add( 'wpec--tab-' + opt.tab );
+			root.classList.add( 'wpe-c--tab-' + opt.tab );
 			control.container[ 0 ].setAttribute( 'data-wpec-tab', opt.tab );
 			api.section( control.section(), function ( section ) {
 				clearTimeout( section.wpecTabs );
@@ -53,7 +53,7 @@
 				}, 50 );
 			} );
 		}
-		var reset = root.querySelector( '.wpec__reset' );
+		var reset = root.querySelector( '.wpe-c__reset' );
 		reset.addEventListener( 'click', function () {
 			setting.set( '' );
 		} );

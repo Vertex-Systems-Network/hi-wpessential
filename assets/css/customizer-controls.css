@@ -4,13 +4,13 @@
 [id^="sub-accordion-section-wpessential_site"] .customize-section-description { margin: 0 0 6px; padding: 10px 12px; border-radius: 8px; background: #fff; border: 1px solid #e5e7eb; color: #50575e; font-size: 12px; line-height: 1.5; }
 #accordion-panel-wpessential_site > .accordion-section-title { border-inline-start: 4px solid #ec7d1a; font-weight: 600; }
 
-.wpec { --wpec-accent: var(--wp-admin-theme-color, #2271b1); --wpec-line: #dcdcde; --wpec-soft: #f6f7f7; font-size: 13px; }
-.wpec__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 24px; margin-bottom: 8px; }
-.wpec__label { font-weight: 600; color: #1d2327; }
-.wpec.is-set .wpec__label::after { content: ""; display: inline-block; width: 6px; height: 6px; margin-inline-start: 6px; border-radius: 50%; background: var(--wpec-accent); vertical-align: middle; }
-.wpec__reset { display: inline-grid; place-items: center; width: 24px; height: 24px; margin-inline-start: auto; padding: 0; border: 0; border-radius: 6px; background: transparent; color: #787c82; cursor: pointer; }
-.wpec__reset:hover, .wpec__reset:focus-visible { background: var(--wpec-soft); color: #d63638; outline: none; }
-.wpec__help { margin: -4px 0 8px; color: #646970; font-size: 12px; }
+.wpe-c { --wpec-accent: var(--wp-admin-theme-color, #2271b1); --wpec-line: #dcdcde; --wpec-soft: #f6f7f7; font-size: 13px; }
+.wpe-c__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 24px; margin-bottom: 8px; }
+.wpe-c__label { font-weight: 600; color: #1d2327; }
+.wpe-c.is-set .wpe-c__label::after { content: ""; display: inline-block; width: 6px; height: 6px; margin-inline-start: 6px; border-radius: 50%; background: var(--wpec-accent); vertical-align: middle; }
+.wpe-c__reset { display: inline-grid; place-items: center; width: 24px; height: 24px; margin-inline-start: auto; padding: 0; border: 0; border-radius: 6px; background: transparent; color: #787c82; cursor: pointer; }
+.wpe-c__reset:hover, .wpe-c__reset:focus-visible { background: var(--wpec-soft); color: #d63638; outline: none; }
+.wpe-c__help { margin: -4px 0 8px; color: #646970; font-size: 12px; }
 .wpe-c-input { width: 100%; min-height: 34px; padding: 0 10px; border: 1px solid var(--wpec-line); border-radius: 8px; background: #fff; font-size: 13px; box-shadow: none; }
 .wpe-c-input:focus { border-color: var(--wpec-accent); box-shadow: 0 0 0 1px var(--wpec-accent); outline: none; }
 .wpe-c-select { appearance: none; padding-inline-end: 28px; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23646970' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 8px center / 14px; }
@@ -36,8 +36,8 @@
 .wpe-c-range__unit { position: absolute; inset-inline-end: 8px; color: #787c82; font-size: 11px; pointer-events: none; }
 
 /* Switch */
-.wpec--toggle .wpec__head { margin-bottom: 0; }
-.wpec--toggle .wpec__ui { margin-inline-start: auto; }
+.wpe-c--toggle .wpe-c__head { margin-bottom: 0; }
+.wpe-c--toggle .wpe-c__ui { margin-inline-start: auto; }
 .wpe-c-switch { position: relative; display: inline-block; width: 36px; height: 20px; }
 .wpe-c-switch__input { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
 .wpe-c-switch__track { position: absolute; inset: 0; border-radius: 99px; background: #c3c4c7; transition: background .2s; }
@@ -45,7 +45,7 @@
 .wpe-c-switch__input:checked + .wpe-c-switch__track { background: var(--wpec-accent); }
 .wpe-c-switch__input:checked + .wpe-c-switch__track::after { transform: translateX(16px); }
 .wpe-c-switch__input:focus-visible + .wpe-c-switch__track { outline: 2px solid var(--wpec-accent); outline-offset: 2px; }
-.wpec--toggle .wpec__reset { display: none; }
+.wpe-c--toggle .wpe-c__reset { display: none; }
 
 /* Button group */
 .wpe-c-seg { display: flex; padding: 3px; border-radius: 9px; background: var(--wpec-soft); border: 1px solid var(--wpec-line); }
@@ -81,7 +81,7 @@
 .wpe-c-fonts__chip button:hover { background: #fff; color: #d63638; }
 .wpe-c-btn { width: 100%; min-height: 34px; border: 1px dashed var(--wpec-accent); border-radius: 8px; background: #fff; color: var(--wpec-accent); font-weight: 600; cursor: pointer; }
 .wpe-c-btn:hover { background: color-mix(in srgb, var(--wpec-accent) 6%, #fff); }
-.wpec__reset[hidden] { display: none; }
+.wpe-c__reset[hidden] { display: none; }
 .wpe-c-range__num { -moz-appearance: textfield; }
 .wpe-c-range__num::-webkit-inner-spin-button, .wpe-c-range__num::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
 
@@ -99,7 +99,7 @@
 .wpe-c-devices__btn { display: inline-grid; place-items: center; width: 20px; height: 20px; padding: 0; border: 0; border-radius: 4px; background: transparent; color: #a7aaad; cursor: pointer; }
 .wpe-c-devices__btn:hover { color: #1d2327; }
 .wpe-c-devices__btn.is-active { background: var(--wpec-soft, #f6f7f7); color: var(--wpec-accent, #2271b1); }
-.wpec__head .wpe-c-devices { margin-inline-end: auto; }
+.wpe-c__head .wpe-c-devices { margin-inline-end: auto; }
 
 /* Range with unit select */
 .wpe-c-range__box.has-units { width: 108px; }
@@ -153,13 +153,13 @@
 .wpe-c-background > .wpe-c-field { margin-bottom: 10px; }
 
 /* WordPress styles every select in the pane; keep ours compact. */
-#customize-controls .wpec select.wpe-c-range__units, #customize-controls .wpec select.wpe-c-dims__unit { width: auto; min-width: 0; min-height: 0; height: 24px; margin: 0; padding: 0 16px 0 6px; border: 1px solid var(--wpec-line, #dcdcde); border-radius: 6px; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23646970' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 3px center / 10px; font-size: 11px; line-height: 22px; box-shadow: none; appearance: none; }
-#customize-controls .wpec .wpe-c-range__box.has-units { width: 112px; }
-#customize-controls .wpec select.wpe-c-range__units { position: absolute; inset-inline-end: 4px; top: 50%; transform: translateY(-50%); width: 44px; border: 0; background-color: var(--wpec-soft, #f6f7f7); }
-#customize-controls .wpec .wpe-c-range__box.has-units .wpe-c-range__num { padding-inline-end: 50px; }
-#customize-controls .wpec .wpe-c-range__num { padding-inline-end: 38px; }
+#customize-controls .wpe-c select.wpe-c-range__units, #customize-controls .wpe-c select.wpe-c-dims__unit { width: auto; min-width: 0; min-height: 0; height: 24px; margin: 0; padding: 0 16px 0 6px; border: 1px solid var(--wpec-line, #dcdcde); border-radius: 6px; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23646970' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 3px center / 10px; font-size: 11px; line-height: 22px; box-shadow: none; appearance: none; }
+#customize-controls .wpe-c .wpe-c-range__box.has-units { width: 112px; }
+#customize-controls .wpe-c select.wpe-c-range__units { position: absolute; inset-inline-end: 4px; top: 50%; transform: translateY(-50%); width: 44px; border: 0; background-color: var(--wpec-soft, #f6f7f7); }
+#customize-controls .wpe-c .wpe-c-range__box.has-units .wpe-c-range__num { padding-inline-end: 50px; }
+#customize-controls .wpe-c .wpe-c-range__num { padding-inline-end: 38px; }
 .wpe-c-dims__head { margin: 0 0 6px; }
-.wpec--dimensions .wpec__head { margin-bottom: 4px; }
+.wpe-c--dimensions .wpe-c__head { margin-bottom: 4px; }
 
 /* Pickr colour chip (alpha shows over a checkerboard) */
 .wpe-c-color__chip { position: relative; background: repeating-conic-gradient(#ddd 0 25%, #fff 0 50%) 0 0 / 10px 10px !important; }
@@ -179,8 +179,8 @@
 .wpe-c-devices { flex-wrap: wrap; }
 #customize-preview.wpe-c-preview-sized { box-shadow: 0 0 0 1px #c3c4c7, 0 10px 40px rgb(0 0 0 / 12%); transition: width .25s, margin .25s; }
 /* Many breakpoints: the switcher gets its own line under the label. */
-.wpec__head { flex-wrap: wrap; }
-.wpec__head .wpe-c-devices { order: 3; flex-basis: 100%; margin: 4px 0 0; }
+.wpe-c__head { flex-wrap: wrap; }
+.wpe-c__head .wpe-c-devices { order: 3; flex-basis: 100%; margin: 4px 0 0; }
 .wpe-c-field__head { flex-wrap: wrap; }
 
 /* No ring after a mouse click on controls; keyboard focus stays visible. */
