@@ -684,6 +684,18 @@ def g_quote():
             className='ess-gap ess-contact-cols')))
 
 
+def g_cart():
+    return b.join(section(b.el('woo-notices', {}), b.el('woo-cart', {})))
+
+
+def g_checkout():
+    return b.join(section(b.el('woo-notices', {}), b.el('woo-checkout', {})))
+
+
+def g_account():
+    return b.join(section(b.el('woo-notices', {}), b.el('woo-account', {})))
+
+
 def g_service(i):
     _, name, desc, price = SERVICES[i]
     slug, headline, who, included, turnaround = svc.DETAIL[name]
@@ -974,6 +986,8 @@ def package(builder):
              ('contact', 'Contact', 'contact', g_contact, e_contact), ('quote', 'Request a quote', 'request-a-quote', g_quote, e_quote),
              ('support', 'Support', 'support', g_support, e_support),
              ('changelog', 'Changelog', 'changelog', g_changelog, e_changelog), ('roadmap', 'Roadmap', 'roadmap', g_roadmap, e_roadmap)]
+    if builder == 'gutenberg':
+        pages += [('cart', 'Cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
     pages += [('svc-' + svc.DETAIL[n][0], n, svc.DETAIL[n][0], (lambda i=i: g_service(i)), (lambda i=i: e_service(i))) for i, (_, n, _d, _p) in enumerate(SERVICES)]
     content = []
     for key, title, slug, g, el in pages:
@@ -1013,7 +1027,7 @@ def package(builder):
     settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'essential', 'style_data': style_data(), 'motion': 'subtle',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'footer': {'content': g_footer()}},
                 'options': {'posts_per_page': 9, 'blogname': 'WPEssential', 'blogdescription': 'Premium WordPress themes and one-click demos.'},
-                'woocommerce': {'options': {'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
+                'woocommerce': {'pages': {'cart': 'cart', 'checkout': 'checkout', 'myaccount': 'my-account'} if builder == 'gutenberg' else {}, 'options': {'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
                                             'woocommerce_coming_soon': 'no', 'woocommerce_store_pages_only': 'no',
                                             'woocommerce_enable_guest_checkout': 'yes',
                                             'woocommerce_cod_settings': {'enabled': 'yes', 'title': 'Pay by invoice'}}}}
