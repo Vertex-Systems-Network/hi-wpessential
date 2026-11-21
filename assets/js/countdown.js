@@ -1,6 +1,6 @@
 /* Live countdown for [data-date] blocks (Pulse home). Updates days, hours, minutes and seconds every second. */
 ( function () {
-	var boxes = document.querySelectorAll( '.px-count[data-date]' );
+	var boxes = document.querySelectorAll( '.wpe-px-count[data-date]' );
 	if ( ! boxes.length ) {
 		return;
 	}

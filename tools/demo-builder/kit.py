@@ -80,7 +80,7 @@ def html(markup, className=None):
 # Actions --------------------------------------------------------------------------------
 
 def button(text, href, style=None, className=None):
-    label = re.sub(r'\s*<span class="ess-arrow"[^>]*>.*?</span>', '', text)
+    label = re.sub(r'\s*<span class="wpe-ess-arrow"[^>]*>.*?</span>', '', text)
     return el('button', {'text': label, 'url': href, 'variant': 'primary',
                           'icon': {'library': 'wpessential', 'value': 'arrow-up-right'} if label != text else {},
                           'cssClass': _classes(style, className)})

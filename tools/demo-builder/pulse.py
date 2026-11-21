@@ -151,7 +151,7 @@ def g_cta():
     return b.section(b.group(b.group(b.h('Early-bird tickets end 22 March', size='h2', color='on-primary'),
                                      b.p('Save €150 on Conference passes. Prices go up at 23:59 Lisbon time.', color='on-primary'), layout='default'),
                              b.buttons(b.button('Get your ticket →', '{{page:tickets}}', style='wpe-dark')),
-                             bg='primary', className='wpe-card px-cta', layout='flex', wrap='wrap', justify='space-between', valign='center'),
+                             bg='primary', className='wpe-card wpe-px-cta', layout='flex', wrap='wrap', justify='space-between', valign='center'),
                      className='wpe-section wpe-section--sm')
 
 
@@ -161,25 +161,25 @@ def g_footer():
                      ('Attend', [('Venue & hotels', '{{page:venue}}'), ('FAQ', '{{page:faq}}'), ('My tickets', '{{woo:myaccount}}'), ('Contact', '{{page:contact}}')]),
                      ('Company', [('Sponsors', '{{page:sponsors}}'), ('About', '{{page:about}}'), ('Become a sponsor', '{{page:become-sponsor}}'), ('Call for speakers', '{{page:cfp}}'), ('Code of conduct', '{{page:code-of-conduct}}'), ('Gallery', '{{page:gallery}}'), ('Blog', '{{page:blog}}')])],
                     ('© Pulse Conference Lda. All rights reserved.', 'Designed &amp; built with <a href="https://wpessential.org/">Hi WPEssential</a>'),
-                    band=('See you in Lisbon.', 'Early-bird pricing until 22 March.', 'Get tickets', '{{page:tickets}}')).replace('wpe-footer__newsletter', 'wpe-footer__newsletter px-bigband')
+                    band=('See you in Lisbon.', 'Early-bird pricing until 22 March.', 'Get tickets', '{{page:tickets}}')).replace('wpe-footer__newsletter', 'wpe-footer__newsletter wpe-px-bigband')
 
 
 def g_speaker_card(s, topic=True):
     k, name, role, company, talk, track = s
     return b.group(b.image(k, 'Portrait of ' + name, aspect='1/1', style='wpe-shadow'),
                    b.h(name, level=3, size='h5'), b.p('%s · %s' % (role, company), color='text-muted', size='small'),
-                   b.p(track, className='px-tag px-tag--%s' % track.lower()),
-                   b.p(talk, size='small') if topic else '', layout='default', className='wpe-speaker px-speaker')
+                   b.p(track, className='wpe-px-tag wpe-px-tag--%s' % track.lower()),
+                   b.p(talk, size='small') if topic else '', layout='default', className='wpe-speaker wpe-px-speaker')
 
 
 def g_session(t):
     time, length, track, room, title, sp = t
     return b.group(
         b.group(b.p('<strong>%s</strong>' % time), b.p(length, color='text-muted', size='small'), layout='default', className='wpe-session__time'),
-        b.group(b.p('<span class="px-tag px-tag--%s">%s</span> <span class="px-room">%s</span>' % (track.lower().split()[0], track, room), className='px-session__tags'),
+        b.group(b.p('<span class="wpe-px-tag wpe-px-tag--%s">%s</span> <span class="wpe-px-room">%s</span>' % (track.lower().split()[0], track, room), className='wpe-px-session__tags'),
                 b.h(title, level=3, size='h5'),
                 b.p(speaker_names(sp), color='text-muted', size='small') if sp else '', layout='default', className='wpe-session__body'),
-        layout='flex', wrap='nowrap', valign='top', className='wpe-card wpe-session px-session')
+        layout='flex', wrap='nowrap', valign='top', className='wpe-card wpe-session wpe-px-session')
 
 
 def g_passes():
@@ -187,54 +187,54 @@ def g_passes():
     for p in PASSES:
         name = p['name'].replace(' Pass', '')
         price = '<strong>€%s</strong>' % p.get('sale', p['price']) + (' <s>€%s</s>' % p['price'] if p.get('sale') else '')
-        top = [b.h(name, level=3, size='h5')] + ([b.p('Most popular', className='px-badge')] if p.get('featured') else [])
+        top = [b.h(name, level=3, size='h5')] + ([b.p('Most popular', className='wpe-px-badge')] if p.get('featured') else [])
         cards.append(b.group(b.group(*top, layout='flex', justify='space-between', valign='center'),
-                             b.p(price, className='px-pass__price'), b.p(p['short'], size='small', className='px-pass__desc'),
-                             b.ul(p['inc'], style='wpe-checklist', className='px-pass__inc'),
+                             b.p(price, className='wpe-px-pass__price'), b.p(p['short'], size='small', className='wpe-px-pass__desc'),
+                             b.ul(p['inc'], style='wpe-checklist', className='wpe-px-pass__inc'),
                              b.buttons(b.button('Get this ticket' if p.get('featured') else 'Choose', '{{home:}}?add-to-cart={{post_id:%s}}' % p['key'],
-                                                style=None if p.get('featured') else 'wpe-outline'), className='px-pass__cta'),
-                             layout='default', className='px-pass' + (' is-featured' if p.get('featured') else '')))
-    return b.group(*cards, layout='grid', columns=4, className='px-passes')
+                                                style=None if p.get('featured') else 'wpe-outline'), className='wpe-px-pass__cta'),
+                             layout='default', className='wpe-px-pass' + (' is-featured' if p.get('featured') else '')))
+    return b.group(*cards, layout='grid', columns=4, className='wpe-px-passes')
 
 
 def g_home():
-    collage = html('<div class="px-collage"><span class="px-live">● Live in Lisbon</span>'
-                   '<img src="{{media:sp-3}}" alt="Mei Lin Chen" class="px-collage__a"><img src="{{media:sp-1}}" alt="Amara Okafor" class="px-collage__b">'
-                   '<img src="{{media:sp-2}}" alt="Rohan Mehta" class="px-collage__c"><span class="px-more">60+ speakers</span></div>')
-    countdown = html('<div class="px-count" data-date="2027-05-13T09:00:00+01:00"><span><b>208</b>days</span><span><b>08</b>hours</span>'
+    collage = html('<div class="wpe-px-collage"><span class="wpe-px-live">● Live in Lisbon</span>'
+                   '<img src="{{media:sp-3}}" alt="Mei Lin Chen" class="wpe-px-collage__a"><img src="{{media:sp-1}}" alt="Amara Okafor" class="wpe-px-collage__b">'
+                   '<img src="{{media:sp-2}}" alt="Rohan Mehta" class="wpe-px-collage__c"><span class="wpe-px-more">60+ speakers</span></div>')
+    countdown = html('<div class="wpe-px-count" data-date="2027-05-13T09:00:00+01:00"><span><b>208</b>days</span><span><b>08</b>hours</span>'
                      '<span><b>41</b>min</span><span><b>17</b>sec</span></div>')
     hero = b.section(b.columns(
-        b.column(b.p('%s · Lisbon Congress Centre' % DATES, className='px-chip'),
-                 b.h('Design.<br>Code.<br><mark>Ship.</mark>', level=1, size='display', className='px-hero__title'),
+        b.column(b.p('%s · Lisbon Congress Centre' % DATES, className='wpe-px-chip'),
+                 b.h('Design.<br>Code.<br><mark>Ship.</mark>', level=1, size='display', className='wpe-px-hero__title'),
                  b.p('Two days, 60 speakers and 3 stages for people who design and build the web. Talks, workshops and the best after-party in Europe.', color='text-muted'),
                  b.buttons(b.button('Get tickets — from €79', '{{page:tickets}}'), b.button('Watch 2026 recap', '{{page:blog}}', style='wpe-outline')),
                  countdown, width='55%', valign='center'),
-        b.column(collage, width='45%', valign='center'), className='wpe-gap-lg'), className='wpe-section px-hero')
-    stats = b.section(b.group(*[b.group(b.p(n, className='px-stat__n'), b.p(t, color='text-muted', size='small'), layout='default', className='px-stat')
+        b.column(collage, width='45%', valign='center'), className='wpe-gap-lg'), className='wpe-section wpe-px-hero')
+    stats = b.section(b.group(*[b.group(b.p(n, className='wpe-px-stat__n'), b.p(t, color='text-muted', size='small'), layout='default', className='wpe-px-stat')
                                 for n, t in [('2', 'days of talks'), ('60+', 'speakers'), ('3', 'stages + workshops'), ('2,400', 'attendees')]],
                               layout='grid', columns=4), className='wpe-section wpe-section--sm')
-    logos = b.group(b.p('Backed by teams who build the web', align='center', size='small', className='px-logos__label'),
-                    b.p(''.join('<span>%s</span>' % n for _, names in SPONSORS for n in names), className='px-logos__row'),
-                    align='full', bg='ink', color='on-ink', className='px-logos', layout='default')
+    logos = b.group(b.p('Backed by teams who build the web', align='center', size='small', className='wpe-px-logos__label'),
+                    b.p(''.join('<span>%s</span>' % n for _, names in SPONSORS for n in names), className='wpe-px-logos__row'),
+                    align='full', bg='ink', color='on-ink', className='wpe-px-logos', layout='default')
     def head(over, title, label, href):
-        return b.group(b.group(b.p(over, className='px-chip'), b.h(title, size='h2'), layout='default'),
-                       b.buttons(b.button(label + ' →', href, style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='px-head')
+        return b.group(b.group(b.p(over, className='wpe-px-chip'), b.h(title, size='h2'), layout='default'),
+                       b.buttons(b.button(label + ' →', href, style='wpe-outline')), layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='wpe-px-head')
     speakers = b.section(head('Speakers', 'Learn from the people building what\'s next', 'All 60 speakers', '{{page:speakers}}'),
                          b.group(*[g_speaker_card(s, False) for s in SPEAKERS], layout='grid', columns=4))
     agenda = b.section(head('Agenda', 'Day 1 · Thursday 13 May', 'Full agenda', '{{page:agenda}}'),
-                       b.p('<span class="is-active">Day 1 · 13 May</span><a href="{{page:agenda}}">Day 2 · 14 May</a><a href="{{page:agenda}}">Workshops · 12 May</a>', className='px-tabs'),
+                       b.p('<span class="is-active">Day 1 · 13 May</span><a href="{{page:agenda}}">Day 2 · 14 May</a><a href="{{page:agenda}}">Workshops · 12 May</a>', className='wpe-px-tabs'),
                        *[g_session(t) for t in DAY1[:4]], bg='surface-alt')
-    tickets = b.section(b.p('Tickets', className='px-chip', align='center'), b.h('Pick your pass', size='h2', align='center'),
+    tickets = b.section(b.p('Tickets', className='wpe-px-chip', align='center'), b.h('Pick your pass', size='h2', align='center'),
                         b.p('All prices include VAT. Student and diversity tickets are available on request.', align='center', color='text-muted'),
                         g_passes())
     venue = b.section(b.columns(
         b.column(b.image('venue', 'Lisbon Congress Centre at dusk', aspect='4/3', style='wpe-shadow'), width='55%'),
-        b.column(b.p('Venue', className='px-chip'), b.h('Lisbon Congress Centre, on the river', size='h2'),
+        b.column(b.p('Venue', className='wpe-px-chip'), b.h('Lisbon Congress Centre, on the river', size='h2'),
                  b.p('Ten minutes from the airport on the metro, with step-free access throughout and a terrace over the Tagus.', color='text-muted'),
                  b.ul(['Praça das Indústrias, 1300-307 Lisboa', 'Doors 08:00 · Talks 09:00 – 18:00', 'Hearing loops, live captions, quiet rooms'], style='wpe-checklist'),
                  b.buttons(b.button('Plan your trip →', '{{page:venue}}', style='wpe-outline')), valign='center'), valign='center', className='wpe-gap-lg'))
-    quotes = b.section(b.group(b.p('2026 in their words', className='px-chip'), b.h('“The best two days of my year.”', size='h2'), layout='default'),
-                       b.columns(*[b.column(b.image(img, alt, aspect='3/2'), b.p('“', className='px-qmark'), b.p(q), b.p('<strong>%s</strong>' % who, size='small'), style='wpe-card')
+    quotes = b.section(b.group(b.p('2026 in their words', className='wpe-px-chip'), b.h('“The best two days of my year.”', size='h2'), layout='default'),
+                       b.columns(*[b.column(b.image(img, alt, aspect='3/2'), b.p('“', className='wpe-px-qmark'), b.p(q), b.p('<strong>%s</strong>' % who, size='small'), style='wpe-card')
                                    for img, alt, q, who in [
                                        ('crowd', 'Audience at Pulse 2026', 'I left with three new collaborators and a notebook full of ideas I shipped the following month.', 'Priya S., Product Designer'),
                                        ('workshop', 'Workshop at Pulse 2026', 'The workshops were hands-on and small. I learned more in four hours than in a semester.', 'Marco R., Frontend Lead'),
@@ -243,9 +243,9 @@ def g_home():
 
 
 def g_title(over, title, lead):
-    return b.section(b.group(b.p('<a href="{{home:}}">Home</a> › %s' % over, className='px-crumb'), b.p(over, className='px-chip'),
-                             b.h(title, level=1, size='display', className='px-title'), b.p(lead, color='text-muted'), layout='default'),
-                     className='wpe-section wpe-section--sm px-page-head', content='1200px')
+    return b.section(b.group(b.p('<a href="{{home:}}">Home</a> › %s' % over, className='wpe-px-crumb'), b.p(over, className='wpe-px-chip'),
+                             b.h(title, level=1, size='display', className='wpe-px-title'), b.p(lead, color='text-muted'), layout='default'),
+                     className='wpe-section wpe-section--sm wpe-px-page-head', content='1200px')
 
 
 def g_speakers():
@@ -257,12 +257,12 @@ def g_speakers():
 
 
 def g_agenda():
-    tabs = b.p('<a class="is-active" href="#day-1">Day 1 · Thu 13</a><a href="#day-2">Day 2 · Fri 14</a><a href="{{home:events/}}">Workshops · Wed 12</a>', className='px-tabs')
-    legend = b.p('Tracks: <span class="px-tag px-tag--design">Design</span> <span class="px-tag px-tag--engineering">Engineering</span> '
-                 '<span class="px-tag px-tag--ai">AI</span> <span class="px-tag px-tag--product">Product</span>', className='px-legend')
+    tabs = b.p('<a class="is-active" href="#day-1">Day 1 · Thu 13</a><a href="#day-2">Day 2 · Fri 14</a><a href="{{home:events/}}">Workshops · Wed 12</a>', className='wpe-px-tabs')
+    legend = b.p('Tracks: <span class="wpe-px-tag wpe-px-tag--design">Design</span> <span class="wpe-px-tag wpe-px-tag--engineering">Engineering</span> '
+                 '<span class="wpe-px-tag wpe-px-tag--ai">AI</span> <span class="wpe-px-tag wpe-px-tag--product">Product</span>', className='wpe-px-legend')
     return b.join(g_title('Agenda', 'Two days, three stages', 'Times are Lisbon time (WEST, UTC+1). Workshops run on 12 May at LX Factory.'),
-                  b.section(tabs, legend, b.h('Day 1 · Thursday 13 May', size='h3', className='px-day', anchor='day-1'), *[g_session(t) for t in DAY1],
-                            b.h('Day 2 · Friday 14 May', size='h3', className='px-day', anchor='day-2'), *[g_session(t) for t in DAY2],
+                  b.section(tabs, legend, b.h('Day 1 · Thursday 13 May', size='h3', className='wpe-px-day', anchor='day-1'), *[g_session(t) for t in DAY1],
+                            b.h('Day 2 · Friday 14 May', size='h3', className='wpe-px-day', anchor='day-2'), *[g_session(t) for t in DAY2],
                             b.buttons(b.button('Add to calendar', '{{home:events/}}', style='wpe-outline'), b.button('Get tickets', '{{page:tickets}}')),
                             className='wpe-section wpe-section--sm'))
 
@@ -286,53 +286,53 @@ def g_venue():
               ('By bike', 'Gira bike stations at the main entrance. Secure bike parking inside.')]
     return b.join(
         g_title('Venue &amp; travel', 'Lisbon Congress Centre', 'On the Tagus riverfront, 10 minutes from the airport. Step-free access throughout.'),
-        b.section(b.image('venue', 'Lisbon Congress Centre at dusk', aspect='2/1', className='px-rounded'), className='wpe-section wpe-section--sm'),
-        b.section(b.group(b.p('Getting here', className='px-chip'), b.h('Metro, tram or bike', size='h2'), layout='default'),
-                  b.group(*[b.group(b.p('●', className='px-dot'), b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='px-tile')
+        b.section(b.image('venue', 'Lisbon Congress Centre at dusk', aspect='2/1', className='wpe-px-rounded'), className='wpe-section wpe-section--sm'),
+        b.section(b.group(b.p('Getting here', className='wpe-px-chip'), b.h('Metro, tram or bike', size='h2'), layout='default'),
+                  b.group(*[b.group(b.p('●', className='wpe-px-dot'), b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='wpe-px-tile')
                             for t, d in routes], layout='grid', columns=3), className='wpe-section wpe-section--sm'),
-        b.section(b.group(b.p('Partner hotels', className='px-chip'), b.h('Stay close, pay less', size='h2'),
+        b.section(b.group(b.p('Partner hotels', className='wpe-px-chip'), b.h('Stay close, pay less', size='h2'),
                           b.p('Use code PULSE27 for the rates below. Rooms held until 10 April.', color='text-muted'), layout='default'),
                   *[b.group(b.group(b.h(n, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default'),
-                            b.p('<span class="px-badge">from %s</span> <a class="px-mini-btn" href="{{page:contact}}">Book →</a>' % p, className='px-row__end'),
-                            layout='flex', wrap='nowrap', justify='space-between', valign='center', className='px-row') for n, d, p in HOTELS],
+                            b.p('<span class="wpe-px-badge">from %s</span> <a class="wpe-px-mini-btn" href="{{page:contact}}">Book →</a>' % p, className='wpe-px-row__end'),
+                            layout='flex', wrap='nowrap', justify='space-between', valign='center', className='wpe-px-row') for n, d, p in HOTELS],
                   className='wpe-section wpe-section--sm'))
 
 
 def g_sponsors():
     labels = {'Platinum': 'Headline partners', 'Gold': 'Gold partners', 'Community': 'Community partners'}
     cols = {'Platinum': 2, 'Gold': 4, 'Community': 6}
-    tiers = [b.group(b.p(labels.get(tier, tier), className='px-chip'),
-                     b.group(*[b.p(n, className='px-logo px-logo--%s' % tier.lower()) for n in names], layout='grid', columns=cols.get(tier, 4), className='px-logos-grid'),
-                     layout='default', className='px-tier') for tier, names in SPONSORS]
+    tiers = [b.group(b.p(labels.get(tier, tier), className='wpe-px-chip'),
+                     b.group(*[b.p(n, className='wpe-px-logo wpe-px-logo--%s' % tier.lower()) for n in names], layout='grid', columns=cols.get(tier, 4), className='wpe-px-logos-grid'),
+                     layout='default', className='wpe-px-tier') for tier, names in SPONSORS]
     return b.join(g_title('Sponsors', 'The teams making Pulse possible', 'Pulse is independent. Our partners fund scholarships, live captions and free recordings.'),
                   b.section(*tiers, className='wpe-section wpe-section--sm'))
 
 
 def g_become():
     hero = b.section(b.columns(
-        b.column(b.p('Partner with us', className='px-chip'), b.h('Put your brand in front of 2,400 builders', level=1, size='display', className='px-title'),
+        b.column(b.p('Partner with us', className='wpe-px-chip'), b.h('Put your brand in front of 2,400 builders', level=1, size='display', className='wpe-px-title'),
                  b.p('72% of attendees influence tooling decisions at their company. Booths, workshops and talk slots available.', color='text-muted'), valign='center'),
-        b.column(b.image('networking', 'Attendees talking at Pulse', aspect='3/2', className='px-rounded'), valign='center'), className='wpe-gap-lg'),
-        className='wpe-section px-page-head')
-    packs = b.section(b.p('Packages', className='px-chip'), b.h('Three ways to partner', size='h2'),
-                      b.group(*[b.group(b.h(n, level=3, size='h5'), b.p(price, className='px-pass__price'), b.ul(items, style='wpe-checklist', className='px-pass__inc'),
-                                        layout='default', className='px-pass') for n, price, items in PACKAGES], layout='grid', columns=3), bg='surface-alt')
-    form = b.section(b.p('Get in touch', className='px-chip'), b.h('Request the sponsor deck', size='h2'),
-                     b.shortcode('[wpforms id="{{form:sponsor}}" title="false"]'), className='wpe-section px-sponsor-form')
+        b.column(b.image('networking', 'Attendees talking at Pulse', aspect='3/2', className='wpe-px-rounded'), valign='center'), className='wpe-gap-lg'),
+        className='wpe-section wpe-px-page-head')
+    packs = b.section(b.p('Packages', className='wpe-px-chip'), b.h('Three ways to partner', size='h2'),
+                      b.group(*[b.group(b.h(n, level=3, size='h5'), b.p(price, className='wpe-px-pass__price'), b.ul(items, style='wpe-checklist', className='wpe-px-pass__inc'),
+                                        layout='default', className='wpe-px-pass') for n, price, items in PACKAGES], layout='grid', columns=3), bg='surface-alt')
+    form = b.section(b.p('Get in touch', className='wpe-px-chip'), b.h('Request the sponsor deck', size='h2'),
+                     b.shortcode('[wpforms id="{{form:sponsor}}" title="false"]'), className='wpe-section wpe-px-sponsor-form')
     return b.join(hero, packs, form)
 
 
 def g_faq():
     return b.join(g_title('FAQ', 'Questions, answered', 'Still stuck? Write to tickets@pulseconf.io and we reply within a day.'),
-                  b.section(*[b.details(q, b.p(a)) for q, a in FAQ], className='wpe-section wpe-section--sm px-faq'))
+                  b.section(*[b.details(q, b.p(a)) for q, a in FAQ], className='wpe-section wpe-section--sm wpe-px-faq'))
 
 
 def g_contact():
     cards = [('General', 'tickets@pulseconf.io'), ('Speaking', 'speakers@pulseconf.io'), ('Sponsorship', 'partners@pulseconf.io'), ('Phone', '+351 21 340 2290')]
-    side = [b.group(b.p('●', className='px-dot'), b.group(b.p('<strong>%s</strong>' % t), b.p(d, color='text-muted', size='small'), layout='default'),
-                    layout='flex', wrap='nowrap', valign='center', className='px-tile px-tile--row') for t, d in cards]
+    side = [b.group(b.p('●', className='wpe-px-dot'), b.group(b.p('<strong>%s</strong>' % t), b.p(d, color='text-muted', size='small'), layout='default'),
+                    layout='flex', wrap='nowrap', valign='center', className='wpe-px-tile wpe-px-tile--row') for t, d in cards]
     return b.join(g_title('Contact', 'Talk to the Pulse team', 'Tickets, press, speaking or sponsorship — pick a topic and we route it to the right person.'),
-                  b.section(b.columns(b.column(b.shortcode('[wpforms id="{{form:contact}}" title="false"]'), width='62%', className='px-form-card'),
+                  b.section(b.columns(b.column(b.shortcode('[wpforms id="{{form:contact}}" title="false"]'), width='62%', className='wpe-px-form-card'),
                                       b.column(*side, width='38%'), className='wpe-gap-lg'), className='wpe-section wpe-section--sm'),
                   b.section(html('<div class="demo-map"><iframe title="Lisbon Congress Centre on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Lisbon%20Congress%20Centre&amp;z=15&amp;output=embed"></iframe></div>'), className='wpe-section wpe-section--sm'))
 
@@ -347,7 +347,7 @@ def e_speaker(s, topic=True):
 def e_session(t):
     time, length, track, room, title, sp = t
     return e.row(e.col(e.heading(time, 3, size_px=20), e.text(length, size_px=13), width=12),
-                 e.col(e.text('<span class="px-tag px-tag--%s">%s</span> <span class="px-room">%s</span>' % (track.lower().split()[0], track, room), size_px=12),
+                 e.col(e.text('<span class="wpe-px-tag wpe-px-tag--%s">%s</span> <span class="wpe-px-room">%s</span>' % (track.lower().split()[0], track, room), size_px=12),
                        e.heading(title, 3, size_px=20), e.text(speaker_names(sp), size_px=13) if sp else e.spacer(1), width=88, gap=6),
                  gap=24, pad=20, bg='surface', radius=16, border='border', mobile_direction='row')
 
@@ -502,24 +502,24 @@ CONDUCT = [('Be kind and inclusive', 'Pulse is for everyone, regardless of gende
 
 
 def g_about():
-    hist = b.group(*[b.group(b.p(y, className='px-year'), b.h(a, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='px-tile')
+    hist = b.group(*[b.group(b.p(y, className='wpe-px-year'), b.h(a, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='wpe-px-tile')
                      for y, a, d in EDITIONS], layout='grid', columns=4)
-    nums = b.group(*[b.group(b.p(n, className='px-num'), b.p(t, color='text-muted', size='small'), layout='default') for n, t in NUMBERS], layout='grid', columns=4, className='px-nums')
-    vals = b.group(*[b.group(b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='px-tile') for _i, t, d in VALUES],
+    nums = b.group(*[b.group(b.p(n, className='wpe-px-num'), b.p(t, color='text-muted', size='small'), layout='default') for n, t in NUMBERS], layout='grid', columns=4, className='wpe-px-nums')
+    vals = b.group(*[b.group(b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='wpe-px-tile') for _i, t, d in VALUES],
                    layout='grid', columns=3)
-    story = b.columns(b.column(b.image('crowd', 'The Pulse main stage full of attendees', aspect='4/3', className='px-rounded')),
-                      b.column(b.p('Our story', className='px-chip'), b.h('Built by people who were tired of sales-pitch conferences', size='h2'),
+    story = b.columns(b.column(b.image('crowd', 'The Pulse main stage full of attendees', aspect='4/3', className='wpe-px-rounded')),
+                      b.column(b.p('Our story', className='wpe-px-chip'), b.h('Built by people who were tired of sales-pitch conferences', size='h2'),
                                b.p('Pulse started in 2023 as a one-day meetup for 420 designers and engineers in Lisbon. Five editions later it is still independent, still run by the same four people and still has no paid keynote slots.', color='text-muted'),
                                valign='center'), valign='center', className='wpe-gap-lg')
     return b.join(g_title('About', 'The conference for people who design and build the web', 'Independent since 2023, in Lisbon every May.'),
                   b.section(story, nums, className='wpe-section wpe-section--sm'),
-                  b.section(b.group(b.p('Five editions', className='px-chip'), b.h('How Pulse grew', size='h2'), layout='default'), hist, bg='surface-alt'),
-                  b.section(b.group(b.p('What we stand for', className='px-chip'), b.h('Three rules we never break', size='h2'), layout='default'), vals,
+                  b.section(b.group(b.p('Five editions', className='wpe-px-chip'), b.h('How Pulse grew', size='h2'), layout='default'), hist, bg='surface-alt'),
+                  b.section(b.group(b.p('What we stand for', className='wpe-px-chip'), b.h('Three rules we never break', size='h2'), layout='default'), vals,
                             b.buttons(b.button('Read the code of conduct', '{{page:code-of-conduct}}', style='wpe-outline'))))
 
 
 def g_gallery():
-    tiles = b.group(*[b.image(k, alt, aspect='4/3', className='px-rounded') for k, alt in GALLERY], layout='grid', columns=4, className='px-gallery')
+    tiles = b.group(*[b.image(k, alt, aspect='4/3', className='wpe-px-rounded') for k, alt in GALLERY], layout='grid', columns=4, className='wpe-px-gallery')
     return b.join(g_title('Gallery', 'Pulse 2026 in pictures', 'Two days, 2,400 people and a lot of very good coffee. Photos by Joana Reis.'),
                   b.section(tiles, className='wpe-section wpe-section--sm'),
                   b.section(b.h('Be in the 2027 photos', size='h3', align='center'),
@@ -528,24 +528,24 @@ def g_gallery():
 
 
 def g_cfp():
-    steps = b.group(*[b.group(b.p(n, className='px-num'), b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='px-tile')
+    steps = b.group(*[b.group(b.p(n, className='wpe-px-num'), b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='wpe-px-tile')
                       for n, t, d in CFP_STEPS], layout='grid', columns=4)
-    topics = b.p(''.join('<span class="px-tag">%s</span> ' % t for t in TOPICS), className='px-topics')
+    topics = b.p(''.join('<span class="wpe-px-tag">%s</span> ' % t for t in TOPICS), className='wpe-px-topics')
     return b.join(g_title('Call for speakers', 'Speak at Pulse 2028', 'Proposals are open until 30 November. We especially want first-time speakers.'),
-                  b.section(b.group(b.p('How it works', className='px-chip'), b.h('From pitch to stage', size='h2'), layout='default'), steps,
+                  b.section(b.group(b.p('How it works', className='wpe-px-chip'), b.h('From pitch to stage', size='h2'), layout='default'), steps,
                             b.h('Topics we are looking for', level=3, size='h4'), topics, className='wpe-section wpe-section--sm'),
                   b.section(b.columns(b.column(b.h('Send your proposal', size='h2'), b.p('It takes about ten minutes. We reply to every proposal.', color='text-muted'),
-                                               b.image('hero-stage', 'A speaker on the Pulse main stage', aspect='4/3', className='px-rounded')),
-                                      b.column(b.shortcode('[wpforms id="{{form:cfp}}" title="false"]'), className='px-form-card'), className='wpe-gap-lg'), bg='surface-alt'))
+                                               b.image('hero-stage', 'A speaker on the Pulse main stage', aspect='4/3', className='wpe-px-rounded')),
+                                      b.column(b.shortcode('[wpforms id="{{form:cfp}}" title="false"]'), className='wpe-px-form-card'), className='wpe-gap-lg'), bg='surface-alt'))
 
 
 def g_conduct():
-    items = [b.group(b.h(t, level=2, size='h4'), b.p(d, color='text-muted'), layout='default', className='px-tile') for t, d in CONDUCT]
+    items = [b.group(b.h(t, level=2, size='h4'), b.p(d, color='text-muted'), layout='default', className='wpe-px-tile') for t, d in CONDUCT]
     report = b.group(b.h('Need help or want to report something?', level=2, size='h4'),
                      b.p('Find anyone in a pink Pulse T-shirt, call our safety line on <a href="tel:+351912000270">+351 912 000 270</a> or email <a href="mailto:safety@pulseconf.io">safety@pulseconf.io</a>. Reports are confidential.'),
-                     layout='default', className='px-tile px-tile--accent')
+                     layout='default', className='wpe-px-tile wpe-px-tile--accent')
     return b.join(g_title('Code of conduct', 'A safe, welcoming event for everyone', 'All attendees, speakers, sponsors and volunteers agree to this code.'),
-                  b.section(*items, report, className='wpe-section wpe-section--sm px-conduct', content='820px'))
+                  b.section(*items, report, className='wpe-section wpe-section--sm wpe-px-conduct', content='820px'))
 
 
 def e_about():
@@ -575,7 +575,7 @@ def e_cfp():
             e.container(e.overline('How it works'), e.heading('From pitch to stage'),
                         e.grid(*[e.col(e.heading(n, 3, 'primary', size_px=36), e.heading(t, 4, size_px=18), e.text(d, size_px=14), gap=6, pad=20, radius=16, bg='surface-alt')
                                  for n, t, d in CFP_STEPS], columns=4),
-                        e.heading('Topics we are looking for', 3, size_px=22), e.text(''.join('<span class="px-tag">%s</span> ' % t for t in TOPICS)), pad=(24, 24, 72, 24)),
+                        e.heading('Topics we are looking for', 3, size_px=22), e.text(''.join('<span class="wpe-px-tag">%s</span> ' % t for t in TOPICS)), pad=(24, 24, 72, 24)),
             e.container(e.row(e.col(e.heading('Send your proposal', 2, size_px=40), e.text('It takes about ten minutes. We reply to every proposal.'),
                                     e.image_fixed('hero-stage', 'A speaker on the Pulse main stage', 320), width=45),
                               e.col(e.shortcode('[wpforms id="{{form:cfp}}" title="false"]'), width=55, pad=28, radius=20, border='border', bg='surface'), gap=48),

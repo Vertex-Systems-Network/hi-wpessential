@@ -160,28 +160,28 @@ STORES = [('Paris', '14 Rue de Saintonge, 75003 Paris', 'Tue–Sat 11:00–19:00
 def g_header():
     topbar = b.group(
         b.group(b.p('Complimentary shipping over €150 · Free returns within 30 days · Gift wrapping on request'),
-                className='wpe-topbar__inner mx-topbar', layout='flex', wrap='nowrap', justify='center'),
+                className='wpe-topbar__inner wpe-mx-topbar', layout='flex', wrap='nowrap', justify='center'),
         className='wpe-topbar', content='1200px')
-    left = b.block('navigation', {'overlayMenu': 'mobile', 'className': 'mx-nav', 'layout': {'type': 'flex', 'justifyContent': 'left'}},
+    left = b.block('navigation', {'overlayMenu': 'mobile', 'className': 'wpe-mx-nav', 'layout': {'type': 'flex', 'justifyContent': 'left'}},
                    '\n'.join(b.block('navigation-link', {'label': l, 'url': u, 'kind': 'custom'}) for l, u in
                              [('New in', '{{woo:shop}}?orderby=date'), ('Dresses', '{{term_link:pc-dresses}}'),
                               ('Knitwear', '{{term_link:pc-knitwear}}'), ('Accessories', '{{term_link:pc-accessories}}')]))
-    right = b.group(b.block('navigation', {'overlayMenu': 'never', 'className': 'mx-nav mx-nav--right', 'layout': {'type': 'flex', 'justifyContent': 'right'}},
+    right = b.group(b.block('navigation', {'overlayMenu': 'never', 'className': 'wpe-mx-nav wpe-mx-nav--right', 'layout': {'type': 'flex', 'justifyContent': 'right'}},
                             '\n'.join(b.block('navigation-link', {'label': l, 'url': u, 'kind': 'custom'}) for l, u in
                                       [('Lookbook', '{{page:lookbook}}'), ('Journal', '{{page:journal}}')])),
                     b.block('search', {'label': 'Search', 'showLabel': False, 'buttonText': 'Search', 'buttonPosition': 'button-only',
                                        'buttonUseIcon': True, 'isSearchFieldHidden': True, 'query': {'post_type': 'product'}}),
                     b.block('woocommerce/customer-account', {'displayStyle': 'icon_only', 'iconStyle': 'line', 'iconClass': 'wc-block-customer-account__account-icon'}),
                     b.block('woocommerce/mini-cart'),
-                    className='wpe-header-actions mx-actions', layout='flex', wrap='nowrap', justify='right')
-    inner = b.group(left, b.block('site-title', {'className': 'mx-logo'}), right, className='wpe-header__inner mx-header__inner', layout='default')
-    return b.join(topbar, b.group(inner, tag='header', className='wpe-header mx-header', content='1200px'))
+                    className='wpe-header-actions wpe-mx-actions', layout='flex', wrap='nowrap', justify='right')
+    inner = b.group(left, b.block('site-title', {'className': 'wpe-mx-logo'}), right, className='wpe-header__inner wpe-mx-header__inner', layout='default')
+    return b.join(topbar, b.group(inner, tag='header', className='wpe-header wpe-mx-header', content='1200px'))
 
 
 def g_letter():
     return b.section(b.p('The Maison letter', style='wpe-overline', align='center'), b.h('Quiet notes on new collections', size='h2', align='center'),
                      b.p('One letter a month: new pieces, atelier stories and private sales. No noise.', align='center', color='text-muted'),
-                     b.shortcode('[wpforms id="{{form:newsletter}}" title="false"]'), content='560px', bg='surface-alt', className='wpe-section mx-letter')
+                     b.shortcode('[wpforms id="{{form:newsletter}}" title="false"]'), content='560px', bg='surface-alt', className='wpe-section wpe-mx-letter')
 
 
 def g_footer():
@@ -201,49 +201,49 @@ STATS = [('6', 'partner ateliers'), ('100%', 'natural fibres'), ('Lifetime', 'fr
 def g_home():
     hero = b.group(b.columns(
         b.column(b.p('Autumn · Winter 2026', style='wpe-overline'),
-                 b.h('The Quiet Season', level=1, size='display', className='mx-hero__title'),
-                 b.p('<em>linen, silk &amp; undyed wool</em>', className='mx-hero__sub'),
+                 b.h('The Quiet Season', level=1, size='display', className='wpe-mx-hero__title'),
+                 b.p('<em>linen, silk &amp; undyed wool</em>', className='wpe-mx-hero__sub'),
                  b.p('Cut in small runs in Porto and Florence. Pieces made to soften with every wear and last for decades.', color='text-muted'),
                  b.buttons(b.button('Shop the collection', '{{woo:shop}}'), b.button('View lookbook', '{{page:lookbook}}', style='wpe-outline')),
-                 b.p('01 / 03 <span>— Look 01: linen suit, natural canvas tote</span>', className='mx-hero__count'),
-                 width='50%', valign='center', className='mx-hero__text'),
-        b.column(b.image('hero-campaign', 'Model in an ivory linen suit in a sunlit stone courtyard', className='mx-hero__img'), width='50%', className='mx-hero__media'),
-        className='mx-hero__cols', stack=True), align='full', className='mx-hero', layout='default')
+                 b.p('01 / 03 <span>— Look 01: linen suit, natural canvas tote</span>', className='wpe-mx-hero__count'),
+                 width='50%', valign='center', className='wpe-mx-hero__text'),
+        b.column(b.image('hero-campaign', 'Model in an ivory linen suit in a sunlit stone courtyard', className='wpe-mx-hero__img'), width='50%', className='wpe-mx-hero__media'),
+        className='wpe-mx-hero__cols', stack=True), align='full', className='wpe-mx-hero', layout='default')
     def head(over, title, link, href, center=False):
         if center:
             return b.group(b.p(over, style='wpe-overline', align='center'), b.h(title, size='h2', align='center'), layout='default')
         return b.group(b.group(b.p(over, style='wpe-overline'), b.h(title, size='h2'), layout='default'),
-                       b.p('<a href="%s">%s</a>' % (href, link), className='mx-link'),
-                       layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='mx-head')
+                       b.p('<a href="%s">%s</a>' % (href, link), className='wpe-mx-link'),
+                       layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='wpe-mx-head')
     cats = b.section(head('Shop by category', 'Wardrobe foundations', 'All categories', '{{woo:shop}}'),
                      b.group(*[b.group(b.image(img, label, aspect='3/4', href='{{term_link:%s}}' % term),
-                                       b.h('<a href="{{term_link:%s}}">%s</a>' % (term, label), level=3, size='h4'), layout='default', className='mx-cat')
+                                       b.h('<a href="{{term_link:%s}}">%s</a>' % (term, label), level=3, size='h4'), layout='default', className='wpe-mx-cat')
                                for term, img, label in CATEGORIES], layout='grid', grid_min='14rem'))
     arrivals = b.section(head('New in', 'The first pieces of the season', 'Shop new in', '{{woo:shop}}?orderby=date'),
                          b.shortcode('[products limit="8" columns="4" orderby="date" order="DESC"]'), className='wpe-section wpe-section--sm')
     atelier = b.group(b.columns(
-        b.column(b.image('atelier-hands', 'Tailor hand-stitching ivory linen', className='mx-split__img'), width='50%', className='mx-split__media'),
+        b.column(b.image('atelier-hands', 'Tailor hand-stitching ivory linen', className='wpe-mx-split__img'), width='50%', className='wpe-mx-split__media'),
         b.column(b.p('The atelier', style='wpe-overline'), b.h('Made slowly,<br>worn for years', size='h1'),
                  b.p('Every Maison piece is cut and sewn by a family workshop we know by name. We pay above the regional wage, use natural fibres only and repair anything we make, free, for life.', color='text-muted'),
-                 b.group(*[b.group(b.p(n, className='mx-stat__n'), b.p(l, className='mx-stat__l'), layout='default') for n, l in STATS],
-                         layout='flex', wrap='wrap', className='mx-stats'),
-                 b.p('<a href="{{page:atelier}}">Discover the atelier</a>', className='mx-link'),
-                 width='50%', valign='center', className='mx-split__text'),
-        className='mx-split', stack=True), align='full', bg='surface-alt', className='mx-split-wrap', layout='default')
+                 b.group(*[b.group(b.p(n, className='wpe-mx-stat__n'), b.p(l, className='wpe-mx-stat__l'), layout='default') for n, l in STATS],
+                         layout='flex', wrap='wrap', className='wpe-mx-stats'),
+                 b.p('<a href="{{page:atelier}}">Discover the atelier</a>', className='wpe-mx-link'),
+                 width='50%', valign='center', className='wpe-mx-split__text'),
+        className='wpe-mx-split', stack=True), align='full', bg='surface-alt', className='wpe-mx-split-wrap', layout='default')
     looks = b.section(head('Lookbook', 'Three ways to wear linen', '', '', center=True),
                       b.p('Styled in Provence by Inès Moreau', align='center', color='text-muted'),
-                      b.group(*[b.group(b.image(k, t, aspect='3/4', href='{{page:lookbook}}'), b.p(t, className='mx-caption'), layout='default') for k, t in LOOKS],
-                              layout='grid', columns=3, className='mx-looks'))
+                      b.group(*[b.group(b.image(k, t, aspect='3/4', href='{{page:lookbook}}'), b.p(t, className='wpe-mx-caption'), layout='default') for k, t in LOOKS],
+                              layout='grid', columns=3, className='wpe-mx-looks'))
     promises = b.section(b.group(*[b.group(b.p('<strong>%s</strong>' % t), b.p(d, color='text-muted', size='small'), layout='default') for t, d in PROMISES],
-                                 layout='grid', grid_min='14rem', className='mx-promises'), className='wpe-section wpe-section--sm mx-promise-band')
+                                 layout='grid', grid_min='14rem', className='wpe-mx-promises'), className='wpe-section wpe-section--sm wpe-mx-promise-band')
     journal = b.section(head('Journal', 'Notes from the studio', 'Read the journal', '{{page:journal}}'), b.latest_posts(3))
     visit = b.group(b.columns(
-        b.column(b.image('store-paris', 'Inside the Paris store', className='mx-split__img'), width='50%', className='mx-split__media'),
+        b.column(b.image('store-paris', 'Inside the Paris store', className='wpe-mx-split__img'), width='50%', className='wpe-mx-split__media'),
         b.column(b.p('Visit us', style='wpe-overline', color='on-ink'), b.h('14 Rue de<br>Saintonge, Paris', size='h1', color='on-ink'),
                  b.p('Tuesday – Saturday, 11:00 – 19:00. Private fittings with our tailors by appointment.', color='on-ink'),
                  b.buttons(b.button('Book a fitting', '{{page:contact}}', style='wpe-light')),
-                 width='50%', valign='center', className='mx-split__text'),
-        className='mx-split', stack=True), align='full', bg='ink', className='mx-split-wrap mx-visit', layout='default')
+                 width='50%', valign='center', className='wpe-mx-split__text'),
+        className='wpe-mx-split', stack=True), align='full', bg='ink', className='wpe-mx-split-wrap wpe-mx-visit', layout='default')
     return b.join(hero, cats, arrivals, atelier, looks, promises, journal, visit)
 
 
@@ -266,11 +266,11 @@ SHIPPING = [('France', '1–2 working days', 'Free over €150 · €8'), ('Euro
 
 def page_head(crumb, over, title, lead=None, center=False):
     a = 'center' if center else None
-    inner = [b.p('<a href="{{home:}}">Home</a> / %s' % crumb, className='mx-crumb')] if not center else []
-    inner += [b.p(over, style='wpe-overline', align=a), b.h(title, level=1, size='display', align=a, className='mx-page-title')]
+    inner = [b.p('<a href="{{home:}}">Home</a> / %s' % crumb, className='wpe-mx-crumb')] if not center else []
+    inner += [b.p(over, style='wpe-overline', align=a), b.h(title, level=1, size='display', align=a, className='wpe-mx-page-title')]
     if lead:
         inner.append(b.p(lead, color='text-muted', align=a))
-    return b.section(*inner, className='wpe-section wpe-section--sm mx-page-head', content='760px' if center else '1200px')
+    return b.section(*inner, className='wpe-section wpe-section--sm wpe-mx-page-head', content='760px' if center else '1200px')
 
 
 def g_lookbook():
@@ -279,38 +279,38 @@ def g_lookbook():
     rows = []
     for n, (img, title, pids) in enumerate(LOOKS_FULL):
         img_col = b.column(b.image(img, title, aspect='7/5'), width='56%')
-        txt_col = b.column(b.p('Look %02d' % (n + 1), className='mx-look__n'), b.h(title, size='h2'),
-                           b.p('<a href="{{page:%s}}">Shop this look</a>' % pids[0], className='mx-link'), width='44%', valign='center')
+        txt_col = b.column(b.p('Look %02d' % (n + 1), className='wpe-mx-look__n'), b.h(title, size='h2'),
+                           b.p('<a href="{{page:%s}}">Shop this look</a>' % pids[0], className='wpe-mx-link'), width='44%', valign='center')
         cols = (img_col, txt_col) if n % 2 == 0 else (txt_col, img_col)
-        rows.append(b.columns(*cols, valign='center', className='wpe-gap-lg mx-look'))
+        rows.append(b.columns(*cols, valign='center', className='wpe-gap-lg wpe-mx-look'))
     return b.join(intro, b.section(*rows, className='wpe-section wpe-section--sm'))
 
 
 def g_atelier():
     head = page_head('Atelier', '', 'We make fewer things,<br>more carefully')
-    wide = b.image('atelier-studio', 'The Maison studio with arched windows and rails of linen', className='mx-wide')
+    wide = b.image('atelier-studio', 'The Maison studio with arched windows and rails of linen', className='wpe-mx-wide')
     story = b.section(b.columns(
-        b.column(b.h('Founded in 2014 by Hélène Rousseau after a decade in Paris couture houses.', size='h2', className='mx-serif-lead')),
+        b.column(b.h('Founded in 2014 by Hélène Rousseau after a decade in Paris couture houses.', size='h2', className='wpe-mx-serif-lead')),
         b.column(b.p('Hélène wanted the craft of couture without its waste. Maison works with six family ateliers in Portugal and Italy, ordering in runs of 80 to 200 pieces so nothing ends in a landfill.', color='text-muted'),
                  b.p('We publish the cost of every garment, pay our partners above the regional living wage and keep a repair workshop open for anything we have ever sold.', color='text-muted')),
         className='wpe-gap-lg'))
     steps = b.section(b.p('How a piece is made', style='wpe-overline'), b.h('From bolt to wardrobe in five weeks', size='h2'),
-                      b.group(*[b.group(b.p('%02d' % (i + 1), className='mx-step__n'), b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'),
-                                        layout='default', className='mx-step') for i, (t, d) in enumerate(STEPS)], layout='grid', columns=4),
+                      b.group(*[b.group(b.p('%02d' % (i + 1), className='wpe-mx-step__n'), b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'),
+                                        layout='default', className='wpe-mx-step') for i, (t, d) in enumerate(STEPS)], layout='grid', columns=4),
                       bg='surface-alt')
     maker = b.group(b.columns(
-        b.column(b.image('atelier-hands', 'Rui Almeida hand-finishing a linen shirt', className='mx-split__img'), width='50%', className='mx-split__media'),
+        b.column(b.image('atelier-hands', 'Rui Almeida hand-finishing a linen shirt', className='wpe-mx-split__img'), width='50%', className='wpe-mx-split__media'),
         b.column(b.p('Meet the makers', style='wpe-overline'),
-                 b.h('“A seam should outlive the person who sewed it.”', size='h2', className='mx-quote'),
-                 b.p('Rui Almeida, master tailor, Porto', color='text-muted', size='small'), width='50%', valign='center', className='mx-split__text'),
-        className='mx-split', stack=True), align='full', className='mx-split-wrap', layout='default')
+                 b.h('“A seam should outlive the person who sewed it.”', size='h2', className='wpe-mx-quote'),
+                 b.p('Rui Almeida, master tailor, Porto', color='text-muted', size='small'), width='50%', valign='center', className='wpe-mx-split__text'),
+        className='wpe-mx-split', stack=True), align='full', className='wpe-mx-split-wrap', layout='default')
     return b.join(head, wide, story, steps, maker)
 
 
 def g_contact():
     head = page_head('Contact', 'Stores &amp; contact', 'We would love to hear from you', 'Our client care team answers within one working day, Monday to Saturday.')
     stores = [b.group(b.h(city, level=3, size='h3'),
-                      b.ul([addr, hours, '<a href="tel:%s">%s</a>' % (tel.replace(' ', ''), tel)], className='mx-store__list'), layout='default', className='mx-store')
+                      b.ul([addr, hours, '<a href="tel:%s">%s</a>' % (tel.replace(' ', ''), tel)], className='wpe-mx-store__list'), layout='default', className='wpe-mx-store')
               for city, addr, hours, tel in STORES]
     body = b.section(b.columns(
         b.column(b.shortcode('[wpforms id="{{form:care}}" title="false"]'), width='55%'),
@@ -322,8 +322,8 @@ def g_contact():
 def g_help():
     head = page_head('Help', 'Client care', 'Shipping, returns &amp; FAQ', 'Everything about delivery, sizing and caring for your pieces.')
     cards = b.group(*[b.group(b.h(t, level=3, size='h3'), b.p(d, color='text-muted', size='small'),
-                              layout='default', className='mx-card') for i, t, d in CARE_CARDS], layout='grid', columns=3)
-    table = b.table(['Destination', 'Delivery time', 'Cost'], [list(r) for r in SHIPPING], className='mx-table')
+                              layout='default', className='wpe-mx-card') for i, t, d in CARE_CARDS], layout='grid', columns=3)
+    table = b.table(['Destination', 'Delivery time', 'Cost'], [list(r) for r in SHIPPING], className='wpe-mx-table')
     faq = b.group(b.p('FAQ', style='wpe-overline'), b.h('Frequently asked', size='h2'), *[b.details(q, b.p(a)) for q, a in FAQ], layout='default')
     return b.join(head, b.section(cards, table, faq, className='wpe-section wpe-section--sm'))
 
@@ -413,7 +413,7 @@ def e_contact():
 
 def e_help():
     rows = ''.join('<tr><td>%s</td><td>%s</td><td>%s</td></tr>' % r for r in SHIPPING)
-    table = '<table class="mx-table"><thead><tr><th>Destination</th><th>Delivery time</th><th>Cost</th></tr></thead><tbody>%s</tbody></table>' % rows
+    table = '<table class="wpe-mx-table"><thead><tr><th>Destination</th><th>Delivery time</th><th>Cost</th></tr></thead><tbody>%s</tbody></table>' % rows
     return [
         e_head('Client care', 'Shipping, returns & FAQ', 'Everything about delivery, sizing and caring for your pieces.'),
         e.container(e.grid(*[e.icon_box('fas ' + i, t, d) for i, t, d in CARE_CARDS], columns=3), e.text(table), pad=(24, 24, 48, 24)),
@@ -444,12 +444,12 @@ APPT = [('Personal styling', '60 minutes', 'Try the new collection with a stylis
 
 def g_size_guide():
     head = page_head('Size guide', 'Client care', 'Size guide', 'Our pieces are cut for an easy fit. If you are between sizes, our client care team is happy to help.')
-    women = b.group(b.h('Clothing', size='h3'), b.table(SIZE_HEAD, [list(r) for r in SIZE_ROWS], className='mx-table'), layout='default')
-    shoes = b.group(b.h('Shoes', size='h3'), b.table(['EU', 'UK', 'US', 'Foot length (cm)'], [list(r) for r in SHOE_ROWS], className='mx-table'), layout='default')
+    women = b.group(b.h('Clothing', size='h3'), b.table(SIZE_HEAD, [list(r) for r in SIZE_ROWS], className='wpe-mx-table'), layout='default')
+    shoes = b.group(b.h('Shoes', size='h3'), b.table(['EU', 'UK', 'US', 'Foot length (cm)'], [list(r) for r in SHOE_ROWS], className='wpe-mx-table'), layout='default')
     how = b.columns(b.column(b.image('atelier-hands', 'Tailor measuring a client with a cloth tape', aspect='4/5')),
                     b.column(b.p('How to measure', style='wpe-overline'), b.h('Three measurements, two minutes', size='h2'),
-                             *[b.group(b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='mx-measure') for t, d in MEASURE],
-                             b.p('<a href="{{page:appointment}}">Book a fitting at the atelier →</a>', className='mx-link'), valign='center'),
+                             *[b.group(b.h(t, level=3, size='h5'), b.p(d, color='text-muted', size='small'), layout='default', className='wpe-mx-measure') for t, d in MEASURE],
+                             b.p('<a href="{{page:appointment}}">Book a fitting at the atelier →</a>', className='wpe-mx-link'), valign='center'),
                     valign='center', className='wpe-gap-lg')
     return b.join(head, b.section(women, shoes, className='wpe-section wpe-section--sm'), b.section(how, bg='surface-alt'))
 
@@ -457,11 +457,11 @@ def g_size_guide():
 def g_responsibility():
     head = page_head('Responsibility', 'Responsibility', 'Made to last.<br>Made to be mended.',
                      'Clothes are only sustainable if you keep wearing them. Here is what we do, and what we still get wrong.')
-    stats = b.group(*[b.group(b.p(n, className='mx-impact__n'), b.p(t, color='text-muted', size='small'), layout='default', className='mx-impact')
-                      for n, t in IMPACT], layout='grid', columns=4, className='mx-impacts')
-    pledges = b.group(*[b.group(b.h(t, level=3, size='h4'), b.p(d, color='text-muted', size='small'), layout='default', className='mx-card')
+    stats = b.group(*[b.group(b.p(n, className='wpe-mx-impact__n'), b.p(t, color='text-muted', size='small'), layout='default', className='wpe-mx-impact')
+                      for n, t in IMPACT], layout='grid', columns=4, className='wpe-mx-impacts')
+    pledges = b.group(*[b.group(b.h(t, level=3, size='h4'), b.p(d, color='text-muted', size='small'), layout='default', className='wpe-mx-card')
                         for _i, t, d in PLEDGES], layout='grid', columns=3)
-    wide = b.image('journal-1', 'Linen swatches dyed with madder, weld and walnut', className='mx-wide')
+    wide = b.image('journal-1', 'Linen swatches dyed with madder, weld and walnut', className='wpe-mx-wide')
     report = b.columns(b.column(b.p('Impact report 2026', style='wpe-overline'), b.h('Where we still fall short', size='h2')),
                        b.column(b.p('Air freight for 4% of orders, wool from one mill we have not yet audited and too many returns on dresses. Our full report lists each one with a date to fix it.', color='text-muted'),
                                 b.buttons(b.button('Read about our atelier', '{{page:atelier}}', style='wpe-outline'))), className='wpe-gap-lg')
@@ -472,7 +472,7 @@ def g_responsibility():
 
 def g_appointment():
     head = page_head('Appointment', 'The atelier', 'Book an appointment', 'Visit our Paris, Milan or London store for styling, fittings and repairs. Appointments are free.')
-    cards = b.group(*[b.group(b.p(d, className='mx-appt__time'), b.h(t, level=3, size='h4'), b.p(x, color='text-muted', size='small'), layout='default', className='mx-card')
+    cards = b.group(*[b.group(b.p(d, className='wpe-mx-appt__time'), b.h(t, level=3, size='h4'), b.p(x, color='text-muted', size='small'), layout='default', className='wpe-mx-card')
                       for t, d, x in APPT], layout='grid', columns=3)
     body = b.columns(b.column(b.h('Choose a time', size='h3'), b.shortcode('[wpforms id="{{form:appointment}}" title="false"]'), width='55%'),
                      b.column(b.image('store-paris', 'Fitting room in the Maison Paris store', aspect='4/5'), width='45%'), className='wpe-gap-lg')
@@ -480,7 +480,7 @@ def g_appointment():
 
 
 def _e_table(head, rows):
-    return e.text('<table class="mx-table"><thead><tr>%s</tr></thead><tbody>%s</tbody></table>' % (
+    return e.text('<table class="wpe-mx-table"><thead><tr>%s</tr></thead><tbody>%s</tbody></table>' % (
         ''.join('<th>%s</th>' % h for h in head), ''.join('<tr>%s</tr>' % ''.join('<td>%s</td>' % c for c in r) for r in rows)))
 
 

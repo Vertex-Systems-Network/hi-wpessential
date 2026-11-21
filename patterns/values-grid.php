@@ -37,8 +37,8 @@ $wpessential_values = array(
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"bx-values","layout":{"type":"grid","columnCount":4}} -->
-<div class="wp-block-group bx-values">
+<!-- wp:group {"className":"wpe-bx-values","layout":{"type":"grid","columnCount":4}} -->
+<div class="wp-block-group wpe-bx-values">
 <?php
 foreach ( $wpessential_values as $wpessential_value ) :
 	?>

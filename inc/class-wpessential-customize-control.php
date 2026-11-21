@@ -55,7 +55,7 @@ if ( ! class_exists( 'WPEssential_Customize_Control' ) ) {
 				'tab'        => $f['tab'] ?? null,
 			);
 			if ( 'heading' === $kind ) {
-				echo '<h3 class="wpec-heading">' . esc_html( $this->label ) . '</h3>';
+				echo '<h3 class="wpe-c-heading">' . esc_html( $this->label ) . '</h3>';
 				return;
 			}
 			?>

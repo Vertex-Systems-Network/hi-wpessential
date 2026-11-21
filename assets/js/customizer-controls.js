@@ -70,17 +70,17 @@
 	function tabs( section ) {
 		var list = section.contentContainer[ 0 ];
 		var items = list.querySelectorAll( '[data-wpec-tab]' );
-		var old = list.querySelector( '.wpec-statebar' );
+		var old = list.querySelector( '.wpe-c-statebar' );
 		if ( ! items.length ) {
 			return;
 		}
 		if ( old ) {
 			old.remove();
 		}
-		var bar = controls.h( 'li', { class: 'wpec-statebar customize-control' } );
-		var seg = controls.h( 'div', { class: 'wpec-seg', role: 'tablist' } );
+		var bar = controls.h( 'li', { class: 'wpe-c-statebar customize-control' } );
+		var seg = controls.h( 'div', { class: 'wpe-c-seg', role: 'tablist' } );
 		[ [ 'normal', 'Normal' ], [ 'hover', 'Hover' ] ].forEach( function ( t, i ) {
-			seg.appendChild( controls.h( 'button', { type: 'button', role: 'tab', class: 'wpec-seg__btn' + ( 0 === i ? ' is-active' : '' ), text: t[ 1 ], onclick: function ( e ) {
+			seg.appendChild( controls.h( 'button', { type: 'button', role: 'tab', class: 'wpe-c-seg__btn' + ( 0 === i ? ' is-active' : '' ), text: t[ 1 ], onclick: function ( e ) {
 				seg.querySelectorAll( 'button' ).forEach( function ( b ) {
 					b.classList.toggle( 'is-active', b === e.currentTarget );
 				} );
@@ -114,10 +114,10 @@
 				preview.style.width = w + 'px';
 				preview.style.left = '50%';
 				preview.style.marginLeft = ( -w / 2 ) + 'px';
-				preview.classList.add( 'wpec-preview-sized' );
+				preview.classList.add( 'wpe-c-preview-sized' );
 			} else {
 				preview.style.width = preview.style.left = preview.style.marginLeft = '';
-				preview.classList.remove( 'wpec-preview-sized' );
+				preview.classList.remove( 'wpe-c-preview-sized' );
 			}
 		};
 		controls.onDevice = function ( d ) {
