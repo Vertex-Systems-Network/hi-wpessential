@@ -42,7 +42,7 @@ function wpessential_migrate_class_prefix() {
 	foreach ( $metas as $row ) {
 		$new = wpessential_prefix_classes( $row->meta_value );
 		if ( $new !== $row->meta_value ) {
-			$wpdb->update( $wpdb->postmeta, array( 'meta_value' => $new ), array( 'meta_id' => $row->meta_id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery,WordPress.DB.SlowDBQuery.slow_query_meta_value
+			$wpdb->update( $wpdb->postmeta, array( 'meta_value' => $new ), array( 'meta_id' => $row->meta_id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery,WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 			wp_cache_delete( (int) $row->post_id, 'post_meta' );
 			delete_post_meta( (int) $row->post_id, '_elementor_css' );
 		}
