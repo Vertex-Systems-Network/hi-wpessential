@@ -476,3 +476,33 @@ add_action(
 	},
 	1
 );
+
+/**
+ * When WPEssential Pro's WooCommerce elements are active, the shop templates render with them
+ * instead of WooCommerce's classic PHP templates. Without Pro, WooCommerce's own output is kept.
+ *
+ * @param string $html  Rendered block HTML.
+ * @param array  $block Parsed block.
+ * @return string
+ */
+function wpessential_woo_kit_template( $html, $block ) {
+	if ( 'woocommerce/legacy-template' !== ( $block['blockName'] ?? '' ) || ! WP_Block_Type_Registry::get_instance()->is_registered( 'wpessential/woo-product-gallery' ) ) {
+		return $html;
+	}
+	$template = (string) ( $block['attrs']['template'] ?? '' );
+	if ( 'single-product' === $template && is_product() ) {
+		$markup = '<!-- wp:columns {"className":"wpe-product-top"} --><div class="wp-block-columns wpe-product-top">'
+			. '<!-- wp:column --><div class="wp-block-column"><!-- wp:wpessential/woo-product-gallery /--></div><!-- /wp:column -->'
+			. '<!-- wp:column --><div class="wp-block-column">'
+			. '<!-- wp:wpessential/woo-product-title {"link":false} /--><!-- wp:wpessential/woo-product-rating /--><!-- wp:wpessential/woo-product-price /-->'
+			. '<!-- wp:wpessential/woo-product-excerpt /--><!-- wp:wpessential/woo-add-to-cart /--><!-- wp:wpessential/woo-product-meta /-->'
+			. '</div><!-- /wp:column --></div><!-- /wp:columns -->'
+			. '<!-- wp:wpessential/woo-product-tabs /--><!-- wp:wpessential/woo-related-products /-->';
+		return do_blocks( $markup );
+	}
+	if ( in_array( $template, array( 'archive-product', 'taxonomy-product_cat', 'taxonomy-product_tag', 'product-search-results' ), true ) ) {
+		return do_blocks( '<!-- wp:wpessential/woo-product-archive /-->' );
+	}
+	return $html;
+}
+add_filter( 'render_block', 'wpessential_woo_kit_template', 10, 2 );
