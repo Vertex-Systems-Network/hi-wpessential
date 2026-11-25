@@ -450,7 +450,7 @@ def g_pricing():
         b.group(periods, tag='section', align='full', layout='constrained', content='1200px', className='wpe-ess-section wpe-ess-section--pull'),
         section(head('Pricing', 'Compare plans'), b.table(['Feature', 'Starter', 'Pro', 'Agency'], rows, className='wpe-ess-table')),
         section(g_band('14-day money-back guarantee', 'Not the right fit? Email us within 14 days and get a full refund. No questions.', 'Talk to sales', '{{page:contact}}')),
-        section(head('FAQ', 'Frequently asked questions'), *[b.details(q, b.p(a), style=None) for q, a in FAQ]))
+        section(head('FAQ', 'Frequently asked questions'), b.faq(FAQ)))
 
 
 SERVICE_ICONS = ['palette', 'download', 'cart', 'figma', 'grid', 'bolt', 'refresh', 'globe', 'shield', 'wrench', 'server', 'heart', 'code']
@@ -615,7 +615,7 @@ def g_contact():
                         layout='grid', columns=5, grid_min='12rem', className='wpe-ess-grid')),
         g_team(),
         section(head('FAQ', 'Questions we hear before every project.'),
-                b.columns(*[b.column(*[b.details(q, b.p(a_), style=None) for q, a_ in half]) for half in (faq[:6], faq[6:])], className='wpe-ess-gap'), alt=True),
+                b.columns(*[b.column(b.faq(half)) for half in (faq[:6], faq[6:])], className='wpe-ess-gap'), alt=True),
         section(b.group(*[b.group(b.p('<strong>%s</strong>' % t), b.p(d, className='wpe-ess-side__muted'), layout='default', className='wpe-ess-card wpe-ess-trust') for t, d in trust],
                         layout='grid', columns=4, grid_min='13rem', className='wpe-ess-grid'),
                 g_band('Have a project in mind?', 'Free 30-minute call and a fixed quote within two business days.', 'Request a quote', '{{page:quote}}')))
