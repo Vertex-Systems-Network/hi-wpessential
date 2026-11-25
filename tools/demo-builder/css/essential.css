@@ -1038,3 +1038,28 @@ body.single-product:has(.wpe-ess-pro) .wpe-main > * { max-width: 1680px !importa
 .wpe-ess-roadmap__item { justify-items: start; text-align: left; }
 .wpe-code:has(.wpe-ess-crumb) { --wpek-content-margin: 0 !important; width: 100% !important; max-width: none !important; margin: 0 !important; }
 .wpe-ess-crumb { text-align: left !important; }
+.wpe-ess-demo__star { font-style: normal; color: #c97a12; margin-right: 4px; }
+
+/* Figma 01: testimonials and doc counts */
+.wpe-ess-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; }
+.wpe-ess-quote { margin: 0; padding: 28px; border: 1px solid #dde4f0; border-radius: 16px; background: #fff; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+.wpe-ess-quote blockquote { margin: 0; padding: 0; border: 0; font-size: 17px; line-height: 1.6; color: #0b1a3d; }
+.wpe-ess-quote figcaption { display: flex; align-items: center; gap: 12px; }
+.wpe-ess-quote__avatar { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #e9eef9; color: #1f48a6; font-weight: 700; }
+.wpe-ess-quote figcaption b { display: block; color: #0b1a3d; }
+.wpe-ess-quote figcaption small { color: #4a5a7a; font-size: 13px; }
+.wpe-ess-card__count a { color: #4a5a7a !important; font-size: 14px; }
+.wpe-ess-more { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 32px; }
+.wpe-ess-more p { margin: 0; color: #4a5a7a; font-size: 14px; }
+.wpe-ess-more__btn { padding: 13px 26px; border: 1px solid #dde4f0; border-radius: 999px; background: #fff; color: #0b1a3d; font-weight: 600; cursor: pointer; }
+.wpe-ess-more__btn[hidden] { display: none; }
+
+/* Figma 16: Google button; Figma 44: delete account */
+.wpe-auth__or { display: flex; align-items: center; gap: 12px; margin: 18px 0 !important; color: #4a5a7a; font-size: 13px; }
+.wpe-auth__or::before, .wpe-auth__or::after { content: ""; flex: 1; height: 1px; background: #e3e8f2; }
+.wpe-auth__google { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 13px; border: 1px solid #dde4f0; border-radius: 999px; background: #fff; color: #0b1a3d; font-weight: 600; text-decoration: none; box-sizing: border-box; }
+.wpe-account__danger { padding: 24px !important; margin-top: 20px; }
+.wpe-account__danger h3 { margin: 0 0 12px; color: #c0362c; font: 700 18px/1.3 var(--wp--preset--font-family--body) !important; }
+.wpe-account__danger p { margin: 0 0 18px; color: #4a5a7a; font-size: 14px; }
+.wpe-account__danger button { padding: 12px 22px; border: 1px solid #dde4f0; border-radius: 999px; background: #fff; color: #0b1a3d; font-weight: 600; cursor: pointer; }
+.wpe-ess-quote__avatar { flex: 0 0 44px; }

@@ -98,7 +98,28 @@
 			cards.slice().sort( function ( x, y ) {
 				return sort.value === 'az' || sort.value === 'za' ? dir * title( x ).localeCompare( title( y ) ) : cards.indexOf( x ) - cards.indexOf( y );
 			} ).forEach( function ( c ) { c.parentNode.appendChild( c ); } );
+			// "Load more": only the first [data-wpe-more] matching cards show until the button is pressed.
+			var more = scope.querySelector( '[data-wpe-more]' );
+			var moreCount = scope.querySelector( '[data-wpe-more-count]' );
+			var limit = more ? parseInt( more.dataset.wpeMore, 10 ) * ( parseInt( more.dataset.page || '1', 10 ) ) : Infinity;
+			var visible = cards.filter( function ( c ) { return ! c.hidden; } ).sort( function ( x, y ) {
+				return Array.prototype.indexOf.call( x.parentNode.children, x ) - Array.prototype.indexOf.call( y.parentNode.children, y );
+			} );
+			visible.forEach( function ( c, i ) { c.hidden = i >= limit; } );
+			if ( moreCount ) {
+				moreCount.textContent = 'Showing ' + Math.min( limit, visible.length ) + ' of ' + visible.length + ' demos';
+			}
+			if ( more ) {
+				more.hidden = visible.length <= limit;
+			}
 		};
+		var moreBtn = scope.querySelector( '[data-wpe-more]' );
+		if ( moreBtn ) {
+			moreBtn.addEventListener( 'click', function () {
+				moreBtn.dataset.page = String( parseInt( moreBtn.dataset.page || '1', 10 ) + 1 );
+				apply();
+			} );
+		}
 		links.forEach( function ( a ) {
 			a.setAttribute( 'role', a.dataset.single ? 'radio' : 'checkbox' );
 			a.setAttribute( 'aria-checked', a.classList.contains( 'is-on' ) ? 'true' : 'false' );

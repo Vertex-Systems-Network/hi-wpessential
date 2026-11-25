@@ -30,18 +30,28 @@ MEDIA = [
     ('mobile-base', 'Base on mobile', 'Base demo home page on a phone'),
     ('mobile-maison', 'Maison on mobile', 'Maison demo home page on a phone'),
     ('mobile-pulse', 'Pulse on mobile', 'Pulse demo home page on a phone'),
+    ('demo-business-pro', 'Business Pro demo', 'Business Pro consulting demo with a corporate hero'),
+    ('demo-saffron', 'Saffron demo', 'Saffron restaurant demo with a menu hero'),
+    ('demo-campus', 'Campus demo', 'Campus online course demo with a learning hero'),
     ('shot-library', 'Demo Library', 'WPEssential dashboard showing the Demo Library with Base, Maison and Pulse'),
     ('shot-import', 'Import wizard', 'WPEssential import wizard finishing a demo import with every step logged'),
     ('shot-plugins', 'Plugins step', 'WPEssential import wizard listing the plugins a demo needs'),
 ]
 
 DEMOS = [
-    dict(key='p-base', name='Base', price='0', image='demo-base', site='site-base', niche='Business · Blog', menu_order=1,
+    dict(key='p-base', name='Base', price='0', image='demo-base', site='site-base', niche='Business · Blog', menu_order=3,
          short='A clean multi-purpose site with services, blog and shop. Free with the theme.'),
-    dict(key='p-maison', name='Maison', price='59', image='demo-maison', site='site-maison', niche='Fashion · WooCommerce', menu_order=2,
+    dict(key='p-maison', name='Maison', price='59', image='demo-maison', site='site-maison', niche='Fashion · WooCommerce', menu_order=1,
          short='An editorial fashion store with lookbooks, journal and a full WooCommerce shop.'),
-    dict(key='p-pulse', name='Pulse', price='59', image='demo-pulse', site='site-pulse', niche='Events · Tickets', menu_order=3,
+    dict(key='p-pulse', name='Pulse', price='59', image='demo-pulse', site='site-pulse', niche='Events · Tickets', menu_order=2,
          short='A conference site with speakers, agenda, ticket passes and an events calendar.'),
+    # Sample demos shown in the library (Figma 01/04); their packages ship later.
+    dict(key='p-business-pro', name='Business Pro', price='59', image='demo-business-pro', site=None, niche='Consulting · Agency', menu_order=4,
+         short='A consulting and corporate services site with case studies, team and a lead form.'),
+    dict(key='p-saffron', name='Saffron', price='59', image='demo-saffron', site=None, niche='Restaurant · Orders', menu_order=5,
+         short='A restaurant site with menu, reservations and online orders.'),
+    dict(key='p-campus', name='Campus', price='59', image='demo-campus', site=None, niche='Education · Courses', menu_order=6,
+         short='An online course site with lessons, quizzes and memberships.'),
 ]
 
 # Same plans as the WPEssential Server (Plans::defaults()): monthly price per tier, yearly is twelve
@@ -128,6 +138,21 @@ PLUGINS = [
      'v1.0 · Elementor', 'https://wordpress.org/plugins/tci-ultimate-element-themes/'),
 ]
 
+HOME_DOCS = [  # Figma 01 documentation cards (title, text, article count)
+    ('Getting started', 'Install the theme, activate your license and import your first demo.', 12),
+    ('Demos & import', 'Choose a builder, what gets imported, re-import and remove a demo.', 18),
+    ('Design & styles', 'Colours, fonts, dark mode, hovers, motion and custom CSS.', 24),
+    ('Multilingual & SEO', 'WPML, Polylang, RTL languages, translations and SEO plugins.', 9),
+    ('Account & billing', 'Licenses, renewals, upgrades, refunds and invoices.', 11),
+    ('Developers', 'Hooks, filters, child themes, demo packages and the REST API.', 27),
+]
+# Sample social proof (Figma 01); editable later in the options below.
+HERO_STATS = [['40+', 'ready demos'], ['2', 'native builders'], ['12k+', 'happy customers'], ['4.9/5', 'average rating']]
+TESTIMONIALS = [
+    ['We rebuilt three client sites in a week. The Gutenberg and Elementor versions match pixel for pixel, so the team just picks one.', 'Ayesha Malik', 'Founder, Northwind Studio'],
+    ['The import just works. Pages, products, menus and the dark mode were all there after one click, and the support team answered within hours.', 'Daniel Brooks', 'Freelance developer'],
+    ['We imported Maison on Monday and launched the client store on Wednesday. Our team now starts every shop from a WPEssential demo.', 'Sara Ahmed', 'Head of Web, Lumen Agency'],
+]
 DOCS = [
     ('fas fa-rocket', 'Getting started', 'Install the theme, activate WPEssential and import your first demo.'),
     ('fas fa-download', 'Demo import', 'Gutenberg vs Elementor packages, required plugins and resuming an import.'),
@@ -274,10 +299,13 @@ def g_search(placeholder, className, button=True):
                            'cssClass': className})
 
 
-DEMO_CARDS = [  # (product key, name, badge(s), price label, text, image, categories)
-    ('p-maison', 'Maison', ['PRO', 'NEW'], '$59', 'Editorial fashion store with lookbook, atelier and journal', 'demo-maison', ['shop', 'fashion']),
-    ('p-pulse', 'Pulse', ['PRO', 'NEW'], '$59', 'Conference and events site with agenda, speakers and tickets', 'demo-pulse', ['events']),
-    ('p-base', 'Base', ['FREE'], 'Free', 'Business site with services, pricing, blog and a full shop', 'demo-base', ['business', 'shop']),
+DEMO_CARDS = [  # (product key, name, badge(s), price label, text, image, categories, rating line) in Figma 01/04 order
+    ('p-maison', 'Maison', ['PRO', 'NEW'], '$59', 'Editorial fashion store with lookbook, atelier and journal', 'demo-maison', ['shop', 'fashion'], '4.9 · 128 sales'),
+    ('p-pulse', 'Pulse', ['PRO', 'NEW'], '$59', 'Conference and events site with agenda, speakers and tickets', 'demo-pulse', ['events'], '5.0 · 64 sales'),
+    ('p-base', 'Base', ['FREE', 'NEW'], 'Free', 'Business site with services, pricing, blog and a full shop', 'demo-base', ['business', 'shop', 'blog'], '4.8 · 3.1k downloads'),
+    ('p-business-pro', 'Business Pro', ['PRO', 'NEW'], '$59', 'Consulting and corporate services with case studies', 'demo-business-pro', ['business', 'agency'], '4.8 · 412 sales'),
+    ('p-saffron', 'Saffron', ['PRO', 'NEW'], '$59', 'Restaurant with menu, reservations and online orders', 'demo-saffron', ['restaurant', 'shop'], '4.9 · 96 sales'),
+    ('p-campus', 'Campus', ['PRO', 'NEW'], '$59', 'Online courses with lessons, quizzes and memberships', 'demo-campus', ['education', 'portfolio'], '4.7 · 88 sales'),
 ]
 DEMO_CATS = [('business', 'Business'), ('shop', 'Shop'), ('fashion', 'Fashion'), ('events', 'Events')]
 
@@ -326,7 +354,7 @@ def g_home():
         b.p('Premium themes and one-click demos — native for Gutenberg and Elementor. Search, preview live, import and launch.', align='center', className='wpe-ess-hero__lead'),
         g_search('Search themes, demos and docs…', 'wpe-ess-hero__search'),
         html('<p class="wpe-ess-hero__popular"><span>Popular:</span>%s</p>' % ''.join(
-            chip(t, '{{page:%s}}' % k) for t, k in [('Fashion store', 'p-maison'), ('Events', 'p-pulse'), ('Business', 'p-base'), ('Pricing', 'pricing'), ('Services', 'services'), ('Docs', 'docs')])),
+            chip(t, '{{page:%s}}' % k) for t, k in [('Fashion store', 'p-maison'), ('Events', 'p-pulse'), ('Business', 'p-base'), ('Restaurant', 'p-saffron'), ('Agency', 'p-business-pro'), ('Online course', 'p-campus')])),
         b.shortcode('[wpessential_demo_cards stats="1"]'),
         html('<div class="wpe-ess-hero__shots"><img src="{{media:demo-pulse}}" alt="Pulse demo" class="is-left"><img src="{{media:demo-maison}}" alt="Maison demo" class="is-mid"><img src="{{media:demo-base}}" alt="Base demo" class="is-right"></div>'),
         tag='section', align='full', className='wpe-ess-hero', layout='constrained', content='1680px')
@@ -385,14 +413,13 @@ def g_home():
                 g_search('Search the docs…', 'wpe-ess-docs__search', button=False),
                 layout='flex', wrap='wrap', justify='space-between', valign='bottom', className='wpe-ess-head'),
         b.group(*[b.group(ico(DOC_ICONS[i], 'soft'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
-                          b.p('<a href="{{page:docs}}">Read the guide <span aria-hidden="true">→</span></a>', className='wpe-ess-card__link'),
-                          layout='default', className='wpe-ess-card') for i, (_, t, d) in enumerate(DOCS)],
+                          b.p('<a href="{{page:docs}}">%d articles</a>' % n, className='wpe-ess-card__link wpe-ess-card__count'),
+                          layout='default', className='wpe-ess-card') for i, (t, d, n) in enumerate(HOME_DOCS)],
                 layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid wpe-ess-grid--3'),
         tag='section', align='full', className='wpe-ess-section wpe-ess-section--alt', layout='constrained', content='1680px')
     news = b.group(
-        head('From the blog', 'Guides and release notes.', align='center'),
-        b.latest_posts(3),
-        b.buttons(arrow('All posts', '{{page:blog}}', style='wpe-outline'), justify='center'),
+        head('Loved by builders', 'Agencies and creators ship faster with WPEssential.'),
+        b.shortcode('[wpessential_testimonials]'),
         tag='section', align='full', className='wpe-ess-section', layout='constrained', content='1680px')
     return b.join(hero, cats, demos, theme, how, services, pricing, docs, news)
 
@@ -929,7 +956,7 @@ def e_home():
 def e_demos():
     out = [e_title('Demos', 'Start from a finished site', 'Every demo imports in one click and ships native Gutenberg and Elementor versions.'),
            e.container(e.shortcode('[wpessential_demo_cards facets="1"]'), pad=(24, 24, 56, 24))]
-    for i, d in enumerate(DEMOS):
+    for i, d in enumerate([x for x in DEMOS if x["site"]]):
         out.append(e.container(e.row(e.col(e.image(d['site'], '%s demo home page' % d['name'], radius=20), width=60),
                                      e.col(e.overline(d['niche']), e.heading(d['name']), e.text(d['short']),
                                            e.heading('Free with the theme' if d['price'] == '0' else '$%s or included in Pro' % d['price'], 4, size_px=18),
@@ -1132,8 +1159,8 @@ def package(builder):
     for d in DEMOS:
         c = next(x for x in DEMO_CARDS if x[0] == d['key'])
         products.append({'key': d['key'], 'name': d['name'] + ' demo', 'slug': d['name'].lower() + '-demo', 'price': d['price'], 'categories': ['pc-demos'],
-                         'image': d['image'], 'gallery': [d['site'], 'mobile-' + d['name'].lower()], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
-                         'meta': {'_wpe_niches': ','.join(c[6]), '_wpe_badge': 'NEW' if 'NEW' in c[2] else '', '_wpe_card_text': c[4]},
+                         'image': d['image'], 'gallery': [d['site'], 'mobile-' + d['name'].lower()] if d['site'] else [d['image']], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
+                         'meta': {'_wpe_niches': ','.join(c[6]), '_wpe_badge': 'NEW' if 'NEW' in c[2] else '', '_wpe_card_text': c[4], '_wpe_card_meta': c[7], '_wpe_includes': ','.join((['woocommerce'] if 'shop' in c[6] else []) + ['dark-mode', 'rtl'])},
                          'description': '<p>%s</p><ul><li>Native Gutenberg and Elementor versions</li><li>One-click import with required plugins</li><li>Light &amp; dark style variation</li></ul>' % d['short']})
     products.append({'key': 'addon-setup', 'name': 'Setup & demo import', 'slug': 'setup-demo-import', 'price': '99', 'categories': ['pc-pro-addons'],
                      'virtual': True, 'sold_individually': True, 'menu_order': 1,
@@ -1160,6 +1187,7 @@ def package(builder):
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'header-checkout': {'content': g_header()},
                           'footer': {'content': g_footer()}, 'footer-simple': {'content': g_footer()}},
                 'options': {'posts_per_page': 9, 'blogname': 'WPEssential', 'blogdescription': 'Premium WordPress themes and one-click demos.',
+                            'wpessential_hero_stats': HERO_STATS, 'wpessential_testimonials': TESTIMONIALS,
                             'wpessential_blog_over': 'Blog', 'wpessential_blog_title': 'Guides and release notes',
                             'wpessential_blog_lead': 'Tutorials for the theme, new demos and WordPress tips from the WPEssential team.',
                             'wpessential_404_title': 'This page took a different demo.', 'wpessential_404_lead': 'The link may be old or mistyped. Search the site or start from one of these.'},

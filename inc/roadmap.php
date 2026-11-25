@@ -48,3 +48,23 @@ function wpessential_vote_ajax() {
 }
 add_action( 'wp_ajax_wpessential_vote', 'wpessential_vote_ajax' );
 add_action( 'wp_ajax_nopriv_wpessential_vote', 'wpessential_vote_ajax' );
+
+/**
+ * Testimonials (Figma 01) from the wpessential_testimonials option: [quote, name, role] rows.
+ *
+ * @return string
+ */
+function wpessential_testimonials() {
+	$rows = (array) get_option( 'wpessential_testimonials', array() );
+	$out  = '';
+	foreach ( $rows as $row ) {
+		if ( empty( $row[0] ) ) {
+			continue;
+		}
+		$name = (string) ( $row[1] ?? '' );
+		$out .= '<figure class="wpe-ess-quote"><blockquote>“' . esc_html( (string) $row[0] ) . '”</blockquote><figcaption><span class="wpe-ess-quote__avatar" aria-hidden="true">' . esc_html( mb_substr( $name, 0, 1 ) ) . '</span>'
+			. '<span><b>' . esc_html( $name ) . '</b><small>' . esc_html( (string) ( $row[2] ?? '' ) ) . '</small></span></figcaption></figure>';
+	}
+	return '' === $out ? '' : '<div class="wpe-ess-quotes">' . $out . '</div>';
+}
+add_shortcode( 'wpessential_testimonials', 'wpessential_testimonials' );
