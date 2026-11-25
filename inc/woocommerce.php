@@ -726,6 +726,10 @@ function wpessential_woo_auth_text( $text, $source, $domain ) {
 		'Username or email address' => __( 'Email', 'hi-wpessential' ),
 		'Email address'             => __( 'Email', 'hi-wpessential' ),
 		'Lost your password?'       => __( 'Forgot password?', 'hi-wpessential' ),
+		'Username or email'         => __( 'Email', 'hi-wpessential' ),
+		'Reset password'            => __( 'Send reset link', 'hi-wpessential' ),
+		'Re-enter new password'     => __( 'Confirm password', 'hi-wpessential' ),
+		'Save'                      => __( 'Save password', 'hi-wpessential' ),
 	);
 	return isset( $map[ $source ] ) ? $map[ $source ] : $text;
 }
@@ -906,3 +910,34 @@ function wpessential_demo_cards( $atts ) {
 		. $grid . '</div></div>';
 }
 add_shortcode( 'wpessential_demo_cards', 'wpessential_demo_cards' );
+
+
+/**
+ * Lost / reset password cards (Figma 30-32): one centred card with a heading and lead line.
+ *
+ * @param string $title Card heading.
+ * @param string $lead  Line under the heading.
+ */
+function wpessential_woo_card_open( $title, $lead ) {
+	echo '<div class="wpe-auth is-register is-card"><div class="wpe-auth__form"><h1 class="wpe-auth__heading">' . esc_html( $title ) . '</h1><p class="wpe-auth__lead">' . esc_html( $lead ) . '</p>';
+}
+add_action( 'woocommerce_before_lost_password_form', static fn() => wpessential_woo_card_open( __( 'Forgot your password?', 'hi-wpessential' ), __( 'Enter your email and we will send a reset link.', 'hi-wpessential' ) ) );
+add_action( 'woocommerce_before_reset_password_form', static fn() => wpessential_woo_card_open( __( 'Set a new password', 'hi-wpessential' ), __( 'Choose a strong password you do not use elsewhere.', 'hi-wpessential' ) ) );
+add_action( 'woocommerce_before_lost_password_confirmation_message', static fn() => wpessential_woo_card_open( __( 'Check your inbox', 'hi-wpessential' ), __( 'We sent a reset link to your email. It expires in 60 minutes.', 'hi-wpessential' ) ) );
+add_action(
+	'woocommerce_after_lost_password_form',
+	static function () {
+		echo '<p class="wpe-auth__switch"><a href="' . esc_url( (string) wc_get_page_permalink( 'myaccount' ) ) . '"><span aria-hidden="true">←</span> ' . esc_html__( 'Back to sign in', 'hi-wpessential' ) . '</a></p></div></div>';
+	}
+);
+add_action( 'woocommerce_after_reset_password_form', static fn() => print( '</div></div>' ) );
+add_action(
+	'woocommerce_after_lost_password_confirmation_message',
+	static function () {
+		echo '<p><a class="wpe-auth__cta" href="mailto:">' . esc_html__( 'Open email app', 'hi-wpessential' ) . '</a></p>'
+			. '<p class="wpe-auth__switch"><a href="' . esc_url( wc_lostpassword_url() ) . '">' . esc_html__( "Didn't get it? Resend", 'hi-wpessential' ) . '</a></p></div></div>';
+	}
+);
+add_filter( 'woocommerce_lost_password_message', '__return_empty_string' );
+add_filter( 'woocommerce_reset_password_message', '__return_empty_string' );
+add_filter( 'woocommerce_lost_password_confirmation_message', '__return_empty_string' );

@@ -819,3 +819,14 @@ body.woocommerce-account:has(.wpe-auth.is-register) .wpe-main { background: #fff
 .wpe-auth .woocommerce-form-login .lost_password { position: absolute; right: 0; bottom: 74px; margin: 0; }
 .wpe-auth form :is(input.input-text, input[type=text], input[type=email], input[type=password]) { background: #f3f6fc !important; border: 1px solid #e3e8f2 !important; border-radius: 10px !important; min-height: 46px; box-shadow: none !important; }
 .wpe-auth .lost_password a { color: #1f48a6; text-decoration: none; }
+/* Figma 30-32: lost / reset password cards */
+.wpe-auth.is-card { margin-block: 40px; }
+.wpe-auth.is-card .lost_reset_password > p:first-child:empty, .wpe-auth.is-card > .wpe-auth__form > p:not([class]):empty { display: none; }
+.wpe-auth.is-card .lost_reset_password { max-width: none !important; border: 0 !important; padding: 0 !important; margin: 0 !important; }
+.wpe-auth.is-card .lost_reset_password .form-row { width: 100% !important; float: none !important; margin: 0 0 14px; }
+.wpe-auth.is-card .lost_reset_password .required { display: none; }
+.wpe-auth.is-card :is(.lost_reset_password button, .wpe-auth__cta) { display: block; width: 100%; text-align: center; border-radius: 999px; background: #ec7d1a !important; color: #0b1a3d !important; padding: 13px !important; font-weight: 600; text-decoration: none; border: 0; }
+body.woocommerce-account:has(.wpe-auth.is-card) :is(.wp-block-post-title, .wpe-page-title) { display: none; }
+body.woocommerce-account:has(.wpe-auth.is-card) .woocommerce-message { display: none; }
+body.woocommerce-account:has(.wpe-auth.is-card) :is(.woocommerce-notices-wrapper, .wc-block-components-notice-banner.is-success, .woocommerce-info) { display: none; }
+.wpe-auth.is-card .wpe-auth__cta { box-sizing: border-box; }
