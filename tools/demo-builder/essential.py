@@ -1139,7 +1139,7 @@ def package(builder):
              ('contact', 'Contact', 'contact', g_contact, e_contact), ('quote', 'Request a quote', 'request-a-quote', g_quote, e_quote),
              ('support', 'Support', 'support', g_support, e_support),
              ('changelog', 'Changelog', 'changelog', g_changelog, e_changelog), ('roadmap', 'Roadmap', 'roadmap', g_roadmap, e_roadmap)]
-    if builder == 'gutenberg':
+    if True:  # Both builders: the Elementor pages reuse the kit markup (elementor.from_blocks).
         pages += [('pro', 'WPEssential Pro', 'wpessential-pro', g_pro, None), ('doc-import', 'Import a demo in one click', 'import-a-demo-in-one-click', g_doc_article, None), ('cart', 'Your cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
     pages += [('svc-' + svc.DETAIL[n][0], n, svc.DETAIL[n][0], (lambda i=i: g_service(i)), (lambda i=i: e_service(i))) for i, (_, n, _d, _p) in enumerate(SERVICES)]
     content = []
@@ -1149,7 +1149,7 @@ def package(builder):
             item['content'] = g()
         else:
             item['content'] = ''
-            item['elementor'] = el()
+            item['elementor'] = e.from_blocks(g())
         content.append(item)
     content.append({'key': 'blog', 'type': 'page', 'title': 'Blog', 'slug': 'blog', 'content': ''})
     for p in POSTS:
@@ -1191,7 +1191,7 @@ def package(builder):
                             'wpessential_blog_over': 'Blog', 'wpessential_blog_title': 'Guides and release notes',
                             'wpessential_blog_lead': 'Tutorials for the theme, new demos and WordPress tips from the WPEssential team.',
                             'wpessential_404_title': 'This page took a different demo.', 'wpessential_404_lead': 'The link may be old or mistyped. Search the site or start from one of these.'},
-                'woocommerce': {'pages': {'cart': 'cart', 'checkout': 'checkout', 'myaccount': 'my-account'} if builder == 'gutenberg' else {}, 'options': {'woocommerce_enable_myaccount_registration': 'yes', 'woocommerce_registration_generate_username': 'yes', 'woocommerce_registration_generate_password': 'no', 'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
+                'woocommerce': {'pages': {'cart': 'cart', 'checkout': 'checkout', 'myaccount': 'my-account'}, 'options': {'woocommerce_enable_myaccount_registration': 'yes', 'woocommerce_registration_generate_username': 'yes', 'woocommerce_registration_generate_password': 'no', 'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
                                             'woocommerce_coming_soon': 'no', 'woocommerce_store_pages_only': 'no',
                                             'woocommerce_enable_guest_checkout': 'yes',
                                             'woocommerce_cod_settings': {'enabled': 'yes', 'title': 'Pay by invoice'}}}}
@@ -1207,7 +1207,7 @@ DEMO = {
     'thumbnail': 'demo:thumbnail.webp',
     'preview': {'desktop': 'demo:preview/desktop.webp', 'tablet': 'demo:preview/tablet.webp', 'mobile': 'demo:preview/mobile.webp'},
     'pages': ['Home', 'Demos', 'Plugins', 'About', 'Pricing', 'Services', 'Docs', 'Blog', 'Contact'],
-    'highlights': ['3 demo products', 'Monthly, yearly & lifetime plans', 'Docs & services', 'Light & dark'],
+    'highlights': ['6 demo products', 'Monthly, yearly & lifetime plans', 'Docs & services', 'Light & dark'],
     'motion': 'subtle',
     'plugins': [{'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'},
                 {'slug': 'wpforms-lite', 'name': 'WPForms Lite', 'source': 'wporg', 'state': 'required'}],

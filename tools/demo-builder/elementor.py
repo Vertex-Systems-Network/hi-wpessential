@@ -7,6 +7,7 @@ Control names were checked against the Elementor source (includes/widgets, conta
 """
 import hashlib
 import itertools
+import re
 
 _seq = itertools.count(1)
 
@@ -353,3 +354,29 @@ def kit(container_width=1200, button_radius=10, field_radius=10, button_padding=
             'form_field_border_color': color('border'),
         },
     }
+
+
+def _top_blocks(markup):
+    """Split serialized block markup into its top-level blocks."""
+    out, depth, start = [], 0, None
+    for m in re.finditer(r'<!--\s+(/?)wp:([a-z0-9/-]+)(?:\s+(\{.*?\}))?\s*(/?)-->', markup, re.S):
+        closing, selfclose = m.group(1) == '/', m.group(4) == '/'
+        if not closing and depth == 0:
+            start = m.start()
+        if selfclose and not closing:
+            if depth == 0:
+                out.append(markup[start:m.end()])
+            continue
+        depth += -1 if closing else 1
+        if depth == 0 and start is not None:
+            out.append(markup[start:m.end()])
+            start = None
+    return out
+
+
+def from_blocks(markup):
+    """Elementor version of a kit page: each top-level section sits in a full-width container as a
+    Block widget, so it renders the same kit markup as the Gutenberg page (and the same Figma design)."""
+    return [{'id': _id(), 'elType': 'container', 'isInner': False, 'elements': [widget('wp-widget-block', {'wp': {'content': blk}})],
+             'settings': {'content_width': 'full', 'padding': box(0), 'flex_gap': {'unit': 'px', 'size': 0, 'column': '0', 'row': '0', 'isLinked': True}}}
+            for blk in _top_blocks(markup)]
