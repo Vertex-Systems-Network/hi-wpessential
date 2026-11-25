@@ -661,12 +661,21 @@ function wpessential_woo_virtual_checkout_fields( $fields ) {
 add_filter( 'woocommerce_checkout_fields', 'wpessential_woo_virtual_checkout_fields', 20 );
 add_filter( 'woocommerce_enable_order_notes_field', static fn( $on ) => ( function_exists( 'WC' ) && WC()->cart && ! WC()->cart->needs_shipping() ) ? false : $on );
 
+/** True when the signed-out My Account page shows the Create account form (Figma 29). */
+function wpessential_woo_is_register() {
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- View switch only.
+	return isset( $_GET['register'] ) && 'yes' === get_option( 'woocommerce_enable_myaccount_registration' );
+}
+
 /**
- * Signed-out My Account (Figma 16): a dark intro panel beside the WooCommerce sign-in form.
+ * Signed-out My Account (Figma 16): a dark intro panel beside the sign-in form, with Sign in /
+ * Create account tabs. ?register shows the single register card (Figma 29).
  */
 function wpessential_woo_login_open() {
+	$register = wpessential_woo_is_register();
+	$account  = (string) wc_get_page_permalink( 'myaccount' );
 	?>
-	<div class="wpe-auth">
+	<div class="wpe-auth<?php echo $register ? ' is-register' : ''; ?>">
 		<div class="wpe-auth__intro">
 			<p class="wpe-auth__over"><?php esc_html_e( 'Welcome back', 'hi-wpessential' ); ?></p>
 			<h2 class="wpe-auth__title"><?php esc_html_e( 'Sign in to manage your licences, downloads and subscriptions.', 'hi-wpessential' ); ?></h2>
@@ -677,15 +686,112 @@ function wpessential_woo_login_open() {
 			</ul>
 		</div>
 		<div class="wpe-auth__form">
+			<?php if ( $register ) : ?>
+				<h1 class="wpe-auth__heading"><?php esc_html_e( 'Create your account', 'hi-wpessential' ); ?></h1>
+				<p class="wpe-auth__lead"><?php esc_html_e( 'Use it to buy Pro, download files and manage licences.', 'hi-wpessential' ); ?></p>
+			<?php elseif ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
+				<nav class="wpe-auth__tabs" aria-label="<?php esc_attr_e( 'Account', 'hi-wpessential' ); ?>"><a class="is-on" href="<?php echo esc_url( $account ); ?>" aria-current="page"><?php esc_html_e( 'Sign in', 'hi-wpessential' ); ?></a><a href="<?php echo esc_url( add_query_arg( 'register', '1', $account ) ); ?>"><?php esc_html_e( 'Create account', 'hi-wpessential' ); ?></a></nav>
+			<?php endif; ?>
 	<?php
 }
 add_action( 'woocommerce_before_customer_login_form', 'wpessential_woo_login_open' );
 
-/** Closes the wrapper opened by wpessential_woo_login_open(). */
+/** Closes the wrapper opened by wpessential_woo_login_open(), with the switch line under the form. */
 function wpessential_woo_login_close() {
+	$account = (string) wc_get_page_permalink( 'myaccount' );
+	if ( wpessential_woo_is_register() ) {
+		echo '<p class="wpe-auth__switch"><a href="' . esc_url( $account ) . '">' . esc_html__( 'Already have an account? Sign in', 'hi-wpessential' ) . '</a></p>';
+	} elseif ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
+		echo '<p class="wpe-auth__switch"><a href="' . esc_url( add_query_arg( 'register', '1', $account ) ) . '">' . esc_html__( 'New here? Create an account — it is free and takes 30 seconds.', 'hi-wpessential' ) . '</a></p>';
+	}
 	echo '</div></div>';
 }
 add_action( 'woocommerce_after_customer_login_form', 'wpessential_woo_login_close' );
+
+/**
+ * Figma 16 / 29 wording on the sign-in and register forms.
+ *
+ * @param string $text   Translated text.
+ * @param string $source Original text.
+ * @param string $domain Text domain.
+ * @return string
+ */
+function wpessential_woo_auth_text( $text, $source, $domain ) {
+	if ( 'woocommerce' !== $domain || ! is_account_page() || is_user_logged_in() ) {
+		return $text;
+	}
+	$map = array(
+		'Log in'                    => __( 'Sign in', 'hi-wpessential' ),
+		'Register'                  => __( 'Create account', 'hi-wpessential' ),
+		'Username or email address' => __( 'Email', 'hi-wpessential' ),
+		'Email address'             => __( 'Email', 'hi-wpessential' ),
+		'Lost your password?'       => __( 'Forgot password?', 'hi-wpessential' ),
+	);
+	return isset( $map[ $source ] ) ? $map[ $source ] : $text;
+}
+add_filter( 'gettext', 'wpessential_woo_auth_text', 20, 3 );
+
+/** Register form (Figma 29): full name first, terms checkbox last. */
+function wpessential_woo_register_name() {
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing -- Refills the field; WooCommerce verifies the nonce.
+	$name = isset( $_POST['wpe_full_name'] ) ? sanitize_text_field( wp_unslash( $_POST['wpe_full_name'] ) ) : '';
+	echo '<p class="woocommerce-form-row form-row form-row-wide"><label for="wpe_full_name">' . esc_html__( 'Full name', 'hi-wpessential' ) . '</label>'
+		. '<input type="text" class="input-text" name="wpe_full_name" id="wpe_full_name" autocomplete="name" placeholder="' . esc_attr__( 'Your name', 'hi-wpessential' ) . '" value="' . esc_attr( $name ) . '"></p>';
+}
+add_action( 'woocommerce_register_form_start', 'wpessential_woo_register_name' );
+
+/** Terms checkbox on the register form. */
+function wpessential_woo_register_terms() {
+	$terms   = get_page_by_path( 'terms' );
+	$privacy = (int) get_option( 'wp_page_for_privacy_policy' );
+	echo '<p class="form-row wpe-auth__agree"><label class="woocommerce-form__label woocommerce-form__label-for-checkbox"><input type="checkbox" class="woocommerce-form__input-checkbox" name="wpe_agree" value="1" required> <span>'
+		. sprintf(
+			/* translators: 1: terms link, 2: privacy link. */
+			esc_html__( 'I agree to the %1$s and %2$s', 'hi-wpessential' ),
+			$terms ? '<a href="' . esc_url( (string) get_permalink( $terms ) ) . '">' . esc_html__( 'Terms', 'hi-wpessential' ) . '</a>' : esc_html__( 'Terms', 'hi-wpessential' ),
+			$privacy ? '<a href="' . esc_url( (string) get_permalink( $privacy ) ) . '">' . esc_html__( 'Privacy policy', 'hi-wpessential' ) . '</a>' : esc_html__( 'Privacy policy', 'hi-wpessential' )
+		)
+		. '</span></label></p>';
+}
+add_action( 'woocommerce_register_form', 'wpessential_woo_register_terms', 30 );
+
+/**
+ * Requires the terms checkbox.
+ *
+ * @param WP_Error $errors Registration errors.
+ * @return WP_Error
+ */
+function wpessential_woo_register_validate( $errors ) {
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing -- WooCommerce verifies the register nonce first.
+	if ( empty( $_POST['wpe_agree'] ) ) {
+		$errors->add( 'wpe_agree', __( 'Please accept the Terms and Privacy policy.', 'hi-wpessential' ) );
+	}
+	return $errors;
+}
+add_filter( 'woocommerce_registration_errors', 'wpessential_woo_register_validate' );
+
+/**
+ * Saves the full name on the new customer.
+ *
+ * @param int $customer_id New customer ID.
+ */
+function wpessential_woo_register_save( $customer_id ) {
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing -- WooCommerce verifies the register nonce first.
+	$name = isset( $_POST['wpe_full_name'] ) ? sanitize_text_field( wp_unslash( $_POST['wpe_full_name'] ) ) : '';
+	if ( '' === $name ) {
+		return;
+	}
+	$parts = explode( ' ', $name, 2 );
+	wp_update_user(
+		array(
+			'ID'           => $customer_id,
+			'first_name'   => $parts[0],
+			'last_name'    => isset( $parts[1] ) ? $parts[1] : '',
+			'display_name' => $name,
+		)
+	);
+}
+add_action( 'woocommerce_created_customer', 'wpessential_woo_register_save' );
 
 /**
  * Demo cards (Figma 03/04) from the live products in the "demos" category, so a new demo product
