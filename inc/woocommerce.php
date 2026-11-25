@@ -490,6 +490,9 @@ function wpessential_woo_kit_template( $html, $block ) {
 		return $html;
 	}
 	$template = (string) ( $block['attrs']['template'] ?? '' );
+	if ( 'single-product' === $template && is_product() && has_term( 'demos', 'product_cat' ) ) {
+		return wpessential_woo_demo_detail();
+	}
 	if ( 'single-product' === $template && is_product() ) {
 		$markup = '<!-- wp:columns {"className":"wpe-product-top"} --><div class="wp-block-columns wpe-product-top">'
 			. '<!-- wp:column --><div class="wp-block-column"><!-- wp:wpessential/woo-product-gallery /--></div><!-- /wp:column -->'
@@ -506,3 +509,49 @@ function wpessential_woo_kit_template( $html, $block ) {
 	return $html;
 }
 add_filter( 'render_block', 'wpessential_woo_kit_template', 10, 2 );
+
+/**
+ * Demo detail page (Figma 05): breadcrumb and title, a framed live-site preview beside a buy box,
+ * the description, then related demos. Built from WPEssential Pro WooCommerce elements.
+ *
+ * @return string
+ */
+function wpessential_woo_demo_detail() {
+	$product = wc_get_product( get_the_ID() );
+	if ( ! $product ) {
+		return '';
+	}
+	$gallery = $product->get_gallery_image_ids();
+	$shot    = $gallery ? (int) $gallery[0] : (int) $product->get_image_id();
+	$cats    = wp_strip_all_tags( wc_get_product_category_list( $product->get_id(), ' · ' ) );
+	$live    = (string) $product->get_meta( 'wpe_live_url' );
+	ob_start();
+	?>
+	<div class="wpe-demo">
+		<nav class="wpe-demo__crumbs" aria-label="<?php esc_attr_e( 'Breadcrumb', 'hi-wpessential' ); ?>">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'hi-wpessential' ); ?></a> /
+			<a href="<?php echo esc_url( (string) get_permalink( wc_get_page_id( 'shop' ) ) ); ?>"><?php esc_html_e( 'Demos', 'hi-wpessential' ); ?></a> /
+			<span aria-current="page"><?php echo esc_html( $product->get_name() ); ?></span>
+		</nav>
+		<h1 class="wpe-demo__title"><?php echo esc_html( $product->get_name() ); ?></h1>
+		<p class="wpe-demo__meta"><?php echo esc_html( $cats ); ?></p>
+		<div class="wpe-demo__grid">
+			<div class="wpe-demo__preview">
+				<div class="wpe-demo__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+				<?php echo wp_get_attachment_image( $shot, 'large', false, array( 'class' => 'wpe-demo__shot' ) ); ?>
+			</div>
+			<aside class="wpe-demo__buy">
+				<?php
+				echo do_blocks( '<!-- wp:wpessential/woo-product-price /--><!-- wp:wpessential/woo-add-to-cart {"showQuantity":false,"fullWidth":true} /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Rendered blocks.
+				if ( $live ) :
+					?>
+					<a class="wpe-demo__live" href="<?php echo esc_url( $live ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Open live preview', 'hi-wpessential' ); ?></a>
+				<?php endif; ?>
+				<div class="wpe-demo__get"><?php echo wp_kses_post( wpautop( $product->get_description() ) ); ?></div>
+			</aside>
+		</div>
+		<?php echo do_blocks( '<!-- wp:wpessential/woo-related-products {"heading":"You might also like","count":3,"columns":3} /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Rendered blocks. ?>
+	</div>
+	<?php
+	return (string) ob_get_clean();
+}
