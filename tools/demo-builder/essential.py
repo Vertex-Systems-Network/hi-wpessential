@@ -205,7 +205,7 @@ def g_footer():
     cols = [('Marketplace', [('Demos', '{{page:demos}}'), ('Plugins', '{{page:plugins}}'), ('Pricing', '{{page:pricing}}'), ('My account', '{{woo:myaccount}}')]),
             ('Resources', [('Documentation', '{{page:docs}}'), ('Blog', '{{page:blog}}'), ('Changelog', '{{page:changelog}}'), ('Roadmap', '{{page:roadmap}}')]),
             ('Company', [('About', '{{page:about}}'), ('Vertex Systems Network (Pvt.) Ltd.', '{{page:about}}'), ('Services', '{{page:services}}'), ('Care plans', '{{page:svc-care-plans}}'), ('Contact', '{{page:contact}}')]),
-            ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refund policy', '{{page:refund-policy}}')])]
+            ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refund policy', '{{page:refund-policy}}'), ('Billing FAQ', '{{page:billing-faq}}'), ('Licence terms', '{{page:licence-terms}}')])]
     band = b.group(b.group(over('Newsletter', tone='orange'), b.h('New themes and demo drops, monthly.', level=3, className='wpe-ess-band__title'),
                            b.p('One email a month. Release notes, freebies and discounts. Unsubscribe anytime.', className='wpe-ess-band__text'), layout='default'),
                    b.el('forms', {'formId': '{{form:newsletter}}', 'showTitle': False}),
@@ -1177,5 +1177,24 @@ SEO = {
 }
 
 LEGAL_WIDTH = '1360px'  # Figma 20
+# Figma 49-51: refund policy, licence terms and billing FAQ ({key: (title, slug, overline, subtitle, sections)}).
+LEGAL_EXTRA = {
+    'refund-policy': ('Refund policy', 'refund-policy', 'Legal', None, [
+        ('Pro plugin (via Kelviq)', ['Request a full refund within 14 days of purchase. Kelviq, our merchant of record, processes the refund to your original payment method.']),
+        ('Subscriptions', ['Cancel any time. You keep access until the end of the paid period. Renewals can be refunded within 7 days.']),
+        ('Pro add-on services', ['Add-on services bought with Pro can be refunded before work begins.']),
+        ('Invoiced services', ['Custom services follow the terms in your quote. Completed milestones are non-refundable.']),
+        ('How to ask', ['<a href="{{page:support}}">Open a ticket</a> or email support@wpessential.org with your order number.'])]),
+    'licence-terms': ('Licence terms', 'licence-terms', 'Legal', 'WPEssential Pro licence', [
+        ('What you get', ['A licence key for the number of sites in your plan, with updates and support while active.']),
+        ('GPL', ['WPEssential and WPEssential Pro are GPL-licensed. The key gives access to updates, Pro demos and support.']),
+        ('Sites', ['Move a licence between sites any time from My Account → Licences.']),
+        ('Expiry', ['If a licence expires, Pro keeps working but stops receiving updates and Pro demo imports.'])]),
+    'billing-faq': ('Billing FAQ', 'billing-faq', 'Help', 'Answers to common payment questions', [
+        ('Who charges my card?', ['Products are sold by Kelviq as merchant of record, so your statement shows Kelviq. Services are invoiced by Vertex Systems Network.']),
+        ('Do you charge tax?', ['Kelviq calculates and collects sales tax or VAT where it applies.']),
+        ('Which methods are accepted?', ['Products: cards and wallets via Kelviq. Services: Payoneer, PayPal, Stripe or bank transfer.']),
+        ('Can I get an invoice with my company details?', ['Yes. Add your company and tax ID under My Account → Addresses before buying.'])]),
+}
 # Brand, contact email and what the site sells, used for the legal pages (tools/demo-builder/legal.py).
 LEGAL = ('WPEssential, a Vertex Systems Network (Pvt.) Ltd. company', 'support@wpessential.org', 'themes, demos, plans and services')
