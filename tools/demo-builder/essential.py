@@ -420,11 +420,15 @@ def section(*inner, alt=False, ink=False):
 
 def g_demos():
     return b.join(
-        g_hero_light('Demos', 'Demo library', 'Complete websites for Gutenberg and Elementor. Preview any demo live, then import it in one click.',
-                     g_search('Search demos…', 'wpe-ess-hero__search wpe-ess-hero__search--light')),
+        g_hero_light('Themes & demos', 'Pick a demo. Preview it live. Import it in one click.',
+                     'Hi WPEssential is free. Every demo ships for Gutenberg and Elementor. Free demos import with the free plugin; Pro demos unlock with a Pro licence.',
+                     b.p('<span aria-hidden="true">▷</span> Live demos run in your browser (WordPress Playground) — nothing to install.', className='wpe-ess-note-pill')),
         section(demo_filter('wpe-ess-cats wpe-ess-cats--left'),
-                b.group(*[g_demo_card(*d) for d in DEMO_CARDS], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid'),
-                g_band('Every demo, every builder.', 'Pro includes all demos, early access to new ones and 5 site licenses.', 'See plans', '{{page:pricing}}', tone='ink')))
+                b.group(*[g_demo_card(*d) for d in DEMO_CARDS], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid'), alt=True),
+        section(b.group(b.h('Unlock every Pro demo', level=2, align='center', className='wpe-ess-band__title'),
+                        b.p('Pro demos come with any paid plan: Starter, Pro or Agency. No separate theme purchase.', align='center', className='wpe-ess-band__text'),
+                        b.buttons(arrow('See plans', '{{page:pricing}}'), justify='center'),
+                        layout='default', className='wpe-ess-band wpe-ess-band--ink wpe-ess-band--center')))
 
 
 def g_periods():
