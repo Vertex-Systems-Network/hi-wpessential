@@ -555,3 +555,22 @@ function wpessential_woo_demo_detail() {
 	<?php
 	return (string) ob_get_clean();
 }
+
+/**
+ * Checkout (Figma 17): when nothing in the cart ships, ask only for name and email. Address,
+ * company and phone are dropped for virtual-only carts; physical products keep every field.
+ *
+ * @param array $fields Checkout fields.
+ * @return array
+ */
+function wpessential_woo_virtual_checkout_fields( $fields ) {
+	if ( ! function_exists( 'WC' ) || ! WC()->cart || WC()->cart->needs_shipping() ) {
+		return $fields;
+	}
+	$keep               = array( 'billing_first_name', 'billing_last_name', 'billing_email' );
+	$fields['billing']  = array_intersect_key( $fields['billing'] ?? array(), array_flip( $keep ) );
+	$fields['shipping'] = array();
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'wpessential_woo_virtual_checkout_fields', 20 );
+add_filter( 'woocommerce_enable_order_notes_field', static fn( $on ) => ( function_exists( 'WC' ) && WC()->cart && ! WC()->cart->needs_shipping() ) ? false : $on );
