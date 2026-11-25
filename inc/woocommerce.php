@@ -700,6 +700,7 @@ function wpessential_demo_cards( $atts ) {
 			'limit'  => 0,
 			'facets' => 0,
 			'chips'  => 0,
+			'stats'  => 0,
 		),
 		$atts,
 		'wpessential_demo_cards'
@@ -715,6 +716,9 @@ function wpessential_demo_cards( $atts ) {
 	);
 	if ( ! $items ) {
 		return '';
+	}
+	if ( (int) $atts['facets'] || (int) $atts['chips'] ) {
+		wp_enqueue_script( 'wpessential-components' ); // Elementor pages skip the render_block check in inc/assets.php.
 	}
 	$import = get_page_by_path( 'doc-import', OBJECT, array( 'page', 'post', 'wpessential_doc' ) );
 	$niches = array();
@@ -749,6 +753,19 @@ function wpessential_demo_cards( $atts ) {
 			. '<p class="wpe-ess-demo__text">' . esc_html( '' !== $text ? $text : wp_strip_all_tags( $item->get_short_description() ) ) . '</p>'
 			. '<div class="wpe-ess-demo__meta"><span>' . esc_html__( 'Gutenberg & Elementor', 'hi-wpessential' ) . '</span><span class="wpe-ess-gb" title="Gutenberg">G</span><span class="wpe-ess-gb" title="Elementor">E</span></div>'
 			. '</div></div>';
+	}
+	if ( (int) $atts['stats'] ) {
+		$stats = array(
+			array( count( $items ), __( 'ready demos', 'hi-wpessential' ) ),
+			array( 2, __( 'native builders', 'hi-wpessential' ) ),
+			array( 20, __( 'languages', 'hi-wpessential' ) ),
+			array( 8, __( 'breakpoints', 'hi-wpessential' ) ),
+		);
+		$out   = '';
+		foreach ( $stats as $stat ) {
+			$out .= '<li><b>' . (int) $stat[0] . '</b><span>' . esc_html( $stat[1] ) . '</span></li>';
+		}
+		return '<ul class="wpe-ess-hero__stats">' . $out . '</ul>';
 	}
 	if ( (int) $atts['chips'] ) {
 		$chips = '<a class="wpe-ess-chip is-on" href="#all">' . esc_html__( 'All', 'hi-wpessential' ) . ' <i>' . count( $items ) . '</i></a>';
