@@ -555,3 +555,29 @@ function wpessential_woo_demo_detail() {
 	<?php
 	return (string) ob_get_clean();
 }
+
+/**
+ * Signed-out My Account (Figma 16): a dark intro panel beside the WooCommerce sign-in form.
+ */
+function wpessential_woo_login_open() {
+	?>
+	<div class="wpe-auth">
+		<div class="wpe-auth__intro">
+			<p class="wpe-auth__over"><?php esc_html_e( 'Welcome back', 'hi-wpessential' ); ?></p>
+			<h2 class="wpe-auth__title"><?php esc_html_e( 'Sign in to manage your licences, downloads and subscriptions.', 'hi-wpessential' ); ?></h2>
+			<ul class="wpe-auth__list">
+				<li><?php esc_html_e( 'Activate sites without copying keys', 'hi-wpessential' ); ?></li>
+				<li><?php esc_html_e( 'Renew, upgrade or switch to lifetime', 'hi-wpessential' ); ?></li>
+				<li><?php esc_html_e( 'Download themes and demo packages', 'hi-wpessential' ); ?></li>
+			</ul>
+		</div>
+		<div class="wpe-auth__form">
+	<?php
+}
+add_action( 'woocommerce_before_customer_login_form', 'wpessential_woo_login_open' );
+
+/** Closes the wrapper opened by wpessential_woo_login_open(). */
+function wpessential_woo_login_close() {
+	echo '</div></div>';
+}
+add_action( 'woocommerce_after_customer_login_form', 'wpessential_woo_login_close' );
