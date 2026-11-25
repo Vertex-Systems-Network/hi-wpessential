@@ -520,6 +520,36 @@ def g_docs():
                         b.buttons(arrow('Open a ticket', '{{page:support}}')), layout='flex', wrap='wrap', valign='center', className='wpe-ess-band wpe-ess-band--soft')))
 
 
+DOC_NAV = [('Getting started', ['Install the theme', 'Activate WPEssential']),
+           ('Demo import', ['Import a demo in one click', 'Gutenberg or Elementor?', 'Required plugins', 'Resume a stopped import']),
+           ('Customising', ['Style variations', 'Fonts &amp; colours'])]
+
+
+def g_doc_article():
+    """Doc article (Figma 09): docs nav, the article, and an on-this-page list."""
+    nav = b.group(g_search('Search the docs…', 'wpe-ess-docnav__search', button=False),
+                  *[b.group(b.p(sec, className='wpe-ess-docnav__head'),
+                            html('<ul class="wpe-ess-docnav__list">%s</ul>' % ''.join(
+                                '<li%s><a href="%s">%s</a></li>' % (' class="is-current"' if t == 'Import a demo in one click' else '',
+                                                                   '{{page:doc-import}}' if t == 'Import a demo in one click' else '{{page:docs}}', t) for t in items)),
+                            layout='default') for sec, items in DOC_NAV], layout='default', className='wpe-ess-docnav')
+    steps = [('Open the Demo Library', 'Go to WPEssential → Demo Library in wp-admin and pick a demo.'),
+             ('Choose your builder', 'Select Gutenberg or Elementor. Both versions look the same.'),
+             ('Install required plugins', 'The wizard lists the plugins and installs them for you.'),
+             ('Import', 'Keep the tab open. A typical demo imports in under two minutes.')]
+    article = b.group(html('<p class="wpe-ess-doc__crumbs"><a href="{{page:docs}}">Docs</a> / <a href="{{page:docs}}">Demo import</a> / Import a demo in one click</p>'),
+                      b.h('Import a demo in one click', level=1, size='h1', className='wpe-ess-doc__title'),
+                      b.p('4 min read', className='wpe-ess-doc__meta'),
+                      b.p('Every Hi WPEssential demo ships a Gutenberg and an Elementor version. The importer installs the plugins the demo needs, brings in pages, products, menus and images, and logs each step so you can resume if anything stops.'),
+                      *[x for n, (t, d) in enumerate(steps) for x in (b.h('%d. %s' % (n + 1, t), level=2, size='h4'), b.p(d))],
+                      b.el('alert', {'type': 'warning', 'title': ' ', 'content': 'Tip: import on a fresh site. Existing pages are kept, but menus and the front page are replaced.', 'dismissible': False}),
+                      b.el('code', {'mode': 'code', 'code': 'wp wpessential import maison --builder=gutenberg', 'language': 'bash'}),
+                      layout='default', className='wpe-ess-doc')
+    toc = b.group(b.el('table-of-contents', {'heading': 'On this page', 'levels': ['h2']}), layout='default', className='wpe-ess-doc__toc')
+    return b.group(b.columns(b.column(nav, width='20%'), b.column(article, width='60%'), b.column(toc, width='20%'), className='wpe-ess-docgrid'),
+                   tag='section', align='full', layout='constrained', content='1200px', className='wpe-ess-section wpe-ess-section--doc')
+
+
 def g_module_cards():
     return b.group(*[b.group(b.p(name, className='wpe-ess-badge wpe-ess-badge--%s' % tone),
                              b.h('%d module%s' % (len(items), '' if len(items) == 1 else 's'), level=3, className='wpe-ess-card__title'),
@@ -1046,7 +1076,7 @@ def package(builder):
              ('support', 'Support', 'support', g_support, e_support),
              ('changelog', 'Changelog', 'changelog', g_changelog, e_changelog), ('roadmap', 'Roadmap', 'roadmap', g_roadmap, e_roadmap)]
     if builder == 'gutenberg':
-        pages += [('cart', 'Cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
+        pages += [('doc-import', 'Import a demo in one click', 'import-a-demo-in-one-click', g_doc_article, None), ('cart', 'Cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
     pages += [('svc-' + svc.DETAIL[n][0], n, svc.DETAIL[n][0], (lambda i=i: g_service(i)), (lambda i=i: e_service(i))) for i, (_, n, _d, _p) in enumerate(SERVICES)]
     content = []
     for key, title, slug, g, el in pages:
