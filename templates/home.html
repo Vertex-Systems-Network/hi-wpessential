@@ -4,8 +4,10 @@
 <!-- wp:pattern {"slug":"wpessential/blog-hero"} /-->
 
 <!-- wp:group {"tagName":"section","align":"full","className":"wpe-section wpe-section--sm","layout":{"type":"constrained","contentSize":"1200px"}} -->
-<section class="wp-block-group alignfull wpe-section wpe-section--sm"><!-- wp:query {"queryId":1,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true}} -->
-<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+<section class="wp-block-group alignfull wpe-section wpe-section--sm"><!-- wp:categories {"showPostCounts":false,"className":"wpe-blog-cats"} /-->
+
+<!-- wp:query {"queryId":1,"className":"wpe-blog-feed","query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true}} -->
+<div class="wp-block-query wpe-blog-feed"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
 <!-- wp:pattern {"slug":"wpessential/post-card"} /-->
 <!-- /wp:post-template -->
 

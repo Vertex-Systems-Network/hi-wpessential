@@ -754,3 +754,13 @@ body:has(.wp-block-navigation__responsive-container.is-menu-open) { overflow: hi
 
 /* No outline or ring after a mouse or touch click; keyboard focus (focus-visible) keeps its outline. */
 :where(a, button, summary, [role="button"], .wp-element-button, .wp-block-button__link, .wpe-btn, input[type="submit"], input[type="button"]):focus:not(:focus-visible) { outline: none; box-shadow: none; }
+/* Blog index (Figma 14): category chips and a featured first post. */
+.wpe-blog-cats { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; padding: 0; list-style: none; }
+.wpe-blog-cats li a { display: inline-block; padding: 6px 14px; border: 1px solid var(--wp--preset--color--border); border-radius: 999px; font-size: 14px; text-decoration: none; color: inherit; }
+.wpe-blog-cats li a:hover, .wpe-blog-cats li.current-cat a { background: var(--wp--preset--color--primary); border-color: transparent; color: var(--wp--preset--color--ink); }
+body.home.blog .wpe-blog-feed .wp-block-post-template > li:first-child,
+body.blog:not(.paged) .wpe-blog-feed .wp-block-post-template > li:first-child { grid-column: 1 / -1; }
+@media (min-width: 900px) {
+	body.blog:not(.paged) .wpe-blog-feed .wp-block-post-template > li:first-child > * { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+	body.blog:not(.paged) .wpe-blog-feed .wp-block-post-template > li:first-child .wp-block-post-title { font-size: clamp(28px, 3vw, 40px); }
+}
