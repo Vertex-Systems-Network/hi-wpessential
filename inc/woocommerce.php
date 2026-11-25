@@ -1042,3 +1042,75 @@ function wpessential_order_received() {
 		. '</div>';
 }
 add_shortcode( 'wpessential_order_received', 'wpessential_order_received' );
+
+/*
+ * My Account (Figma 34, 35, 44): a heading over each section, "Sign out" in the menu and the order view
+ * as two cards (items and totals; payment and actions).
+ */
+add_filter(
+	'woocommerce_account_menu_items',
+	static function ( $items ) {
+		if ( isset( $items['customer-logout'] ) ) {
+			$items['customer-logout'] = __( 'Sign out', 'hi-wpessential' );
+		}
+		return $items;
+	}
+);
+add_action(
+	'woocommerce_account_content',
+	static function () {
+		global $wp;
+		foreach ( array( 'orders', 'downloads', 'edit-address', 'edit-account', 'payment-methods' ) as $endpoint ) {
+			if ( isset( $wp->query_vars[ $endpoint ] ) ) {
+				echo '<h2 class="wpe-account__heading">' . esc_html( WC()->query->get_endpoint_title( $endpoint ) ) . '</h2>';
+			}
+		}
+	},
+	1
+);
+
+/**
+ * Order view (Figma 35).
+ *
+ * @param int $order_id Order ID.
+ */
+function wpessential_woo_view_order( $order_id ) {
+	$order = wc_get_order( $order_id );
+	if ( ! $order ) {
+		return;
+	}
+	$rows = '';
+	foreach ( $order->get_items() as $item ) {
+		$rows .= '<p><span>' . esc_html( $item->get_name() ) . '</span><b>' . wp_kses_post( $order->get_formatted_line_subtotal( $item ) ) . '</b></p>';
+	}
+	foreach ( $order->get_order_item_totals() as $key => $total ) {
+		if ( 'cart_subtotal' === $key || 'payment_method' === $key ) {
+			continue;
+		}
+		$rows .= '<p class="' . ( 'order_total' === $key ? 'is-total' : '' ) . '"><span>' . esc_html( rtrim( wp_strip_all_tags( $total['label'] ), ':' ) ) . '</span><b>' . wp_kses_post( $total['value'] ) . '</b></p>';
+	}
+	$refund  = get_page_by_path( 'support' );
+	$actions = '';
+	foreach ( wc_get_account_orders_actions( $order ) as $action ) {
+		if ( 'view' !== sanitize_key( $action['name'] ) ) {
+			$actions .= '<a href="' . esc_url( $action['url'] ) . '">' . esc_html( $action['name'] ) . '</a>';
+		}
+	}
+	if ( $refund && $order->is_paid() ) {
+		$actions .= '<a href="' . esc_url( add_query_arg( 'order', $order->get_order_number(), (string) get_permalink( $refund ) ) ) . '">' . esc_html__( 'Request refund', 'hi-wpessential' ) . '</a>';
+	}
+	echo '<p class="wpe-account__back"><a href="' . esc_url( wc_get_account_endpoint_url( 'orders' ) ) . '"><span aria-hidden="true">←</span> ' . esc_html__( 'Orders', 'hi-wpessential' ) . '</a></p>'
+		/* translators: %s: order number. */
+		. '<h2 class="wpe-account__heading wpe-account__heading--order">' . esc_html( sprintf( __( 'Order #%s', 'hi-wpessential' ), $order->get_order_number() ) ) . ' <span class="wpe-account__status is-' . esc_attr( $order->get_status() ) . '">' . esc_html( wc_get_order_status_name( $order->get_status() ) ) . '</span></h2>'
+		. '<div class="wpe-account__card wpe-account__lines">' . $rows . '</div>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
+		. '<div class="wpe-account__card wpe-account__lines"><p><span>' . esc_html__( 'Paid with', 'hi-wpessential' ) . '</span><b>' . esc_html( $order->get_payment_method_title() ? $order->get_payment_method_title() : '—' ) . '</b></p>'
+		. '<p><span>' . esc_html__( 'Billing email', 'hi-wpessential' ) . '</span><b>' . esc_html( $order->get_billing_email() ) . '</b></p>'
+		. ( '' !== $actions ? '<p class="wpe-account__actions">' . $actions . '</p>' : '' ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
+}
+add_action(
+	'init',
+	static function () {
+		remove_action( 'woocommerce_view_order', 'woocommerce_order_details_table', 10 );
+	}
+);
+add_action( 'woocommerce_view_order', 'wpessential_woo_view_order', 10 );

@@ -803,7 +803,7 @@ def g_checkout():
 
 
 def g_account():
-    return b.join(section(b.el('woo-notices', {}), b.el('woo-account', {})))
+    return b.join(section(html('<h1 class="wpe-ess-cart__title wpe-ess-account__title">My account</h1>'), b.el('woo-notices', {}), b.el('woo-account', {})))
 
 
 def g_service(i):
