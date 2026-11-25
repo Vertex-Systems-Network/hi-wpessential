@@ -439,18 +439,39 @@ def g_toggle(dark=False):
         '<a href="#%s"%s>%s</a>' % (k, ' class="is-on"' if k == 'monthly' else '', t) for k, t in [('monthly', 'Monthly'), ('yearly', 'Yearly · save 20%'), ('lifetime', 'Lifetime')])))
 
 
+PRO_MODULES = [('Content & data', 'blue', ['Fields', 'Relations', 'Custom Tables', 'Query', 'Listings', 'Admin Columns', 'Status']),
+               ('Design & build', 'orange', ['Site Kit — colours, fonts, dark mode, SEO', 'Pro Kit — countdown, modal, pricing, chart…', 'Builder Widgets']),
+               ('Users & access', 'purple', ['Roles', 'Profiles', 'Membership']),
+               ('Admin', 'ink', ['Dashboard', 'Dashboard Widgets', 'Admin Menu', 'Settings']),
+               ('Automation', 'teal', ['Forms & Workflows', 'Emails', 'Notifications', 'Chat', 'Cron']),
+               ('Site ops', 'green', ['Backup'])]
+PRO_ADDONS = [['Setup &amp; demo import', '$99', 'One-time'], ['Priority support upgrade', '$15', 'Monthly'], ['Plugin customisation', 'from $249', 'One-time'],
+              ['New module', 'from $499', 'One-time'], ['Custom demo', 'from $1,490', 'One-time']]
+
+
 def g_pricing():
-    rows = [['Themes', '1', 'All', 'All'], ['Demos (Gutenberg + Elementor)', 'Theme demos', 'All', 'All'], ['Site licenses', '1', '5', 'Unlimited'],
-            ['Updates &amp; support', 'Standard', 'Priority', 'Dedicated'], ['White-label dashboard', '—', '—', '✓']]
-    toggle = g_toggle(dark=True)
-    periods = g_periods()
+    rows = [['Hi WPEssential theme', 'Yes', 'Yes', 'Yes', 'Yes'], ['Custom Post Types &amp; Taxonomies', 'Yes', 'Yes', 'Yes', 'Yes'],
+            ['Free demos', 'Yes', 'Yes', 'Yes', 'Yes'], ['Pro demos', '—', 'Yes', 'Yes', 'Yes'], ['22 Pro modules', '—', 'Yes', 'Yes', 'Yes'],
+            ['Sites', 'Unlimited', '1', '5', 'Unlimited'], ['Support', 'Forum', 'Standard', 'Priority', 'Dedicated'], ['White-label', '—', '—', '—', 'Yes']]
+    modules = b.group(*[b.group(b.p(name, className='wpe-ess-badge wpe-ess-badge--%s' % tone),
+                                b.h('%d module%s' % (len(items), '' if len(items) == 1 else 's'), level=3, className='wpe-ess-card__title'),
+                                b.ul(items, className='wpe-ess-plain'), layout='default', className='wpe-ess-card wpe-ess-card--soft')
+                        for name, tone, items in PRO_MODULES], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid')
     return b.join(
-        g_hero_dark('Pricing', 'One subscription. Every theme and demo.',
-                    'From $10 a month. Save 20% yearly, or pay once for lifetime — it covers the major version you buy (1.x until 2.0 ships).', toggle),
-        b.group(periods, tag='section', align='full', layout='constrained', content='1200px', className='wpe-ess-section wpe-ess-section--pull'),
-        section(head('Pricing', 'Compare plans'), b.table(['Feature', 'Starter', 'Pro', 'Agency'], rows, className='wpe-ess-table')),
-        section(g_band('14-day money-back guarantee', 'Not the right fit? Email us within 14 days and get a full refund. No questions.', 'Talk to sales', '{{page:contact}}')),
-        section(head('FAQ', 'Frequently asked questions'), b.faq(FAQ)))
+        g_hero_dark('Pricing · WPEssential Pro', 'Free to start. <span class="wpe-ess-grad">Pro when you grow.</span>',
+                    'The Hi WPEssential theme, the WPEssential plugin and free demos cost nothing. WPEssential Pro adds 22 modules and the Pro demos.',
+                    b.buttons(arrow('Compare plans', '#compare'), b.button('Download free', '{{page:plugins}}', style='wpe-ghost-light'), justify='center')),
+        section(g_toggle(), g_periods(), alt=True),
+        section(head('What you get', '22 Pro modules in every plan', 'Plans differ only by number of sites and support level.'), modules),
+        section(head('Compare', 'Free vs Pro'), b.table(['Feature', 'Free', 'Starter', 'Pro', 'Agency'], rows, className='wpe-ess-table'), alt=True)
+        .replace('"cssClass":"wpe-ess-section', '"anchor":"compare","cssClass":"wpe-ess-section', 1),
+        section(head('Pro add-ons', 'Extras for a Pro licence', 'Bought on the same checkout. Each one needs an active Pro licence.'),
+                b.table(['Add-on', 'Price', 'Billing'], PRO_ADDONS, className='wpe-ess-table'),
+                b.p('Custom design, development, SEO or hosting is a service, quoted and invoiced separately. <a href="{{page:services}}">→ Services</a>', className='wpe-ess-note-box')),
+        section(b.group(b.h('Start free. Upgrade when you need it.', level=2, align='center', className='wpe-ess-band__title'),
+                        b.p('The theme and plugin stay free forever.', align='center', className='wpe-ess-band__text'),
+                        b.buttons(arrow('Get Pro', '#compare'), b.button('Download free', '{{page:plugins}}', style='wpe-ghost-light'), justify='center'),
+                        layout='default', className='wpe-ess-band wpe-ess-band--blue wpe-ess-band--center')))
 
 
 SERVICE_ICONS = ['palette', 'download', 'cart', 'figma', 'grid', 'bolt', 'refresh', 'globe', 'shield', 'wrench', 'server', 'heart', 'code']
