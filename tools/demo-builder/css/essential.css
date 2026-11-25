@@ -483,3 +483,22 @@ ul.wpe-ess-facts { list-style: none; padding: 0; margin: 8px 0 0; max-width: 560
 .wpe-ess-card--svc .wpe-ess-plan__price { font-size: 28px; margin-block: 12px 24px; }
 .wpe-ess-card .wpe-code.is-html, .wpe-ess-section .wpe-code:has(.wpe-ess-map) { align-self: stretch; width: 100%; }
 .wpe-ess-section .wpe-ess-grid { align-self: stretch; width: 100%; }
+/* Doc article (Figma 09). */
+.wpe-ess-section--doc { padding-block: 32px 80px; }
+
+.wpe-ess-docnav, .wpe-ess-doc__toc { position: sticky; top: 96px; font-size: 14px; }
+.wpe-ess-docnav__head { margin: 20px 0 6px !important; font-family: var(--wp--preset--font-family--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--wp--preset--color--text-muted); }
+.wpe-ess-docnav__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.wpe-ess-docnav__list a { display: block; padding: 6px 10px; border-radius: 8px; color: inherit; text-decoration: none; }
+.wpe-ess-docnav__list .is-current a, .wpe-ess-docnav__list a:hover { background: rgba(31, 72, 166, .08); color: var(--wp--preset--color--secondary); }
+.wpe-ess-doc__crumbs, .wpe-ess-doc__meta { font-size: 13px; color: var(--wp--preset--color--text-muted); }
+.wpe-ess-doc__crumbs a { color: inherit; }
+.wpe-ess-doc__title { margin-block: 8px !important; }
+.wpe-ess-docgrid > .wpe-container__inner { display: grid !important; grid-template-columns: 220px minmax(0, 1fr) 200px; gap: 48px; align-items: start; }
+.wpe-ess-docgrid .wpe-column, .wpe-ess-docgrid > .wpe-container__inner > * { width: auto !important; max-width: none !important; flex: none !important; }
+.wpe-ess-docnav__list li { text-align: left; }
+.wpe-ess-doc__toc ol, .wpe-ess-doc__toc ul { list-style: none; padding-left: 0; }
+.wpe-ess-doc .wpe-code pre { white-space: pre-wrap; }
+@media (max-width: 1000px) { .wpe-ess-docgrid > .wpe-container__inner { grid-template-columns: 1fr; } .wpe-ess-docnav, .wpe-ess-doc__toc { position: static; } }
+.wpe-ess-doc .wpe-code { --wpek-content-width: 100%; margin: 0 !important; align-self: stretch; }
+.wpe-ess-docnav .wpe-container__inner, .wpe-ess-doc > .wpe-container__inner { align-items: stretch !important; }
