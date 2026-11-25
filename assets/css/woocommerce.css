@@ -343,3 +343,58 @@
 .wpe-auth__form > h2 { display: none; }
 .wpe-auth__form .woocommerce-form-login, .wpe-auth__form form.login { margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: none !important; }
 @media (max-width: 900px) { .wpe-auth { grid-template-columns: 1fr; } .wpe-auth__intro, .wpe-auth__form { padding: 28px; } }
+
+/* Demo detail (Figma 05) */
+.wpe-shop:has(> .wpe-demo) > *, .wpe-shop:has(.wpe-demo) .wpe-demo { max-width: 1680px; margin-inline: auto; }
+.wpe-demo__badges { margin: 16px 0 0; display: flex; gap: 6px; }
+.wpe-demo__badges span { padding: 4px 10px; border-radius: 999px; font: 500 11px/16px var(--wp--preset--font-family--mono, monospace); letter-spacing: .08em; text-transform: uppercase; background: #e9eef9; color: #1f48a6; }
+.wpe-demo__badges .is-free { background: #fdf1e6; color: #b85d0b; }
+.wpe-demo__title { margin: 8px 0 6px; font-weight: 800; font-size: clamp(36px, 2.6vw, 50px); letter-spacing: -0.02em; }
+.wpe-demo__meta { font-size: 13px; }
+.wpe-demo__grid { grid-template-columns: minmax(0, 1fr) 400px; gap: 40px; }
+.wpe-demo__preview { border-radius: 16px; background: #f3f6fc; }
+.wpe-demo__bar { align-items: center; background: #fff; }
+.wpe-demo__bar em { margin-inline: auto; padding: 4px 12px; border-radius: 999px; background: #f3f6fc; font-style: normal; font-size: 12px; color: #5d6780; }
+.wpe-demo__note { margin: 0; padding: 10px 14px; font-size: 12px; color: #1f48a6; background: #e9eef9; }
+.wpe-demo__tabs { display: flex; gap: 28px; margin: 28px 0 24px; border-bottom: 1px solid var(--wp--preset--color--border); }
+.wpe-demo__tabs a { padding: 0 0 12px; color: var(--wp--preset--color--text-muted); text-decoration: none; font-size: 14px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.wpe-demo__tabs a.is-on { color: var(--wp--preset--color--text); border-color: #1f48a6; }
+.wpe-demo__overview h2 { font-size: clamp(22px, 1.6vw, 30px); font-weight: 700; margin: 0 0 12px; }
+.wpe-demo__overview p { color: var(--wp--preset--color--text-muted); font-size: 15px; }
+.wpe-demo__label { margin: 8px 0 0; font: 500 11px/16px var(--wp--preset--font-family--mono, monospace); letter-spacing: .12em; text-transform: uppercase; color: #5d6780; }
+.wpe-demo__pages ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.wpe-demo__pages img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; border-radius: 10px; display: block; }
+.wpe-demo__pages span { display: block; margin-top: 8px; font-size: 13px; font-weight: 600; }
+.wpe-demo__buy { border-radius: 20px; padding: 28px; gap: 12px; box-shadow: 0 18px 48px rgb(11 26 61 / .08); }
+.wpe-demo__buy .wpe-woo-price { font-size: 40px; font-weight: 800; }
+.wpe-demo__incl { margin: 0; padding: 8px 12px; border-radius: 8px; background: #fdf1e6; color: #b85d0b; font-size: 12px; }
+.wpe-demo__cta { display: block; padding: 14px; border-radius: 999px; background: #ec7d1a; color: #0b1a3d; text-align: center; font-weight: 700; text-decoration: none; }
+.wpe-demo__buy :is(.single_add_to_cart_button, .wpe-woo-add-to-cart button, .button) { width: 100%; background: #fff !important; color: #0b1a3d !important; border: 1px solid #dde4f0 !important; border-radius: 999px; }
+.wpe-demo__live { border: 0; color: #0b1a3d; font-size: 14px; }
+.wpe-demo__checks, .wpe-demo__plugins { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 13px; }
+.wpe-demo__checks li { position: relative; padding-inline-start: 22px; }
+.wpe-demo__checks li::before { content: ""; position: absolute; inset-inline-start: 2px; top: .4em; width: 10px; height: 6px; border-left: 2px solid #17704a; border-bottom: 2px solid #17704a; transform: rotate(-45deg); }
+.wpe-demo__plugins li { display: flex; align-items: center; gap: 10px; }
+.wpe-demo__plugins b { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 6px; background: #e9eef9; color: #1f48a6; font-size: 11px; }
+.wpe-demo__plugins em { margin-inline-start: auto; font-style: normal; color: #5d6780; font-size: 12px; }
+.wpe-demo__related { margin: 0 calc(50% - 50vw); padding: 72px calc(50vw - 50%); background: #f3f6fc; }
+
+.wpe-demo__buy form.cart { margin: 0; }
+.wpe-demo__buy .single_add_to_cart_button { padding: 13px !important; font-weight: 600; }
+.wpe-demo__related h2 { font-weight: 800; font-size: clamp(28px, 1.9vw, 36px); margin: 0 0 24px; }
+.wpe-demo__cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+@media (min-width: 1000px) { .wpe-demo__cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.wpe-demo-card { border: 1px solid #dde4f0; border-radius: 20px; overflow: hidden; background: #fff; }
+.wpe-demo-card__shot { position: relative; display: block; aspect-ratio: 542 / 240; overflow: hidden; }
+.wpe-demo-card__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.wpe-demo-card__shot span { position: absolute; top: 14px; left: 14px; padding: 4px 10px; border-radius: 999px; font: 500 11px/16px var(--wp--preset--font-family--mono, monospace); letter-spacing: .08em; text-transform: uppercase; background: #e9eef9; color: #1f48a6; }
+.wpe-demo-card__shot span.is-free { background: #fdf1e6; color: #b85d0b; }
+.wpe-demo-card__body { padding: 18px 20px 20px; }
+.wpe-demo-card__body h3 { display: flex; justify-content: space-between; margin: 0; font-size: 20px; }
+.wpe-demo-card__body h3 a { color: inherit; text-decoration: none; }
+.wpe-demo-card__body h3 b { font-family: var(--wp--preset--font-family--body); font-size: 15px; }
+.wpe-demo-card__body p { margin: 8px 0 0; font-size: 13px; color: var(--wp--preset--color--text-muted); }
+.wpe-demo-card__builders { display: flex; justify-content: flex-end; gap: 6px; }
+.wpe-demo-card__builders span { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 6px; background: #e8f0fd; color: #2f6be0; font-size: 11px; font-weight: 700; }
+.wpe-demo-card__builders span + span { background: #e9eef9; color: #1f48a6; }
+.wpe-demo__shot { aspect-ratio: 1240 / 560; object-fit: cover; object-position: top; }

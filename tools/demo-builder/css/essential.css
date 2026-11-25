@@ -458,7 +458,7 @@ ul.wpe-ess-facts { list-style: none; padding: 0; margin: 8px 0 0; max-width: 560
 }
 
 /* ── Kit bridge: the .ess-* rules above style WPEssential kit elements exactly like the core blocks they replace. */
-:where(.wpe-heading[class*="ess-"]){font-family:var(--wp--preset--font-family--heading);font-weight:600;line-height:1.04;letter-spacing:-0.02em}
+:where(.wpe-heading[class*="ess-"], .wpe-heading[class*="has-"]){font-family:var(--wp--preset--font-family--heading);font-weight:600;line-height:1.04;letter-spacing:-0.02em}
 .wpe-heading[class*="ess-"] .wpe-heading__title,.wpe-heading[class*="has-"] .wpe-heading__title{font:inherit;color:inherit;letter-spacing:inherit;line-height:inherit;text-transform:inherit;text-align:inherit;margin:0}
 .wpe-text[class*="ess-"] .wpe-text__body>*,.wpe-text[class*="is-style-"] .wpe-text__body>*{margin:0}
 .wpe-text .wpe-text__body>*+*{margin-top:.6em}
@@ -643,3 +643,127 @@ body:not(:has(.wpe-ess-hero)) .wpe-ess-card.wpe-ess-card--doc .wpe-ess-card__tit
 /* Figma 13: service quick links, six per row, icon + name + price in one line */
 .wpe-ess-card.wpe-ess-mini { flex-direction: row; align-items: center; gap: 10px; padding: 14px 16px; border-radius: 12px; }
 @media (min-width: 1200px) { .wpe-ess-grid:has(> .wpe-ess-mini, > .wpe-container__inner > .wpe-ess-mini) :is(.wpe-container__inner), .wpe-ess-grid:has(> .wpe-ess-mini) { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; } }
+/* Light page hero (Figma 10/11/12/19): breadcrumb and overline on the left */
+.wpe-ess-page-hero .wpe-ess-crumb { text-align: left; font-size: 12px; color: #5d6780; margin: 0 0 10px !important; }
+.wpe-ess-page-hero .wpe-ess-crumb + .wpe-ess-over { margin-top: 0 !important; color: #1f48a6 !important; }
+.wpe-ess-page-hero:not(.wpe-ess-page-hero--dark) .wpe-ess-lead { max-width: none; font-size: 15px; }
+/* Footer brand column left-aligned (Figma) */
+.wpe-ess-footer .wpe-ess-foot__cols > .wpe-column:first-child, .wpe-ess-footer .wpe-ess-foot__cols > .wp-block-column:first-child { text-align: left; align-items: flex-start; }
+.wpe-ess-footer .wpe-ess-social { justify-content: flex-start; display: flex; gap: 10px; }
+.wpe-ess-footer :is(.wpe-code, .wpe-html):has(.wpe-ess-logo, .wpe-ess-social) { align-self: flex-start; width: auto; }
+/* Figma 09: doc article */
+.wpe-ess-section--doc { padding-block: 40px 96px; }
+.wpe-ess-docgrid { gap: 48px !important; }
+.wpe-ess-docnav__search :is(.wp-block-search__inside-wrapper, .wpe-search__row) { border: 1px solid #dde4f0 !important; border-radius: 999px; padding: 4px 6px 4px 14px !important; background: #fff; }
+.wpe-ess-docnav__search :is(.wp-block-search__button, .wpe-search__submit) { background: transparent !important; color: #5d6780 !important; }
+.wpe-ess-docnav__search :is(input) { font-size: 13px; }
+.wpe-ess-docnav__head { margin: 24px 0 8px !important; font: 500 11px/16px var(--wp--preset--font-family--mono); letter-spacing: .12em; text-transform: uppercase; color: #5d6780; }
+.wpe-ess-docnav__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.wpe-ess-docnav__list a { display: block; padding: 7px 10px; border-radius: 8px; font-size: 13px; color: var(--wp--preset--color--text); text-decoration: none; }
+.wpe-ess-docnav__list .is-current a, .wpe-ess-docnav__list a:hover { background: #e9eef9; color: #1f48a6; }
+.wpe-ess-doc__crumbs { font-size: 12px; color: #5d6780; }
+.wpe-ess-doc__crumbs a { color: inherit; text-decoration: none; }
+.wpe-ess-doc__title { font-weight: 800 !important; font-size: clamp(34px, 2.6vw, 50px) !important; margin: 12px 0 8px !important; }
+.wpe-ess-doc__meta { font-size: 12px; color: #5d6780; }
+.wpe-ess-doc h2 { font-family: var(--wp--preset--font-family--body) !important; font-weight: 700 !important; font-size: 20px !important; margin: 28px 0 10px !important; letter-spacing: 0; }
+.wpe-ess-doc p { font-size: 15px; }
+.wpe-ess-doc .wpe-alert { background: #fdf1e6 !important; border: 0 !important; border-inline-start: 3px solid #ec7d1a !important; border-radius: 8px; color: var(--wp--preset--color--text) !important; }
+.wpe-ess-doc .wpe-alert :is(.wpe-alert__icon, .wpe-alert__title) { display: none; }
+.wpe-ess-doc .wpe-code { background: #0b1a3d !important; border: 0 !important; border-radius: 8px; color: #fff; }
+.wpe-ess-doc .wpe-code :is(.wpe-code__head, .wpe-code__header, .wpe-code__bar) { display: none; }
+.wpe-ess-doc .wpe-code :is(pre, code) { background: transparent !important; color: #fff !important; font-size: 12px; }
+.wpe-ess-doc__helpful { display: flex; align-items: center; gap: 8px; margin-top: 28px !important; padding-top: 20px; border-top: 1px solid #dde4f0; font-size: 13px; font-weight: 600; }
+.wpe-ess-doc__helpful span { margin-inline-end: auto; }
+.wpe-ess-doc__helpful a { padding: 8px 16px; border: 1px solid #dde4f0; border-radius: 999px; color: var(--wp--preset--color--text); text-decoration: none; font-weight: 500; }
+.wpe-ess-doc__toc :is(.wpe-toc, .wpe-table-of-contents) { border: 0 !important; background: none !important; padding: 0 !important; box-shadow: none !important; }
+.wpe-ess-doc__toc :is(summary, .wpe-toc__title, .wpe-toc__heading) { font: 500 11px/16px var(--wp--preset--font-family--mono); letter-spacing: .12em; text-transform: uppercase; color: #5d6780; list-style: none; }
+.wpe-ess-doc__toc :is(ol, ul) { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
+.wpe-ess-doc__toc a { font-size: 13px; color: #1f48a6; text-decoration: none; }
+/* Figma 14: blog */
+body.blog .wpe-page-hero { padding: clamp(48px, 4.2vw, 80px) clamp(20px, 6.25vw, 120px) !important; text-align: left; background: #f3f6fc !important; }
+body.blog .wpe-page-hero > * { max-width: 1680px !important; margin-inline: auto !important; text-align: left; }
+body.blog .wpe-page-hero .is-style-wpe-overline { font: 500 12px/16px var(--wp--preset--font-family--mono); letter-spacing: .12em; text-transform: uppercase; color: #1f48a6; margin-bottom: 12px; }
+body.blog .wpe-page-hero h1 { font-weight: 800; font-size: clamp(34px, 2.6vw, 50px); }
+body.blog .wpe-page-hero .is-style-wpe-lead { font-size: 15px; color: #5d6780; }
+body.blog main > .wpe-section { padding-inline: clamp(20px, 6.25vw, 120px); }
+body.blog main > .wpe-section > * { max-width: 1680px !important; }
+body.blog .wpe-blog-cats { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0 0 24px; }
+body.blog .wpe-blog-cats li a { display: inline-block; padding: 7px 14px; border: 1px solid #dde4f0; border-radius: 999px; background: #fff; color: var(--wp--preset--color--text); font-size: 13px; text-decoration: none; }
+body.blog .wpe-blog-cats li.current-cat a, body.blog .wpe-blog-cats li a:hover { background: #ec7d1a; border-color: #ec7d1a; color: #0b1a3d; }
+body.blog .wpe-blog-feed .wp-block-post-template { gap: 24px; }
+body.blog .wpe-blog-feed .wpe-card { border: 1px solid #dde4f0; border-radius: 20px; overflow: hidden; background: #fff; }
+body.blog .wpe-blog-feed .wp-block-post-template > li:first-child { grid-column: 1 / -1; }
+@media (min-width: 900px) {
+	body.blog .wpe-blog-feed .wp-block-post-template > li:first-child > .wpe-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+	body.blog .wpe-blog-feed .wp-block-post-template > li:first-child .wp-block-post-featured-image { height: 100%; }
+	body.blog .wpe-blog-feed .wp-block-post-template > li:first-child .wp-block-post-featured-image img { height: 100%; aspect-ratio: auto; }
+	body.blog .wpe-blog-feed .wp-block-post-template > li:first-child .wpe-card__body { padding: 40px; }
+	body.blog .wpe-blog-feed .wp-block-post-template > li:first-child .wp-block-post-title { font-size: clamp(28px, 1.9vw, 36px) !important; }
+}
+body.blog .wpe-blog-feed .wpe-card__body .is-style-wpe-overline a { color: #ec7d1a; font: 500 11px/16px var(--wp--preset--font-family--mono); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; }
+body.blog .wpe-pagination :is(.page-numbers) { display: inline-grid; place-items: center; min-width: 32px; height: 32px; border: 1px solid #dde4f0; border-radius: 999px; font-size: 13px; text-decoration: none; color: var(--wp--preset--color--text); }
+body.blog .wpe-pagination .page-numbers.current { background: #ec7d1a; border-color: #ec7d1a; color: #0b1a3d; }
+/* Figma 15: blog post */
+body.single-post .wpe-main { padding-inline: clamp(20px, 6.25vw, 120px); }
+body.single-post .wpe-post-header { max-width: 1360px !important; margin-inline: auto !important; text-align: left; }
+body.single-post .wpe-post-header :is(.wp-block-post-title, h1) { text-align: left; font-weight: 800; font-size: clamp(36px, 3.75vw, 72px); letter-spacing: -0.03em; line-height: 1.08; }
+body.single-post .wpe-post-header .wpe-post-meta { justify-content: flex-start; font-size: 12px; color: #5d6780; }
+body.single-post .wpe-post-header .is-style-wpe-pills { justify-content: flex-start; }
+body.single-post .wp-block-post-featured-image { max-width: 1480px !important; margin-inline: auto !important; }
+body.single-post .wp-block-post-featured-image img { border-radius: 16px; box-shadow: none; }
+body.single-post :is(.wp-block-post-content, .wpe-post-footer, .wpe-author-box, .wpe-post-nav) { max-width: 1360px !important; margin-inline: auto !important; }
+body.single-post .wp-block-post-content h2 { font-family: var(--wp--preset--font-family--body); font-weight: 700; font-size: 20px; letter-spacing: 0; }
+body.single-post .wp-block-post-content :is(p, li) { font-size: 15px; }
+body.single-post .wp-block-post-content .wp-block-image img { max-height: 640px; width: auto; margin-inline: auto; border-radius: 12px; }
+body.single-post .wp-block-post-content .wp-block-quote { border: 0; border-inline-start: 3px solid #ec7d1a; border-radius: 12px; background: #fdf1e6; padding: 18px 22px; }
+body.single-post .wp-block-post-content .wp-block-quote p { font-weight: 600; }
+body.single-post .wp-block-post-content .wp-block-quote cite { font-size: 12px; color: #5d6780; }
+body.single-post :is(.wp-block-comments, .wp-block-post-comments-form, .wpe-author-box) { display: none; }
+body.single-post main + * h2, body.single-post .wpe-section--alt h2 { text-align: left; }
+/* Figma 16: sign in (logged-out My account) */
+body.woocommerce-account:has(.wpe-auth) :is(.wp-block-post-title, .wpe-page-title, main h1.wp-block-heading:first-child) { display: none; }
+body.woocommerce-account:has(.wpe-auth) .wpe-main { background: #e8eef8; padding: 40px clamp(20px, 6.25vw, 120px) 64px !important; }
+body.woocommerce-account:has(.wpe-auth) .wpe-main > * { max-width: 1680px !important; }
+.wpe-auth { max-width: 1680px !important; width: 100%; display: grid !important; grid-template-columns: 1fr 1fr; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: none; border: 0; }
+.wpe-auth__intro { background: #0b1a3d; color: #fff; padding: 56px 30px !important; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.wpe-auth__over { font: 500 11px/16px var(--wp--preset--font-family--mono); letter-spacing: .12em; text-transform: uppercase; color: #ec7d1a; margin: 0; }
+.wpe-auth__title { font-family: var(--wp--preset--font-family--body) !important; font-weight: 700 !important; font-size: clamp(22px, 1.5vw, 28px) !important; line-height: 1.3; color: #fff; margin: 0; }
+.wpe-auth__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; color: #a9b6d3; font-size: 13px; }
+.wpe-auth__list li::before { content: none !important; }
+.wpe-auth__form { padding: 30px !important; }
+.wpe-auth__form :is(input[type=text], input[type=email], input[type=password]) { background: #f3f6fc; border: 1px solid #e3e8f2; border-radius: 10px; min-height: 46px; }
+.wpe-auth__form .woocommerce-form-login__submit { width: 100%; border-radius: 999px; background: linear-gradient(90deg, #E8701A, #F7A23E) !important; color: #0b1a3d !important; padding: 13px !important; }
+.wpe-auth__form .lost_password a { color: #1f48a6; }
+@media (max-width: 800px) { .wpe-auth { grid-template-columns: 1fr; } }
+body.woocommerce-account :is(.wp-block-post-content, .woocommerce, .wp-block-woocommerce-customer-account, .entry-content):has(.wpe-auth) { max-width: 1680px !important; width: 100%; margin-inline: auto !important; }
+body.woocommerce-account .wpe-main :has(> .woocommerce .wpe-auth) > * { max-width: 1680px !important; }
+
+/* Figma 20: legal */
+.wpe-legal-chips + * , .wpe-section:has(.wpe-legal-chips) h1 { text-align: left; }
+.wpe-section:has(.wpe-legal-chips) h1 .wpe-heading__title, .wpe-section:has(.wpe-legal-chips) h1 { font-weight: 800 !important; font-size: clamp(34px, 2.6vw, 50px) !important; }
+/* Figma 21: 404 */
+.wpe-404-num { font-family: var(--wp--preset--font-family--heading); font-weight: 800; font-size: clamp(96px, 9vw, 180px); line-height: 1; letter-spacing: -0.04em; background: linear-gradient(90deg, #1f48a6, #4a90f5); -webkit-background-clip: text; background-clip: text; color: transparent; margin: 0; }
+body.error404 h1.wp-block-heading { font-weight: 600; font-size: clamp(32px, 2.4vw, 44px); letter-spacing: -0.02em; }
+/* Footer logo + social on the left (Figma) */
+.wpe-ess-footer .wpe-code:has(.wpe-ess-logo, .wpe-ess-social) { justify-content: flex-start; align-items: flex-start; text-align: left; width: 100%; }
+.wpe-ess-footer .wpe-code__html { text-align: left; }
+/* Figma 17: checkout — full-width cards, order summary on the right */
+body.woocommerce-checkout .wpe-checkout { padding-inline: clamp(20px, 6.25vw, 120px) !important; }
+body.woocommerce-checkout .wpe-checkout > *, body.woocommerce-checkout .wpe-checkout .wp-block-post-content > * { max-width: 1680px !important; }
+body.woocommerce-checkout .wpe-checkout .wp-block-post-title { text-align: left; font-weight: 800; font-size: clamp(34px, 2.6vw, 50px); }
+body.woocommerce-checkout .wc-block-checkout__main .wc-block-components-checkout-step { border: 1px solid #dde4f0; border-radius: 16px; padding: 24px !important; background: #fff; margin: 0 0 16px !important; }
+body.woocommerce-checkout .wc-block-components-checkout-step__title { font-family: var(--wp--preset--font-family--body); font-weight: 700; font-size: 18px; }
+body.woocommerce-checkout .wc-block-checkout__sidebar .wp-block-woocommerce-checkout-order-summary-block { border: 1px solid #dde4f0; border-radius: 16px; background: #fff; padding: 8px 8px 16px; }
+body.woocommerce-checkout .wc-block-components-text-input input, body.woocommerce-checkout .wc-block-components-combobox input, body.woocommerce-checkout .wc-blocks-components-select select { background: #f3f6fc !important; border-color: #e3e8f2 !important; border-radius: 10px !important; }
+body.woocommerce-checkout .wc-block-components-checkout-place-order-button { border-radius: 999px !important; background: linear-gradient(90deg, #E8701A, #F7A23E) !important; color: #0b1a3d !important; }
+/* Figma 18: my account — left nav, content cards */
+body.woocommerce-account:not(:has(.wpe-auth)) .wpe-main { padding-inline: clamp(20px, 6.25vw, 120px) !important; }
+body.woocommerce-account:not(:has(.wpe-auth)) .wpe-main > *, body.woocommerce-account:not(:has(.wpe-auth)) .wp-block-post-content > * { max-width: 1680px !important; }
+body.woocommerce-account .wpe-main .wp-block-post-title { text-align: left; font-weight: 800; font-size: clamp(34px, 2.6vw, 50px); }
+body.woocommerce-account .woocommerce:has(.woocommerce-MyAccount-navigation) { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 24px; align-items: start; }
+body.woocommerce-account .woocommerce-MyAccount-navigation { width: auto !important; float: none !important; border: 0 !important; padding: 0 !important; background: none !important; box-shadow: none !important; }
+body.woocommerce-account .woocommerce-MyAccount-navigation ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+body.woocommerce-account .woocommerce-MyAccount-navigation li a { display: block; padding: 8px 12px; border-radius: 8px; font-size: 14px; color: var(--wp--preset--color--text); text-decoration: none; background: none !important; }
+body.woocommerce-account .woocommerce-MyAccount-navigation li.is-active a, body.woocommerce-account .woocommerce-MyAccount-navigation li a:hover { background: #e9eef9 !important; color: #1f48a6 !important; }
+body.woocommerce-account .woocommerce-MyAccount-content { width: auto !important; float: none !important; border: 1px solid #dde4f0; border-radius: 16px; padding: 24px; background: #fff; }
+@media (max-width: 800px) { body.woocommerce-account .woocommerce:has(.woocommerce-MyAccount-navigation) { grid-template-columns: 1fr; } }

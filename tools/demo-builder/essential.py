@@ -156,7 +156,7 @@ POSTS = [
          body=[('p', 'Each demo is built twice, natively: once with core blocks and once with Elementor widgets. Neither is a converted copy of the other.'),
                ('ul', ['Choose Gutenberg for the fastest pages and no page-builder plugin.', 'Choose Elementor if your team already edits with it.', 'Switching later means importing the other package on a fresh site.']),
                ('img', 'site-maison', 'The Maison demo home page'),
-               ('quote', 'We moved three client sites to the Gutenberg packages and every one went above 95 on PageSpeed.', 'Agency customer')]),
+               ('quote', 'Pick Gutenberg for the leanest pages; pick Elementor when your team already edits with it. The design is the same either way.', 'WPEssential team')]),
     dict(key='post-pulse', title='New demo: Pulse for conferences and events', slug='new-demo-pulse', image='site-pulse', date='2026-10-08 09:00:00', cat='cat-news',
          excerpt='Speakers, a two-day agenda, ticket passes and The Events Calendar, ready to import.',
          body=[('p', 'Pulse is our second Pro demo. It is built for conferences, meetups and anyone who sells tickets.'),
@@ -395,10 +395,11 @@ def g_home():
     return b.join(hero, cats, demos, theme, how, services, pricing, docs, news)
 
 
-def g_hero_light(crumb, title, lead, *extra, over_text=None):
+def g_hero_light(crumb, title, lead, *extra, over_text=None, parent=('Home', '{{home:}}'), show_over=True):
     """Light page hero (Figma: Demos, Plugins, About, Contact, Blog)."""
-    top = html('<p class="wpe-ess-crumb"><a href="{{home:}}">Home</a> <span>/</span> %s</p>' % crumb) if crumb else over(over_text)
-    return b.group(top, b.h(title, level=1, className='wpe-ess-page__title'), b.p(lead, className='wpe-ess-lead'), *extra,
+    # Figma 10/11/19: breadcrumb, then the overline; 04/12: overline only.
+    top = ([html('<p class="wpe-ess-crumb"><a href="%s">%s</a> / %s</p>' % (parent[1], parent[0], crumb))] + ([over(crumb)] if show_over else [])) if crumb else [over(over_text)]
+    return b.group(*top, b.h(title, level=1, className='wpe-ess-page__title'), b.p(lead, className='wpe-ess-lead'), *extra,
                    tag='section', align='full', className='wpe-ess-page-hero', layout='constrained', content='1680px')
 
 
@@ -571,14 +572,15 @@ def g_doc_article():
              ('Import', 'Keep the tab open. A typical demo imports in under two minutes.')]
     article = b.group(html('<p class="wpe-ess-doc__crumbs"><a href="{{page:docs}}">Docs</a> / <a href="{{page:docs}}">Demo import</a> / Import a demo in one click</p>'),
                       b.h('Import a demo in one click', level=1, size='h1', className='wpe-ess-doc__title'),
-                      b.p('4 min read', className='wpe-ess-doc__meta'),
+                      b.p('Updated 12 Oct 2026 · 4 min read', className='wpe-ess-doc__meta'),
                       b.p('Every Hi WPEssential demo ships a Gutenberg and an Elementor version. The importer installs the plugins the demo needs, brings in pages, products, menus and images, and logs each step so you can resume if anything stops.'),
                       *[x for n, (t, d) in enumerate(steps) for x in (b.h('%d. %s' % (n + 1, t), level=2, size='h4'), b.p(d))],
                       b.el('alert', {'type': 'warning', 'title': ' ', 'content': 'Tip: import on a fresh site. Existing pages are kept, but menus and the front page are replaced.', 'dismissible': False}),
                       b.el('code', {'mode': 'code', 'code': 'wp wpessential import maison --builder=gutenberg', 'language': 'bash'}),
+                      html('<p class="wpe-ess-doc__helpful"><span>Was this article helpful?</span> <a href="{{page:docs}}">Yes</a> <a href="{{page:support}}">No</a></p>'),
                       layout='default', className='wpe-ess-doc')
     toc = b.group(b.el('table-of-contents', {'heading': 'On this page', 'levels': ['h2']}), layout='default', className='wpe-ess-doc__toc')
-    return b.group(b.columns(b.column(nav, width='20%'), b.column(article, width='60%'), b.column(toc, width='20%'), className='wpe-ess-docgrid'),
+    return b.group(b.columns(b.column(nav, width='15%'), b.column(article, width='65%'), b.column(toc, width='20%'), className='wpe-ess-docgrid'),
                    tag='section', align='full', layout='constrained', content='1680px', className='wpe-ess-section wpe-ess-section--doc')
 
 
@@ -793,7 +795,7 @@ def g_roadmap():
 
 def g_quote():
     return b.join(
-        g_hero_light('Request a quote', 'Tell us about your project', 'A few questions, then a fixed quote, scope and timeline within two business days — free, no obligation.'),
+        g_hero_light('Request a quote', 'Tell us about your project', 'A few questions, then a fixed quote, scope and timeline within two business days — free, no obligation.', parent=('Services', '{{page:services}}'), show_over=False),
         section(b.columns(
             b.column(b.group(wpform('quote'), layout='default', className='wpe-ess-card wpe-ess-form'), width='66%'),
             b.column(b.group(b.h('What happens next', level=3, className='wpe-ess-side__title'),
@@ -1146,8 +1148,12 @@ def package(builder):
         {'title': 'Demos', 'page': 'demos'}, {'title': 'Plugins', 'page': 'plugins'}, {'title': 'Docs', 'page': 'docs'}, {'title': 'Services', 'page': 'services'},
         {'title': 'Pricing', 'page': 'pricing'}, {'title': 'Blog', 'page': 'blog'}]}]
     settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'essential', 'style_data': style_data(), 'motion': 'subtle',
-                'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'footer': {'content': g_footer()}},
-                'options': {'posts_per_page': 9, 'blogname': 'WPEssential', 'blogdescription': 'Premium WordPress themes and one-click demos.'},
+                'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'header-checkout': {'content': g_header()},
+                          'footer': {'content': g_footer()}, 'footer-simple': {'content': g_footer()}},
+                'options': {'posts_per_page': 9, 'blogname': 'WPEssential', 'blogdescription': 'Premium WordPress themes and one-click demos.',
+                            'wpessential_blog_over': 'Blog', 'wpessential_blog_title': 'Guides and release notes',
+                            'wpessential_blog_lead': 'Tutorials for the theme, new demos and WordPress tips from the WPEssential team.',
+                            'wpessential_404_title': 'This page took a different demo.', 'wpessential_404_lead': 'The link may be old or mistyped. Search the site or start from one of these.'},
                 'woocommerce': {'pages': {'cart': 'cart', 'checkout': 'checkout', 'myaccount': 'my-account'} if builder == 'gutenberg' else {}, 'options': {'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
                                             'woocommerce_coming_soon': 'no', 'woocommerce_store_pages_only': 'no',
                                             'woocommerce_enable_guest_checkout': 'yes',
@@ -1182,5 +1188,6 @@ SEO = {
     'blog': 'Guides, release notes and new demos from the WPEssential team.',
 }
 
+LEGAL_WIDTH = '1360px'  # Figma 20
 # Brand, contact email and what the site sells, used for the legal pages (tools/demo-builder/legal.py).
 LEGAL = ('WPEssential, a Vertex Systems Network (Pvt.) Ltd. company', 'support@wpessential.org', 'themes, demos, plans and services')

@@ -525,6 +525,24 @@ function wpessential_woo_demo_detail() {
 	$shot    = $gallery ? (int) $gallery[0] : (int) $product->get_image_id();
 	$cats    = wp_strip_all_tags( wc_get_product_category_list( $product->get_id(), ' · ' ) );
 	$live    = (string) $product->get_meta( 'wpe_live_url' );
+	$free    = 0.0 === (float) $product->get_price();
+	$pages   = array_slice( $gallery, 1, 6 );
+	$pricing = get_page_by_path( 'pricing' );
+	$log     = get_page_by_path( 'changelog' );
+	$plans   = $pricing ? (string) get_permalink( $pricing ) : '';
+	$updated = $product->get_date_modified();
+	$host    = $live ? (string) wp_parse_url( $live, PHP_URL_HOST ) . (string) wp_parse_url( $live, PHP_URL_PATH ) : '';
+	$checks  = array(
+		__( 'Gutenberg and Elementor versions', 'hi-wpessential' ),
+		__( 'Real photography, hovers and dark mode', 'hi-wpessential' ),
+		__( 'One-click import with undo', 'hi-wpessential' ),
+		__( '1 year of updates and support', 'hi-wpessential' ),
+	);
+	$plugins = array(
+		array( 'W', 'WooCommerce', __( 'Recommended', 'hi-wpessential' ) ),
+		array( 'E', 'Elementor', __( 'Elementor version', 'hi-wpessential' ) ),
+		array( 'C', 'WPEssential', __( 'Included', 'hi-wpessential' ) ),
+	);
 	ob_start();
 	?>
 	<div class="wpe-demo">
@@ -533,24 +551,92 @@ function wpessential_woo_demo_detail() {
 			<a href="<?php echo esc_url( (string) get_permalink( wc_get_page_id( 'shop' ) ) ); ?>"><?php esc_html_e( 'Demos', 'hi-wpessential' ); ?></a> /
 			<span aria-current="page"><?php echo esc_html( $product->get_name() ); ?></span>
 		</nav>
-		<h1 class="wpe-demo__title"><?php echo esc_html( $product->get_name() ); ?></h1>
-		<p class="wpe-demo__meta"><?php echo esc_html( $cats ); ?></p>
+		<p class="wpe-demo__badges"><span class="<?php echo $free ? 'is-free' : 'is-pro'; ?>"><?php echo $free ? esc_html__( 'Free', 'hi-wpessential' ) : esc_html__( 'Pro', 'hi-wpessential' ); ?></span></p>
+		<h1 class="wpe-demo__title"><?php echo esc_html( preg_replace( '/\s+demo$/i', '', $product->get_name() ) ); ?></h1>
+		<p class="wpe-demo__meta"><?php echo esc_html( implode( '  ·  ', array_filter( array( $cats, $gallery ? sprintf( /* translators: %d: pages. */ _n( '%d page', '%d pages', count( $gallery ), 'hi-wpessential' ), count( $gallery ) ) : '', sprintf( /* translators: %s: date. */ __( 'Updated %s', 'hi-wpessential' ), $updated ? $updated->date_i18n( 'M Y' ) : '' ) ) ) ) ); ?></p>
 		<div class="wpe-demo__grid">
-			<div class="wpe-demo__preview">
-				<div class="wpe-demo__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-				<?php echo wp_get_attachment_image( $shot, 'large', false, array( 'class' => 'wpe-demo__shot' ) ); ?>
+			<div class="wpe-demo__main">
+				<div class="wpe-demo__preview">
+					<div class="wpe-demo__bar" aria-hidden="true"><span></span><span></span><span></span><?php if ( $host ) : ?><em><?php echo esc_html( $host ); ?></em><?php endif; ?></div>
+					<?php echo wp_get_attachment_image( $shot, 'large', false, array( 'class' => 'wpe-demo__shot' ) ); ?>
+					<p class="wpe-demo__note"><?php esc_html_e( 'Live demo running in your browser — click, hover and browse every page before you import.', 'hi-wpessential' ); ?></p>
+				</div>
+				<nav class="wpe-demo__tabs" aria-label="<?php esc_attr_e( 'Sections', 'hi-wpessential' ); ?>"><a class="is-on" href="#overview"><?php esc_html_e( 'Overview', 'hi-wpessential' ); ?></a><?php if ( $pages ) : ?><a href="#pages"><?php esc_html_e( 'Pages', 'hi-wpessential' ); ?></a><?php endif; ?><a href="<?php echo esc_url( $log ? (string) get_permalink( $log ) : '#overview' ); ?>"><?php esc_html_e( 'Changelog', 'hi-wpessential' ); ?></a></nav>
+				<section id="overview" class="wpe-demo__overview">
+					<?php if ( $product->get_short_description() ) : ?>
+						<h2><?php echo esc_html( wp_strip_all_tags( $product->get_short_description() ) ); ?></h2>
+					<?php endif; ?>
+					<?php echo wp_kses_post( wpautop( $product->get_description() ) ); ?>
+				</section>
+				<?php if ( $pages ) : ?>
+					<section id="pages" class="wpe-demo__pages">
+						<p class="wpe-demo__label"><?php esc_html_e( 'Pages included', 'hi-wpessential' ); ?></p>
+						<ul>
+							<?php foreach ( $pages as $img ) : ?>
+								<li><?php echo wp_get_attachment_image( $img, 'medium_large' ); ?><span><?php echo esc_html( (string) get_the_title( $img ) ); ?></span></li>
+							<?php endforeach; ?>
+						</ul>
+					</section>
+				<?php endif; ?>
 			</div>
 			<aside class="wpe-demo__buy">
-				<?php
-				echo do_blocks( '<!-- wp:wpessential/woo-product-price /--><!-- wp:wpessential/woo-add-to-cart {"showQuantity":false,"fullWidth":true} /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Rendered blocks.
-				if ( $live ) :
-					?>
+				<?php echo do_blocks( '<!-- wp:wpessential/woo-product-price /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Rendered blocks. ?>
+				<?php if ( ! $free ) : ?>
+					<p class="wpe-demo__incl"><?php esc_html_e( 'Included in every paid plan', 'hi-wpessential' ); ?></p>
+					<?php if ( $plans ) : ?>
+						<a class="wpe-demo__cta" href="<?php echo esc_url( $plans ); ?>"><?php esc_html_e( 'Get Pro', 'hi-wpessential' ); ?> <span aria-hidden="true">↗</span></a>
+					<?php endif; ?>
+				<?php endif; ?>
+				<?php echo do_blocks( '<!-- wp:wpessential/woo-add-to-cart {"showQuantity":false,"fullWidth":true} /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Rendered blocks. ?>
+				<?php if ( $live ) : ?>
 					<a class="wpe-demo__live" href="<?php echo esc_url( $live ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Open live preview', 'hi-wpessential' ); ?></a>
 				<?php endif; ?>
-				<div class="wpe-demo__get"><?php echo wp_kses_post( wpautop( $product->get_description() ) ); ?></div>
+				<p class="wpe-demo__label"><?php esc_html_e( 'What you get', 'hi-wpessential' ); ?></p>
+				<ul class="wpe-demo__checks">
+					<?php foreach ( $checks as $check ) : ?>
+						<li><?php echo esc_html( $check ); ?></li>
+					<?php endforeach; ?>
+				</ul>
+				<p class="wpe-demo__label"><?php esc_html_e( 'Plugins (installed for you)', 'hi-wpessential' ); ?></p>
+				<ul class="wpe-demo__plugins">
+					<?php foreach ( $plugins as $plugin ) : ?>
+						<li><b><?php echo esc_html( $plugin[0] ); ?></b><span><?php echo esc_html( $plugin[1] ); ?></span><em><?php echo esc_html( $plugin[2] ); ?></em></li>
+					<?php endforeach; ?>
+				</ul>
 			</aside>
 		</div>
-		<?php echo do_blocks( '<!-- wp:wpessential/woo-related-products {"heading":"You might also like","count":3,"columns":3} /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Rendered blocks. ?>
+		<?php
+		$others = wc_get_products(
+			array(
+				'category' => array( 'demos' ),
+				'exclude'  => array( $product->get_id() ),
+				'limit'    => 3,
+				'orderby'  => 'menu_order',
+				'order'    => 'ASC',
+			)
+		);
+		if ( $others ) :
+			?>
+			<section class="wpe-demo__related">
+				<h2><?php esc_html_e( 'You might also like', 'hi-wpessential' ); ?></h2>
+				<div class="wpe-demo__cards">
+					<?php foreach ( $others as $other ) : ?>
+						<?php $other_free = 0.0 === (float) $other->get_price(); ?>
+						<article class="wpe-demo-card">
+							<a class="wpe-demo-card__shot" href="<?php echo esc_url( (string) $other->get_permalink() ); ?>">
+								<?php echo wp_get_attachment_image( (int) $other->get_image_id(), 'large' ); ?>
+								<span class="<?php echo $other_free ? 'is-free' : 'is-pro'; ?>"><?php echo $other_free ? esc_html__( 'Free', 'hi-wpessential' ) : esc_html__( 'Pro', 'hi-wpessential' ); ?></span>
+							</a>
+							<div class="wpe-demo-card__body">
+								<h3><a href="<?php echo esc_url( (string) $other->get_permalink() ); ?>"><?php echo esc_html( preg_replace( '/\s+demo$/i', '', $other->get_name() ) ); ?></a> <b><?php echo $other_free ? esc_html__( 'Free', 'hi-wpessential' ) : esc_html__( 'Pro', 'hi-wpessential' ); ?></b></h3>
+								<p><?php echo esc_html( wp_strip_all_tags( $other->get_short_description() ) ); ?></p>
+								<p class="wpe-demo-card__builders"><span>G</span><span>E</span></p>
+							</div>
+						</article>
+					<?php endforeach; ?>
+				</div>
+			</section>
+		<?php endif; ?>
 	</div>
 	<?php
 	return (string) ob_get_clean();
