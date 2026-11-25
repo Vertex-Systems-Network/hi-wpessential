@@ -843,7 +843,7 @@ function wpessential_demo_cards( $atts ) {
 	if ( (int) $atts['facets'] || (int) $atts['chips'] ) {
 		wp_enqueue_script( 'wpessential-components' ); // Elementor pages skip the render_block check in inc/assets.php.
 	}
-	$import = get_page_by_path( 'doc-import', OBJECT, array( 'page', 'post', 'wpessential_doc' ) );
+	$import   = get_page_by_path( 'doc-import', OBJECT, array( 'page', 'post', 'wpessential_doc' ) );
 	$niches   = array();
 	$includes = array();
 	$cards    = '';
@@ -1349,7 +1349,7 @@ function wpessential_woo_delete_account_card() {
 	}
 	echo '<form class="wpe-account__card wpe-account__danger" method="post" onsubmit="return confirm(' . esc_attr( wp_json_encode( __( 'Delete your account? This cannot be undone.', 'hi-wpessential' ) ) ) . ');">'
 		. '<h3>' . esc_html__( 'Delete account', 'hi-wpessential' ) . '</h3><p>' . esc_html__( 'Removes your account. Active licences stop receiving updates.', 'hi-wpessential' ) . '</p>'
-		. wp_nonce_field( 'wpessential_delete_account', 'wpe_delete_nonce', true, false )
+		. wp_nonce_field( 'wpessential_delete_account', 'wpe_delete_nonce', true, false ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core markup.
 		. '<button type="submit" name="wpe_delete_account" value="1">' . esc_html__( 'Delete account', 'hi-wpessential' ) . '</button></form>';
 }
 add_action( 'woocommerce_after_edit_account_form', 'wpessential_woo_delete_account_card' );
