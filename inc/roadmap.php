@@ -19,6 +19,7 @@ function wpessential_vote( $atts ) {
 		return '';
 	}
 	static $script = false;
+
 	$out = '<button type="button" class="wpe-vote" data-wpe-vote="' . esc_attr( $id ) . '"><span aria-hidden="true">▲</span> ' . esc_html__( 'Vote', 'hi-wpessential' ) . ' <b>' . ( empty( $votes[ $id ] ) ? '' : (int) $votes[ $id ] ) . '</b></button>';
 	if ( ! $script ) {
 		$script = true;

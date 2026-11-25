@@ -982,7 +982,7 @@ function wpessential_order_received() {
 	$order_id = absint( get_query_var( 'order-received' ) );
 	$order    = $order_id ? wc_get_order( $order_id ) : false;
 	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- The order key is the access check.
-	$key = isset( $_GET['key'] ) ? wc_clean( wp_unslash( $_GET['key'] ) ) : '';
+	$key = isset( $_GET['key'] ) ? sanitize_text_field( wp_unslash( $_GET['key'] ) ) : '';
 	if ( ! $order || ! hash_equals( $order->get_order_key(), (string) $key ) ) {
 		return '<div class="wpe-order wpe-order--center"><h1 class="wpe-order__title">' . esc_html__( 'We could not find that order', 'hi-wpessential' ) . '</h1><p class="wpe-order__lead">' . esc_html__( 'Open it from your account or the receipt email.', 'hi-wpessential' ) . '</p></div>';
 	}
@@ -1028,7 +1028,7 @@ function wpessential_order_received() {
 		__( 'Install it next to the free WPEssential plugin', 'hi-wpessential' ),
 		__( 'Paste your licence key in WPEssential → Licence', 'hi-wpessential' ),
 	);
-	$list = '';
+	$list  = '';
 	foreach ( $steps as $step ) {
 		$list .= '<li>' . esc_html( $step ) . '</li>';
 	}
