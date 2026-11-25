@@ -705,6 +705,15 @@ function wpessential_woo_login_close() {
 	if ( wpessential_woo_is_register() ) {
 		echo '<p class="wpe-auth__switch"><a href="' . esc_url( $account ) . '">' . esc_html__( 'Already have an account? Sign in', 'hi-wpessential' ) . '</a></p>';
 	} elseif ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
+		/**
+		 * Google sign-in link (Figma 16). Defaults to the Nextend Social Login URL; return '' to hide the button.
+		 *
+		 * @param string $url Sign-in URL.
+		 */
+		$google = (string) apply_filters( 'wpessential_google_login_url', add_query_arg( 'loginSocial', 'google', wp_login_url( $account ) ) );
+		if ( '' !== $google ) {
+			echo '<p class="wpe-auth__or"><span>' . esc_html__( 'or', 'hi-wpessential' ) . '</span></p><p><a class="wpe-auth__google" href="' . esc_url( $google ) . '"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>' . esc_html__( 'Continue with Google', 'hi-wpessential' ) . '</a></p>';
+		}
 		echo '<p class="wpe-auth__switch"><a href="' . esc_url( add_query_arg( 'register', '1', $account ) ) . '">' . esc_html__( 'New here? Create an account — it is free and takes 30 seconds.', 'hi-wpessential' ) . '</a></p>';
 	}
 	echo '</div></div>';
@@ -835,8 +844,9 @@ function wpessential_demo_cards( $atts ) {
 		wp_enqueue_script( 'wpessential-components' ); // Elementor pages skip the render_block check in inc/assets.php.
 	}
 	$import = get_page_by_path( 'doc-import', OBJECT, array( 'page', 'post', 'wpessential_doc' ) );
-	$niches = array();
-	$cards  = '';
+	$niches   = array();
+	$includes = array();
+	$cards    = '';
 	foreach ( $items as $item ) {
 		$free  = 0.0 === (float) $item->get_price();
 		$name  = preg_replace( '/\s+demo$/i', '', $item->get_name() );
@@ -847,6 +857,10 @@ function wpessential_demo_cards( $atts ) {
 		foreach ( $keys as $key ) {
 			$niches[ $key ] = isset( $niches[ $key ] ) ? $niches[ $key ] + 1 : 1;
 		}
+		$incl = array_filter( array_map( 'sanitize_key', explode( ',', (string) $item->get_meta( '_wpe_includes' ) ) ) );
+		foreach ( $incl as $key ) {
+			$includes[ $key ] = isset( $includes[ $key ] ) ? $includes[ $key ] + 1 : 1;
+		}
 		$badges = '<span class="wpe-ess-badge' . ( $free ? ' wpe-ess-badge--orange' : '' ) . '">' . ( $free ? esc_html__( 'FREE', 'hi-wpessential' ) : esc_html__( 'PRO', 'hi-wpessential' ) ) . '</span>';
 		if ( '' !== $badge ) {
 			$badges .= '<span class="wpe-ess-badge">' . esc_html( $badge ) . '</span>';
@@ -855,6 +869,9 @@ function wpessential_demo_cards( $atts ) {
 		foreach ( $keys as $key ) {
 			$classes[] = 'wpe-cat-' . $key;
 			$classes[] = 'wpe-niche-' . $key;
+		}
+		foreach ( $incl as $key ) {
+			$classes[] = 'wpe-includes-' . $key;
 		}
 		$cards .= '<div class="' . esc_attr( implode( ' ', $classes ) ) . '">'
 			. '<div class="wpe-ess-demo__shot">' . wp_get_attachment_image( (int) $item->get_image_id(), 'large', false, array( 'alt' => $name . ' demo' ) )
@@ -865,19 +882,23 @@ function wpessential_demo_cards( $atts ) {
 			. '<div class="wpe-ess-demo__head"><h3 class="wpe-ess-demo__name"><a href="' . esc_url( $url ) . '">' . esc_html( $name ) . '</a></h3>'
 			. '<p class="wpe-ess-demo__price">' . ( $free ? esc_html__( 'Free', 'hi-wpessential' ) : wp_kses_post( wc_price( (float) $item->get_price(), array( 'decimals' => 0 ) ) ) ) . '</p></div>'
 			. '<p class="wpe-ess-demo__text">' . esc_html( '' !== $text ? $text : wp_strip_all_tags( $item->get_short_description() ) ) . '</p>'
-			. '<div class="wpe-ess-demo__meta"><span>' . esc_html__( 'Gutenberg & Elementor', 'hi-wpessential' ) . '</span><span class="wpe-ess-gb" title="Gutenberg">G</span><span class="wpe-ess-gb" title="Elementor">E</span></div>'
+			. '<div class="wpe-ess-demo__meta"><span>' . ( '' !== (string) $item->get_meta( '_wpe_card_meta' ) ? '<i class="wpe-ess-demo__star" aria-hidden="true">★</i> ' . esc_html( (string) $item->get_meta( '_wpe_card_meta' ) ) : esc_html__( 'Gutenberg & Elementor', 'hi-wpessential' ) ) . '</span><span class="wpe-ess-gb" title="Gutenberg">G</span><span class="wpe-ess-gb" title="Elementor">E</span></div>'
 			. '</div></div>';
 	}
 	if ( (int) $atts['stats'] ) {
-		$stats = array(
-			array( count( $items ), __( 'ready demos', 'hi-wpessential' ) ),
-			array( 2, __( 'native builders', 'hi-wpessential' ) ),
-			array( 20, __( 'languages', 'hi-wpessential' ) ),
-			array( 8, __( 'breakpoints', 'hi-wpessential' ) ),
-		);
-		$out   = '';
+		// Editable in the wpessential_hero_stats option ([value, label] pairs); the demo count is live otherwise.
+		$stats = (array) get_option( 'wpessential_hero_stats', array() );
+		if ( ! $stats ) {
+			$stats = array(
+				array( count( $items ), __( 'ready demos', 'hi-wpessential' ) ),
+				array( 2, __( 'native builders', 'hi-wpessential' ) ),
+				array( 20, __( 'languages', 'hi-wpessential' ) ),
+				array( 8, __( 'breakpoints', 'hi-wpessential' ) ),
+			);
+		}
+		$out = '';
 		foreach ( $stats as $stat ) {
-			$out .= '<li><b>' . (int) $stat[0] . '</b><span>' . esc_html( $stat[1] ) . '</span></li>';
+			$out .= '<li><b>' . esc_html( (string) ( $stat[0] ?? '' ) ) . '</b><span>' . esc_html( (string) ( $stat[1] ?? '' ) ) . '</span></li>';
 		}
 		return '<ul class="wpe-ess-hero__stats">' . $out . '</ul>';
 	}
@@ -901,17 +922,30 @@ function wpessential_demo_cards( $atts ) {
 	foreach ( $niches as $key => $count ) {
 		$niche .= $opt( 'niche', $key, ucwords( str_replace( '-', ' ', $key ) ), $count );
 	}
+	$labels = array(
+		'woocommerce' => __( 'WooCommerce shop', 'hi-wpessential' ),
+		'dark-mode'   => __( 'Dark mode', 'hi-wpessential' ),
+		'rtl'         => __( 'RTL ready', 'hi-wpessential' ),
+	);
+	$inc    = '';
+	foreach ( $includes as $key => $count ) {
+		$inc .= $opt( 'includes', $key, isset( $labels[ $key ] ) ? $labels[ $key ] : ucwords( str_replace( '-', ' ', $key ) ), $count );
+	}
 	return '<div class="wpe-ess-facet-layout"><div class="wpe-ess-facets" data-wpe-facets role="group" aria-label="' . esc_attr__( 'Filter demos', 'hi-wpessential' ) . '">'
 		. '<p class="wpe-ess-facets__head"><b>' . esc_html__( 'Filters', 'hi-wpessential' ) . '</b> <a href="#" data-facet-reset>' . esc_html__( 'Reset', 'hi-wpessential' ) . '</a></p>'
 		. '<p class="wpe-ess-facets__search"><span data-facet-search>' . esc_html__( 'Search demos', 'hi-wpessential' ) . '</span></p>'
 		. '<p class="wpe-ess-facets__group"><span class="wpe-ess-facets__legend">' . esc_html__( 'Plan', 'hi-wpessential' ) . '</span>' . $opt( 'plan', '', __( 'All', 'hi-wpessential' ), null, true, true ) . $opt( 'plan', 'free', __( 'Free', 'hi-wpessential' ), null, false, true ) . $opt( 'plan', 'pro', __( 'Pro', 'hi-wpessential' ), null, false, true ) . '</p>'
 		. '<p class="wpe-ess-facets__group"><span class="wpe-ess-facets__legend">' . esc_html__( 'Builder', 'hi-wpessential' ) . '</span>' . $opt( 'builder', 'gutenberg', 'Gutenberg', $total ) . $opt( 'builder', 'elementor', 'Elementor', $total ) . '</p>'
 		. ( '' !== $niche ? '<p class="wpe-ess-facets__group"><span class="wpe-ess-facets__legend">' . esc_html__( 'Niche', 'hi-wpessential' ) . '</span>' . $niche . '</p>' : '' )
+		. ( '' !== $inc ? '<p class="wpe-ess-facets__group"><span class="wpe-ess-facets__legend">' . esc_html__( 'Includes', 'hi-wpessential' ) . '</span>' . $inc . '</p>' : '' )
 		. '</div><div class="wpe-ess-facet-main"><div class="wpe-ess-facets__bar"><p data-facet-count>'
 		/* translators: %d: number of demos. */
 		. esc_html( sprintf( _n( '%d demo', '%d demos', $total, 'hi-wpessential' ), $total ) ) . '</p>'
 		. '<p class="wpe-ess-facets__sort">' . esc_html__( 'Sort:', 'hi-wpessential' ) . ' <span data-facet-sort>' . esc_html__( 'Newest | Name A–Z | Name Z–A', 'hi-wpessential' ) . '</span></p></div>'
-		. $grid . '</div></div>';
+		. $grid
+		/* translators: 1: shown demos, 2: all demos. */
+		. '<div class="wpe-ess-more"><p data-wpe-more-count>' . esc_html( sprintf( __( 'Showing %1$d of %2$d demos', 'hi-wpessential' ), min( 6, $total ), $total ) ) . '</p>'
+		. ( $total > 6 ? '<button type="button" class="wpe-ess-more__btn" data-wpe-more="6">' . esc_html__( 'Load more demos', 'hi-wpessential' ) . '</button>' : '' ) . '</div></div></div>';
 }
 add_shortcode( 'wpessential_demo_cards', 'wpessential_demo_cards' );
 
@@ -1306,3 +1340,32 @@ add_action(
 	10,
 	3
 );
+
+
+/** Delete account card under Account details (Figma 44). Administrators keep their account. */
+function wpessential_woo_delete_account_card() {
+	if ( current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	echo '<form class="wpe-account__card wpe-account__danger" method="post" onsubmit="return confirm(' . esc_attr( wp_json_encode( __( 'Delete your account? This cannot be undone.', 'hi-wpessential' ) ) ) . ');">'
+		. '<h3>' . esc_html__( 'Delete account', 'hi-wpessential' ) . '</h3><p>' . esc_html__( 'Removes your account. Active licences stop receiving updates.', 'hi-wpessential' ) . '</p>'
+		. wp_nonce_field( 'wpessential_delete_account', 'wpe_delete_nonce', true, false )
+		. '<button type="submit" name="wpe_delete_account" value="1">' . esc_html__( 'Delete account', 'hi-wpessential' ) . '</button></form>';
+}
+add_action( 'woocommerce_after_edit_account_form', 'wpessential_woo_delete_account_card' );
+
+/** Deletes the signed-in customer's account after the nonce check, then signs out. */
+function wpessential_woo_delete_account() {
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing -- The nonce is checked right below.
+	if ( empty( $_POST['wpe_delete_account'] ) || ! is_user_logged_in() || current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	check_admin_referer( 'wpessential_delete_account', 'wpe_delete_nonce' );
+	require_once ABSPATH . 'wp-admin/includes/user.php';
+	$user_id = get_current_user_id();
+	wp_logout();
+	wp_delete_user( $user_id );
+	wp_safe_redirect( home_url( '/' ) );
+	exit;
+}
+add_action( 'template_redirect', 'wpessential_woo_delete_account' );
