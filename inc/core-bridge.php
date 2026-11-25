@@ -152,3 +152,13 @@ add_action(
 		}
 	}
 );
+
+/**
+ * Demo the WPEssential plugin imports when this theme is activated on a site without one.
+ */
+add_filter(
+	'wpessential_core_default_demo',
+	static function () {
+		return 'base';
+	}
+);
