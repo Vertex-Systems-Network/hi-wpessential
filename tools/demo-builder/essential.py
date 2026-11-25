@@ -741,9 +741,9 @@ RELEASES = [('1.0.0', 'In development', [('New', 'Base, Maison and Pulse demos f
                                          ('New', 'Light and dark schemes, 20 languages and right-to-left support'),
                                          ('New', 'Licenses and subscriptions on WooCommerce with a full event log')])]
 # From docs/STATUS.md: what is designed or planned, nothing promised beyond that.
-ROADMAP = [('Now', ['WPEssential.org rebuilt to its Figma design', 'Business Pro, Saffron and Campus demos (designed in Figma)']),
-           ('Next', ['Base, Maison and Pulse upgraded to the premium design rules', 'Automatic renewals with a saved card']),
-           ('Later', ['Minimal portfolio, News and Electronics store demos', 'Clinic, Real estate, Hotel and Nonprofit demos'])]
+ROADMAP = [('Now', ['WPEssential.org service pages', 'Variation swatches everywhere', 'Elementor version of every demo']),  # Figma 11
+           ('Next', ['Restaurant and Course demos', 'Header & footer builder', 'Wishlist and compare']),
+           ('Later', ['AI demo generator', 'Multisite licence manager', 'Figma plugin for demo kits'])]
 
 
 def g_care_plans():
@@ -774,9 +774,10 @@ def g_changelog():
 
 
 def g_roadmap():
-    cols = [b.group(b.h(c, level=3, className='wpe-ess-card__title'), *[b.group(b.p('<strong>%s</strong>' % i), layout='default', className='wpe-ess-card')
+    slug = lambda t: re.sub(r'[^a-z0-9]+', '-', t.lower()).strip('-')
+    cols = [b.group(b.h(c, level=3, className='wpe-ess-card__title'), *[b.group(b.p('<strong>%s</strong>' % i), b.shortcode('[wpessential_vote id="%s"]' % slug(i)), layout='default', className='wpe-ess-card wpe-ess-roadmap__item')
                                                                     for i in items], layout='default', className='wpe-ess-card wpe-ess-card--alt') for c, items in ROADMAP]
-    return b.join(g_hero_light('Roadmap', 'What we are building next', 'What is in progress and what comes after it. Suggest a demo or feature through Support.'),
+    return b.join(g_hero_light('Roadmap', 'What we are building next', 'Vote for features and see what is in progress. Suggest your own from My Account.'),
                   section(b.group(*cols, layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid wpe-ess-grid--3')))
 
 

@@ -1,0 +1,49 @@
+<?php
+/**
+ * Roadmap votes.
+ *
+ * @package WPEssential
+ */
+
+/**
+ * Roadmap vote button (Figma 11). Votes are counted in the wpessential_roadmap_votes option;
+ * the browser remembers what it voted for, so one visitor counts once per item.
+ *
+ * @param array|string $atts Shortcode attributes.
+ * @return string
+ */
+function wpessential_vote( $atts ) {
+	$id    = sanitize_key( (string) ( shortcode_atts( array( 'id' => '' ), $atts, 'wpessential_vote' )['id'] ) );
+	$votes = (array) get_option( 'wpessential_roadmap_votes', array() );
+	if ( '' === $id ) {
+		return '';
+	}
+	static $script = false;
+	$out = '<button type="button" class="wpe-vote" data-wpe-vote="' . esc_attr( $id ) . '"><span aria-hidden="true">▲</span> ' . esc_html__( 'Vote', 'hi-wpessential' ) . ' <b>' . ( empty( $votes[ $id ] ) ? '' : (int) $votes[ $id ] ) . '</b></button>';
+	if ( ! $script ) {
+		$script = true;
+		$out   .= '<script>document.addEventListener("click",function(e){var b=e.target.closest("[data-wpe-vote]");if(!b)return;var k="wpe-vote-"+b.dataset.wpeVote;try{if(localStorage.getItem(k))return;}catch(x){}b.disabled=true;var f=new FormData();f.append("action","wpessential_vote");f.append("id",b.dataset.wpeVote);f.append("nonce",' . wp_json_encode( wp_create_nonce( 'wpessential_vote' ) ) . ');'
+			. 'fetch(' . wp_json_encode( admin_url( 'admin-ajax.php' ) ) . ',{method:"POST",body:f,credentials:"same-origin"}).then(function(r){return r.json();}).then(function(r){if(r&&r.success){b.querySelector("b").textContent=r.data;b.classList.add("is-voted");try{localStorage.setItem(k,1);}catch(x){}}});});'
+			. 'document.querySelectorAll("[data-wpe-vote]").forEach(function(b){try{if(localStorage.getItem("wpe-vote-"+b.dataset.wpeVote)){b.classList.add("is-voted");b.disabled=true;}}catch(x){}});</script>';
+	}
+	return $out;
+}
+add_shortcode( 'wpessential_vote', 'wpessential_vote' );
+
+/** Counts one roadmap vote. */
+function wpessential_vote_ajax() {
+	check_ajax_referer( 'wpessential_vote', 'nonce' );
+	$id = isset( $_POST['id'] ) ? sanitize_key( wp_unslash( $_POST['id'] ) ) : '';
+	if ( '' === $id || strlen( $id ) > 80 ) {
+		wp_send_json_error();
+	}
+	$votes = (array) get_option( 'wpessential_roadmap_votes', array() );
+	if ( ! isset( $votes[ $id ] ) && count( $votes ) >= 200 ) {
+		wp_send_json_error(); // Caps unknown ids so the option cannot be flooded.
+	}
+	$votes[ $id ] = ( isset( $votes[ $id ] ) ? (int) $votes[ $id ] : 0 ) + 1;
+	update_option( 'wpessential_roadmap_votes', $votes, false );
+	wp_send_json_success( $votes[ $id ] );
+}
+add_action( 'wp_ajax_wpessential_vote', 'wpessential_vote_ajax' );
+add_action( 'wp_ajax_nopriv_wpessential_vote', 'wpessential_vote_ajax' );

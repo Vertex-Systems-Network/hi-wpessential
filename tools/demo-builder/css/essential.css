@@ -1028,3 +1028,9 @@ body.single-product:has(.wpe-ess-pro) .wpe-main > * { max-width: 1680px !importa
 .wpe-container__inner:has(> .wpe-ess-pro) { align-items: stretch !important; }
 .wpe-pro-buy a, .wpe-pro-buy__note a { text-decoration: none !important; }
 .wpe-ess-pro:has(> .wpe-container__inner) { display: block !important; }
+
+/* Figma 11: roadmap vote */
+.wpe-ess-roadmap__item { display: grid; gap: 6px; }
+.wpe-vote { justify-self: start; padding: 0; border: 0; background: none; color: #1f48a6; font-size: 13px; cursor: pointer; }
+.wpe-vote b { font-weight: 600; }
+.wpe-vote.is-voted { color: #17845a; cursor: default; }
