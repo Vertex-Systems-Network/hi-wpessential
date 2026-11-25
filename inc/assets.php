@@ -102,7 +102,7 @@ add_action(
 add_filter(
 	'render_block',
 	static function ( $content, $block ) {
-		if ( false !== strpos( $content, 'data-wpe-tabs' ) || false !== strpos( $content, 'data-wpe-filter' ) || false !== strpos( $content, 'data-wpe-facets' ) ) {
+		if ( false !== strpos( $content, 'data-wpe-tabs' ) || false !== strpos( $content, 'data-wpe-filter' ) || false !== strpos( $content, 'data-wpe-facets' ) || false !== strpos( $content, '[wpessential_demo_cards' ) ) {
 			wp_enqueue_script( 'wpessential-components' );
 		}
 		if ( 'core/paragraph' === ( $block['blockName'] ?? '' ) && false !== strpos( (string) ( $block['attrs']['className'] ?? '' ), 'wpe-signin' ) && is_user_logged_in() ) {
