@@ -574,6 +574,8 @@ function wpessential_woo_virtual_checkout_fields( $fields ) {
 }
 add_filter( 'woocommerce_checkout_fields', 'wpessential_woo_virtual_checkout_fields', 20 );
 add_filter( 'woocommerce_enable_order_notes_field', static fn( $on ) => ( function_exists( 'WC' ) && WC()->cart && ! WC()->cart->needs_shipping() ) ? false : $on );
+
+/**
  * Signed-out My Account (Figma 16): a dark intro panel beside the WooCommerce sign-in form.
  */
 function wpessential_woo_login_open() {
