@@ -795,7 +795,7 @@ def g_quote():
 
 
 def g_cart():
-    return b.join(section(b.el('woo-notices', {}), b.el('woo-cart', {})))
+    return b.join(section(html('<p class="wpe-ess-cart__over">— Cart</p><h1 class="wpe-ess-cart__title">Your cart</h1>'), b.el('woo-notices', {}), b.el('woo-cart', {})))
 
 
 def g_checkout():

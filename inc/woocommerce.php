@@ -717,10 +717,11 @@ add_action( 'woocommerce_after_customer_login_form', 'wpessential_woo_login_clos
  * @return string
  */
 function wpessential_woo_auth_text( $text, $source, $domain ) {
-	if ( 'woocommerce' !== $domain || ! is_account_page() || is_user_logged_in() ) {
+	if ( 'woocommerce' !== $domain || ! did_action( 'wp' ) || ! ( is_cart() || ( is_account_page() && ! is_user_logged_in() ) ) ) {
 		return $text;
 	}
 	$map = array(
+		'Cart totals'               => __( 'Order summary', 'hi-wpessential' ),
 		'Log in'                    => __( 'Sign in', 'hi-wpessential' ),
 		'Register'                  => __( 'Create account', 'hi-wpessential' ),
 		'Username or email address' => __( 'Email', 'hi-wpessential' ),
@@ -949,15 +950,95 @@ add_filter(
 	'render_block_woocommerce/cart-order-summary-heading-block',
 	static fn( $html ) => str_replace( 'wp-block-woocommerce-cart-order-summary-heading-block"', 'wp-block-woocommerce-cart-order-summary-heading-block" data-content="' . esc_attr__( 'Order summary', 'hi-wpessential' ) . '"', $html )
 );
-add_filter(
-	'render_block_woocommerce/empty-cart-block',
+/** Empty cart message with plan and free plugin buttons (Figma 25). */
+function wpessential_woo_empty_cart() {
+	$pricing = get_page_by_path( 'pricing' );
+	$plugins = get_page_by_path( 'plugins' );
+	return '<div class="wpe-cart-empty"><h2 class="wpe-cart-empty__title">' . esc_html__( 'Your cart is empty', 'hi-wpessential' ) . '</h2>'
+		. '<p class="wpe-cart-empty__text">' . esc_html__( 'Pick a plan to get WPEssential Pro, or download the free plugin.', 'hi-wpessential' ) . '</p><p class="wpe-cart-empty__actions">'
+		. ( $pricing ? '<a class="is-primary" href="' . esc_url( (string) get_permalink( $pricing ) ) . '">' . esc_html__( 'See pricing', 'hi-wpessential' ) . '</a>' : '' )
+		. ( $plugins ? '<a href="' . esc_url( (string) get_permalink( $plugins ) ) . '">' . esc_html__( 'Download free', 'hi-wpessential' ) . '</a>' : '' )
+		. '</p></div>';
+}
+add_filter( 'render_block_woocommerce/empty-cart-block', 'wpessential_woo_empty_cart' );
+add_action(
+	'init',
 	static function () {
-		$pricing = get_page_by_path( 'pricing' );
-		$plugins = get_page_by_path( 'plugins' );
-		return '<div class="wp-block-woocommerce-empty-cart-block wpe-cart-empty"><h2 class="wpe-cart-empty__title">' . esc_html__( 'Your cart is empty', 'hi-wpessential' ) . '</h2>'
-			. '<p class="wpe-cart-empty__text">' . esc_html__( 'Pick a plan to get WPEssential Pro, or download the free plugin.', 'hi-wpessential' ) . '</p><p class="wpe-cart-empty__actions">'
-			. ( $pricing ? '<a class="is-primary" href="' . esc_url( (string) get_permalink( $pricing ) ) . '">' . esc_html__( 'See pricing', 'hi-wpessential' ) . '</a>' : '' )
-			. ( $plugins ? '<a href="' . esc_url( (string) get_permalink( $plugins ) ) . '">' . esc_html__( 'Download free', 'hi-wpessential' ) . '</a>' : '' )
-			. '</p></div>';
+		remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
 	}
 );
+add_action( 'woocommerce_cart_is_empty', static fn() => print( wpessential_woo_empty_cart() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the function.
+
+/**
+ * Order received / payment failed (Figma 27 / 28). Licence keys come from the WPEssential Server
+ * plugin when it is active (order meta _wpes_licenses).
+ *
+ * @return string
+ */
+function wpessential_order_received() {
+	$order_id = absint( get_query_var( 'order-received' ) );
+	$order    = $order_id ? wc_get_order( $order_id ) : false;
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- The order key is the access check.
+	$key = isset( $_GET['key'] ) ? wc_clean( wp_unslash( $_GET['key'] ) ) : '';
+	if ( ! $order || ! hash_equals( $order->get_order_key(), (string) $key ) ) {
+		return '<div class="wpe-order wpe-order--center"><h1 class="wpe-order__title">' . esc_html__( 'We could not find that order', 'hi-wpessential' ) . '</h1><p class="wpe-order__lead">' . esc_html__( 'Open it from your account or the receipt email.', 'hi-wpessential' ) . '</p></div>';
+	}
+	$support = get_page_by_path( 'support' );
+	$account = (string) wc_get_page_permalink( 'myaccount' );
+	if ( $order->has_status( 'failed' ) ) {
+		return '<div class="wpe-order wpe-order--center"><span class="wpe-order__badge is-failed">' . esc_html__( 'Payment failed', 'hi-wpessential' ) . '</span>'
+			. '<h1 class="wpe-order__title">' . esc_html__( 'Your payment did not go through', 'hi-wpessential' ) . '</h1>'
+			. '<p class="wpe-order__lead">' . esc_html__( 'Nothing was charged. Your cart is saved. Try another card or payment method.', 'hi-wpessential' ) . '</p>'
+			. '<p class="wpe-order__actions"><a class="is-primary" href="' . esc_url( $order->get_checkout_payment_url() ) . '">' . esc_html__( 'Try again', 'hi-wpessential' ) . '</a>'
+			. '<a href="' . esc_url( wc_get_cart_url() ) . '">' . esc_html__( 'Back to cart', 'hi-wpessential' ) . '</a>'
+			. ( $support ? '<a href="' . esc_url( (string) get_permalink( $support ) ) . '">' . esc_html__( 'Contact support', 'hi-wpessential' ) . '</a>' : '' ) . '</p></div>';
+	}
+	$keys = '';
+	if ( class_exists( '\WPEssential\Server\Licenses' ) ) {
+		foreach ( (array) $order->get_meta( '_wpes_licenses' ) as $id ) {
+			$licence = \WPEssential\Server\Licenses::get( $id );
+			if ( ! $licence ) {
+				continue;
+			}
+			$meta  = array_filter(
+				array(
+					ucfirst( (string) $licence['plan'] ),
+					(int) $licence['sites_limit'] ? sprintf( /* translators: %d: sites. */ _n( '%d site', '%d sites', (int) $licence['sites_limit'], 'hi-wpessential' ), (int) $licence['sites_limit'] ) : __( 'Unlimited sites', 'hi-wpessential' ),
+					$licence['expires_at'] ? sprintf( /* translators: %s: date. */ __( 'renews %s', 'hi-wpessential' ), date_i18n( 'j M Y', strtotime( $licence['expires_at'] . ' UTC' ) ) ) : __( 'lifetime', 'hi-wpessential' ),
+				)
+			);
+			$keys .= '<div class="wpe-order__key"><code>' . esc_html( $licence['license_key'] ) . '</code><button type="button" data-wpe-copy="' . esc_attr( $licence['license_key'] ) . '" onclick="navigator.clipboard&&navigator.clipboard.writeText(this.dataset.wpeCopy);this.textContent=\'' . esc_js( __( 'Copied', 'hi-wpessential' ) ) . '\'">' . esc_html__( 'Copy', 'hi-wpessential' ) . '</button></div>'
+				. '<p class="wpe-order__meta">' . esc_html( implode( ' · ', $meta ) ) . '</p>';
+		}
+	}
+	$downloads = $order->get_downloadable_items();
+	$download  = $downloads ? (string) $downloads[0]['download_url'] : $account;
+	$services  = false;
+	foreach ( $order->get_items() as $item ) {
+		$product = $item->get_product();
+		if ( $product && has_term( 'services', 'product_cat', $product->get_id() ) ) {
+			$services = true;
+		}
+	}
+	$steps = array(
+		__( 'Download WPEssential Pro (.zip)', 'hi-wpessential' ),
+		__( 'Install it next to the free WPEssential plugin', 'hi-wpessential' ),
+		__( 'Paste your licence key in WPEssential → Licence', 'hi-wpessential' ),
+	);
+	$list = '';
+	foreach ( $steps as $step ) {
+		$list .= '<li>' . esc_html( $step ) . '</li>';
+	}
+	return '<div class="wpe-order"><div class="wpe-order--center"><span class="wpe-order__badge">' . esc_html__( 'Payment received', 'hi-wpessential' ) . '</span>'
+		/* translators: %s: order number. */
+		. '<h1 class="wpe-order__title">' . esc_html( sprintf( __( 'Thank you! Order #%s', 'hi-wpessential' ), $order->get_order_number() ) ) . '</h1>'
+		/* translators: %s: email. */
+		. '<p class="wpe-order__lead">' . esc_html( sprintf( __( 'A receipt is on its way to %s.', 'hi-wpessential' ), $order->get_billing_email() ) ) . '</p></div>'
+		. '<div class="wpe-order__grid">'
+		. ( '' !== $keys ? '<section class="wpe-order__card"><h2>' . esc_html__( 'Your licence key', 'hi-wpessential' ) . '</h2>' . $keys . '</section>' : '' )
+		. '<section class="wpe-order__card"><h2>' . esc_html__( 'Next steps', 'hi-wpessential' ) . '</h2><ol>' . $list . '</ol>'
+		. '<p class="wpe-order__actions"><a class="is-primary" href="' . esc_url( $download ) . '">' . esc_html__( 'Download Pro', 'hi-wpessential' ) . '</a><a href="' . esc_url( $account ) . '">' . esc_html__( 'Go to my account', 'hi-wpessential' ) . '</a></p></section></div>'
+		. ( $services ? '<p class="wpe-order__note"><strong>' . esc_html__( 'Setup & demo import:', 'hi-wpessential' ) . '</strong> ' . esc_html__( 'we will email you within 1 business day to collect site access.', 'hi-wpessential' ) . '</p>' : '' )
+		. '</div>';
+}
+add_shortcode( 'wpessential_order_received', 'wpessential_order_received' );
