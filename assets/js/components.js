@@ -42,6 +42,98 @@
 		show( start && scope.querySelector( '.wpe-tab-panel[id="' + start + '"]' ) ? start : first.getAttribute( 'href' ).slice( 1 ) );
 	} );
 
+	// Facet filter (sidebar). Markup is links and spans (block HTML keeps no form controls):
+	// a[data-facet][href="#value"] toggles a facet, [data-facet-search] / [data-facet-sort] become a search box / select,
+	// [data-facet-reset] clears. Cards are .wpe-filter-item with classes wpe-<facet>-<value>; [data-facet-count] shows the total.
+	document.querySelectorAll( '[data-wpe-facets]' ).forEach( function ( side ) {
+		var scope = side.closest( '.wpe-ess-facet-layout' ) || document;
+		var cards = Array.prototype.slice.call( scope.querySelectorAll( '.wpe-filter-item' ) );
+		var count = scope.querySelector( '[data-facet-count]' );
+		var links = side.querySelectorAll( 'a[data-facet]' );
+		var search = document.createElement( 'input' );
+		var sort = document.createElement( 'select' );
+		var slot = side.querySelector( '[data-facet-search]' );
+		var sortSlot = scope.querySelector( '[data-facet-sort]' );
+		search.type = 'search';
+		search.placeholder = slot ? slot.textContent : 'Search';
+		search.setAttribute( 'aria-label', search.placeholder );
+		if ( slot ) {
+			slot.textContent = '';
+			slot.appendChild( search );
+		}
+		if ( sortSlot ) {
+			sortSlot.textContent.split( '|' ).forEach( function ( label, n ) {
+				var o = document.createElement( 'option' );
+				o.value = [ 'newest', 'az', 'za' ][ n ] || 'newest';
+				o.textContent = label.trim();
+				sort.appendChild( o );
+			} );
+			sort.setAttribute( 'aria-label', 'Sort demos' );
+			sortSlot.textContent = '';
+			sortSlot.appendChild( sort );
+		}
+		var title = function ( c ) { var h = c.querySelector( 'h2, h3' ); return h ? h.textContent.trim() : ''; };
+		var apply = function () {
+			var q = search.value.trim().toLowerCase();
+			var on = {};
+			links.forEach( function ( a ) {
+				var v = a.getAttribute( 'href' ).slice( 1 );
+				if ( a.classList.contains( 'is-on' ) && v ) {
+					( on[ a.dataset.facet ] = on[ a.dataset.facet ] || [] ).push( v );
+				}
+			} );
+			var shown = 0;
+			cards.forEach( function ( card ) {
+				var ok = ! q || card.textContent.toLowerCase().indexOf( q ) !== -1;
+				Object.keys( on ).forEach( function ( g ) {
+					ok = ok && on[ g ].some( function ( v ) { return card.classList.contains( 'wpe-' + g + '-' + v ); } );
+				} );
+				card.hidden = ! ok;
+				shown += ok ? 1 : 0;
+			} );
+			if ( count ) {
+				count.textContent = shown + ( 1 === shown ? ' demo' : ' demos' );
+			}
+			var dir = sort.value === 'za' ? -1 : 1;
+			cards.slice().sort( function ( x, y ) {
+				return sort.value === 'az' || sort.value === 'za' ? dir * title( x ).localeCompare( title( y ) ) : cards.indexOf( x ) - cards.indexOf( y );
+			} ).forEach( function ( c ) { c.parentNode.appendChild( c ); } );
+		};
+		links.forEach( function ( a ) {
+			a.setAttribute( 'role', a.dataset.single ? 'radio' : 'checkbox' );
+			a.setAttribute( 'aria-checked', a.classList.contains( 'is-on' ) ? 'true' : 'false' );
+			a.addEventListener( 'click', function ( e ) {
+				e.preventDefault();
+				if ( a.dataset.single ) {
+					side.querySelectorAll( 'a[data-facet="' + a.dataset.facet + '"]' ).forEach( function ( o ) {
+						o.classList.toggle( 'is-on', o === a );
+						o.setAttribute( 'aria-checked', o === a ? 'true' : 'false' );
+					} );
+				} else {
+					a.classList.toggle( 'is-on' );
+					a.setAttribute( 'aria-checked', a.classList.contains( 'is-on' ) ? 'true' : 'false' );
+				}
+				apply();
+			} );
+		} );
+		var reset = side.querySelector( '[data-facet-reset]' );
+		if ( reset ) {
+			reset.addEventListener( 'click', function ( e ) {
+				e.preventDefault();
+				search.value = '';
+				links.forEach( function ( a ) {
+					var keep = a.dataset.single && '#' === a.getAttribute( 'href' );
+					a.classList.toggle( 'is-on', !! keep );
+					a.setAttribute( 'aria-checked', keep ? 'true' : 'false' );
+				} );
+				apply();
+			} );
+		}
+		search.addEventListener( 'input', apply );
+		sort.addEventListener( 'change', apply );
+		apply();
+	} );
+
 	// Filter.
 	document.querySelectorAll( '[data-wpe-filter]' ).forEach( function ( bar ) {
 		var cards = document.querySelectorAll( '.wpe-filter-item' );

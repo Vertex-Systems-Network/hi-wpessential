@@ -65,7 +65,7 @@ def _sections(key, brand, email, sells):
     ]
 
 
-def _g_page(title, sections, b=b):
+def _g_page(title, sections, b=b, width='760px'):
     body = []
     for h, items in sections:
         body.append(b.h(h, size='h4'))
@@ -75,8 +75,8 @@ def _g_page(title, sections, b=b):
                             b.p('Last updated %s' % UPDATED, color='text-muted', size='small'),
                             b.p(' '.join('<a class="wpe-legal-chip%s" href="%s">%s</a>' % (' is-current' if t == title.split()[0] or (t == 'Refunds' and 'Refund' in title) or (t == 'Cookies' and 'Cookie' in title) else '', u, t)
                                          for t, u in LINKS), className='wpe-legal-chips'),
-                            className='wpe-section wpe-section--sm', content='760px'),
-                  b.section(*body, className='wpe-section wpe-section--sm', content='760px'))
+                            className='wpe-section wpe-section--sm', content=width),
+                  b.section(*body, className='wpe-section wpe-section--sm', content=width))
 
 
 def _e_page(title, sections):
@@ -89,7 +89,7 @@ def _e_page(title, sections):
             e.container(e.text(html, 'text', size_px=16), pad=(16, 24, 96, 24))]
 
 
-def pages(builder, brand, email, sells=None, kit=False):
+def pages(builder, brand, email, sells=None, kit=False, width='760px'):
     """Content items for the four legal pages."""
     out = []
     for key, title, slug in PAGES:
@@ -100,13 +100,13 @@ def pages(builder, brand, email, sells=None, kit=False):
             item['content'] = ''
             item['elementor'] = _e_page(title, secs)
         else:
-            item['content'] = _g_page(title, secs, *([__import__('kit')] if kit else []))
+            item['content'] = _g_page(title, secs, *([__import__('kit')] if kit else [b]), width=width)
         out.append(item)
     return out
 
 
-def add(package, builder, brand, email, sells=None, kit=False):
+def add(package, builder, brand, email, sells=None, kit=False, width='760px'):
     """Add the legal pages to a package, replacing copies built for another builder."""
-    fresh = {p['key']: p for p in pages(builder, brand, email, sells, kit)}
+    fresh = {p['key']: p for p in pages(builder, brand, email, sells, kit, width)}
     package['content'] = [fresh.pop(c.get('key'), c) for c in package.get('content', [])] + list(fresh.values())
     return package

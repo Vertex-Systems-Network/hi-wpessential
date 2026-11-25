@@ -162,3 +162,13 @@ add_filter(
 		return 'base';
 	}
 );
+
+/**
+ * Blog hero texts a demo may set on import (patterns/blog-hero.php).
+ */
+add_filter(
+	'wpessential_core_import_options',
+	static function ( $options ) {
+		return array_merge( (array) $options, array( 'wpessential_blog_over', 'wpessential_blog_title', 'wpessential_blog_lead', 'wpessential_404_title', 'wpessential_404_lead' ) );
+	}
+);
