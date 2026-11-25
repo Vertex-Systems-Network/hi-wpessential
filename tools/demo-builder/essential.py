@@ -512,12 +512,42 @@ def g_docs():
                         b.buttons(arrow('Open a ticket', '{{page:support}}')), layout='flex', wrap='wrap', valign='center', className='wpe-ess-band wpe-ess-band--soft')))
 
 
+def g_module_cards():
+    return b.group(*[b.group(b.p(name, className='wpe-ess-badge wpe-ess-badge--%s' % tone),
+                             b.h('%d module%s' % (len(items), '' if len(items) == 1 else 's'), level=3, className='wpe-ess-card__title'),
+                             b.ul(items, className='wpe-ess-plain'), layout='default', className='wpe-ess-card')
+                     for name, tone, items in PRO_MODULES], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid')
+
+
 def g_plugins():
+    def product(badge, tone, name, sub, inc, btn, featured=False):
+        return b.group(b.p(badge, className='wpe-ess-badge wpe-ess-badge--%s' % tone), b.h(name, level=3, className='wpe-ess-card__title'),
+                       b.p(sub, className='wpe-ess-card__text'), b.ul(inc, className='wpe-ess-check'), btn,
+                       layout='default', className=b.cls('wpe-ess-plan', 'is-featured' if featured else None))
+    rows = [['Custom Post Types &amp; Taxonomies', 'Yes', 'Yes'], ['Demo Library', 'Free demos', 'Free + Pro demos'], ['Content &amp; data modules', '—', '7 modules'],
+            ['Site Kit, Pro Kit', '—', 'Yes'], ['Roles, Profiles, Membership', '—', 'Yes'], ['Automation &amp; Backup', '—', 'Yes'],
+            ['Updates', 'WordPress.org', 'Licence key'], ['Support', 'Forum', 'Ticket']]
+    small = [(n, t) for _, n, t, *_ in PLUGINS[1:]]
     return b.join(
-        g_hero_light('Plugins', 'Free WordPress plugins', 'Made by the WPEssential team and free on WordPress.org. Install them from Plugins → Add New in your dashboard.'),
-        section(b.p('<strong>3 plugins</strong> <span>All free · Elementor add-ons</span>', className='wpe-ess-count'),
-                b.group(*[g_plugin_card(*pl) for pl in PLUGINS], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid'),
-                g_band('Want everything in one place?', 'Hi WPEssential and its demo library work with all three plugins out of the box.', 'Get the theme', '{{page:pricing}}', tone='ink')))
+        g_hero_dark('Plugins', 'Free core on WordPress.org. <span class="wpe-ess-grad">Pro extension from us.</span>',
+                    'WPEssential is free forever. WPEssential Pro needs it and adds 22 modules plus the Pro demos.',
+                    b.buttons(arrow('Get Pro', '{{page:pricing}}'), b.button('Download free', 'https://wordpress.org/plugins/wpessential/', style='wpe-ghost-light'), justify='center')),
+        section(b.group(product('Free · WordPress.org', 'green', 'WPEssential', 'The free core plugin.',
+                                ['Custom Post Type builder', 'Custom Taxonomy builder', 'Modules dashboard &amp; System Status', 'Demo Library with free demos', 'AI Connect (MCP, optional)'],
+                                b.buttons(b.button('Download free', 'https://wordpress.org/plugins/wpessential/', style='wpe-outline'))),
+                        product('Pro · wpessential.org', 'orange', 'WPEssential Pro', 'Extension for the free plugin.',
+                                ['Fields, Relations, Custom Tables, Query', 'Site Kit + Pro Kit elements', 'Roles, Profiles, Membership', 'Forms, Emails, Notifications, Backup', 'Pro demos for Hi WPEssential'],
+                                b.buttons(arrow('Get Pro', '{{page:pricing}}')), featured=True),
+                        layout='grid', columns=2, grid_min='20rem', className='wpe-ess-grid'),
+                b.group(*[b.group(b.p('Free', className='wpe-ess-badge wpe-ess-badge--green'), b.h(n, level=3, className='wpe-ess-card__title'), b.p(t, className='wpe-ess-card__text'),
+                                  layout='default', className='wpe-ess-card') for n, t in small],
+                        layout='grid', columns=2, grid_min='20rem', className='wpe-ess-grid')),
+        section(head('Pro modules', 'Everything WPEssential Pro adds'), g_module_cards(), alt=True),
+        section(head('Free vs Pro', 'What changes when you add Pro'), b.table(['✓', 'WPEssential (Free)', 'WPEssential Pro'], rows, className='wpe-ess-table')),
+        section(b.group(b.h('Start free. Add Pro later.', level=2, align='center', className='wpe-ess-band__title'),
+                        b.p('The free plugin stays free.', align='center', className='wpe-ess-band__text'),
+                        b.buttons(arrow('Get Pro', '{{page:pricing}}'), b.button('Download free', 'https://wordpress.org/plugins/wpessential/', style='wpe-ghost-light'), justify='center'),
+                        layout='default', className='wpe-ess-band wpe-ess-band--blue wpe-ess-band--center')))
 
 
 ABOUT_VALUES = [('bolt', 'Fast by default', 'Lean code, local fonts and no page-builder bloat.'),
