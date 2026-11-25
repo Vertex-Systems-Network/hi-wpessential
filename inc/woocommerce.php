@@ -493,6 +493,9 @@ function wpessential_woo_kit_template( $html, $block ) {
 	if ( 'single-product' === $template && is_product() && has_term( 'demos', 'product_cat' ) ) {
 		return wpessential_woo_demo_detail();
 	}
+	if ( 'single-product' === $template && is_product() && has_term( 'pro-addons', 'product_cat' ) ) {
+		return wpessential_woo_addon_detail();
+	}
 	if ( 'single-product' === $template && is_product() ) {
 		$markup = '<!-- wp:columns {"className":"wpe-product-top"} --><div class="wp-block-columns wpe-product-top">'
 			. '<!-- wp:column --><div class="wp-block-column"><!-- wp:wpessential/woo-product-gallery /--></div><!-- /wp:column -->'
@@ -1114,3 +1117,192 @@ add_action(
 	}
 );
 add_action( 'woocommerce_view_order', 'wpessential_woo_view_order', 10 );
+
+/**
+ * WPEssential Pro buy box (Figma 22): billing period tabs and plan choice built from the plan
+ * products (categories plans-monthly / plans-yearly / plans-lifetime, meta _wpes_sites).
+ *
+ * @return string
+ */
+function wpessential_pro_buy() {
+	$periods = array(
+		'monthly'  => array( __( 'Monthly', 'hi-wpessential' ), __( '/ month', 'hi-wpessential' ) ),
+		'yearly'   => array( __( 'Yearly · −20%', 'hi-wpessential' ), __( '/ year', 'hi-wpessential' ) ),
+		'lifetime' => array( __( 'Lifetime', 'hi-wpessential' ), __( 'once', 'hi-wpessential' ) ),
+	);
+	$tabs    = '';
+	$panels  = '';
+	foreach ( $periods as $period => $labels ) {
+		$plans = wc_get_products(
+			array(
+				'category' => array( 'plans-' . $period ),
+				'status'   => 'publish',
+				'limit'    => -1,
+				'orderby'  => 'menu_order',
+				'order'    => 'ASC',
+			)
+		);
+		if ( ! $plans ) {
+			continue;
+		}
+		$first = '' === $tabs;
+		$tabs .= '<button type="button" class="' . ( $first ? 'is-on' : '' ) . '" data-period="' . esc_attr( $period ) . '">' . esc_html( $labels[0] ) . '</button>';
+		$rows  = '';
+		foreach ( $plans as $i => $plan ) {
+			$sites = (int) $plan->get_meta( '_wpes_sites' );
+			$tier  = trim( preg_replace( '/\s+\S+$/', '', $plan->get_name() ) );
+			$price = wp_strip_all_tags( wc_price( (float) $plan->get_price(), array( 'decimals' => 0 ) ) );
+			$on    = 1 === $i || 1 === count( $plans );
+			$rows .= '<label class="wpe-pro-buy__plan"><input type="radio" name="wpe-plan-' . esc_attr( $period ) . '" value="' . (int) $plan->get_id() . '"' . checked( $on, true, false )
+				. ' data-price="' . esc_attr( $price ) . '" data-cart="' . esc_url( add_query_arg( 'add-to-cart', $plan->get_id(), wc_get_cart_url() ) ) . '" data-buy="' . esc_url( add_query_arg( 'add-to-cart', $plan->get_id(), wc_get_checkout_url() ) ) . '">'
+				. '<span>' . esc_html( $tier ) . ' · ' . esc_html( $sites ? sprintf( /* translators: %d: sites. */ _n( '%d site', '%d sites', $sites, 'hi-wpessential' ), $sites ) : __( 'Unlimited', 'hi-wpessential' ) ) . ' · ' . esc_html( $price ) . '</span></label>';
+		}
+		$panels .= '<div class="wpe-pro-buy__plans" data-period="' . esc_attr( $period ) . '" data-suffix="' . esc_attr( $labels[1] . ' · ' . __( 'tax at checkout', 'hi-wpessential' ) ) . '"' . ( $first ? '' : ' hidden' ) . '>' . $rows . '</div>';
+	}
+	if ( '' === $panels ) {
+		return '';
+	}
+	$plugin = get_page_by_path( 'plugins' );
+	return '<div class="wpe-pro-buy" data-wpe-pro-buy><p class="wpe-pro-buy__label">' . esc_html__( 'Billing', 'hi-wpessential' ) . '</p><p class="wpe-pro-buy__tabs">' . $tabs . '</p>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
+		. '<p class="wpe-pro-buy__label">' . esc_html__( 'Plan', 'hi-wpessential' ) . '</p>' . $panels // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
+		. '<p class="wpe-pro-buy__price"><b></b><span></span></p><p class="wpe-pro-buy__actions"><a class="is-cart" href="#">' . esc_html__( 'Add to cart', 'hi-wpessential' ) . '</a><a class="is-buy" href="#">' . esc_html__( 'Buy now', 'hi-wpessential' ) . '</a></p>'
+		. '<p class="wpe-pro-buy__note">' . ( $plugin ? '<a href="' . esc_url( (string) get_permalink( $plugin ) ) . '">' : '' ) . esc_html__( 'Needs the free WPEssential plugin (WordPress.org).', 'hi-wpessential' ) . ( $plugin ? '</a>' : '' ) . ' ' . esc_html__( '14-day money-back.', 'hi-wpessential' ) . '</p>'
+		. '<script>(function(r){if(!r)return;var s=function(){var p=r.querySelector(".wpe-pro-buy__plans:not([hidden])"),i=p&&p.querySelector("input:checked");if(!i)return;r.querySelector(".wpe-pro-buy__price b").textContent=i.dataset.price;r.querySelector(".wpe-pro-buy__price span").textContent=p.dataset.suffix;r.querySelector(".is-cart").href=i.dataset.cart;r.querySelector(".is-buy").href=i.dataset.buy;};'
+		. 'r.querySelectorAll(".wpe-pro-buy__tabs button").forEach(function(b){b.addEventListener("click",function(){r.querySelectorAll(".wpe-pro-buy__tabs button").forEach(function(x){x.classList.toggle("is-on",x===b);});r.querySelectorAll(".wpe-pro-buy__plans").forEach(function(x){x.hidden=x.dataset.period!==b.dataset.period;});s();});});'
+		. 'r.addEventListener("change",s);s();})(document.currentScript.closest("[data-wpe-pro-buy]"));</script></div>';
+}
+add_shortcode( 'wpessential_pro_buy', 'wpessential_pro_buy' );
+
+
+/** Licences of the signed-in customer from the WPEssential Server plugin, as key => label. */
+function wpessential_woo_customer_licences() {
+	if ( ! is_user_logged_in() || ! class_exists( '\\WPEssential\\Server\\Licenses' ) || ! method_exists( '\\WPEssential\\Server\\Licenses', 'for_user' ) ) {
+		return array();
+	}
+	$out = array();
+	foreach ( (array) \WPEssential\Server\Licenses::for_user( get_current_user_id() ) as $licence ) {
+		if ( 'active' === ( $licence['status'] ?? '' ) ) {
+			$out[ (string) $licence['license_key'] ] = ucfirst( (string) $licence['plan'] ) . ' · ' . substr( (string) $licence['license_key'], 0, 12 ) . '…';
+		}
+	}
+	return $out;
+}
+
+/**
+ * Pro add-on product (Figma 23): licence, site URL and demo, then add to cart.
+ *
+ * @return string
+ */
+function wpessential_woo_addon_detail() {
+	$product = wc_get_product( get_the_ID() );
+	if ( ! $product ) {
+		return '';
+	}
+	$demos    = wc_get_products(
+		array(
+			'category' => array( 'demos' ),
+			'status'   => 'publish',
+			'limit'    => -1,
+			'orderby'  => 'menu_order',
+			'order'    => 'ASC',
+		)
+	);
+	$licences = wpessential_woo_customer_licences();
+	$options  = '<option value="">' . esc_html__( 'Select your Pro licence', 'hi-wpessential' ) . '</option>';
+	foreach ( $licences as $key => $label ) {
+		$options .= '<option value="' . esc_attr( $key ) . '">' . esc_html( $label ) . '</option>';
+	}
+	$demo_opts = '';
+	foreach ( $demos as $demo ) {
+		$demo_opts .= '<option>' . esc_html( preg_replace( '/\s+demo$/i', '', $demo->get_name() ) ) . '</option>';
+	}
+	$image = (int) $product->get_image_id();
+	ob_start();
+	?>
+	<div class="wpe-ess-pro wpe-addon">
+		<div class="wpe-ess-pro__media">
+			<?php if ( $image ) : ?>
+				<?php echo wp_get_attachment_image( $image, 'large', false, array( 'class' => 'wpe-addon__img' ) ); ?>
+			<?php else : ?>
+				<div class="wpe-ess-pro__art is-teal"><span><?php echo esc_html( $product->get_name() ); ?></span></div>
+			<?php endif; ?>
+		</div>
+		<form class="wpe-ess-pro__buy wpe-addon__form" method="post" action="<?php echo esc_url( wc_get_cart_url() ); ?>">
+			<span class="wpe-ess-pro__badge is-teal"><?php esc_html_e( 'Pro add-on', 'hi-wpessential' ); ?></span>
+			<h1 class="wpe-ess-pro__title wpe-addon__title"><?php echo esc_html( $product->get_name() ); ?></h1>
+			<div class="wpe-ess-pro__lead"><?php echo wp_kses_post( wpautop( $product->get_short_description() ) ); ?></div>
+			<p><label for="wpe_licence"><?php esc_html_e( 'Licence', 'hi-wpessential' ); ?></label><select id="wpe_licence" name="wpe_licence" required><?php echo $options; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?></select></p>
+			<p><label for="wpe_site"><?php esc_html_e( 'Site URL', 'hi-wpessential' ); ?></label><input id="wpe_site" name="wpe_site" type="url" placeholder="https://yoursite.com" required></p>
+			<?php if ( $demo_opts ) : ?>
+				<p><label for="wpe_demo"><?php esc_html_e( 'Demo to import', 'hi-wpessential' ); ?></label><select id="wpe_demo" name="wpe_demo"><?php echo $demo_opts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?></select></p>
+			<?php endif; ?>
+			<p class="wpe-pro-buy__price"><b><?php echo wp_kses_post( wc_price( (float) $product->get_price(), array( 'decimals' => 0 ) ) ); ?></b><span><?php esc_html_e( 'one-time', 'hi-wpessential' ); ?></span></p>
+			<input type="hidden" name="add-to-cart" value="<?php echo (int) $product->get_id(); ?>">
+			<button type="submit" class="wpe-addon__submit"><?php esc_html_e( 'Add to cart', 'hi-wpessential' ); ?></button>
+			<p class="wpe-pro-buy__note is-warm"><?php esc_html_e( 'Requires an active WPEssential Pro licence. No licence? Add Pro to the cart first.', 'hi-wpessential' ); ?></p>
+		</form>
+	</div>
+	<?php
+	return (string) ob_get_clean();
+}
+
+/**
+ * Keeps the add-on details with the cart item.
+ *
+ * @param array $data       Cart item data.
+ * @param int   $product_id Product ID.
+ * @return array
+ */
+function wpessential_woo_addon_cart_data( $data, $product_id ) {
+	// phpcs:disable WordPress.Security.NonceVerification.Missing -- WooCommerce add-to-cart form.
+	if ( has_term( 'pro-addons', 'product_cat', $product_id ) ) {
+		foreach ( array( 'wpe_licence', 'wpe_demo' ) as $field ) {
+			if ( isset( $_POST[ $field ] ) ) {
+				$data[ $field ] = sanitize_text_field( wp_unslash( $_POST[ $field ] ) );
+			}
+		}
+		if ( isset( $_POST['wpe_site'] ) ) {
+			$data['wpe_site'] = esc_url_raw( wp_unslash( $_POST['wpe_site'] ) );
+		}
+	}
+	// phpcs:enable
+	return $data;
+}
+add_filter( 'woocommerce_add_cart_item_data', 'wpessential_woo_addon_cart_data', 10, 2 );
+
+/** Labels for the add-on details. */
+function wpessential_woo_addon_fields() {
+	return array(
+		'wpe_licence' => __( 'Licence', 'hi-wpessential' ),
+		'wpe_site'    => __( 'Site URL', 'hi-wpessential' ),
+		'wpe_demo'    => __( 'Demo', 'hi-wpessential' ),
+	);
+}
+add_filter(
+	'woocommerce_get_item_data',
+	static function ( $items, $cart_item ) {
+		foreach ( wpessential_woo_addon_fields() as $key => $label ) {
+			if ( ! empty( $cart_item[ $key ] ) ) {
+				$items[] = array(
+					'key'   => $label,
+					'value' => esc_html( $cart_item[ $key ] ),
+				);
+			}
+		}
+		return $items;
+	},
+	10,
+	2
+);
+add_action(
+	'woocommerce_checkout_create_order_line_item',
+	static function ( $item, $cart_key, $values ) {
+		foreach ( wpessential_woo_addon_fields() as $key => $label ) {
+			if ( ! empty( $values[ $key ] ) ) {
+				$item->add_meta_data( $label, $values[ $key ] );
+			}
+		}
+	},
+	10,
+	3
+);

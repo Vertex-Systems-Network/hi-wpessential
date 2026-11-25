@@ -960,3 +960,71 @@ body:has(.wpe-cart-empty):not(:has(.wc-block-cart)) .wpe-main .wp-block-post-tit
 .wpe-woo-account .woocommerce-orders-table tbody th { background: inherit !important; }
 body.woocommerce-account .wpe-main.wpe-main--canvas { padding-inline: 0 !important; max-width: none !important; width: 100% !important; }
 body.woocommerce-account .wpe-main--canvas > .wpe-ess-section { max-width: none !important; }
+
+/* Figma 22: WPEssential Pro product */
+.wpe-ess-pro { display: grid !important; grid-template-columns: minmax(0, 1fr) 560px; gap: 40px; align-items: start; width: 100%; }
+.wpe-ess-pro .wpe-code, .wpe-code:has(.wpe-ess-pro__h2) { --wpek-content-margin: 0 !important; width: 100% !important; max-width: none !important; margin: 0 !important; }
+.wpe-ess-pro__art { display: grid; place-items: center; aspect-ratio: 1080 / 410; border-radius: 16px; background: #1f48a6; color: #fff; font: 600 clamp(24px, 2vw, 36px)/1.2 var(--wp--preset--font-family--heading); }
+.wpe-ess-pro__meta { margin: 14px 0 0; font-size: 14px; color: #4a5a7a; }
+.wpe-ess-pro__badge { display: inline-block; padding: 4px 12px; border-radius: 999px; background: #ec7d1a; color: #fff; font: 700 11px/16px var(--wp--preset--font-family--mono); letter-spacing: .08em; text-transform: uppercase; }
+.wpe-ess-pro__title { margin: 16px 0 18px !important; font-size: clamp(40px, 3.2vw, 62px) !important; font-weight: 600 !important; letter-spacing: -0.02em; }
+.wpe-ess-pro__lead { margin: 0 0 18px; color: #4a5a7a; font-size: 16px; }
+.wpe-pro-buy__label { margin: 0 0 10px; font-size: 13px; font-weight: 700; color: #0b1a3d; }
+.wpe-pro-buy__tabs { display: flex; gap: 8px; margin: 0 0 22px; }
+.wpe-pro-buy__tabs button { padding: 6px 12px; border: 0; border-radius: 999px; background: none; font: 700 11px/16px var(--wp--preset--font-family--mono); letter-spacing: .06em; text-transform: uppercase; color: #0b1a3d; cursor: pointer; }
+.wpe-pro-buy__tabs button:not(.is-on) { background: #0b1a3d; color: #fff; }
+.wpe-pro-buy__tabs button.is-on { background: none; color: #0b1a3d; box-shadow: inset 0 0 0 1px #dde4f0; }
+.wpe-pro-buy__plans { display: grid; gap: 12px; margin-bottom: 18px; }
+.wpe-pro-buy__plans[hidden] { display: none; }
+.wpe-pro-buy__plan { display: flex; align-items: center; gap: 12px; padding: 18px 20px; border: 1px solid #dde4f0; border-radius: 12px; background: #fff; font-size: 16px; color: #0b1a3d; cursor: pointer; }
+.wpe-pro-buy__plan:has(input:checked) { border-color: #ec7d1a; background: #fdf0e4; font-weight: 700; }
+.wpe-pro-buy__plan input { accent-color: #ec7d1a; margin: 0; }
+.wpe-pro-buy__price { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 18px; }
+.wpe-pro-buy__price b { font: 600 clamp(40px, 3vw, 60px)/1 var(--wp--preset--font-family--heading); color: #0b1a3d; }
+.wpe-pro-buy__price span { font-size: 13px; color: #4a5a7a; }
+.wpe-pro-buy__actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 16px; }
+.wpe-pro-buy__actions a { padding: 15px; border-radius: 999px; text-align: center; font-weight: 600; text-decoration: none; background: #ec7d1a; color: #0b1a3d; }
+.wpe-pro-buy__actions a.is-buy { background: #0b1a3d; color: #fff; }
+.wpe-pro-buy__note { margin: 0; padding: 12px 16px; border-radius: 10px; background: #eef2f9; font-size: 13px; color: #0b1a3d; }
+.wpe-pro-buy__note a { color: inherit; text-decoration: none; }
+.wpe-ess-pro__h2 { margin: 0 0 40px !important; font-size: clamp(36px, 3vw, 60px) !important; font-weight: 600 !important; letter-spacing: -0.02em; }
+.wpe-ess-pro-mods { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 24px; }
+@media (min-width: 1000px) { .wpe-ess-pro-mods { grid-template-columns: repeat(3, 1fr); } }
+.wpe-ess-pro-mod { padding: 24px; border: 1px solid #dde4f0; border-radius: 16px; background: #f3f6fc; }
+.wpe-ess-pro-mod__tag { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #0b1a3d; color: #fff; font: 700 10px/14px var(--wp--preset--font-family--mono); letter-spacing: .06em; text-transform: uppercase; }
+.wpe-ess-pro-mod__tag.is-orange { background: #ec7d1a; } .wpe-ess-pro-mod__tag.is-blue { background: #1f48a6; } .wpe-ess-pro-mod__tag.is-purple { background: #6b4bd8; } .wpe-ess-pro-mod__tag.is-teal { background: #0f8a8a; } .wpe-ess-pro-mod__tag.is-green { background: #17845a; }
+.wpe-ess-pro-mod h3 { margin: 16px 0 18px !important; font: 600 24px/1.3 var(--wp--preset--font-family--body) !important; color: #0b1a3d; }
+.wpe-ess-pro-mod ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; font-size: 15px; color: #4a5a7a; }
+.wpe-ess-pro-mod li::before { content: none !important; }
+@media (max-width: 1000px) { .wpe-ess-pro { grid-template-columns: 1fr; } }
+
+/* Figma 23: Pro add-on product */
+.wpe-ess-pro__art.is-teal, .wpe-ess-pro__badge.is-teal { background: #0f8a8a; }
+.wpe-addon__img { width: 100%; height: auto; border-radius: 16px; }
+.wpe-addon__title { font-size: clamp(30px, 2.2vw, 40px) !important; margin: 14px 0 12px !important; }
+.wpe-addon__form > p { margin: 0 0 16px; }
+.wpe-addon__form label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: #0b1a3d; }
+.wpe-addon__form :is(input[type=url], select) { width: 100%; min-height: 52px; padding: 0 16px; border: 1px solid #e3e8f2; border-radius: 10px; background: #f3f6fc; font-size: 15px; box-sizing: border-box; }
+.wpe-addon__submit { display: block; width: 100%; margin: 0 0 16px; padding: 15px; border: 0; border-radius: 999px; background: #ec7d1a; color: #0b1a3d; font-weight: 600; font-size: 16px; cursor: pointer; }
+.wpe-pro-buy__note.is-warm { background: #fdf0e4; }
+body.single-product:has(.wpe-ess-pro) .wpe-main { padding-inline: clamp(20px, 6.25vw, 120px) !important; }
+body.single-product:has(.wpe-ess-pro) .wpe-main > * { max-width: 1680px !important; }
+
+/* Figma 49-51: plain policy pages, full width and left aligned */
+.wpe-legal-plain > .wpe-container__inner, .wpe-legal-plain { max-width: 1680px !important; }
+.wpe-legal-plain :is(.is-style-wpe-overline, .wpe-overline) { color: #ec7d1a !important; }
+.wpe-legal-plain h1 { font-size: clamp(40px, 3.2vw, 62px) !important; font-weight: 600 !important; margin: 12px 0 18px !important; }
+.wpe-legal-plain + .wpe-legal-plain, .wpe-legal-plain:has(h1) { padding-bottom: 8px !important; }
+.wpe-legal-plain:not(:has(h1)) { padding-top: 0 !important; }
+.wpe-legal-plain:not(:has(h1)) :is(h2, h3, h4) { margin: 32px 0 10px !important; font: 600 24px/1.3 var(--wp--preset--font-family--body) !important; }
+.wpe-legal-plain:not(:has(h1)) p { max-width: 820px; margin: 0 !important; color: #4a5a7a; }
+
+/* Figma 22 fixes */
+.wpe-ess-pro > .wpe-container__inner { display: grid !important; grid-template-columns: minmax(0, 1fr) 560px; gap: 40px; align-items: start; }
+@media (max-width: 1000px) { .wpe-ess-pro > .wpe-container__inner { grid-template-columns: 1fr; } }
+.wpe-ess-pro-mod ul { padding-left: 0 !important; }
+.wpe-pro-buy__price b * { font: inherit !important; color: inherit; }
+:is(.wpe-ess-pro, .wpe-ess-pro > .wpe-container__inner) { width: 100% !important; max-width: 1680px !important; }
+.wpe-container__inner:has(> .wpe-ess-pro) { align-items: stretch !important; }
+.wpe-pro-buy a, .wpe-pro-buy__note a { text-decoration: none !important; }
+.wpe-ess-pro:has(> .wpe-container__inner) { display: block !important; }

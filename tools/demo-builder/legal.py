@@ -65,18 +65,19 @@ def _sections(key, brand, email, sells):
     ]
 
 
-def _g_page(title, sections, b=b, width='760px', over='Legal', sub=None):
+def _g_page(title, sections, b=b, width='760px', over='Legal', sub=None, plain=False):
     body = []
     for h, items in sections:
         body.append(b.h(h, size='h4'))
         for it in items:
             body.append(b.ul(it[1]) if isinstance(it, tuple) else b.p(it))
-    return b.join(b.section(b.p(over, style='wpe-overline'), b.h(title, level=1, size='h1'),
-                            b.p(sub or 'Last updated %s' % UPDATED, color='text-muted', size='small'),
-                            b.p(' '.join('<a class="wpe-legal-chip%s" href="%s">%s</a>' % (' is-current' if t == title.split()[0] or (t == 'Refunds' and 'Refund' in title) or (t == 'Cookies' and 'Cookie' in title) else '', u, t)
-                                         for t, u in LINKS), className='wpe-legal-chips'),
-                            className='wpe-section wpe-section--sm', content=width),
-                  b.section(*body, className='wpe-section wpe-section--sm', content=width))
+    chips = [] if plain else [b.p(' '.join('<a class="wpe-legal-chip%s" href="%s">%s</a>' % (' is-current' if t == title.split()[0] or (t == 'Refunds' and 'Refund' in title) or (t == 'Cookies' and 'Cookie' in title) else '', u, t)
+                                           for t, u in LINKS), className='wpe-legal-chips')]
+    cls = 'wpe-section wpe-section--sm' + (' wpe-legal-plain' if plain else '')
+    return b.join(b.section(b.p(('— ' + over) if plain else over, style='wpe-overline'), b.h(title, level=1, size='h1'),
+                            b.p(sub or 'Last updated %s' % UPDATED, color='text-muted', size='small'), *chips,
+                            className=cls, content=width),
+                  b.section(*body, className=cls, content=width))
 
 
 def _e_page(title, sections, over='Legal', sub=None):
@@ -94,13 +95,13 @@ def pages(builder, brand, email, sells=None, kit=False, width='760px', extra=Non
     extra: {key: (title, slug, overline, subtitle, sections)} replaces a legal page by key or adds one."""
     extra = dict(extra or {})
     out = []
-    rows = [(k, t, s, 'Legal', None, None) for k, t, s in PAGES]
+    rows = [(k, t, s, 'Legal', None, None, False) for k, t, s in PAGES]
     for i, r in enumerate(rows):
         if r[0] in (extra or {}):
             t, sl, ov, sub, secs = extra.pop(r[0])
-            rows[i] = (r[0], t, sl, ov, sub, secs)
-    rows += [(k, t, sl, ov, sub, secs) for k, (t, sl, ov, sub, secs) in extra.items()]
-    for key, title, slug, over, sub, secs in rows:
+            rows[i] = (r[0], t, sl, ov, sub, secs, True)
+    rows += [(k, t, sl, ov, sub, secs, True) for k, (t, sl, ov, sub, secs) in extra.items()]
+    for key, title, slug, over, sub, secs, plain in rows:
         item = {'key': key, 'type': 'page', 'title': title, 'slug': slug, 'template': 'page-full-width',
                 'meta': {'_wpe_seo_description': '%s of %s.' % (title, brand)}}
         secs = secs or _sections(key, brand, email, sells)
@@ -108,7 +109,7 @@ def pages(builder, brand, email, sells=None, kit=False, width='760px', extra=Non
             item['content'] = ''
             item['elementor'] = _e_page(title, secs, over, sub)
         else:
-            item['content'] = _g_page(title, secs, *([__import__('kit')] if kit else [b]), width=width, over=over, sub=sub)
+            item['content'] = _g_page(title, secs, *([__import__('kit')] if kit else [b]), width='1680px' if plain else width, over=over, sub=sub, plain=plain)
         out.append(item)
     return out
 

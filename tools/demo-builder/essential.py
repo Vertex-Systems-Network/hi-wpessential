@@ -794,6 +794,21 @@ def g_quote():
             className='wpe-ess-gap wpe-ess-contact-cols')))
 
 
+
+def g_pro():
+    """Figma 22: the WPEssential Pro product page; the buy box is live from the plan products (inc/woocommerce.php)."""
+    cards = ''.join('<div class="wpe-ess-pro-mod"><span class="wpe-ess-pro-mod__tag is-%s">%s</span><h3>%d %s</h3><ul>%s</ul></div>'
+                    % (tone, g, len(m), 'module' if len(m) == 1 else 'modules', ''.join('<li>%s</li>' % x for x in m)) for g, tone, m in PRO_MODULES)
+    return b.join(
+        section(b.group(
+            b.group(html('<div class="wpe-ess-pro__art"><span>WPEssential Pro</span></div><p class="wpe-ess-pro__meta">22 modules · Pro demos · licence key + updates</p>'),
+                    layout='default', className='wpe-ess-pro__media'),
+            b.group(html('<span class="wpe-ess-pro__badge">Pro plugin</span><h1 class="wpe-ess-pro__title">WPEssential Pro</h1><p class="wpe-ess-pro__lead">Pro extension for the free WPEssential plugin.</p>'),
+                    b.shortcode('[wpessential_pro_buy]'), layout='default', className='wpe-ess-pro__buy'),
+            layout='default', className='wpe-ess-pro')),
+        section(html('<p class="wpe-ess-cart__over">— Included</p><h2 class="wpe-ess-pro__h2">All 22 Pro modules</h2><div class="wpe-ess-pro-mods">%s</div>' % cards)))
+
+
 def g_cart():
     return b.join(section(html('<p class="wpe-ess-cart__over">— Cart</p><h1 class="wpe-ess-cart__title">Your cart</h1>'), b.el('woo-notices', {}), b.el('woo-cart', {})))
 
@@ -1085,6 +1100,7 @@ def package(builder):
         {'key': 'pc-plans-monthly', 'taxonomy': 'product_cat', 'name': 'Monthly plans', 'slug': 'plans-monthly', 'meta': {'thumbnail_id': '{{media_id:shot-library}}'}},
         {'key': 'pc-plans-yearly', 'taxonomy': 'product_cat', 'name': 'Yearly plans', 'slug': 'plans-yearly', 'meta': {'thumbnail_id': '{{media_id:shot-library}}'}},
         {'key': 'pc-plans-lifetime', 'taxonomy': 'product_cat', 'name': 'Lifetime plans', 'slug': 'plans-lifetime', 'meta': {'thumbnail_id': '{{media_id:shot-library}}'}},
+        {'key': 'pc-pro-addons', 'taxonomy': 'product_cat', 'name': 'Pro add-ons', 'slug': 'pro-addons'},
         {'key': 'pc-services', 'taxonomy': 'product_cat', 'name': 'Services', 'slug': 'services', 'meta': {'thumbnail_id': '{{media_id:shot-import}}'}},
         {'key': 'cat-news', 'taxonomy': 'category', 'name': 'News', 'slug': 'news'},
         {'key': 'cat-guides', 'taxonomy': 'category', 'name': 'Guides', 'slug': 'guides'},
@@ -1096,7 +1112,7 @@ def package(builder):
              ('support', 'Support', 'support', g_support, e_support),
              ('changelog', 'Changelog', 'changelog', g_changelog, e_changelog), ('roadmap', 'Roadmap', 'roadmap', g_roadmap, e_roadmap)]
     if builder == 'gutenberg':
-        pages += [('doc-import', 'Import a demo in one click', 'import-a-demo-in-one-click', g_doc_article, None), ('cart', 'Your cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
+        pages += [('pro', 'WPEssential Pro', 'wpessential-pro', g_pro, None), ('doc-import', 'Import a demo in one click', 'import-a-demo-in-one-click', g_doc_article, None), ('cart', 'Your cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
     pages += [('svc-' + svc.DETAIL[n][0], n, svc.DETAIL[n][0], (lambda i=i: g_service(i)), (lambda i=i: e_service(i))) for i, (_, n, _d, _p) in enumerate(SERVICES)]
     content = []
     for key, title, slug, g, el in pages:
@@ -1118,6 +1134,10 @@ def package(builder):
                          'image': d['image'], 'gallery': [d['site'], 'mobile-' + d['name'].lower()], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
                          'meta': {'_wpe_niches': ','.join(c[6]), '_wpe_badge': 'NEW' if 'NEW' in c[2] else '', '_wpe_card_text': c[4]},
                          'description': '<p>%s</p><ul><li>Native Gutenberg and Elementor versions</li><li>One-click import with required plugins</li><li>Light &amp; dark style variation</li></ul>' % d['short']})
+    products.append({'key': 'addon-setup', 'name': 'Setup & demo import', 'slug': 'setup-demo-import', 'price': '99', 'categories': ['pc-pro-addons'],
+                     'virtual': True, 'sold_individually': True, 'menu_order': 1,
+                     'short': 'We install the theme and plugins, activate your licence and import your chosen demo.',
+                     'description': '<p>We install the theme and plugins, activate your licence and import your chosen demo. We email you within 1 business day to collect site access.</p>'})
     for pl in PLANS:
         products.append({'key': 'plan-' + pl['plan'], 'name': '%s %s' % (pl['name'], pl['period_name']), 'slug': 'plan-' + pl['plan'].replace('_', '-'),
                          'price': pl['price'], 'categories': ['pc-plans-' + pl['period']], 'image': 'shot-library', 'virtual': True, 'sold_individually': True,
