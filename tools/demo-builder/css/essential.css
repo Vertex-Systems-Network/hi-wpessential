@@ -830,3 +830,39 @@ body.woocommerce-account:has(.wpe-auth.is-card) :is(.wp-block-post-title, .wpe-p
 body.woocommerce-account:has(.wpe-auth.is-card) .woocommerce-message { display: none; }
 body.woocommerce-account:has(.wpe-auth.is-card) :is(.woocommerce-notices-wrapper, .wc-block-components-notice-banner.is-success, .woocommerce-info) { display: none; }
 .wpe-auth.is-card .wpe-auth__cta { box-sizing: border-box; }
+
+/* Figma 24 / 25: cart */
+body:has(.wp-block-woocommerce-cart) .wpe-main { padding-inline: clamp(20px, 6.25vw, 120px) !important; padding-top: 72px !important; }
+body:has(.wp-block-woocommerce-cart) .wpe-main > *, body:has(.wp-block-woocommerce-cart) .wp-block-post-content > * { max-width: 1680px !important; margin-inline: auto !important; }
+body:has(.wp-block-woocommerce-filled-cart-block) .wpe-main .wp-block-post-title { text-align: left; font-weight: 800; font-size: clamp(40px, 3vw, 60px); letter-spacing: -0.02em; margin-bottom: 40px; }
+body:has(.wp-block-woocommerce-filled-cart-block) .wpe-main .wp-block-post-title::before { content: "— Cart"; display: block; margin-bottom: 18px; font: 500 12px/16px var(--wp--preset--font-family--mono); letter-spacing: .12em; text-transform: uppercase; color: #ec7d1a; }
+body:has(.wpe-cart-empty):not(:has(.wc-block-cart)) .wpe-main .wp-block-post-title { display: none; }
+.wp-block-woocommerce-cart:has(.wc-block-cart) .wpe-cart-empty { display: none; }
+.wc-block-cart .wc-block-cart__sidebar .wp-block-woocommerce-cart-order-summary-block { background: none !important; padding: 0 !important; border: 0 !important; }
+.wc-block-cart .wc-block-cart-item__product .wc-block-components-product-price { display: none !important; }
+.wc-block-cart .wc-block-cart-item__remove-link { color: #c0362c !important; }
+.wc-block-cart.wc-block-components-sidebar-layout { gap: 24px; flex-wrap: nowrap; }
+.wc-block-cart .wc-block-cart__main { flex: 1 1 auto; width: auto !important; padding: 24px !important; border: 1px solid #dde4f0; border-radius: 16px; align-self: flex-start; }
+.wc-block-cart .wc-block-cart__sidebar { flex: 0 0 400px; width: 400px !important; padding: 24px !important; border: 1px solid #dde4f0; border-radius: 16px; background: #fff !important; align-self: flex-start; }
+.wc-block-cart .wc-block-cart-items__header { display: none; }
+.wc-block-cart .wc-block-cart-items, .wc-block-cart .wc-block-cart-items td { border: 0 !important; }
+.wc-block-cart .wc-block-cart-items__row { border: 0 !important; padding: 0 0 16px !important; }
+.wc-block-cart .wc-block-cart-item__image { width: 60px; padding: 0 !important; }
+.wc-block-cart .wc-block-cart-item__image img { width: 60px; height: 60px; object-fit: cover; border-radius: 10px; }
+.wc-block-cart .wc-block-components-product-name { font-weight: 700; font-size: 18px; color: #0b1a3d; text-decoration: none; }
+.wc-block-cart .wc-block-cart-item__prices, .wc-block-cart .wc-block-cart-item__quantity { display: none; }
+.wc-block-cart .wc-block-components-product-metadata { font-size: 14px; color: #4a5a7a; }
+.wc-block-cart .wc-block-cart-item__total { font-weight: 700; font-size: 18px; color: #0b1a3d; vertical-align: middle !important; }
+.wc-block-cart .wc-block-cart__totals-title { display: block !important; text-align: left !important; text-transform: none !important; font: 700 22px/1.3 var(--wp--preset--font-family--body) !important; color: #0b1a3d; padding: 0 0 12px !important; margin: 0 !important; }
+.wc-block-cart .wc-block-components-totals-wrapper { border: 0 !important; padding: 8px 0 !important; }
+.wc-block-cart .wc-block-components-totals-coupon .wc-block-components-panel__button { font-size: 15px; color: #4a5a7a; }
+.wc-block-cart .wc-block-components-totals-footer-item { border-top: 1px solid #dde4f0 !important; padding-top: 14px !important; font-weight: 700; }
+.wc-block-cart .wc-block-cart__submit-button { border-radius: 999px !important; background: #ec7d1a !important; color: #0b1a3d !important; font-weight: 600; min-height: 52px; }
+.wc-block-cart .wc-block-cart__submit-container::after { content: "Secure checkout · merchant of record"; display: block; margin-top: 14px; text-align: center; font-size: 13px; color: #4a5a7a; }
+@media (max-width: 900px) { .wc-block-cart.wc-block-components-sidebar-layout { flex-wrap: wrap; } .wc-block-cart .wc-block-cart__sidebar { flex-basis: 100%; width: 100% !important; } }
+.wpe-cart-empty { text-align: center; padding: 160px 0 !important; }
+.wpe-cart-empty__title { margin: 0 0 16px; font-size: 38px !important; font-weight: 600 !important; color: #0b1a3d; }
+.wpe-cart-empty__text { margin: 0 0 28px; color: #4a5a7a; font-size: 17px; }
+.wpe-cart-empty__actions { display: flex; justify-content: center; gap: 12px; margin: 0; }
+.wpe-cart-empty__actions a { padding: 14px 26px; border-radius: 999px; border: 1px solid #dde4f0; background: #fff; color: #0b1a3d; font-weight: 600; text-decoration: none; }
+.wpe-cart-empty__actions a.is-primary { background: #ec7d1a; border-color: #ec7d1a; }

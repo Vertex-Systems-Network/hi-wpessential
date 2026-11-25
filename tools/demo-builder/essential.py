@@ -1096,7 +1096,7 @@ def package(builder):
              ('support', 'Support', 'support', g_support, e_support),
              ('changelog', 'Changelog', 'changelog', g_changelog, e_changelog), ('roadmap', 'Roadmap', 'roadmap', g_roadmap, e_roadmap)]
     if builder == 'gutenberg':
-        pages += [('doc-import', 'Import a demo in one click', 'import-a-demo-in-one-click', g_doc_article, None), ('cart', 'Cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
+        pages += [('doc-import', 'Import a demo in one click', 'import-a-demo-in-one-click', g_doc_article, None), ('cart', 'Your cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
     pages += [('svc-' + svc.DETAIL[n][0], n, svc.DETAIL[n][0], (lambda i=i: g_service(i)), (lambda i=i: e_service(i))) for i, (_, n, _d, _p) in enumerate(SERVICES)]
     content = []
     for key, title, slug, g, el in pages:

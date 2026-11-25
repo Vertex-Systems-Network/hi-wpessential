@@ -941,3 +941,23 @@ add_action(
 add_filter( 'woocommerce_lost_password_message', '__return_empty_string' );
 add_filter( 'woocommerce_reset_password_message', '__return_empty_string' );
 add_filter( 'woocommerce_lost_password_confirmation_message', '__return_empty_string' );
+
+/*
+ * Cart (Figma 24 / 25): "Order summary" heading and the empty cart message with plan and free plugin buttons.
+ */
+add_filter(
+	'render_block_woocommerce/cart-order-summary-heading-block',
+	static fn( $html ) => str_replace( 'wp-block-woocommerce-cart-order-summary-heading-block"', 'wp-block-woocommerce-cart-order-summary-heading-block" data-content="' . esc_attr__( 'Order summary', 'hi-wpessential' ) . '"', $html )
+);
+add_filter(
+	'render_block_woocommerce/empty-cart-block',
+	static function () {
+		$pricing = get_page_by_path( 'pricing' );
+		$plugins = get_page_by_path( 'plugins' );
+		return '<div class="wp-block-woocommerce-empty-cart-block wpe-cart-empty"><h2 class="wpe-cart-empty__title">' . esc_html__( 'Your cart is empty', 'hi-wpessential' ) . '</h2>'
+			. '<p class="wpe-cart-empty__text">' . esc_html__( 'Pick a plan to get WPEssential Pro, or download the free plugin.', 'hi-wpessential' ) . '</p><p class="wpe-cart-empty__actions">'
+			. ( $pricing ? '<a class="is-primary" href="' . esc_url( (string) get_permalink( $pricing ) ) . '">' . esc_html__( 'See pricing', 'hi-wpessential' ) . '</a>' : '' )
+			. ( $plugins ? '<a href="' . esc_url( (string) get_permalink( $plugins ) ) . '">' . esc_html__( 'Download free', 'hi-wpessential' ) . '</a>' : '' )
+			. '</p></div>';
+	}
+);
