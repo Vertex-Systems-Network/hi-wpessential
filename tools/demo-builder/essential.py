@@ -481,23 +481,27 @@ def g_pricing():
 SERVICE_ICONS = ['palette', 'download', 'cart', 'figma', 'grid', 'bolt', 'refresh', 'globe', 'shield', 'wrench', 'server', 'heart', 'code']
 
 
+SERVICE_GROUPS = [('Custom design', 'Figma or web design for your brand.', 'from $1,490'), ('Figma / HTML → WordPress', 'Pixel-perfect builds on WPEssential.', 'from $499'),
+                  ('Custom development', 'Plugins, integrations, WooCommerce.', 'Quote'), ('Speed &amp; SEO', 'Core Web Vitals and technical SEO.', 'from $249'),
+                  ('Hosting &amp; care plans', 'Managed hosting, updates, backups.', 'from $49/mo'), ('Branding &amp; social', 'Logo, brand kit, social media.', 'Quote')]
+
+
 def g_services():
-    steps = [('Discovery call', '30 minutes on goals, content and budget.'), ('Proposal', 'Fixed price, scope and timeline within 48 hours.'),
-             ('Build', 'Weekly previews on a staging site you can click through.'), ('Launch & care', 'We go live, train your team and stay on call.')]
+    steps = [['1. Request a quote', 'Tell us about the project'], ['2. Proposal', 'Scope, timeline and fixed price'],
+             ['3. Invoice', 'Pay by Payoneer, PayPal, Stripe or bank transfer'], ['4. Delivery', 'Work, review rounds, handover']]
     return b.join(
-        g_hero_dark('Services', 'Your site, launched by the people who build the theme.',
-                    'Design, setup, speed and care from the WPEssential team at Vertex Systems Network (Pvt.) Ltd.',
-                    b.buttons(arrow('Book a free call', '{{page:contact}}'), b.button('See pricing', '{{page:pricing}}', style='wpe-ghost-light'), justify='center')),
-        section(head('Services', 'What we do'),
-                b.group(*[b.group(ico(SERVICE_ICONS[i], 'soft'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
-                                  b.p('<a href="%s">%s →</a>' % (svc_link(t), price), className='wpe-ess-card__from'), layout='default', className='wpe-ess-card')
-                          for i, (_, t, d, price) in enumerate(SERVICES)], layout='grid', columns=3, grid_min='17rem', className='wpe-ess-grid')),
-        section(head('Process', 'How a project runs'),
-                b.group(*[b.group(b.p('0%d' % (i + 1), className='wpe-ess-num'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'), layout='default', className='wpe-ess-run')
-                          for i, (t, d) in enumerate(steps)], layout='grid', columns=4, grid_min='12rem', className='wpe-ess-grid'), alt=True),
-        g_work(),
-        g_team(),
-        section(g_band('Tell us about your project', 'Free 30-minute call. Fixed quote within 48 hours.', 'Book a free call', '{{page:contact}}')))
+        g_hero_dark('Services · by Vertex Systems Network', 'WordPress work, <span class="wpe-ess-grad">done for you.</span>',
+                    'Design, development, speed, SEO and hosting. Quoted per project and invoiced by Vertex Systems Network (Pvt.) Ltd.',
+                    b.buttons(arrow('Request a quote', '{{page:quote}}'), b.button('See Pro add-ons', '{{page:pricing}}', style='wpe-ghost-light'), justify='center')),
+        section(b.group(*[b.group(b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'), b.p(price, className='wpe-ess-plan__price'),
+                                  b.buttons(b.button('Request a quote', '{{page:quote}}', style='wpe-outline')), layout='default', className='wpe-ess-card wpe-ess-card--svc')
+                          for t, d, price in SERVICE_GROUPS], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid')),
+        section(head('How it works', 'Quote → invoice → delivery'), b.table(['Step', 'What happens'], steps, className='wpe-ess-table'),
+                b.p('Already on WPEssential Pro? Setup, customisation and new modules are Pro add-ons on the normal checkout. <a href="{{page:pricing}}">→ Pricing</a>', className='wpe-ess-note-box'), alt=True),
+        section(b.group(b.h('Tell us what you need.', level=2, align='center', className='wpe-ess-band__title'),
+                        b.p('We reply with a fixed quote within one business day.', align='center', className='wpe-ess-band__text'),
+                        b.buttons(arrow('Request a quote', '{{page:quote}}'), b.button('Pricing', '{{page:pricing}}', style='wpe-ghost-light'), justify='center'),
+                        layout='default', className='wpe-ess-band wpe-ess-band--blue wpe-ess-band--center')))
 
 
 def g_docs():
