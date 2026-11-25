@@ -430,7 +430,7 @@ def g_demos():
 def g_periods():
     """All three billing periods; the toggle (assets/js/components.js) shows one at a time, monthly first."""
     return b.group(*[b.group(g_plan_cards(period), b.p(BILLING_NOTE[period], align='center', className='wpe-ess-note'),
-                             layout='default', className='wpe-ess-period wpe-tab-panel').replace('{"className":"wpe-ess-period wpe-tab-panel"', '{"anchor":"%s","className":"wpe-ess-period wpe-tab-panel"' % period, 1).replace('class="wp-block-group wpe-ess-period wpe-tab-panel"', 'id="%s" class="wp-block-group wpe-ess-period wpe-tab-panel"' % period, 1)
+                             layout='default', className='wpe-ess-period wpe-tab-panel').replace('"cssClass":"wpe-ess-period wpe-tab-panel"', '"anchor":"%s","cssClass":"wpe-ess-period wpe-tab-panel"' % period, 1)
                      for period, _, _ in BILLING], layout='default', className='wpe-ess-periods')
 
 
