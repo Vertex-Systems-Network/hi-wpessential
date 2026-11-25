@@ -73,7 +73,9 @@ def spacer(px):
 
 
 def shortcode(code):
-    """Forms go through the Pro Forms element; other shortcodes are not used in kit demos."""
+    """Forms go through the Pro Forms element; any other shortcode stays a core shortcode block."""
+    if not re.match(r'\[(wpforms|wpessential_form|form)\b', code):
+        return '<!-- wp:shortcode -->\n%s\n<!-- /wp:shortcode -->' % code
     m = re.search(r'id="([^"]+)"', code)
     return el('forms', {'formId': m.group(1) if m else '', 'showTitle': False})
 

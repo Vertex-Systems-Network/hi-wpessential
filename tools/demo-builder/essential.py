@@ -282,11 +282,9 @@ DEMO_CARDS = [  # (product key, name, badge(s), price label, text, image, catego
 DEMO_CATS = [('business', 'Business'), ('shop', 'Shop'), ('fashion', 'Fashion'), ('events', 'Events')]
 
 
-def demo_filter(cls='wpe-ess-cats'):
-    """Category chips that filter the demo cards on the page (assets/js/components.js); counts come from DEMO_CARDS."""
-    count = lambda k: sum(1 for d in DEMO_CARDS if k in d[6])
-    chips = [chip('All <i>%d</i>' % len(DEMO_CARDS), '#all', 'is-on')] + [chip('%s <i>%d</i>' % (t, count(k)), '#' + k) for k, t in DEMO_CATS if count(k)]
-    return html('<p class="%s" data-wpe-filter>%s</p>' % (cls, ''.join(chips)))
+def demo_filter():
+    """Niche chips that filter the demo cards on the page; labels and counts come from the live demo products."""
+    return b.shortcode('[wpessential_demo_cards chips="1"]')
 ICON_FOR = {'Custom demo design': 'palette', 'Migration': 'refresh', 'Speed & SEO tuning': 'bolt', 'Care plans': 'headset'}
 DOC_ICONS = ['book', 'layers', 'palette', 'key', 'globe', 'code']
 
@@ -303,6 +301,11 @@ def g_demo_card(key, name, badges, price, text, image, cats=()):
                 layout='default', className='wpe-ess-demo__body'),
         layout='default', className=' '.join(['wpe-ess-demo', 'wpe-filter-item', 'wpe-plan-' + ('free' if 'FREE' in badges else 'pro'), 'wpe-builder-gutenberg', 'wpe-builder-elementor']
                                              + ['wpe-cat-' + c for c in cats] + ['wpe-niche-' + c for c in cats]))
+
+
+def g_demo_grid(limit=0):
+    """Demo cards rendered live from the 'demos' products (inc/woocommerce.php, [wpessential_demo_cards])."""
+    return b.shortcode('[wpessential_demo_cards limit="%d"]' % limit)
 
 
 def g_plugin_card(icon, name, text, meta, url, first=False):
@@ -334,7 +337,7 @@ def g_home():
         head('Demo library', 'Pick a demo. Preview it live. Import it in one click.',
              'Every demo ships for Gutenberg and Elementor, with real content, images, hovers and dark mode.',
              action=arrow('Browse all demos', '{{page:demos}}', style='wpe-outline')),
-        b.group(*[g_demo_card(*d) for d in DEMO_CARDS], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid wpe-ess-grid--3'),
+        g_demo_grid(),
         tag='section', align='full', className='wpe-ess-section', layout='constrained', content='1680px')
     theme = b.group(
         head('Theme & plugins', 'One theme. Every niche. Demos that do the heavy lifting.',
@@ -422,24 +425,9 @@ def section(*inner, alt=False, ink=False):
 
 
 def demo_facets():
-    """Figma 04: filter sidebar (search, plan, builder, niche), result bar (count, sort) and the card grid.
+    """Figma 04: filter sidebar, result bar and card grid, all built from the live 'demos' products.
     Filtering runs in the browser (assets/js/components.js, [data-wpe-facets])."""
-    count = lambda k: sum(1 for d in DEMO_CARDS if k in d[6])
-    radio = lambda v, t: '<a class="wpe-ess-facet__opt is-radio%s" href="#%s" data-facet="plan" data-single="1">%s</a>' % (' is-on' if v == '' else '', v, t)
-    box = lambda g, v, t, n: '<a class="wpe-ess-facet__opt" href="#%s" data-facet="%s">%s <i>%d</i></a>' % (v, g, t, n)
-    total = len(DEMO_CARDS)
-    side = ('<div class="wpe-ess-facets" data-wpe-facets role="group" aria-label="Filter demos">'
-            '<p class="wpe-ess-facets__head"><b>Filters</b> <a href="#" data-facet-reset>Reset</a></p>'
-            '<p class="wpe-ess-facets__search"><span data-facet-search>Search demos</span></p>'
-            '<p class="wpe-ess-facets__group"><span class="wpe-ess-facets__legend">Plan</span>%s%s%s</p>' % (radio('', 'All'), radio('free', 'Free'), radio('pro', 'Pro'))
-            + '<p class="wpe-ess-facets__group"><span class="wpe-ess-facets__legend">Builder</span>%s%s</p>' % (box('builder', 'gutenberg', 'Gutenberg', total), box('builder', 'elementor', 'Elementor', total))
-            + '<p class="wpe-ess-facets__group"><span class="wpe-ess-facets__legend">Niche</span>%s</p></div>' % ''.join(box('niche', k, t, count(k)) for k, t in DEMO_CATS if count(k)))
-    bar = ('<div class="wpe-ess-facets__bar"><p data-facet-count>%d demos</p>'
-           '<p class="wpe-ess-facets__sort">Sort: <span data-facet-sort>Newest | Name A–Z | Name Z–A</span></p></div>' % total)
-    return b.group(html(side),
-                   b.group(html(bar), b.group(*[g_demo_card(*d) for d in DEMO_CARDS], layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid wpe-ess-grid--3'),
-                           layout='default', className='wpe-ess-facet-main'),
-                   layout='flex', wrap='nowrap', valign='top', className='wpe-ess-facet-layout')
+    return b.shortcode('[wpessential_demo_cards facets="1"]')
 
 
 def g_demos():
@@ -1127,8 +1115,10 @@ def package(builder):
                         'terms': {'category': [p['cat']]}, 'excerpt': p['excerpt'], 'content': post_html(p['body'])})
     products = []
     for d in DEMOS:
+        c = next(x for x in DEMO_CARDS if x[0] == d['key'])
         products.append({'key': d['key'], 'name': d['name'] + ' demo', 'slug': d['name'].lower() + '-demo', 'price': d['price'], 'categories': ['pc-demos'],
                          'image': d['image'], 'gallery': [d['site'], 'mobile-' + d['name'].lower()], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
+                         'meta': {'_wpe_niches': ','.join(c[6]), '_wpe_badge': 'NEW' if 'NEW' in c[2] else '', '_wpe_card_text': c[4]},
                          'description': '<p>%s</p><ul><li>Native Gutenberg and Elementor versions</li><li>One-click import with required plugins</li><li>Light &amp; dark style variation</li></ul>' % d['short']})
     for pl in PLANS:
         products.append({'key': 'plan-' + pl['plan'], 'name': '%s %s' % (pl['name'], pl['period_name']), 'slug': 'plan-' + pl['plan'].replace('_', '-'),

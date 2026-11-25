@@ -686,3 +686,100 @@ function wpessential_woo_login_close() {
 	echo '</div></div>';
 }
 add_action( 'woocommerce_after_customer_login_form', 'wpessential_woo_login_close' );
+
+/**
+ * Demo cards (Figma 03/04) from the live products in the "demos" category, so a new demo product
+ * shows up with its own card, badges and filter counts. facets="1" adds the filter sidebar and bar.
+ *
+ * @param array|string $atts Shortcode attributes.
+ * @return string
+ */
+function wpessential_demo_cards( $atts ) {
+	$atts  = shortcode_atts(
+		array(
+			'limit'  => 0,
+			'facets' => 0,
+			'chips'  => 0,
+		),
+		$atts,
+		'wpessential_demo_cards'
+	);
+	$items = wc_get_products(
+		array(
+			'category' => array( 'demos' ),
+			'status'   => 'publish',
+			'limit'    => (int) $atts['limit'] > 0 ? (int) $atts['limit'] : -1,
+			'orderby'  => 'menu_order',
+			'order'    => 'ASC',
+		)
+	);
+	if ( ! $items ) {
+		return '';
+	}
+	$import = get_page_by_path( 'doc-import', OBJECT, array( 'page', 'post', 'wpessential_doc' ) );
+	$niches = array();
+	$cards  = '';
+	foreach ( $items as $item ) {
+		$free  = 0.0 === (float) $item->get_price();
+		$name  = preg_replace( '/\s+demo$/i', '', $item->get_name() );
+		$keys  = array_filter( array_map( 'sanitize_key', explode( ',', (string) $item->get_meta( '_wpe_niches' ) ) ) );
+		$text  = (string) $item->get_meta( '_wpe_card_text' );
+		$badge = (string) $item->get_meta( '_wpe_badge' );
+		$url   = (string) $item->get_permalink();
+		foreach ( $keys as $key ) {
+			$niches[ $key ] = isset( $niches[ $key ] ) ? $niches[ $key ] + 1 : 1;
+		}
+		$badges = '<span class="wpe-ess-badge' . ( $free ? ' wpe-ess-badge--orange' : '' ) . '">' . ( $free ? esc_html__( 'FREE', 'hi-wpessential' ) : esc_html__( 'PRO', 'hi-wpessential' ) ) . '</span>';
+		if ( '' !== $badge ) {
+			$badges .= '<span class="wpe-ess-badge">' . esc_html( $badge ) . '</span>';
+		}
+		$classes = array( 'wpe-ess-demo', 'wpe-filter-item', 'wpe-plan-' . ( $free ? 'free' : 'pro' ), 'wpe-builder-gutenberg', 'wpe-builder-elementor' );
+		foreach ( $keys as $key ) {
+			$classes[] = 'wpe-cat-' . $key;
+			$classes[] = 'wpe-niche-' . $key;
+		}
+		$cards .= '<div class="' . esc_attr( implode( ' ', $classes ) ) . '">'
+			. '<div class="wpe-ess-demo__shot">' . wp_get_attachment_image( (int) $item->get_image_id(), 'large', false, array( 'alt' => $name . ' demo' ) )
+			. '<span class="wpe-ess-demo__badges">' . $badges . '</span>'
+			. '<span class="wpe-ess-demo__over"><a href="' . esc_url( $url ) . '">' . esc_html__( 'Live preview', 'hi-wpessential' ) . ' <span aria-hidden="true">↗</span></a>'
+			. ( $import ? '<a class="is-import" href="' . esc_url( (string) get_permalink( $import ) ) . '">' . esc_html__( 'Import', 'hi-wpessential' ) . ' <span aria-hidden="true">↗</span></a>' : '' )
+			. '</span></div><div class="wpe-ess-demo__body">'
+			. '<div class="wpe-ess-demo__head"><h3 class="wpe-ess-demo__name"><a href="' . esc_url( $url ) . '">' . esc_html( $name ) . '</a></h3>'
+			. '<p class="wpe-ess-demo__price">' . ( $free ? esc_html__( 'Free', 'hi-wpessential' ) : wp_kses_post( wc_price( (float) $item->get_price(), array( 'decimals' => 0 ) ) ) ) . '</p></div>'
+			. '<p class="wpe-ess-demo__text">' . esc_html( '' !== $text ? $text : wp_strip_all_tags( $item->get_short_description() ) ) . '</p>'
+			. '<div class="wpe-ess-demo__meta"><span>' . esc_html__( 'Gutenberg & Elementor', 'hi-wpessential' ) . '</span><span class="wpe-ess-gb" title="Gutenberg">G</span><span class="wpe-ess-gb" title="Elementor">E</span></div>'
+			. '</div></div>';
+	}
+	if ( (int) $atts['chips'] ) {
+		$chips = '<a class="wpe-ess-chip is-on" href="#all">' . esc_html__( 'All', 'hi-wpessential' ) . ' <i>' . count( $items ) . '</i></a>';
+		foreach ( $niches as $key => $count ) {
+			$chips .= '<a class="wpe-ess-chip" href="#' . esc_attr( $key ) . '">' . esc_html( ucwords( str_replace( '-', ' ', $key ) ) ) . ' <i>' . (int) $count . '</i></a>';
+		}
+		return '<p class="wpe-ess-cats" data-wpe-filter>' . $chips . '</p>';
+	}
+	$grid = '<div class="wpe-ess-grid wpe-ess-grid--3 wpe-ess-demo-grid">' . $cards . '</div>';
+	if ( ! (int) $atts['facets'] ) {
+		return $grid;
+	}
+	$total = count( $items );
+	$opt   = function ( $group, $value, $label, $count = null, $on = false, $single = false ) {
+		return '<a class="wpe-ess-facet__opt' . ( $single ? ' is-radio' : '' ) . ( $on ? ' is-on' : '' ) . '" href="#' . esc_attr( $value ) . '" data-facet="' . esc_attr( $group ) . '"' . ( $single ? ' data-single="1"' : '' ) . '>'
+			. esc_html( $label ) . ( null === $count ? '' : ' <i>' . (int) $count . '</i>' ) . '</a>';
+	};
+	$niche = '';
+	foreach ( $niches as $key => $count ) {
+		$niche .= $opt( 'niche', $key, ucwords( str_replace( '-', ' ', $key ) ), $count );
+	}
+	return '<div class="wpe-ess-facet-layout"><div class="wpe-ess-facets" data-wpe-facets role="group" aria-label="' . esc_attr__( 'Filter demos', 'hi-wpessential' ) . '">'
+		. '<p class="wpe-ess-facets__head"><b>' . esc_html__( 'Filters', 'hi-wpessential' ) . '</b> <a href="#" data-facet-reset>' . esc_html__( 'Reset', 'hi-wpessential' ) . '</a></p>'
+		. '<p class="wpe-ess-facets__search"><span data-facet-search>' . esc_html__( 'Search demos', 'hi-wpessential' ) . '</span></p>'
+		. '<p class="wpe-ess-facets__group"><span class="wpe-ess-facets__legend">' . esc_html__( 'Plan', 'hi-wpessential' ) . '</span>' . $opt( 'plan', '', __( 'All', 'hi-wpessential' ), null, true, true ) . $opt( 'plan', 'free', __( 'Free', 'hi-wpessential' ), null, false, true ) . $opt( 'plan', 'pro', __( 'Pro', 'hi-wpessential' ), null, false, true ) . '</p>'
+		. '<p class="wpe-ess-facets__group"><span class="wpe-ess-facets__legend">' . esc_html__( 'Builder', 'hi-wpessential' ) . '</span>' . $opt( 'builder', 'gutenberg', 'Gutenberg', $total ) . $opt( 'builder', 'elementor', 'Elementor', $total ) . '</p>'
+		. ( '' !== $niche ? '<p class="wpe-ess-facets__group"><span class="wpe-ess-facets__legend">' . esc_html__( 'Niche', 'hi-wpessential' ) . '</span>' . $niche . '</p>' : '' )
+		. '</div><div class="wpe-ess-facet-main"><div class="wpe-ess-facets__bar"><p data-facet-count>'
+		/* translators: %d: number of demos. */
+		. esc_html( sprintf( _n( '%d demo', '%d demos', $total, 'hi-wpessential' ), $total ) ) . '</p>'
+		. '<p class="wpe-ess-facets__sort">' . esc_html__( 'Sort:', 'hi-wpessential' ) . ' <span data-facet-sort>' . esc_html__( 'Newest | Name A–Z | Name Z–A', 'hi-wpessential' ) . '</span></p></div>'
+		. $grid . '</div></div>';
+}
+add_shortcode( 'wpessential_demo_cards', 'wpessential_demo_cards' );

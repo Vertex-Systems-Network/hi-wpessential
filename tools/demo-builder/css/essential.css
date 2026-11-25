@@ -777,3 +777,11 @@ body.woocommerce-account .woocommerce > .woocommerce-MyAccount-navigation { grid
 body.woocommerce-account .woocommerce > .woocommerce-MyAccount-content { grid-column: 2; }
 body.woocommerce-account .wpe-main .wp-block-post-title { max-width: 1680px !important; }
 body.woocommerce-account .woocommerce-MyAccount-navigation li { margin: 0 !important; padding: 0 !important; border: 0 !important; }
+
+/* Live demo cards ([wpessential_demo_cards]) */
+.wpe-ess-demo-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); }
+div.wpe-ess-facet-layout { display: flex; flex-wrap: nowrap; }
+@media (max-width: 999px) { div.wpe-ess-facet-layout { flex-direction: column; } div.wpe-ess-facet-layout .wpe-ess-facets { position: static; width: 100%; flex-basis: auto; } }
+.wpe-ess-demo__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.wpe-ess-demo__head > * { margin: 0; }
+.wpe-ess-demo__shot img { display: block; width: 100%; height: auto; }
