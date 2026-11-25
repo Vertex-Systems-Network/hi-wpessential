@@ -65,48 +65,57 @@ def _sections(key, brand, email, sells):
     ]
 
 
-def _g_page(title, sections, b=b, width='760px'):
+def _g_page(title, sections, b=b, width='760px', over='Legal', sub=None, plain=False):
     body = []
     for h, items in sections:
         body.append(b.h(h, size='h4'))
         for it in items:
             body.append(b.ul(it[1]) if isinstance(it, tuple) else b.p(it))
-    return b.join(b.section(b.p('Legal', style='wpe-overline'), b.h(title, level=1, size='h1'),
-                            b.p('Last updated %s' % UPDATED, color='text-muted', size='small'),
-                            b.p(' '.join('<a class="wpe-legal-chip%s" href="%s">%s</a>' % (' is-current' if t == title.split()[0] or (t == 'Refunds' and 'Refund' in title) or (t == 'Cookies' and 'Cookie' in title) else '', u, t)
-                                         for t, u in LINKS), className='wpe-legal-chips'),
-                            className='wpe-section wpe-section--sm', content=width),
-                  b.section(*body, className='wpe-section wpe-section--sm', content=width))
+    chips = [] if plain else [b.p(' '.join('<a class="wpe-legal-chip%s" href="%s">%s</a>' % (' is-current' if t == title.split()[0] or (t == 'Refunds' and 'Refund' in title) or (t == 'Cookies' and 'Cookie' in title) else '', u, t)
+                                           for t, u in LINKS), className='wpe-legal-chips')]
+    cls = 'wpe-section wpe-section--sm' + (' wpe-legal-plain' if plain else '')
+    return b.join(b.section(b.p(('— ' + over) if plain else over, style='wpe-overline'), b.h(title, level=1, size='h1'),
+                            b.p(sub or 'Last updated %s' % UPDATED, color='text-muted', size='small'), *chips,
+                            className=cls, content=width),
+                  b.section(*body, className=cls, content=width))
 
 
-def _e_page(title, sections):
+def _e_page(title, sections, over='Legal', sub=None):
     html = ''
     for h, items in sections:
         html += '<h3>%s</h3>' % h
         for it in items:
             html += '<ul>%s</ul>' % ''.join('<li>%s</li>' % x for x in it[1]) if isinstance(it, tuple) else '<p>%s</p>' % it
-    return [e.container(e.overline('Legal'), e.heading(title, 1, size_px=56), e.text('Last updated %s' % UPDATED, size_px=14), pad=(80, 24, 24, 24)),
+    return [e.container(e.overline(over), e.heading(title, 1, size_px=56), e.text(sub or 'Last updated %s' % UPDATED, size_px=14), pad=(80, 24, 24, 24)),
             e.container(e.text(html, 'text', size_px=16), pad=(16, 24, 96, 24))]
 
 
-def pages(builder, brand, email, sells=None, kit=False, width='760px'):
-    """Content items for the four legal pages."""
+def pages(builder, brand, email, sells=None, kit=False, width='760px', extra=None):
+    """Content items for the four legal pages, plus a demo's own policy pages.
+    extra: {key: (title, slug, overline, subtitle, sections)} replaces a legal page by key or adds one."""
+    extra = dict(extra or {})
     out = []
-    for key, title, slug in PAGES:
+    rows = [(k, t, s, 'Legal', None, None, False) for k, t, s in PAGES]
+    for i, r in enumerate(rows):
+        if r[0] in (extra or {}):
+            t, sl, ov, sub, secs = extra.pop(r[0])
+            rows[i] = (r[0], t, sl, ov, sub, secs, True)
+    rows += [(k, t, sl, ov, sub, secs, True) for k, (t, sl, ov, sub, secs) in extra.items()]
+    for key, title, slug, over, sub, secs, plain in rows:
         item = {'key': key, 'type': 'page', 'title': title, 'slug': slug, 'template': 'page-full-width',
                 'meta': {'_wpe_seo_description': '%s of %s.' % (title, brand)}}
-        secs = _sections(key, brand, email, sells)
+        secs = secs or _sections(key, brand, email, sells)
         if builder == 'elementor':
             item['content'] = ''
-            item['elementor'] = _e_page(title, secs)
+            item['elementor'] = _e_page(title, secs, over, sub)
         else:
-            item['content'] = _g_page(title, secs, *([__import__('kit')] if kit else [b]), width=width)
+            item['content'] = _g_page(title, secs, *([__import__('kit')] if kit else [b]), width='1680px' if plain else width, over=over, sub=sub, plain=plain)
         out.append(item)
     return out
 
 
-def add(package, builder, brand, email, sells=None, kit=False, width='760px'):
+def add(package, builder, brand, email, sells=None, kit=False, width='760px', extra=None):
     """Add the legal pages to a package, replacing copies built for another builder."""
-    fresh = {p['key']: p for p in pages(builder, brand, email, sells, kit, width)}
+    fresh = {p['key']: p for p in pages(builder, brand, email, sells, kit, width, extra)}
     package['content'] = [fresh.pop(c.get('key'), c) for c in package.get('content', [])] + list(fresh.values())
     return package

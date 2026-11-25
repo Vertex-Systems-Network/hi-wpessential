@@ -205,7 +205,7 @@ def g_footer():
     cols = [('Marketplace', [('Demos', '{{page:demos}}'), ('Plugins', '{{page:plugins}}'), ('Pricing', '{{page:pricing}}'), ('My account', '{{woo:myaccount}}')]),
             ('Resources', [('Documentation', '{{page:docs}}'), ('Blog', '{{page:blog}}'), ('Changelog', '{{page:changelog}}'), ('Roadmap', '{{page:roadmap}}')]),
             ('Company', [('About', '{{page:about}}'), ('Vertex Systems Network (Pvt.) Ltd.', '{{page:about}}'), ('Services', '{{page:services}}'), ('Care plans', '{{page:svc-care-plans}}'), ('Contact', '{{page:contact}}')]),
-            ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refund policy', '{{page:refund-policy}}')])]
+            ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refund policy', '{{page:refund-policy}}'), ('Billing FAQ', '{{page:billing-faq}}'), ('Licence terms', '{{page:licence-terms}}')])]
     band = b.group(b.group(over('Newsletter', tone='orange'), b.h('New themes and demo drops, monthly.', level=3, className='wpe-ess-band__title'),
                            b.p('One email a month. Release notes, freebies and discounts. Unsubscribe anytime.', className='wpe-ess-band__text'), layout='default'),
                    b.el('forms', {'formId': '{{form:newsletter}}', 'showTitle': False}),
@@ -741,9 +741,9 @@ RELEASES = [('1.0.0', 'In development', [('New', 'Base, Maison and Pulse demos f
                                          ('New', 'Light and dark schemes, 20 languages and right-to-left support'),
                                          ('New', 'Licenses and subscriptions on WooCommerce with a full event log')])]
 # From docs/STATUS.md: what is designed or planned, nothing promised beyond that.
-ROADMAP = [('Now', ['WPEssential.org rebuilt to its Figma design', 'Business Pro, Saffron and Campus demos (designed in Figma)']),
-           ('Next', ['Base, Maison and Pulse upgraded to the premium design rules', 'Automatic renewals with a saved card']),
-           ('Later', ['Minimal portfolio, News and Electronics store demos', 'Clinic, Real estate, Hotel and Nonprofit demos'])]
+ROADMAP = [('Now', ['WPEssential.org service pages', 'Variation swatches everywhere', 'Elementor version of every demo']),  # Figma 11
+           ('Next', ['Restaurant and Course demos', 'Header & footer builder', 'Wishlist and compare']),
+           ('Later', ['AI demo generator', 'Multisite licence manager', 'Figma plugin for demo kits'])]
 
 
 def g_care_plans():
@@ -774,9 +774,10 @@ def g_changelog():
 
 
 def g_roadmap():
-    cols = [b.group(b.h(c, level=3, className='wpe-ess-card__title'), *[b.group(b.p('<strong>%s</strong>' % i), layout='default', className='wpe-ess-card')
+    slug = lambda t: re.sub(r'[^a-z0-9]+', '-', t.lower()).strip('-')
+    cols = [b.group(b.h(c, level=3, className='wpe-ess-card__title'), *[b.group(b.p('<strong>%s</strong>' % i), b.shortcode('[wpessential_vote id="%s"]' % slug(i)), layout='default', className='wpe-ess-card wpe-ess-roadmap__item')
                                                                     for i in items], layout='default', className='wpe-ess-card wpe-ess-card--alt') for c, items in ROADMAP]
-    return b.join(g_hero_light('Roadmap', 'What we are building next', 'What is in progress and what comes after it. Suggest a demo or feature through Support.'),
+    return b.join(g_hero_light('Roadmap', 'What we are building next', 'Vote for features and see what is in progress. Suggest your own from My Account.'),
                   section(b.group(*cols, layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid wpe-ess-grid--3')))
 
 
@@ -794,8 +795,23 @@ def g_quote():
             className='wpe-ess-gap wpe-ess-contact-cols')))
 
 
+
+def g_pro():
+    """Figma 22: the WPEssential Pro product page; the buy box is live from the plan products (inc/woocommerce.php)."""
+    cards = ''.join('<div class="wpe-ess-pro-mod"><span class="wpe-ess-pro-mod__tag is-%s">%s</span><h3>%d %s</h3><ul>%s</ul></div>'
+                    % (tone, g, len(m), 'module' if len(m) == 1 else 'modules', ''.join('<li>%s</li>' % x for x in m)) for g, tone, m in PRO_MODULES)
+    return b.join(
+        section(b.group(
+            b.group(html('<div class="wpe-ess-pro__art"><span>WPEssential Pro</span></div><p class="wpe-ess-pro__meta">22 modules · Pro demos · licence key + updates</p>'),
+                    layout='default', className='wpe-ess-pro__media'),
+            b.group(html('<span class="wpe-ess-pro__badge">Pro plugin</span><h1 class="wpe-ess-pro__title">WPEssential Pro</h1><p class="wpe-ess-pro__lead">Pro extension for the free WPEssential plugin.</p>'),
+                    b.shortcode('[wpessential_pro_buy]'), layout='default', className='wpe-ess-pro__buy'),
+            layout='default', className='wpe-ess-pro')),
+        section(html('<p class="wpe-ess-cart__over">— Included</p><h2 class="wpe-ess-pro__h2">All 22 Pro modules</h2><div class="wpe-ess-pro-mods">%s</div>' % cards)))
+
+
 def g_cart():
-    return b.join(section(b.el('woo-notices', {}), b.el('woo-cart', {})))
+    return b.join(section(html('<p class="wpe-ess-cart__over">— Cart</p><h1 class="wpe-ess-cart__title">Your cart</h1>'), b.el('woo-notices', {}), b.el('woo-cart', {})))
 
 
 def g_checkout():
@@ -803,7 +819,7 @@ def g_checkout():
 
 
 def g_account():
-    return b.join(section(b.el('woo-notices', {}), b.el('woo-account', {})))
+    return b.join(section(html('<h1 class="wpe-ess-cart__title wpe-ess-account__title">My account</h1>'), b.el('woo-notices', {}), b.el('woo-account', {})))
 
 
 def g_service(i):
@@ -1085,6 +1101,7 @@ def package(builder):
         {'key': 'pc-plans-monthly', 'taxonomy': 'product_cat', 'name': 'Monthly plans', 'slug': 'plans-monthly', 'meta': {'thumbnail_id': '{{media_id:shot-library}}'}},
         {'key': 'pc-plans-yearly', 'taxonomy': 'product_cat', 'name': 'Yearly plans', 'slug': 'plans-yearly', 'meta': {'thumbnail_id': '{{media_id:shot-library}}'}},
         {'key': 'pc-plans-lifetime', 'taxonomy': 'product_cat', 'name': 'Lifetime plans', 'slug': 'plans-lifetime', 'meta': {'thumbnail_id': '{{media_id:shot-library}}'}},
+        {'key': 'pc-pro-addons', 'taxonomy': 'product_cat', 'name': 'Pro add-ons', 'slug': 'pro-addons'},
         {'key': 'pc-services', 'taxonomy': 'product_cat', 'name': 'Services', 'slug': 'services', 'meta': {'thumbnail_id': '{{media_id:shot-import}}'}},
         {'key': 'cat-news', 'taxonomy': 'category', 'name': 'News', 'slug': 'news'},
         {'key': 'cat-guides', 'taxonomy': 'category', 'name': 'Guides', 'slug': 'guides'},
@@ -1096,7 +1113,7 @@ def package(builder):
              ('support', 'Support', 'support', g_support, e_support),
              ('changelog', 'Changelog', 'changelog', g_changelog, e_changelog), ('roadmap', 'Roadmap', 'roadmap', g_roadmap, e_roadmap)]
     if builder == 'gutenberg':
-        pages += [('doc-import', 'Import a demo in one click', 'import-a-demo-in-one-click', g_doc_article, None), ('cart', 'Cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
+        pages += [('pro', 'WPEssential Pro', 'wpessential-pro', g_pro, None), ('doc-import', 'Import a demo in one click', 'import-a-demo-in-one-click', g_doc_article, None), ('cart', 'Your cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
     pages += [('svc-' + svc.DETAIL[n][0], n, svc.DETAIL[n][0], (lambda i=i: g_service(i)), (lambda i=i: e_service(i))) for i, (_, n, _d, _p) in enumerate(SERVICES)]
     content = []
     for key, title, slug, g, el in pages:
@@ -1118,6 +1135,10 @@ def package(builder):
                          'image': d['image'], 'gallery': [d['site'], 'mobile-' + d['name'].lower()], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
                          'meta': {'_wpe_niches': ','.join(c[6]), '_wpe_badge': 'NEW' if 'NEW' in c[2] else '', '_wpe_card_text': c[4]},
                          'description': '<p>%s</p><ul><li>Native Gutenberg and Elementor versions</li><li>One-click import with required plugins</li><li>Light &amp; dark style variation</li></ul>' % d['short']})
+    products.append({'key': 'addon-setup', 'name': 'Setup & demo import', 'slug': 'setup-demo-import', 'price': '99', 'categories': ['pc-pro-addons'],
+                     'virtual': True, 'sold_individually': True, 'menu_order': 1,
+                     'short': 'We install the theme and plugins, activate your licence and import your chosen demo.',
+                     'description': '<p>We install the theme and plugins, activate your licence and import your chosen demo. We email you within 1 business day to collect site access.</p>'})
     for pl in PLANS:
         products.append({'key': 'plan-' + pl['plan'], 'name': '%s %s' % (pl['name'], pl['period_name']), 'slug': 'plan-' + pl['plan'].replace('_', '-'),
                          'price': pl['price'], 'categories': ['pc-plans-' + pl['period']], 'image': 'shot-library', 'virtual': True, 'sold_individually': True,
@@ -1142,7 +1163,7 @@ def package(builder):
                             'wpessential_blog_over': 'Blog', 'wpessential_blog_title': 'Guides and release notes',
                             'wpessential_blog_lead': 'Tutorials for the theme, new demos and WordPress tips from the WPEssential team.',
                             'wpessential_404_title': 'This page took a different demo.', 'wpessential_404_lead': 'The link may be old or mistyped. Search the site or start from one of these.'},
-                'woocommerce': {'pages': {'cart': 'cart', 'checkout': 'checkout', 'myaccount': 'my-account'} if builder == 'gutenberg' else {}, 'options': {'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
+                'woocommerce': {'pages': {'cart': 'cart', 'checkout': 'checkout', 'myaccount': 'my-account'} if builder == 'gutenberg' else {}, 'options': {'woocommerce_enable_myaccount_registration': 'yes', 'woocommerce_registration_generate_username': 'yes', 'woocommerce_registration_generate_password': 'no', 'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
                                             'woocommerce_coming_soon': 'no', 'woocommerce_store_pages_only': 'no',
                                             'woocommerce_enable_guest_checkout': 'yes',
                                             'woocommerce_cod_settings': {'enabled': 'yes', 'title': 'Pay by invoice'}}}}
@@ -1177,5 +1198,24 @@ SEO = {
 }
 
 LEGAL_WIDTH = '1360px'  # Figma 20
+# Figma 49-51: refund policy, licence terms and billing FAQ ({key: (title, slug, overline, subtitle, sections)}).
+LEGAL_EXTRA = {
+    'refund-policy': ('Refund policy', 'refund-policy', 'Legal', None, [
+        ('Pro plugin (via Kelviq)', ['Request a full refund within 14 days of purchase. Kelviq, our merchant of record, processes the refund to your original payment method.']),
+        ('Subscriptions', ['Cancel any time. You keep access until the end of the paid period. Renewals can be refunded within 7 days.']),
+        ('Pro add-on services', ['Add-on services bought with Pro can be refunded before work begins.']),
+        ('Invoiced services', ['Custom services follow the terms in your quote. Completed milestones are non-refundable.']),
+        ('How to ask', ['<a href="{{page:support}}">Open a ticket</a> or email support@wpessential.org with your order number.'])]),
+    'licence-terms': ('Licence terms', 'licence-terms', 'Legal', 'WPEssential Pro licence', [
+        ('What you get', ['A licence key for the number of sites in your plan, with updates and support while active.']),
+        ('GPL', ['WPEssential and WPEssential Pro are GPL-licensed. The key gives access to updates, Pro demos and support.']),
+        ('Sites', ['Move a licence between sites any time from My Account → Licences.']),
+        ('Expiry', ['If a licence expires, Pro keeps working but stops receiving updates and Pro demo imports.'])]),
+    'billing-faq': ('Billing FAQ', 'billing-faq', 'Help', 'Answers to common payment questions', [
+        ('Who charges my card?', ['Products are sold by Kelviq as merchant of record, so your statement shows Kelviq. Services are invoiced by Vertex Systems Network.']),
+        ('Do you charge tax?', ['Kelviq calculates and collects sales tax or VAT where it applies.']),
+        ('Which methods are accepted?', ['Products: cards and wallets via Kelviq. Services: Payoneer, PayPal, Stripe or bank transfer.']),
+        ('Can I get an invoice with my company details?', ['Yes. Add your company and tax ID under My Account → Addresses before buying.'])]),
+}
 # Brand, contact email and what the site sells, used for the legal pages (tools/demo-builder/legal.py).
 LEGAL = ('WPEssential, a Vertex Systems Network (Pvt.) Ltd. company', 'support@wpessential.org', 'themes, demos, plans and services')
