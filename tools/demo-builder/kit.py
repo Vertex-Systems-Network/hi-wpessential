@@ -54,9 +54,14 @@ def details(summary, *inner, style='wpe-flush'):
                             'cssClass': _classes(style)})
 
 
+def faq(pairs, style=None):
+    """One accordion holding every question, so the items sit together."""
+    return el('accordion', {'items': [{'title': re.sub('<[^>]+>', '', q), 'content': p(a)} for q, a in pairs], 'cssClass': _classes(style)})
+
+
 def table(head, rows, className=None):
     line = lambda cells: ','.join('"%s"' % str(c).replace('"', '""') for c in cells)  # noqa: E731
-    return el('table', {'data': '\n'.join([line(head)] + [line(r) for r in rows]), 'cssClass': className})
+    return el('table', {'data': '\n'.join([line(head)] + [line(r) for r in rows]), 'caption': ' ', 'cssClass': className})
 
 
 def separator(className=None):
