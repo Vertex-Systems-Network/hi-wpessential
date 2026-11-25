@@ -215,7 +215,6 @@ body:has(#yearly:target) .wpe-ess-toggle--dark a[href="#yearly"], body:has(#life
 .wpe-ess-table th, .wpe-ess-table td { padding: 14px 20px; border: 0; border-bottom: 1px solid var(--wp--preset--color--border); }
 .wpe-ess-table tr:last-child td { border-bottom: 0; }
 .wpe-ess-table td:first-child { font-weight: 600; }
-.wpe-ess-table td:nth-child(3), .wpe-ess-table th:nth-child(3) { background: rgba(31, 72, 166, .05); color: var(--wp--preset--color--secondary); }
 .wpe-ess-section details { border: 1px solid var(--wp--preset--color--border); border-radius: 14px; padding: 18px 22px; margin-block: 12px; background: var(--wp--preset--color--surface); }
 .wpe-ess-section details summary { font-weight: 600; cursor: pointer; }
 .wpe-ess-section details p { color: var(--wp--preset--color--text-muted); margin: 12px 0 0; }
@@ -468,3 +467,14 @@ ul.wpe-ess-facts { list-style: none; padding: 0; margin: 8px 0 0; max-width: 560
 .wpe-main > .wpe-ess-hero:first-child, .wpe-main > style:first-child + .wpe-ess-hero { margin-top: 0 !important; }
 .wpe-ess-section .wpe-accordion__item { margin-block: 0 !important; }
 .wpe-ess-grid + .wpe-ess-band, .wpe-ess-grid + style + .wpe-ess-band { margin-top: 48px !important; }
+/* Pricing (Figma 02): module groups, add-on note, centred closing band. */
+.wpe-ess-badge--blue { background: #1F48A6; color: #fff; }
+.wpe-ess-badge--purple { background: #6D4AE0; color: #fff; }
+.wpe-ess-badge--ink { background: var(--wp--preset--color--ink); color: #fff; }
+.wpe-ess-badge--teal { background: #0F8B8D; color: #fff; }
+.wpe-ess-badge--green { background: #1E9E5A; color: #fff; }
+.wpe-ess-card .wpe-ess-badge, .wpe-ess-plan .wpe-ess-badge { align-self: flex-start; width: auto; }
+.wpe-ess-plain { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; color: var(--wp--preset--color--text-muted); font-size: 14px; }
+.wpe-ess-note-box { margin-top: 24px !important; padding: 16px 20px; border-radius: 12px; background: rgba(232, 112, 26, .08); font-size: 14px; }
+.wpe-ess-band--center { flex-direction: column; align-items: center; text-align: center; padding: 64px 32px; }
+.wpe-ess-note-pill { display: inline-block; width: fit-content; align-self: flex-start; margin-top: 16px !important; padding: 8px 14px; border: 1px solid var(--wp--preset--color--border); border-radius: 999px; font-size: 13px; }

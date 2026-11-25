@@ -61,7 +61,7 @@ def faq(pairs, style=None):
 
 def table(head, rows, className=None):
     line = lambda cells: ','.join('"%s"' % str(c).replace('"', '""') for c in cells)  # noqa: E731
-    return el('table', {'data': '\n'.join([line(head)] + [line(r) for r in rows]), 'caption': ' ', 'cssClass': className})
+    return el('table', {'data': '\n'.join([line(head)] + [line(r) for r in rows]), 'caption': ' ', 'searchable': False, 'sortable': False, 'cssClass': className})
 
 
 def separator(className=None):
