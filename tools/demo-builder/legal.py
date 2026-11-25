@@ -72,7 +72,10 @@ def _g_page(title, sections, b=b):
         for it in items:
             body.append(b.ul(it[1]) if isinstance(it, tuple) else b.p(it))
     return b.join(b.section(b.p('Legal', style='wpe-overline'), b.h(title, level=1, size='h1'),
-                            b.p('Last updated %s' % UPDATED, color='text-muted', size='small'), className='wpe-section wpe-section--sm', content='760px'),
+                            b.p('Last updated %s' % UPDATED, color='text-muted', size='small'),
+                            b.p(' '.join('<a class="wpe-legal-chip%s" href="%s">%s</a>' % (' is-current' if t == title.split()[0] or (t == 'Refunds' and 'Refund' in title) or (t == 'Cookies' and 'Cookie' in title) else '', u, t)
+                                         for t, u in LINKS), className='wpe-legal-chips'),
+                            className='wpe-section wpe-section--sm', content='760px'),
                   b.section(*body, className='wpe-section wpe-section--sm', content='760px'))
 
 
