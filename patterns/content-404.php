@@ -10,8 +10,8 @@
 
 ?>
 <!-- wp:group {"tagName":"section","className":"wpe-section wpe-center","layout":{"type":"constrained","contentSize":"640px"}} -->
-<section class="wp-block-group wpe-section wpe-center"><!-- wp:paragraph {"className":"is-style-wpe-overline"} -->
-<p class="is-style-wpe-overline"><?php esc_html_e( 'Error 404', 'hi-wpessential' ); ?></p>
+<section class="wp-block-group wpe-section wpe-center"><!-- wp:paragraph {"className":"wpe-404-num"} -->
+<p class="wpe-404-num" aria-hidden="true">404</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1,"fontSize":"display"} -->
