@@ -327,8 +327,7 @@ def g_home():
         g_search('Search themes, demos and docs…', 'wpe-ess-hero__search'),
         html('<p class="wpe-ess-hero__popular"><span>Popular:</span>%s</p>' % ''.join(
             chip(t, '{{page:%s}}' % k) for t, k in [('Fashion store', 'p-maison'), ('Events', 'p-pulse'), ('Business', 'p-base'), ('Pricing', 'pricing'), ('Services', 'services'), ('Docs', 'docs')])),
-        html('<ul class="wpe-ess-hero__stats">%s</ul>' % ''.join('<li><b>%s</b><span>%s</span></li>' % x for x in
-                                                            [('3', 'ready demos'), ('2', 'native builders'), ('20', 'languages'), ('8', 'breakpoints')])),
+        b.shortcode('[wpessential_demo_cards stats="1"]'),
         html('<div class="wpe-ess-hero__shots"><img src="{{media:demo-pulse}}" alt="Pulse demo" class="is-left"><img src="{{media:demo-maison}}" alt="Maison demo" class="is-mid"><img src="{{media:demo-base}}" alt="Base demo" class="is-right"></div>'),
         tag='section', align='full', className='wpe-ess-hero', layout='constrained', content='1680px')
     cats = b.group(demo_filter(),
@@ -888,9 +887,8 @@ def e_home():
                     e.row(e.button('Browse demos', '{{page:demos}}'), e.button('See pricing', '{{page:pricing}}', 'light'), gap=12, justify='center', wrap=True, mobile_direction='row'),
                     e.image('shot-library', 'The WPEssential Demo Library', radius=20),
                     bg='ink', pad=(112, 24, 96, 24), align='center'),
-        e.container(e.grid(e.counter(3, 'ready-made demos'), e.counter(2, 'native builders'), e.counter(20, 'languages'), e.counter(95, 'PageSpeed score', '+'), columns=4),
-                    pad=(56, 24, 56, 24)),
-        e.container(e.overline('Demos'), e.heading('Start from a finished site'), e_products('demos'), e.button('All demos', '{{page:demos}}', 'outline'),
+        e.container(e.shortcode('[wpessential_demo_cards stats="1"]'), bg='ink', pad=(8, 24, 56, 24)),
+        e.container(e.overline('Demos'), e.heading('Start from a finished site'), e.shortcode('[wpessential_demo_cards]'), e.button('All demos', '{{page:demos}}', 'outline'),
                     bg='surface-alt', pad=(80, 24, 80, 24)),
         e.container(e.overline('The theme'), e.heading('One theme. Every niche. Demos that do the heavy lifting.'), e_icon_cards(FEATURES), pad=(80, 24, 80, 24)),
         e.container(e.overline('Free plugins'), e.heading('Free on WordPress.org'), e_plugin_cards(), e.button('All plugins', '{{page:plugins}}', 'outline'),
@@ -914,7 +912,7 @@ def e_home():
 
 def e_demos():
     out = [e_title('Demos', 'Start from a finished site', 'Every demo imports in one click and ships native Gutenberg and Elementor versions.'),
-           e.container(e_products('demos'), pad=(24, 24, 56, 24))]
+           e.container(e.shortcode('[wpessential_demo_cards facets="1"]'), pad=(24, 24, 56, 24))]
     for i, d in enumerate(DEMOS):
         out.append(e.container(e.row(e.col(e.image(d['site'], '%s demo home page' % d['name'], radius=20), width=60),
                                      e.col(e.overline(d['niche']), e.heading(d['name']), e.text(d['short']),
