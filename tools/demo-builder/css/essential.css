@@ -206,10 +206,6 @@
 .wpe-ess-toggle--dark a { color: #fff; }
 .wpe-ess-toggle--dark a:first-child, .wpe-ess-pricing-yearly .wpe-ess-toggle--dark a { background: #fff; color: var(--wp--preset--color--ink); }
 .wpe-ess-section--pull { padding-top: 0; margin-top: -1px; background: linear-gradient(var(--wp--preset--color--ink) 0 120px, transparent 120px); }
-.wpe-ess-period { display: none; }
-.wpe-ess-period:first-child { display: block; }
-.wpe-ess-periods:has(.wpe-ess-period:target) .wpe-ess-period { display: none; }
-.wpe-ess-periods .wpe-ess-period:target { display: block; }
 .wpe-ess-note { color: var(--wp--preset--color--text-muted); font-size: 14px; margin-top: 24px !important; }
 body:has(#yearly:target) .wpe-ess-toggle--dark a, body:has(#lifetime:target) .wpe-ess-toggle--dark a { background: transparent; color: #fff; }
 body:has(#yearly:target) .wpe-ess-toggle--dark a[href="#yearly"], body:has(#lifetime:target) .wpe-ess-toggle--dark a[href="#lifetime"] { background: #fff; color: var(--wp--preset--color--ink); }
