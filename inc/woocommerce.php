@@ -557,11 +557,11 @@ function wpessential_woo_demo_detail() {
 		<div class="wpe-demo__grid">
 			<div class="wpe-demo__main">
 				<div class="wpe-demo__preview">
-					<div class="wpe-demo__bar" aria-hidden="true"><span></span><span></span><span></span><?php if ( $host ) : ?><em><?php echo esc_html( $host ); ?></em><?php endif; ?></div>
+					<div class="wpe-demo__bar" aria-hidden="true"><span></span><span></span><span></span><?php echo $host ? '<em>' . esc_html( $host ) . '</em>' : ''; ?></div>
 					<?php echo wp_get_attachment_image( $shot, 'large', false, array( 'class' => 'wpe-demo__shot' ) ); ?>
 					<p class="wpe-demo__note"><?php esc_html_e( 'Live demo running in your browser — click, hover and browse every page before you import.', 'hi-wpessential' ); ?></p>
 				</div>
-				<nav class="wpe-demo__tabs" aria-label="<?php esc_attr_e( 'Sections', 'hi-wpessential' ); ?>"><a class="is-on" href="#overview"><?php esc_html_e( 'Overview', 'hi-wpessential' ); ?></a><?php if ( $pages ) : ?><a href="#pages"><?php esc_html_e( 'Pages', 'hi-wpessential' ); ?></a><?php endif; ?><a href="<?php echo esc_url( $log ? (string) get_permalink( $log ) : '#overview' ); ?>"><?php esc_html_e( 'Changelog', 'hi-wpessential' ); ?></a></nav>
+				<nav class="wpe-demo__tabs" aria-label="<?php esc_attr_e( 'Sections', 'hi-wpessential' ); ?>"><a class="is-on" href="#overview"><?php esc_html_e( 'Overview', 'hi-wpessential' ); ?></a><?php echo $pages ? '<a href="#pages">' . esc_html__( 'Pages', 'hi-wpessential' ) . '</a>' : ''; ?><a href="<?php echo esc_url( $log ? (string) get_permalink( $log ) : '#overview' ); ?>"><?php esc_html_e( 'Changelog', 'hi-wpessential' ); ?></a></nav>
 				<section id="overview" class="wpe-demo__overview">
 					<?php if ( $product->get_short_description() ) : ?>
 						<h2><?php echo esc_html( wp_strip_all_tags( $product->get_short_description() ) ); ?></h2>

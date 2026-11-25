@@ -15,11 +15,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1,"fontSize":"display"} -->
-<h1 class="wp-block-heading has-display-font-size"><?php echo esc_html( (string) get_option( 'wpessential_404_title', '' ) ?: __( 'This page took a day off', 'hi-wpessential' ) ); ?></h1>
+<h1 class="wp-block-heading has-display-font-size"><?php echo esc_html( '' !== (string) get_option( 'wpessential_404_title', '' ) ? (string) get_option( 'wpessential_404_title' ) : __( 'This page took a day off', 'hi-wpessential' ) ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"is-style-wpe-lead"} -->
-<p class="is-style-wpe-lead"><?php echo esc_html( (string) get_option( 'wpessential_404_lead', '' ) ?: __( 'The link may be broken or the page may have moved. Try a search or head back home.', 'hi-wpessential' ) ); ?></p>
+<p class="is-style-wpe-lead"><?php echo esc_html( '' !== (string) get_option( 'wpessential_404_lead', '' ) ? (string) get_option( 'wpessential_404_lead' ) : __( 'The link may be broken or the page may have moved. Try a search or head back home.', 'hi-wpessential' ) ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:search {"label":"<?php echo esc_attr__( 'Search', 'hi-wpessential' ); ?>","showLabel":false,"buttonText":"<?php echo esc_attr__( 'Search', 'hi-wpessential' ); ?>"} /-->
