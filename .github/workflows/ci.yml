@@ -32,3 +32,5 @@ jobs:
         run: for f in theme.json styles/*.json bundled-demos/*/demo.json bundled-demos/*/*/content.json; do python3 -m json.tool "$f" > /dev/null || exit 1; done
       - name: JavaScript syntax
         run: for f in assets/js/*.js; do node --check "$f" || exit 1; done
+      - name: CSS class prefix guard (wpe-)
+        run: python3 tools/check-prefix.py
