@@ -852,8 +852,8 @@ function wpessential_demo_cards( $atts ) {
 	$includes = array();
 	$cards    = '';
 	foreach ( $items as $item ) {
-		$free  = 0.0 === (float) $item->get_price();
-		$name  = preg_replace( '/\s+demo$/i', '', $item->get_name() );
+		$free = 0.0 === (float) $item->get_price();
+		$name = preg_replace( '/\s+demo$/i', '', $item->get_name() );
 		// Niches: the wpe_demo_niche taxonomy (WPEssential Taxonomies module); the old meta is the fallback.
 		$terms = taxonomy_exists( 'wpe_demo_niche' ) ? wp_get_post_terms( $item->get_id(), 'wpe_demo_niche' ) : array();
 		$keys  = ! is_wp_error( $terms ) && $terms ? wp_list_pluck( $terms, 'slug' ) : array_filter( array_map( 'sanitize_key', explode( ',', (string) $item->get_meta( '_wpe_niches' ) ) ) );

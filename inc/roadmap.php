@@ -117,10 +117,10 @@ function wpessential_post_byline( $name ) {
 }
 add_filter( 'get_the_author_display_name', 'wpessential_post_byline' );
 
-
 /**
  * Team members (Figma 13) from the wpe_team post type with its Role field.
  *
+ * @param array|string $atts Shortcode attributes: over, title, lead, map, card.
  * @return string
  */
 function wpessential_team( $atts = array() ) {
@@ -137,7 +137,14 @@ function wpessential_team( $atts = array() ) {
 	);
 	// Team posts (wpe_team CPT with a Role field); the wpessential_team option ([name, role] rows) is the fallback.
 	$members = array();
-	$posts   = post_type_exists( 'wpe_team' ) ? get_posts( array( 'post_type' => 'wpe_team', 'numberposts' => 8, 'orderby' => 'menu_order date', 'order' => 'ASC' ) ) : array();
+	$posts   = post_type_exists( 'wpe_team' ) ? get_posts(
+		array(
+			'post_type'   => 'wpe_team',
+			'numberposts' => 8,
+			'orderby'     => 'menu_order date',
+			'order'       => 'ASC',
+		)
+	) : array();
 	foreach ( $posts as $post ) {
 		$members[] = array( $post->post_title, (string) get_post_meta( $post->ID, 'wpe_role', true ), get_the_post_thumbnail( $post, 'medium', array( 'alt' => '' ) ) );
 	}
