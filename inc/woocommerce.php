@@ -880,7 +880,7 @@ function wpessential_demo_cards( $atts ) {
 			. ( $import ? '<a class="is-import" href="' . esc_url( (string) get_permalink( $import ) ) . '">' . esc_html__( 'Import', 'hi-wpessential' ) . ' <span aria-hidden="true">↗</span></a>' : '' )
 			. '</span></div><div class="wpe-ess-demo__body">'
 			. '<div class="wpe-ess-demo__head"><h3 class="wpe-ess-demo__name"><a href="' . esc_url( $url ) . '">' . esc_html( $name ) . '</a></h3>'
-			. '<p class="wpe-ess-demo__price">' . ( $free ? esc_html__( 'Free', 'hi-wpessential' ) : wp_kses_post( wc_price( (float) $item->get_price(), array( 'decimals' => 0 ) ) ) ) . '</p></div>'
+			. '<p class="wpe-ess-demo__price">' . ( $free ? esc_html__( 'Free', 'hi-wpessential' ) : esc_html__( 'Pro', 'hi-wpessential' ) ) . '</p></div>'
 			. '<p class="wpe-ess-demo__text">' . esc_html( '' !== $text ? $text : wp_strip_all_tags( $item->get_short_description() ) ) . '</p>'
 			. '<div class="wpe-ess-demo__meta"><span>' . ( '' !== (string) $item->get_meta( '_wpe_card_meta' ) ? '<i class="wpe-ess-demo__star" aria-hidden="true">★</i> ' . esc_html( (string) $item->get_meta( '_wpe_card_meta' ) ) : esc_html__( 'Gutenberg & Elementor', 'hi-wpessential' ) ) . '</span><span class="wpe-ess-gb" title="Gutenberg">G</span><span class="wpe-ess-gb" title="Elementor">E</span></div>'
 			. '</div></div>';

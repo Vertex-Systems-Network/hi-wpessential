@@ -62,11 +62,11 @@ OFFICE = {'street': 'House 3213/4 8M, Fried Abad, Baron Bohar Gate', 'city': 'Mu
 
 YEARLY_DISCOUNT = 20
 TIERS = [
-    dict(key='starter', name='Starter', monthly=10, lifetime=239, sites=1, white=0, short='One theme with its demos for one website.',
+    dict(key='starter', who='For one website', name='Starter', monthly=10, lifetime=239, sites=1, white=0, short='One theme with its demos for one website.',
          inc=['1 theme + its demos', 'Gutenberg & Elementor', '1 website', 'Updates & support']),
-    dict(key='pro', name='Pro', monthly=30, lifetime=719, sites=5, white=0, featured=True, short='Every theme and demo for growing studios.',
+    dict(key='pro', who='For freelancers & studios', name='Pro', monthly=30, lifetime=719, sites=5, white=0, featured=True, short='Every theme and demo for growing studios.',
          inc=['All themes + every demo', 'Early access to new demos', '5 websites', 'Priority support']),
-    dict(key='agency', name='Agency', monthly=100, lifetime=2399, sites=0, white=1, short='Unlimited client sites, white label and dedicated help.',
+    dict(key='agency', who='For agencies', name='Agency', monthly=100, lifetime=2399, sites=0, white=1, short='Unlimited client sites, white label and dedicated help.',
          inc=['Everything in Pro', 'Unlimited websites', 'White-label dashboard', 'Dedicated success manager']),
 ]
 BILLING = [('monthly', 'Monthly', 1), ('yearly', 'Yearly', 12), ('lifetime', 'Lifetime', 0)]
@@ -227,10 +227,10 @@ def g_header():
 
 
 def g_footer():
-    cols = [('Marketplace', [('Demos', '{{page:demos}}'), ('Plugins', '{{page:plugins}}'), ('Pricing', '{{page:pricing}}'), ('My account', '{{woo:myaccount}}')]),
-            ('Resources', [('Documentation', '{{page:docs}}'), ('Blog', '{{page:blog}}'), ('Changelog', '{{page:changelog}}'), ('Roadmap', '{{page:roadmap}}')]),
-            ('Company', [('About', '{{page:about}}'), ('Vertex Systems Network (Pvt.) Ltd.', '{{page:about}}'), ('Services', '{{page:services}}'), ('Care plans', '{{page:svc-care-plans}}'), ('Contact', '{{page:contact}}')]),
-            ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refund policy', '{{page:refund-policy}}'), ('Billing FAQ', '{{page:billing-faq}}'), ('Licence terms', '{{page:licence-terms}}')])]
+    cols = [('Products', [('Themes', '{{page:demos}}'), ('Demos', '{{page:demos}}'), ('Plugins', '{{page:plugins}}'), ('Pro add-ons', '{{page:pro}}'), ('Free plugin', '{{page:plugins}}')]),  # Figma footer
+            ('Resources', [('Documentation', '{{page:docs}}'), ('Changelog', '{{page:changelog}}'), ('Blog', '{{page:blog}}'), ('Status', '{{page:support}}'), ('Roadmap', '{{page:roadmap}}')]),
+            ('Company', [('About', '{{page:about}}'), ('Vertex Systems Network (Pvt.) Ltd.', '{{page:about}}'), ('Services', '{{page:services}}'), ('Careers', '{{page:contact}}'), ('Contact', '{{page:contact}}')]),
+            ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refunds', '{{page:billing-faq}}'), ('Refund policy', '{{page:refund-policy}}'), ('Affiliates', '{{page:contact}}')])]
     band = b.group(b.group(over('Newsletter', tone='orange'), b.h('New themes and demo drops, monthly.', level=3, className='wpe-ess-band__title'),
                            b.p('One email a month. Release notes, freebies and discounts. Unsubscribe anytime.', className='wpe-ess-band__text'), layout='default'),
                    b.el('forms', {'formId': '{{form:newsletter}}', 'showTitle': False}),
@@ -394,13 +394,16 @@ def g_home():
                      width='42%', valign='center'),
             valign='center', className='wpe-ess-gap'),
         tag='section', align='full', className='wpe-ess-section', layout='constrained', content='1680px')
-    svc = [x for x in SERVICES if x[1] in ICON_FOR]
+    svc = [('palette', 'Custom design', 'A unique theme style or a full custom site, designed in Figma and built on Hi WPEssential.', 'from $1,490', 'svc-custom-design'),  # Figma 01
+           ('download', 'Setup & migration', 'We install, import your demo, move your content and launch on your hosting.', 'from $290', 'svc-migration'),
+           ('bolt', 'Speed & SEO', 'Core Web Vitals, caching, image optimisation and on-page SEO to rank and convert.', 'from $390', 'svc-speed-seo'),
+           ('headset', 'Care plans', 'Updates, backups, uptime monitoring and priority fixes, every month.', 'from $49/mo', 'svc-care-plans')]
     services = b.group(
         head('Services by Vertex Systems Network (Pvt.) Ltd.', 'Need it done for you? Our team builds, moves and maintains WordPress sites.',
              tone='orange', action=arrow('Book a free call', '{{page:contact}}'), title_color='on-ink'),
-        b.group(*[b.group(ico(ICON_FOR[t]), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
-                          html('<a class="wpe-ess-card__price" href="{{page:services}}"><code>%s</code><span aria-hidden="true">↗</span></a>' % price),
-                          layout='default', className='wpe-ess-card wpe-ess-card--dark') for _, t, d, price in svc],
+        b.group(*[b.group(ico(i_), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
+                          html('<a class="wpe-ess-card__price" href="{{page:%s}}"><code>%s</code><span aria-hidden="true">↗</span></a>' % (k, price)),
+                          layout='default', className='wpe-ess-card wpe-ess-card--dark') for i_, t, d, price, k in svc],
                 layout='grid', columns=4, grid_min='14rem', className='wpe-ess-grid'),
         tag='section', align='full', className='wpe-ess-section wpe-ess-section--ink', layout='constrained', content='1680px')
     pricing = b.group(
@@ -418,7 +421,7 @@ def g_home():
                 layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid wpe-ess-grid--3'),
         tag='section', align='full', className='wpe-ess-section wpe-ess-section--alt', layout='constrained', content='1680px')
     news = b.group(
-        head('Loved by builders', 'Agencies and creators ship faster with WPEssential.'),
+        head('Loved by builders', 'Agencies and creators ship faster with WPEssential.', align='center'),
         b.shortcode('[wpessential_testimonials]'),
         tag='section', align='full', className='wpe-ess-section', layout='constrained', content='1680px')
     return b.join(hero, cats, demos, theme, how, services, pricing, docs, news)
@@ -1181,8 +1184,13 @@ def package(builder):
                          'menu_order': i + 1, 'short': desc,
                          'description': '<p>%s</p><p>After checkout we email you within one business day to book a kick-off call.</p>' % desc})
     menus = [{'name': 'Essential menu', 'location': 'primary', 'items': [
-        {'title': 'Demos', 'page': 'demos'}, {'title': 'Plugins', 'page': 'plugins'}, {'title': 'Docs', 'page': 'docs'}, {'title': 'Services', 'page': 'services'},
-        {'title': 'Pricing', 'page': 'pricing'}, {'title': 'Blog', 'page': 'blog'}]}]
+        # Figma 01: Themes ▾, Demos, Plugins ▾, Docs, Services ▾, Pricing.
+        {'title': 'Themes', 'page': 'demos', 'children': [{'title': 'Hi WPEssential theme', 'page': 'demos'}, {'title': 'WPEssential Pro', 'page': 'pro'}, {'title': 'Pro add-ons', 'url': '{{home}}product-category/pro-addons/'}]},
+        {'title': 'Demos', 'page': 'demos'},
+        {'title': 'Plugins', 'page': 'plugins', 'children': [{'title': 'Free plugins', 'page': 'plugins'}, {'title': 'WPEssential Pro', 'page': 'pro'}, {'title': 'Changelog', 'page': 'changelog'}]},
+        {'title': 'Docs', 'page': 'docs'},
+        {'title': 'Services', 'page': 'services', 'children': [{'title': 'All services', 'page': 'services'}, {'title': 'Request a quote', 'page': 'quote'}, {'title': 'Support', 'page': 'support'}]},
+        {'title': 'Pricing', 'page': 'pricing'}]}]
     settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'essential', 'style_data': style_data(), 'motion': 'subtle',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'header-checkout': {'content': g_header()},
                           'footer': {'content': g_footer()}, 'footer-simple': {'content': g_footer()}},

@@ -62,7 +62,7 @@ function wpessential_testimonials() {
 			continue;
 		}
 		$name = (string) ( $row[1] ?? '' );
-		$out .= '<figure class="wpe-ess-quote"><blockquote>“' . esc_html( (string) $row[0] ) . '”</blockquote><figcaption><span class="wpe-ess-quote__avatar" aria-hidden="true">' . esc_html( mb_substr( $name, 0, 1 ) ) . '</span>'
+		$out .= '<figure class="wpe-ess-quote"><span class="wpe-ess-quote__stars" aria-label="' . esc_attr__( '5 out of 5', 'hi-wpessential' ) . '">★★★★★</span><blockquote>“' . esc_html( (string) $row[0] ) . '”</blockquote><figcaption><span class="wpe-ess-quote__avatar" aria-hidden="true">' . esc_html( mb_substr( $name, 0, 1 ) ) . '</span>'
 			. '<span><b>' . esc_html( $name ) . '</b><small>' . esc_html( (string) ( $row[2] ?? '' ) ) . '</small></span></figcaption></figure>';
 	}
 	return '' === $out ? '' : '<div class="wpe-ess-quotes">' . $out . '</div>';
