@@ -189,6 +189,9 @@ POSTS = [
                ('ul', ['Choose Gutenberg for the fastest pages and no page-builder plugin.', 'Choose Elementor if your team already edits with it.', 'Switching later means importing the other package on a fresh site.']),
                ('img', 'site-maison', 'The Maison demo home page'),
                ('quote', 'Pick Gutenberg for the leanest pages; pick Elementor when your team already edits with it. The design is the same either way.', 'WPEssential team')]),
+    dict(key='post-release', title='Hi WPEssential 1.0.0 is out', slug='hi-wpessential-1-0-0', image='shot-library', date='2026-10-18 09:00:00', cat='cat-releases',
+         excerpt='Pulse and Maison demos, AI Connect and shop filters — everything in the first stable release.',
+         body=[('p', 'Version 1.0.0 brings the Pulse and Maison demos for Gutenberg and Elementor, AI Connect (MCP), shop filters with variation swatches, and dark mode colours on every style variation.')]),
     dict(key='post-pulse', title='New demo: Pulse for conferences and events', slug='new-demo-pulse', image='site-pulse', date='2026-10-08 09:00:00', cat='cat-news',
          excerpt='Speakers, a two-day agenda, ticket passes and The Events Calendar, ready to import.',
          body=[('p', 'Pulse is our second Pro demo. It is built for conferences, meetups and anyone who sells tickets.'),
@@ -1163,6 +1166,10 @@ def package(builder):
         {'key': 'pc-services', 'taxonomy': 'product_cat', 'name': 'Services', 'slug': 'services', 'meta': {'thumbnail_id': '{{media_id:shot-import}}'}},
         {'key': 'cat-news', 'taxonomy': 'category', 'name': 'News', 'slug': 'news'},
         {'key': 'cat-guides', 'taxonomy': 'category', 'name': 'Guides', 'slug': 'guides'},
+        {'key': 'cat-releases', 'taxonomy': 'category', 'name': 'Releases', 'slug': 'releases'},
+        {'key': 'tag-import', 'taxonomy': 'post_tag', 'name': 'Demo import', 'slug': 'demo-import'},
+        {'key': 'tag-gutenberg', 'taxonomy': 'post_tag', 'name': 'Gutenberg', 'slug': 'gutenberg'},
+        {'key': 'tag-elementor', 'taxonomy': 'post_tag', 'name': 'Elementor', 'slug': 'elementor'},
     ]
     pages = [('home', 'Home', 'home', g_home, e_home), ('demos', 'Demos', 'demos', g_demos, e_demos),
              ('plugins', 'Plugins', 'plugins', g_plugins, e_plugins), ('pricing', 'Pricing', 'pricing', g_pricing, e_pricing), ('services', 'Services', 'services', g_services, e_services),
@@ -1185,7 +1192,7 @@ def package(builder):
     content.append({'key': 'blog', 'type': 'page', 'title': 'Blog', 'slug': 'blog', 'content': ''})
     for p in POSTS:
         content.append({'key': p['key'], 'type': 'post', 'title': p['title'], 'slug': p['slug'], 'featured': p['image'], 'date': p['date'],
-                        'terms': {'category': [p['cat']]}, 'excerpt': p['excerpt'], 'content': post_html(p['body'])})
+                        'terms': {'category': [p['cat']], 'post_tag': ['tag-import', 'tag-gutenberg', 'tag-elementor']}, 'excerpt': p['excerpt'], 'content': post_html(p['body']), 'sticky': p['key'] == 'post-import'})
     products = []
     for d in DEMOS:
         c = next(x for x in DEMO_CARDS if x[0] == d['key'])
@@ -1219,14 +1226,14 @@ def package(builder):
         {'title': 'Docs', 'page': 'docs'},
         {'title': 'Services', 'page': 'services', 'children': [{'title': 'All services', 'page': 'services'}, {'title': 'Request a quote', 'page': 'quote'}, {'title': 'Support', 'page': 'support'}]},
         {'title': 'Pricing', 'page': 'pricing'}]}]
-    settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'essential', 'style_data': style_data(), 'motion': 'subtle',
+    settings = {'front_page': 'home', 'blog_page': 'blog', 'hide_sample_post': True, 'style': 'essential', 'style_data': style_data(), 'motion': 'subtle',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'header-checkout': {'content': g_header()},
                           'footer': {'content': g_footer()}, 'footer-simple': {'content': g_footer()}},
                 'options': {'posts_per_page': 9, 'blogname': 'WPEssential', 'blogdescription': 'Premium WordPress themes and one-click demos.',
                             'wpessential_hero_stats': HERO_STATS, 'wpessential_testimonials': TESTIMONIALS,
                             'wpessential_blog_over': 'Blog', 'wpessential_blog_title': 'Guides and release notes',
                             'wpessential_blog_lead': 'Tutorials for the theme, new demos and WordPress tips from the WPEssential team.',
-                            'wpessential_404_title': 'This page took a different demo.', 'wpessential_404_lead': 'The link may be old or mistyped. Search the site or start from one of these.'},
+                            'wpessential_404_links': [['Browse demos', 'demos'], ['Pricing', 'pricing'], ['Docs', 'docs']], 'wpessential_404_title': 'This page took a different demo.', 'wpessential_404_lead': 'The link may be old or mistyped. Search the site or start from one of these.'},
                 'woocommerce': {'pages': {'cart': 'cart', 'checkout': 'checkout', 'myaccount': 'my-account'}, 'options': {'woocommerce_enable_myaccount_registration': 'yes', 'woocommerce_registration_generate_username': 'yes', 'woocommerce_registration_generate_password': 'no', 'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
                                             'woocommerce_coming_soon': 'no', 'woocommerce_store_pages_only': 'no',
                                             'woocommerce_enable_guest_checkout': 'yes',

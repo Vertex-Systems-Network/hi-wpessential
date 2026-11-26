@@ -1184,3 +1184,11 @@ body:not(:has(.wpe-ess-hero)) .wpe-ess-toggle { margin-left: 0 !important; margi
 .wpe-ess-people small { font-size: 12px; color: #4a5a7a; }
 .wpe-code:has(.wpe-ess-stats), .wpe-code:has(.wpe-ess-teamgrid) { --wpek-content-margin: 0 !important; width: 100% !important; max-width: none !important; }
 @media (max-width: 900px) { .wpe-ess-teamgrid { grid-template-columns: 1fr; } }
+
+/* Figma 15: tags as soft chips, share row, "Keep reading" left aligned */
+body.single-post .is-style-wpe-hashtags a { display: inline-block; padding: 4px 10px; margin: 0 6px 6px 0; border: 1px solid #dde4f0; border-radius: 999px; background: #eef2f9; font-size: 12px; color: #33415c; text-decoration: none; }
+body.single-post .is-style-wpe-hashtags a::before { content: none !important; }
+body.single-post .wpe-post-share { max-width: 1360px; margin: 16px auto 0 !important; }
+body.single-post :is(.wpe-author-box, .wpe-post-nav) { display: none !important; }
+body.single-post .wpe-keep-reading > * { max-width: 1680px !important; }
+.error404 .wp-block-search { max-width: 520px; margin-inline: auto; } .error404 .wp-block-search__input { border-radius: 999px; }

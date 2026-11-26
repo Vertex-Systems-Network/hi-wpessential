@@ -68,3 +68,21 @@ function wpessential_testimonials() {
 	return '' === $out ? '' : '<div class="wpe-ess-quotes">' . $out . '</div>';
 }
 add_shortcode( 'wpessential_testimonials', 'wpessential_testimonials' );
+
+/**
+ * Blog category chips (Figma 14): an "All" chip first, marked current on the posts page.
+ *
+ * @param string $html  Block markup.
+ * @param array  $block Block.
+ * @return string
+ */
+function wpessential_blog_all_chip( $html, $block ) {
+	if ( false === strpos( (string) ( $block['attrs']['className'] ?? '' ), 'wpe-blog-cats' ) ) {
+		return $html;
+	}
+	$page = (int) get_option( 'page_for_posts' );
+	$url  = $page ? (string) get_permalink( $page ) : home_url( '/' );
+	$li   = '<li class="cat-item cat-item-all' . ( is_home() ? ' current-cat' : '' ) . '"><a href="' . esc_url( $url ) . '">' . esc_html__( 'All', 'hi-wpessential' ) . '</a></li>';
+	return (string) preg_replace( '#(<ul[^>]*>)#', '$1' . $li, $html, 1 );
+}
+add_filter( 'render_block_core/categories', 'wpessential_blog_all_chip', 10, 2 );
