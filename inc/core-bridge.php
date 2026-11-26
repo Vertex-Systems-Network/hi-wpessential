@@ -169,6 +169,6 @@ add_filter(
 add_filter(
 	'wpessential_core_import_options',
 	static function ( $options ) {
-		return array_merge( (array) $options, array( 'wpessential_blog_over', 'wpessential_blog_title', 'wpessential_blog_lead', 'wpessential_404_title', 'wpessential_404_lead', 'wpessential_404_links', 'wpessential_hero_stats', 'wpessential_testimonials' ) );
+		return array_merge( (array) $options, array( 'wpessential_blog_over', 'wpessential_blog_title', 'wpessential_blog_lead', 'wpessential_404_title', 'wpessential_404_lead', 'wpessential_404_links', 'wpessential_team', 'wpessential_hero_stats', 'wpessential_testimonials' ) );
 	}
 );

@@ -318,6 +318,8 @@ DEMO_CARDS = [  # (product key, name, badge(s), price label, text, image, catego
     ('p-campus', 'Campus', ['PRO', 'NEW'], '$59', 'Online courses with lessons, quizzes and memberships', 'demo-campus', ['education', 'portfolio'], '4.7 · 88 sales'),
 ]
 DEMO_CATS = [('business', 'Business'), ('shop', 'Shop'), ('fashion', 'Fashion'), ('events', 'Events')]
+NICHES = [('business', 'Business'), ('shop', 'Shop'), ('fashion', 'Fashion'), ('events', 'Events'), ('agency', 'Agency'), ('blog', 'Blog'),
+          ('restaurant', 'Restaurant'), ('education', 'Education'), ('portfolio', 'Portfolio')]
 
 
 def demo_filter():
@@ -703,15 +705,10 @@ CLIENT_LOGOS = ['Northwind', 'Kilncraft', 'Fieldhouse', 'Lumen Studio', 'Orbitly
 
 
 def g_team():
-    people = ''.join('<figure><span aria-hidden="true">%s</span><figcaption><b>%s</b><small>%s</small></figcaption></figure>' % (''.join(w[0] for w in n.split()), n, r) for n, r in TEAM)
-    q = quote(OFFICE['map'])
-    mapbox = ('<div class="wpe-ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=%s&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-              '<div class="wpe-ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>%s<br>%s</span><span><a href="tel:%s">%s</a> · PKT (UTC+5)</span>'
-              '<a href="https://maps.google.com/?q=%s" target="_blank" rel="noopener">Get directions ↗</a></div></div>') % (
-        q, OFFICE['street'], OFFICE['city'], OFFICE['phone'].replace(' ', ''), OFFICE['phone'], q)
-    return section(html('<div class="wpe-ess-teamgrid"><div><p class="wpe-ess-over">— Who you will talk to</p><h2 class="wpe-ess-h2">Real people, one team</h2>'
-                        '<p class="wpe-ess-lead">No call centres and no outsourcing — the people who build the theme run your project.</p>'
-                        '<div class="wpe-ess-people">%s</div></div>%s</div>' % (people, mapbox)))
+    """Figma 13: team (wpe_team posts) beside the office map."""
+    card = '|'.join(['Vertex Systems Network (Pvt.) Ltd.', OFFICE['street'], OFFICE['city'], '%s · PKT (UTC+5)' % OFFICE['phone']])
+    return section(b.shortcode('[wpessential_team over="— Who you will talk to" title="Real people, one team" lead="No call centres and no outsourcing — the people who build the theme run your project." map="%s" card="%s"]'
+                               % (OFFICE['map'], card)))
 
 
 def g_contact():
@@ -1192,13 +1189,13 @@ def package(builder):
     content.append({'key': 'blog', 'type': 'page', 'title': 'Blog', 'slug': 'blog', 'content': ''})
     for p in POSTS:
         content.append({'key': p['key'], 'type': 'post', 'title': p['title'], 'slug': p['slug'], 'featured': p['image'], 'date': p['date'],
-                        'terms': {'category': [p['cat']], 'post_tag': ['tag-import', 'tag-gutenberg', 'tag-elementor']}, 'excerpt': p['excerpt'], 'content': post_html(p['body']), 'sticky': p['key'] == 'post-import'})
+                        'terms': {'category': [p['cat']], 'post_tag': ['tag-import', 'tag-gutenberg', 'tag-elementor']}, 'excerpt': p['excerpt'], 'content': post_html(p['body']), 'sticky': p['key'] == 'post-import', 'meta': {'_wpe_author_name': 'WPEssential Team'}})
     products = []
     for d in DEMOS:
         c = next(x for x in DEMO_CARDS if x[0] == d['key'])
-        products.append({'key': d['key'], 'name': d['name'] + ' demo', 'slug': d['name'].lower() + '-demo', 'price': d['price'], 'categories': ['pc-demos'],
+        products.append({'key': d['key'], 'terms': {'wpe_demo_niche': ['niche-' + x for x in c[6]]}, 'name': d['name'] + ' demo', 'slug': d['name'].lower() + '-demo', 'price': d['price'], 'categories': ['pc-demos'],
                          'image': d['image'], 'gallery': ([d['site']] + d['pages'] if d.get('pages') else [d['site'], 'mobile-' + d['name'].lower()]) if d['site'] else [d['image']], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
-                         'meta': {'_wpe_niches': ','.join(c[6]), '_wpe_badge': 'NEW' if 'NEW' in c[2] else '', '_wpe_card_text': c[4], '_wpe_card_meta': c[7], '_wpe_rating_line': '%s (%s reviews)' % (c[7].split(' · ')[0], re.sub(r'\D', '', c[7].split(' · ')[1].replace('k', '00'))), '_wpe_reviews': re.sub(r'\D', '', c[7].split(' · ')[1].replace('k', '00')), '_wpe_pages': d.get('pages_n', 8), '_wpe_niche_label': ' · '.join(x.title() for x in c[6][:2]), '_wpe_includes_line': d.get('scope', ''), '_wpe_includes': ','.join((['woocommerce'] if 'shop' in c[6] else []) + ['dark-mode', 'rtl'])},
+                         'meta': {'_wpe_niches': ','.join(c[6]), 'wpe_badge': 'NEW' if 'NEW' in c[2] else '', 'wpe_card_text': c[4], 'wpe_card_meta': c[7], '_wpe_rating_line': '%s (%s reviews)' % (c[7].split(' · ')[0], re.sub(r'\D', '', c[7].split(' · ')[1].replace('k', '00'))), 'wpe_reviews': re.sub(r'\D', '', c[7].split(' · ')[1].replace('k', '00')), 'wpe_pages': d.get('pages_n', 8), '_wpe_niche_label': ' · '.join(x.title() for x in c[6][:2]), 'wpe_includes_line': d.get('scope', ''), '_wpe_includes': ','.join((['woocommerce'] if 'shop' in c[6] else []) + ['dark-mode', 'rtl'])},
                          'description': '<p>%s</p><ul><li>Native Gutenberg and Elementor versions</li><li>One-click import with required plugins</li><li>Light &amp; dark style variation</li></ul>' % d['short']})
     products.append({'key': 'addon-setup', 'name': 'Setup & demo import', 'slug': 'setup-demo-import', 'price': '99', 'categories': ['pc-pro-addons'],
                      'virtual': True, 'sold_individually': True, 'menu_order': 1,
@@ -1230,7 +1227,7 @@ def package(builder):
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'header-checkout': {'content': g_header()},
                           'footer': {'content': g_footer()}, 'footer-simple': {'content': g_footer()}},
                 'options': {'posts_per_page': 9, 'blogname': 'WPEssential', 'blogdescription': 'Premium WordPress themes and one-click demos.',
-                            'wpessential_hero_stats': HERO_STATS, 'wpessential_testimonials': TESTIMONIALS,
+                            'wpessential_hero_stats': HERO_STATS, 'wpessential_testimonials': [list(t) + [5] for t in TESTIMONIALS], 'wpessential_team': [list(t) for t in TEAM],
                             'wpessential_blog_over': 'Blog', 'wpessential_blog_title': 'Guides and release notes',
                             'wpessential_blog_lead': 'Tutorials for the theme, new demos and WordPress tips from the WPEssential team.',
                             'wpessential_404_links': [['Browse demos', 'demos'], ['Pricing', 'pricing'], ['Docs', 'docs']], 'wpessential_404_title': 'This page took a different demo.', 'wpessential_404_lead': 'The link may be old or mistyped. Search the site or start from one of these.'},
@@ -1241,7 +1238,35 @@ def package(builder):
     if builder == 'elementor':
         settings['elementor_kit'] = e.kit(container_width=1200, button_radius=999, field_radius=12, button_padding=(14, 24))
     forms = [f() for f in svc.FORMS]
-    return {'version': 1, 'media': media, 'terms': terms, 'forms': forms, 'content': content, 'products': products, 'menus': menus, 'settings': settings}
+    # Post types, taxonomies and fields come from the WPEssential plugins (CPT, Taxonomies and Pro Fields modules).
+    definitions = [
+        {'kind': 'cpt', 'payload': {'post_type_key': 'wpe_testimonial', 'name': 'Testimonials', 'singular_name': 'Testimonial', 'public': False, 'show_ui': True,
+                                    'show_in_rest': True, 'menu_icon': 'dashicons-format-quote', 'supports': ['title', 'editor', 'custom-fields']}},
+        {'kind': 'cpt', 'payload': {'post_type_key': 'wpe_team', 'name': 'Team', 'singular_name': 'Team member', 'public': False, 'show_ui': True,
+                                    'show_in_rest': True, 'menu_icon': 'dashicons-groups', 'supports': ['title', 'thumbnail', 'custom-fields']}},
+        {'kind': 'taxonomy', 'payload': {'taxonomy_key': 'wpe_demo_niche', 'object_types': ['product'], 'name': 'Niches', 'singular_name': 'Niche',
+                                         'public': True, 'show_in_rest': True, 'hierarchical': False}},
+        {'kind': 'fields', 'payload': {'group_key': 'wpe_testimonial_details', 'title': 'Testimonial details', 'storage': {'mode': 'native_post_meta'}, 'show_in_rest': True,
+                                       'fields': [{'key': 'wpe_role', 'label': 'Role and company', 'type': 'text', 'show_in_rest': True},
+                                                  {'key': 'wpe_rating', 'label': 'Rating (1–5)', 'type': 'number', 'settings': {'integer': True}, 'show_in_rest': True}],
+                                       'locations': [[{'source': 'post_type', 'operator': 'equals', 'value': 'wpe_testimonial'}]]}},
+        {'kind': 'fields', 'payload': {'group_key': 'wpe_team_details', 'title': 'Team member', 'storage': {'mode': 'native_post_meta'}, 'show_in_rest': True,
+                                       'fields': [{'key': 'wpe_role', 'label': 'Role', 'type': 'text', 'show_in_rest': True}],
+                                       'locations': [[{'source': 'post_type', 'operator': 'equals', 'value': 'wpe_team'}]]}},
+        {'kind': 'fields', 'payload': {'group_key': 'wpe_demo_card', 'title': 'Demo card', 'storage': {'mode': 'native_post_meta'}, 'show_in_rest': True,
+                                       'fields': [{'key': 'wpe_card_text', 'label': 'Card text', 'type': 'text', 'show_in_rest': True},
+                                                  {'key': 'wpe_badge', 'label': 'Badge (e.g. NEW)', 'type': 'text', 'show_in_rest': True},
+                                                  {'key': 'wpe_card_meta', 'label': 'Rating line', 'type': 'text', 'show_in_rest': True},
+                                                  {'key': 'wpe_reviews', 'label': 'Reviews', 'type': 'number', 'settings': {'integer': True}, 'show_in_rest': True},
+                                                  {'key': 'wpe_pages', 'label': 'Pages', 'type': 'number', 'settings': {'integer': True}, 'show_in_rest': True},
+                                                  {'key': 'wpe_includes_line', 'label': 'What is included', 'type': 'text', 'show_in_rest': True}],
+                                       'locations': [[{'source': 'post_type', 'operator': 'equals', 'value': 'product'}]]}},
+    ]
+    terms += [{'key': 'niche-' + k, 'taxonomy': 'wpe_demo_niche', 'name': t, 'slug': k} for k, t in NICHES]
+    content += [{'key': 'tm-%d' % i, 'type': 'wpe_testimonial', 'title': n, 'slug': 'testimonial-%d' % (i + 1), 'content': q,
+                 'meta': {'wpe_role': r, 'wpe_rating': 5}} for i, (q, n, r) in enumerate(TESTIMONIALS)]
+    content += [{'key': 'team-%d' % i, 'type': 'wpe_team', 'title': n, 'slug': 'team-%d' % (i + 1), 'content': '', 'meta': {'wpe_role': r}} for i, (n, r) in enumerate(TEAM)]
+    return {'version': 1, 'media': media, 'definitions': definitions, 'terms': terms, 'forms': forms, 'content': content, 'products': products, 'menus': menus, 'settings': settings}
 
 
 DEMO = {
