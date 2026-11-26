@@ -1146,7 +1146,7 @@ def style_data():
     """The essential style variation plus this demo's own CSS (css/essential.css). It travels in the
     package and lands in the site's global styles, so the base theme carries no demo CSS."""
     here = os.path.dirname(os.path.abspath(__file__))
-    data = json.load(open(os.path.join(here, '..', '..', 'styles', 'essential.json')))
+    data = json.load(open(os.path.join(here, 'styles', 'essential.json')))
     data.setdefault('styles', {})['css'] = open(os.path.join(here, 'css', 'essential.css')).read()
     return data
 

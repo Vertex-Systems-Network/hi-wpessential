@@ -1,4 +1,6 @@
 """Maison — fashion store demo (Pro). Research and direction: docs/demos/maison.md."""
+import os
+import json
 import blocks as b
 import demo_forms as forms
 import elementor as e
@@ -566,7 +568,7 @@ def package(builder):
     menus = [{'name': 'Maison menu', 'location': 'primary', 'items': [
         {'title': 'Shop', 'woo': 'shop'}, {'title': 'Lookbook', 'page': 'lookbook'}, {'title': 'Atelier', 'page': 'atelier'},
         {'title': 'Responsibility', 'page': 'responsibility'}, {'title': 'Journal', 'page': 'journal'}, {'title': 'Stores', 'page': 'contact'}]}]
-    settings = {'front_page': 'home', 'blog_page': 'journal', 'style': 'maison', 'motion': 'editorial',
+    settings = {'front_page': 'home', 'blog_page': 'journal', 'style': 'maison', 'style_data': json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'styles', 'maison.json'))), 'motion': 'editorial',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'footer': {'content': g_footer()}},
                 'options': {'posts_per_page': 9, 'blogname': 'Maison', 'blogdescription': 'Clothes made slowly, to be worn for years.',
                             'wpessential_shop_title': 'All pieces', 'wpessential_shop_lead': 'Linen, wool, silk and leather — made in small runs.', 'wpessential_cart_title': 'Your bag', 'wpessential_pdp_gallery': 'grid', 'wpessential_shop_banner': 'off',
