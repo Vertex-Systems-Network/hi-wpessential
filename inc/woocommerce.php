@@ -535,16 +535,24 @@ function wpessential_woo_demo_detail() {
 	$plans   = $pricing ? (string) get_permalink( $pricing ) : '';
 	$updated = $product->get_date_modified();
 	$host    = $live ? (string) wp_parse_url( $live, PHP_URL_HOST ) . (string) wp_parse_url( $live, PHP_URL_PATH ) : '';
+	$badge   = (string) $product->get_meta( '_wpe_badge' );
+	$rating  = (string) $product->get_meta( '_wpe_rating_line' );
+	$reviews = (int) $product->get_meta( '_wpe_reviews' );
+	$pages_n = (int) $product->get_meta( '_wpe_pages' );
+	$niche   = (string) $product->get_meta( '_wpe_niche_label' );
+	$scope   = (string) $product->get_meta( '_wpe_includes_line' );
 	$checks  = array(
 		__( 'Gutenberg and Elementor versions', 'hi-wpessential' ),
+		$scope,
 		__( 'Real photography, hovers and dark mode', 'hi-wpessential' ),
 		__( 'One-click import with undo', 'hi-wpessential' ),
 		__( '1 year of updates and support', 'hi-wpessential' ),
 	);
+	$checks  = array_filter( $checks );
 	$plugins = array(
-		array( 'W', 'WooCommerce', __( 'Recommended', 'hi-wpessential' ) ),
+		array( 'W', 'WooCommerce', __( 'Required', 'hi-wpessential' ) ),
 		array( 'E', 'Elementor', __( 'Elementor version', 'hi-wpessential' ) ),
-		array( 'C', 'WPEssential', __( 'Included', 'hi-wpessential' ) ),
+		array( 'C', 'WPEssential Core', __( 'Included', 'hi-wpessential' ) ),
 	);
 	ob_start();
 	?>
@@ -554,9 +562,10 @@ function wpessential_woo_demo_detail() {
 			<a href="<?php echo esc_url( (string) get_permalink( wc_get_page_id( 'shop' ) ) ); ?>"><?php esc_html_e( 'Demos', 'hi-wpessential' ); ?></a> /
 			<span aria-current="page"><?php echo esc_html( $product->get_name() ); ?></span>
 		</nav>
-		<p class="wpe-demo__badges"><span class="<?php echo $free ? 'is-free' : 'is-pro'; ?>"><?php echo $free ? esc_html__( 'Free', 'hi-wpessential' ) : esc_html__( 'Pro', 'hi-wpessential' ); ?></span></p>
+		<p class="wpe-demo__badges"><span class="<?php echo $free ? 'is-free' : 'is-pro'; ?>"><?php echo $free ? esc_html__( 'Free', 'hi-wpessential' ) : esc_html__( 'Pro', 'hi-wpessential' ); ?></span><?php echo $badge ? '<span class="is-new">' . esc_html( $badge ) . '</span>' : ''; ?></p>
+		<p class="wpe-demo__tools"><button type="button" class="wpe-demo__icon" aria-pressed="false" aria-label="<?php esc_attr_e( 'Save to favourites', 'hi-wpessential' ); ?>" onclick="this.setAttribute('aria-pressed',this.getAttribute('aria-pressed')==='true'?'false':'true')">♡</button><button type="button" class="wpe-demo__icon" aria-label="<?php esc_attr_e( 'Share', 'hi-wpessential' ); ?>" onclick="navigator.share?navigator.share({url:location.href}):navigator.clipboard&&navigator.clipboard.writeText(location.href)">↗</button></p>
 		<h1 class="wpe-demo__title"><?php echo esc_html( preg_replace( '/\s+demo$/i', '', $product->get_name() ) ); ?></h1>
-		<p class="wpe-demo__meta"><?php echo esc_html( implode( '  ·  ', array_filter( array( $cats, $gallery ? sprintf( /* translators: %d: pages. */ _n( '%d page', '%d pages', count( $gallery ), 'hi-wpessential' ), count( $gallery ) ) : '', sprintf( /* translators: %s: date. */ __( 'Updated %s', 'hi-wpessential' ), $updated ? $updated->date_i18n( 'M Y' ) : '' ) ) ) ) ); ?></p>
+		<p class="wpe-demo__meta"><?php echo $rating ? '<span class="wpe-demo__stars" aria-hidden="true">★★★★★</span> ' . esc_html( $rating ) . '  ·  ' : ''; ?><?php echo esc_html( implode( '  ·  ', array_filter( array( $niche ? $niche : $cats, $pages_n ? sprintf( /* translators: %d: pages. */ _n( '%d page', '%d pages', $pages_n, 'hi-wpessential' ), $pages_n ) : ( $gallery ? sprintf( /* translators: %d: pages. */ _n( '%d page', '%d pages', count( $gallery ), 'hi-wpessential' ), count( $gallery ) ) : '' ), sprintf( /* translators: %s: date. */ __( 'Updated %s', 'hi-wpessential' ), $updated ? $updated->date_i18n( 'M Y' ) : '' ) ) ) ) ); ?></p>
 		<div class="wpe-demo__grid">
 			<div class="wpe-demo__main">
 				<div class="wpe-demo__preview">
@@ -564,7 +573,7 @@ function wpessential_woo_demo_detail() {
 					<?php echo wp_get_attachment_image( $shot, 'large', false, array( 'class' => 'wpe-demo__shot' ) ); ?>
 					<p class="wpe-demo__note"><?php esc_html_e( 'Live demo running in your browser — click, hover and browse every page before you import.', 'hi-wpessential' ); ?></p>
 				</div>
-				<nav class="wpe-demo__tabs" aria-label="<?php esc_attr_e( 'Sections', 'hi-wpessential' ); ?>"><a class="is-on" href="#overview"><?php esc_html_e( 'Overview', 'hi-wpessential' ); ?></a><?php echo $pages ? '<a href="#pages">' . esc_html__( 'Pages', 'hi-wpessential' ) . '</a>' : ''; ?><a href="<?php echo esc_url( $log ? (string) get_permalink( $log ) : '#overview' ); ?>"><?php esc_html_e( 'Changelog', 'hi-wpessential' ); ?></a></nav>
+				<nav class="wpe-demo__tabs" aria-label="<?php esc_attr_e( 'Sections', 'hi-wpessential' ); ?>"><a class="is-on" href="#overview"><?php esc_html_e( 'Overview', 'hi-wpessential' ); ?></a><?php echo $pages ? '<a href="#pages">' . esc_html__( 'Pages', 'hi-wpessential' ) . '</a>' : ''; ?><a href="<?php echo esc_url( $log ? (string) get_permalink( $log ) : '#overview' ); ?>"><?php esc_html_e( 'Changelog', 'hi-wpessential' ); ?></a><?php echo $reviews ? '<a href="#overview">' . esc_html__( 'Reviews', 'hi-wpessential' ) . ' <i>' . (int) $reviews . '</i></a>' : ''; ?></nav>
 				<section id="overview" class="wpe-demo__overview">
 					<?php if ( $product->get_short_description() ) : ?>
 						<h2><?php echo esc_html( wp_strip_all_tags( $product->get_short_description() ) ); ?></h2>
@@ -583,9 +592,9 @@ function wpessential_woo_demo_detail() {
 				<?php endif; ?>
 			</div>
 			<aside class="wpe-demo__buy">
-				<?php echo do_blocks( '<!-- wp:wpessential/woo-product-price /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Rendered blocks. ?>
+				<div class="wpe-demo__pricebox"><?php echo do_blocks( '<!-- wp:wpessential/woo-product-price /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Rendered blocks. ?><?php echo $free ? '' : '<span class="wpe-demo__per">' . esc_html__( 'one site · 1 year updates', 'hi-wpessential' ) . '</span>'; ?></div>
 				<?php if ( ! $free ) : ?>
-					<p class="wpe-demo__incl"><?php esc_html_e( 'Included in every paid plan', 'hi-wpessential' ); ?></p>
+					<p class="wpe-demo__incl"><?php esc_html_e( 'Included free in Pro and Agency plans', 'hi-wpessential' ); ?></p>
 					<?php if ( $plans ) : ?>
 						<a class="wpe-demo__cta" href="<?php echo esc_url( $plans ); ?>"><?php esc_html_e( 'Get Pro', 'hi-wpessential' ); ?> <span aria-hidden="true">↗</span></a>
 					<?php endif; ?>
@@ -622,22 +631,7 @@ function wpessential_woo_demo_detail() {
 			?>
 			<section class="wpe-demo__related">
 				<h2><?php esc_html_e( 'You might also like', 'hi-wpessential' ); ?></h2>
-				<div class="wpe-demo__cards">
-					<?php foreach ( $others as $other ) : ?>
-						<?php $other_free = 0.0 === (float) $other->get_price(); ?>
-						<article class="wpe-demo-card">
-							<a class="wpe-demo-card__shot" href="<?php echo esc_url( (string) $other->get_permalink() ); ?>">
-								<?php echo wp_get_attachment_image( (int) $other->get_image_id(), 'large' ); ?>
-								<span class="<?php echo $other_free ? 'is-free' : 'is-pro'; ?>"><?php echo $other_free ? esc_html__( 'Free', 'hi-wpessential' ) : esc_html__( 'Pro', 'hi-wpessential' ); ?></span>
-							</a>
-							<div class="wpe-demo-card__body">
-								<h3><a href="<?php echo esc_url( (string) $other->get_permalink() ); ?>"><?php echo esc_html( preg_replace( '/\s+demo$/i', '', $other->get_name() ) ); ?></a> <b><?php echo $other_free ? esc_html__( 'Free', 'hi-wpessential' ) : esc_html__( 'Pro', 'hi-wpessential' ); ?></b></h3>
-								<p><?php echo esc_html( wp_strip_all_tags( $other->get_short_description() ) ); ?></p>
-								<p class="wpe-demo-card__builders"><span>G</span><span>E</span></p>
-							</div>
-						</article>
-					<?php endforeach; ?>
-				</div>
+				<?php echo wpessential_demo_cards( array( 'limit' => 3, 'exclude' => $product->get_id() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the function. ?>
 			</section>
 		<?php endif; ?>
 	</div>
@@ -820,10 +814,11 @@ add_action( 'woocommerce_created_customer', 'wpessential_woo_register_save' );
 function wpessential_demo_cards( $atts ) {
 	$atts  = shortcode_atts(
 		array(
-			'limit'  => 0,
-			'facets' => 0,
-			'chips'  => 0,
-			'stats'  => 0,
+			'limit'   => 0,
+			'facets'  => 0,
+			'chips'   => 0,
+			'stats'   => 0,
+			'exclude' => 0,
 		),
 		$atts,
 		'wpessential_demo_cards'
@@ -832,6 +827,7 @@ function wpessential_demo_cards( $atts ) {
 		array(
 			'category' => array( 'demos' ),
 			'status'   => 'publish',
+			'exclude'  => array_filter( array( (int) $atts['exclude'] ) ),
 			'limit'    => (int) $atts['limit'] > 0 ? (int) $atts['limit'] : -1,
 			'orderby'  => 'menu_order',
 			'order'    => 'ASC',

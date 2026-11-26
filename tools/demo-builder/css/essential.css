@@ -1102,3 +1102,7 @@ body:not(:has(.wpe-ess-hero)) .wpe-ess-plan .wpe-button__link { width: 100% !imp
 body:not(:has(.wpe-ess-hero)) .wpe-ess-plan .wpe-button { grid-template-columns: 1fr !important; }
 .wpe-ess-demo__meta { display: flex; align-items: center; gap: 6px; }
 .wpe-ess-demo__meta > span:first-child { margin-right: auto; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan__top > .wpe-container__inner { flex-direction: column !important; align-items: flex-start !important; gap: 10px; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan__top > .wpe-container__inner > * { width: auto !important; }
+body:not(:has(.wpe-ess-hero)) .wpe-code:has(> .wpe-ess-toggle), body:not(:has(.wpe-ess-hero)) .wpe-code:has(.wpe-ess-toggle) { --wpek-content-margin: 0 !important; margin: 0 !important; width: 100% !important; max-width: none !important; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-toggle { margin-left: 0 !important; margin-right: auto !important; justify-content: flex-start; width: max-content; }

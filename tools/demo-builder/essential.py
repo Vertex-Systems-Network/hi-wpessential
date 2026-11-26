@@ -30,6 +30,12 @@ MEDIA = [
     ('mobile-base', 'Base on mobile', 'Base demo home page on a phone'),
     ('mobile-maison', 'Maison on mobile', 'Maison demo home page on a phone'),
     ('mobile-pulse', 'Pulse on mobile', 'Pulse demo home page on a phone'),
+    ('mpage-home', 'Home', 'Maison home page with The Quiet Season campaign'),
+    ('mpage-lookbook', 'Lookbook', 'Maison lookbook page'),
+    ('mpage-atelier', 'Atelier', 'Maison atelier page'),
+    ('mpage-journal', 'Journal', 'Maison journal page'),
+    ('mpage-product', 'Product', 'Maison product page'),
+    ('mpage-stores', 'Stores', 'Maison stores page'),
     ('demo-business-pro', 'Business Pro demo', 'Business Pro consulting demo with a corporate hero'),
     ('demo-saffron', 'Saffron demo', 'Saffron restaurant demo with a menu hero'),
     ('demo-campus', 'Campus demo', 'Campus online course demo with a learning hero'),
@@ -41,16 +47,16 @@ MEDIA = [
 DEMOS = [
     dict(key='p-base', name='Base', price='0', image='demo-base', site='site-base', niche='Business · Blog', menu_order=3,
          short='A clean multi-purpose site with services, blog and shop. Free with the theme.'),
-    dict(key='p-maison', name='Maison', price='59', image='demo-maison', site='site-maison', niche='Fashion · WooCommerce', menu_order=1,
+    dict(key='p-maison', name='Maison', price='10', image='demo-maison', site='site-maison', niche='Fashion · WooCommerce', menu_order=1, pages_n=12, scope='12 pages, 8 products, 3 articles', pages=['mpage-home', 'mpage-lookbook', 'mpage-atelier', 'mpage-journal', 'mpage-product', 'mpage-stores'],
          short='An editorial fashion store with lookbooks, journal and a full WooCommerce shop.'),
-    dict(key='p-pulse', name='Pulse', price='59', image='demo-pulse', site='site-pulse', niche='Events · Tickets', menu_order=2,
+    dict(key='p-pulse', name='Pulse', price='10', image='demo-pulse', site='site-pulse', niche='Events · Tickets', menu_order=2,
          short='A conference site with speakers, agenda, ticket passes and an events calendar.'),
     # Sample demos shown in the library (Figma 01/04); their packages ship later.
-    dict(key='p-business-pro', name='Business Pro', price='59', image='demo-business-pro', site=None, niche='Consulting · Agency', menu_order=4,
+    dict(key='p-business-pro', name='Business Pro', price='10', image='demo-business-pro', site=None, niche='Consulting · Agency', menu_order=4,
          short='A consulting and corporate services site with case studies, team and a lead form.'),
-    dict(key='p-saffron', name='Saffron', price='59', image='demo-saffron', site=None, niche='Restaurant · Orders', menu_order=5,
+    dict(key='p-saffron', name='Saffron', price='10', image='demo-saffron', site=None, niche='Restaurant · Orders', menu_order=5,
          short='A restaurant site with menu, reservations and online orders.'),
-    dict(key='p-campus', name='Campus', price='59', image='demo-campus', site=None, niche='Education · Courses', menu_order=6,
+    dict(key='p-campus', name='Campus', price='10', image='demo-campus', site=None, niche='Education · Courses', menu_order=6,
          short='An online course site with lessons, quizzes and memberships.'),
 ]
 
@@ -1162,8 +1168,8 @@ def package(builder):
     for d in DEMOS:
         c = next(x for x in DEMO_CARDS if x[0] == d['key'])
         products.append({'key': d['key'], 'name': d['name'] + ' demo', 'slug': d['name'].lower() + '-demo', 'price': d['price'], 'categories': ['pc-demos'],
-                         'image': d['image'], 'gallery': [d['site'], 'mobile-' + d['name'].lower()] if d['site'] else [d['image']], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
-                         'meta': {'_wpe_niches': ','.join(c[6]), '_wpe_badge': 'NEW' if 'NEW' in c[2] else '', '_wpe_card_text': c[4], '_wpe_card_meta': c[7], '_wpe_includes': ','.join((['woocommerce'] if 'shop' in c[6] else []) + ['dark-mode', 'rtl'])},
+                         'image': d['image'], 'gallery': ([d['site']] + d['pages'] if d.get('pages') else [d['site'], 'mobile-' + d['name'].lower()]) if d['site'] else [d['image']], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
+                         'meta': {'_wpe_niches': ','.join(c[6]), '_wpe_badge': 'NEW' if 'NEW' in c[2] else '', '_wpe_card_text': c[4], '_wpe_card_meta': c[7], '_wpe_rating_line': '%s (%s reviews)' % (c[7].split(' · ')[0], re.sub(r'\D', '', c[7].split(' · ')[1].replace('k', '00'))), '_wpe_reviews': re.sub(r'\D', '', c[7].split(' · ')[1].replace('k', '00')), '_wpe_pages': d.get('pages_n', 8), '_wpe_niche_label': ' · '.join(x.title() for x in c[6][:2]), '_wpe_includes_line': d.get('scope', ''), '_wpe_includes': ','.join((['woocommerce'] if 'shop' in c[6] else []) + ['dark-mode', 'rtl'])},
                          'description': '<p>%s</p><ul><li>Native Gutenberg and Elementor versions</li><li>One-click import with required plugins</li><li>Light &amp; dark style variation</li></ul>' % d['short']})
     products.append({'key': 'addon-setup', 'name': 'Setup & demo import', 'slug': 'setup-demo-import', 'price': '99', 'categories': ['pc-pro-addons'],
                      'virtual': True, 'sold_individually': True, 'menu_order': 1,
