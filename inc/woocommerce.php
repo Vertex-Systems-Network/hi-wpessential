@@ -730,11 +730,14 @@ add_action( 'woocommerce_after_customer_login_form', 'wpessential_woo_login_clos
  * @return string
  */
 function wpessential_woo_auth_text( $text, $source, $domain ) {
-	if ( 'woocommerce' !== $domain || ! did_action( 'wp' ) || ! ( is_cart() || ( is_account_page() && ! is_user_logged_in() ) ) ) {
+	if ( 'woocommerce' !== $domain || ! did_action( 'wp' ) || ! ( is_cart() || is_checkout() || ( is_account_page() && ! is_user_logged_in() ) ) ) {
 		return $text;
 	}
 	$map = array(
 		'Cart totals'               => __( 'Order summary', 'hi-wpessential' ),
+		'Billing details'           => __( 'Your account', 'hi-wpessential' ),
+		'Your order'                => __( 'Order summary', 'hi-wpessential' ),
+		'Place order'               => __( 'Pay now', 'hi-wpessential' ),
 		'Log in'                    => __( 'Sign in', 'hi-wpessential' ),
 		'Register'                  => __( 'Create account', 'hi-wpessential' ),
 		'Username or email address' => __( 'Email', 'hi-wpessential' ),

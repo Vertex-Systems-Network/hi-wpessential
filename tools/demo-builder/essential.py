@@ -873,7 +873,8 @@ def g_cart():
 
 
 def g_checkout():
-    return b.join(section(b.el('woo-notices', {}), b.el('woo-checkout', {})))
+    return b.join(section(html('<h1 class="wpe-ess-cart__title wpe-ess-co__title">Checkout</h1><ol class="wpe-ess-co__steps"><li class="is-done"><b>1</b> Cart</li><li class="is-on"><b>2</b> Details</li><li><b>3</b> Payment</li></ol>'),
+                          b.el('woo-checkout', {})))
 
 
 def g_account():
