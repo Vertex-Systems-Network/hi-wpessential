@@ -22,6 +22,8 @@
 <!-- wp:group {"className":"wpe-post-footer","layout":{"type":"constrained","contentSize":"760px"}} -->
 <div class="wp-block-group wpe-post-footer"><!-- wp:post-terms {"term":"post_tag","separator":" ","className":"is-style-wpe-hashtags"} /-->
 
+<!-- wp:wpessential/social-share {"net_whatsapp":false,"net_email":false,"net_copy":false,"label":"Share","showNames":false,"cssClass":"wpe-post-share"} /-->
+
 <!-- wp:group {"className":"wpe-author-box is-style-wpe-card-flat","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group wpe-author-box is-style-wpe-card-flat"><!-- wp:avatar {"size":64} /-->
 
@@ -43,5 +45,15 @@
 </main>
 <!-- /wp:group -->
 
-<!-- wp:pattern {"slug":"wpessential/latest-posts"} /-->
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"surface-alt","className":"wpe-section wpe-keep-reading","layout":{"type":"constrained","contentSize":"1200px"}} -->
+<section class="wp-block-group alignfull wpe-section wpe-keep-reading has-surface-alt-background-color has-background"><!-- wp:heading -->
+<h2 class="wp-block-heading">Keep reading</h2>
+<!-- /wp:heading -->
+
+<!-- wp:query {"queryId":2,"query":{"perPage":2,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","sticky":"exclude","inherit":false}} -->
+<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":2,"minimumColumnWidth":"280px"}} -->
+<!-- wp:pattern {"slug":"wpessential/post-card"} /-->
+<!-- /wp:post-template --></div>
+<!-- /wp:query --></section>
+<!-- /wp:group -->
 <!-- wp:template-part {"slug":"footer","tagName":"div"} /-->
