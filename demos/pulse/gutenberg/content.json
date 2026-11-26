@@ -838,6 +838,252 @@
 		"front_page": "home",
 		"blog_page": "blog",
 		"style": "pulse",
+		"style_data": {
+			"$schema": "https://schemas.wp.org/trunk/theme.json",
+			"version": 3,
+			"title": "Pulse",
+			"settings": {
+				"color": {
+					"palette": [
+						{
+							"slug": "primary",
+							"name": "Primary",
+							"color": "#C6F432"
+						},
+						{
+							"slug": "primary-hover",
+							"name": "Primary Hover",
+							"color": "#B3E01F"
+						},
+						{
+							"slug": "primary-soft",
+							"name": "Primary Soft",
+							"color": "#F1FBD0"
+						},
+						{
+							"slug": "secondary",
+							"name": "Secondary",
+							"color": "#0A0A12"
+						},
+						{
+							"slug": "accent",
+							"name": "Accent",
+							"color": "#E0186F"
+						},
+						{
+							"slug": "ink",
+							"name": "Ink",
+							"color": "#0A0A12"
+						},
+						{
+							"slug": "text",
+							"name": "Text",
+							"color": "#0A0A12"
+						},
+						{
+							"slug": "text-muted",
+							"name": "Text Muted",
+							"color": "#5A5A72"
+						},
+						{
+							"slug": "surface",
+							"name": "Surface",
+							"color": "#F7F7FB"
+						},
+						{
+							"slug": "surface-alt",
+							"name": "Surface Alt",
+							"color": "#ECECF4"
+						},
+						{
+							"slug": "border",
+							"name": "Border",
+							"color": "#DCDCE8"
+						},
+						{
+							"slug": "on-primary",
+							"name": "On Primary",
+							"color": "#0A0A12"
+						},
+						{
+							"slug": "on-ink",
+							"name": "On Ink",
+							"color": "#FFFFFF"
+						},
+						{
+							"slug": "on-ink-muted",
+							"name": "On Ink Muted",
+							"color": "#9A9AB0"
+						},
+						{
+							"slug": "success",
+							"name": "Success",
+							"color": "#16A34A"
+						},
+						{
+							"slug": "warning",
+							"name": "Warning",
+							"color": "#B45309"
+						},
+						{
+							"slug": "danger",
+							"name": "Danger",
+							"color": "#E0186F"
+						},
+						{
+							"slug": "pro",
+							"name": "Pro",
+							"color": "#E0186F"
+						},
+						{
+							"slug": "star",
+							"name": "Star",
+							"color": "#F5B700"
+						}
+					],
+					"gradients": [
+						{
+							"slug": "brand",
+							"name": "Brand",
+							"gradient": "linear-gradient(120deg,#0A0A12 0%,#1B1030 55%,#E0186F 100%)"
+						},
+						{
+							"slug": "night",
+							"name": "Night",
+							"gradient": "linear-gradient(180deg,#05050A 0%,#12121E 100%)"
+						},
+						{
+							"slug": "fade-bottom",
+							"name": "Fade to ink",
+							"gradient": "linear-gradient(180deg, rgba(11,16,32,0) 0%, rgba(11,16,32,0.85) 100%)"
+						}
+					]
+				},
+				"typography": {
+					"fontFamilies": [
+						{
+							"slug": "body",
+							"name": "DM Sans",
+							"fontFamily": "\"DM Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+							"fontFace": [
+								{
+									"fontFamily": "DM Sans",
+									"fontStyle": "normal",
+									"fontWeight": "100 1000",
+									"fontDisplay": "swap",
+									"src": [
+										"file:./assets/fonts/dm-sans-var.woff2"
+									]
+								}
+							]
+						},
+						{
+							"slug": "heading",
+							"name": "Space Grotesk",
+							"fontFamily": "\"Space Grotesk\", \"DM Sans\", system-ui, sans-serif",
+							"fontFace": [
+								{
+									"fontFamily": "Space Grotesk",
+									"fontStyle": "normal",
+									"fontWeight": "300 700",
+									"fontDisplay": "swap",
+									"src": [
+										"file:./assets/fonts/space-grotesk-var.woff2"
+									]
+								}
+							]
+						},
+						{
+							"slug": "mono",
+							"name": "Monospace",
+							"fontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+						}
+					]
+				},
+				"custom": {
+					"radius": {
+						"sm": "10px",
+						"md": "14px",
+						"lg": "20px",
+						"xl": "28px",
+						"full": "999px"
+					},
+					"scheme": {
+						"dark": {
+							"primary": "#C6F432",
+							"primary-hover": "#D7FF5A",
+							"primary-soft": "#1E2410",
+							"secondary": "#FFFFFF",
+							"accent": "#FF3D8B",
+							"ink": "#05050A",
+							"text": "#FFFFFF",
+							"text-muted": "#9A9AB0",
+							"surface": "#0A0A12",
+							"surface-alt": "#12121E",
+							"border": "#23233A",
+							"on-primary": "#0A0A12",
+							"on-ink": "#FFFFFF",
+							"on-ink-muted": "#9A9AB0",
+							"success": "#4ADE80",
+							"warning": "#FBBF24",
+							"danger": "#FF3D8B",
+							"pro": "#FF3D8B",
+							"star": "#F5B700"
+						}
+					},
+					"color": {
+						"primaryText": "#C2125F"
+					},
+					"hover": {
+						"zoom": "1.06",
+						"lift": "-6px",
+						"productLift": "-6px",
+						"shadow": "0 24px 48px rgba(10, 10, 18, .18)",
+						"cardShadow": "0 0 0 2px #C6F432, 0 24px 48px rgba(10, 10, 18, .18)",
+						"duration": "260ms",
+						"ease": "cubic-bezier(.22, 1, .36, 1)",
+						"buttonLift": "-3px",
+						"buttonGlow": "0 10px 28px rgba(198, 244, 50, .45)",
+						"underline": "2px",
+						"imageRest": "grayscale(1)"
+					}
+				}
+			},
+			"styles": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--body)",
+					"fontSize": "16px",
+					"lineHeight": "1.6"
+				},
+				"elements": {
+					"heading": {
+						"typography": {
+							"fontFamily": "var(--wp--preset--font-family--heading)",
+							"fontWeight": "700",
+							"letterSpacing": "-0.03em",
+							"lineHeight": "1"
+						}
+					},
+					"button": {
+						"border": {
+							"radius": "999px"
+						},
+						"typography": {
+							"fontSize": "15px",
+							"fontWeight": "700"
+						},
+						"spacing": {
+							"padding": {
+								"top": "14px",
+								"bottom": "14px",
+								"left": "24px",
+								"right": "24px"
+							}
+						}
+					}
+				}
+			}
+		},
 		"motion": "dynamic",
 		"parts": {
 			"header": {

@@ -9986,6 +9986,274 @@
 		"front_page": "home",
 		"blog_page": "journal",
 		"style": "maison",
+		"style_data": {
+			"$schema": "https://schemas.wp.org/trunk/theme.json",
+			"version": 3,
+			"title": "Maison",
+			"settings": {
+				"color": {
+					"palette": [
+						{
+							"slug": "primary",
+							"name": "Primary",
+							"color": "#2B211B"
+						},
+						{
+							"slug": "primary-hover",
+							"name": "Primary Hover",
+							"color": "#1E1712"
+						},
+						{
+							"slug": "primary-soft",
+							"name": "Primary Soft",
+							"color": "#EFE7DC"
+						},
+						{
+							"slug": "secondary",
+							"name": "Secondary",
+							"color": "#1E1712"
+						},
+						{
+							"slug": "accent",
+							"name": "Accent",
+							"color": "#B5643C"
+						},
+						{
+							"slug": "ink",
+							"name": "Ink",
+							"color": "#1E1712"
+						},
+						{
+							"slug": "text",
+							"name": "Text",
+							"color": "#2B211B"
+						},
+						{
+							"slug": "text-muted",
+							"name": "Text Muted",
+							"color": "#7A6B5E"
+						},
+						{
+							"slug": "surface",
+							"name": "Surface",
+							"color": "#F6F1EA"
+						},
+						{
+							"slug": "surface-alt",
+							"name": "Surface Alt",
+							"color": "#EFE7DC"
+						},
+						{
+							"slug": "border",
+							"name": "Border",
+							"color": "#E4DACD"
+						},
+						{
+							"slug": "on-primary",
+							"name": "On Primary",
+							"color": "#F6F1EA"
+						},
+						{
+							"slug": "on-ink",
+							"name": "On Ink",
+							"color": "#F6F1EA"
+						},
+						{
+							"slug": "on-ink-muted",
+							"name": "On Ink Muted",
+							"color": "#B3A595"
+						},
+						{
+							"slug": "success",
+							"name": "Success",
+							"color": "#4F6B3A"
+						},
+						{
+							"slug": "warning",
+							"name": "Warning",
+							"color": "#9A6B1F"
+						},
+						{
+							"slug": "danger",
+							"name": "Danger",
+							"color": "#A23B2A"
+						},
+						{
+							"slug": "pro",
+							"name": "Pro",
+							"color": "#B5643C"
+						},
+						{
+							"slug": "star",
+							"name": "Star",
+							"color": "#B5643C"
+						}
+					],
+					"gradients": [
+						{
+							"slug": "brand",
+							"name": "Brand",
+							"gradient": "linear-gradient(135deg,#2B211B 0%,#5A3A28 55%,#B5643C 100%)"
+						},
+						{
+							"slug": "night",
+							"name": "Night",
+							"gradient": "linear-gradient(180deg,#1E1712 0%,#2B211B 100%)"
+						},
+						{
+							"slug": "fade-bottom",
+							"name": "Fade to ink",
+							"gradient": "linear-gradient(180deg, rgba(11,16,32,0) 0%, rgba(11,16,32,0.85) 100%)"
+						}
+					]
+				},
+				"typography": {
+					"fontFamilies": [
+						{
+							"slug": "body",
+							"name": "Manrope",
+							"fontFamily": "Manrope, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+							"fontFace": [
+								{
+									"fontFamily": "Manrope",
+									"fontStyle": "normal",
+									"fontWeight": "200 800",
+									"fontDisplay": "swap",
+									"src": [
+										"file:./assets/fonts/manrope-var.woff2"
+									]
+								}
+							]
+						},
+						{
+							"slug": "heading",
+							"name": "Cormorant Garamond",
+							"fontFamily": "\"Cormorant Garamond\", Georgia, \"Times New Roman\", serif",
+							"fontFace": [
+								{
+									"fontFamily": "Cormorant Garamond",
+									"fontStyle": "normal",
+									"fontWeight": "300 700",
+									"fontDisplay": "swap",
+									"src": [
+										"file:./assets/fonts/cormorant-garamond-var.woff2"
+									]
+								},
+								{
+									"fontFamily": "Cormorant Garamond",
+									"fontStyle": "italic",
+									"fontWeight": "300 700",
+									"fontDisplay": "swap",
+									"src": [
+										"file:./assets/fonts/cormorant-garamond-var-italic.woff2"
+									]
+								}
+							]
+						},
+						{
+							"slug": "mono",
+							"name": "Monospace",
+							"fontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+						}
+					]
+				},
+				"custom": {
+					"radius": {
+						"sm": "0px",
+						"md": "0px",
+						"lg": "0px",
+						"xl": "0px",
+						"full": "999px"
+					},
+					"scheme": {
+						"dark": {
+							"primary": "#F3ECE2",
+							"primary-hover": "#FFFFFF",
+							"primary-soft": "#2A211B",
+							"secondary": "#F3ECE2",
+							"accent": "#D07A50",
+							"ink": "#0B0806",
+							"text": "#F3ECE2",
+							"text-muted": "#B3A595",
+							"surface": "#17110D",
+							"surface-alt": "#221A15",
+							"border": "#3A2E26",
+							"on-primary": "#17110D",
+							"on-ink": "#F3ECE2",
+							"on-ink-muted": "#B3A595",
+							"success": "#9CC27E",
+							"warning": "#E0B060",
+							"danger": "#E07B62",
+							"pro": "#D07A50",
+							"star": "#D07A50"
+						}
+					},
+					"hover": {
+						"zoom": "1.04",
+						"lift": "0px",
+						"productLift": "0px",
+						"shadow": "none",
+						"cardShadow": "none",
+						"duration": "900ms",
+						"ease": "cubic-bezier(.16, 1, .3, 1)",
+						"buttonLift": "0px",
+						"buttonGlow": "none",
+						"underline": "1px",
+						"imageRest": "none"
+					}
+				}
+			},
+			"styles": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--body)",
+					"fontSize": "16px",
+					"lineHeight": "1.7"
+				},
+				"elements": {
+					"heading": {
+						"typography": {
+							"fontFamily": "var(--wp--preset--font-family--heading)",
+							"fontWeight": "500",
+							"letterSpacing": "-0.01em",
+							"lineHeight": "1.05"
+						}
+					},
+					"button": {
+						"border": {
+							"radius": "0px",
+							"width": "1px",
+							"style": "solid",
+							"color": "var(--wp--preset--color--primary)"
+						},
+						"typography": {
+							"fontSize": "13px",
+							"fontWeight": "600",
+							"letterSpacing": "0.14em",
+							"textTransform": "uppercase"
+						},
+						"spacing": {
+							"padding": {
+								"top": "16px",
+								"bottom": "16px",
+								"left": "28px",
+								"right": "28px"
+							}
+						},
+						":hover": {
+							"color": {
+								"background": "transparent",
+								"text": "var(--wp--preset--color--text)"
+							},
+							"border": {
+								"color": "var(--wp--preset--color--text)",
+								"width": "1px",
+								"style": "solid"
+							}
+						}
+					}
+				}
+			}
+		},
 		"motion": "editorial",
 		"parts": {
 			"header": {

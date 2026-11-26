@@ -3,6 +3,8 @@
 Companies and people are fictional. Event dates are fixed (13–14 May 2027) so the copy,
 the agenda and The Events Calendar always agree.
 """
+import os
+import json
 import blocks as b
 import demo_forms as forms
 from ess_ui import html
@@ -664,7 +666,7 @@ def package(builder):
         {'title': 'About', 'page': 'about'}, {'title': 'Speakers', 'page': 'speakers'}, {'title': 'Agenda', 'page': 'agenda'}, {'title': 'Tickets', 'page': 'tickets'},
         {'title': 'Venue', 'page': 'venue'}, {'title': 'Sponsors', 'page': 'sponsors'}, {'title': 'Gallery', 'page': 'gallery'},
         {'title': 'Events', 'url': '{{home:events/}}'}, {'title': 'Blog', 'page': 'blog'}]}]
-    settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'pulse', 'motion': 'dynamic',
+    settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'pulse', 'style_data': json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'styles', 'pulse.json'))), 'motion': 'dynamic',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'footer': {'content': g_footer()}},
                 'options': {'posts_per_page': 9, 'blogname': 'Pulse', 'blogdescription': 'The conference for people who design and build the web.',
                             'wpessential_shop_title': 'Passes & tickets', 'wpessential_shop_lead': 'All prices include VAT. Group discounts apply automatically from five passes.'},
