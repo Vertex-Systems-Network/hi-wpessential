@@ -1042,6 +1042,15 @@ function wpessential_order_received() {
 			. '<a href="' . esc_url( wc_get_cart_url() ) . '">' . esc_html__( 'Back to cart', 'hi-wpessential' ) . '</a>'
 			. ( $support ? '<a href="' . esc_url( (string) get_permalink( $support ) ) . '">' . esc_html__( 'Contact support', 'hi-wpessential' ) . '</a>' : '' ) . '</p></div>';
 	}
+	// A service invoice (WPEssential Server quote): Figma 47, payment received with the project link.
+	$project = class_exists( '\WPEssential\Server\Quotes' ) ? \WPEssential\Server\Quotes::project_url( $order ) : '';
+	if ( '' !== $project ) {
+		return '<div class="wpe-order wpe-order--center"><span class="wpe-order__badge">' . esc_html__( 'Paid', 'hi-wpessential' ) . '</span>'
+			. '<h1 class="wpe-order__title">' . esc_html__( 'Payment received', 'hi-wpessential' ) . '</h1>'
+			/* translators: 1: invoice number, 2: amount, 3: payment method, 4: email. */
+			. '<p class="wpe-order__lead">' . esc_html( sprintf( __( 'Invoice %1$s · %2$s via %3$s. A receipt was sent to %4$s.', 'hi-wpessential' ), $order->get_order_number(), wp_strip_all_tags( wc_price( (float) $order->get_total() ) ), $order->get_payment_method_title(), $order->get_billing_email() ) ) . '</p>'
+			. '<p class="wpe-order__actions"><a class="is-primary" href="' . esc_url( $project ) . '">' . esc_html__( 'View project status', 'hi-wpessential' ) . '</a><a href="' . esc_url( $order->get_view_order_url() ) . '">' . esc_html__( 'Download receipt', 'hi-wpessential' ) . '</a></p></div>';
+	}
 	$keys = '';
 	if ( class_exists( '\WPEssential\Server\Licenses' ) ) {
 		foreach ( (array) $order->get_meta( '_wpes_licenses' ) as $id ) {
