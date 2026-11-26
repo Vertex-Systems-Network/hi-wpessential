@@ -40,8 +40,11 @@ def plan_card(pl, period_suffix, buy):
     top = b.group(b.h(pl['name'], level=3, className='wpe-ess-plan__name'),
                   *([b.p('Popular', className='wpe-ess-badge wpe-ess-badge--orange')] if feat else []),
                   layout='flex', justify='space-between', valign='center', className='wpe-ess-plan__top')
+    alt = {'monthly': 'or yearly −20%, or lifetime', 'yearly': 'or monthly, or lifetime', 'lifetime': 'or monthly, or yearly −20%'}.get(pl.get('period'), '')
     return b.group(top,
+                   *([b.p(pl['who'], className='wpe-ess-plan__who')] if pl.get('who') else []),
                    b.p('$%s <small>%s</small>' % ('{:,}'.format(int(pl['price'])), period_suffix), className='wpe-ess-plan__price'),
+                   *([b.p(alt, className='wpe-ess-plan__alt')] if alt else []),
                    b.p(pl['short'], className='wpe-ess-plan__desc'),
                    b.buttons(arrow(('Get ' if feat else 'Choose ') + pl['name'], buy), className='wpe-ess-plan__cta'),
                    b.ul(pl['inc'], className='wpe-ess-check'),

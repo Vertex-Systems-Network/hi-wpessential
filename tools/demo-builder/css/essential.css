@@ -669,9 +669,10 @@ body:not(:has(.wpe-ess-hero)) .wpe-ess-card.wpe-ess-card--doc .wpe-ess-card__tit
 .wpe-ess-doc p { font-size: 15px; }
 .wpe-ess-doc .wpe-alert { background: #fdf1e6 !important; border: 0 !important; border-inline-start: 3px solid #ec7d1a !important; border-radius: 8px; color: var(--wp--preset--color--text) !important; }
 .wpe-ess-doc .wpe-alert :is(.wpe-alert__icon, .wpe-alert__title) { display: none; }
-.wpe-ess-doc .wpe-code { background: #0b1a3d !important; border: 0 !important; border-radius: 8px; color: #fff; }
-.wpe-ess-doc .wpe-code :is(.wpe-code__head, .wpe-code__header, .wpe-code__bar) { display: none; }
-.wpe-ess-doc .wpe-code :is(pre, code) { background: transparent !important; color: #fff !important; font-size: 12px; }
+.wpe-ess-doc .wpe-code:not(.is-html) :is(.wpe-code__code-panel, pre) { background: #0b1a3d !important; border: 0 !important; border-radius: 8px; color: #fff; }
+.wpe-ess-doc .wpe-code:not(.is-html) :is(.wpe-code__head, .wpe-code__header, .wpe-code__bar, .wpe-code__copy, .wpe-code__lang) { display: none !important; }
+.wpe-ess-doc .wpe-code:not(.is-html) :is(pre, code) { background: transparent !important; color: #fff !important; font-size: 12px; padding: 14px 16px; margin: 0; }
+.wpe-ess-doc .wpe-code.is-html { background: none !important; color: inherit; }
 .wpe-ess-doc__helpful { display: flex; align-items: center; gap: 8px; margin-top: 28px !important; padding-top: 20px; border-top: 1px solid #dde4f0; font-size: 13px; font-weight: 600; }
 .wpe-ess-doc__helpful span { margin-inline-end: auto; }
 .wpe-ess-doc__helpful a { padding: 8px 16px; border: 1px solid #dde4f0; border-radius: 999px; color: var(--wp--preset--color--text); text-decoration: none; font-weight: 500; }
@@ -1063,3 +1064,123 @@ body.single-product:has(.wpe-ess-pro) .wpe-main > * { max-width: 1680px !importa
 .wpe-account__danger p { margin: 0 0 18px; color: #4a5a7a; font-size: 14px; }
 .wpe-account__danger button { padding: 12px 22px; border: 1px solid #dde4f0; border-radius: 999px; background: #fff; color: #0b1a3d; font-weight: 600; cursor: pointer; }
 .wpe-ess-quote__avatar { flex: 0 0 44px; }
+
+/* Figma 01 recheck: split headings, docs search on the right, stars */
+.wpe-ess-head--split > .wpe-container__inner, .wpe-ess-head--split { display: flex !important; flex-wrap: wrap; justify-content: space-between !important; align-items: flex-end !important; gap: 24px; }
+.wpe-ess-head--split > .wpe-container__inner > .wpe-ess-head__text, .wpe-ess-head--split > .wpe-ess-head__text { flex: 1 1 520px; }
+.wpe-ess-section--alt .wpe-ess-head:has(.wpe-ess-docs__search) > .wpe-container__inner { display: flex !important; justify-content: space-between !important; align-items: flex-end !important; flex-wrap: wrap; gap: 24px; }
+.wpe-ess-quote { justify-content: flex-start; }
+.wpe-ess-quote__stars { color: #ec7d1a; letter-spacing: 2px; font-size: 16px; }
+.wpe-ess-quote figcaption { margin-top: auto; }
+.wpe-ess-head--split > .wpe-container__inner, .wpe-ess-section--alt .wpe-ess-head:has(.wpe-ess-docs__search) > .wpe-container__inner { flex-direction: row !important; }
+.wpe-ess-head--split > .wpe-container__inner > :last-child { flex: none; }
+.wpe-ess-news > .wpe-container__inner { flex-direction: row !important; flex-wrap: wrap; justify-content: space-between !important; align-items: center !important; }
+:is(.wpe-ess-head--split, .wpe-ess-head:has(.wpe-ess-docs__search), .wpe-ess-news) > .wpe-container__inner > .wpe-container, :is(.wpe-ess-head:has(.wpe-ess-docs__search), .wpe-ess-news) > .wpe-container__inner > * { width: auto !important; flex: 0 1 auto; }
+:is(.wpe-ess-head--split, .wpe-ess-head:has(.wpe-ess-docs__search), .wpe-ess-news) > .wpe-container__inner > :first-child, .wpe-ess-head--split .wpe-ess-head__text { flex: 1 1 520px !important; }
+.wpe-ess-header .wpe-header__inner, .wpe-ess-header .wpe-header__inner > .wpe-container__inner { width: 100% !important; justify-content: space-between !important; }
+.wpe-ess-header .wpe-header__inner > .wpe-container__inner > * { width: auto !important; }
+
+/* Figma 02: plan cards on the pricing page */
+.wpe-ess-plan > .wpe-container__inner { display: flex !important; flex-direction: column !important; height: 100%; }
+.wpe-ess-plan__who, .wpe-ess-plan__alt { font-size: 14px; color: #4a5a7a; }
+body:has(.wpe-ess-hero) :is(.wpe-ess-plan__who, .wpe-ess-plan__alt) { display: none; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan__desc { display: none; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan__price { font-size: 40px; line-height: 1.1; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan .wpe-ess-plan__top .wpe-ess-badge { order: -1; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan.is-featured .wpe-ess-plan__cta :is(.wpe-button__link, .wp-block-button__link) { background: #ec7d1a; color: #0b1a3d; border: 0; }
+
+/* Figma 02/03: single check markers, full-width plan buttons pinned to the bottom, newsletter text flush left */
+:is(.wpe-ess-check, .wpe-ess-plain, .wpe-ess-pro-mod ul) { list-style: none !important; padding-left: 0 !important; }
+:is(.wpe-ess-check, .wpe-ess-plain) li::marker { content: none; }
+.wpe-ess-plain li::before { content: none !important; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan .wpe-buttons { margin-top: auto !important; width: 100% !important; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan .wpe-buttons > .wpe-container__inner, body:not(:has(.wpe-ess-hero)) .wpe-ess-plan .wpe-buttons .wpe-button { width: 100% !important; flex: 1 1 100%; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan .wpe-buttons .wpe-button__link { width: 100%; justify-content: center; }
+.wpe-ess-news > .wpe-container__inner > .wpe-container, .wpe-ess-news > .wpe-container__inner > .wpe-container > .wpe-container__inner { margin: 0 !important; align-items: flex-start !important; text-align: left; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan .wpe-button { justify-items: stretch !important; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan .wpe-button__link { width: 100% !important; box-sizing: border-box; justify-self: stretch !important; max-width: none !important; justify-content: center; }
+:is(.wpe-ess-check, .wpe-ess-plain) ul { list-style: none !important; padding-left: 0 !important; margin-left: 0 !important; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan .wpe-button { grid-template-columns: 1fr !important; }
+.wpe-ess-demo__meta { display: flex; align-items: center; gap: 6px; }
+.wpe-ess-demo__meta > span:first-child { margin-right: auto; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan__top > .wpe-container__inner { flex-direction: column !important; align-items: flex-start !important; gap: 10px; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-plan__top > .wpe-container__inner > * { width: auto !important; }
+body:not(:has(.wpe-ess-hero)) .wpe-code:has(> .wpe-ess-toggle), body:not(:has(.wpe-ess-hero)) .wpe-code:has(.wpe-ess-toggle) { --wpek-content-margin: 0 !important; margin: 0 !important; width: 100% !important; max-width: none !important; }
+body:not(:has(.wpe-ess-hero)) .wpe-ess-toggle { margin-left: 0 !important; margin-right: auto !important; justify-content: flex-start; width: max-content; }
+
+/* Figma 02/03/06: dark hero overline as a full-width strip; service cards with full-width buttons at the bottom */
+.wpe-ess-page-hero--dark .wpe-code:has(.wpe-ess-over), .wpe-ess-page-hero--dark :is(.wpe-ess-over, .is-style-wpe-overline):first-child { width: 100% !important; max-width: none !important; }
+.wpe-ess-page-hero--dark .wpe-container__inner > :first-child :is(.wpe-ess-over, p) { display: block; width: 100%; text-align: left; padding: 4px 8px; border-radius: 999px; background: #1a2f63; color: #cfd8ee !important; font-size: 10px !important; letter-spacing: .06em; box-sizing: border-box; }
+.wpe-ess-card--svc > .wpe-container__inner { display: flex !important; flex-direction: column !important; height: 100%; min-height: 330px; }
+.wpe-ess-card--svc .wpe-buttons { margin-top: auto !important; width: 100% !important; }
+.wpe-ess-card--svc .wpe-buttons > .wpe-container__inner, .wpe-ess-card--svc .wpe-button { width: 100% !important; grid-template-columns: 1fr !important; }
+.wpe-ess-card--svc .wpe-button__link { width: 100% !important; justify-content: center; box-sizing: border-box; }
+
+/* Figma 07: five-step brief */
+.wpe-steps__nav { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; padding: 0; }
+.wpe-steps__nav li::before { content: none !important; }
+.wpe-steps__nav button { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 0; border-radius: 999px; background: none; color: #4a5a7a; font-size: 14px; cursor: pointer; }
+.wpe-steps__nav b { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #e9eef9; font-size: 12px; color: #1f48a6; }
+.wpe-steps__nav .is-on button, .wpe-steps__nav .is-done button { background: #e9eef9; color: #0b1a3d; }
+.wpe-steps__nav .is-on b, .wpe-steps__nav .is-done b { background: #1f48a6; color: #fff; }
+.wpe-steps__bar { height: 4px; border-radius: 4px; background: #e3e8f2; margin-bottom: 26px; overflow: hidden; }
+.wpe-steps__bar span { display: block; height: 100%; background: #ec7d1a; transition: width .3s; }
+.wpe-steps__title { margin: 0 0 18px !important; font: 700 24px/1.3 var(--wp--preset--font-family--body) !important; color: #0b1a3d; }
+.wpe-steps__foot { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+.wpe-steps__foot button { padding: 12px 22px; border-radius: 999px; font-weight: 600; cursor: pointer; }
+.wpe-steps__back { border: 1px solid #dde4f0; background: #fff; color: #0b1a3d; }
+.wpe-steps__next { margin-left: auto; border: 0; background: #ec7d1a; color: #0b1a3d; }
+.wpe-steps__foot [hidden] { display: none; }
+.wpe-steps__note { margin: 18px 0 0; font-size: 12px; color: #4a5a7a; }
+.wpe-ess-stepper.is-stepped .wpforms-field-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+.wpe-ess-stepper.is-stepped .wpforms-field[hidden] { display: none !important; }
+.wpe-ess-stepper.is-stepped :is(.wpforms-field-checkbox, .wpforms-field-radio, .wpforms-field-textarea, .wpforms-field-url:has(+ .wpforms-field-textarea)) { grid-column: 1 / -1; }
+.wpe-ess-stepper .wpforms-field :is(input[type=text], input[type=email], input[type=url], input[type=tel], select, textarea) { width: 100% !important; max-width: none !important; background: #f3f6fc !important; border: 1px solid #e3e8f2 !important; border-radius: 10px !important; min-height: 46px; }
+.wpe-ess-stepper :is(.wpforms-field-checkbox, .wpforms-field-radio) ul { display: flex !important; flex-wrap: wrap; gap: 8px; padding: 0 !important; }
+.wpe-ess-stepper :is(.wpforms-field-checkbox, .wpforms-field-radio) li { margin: 0 !important; padding: 0 !important; }
+.wpe-ess-stepper :is(.wpforms-field-checkbox, .wpforms-field-radio) li::before { content: none !important; }
+.wpe-ess-stepper :is(.wpforms-field-checkbox, .wpforms-field-radio) li { position: relative; }
+.wpe-ess-stepper :is(.wpforms-field-checkbox, .wpforms-field-radio) li input { position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; margin: 0 !important; }
+.wpe-ess-stepper :is(.wpforms-field-checkbox, .wpforms-field-radio) li label { display: inline-block !important; padding: 7px 14px; border: 1px solid #dde4f0; border-radius: 999px; background: #fff; font-size: 13px; color: #0b1a3d; cursor: pointer; }
+.wpe-ess-stepper :is(.wpforms-field-checkbox, .wpforms-field-radio) li:has(input:checked) label { border-color: #ec7d1a; background: #fdf0e4; }
+.wpe-ess-stepper :is(.wpforms-field-checkbox, .wpforms-field-radio) li:has(input:focus-visible) label { outline: 2px solid #1f48a6; outline-offset: 2px; }
+.wpe-ess-stepper .wpforms-field-container > .wpforms-field:last-child li input { position: static !important; opacity: 1 !important; width: auto !important; height: auto !important; margin-right: 8px !important; }
+.wpe-ess-stepper .wpforms-field-container > .wpforms-field:last-child li label, .wpe-ess-stepper .wpforms-field-container > .wpforms-field:last-child li:has(input:checked) label { border: 0; background: none; padding: 0; }
+.wpe-ess-side__list { margin: 0; padding-left: 18px; display: grid; gap: 10px; font-size: 14px; color: #4a5a7a; }
+.wpe-ess-side__steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; font-size: 14px; color: #4a5a7a; }
+.wpe-ess-side__steps li::before { content: none !important; }
+@media (max-width: 700px) { .wpe-ess-stepper.is-stepped .wpforms-field-container { grid-template-columns: 1fr; } }
+
+/* Figma 08: topic counts with the arrow on the right; "Still stuck" button on the right edge */
+.wpe-ess-card__link--split a { display: flex !important; justify-content: space-between; width: 100%; text-decoration: none; }
+.wpe-ess-band--row > .wpe-container__inner { flex-direction: row !important; flex-wrap: nowrap; align-items: center !important; }
+.wpe-ess-band--row > .wpe-container__inner > * { width: auto !important; }
+.wpe-ess-band--row > .wpe-container__inner > .wpe-buttons { margin-left: auto !important; }
+.wpe-ess-stepper .wpe-steps__nav button { padding: 6px 12px !important; border: 0 !important; border-radius: 999px !important; background: none !important; color: #4a5a7a !important; font-size: 14px !important; font-weight: 500 !important; box-shadow: none !important; height: auto !important; line-height: 1.4 !important; }
+.wpe-ess-stepper .wpe-steps__nav :is(.is-on, .is-done) button { background: #e9eef9 !important; color: #0b1a3d !important; }
+.wpe-ess-stepper .wpe-steps__foot button { padding: 12px 22px !important; border-radius: 999px !important; font-weight: 600 !important; font-size: 15px !important; height: auto !important; box-shadow: none !important; }
+.wpe-ess-stepper .wpe-steps__foot .wpe-steps__back { border: 1px solid #dde4f0 !important; background: #fff !important; color: #0b1a3d !important; }
+.wpe-ess-stepper .wpe-steps__foot .wpe-steps__next { border: 0 !important; background: #ec7d1a !important; color: #0b1a3d !important; }
+.wpe-ess-docnav__list { padding-left: 0 !important; list-style: none; }
+.wpe-ess-doc .wpe-code:not(.is-html) .wpe-code__toolbar { display: none !important; }
+.wpe-ess-stepper :is(.wpforms-container, .wpforms-form, .wpforms-field-container, .wpforms-field) { max-width: none !important; width: 100% !important; } .wpe-ess-stepper .wpforms-field { padding: 8px 0 !important; }
+.wpe-ess-stepper section.wpe-forms { max-width: none !important; width: 100% !important; --wpek-content-width: 100%; } .wpe-ess-stepper .wpe-steps__foot { width: 100%; }
+.wpe-ess-stepper .wpe-steps__foot { display: flex !important; justify-content: space-between !important; } .wpe-ess-stepper .wpe-steps__foot .wpe-steps__next { margin-left: auto !important; } .wpe-ess-stepper .wpe-steps__bar { display: block !important; height: 4px !important; width: 100% !important; margin: 0 0 26px !important; } .wpe-ess-stepper .wpe-steps__bar span { display: block !important; height: 4px !important; }
+.wpe-ess-tag--improved { background: #e9eef9; color: #1f48a6; }
+
+/* Figma 13: stats + logos, team beside the map */
+.wpe-ess-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.wpe-ess-stats > div { padding: 18px 20px; border-radius: 12px; background: #eef2f9; }
+.wpe-ess-stats b { display: block; font: 600 28px/1.2 var(--wp--preset--font-family--heading); color: #0b1a3d; }
+.wpe-ess-stats span { font-size: 13px; color: #4a5a7a; }
+.wpe-ess-logos { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin: 28px 0 0; }
+.wpe-ess-logos span { font-size: 12px; color: #4a5a7a; }
+.wpe-ess-logos i { font: 600 18px/1 var(--wp--preset--font-family--heading); font-style: normal; color: #4a5a7a; opacity: .8; }
+.wpe-ess-teamgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.wpe-ess-people { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 24px; }
+.wpe-ess-people figure { margin: 0; width: 120px; }
+.wpe-ess-people figure > span { display: grid; place-items: center; aspect-ratio: 1; border-radius: 12px; background: #e9eef9; color: #1f48a6; font: 700 28px/1 var(--wp--preset--font-family--heading); }
+.wpe-ess-people b { display: block; margin-top: 8px; font-size: 14px; color: #0b1a3d; }
+.wpe-ess-people small { font-size: 12px; color: #4a5a7a; }
+.wpe-code:has(.wpe-ess-stats), .wpe-code:has(.wpe-ess-teamgrid) { --wpek-content-margin: 0 !important; width: 100% !important; max-width: none !important; }
+@media (max-width: 900px) { .wpe-ess-teamgrid { grid-template-columns: 1fr; } }

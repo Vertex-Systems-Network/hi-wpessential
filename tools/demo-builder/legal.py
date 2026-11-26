@@ -105,7 +105,10 @@ def pages(builder, brand, email, sells=None, kit=False, width='760px', extra=Non
         item = {'key': key, 'type': 'page', 'title': title, 'slug': slug, 'template': 'page-full-width',
                 'meta': {'_wpe_seo_description': '%s of %s.' % (title, brand)}}
         secs = secs or _sections(key, brand, email, sells)
-        if builder == 'elementor':
+        if builder == 'elementor' and kit:
+            item['content'] = ''
+            item['elementor'] = e.from_blocks(_g_page(title, secs, __import__('kit'), width='1680px' if plain else width, over=over, sub=sub, plain=plain))
+        elif builder == 'elementor':
             item['content'] = ''
             item['elementor'] = _e_page(title, secs, over, sub)
         else:

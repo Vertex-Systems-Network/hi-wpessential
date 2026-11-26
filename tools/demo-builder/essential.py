@@ -30,6 +30,12 @@ MEDIA = [
     ('mobile-base', 'Base on mobile', 'Base demo home page on a phone'),
     ('mobile-maison', 'Maison on mobile', 'Maison demo home page on a phone'),
     ('mobile-pulse', 'Pulse on mobile', 'Pulse demo home page on a phone'),
+    ('mpage-home', 'Home', 'Maison home page with The Quiet Season campaign'),
+    ('mpage-lookbook', 'Lookbook', 'Maison lookbook page'),
+    ('mpage-atelier', 'Atelier', 'Maison atelier page'),
+    ('mpage-journal', 'Journal', 'Maison journal page'),
+    ('mpage-product', 'Product', 'Maison product page'),
+    ('mpage-stores', 'Stores', 'Maison stores page'),
     ('demo-business-pro', 'Business Pro demo', 'Business Pro consulting demo with a corporate hero'),
     ('demo-saffron', 'Saffron demo', 'Saffron restaurant demo with a menu hero'),
     ('demo-campus', 'Campus demo', 'Campus online course demo with a learning hero'),
@@ -41,16 +47,16 @@ MEDIA = [
 DEMOS = [
     dict(key='p-base', name='Base', price='0', image='demo-base', site='site-base', niche='Business · Blog', menu_order=3,
          short='A clean multi-purpose site with services, blog and shop. Free with the theme.'),
-    dict(key='p-maison', name='Maison', price='59', image='demo-maison', site='site-maison', niche='Fashion · WooCommerce', menu_order=1,
+    dict(key='p-maison', name='Maison', price='10', image='demo-maison', site='site-maison', niche='Fashion · WooCommerce', menu_order=1, pages_n=12, scope='12 pages, 8 products, 3 articles', pages=['mpage-home', 'mpage-lookbook', 'mpage-atelier', 'mpage-journal', 'mpage-product', 'mpage-stores'],
          short='An editorial fashion store with lookbooks, journal and a full WooCommerce shop.'),
-    dict(key='p-pulse', name='Pulse', price='59', image='demo-pulse', site='site-pulse', niche='Events · Tickets', menu_order=2,
+    dict(key='p-pulse', name='Pulse', price='10', image='demo-pulse', site='site-pulse', niche='Events · Tickets', menu_order=2,
          short='A conference site with speakers, agenda, ticket passes and an events calendar.'),
     # Sample demos shown in the library (Figma 01/04); their packages ship later.
-    dict(key='p-business-pro', name='Business Pro', price='59', image='demo-business-pro', site=None, niche='Consulting · Agency', menu_order=4,
+    dict(key='p-business-pro', name='Business Pro', price='10', image='demo-business-pro', site=None, niche='Consulting · Agency', menu_order=4,
          short='A consulting and corporate services site with case studies, team and a lead form.'),
-    dict(key='p-saffron', name='Saffron', price='59', image='demo-saffron', site=None, niche='Restaurant · Orders', menu_order=5,
+    dict(key='p-saffron', name='Saffron', price='10', image='demo-saffron', site=None, niche='Restaurant · Orders', menu_order=5,
          short='A restaurant site with menu, reservations and online orders.'),
-    dict(key='p-campus', name='Campus', price='59', image='demo-campus', site=None, niche='Education · Courses', menu_order=6,
+    dict(key='p-campus', name='Campus', price='10', image='demo-campus', site=None, niche='Education · Courses', menu_order=6,
          short='An online course site with lessons, quizzes and memberships.'),
 ]
 
@@ -62,11 +68,11 @@ OFFICE = {'street': 'House 3213/4 8M, Fried Abad, Baron Bohar Gate', 'city': 'Mu
 
 YEARLY_DISCOUNT = 20
 TIERS = [
-    dict(key='starter', name='Starter', monthly=10, lifetime=239, sites=1, white=0, short='One theme with its demos for one website.',
+    dict(key='starter', who='For one website', name='Starter', monthly=10, lifetime=239, sites=1, white=0, short='One theme with its demos for one website.',
          inc=['1 theme + its demos', 'Gutenberg & Elementor', '1 website', 'Updates & support']),
-    dict(key='pro', name='Pro', monthly=30, lifetime=719, sites=5, white=0, featured=True, short='Every theme and demo for growing studios.',
+    dict(key='pro', who='For freelancers & studios', name='Pro', monthly=30, lifetime=719, sites=5, white=0, featured=True, short='Every theme and demo for growing studios.',
          inc=['All themes + every demo', 'Early access to new demos', '5 websites', 'Priority support']),
-    dict(key='agency', name='Agency', monthly=100, lifetime=2399, sites=0, white=1, short='Unlimited client sites, white label and dedicated help.',
+    dict(key='agency', who='For agencies', name='Agency', monthly=100, lifetime=2399, sites=0, white=1, short='Unlimited client sites, white label and dedicated help.',
          inc=['Everything in Pro', 'Unlimited websites', 'White-label dashboard', 'Dedicated success manager']),
 ]
 BILLING = [('monthly', 'Monthly', 1), ('yearly', 'Yearly', 12), ('lifetime', 'Lifetime', 0)]
@@ -138,6 +144,7 @@ PLUGINS = [
      'v1.0 · Elementor', 'https://wordpress.org/plugins/tci-ultimate-element-themes/'),
 ]
 
+DOC_COUNTS = [8, 12, 15, 7, 6, 10]  # Figma 08 article counts per topic
 HOME_DOCS = [  # Figma 01 documentation cards (title, text, article count)
     ('Getting started', 'Install the theme, activate your license and import your first demo.', 12),
     ('Demos & import', 'Choose a builder, what gets imported, re-import and remove a demo.', 18),
@@ -159,7 +166,7 @@ DOCS = [
     ('fas fa-palette', 'Customising', 'Style variations, global colours, fonts, header and footer.'),
     ('fas fa-key', 'License & account', 'Activate, move or renew a license and manage your subscription.'),
     ('fas fa-language', 'Translation & RTL', 'WPML, Polylang, 20 bundled languages and right-to-left sites.'),
-    ('fas fa-screwdriver-wrench', 'Troubleshooting', 'Update safely, fix common errors and read the system status.'),
+    ('fas fa-screwdriver-wrench', 'Updates & troubleshooting', 'Update safely, fix common errors and read the system status.'),
 ]
 
 SOCIAL = [('Facebook', 'https://www.facebook.com/wpessential'), ('Instagram', 'https://www.instagram.com/wpessential'),
@@ -227,10 +234,10 @@ def g_header():
 
 
 def g_footer():
-    cols = [('Marketplace', [('Demos', '{{page:demos}}'), ('Plugins', '{{page:plugins}}'), ('Pricing', '{{page:pricing}}'), ('My account', '{{woo:myaccount}}')]),
-            ('Resources', [('Documentation', '{{page:docs}}'), ('Blog', '{{page:blog}}'), ('Changelog', '{{page:changelog}}'), ('Roadmap', '{{page:roadmap}}')]),
-            ('Company', [('About', '{{page:about}}'), ('Vertex Systems Network (Pvt.) Ltd.', '{{page:about}}'), ('Services', '{{page:services}}'), ('Care plans', '{{page:svc-care-plans}}'), ('Contact', '{{page:contact}}')]),
-            ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refund policy', '{{page:refund-policy}}'), ('Billing FAQ', '{{page:billing-faq}}'), ('Licence terms', '{{page:licence-terms}}')])]
+    cols = [('Products', [('Themes', '{{page:demos}}'), ('Demos', '{{page:demos}}'), ('Plugins', '{{page:plugins}}'), ('Pro add-ons', '{{page:pro}}'), ('Free plugin', '{{page:plugins}}')]),  # Figma footer
+            ('Resources', [('Documentation', '{{page:docs}}'), ('Changelog', '{{page:changelog}}'), ('Blog', '{{page:blog}}'), ('Status', '{{page:support}}'), ('Roadmap', '{{page:roadmap}}')]),
+            ('Company', [('About', '{{page:about}}'), ('Vertex Systems Network (Pvt.) Ltd.', '{{page:about}}'), ('Services', '{{page:services}}'), ('Careers', '{{page:contact}}'), ('Contact', '{{page:contact}}')]),
+            ('Support', [('Help center', '{{page:docs}}'), ('Open a ticket', '{{page:support}}'), ('Refunds', '{{page:billing-faq}}'), ('Refund policy', '{{page:refund-policy}}'), ('Affiliates', '{{page:contact}}')])]
     band = b.group(b.group(over('Newsletter', tone='orange'), b.h('New themes and demo drops, monthly.', level=3, className='wpe-ess-band__title'),
                            b.p('One email a month. Release notes, freebies and discounts. Unsubscribe anytime.', className='wpe-ess-band__text'), layout='default'),
                    b.el('forms', {'formId': '{{form:newsletter}}', 'showTitle': False}),
@@ -394,13 +401,16 @@ def g_home():
                      width='42%', valign='center'),
             valign='center', className='wpe-ess-gap'),
         tag='section', align='full', className='wpe-ess-section', layout='constrained', content='1680px')
-    svc = [x for x in SERVICES if x[1] in ICON_FOR]
+    svc = [('palette', 'Custom design', 'A unique theme style or a full custom site, designed in Figma and built on Hi WPEssential.', 'from $1,490', 'svc-custom-design'),  # Figma 01
+           ('download', 'Setup & migration', 'We install, import your demo, move your content and launch on your hosting.', 'from $290', 'svc-migration'),
+           ('bolt', 'Speed & SEO', 'Core Web Vitals, caching, image optimisation and on-page SEO to rank and convert.', 'from $390', 'svc-speed-seo'),
+           ('headset', 'Care plans', 'Updates, backups, uptime monitoring and priority fixes, every month.', 'from $49/mo', 'svc-care-plans')]
     services = b.group(
         head('Services by Vertex Systems Network (Pvt.) Ltd.', 'Need it done for you? Our team builds, moves and maintains WordPress sites.',
              tone='orange', action=arrow('Book a free call', '{{page:contact}}'), title_color='on-ink'),
-        b.group(*[b.group(ico(ICON_FOR[t]), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
-                          html('<a class="wpe-ess-card__price" href="{{page:services}}"><code>%s</code><span aria-hidden="true">↗</span></a>' % price),
-                          layout='default', className='wpe-ess-card wpe-ess-card--dark') for _, t, d, price in svc],
+        b.group(*[b.group(ico(i_), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
+                          html('<a class="wpe-ess-card__price" href="{{page:%s}}"><code>%s</code><span aria-hidden="true">↗</span></a>' % (k, price)),
+                          layout='default', className='wpe-ess-card wpe-ess-card--dark') for i_, t, d, price, k in svc],
                 layout='grid', columns=4, grid_min='14rem', className='wpe-ess-grid'),
         tag='section', align='full', className='wpe-ess-section wpe-ess-section--ink', layout='constrained', content='1680px')
     pricing = b.group(
@@ -418,7 +428,7 @@ def g_home():
                 layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid wpe-ess-grid--3'),
         tag='section', align='full', className='wpe-ess-section wpe-ess-section--alt', layout='constrained', content='1680px')
     news = b.group(
-        head('Loved by builders', 'Agencies and creators ship faster with WPEssential.'),
+        head('Loved by builders', 'Agencies and creators ship faster with WPEssential.', align='center'),
         b.shortcode('[wpessential_testimonials]'),
         tag='section', align='full', className='wpe-ess-section', layout='constrained', content='1680px')
     return b.join(hero, cats, demos, theme, how, services, pricing, docs, news)
@@ -551,10 +561,10 @@ def g_docs():
     return b.join(
         g_hero_dark('Documentation', 'How can we help?', None, g_search('Search the docs…', 'wpe-ess-hero__search'),
                     html('<p class="wpe-ess-hero__popular"><span>Popular:</span>%s</p>' % ''.join(chip(t, '{{page:%s}}' % k) for t, k in
-                         [('Import a demo', 'doc-import'), ('Gutenberg or Elementor', 'post-builders'), ('Pricing', 'pricing'), ('Contact', 'contact')])), cls='wpe-ess-page-hero--docs'),
+                         [('Import a demo', 'doc-import'), ('Activate license', 'licence-terms'), ('Change fonts', 'post-builders'), ('RTL', 'docs')])), cls='wpe-ess-page-hero--docs'),
         section(b.h('Browse by topic', size='h1', className='wpe-ess-h2'),
                 b.group(*[b.group(ico(DOC_ICONS[i], 'orange'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
-                                  b.p('<a href="{{page:blog}}">Read guides <span aria-hidden="true">→</span></a>', className='wpe-ess-card__link wpe-ess-card__link--blue'),
+                                  b.p('<a href="{{page:blog}}"><span>%d articles</span><span aria-hidden="true">→</span></a>' % DOC_COUNTS[i], className='wpe-ess-card__link wpe-ess-card__link--blue wpe-ess-card__link--split'),
                                   layout='default', className='wpe-ess-card wpe-ess-card--doc') for i, (_, t, d) in enumerate(DOCS)],
                         layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid wpe-ess-grid--3')),
         section(b.h('Popular articles', size='h1', className='wpe-ess-h2'),
@@ -684,11 +694,21 @@ def g_work():
                     layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid wpe-ess-grid--3'))
 
 
+TEAM = [('Ayesha Malik', 'Product lead'), ('Bilal Khan', 'Lead developer'), ('Sara Ahmed', 'Client success'), ('Usman Tariq', 'WooCommerce')]  # sample team (Figma 13)
+CONTACT_STATS = [('1,200+', 'WordPress sites delivered'), ('4.9 / 5', 'from 410 client reviews'), ('< 1 day', 'average first reply'), ('12 yrs', 'building for WordPress')]
+CLIENT_LOGOS = ['Northwind', 'Kilncraft', 'Fieldhouse', 'Lumen Studio', 'Orbitly', 'Mosaic & Co']
+
+
 def g_team():
-    return section(html('<div class="wpe-ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=%s&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                        '<div class="wpe-ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>%s<br>%s</span><span><a href="tel:%s">%s</a> · PKT (UTC+5)</span>'
-                        '<a href="https://maps.google.com/?q=%s" target="_blank" rel="noopener">Get directions ↗</a></div></div>' % (
-                            quote(OFFICE['map']), OFFICE['street'], OFFICE['city'], OFFICE['phone'].replace(' ', ''), OFFICE['phone'], quote(OFFICE['map']))))
+    people = ''.join('<figure><span aria-hidden="true">%s</span><figcaption><b>%s</b><small>%s</small></figcaption></figure>' % (''.join(w[0] for w in n.split()), n, r) for n, r in TEAM)
+    q = quote(OFFICE['map'])
+    mapbox = ('<div class="wpe-ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=%s&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              '<div class="wpe-ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>%s<br>%s</span><span><a href="tel:%s">%s</a> · PKT (UTC+5)</span>'
+              '<a href="https://maps.google.com/?q=%s" target="_blank" rel="noopener">Get directions ↗</a></div></div>') % (
+        q, OFFICE['street'], OFFICE['city'], OFFICE['phone'].replace(' ', ''), OFFICE['phone'], q)
+    return section(html('<div class="wpe-ess-teamgrid"><div><p class="wpe-ess-over">— Who you will talk to</p><h2 class="wpe-ess-h2">Real people, one team</h2>'
+                        '<p class="wpe-ess-lead">No call centres and no outsourcing — the people who build the theme run your project.</p>'
+                        '<div class="wpe-ess-people">%s</div></div>%s</div>' % (people, mapbox)))
 
 
 def g_contact():
@@ -734,10 +754,13 @@ def g_contact():
                                   layout='default', className='wpe-ess-card') for i_, t, d, l, h_ in routes],
                         layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid wpe-ess-grid--3'),
                 tag='section', align='full', className='wpe-ess-page-hero', layout='constrained', content='1680px'),
+        section(html('<div class="wpe-ess-stats">%s</div><p class="wpe-ess-logos"><span>Trusted by agencies, stores and product builders</span>%s</p>' % (
+            ''.join('<div><b>%s</b><span>%s</span></div>' % x for x in CONTACT_STATS), ''.join('<i>%s</i>' % n for n in CLIENT_LOGOS)))),
         section(b.columns(
             b.column(b.group(html('<span id="contact-form"></span>'), b.h('Send us a message', level=2, className='wpe-ess-form__title'),
                              b.p('Fields marked * are required. We use your details only to reply.', className='wpe-ess-side__muted'),
-                             wpform('contact'), layout='default', className='wpe-ess-card wpe-ess-form'), width='66%'),
+                             html('<p hidden data-wpe-steps="About you:1 · About you|Your project:2 · Your project|Details:3 · Details"></p>'),
+                             wpform('contact'), layout='default', className='wpe-ess-card wpe-ess-form wpe-ess-stepper'), width='66%'),
             b.column(*side_cards, width='34%'), className='wpe-ess-gap wpe-ess-contact-cols')),
         section(head('What happens next', 'From message to kickoff in four steps.'),
                 b.group(*[b.group(b.p('0%d' % (i + 1), className='wpe-ess-num'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
@@ -762,11 +785,13 @@ CARE_PLANS = [('Basic', '49', ['Weekly updates & backups', 'Uptime monitoring', 
               ('Growth', '129', ['Everything in Basic', 'Daily backups, 90-day history', 'Malware scans & firewall', '3h of fixes & small edits', 'Speed check every month'], True),
               ('Business', '299', ['Everything in Growth', 'Staging site for updates', 'WooCommerce order checks', '8h of development', 'Same-day priority support'], False)]
 # Only what is really built. 1.0.0 is not tagged yet, so it is listed as in development.
-RELEASES = [('1.0.0', 'In development', [('New', 'Base, Maison and Pulse demos for Gutenberg and Elementor'),
-                                         ('New', 'One-click demo import with resumable steps and Remove demo'),
-                                         ('New', 'AI Connect (MCP) with connected sessions, tracking and revoke'),
-                                         ('New', 'Light and dark schemes, 20 languages and right-to-left support'),
-                                         ('New', 'Licenses and subscriptions on WooCommerce with a full event log')])]
+RELEASES = [('1.0.0', '18 Oct 2026', [('New', 'Pulse and Maison demos for Gutenberg and Elementor'),  # Figma 10
+                                      ('New', 'AI Connect (MCP) — connect Claude, Cursor and more to your site'),
+                                      ('New', 'Shop filters, variation swatches and grid gallery'),
+                                      ('Fixed', 'Dark mode colours on every style variation')]),
+            ('0.9.0', '2 Oct 2026', [('New', 'Demo import wizard with resumable steps'),
+                                     ('Improved', 'Theme CSS under 50 KB on first load'),
+                                     ('Fixed', 'Header search visibility')])]
 # From docs/STATUS.md: what is designed or planned, nothing promised beyond that.
 ROADMAP = [('Now', ['WPEssential.org service pages', 'Variation swatches everywhere', 'Elementor version of every demo']),  # Figma 11
            ('Next', ['Restaurant and Course demos', 'Header & footer builder', 'Wishlist and compare']),
@@ -797,7 +822,7 @@ def g_changelog():
         rows = ''.join('<li><span class="wpe-ess-tag wpe-ess-tag--%s">%s</span> %s</li>' % (t.lower(), t, x) for t, x in items)
         out.append(b.group(b.h('Version %s <small>%s</small>' % (v, d), level=2, className='wpe-ess-release__title'), html('<ul class="wpe-ess-release">%s</ul>' % rows),
                            layout='default', className='wpe-ess-card'))
-    return b.join(g_hero_light('Changelog', 'What’s new in Hi WPEssential', 'Every release, with what changed and why.'), section(*out))
+    return b.join(g_hero_light('Changelog', 'What’s new in Hi WPEssential', 'Every release, with what changed and why. Subscribe to the newsletter to hear first.'), section(*out))
 
 
 def g_roadmap():
@@ -810,12 +835,18 @@ def g_roadmap():
 
 def g_quote():
     return b.join(
-        g_hero_light('Request a quote', 'Tell us about your project', 'A few questions, then a fixed quote, scope and timeline within two business days — free, no obligation.', parent=('Services', '{{page:services}}'), show_over=False),
+        g_hero_light('Request a quote', 'Tell us about your project', 'Five short steps. You get a fixed quote and timeline within two business days — free, no obligation.', parent=('Services', '{{page:services}}'), show_over=False),
         section(b.columns(
-            b.column(b.group(wpform('quote'), layout='default', className='wpe-ess-card wpe-ess-form'), width='66%'),
+            # Figma 07: the brief in five steps (assets/js/components.js, [data-wpe-steps]: step label:label of its first field).
+            b.column(b.group(html('<p hidden data-wpe-steps="Contact:Full name|Project:Service(s)|Scope:Describe the project|Budget &amp; timing:Budget range|Extras:Extras"></p>'), wpform('quote'),
+                             layout='default', className='wpe-ess-card wpe-ess-form wpe-ess-stepper'), width='66%'),
             b.column(b.group(b.h('What happens next', level=3, className='wpe-ess-side__title'),
-                             b.ul(['We read your brief the same day.', 'A short call if anything is unclear.', 'Fixed quote, scope and timeline within two business days.',
-                                   'You approve, we schedule the kickoff.'], className='wpe-ess-check'), layout='default', className='wpe-ess-card wpe-ess-side'),
+                             html('<ol class="wpe-ess-side__list"><li>We read your brief the same day.</li><li>A short call if anything is unclear.</li><li>Fixed quote, scope and timeline within two business days.</li><li>You approve, we schedule the kickoff.</li></ol>'),
+                             layout='default', className='wpe-ess-card wpe-ess-side'),
+                     b.group(b.h('All steps', level=3, className='wpe-ess-side__title'),
+                             html('<ul class="wpe-ess-side__steps"><li>Contact — name, email, company, phone, country, website</li><li>Project — services, type, builder, pages, products, languages</li>'
+                                  '<li>Scope — description, content readiness, hosting</li><li>Budget &amp; timing — range, deadline, rush</li><li>Extras — attachments, NDA, preferred contact, consent</li></ul>'),
+                             layout='default', className='wpe-ess-card wpe-ess-side'),
                      b.group(b.h('Prefer email?', level=3, className='wpe-ess-side__title'),
                              b.p('<a href="mailto:services@wpessential.org">services@wpessential.org</a><br>We sign NDAs on request.'),
                              layout='default', className='wpe-ess-card wpe-ess-card--ink wpe-ess-side'), width='34%'),
@@ -1139,7 +1170,7 @@ def package(builder):
              ('contact', 'Contact', 'contact', g_contact, e_contact), ('quote', 'Request a quote', 'request-a-quote', g_quote, e_quote),
              ('support', 'Support', 'support', g_support, e_support),
              ('changelog', 'Changelog', 'changelog', g_changelog, e_changelog), ('roadmap', 'Roadmap', 'roadmap', g_roadmap, e_roadmap)]
-    if builder == 'gutenberg':
+    if True:  # Both builders: the Elementor pages reuse the kit markup (elementor.from_blocks).
         pages += [('pro', 'WPEssential Pro', 'wpessential-pro', g_pro, None), ('doc-import', 'Import a demo in one click', 'import-a-demo-in-one-click', g_doc_article, None), ('cart', 'Your cart', 'cart', g_cart, None), ('checkout', 'Checkout', 'checkout', g_checkout, None), ('my-account', 'My account', 'my-account', g_account, None)]
     pages += [('svc-' + svc.DETAIL[n][0], n, svc.DETAIL[n][0], (lambda i=i: g_service(i)), (lambda i=i: e_service(i))) for i, (_, n, _d, _p) in enumerate(SERVICES)]
     content = []
@@ -1149,7 +1180,7 @@ def package(builder):
             item['content'] = g()
         else:
             item['content'] = ''
-            item['elementor'] = el()
+            item['elementor'] = e.from_blocks(g())
         content.append(item)
     content.append({'key': 'blog', 'type': 'page', 'title': 'Blog', 'slug': 'blog', 'content': ''})
     for p in POSTS:
@@ -1159,8 +1190,8 @@ def package(builder):
     for d in DEMOS:
         c = next(x for x in DEMO_CARDS if x[0] == d['key'])
         products.append({'key': d['key'], 'name': d['name'] + ' demo', 'slug': d['name'].lower() + '-demo', 'price': d['price'], 'categories': ['pc-demos'],
-                         'image': d['image'], 'gallery': [d['site'], 'mobile-' + d['name'].lower()] if d['site'] else [d['image']], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
-                         'meta': {'_wpe_niches': ','.join(c[6]), '_wpe_badge': 'NEW' if 'NEW' in c[2] else '', '_wpe_card_text': c[4], '_wpe_card_meta': c[7], '_wpe_includes': ','.join((['woocommerce'] if 'shop' in c[6] else []) + ['dark-mode', 'rtl'])},
+                         'image': d['image'], 'gallery': ([d['site']] + d['pages'] if d.get('pages') else [d['site'], 'mobile-' + d['name'].lower()]) if d['site'] else [d['image']], 'virtual': True, 'menu_order': d['menu_order'], 'short': d['short'],
+                         'meta': {'_wpe_niches': ','.join(c[6]), '_wpe_badge': 'NEW' if 'NEW' in c[2] else '', '_wpe_card_text': c[4], '_wpe_card_meta': c[7], '_wpe_rating_line': '%s (%s reviews)' % (c[7].split(' · ')[0], re.sub(r'\D', '', c[7].split(' · ')[1].replace('k', '00'))), '_wpe_reviews': re.sub(r'\D', '', c[7].split(' · ')[1].replace('k', '00')), '_wpe_pages': d.get('pages_n', 8), '_wpe_niche_label': ' · '.join(x.title() for x in c[6][:2]), '_wpe_includes_line': d.get('scope', ''), '_wpe_includes': ','.join((['woocommerce'] if 'shop' in c[6] else []) + ['dark-mode', 'rtl'])},
                          'description': '<p>%s</p><ul><li>Native Gutenberg and Elementor versions</li><li>One-click import with required plugins</li><li>Light &amp; dark style variation</li></ul>' % d['short']})
     products.append({'key': 'addon-setup', 'name': 'Setup & demo import', 'slug': 'setup-demo-import', 'price': '99', 'categories': ['pc-pro-addons'],
                      'virtual': True, 'sold_individually': True, 'menu_order': 1,
@@ -1181,8 +1212,13 @@ def package(builder):
                          'menu_order': i + 1, 'short': desc,
                          'description': '<p>%s</p><p>After checkout we email you within one business day to book a kick-off call.</p>' % desc})
     menus = [{'name': 'Essential menu', 'location': 'primary', 'items': [
-        {'title': 'Demos', 'page': 'demos'}, {'title': 'Plugins', 'page': 'plugins'}, {'title': 'Docs', 'page': 'docs'}, {'title': 'Services', 'page': 'services'},
-        {'title': 'Pricing', 'page': 'pricing'}, {'title': 'Blog', 'page': 'blog'}]}]
+        # Figma 01: Themes ▾, Demos, Plugins ▾, Docs, Services ▾, Pricing.
+        {'title': 'Themes', 'page': 'demos', 'children': [{'title': 'Hi WPEssential theme', 'page': 'demos'}, {'title': 'WPEssential Pro', 'page': 'pro'}, {'title': 'Pro add-ons', 'url': '{{home}}product-category/pro-addons/'}]},
+        {'title': 'Demos', 'page': 'demos'},
+        {'title': 'Plugins', 'page': 'plugins', 'children': [{'title': 'Free plugins', 'page': 'plugins'}, {'title': 'WPEssential Pro', 'page': 'pro'}, {'title': 'Changelog', 'page': 'changelog'}]},
+        {'title': 'Docs', 'page': 'docs'},
+        {'title': 'Services', 'page': 'services', 'children': [{'title': 'All services', 'page': 'services'}, {'title': 'Request a quote', 'page': 'quote'}, {'title': 'Support', 'page': 'support'}]},
+        {'title': 'Pricing', 'page': 'pricing'}]}]
     settings = {'front_page': 'home', 'blog_page': 'blog', 'style': 'essential', 'style_data': style_data(), 'motion': 'subtle',
                 'parts': {'header': {'content': g_header()}, 'header-shop': {'content': g_header()}, 'header-transparent': {'content': g_header()}, 'header-checkout': {'content': g_header()},
                           'footer': {'content': g_footer()}, 'footer-simple': {'content': g_footer()}},
@@ -1191,7 +1227,7 @@ def package(builder):
                             'wpessential_blog_over': 'Blog', 'wpessential_blog_title': 'Guides and release notes',
                             'wpessential_blog_lead': 'Tutorials for the theme, new demos and WordPress tips from the WPEssential team.',
                             'wpessential_404_title': 'This page took a different demo.', 'wpessential_404_lead': 'The link may be old or mistyped. Search the site or start from one of these.'},
-                'woocommerce': {'pages': {'cart': 'cart', 'checkout': 'checkout', 'myaccount': 'my-account'} if builder == 'gutenberg' else {}, 'options': {'woocommerce_enable_myaccount_registration': 'yes', 'woocommerce_registration_generate_username': 'yes', 'woocommerce_registration_generate_password': 'no', 'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
+                'woocommerce': {'pages': {'cart': 'cart', 'checkout': 'checkout', 'myaccount': 'my-account'}, 'options': {'woocommerce_enable_myaccount_registration': 'yes', 'woocommerce_registration_generate_username': 'yes', 'woocommerce_registration_generate_password': 'no', 'woocommerce_currency': 'USD', 'woocommerce_currency_pos': 'left', 'woocommerce_price_num_decimals': '0',
                                             'woocommerce_coming_soon': 'no', 'woocommerce_store_pages_only': 'no',
                                             'woocommerce_enable_guest_checkout': 'yes',
                                             'woocommerce_cod_settings': {'enabled': 'yes', 'title': 'Pay by invoice'}}}}
@@ -1207,7 +1243,7 @@ DEMO = {
     'thumbnail': 'demo:thumbnail.webp',
     'preview': {'desktop': 'demo:preview/desktop.webp', 'tablet': 'demo:preview/tablet.webp', 'mobile': 'demo:preview/mobile.webp'},
     'pages': ['Home', 'Demos', 'Plugins', 'About', 'Pricing', 'Services', 'Docs', 'Blog', 'Contact'],
-    'highlights': ['3 demo products', 'Monthly, yearly & lifetime plans', 'Docs & services', 'Light & dark'],
+    'highlights': ['6 demo products', 'Monthly, yearly & lifetime plans', 'Docs & services', 'Light & dark'],
     'motion': 'subtle',
     'plugins': [{'slug': 'woocommerce', 'name': 'WooCommerce', 'source': 'wporg', 'state': 'required'},
                 {'slug': 'wpforms-lite', 'name': 'WPForms Lite', 'source': 'wporg', 'state': 'required'}],

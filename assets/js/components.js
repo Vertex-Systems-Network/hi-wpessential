@@ -174,4 +174,79 @@
 			} );
 		} );
 	} );
+	// Multi-step form: <p data-wpe-steps="Step:First field label|..."> before a form splits its fields into steps with tabs,
+	// a progress bar and Back / Next. Required fields are checked before moving on; the last step shows submit.
+	document.querySelectorAll( '[data-wpe-steps]' ).forEach( function ( cfg ) {
+		var box = cfg.closest( '.wpe-ess-stepper' ) || cfg.parentNode;
+		var form = box.querySelector( 'form' );
+		var fields = form ? Array.prototype.slice.call( form.querySelectorAll( '.wpforms-field-container > .wpforms-field' ) ) : [];
+		if ( ! fields.length ) {
+			return;
+		}
+		// Each step starts at the field whose label begins with the text after the colon.
+		var label = function ( f ) { var l = f.querySelector( '.wpforms-field-label, h3' ); return l ? l.textContent.trim() : ''; };
+		var steps = cfg.dataset.wpeSteps.split( '|' ).map( function ( s ) {
+			var p = s.split( ':' );
+			var start = fields.findIndex( function ( f ) { return 0 === label( f ).indexOf( p[ 1 ] ); } );
+			return { label: p[ 0 ], start: start < 0 ? fields.length : start };
+		} );
+		steps[ 0 ].start = 0;
+		steps.forEach( function ( s, k ) { s.fields = fields.slice( s.start, k + 1 < steps.length ? steps[ k + 1 ].start : fields.length ); } );
+		var nav = document.createElement( 'ol' );
+		nav.className = 'wpe-steps__nav';
+		var bar = document.createElement( 'div' );
+		bar.className = 'wpe-steps__bar';
+		bar.innerHTML = '<span></span>';
+		var title = document.createElement( 'h3' );
+		title.className = 'wpe-steps__title';
+		var foot = document.createElement( 'div' );
+		foot.className = 'wpe-steps__foot';
+		foot.innerHTML = '<button type="button" class="wpe-steps__back">← Back</button><button type="button" class="wpe-steps__next"></button>';
+		var note = document.createElement( 'p' );
+		note.className = 'wpe-steps__note';
+		note.textContent = 'Fields marked * are required.';
+		var submit = form.querySelector( '.wpforms-submit-container' );
+		form.insertBefore( title, form.firstChild );
+		form.insertBefore( bar, title );
+		form.insertBefore( nav, bar );
+		( submit || form ).parentNode.insertBefore( foot, submit );
+		form.appendChild( note );
+		var cur = 0;
+		var show = function ( i ) {
+			cur = i;
+			steps.forEach( function ( s, k ) { s.fields.forEach( function ( f ) { f.hidden = k !== i; } ); } );
+			nav.querySelectorAll( 'li' ).forEach( function ( li, k ) { li.classList.toggle( 'is-on', k === i ); li.classList.toggle( 'is-done', k < i ); } );
+			bar.firstChild.style.width = ( ( i + 1 ) / steps.length * 100 ) + '%';
+			title.textContent = 'Step ' + ( i + 1 ) + ' of ' + steps.length + ' · ' + steps[ i ].label;
+			foot.querySelector( '.wpe-steps__back' ).hidden = 0 === i;
+			var last = i === steps.length - 1;
+			foot.querySelector( '.wpe-steps__next' ).hidden = last;
+			foot.querySelector( '.wpe-steps__next' ).textContent = last ? '' : 'Next: ' + steps[ i + 1 ].label + ' →';
+			if ( submit ) {
+				submit.hidden = ! last;
+			}
+		};
+		var valid = function () {
+			var ok = true;
+			steps[ cur ].fields.forEach( function ( f ) {
+				f.querySelectorAll( 'input, select, textarea' ).forEach( function ( el ) {
+					if ( ok && el.willValidate && ! el.checkValidity() ) {
+						el.reportValidity();
+						ok = false;
+					}
+				} );
+			} );
+			return ok;
+		};
+		steps.forEach( function ( s, k ) {
+			var li = document.createElement( 'li' );
+			li.innerHTML = '<button type="button"><b>' + ( k + 1 ) + '</b> ' + s.label + '</button>';
+			li.firstChild.addEventListener( 'click', function () { if ( k <= cur || valid() ) { show( k ); } } );
+			nav.appendChild( li );
+		} );
+		foot.querySelector( '.wpe-steps__back' ).addEventListener( 'click', function () { show( cur - 1 ); } );
+		foot.querySelector( '.wpe-steps__next' ).addEventListener( 'click', function () { if ( valid() ) { show( cur + 1 ); } } );
+		box.classList.add( 'is-stepped' );
+		show( 0 );
+	} );
 }() );
