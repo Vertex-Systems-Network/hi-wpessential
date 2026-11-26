@@ -535,12 +535,12 @@ function wpessential_woo_demo_detail() {
 	$plans   = $pricing ? (string) get_permalink( $pricing ) : '';
 	$updated = $product->get_date_modified();
 	$host    = $live ? (string) wp_parse_url( $live, PHP_URL_HOST ) . (string) wp_parse_url( $live, PHP_URL_PATH ) : '';
-	$badge   = (string) $product->get_meta( '_wpe_badge' );
+	$badge   = (string) $product->get_meta( 'wpe_badge' );
 	$rating  = (string) $product->get_meta( '_wpe_rating_line' );
-	$reviews = (int) $product->get_meta( '_wpe_reviews' );
-	$pages_n = (int) $product->get_meta( '_wpe_pages' );
+	$reviews = (int) $product->get_meta( 'wpe_reviews' );
+	$pages_n = (int) $product->get_meta( 'wpe_pages' );
 	$niche   = (string) $product->get_meta( '_wpe_niche_label' );
-	$scope   = (string) $product->get_meta( '_wpe_includes_line' );
+	$scope   = (string) $product->get_meta( 'wpe_includes_line' );
 	$checks  = array(
 		__( 'Gutenberg and Elementor versions', 'hi-wpessential' ),
 		$scope,
@@ -848,14 +848,20 @@ function wpessential_demo_cards( $atts ) {
 	}
 	$import   = get_page_by_path( 'doc-import', OBJECT, array( 'page', 'post', 'wpessential_doc' ) );
 	$niches   = array();
+	$labels_n = array();
 	$includes = array();
 	$cards    = '';
 	foreach ( $items as $item ) {
-		$free  = 0.0 === (float) $item->get_price();
-		$name  = preg_replace( '/\s+demo$/i', '', $item->get_name() );
-		$keys  = array_filter( array_map( 'sanitize_key', explode( ',', (string) $item->get_meta( '_wpe_niches' ) ) ) );
-		$text  = (string) $item->get_meta( '_wpe_card_text' );
-		$badge = (string) $item->get_meta( '_wpe_badge' );
+		$free = 0.0 === (float) $item->get_price();
+		$name = preg_replace( '/\s+demo$/i', '', $item->get_name() );
+		// Niches: the wpe_demo_niche taxonomy (WPEssential Taxonomies module); the old meta is the fallback.
+		$terms = taxonomy_exists( 'wpe_demo_niche' ) ? wp_get_post_terms( $item->get_id(), 'wpe_demo_niche' ) : array();
+		$keys  = ! is_wp_error( $terms ) && $terms ? wp_list_pluck( $terms, 'slug' ) : array_filter( array_map( 'sanitize_key', explode( ',', (string) $item->get_meta( '_wpe_niches' ) ) ) );
+		foreach ( is_wp_error( $terms ) ? array() : $terms as $term ) {
+			$labels_n[ $term->slug ] = $term->name;
+		}
+		$text  = (string) $item->get_meta( 'wpe_card_text' );
+		$badge = (string) $item->get_meta( 'wpe_badge' );
 		$url   = (string) $item->get_permalink();
 		foreach ( $keys as $key ) {
 			$niches[ $key ] = isset( $niches[ $key ] ) ? $niches[ $key ] + 1 : 1;
@@ -885,7 +891,7 @@ function wpessential_demo_cards( $atts ) {
 			. '<div class="wpe-ess-demo__head"><h3 class="wpe-ess-demo__name"><a href="' . esc_url( $url ) . '">' . esc_html( $name ) . '</a></h3>'
 			. '<p class="wpe-ess-demo__price">' . ( $free ? esc_html__( 'Free', 'hi-wpessential' ) : esc_html__( 'Pro', 'hi-wpessential' ) ) . '</p></div>'
 			. '<p class="wpe-ess-demo__text">' . esc_html( '' !== $text ? $text : wp_strip_all_tags( $item->get_short_description() ) ) . '</p>'
-			. '<div class="wpe-ess-demo__meta"><span>' . ( '' !== (string) $item->get_meta( '_wpe_card_meta' ) ? '<i class="wpe-ess-demo__star" aria-hidden="true">★</i> ' . esc_html( (string) $item->get_meta( '_wpe_card_meta' ) ) : esc_html__( 'Gutenberg & Elementor', 'hi-wpessential' ) ) . '</span><span class="wpe-ess-gb" title="Gutenberg">G</span><span class="wpe-ess-gb" title="Elementor">E</span></div>'
+			. '<div class="wpe-ess-demo__meta"><span>' . ( '' !== (string) $item->get_meta( 'wpe_card_meta' ) ? '<i class="wpe-ess-demo__star" aria-hidden="true">★</i> ' . esc_html( (string) $item->get_meta( 'wpe_card_meta' ) ) : esc_html__( 'Gutenberg & Elementor', 'hi-wpessential' ) ) . '</span><span class="wpe-ess-gb" title="Gutenberg">G</span><span class="wpe-ess-gb" title="Elementor">E</span></div>'
 			. '</div></div>';
 	}
 	if ( (int) $atts['stats'] ) {
@@ -908,7 +914,7 @@ function wpessential_demo_cards( $atts ) {
 	if ( (int) $atts['chips'] ) {
 		$chips = '<a class="wpe-ess-chip is-on" href="#all">' . esc_html__( 'All', 'hi-wpessential' ) . ' <i>' . count( $items ) . '</i></a>';
 		foreach ( $niches as $key => $count ) {
-			$chips .= '<a class="wpe-ess-chip" href="#' . esc_attr( $key ) . '">' . esc_html( ucwords( str_replace( '-', ' ', $key ) ) ) . ' <i>' . (int) $count . '</i></a>';
+			$chips .= '<a class="wpe-ess-chip" href="#' . esc_attr( $key ) . '">' . esc_html( isset( $labels_n[ $key ] ) ? $labels_n[ $key ] : ucwords( str_replace( '-', ' ', $key ) ) ) . ' <i>' . (int) $count . '</i></a>';
 		}
 		return '<p class="wpe-ess-cats" data-wpe-filter>' . $chips . '</p>';
 	}
@@ -923,7 +929,7 @@ function wpessential_demo_cards( $atts ) {
 	};
 	$niche = '';
 	foreach ( $niches as $key => $count ) {
-		$niche .= $opt( 'niche', $key, ucwords( str_replace( '-', ' ', $key ) ), $count );
+		$niche .= $opt( 'niche', $key, isset( $labels_n[ $key ] ) ? $labels_n[ $key ] : ucwords( str_replace( '-', ' ', $key ) ), $count );
 	}
 	$labels = array(
 		'woocommerce' => __( 'WooCommerce shop', 'hi-wpessential' ),
