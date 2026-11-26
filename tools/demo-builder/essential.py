@@ -144,6 +144,7 @@ PLUGINS = [
      'v1.0 · Elementor', 'https://wordpress.org/plugins/tci-ultimate-element-themes/'),
 ]
 
+DOC_COUNTS = [8, 12, 15, 7, 6, 10]  # Figma 08 article counts per topic
 HOME_DOCS = [  # Figma 01 documentation cards (title, text, article count)
     ('Getting started', 'Install the theme, activate your license and import your first demo.', 12),
     ('Demos & import', 'Choose a builder, what gets imported, re-import and remove a demo.', 18),
@@ -165,7 +166,7 @@ DOCS = [
     ('fas fa-palette', 'Customising', 'Style variations, global colours, fonts, header and footer.'),
     ('fas fa-key', 'License & account', 'Activate, move or renew a license and manage your subscription.'),
     ('fas fa-language', 'Translation & RTL', 'WPML, Polylang, 20 bundled languages and right-to-left sites.'),
-    ('fas fa-screwdriver-wrench', 'Troubleshooting', 'Update safely, fix common errors and read the system status.'),
+    ('fas fa-screwdriver-wrench', 'Updates & troubleshooting', 'Update safely, fix common errors and read the system status.'),
 ]
 
 SOCIAL = [('Facebook', 'https://www.facebook.com/wpessential'), ('Instagram', 'https://www.instagram.com/wpessential'),
@@ -560,10 +561,10 @@ def g_docs():
     return b.join(
         g_hero_dark('Documentation', 'How can we help?', None, g_search('Search the docs…', 'wpe-ess-hero__search'),
                     html('<p class="wpe-ess-hero__popular"><span>Popular:</span>%s</p>' % ''.join(chip(t, '{{page:%s}}' % k) for t, k in
-                         [('Import a demo', 'doc-import'), ('Gutenberg or Elementor', 'post-builders'), ('Pricing', 'pricing'), ('Contact', 'contact')])), cls='wpe-ess-page-hero--docs'),
+                         [('Import a demo', 'doc-import'), ('Activate license', 'licence-terms'), ('Change fonts', 'post-builders'), ('RTL', 'docs')])), cls='wpe-ess-page-hero--docs'),
         section(b.h('Browse by topic', size='h1', className='wpe-ess-h2'),
                 b.group(*[b.group(ico(DOC_ICONS[i], 'orange'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
-                                  b.p('<a href="{{page:blog}}">Read guides <span aria-hidden="true">→</span></a>', className='wpe-ess-card__link wpe-ess-card__link--blue'),
+                                  b.p('<a href="{{page:blog}}"><span>%d articles</span><span aria-hidden="true">→</span></a>' % DOC_COUNTS[i], className='wpe-ess-card__link wpe-ess-card__link--blue wpe-ess-card__link--split'),
                                   layout='default', className='wpe-ess-card wpe-ess-card--doc') for i, (_, t, d) in enumerate(DOCS)],
                         layout='grid', columns=3, grid_min='18rem', className='wpe-ess-grid wpe-ess-grid--3')),
         section(b.h('Popular articles', size='h1', className='wpe-ess-h2'),
@@ -819,12 +820,18 @@ def g_roadmap():
 
 def g_quote():
     return b.join(
-        g_hero_light('Request a quote', 'Tell us about your project', 'A few questions, then a fixed quote, scope and timeline within two business days — free, no obligation.', parent=('Services', '{{page:services}}'), show_over=False),
+        g_hero_light('Request a quote', 'Tell us about your project', 'Five short steps. You get a fixed quote and timeline within two business days — free, no obligation.', parent=('Services', '{{page:services}}'), show_over=False),
         section(b.columns(
-            b.column(b.group(wpform('quote'), layout='default', className='wpe-ess-card wpe-ess-form'), width='66%'),
+            # Figma 07: the brief in five steps (assets/js/components.js, [data-wpe-steps]: step label:label of its first field).
+            b.column(b.group(html('<p hidden data-wpe-steps="Contact:Full name|Project:Service(s)|Scope:Describe the project|Budget &amp; timing:Budget range|Extras:Extras"></p>'), wpform('quote'),
+                             layout='default', className='wpe-ess-card wpe-ess-form wpe-ess-stepper'), width='66%'),
             b.column(b.group(b.h('What happens next', level=3, className='wpe-ess-side__title'),
-                             b.ul(['We read your brief the same day.', 'A short call if anything is unclear.', 'Fixed quote, scope and timeline within two business days.',
-                                   'You approve, we schedule the kickoff.'], className='wpe-ess-check'), layout='default', className='wpe-ess-card wpe-ess-side'),
+                             html('<ol class="wpe-ess-side__list"><li>We read your brief the same day.</li><li>A short call if anything is unclear.</li><li>Fixed quote, scope and timeline within two business days.</li><li>You approve, we schedule the kickoff.</li></ol>'),
+                             layout='default', className='wpe-ess-card wpe-ess-side'),
+                     b.group(b.h('All steps', level=3, className='wpe-ess-side__title'),
+                             html('<ul class="wpe-ess-side__steps"><li>Contact — name, email, company, phone, country, website</li><li>Project — services, type, builder, pages, products, languages</li>'
+                                  '<li>Scope — description, content readiness, hosting</li><li>Budget &amp; timing — range, deadline, rush</li><li>Extras — attachments, NDA, preferred contact, consent</li></ul>'),
+                             layout='default', className='wpe-ess-card wpe-ess-side'),
                      b.group(b.h('Prefer email?', level=3, className='wpe-ess-side__title'),
                              b.p('<a href="mailto:services@wpessential.org">services@wpessential.org</a><br>We sign NDAs on request.'),
                              layout='default', className='wpe-ess-card wpe-ess-card--ink wpe-ess-side'), width='34%'),
