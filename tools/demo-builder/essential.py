@@ -694,11 +694,21 @@ def g_work():
                     layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid wpe-ess-grid--3'))
 
 
+TEAM = [('Ayesha Malik', 'Product lead'), ('Bilal Khan', 'Lead developer'), ('Sara Ahmed', 'Client success'), ('Usman Tariq', 'WooCommerce')]  # sample team (Figma 13)
+CONTACT_STATS = [('1,200+', 'WordPress sites delivered'), ('4.9 / 5', 'from 410 client reviews'), ('< 1 day', 'average first reply'), ('12 yrs', 'building for WordPress')]
+CLIENT_LOGOS = ['Northwind', 'Kilncraft', 'Fieldhouse', 'Lumen Studio', 'Orbitly', 'Mosaic & Co']
+
+
 def g_team():
-    return section(html('<div class="wpe-ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=%s&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                        '<div class="wpe-ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>%s<br>%s</span><span><a href="tel:%s">%s</a> · PKT (UTC+5)</span>'
-                        '<a href="https://maps.google.com/?q=%s" target="_blank" rel="noopener">Get directions ↗</a></div></div>' % (
-                            quote(OFFICE['map']), OFFICE['street'], OFFICE['city'], OFFICE['phone'].replace(' ', ''), OFFICE['phone'], quote(OFFICE['map']))))
+    people = ''.join('<figure><span aria-hidden="true">%s</span><figcaption><b>%s</b><small>%s</small></figcaption></figure>' % (''.join(w[0] for w in n.split()), n, r) for n, r in TEAM)
+    q = quote(OFFICE['map'])
+    mapbox = ('<div class="wpe-ess-map"><iframe title="Office location on Google Maps" src="https://maps.google.com/maps?q=%s&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              '<div class="wpe-ess-map__card"><strong>Vertex Systems Network (Pvt.) Ltd.</strong><span>%s<br>%s</span><span><a href="tel:%s">%s</a> · PKT (UTC+5)</span>'
+              '<a href="https://maps.google.com/?q=%s" target="_blank" rel="noopener">Get directions ↗</a></div></div>') % (
+        q, OFFICE['street'], OFFICE['city'], OFFICE['phone'].replace(' ', ''), OFFICE['phone'], q)
+    return section(html('<div class="wpe-ess-teamgrid"><div><p class="wpe-ess-over">— Who you will talk to</p><h2 class="wpe-ess-h2">Real people, one team</h2>'
+                        '<p class="wpe-ess-lead">No call centres and no outsourcing — the people who build the theme run your project.</p>'
+                        '<div class="wpe-ess-people">%s</div></div>%s</div>' % (people, mapbox)))
 
 
 def g_contact():
@@ -744,10 +754,13 @@ def g_contact():
                                   layout='default', className='wpe-ess-card') for i_, t, d, l, h_ in routes],
                         layout='grid', columns=3, grid_min='16rem', className='wpe-ess-grid wpe-ess-grid--3'),
                 tag='section', align='full', className='wpe-ess-page-hero', layout='constrained', content='1680px'),
+        section(html('<div class="wpe-ess-stats">%s</div><p class="wpe-ess-logos"><span>Trusted by agencies, stores and product builders</span>%s</p>' % (
+            ''.join('<div><b>%s</b><span>%s</span></div>' % x for x in CONTACT_STATS), ''.join('<i>%s</i>' % n for n in CLIENT_LOGOS)))),
         section(b.columns(
             b.column(b.group(html('<span id="contact-form"></span>'), b.h('Send us a message', level=2, className='wpe-ess-form__title'),
                              b.p('Fields marked * are required. We use your details only to reply.', className='wpe-ess-side__muted'),
-                             wpform('contact'), layout='default', className='wpe-ess-card wpe-ess-form'), width='66%'),
+                             html('<p hidden data-wpe-steps="About you:1 · About you|Your project:2 · Your project|Details:3 · Details"></p>'),
+                             wpform('contact'), layout='default', className='wpe-ess-card wpe-ess-form wpe-ess-stepper'), width='66%'),
             b.column(*side_cards, width='34%'), className='wpe-ess-gap wpe-ess-contact-cols')),
         section(head('What happens next', 'From message to kickoff in four steps.'),
                 b.group(*[b.group(b.p('0%d' % (i + 1), className='wpe-ess-num'), b.h(t, level=3, className='wpe-ess-card__title'), b.p(d, className='wpe-ess-card__text'),
@@ -772,11 +785,13 @@ CARE_PLANS = [('Basic', '49', ['Weekly updates & backups', 'Uptime monitoring', 
               ('Growth', '129', ['Everything in Basic', 'Daily backups, 90-day history', 'Malware scans & firewall', '3h of fixes & small edits', 'Speed check every month'], True),
               ('Business', '299', ['Everything in Growth', 'Staging site for updates', 'WooCommerce order checks', '8h of development', 'Same-day priority support'], False)]
 # Only what is really built. 1.0.0 is not tagged yet, so it is listed as in development.
-RELEASES = [('1.0.0', 'In development', [('New', 'Base, Maison and Pulse demos for Gutenberg and Elementor'),
-                                         ('New', 'One-click demo import with resumable steps and Remove demo'),
-                                         ('New', 'AI Connect (MCP) with connected sessions, tracking and revoke'),
-                                         ('New', 'Light and dark schemes, 20 languages and right-to-left support'),
-                                         ('New', 'Licenses and subscriptions on WooCommerce with a full event log')])]
+RELEASES = [('1.0.0', '18 Oct 2026', [('New', 'Pulse and Maison demos for Gutenberg and Elementor'),  # Figma 10
+                                      ('New', 'AI Connect (MCP) — connect Claude, Cursor and more to your site'),
+                                      ('New', 'Shop filters, variation swatches and grid gallery'),
+                                      ('Fixed', 'Dark mode colours on every style variation')]),
+            ('0.9.0', '2 Oct 2026', [('New', 'Demo import wizard with resumable steps'),
+                                     ('Improved', 'Theme CSS under 50 KB on first load'),
+                                     ('Fixed', 'Header search visibility')])]
 # From docs/STATUS.md: what is designed or planned, nothing promised beyond that.
 ROADMAP = [('Now', ['WPEssential.org service pages', 'Variation swatches everywhere', 'Elementor version of every demo']),  # Figma 11
            ('Next', ['Restaurant and Course demos', 'Header & footer builder', 'Wishlist and compare']),
@@ -807,7 +822,7 @@ def g_changelog():
         rows = ''.join('<li><span class="wpe-ess-tag wpe-ess-tag--%s">%s</span> %s</li>' % (t.lower(), t, x) for t, x in items)
         out.append(b.group(b.h('Version %s <small>%s</small>' % (v, d), level=2, className='wpe-ess-release__title'), html('<ul class="wpe-ess-release">%s</ul>' % rows),
                            layout='default', className='wpe-ess-card'))
-    return b.join(g_hero_light('Changelog', 'What’s new in Hi WPEssential', 'Every release, with what changed and why.'), section(*out))
+    return b.join(g_hero_light('Changelog', 'What’s new in Hi WPEssential', 'Every release, with what changed and why. Subscribe to the newsletter to hear first.'), section(*out))
 
 
 def g_roadmap():

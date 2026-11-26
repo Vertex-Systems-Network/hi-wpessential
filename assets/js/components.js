@@ -184,7 +184,7 @@
 			return;
 		}
 		// Each step starts at the field whose label begins with the text after the colon.
-		var label = function ( f ) { var l = f.querySelector( '.wpforms-field-label' ); return l ? l.textContent.trim() : ''; };
+		var label = function ( f ) { var l = f.querySelector( '.wpforms-field-label, h3' ); return l ? l.textContent.trim() : ''; };
 		var steps = cfg.dataset.wpeSteps.split( '|' ).map( function ( s ) {
 			var p = s.split( ':' );
 			var start = fields.findIndex( function ( f ) { return 0 === label( f ).indexOf( p[ 1 ] ); } );
