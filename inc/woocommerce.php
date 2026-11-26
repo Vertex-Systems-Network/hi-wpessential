@@ -631,7 +631,14 @@ function wpessential_woo_demo_detail() {
 			?>
 			<section class="wpe-demo__related">
 				<h2><?php esc_html_e( 'You might also like', 'hi-wpessential' ); ?></h2>
-				<?php echo wpessential_demo_cards( array( 'limit' => 3, 'exclude' => $product->get_id() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the function. ?>
+				<?php
+				echo wpessential_demo_cards( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the function.
+					array(
+						'limit'   => 3,
+						'exclude' => $product->get_id(),
+					)
+				);
+				?>
 			</section>
 		<?php endif; ?>
 	</div>
