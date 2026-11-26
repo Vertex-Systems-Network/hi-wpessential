@@ -1193,3 +1193,37 @@ body.single-post :is(.wpe-author-box, .wpe-post-nav) { display: none !important;
 body.single-post .wpe-keep-reading > * { max-width: 1680px !important; }
 .error404 .wp-block-search { max-width: 520px; margin-inline: auto; } .error404 .wp-block-search__input { border-radius: 999px; }
 .wpe-code:has(.wpe-ess-teamgrid), .wpe-ess-teamgrid { width: 100%; }
+
+/* Figma 17: classic checkout on the kit element */
+.wpe-code:has(.wpe-ess-co__title) { --wpek-content-margin: 0 !important; width: 100% !important; max-width: none !important; margin: 0 !important; }
+.wpe-ess-co__title { margin-bottom: 16px !important; }
+.wpe-ess-co__steps { list-style: none; display: flex; gap: 14px; margin: 0 0 24px; padding: 0; font-size: 13px; color: #4a5a7a; }
+.wpe-ess-co__steps li::before { content: none !important; }
+.wpe-ess-co__steps li:not(:last-child)::after { content: "—"; margin-left: 14px; color: #c3cbdb; }
+.wpe-ess-co__steps b { display: inline-grid; place-items: center; width: 22px; height: 22px; margin-right: 6px; border-radius: 50%; background: #e9eef9; color: #1f48a6; font-size: 12px; }
+.wpe-ess-co__steps .is-done b { background: #0b1a3d; color: #fff; }
+.wpe-ess-co__steps .is-on { color: #0b1a3d; font-weight: 600; }
+.wpe-ess-co__steps .is-on b { background: #1f48a6; color: #fff; }
+.wpe-woo-checkout :is(.woocommerce-notices-wrapper, .woocommerce-form-coupon-toggle, .woocommerce-message) { display: none !important; }
+.wpe-woo-checkout form.checkout { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 24px; align-items: start; }
+.wpe-woo-checkout #customer_details { grid-column: 1; grid-row: 1 / span 2; padding: 24px; border: 1px solid #dde4f0; border-radius: 16px; background: #fff; }
+.wpe-woo-checkout #customer_details > div { float: none; width: 100%; padding: 0; }
+.wpe-woo-checkout :is(#order_review_heading, #order_review) { grid-column: 2; }
+.wpe-woo-checkout #order_review_heading { margin: 0 !important; padding: 24px 24px 0; border: 1px solid #dde4f0; border-bottom: 0; border-radius: 16px 16px 0 0; background: #fff; font: 700 22px/1.3 var(--wp--preset--font-family--body) !important; }
+.wpe-woo-checkout #order_review { padding: 12px 24px 24px; border: 1px solid #dde4f0; border-top: 0; border-radius: 0 0 16px 16px; background: #fff; }
+.wpe-woo-checkout h3 { font: 700 22px/1.3 var(--wp--preset--font-family--body) !important; margin: 0 0 16px !important; }
+.wpe-woo-checkout .woocommerce-checkout-review-order-table { border: 0 !important; }
+.wpe-woo-checkout .woocommerce-checkout-review-order-table :is(th, td) { border: 0 !important; background: none !important; padding: 8px 0 !important; font-size: 14px; }
+.wpe-woo-checkout .woocommerce-checkout-review-order-table thead { display: none; }
+.wpe-woo-checkout .order-total :is(th, td) { font-size: 20px !important; font-weight: 700; border-top: 1px solid #dde4f0 !important; padding-top: 14px !important; }
+.wpe-woo-checkout :is(input.input-text, select, textarea) { background: #f3f6fc !important; border: 1px solid #e3e8f2 !important; border-radius: 10px !important; min-height: 46px; padding: 0 14px; width: 100%; box-sizing: border-box; }
+.wpe-woo-checkout .form-row { padding: 0 !important; margin: 0 0 14px !important; }
+.wpe-woo-checkout .form-row-first, .wpe-woo-checkout .form-row-last { width: calc(50% - 8px) !important; }
+.wpe-woo-checkout #payment { background: none !important; border-radius: 0; }
+.wpe-woo-checkout #payment ul.payment_methods { padding: 0 !important; border: 0 !important; }
+.wpe-woo-checkout #place_order { width: 100%; padding: 15px !important; border-radius: 999px !important; background: linear-gradient(90deg, #E8701A, #F7A23E) !important; color: #0b1a3d !important; font-weight: 600; float: none; }
+.wpe-woo-checkout .woocommerce-privacy-policy-text { font-size: 12px; color: #4a5a7a; text-align: center; }
+@media (max-width: 900px) { .wpe-woo-checkout form.checkout { grid-template-columns: 1fr; } .wpe-woo-checkout :is(#order_review_heading, #order_review) { grid-column: 1; } }
+.wpe-woo-checkout #customer_details :is(.woocommerce-billing-fields, .col-1, .col-2, .woocommerce-additional-fields) { border: 0 !important; padding: 0 !important; background: none !important; box-shadow: none !important; }
+.wpe-woo-checkout #customer_details .col-2:empty, .wpe-woo-checkout .woocommerce-additional-fields:empty { display: none; }
+.wpe-woo-checkout .woocommerce-checkout-review-order-table th { text-transform: none !important; letter-spacing: 0 !important; color: #4a5a7a; font-weight: 400; }
