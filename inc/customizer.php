@@ -37,6 +37,39 @@ function wpessential_site_fonts() {
 }
 
 /**
+ * The companion Kit can use the exact locally bundled fonts without converting
+ * them to Google Fonts or relying on mutable body/heading role presets.
+ *
+ * @param array $presets Existing source presets.
+ * @return array
+ */
+function wpessential_site_kit_bundled_fonts( array $presets ) {
+	foreach ( wpessential_site_fonts() as $name => $font ) {
+		$slug = 'hi-wpessential-' . sanitize_title( $name );
+		$entry = array(
+			'slug'       => $slug,
+			'name'       => $name,
+			'fontFamily' => $font[0],
+		);
+		if ( ! empty( $font[1] ) ) {
+			$entry['fontFace'] = array_map(
+				static fn( $file ) => array(
+					'fontFamily'  => $name,
+					'fontStyle'   => false !== strpos( $file, 'italic' ) ? 'italic' : 'normal',
+					'fontWeight'  => '100 900',
+					'fontDisplay' => 'swap',
+					'src'         => array( get_theme_file_uri( 'assets/fonts/' . $file ) ),
+				),
+				$font[1]
+			);
+		}
+		$presets[] = $entry;
+	}
+	return $presets;
+}
+add_filter( 'wpessential_site_kit_bundled_font_presets', 'wpessential_site_kit_bundled_fonts' );
+
+/**
  * Sections and their settings, with the Elementor-style controls applied.
  *
  * @return array
