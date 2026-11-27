@@ -572,9 +572,28 @@ function wpessential_site_fields_base() {
  * @return array
  */
 function wpessential_site_values() {
-	return array_filter(
-		(array) get_theme_mod( 'wpessential_site', array() ),
-		static fn( $v ) => '' !== $v && null !== $v && false !== $v
+	return array_diff_key(
+		array_filter(
+			(array) get_theme_mod( 'wpessential_site', array() ),
+			static fn( $v ) => '' !== $v && null !== $v && false !== $v
+		),
+		array_fill_keys( wpessential_site_owned_palette_keys(), true )
+	);
+}
+
+/**
+ * Canonically owned palette fields. With Free disabled or absent, the legacy theme
+ * resumes its original settings without deleting or rewriting any theme mods.
+ *
+ * @return string[]
+ */
+function wpessential_site_owned_palette_keys() {
+	$keys = apply_filters( 'wpessential_site_kit_owned_legacy_fields', array() );
+	return array_values(
+		array_filter(
+			is_array( $keys ) ? $keys : array(),
+			static fn( $key ) => is_string( $key ) && preg_match( '/^(?:color_|dark_)[a-z0-9-]+$/', $key )
+		)
 	);
 }
 
@@ -654,7 +673,12 @@ add_action(
 		}
 		require_once WPESSENTIAL_DIR . '/inc/class-wpessential-customize-group.php';
 		$wp->register_section_type( 'WPEssential_Customize_Group' );
+		$owned = array_fill_keys( wpessential_site_owned_palette_keys(), true );
 		foreach ( wpessential_site_fields() as $section => $s ) {
+			$s['fields'] = array_diff_key( $s['fields'], $owned );
+			if ( ! array_filter( $s['fields'], static fn( $field ) => 'heading' !== $field['type'] ) ) {
+				continue;
+			}
 			$wp->add_section(
 				$section,
 				array(
@@ -1366,7 +1390,7 @@ add_action(
 			__( 'Site Settings', 'hi-wpessential' ),
 			__( 'Site Settings', 'hi-wpessential' ),
 			'edit_theme_options',
-			'customize.php?autofocus[section]=wpessential_site_colors'
+			wpessential_site_owned_palette_keys() ? 'customize.php?autofocus[section]=wpessential_site_kit_colors' : 'customize.php?autofocus[section]=wpessential_site_colors'
 		);
 	}
 );
