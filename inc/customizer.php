@@ -615,7 +615,7 @@ function wpessential_site_values() {
 }
 
 // Explicit compatibility handshake: this theme honors the reviewed ownership allowlist.
-add_filter( 'wpessential_site_kit_handoff_contract', static fn() => 1 );
+add_filter( 'wpessential_site_kit_handoff_contract', static fn() => 2 );
 
 /**
  * Canonically owned palette and reviewed scalar fields. With Free disabled or absent, the legacy theme
@@ -628,7 +628,7 @@ function wpessential_site_owned_palette_keys() {
 	return array_values(
 		array_filter(
 			is_array( $keys ) ? $keys : array(),
-			static fn( $key ) => is_string( $key ) && ( preg_match( '/^(?:color_|dark_)[a-z0-9-]+$/', $key ) || in_array( $key, array( 'btn_radius', 'field_radius', 'radius_sm', 'radius_md', 'radius_lg', 'radius_xl', 'btn_lift', 'hover_lift', 'hover_duration', 'font_body', 'font_heading', 'font_mono' ), true ) )
+			static fn( $key ) => is_string( $key ) && ( preg_match( '/^(?:color_|dark_)[a-z0-9-]+$/', $key ) || in_array( $key, array( 'btn_radius', 'field_radius', 'radius_sm', 'radius_md', 'radius_lg', 'radius_xl', 'btn_lift', 'hover_lift', 'hover_duration', 'font_body', 'font_heading', 'font_mono', 'fonts_extra' ), true ) )
 		)
 	);
 }
