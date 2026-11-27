@@ -1,6 +1,6 @@
 # R&D process for every demo
 
-Owner instruction (Oct 2026): study the best-selling themes, keep three banks up to date, design only from
+Owner instruction (Oct 2026): study the best-selling themes, keep three banks up to date (the elements bank is in the WPEssential plugin repo), design only from
 the banks, then compare against the market and redo anything that is not better.
 
 **Themes studied:** Avada (113 prebuilt sites, 450+ Studio blocks), Betheme (700+ prebuilt sites, 19 categories),
@@ -10,7 +10,7 @@ Enfold, The7, WoodMart, Shopkeeper, Newspaper (tagDiv), plus the ThemeForest Wor
 ## Steps
 1. **Research** – open the niche's demos in the themes above + 3–5 real market leaders; list every page, section and element.
 2. **Bank it** – add anything new to:
-   - [elements-bank.md](elements-bank.md) – atomic UI parts (buttons, badges, cards, counters…)
+   - elements bank (atomic UI parts: buttons, badges, cards, counters…) – lives in the plugin: `wpessential/docs/RESEARCH/ELEMENTS-BANK.md`
    - [sections-bank.md](sections-bank.md) – page sections and their variants
    - [niche-bank.md](niche-bank.md) – per niche: pages, must-have sections, plugins, tone
 3. **Design** – build the Figma pages only from bank items (sections + elements) that the niche bank marks as required/recommended, following [../demos/design-rules.md](../demos/design-rules.md).
