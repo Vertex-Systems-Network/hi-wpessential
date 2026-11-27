@@ -614,6 +614,9 @@ function wpessential_site_values() {
 	);
 }
 
+// Explicit compatibility handshake: this theme honors the reviewed ownership allowlist.
+add_filter( 'wpessential_site_kit_handoff_contract', static fn() => 1 );
+
 /**
  * Canonically owned palette and reviewed scalar fields. With Free disabled or absent, the legacy theme
  * resumes its original settings without deleting or rewriting any theme mods.
