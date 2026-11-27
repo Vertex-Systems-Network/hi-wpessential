@@ -105,22 +105,32 @@
 		// A breakpoint button resizes the preview to that screen width (like Elementor's responsive mode).
 		var WP_TO_BP = { desktop: 'desktop', tablet: '768', mobile: '560' };
 		var preview = document.getElementById( 'customize-preview' );
+		var clearLegacyPreview = function () {
+			if ( preview && preview.classList.contains( 'wpe-c-preview-sized' ) ) {
+				preview.style.width = preview.style.left = preview.style.marginLeft = '';
+				preview.classList.remove( 'wpe-c-preview-sized' );
+			}
+		};
 		var resize = function ( d ) {
 			var w = ( controls.breakpoints[ d ] || {} ).width;
 			if ( ! preview ) {
 				return;
 			}
 			if ( w && w < 1920 ) {
-				preview.style.width = w + 'px';
+				preview.style.width = 'min(100%, ' + w + 'px)';
 				preview.style.left = '50%';
-				preview.style.marginLeft = ( -w / 2 ) + 'px';
+				preview.style.marginLeft = 'max(-50%, ' + ( -w / 2 ) + 'px)';
 				preview.classList.add( 'wpe-c-preview-sized' );
 			} else {
-				preview.style.width = preview.style.left = preview.style.marginLeft = '';
-				preview.classList.remove( 'wpe-c-preview-sized' );
+				clearLegacyPreview();
 			}
 		};
+		document.addEventListener( 'wpe-sitekit-preview-claim', function () {
+			clearLegacyPreview();
+			controls.setDevice( 'desktop', false );
+		} );
 		controls.onDevice = function ( d ) {
+			document.dispatchEvent( new Event( 'wpe-legacy-preview-claim' ) );
 			if ( api.previewedDevice && 'desktop' !== api.previewedDevice.get() ) {
 				api.previewedDevice.set( 'desktop' );
 			}
@@ -129,14 +139,18 @@
 		if ( api.previewedDevice ) {
 			api.previewedDevice.bind( function ( d ) {
 				var bp = WP_TO_BP[ d ] || 'desktop';
-				if ( 'desktop' !== d && controls.currentDevice !== bp ) {
-					// WordPress' own device buttons: show the matching breakpoint.
-					resize( 'desktop' );
-					controls.currentDevice = bp;
-					controls.setDevice( bp );
-				}
+				// Native buttons own their own preview sizing. Do not call the
+				// custom resize callback or force WordPress back to desktop.
+				clearLegacyPreview();
+				controls.setDevice( bp, false );
 			} );
 		}
+		document.addEventListener( 'click', function ( event ) {
+			if ( event.target instanceof Element && event.target.closest( '.wp-full-overlay-footer .devices button[data-device="desktop"]' ) ) {
+				clearLegacyPreview();
+				controls.setDevice( 'desktop', false );
+			}
+		}, true );
 		// The Breakpoints setting decides which breakpoints every responsive control shows.
 		api( 'wpessential_site[breakpoints]', function ( setting ) {
 			setting.bind( function ( v ) {

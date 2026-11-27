@@ -846,10 +846,10 @@
 			} );
 		},
 		breakpoints: BP,
-		setDevice: function ( d ) {
-			api.currentDevice = d;
-			if ( api.onDevice ) {
-				api.onDevice( d );
+		setDevice: function ( d, notify ) {
+			api.currentDevice = api.enabled().indexOf( d ) < 0 ? 'desktop' : d;
+			if ( api.onDevice && false !== notify ) {
+				api.onDevice( api.currentDevice );
 			}
 			listeners.forEach( function ( fn ) {
 				fn();
