@@ -615,7 +615,8 @@ function wpessential_site_values() {
 }
 
 // Explicit compatibility handshake: this theme honors the reviewed ownership allowlist.
-add_filter( 'wpessential_site_kit_handoff_contract', static fn() => 2 );
+add_filter( 'wpessential_site_kit_handoff_contract', static fn() => 1 );
+add_filter( 'wpessential_site_kit_remote_font_handoff', '__return_true' );
 
 /**
  * Canonically owned palette and reviewed scalar fields. With Free disabled or absent, the legacy theme
