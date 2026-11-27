@@ -153,7 +153,7 @@
 		api.control.each( init );
 		api.control.bind( 'add', init );
 		api.section.each( function ( section ) {
-			if ( 0 === section.id.indexOf( 'wpessential_site' ) ) {
+			if ( 0 === section.id.indexOf( 'wpessential_site' ) && 0 !== section.id.indexOf( 'wpessential_site_kit_' ) ) {
 				section.expanded.bind( function ( open ) {
 					if ( open ) {
 						setTimeout( function () {
