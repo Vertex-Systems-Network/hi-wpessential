@@ -45,7 +45,7 @@ function wpessential_site_fonts() {
  */
 function wpessential_site_kit_bundled_fonts( array $presets ) {
 	foreach ( wpessential_site_fonts() as $name => $font ) {
-		$slug = 'hi-wpessential-' . sanitize_title( $name );
+		$slug  = 'hi-wpessential-' . sanitize_title( $name );
 		$entry = array(
 			'slug'       => $slug,
 			'name'       => $name,
