@@ -36,11 +36,44 @@ function wpessential_active_palette() {
 }
 
 /**
+ * New Site Tools Kit owns synchronization when its entitlement-aware API is present.
+ *
+ * @return bool
+ */
+function wpessential_plugin_owns_elementor_sync() {
+	return is_callable( array( '\WPEssential\Modules\SiteKit\SiteKitElementor', 'enabled' ) );
+}
+
+/**
+ * Merge global entries by stable ID; do not delete unrelated user globals.
+ *
+ * @param array $existing Existing globals.
+ * @param array $incoming Theme globals.
+ * @return array
+ */
+function wpessential_merge_elementor_globals( array $existing, array $incoming ) {
+	$out = array_values( $existing );
+	foreach ( $incoming as $row ) {
+		foreach ( $out as $index => $old ) {
+			if ( is_array( $old ) && isset( $old['_id'] ) && $old['_id'] === $row['_id'] ) {
+				$out[ $index ] = array_replace( $old, $row );
+				continue 2;
+			}
+		}
+		$out[] = $row;
+	}
+	return $out;
+}
+
+/**
  * Copy the theme.json palette and fonts into the active Elementor Kit.
  *
  * @return bool True when the kit was updated.
  */
 function wpessential_sync_elementor_kit() {
+	if ( wpessential_plugin_owns_elementor_sync() ) {
+		return \WPEssential\Modules\SiteKit\SiteKitElementor::sync();
+	}
 	if ( ! class_exists( '\Elementor\Plugin' ) || empty( \Elementor\Plugin::$instance->kits_manager ) ) {
 		return false;
 	}
@@ -121,9 +154,9 @@ function wpessential_sync_elementor_kit() {
 	);
 
 	$settings                      = $kit->get_settings();
-	$settings['system_colors']     = $system;
-	$settings['custom_colors']     = $custom;
-	$settings['system_typography'] = $typography;
+	$settings['system_colors']     = wpessential_merge_elementor_globals( (array) ( $settings['system_colors'] ?? array() ), $system );
+	$settings['custom_colors']     = wpessential_merge_elementor_globals( (array) ( $settings['custom_colors'] ?? array() ), $custom );
+	$settings['system_typography'] = wpessential_merge_elementor_globals( (array) ( $settings['system_typography'] ?? array() ), $typography );
 	// Kit "Site identity" writes back to blogname/blogdescription on save; keep it current.
 	$settings['site_name']        = get_option( 'blogname' );
 	$settings['site_description'] = get_option( 'blogdescription' );
@@ -147,7 +180,7 @@ function wpessential_sync_elementor_kit() {
 add_action(
 	'admin_init',
 	static function () {
-		if ( ! current_user_can( 'edit_theme_options' ) ) {
+		if ( wpessential_plugin_owns_elementor_sync() || ! current_user_can( 'edit_theme_options' ) ) {
 			return;
 		}
 		$hash = md5( wp_json_encode( wpessential_active_palette() ) . WPESSENTIAL_VERSION );
