@@ -1,6 +1,6 @@
 # Project status & handoff — Hi WPEssential (as of 21 Oct 2026)
 
-Start the next session from this file. Owner: Vertex Systems Network (Pvt.) Ltd. Version stays **1.0.0**.
+Start the next session from this file. Plugin-side work (kit elements, Site Tools Kit, importer) is tracked in the WPEssential plugin repository; see [CORE-INTEGRATION.md](CORE-INTEGRATION.md). Owner: Vertex Systems Network (Pvt.) Ltd. Version stays **1.0.0**.
 
 ## Standing rules (owner decisions)
 - Replies to the owner in simple Roman Urdu; do pending work without being asked twice.
