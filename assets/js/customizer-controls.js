@@ -104,6 +104,14 @@
 		}
 		// A breakpoint button resizes the preview to that screen width (like Elementor's responsive mode).
 		var WP_TO_BP = { desktop: 'desktop', tablet: '768', mobile: '560' };
+		var kitModel = ( window.wpessentialControls || {} ).kitBreakpoints || {};
+		if ( kitModel.desktop ) {
+			Object.keys( kitModel ).forEach( function ( key ) {
+				if ( 'mobile' === kitModel[ key ].key ) {
+					WP_TO_BP.mobile = key;
+				}
+			} );
+		}
 		var preview = document.getElementById( 'customize-preview' );
 		var clearLegacyPreview = function () {
 			if ( preview && preview.classList.contains( 'wpe-c-preview-sized' ) ) {
@@ -151,7 +159,17 @@
 				controls.setDevice( 'desktop', false );
 			}
 		}, true );
-		// The Breakpoints setting decides which breakpoints every responsive control shows.
+		// Canonical ownership keeps legacy controls on the same unpublished device model.
+		if ( kitModel.desktop ) {
+			api( 'wpessential_site_kit[values][breakpoints]', function ( setting ) {
+				controls.setKitBreakpoints( setting.get() );
+				setting.bind( function ( v ) {
+					clearLegacyPreview();
+					controls.setKitBreakpoints( v );
+				} );
+			} );
+		}
+		// Standalone theme keeps its original breakpoint setting.
 		api( 'wpessential_site[breakpoints]', function ( setting ) {
 			setting.bind( function ( v ) {
 				controls.setBreakpoints( controls.parseOn( v ) );
