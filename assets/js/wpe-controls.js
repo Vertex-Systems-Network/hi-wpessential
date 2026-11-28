@@ -31,6 +31,17 @@
 		return BP[ k ];
 	} );
 	var LEGACY = { 768: 'tablet', 560: 'mobile' };
+	// Preserve numeric storage keys; the Kit supplies the canonical media model.
+	var KIT_BP = cfg.kitBreakpoints || {};
+	function kitOrder() {
+		return Object.keys( KIT_BP ).sort( function ( a, b ) {
+			var rank = function ( d ) { return '' === d ? 0 : 'min' === d ? 1 : 2; };
+			return rank( KIT_BP[ a ].dir ) - rank( KIT_BP[ b ].dir ) || BP[ b ].width - BP[ a ].width;
+		} );
+	}
+	if ( KIT_BP.desktop ) {
+		BP_ORDER = kitOrder();
+	}
 	var switchers = [];
 	var googleList = null;
 	var googleWaiters = [];
@@ -845,11 +856,29 @@
 				fn();
 			} );
 		},
+		// Unpublished canonical changes update legacy device menus, not legacy data.
+		setKitBreakpoints: function ( raw ) {
+			if ( ! KIT_BP.desktop ) {
+				return;
+			}
+			var stored = parse( raw );
+			api.on = Object.keys( KIT_BP ).filter( function ( k ) {
+				var def = KIT_BP[ k ], row = stored[ def.key ] || {};
+				var w = Number( undefined === row.w ? def.defaultWidth : row.w );
+				BP[ k ].width = 'desktop' === k ? 0 : Number.isFinite( w ) ? Math.max( 240, Math.min( 3840, Math.trunc( w ) ) ) : def.defaultWidth;
+				return 'desktop' === k || ( undefined === row.on ? def.defaultOn : row.on );
+			} );
+			BP_ORDER = kitOrder();
+			if ( api.enabled().indexOf( api.currentDevice ) < 0 ) {
+				api.setDevice( 'desktop', false );
+			}
+			switchers.forEach( function ( fn ) { fn(); } );
+		},
 		breakpoints: BP,
-		setDevice: function ( d ) {
-			api.currentDevice = d;
-			if ( api.onDevice ) {
-				api.onDevice( d );
+		setDevice: function ( d, notify ) {
+			api.currentDevice = api.enabled().indexOf( d ) < 0 ? 'desktop' : d;
+			if ( api.onDevice && false !== notify ) {
+				api.onDevice( api.currentDevice );
 			}
 			listeners.forEach( function ( fn ) {
 				fn();

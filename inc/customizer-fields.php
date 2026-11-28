@@ -17,6 +17,13 @@ defined( 'ABSPATH' ) || exit;
  * @return array
  */
 function wpessential_site_breakpoints() {
+	$model = wpessential_site_kit_breakpoint_model();
+	if ( $model ) {
+		return array_map(
+			static fn( $row ) => array( $row['label'], $row['media'], $row['width'] ),
+			$model
+		);
+	}
 	return array(
 		'1920'    => array( __( 'Wide screen (1920 and up)', 'hi-wpessential' ), '@media (min-width: 1920px)', 1920 ),
 		'desktop' => array( __( 'Desktop (1440, base)', 'hi-wpessential' ), '', 0 ),
@@ -31,11 +38,25 @@ function wpessential_site_breakpoints() {
 }
 
 /**
+ * Canonical breakpoint bridge, provided only after explicit plugin handoff.
+ *
+ * @return array
+ */
+function wpessential_site_kit_breakpoint_model() {
+	$model = apply_filters( 'wpessential_site_kit_legacy_breakpoint_model', array() );
+	return is_array( $model ) && isset( $model['desktop'] ) ? $model : array();
+}
+
+/**
  * Breakpoints switched on in Site Settings → Layout (desktop is always on).
  *
  * @return string[]
  */
 function wpessential_site_breakpoints_on() {
+	$model = wpessential_site_kit_breakpoint_model();
+	if ( $model ) {
+		return array_keys( array_filter( $model, static fn( $row ) => $row['on'] ) );
+	}
 	$v   = function_exists( 'wpessential_site_values' ) ? (array) get_theme_mod( 'wpessential_site', array() ) : array();
 	$raw = (string) ( $v['breakpoints'] ?? '' );
 	$on  = '' === $raw ? array( '768', '560' ) : array_filter( explode( '|', $raw ) );

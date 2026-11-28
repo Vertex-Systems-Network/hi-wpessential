@@ -37,6 +37,39 @@ function wpessential_site_fonts() {
 }
 
 /**
+ * The companion Kit can use the exact locally bundled fonts without converting
+ * them to Google Fonts or relying on mutable body/heading role presets.
+ *
+ * @param array $presets Existing source presets.
+ * @return array
+ */
+function wpessential_site_kit_bundled_fonts( array $presets ) {
+	foreach ( wpessential_site_fonts() as $name => $font ) {
+		$slug  = 'hi-wpessential-' . sanitize_title( $name );
+		$entry = array(
+			'slug'       => $slug,
+			'name'       => $name,
+			'fontFamily' => $font[0],
+		);
+		if ( ! empty( $font[1] ) ) {
+			$entry['fontFace'] = array_map(
+				static fn( $file ) => array(
+					'fontFamily'  => $name,
+					'fontStyle'   => false !== strpos( $file, 'italic' ) ? 'italic' : 'normal',
+					'fontWeight'  => '100 900',
+					'fontDisplay' => 'swap',
+					'src'         => array( get_theme_file_uri( 'assets/fonts/' . $file ) ),
+				),
+				$font[1]
+			);
+		}
+		$presets[] = $entry;
+	}
+	return $presets;
+}
+add_filter( 'wpessential_site_kit_bundled_font_presets', 'wpessential_site_kit_bundled_fonts' );
+
+/**
  * Sections and their settings, with the Elementor-style controls applied.
  *
  * @return array
@@ -572,9 +605,34 @@ function wpessential_site_fields_base() {
  * @return array
  */
 function wpessential_site_values() {
-	return array_filter(
-		(array) get_theme_mod( 'wpessential_site', array() ),
-		static fn( $v ) => '' !== $v && null !== $v && false !== $v
+	return array_diff_key(
+		array_filter(
+			(array) get_theme_mod( 'wpessential_site', array() ),
+			static fn( $v ) => '' !== $v && null !== $v && false !== $v
+		),
+		array_fill_keys( wpessential_site_owned_palette_keys(), true )
+	);
+}
+
+// Explicit compatibility handshake: this theme honors the reviewed ownership allowlist.
+add_filter( 'wpessential_site_kit_handoff_contract', static fn() => 1 );
+add_filter( 'wpessential_site_kit_remote_font_handoff', '__return_true' );
+add_filter( 'wpessential_site_kit_breakpoint_handoff', static fn() => 1 );
+add_filter( 'wpessential_site_kit_responsive_handoff', static fn() => 1 );
+
+/**
+ * Canonically owned palette and reviewed scalar fields. With Free disabled or absent, the legacy theme
+ * resumes its original settings without deleting or rewriting any theme mods.
+ *
+ * @return string[]
+ */
+function wpessential_site_owned_palette_keys() {
+	$keys = apply_filters( 'wpessential_site_kit_owned_legacy_fields', array() );
+	return array_values(
+		array_filter(
+			is_array( $keys ) ? $keys : array(),
+			static fn( $key ) => is_string( $key ) && ( preg_match( '/^(?:color_|dark_)[a-z0-9-]+$/', $key ) || in_array( $key, array( 'btn_radius', 'field_radius', 'radius_sm', 'radius_md', 'radius_lg', 'radius_xl', 'btn_lift', 'hover_lift', 'hover_duration', 'font_body', 'font_heading', 'font_mono', 'fonts_extra', 'breakpoints', 'menu_size', 'menu_gap' ), true ) )
+		)
 	);
 }
 
@@ -654,7 +712,12 @@ add_action(
 		}
 		require_once WPESSENTIAL_DIR . '/inc/class-wpessential-customize-group.php';
 		$wp->register_section_type( 'WPEssential_Customize_Group' );
+		$owned = array_fill_keys( wpessential_site_owned_palette_keys(), true );
 		foreach ( wpessential_site_fields() as $section => $s ) {
+			$s['fields'] = array_diff_key( $s['fields'], $owned );
+			if ( ! array_filter( $s['fields'], static fn( $field ) => 'heading' !== $field['type'] ) ) {
+				continue;
+			}
 			$wp->add_section(
 				$section,
 				array(
@@ -1340,19 +1403,20 @@ add_action(
 			'wpessential-controls',
 			'wpessentialControls',
 			array(
-				'palette'       => $palette,
-				'themeFonts'    => array_keys( wpessential_site_fonts() ),
-				'themeStacks'   => array_map( static fn( $f ) => $f[0], wpessential_site_fonts() ),
-				'fontFiles'     => array_map( static fn( $f ) => $f[1] ? get_theme_file_uri( 'assets/fonts/' . $f[1][0] ) : '', wpessential_site_fonts() ),
-				'googleList'    => get_theme_file_uri( 'assets/data/google-fonts.json' ),
-				'breakpoints'   => array_map(
+				'palette'        => $palette,
+				'themeFonts'     => array_keys( wpessential_site_fonts() ),
+				'themeStacks'    => array_map( static fn( $f ) => $f[0], wpessential_site_fonts() ),
+				'fontFiles'      => array_map( static fn( $f ) => $f[1] ? get_theme_file_uri( 'assets/fonts/' . $f[1][0] ) : '', wpessential_site_fonts() ),
+				'googleList'     => get_theme_file_uri( 'assets/data/google-fonts.json' ),
+				'breakpoints'    => array_map(
 					static fn( $b ) => array(
 						'label' => $b[0],
 						'width' => $b[2],
 					),
 					wpessential_site_breakpoints()
 				),
-				'breakpointsOn' => wpessential_site_breakpoints_on(),
+				'breakpointsOn'  => wpessential_site_breakpoints_on(),
+				'kitBreakpoints' => wpessential_site_kit_breakpoint_model(),
 			)
 		);
 	}
@@ -1366,7 +1430,7 @@ add_action(
 			__( 'Site Settings', 'hi-wpessential' ),
 			__( 'Site Settings', 'hi-wpessential' ),
 			'edit_theme_options',
-			'customize.php?autofocus[section]=wpessential_site_colors'
+			wpessential_site_owned_palette_keys() ? 'customize.php?autofocus[section]=wpessential_site_kit_colors' : 'customize.php?autofocus[section]=wpessential_site_colors'
 		);
 	}
 );
